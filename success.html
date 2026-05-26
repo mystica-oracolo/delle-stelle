@@ -22,16 +22,33 @@
   <div class="star">⭐</div>
   <h1>Premium Attivato!</h1>
   <p>Grazie per aver scelto MYSTICA Premium.<br>L'oracolo completo è ora tuo per sempre.</p>
-  <a class="btn" href="./index.html">✨ Entra nell'Oracolo</a>
+  <a class="btn" id="enterBtn" href="#">✨ Entra nell'Oracolo</a>
   <p class="loader">Reindirizzamento automatico in <span id="cnt">3</span> secondi...</p>
 </div>
 <script>
-  // Attiva il Premium salvando in localStorage
-  try{ localStorage.setItem('mystica_premium_v1','true'); }catch(e){}
-  try{ sessionStorage.setItem('mystica_premium_v1','true'); }catch(e){}
-  try{ sessionStorage.setItem('mystica_stripe_just_paid','true'); }catch(e){}
+  // Verifica che arrivi da Stripe con il session ID
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id');
+  
+  // Deve avere un session_id Stripe valido (inizia con cs_)
+  const isValidPayment = sessionId && sessionId.startsWith('cs_');
+  
+  if(isValidPayment){
+    // Pagamento reale verificato — attiva premium
+    try{ localStorage.setItem('mystica_premium_v1','true'); }catch(e){}
+    try{ sessionStorage.setItem('mystica_premium_v1','true'); }catch(e){}
+    try{ sessionStorage.setItem('mystica_stripe_just_paid','true'); }catch(e){}
+  } else {
+    // Accesso diretto senza pagamento — NON attivare premium
+    document.querySelector('h1').textContent = 'Pagina non valida';
+    document.querySelector('.star').textContent = '❌';
+    document.querySelector('p').textContent = 'Accesso non autorizzato.';
+    document.querySelector('.loader').style.display = 'none';
+  }
 
-  // Countdown e redirect automatico
+  const baseUrl = './index.html';
+  document.getElementById('enterBtn').href = baseUrl;
+
   let n = 3;
   const el = document.getElementById('cnt');
   const t = setInterval(()=>{
@@ -39,7 +56,7 @@
     if(el) el.textContent = n;
     if(n <= 0){
       clearInterval(t);
-      window.location.href = './index.html';
+      window.location.href = baseUrl;
     }
   }, 1000);
 </script>
