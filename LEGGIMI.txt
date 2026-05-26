@@ -1,0 +1,57 @@
+═══════════════════════════════════════════════════
+  MYSTICA — SITO WEB LIVE
+  Versione: 1.0 — Data: 23 Maggio 2026
+═══════════════════════════════════════════════════
+
+QUESTO È IL SITO WEB UFFICIALE SU NETLIFY
+URL: https://mystica-oracolo.netlify.app
+
+CONTENUTO CARTELLA:
+───────────────────
+index.html              → App completa (FILE PRINCIPALE)
+sw.js                   → Service Worker (PWA offline)
+manifest.json           → Manifesto PWA
+icon-192.png            → Icona Android/Chrome
+icon-512.png            → Icona Play Store
+apple-touch-icon.png    → Icona iOS
+success.html            → Pagina dopo pagamento Stripe
+sitemap.xml             → Mappa sito per Google
+robots.txt              → Istruzioni per Google
+google07f0cd00adc0f158  → Verifica Google Search Console
+
+COSA È ATTIVO:
+──────────────
+✅ AdSense: ca-pub-0522720046244970 (in attesa approvazione Google)
+✅ Stripe Premium: https://buy.stripe.com/aFa6ozfOx2vNcdAdEW4ow00
+✅ Redirect Premium: https://mystica-oracolo.netlify.app/success.html
+✅ SEO ottimizzato con sitemap e Search Console
+✅ PWA installabile su Android e iOS
+✅ Service Worker con cache offline
+
+CONTATTI E LEGALE:
+──────────────────
+Email supporto: Blackpetro83@gmail.com
+Titolare: PetroCorporation
+Privacy Policy: inclusa nell'app (footer → Privacy Policy)
+Termini di Servizio: inclusi nell'app (footer → Termini)
+
+COME AGGIORNARE IL SITO:
+─────────────────────────
+1. Modifica index.html in questa cartella
+2. Vai su app.netlify.com
+3. Deploys → trascina questa cartella
+4. Aspetta "Deploy is live"
+
+BACKUP NETLIFY:
+───────────────
+Netlify conserva tutti i deploy precedenti.
+Se qualcosa va storto: Deploys → clicca deploy precedente → "Publish deploy"
+
+PROSSIMI PASSI DA FARE:
+────────────────────────
+⬜ AdMob (per versione APK Android)
+⬜ Generare APK con PWABuilder
+⬜ Pubblicare su Google Play Store
+⬜ Aspettare approvazione AdSense (2-4 settimane)
+
+═══════════════════════════════════════════════════

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MYSTICA — Premium Attivato!</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0a0514;color:#e6e0f0;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px}
+  .wrap{max-width:340px}
+  .star{font-size:72px;margin-bottom:20px;animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  h1{font-size:22px;color:#d4af37;margin-bottom:12px;font-family:Georgia,serif}
+  p{color:#a89bc2;font-size:14px;line-height:1.6;margin-bottom:24px}
+  .btn{display:inline-block;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;padding:14px 32px;border-radius:25px;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.5px}
+  .loader{font-size:12px;color:#6b5a8a;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="star">⭐</div>
+  <h1>Premium Attivato!</h1>
+  <p>Grazie per aver scelto MYSTICA Premium.<br>L'oracolo completo è ora tuo per sempre.</p>
+  <a class="btn" href="./index.html">✨ Entra nell'Oracolo</a>
+  <p class="loader">Reindirizzamento automatico in <span id="cnt">3</span> secondi...</p>
+</div>
+<script>
+  // Attiva il Premium salvando in localStorage
+  try{ localStorage.setItem('mystica_premium_v1','true'); }catch(e){}
+  try{ sessionStorage.setItem('mystica_premium_v1','true'); }catch(e){}
+  try{ sessionStorage.setItem('mystica_stripe_just_paid','true'); }catch(e){}
+
+  // Countdown e redirect automatico
+  let n = 3;
+  const el = document.getElementById('cnt');
+  const t = setInterval(()=>{
+    n--;
+    if(el) el.textContent = n;
+    if(n <= 0){
+      clearInterval(t);
+      window.location.href = './index.html';
+    }
+  }, 1000);
+</script>
+</body>
+</html>
