@@ -618,8 +618,24 @@
         </button>
 
         <div id="oroContent">
-          <p class="t-muted" style="padding:16px 0 10px;text-align:center">Salva il tuo profilo per ricevere l'oroscopo personalizzato ✨</p>
-          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:0">✏️ Vai al Profilo</button>
+          <!-- SEO static preview: Google indica questo contenuto; il JS lo sovrascrive con l'oroscopo personalizzato quando esiste un profilo -->
+          <p style="font-family:'Cinzel',serif;font-size:11px;color:var(--muted);text-align:center;letter-spacing:1.5px;margin-bottom:14px">✦ SCEGLI IL TUO SEGNO ✦</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px">
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♈</span><div class="mi-label">Ariete</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♉</span><div class="mi-label">Toro</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♊</span><div class="mi-label">Gemelli</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♋</span><div class="mi-label">Cancro</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♌</span><div class="mi-label">Leone</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♍</span><div class="mi-label">Vergine</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♎</span><div class="mi-label">Bilancia</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♏</span><div class="mi-label">Scorpione</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♐</span><div class="mi-label">Sagittario</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♑</span><div class="mi-label">Capricorno</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♒</span><div class="mi-label">Acquario</div></div>
+            <div class="menu-item" onclick="hapticFeedback();nav('profilo')"><span class="mi-icon">♓</span><div class="mi-label">Pesci</div></div>
+          </div>
+          <div class="horosec"><h4>🌟 Oroscopo del Giorno</h4><p>Crea il tuo profilo con nome e data di nascita per ricevere l'oroscopo personalizzato giornaliero, settimanale e mensile per il tuo segno zodiacale. Le stelle guidano il tuo cammino ogni giorno.</p></div>
+          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">✏️ Crea il tuo Profilo Astrologico</button>
         </div>
         </div><!-- fine oroPannelloGiorno -->
 
@@ -646,8 +662,23 @@
       <div class="card">
         <h2>♈ Il Tuo Segno Zodiacale</h2>
         <div id="zodContent">
-          <p class="t-muted" style="padding:16px 0 10px;text-align:center">Salva il tuo profilo per scoprire il tuo segno ✨</p>
-          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:0">✏️ Vai al Profilo</button>
+          <!-- SEO static preview -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♈</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Ariete</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Fuoco · Marte</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♉</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Toro</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Terra · Venere</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♊</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Gemelli</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Aria · Mercurio</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♋</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Cancro</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Acqua · Luna</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♌</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Leone</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Fuoco · Sole</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♍</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Vergine</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Terra · Mercurio</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♎</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Bilancia</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Aria · Venere</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♏</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Scorpione</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Acqua · Plutone</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♐</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Sagittario</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Fuoco · Giove</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♑</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Capricorno</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Terra · Saturno</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♒</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Acquario</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Aria · Urano</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:22px">♓</span><div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-top:4px">Pesci</div><div style="font-size:9px;color:var(--muted);margin-top:2px">Acqua · Nettuno</div></div>
+          </div>
+          <div class="horosec"><h4>🔮 Il Tuo Segno Zodiacale</h4><p>Ogni segno dello zodiaco rivela tratti unici di personalità, pianeta governatore, elemento e pietra fortunata. Crea il tuo profilo per scoprire l'analisi completa del tuo segno con caratteristiche, affinità e previsioni.</p></div>
+          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">✏️ Scopri il tuo Segno</button>
         </div>
       </div>
     </div>
@@ -675,8 +706,19 @@
       <div class="card gold-border">
         <h2 id="misticoViewTitle">🌟 Il Tuo Profilo Mistico</h2>
         <div id="misticoViewContent">
-          <p class="t-muted" style="padding:16px 0 10px;text-align:center">Salva prima il tuo profilo ✨</p>
-          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:0">✏️ Vai al Profilo</button>
+          <!-- SEO static preview -->
+          <div style="text-align:center;padding:10px 0 14px">
+            <div style="font-size:48px;margin-bottom:8px;filter:drop-shadow(0 0 16px #d4af3760)">🌟</div>
+            <p style="font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">Profilo Mistico Personale</p>
+            <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px">Il tuo profilo mistico include pietra fortunata, colore dell'anima, elemento spirituale, numero di vita e animale guida basati sul tuo segno zodiacale e data di nascita.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:12px 8px;text-align:center"><span style="font-size:20px">💎</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;margin:4px 0 2px;text-transform:uppercase">Pietra</div><div style="font-size:12px;color:var(--text)">Personalizzata</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:12px 8px;text-align:center"><span style="font-size:20px">🎨</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;margin:4px 0 2px;text-transform:uppercase">Colore Anima</div><div style="font-size:12px;color:var(--text)">Unico per te</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:12px 8px;text-align:center"><span style="font-size:20px">🔢</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;margin:4px 0 2px;text-transform:uppercase">Numero di Vita</div><div style="font-size:12px;color:var(--text)">Dalla nascita</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:12px 8px;text-align:center"><span style="font-size:20px">🦅</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;margin:4px 0 2px;text-transform:uppercase">Animale Guida</div><div style="font-size:12px;color:var(--text)">Il tuo totem</div></div>
+          </div>
+          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:4px">✨ Crea il tuo Profilo Mistico</button>
         </div>
       </div>
     </div>
@@ -686,8 +728,24 @@
       <div class="card gold-border">
         <h2 id="zodCineseViewTitle">🏮 Il Tuo Zodiaco Cinese</h2>
         <div id="zodCineseViewContent">
-          <p class="t-muted" style="padding:16px 0 10px;text-align:center">Salva prima il tuo profilo ✨</p>
-          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:0">✏️ Vai al Profilo</button>
+          <!-- SEO static preview -->
+          <p style="font-family:'Cinzel',serif;font-size:11px;color:var(--muted);text-align:center;letter-spacing:1.5px;margin-bottom:12px">✦ I 12 ANIMALI DELLO ZODIACO CINESE ✦</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐭</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Ratto</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Acqua</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐂</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Bue</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐯</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Tigre</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐰</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Coniglio</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐲</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Drago</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐍</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Serpente</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐴</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cavallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐑</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Capra</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐵</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Scimmia</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐓</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Gallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐕</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cane</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐷</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Maiale</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Acqua</div></div>
+          </div>
+          <div class="horosec"><h4>🏮 Zodiaco Cinese</h4><p>Lo zodiaco cinese si basa sull'anno di nascita e assegna uno dei 12 animali con il relativo elemento. Ogni animale porta qualità uniche: forza, intelligenza, creatività o diplomazia. Inserisci la tua data di nascita per scoprire il tuo animale.</p></div>
+          <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">🏮 Scopri il tuo Animale</button>
         </div>
       </div>
     </div>
