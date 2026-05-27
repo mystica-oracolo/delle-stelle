@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://mystica-oracolo.netlify.app/sitemap.xml
+
+Sitemap: https://mystica-oracolo.github.io/delle-stelle/sitemap.xml
