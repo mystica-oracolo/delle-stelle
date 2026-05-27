@@ -847,7 +847,7 @@
             <input type="date" id="angelDate">
             <label style="font-size:11px;color:var(--muted);display:block;margin:10px 0 4px;font-family:'Cinzel',serif">Ora di nascita (più precisa è, meglio è)</label>
             <input type="time" id="angelTime" placeholder="es. 14:30">
-            <button class="btn" onclick="calcAngelo()" style="margin-top:13px">✨ Rivela il Mio Angelo</button>
+            <button class="btn" onclick="requirePremium(calcAngelo)" style="margin-top:13px">✨ Rivela il Mio Angelo</button>
           </div>
           <div id="angeliResult" style="display:none"></div>
         </div>
@@ -896,7 +896,7 @@
                   <span class="geo-dots-placeholder">· · · · ·</span>
                 </div>
               </div>
-              <button class="btn" id="geoTapBtn" onclick="geoTapRow()">
+              <button class="btn" id="geoTapBtn" onclick="requirePremium(geoTapRow)">
                 <span id="geoTapLabel">✋ Traccia la Prima Riga</span>
               </button>
             </div>
@@ -941,7 +941,7 @@
                 Il Sentiero di Vita rivela la missione della tua anima in questo incarnato. Si calcola riducendo tutti i numeri della tua data di nascita a una singola cifra vibrazionale.
               </p>
               <input type="date" id="numDate">
-              <button class="btn" onclick="calcSentiero()" style="margin-top:13px">🔮 Calcola il Mio Sentiero</button>
+              <button class="btn" onclick="requirePremium(calcSentiero)" style="margin-top:13px">🔮 Calcola il Mio Sentiero</button>
             </div>
 
 
@@ -955,7 +955,7 @@
                 <div class="num-chart-row"><span>J K L M N O P Q R</span><span>1 2 3 4 5 6 7 8 9</span></div>
                 <div class="num-chart-row"><span>S T U V W X Y Z</span><span>1 2 3 4 5 6 7 8</span></div>
               </div>
-              <button class="btn" onclick="calcDestino()" style="margin-top:13px">🔮 Rivela il Mio Destino</button>
+              <button class="btn" onclick="requirePremium(calcDestino)" style="margin-top:13px">🔮 Rivela il Mio Destino</button>
             </div>
           </div>
 
@@ -987,7 +987,7 @@
               <span>oppure inserisci manualmente</span>
             </div>
             <input type="time" id="oreTime" placeholder="es. 11:11">
-            <button class="btn" onclick="calcOreSpecchio()" style="margin-top:11px">🔮 Scopri il Messaggio</button>
+            <button class="btn" onclick="requirePremium(calcOreSpecchio)" style="margin-top:11px">🔮 Scopri il Messaggio</button>
             <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.6">
               Le ore specchio classiche: 00:00 · 01:01 · 02:02 … 23:23<br>
               Ma anche le ore inverse e i numeri ripetuti come 11:11, 22:22 ✦
@@ -1043,7 +1043,7 @@
                 <button class="delfi-rito" data-rito="2" onclick="selRito(this)">💧<br><span>Acqua<br><small>rivelazione</small></span></button>
               </div>
             </div>
-            <button class="btn" onclick="consultaDelfi()" style="width:100%;margin-top:4px">
+            <button class="btn" onclick="requirePremium(consultaDelfi)" style="width:100%;margin-top:4px">
               ☀️ Consulta la Pizia
             </button>
           </div>
@@ -1070,11 +1070,11 @@
 
           <div id="lunaForm">
             <div class="luna-today-box">
-              <button class="btn" onclick="calcLunaOggi()">🌕 Analizza la Luna di Oggi</button>
+              <button class="btn" onclick="requirePremium(calcLunaOggi)">🌕 Analizza la Luna di Oggi</button>
             </div>
             <div class="ore-divider-or"><span>oppure scegli una data</span></div>
             <input type="date" id="lunaDate">
-            <button class="btn" onclick="calcLunaData()" style="margin-top:11px">🔭 Analizza Quella Data</button>
+            <button class="btn" onclick="requirePremium(calcLunaData)" style="margin-top:11px">🔭 Analizza Quella Data</button>
           </div>
 
           <div id="lunaResult" style="display:none"></div>
@@ -1097,11 +1097,11 @@
 
           <div id="planetiForm">
             <div style="text-align:center;margin-bottom:10px">
-              <button class="btn" onclick="calcPianeti()">🔭 Mostra il Cielo di Oggi</button>
+              <button class="btn" onclick="requirePremium(calcPianeti)">🔭 Mostra il Cielo di Oggi</button>
             </div>
             <div class="ore-divider-or"><span>oppure scegli una data</span></div>
             <input type="date" id="planetiDate">
-            <button class="btn" onclick="calcPianetiData()" style="margin-top:11px">🪐 Analizza Quella Data</button>
+            <button class="btn" onclick="requirePremium(calcPianetiData)" style="margin-top:11px">🪐 Analizza Quella Data</button>
           </div>
 
           <div id="planetiResult" style="display:none"></div>
@@ -1144,7 +1144,7 @@
               <div id="runeDomandaBox">
                 <input type="text" id="runeDomanda" placeholder="La tua domanda (facoltativa)..." maxlength="80">
               </div>
-              <button class="btn" id="runeDrawBtn" onclick="runeDraw()">ᚱ Estrai le Rune</button>
+              <button class="btn" id="runeDrawBtn" onclick="requirePremium(runeDraw)">ᚱ Estrai le Rune</button>
             </div>
           </div>
 
@@ -1187,7 +1187,7 @@
               </div>
               <div class="iching-throw-info" id="ichingThrowInfo" style="display:none"></div>
 
-              <button class="btn" id="ichingThrowBtn" onclick="ichingThrow()">
+              <button class="btn" id="ichingThrowBtn" onclick="requirePremium(ichingThrow)">
                 <span id="ichingThrowLabel">🪙 Lancia le Monete — 1ª linea</span>
               </button>
               <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:8px" id="ichingProgress">Linee generate: 0 / 6</p>
@@ -1240,7 +1240,7 @@
                   style="width:100%;background:rgba(10,5,30,0.75);border:1.5px solid rgba(212,175,55,0.5);color:#f0e8ff;border-radius:10px;padding:12px 14px;font-family:'Crimson Pro',serif;font-size:15px;line-height:1.5;resize:none;outline:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-sizing:border-box"></textarea>
               </div>
               <!-- Area cliccabile trasparente sul libro (evita duplicazione del testo già nell'immagine) -->
-              <div onclick="apriLibro()" style="position:absolute;bottom:0;left:0;right:0;height:55%;cursor:pointer;-webkit-tap-highlight-color:transparent"></div>
+              <div onclick="requirePremium(apriLibro)" style="position:absolute;bottom:0;left:0;right:0;height:55%;cursor:pointer;-webkit-tap-highlight-color:transparent"></div>
             </div>
           </div>
 
@@ -1310,7 +1310,7 @@
             </div>
 
             <input type="text" id="wiccaDomanda" placeholder="La tua domanda o intenzione specifica (facoltativa)..." maxlength="80">
-            <button class="btn" onclick="calcWicca()" style="margin-top:13px">🌙 Invoca le Corrispondenze</button>
+            <button class="btn" onclick="requirePremium(calcWicca)" style="margin-top:13px">🌙 Invoca le Corrispondenze</button>
           </div>
 
           <div id="wiccaResult" style="display:none"></div>
@@ -1348,7 +1348,7 @@
               </div>
             </div>
             <input type="text" id="alchDomanda" placeholder="La tua intenzione o domanda alchemica (facoltativa)..." maxlength="80" style="margin-top:10px">
-            <button class="btn" onclick="calcAlchimia()" style="margin-top:13px">⚗️ Rivela la Trasmutazione</button>
+            <button class="btn" onclick="requirePremium(calcAlchimia)" style="margin-top:13px">⚗️ Rivela la Trasmutazione</button>
             <button class="btn btn-sec" onclick="alchRandom()" style="margin-top:6px">✨ Lascia che il Laboratorio scelga</button>
           </div>
           <div id="alchResult" style="display:none"></div>
@@ -1383,7 +1383,7 @@
               <div class="menu-item" id="kabTab8" onclick="kabSelSeph(8)"><span class="mi-icon">🌙</span><div class="mi-label" style="font-size:9px">Yesod</div></div>
               <div class="menu-item" id="kabTab9" onclick="kabSelSeph(9)"><span class="mi-icon">🌍</span><div class="mi-label" style="font-size:9px">Malkuth</div></div>
             </div>
-            <button class="btn" onclick="calcCabala()" style="margin-top:6px">🕎 Svela il Sentiero</button>
+            <button class="btn" onclick="requirePremium(calcCabala)" style="margin-top:6px">🕎 Svela il Sentiero</button>
             <button class="btn btn-sec" onclick="kabRandom()" style="margin-top:6px">✨ Lascia che l'Albero scelga</button>
           </div>
           <div id="cabalaResult" style="display:none"></div>
@@ -1415,7 +1415,7 @@
               <button class="num-tab" id="herTab5" onclick="herSelPrincipio(5)"><span style="font-size:14px">⚙️</span><span>Causa ed Effetto</span></button>
               <button class="num-tab" id="herTab6" onclick="herSelPrincipio(6)"><span style="font-size:14px">⚛️</span><span>Genere</span></button>
             </div>
-            <button class="btn" onclick="calcErmetismo()" style="margin-top:6px">📜 Rivela il Principio</button>
+            <button class="btn" onclick="requirePremium(calcErmetismo)" style="margin-top:6px">📜 Rivela il Principio</button>
             <button class="btn btn-sec" onclick="herRandom()" style="margin-top:6px">✨ Lascia che la Tavola scelga</button>
           </div>
           <div id="hermetResult" style="display:none"></div>
@@ -1453,7 +1453,7 @@
               </div>
             </div>
             <input type="text" id="necroDomanda" placeholder="La tua domanda per l'Ombra (facoltativa)..." maxlength="80">
-            <button class="btn" onclick="calcNegromanzia()" style="margin-top:13px">💀 Apri il Confine</button>
+            <button class="btn" onclick="requirePremium(calcNegromanzia)" style="margin-top:13px">💀 Apri il Confine</button>
             <button class="btn btn-sec" onclick="necroRandom()" style="margin-top:6px">✨ Lascia che l'Ombra scelga</button>
           </div>
           <div id="necroResult" style="display:none"></div>
@@ -1490,7 +1490,7 @@
                 La <b>Bibliomanzia</b> consiste nell'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall'universo.
               </p>
             </div>
-            <button class="btn" onclick="calcBiblioTasseo()">✨ Ricevi il Messaggio</button>
+            <button class="btn" onclick="requirePremium(calcBiblioTasseo)">✨ Ricevi il Messaggio</button>
           </div>
 
           <div id="biblioResult" style="display:none;margin-top:16px"></div>
@@ -5087,12 +5087,6 @@ function consultaDelfi(){
 
 function openOracoloHome(id){
 
-  if(PREMIUM_ORACOLI.has(id) && !isPremium()){
-  if(typeof trackEvent!=='undefined') trackEvent('Premium','gate_triggered',id);
-  requirePremium(()=>openOracoloHome(id));
-  return;
-  }
-
   if(typeof trackEvent!=='undefined') trackEvent('Oracle','open',id);
 
   if(!_adSeen.has('oracolo_'+id)){
@@ -5113,10 +5107,6 @@ function openOracoloHome(id){
 
 function navMagia(panel){
 
-  if(!isPremium()){
-  requirePremium(()=>navMagia(panel));
-  return;
-  }
   if(!_adSeen.has('magia')){
   _adSeenAdd('magia');
   const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio'};
@@ -9270,6 +9260,91 @@ function resetNegromanzia(){
   $('#necroForm').style.display='block';
   $('#necroResult').style.display='none';
   if($('#necroDomanda')) $('#necroDomanda').value='';
+}
+
+/* ── BIBLIOMANZIA & TASSEOMANZIA ── */
+let _biblioMode = 0; // 0=bibliomanzia, 1=tasseomanzia
+
+function resetBibliomanzia(){
+  _biblioMode = 0;
+  const f=$('#biblioForm'); if(f) f.style.display='block';
+  const r=$('#biblioResult'); if(r){ r.style.display='none'; r.innerHTML=''; }
+  ['biblioTab0','biblioTab1'].forEach((id,i)=>{
+    const t=$('#'+id); if(t) t.classList.toggle('active', i===0);
+  });
+  const d=$('#biblioDesc');
+  if(d) d.innerHTML='La <b>Bibliomanzia</b> consiste nell\'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall\'universo.';
+}
+
+function selBiblioMode(mode){
+  _biblioMode = mode;
+  ['biblioTab0','biblioTab1'].forEach((id,i)=>{
+    const t=$('#'+id); if(t) t.classList.toggle('active', i===mode);
+  });
+  const d=$('#biblioDesc');
+  if(!d) return;
+  if(mode===0){
+    d.innerHTML='La <b>Bibliomanzia</b> consiste nell\'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall\'universo.';
+  } else {
+    d.innerHTML='La <b>Tasseomanzia</b> legge i fondi di tè o caffè come mappa simbolica dell\'anima. Concentrati sulla tua domanda, poi premi per rivelare i simboli.';
+  }
+}
+
+function calcBiblioTasseo(){
+  const frasi_biblio = [
+    {titolo:'📖 Libro della Saggezza', testo:'Ogni cosa ha il suo tempo e la sua stagione sotto il cielo. Questo momento richiede pazienza e fiducia nel processo naturale della vita.'},
+    {titolo:'📖 Upanishad', testo:'L\'Atman è Brahman — il tuo Sé profondo è tutt\'uno con l\'universo. Ciò che cerchi fuori è già dentro di te.'},
+    {titolo:'📖 Tao Tê Ching', testo:'Il Tao che può essere detto non è l\'eterno Tao. Agisci senza forzare. La via dell\'acqua supera la roccia senza sforzo.'},
+    {titolo:'📖 I Ching — Mutamento', testo:'Il cambiamento è l\'unica costante. Abbandona la resistenza e lascia che la trasformazione avvenga naturalmente.'},
+    {titolo:'📖 Vangelo di Tommaso', testo:'Conosci ciò che è davanti a te, e ciò che è nascosto ti sarà rivelato. La luce è dentro di te.'},
+    {titolo:'📖 Corpus Hermeticum', testo:'Come in alto, così in basso. Le forze cosmiche rispecchiano la tua situazione interiore. Osserva i segni.'},
+    {titolo:'📖 Libro dei Salmi', testo:'Il Signore è il mio pastore, nulla mi mancherà. Attraversa la valle oscura sapendo di non essere solo.'},
+    {titolo:'📖 Bhagavad Gita', testo:'Esegui il tuo dovere senza attaccarti ai frutti dell\'azione. L\'azione giusta porta la sua ricompensa nel momento giusto.'},
+  ];
+  const simboli_tasseo = [
+    {simbolo:'🐍', nome:'Serpente', significato:'Trasformazione profonda in atto. Lascia andare la vecchia pelle — una nuova versione di te sta emergendo.'},
+    {simbolo:'🦅', nome:'Aquila', significato:'Visione d\'insieme. Sei chiamato a elevarti sopra le preoccupazioni quotidiane per vedere la situazione dall\'alto.'},
+    {simbolo:'🌙', nome:'Luna Crescente', significato:'Nuovi inizi e crescita intuitiva. Fidati dei tuoi sogni e delle sensazioni notturne nelle prossime settimane.'},
+    {simbolo:'⚓', nome:'Ancora', significato:'Stabilità e radicamento. È il momento di costruire fondamenta solide, non di vagare.'},
+    {simbolo:'🌺', nome:'Fiore', significato:'Fioritura imminente. Qualcosa che hai coltivato con cura sta per sbocciare in modo inaspettato e bellissimo.'},
+    {simbolo:'🔑', nome:'Chiave', significato:'La risposta che cerchi è più vicina di quanto pensi. Una porta si sta aprendo — riconosci l\'opportunità.'},
+    {simbolo:'💧', nome:'Goccia d\'Acqua', significato:'Emozioni da elaborare. Permettiti di sentire pienamente — le lacrime e la gioia portano entrambe chiarezza.'},
+    {simbolo:'⭐', nome:'Stella a cinque punte', significato:'Protezione spirituale e guida superiore. Non sei solo in questo cammino — forze benigne ti accompagnano.'},
+    {simbolo:'🏔️', nome:'Montagna', significato:'Una sfida importante da affrontare. La fatica della salita è reale, ma dalla vetta la vista cambierà tutto.'},
+    {simbolo:'🌊', nome:'Onda', significato:'Un\'ondata di cambiamento è in arrivo. Impara a cavalcarla piuttosto che resisterle.'},
+  ];
+  const r=$('#biblioResult');
+  const f=$('#biblioForm');
+  if(!r) return;
+  let html='';
+  if(_biblioMode===0){
+    const item=frasi_biblio[Math.floor(Math.random()*frasi_biblio.length)];
+    html=`<div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.3);border-radius:14px;padding:20px;text-align:center">
+      <div style="font-size:28px;margin-bottom:12px">📖</div>
+      <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px;margin-bottom:14px;letter-spacing:1px">${item.titolo}</div>
+      <p style="font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:16px;line-height:1.8;color:var(--text)">"${item.testo}"</p>
+      <div style="margin-top:18px;font-size:10px;color:var(--muted);letter-spacing:3px">✦ ✦ ✦</div>
+    </div>
+    <button class="btn btn-sec" onclick="resetBibliomanzia()" style="margin-top:14px">🔄 Nuova Pagina</button>`;
+  } else {
+    const item=simboli_tasseo[Math.floor(Math.random()*simboli_tasseo.length)];
+    const extra=simboli_tasseo[Math.floor(Math.random()*simboli_tasseo.length)];
+    html=`<div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.3);border-radius:14px;padding:20px;text-align:center">
+      <div style="font-size:40px;margin-bottom:8px">${item.simbolo}</div>
+      <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:14px;margin-bottom:12px">${item.nome}</div>
+      <p style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:16px">${item.significato}</p>
+      <div style="border-top:1px solid rgba(212,175,55,0.2);padding-top:14px;margin-top:4px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:1px">SIMBOLO SECONDARIO</div>
+        <div style="font-size:28px;margin-bottom:6px">${extra.simbolo}</div>
+        <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:12px;margin-bottom:8px">${extra.nome}</div>
+        <p style="font-size:13px;line-height:1.6;color:var(--muted)">${extra.significato}</p>
+      </div>
+    </div>
+    <button class="btn btn-sec" onclick="resetBibliomanzia()" style="margin-top:14px">☕ Nuova Lettura</button>`;
+  }
+  if(f) f.style.display='none';
+  r.innerHTML=html;
+  r.style.display='block';
 }
 
 const DB_SIGILLI_SALOMONE = [
