@@ -43,20 +43,11 @@
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/">
 
 
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="./icon-192.png">
 <script>(function(){
-
-  // Manifest statico — icone PNG esterne (necessario per PWABuilder / APK)
-  const link = document.createElement('link');
-  link.rel = 'manifest'; link.href = './manifest.json';
-  document.head.appendChild(link);
-
-  const apple = document.createElement('link');
-  apple.rel = 'apple-touch-icon'; apple.href = './apple-touch-icon.png';
-  document.head.appendChild(apple);
-
-  const fav = document.createElement('link');
-  fav.rel = 'icon'; fav.type = 'image/png'; fav.href = './icon-192.png';
-  document.head.appendChild(fav);
+  // manifest già dichiarato staticamente nell'head
 })();</script>
 <meta name="theme-color" content="#d4af37">
 <meta name="apple-mobile-web-app-title" content="MYSTICA">
@@ -120,8 +111,7 @@
 <!-- Preconnect per ridurre latenza Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 /* font-display: swap — evita FOIT (testo invisibile durante caricamento font) */
 @font-face { font-family: 'Cinzel'; font-display: swap; }
