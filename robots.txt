@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mystica-oracolo.github.io/delle-stelle/sitemap.xml
+Sitemap: https://mysticaoracoli.it/sitemap.xml
