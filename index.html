@@ -313,6 +313,12 @@ body.day-mode .home-fab:hover{box-shadow:0 6px 28px rgba(0,0,0,.2),0 0 22px rgba
 body.day-mode .home-fab-icon{filter:drop-shadow(0 0 6px rgba(139,106,16,.5))}
 /* Tasto Modifica Profilo nella hero card */
 body.day-mode .phc-edit-btn{background:rgba(139,106,16,0.12);border-color:rgba(139,106,16,0.5);color:#6a4a08}
+#homeQuickActions button{background:rgba(30,15,55,0.7);border-color:rgba(212,175,55,0.4);color:#d4af37}
+#homeQuickActions button:hover{background:rgba(42,23,72,0.85);border-color:rgba(212,175,55,0.7)}
+#homeQuickActions button.qa-active{background:rgba(212,175,55,0.22);border-color:#d4af37;color:#f1c40f;box-shadow:0 0 12px rgba(212,175,55,0.3)}
+body.day-mode #homeQuickActions button{background:rgba(80,55,10,0.12);border-color:rgba(100,70,10,0.5);color:#5a3e08}
+body.day-mode #homeQuickActions button:hover{background:rgba(100,70,10,0.2);border-color:rgba(100,70,10,0.7)}
+body.day-mode #homeQuickActions button.qa-active{background:rgba(139,106,16,0.2);border-color:#8b6a10;color:#5a3e08;box-shadow:0 0 10px rgba(139,106,16,0.2)}
 body.day-mode .phc-edit-btn:hover{background:rgba(139,106,16,0.22);border-color:#9a7820;color:#4a3005}
 /* Num calc steps */
 body.day-mode .num-calc-steps{background:#fff8ee;color:#5a4a30}
@@ -377,7 +383,6 @@ body.day-mode .hdr-fullscreen-btn{background:rgba(139,106,16,0.12);border-color:
   .tslot{width:120px;height:180px}
   .tgrid.wide .tslot{width:100px;height:150px}
   .profilo-hero-card{padding:34px 28px 30px}
-  #phCoverImg{height:280px !important}
   .phc-name{font-size:26px}
   .num-big{font-size:96px}
   .rune-symbol-big{font-size:100px}
@@ -394,7 +399,6 @@ body.day-mode .hdr-fullscreen-btn{background:rgba(139,106,16,0.12);border-color:
   .header{max-width:1080px}
   .dash-grid{grid-template-columns:repeat(4,1fr)}
   .g3{grid-template-columns:repeat(5,1fr)}
-  #phCoverImg{height:340px !important}
 }
 
 /* ── PREVIEW PREMIUM BANNER ── */
@@ -473,15 +477,19 @@ body.day-mode .preview-lock-badge {
     <div class="logo" onclick="hapticFeedback();nav('profilo')" style="cursor:pointer" title="Home">✦ MYSTICA ✦</div>
     <div class="header-sub">Oracolo delle Stelle</div>
     <div class="hdr-premium" id="premiumHeaderBadge" onclick="showPremiumModal(null)">⭐ PREMIUM ATTIVO</div>
-    <button class="hdr-audio-btn" id="hdrAudioBtn" onclick="toggleBgAudio()" title="Musica di sottofondo">
-      <span class="hdr-audio-icon">🎵</span>
-      <span class="hdr-audio-waves">
-        <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
-        <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
-        <span class="hdr-audio-wave"></span>
-      </span>
-    </button>
-    <button class="hdr-fullscreen-btn" id="hdrFullscreenBtn" onclick="toggleFullscreen()" title="Schermo intero" style="right:54px">⛶</button>
+    <div style="position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:25">
+      <button class="hdr-audio-btn" id="hdrThemeBtn" onclick="qaToggleTheme()" title="Modalità Giorno" style="position:static;width:30px;height:30px;font-size:14px">
+        <span id="hdrThemeIcon">☀️</span>
+      </button>
+      <button class="hdr-audio-btn" id="hdrAudioBtn" onclick="toggleBgAudio()" title="Musica di sottofondo" style="position:static;width:30px;height:30px;font-size:13px">
+        <span class="hdr-audio-icon">🎵</span>
+        <span class="hdr-audio-waves">
+          <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
+          <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
+          <span class="hdr-audio-wave"></span>
+        </span>
+      </button>
+    </div>
 
 
     <div class="search-container" style="margin: 12px auto 0; max-width: 280px; position: relative;">
@@ -507,8 +515,8 @@ body.day-mode .preview-lock-badge {
 
       <div class="profilo-hero-card" id="profileHero" style="padding:0;overflow:hidden">
         <!-- Immagine copertina segno zodiacale -->
-        <div id="phCoverImg" style="width:100%;height:200px;position:relative;overflow:hidden;display:none">
-          <img id="phCoverImgEl" src="" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block">
+        <div id="phCoverImg" style="width:100%;height:clamp(180px,30vw,320px);position:relative;overflow:hidden;display:none">
+          <img id="phCoverImgEl" src="" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block">
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 30%,rgba(10,5,20,0.95) 100%)"></div>
         </div>
         <!-- Header senza immagine (default) -->
@@ -528,6 +536,18 @@ body.day-mode .preview-lock-badge {
             ✏️ Modifica Profilo
           </div>
         </div>
+      </div>
+
+      <!-- ── QUICK ACTIONS HOME ── -->
+      <div id="homeQuickActions" style="display:flex;gap:10px;margin-bottom:14px">
+        <button id="qaAudioBtn" onclick="toggleBgAudio();updateQaAudioBtn()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 10px;border-radius:14px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;touch-action:manipulation">
+          <span id="qaAudioIcon" style="font-size:15px">🎵</span>
+          <span id="qaAudioLabel">Musica Off</span>
+        </button>
+        <button id="qaThemeBtn" onclick="qaToggleTheme()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 10px;border-radius:14px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;touch-action:manipulation">
+          <span id="qaThemeIcon" style="font-size:15px">🌙</span>
+          <span id="qaThemeLabel">Modalità Notte</span>
+        </button>
       </div>
 
       <div class="card" id="cardEditProfilo">
@@ -12239,6 +12259,7 @@ function toggleBgAudio(){
       localStorage.setItem('mystica_audio','1');
     }).catch(()=>{});
   }
+  updateQaAudioBtn();
 }
 function toggleBgAudioFromOpt(on){
   _initBgAudio();
@@ -12266,6 +12287,49 @@ function setBgAudioVolume(val){
 function toggleDayMode(on){
   document.body.classList.toggle('day-mode',on);
   localStorage.setItem('mystica_daymode',on?'1':'0');
+  const btn=document.getElementById('hdrThemeBtn');
+  if(btn){btn.textContent=on?'🌙':'☀️';btn.title=on?'Modalità Notte':'Modalità Giorno';}
+}
+// ═══ QUICK ACTION BUTTONS HOME ═══
+function updateQaAudioBtn(){
+  const btn=document.getElementById('qaAudioBtn');
+  const icon=document.getElementById('qaAudioIcon');
+  const label=document.getElementById('qaAudioLabel');
+  if(!btn)return;
+  if(_bgAudioPlaying){
+    btn.classList.add('qa-active');
+    if(icon)icon.textContent='🔊';
+    if(label)label.textContent='Musica On';
+  }else{
+    btn.classList.remove('qa-active');
+    if(icon)icon.textContent='🎵';
+    if(label)label.textContent='Musica Off';
+  }
+}
+function qaToggleTheme(){
+  const isDayNow=document.body.classList.contains('day-mode');
+  const goDay=!isDayNow;
+  toggleDayMode(goDay);
+  const hdrBtn=document.getElementById('hdrThemeBtn');
+  if(hdrBtn){hdrBtn.title=goDay?'Modalità Notte':'Modalità Giorno';}
+  const hdrThIcon=document.getElementById('hdrThemeIcon');
+  if(hdrThIcon)hdrThIcon.textContent=goDay?'🌙':'☀️';
+  const chk=document.getElementById('optDayMode');
+  if(chk)chk.checked=goDay;
+  const btn=document.getElementById('qaThemeBtn');
+  const icon=document.getElementById('qaThemeIcon');
+  const lbl=document.getElementById('qaThemeLabel');
+  if(goDay){
+    // now IN day mode → show "Modalità Notte" (next action)
+    if(btn)btn.classList.add('qa-active');
+    if(icon)icon.textContent='🌙';
+    if(lbl)lbl.textContent='Modalità Notte';
+  }else{
+    // now IN night mode → show "Modalità Giorno" (next action)
+    if(btn)btn.classList.remove('qa-active');
+    if(icon)icon.textContent='☀️';
+    if(lbl)lbl.textContent='Modalità Giorno';
+  }
 }
 // ═══ SCHERMO INTERO ═══
 function toggleFullscreen(){
@@ -12298,6 +12362,17 @@ document.addEventListener('DOMContentLoaded',function(){
     document.body.classList.add('day-mode');
     const t=document.getElementById('optDayMode');
     if(t)t.checked=true;
+    const btn=document.getElementById('hdrThemeBtn');
+    if(btn){btn.textContent='🌙';btn.title='Modalità Notte';}
+    const qaIcon=document.getElementById('qaThemeIcon');
+    const qaLabel=document.getElementById('qaThemeLabel');
+    const qaThBtn=document.getElementById('qaThemeBtn');
+    const hdrThIcon=document.getElementById('hdrThemeIcon');
+    // in day mode → show "Modalità Notte" (next action), mark active
+    if(qaIcon)qaIcon.textContent='🌙';
+    if(qaLabel)qaLabel.textContent='Modalità Notte';
+    if(qaThBtn)qaThBtn.classList.add('qa-active');
+    if(hdrThIcon)hdrThIcon.textContent='🌙';
   }
   const vol=localStorage.getItem('mystica_audio_vol');
   if(vol){
