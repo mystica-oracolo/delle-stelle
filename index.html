@@ -461,9 +461,70 @@ body.day-mode .preview-lock-badge {
   border-color: rgba(139,106,16,0.35);
   color: #8b6a10;
 }
+
+/* ═══ DISCLAIMER POPUP ═══ */
+#disclaimerOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#disclaimerOverlay.hidden{display:none}
+#disclaimerBox{background:linear-gradient(145deg,#120830,#0d0620);border:1px solid rgba(212,175,55,0.45);border-radius:20px;padding:28px 22px;max-width:400px;width:100%;text-align:center;position:relative;box-shadow:0 0 60px rgba(212,175,55,0.15)}
+#disclaimerBox::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.5),transparent)}
+.discl-star{font-size:2.4rem;margin-bottom:10px;display:block}
+.discl-title{font-family:'Cinzel',serif;font-size:1.15rem;color:#d4af37;letter-spacing:.08em;margin-bottom:12px}
+.discl-text{font-family:'Crimson Pro',Georgia,serif;font-size:1rem;color:#c8b890;line-height:1.8;margin-bottom:20px}
+.discl-text strong{color:#e8c870}
+.discl-btn{width:100%;padding:14px;background:linear-gradient(135deg,#c8a040,#9a7820);border:none;border-radius:12px;color:#fffdf7;font-family:'Cinzel',serif;font-size:0.9rem;letter-spacing:.06em;cursor:pointer;touch-action:manipulation;transition:opacity .2s}
+.discl-btn:hover{opacity:.9}
+.discl-link{display:block;margin-top:12px;font-size:0.78rem;color:rgba(212,175,55,0.5);text-decoration:none;font-family:'Crimson Pro',serif;cursor:pointer;background:none;border:none}
+.discl-link:hover{color:rgba(212,175,55,0.8)}
+body.day-mode #disclaimerBox{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.4)}
+body.day-mode .discl-title{color:#8b6a10}
+body.day-mode .discl-text{color:#5a4a30}
+body.day-mode .discl-text strong{color:#3a2a10}
+body.day-mode .discl-link{color:rgba(139,106,16,0.5)}
+
+/* ═══ BLOCCO INTRO HOMEPAGE ═══ */
+.home-intro-block{background:linear-gradient(145deg,rgba(18,8,48,0.7),rgba(10,4,24,0.8));border:1px solid rgba(212,175,55,0.15);border-radius:18px;padding:22px 18px;margin-bottom:18px;position:relative;overflow:hidden}
+.home-intro-block::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.35),transparent)}
+.home-intro-title{font-family:'Cinzel',serif;font-size:1rem;color:#d4af37;letter-spacing:.06em;margin-bottom:10px;text-align:center}
+.home-intro-text{font-family:'Crimson Pro',Georgia,serif;font-size:0.95rem;color:#c8b890;line-height:1.8;margin-bottom:10px;text-align:center}
+.home-intro-text:last-child{margin-bottom:0}
+.home-intro-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
+.home-intro-chip{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:20px;padding:4px 10px;font-size:0.75rem;color:#d4af37;font-family:'Cinzel',serif;letter-spacing:.03em}
+body.day-mode .home-intro-block{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.18)}
+body.day-mode .home-intro-title{color:#8b6a10}
+body.day-mode .home-intro-text{color:#5a4a30}
+body.day-mode .home-intro-chip{background:rgba(139,106,16,0.08);border-color:rgba(139,106,16,0.2);color:#8b6a10}
+
 </style>
 </head>
 <body>
+
+<!-- ═══ DISCLAIMER POPUP (appare una volta al primo accesso) ═══ -->
+<div id="disclaimerOverlay">
+  <div id="disclaimerBox">
+    <span class="discl-star">🔮</span>
+    <div class="discl-title">Benvenuto in MYSTICA</div>
+    <p class="discl-text">
+      MYSTICA è un'app di <strong>puro intrattenimento</strong> esoterico.<br>
+      Tarocchi, oroscopi, rune e tutti gli oracoli sono strumenti ludici e culturali
+      — non previsioni reali né consulenze professionali.
+    </p>
+    <button class="discl-btn" onclick="chiudiDisclaimer()">✦ Ho Capito — Entra nell'App ✦</button>
+    <button class="discl-link" onclick="chiudiDisclaimer()">Leggi i <a href="./termini.html" style="color:inherit">Termini di Servizio</a> · <a href="./privacy.html" style="color:inherit">Privacy Policy</a></button>
+  </div>
+</div>
+<script>
+(function(){
+  if(localStorage.getItem('mystica_discl_ok')==='1'){
+    var el=document.getElementById('disclaimerOverlay');
+    if(el)el.classList.add('hidden');
+  }
+})();
+function chiudiDisclaimer(){
+  localStorage.setItem('mystica_discl_ok','1');
+  var el=document.getElementById('disclaimerOverlay');
+  if(el){el.style.transition='opacity .35s ease';el.style.opacity='0';setTimeout(function(){el.classList.add('hidden');el.style.opacity='';},350);}
+}
+</script>
 
 <!-- ═══ CONTENUTO STATICO SEO / ADSENSE ═══
      Questo blocco è indicizzabile dai crawler (Google AdSense, Googlebot).
@@ -537,6 +598,34 @@ body.day-mode .preview-lock-badge {
 
     <div id="view-profilo" class="view active">
 
+
+
+      <!-- ═══ BLOCCO INTRODUTTIVO HOMEPAGE (SEO + AdSense) ═══ -->
+      <div class="home-intro-block">
+        <div class="home-intro-title">✦ Il Tuo Portale di Divinazione Digitale ✦</div>
+        <p class="home-intro-text">
+          MYSTICA è l'app web italiana gratuita dedicata all'esoterismo e alla spiritualità,
+          accessibile da qualsiasi dispositivo senza installazione né registrazione.
+          Esplora oltre <strong>25 oracoli antichi</strong> — dai Tarocchi alle Rune, dall'I Ching
+          all'Astrologia — per un viaggio di introspezione, crescita personale e intrattenimento mistico.
+        </p>
+        <p class="home-intro-text">
+          Ogni lettura è un invito a guardare dentro di te: le stelle, le carte e i simboli
+          sono specchi dell'anima, non profezie. Usa MYSTICA come strumento di riflessione
+          e di connessione con la saggezza delle tradizioni spirituali del mondo.
+        </p>
+        <div class="home-intro-chips">
+          <span class="home-intro-chip">🃏 Tarocchi 78 carte</span>
+          <span class="home-intro-chip">♈ Oroscopo</span>
+          <span class="home-intro-chip">☯ I Ching</span>
+          <span class="home-intro-chip">ᚠ Rune</span>
+          <span class="home-intro-chip">🔢 Numerologia</span>
+          <span class="home-intro-chip">🌙 Fasi Lunari</span>
+          <span class="home-intro-chip">👼 Angelologia</span>
+          <span class="home-intro-chip">🐺 Animali Guida</span>
+        </div>
+      </div>
+      <!-- ═══ FINE BLOCCO INTRODUTTIVO ═══ -->
 
       <div class="profilo-hero-card" id="profileHero" style="padding:0;overflow:hidden">
         <!-- Immagine copertina segno zodiacale -->
