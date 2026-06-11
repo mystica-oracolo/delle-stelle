@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -469,12 +469,29 @@ body.day-mode .preview-lock-badge {
      Questo blocco è indicizzabile dai crawler (Google AdSense, Googlebot).
      Non interferisce con l'app: è posizionato fuori dal viewport visivo.
      NON rimuovere — necessario per la conformità alle policy AdSense. -->
-<div id="seo-static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden">
+<style>
+#seo-static-content{margin:0;padding:0}
+.seo-accordion{background:linear-gradient(145deg,#0d0720,#070312);border-top:1px solid #2a174840;padding:0 16px 16px;font-family:'Crimson Pro',Georgia,serif}
+.seo-toggle{width:100%;background:none;border:none;border-top:1px solid #2a174840;color:#5a4a70;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;padding:12px 0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase}
+.seo-toggle::after{content:'▾';font-size:12px;transition:transform .3s;color:#3a2a50}
+.seo-accordion.open .seo-toggle::after{transform:rotate(180deg)}
+.seo-body{display:none;padding-top:4px}
+.seo-accordion.open .seo-body{display:block}
+.seo-body h2{font-family:'Cinzel',serif;font-size:11px;color:#4a3860;letter-spacing:1.5px;margin:16px 0 5px;text-transform:uppercase}
+.seo-body p,.seo-body dd{font-size:12px;color:#3a2e50;line-height:1.75;margin:0 0 6px}
+.seo-body dt{font-family:'Cinzel',serif;font-size:10px;color:#4a3860;letter-spacing:1px;margin-top:10px}
+.seo-body dl{margin:0}
+.seo-guide-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid #2a174830}
+.seo-guide-links a{font-family:'Cinzel',serif;font-size:9px;color:#4a3860;letter-spacing:1px;text-decoration:none;border:1px solid #2a174860;border-radius:20px;padding:4px 10px;transition:all .2s}
+.seo-guide-links a:hover{border-color:#d4af3740;color:#d4af3780}
+</style>
 
+<div id="seo-static-content">
+<div class="seo-accordion" id="seoAccordion">
+  <button class="seo-toggle" onclick="var a=document.getElementById('seoAccordion');a.classList.toggle('open')">✦ Scopri tutto su Mystica ✦</button>
+  <div class="seo-body">
   <article>
-    <h1>MYSTICA – App Web Tarocchi Online Gratis in Italiano | Oroscopo, Rune, I Ching</h1>
     <p>MYSTICA è un'applicazione web gratuita di divinazione e astrologia in italiano, accessibile online da browser senza installazione e senza registrazione. Funziona su smartphone Android e iPhone, tablet e computer. Offre tarocchi online con il mazzo completo di 78 carte, oroscopo giornaliero e mensile personalizzato, I Ching con i 64 esagrammi, rune norrene, numerologia, compatibilità zodiacale e oltre 25 oracoli antichi — tutto gratis.</p>
-    <p>A differenza delle app a pagamento disponibili negli store, MYSTICA è una web app completamente gratuita che puoi usare direttamente dal browser del tuo telefono o del tuo PC, senza scaricare nulla. Basta aprire mysticaoracoli.it e iniziare subito la tua lettura dei tarocchi o il tuo oroscopo personalizzato.</p>
 
     <h2>Tarocchi Online Gratis – 78 Carte Arcane</h2>
     <p>La sezione Tarocchi di MYSTICA include l'intero mazzo tradizionale: 22 Arcani Maggiori (Il Matto, Il Mago, La Papessa, L'Imperatrice, L'Imperatore, Il Papa, Gli Innamorati, Il Carro, La Forza, L'Eremita, La Ruota della Fortuna, La Giustizia, L'Appeso, La Morte, La Temperanza, Il Diavolo, La Torre, Le Stelle, La Luna, Il Sole, Il Giudizio, Il Mondo) e 56 Arcani Minori divisi in quattro semi: Bastoni, Coppe, Spade e Pentacoli. Ogni carta ha un'interpretazione originale in lingua italiana per la posizione diritta e rovesciata.</p>
@@ -581,8 +598,18 @@ body.day-mode .preview-lock-badge {
         <dd>Sì, inserendo nome e data di nascita nel profilo gratuito, l'app riconosce il tuo segno zodiacale e mostra previsioni specifiche ogni giorno per amore, lavoro, salute e fortuna. Disponibili tutti i 12 segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorpione, Sagittario, Capricorno, Acquario e Pesci.</dd>
       </dl>
     </section>
-  </article>
 
+    <div class="seo-guide-links">
+      <a href="/guida-tarocchi.html">Guida ai Tarocchi</a>
+      <a href="/guida-i-ching.html">Guida I Ching</a>
+      <a href="/significato-rune.html">Significato Rune</a>
+      <a href="/oroscopo-segni.html">Segni Zodiacali</a>
+      <a href="/about.html">Chi Siamo</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+  </article>
+  </div>
+</div>
 </div>
 <!-- ═══ FINE CONTENUTO STATICO SEO / ADSENSE ═══ -->
 
@@ -12396,15 +12423,16 @@ function toggleBgAudio(){
     if(btn)btn.classList.remove('playing');
     if(tog)tog.checked=false;
     localStorage.setItem('mystica_audio','0');
+    updateQaAudioBtn();
   }else{
     _bgAudio.play().then(()=>{
       _bgAudioPlaying=true;
       if(btn)btn.classList.add('playing');
       if(tog)tog.checked=true;
       localStorage.setItem('mystica_audio','1');
+      updateQaAudioBtn();
     }).catch(()=>{});
   }
-  updateQaAudioBtn();
 }
 function toggleBgAudioFromOpt(on){
   _initBgAudio();
