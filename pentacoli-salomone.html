@@ -89,6 +89,13 @@ footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);co
   .planet-nav-grid{grid-template-columns:repeat(4,1fr)}
   .planet-nav-name{display:none}
 }
+/* Bottone fisso torna a Mystica */
+.fab-home{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:8px;padding:12px 22px;background:linear-gradient(135deg,#1a0c32,#0a0520);border:1.5px solid var(--gold);border-radius:50px;color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.7),0 0 16px rgba(212,175,55,0.2);transition:all 0.25s;white-space:nowrap}
+.fab-home:hover{background:var(--gold);color:#0a0514;box-shadow:0 6px 28px rgba(212,175,55,0.4)}
+/* Bottone torna al menu pianeti dopo ogni sezione */
+.back-to-nav{display:flex;justify-content:center;margin-top:32px;margin-bottom:8px}
+.back-to-nav a{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.3);border-radius:50px;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1.5px;text-decoration:none;transition:all 0.2s}
+.back-to-nav a:hover{background:rgba(212,175,55,0.15);border-color:var(--gold)}
 </style>
 <script>
 function goBack(){if(window.history.length>1){window.history.back();}else{window.location.href='index.html';}}
@@ -371,6 +378,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ LUNA ══════════════════════════════ -->
@@ -554,6 +562,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ MARTE ══════════════════════════════ -->
@@ -765,6 +774,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ MERCURIO ══════════════════════════════ -->
@@ -920,6 +930,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ GIOVE ══════════════════════════════ -->
@@ -1131,6 +1142,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ VENERE ══════════════════════════════ -->
@@ -1286,6 +1298,7 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
   <!-- ══════════════════════════════ SATURNO ══════════════════════════════ -->
@@ -1497,9 +1510,11 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
       </div>
 
     </div>
+  <div class="back-to-nav"><a href="#" onclick="document.querySelector('.planet-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Pianeta</a></div>
   </section>
 
 </main>
+<a href="index.html" onclick="event.preventDefault();goBack();" class="fab-home">⇠ MYSTICA</a>
 <footer>
   <p>&copy; 2026 MYSTICA – Oracolo delle Stelle. Tutti i diritti riservati.</p>
 </footer>
