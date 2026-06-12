@@ -44,15 +44,20 @@ nav.breadcrumb a{color:var(--gold);text-decoration:none}
 nav.breadcrumb span{margin:0 6px;opacity:0.5}
 .planet-nav{margin-bottom:52px}
 .planet-nav-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:24px;opacity:0.8}
-.planet-nav-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.planet-nav-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
 .planet-nav-item{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;padding:18px 8px;background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);transition:all 0.3s;cursor:pointer}
 .planet-nav-item:hover{border-color:var(--border-hover);background:linear-gradient(145deg,var(--bg4),var(--bg3));transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,0.12)}
 .planet-nav-icon{font-size:30px;filter:drop-shadow(0 0 10px rgba(212,175,55,0.4));line-height:1}
+.planet-nav-img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center;border-radius:10px;border:2px solid var(--border);display:block;transition:transform 0.3s,border-color 0.3s}
+.planet-nav-item:hover .planet-nav-img{transform:scale(1.03);border-color:var(--gold)}
+.planet-nav-item{padding:10px 6px}
+.planet-header-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;display:block;z-index:0}
+.planet-header-content{position:relative;z-index:1}
 .planet-nav-symbol{font-size:20px;color:var(--gold);font-weight:700;line-height:1}
 .planet-nav-name{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;text-align:center}
 .planet-nav-count{font-size:11px;color:var(--gold);opacity:0.7}
 .planet-section{margin-bottom:72px;scroll-margin-top:80px}
-.planet-header{display:flex;align-items:center;gap:20px;margin-bottom:32px;padding:24px 28px;background:linear-gradient(145deg,var(--bg4),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);position:relative;overflow:hidden}
+.planet-header{display:flex;align-items:center;gap:20px;margin-bottom:32px;padding:0;background:transparent;border:2px solid var(--border);border-radius:var(--radius);position:relative;overflow:hidden;min-height:220px}
 .planet-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(212,175,55,0.06),transparent 60%);pointer-events:none}
 .planet-icon-big{font-size:52px;line-height:1;filter:drop-shadow(0 0 20px rgba(212,175,55,0.5))}
 .planet-title-block{flex:1}
@@ -77,16 +82,14 @@ nav.breadcrumb span{margin:0 6px;opacity:0.5}
 .traduzione-box strong{color:var(--gold);font-style:normal;font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;display:block;margin-bottom:4px}
 footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:40px}
 @media(max-width:720px){
-  .planet-nav-grid{grid-template-columns:repeat(4,1fr)}
+  .planet-nav-grid{grid-template-columns:repeat(4,1fr);gap:8px}
   .pentacoli-grid{grid-template-columns:1fr}
   h1{font-size:22px}
-  .planet-header{flex-direction:column;align-items:flex-start;gap:14px}
   main{padding:24px 14px 60px}
-  .planet-nav-item{padding:14px 6px}
-  .planet-nav-icon{font-size:24px}
+  .planet-nav-item{padding:6px 4px}
 }
 @media(max-width:480px){
-  .planet-nav-grid{grid-template-columns:repeat(4,1fr)}
+  .planet-nav-grid{grid-template-columns:repeat(4,1fr);gap:8px}
   .planet-nav-name{display:none}
 }
 /* Bottone fisso torna a Mystica */
@@ -218,7 +221,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </button>
   </div>
   <div class="hero">
-    <span class="hero-icon">🔯</span>
+    <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/principale/i44pentacoli.webp" class="hero-icon" alt="I 44 Pentacoli di Re Salomone" style="width:160px;height:160px;object-fit:cover;border-radius:16px;border:2px solid var(--gold);display:block;margin:0 auto 16px;box-shadow:0 0 32px rgba(212,175,55,0.4)">
     <h1>I 44 Pentacoli di Re Salomone</h1>
     <p class="hero-sub">Enciclopedia completa dei sigilli della <em>Clavicula Salomonis</em>. Per ogni pentacolo: origine e simbologia, uso magico, tempistica di consacrazione, modo d'uso e traduzione delle iscrizioni sacre in ebraico e latino.</p>
   </div>
@@ -226,43 +229,43 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="planet-nav-title">✦ Scegli il tuo Pianeta ✦</div>
     <div class="planet-nav-grid">
       <a href="#sole" class="planet-nav-item">
-        <span class="planet-nav-icon">☀️</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/sole-copertina.webp" alt="Sole" class="planet-nav-img">
         <span class="planet-nav-symbol">☉</span>
         <span class="planet-nav-name">Sole</span>
         <span class="planet-nav-count">7 sigilli</span>
       </a>
       <a href="#luna" class="planet-nav-item">
-        <span class="planet-nav-icon">🌙</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/luna-copertina.webp" alt="Luna" class="planet-nav-img">
         <span class="planet-nav-symbol">☽</span>
         <span class="planet-nav-name">Luna</span>
         <span class="planet-nav-count">6 sigilli</span>
       </a>
       <a href="#marte" class="planet-nav-item">
-        <span class="planet-nav-icon">🔴</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/marte-copertina.webp" alt="Marte" class="planet-nav-img">
         <span class="planet-nav-symbol">♂</span>
         <span class="planet-nav-name">Marte</span>
         <span class="planet-nav-count">7 sigilli</span>
       </a>
       <a href="#mercurio" class="planet-nav-item">
-        <span class="planet-nav-icon">⚡</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/mercurio-copertina.webp" alt="Mercurio" class="planet-nav-img">
         <span class="planet-nav-symbol">☿</span>
         <span class="planet-nav-name">Mercurio</span>
         <span class="planet-nav-count">5 sigilli</span>
       </a>
       <a href="#giove" class="planet-nav-item">
-        <span class="planet-nav-icon">🌟</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/giove-copertina.webp" alt="Giove" class="planet-nav-img">
         <span class="planet-nav-symbol">♃</span>
         <span class="planet-nav-name">Giove</span>
         <span class="planet-nav-count">7 sigilli</span>
       </a>
       <a href="#venere" class="planet-nav-item">
-        <span class="planet-nav-icon">💚</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/venere-copertina.webp" alt="Venere" class="planet-nav-img">
         <span class="planet-nav-symbol">♀</span>
         <span class="planet-nav-name">Venere</span>
         <span class="planet-nav-count">5 sigilli</span>
       </a>
       <a href="#saturno" class="planet-nav-item">
-        <span class="planet-nav-icon">🪐</span>
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/verticale/saturno-copertina.webp" alt="Saturno" class="planet-nav-img">
         <span class="planet-nav-symbol">♄</span>
         <span class="planet-nav-name">Saturno</span>
         <span class="planet-nav-count">7 sigilli</span>
@@ -272,14 +275,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ SOLE ══════════════════════════════ -->
   <section id="sole" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">☀️</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli del Sole</h2>
-        <p class="planet-subtitle">Potere, Gloria, Visione e Liberazione — 7 Sigilli</p>
-      </div>
-      <div class="planet-symbol">☉</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/sole-oriz.webp" alt="sole" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -487,14 +483,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ LUNA ══════════════════════════════ -->
   <section id="luna" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">🌙</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli della Luna</h2>
-        <p class="planet-subtitle">Sogni, Protezione, Acqua e Misteri Notturni — 6 Sigilli</p>
-      </div>
-      <div class="planet-symbol">☽</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/luna-oriz.webp" alt="luna" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -671,14 +660,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ MARTE ══════════════════════════════ -->
   <section id="marte" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">🔴</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli di Marte</h2>
-        <p class="planet-subtitle">Guerra, Guarigione, Vittoria e Protezione Attiva — 7 Sigilli</p>
-      </div>
-      <div class="planet-symbol">♂</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/marte-oriz.webp" alt="marte" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -883,14 +865,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ MERCURIO ══════════════════════════════ -->
   <section id="mercurio" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">⚡</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli di Mercurio</h2>
-        <p class="planet-subtitle">Intelletto, Comunicazione, Conoscenza e Opportunità — 5 Sigilli</p>
-      </div>
-      <div class="planet-symbol">☿</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/mercurio-oriz.webp" alt="mercurio" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -1039,14 +1014,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ GIOVE ══════════════════════════════ -->
   <section id="giove" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">🌟</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli di Giove</h2>
-        <p class="planet-subtitle">Prosperità, Gloria, Profezia e Protezione Celeste — 7 Sigilli</p>
-      </div>
-      <div class="planet-symbol">♃</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/giove-oriz.webp" alt="giove" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -1251,14 +1219,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ VENERE ══════════════════════════════ -->
   <section id="venere" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">💚</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli di Venere</h2>
-        <p class="planet-subtitle">Amore, Bellezza, Desiderio e Armonia — 5 Sigilli</p>
-      </div>
-      <div class="planet-symbol">♀</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/venere-oriz.webp" alt="venere" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
@@ -1407,14 +1368,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════════ SATURNO ══════════════════════════════ -->
   <section id="saturno" class="planet-section">
-    <div class="planet-header">
-      <div class="planet-icon-big">🪐</div>
-      <div class="planet-title-block">
-        <h2>Pentacoli di Saturno</h2>
-        <p class="planet-subtitle">Saggezza, Tempo, Karma e Protezione Oscura — 7 Sigilli</p>
-      </div>
-      <div class="planet-symbol">♄</div>
-    </div>
+    <div class="planet-header"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/pentacoliresalomone/orizzontale/saturno-oriz.webp" alt="saturno" class="planet-header-img"></div>
     <div class="pentacoli-grid">
 
       <div class="pentacolo-card">
