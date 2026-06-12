@@ -501,6 +501,11 @@ body.day-mode .discl-link{color:rgba(139,106,16,0.5)}
 .consult-block{background:#0b0520;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px}
 .consult-block h4{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase}
 .consult-block p{font-size:13.5px;line-height:1.75;margin:0;color:var(--text)}
+.consult-response{background:linear-gradient(135deg,rgba(218,165,32,0.05) 0%,rgba(75,0,130,0.05) 100%);border-left:3px solid var(--gold);padding:1.5rem;border-radius:8px;margin-top:1rem;line-height:1.7;font-style:italic;color:var(--text)}
+.consult-response-general{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(218,165,32,0.2)}
+.consult-response-advice{font-style:normal;color:var(--gold);font-weight:500;display:block;margin-top:0.5rem}
+.consult-loading{display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;animation:consult-pulse 1.5s infinite;margin-left:0.5rem}
+@keyframes consult-pulse{0%,100%{opacity:0.3}50%{opacity:1}}
 body.day-mode .home-intro-block{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.18)}
 body.day-mode .home-intro-title{color:#8b6a10}
 body.day-mode .home-intro-text{color:#5a4a30}
@@ -6283,214 +6288,435 @@ function _detectSoggetto(txt) {
 }
 
 function _getRispostaKeyword(temi, nome, soggetto) {
-  var RISPOSTE = {
-    amore: [
-      'Le stelle vedono un cuore che cerca connessione profonda. L\'universo non ignora questo desiderio — prepara il terreno affinche l\'amore possa crescere dove meno te lo aspetti.',
-      'Il sentimento che porti dentro e reale e potente. Non affrettare i tempi: cio che e destinato a fiorire, fiorira nel momento esatto in cui il terreno sara pronto.',
-      'Venere parla chiaro: c\'e energia amorosa in movimento attorno a te. Apriti alla possibilita senza difese — il cuore che si chiude per paura si priva della sua stessa gioia.',
-      'L\'amore che cerchi inizia con l\'amore che dai a te stesso. Quando quella luce sara piena, attrarrа naturalmente chi e in sintonia con la tua anima.',
-      'Il pianeta del desiderio e in aspetto favorevole: non ignorare i segnali sottili che ti manda chi ti sta accanto. A volte l\'amore parla sottovoce, aspettando di essere ascoltato.',
-      'Un incontro che hai considerato casuale potrebbe rivelarsi tutt\'altro. Le stelle suggeriscono di guardare di nuovo chi e gia nella tua vita quotidiana.',
-      'La vulnerabilita autentica e il portale piu diretto verso la connessione profonda. Abbassa le difese con chi merita il tuo cuore — e il momento giusto.',
-      'L\'attrazione che senti e confermata dagli astri, ma ricorda: la chimica accende, il rispetto reciproco tiene vivo il fuoco nel tempo.',
-      'Non temere di fare il primo passo. Venere sostiene i coraggiosi in amore — chi non rischia non ottiene cio che il cuore desidera davvero.',
-      'Un periodo di crescita personale e anche il piu fertile per l\'amore autentico. Lavorando su te stesso attrai chi e allineato con la tua versione migliore.'
-    ],
-    tradimento: [
-      'L\'universo non nasconde la verita a lungo — cio che e fatto nell\'ombra prima o poi emerge alla luce. Abbi il coraggio di guardare i fatti senza lasciarti accecare dalla paura.',
-      'Il dolore del tradimento e reale, ma non definitivo. Le stelle ti invitano a non confondere il silenzio con l\'innocenza: fidati del tuo istinto.',
-      'Saturno insegna che le prove difficili rivelano chi siamo davvero — sia noi sia le persone accanto a noi. La risposta che cerchi e gia dentro di te.',
-      'Il tuo corpo sa prima della tua mente. Quella sensazione nell\'addome che non riesci a ignorare e il tuo istinto che parla: ascoltalo prima di chiedere conferme.',
-      'Non ogni segreto e un tradimento, ma non ogni tradimento viene dichiarato. Osserva i comportamenti nel tempo, non solo le parole del momento.',
-      'Le stelle ti invitano a non costruire castelli di ipotesi. Chiedi con calma e chiarezza — la risposta, qualunque essa sia, ti libera dall\'incertezza che logora.'
-    ],
-    separazione: [
-      'Ogni fine porta il seme di un nuovo inizio. Questo dolore che senti e reale, ma le stelle vedono oltre: stai attraversando una soglia, non un muro.',
-      'La separazione non e sempre una sconfitta — a volte e la cosa piu amorevole che l\'universo possa orchestrare per entrambe le anime coinvolte. Il tempo rivelera il perche.',
-      'Marte e Venere ti invitano a non decidere nulla nell\'immediato dolore. Lascia che il silenzio parli. La chiarezza arrivera quando le acque si calmeranno.',
-      'Lasciare andare non significa smettere di amare — significa scegliere il proprio benessere con lo stesso rispetto con cui hai amato l\'altro.',
-      'Un ciclo si chiude per permettere a uno nuovo di aprirsi. La separazione, per quanto dolorosa, e spesso il gesto piu onesto che due persone possano farsi reciprocamente.',
-      'Il vuoto che senti ora non e perdita permanente — e spazio. E nello spazio che entrano le cose nuove e migliori che il destino sta preparando per te.'
-    ],
-    ritorno: [
-      'Le stelle vedono un\'energia di riavvicinamento, ma attenzione: non tutto cio che ritorna merita di restare. Chiediti se e amore o abitudine a chiamarti indietro.',
-      'Un possibile ritorno e nell\'aria — ma le stelle ti chiedono: e davvero questo che vuoi, o e la paura della solitudine a guidarti? La risposta onesta e quella che ti libera.',
-      'Cio che e destinato a restare non ha bisogno di essere inseguito. Se quell\'energia deve tornare, tornera. Il tuo compito ora e essere pronto ad accoglierla o lasciarla andare.',
-      'Prima di riaprire una porta chiusa, chiediti cosa e cambiato. Se le stesse dinamiche sono ancora presenti, anche il risultato sara lo stesso. La crescita si misura nelle azioni, non nelle promesse.',
-      'Il riavvicinamento richiede onesta da entrambi i lati. Non basta il desiderio — occorre un accordo chiaro su cosa deve cambiare perche questa volta sia diversa.',
-      'A volte torna perche si e sentito mancare. Ma il vuoto non e la stessa cosa dell\'amore. Distingui tra chi ti vuole nella sua vita e chi vuole solo colmare il proprio.'
-    ],
-    lavoro: [
-      'Il cielo professionale e in movimento. Un\'energia nuova si avvicina nel campo lavorativo — rimani vigile e non scartare opportunita che sembrano minori: nascondono semi di grandi cambiamenti.',
-      'Giove guarda favorevolmente la tua sfera professionale. Ma la fortuna va incontrata a meta strada: agisci, proponi, mostrati. L\'universo premia chi non aspetta in silenzio.',
-      'Sul lavoro si apre una fase di valutazione — gli sforzi passati stanno per trovare risposta. Mantieni la rotta senza disperderti: la coerenza ora vale piu del talento.',
-      'Le stelle indicano che le tue competenze sono sottovalutate nel contesto attuale. E il momento di alzare la voce o cercare un ambiente che sappia riconoscere il tuo valore.',
-      'Un colloquio, una proposta, un progetto nuovo: Mercurio favorisce la comunicazione professionale. Preparati con cura e presentati con fiducia — le stelle sostengono chi si espone con preparazione.',
-      'Un cambiamento lavorativo puo sembrare spaventoso, ma le stelle lo confermano come necessario per la tua crescita. Cio che hai accumulato non andra perso — ti seguira ovunque tu vada.',
-      'Non ogni giornata difficile e un segnale negativo. A volte i momenti piu duri del lavoro precedono un salto di qualita importante. Persevera con metodo.',
-      'Il tuo istinto professionale e piu affidabile di quanto credi. Quando qualcosa sul lavoro non ti convince, indaga invece di ignorare: la tua intuizione e un radar prezioso.'
-    ],
-    promozione: [
-      'Le stelle vedono il riconoscimento avvicinarsi. Gli sforzi che hai messo nel lavoro non sono passati inosservati — un passo in avanti e nell\'aria, ma richiede ancora pazienza e un ultimo slancio.',
-      'Giove in aspetto favorevole indica che questo e il momento giusto per mettersi in luce. Non restare in ombra: fai vedere il tuo valore senza timore.',
-      'L\'avanzamento che sogni e piu vicino di quanto pensi. L\'universo suggerisce di non aspettare che arrivino a chiederti — fai il primo passo, sii visibile, dimostra la tua leadership.',
-      'Le stelle ti invitano a non sminuirti nei momenti chiave. Il riconoscimento arriva a chi sa presentarsi con sicurezza: prepara le tue argomentazioni e parla con chi decide.',
-      'Un ciclo di lavoro intenso sta per essere premiato. La promozione o il riconoscimento che cerchi e gia in valutazione — sii paziente ma non passivo in questi ultimi passi.'
-    ],
-    soldi: [
-      'Mercurio e Giove parlano di flusso finanziario in movimento. Non e il momento di bloccarsi per paura ma nemmeno di agire impulsivamente. La saggezza ora vale oro.',
-      'Le stelle vedono un\'opportunita economica che si avvicina, ma richiede attenzione ai dettagli. Non firmare nulla senza averlo letto bene — ogni parola conta.',
-      'Il denaro e energia, e l\'energia segue la mente. Se i tuoi pensieri sui soldi sono di scarsita, attrai scarsita. Inizia a vedere l\'abbondanza come possibile — le stelle la confermano.',
-      'Un\'entrata inaspettata o una soluzione a un problema economico si avvicina da una direzione non prevista. Rimani aperto alle possibilita che non rientrano nei tuoi schemi abituali.',
-      'Le stelle ti invitano a fare chiarezza nella gestione delle risorse. Un bilancio onesto tra entrate e uscite e il primo atto magico per attirare prosperita duratura.',
-      'Non ogni rischio finanziario e avventatezza. Le stelle indicano che un investimento ponderato e ben studiato in questo periodo puo portare frutti significativi nel medio termine.',
-      'La prosperita che cerchi e gia in movimento verso di te. Ma richiede che tu sia pronto a riceverla: rimuovi i blocchi mentali sulla merita e sull\'abbondanza.',
-      'Un consiglio finanziario da una fonte inaspettata potrebbe rivelarsi prezioso. Ascolta chi ha gia percorso la strada che stai cercando di imboccare.'
-    ],
-    salute: [
-      'Il tuo corpo ti sta mandando un messaggio. Le stelle ti invitano a fermarti e ascoltarlo davvero, senza rimandare. La cura di se non e un lusso — e la base di tutto il resto.',
-      'Un periodo di recupero e rigenerazione e indicato dagli astri. Non combattere il bisogno di riposo: e il tuo sistema che si riorganizza per tornare piu forte.',
-      'La Luna governa i ritmi del corpo. Segui i tuoi ritmi naturali — il tuo organismo sa di cosa ha bisogno. L\'equilibrio che cerchi parte dal rispetto per i tuoi limiti.',
-      'Le stelle ti invitano a non sottovalutare i segnali fisici che stai ricevendo. Un piccolo sintomo ignorato a lungo diventa una voce sempre piu alta — ascoltalo ora.',
-      'L\'equilibrio tra corpo e mente e la chiave che le stelle evidenziano in questo momento. Un\'attenzione maggiore al sonno, all\'alimentazione e al movimento trasforma l\'energia disponibile.',
-      'Un cambiamento nello stile di vita — anche piccolo e graduale — viene indicato dagli astri come il punto di svolta per il benessere che stai cercando.',
-      'La salute emotiva influenza quella fisica in modo diretto. Le stelle ti invitano a non trattare il corpo come separato dalla mente — curarsi e un atto olistico.'
-    ],
-    gravidanza: [
-      'Le stelle vedono un\'energia di nascita e creazione fortissima attorno a te — che si tratti di vita, di un progetto o di una nuova fase. Qualcosa di grande sta per venire alla luce.',
-      'La luna nuova parla di semi piantati e pronti a germogliare. Un inizio prezioso si avvicina — preparati ad accoglierlo con amore e presenza.',
-      'L\'universo sostiene i nuovi inizi. Qualunque cosa stai aspettando, le condizioni per la sua fioritura si stanno creando proprio ora.',
-      'Le stelle indicano un periodo fertile — sia in senso letterale che simbolico. Un progetto, un legame o una nuova vita e in fase di creazione. Nutrilo con intenzione e cura.',
-      'Il desiderio di creare qualcosa di tuo — che sia una famiglia, un\'opera o un progetto — e sostenuto dall\'energia cosmica di questo periodo. E il momento di agire con fede.'
-    ],
-    fortuna: [
-      'Giove, pianeta della fortuna, e attivo nel tuo tema. Questo non significa che la fortuna cadra dal cielo — significa che sei in un periodo in cui le tue azioni vengono amplificate dal favore cosmico.',
-      'Le stelle indicano un ciclo positivo in apertura. La fortuna non e casuale: e risonanza tra la tua energia e quella dell\'universo. Sintonizzati.',
-      'Un vento favorevole soffia — ma la vela devi alzarla tu. Le stelle creano le condizioni, tu devi essere pronto a coglierle senza esitazione.',
-      'La fortuna in questo momento si nasconde nei dettagli che altri ignorano. La tua capacita di osservare cio che gli altri trascurano potrebbe rivelarsi il tuo vantaggio principale.',
-      'Le stelle ti invitano a non giocare tutto su un solo numero. La vera fortuna si costruisce con scelte ponderate e un pizzico di audacia al momento giusto.',
-      'Un ciclo karmico favorevole sta compensando sacrifici e sforzi passati. Cio che stai per ricevere non e un caso — e la risposta dell\'universo a cio che hai seminator.',
-      'I numeri guida di oggi suggeriscono attenzione alle opportunita che si presentano due volte. La seconda volta che incontri qualcosa di interessante, non lasciarlo andare.'
-    ],
-    viaggio: [
-      'Un movimento importante si prospetta — fisico, mentale o spirituale. Le stelle sostengono i cambiamenti di prospettiva. Cio che sembra un salto nel vuoto e in realta un salto verso qualcosa di piu grande.',
-      'Mercurio e Giove in sintonia parlano di orizzonti che si aprono. Non avere paura del nuovo — il tuo spirito e fatto per esplorare, non per restare fermo.',
-      'Il viaggio che stai considerando porta con se una trasformazione profonda. L\'universo dice: vai — ma vai consapevole, non in fuga.',
-      'Un trasferimento o un viaggio importante e nell\'aria. Le stelle indicano che il cambiamento di ambiente ti portera la chiarezza che stai cercando da troppo tempo.',
-      'L\'energia del movimento e potente ora. Anche un breve spostamento — una nuova citta, un nuovo quartiere — puo aprire porte che nella routine quotidiana resterebbero invisibili.',
-      'Chi si muove incontra il mondo. Le stelle confermano che restare fermi in questo momento significa perdere opportunita che il moto porterebbe naturalmente a te.'
-    ],
-    casa: [
-      'La tua quarta casa — quella della dimora e delle radici — e attiva. Un cambiamento nel tuo spazio fisico si avvicina. Le stelle sostengono le decisioni prese con il cuore.',
-      'La casa e il luogo dove l\'anima si riposa. Le stelle ti invitano a chiederti: il luogo in cui vivi ti nutre o ti prosciuga? La risposta guidera la prossima mossa.',
-      'Un nuovo inizio legato alle fondamenta materiali si avvicina. Non avere fretta, ma non bloccarti per paura. Il momento giusto si riconosce quando agisci senza rimpianti.',
-      'Un\'energia di stabilita e di radicamento e presente. Le stelle favoriscono le decisioni relative alla casa prese in questo periodo — agisci con fiducia e documentazione in ordine.',
-      'Lo spazio fisico riflette lo stato interiore. Prima di cercare una nuova casa fuori, chiediti cosa puoi trasformare nello spazio che gia hai — a volte basta riarrangiare l\'energia.',
-      'Le stelle indicano che il cambiamento di casa o di ambiente che stai considerando apportera benefici che vanno ben oltre il puramente pratico. E un atto di cura verso te stesso.'
-    ],
-    famiglia: [
-      'I legami familiari sono sotto i riflettori del cielo. Le stelle invitano alla comprensione e al dialogo — vecchie ferite possono essere toccate, ma anche finalmente guarite.',
-      'La famiglia e il primo specchio della nostra anima. Cio che senti nelle relazioni con i tuoi cari riflette qualcosa che e ancora in elaborazione dentro di te. Guarda con compassione.',
-      'Un momento di chiarimento nelle relazioni familiari si avvicina. Parla con il cuore aperto — la vulnerabilita ora e forza, non debolezza.',
-      'Le stelle evidenziano una dinamica familiare che richiede attenzione. Non aspettare che si risolva da sola — un passo verso il dialogo oggi evita distanze che domani sarebbero difficili da colmare.',
-      'Le radici familiari ti hanno dato piu di quanto riconosci. Anche nelle relazioni difficili c\'e un dono nascosto — trovarlo richiede pazienza e uno sguardo piu ampio.',
-      'Un membro della famiglia ha bisogno di sentirti vicino anche se non lo chiede esplicitamente. Le stelle ti invitano a fare il primo passo verso chi ami, senza aspettare.'
-    ],
-    amicizia: [
-      'Le stelle rivelano che non tutte le persone accanto a te stanno camminando nella tua stessa direzione. Fidati di chi dimostra — non di chi promette.',
-      'Un\'amicizia vera si rivela nei momenti difficili. Guarda chi c\'e stato nelle tue notti buie — quella e la tua cerchia reale. Il resto e contorno.',
-      'Venere nei legami di amicizia parla di connessioni che si rafforzano e altre che si allontanano naturalmente. Lascia andare senza rancore cio che non cresce piu.',
-      'Le stelle indicano che un\'amicizia che senti distante potrebbe essere recuperata con un gesto semplice e sincero. A volte una persona importante aspetta solo un tuo segnale.',
-      'Non ogni allontanamento e un rifiuto. Le persone evolvono e a volte i percorsi si separano. Onora cio che e stato senza trattenerlo per forza — le stelle sostengono i cambiamenti naturali.',
-      'Una nuova amicizia potrebbe entrare nella tua vita da una direzione inaspettata. Le stelle ti invitano a essere aperto con chi ancora non conosci — l\'incontro significativo e vicino.'
-    ],
-    studio: [
-      'Le stelle sono favorevoli all\'apprendimento e alla crescita mentale. Il percorso di studio che stai seguendo ti portera piu lontano di quanto immagini — non mollare.',
-      'Mercurio, pianeta dell\'intelletto, ti sostiene. Un esame o una prova importante sta per essere superata. La preparazione che hai fatto vale piu di quanto credi.',
-      'Il sapere che stai accumulando e un investimento nell\'anima oltre che nella carriera. Anche quando le difficolta sembrano insormontabili, ricorda: hai gia superato ostacoli piu grandi.',
-      'Le stelle indicano che il momento di dubbio che attraversi nello studio e una fase normale di ogni processo di crescita. Chi si ferma qui perde; chi persevera trova la svolta.',
-      'Un metodo di studio diverso dal tuo solito potrebbe sbloccare un apprendimento che sembrava bloccato. Le stelle favoriscono la sperimentazione metodologica in questo periodo.',
-      'Non confrontare il tuo progresso con quello degli altri: ogni mente ha il suo ritmo e la sua profondita. Il tuo percorso e unico e sta andando nella direzione giusta.'
-    ],
-    futuro: [
-      'Il futuro non e scritto nella pietra — si plasma con ogni scelta consapevole che fai oggi. Le stelle mostrano potenziale enorme, ma la direzione la scegli tu.',
-      'Una svolta si avvicina. Non tutte le rivoluzioni sono rumorose — spesso il cambiamento piu profondo inizia con un momento di silenzio e chiarezza interiore.',
-      'L\'universo sta riorganizzando le carte del tuo destino. Cio che sembra incerto ora e in realta il suolo che si prepara per qualcosa di straordinario.',
-      'Le stelle ti invitano a smettere di temere il futuro e a iniziare a costruirlo. Ogni azione intenzionale oggi e un mattone nella direzione che desideri.',
-      'Il cambiamento che senti arrivare non e da temere — e il segnale che sei pronto per una versione piu grande di te stesso. Lasciati superare da chi stavi diventando.',
-      'L\'incertezza che provi ora e la stessa che sente il seme prima di germogliare. Le stelle confermano che stai per emergere alla superficie — mantieni la fede nel processo.',
-      'Le stelle mostrano piu strade aperte davanti a te. Non e il momento di aspettare che una si chiuda per prenderne una — e il momento di scegliere con cuore e metodo.'
-    ],
-    paura: [
-      'Le stelle riconoscono il peso che stai portando. Ma l\'ansia e la paura non sono la realta — sono l\'ombra proiettata da pensieri che il futuro non ha ancora confermato.',
-      'Saturno ti invita a guardare in faccia cio che ti spaventa. La paura affrontata perde meta del suo potere — l\'altra meta la perde quando scopri di essere piu forte di lei.',
-      'L\'universo non ti ha messo in questa situazione per spezzarti, ma per mostrarti di cosa sei capace. Anche nel buio piu fitto, una stella si vede sempre.',
-      'Lo stress che senti e reale, ma non e permanente. Le stelle indicano un periodo di transizione — il disagio attuale e il preludio di un equilibrio che sta tornando.',
-      'L\'ansia ha una funzione: ti segnala cio che ti importa davvero. Usala come bussola invece di combatterla — ti dira esattamente dove concentrare la tua energia di cura.',
-      'Non devi affrontare tutto da solo. Le stelle ti invitano a permettere ad altri di sostenerti — la forza vera non e non aver bisogno, ma saper chiedere e ricevere con grazia.',
-      'Un pensiero ripetuto crea la realta che poi si autocertifica. Interrompi il ciclo con un\'azione piccola ma concreta: il movimento fisico piu semplice spezza le spirali mentali.'
-    ],
-    magia: [
-      'L\'energia che stai percependo e reale. Le forze sottili rispondono alle intenzioni pure — chiarisci dentro di te cosa vuoi davvero, poi agisci con rispetto e consapevolezza.',
-      'Le stelle confermano che sei in un periodo di forte sensibilita energetica. Proteggiti con intenzione, sii selettivo sulle persone che lasci entrare nel tuo spazio.',
-      'Cio che mandi nell\'universo ritorna moltiplicato. Prima di qualsiasi rituale, chiediti: agisco dall\'amore o dalla paura? La risposta determina il risultato.',
-      'L\'intenzione e il vero strumento magico. Prima di qualsiasi rituale, fermati e definisci con precisione cosa stai chiedendo — l\'universo risponde alla chiarezza, non all\'urgenza.',
-      'Le stelle confermano che sei in un periodo di heightened sensitivity energetica. I tuoi sogni, le tue intuizioni e le sincronicita che noti sono messaggi reali: annotali.',
-      'La magia piu potente non ha bisogno di strumenti esterni. La tua intenzione chiara, il tuo respiro consapevole e il tuo cuore allineato sono il rituale completo.'
-    ],
-    sogno: [
-      'I sogni sono messaggi dell\'anima in un linguaggio che la mente razionale non riesce a bloccare. Prendi nota di cio che hai visto — contiene un simbolo importante per il tuo percorso.',
-      'Il mondo onirico e un ponte tra il conscio e l\'inconscio. Cio che appare ripetutamente nei sogni chiede di essere ascoltato nella veglia.',
-      'Le stelle confermano: il sogno che ti ha colpito non e casuale. L\'universo parla attraverso di esso. Meditaci sopra con calma — il significato si rivelera.',
-      'Ogni elemento del sogno e un simbolo che parla il linguaggio della tua anima. Il luogo, i colori, le emozioni provate: ognuno di questi e un frammento di risposta.',
-      'Un sogno ricorrente e una lettera che l\'inconscio ti respedisce finche non viene letta. Questa volta fermati e presta attenzione — il messaggio e urgente e necessario.',
-      'Le stelle confermano che il tuo inconscio e in stato di elaborazione intensa. I sogni vividi di questo periodo sono un segnale che stai integrando qualcosa di importante.'
-    ],
-    morte: [
-      'La morte nell\'ottica esoterica e trasformazione, non fine. Qualcosa sta chiudendo un ciclo nella tua vita per fare spazio a qualcosa di completamente nuovo. Onora cio che finisce.',
-      'Le stelle sono con te nel lutto. Il dolore della perdita e il segno di quanto profondo fosse quel legame — e l\'amore non muore con il corpo.',
-      'Ogni grande trasformazione ha la forma di una piccola morte. Cio che stai attraversando sta rimodellando la tua anima. Dall\'altro lato di questa soglia c\'e una versione piu autentica di te.',
-      'L\'aldila esiste nelle tradizioni di ogni civilta come realta parallela. Chi ami e partito, non sparito. La connessione dell\'anima non si interrompe con il corpo fisico.',
-      'Il lutto richiede il suo tempo e non va affrettato. Le stelle ti invitano a onorare il dolore senza affogare in esso — la vita del defunto continua in te attraverso i suoi insegnamenti.',
-      'La perdita di una persona cara lascia un vuoto che nessuno puo colmare, ma che col tempo si trasforma in uno spazio sacro dove il ricordo vive per sempre.'
-    ],
-    vendetta: [
-      'Le stelle ti invitano a riflettere: la vendetta non sana la ferita — la mantiene viva. Cio che vuoi davvero non e punire, ma guarire. Sono strade diverse.',
-      'Il karma e un meccanismo dell\'universo che non ha bisogno del tuo intervento. Chi ti ha fatto del male ricevera cio che ha seminato — il tuo compito e uscire dal ciclo, non alimentarlo.',
-      'L\'energia che stai dirigendo verso la rivalsa puo essere reindirizzata verso la tua crescita. La migliore vendetta e una vita piena e autentica che nulla deve alla tua fonte di dolore.',
-      'La giustizia cosmica non dimentica nulla. Le stelle ti dicono di affidarti al meccanismo universale di riequilibrio — e piu potente e preciso di qualsiasi azione tu possa intraprendere.',
-      'Il rancore e un veleno che avvelena chi lo porta, non chi lo ha causato. Liberartene non e debolezza — e l\'atto di forza piu difficile e piu trasformativo che esista.'
-    ],
-    successo: [
-      'Le stelle confermano che sei sulla strada giusta verso i tuoi obiettivi. Ogni passo, anche quelli che sembrano piccoli, ti avvicina al traguardo che hai nel cuore.',
-      'Giove sorride alle tue ambizioni. Il successo che cerchi non e irraggiungibile — e il risultato naturale della coerenza tra cio che vuoi, cio che pensi e cio che fai ogni giorno.',
-      'Un momento di visibilita si avvicina. Le stelle ti invitano a non sminuire i tuoi risultati quando li presenti agli altri — il tuo valore e reale e merita di essere riconosciuto.',
-      'Il successo autentico non arriva solo — arriva con le persone giuste accanto. Le stelle ti invitano a coltivare le relazioni con chi ti ispira a crescere.',
-      'Non confondere la velocita con il progresso. Le stelle indicano che il tuo percorso verso il successo ha il suo ritmo preciso — forzarlo crea errori che rallentano.'
-    ],
-    creativita: [
-      'Le stelle confermano che la tua creativita e in un periodo di forte attivazione. Cio che senti di voler creare ora ha una ragione profonda — non ignorare quell\'impulso.',
-      'L\'ispirazione che cerchi non arriva aspettando — arriva iniziando. Le stelle ti invitano ad aprire il quaderno, lo schermo o lo strumento e mettere giu il primo segno.',
-      'Il blocco creativo che senti e spesso paura del giudizio travestita da mancanza di idee. Le stelle ti dicono: crea per te prima che per gli altri.',
-      'Mercurio favorisce la comunicazione creativa in questo periodo. E il momento giusto per condividere un progetto o un\'idea che hai tenuto solo per te.',
-      'La creativita autentica nasce dal vissuto reale. Le tue esperienze piu difficili contengono il materiale per la tua opera piu potente. Non aver paura di usarle.',
-      'Le stelle indicano che una collaborazione creativa potrebbe moltiplicare il tuo potenziale in questo periodo. Cerca chi completa cio che tu sai fare con cio che sa fare lui.'
-    ],
-    default: [
-      'Le stelle hanno ricevuto la tua domanda. L\'universo non risponde sempre con parole dirette — a volte risponde con un\'intuizione, un incontro inatteso, un sogno.',
-      'La tua intenzione e stata inviata al cosmo. Cio che stai cercando sta cercando anche te — rimani aperto ai segnali che arriveranno nelle prossime ore e nei prossimi giorni.',
-      'Il cielo vede la tua domanda e la tua ricerca. Confida nel fatto che cio che ti serve davvero arrivera — anche in una forma diversa da quella che ti aspetti.',
-      'L\'universo risponde sempre — ma a volte il silenzio e gia una risposta. Fermati, respira, e ascolta cio che gia sai nel profondo.',
-      'Le stelle vedono la tua intenzione e la tua sincera ricerca. Ogni domanda posta con il cuore aperto merita una risposta — e l\'universo non la nega mai a chi sa ascoltare.',
-      'Cio che cerchi sta gia cercando te. La risposta arrivera nel momento esatto in cui sarai abbastanza quieto da riceverla — fidati del processo e del tempo cosmico.',
-      'Il tuo cammino e osservato dalle stelle con attenzione e cura. Non sei solo in questa ricerca — forze piu grandi di te stanno lavorando a tuo favore anche quando non le senti.'
-    ]
-  };
+  var RISPOSTE_AI = {
+    "amore": {
+        "generale": [
+            "Le stelle vedono un cuore che cerca connessione profonda. L'universo non ignora questo desiderio — prepara il terreno affinché l'amore possa crescere dove meno te lo aspetti.",
+            "Il sentimento che porti dentro è reale e potente. Non affrettare i tempi: ciò che è destinato a fiorire, fiorirà nel momento esatto in cui il terreno sarà pronto.",
+            "Venere parla chiaro: c'è energia amorosa in movimento attorno a te. Apriti alla possibilità senza difese — il cuore che si chiude per paura si priva della sua stessa gioia.",
+            "L'amore che cerchi inizia con l'amore che dai a te stesso. Quando quella luce sarà piena, attrarrà naturalmente chi è in sintonia con la tua anima.",
+            "Il pianeta del desiderio è in aspetto favorevole: non ignorare i segnali sottili che ti manda chi ti sta accanto. A volte l'amore parla sottovoce, aspettando di essere ascoltato.",
+            "Un incontro che hai considerato casuale potrebbe rivelarsi tutt'altro. Le stelle suggeriscono di guardare di nuovo chi è già nella tua vita quotidiana.",
+            "La vulnerabilità autentica è il portale più diretto verso la connessione profonda. Abbassa le difese con chi merita il tuo cuore — è il momento giusto.",
+            "L'attrazione che senti è confermata dagli astri, ma ricorda: la chimica accende, il rispetto reciproco tiene vivo il fuoco nel tempo.",
+            "Non temere di fare il primo passo. Venere sostiene i coraggiosi in amore — chi non rischia non ottiene ciò che il cuore desidera davvero.",
+            "Un periodo di crescita personale è anche il più fertile per l'amore autentico. Lavorando su te stesso attrai chi è allineato con la tua versione migliore."
+        ],
+        "consiglio": [
+            "Ascolta il tuo cuore, ma non ignorare la voce della ragione. L'equilibrio è la chiave.",
+            "Sii paziente. Le cose migliori richiedono tempo per manifestarsi.",
+            "Comunica apertamente. La chiarezza dissolve ogni dubbio.",
+            "Ama te stesso per primo. Solo così potrai amare pienamente gli altri.",
+            "Lascia andare il passato. Il futuro ti aspetta con nuove possibilità."
+        ]
+    },
+    "tradimento": {
+        "generale": [
+            "L'universo non nasconde la verità a lungo — ciò che è fatto nell'ombra prima o poi emerge alla luce. Abbi il coraggio di guardare i fatti senza lasciarti accecare dalla paura.",
+            "Il dolore del tradimento è reale, ma non definitivo. Le stelle ti invitano a non confondere il silenzio con l'innocenza: fidati del tuo istinto.",
+            "Saturno insegna che le prove difficili rivelano chi siamo davvero — sia noi sia le persone accanto a noi. La risposta che cerchi è già dentro di te.",
+            "Il tuo corpo sa prima della tua mente. Quella sensazione nell'addome che non riesci a ignorare è il tuo istinto che parla: ascoltalo prima di chiedere conferme.",
+            "Non ogni segreto è un tradimento, ma non ogni tradimento viene dichiarato. Osserva i comportamenti nel tempo, non solo le parole del momento.",
+            "Le stelle ti invitano a non costruire castelli di ipotesi. Chiedi con calma e chiarezza — la risposta, qualunque essa sia, ti libera dall'incertezza che logora."
+        ],
+        "consiglio": [
+            "Affronta la verità, per quanto dolorosa. Solo così potrai guarire.",
+            "Proteggi il tuo cuore, ma non chiuderti all'amore. La fiducia si ricostruisce, ma con cautela.",
+            "Cerca il supporto di chi ti vuole bene. Non affrontare questo momento da solo.",
+            "Perdona, non per l'altro, ma per te stesso. Lascia andare il peso del rancore.",
+            "Ricorda il tuo valore. Non permettere a nessuno di farti sentire meno di ciò che sei."
+        ]
+    },
+    "separazione": {
+        "generale": [
+            "Ogni fine porta il seme di un nuovo inizio. Questo dolore che senti è reale, ma le stelle vedono oltre: stai attraversando una soglia, non un muro.",
+            "La separazione non è sempre una sconfitta — a volte è la cosa più amorevole che l'universo possa orchestrare per entrambe le anime coinvolte. Il tempo rivelerà il perché.",
+            "Marte e Venere ti invitano a non decidere nulla nell'immediato dolore. Lascia che il silenzio parli. La chiarezza arriverà quando le acque si calmeranno.",
+            "Lasciare andare non significa smettere di amare — significa scegliere il proprio benessere con lo stesso rispetto con cui hai amato l'altro.",
+            "Un ciclo si chiude per permettere a uno nuovo di aprirsi. La separazione, per quanto dolorosa, è spesso il gesto più onesto che due persone possano farsi reciprocamente.",
+            "Il vuoto che senti ora non è perdita permanente — è spazio. È nello spazio che entrano le cose nuove e migliori che il destino sta preparando per te."
+        ],
+        "consiglio": [
+            "Permettiti di sentire il dolore, ma non lasciarti definire da esso.",
+            "Concentrati sulla tua guarigione. È il momento di prenderti cura di te.",
+            "Guarda avanti con speranza. Nuove opportunità ti attendono.",
+            "Non aver paura di chiedere aiuto. Amici e famiglia sono lì per te.",
+            "Riscopri te stesso. Questa è un'opportunità per un nuovo inizio."
+        ]
+    },
+    "ritorno": {
+        "generale": [
+            "Le stelle vedono un'energia di riavvicinamento, ma attenzione: non tutto ciò che ritorna merita di restare. Chiediti se è amore o abitudine a chiamarti indietro.",
+            "Un possibile ritorno è nell'aria — ma le stelle ti chiedono: è davvero questo che vuoi, o è la paura della solitudine a guidarti? La risposta onesta è quella che ti libera.",
+            "Ciò che è destinato a restare non ha bisogno di essere inseguito. Se quell'energia deve tornare, tornerà. Il tuo compito ora è essere pronto ad accoglierla o lasciarla andare.",
+            "Prima di riaprire una porta chiusa, chiediti cosa è cambiato. Se le stesse dinamiche sono ancora presenti, anche il risultato sarà lo stesso. La crescita si misura nelle azioni, non nelle promesse.",
+            "Il riavvicinamento richiede onestà da entrambi i lati. Non basta il desiderio — occorre un accordo chiaro su cosa deve cambiare perché questa volta sia diversa.",
+            "A volte torna perché si è sentito mancare. Ma il vuoto non è la stessa cosa dell'amore. Distingui tra chi ti vuole nella sua vita e chi vuole solo colmare il proprio."
+        ],
+        "consiglio": [
+            "Valuta attentamente le tue vere intenzioni. Cosa desideri realmente?",
+            "Non affrettare le decisioni. Lascia che il tempo riveli la verità.",
+            "Comunica chiaramente le tue aspettative. La trasparenza è fondamentale.",
+            "Proteggi il tuo cuore. Non permettere che vecchie ferite si riaprano senza una vera ragione.",
+            "Ricorda che il tuo benessere viene prima di tutto. Sii onesto con te stesso."
+        ]
+    },
+    "lavoro": {
+        "generale": [
+            "Il cielo professionale è in movimento. Un'energia nuova si avvicina nel campo lavorativo — rimani vigile e non scartare opportunità che sembrano minori: nascondono semi di grandi cambiamenti.",
+            "Giove guarda favorevolmente la tua sfera professionale. Ma la fortuna va incontrata a metà strada: agisci, proponi, mostrati. L'universo premia chi non aspetta in silenzio.",
+            "Sul lavoro si apre una fase di valutazione — gli sforzi passati stanno per trovare risposta. Mantieni la rotta senza disperderti: la coerenza ora vale più del talento.",
+            "Le stelle indicano che le tue competenze sono sottovalutate nel contesto attuale. È il momento di alzare la voce o cercare un ambiente che sappia riconoscere il tuo valore.",
+            "Un colloquio, una proposta, un progetto nuovo: Mercurio favorisce la comunicazione professionale. Preparati con cura e presentati con fiducia — le stelle sostengono chi si espone con preparazione.",
+            "Un cambiamento lavorativo può sembrare spaventoso, ma le stelle lo confermano come necessario per la tua crescita. Ciò che hai accumulato non andrà perso — ti seguirà ovunque tu vada.",
+            "Non ogni giornata difficile è un segnale negativo. A volte i momenti più duri del lavoro precedono un salto di qualità importante. Persevera con metodo.",
+            "Il tuo istinto professionale è più affidabile di quanto credi. Quando qualcosa sul lavoro non ti convince, indaga invece di ignorare: la tua intuizione è un radar prezioso."
+        ],
+        "consiglio": [
+            "Sii proattivo. Le opportunità si creano, non si aspettano.",
+            "Valorizza le tue competenze. Non aver paura di mostrare il tuo valore.",
+            "La perseveranza è la chiave del successo. Non mollare di fronte alle difficoltà.",
+            "Cerca un ambiente che ti valorizzi. Il tuo talento merita di essere riconosciuto.",
+            "Ascolta la tua intuizione. Spesso ti guida verso la strada giusta."
+        ]
+    },
+    "promozione": {
+        "generale": [
+            "Le stelle vedono il riconoscimento avvicinarsi. Gli sforzi che hai messo nel lavoro non sono passati inosservati — un passo in avanti è nell'aria, ma richiede ancora pazienza e un ultimo slancio.",
+            "Giove in aspetto favorevole indica che questo è il momento giusto per mettersi in luce. Non restare in ombra: fai vedere il tuo valore senza timore.",
+            "L'avanzamento che sogni è più vicino di quanto pensi. L'universo suggerisce di non aspettare che arrivino a chiederti — fai il primo passo, sii visibile, dimostra la tua leadership.",
+            "Le stelle ti invitano a non sminuirti nei momenti chiave. Il riconoscimento arriva a chi sa presentarsi con sicurezza: prepara le tue argomentazioni e parla con chi decide.",
+            "Un ciclo di lavoro intenso sta per essere premiato. La promozione o il riconoscimento che cerchi è già in valutazione — sii paziente ma non passivo in questi ultimi passi."
+        ],
+        "consiglio": [
+            "Sii audace e mostra il tuo valore. Non aver paura di chiedere ciò che meriti.",
+            "Prepara le tue argomentazioni con cura. La chiarezza ti darà forza.",
+            "Sii paziente, ma non passivo. Continua a lavorare sodo e a farti notare.",
+            "La leadership si dimostra con l'esempio. Sii un punto di riferimento per gli altri.",
+            "Credi in te stesso. Il successo è a portata di mano."
+        ]
+    },
+    "soldi": {
+        "generale": [
+            "Mercurio e Giove parlano di flusso finanziario in movimento. Non è il momento di bloccarsi per paura ma nemmeno di agire impulsivamente. La saggezza ora vale oro.",
+            "Le stelle vedono un'opportunità economica che si avvicina, ma richiede attenzione ai dettagli. Non firmare nulla senza averlo letto bene — ogni parola conta.",
+            "Il denaro è energia, e l'energia segue la mente. Se i tuoi pensieri sui soldi sono di scarsità, attrai scarsità. Inizia a vedere l'abbondanza come possibile — le stelle la confermano.",
+            "Un'entrata inaspettata o una soluzione a un problema economico si avvicina da una direzione non prevista. Rimani aperto alle possibilità che non rientrano nei tuoi schemi abituali.",
+            "Le stelle ti invitano a fare chiarezza nella gestione delle risorse. Un bilancio onesto tra entrate e uscite è il primo atto magico per attirare prosperità duratura.",
+            "Non ogni rischio finanziario è avventatezza. Le stelle indicano che un investimento ponderato e ben studiato in questo periodo può portare frutti significativi nel medio termine.",
+            "La prosperità che cerchi è già in movimento verso di te. Ma richiede che tu sia pronto a riceverla: rimuovi i blocchi mentali sulla merita e sull'abbondanza.",
+            "Un consiglio finanziario da una fonte inaspettata potrebbe rivelarsi prezioso. Ascolta chi ha già percorso la strada che stai cercando di imboccare."
+        ],
+        "consiglio": [
+            "Sii attento ai dettagli. Ogni opportunità merita un'analisi accurata.",
+            "Cambia la tua mentalità riguardo al denaro. L'abbondanza inizia nella mente.",
+            "Sii aperto alle nuove possibilità. Le soluzioni possono arrivare da direzioni inaspettate.",
+            "Gestisci le tue risorse con saggezza. Un buon bilancio è la base della prosperità.",
+            "Non aver paura di investire in te stesso. La conoscenza è la ricchezza più grande."
+        ]
+    },
+    "salute": {
+        "generale": [
+            "Il tuo corpo ti sta mandando un messaggio. Le stelle ti invitano a fermarti e ascoltarlo davvero, senza rimandare. La cura di sé non è un lusso — è la base di tutto il resto.",
+            "Un periodo di recupero e rigenerazione è indicato dagli astri. Non combattere il bisogno di riposo: è il tuo sistema che si riorganizza per tornare più forte.",
+            "La Luna governa i ritmi del corpo. Segui i tuoi ritmi naturali — il tuo organismo sa di cosa ha bisogno. L'equilibrio che cerchi parte dal rispetto per i tuoi limiti.",
+            "Le stelle ti invitano a non sottovalutare i segnali fisici che stai ricevendo. Un piccolo sintomo ignorato a lungo diventa una voce sempre più alta — ascoltalo ora.",
+            "L'equilibrio tra corpo e mente è la chiave che le stelle evidenziano in questo momento. Un'attenzione maggiore al sonno, all'alimentazione e al movimento trasforma l'energia disponibile.",
+            "Un cambiamento nello stile di vita — anche piccolo e graduale — viene indicato dagli astri come il punto di svolta per il benessere che stai cercando.",
+            "La salute emotiva influenza quella fisica in modo diretto. Le stelle ti invitano a non trattare il corpo come separato dalla mente — curarsi è un atto olistico."
+        ],
+        "consiglio": [
+            "Ascolta il tuo corpo. Ti sta dando segnali importanti.",
+            "Riposa e rigenerati. Il riposo è fondamentale per la tua salute.",
+            "Segui i tuoi ritmi naturali. Il tuo benessere ne trarrà beneficio.",
+            "Prenditi cura di te stesso. La tua salute è la tua priorità.",
+            "Cerca l'equilibrio tra corpo e mente. Sono interconnessi."
+        ]
+    },
+    "gravidanza": {
+        "generale": [
+            "Le stelle vedono un'energia di nascita e creazione fortissima attorno a te — che si tratti di vita, di un progetto o di una nuova fase. Qualcosa di grande sta per venire alla luce.",
+            "La luna nuova parla di semi piantati e pronti a germogliare. Un inizio prezioso si avvicina — preparati ad accoglierlo con amore e presenza.",
+            "L'universo sostiene i nuovi inizi. Qualunque cosa stai aspettando, le condizioni per la sua fioritura si stanno creando proprio ora.",
+            "Le stelle indicano un periodo fertile — sia in senso letterale che simbolico. Un progetto, un legame o una nuova vita è in fase di creazione. Nutrilo con intenzione e cura.",
+            "Il desiderio di creare qualcosa di tuo — che sia una famiglia, un'opera o un progetto — è sostenuto dall'energia cosmica di questo periodo. È il momento di agire con fede."
+        ],
+        "consiglio": [
+            "Accogli questa nuova energia con amore e gratitudine.",
+            "Sii paziente. Ogni cosa ha il suo tempo per crescere e fiorire.",
+            "Nutri i tuoi sogni e progetti con intenzione e cura.",
+            "Confida nel processo. L'universo ti sta sostenendo.",
+            "Preparati ad accogliere un nuovo inizio con gioia."
+        ]
+    },
+    "fortuna": {
+        "generale": [
+            "Giove, pianeta della fortuna, è attivo nel tuo tema. Questo non significa che la fortuna cadrà dal cielo — significa che sei in un periodo in cui le tue azioni vengono amplificate dal favore cosmico.",
+            "Le stelle indicano un ciclo positivo in apertura. La fortuna non è casuale: è risonanza tra la tua energia e quella dell'universo. Sintonizzati.",
+            "Un vento favorevole soffia — ma la vela devi alzarla tu. Le stelle creano le condizioni, tu devi essere pronto a coglierle senza esitazione.",
+            "La fortuna in questo momento si nasconde nei dettagli che altri ignorano. La tua capacità di osservare ciò che gli altri trascurano potrebbe rivelarsi il tuo vantaggio principale.",
+            "Le stelle ti invitano a non giocare tutto su un solo numero. La vera fortuna si costruisce con scelte ponderate e un pizzico di audacia al momento giusto.",
+            "Un ciclo karmico favorevole sta compensando sacrifici e sforzi passati. Ciò che stai per ricevere non è un caso — è la risposta dell'universo a ciò che hai seminato.",
+            "I numeri guida di oggi suggeriscono attenzione alle opportunità che si presentano due volte. La seconda volta che incontri qualcosa di interessante, non lasciarlo andare."
+        ],
+        "consiglio": [
+            "Sii proattivo. La fortuna aiuta gli audaci.",
+            "Sintonizzati con l'energia positiva dell'universo. Attrai ciò che emani.",
+            "Cogli le opportunità che si presentano. Non esitare troppo a lungo.",
+            "Presta attenzione ai dettagli. Spesso la fortuna si nasconde lì.",
+            "Costruisci la tua fortuna con scelte sagge e un pizzico di coraggio."
+        ]
+    },
+    "viaggio": {
+        "generale": [
+            "Un movimento importante si prospetta — fisico, mentale o spirituale. Le stelle sostengono i cambiamenti di prospettiva. Ciò che sembra un salto nel vuoto è in realtà un salto verso qualcosa di più grande.",
+            "Mercurio e Giove in sintonia parlano di orizzonti che si aprono. Non avere paura del nuovo — il tuo spirito è fatto per esplorare, non per restare fermo.",
+            "Il viaggio che stai considerando porta con sé una trasformazione profonda. L'universo dice: vai — ma vai consapevole, non in fuga.",
+            "Un trasferimento o un viaggio importante è nell'aria. Le stelle indicano che il cambiamento di ambiente ti porterà la chiarezza che stai cercando da troppo tempo.",
+            "L'energia del movimento è potente ora. Anche un breve spostamento — una nuova città, un nuovo quartiere — può aprire porte che nella routine quotidiana resterebbero invisibili.",
+            "Chi si muove incontra il mondo. Le stelle confermano che restare fermi in questo momento significa perdere opportunità che il moto porterebbe naturalmente a te."
+        ],
+        "consiglio": [
+            "Apriti al nuovo. L'esplorazione ti porterà crescita.",
+            "Sii consapevole delle tue intenzioni. Viaggia con uno scopo.",
+            "Non aver paura del cambiamento. Spesso è necessario per la tua evoluzione.",
+            "Cogli le opportunità di movimento. Ti porteranno nuove prospettive.",
+            "Lasciati guidare dalla tua curiosità. Il mondo ha molto da offrirti."
+        ]
+    },
+    "casa": {
+        "generale": [
+            "La tua quarta casa — quella della dimora e delle radici — è attiva. Un cambiamento nel tuo spazio fisico si avvicina. Le stelle sostengono le decisioni prese con il cuore.",
+            "La casa è il luogo dove l'anima si riposa. Le stelle ti invitano a chiederti: il luogo in cui vivi ti nutre o ti prosciuga? La risposta guiderà la prossima mossa.",
+            "Un nuovo inizio legato alle fondamenta materiali si avvicina. Non avere fretta, ma non bloccarti per paura. Il momento giusto si riconosce quando agisci senza rimpianti.",
+            "Un'energia di stabilità e di radicamento è presente. Le stelle favoriscono le decisioni relative alla casa prese in questo periodo — agisci con fiducia e documentazione in ordine.",
+            "Lo spazio fisico riflette lo stato interiore. Prima di cercare una nuova casa fuori, chiediti cosa puoi trasformare nello spazio che già hai — a volte basta riarrangiare l'energia.",
+            "Le stelle indicano che il cambiamento di casa o di ambiente che stai considerando apporterà benefici che vanno ben oltre il puramente pratico. È un atto di cura verso te stesso."
+        ],
+        "consiglio": [
+            "Ascolta il tuo cuore riguardo alla tua dimora. Ti guiderà verso la scelta giusta.",
+            "Non aver paura del cambiamento. Un nuovo spazio può portare nuova energia.",
+            "Crea un ambiente che ti nutra. La tua casa è il tuo santuario.",
+            "Agisci con fiducia e preparazione. Le stelle ti sostengono nelle tue decisioni.",
+            "Rifletti sul tuo spazio interiore. Spesso è lì che inizia il cambiamento esteriore."
+        ]
+    },
+    "famiglia": {
+        "generale": [
+            "I legami familiari sono sotto i riflettori del cielo. Le stelle invitano alla comprensione e al dialogo — vecchie ferite possono essere toccate, ma anche finalmente guarite.",
+            "La famiglia è il primo specchio della nostra anima. Ciò che senti nelle relazioni con i tuoi cari riflette qualcosa che è ancora in elaborazione dentro di te. Guarda con compassione.",
+            "Un momento di chiarimento nelle relazioni familiari si avvicina. Parla con il cuore aperto — la vulnerabilità ora è forza, non debolezza.",
+            "Le stelle evidenziano una dinamica familiare che richiede attenzione. Non aspettare che si risolva da sola — un passo verso il dialogo oggi evita distanze che domani sarebbero difficili da colmare.",
+            "Le radici familiari ti hanno dato più di quanto riconosci. Anche nelle relazioni difficili c'è un dono nascosto — trovarlo richiede pazienza e uno sguardo più ampio.",
+            "Un membro della famiglia ha bisogno di sentirti vicino anche se non lo chiede esplicitamente. Le stelle ti invitano a fare il primo passo verso chi ami, senza aspettare."
+        ],
+        "consiglio": [
+            "Comunica apertamente e con compassione. Il dialogo può guarire vecchie ferite.",
+            "Rifletti sulle dinamiche familiari. Spesso sono uno specchio del tuo mondo interiore.",
+            "Sii vulnerabile. La vera forza si trova nell'apertura del cuore.",
+            "Non aspettare. Fai il primo passo verso la riconciliazione.",
+            "Onora le tue radici. La famiglia è una fonte di forza e apprendimento."
+        ]
+    },
+    "amicizia": {
+        "generale": [
+            "Le stelle rivelano che non tutte le persone accanto a te stanno camminando nella tua stessa direzione. Fidati di chi dimostra — non di chi promette.",
+            "Un'amicizia vera si rivela nei momenti difficili. Guarda chi c'è stato nelle tue notti buie — quella è la tua cerchia reale. Il resto è contorno.",
+            "Venere nei legami di amicizia parla di connessioni che si rafforzano e altre che si allontanano naturalmente. Lascia andare senza rancore ciò che non cresce più.",
+            "Le stelle indicano che un'amicizia che senti distante potrebbe essere recuperata con un gesto semplice e sincero. A volte una persona importante aspetta solo un tuo segnale.",
+            "Non ogni allontanamento è un rifiuto. Le persone evolvono e a volte i percorsi si separano. Onora ciò che è stato senza trattenerlo per forza — le stelle sostengono i cambiamenti naturali.",
+            "Una nuova amicizia potrebbe entrare nella tua vita da una direzione inaspettata. Le stelle ti invitano a essere aperto con chi ancora non conosci — l'incontro significativo è vicino."
+        ],
+        "consiglio": [
+            "Fidati del tuo istinto. Le vere amicizie si dimostrano con i fatti.",
+            "Sii presente per chi ti è caro. L'amicizia si nutre di presenza e supporto.",
+            "Lascia andare ciò che non ti serve più. Non aver paura di chiudere cicli.",
+            "Apriti a nuove connessioni. L'universo ti sta presentando nuove persone.",
+            "Comunica apertamente con i tuoi amici. La chiarezza rafforza i legami."
+        ]
+    },
+    "studio": {
+        "generale": [
+            "Le stelle sono favorevoli all'apprendimento e alla crescita mentale. Il percorso di studio che stai seguendo ti porterà più lontano di quanto immagini — non mollare.",
+            "Mercurio, pianeta dell'intelletto, ti sostiene. Un esame o una prova importante sta per essere superata. La preparazione che hai fatto vale più di quanto credi.",
+            "Il sapere che stai accumulando è un investimento nell'anima oltre che nella carriera. Anche quando le difficoltà sembrano insormontabili, ricorda: hai già superato ostacoli più grandi.",
+            "Le stelle indicano che il momento di dubbio che attraversi nello studio è una fase normale di ogni processo di crescita. Chi si ferma qui perde; chi persevera trova la svolta.",
+            "Un metodo di studio diverso dal tuo solito potrebbe sbloccare un apprendimento che sembrava bloccato. Le stelle favoriscono la sperimentazione metodologica in questo periodo.",
+            "Non confrontare il tuo progresso con quello degli altri: ogni mente ha il suo ritmo e la sua profondità. Il tuo percorso è unico e sta andando nella direzione giusta."
+        ],
+        "consiglio": [
+            "Persevera nei tuoi studi. La conoscenza è un tesoro inestimabile.",
+            "Confida nella tua preparazione. Hai le capacità per superare ogni ostacolo.",
+            "Sperimenta nuovi metodi di apprendimento. Potrebbero aprirti nuove prospettive.",
+            "Non confrontarti con gli altri. Il tuo percorso è unico e prezioso.",
+            "Ricorda che ogni difficoltà è un'opportunità per crescere e imparare."
+        ]
+    },
+    "futuro": {
+        "generale": [
+            "Il futuro non è scritto nella pietra — si plasma con ogni scelta consapevole che fai oggi. Le stelle mostrano potenziale enorme, ma la direzione la scegli tu.",
+            "Una svolta si avvicina. Non tutte le rivoluzioni sono rumorose — spesso il cambiamento più profondo inizia con un momento di silenzio e chiarezza interiore.",
+            "L'universo sta riorganizzando le carte del tuo destino. Ciò che sembra incerto ora è in realtà il suolo che si prepara per qualcosa di straordinario.",
+            "Le stelle ti invitano a smettere di temere il futuro e a iniziare a costruirlo. Ogni azione intenzionale oggi è un mattone nella direzione che desideri.",
+            "Il cambiamento che senti arrivare non è da temere — è il segnale che sei pronto per una versione più grande di te stesso. Lasciati superare da chi stavi diventando.",
+            "L'incertezza che provi ora è la stessa che sente il seme prima di germogliare. Le stelle confermano che stai per emergere alla superficie — mantieni la fede nel processo.",
+            "Le stelle mostrano più strade aperte davanti a te. Non è il momento di aspettare che una si chiuda per prenderne una — è il momento di scegliere con cuore e metodo."
+        ],
+        "consiglio": [
+            "Sii l'architetto del tuo futuro. Ogni scelta conta.",
+            "Accogli il cambiamento con fiducia. Spesso porta a nuove opportunità.",
+            "Non temere l'incertezza. È il terreno fertile per la crescita.",
+            "Costruisci il tuo futuro con azioni intenzionali. Ogni passo ti avvicina ai tuoi sogni.",
+            "Scegli con il cuore e con metodo. La chiarezza ti guiderà."
+        ]
+    },
+    "paura": {
+        "generale": [
+            "Le stelle riconoscono il peso che stai portando. Ma l'ansia e la paura non sono la realtà — sono l'ombra proiettata da pensieri che il futuro non ha ancora confermato.",
+            "Saturno ti invita a guardare in faccia ciò che ti spaventa. La paura affrontata perde metà del suo potere — l'altra metà la perde quando scopri di essere più forte di lei.",
+            "L'universo non ti ha messo in questa situazione per spezzarti, ma per mostrarti di cosa sei capace. Anche nel buio più fitto, una stella si vede sempre.",
+            "Lo stress che senti è reale, ma non è permanente. Le stelle indicano un periodo di transizione — il disagio attuale è il preludio di un equilibrio che sta tornando.",
+            "L'ansia ha una funzione: ti segnala ciò che ti importa davvero. Usala come bussola invece di combatterla — ti dirà esattamente dove concentrare la tua energia di cura.",
+            "Non devi affrontare tutto da solo. Le stelle ti invitano a permettere ad altri di sostenerti — la forza vera non è non aver bisogno, ma saper chiedere e ricevere con grazia.",
+            "Un pensiero ripetuto crea la realtà che poi si autocertifica. Interrompi il ciclo con un'azione piccola ma concreta: il movimento fisico più semplice spezza le spirali mentali."
+        ],
+        "consiglio": [
+            "Affronta le tue paure. Scoprirai una forza che non pensavi di avere.",
+            "Non sei solo. Permetti agli altri di sostenerti.",
+            "Trasforma l'ansia in una bussola. Ti indicherà ciò che è importante.",
+            "Interrompi i cicli negativi con piccole azioni concrete.",
+            "Ricorda che sei più forte di quanto credi. La luce è sempre presente, anche nel buio."
+        ]
+    },
+    "magia": {
+        "generale": [
+            "L'energia che stai percependo è reale. Le forze sottili rispondono alle intenzioni pure — chiarisci dentro di te cosa vuoi davvero, poi agisci con rispetto e consapevolezza.",
+            "Le stelle confermano che sei in un periodo di forte sensibilità energetica. Proteggiti con intenzione, sii selettivo sulle persone che lasci entrare nel tuo spazio.",
+            "Ciò che mandi nell'universo ritorna moltiplicato. Prima di qualsiasi rituale, chiediti: agisco dall'amore o dalla paura? La risposta determina il risultato.",
+            "L'intenzione è il vero strumento magico. Prima di qualsiasi rituale, fermati e definisci con precisione cosa stai chiedendo — l'universo risponde alla chiarezza, non all'urgenza.",
+            "Le stelle confermano che sei in un periodo di heightened sensitivity energetica. I tuoi sogni, le tue intuizioni e le sincronicità che noti sono messaggi reali: annotali.",
+            "La magia più potente non ha bisogno di strumenti esterni. La tua intenzione chiara, il tuo respiro consapevole e il tuo cuore allineato sono il rituale completo."
+        ],
+        "consiglio": [
+            "Chiarisci le tue intenzioni. La magia risponde alla chiarezza.",
+            "Proteggi la tua energia. Sii selettivo con le tue interazioni.",
+            "Agisci con amore e consapevolezza. L'universo ti restituirà il doppio.",
+            "Ascolta i messaggi dell'universo. Sono ovunque intorno a te.",
+            "Ricorda che la vera magia risiede dentro di te. La tua intenzione è il tuo potere."
+        ]
+    },
+    "sogno": {
+        "generale": [
+            "I sogni sono messaggi dell'anima in un linguaggio che la mente razionale non riesce a bloccare. Prendi nota di ciò che hai visto — contiene un simbolo importante per il tuo percorso.",
+            "Il mondo onirico è un ponte tra il conscio e l'inconscio. Ciò che appare ripetutamente nei sogni chiede di essere ascoltato nella veglia.",
+            "Le stelle confermano: il sogno che ti ha colpito non è casuale. L'universo parla attraverso di esso. Meditaci sopra con calma — il significato si rivelerà.",
+            "Ogni elemento del sogno è un simbolo che parla il linguaggio della tua anima. Il luogo, i colori, le emozioni provate: ognuno di questi è un frammento di risposta.",
+            "Un sogno ricorrente è una lettera che l'inconscio ti rispedisce finché non viene letta. Questa volta fermati e presta attenzione — il messaggio è urgente e necessario.",
+            "Le stelle confermano che il tuo inconscio è in stato di elaborazione intensa. I sogni vividi di questo periodo sono un segnale che stai integrando qualcosa di importante."
+        ],
+        "consiglio": [
+            "Presta attenzione ai tuoi sogni. Sono messaggi preziosi dall'inconscio.",
+            "Annota i tuoi sogni. Spesso contengono simboli importanti per il tuo percorso.",
+            "Rifletti sui tuoi sogni con calma. Il significato si rivelerà col tempo.",
+            "Ogni elemento del sogno è un simbolo. Cerca di comprenderne il linguaggio.",
+            "Non ignorare i sogni ricorrenti. Sono messaggi urgenti che richiedono la tua attenzione."
+        ]
+    },
+    "morte": {
+        "generale": [
+            "La morte nell'ottica esoterica è trasformazione, non fine. Qualcosa sta chiudendo un ciclo nella tua vita per fare spazio a qualcosa di completamente nuovo. Onora ciò che finisce.",
+            "Le stelle sono con te nel lutto. Il dolore della perdita è il segno di quanto profondo fosse quel legame — e l'amore non muore con il corpo.",
+            "Ogni grande trasformazione ha la forma di una piccola morte. Ciò che stai attraversando sta rimodellando la tua anima. Dall'altro lato di questa soglia c'è una versione più autentica di te.",
+            "L'aldilà esiste nelle tradizioni di ogni civiltà come realtà parallela. Chi ami è partito, non sparito. La connessione dell'anima non si interrompe con il corpo fisico.",
+            "Il lutto richiede il suo tempo e non va affrettato. Le stelle ti invitano a onorare il dolore senza affogare in esso — la vita del defunto continua in te attraverso i suoi insegnamenti.",
+            "La perdita di una persona cara lascia un vuoto che nessuno può colmare, ma che col tempo si trasforma in uno spazio sacro dove il ricordo vive per sempre."
+        ],
+        "consiglio": [
+            "Accetta la trasformazione. Ogni fine è un nuovo inizio.",
+            "Onora il tuo dolore. È una parte naturale del processo di guarigione.",
+            "Ricorda che l'amore non muore. La connessione con chi hai perso rimane.",
+            "Permettiti di vivere il lutto. Ogni emozione è valida.",
+            "Trova conforto nei ricordi. Chi hai amato vive attraverso di essi."
+        ]
+    },
+    "vendetta": {
+        "generale": [
+            "Le stelle ti invitano a riflettere: la vendetta non sana la ferita — la mantiene viva. Ciò che vuoi davvero non è punire, ma guarire. Sono strade diverse.",
+            "Il karma è un meccanismo dell'universo che non ha bisogno del tuo intervento. Chi ti ha fatto del male riceverà ciò che ha seminato — il tuo compito è uscire dal ciclo, non alimentarlo.",
+            "L'energia che stai dirigendo verso la rivalsa può essere reindirizzata verso la tua crescita. La migliore vendetta è una vita piena e autentica che nulla deve alla tua fonte di dolore.",
+            "La giustizia cosmica non dimentica nulla. Le stelle ti dicono di affidarti al meccanismo universale di riequilibrio — è più potente e preciso di qualsiasi azione tu possa intraprendere.",
+            "Il rancore è un veleno che avvelena chi lo porta, non chi lo ha causato. Liberartene non è debolezza — è l'atto di forza più difficile e più trasformativo che esista."
+        ],
+        "consiglio": [
+            "Cerca la guarigione, non la punizione. La pace interiore è più preziosa della vendetta.",
+            "Affidati al karma. L'universo si occuperà di riequilibrare le cose.",
+            "Reindirizza la tua energia verso la crescita personale. La tua felicità è la migliore risposta.",
+            "Lascia andare il rancore. Ti libererà da un peso inutile.",
+            "Sii superiore. La tua dignità è la tua forza più grande."
+        ]
+    },
+    "successo": {
+        "generale": [
+            "Le stelle confermano che sei sulla strada giusta verso i tuoi obiettivi. Ogni passo, anche quelli che sembrano piccoli, ti avvicina al traguardo che hai nel cuore.",
+            "Giove sorride alle tue ambizioni. Il successo che cerchi non è irraggiungibile — è il risultato naturale della coerenza tra ciò che vuoi, ciò che pensi e ciò che fai ogni giorno.",
+            "Un momento di visibilità si avvicina. Le stelle ti invitano a non sminuire i tuoi risultati quando li presenti agli altri — il tuo valore è reale e merita di essere riconosciuto.",
+            "Il successo autentico non arriva solo — arriva con le persone giuste accanto. Le stelle ti invitano a coltivare le relazioni con chi ti ispira a crescere.",
+            "Non confondere la velocità con il progresso. Le stelle indicano che il tuo percorso verso il successo ha il suo ritmo preciso — forzarlo crea errori che rallentano."
+        ],
+        "consiglio": [
+            "Confida nel tuo percorso. Ogni passo ti avvicina al successo.",
+            "Sii coerente con i tuoi obiettivi. La costanza premia sempre.",
+            "Non aver paura di mostrare i tuoi risultati. Il tuo valore merita riconoscimento.",
+            "Coltiva relazioni positive. Le persone giuste ti ispireranno a crescere.",
+            "Rispetta il tuo ritmo. Il successo arriva al momento giusto."
+        ]
+    },
+    "creativita": {
+        "generale": [
+            "Le stelle confermano che la tua creatività è in un periodo di forte attivazione. Ciò che senti di voler creare ora ha una ragione profonda — non ignorare quell'impulso.",
+            "L'ispirazione che cerchi non arriva aspettando — arriva iniziando. Le stelle ti invitano ad aprire il quaderno, lo schermo o lo strumento e mettere giù il primo segno.",
+            "Il blocco creativo che senti è spesso paura del giudizio travestita da mancanza di idee. Le stelle ti dicono: crea per te prima che per gli altri.",
+            "Mercurio favorisce la comunicazione creativa in questo periodo. È il momento giusto per condividere un progetto o un'idea che hai tenuto solo per te.",
+            "La creatività autentica nasce dal vissuto reale. Le tue esperienze più difficili contengono il materiale per la tua opera più potente. Non aver paura di usarle.",
+            "Le stelle indicano che una collaborazione creativa potrebbe moltiplicare il tuo potenziale in questo periodo. Cerca chi completa ciò che tu sai fare con ciò che sa fare lui."
+        ],
+        "consiglio": [
+            "Non ignorare il tuo impulso creativo. È un dono prezioso.",
+            "Inizia a creare. L'ispirazione arriverà con l'azione.",
+            "Crea per te stesso, senza paura del giudizio. La tua espressione è unica.",
+            "Condividi le tue idee. La collaborazione può amplificare il tuo potenziale.",
+            "Trasforma le tue esperienze in arte. La tua storia è una fonte di ispirazione."
+        ]
+    },
+    "default": {
+        "generale": [
+            "Le stelle hanno ricevuto la tua domanda. L'universo non risponde sempre con parole dirette — a volte risponde con un'intuizione, un incontro inatteso, un sogno.",
+            "La tua intenzione è stata inviata al cosmo. Ciò che stai cercando sta cercando anche te — rimani aperto ai segnali che arriveranno nelle prossime ore e nei prossimi giorni.",
+            "Il cielo vede la tua domanda e la tua ricerca. Confida nel fatto che ciò che ti serve davvero arriverà — anche in una forma diversa da quella che ti aspetti.",
+            "L'universo risponde sempre — ma a volte il silenzio è già una risposta. Fermati, respira, e ascolta ciò che già sai nel profondo.",
+            "Le stelle vedono la tua intenzione e la tua sincera ricerca. Ogni domanda posta con il cuore aperto merita una risposta — e l'universo non la nega mai a chi sa ascoltare.",
+            "Ciò che cerchi sta già cercando te. La risposta arriverà nel momento esatto in cui sarai abbastanza quieto da riceverla — fidati del processo e del tempo cosmico.",
+            "Il tuo cammino è osservato dalle stelle con attenzione e cura. Non sei solo in questa ricerca — forze più grandi di te stanno lavorando a tuo favore anche quando non le senti."
+        ],
+        "consiglio": [
+            "Rimani aperto ai segnali dell'universo. Le risposte possono arrivare in modi inaspettati.",
+            "Confida nel processo. Ciò che è destinato a te arriverà al momento giusto.",
+            "Ascolta la tua voce interiore. Spesso la risposta è già dentro di te.",
+            "Sii paziente. L'universo ha i suoi tempi perfetti.",
+            "Non sei solo. Forze più grandi ti stanno guidando e sostenendo."
+        ]
+    }
+}
+;
 
   var tema = temi.length > 0 ? temi[0] : 'default';
-  var pool = RISPOSTE[tema] || RISPOSTE['default'];
-  var idx = Math.floor(Date.now() / 300000) % pool.length;
-  var risposta = pool[idx];
+  var poolGenerale = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].generale ? RISPOSTE_AI[tema].generale : RISPOSTE_AI['default'].generale;
+  var poolConsiglio = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].consiglio ? RISPOSTE_AI[tema].consiglio : RISPOSTE_AI['default'].consiglio;
+  var idxGenerale = Math.floor(Date.now() / 300000) % poolGenerale.length;
+  var idxConsiglio = Math.floor(Date.now() / 150000) % poolConsiglio.length; // Usa un seed diverso per il consiglio
+  var rispostaGenerale = poolGenerale[idxGenerale];
+  var rispostaConsiglio = poolConsiglio[idxConsiglio];
+  var risposta = rispostaGenerale + ' ' + rispostaConsiglio; // Combina le due risposte
 
   // Adatta la risposta al soggetto rilevato
   var sog = soggetto || { tipo: 'io', label: 'io' };
@@ -6650,7 +6876,10 @@ function runConsulente() {
     res.innerHTML = [
       '<div class="consult-block">',
       '<h4>🔮 Il Messaggio delle Stelle</h4>',
-      '<p>' + rispostaPersonale + '</p>',
+      '<div class="consult-response">' + rispostaPersonale.split('. ').map(function(s,i,a){
+        if(i === a.length - 1) return '<span class="consult-response-advice">✦ ' + s + '</span>';
+        return '<span class="consult-response-general">' + s + (s.endsWith('.')?'':'.') + '</span>';
+      }).join(' ') + '</div>',
       '</div>',
       '<div class="consult-block">',
       '<h4>' + carta.e + ' Arcano Rivelato — ' + carta.n + '</h4>',
