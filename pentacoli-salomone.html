@@ -96,9 +96,103 @@ footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);co
 .back-to-nav{display:flex;justify-content:center;margin-top:32px;margin-bottom:8px}
 .back-to-nav a{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.3);border-radius:50px;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1.5px;text-decoration:none;transition:all 0.2s}
 .back-to-nav a:hover{background:rgba(212,175,55,0.15);border-color:var(--gold)}
+/* Barra controlli (musica + tema) */
+.controls-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px;margin:0 auto 32px;padding:0 20px}
+.ctrl-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 10px;border-radius:14px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.5px;cursor:pointer;border:1.5px solid rgba(212,175,55,0.35);background:linear-gradient(135deg,#1a0c32,#0a0520);color:var(--gold);transition:all .25s ease}
+.ctrl-btn:hover{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30)}
+.ctrl-btn.active{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30);box-shadow:0 0 14px rgba(212,175,55,0.25)}
+.ctrl-btn-icon{font-size:15px}
+/* MODALITA GIORNO */
+body.day-mode{--bg:#f5f0e8;--text:#1a0e04;--muted:#6a5a40;--gold:#8b6a10;--gold-light:#a07820;--gold-dim:rgba(139,106,16,0.15);--border:rgba(139,106,16,0.2);--border-hover:rgba(139,106,16,0.5);--bg2:#fdf6e8;--bg3:#fffdf7;--bg4:#faf0d8}
+body.day-mode{background:#f5f0e8;color:#1a0e04}
+body.day-mode header{background:rgba(245,240,232,0.97);border-bottom-color:rgba(139,106,16,0.25)}
+body.day-mode .logo{color:#8b6a10;text-shadow:none}
+body.day-mode h1,body.day-mode h2{color:#7a5a08}
+body.day-mode p,body.day-mode .detail-text{color:#1a0e04;opacity:1}
+body.day-mode .hero{background:linear-gradient(145deg,#fdf6e8,#faf0d8);border-color:rgba(139,106,16,0.3)}
+body.day-mode .hero-sub,body.day-mode .planet-subtitle,body.day-mode .planet-nav-name,body.day-mode .planet-nav-count,body.day-mode .pentacolo-lead,body.day-mode .header-sub{color:#6a5a40}
+body.day-mode .planet-nav-item{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
+body.day-mode .planet-nav-item:hover{background:linear-gradient(145deg,#fdf6e8,#f5ead0);border-color:rgba(139,106,16,0.5)}
+body.day-mode .planet-nav-symbol{color:#8b6a10}
+body.day-mode .planet-header{background:linear-gradient(145deg,#fdf6e8,#faf0d8);border-color:rgba(139,106,16,0.3)}
+body.day-mode .pentacolo-card{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
+body.day-mode .pentacolo-card:hover{border-color:rgba(139,106,16,0.5);box-shadow:0 8px 32px rgba(139,106,16,0.12)}
+body.day-mode .pentacolo-img-wrap{background:radial-gradient(ellipse at center,rgba(139,106,16,0.08) 0%,rgba(245,240,232,0.95) 70%);border-bottom-color:rgba(139,106,16,0.15)}
+body.day-mode .pentacolo-img{border-color:rgba(139,106,16,0.3);filter:drop-shadow(0 4px 16px rgba(139,106,16,0.2))}
+body.day-mode .pentacolo-num,body.day-mode .detail-label{color:#8b6a10}
+body.day-mode .pentacolo-title{color:#1a0e04}
+body.day-mode .tempistica-badge{background:rgba(139,106,16,0.08);border-color:rgba(139,106,16,0.25);color:#7a5a08}
+body.day-mode .traduzione-box{background:rgba(139,106,16,0.06);border-left-color:#c8a040;color:#4a3a20}
+body.day-mode .traduzione-box strong{color:#7a5a08}
+body.day-mode .btn-back{background:rgba(139,106,16,0.08);border-color:#8b6a10;color:#8b6a10}
+body.day-mode .btn-back:hover{background:#8b6a10;color:#fff}
+body.day-mode .back-to-nav a{background:rgba(139,106,16,0.07);border-color:rgba(139,106,16,0.3);color:#8b6a10}
+body.day-mode .back-to-nav a:hover{background:rgba(139,106,16,0.15);border-color:#8b6a10}
+body.day-mode .fab-home{background:linear-gradient(135deg,#c8a040,#9a7820);border-color:#9a7820;color:#fff;box-shadow:0 4px 24px rgba(0,0,0,0.2)}
+body.day-mode .fab-home:hover{background:#8b6a10}
+body.day-mode .ctrl-btn{background:linear-gradient(135deg,#fdf6e8,#f5ead0);border-color:rgba(139,106,16,0.35);color:#8b6a10}
+body.day-mode .ctrl-btn:hover,body.day-mode .ctrl-btn.active{background:linear-gradient(135deg,#f5ead0,#e8d4a0);border-color:#8b6a10}
+body.day-mode nav.breadcrumb{color:#6a5a40}
+body.day-mode nav.breadcrumb a{color:#8b6a10}
+body.day-mode footer{border-top-color:rgba(139,106,16,0.2);color:#6a5a40}
+body.day-mode .planet-symbol{color:#8b6a10}
 </style>
 <script>
 function goBack(){if(window.history.length>1){window.history.back();}else{window.location.href='index.html';}}
+
+/* AUDIO */
+let _bgAudio=null,_bgPlaying=false;
+function _initAudio(){
+  if(_bgAudio)return;
+  _bgAudio=new Audio('./icone/audio/mystica_ambient_432_528.mp3');
+  _bgAudio.loop=true;_bgAudio.volume=0.15;_bgAudio.preload='none';
+}
+function toggleAudio(){
+  _initAudio();
+  if(_bgPlaying){
+    _bgAudio.pause();_bgPlaying=false;
+  } else {
+    _bgAudio.play().then(()=>{_bgPlaying=true;}).catch(()=>{});
+  }
+  updateAudioBtn();
+}
+function updateAudioBtn(){
+  const icon=document.getElementById('ctrlAudioIcon');
+  const lbl=document.getElementById('ctrlAudioLabel');
+  const btn=document.getElementById('ctrlAudioBtn');
+  if(_bgPlaying){
+    if(icon)icon.textContent='🔊';if(lbl)lbl.textContent='Musica On';if(btn)btn.classList.add('active');
+  } else {
+    if(icon)icon.textContent='🎵';if(lbl)lbl.textContent='Musica Off';if(btn)btn.classList.remove('active');
+  }
+}
+
+/* TEMA */
+function toggleTheme(){
+  const isDay=document.body.classList.contains('day-mode');
+  const goDay=!isDay;
+  document.body.classList.toggle('day-mode',goDay);
+  localStorage.setItem('mystica_daymode',goDay?'1':'0');
+  const icon=document.getElementById('ctrlThemeIcon');
+  const lbl=document.getElementById('ctrlThemeLabel');
+  const btn=document.getElementById('ctrlThemeBtn');
+  if(goDay){
+    if(icon)icon.textContent='🌙';if(lbl)lbl.textContent='Modalità Notte';if(btn)btn.classList.add('active');
+  } else {
+    if(icon)icon.textContent='☀️';if(lbl)lbl.textContent='Modalità Giorno';if(btn)btn.classList.remove('active');
+  }
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  /* Ripristina tema salvato */
+  if(localStorage.getItem('mystica_daymode')==='1'){
+    document.body.classList.add('day-mode');
+    const icon=document.getElementById('ctrlThemeIcon');
+    const lbl=document.getElementById('ctrlThemeLabel');
+    const btn=document.getElementById('ctrlThemeBtn');
+    if(icon)icon.textContent='🌙';if(lbl)lbl.textContent='Modalità Notte';if(btn)btn.classList.add('active');
+  }
+});
 </script>
 </head>
 <body>
@@ -113,6 +207,16 @@ function goBack(){if(window.history.length>1){window.history.back();}else{window
     <span>›</span>
     <span>I 44 Pentacoli di Re Salomone</span>
   </nav>
+  <div class="controls-bar">
+    <button id="ctrlAudioBtn" class="ctrl-btn" onclick="toggleAudio()">
+      <span id="ctrlAudioIcon" class="ctrl-btn-icon">🎵</span>
+      <span id="ctrlAudioLabel">Musica Off</span>
+    </button>
+    <button id="ctrlThemeBtn" class="ctrl-btn" onclick="toggleTheme()">
+      <span id="ctrlThemeIcon" class="ctrl-btn-icon">☀️</span>
+      <span id="ctrlThemeLabel">Modalità Giorno</span>
+    </button>
+  </div>
   <div class="hero">
     <span class="hero-icon">🔯</span>
     <h1>I 44 Pentacoli di Re Salomone</h1>
