@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<!-- AdSense accessibility: no user-scalable=no, no maximum-scale restriction -->
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -487,6 +486,21 @@ body.day-mode .discl-link{color:rgba(139,106,16,0.5)}
 .home-intro-text:last-child{margin-bottom:0}
 .home-intro-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
 .home-intro-chip{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:20px;padding:4px 10px;font-size:0.75rem;color:#d4af37;font-family:'Cinzel',serif;letter-spacing:.03em}
+/* ═══ ONBOARDING CARDS ═══ */
+.onb-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px;background:linear-gradient(145deg,#100820,#08040f);border:1.5px solid rgba(42,23,72,.7);border-radius:16px;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.onb-card:hover,.onb-card.selected{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30);box-shadow:0 0 20px var(--gold-glow)}
+.onb-card.selected{box-shadow:0 0 24px var(--gold-glow),0 4px 16px rgba(0,0,0,.5)}
+.onb-ico{font-size:30px;line-height:1;filter:drop-shadow(0 0 8px rgba(212,175,55,.4))}
+.onb-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.5px}
+.onb-sub{font-size:10px;color:var(--muted);text-align:center;line-height:1.4}
+/* ═══ CONSULENTE TOPIC BUTTONS ═══ */
+.consult-topic{padding:10px 6px;background:rgba(42,23,72,.25);border:1px solid rgba(42,23,72,.6);border-radius:10px;color:var(--muted);font-family:'Cinzel',serif;font-size:11px;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.consult-topic:hover,.consult-topic.active{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,.6)}
+.consult-topic.active{border-color:var(--gold);background:rgba(42,23,72,.7);box-shadow:0 0 10px var(--gold-glow)}
+/* ═══ CONSULENTE RESULT BLOCKS ═══ */
+.consult-block{background:#0b0520;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px}
+.consult-block h4{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase}
+.consult-block p{font-size:13.5px;line-height:1.75;margin:0;color:var(--text)}
 body.day-mode .home-intro-block{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.18)}
 body.day-mode .home-intro-title{color:#8b6a10}
 body.day-mode .home-intro-text{color:#5a4a30}
@@ -504,8 +518,7 @@ body.day-mode .home-intro-chip{background:rgba(139,106,16,0.08);border-color:rgb
     <p class="discl-text">
       MYSTICA è un'app di <strong>puro intrattenimento</strong> esoterico.<br>
       Tarocchi, oroscopi, rune e tutti gli oracoli sono strumenti ludici e culturali
-      — non previsioni reali né consulenze professionali di alcun tipo.<br>
-      <span style="font-size:0.82em;opacity:0.75">L'uso dell'app implica l'accettazione dei Termini di Servizio e della Privacy Policy.</span>
+      — non previsioni reali né consulenze professionali.
     </p>
     <button class="discl-btn" onclick="chiudiDisclaimer()">✦ Ho Capito — Entra nell'App ✦</button>
     <button class="discl-link" onclick="chiudiDisclaimer()">Leggi i <a href="./termini.html" style="color:inherit">Termini di Servizio</a> · <a href="./privacy.html" style="color:inherit">Privacy Policy</a></button>
@@ -551,7 +564,7 @@ function chiudiDisclaimer(){
 <div class="cosmos"></div>
 <div class="particles" id="particles"></div>
 
-<div id="app">
+<div id="app" style="visibility:hidden">
 
   <div class="header">
     <div class="moon-widget" id="moonWidget" onclick="showMoonInfo()" title="Fase Lunare Attuale">
@@ -662,6 +675,13 @@ function chiudiDisclaimer(){
           <span id="qaThemeLabel">Modalità Notte</span>
         </button>
       </div>
+
+      <!-- ═══ CONSULENTE MISTICO BUTTON ═══ -->
+      <button onclick="openConsulente()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;margin-bottom:14px;background:linear-gradient(135deg,#1e0e38,#0f0720);border:1.5px solid rgba(212,175,55,.55);border-radius:16px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;cursor:pointer;touch-action:manipulation;transition:all .25s ease;box-shadow:0 0 20px rgba(212,175,55,.1)">
+        <span style="font-size:22px;animation:logoGlow 4s infinite">🔮</span>
+        <span>Consulente Mistico</span>
+        <span style="font-size:10px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:2px 8px;margin-left:4px">NUOVO</span>
+      </button>
 
       <div class="card" id="cardEditProfilo">
         <h2>🔮 Il Tuo Profilo Mistico</h2>
@@ -2109,7 +2129,260 @@ function chiudiDisclaimer(){
             <button class="btn btn-sec" onclick="resetSigillo()">🔄 Cerca un altro Sigillo</button>
           </div>
         </div>
+
+      <!-- ═══ ENCICLOPEDIA DEI SETTE PENTACOLI ═══ -->
+      <div id="enciclopediaPentacoli" style="margin-top:10px">
+        <div class="card" style="border-color:var(--gold-dim);text-align:center;padding:20px 16px 16px">
+          <div style="font-size:44px;margin-bottom:8px;filter:drop-shadow(0 0 18px rgba(212,175,55,0.5));animation:logoGlow 4s infinite">🔯</div>
+          <h2 style="font-family:'Cinzel',serif;color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:6px">I SETTE PENTACOLI<br>DI RE SALOMONE</h2>
+          <p style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px">Clavicula Salomonis · Sigilli Planetari · Arte Ermetica</p>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 0 14px"></div>
+          <p style="font-size:13px;color:var(--text);line-height:1.75;text-align:left">
+            I Pentacoli di Re Salomone sono i sette sigilli planetari descritti nella <em>Clavicula Salomonis</em> e nella <em>Grande Chiave di Salomone</em>, testi di magia cerimoniale risalenti al Medioevo e attribuiti alla saggezza del leggendario re biblico. Ogni pentacolo è legato a un pianeta del sistema solare classico, porta un simbolo geometrico sacro, un nome divino e un potere specifico. La tradizione ermetica insegna che incidere il pentacolo sul metallo corrispondente, nelle ore planetarie giuste, attiva una connessione diretta con la forza cosmica di quel pianeta.
+          </p>
+        </div>
+
+        <!-- SATURNO -->
+        <div class="card" style="border-color:#6b6b8a80;background:linear-gradient(145deg,#0d0d18,#08080f)" id="pentacolo-saturno">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#6b6b8a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">I° Pentacolo Planetario</div>
+            <div id="svgSaturno" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(107,107,138,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#9090b8;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Saturno ✦</h3>
+            <div style="font-size:13px;color:#6b6b8a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♄ SATURNUS</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#6b6b8a,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Piombo</span>
+            <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Nero · Grigio</span>
+            <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Sabato</span>
+            <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 3</span>
+          </div>
+          <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Saturno è il Signore del Tempo, della Legge Cosmica e della Morte come trasformazione. Il suo pentacolo incarna il principio della <strong style="color:#9090b8">limitazione necessaria</strong>: ciò che delimita definisce, ciò che definisce protegge. È il sigillo della saggezza acquisita attraverso la prova, il sudore e la perseveranza. Nella tradizione cabalistica corrisponde alla Sephirah Binah, l'Intelligenza, terza emanazione dell'Albero della Vita.</p>
+          </div>
+          <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Saturno è invocato per <strong style="color:#9090b8">protezione dagli spiriti malevoli</strong>, per rompere maledizioni antiche e per acquisire disciplina interiore. I maghi cerimoniali lo usano per evocare spiriti del piano saturnino, per comprendere le leggi karmiche e per lavori di magia funeraria e ancestrale. È anche il sigillo della longevità: portarlo inciso nel piombo si dice prolunghi la vita e rafforzi le ossa.</p>
+          </div>
+          <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#9090b8">Agiel</strong> (intelligenza di Saturno) · <strong style="color:#9090b8">Zazel</strong> (spirito di Saturno) · <strong style="color:#9090b8">YHWH Elohim</strong> (nome divino). Quadrato magico: la somma di ogni riga, colonna e diagonale è 15. I numeri da 1 a 9 disposti nel quadrato di Saturno producono la somma totale di 45, numero sacro al pianeta.</p>
+          </div>
+          <div style="background:rgba(107,107,138,0.1);padding:14px;border-radius:8px;border:1px dashed #6b6b8a60;text-align:center">
+            <div style="font-size:10px;color:#6b6b8a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#9090b8;font-weight:600;margin:0">« Per Saturnum, fundamentum aeternum »</p>
+          </div>
+        </div>
+
+        <!-- GIOVE -->
+        <div class="card" style="border-color:#4a7fbf80;background:linear-gradient(145deg,#090e18,#050810)" id="pentacolo-giove">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#4a7fbf;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">II° Pentacolo Planetario</div>
+            <div id="svgGiove" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(74,127,191,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Giove ✦</h3>
+            <div style="font-size:13px;color:#4a7fbf;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♃ IUPPITER</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#4a7fbf,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Stagno</span>
+            <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Blu Reale · Viola</span>
+            <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Giovedì</span>
+            <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 4</span>
+          </div>
+          <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Giove è il Re degli Dèi, il Grande Benefattore, patrono di giustizia, espansione e abbondanza. Il suo pentacolo porta in sé il principio della <strong style="color:#7ab0e8">moltiplicazione generosa</strong>: chi lo porta con fede vede amplificarsi le proprie risorse materiali e spirituali. Nella Cabala corrisponde a Chesed, la Misericordia, quarta sephirah, sede dell'amore divino incondizionato e della benevolenza cosmica.</p>
+          </div>
+          <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Giove è il più celebre talismano di <strong style="color:#7ab0e8">prosperità e fortuna</strong> dell'intera tradizione salomoniana. Si usa per attirare ricchezza, onori, promozioni lavorative e vittorie legali. I maghi lo tracciano su lamine di stagno durante l'ora di Giove del giovedì mattina. È anche invocato per ottenere favori dai potenti, per la giustizia nelle cause difficili e per amplificare la generosità altrui verso di noi.</p>
+          </div>
+          <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#7ab0e8">Iophiel</strong> (intelligenza di Giove) · <strong style="color:#7ab0e8">Hismael</strong> (spirito di Giove) · <strong style="color:#7ab0e8">El</strong> (nome divino della Misericordia). Il quadrato magico di Giove è un quadrato 4×4 con somma di riga 34 e somma totale 136. Ogni numero è diverso e la simmetria del quadrato simboleggia l'ordine divino che distribuisce i doni.</p>
+          </div>
+          <div style="background:rgba(74,127,191,0.1);padding:14px;border-radius:8px;border:1px dashed #4a7fbf60;text-align:center">
+            <div style="font-size:10px;color:#4a7fbf;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#7ab0e8;font-weight:600;margin:0">« Iuppiter omnipotens, dator bonorum »</p>
+          </div>
+        </div>
+
+        <!-- MARTE -->
+        <div class="card" style="border-color:#c84a3a80;background:linear-gradient(145deg,#180a08,#0d0604)" id="pentacolo-marte">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#c84a3a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">III° Pentacolo Planetario</div>
+            <div id="svgMarte" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(200,74,58,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#e87a6a;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Marte ✦</h3>
+            <div style="font-size:13px;color:#c84a3a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♂ MARS</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#c84a3a,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Ferro</span>
+            <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Rosso Scarlatto</span>
+            <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Martedì</span>
+            <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 5</span>
+          </div>
+          <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Marte è il Guerriero Cosmico, il principe del fuoco e dell'azione. Il suo pentacolo non è solo uno strumento di violenza — è il sigillo della <strong style="color:#e87a6a">volontà che penetra la resistenza</strong>. Nella tradizione salomonica Marte governa il coraggio necessario per affrontare le paure più profonde. Corrisponde a Geburah nella Cabala, la Severità, la forza che taglia il superfluo e difende l'essenziale.</p>
+          </div>
+          <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Marte è usato per <strong style="color:#e87a6a">protezione in situazioni di pericolo</strong>, per vincere nelle competizioni e nei conflitti, e per rafforzare la determinazione personale. I guerrieri medievali lo incidevano sulle armature. È anche efficace per spezzare incantesimi ostili: la geometria stellare a cinque punte — il Pentagono di Marte — respinge le energie aggressive e le rimanda alla loro origine.</p>
+          </div>
+          <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#e87a6a">Graphiel</strong> (intelligenza di Marte) · <strong style="color:#e87a6a">Barzabel</strong> (spirito di Marte) · <strong style="color:#e87a6a">Elohim Gibor</strong> (Dio della forza, nome divino). Il quadrato 5×5 di Marte ha somma di riga 65 e somma totale 325. I 25 numeri disposti nel quadrato formano una struttura di simmetria perfetta che simboleggia la forza nell'ordine.</p>
+          </div>
+          <div style="background:rgba(200,74,58,0.1);padding:14px;border-radius:8px;border:1px dashed #c84a3a60;text-align:center">
+            <div style="font-size:10px;color:#c84a3a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#e87a6a;font-weight:600;margin:0">« Mars potens, vincere et superare »</p>
+          </div>
+        </div>
+
+        <!-- SOLE -->
+        <div class="card" style="border-color:#e6b80080;background:linear-gradient(145deg,#1a1400,#0d0a00)" id="pentacolo-sole">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#e6b800;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">IV° Pentacolo Planetario</div>
+            <div id="svgSole" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 22px rgba(230,184,0,0.7))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#ffd700;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo del Sole ✦</h3>
+            <div style="font-size:13px;color:#e6b800;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☉ SOL INVICTUS</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#e6b800,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Oro</span>
+            <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Oro · Giallo Solare</span>
+            <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Domenica</span>
+            <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 6</span>
+          </div>
+          <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Sole è il cuore pulsante del sistema planetario esoterico: rappresenta la <strong style="color:#ffd700">coscienza solare</strong>, la divinità immanente nel creato e la gloria che irradia senza trattenere nulla. Il suo pentacolo porta in sé il numero 6 — il numero della bellezza e dell'armonia, la Sephirah Tiphereth — centro assoluto dell'Albero della Vita, dove la forza divina si manifesta come luce visibile e comprensibile.</p>
+          </div>
+          <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo del Sole è il talismano della <strong style="color:#ffd700">gloria, del successo e del riconoscimento</strong>. Si invoca per ottenere fama, per essere favoriti dai potenti, per guarire malattie legate all'energia vitale. L'oro inciso con i 12 raggi solari durante la domenica all'alba crea uno dei talismani più potenti dell'intera tradizione salomoniana. È anche usato dagli esorcisti: la luce solare dissolve le tenebre dell'oppressione demoniaca.</p>
+          </div>
+          <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#ffd700">Nakhiel</strong> (intelligenza del Sole) · <strong style="color:#ffd700">Sorath</strong> (spirito del Sole) · <strong style="color:#ffd700">YHWH Eloah Va-Da'ath</strong> (nome divino di Tiphereth). Il quadrato 6×6 del Sole ha somma di riga 111 e somma totale 666 — numero mistico interpretato dai cabalisti come la pienezza della luce manifesta nel mondo materiale.</p>
+          </div>
+          <div style="background:rgba(230,184,0,0.1);padding:14px;border-radius:8px;border:1px dashed #e6b80060;text-align:center">
+            <div style="font-size:10px;color:#e6b800;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#ffd700;font-weight:600;margin:0">« Sol invictus, lux mundi »</p>
+          </div>
+        </div>
+
+        <!-- VENERE -->
+        <div class="card" style="border-color:#3da88e80;background:linear-gradient(145deg,#061410,#030a08)" id="pentacolo-venere">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#3da88e;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">V° Pentacolo Planetario</div>
+            <div id="svgVenere" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(61,168,142,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#6dd8be;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Venere ✦</h3>
+            <div style="font-size:13px;color:#3da88e;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♀ VENUS</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#3da88e,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Rame</span>
+            <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Verde · Smeraldo</span>
+            <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Venerdì</span>
+            <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 7</span>
+          </div>
+          <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Venere è la Dea dell'Amore, della Bellezza e dell'Armonia cosmica. Il suo pentacolo governa il principio di <strong style="color:#6dd8be">attrazione magnetica</strong>: come il magnete attira il ferro senza sforzo, così il portatore del sigillo venusiano diventa un centro di attrazione naturale per l'amore e le fortune. Nella Cabala corrisponde a Netzach, la Vittoria, settima sephirah, sede delle emozioni pure, dell'estetica e dell'istinto vitale.</p>
+          </div>
+          <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Venere è il talismano dell'<strong style="color:#6dd8be">amore, della bellezza e della fertilità</strong>. Si usa per attirare un partner, per rafforzare legami esistenti, per vincere il cuore di una persona amata. Inciso sul rame con inchiostro verde durante il venerdì mattina — mentre Venere è all'orizzonte — crea una potente calamita amorosa. È anche usato per lavori artistici, per il successo nella musica e nelle arti visive.</p>
+          </div>
+          <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#6dd8be">Hagiel</strong> (intelligenza di Venere) · <strong style="color:#6dd8be">Kedemel</strong> (spirito di Venere) · <strong style="color:#6dd8be">YHWH Tzabaoth</strong> (Signore degli Eserciti Celesti, nome di Netzach). Il quadrato 7×7 di Venere ha somma di riga 175 e somma totale 1225. Il numero 7 è sacro a Venere e alla luna crescente: sette note musicali, sette chakra, sette colori dell'iride.</p>
+          </div>
+          <div style="background:rgba(61,168,142,0.1);padding:14px;border-radius:8px;border:1px dashed #3da88e60;text-align:center">
+            <div style="font-size:10px;color:#3da88e;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#6dd8be;font-weight:600;margin:0">« Venus dea, amoris flamma »</p>
+          </div>
+        </div>
+
+        <!-- MERCURIO -->
+        <div class="card" style="border-color:#d97a3a80;background:linear-gradient(145deg,#160c00,#0a0600)" id="pentacolo-mercurio">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#d97a3a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">VI° Pentacolo Planetario</div>
+            <div id="svgMercurio" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(217,122,58,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#f0a060;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Mercurio ✦</h3>
+            <div style="font-size:13px;color:#d97a3a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☿ MERCURIUS</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#d97a3a,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Argento-Mercurio</span>
+            <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Arancione · Giallo</span>
+            <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Mercoledì</span>
+            <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 8</span>
+          </div>
+          <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Mercurio è il Messaggero degli Dèi, il principio dell'<strong style="color:#f0a060">intelligenza che collega</strong>: collega la terra al cielo, il pensiero alla parola, l'intuizione all'azione. Il suo pentacolo porta in sé la rapidità dell'ermes, la capacità di muoversi tra i mondi senza perdere mai l'orientamento. Nella Cabala corrisponde a Hod, lo Splendore, ottava sephirah, sede della logica, della magia pratica e delle arti divinatorie.</p>
+          </div>
+          <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Mercurio è il talismano dello <strong style="color:#f0a060">studio, della parola e del commercio</strong>. Si usa per superare esami, per migliorare la memoria e la capacità di apprendimento, per favorire trattative commerciali e contratti vantaggiosi. I viaggiatori lo portano come protezione durante i cammini. Gli scrittori e gli oratori lo invocano per trovare le parole giuste. È anche il sigillo della divinazione: amplifica i poteri profetici di chi lo porta.</p>
+          </div>
+          <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#f0a060">Tiriel</strong> (intelligenza di Mercurio) · <strong style="color:#f0a060">Taphthartharath</strong> (spirito di Mercurio) · <strong style="color:#f0a060">Elohim Tzabaoth</strong> (Dio degli Eserciti, nome di Hod). Il quadrato 8×8 di Mercurio ha somma di riga 260 e somma totale 2080. Le sue 64 celle corrispondono alle 64 caselle degli scacchi — il gioco di Mercurio per eccellenza.</p>
+          </div>
+          <div style="background:rgba(217,122,58,0.1);padding:14px;border-radius:8px;border:1px dashed #d97a3a60;text-align:center">
+            <div style="font-size:10px;color:#d97a3a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#f0a060;font-weight:600;margin:0">« Mercurius velox, sermo et sapientia »</p>
+          </div>
+        </div>
+
+        <!-- LUNA -->
+        <div class="card" style="border-color:#b8a8d480;background:linear-gradient(145deg,#0a0818,#060510)" id="pentacolo-luna">
+          <div style="text-align:center;padding:8px 0 18px">
+            <div style="font-size:11px;color:#b8a8d4;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">VII° Pentacolo Planetario</div>
+            <div id="svgLuna" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(184,168,212,0.6))"></div>
+            <h3 style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo della Luna ✦</h3>
+            <div style="font-size:13px;color:#b8a8d4;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☾ LUNA MATER</div>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#b8a8d4,transparent);margin-bottom:14px;opacity:.5"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
+            <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Argento</span>
+            <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Argento · Bianco</span>
+            <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Lunedì</span>
+            <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 9</span>
+          </div>
+          <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">La Luna è il Grande Specchio del cosmo, il principio del <strong style="color:#d8c8f0">mistero riflesso</strong>: non produce luce propria ma la trasforma, la modula e la riversa nel mondo delle ombre. Il suo pentacolo governa le maree dell'inconscio, i cicli del tempo e le porte del sogno. Nella Cabala corrisponde a Yesod, il Fondamento, nona sephirah, custode dell'immaginazione cosmica e del passaggio tra il visibile e l'invisibile.</p>
+          </div>
+          <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo della Luna è il talismano dell'<strong style="color:#d8c8f0">intuizione, dei sogni profetici e della divinazione</strong>. Si usa per amplificare i poteri psichici, per ricevere sogni guida, per proteggersi durante i viaggi notturni — fisici e astrali. Inciso sull'argento durante la luna crescente, apre le porte della percezione extrasensoriale. È anche il sigillo della protezione degli anziani e dei bambini, i più vulnerabili alle energie lunari destabilizzate.</p>
+          </div>
+          <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
+            <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
+            <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#d8c8f0">Malka be-Tarshishim ve-Ruachoth ha-Schahalim</strong> (intelligenza della Luna) · <strong style="color:#d8c8f0">Chasmodai</strong> (spirito della Luna) · <strong style="color:#d8c8f0">Shaddai El Chai</strong> (Dio Onnipotente Vivente, nome di Yesod). Il quadrato 9×9 della Luna ha somma di riga 369 e somma totale 3321. Il 9 è il numero della Luna: ogni multiplo di 9 ridotto per somma delle cifre torna a 9 — l'infinito che si riflette su sé stesso.</p>
+          </div>
+          <div style="background:rgba(184,168,212,0.1);padding:14px;border-radius:8px;border:1px dashed #b8a8d460;text-align:center">
+            <div style="font-size:10px;color:#b8a8d4;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
+            <p style="font-style:italic;font-size:14px;color:#d8c8f0;font-weight:600;margin:0">« Luna mater, regina noctis »</p>
+          </div>
+        </div>
+
+        <!-- FOOTER ENCICLOPEDIA -->
+        <div class="card" style="border-color:var(--gold-dim);text-align:center;padding:18px">
+          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.75">
+            I sette Pentacoli di Re Salomone formano un sistema completo di magia planetaria trasmesso attraverso i secoli nei testi della <em>Clavicula Salomonis</em>, del <em>Lemegeton</em> e delle tradizioni ermetiche dell'Ordine della Golden Dawn. Il loro uso richiede rispetto, intenzione pura e consapevolezza delle proprie responsabilità spirituali.
+          </p>
+          <div style="margin-top:12px;font-family:'Cinzel',serif;font-size:10px;color:var(--gold-dim);letter-spacing:2px">✦ Saturnо · Giove · Marte · Sole · Venere · Mercurio · Luna ✦</div>
+        </div>
       </div>
+      <!-- ═══ FINE ENCICLOPEDIA PENTACOLI ═══ -->
+      </div><!-- fine magiaPanel-sigilli -->
 
     </div>
 
@@ -2807,7 +3080,7 @@ function chiudiDisclaimer(){
         style="font-size:10px;color:var(--muted);cursor:pointer;letter-spacing:.8px;text-decoration:underline;text-underline-offset:3px">
         Privacy Policy
       </a>
-      <a href="./termini.html"
+      <a href="#termini" onclick="event.preventDefault();showLegal('termini')"
         style="font-size:10px;color:var(--muted);cursor:pointer;letter-spacing:.8px;text-decoration:underline;text-underline-offset:3px">
         Termini di Servizio
       </a>
@@ -2881,9 +3154,182 @@ function chiudiDisclaimer(){
     <input type="text" id="wName" placeholder="Come vuoi essere chiamato/a?" maxlength="20">
 
     <div style="display:flex;gap:6px;margin:5px 0" data-testid="welcome-date-selects">
-      <select id="wDay" aria-label="Giorno" data-testid="welcome-day-select" style="flex:1"></select>
-      <select id="wMonth" aria-label="Mese" data-testid="welcome-month-select" style="flex:1.4"></select>
-      <select id="wYear" aria-label="Anno" data-testid="welcome-year-select" style="flex:1.1"></select>
+      <select id="wDay" aria-label="Giorno" data-testid="welcome-day-select" style="flex:1" data-filled="1" onchange="syncWelcomeDate()"><option value="">— Giorno —</option>
+      <option value="01">1</option>
+      <option value="02">2</option>
+      <option value="03">3</option>
+      <option value="04">4</option>
+      <option value="05">5</option>
+      <option value="06">6</option>
+      <option value="07">7</option>
+      <option value="08">8</option>
+      <option value="09">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      </select>
+      <select id="wMonth" aria-label="Mese" data-testid="welcome-month-select" style="flex:1.4" data-filled="1" onchange="syncWelcomeDate()"><option value="">— Mese —</option>
+      <option value="01">Gennaio</option>
+      <option value="02">Febbraio</option>
+      <option value="03">Marzo</option>
+      <option value="04">Aprile</option>
+      <option value="05">Maggio</option>
+      <option value="06">Giugno</option>
+      <option value="07">Luglio</option>
+      <option value="08">Agosto</option>
+      <option value="09">Settembre</option>
+      <option value="10">Ottobre</option>
+      <option value="11">Novembre</option>
+      <option value="12">Dicembre</option>
+      </select>
+      <select id="wYear" aria-label="Anno" data-testid="welcome-year-select" style="flex:1.1" data-filled="1" onchange="syncWelcomeDate()"><option value="">— Anno —</option>
+      <option value="2026">2026</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      <option value="2011">2011</option>
+      <option value="2010">2010</option>
+      <option value="2009">2009</option>
+      <option value="2008">2008</option>
+      <option value="2007">2007</option>
+      <option value="2006">2006</option>
+      <option value="2005">2005</option>
+      <option value="2004">2004</option>
+      <option value="2003">2003</option>
+      <option value="2002">2002</option>
+      <option value="2001">2001</option>
+      <option value="2000">2000</option>
+      <option value="1999">1999</option>
+      <option value="1998">1998</option>
+      <option value="1997">1997</option>
+      <option value="1996">1996</option>
+      <option value="1995">1995</option>
+      <option value="1994">1994</option>
+      <option value="1993">1993</option>
+      <option value="1992">1992</option>
+      <option value="1991">1991</option>
+      <option value="1990">1990</option>
+      <option value="1989">1989</option>
+      <option value="1988">1988</option>
+      <option value="1987">1987</option>
+      <option value="1986">1986</option>
+      <option value="1985">1985</option>
+      <option value="1984">1984</option>
+      <option value="1983">1983</option>
+      <option value="1982">1982</option>
+      <option value="1981">1981</option>
+      <option value="1980">1980</option>
+      <option value="1979">1979</option>
+      <option value="1978">1978</option>
+      <option value="1977">1977</option>
+      <option value="1976">1976</option>
+      <option value="1975">1975</option>
+      <option value="1974">1974</option>
+      <option value="1973">1973</option>
+      <option value="1972">1972</option>
+      <option value="1971">1971</option>
+      <option value="1970">1970</option>
+      <option value="1969">1969</option>
+      <option value="1968">1968</option>
+      <option value="1967">1967</option>
+      <option value="1966">1966</option>
+      <option value="1965">1965</option>
+      <option value="1964">1964</option>
+      <option value="1963">1963</option>
+      <option value="1962">1962</option>
+      <option value="1961">1961</option>
+      <option value="1960">1960</option>
+      <option value="1959">1959</option>
+      <option value="1958">1958</option>
+      <option value="1957">1957</option>
+      <option value="1956">1956</option>
+      <option value="1955">1955</option>
+      <option value="1954">1954</option>
+      <option value="1953">1953</option>
+      <option value="1952">1952</option>
+      <option value="1951">1951</option>
+      <option value="1950">1950</option>
+      <option value="1949">1949</option>
+      <option value="1948">1948</option>
+      <option value="1947">1947</option>
+      <option value="1946">1946</option>
+      <option value="1945">1945</option>
+      <option value="1944">1944</option>
+      <option value="1943">1943</option>
+      <option value="1942">1942</option>
+      <option value="1941">1941</option>
+      <option value="1940">1940</option>
+      <option value="1939">1939</option>
+      <option value="1938">1938</option>
+      <option value="1937">1937</option>
+      <option value="1936">1936</option>
+      <option value="1935">1935</option>
+      <option value="1934">1934</option>
+      <option value="1933">1933</option>
+      <option value="1932">1932</option>
+      <option value="1931">1931</option>
+      <option value="1930">1930</option>
+      <option value="1929">1929</option>
+      <option value="1928">1928</option>
+      <option value="1927">1927</option>
+      <option value="1926">1926</option>
+      <option value="1925">1925</option>
+      <option value="1924">1924</option>
+      <option value="1923">1923</option>
+      <option value="1922">1922</option>
+      <option value="1921">1921</option>
+      <option value="1920">1920</option>
+      <option value="1919">1919</option>
+      <option value="1918">1918</option>
+      <option value="1917">1917</option>
+      <option value="1916">1916</option>
+      <option value="1915">1915</option>
+      <option value="1914">1914</option>
+      <option value="1913">1913</option>
+      <option value="1912">1912</option>
+      <option value="1911">1911</option>
+      <option value="1910">1910</option>
+      <option value="1909">1909</option>
+      <option value="1908">1908</option>
+      <option value="1907">1907</option>
+      <option value="1906">1906</option>
+      <option value="1905">1905</option>
+      <option value="1904">1904</option>
+      <option value="1903">1903</option>
+      <option value="1902">1902</option>
+      <option value="1901">1901</option>
+      <option value="1900">1900</option>
+      </select>
     </div>
 
     <input type="hidden" id="wDate" autocomplete="bday">
@@ -2894,6 +3340,102 @@ function chiudiDisclaimer(){
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- ═══ ONBOARDING STEP 2 — Interesse Principale ═══ -->
+<div id="onboardingInteresse" style="display:none;position:fixed;inset:0;background:rgba(5,2,15,.97);z-index:9998;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto">
+  <div style="max-width:440px;width:100%;margin:auto">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:40px;margin-bottom:10px;animation:logoGlow 4s infinite">✦</div>
+      <div style="font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:2px;margin-bottom:6px" id="onbWelcomeMsg">Benvenuto</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--muted);line-height:1.6">Le stelle ti hanno guidato fin qui.<br>Dimmi dove vuoi iniziare il tuo cammino.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+      <button class="onb-card" data-interest="divinazione" onclick="selectInterest(this)">
+        <span class="onb-ico">🔮</span>
+        <span class="onb-label">Divinazione</span>
+        <span class="onb-sub">Tarocchi, Rune, I Ching</span>
+      </button>
+      <button class="onb-card" data-interest="astrologia" onclick="selectInterest(this)">
+        <span class="onb-ico">⭐</span>
+        <span class="onb-label">Astrologia</span>
+        <span class="onb-sub">Oroscopo, Pianeti, Luna</span>
+      </button>
+      <button class="onb-card" data-interest="amore" onclick="selectInterest(this)">
+        <span class="onb-ico">💜</span>
+        <span class="onb-label">Amore e Anime</span>
+        <span class="onb-sub">Compatibilità, Cuore</span>
+      </button>
+      <button class="onb-card" data-interest="spiritualita" onclick="selectInterest(this)">
+        <span class="onb-ico">🌙</span>
+        <span class="onb-label">Spiritualità</span>
+        <span class="onb-sub">Chakra, Meditazione, Sogni</span>
+      </button>
+      <button class="onb-card" data-interest="magia" onclick="selectInterest(this)" style="grid-column:span 2">
+        <span class="onb-ico">🕯️</span>
+        <span class="onb-label">Magia e Rituali</span>
+        <span class="onb-sub">Grimorio, Wicca, Sigilli, Alchimia</span>
+      </button>
+    </div>
+    <button class="btn" id="onbContinueBtn" onclick="completeOnboarding()" style="opacity:.4;pointer-events:none">✨ Entra nel Tempio</button>
+    <p style="text-align:center;font-size:10px;color:#3a2e50;margin-top:10px;cursor:pointer" onclick="skipOnboarding()">Salta — mostrami tutto</p>
+  </div>
+</div>
+
+<!-- ═══ WOW SCREEN — Messaggio Cosmico del Giorno ═══ -->
+<div id="wowScreen" style="display:none;position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,#1a0d35 0%,#04020c 70%);z-index:9997;align-items:center;justify-content:center;padding:20px;overflow-y:auto">
+  <div style="max-width:440px;width:100%;text-align:center;margin:auto">
+    <div style="font-size:11px;color:var(--muted);letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:18px;text-transform:uppercase" id="wowDate"></div>
+    <div style="font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:2px;margin-bottom:4px">Il tuo messaggio cosmico,</div>
+    <div style="font-family:'Cinzel',serif;font-size:24px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:22px" id="wowName"></div>
+    <div style="background:linear-gradient(145deg,#1a0d35,#080418);border:1.5px solid var(--gold-dim);border-radius:20px;padding:20px 16px;margin-bottom:14px">
+      <div style="font-size:10px;letter-spacing:3px;color:var(--muted);font-family:'Cinzel',serif;margin-bottom:10px;text-transform:uppercase">✦ Arcano del Giorno ✦</div>
+      <div style="font-size:52px;margin-bottom:8px;animation:logoGlow 4s infinite" id="wowCardEmoji">🃏</div>
+      <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1px;margin-bottom:6px" id="wowCardName"></div>
+      <div style="font-size:13px;color:var(--text);line-height:1.7;font-style:italic" id="wowCardMsg"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:18px">
+      <div style="background:rgba(20,12,36,.7);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:12px 6px;text-align:center">
+        <div style="font-size:22px;margin-bottom:4px" id="wowMoonEmoji">🌕</div>
+        <div style="font-size:9px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;margin-bottom:3px">LUNA</div>
+        <div style="font-size:12px;color:var(--text)" id="wowMoonName"></div>
+      </div>
+      <div style="background:rgba(20,12,36,.7);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:12px 6px;text-align:center">
+        <div style="font-size:22px;margin-bottom:4px">✨</div>
+        <div style="font-size:9px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;margin-bottom:3px">NUMERO GUIDA</div>
+        <div style="font-family:'Cinzel',serif;font-size:26px;color:var(--gold);font-weight:700" id="wowNum"></div>
+      </div>
+      <div style="background:rgba(20,12,36,.7);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:12px 6px;text-align:center">
+        <div style="font-size:22px;margin-bottom:4px" id="wowSegnoEmoji">♈</div>
+        <div style="font-size:9px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;margin-bottom:3px">SEGNO</div>
+        <div style="font-size:11px;color:var(--text)" id="wowSegnoName"></div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(184,134,11,.05));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:14px;margin-bottom:20px;font-style:italic;font-size:14px;color:var(--text);line-height:1.8" id="wowEnergy"></div>
+    <button class="btn" onclick="enterApp()">✦ Entra nel Tempio delle Stelle ✦</button>
+    <p style="font-size:10px;color:#3a2e50;margin-top:12px">Questo messaggio si rinnova ogni giorno all'alba</p>
+  </div>
+</div>
+
+<!-- ═══ CONSULENTE MISTICO MODAL ═══ -->
+<div class="modal" id="modalConsulente">
+  <div class="mbox" style="max-width:420px;position:relative">
+    <button onclick="document.getElementById('modalConsulente').classList.remove('open')" style="position:absolute;top:12px;right:14px;background:transparent;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;z-index:2">✕</button>
+    <div style="text-align:center;margin-bottom:16px">
+      <div style="font-size:40px;margin-bottom:8px;animation:logoGlow 4s infinite">🔮</div>
+      <h2 style="font-size:17px;margin-bottom:4px">Consulente Mistico</h2>
+      <div style="font-size:11px;color:var(--muted);letter-spacing:1px">Tarocchi · Astrologia · Numerologia · Energia</div>
+    </div>
+    <textarea id="consultInput" placeholder="Descrivi la tua situazione o fai la tua domanda all'universo..." style="height:90px;margin-bottom:12px"></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+      <button class="consult-topic active" data-t="amore" onclick="selectConsultTopic(this)">💜 Amore</button>
+      <button class="consult-topic" data-t="lavoro" onclick="selectConsultTopic(this)">💼 Lavoro</button>
+      <button class="consult-topic" data-t="salute" onclick="selectConsultTopic(this)">🌿 Salute</button>
+      <button class="consult-topic" data-t="destino" onclick="selectConsultTopic(this)">⭐ Destino</button>
+    </div>
+    <button class="btn" onclick="runConsulente()" id="consultBtn">✨ Chiedi all'Universo</button>
+    <div id="consultResult" style="display:none;margin-top:16px"></div>
+  </div>
+</div>
 
 <script>'use strict';
 
@@ -4266,7 +4808,7 @@ function populateWelcomeDateSelects(){
   const mSel=document.getElementById('wMonth');
   const ySel=document.getElementById('wYear');
   if(!dSel||!mSel||!ySel) return;
-  if(dSel.dataset.filled==='1') return; // evita doppia popolazione
+  if(dSel.dataset.filled==='1'){ [dSel,mSel,ySel].forEach(el=>{ if(!el.dataset.errBound2){ el.addEventListener('change',syncWelcomeDate); el.dataset.errBound2='1'; } }); return; } // già popolati
   const mesi=['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
 
   dSel.innerHTML='<option value="" selected>— Giorno —</option>';
@@ -4316,10 +4858,7 @@ function completeWelcome(){
   try{
   const dSel = document.getElementById('wDay');
   if(dSel && (!dSel.dataset.filled || dSel.options.length <= 1)){
-  populateWelcomeDateSelects();
-
-  toast('📅 Seleziona giorno, mese e anno');
-  return;
+    populateWelcomeDateSelects();
   }
   }catch(e){}
 
@@ -4391,17 +4930,28 @@ function completeWelcome(){
   }catch(e){}
   try{ burst(); }catch(e){}
   toast('✨ Le stelle ti danno il benvenuto, '+name+'!');
+  // ═══ ONBOARDING: mostra selezione interesse dopo benvenuto ═══
+  setTimeout(function(){
+    var hasOnboard = localStorage.getItem('myst_onboard_v1');
+    if(!hasOnboard) showOnboarding(name);
+  }, 900);
   }, 80);
 }
 
 function loadProfile(){
   const raw=_lsGet(CFG.kProfilo);
-  if(!raw) return;
+  if(!raw){
+    // Nuovo utente: mostra app (dietro al modal welcome che è già open)
+    document.getElementById('app').style.visibility='visible';
+    return;
+  }
   try{
   const p=JSON.parse(raw);
   applyProfile(p);
   $('#modalWelcome').classList.remove('open');
-  }catch(e){ _lsRemove(CFG.kProfilo); }
+  // Profilo già presente: mostra app senza flicker
+  document.getElementById('app').style.visibility='visible';
+  }catch(e){ _lsRemove(CFG.kProfilo); document.getElementById('app').style.visibility='visible'; }
 }
 
 function refreshWisdom(){
@@ -5394,6 +5944,728 @@ window.addEventListener('popstate', function(event) {
 
 try{ window.history.replaceState({view: 'profilo', type: 'section'}, '', '#profilo'); }catch(e){}
 
+/* ═══════════════════════════════════════════════
+   ONBOARDING v2 — Interesse + WOW Screen + Consulente
+   ═══════════════════════════════════════════════ */
+
+const ONBOARD_KEY = 'myst_onboard_v1';
+const WOW_KEY     = 'myst_wow_seen_v1';
+
+/* ---------- ONBOARDING ---------- */
+function showOnboarding(nome) {
+  var el = document.getElementById('onboardingInteresse');
+  if (!el) return;
+  var msg = document.getElementById('onbWelcomeMsg');
+  if (msg) msg.textContent = nome ? '✦ Benvenuto, ' + nome : 'Benvenuto in MYSTICA';
+  el.style.display = 'flex';
+}
+
+function selectInterest(btn) {
+  document.querySelectorAll('.onb-card').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  var cont = document.getElementById('onbContinueBtn');
+  if (cont) { cont.style.opacity = '1'; cont.style.pointerEvents = 'auto'; }
+}
+
+function completeOnboarding() {
+  var sel = document.querySelector('.onb-card.selected');
+  var interest = sel ? sel.dataset.interest : 'tutto';
+  try { localStorage.setItem(ONBOARD_KEY, interest); } catch(e){}
+  applyInterestPriority(interest);
+  var el = document.getElementById('onboardingInteresse');
+  if (el) { el.style.opacity='0'; el.style.transition='opacity .4s'; setTimeout(function(){ el.style.display='none'; el.style.opacity=''; }, 400); }
+  showWowScreen();
+}
+
+function skipOnboarding() {
+  try { localStorage.setItem(ONBOARD_KEY, 'tutto'); } catch(e){}
+  var el = document.getElementById('onboardingInteresse');
+  if (el) el.style.display = 'none';
+  showWowScreen();
+}
+
+/* Riordina la home in base all'interesse scelto */
+function applyInterestPriority(interest) {
+  try {
+    var sectionMap = {
+      'divinazione': ['🃏 Divinazione','✨ Oracoli Antichi','🌌 Astrologia & Destino'],
+      'astrologia':  ['🌌 Astrologia & Destino','🔯 Profilo Mistico','🃏 Divinazione'],
+      'amore':       ['💜 Amore & Relazioni','🌌 Astrologia & Destino','🃏 Divinazione'],
+      'spiritualita':['🧘 Mente & Spirito','✨ Oracoli Antichi','🌌 Astrologia & Destino'],
+      'magia':       ['🌿 Magia & Rituali','✨ Oracoli Antichi','🃏 Divinazione']
+    };
+    // Store preference for dashboard reorder on next nav('profilo')
+    try { localStorage.setItem('myst_interest', interest); } catch(e){}
+  } catch(e) {}
+}
+
+/* ---------- WOW SCREEN ---------- */
+var _arcaniMaggiori = [
+  {n:'Il Matto',       e:'🃏', msg:`Ogni viaggio inizia con un passo verso l'ignoto. Oggi abbraccia l'incertezza con coraggio.`},
+  {n:'Il Mago',        e:'⚗️', msg:`Hai tutti gli strumenti di cui hai bisogno. La tua volontà è la tua bacchetta magica.`},
+  {n:'La Papessa',     e:'📖', msg:`Il silenzio conosce le risposte. Ascolta la voce interiore prima di agire.`},
+  {n:`L'Imperatrice`, e:'🌹', msg:`Abbondanza e creatività fioriscono quando ti lasci nutrire dalla terra e dall'amore.`},
+  {n:`L'Imperatore`,  e:'👑', msg:`Struttura e disciplina sono fondamenta di libertà. Costruisci oggi ciò che durerà.`},
+  {n:'Il Papa',        e:'🗝️', msg:`La tradizione nasconde saggezze profonde. Cerca il maestro dentro e fuori di te.`},
+  {n:'Gli Innamorati', e:'💑', msg:`Le scelte del cuore definiscono il cammino. Scegli con amore, non con paura.`},
+  {n:'Il Carro',       e:'🏆', msg:`La vittoria appartiene a chi mantiene il controllo delle proprie forze opposte.`},
+  {n:'La Forza',       e:'🦁', msg:`La vera forza non urla — si manifesta nella dolcezza e nella pazienza.`},
+  {n:`L'Eremita`,     e:'🕯️', msg:`Ritirati dal rumore del mondo per trovare la tua luce interiore.`},
+  {n:'La Ruota',       e:'☸️', msg:`I cicli girano. Ciò che sale deve scendere, ciò che cade tornerà a salire.`},
+  {n:'La Giustizia',   e:'⚖️', msg:`Ogni azione porta il suo seme di conseguenza. Agisci con integrità.`},
+  {n:`L'Appeso`,      e:'🔮', msg:`La resa è il portale verso una nuova prospettiva. Lascia andare ciò che non serve.`},
+  {n:'La Morte',       e:'🦋', msg:`Ogni fine è un inizio travestito. La trasformazione è la legge dell'universo.`},
+  {n:'La Temperanza',  e:'⚗️', msg:`L'alchimia della vita richiede equilibrio. Mescola con cura le tue energie.`},
+  {n:'Il Diavolo',     e:'🔗', msg:`Riconosci le catene che porti volentieri. La libertà inizia dalla consapevolezza.`},
+  {n:'La Torre',       e:'⚡', msg:`Ciò che crolla era costruito su basi false. Dal crollo nasce la verità.`},
+  {n:'Le Stelle',      e:'⭐', msg:`Sei guidato dalla luce del cosmo. Confida nel tuo percorso con speranza aperta.`},
+  {n:'La Luna',        e:'🌙', msg:`Le illusioni del subconscio chiedono attenzione. Non tutto è come appare.`},
+  {n:'Il Sole',        e:'☀️', msg:`Chiarezza, gioia e vitalità illuminano il tuo giorno. Brilla senza riserve.`},
+  {n:'Il Giudizio',    e:'📯', msg:`È il momento della resa dei conti e del risveglio. Ascolta la chiamata interiore.`},
+  {n:'Il Mondo',       e:'🌍', msg:`Un ciclo si compie nella sua pienezza. Celebra quanto hai costruito e cresciuto.`}
+];
+
+var _fasi = [
+  {e:'🌑',n:'Luna Nuova'},    {e:'🌒',n:'Luna Crescente'},
+  {e:'🌓',n:'Primo Quarto'}, {e:'🌔',n:'Gibbosa Crescente'},
+  {e:'🌕',n:'Luna Piena'},   {e:'🌖',n:'Gibbosa Calante'},
+  {e:'🌗',n:'Ultimo Quarto'},{e:'🌘',n:'Luna Calante'}
+];
+
+var _energieGiorno = [
+  'Il cosmo soffia venti di cambiamento. Resta aperto e adattati con grazia.',
+  `Un'energia di protezione ti circonda. Fidati del tuo istinto oggi.`,
+  'La creatività scorre forte. Esprimi chi sei senza filtri.',
+  `Giornata di riflessione profonda. Le risposte vengono dall'interno.`,
+  'Le connessioni umane portano doni inaspettati. Apri il cuore.',
+  `Il momento favorisce l'azione decisa. Agisci su ciò che rimandi.`,
+  'Energie lunari potenti amplificano le emozioni. Naviga con consapevolezza.',
+  'Una sincronicità ti aspetta oggi. Presta attenzione ai segni.',
+  'È il giorno ideale per rilasciare ciò che non ti appartiene più.',
+  `L'abbondanza è vicina a chi si muove con fiducia e gratitudine.`
+];
+
+function _dailySeedN(salt) {
+  var d = new Date();
+  return d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate() + (salt||0);
+}
+function _seededIdx(arr, seed) {
+  return ((seed % arr.length) + arr.length) % arr.length;
+}
+
+function showWowScreen() {
+  try {
+    var raw = localStorage.getItem('myst_v3_profile');
+    var p = raw ? JSON.parse(raw) : null;
+    var nome = p ? p.name : 'Viandante';
+    var segno = p ? (DB.segni[p.segno] || null) : null;
+
+    // Arcano del giorno (seed giornaliero)
+    var cardIdx = _seededIdx(_arcaniMaggiori, _dailySeedN(7));
+    var carta = _arcaniMaggiori[cardIdx];
+
+    // Luna
+    var lunaIdx = _seededIdx(_fasi, _dailySeedN(3));
+    var luna = _fasi[lunaIdx];
+
+    // Numero guida (1-9, seed giornaliero)
+    var num = (_dailySeedN(11) % 9) + 1;
+
+    // Energia
+    var energiaIdx = _seededIdx(_energieGiorno, _dailySeedN(5));
+
+    // Popola
+    var d = new Date();
+    var dateStr = d.toLocaleDateString('it-IT', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+    dateStr = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+
+    document.getElementById('wowDate').textContent = dateStr;
+    document.getElementById('wowName').textContent = nome;
+    document.getElementById('wowCardEmoji').textContent = carta.e;
+    document.getElementById('wowCardName').textContent = carta.n;
+    document.getElementById('wowCardMsg').textContent = carta.msg;
+    document.getElementById('wowMoonEmoji').textContent = luna.e;
+    document.getElementById('wowMoonName').textContent = luna.n;
+    document.getElementById('wowNum').textContent = num;
+    document.getElementById('wowSegnoEmoji').textContent = segno ? segno.e : '✨';
+    document.getElementById('wowSegnoName').textContent = segno ? segno.n : (p ? p.segno : '—');
+    document.getElementById('wowEnergy').textContent = '"' + _energieGiorno[energiaIdx] + '"';
+
+    var ws = document.getElementById('wowScreen');
+    if (ws) { ws.style.display = 'flex'; }
+  } catch(e) { console.warn('WOW screen error:', e); enterApp(); }
+}
+
+function enterApp() {
+  var ws = document.getElementById('wowScreen');
+  if (ws) { ws.style.opacity='0'; ws.style.transition='opacity .5s'; setTimeout(function(){ ws.style.display='none'; ws.style.opacity=''; }, 500); }
+  try { burst(); } catch(e){}
+}
+
+/* Hook completeWelcome per lanciare onboarding dopo */
+var _origCompleteWelcome = completeWelcome;
+// Override dopo definizione — vedi initOnboardingFlow()
+function initOnboardingFlow() {
+  // Se profilo già salvato E onboarding già fatto: skip tutto
+  var hasProfile  = !!localStorage.getItem('myst_v3_profile');
+  var hasOnboard  = !!localStorage.getItem(ONBOARD_KEY);
+  var wowSeenDate = localStorage.getItem(WOW_KEY);
+  var todayStr    = new Date().toISOString().split('T')[0];
+
+  if (hasProfile && hasOnboard) {
+    // Mostra WOW screen solo una volta al giorno
+    if (wowSeenDate !== todayStr) {
+      localStorage.setItem(WOW_KEY, todayStr);
+      setTimeout(showWowScreen, 600);
+    }
+    return;
+  }
+
+  if (hasProfile && !hasOnboard) {
+    // Ha profilo ma non ha fatto onboarding interesse
+    var raw = localStorage.getItem('myst_v3_profile');
+    var p = null; try { p = JSON.parse(raw); } catch(e){}
+    setTimeout(function(){ showOnboarding(p ? p.name : ''); }, 400);
+    return;
+  }
+  // Nuovo utente: il modalWelcome gestisce la raccolta dati.
+  // Dopo completeWelcome() hook mostra onboarding.
+}
+
+/* Patch completeWelcome per iniettare onboarding dopo */
+/* patch rimossa: onboarding iniettato direttamente in completeWelcome */
+
+/* ---------- CONSULENTE MISTICO ---------- */
+var _consultTopicActive = 'amore';
+
+function selectConsultTopic(btn) {
+  document.querySelectorAll('.consult-topic').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  _consultTopicActive = btn.dataset.t;
+}
+
+function openConsulente() {
+  document.getElementById('consultResult').style.display = 'none';
+  document.getElementById('consultInput').value = '';
+  document.getElementById('modalConsulente').classList.add('open');
+}
+
+function _detectKeywords(txt) {
+  var t = txt.toLowerCase();
+  var KMAP = [
+    { keys: ['amore','amo','innamorat','cuore','sentimento','lei','lui','ragazzo','ragazza','fidanzat','ex','storia','relazione','coppia','matrimonio','sposo','sposa','sposare','romantico','bacio','ti amo','mi ama','mi vuole','anima gemella','flirt','crush','piacere','attrazione','ci sto','ci sono','vuole bene','ci tengo','gelosia','geloso','gelosa','possessivo','possessiva','appuntamento','uscire insieme','incontro','primo bacio','incontro romantico','storia seria','convivenza','convivere','vivere insieme','partner','compagno','compagna'], tema: 'amore' },
+    { keys: ['tradimento','tradisce','tradito','tradita','cornuto','cornuta','inganna','infedele','bugiardo','bugiarda','mente','mentito','nasconde','doppia vita','segreto','nascosto','messaggi nascosti','altra persona','altro uomo','altra donna','sospetto','sospetti','scoperto','scoperta','tradisce davvero','mi sta ingannando'], tema: 'tradimento' },
+    { keys: ['separazione','separare','lasciar','lasciato','lasciata','divorzio','si separa','rottura','finita','addio','perso','persa','ci lasciamo','voglio lasciarlo','voglio lasciarla','lasciare','andarsene','chiudere','fine della storia','rompere','si lasceranno','litigio grave','crisi di coppia'], tema: 'separazione' },
+    { keys: ['ritorno','torna','torner','ritornare','riavvicinamento','riconquistare','riconquista','vuole tornare','sta tornando','mi scrive','mi cerca','mi pensa','tornare insieme','ricominciare','riprendere','secondo tentativo','ci riprovo','lo riconquisto','la riconquisto'], tema: 'ritorno' },
+    { keys: ['lavoro','carriera','impiego','ufficio','azienda','capo','collega','licenziat','assunto','assunta','contratto','stipendio','professione','mestiere','dimissioni','concorso','colloquio','curriculum','trovare lavoro','nuovo lavoro','cambio lavoro','lavorare','freelance','autonomo','partita iva','aprire attivita','attivita propria','business','progetto lavorativo','scadenza','obiettivo professionale'], tema: 'lavoro' },
+    { keys: ['promoss','promozione','avanzamento','aumento stipendio','aumento di stipendio','scatto','riconoscimento professionale','crescita carriera','posizione superiore','responsabilita maggiore','diventare capo','leadership','manager','direttore'], tema: 'promozione' },
+    { keys: ['soldi','denaro','finanzi','economico','economica','guadagno','guadagnare','ricchezza','povero','povera','debito','debiti','prestito','investimento','eredit','prosperit','stipendio','entrate','uscite','risparmio','risparmiare','conto in banca','budget','spese','bollette','affitti','mutuo','finanziamento','criptovalute','azioni','borsa','crypto','bitcoin','rendita','passivo','guadagnare online'], tema: 'soldi' },
+    { keys: ['salute','malattia','malato','malata','guarire','guarigione','dolore','ospedale','medico','dottore','diagnosi','cura','terapia','operazione','intervento','esami','analisi','risultati','referto','sintomi','febbre','stanchezza','affaticamento','disturbo','psicolog','psichiatra','terapeuta','ansia da salute','ipocondria','corpo','fisico','benessere fisico'], tema: 'salute' },
+    { keys: ['gravidanza','incinta','aspetto un bambino','aspetto una bambina','sono incinta','sto aspettando','maternit','paternit','avere figli','neonato','concepire','test gravidanza','ciclo','ovulazione','fertilita','ivf','fecondazione','aborto','perdita gravidanza','nascita','aspettando un bimbo','sto aspettando un figlio'], tema: 'gravidanza' },
+    { keys: ['fortuna','sfiga','sfortuna','fortunato','fortunata','vincere','vincita','lotteria','gioco','gratta e vinci','slot','casinо','scommessa','scommesse','numeri fortunati','numeri','jackpot','colpo di fortuna','portafortuna','buona sorte','cattiva sorte','disdetta','iella'], tema: 'fortuna' },
+    { keys: ['viaggio','viaggiare','partire','partenza','trasferimento','trasferirsi','trasferirmi','estero','straniero','trasloco','volo','aereo','crociera','vacanza','gita','fuga','nuova citta','nuova nazione','emigrare','avventura','zaino in spalla','tour','paese straniero','trasferta','traslocarmi','mi trasferisco','cambiare citta','andare all estero','vivere all estero','spostarmi'], tema: 'viaggio' },
+    { keys: ['casa','appartamento','affitto','mutuo','acquistare casa','comprare casa','vendere casa','immobile','trasloco','nuovo appartamento','nuova casa','stanza','abitazione','ristrutturare','ristrutturazione','arredamento','affittare','trovare casa','cambio casa','radici'], tema: 'casa' },
+    { keys: ['famiglia','genitori','madre','padre','fratello','sorella','nonno','nonna','parenti','mamma','papa','figli','figlio','figlia','cognato','cognata','suocero','suocera','nucleo familiare','dinamiche familiari','litigio in famiglia','conflitto familiare','distacco dalla famiglia'], tema: 'famiglia' },
+    { keys: ['amicizia','amico','amica','amici','litigio con amico','amica del cuore','migliore amico','migliore amica','tradimento amicizia','amici veri','falsi amici','allontanamento','distanza con amici','ritrovare amicizia','riavvicinarsi','gruppo di amici','cerchia sociale'], tema: 'amicizia' },
+    { keys: ['studio','esame','universit','scuola','laurea','laurearsi','diplomarsi','diploma','bocciato','bocciata','studiare','tesi','dottorato','master','corso','formazione','apprendimento','studiare all estero','borse di studio','risultati scolastici','voto','votazione','preparazione esame','elementare','media','superiore','liceo','materna','asilo','pagella','voti','compito','interrogazione','professoressa','professore','maestra','maestro','classe','terza','quarta','quinta','prima media','seconda media'], tema: 'studio' },
+    { keys: ['futuro','destino','cosa succeder','cosa mi aspetta','cosa mi riserva','cambiamento','svolta','cambiare vita','prospettive','vie da seguire','scelta','bivio','decisione importante','cosa fare','cosa scegliere','quale strada','percorso','missione','scopo di vita','purpose'], tema: 'futuro' },
+    { keys: ['paura','ansia','angoscia','preoccupazione','preoccupato','preoccupata','stress','nervoso','nervosa','depressione','tristezza','piangere','solitudine','isolamento','abbandono','rifiuto','insicurezza','dubbio','indecisione','blocco','panico','attacco di panico','burnout','esaurimento','crisi','sofferenza'], tema: 'paura' },
+    { keys: ['magia','rituale','incantesimo','fattura','malocchio','protezione magica','sigillo','strega','stregone','spirito','karma','legamento','scioglimento','filtro magico','rito','energia negativa','energia positiva','pulizia energetica','campo aura','vibrazione cosmica','frequenza energetica','manifestare','legge di attrazione','fare un rituale','wicca','sabbat'], tema: 'magia' },
+    { keys: ['sogno','sognato','sognare','visione','simbolo','messaggio onirico','incubo','sogno lucido','sogno ricorrente','sogno strano','ho sognato','cosa significa sognare','significato del sogno','profetico','premonitore','apparizione nel sogno'], tema: 'sogno' },
+    { keys: ['morte','morire','morto','morta','lutto','perdita','defunto','defunta','aldila','spirito del defunto','contattare il defunto','comunicare con i morti','oltre la morte','reincarnazione','passaggio','vita dopo la morte','testamento','eredita'], tema: 'morte' },
+    { keys: ['vendetta','vendette','rivalsa','fargliela pagare','punire','punizione','karma negativo','maledizione','mi ha fatto del male','mi vuole male','nemica','nemico dichiarato','fare del male','maledirlo','maledirla','odio','rancore','risentimento','me la paghi'], tema: 'vendetta' },
+    { keys: ['successo','riuscire','vincere','obiettivo','sogno realizzato','realizzarsi','ambizione','aspirazione','famoso','famosa','diventare ricco','diventare ricca','raggiungere','traguardo','meta','aspirare','volare alto','crescita personale','sviluppo personale','competizione','gara','concorso','sfida professionale','diventare qualcuno','primeggiare','eccellere','emergere'], tema: 'successo' },
+    { keys: ['ispirazione','creativita','arte','artista','musica','musican','cantante','scrivere','scrittore','pittore','pittrice','disegnare','fotografo','fotografa','recitare','attore','attrice','film','progetto creativo','idea creativa','blocco creativo'], tema: 'creativita' }
+  ];
+  var trovati = [];
+  for (var i = 0; i < KMAP.length; i++) {
+    for (var j = 0; j < KMAP[i].keys.length; j++) {
+      if (t.indexOf(KMAP[i].keys[j]) !== -1) {
+        if (trovati.indexOf(KMAP[i].tema) === -1) trovati.push(KMAP[i].tema);
+        break;
+      }
+    }
+  }
+
+  // Correzioni semantiche contestuali: rimuove falsi positivi
+  // "promossa/promosso" con parenti/figli -> studia, non promozione lavorativa
+  var PARENTI = ['figlia','figlio','figl','bambino','bambina','bimbo','bimba','nipote','sorella','fratello','figliolo','figliola'];
+  var haParente = PARENTI.some(function(p){ return t.indexOf(p) !== -1; });
+  if (haParente) {
+    // rimuovi promozione se c'e' un parente nel testo
+    var idxProm = trovati.indexOf('promozione');
+    if (idxProm !== -1) trovati.splice(idxProm, 1);
+    // rimuovi lavoro se NON ci sono parole di lavoro adulto esplicite
+    var LAVORO_ESPLICITO = ['mio lavoro','mia carriera','mio capo','mio ufficio','mia azienda','mio contratto','mio stipendio','mie dimissioni'];
+    var hasLavoroEsplicito = LAVORO_ESPLICITO.some(function(p){ return t.indexOf(p) !== -1; });
+    if (!hasLavoroEsplicito) {
+      var idxLav = trovati.indexOf('lavoro');
+      if (idxLav !== -1) trovati.splice(idxLav, 1);
+    }
+    // aggiungi famiglia se non c'e' gia
+    if (trovati.indexOf('famiglia') === -1) trovati.unshift('famiglia');
+    // aggiungi studio se la domanda contiene parole scolastiche o di valutazione
+    var SCOLASTICO = ['promoss','promossa','promosso','esame','scuola','classe','voto','bocciato','bocciata','diplomarsi','laurearsi','maestra','professore','compito','interrogazione','pagella','elementare','media','superiore','liceo','asilo','materna','terza','quarta','quinta'];
+    var hasScolastico = SCOLASTICO.some(function(p){ return t.indexOf(p) !== -1; });
+    if (hasScolastico) {
+      // rimuovi promozione lavorativa: in contesto scolastico e' una falsa corrispondenza
+      var idxProm2 = trovati.indexOf('promozione');
+      if (idxProm2 !== -1) trovati.splice(idxProm2, 1);
+      if (trovati.indexOf('studio') === -1) trovati.unshift('studio');
+      else {
+        // porta studio in prima posizione
+        trovati.splice(trovati.indexOf('studio'), 1);
+        trovati.unshift('studio');
+      }
+    }
+  }
+
+  // Correzione: "promoss" + parole scolastiche (livello classe) -> studio, non promozione lavorativa
+  var LIVELLI_SCUOLA = ['elementare','media','superiore','liceo','asilo','materna','terza','quarta','quinta','prima media','seconda media','terza media','maturita','a scuola','di scuola','alla scuola','anno scolastico'];
+  var hasLivello = LIVELLI_SCUOLA.some(function(p){ return t.indexOf(p) !== -1; });
+  if (hasLivello) {
+    var idxProm3 = trovati.indexOf('promozione');
+    if (idxProm3 !== -1) trovati.splice(idxProm3, 1);
+    if (trovati.indexOf('studio') === -1) trovati.unshift('studio');
+    else { trovati.splice(trovati.indexOf('studio'),1); trovati.unshift('studio'); }
+  }
+
+  // "vincero" / "vinco" senza "lotteria" o "gioco" -> non e' fortuna classica, ma puo' essere successo
+  // "gratta" e "vinci" devono stare insieme per essere fortuna
+  if (t.indexOf('gratta') === -1 && t.indexOf('lotteria') === -1 && t.indexOf('gioco') === -1 && t.indexOf('scommess') === -1 && t.indexOf('jackpot') === -1) {
+    var idxFort = trovati.indexOf('fortuna');
+    // solo se l'unica ragione era "vincere" generica, rimuovila in favore di successo
+    if (idxFort !== -1 && (t.indexOf('vince') !== -1 || t.indexOf('vincero') !== -1 || t.indexOf('vinco') !== -1)) {
+      trovati.splice(idxFort, 1);
+      if (trovati.indexOf('successo') === -1) trovati.push('successo');
+    }
+  }
+
+  return trovati;
+}
+
+
+function _detectSoggetto(txt) {
+  var t = txt.toLowerCase();
+  // Parenti femminili con possessivo
+  var FEMMINILI = ['mia figlia','mia madre','mia mamma','mia sorella','mia nonna','mia zia','mia nipote','mia amica','mia moglie','mia compagna','mia ragazza','mia fidanzata','mia cugina'];
+  // Parenti maschili con possessivo
+  var MASCHILI  = ['mio figlio','mio padre','mio papa','mio fratello','mio nonno','mio zio','mio nipote','mio amico','mio marito','mio compagno','mio ragazzo','mio fidanzato','mio cugino','mio capo','mio collega'];
+  // Terza persona senza possessivo esplicito
+  var LEI_KEYS  = ['lei ','lei,','lei.','lei?','lei!','di lei','per lei','su lei','con lei','\\u00e8 lei','sara lei'];
+  var LUI_KEYS  = ['lui ','lui,','lui.','lui?','lui!','di lui','per lui','su lui','con lui','\\u00e8 lui','sara lui'];
+  // Prima persona
+  var IO_KEYS   = ['io ','io,','io.','io?','io!','mio ','mia ','mi ','sono ','ho ','staro','faro','trovero','riusciro','vincero','avro','saro','mi ama','mi vuole','mi tradisce','mi lascia','mi cerca','mi scrive'];
+
+  for (var i = 0; i < FEMMINILI.length; i++) {
+    if (t.indexOf(FEMMINILI[i]) !== -1) return { tipo: 'terza_f', label: FEMMINILI[i] };
+  }
+  for (var i = 0; i < MASCHILI.length; i++) {
+    if (t.indexOf(MASCHILI[i]) !== -1) return { tipo: 'terza_m', label: MASCHILI[i] };
+  }
+  for (var i = 0; i < LEI_KEYS.length; i++) {
+    if (t.indexOf(LEI_KEYS[i]) !== -1) return { tipo: 'terza_f', label: 'lei' };
+  }
+  for (var i = 0; i < LUI_KEYS.length; i++) {
+    if (t.indexOf(LUI_KEYS[i]) !== -1) return { tipo: 'terza_m', label: 'lui' };
+  }
+  // Default: se c\'e\' un verbo in prima persona -> io
+  for (var i = 0; i < IO_KEYS.length; i++) {
+    if (t.indexOf(IO_KEYS[i]) !== -1) return { tipo: 'io', label: 'io' };
+  }
+  return { tipo: 'io', label: 'io' };
+}
+
+function _getRispostaKeyword(temi, nome, soggetto) {
+  var RISPOSTE = {
+    amore: [
+      'Le stelle vedono un cuore che cerca connessione profonda. L\'universo non ignora questo desiderio — prepara il terreno affinche l\'amore possa crescere dove meno te lo aspetti.',
+      'Il sentimento che porti dentro e reale e potente. Non affrettare i tempi: cio che e destinato a fiorire, fiorira nel momento esatto in cui il terreno sara pronto.',
+      'Venere parla chiaro: c\'e energia amorosa in movimento attorno a te. Apriti alla possibilita senza difese — il cuore che si chiude per paura si priva della sua stessa gioia.',
+      'L\'amore che cerchi inizia con l\'amore che dai a te stesso. Quando quella luce sara piena, attrarrа naturalmente chi e in sintonia con la tua anima.',
+      'Il pianeta del desiderio e in aspetto favorevole: non ignorare i segnali sottili che ti manda chi ti sta accanto. A volte l\'amore parla sottovoce, aspettando di essere ascoltato.',
+      'Un incontro che hai considerato casuale potrebbe rivelarsi tutt\'altro. Le stelle suggeriscono di guardare di nuovo chi e gia nella tua vita quotidiana.',
+      'La vulnerabilita autentica e il portale piu diretto verso la connessione profonda. Abbassa le difese con chi merita il tuo cuore — e il momento giusto.',
+      'L\'attrazione che senti e confermata dagli astri, ma ricorda: la chimica accende, il rispetto reciproco tiene vivo il fuoco nel tempo.',
+      'Non temere di fare il primo passo. Venere sostiene i coraggiosi in amore — chi non rischia non ottiene cio che il cuore desidera davvero.',
+      'Un periodo di crescita personale e anche il piu fertile per l\'amore autentico. Lavorando su te stesso attrai chi e allineato con la tua versione migliore.'
+    ],
+    tradimento: [
+      'L\'universo non nasconde la verita a lungo — cio che e fatto nell\'ombra prima o poi emerge alla luce. Abbi il coraggio di guardare i fatti senza lasciarti accecare dalla paura.',
+      'Il dolore del tradimento e reale, ma non definitivo. Le stelle ti invitano a non confondere il silenzio con l\'innocenza: fidati del tuo istinto.',
+      'Saturno insegna che le prove difficili rivelano chi siamo davvero — sia noi sia le persone accanto a noi. La risposta che cerchi e gia dentro di te.',
+      'Il tuo corpo sa prima della tua mente. Quella sensazione nell\'addome che non riesci a ignorare e il tuo istinto che parla: ascoltalo prima di chiedere conferme.',
+      'Non ogni segreto e un tradimento, ma non ogni tradimento viene dichiarato. Osserva i comportamenti nel tempo, non solo le parole del momento.',
+      'Le stelle ti invitano a non costruire castelli di ipotesi. Chiedi con calma e chiarezza — la risposta, qualunque essa sia, ti libera dall\'incertezza che logora.'
+    ],
+    separazione: [
+      'Ogni fine porta il seme di un nuovo inizio. Questo dolore che senti e reale, ma le stelle vedono oltre: stai attraversando una soglia, non un muro.',
+      'La separazione non e sempre una sconfitta — a volte e la cosa piu amorevole che l\'universo possa orchestrare per entrambe le anime coinvolte. Il tempo rivelera il perche.',
+      'Marte e Venere ti invitano a non decidere nulla nell\'immediato dolore. Lascia che il silenzio parli. La chiarezza arrivera quando le acque si calmeranno.',
+      'Lasciare andare non significa smettere di amare — significa scegliere il proprio benessere con lo stesso rispetto con cui hai amato l\'altro.',
+      'Un ciclo si chiude per permettere a uno nuovo di aprirsi. La separazione, per quanto dolorosa, e spesso il gesto piu onesto che due persone possano farsi reciprocamente.',
+      'Il vuoto che senti ora non e perdita permanente — e spazio. E nello spazio che entrano le cose nuove e migliori che il destino sta preparando per te.'
+    ],
+    ritorno: [
+      'Le stelle vedono un\'energia di riavvicinamento, ma attenzione: non tutto cio che ritorna merita di restare. Chiediti se e amore o abitudine a chiamarti indietro.',
+      'Un possibile ritorno e nell\'aria — ma le stelle ti chiedono: e davvero questo che vuoi, o e la paura della solitudine a guidarti? La risposta onesta e quella che ti libera.',
+      'Cio che e destinato a restare non ha bisogno di essere inseguito. Se quell\'energia deve tornare, tornera. Il tuo compito ora e essere pronto ad accoglierla o lasciarla andare.',
+      'Prima di riaprire una porta chiusa, chiediti cosa e cambiato. Se le stesse dinamiche sono ancora presenti, anche il risultato sara lo stesso. La crescita si misura nelle azioni, non nelle promesse.',
+      'Il riavvicinamento richiede onesta da entrambi i lati. Non basta il desiderio — occorre un accordo chiaro su cosa deve cambiare perche questa volta sia diversa.',
+      'A volte torna perche si e sentito mancare. Ma il vuoto non e la stessa cosa dell\'amore. Distingui tra chi ti vuole nella sua vita e chi vuole solo colmare il proprio.'
+    ],
+    lavoro: [
+      'Il cielo professionale e in movimento. Un\'energia nuova si avvicina nel campo lavorativo — rimani vigile e non scartare opportunita che sembrano minori: nascondono semi di grandi cambiamenti.',
+      'Giove guarda favorevolmente la tua sfera professionale. Ma la fortuna va incontrata a meta strada: agisci, proponi, mostrati. L\'universo premia chi non aspetta in silenzio.',
+      'Sul lavoro si apre una fase di valutazione — gli sforzi passati stanno per trovare risposta. Mantieni la rotta senza disperderti: la coerenza ora vale piu del talento.',
+      'Le stelle indicano che le tue competenze sono sottovalutate nel contesto attuale. E il momento di alzare la voce o cercare un ambiente che sappia riconoscere il tuo valore.',
+      'Un colloquio, una proposta, un progetto nuovo: Mercurio favorisce la comunicazione professionale. Preparati con cura e presentati con fiducia — le stelle sostengono chi si espone con preparazione.',
+      'Un cambiamento lavorativo puo sembrare spaventoso, ma le stelle lo confermano come necessario per la tua crescita. Cio che hai accumulato non andra perso — ti seguira ovunque tu vada.',
+      'Non ogni giornata difficile e un segnale negativo. A volte i momenti piu duri del lavoro precedono un salto di qualita importante. Persevera con metodo.',
+      'Il tuo istinto professionale e piu affidabile di quanto credi. Quando qualcosa sul lavoro non ti convince, indaga invece di ignorare: la tua intuizione e un radar prezioso.'
+    ],
+    promozione: [
+      'Le stelle vedono il riconoscimento avvicinarsi. Gli sforzi che hai messo nel lavoro non sono passati inosservati — un passo in avanti e nell\'aria, ma richiede ancora pazienza e un ultimo slancio.',
+      'Giove in aspetto favorevole indica che questo e il momento giusto per mettersi in luce. Non restare in ombra: fai vedere il tuo valore senza timore.',
+      'L\'avanzamento che sogni e piu vicino di quanto pensi. L\'universo suggerisce di non aspettare che arrivino a chiederti — fai il primo passo, sii visibile, dimostra la tua leadership.',
+      'Le stelle ti invitano a non sminuirti nei momenti chiave. Il riconoscimento arriva a chi sa presentarsi con sicurezza: prepara le tue argomentazioni e parla con chi decide.',
+      'Un ciclo di lavoro intenso sta per essere premiato. La promozione o il riconoscimento che cerchi e gia in valutazione — sii paziente ma non passivo in questi ultimi passi.'
+    ],
+    soldi: [
+      'Mercurio e Giove parlano di flusso finanziario in movimento. Non e il momento di bloccarsi per paura ma nemmeno di agire impulsivamente. La saggezza ora vale oro.',
+      'Le stelle vedono un\'opportunita economica che si avvicina, ma richiede attenzione ai dettagli. Non firmare nulla senza averlo letto bene — ogni parola conta.',
+      'Il denaro e energia, e l\'energia segue la mente. Se i tuoi pensieri sui soldi sono di scarsita, attrai scarsita. Inizia a vedere l\'abbondanza come possibile — le stelle la confermano.',
+      'Un\'entrata inaspettata o una soluzione a un problema economico si avvicina da una direzione non prevista. Rimani aperto alle possibilita che non rientrano nei tuoi schemi abituali.',
+      'Le stelle ti invitano a fare chiarezza nella gestione delle risorse. Un bilancio onesto tra entrate e uscite e il primo atto magico per attirare prosperita duratura.',
+      'Non ogni rischio finanziario e avventatezza. Le stelle indicano che un investimento ponderato e ben studiato in questo periodo puo portare frutti significativi nel medio termine.',
+      'La prosperita che cerchi e gia in movimento verso di te. Ma richiede che tu sia pronto a riceverla: rimuovi i blocchi mentali sulla merita e sull\'abbondanza.',
+      'Un consiglio finanziario da una fonte inaspettata potrebbe rivelarsi prezioso. Ascolta chi ha gia percorso la strada che stai cercando di imboccare.'
+    ],
+    salute: [
+      'Il tuo corpo ti sta mandando un messaggio. Le stelle ti invitano a fermarti e ascoltarlo davvero, senza rimandare. La cura di se non e un lusso — e la base di tutto il resto.',
+      'Un periodo di recupero e rigenerazione e indicato dagli astri. Non combattere il bisogno di riposo: e il tuo sistema che si riorganizza per tornare piu forte.',
+      'La Luna governa i ritmi del corpo. Segui i tuoi ritmi naturali — il tuo organismo sa di cosa ha bisogno. L\'equilibrio che cerchi parte dal rispetto per i tuoi limiti.',
+      'Le stelle ti invitano a non sottovalutare i segnali fisici che stai ricevendo. Un piccolo sintomo ignorato a lungo diventa una voce sempre piu alta — ascoltalo ora.',
+      'L\'equilibrio tra corpo e mente e la chiave che le stelle evidenziano in questo momento. Un\'attenzione maggiore al sonno, all\'alimentazione e al movimento trasforma l\'energia disponibile.',
+      'Un cambiamento nello stile di vita — anche piccolo e graduale — viene indicato dagli astri come il punto di svolta per il benessere che stai cercando.',
+      'La salute emotiva influenza quella fisica in modo diretto. Le stelle ti invitano a non trattare il corpo come separato dalla mente — curarsi e un atto olistico.'
+    ],
+    gravidanza: [
+      'Le stelle vedono un\'energia di nascita e creazione fortissima attorno a te — che si tratti di vita, di un progetto o di una nuova fase. Qualcosa di grande sta per venire alla luce.',
+      'La luna nuova parla di semi piantati e pronti a germogliare. Un inizio prezioso si avvicina — preparati ad accoglierlo con amore e presenza.',
+      'L\'universo sostiene i nuovi inizi. Qualunque cosa stai aspettando, le condizioni per la sua fioritura si stanno creando proprio ora.',
+      'Le stelle indicano un periodo fertile — sia in senso letterale che simbolico. Un progetto, un legame o una nuova vita e in fase di creazione. Nutrilo con intenzione e cura.',
+      'Il desiderio di creare qualcosa di tuo — che sia una famiglia, un\'opera o un progetto — e sostenuto dall\'energia cosmica di questo periodo. E il momento di agire con fede.'
+    ],
+    fortuna: [
+      'Giove, pianeta della fortuna, e attivo nel tuo tema. Questo non significa che la fortuna cadra dal cielo — significa che sei in un periodo in cui le tue azioni vengono amplificate dal favore cosmico.',
+      'Le stelle indicano un ciclo positivo in apertura. La fortuna non e casuale: e risonanza tra la tua energia e quella dell\'universo. Sintonizzati.',
+      'Un vento favorevole soffia — ma la vela devi alzarla tu. Le stelle creano le condizioni, tu devi essere pronto a coglierle senza esitazione.',
+      'La fortuna in questo momento si nasconde nei dettagli che altri ignorano. La tua capacita di osservare cio che gli altri trascurano potrebbe rivelarsi il tuo vantaggio principale.',
+      'Le stelle ti invitano a non giocare tutto su un solo numero. La vera fortuna si costruisce con scelte ponderate e un pizzico di audacia al momento giusto.',
+      'Un ciclo karmico favorevole sta compensando sacrifici e sforzi passati. Cio che stai per ricevere non e un caso — e la risposta dell\'universo a cio che hai seminator.',
+      'I numeri guida di oggi suggeriscono attenzione alle opportunita che si presentano due volte. La seconda volta che incontri qualcosa di interessante, non lasciarlo andare.'
+    ],
+    viaggio: [
+      'Un movimento importante si prospetta — fisico, mentale o spirituale. Le stelle sostengono i cambiamenti di prospettiva. Cio che sembra un salto nel vuoto e in realta un salto verso qualcosa di piu grande.',
+      'Mercurio e Giove in sintonia parlano di orizzonti che si aprono. Non avere paura del nuovo — il tuo spirito e fatto per esplorare, non per restare fermo.',
+      'Il viaggio che stai considerando porta con se una trasformazione profonda. L\'universo dice: vai — ma vai consapevole, non in fuga.',
+      'Un trasferimento o un viaggio importante e nell\'aria. Le stelle indicano che il cambiamento di ambiente ti portera la chiarezza che stai cercando da troppo tempo.',
+      'L\'energia del movimento e potente ora. Anche un breve spostamento — una nuova citta, un nuovo quartiere — puo aprire porte che nella routine quotidiana resterebbero invisibili.',
+      'Chi si muove incontra il mondo. Le stelle confermano che restare fermi in questo momento significa perdere opportunita che il moto porterebbe naturalmente a te.'
+    ],
+    casa: [
+      'La tua quarta casa — quella della dimora e delle radici — e attiva. Un cambiamento nel tuo spazio fisico si avvicina. Le stelle sostengono le decisioni prese con il cuore.',
+      'La casa e il luogo dove l\'anima si riposa. Le stelle ti invitano a chiederti: il luogo in cui vivi ti nutre o ti prosciuga? La risposta guidera la prossima mossa.',
+      'Un nuovo inizio legato alle fondamenta materiali si avvicina. Non avere fretta, ma non bloccarti per paura. Il momento giusto si riconosce quando agisci senza rimpianti.',
+      'Un\'energia di stabilita e di radicamento e presente. Le stelle favoriscono le decisioni relative alla casa prese in questo periodo — agisci con fiducia e documentazione in ordine.',
+      'Lo spazio fisico riflette lo stato interiore. Prima di cercare una nuova casa fuori, chiediti cosa puoi trasformare nello spazio che gia hai — a volte basta riarrangiare l\'energia.',
+      'Le stelle indicano che il cambiamento di casa o di ambiente che stai considerando apportera benefici che vanno ben oltre il puramente pratico. E un atto di cura verso te stesso.'
+    ],
+    famiglia: [
+      'I legami familiari sono sotto i riflettori del cielo. Le stelle invitano alla comprensione e al dialogo — vecchie ferite possono essere toccate, ma anche finalmente guarite.',
+      'La famiglia e il primo specchio della nostra anima. Cio che senti nelle relazioni con i tuoi cari riflette qualcosa che e ancora in elaborazione dentro di te. Guarda con compassione.',
+      'Un momento di chiarimento nelle relazioni familiari si avvicina. Parla con il cuore aperto — la vulnerabilita ora e forza, non debolezza.',
+      'Le stelle evidenziano una dinamica familiare che richiede attenzione. Non aspettare che si risolva da sola — un passo verso il dialogo oggi evita distanze che domani sarebbero difficili da colmare.',
+      'Le radici familiari ti hanno dato piu di quanto riconosci. Anche nelle relazioni difficili c\'e un dono nascosto — trovarlo richiede pazienza e uno sguardo piu ampio.',
+      'Un membro della famiglia ha bisogno di sentirti vicino anche se non lo chiede esplicitamente. Le stelle ti invitano a fare il primo passo verso chi ami, senza aspettare.'
+    ],
+    amicizia: [
+      'Le stelle rivelano che non tutte le persone accanto a te stanno camminando nella tua stessa direzione. Fidati di chi dimostra — non di chi promette.',
+      'Un\'amicizia vera si rivela nei momenti difficili. Guarda chi c\'e stato nelle tue notti buie — quella e la tua cerchia reale. Il resto e contorno.',
+      'Venere nei legami di amicizia parla di connessioni che si rafforzano e altre che si allontanano naturalmente. Lascia andare senza rancore cio che non cresce piu.',
+      'Le stelle indicano che un\'amicizia che senti distante potrebbe essere recuperata con un gesto semplice e sincero. A volte una persona importante aspetta solo un tuo segnale.',
+      'Non ogni allontanamento e un rifiuto. Le persone evolvono e a volte i percorsi si separano. Onora cio che e stato senza trattenerlo per forza — le stelle sostengono i cambiamenti naturali.',
+      'Una nuova amicizia potrebbe entrare nella tua vita da una direzione inaspettata. Le stelle ti invitano a essere aperto con chi ancora non conosci — l\'incontro significativo e vicino.'
+    ],
+    studio: [
+      'Le stelle sono favorevoli all\'apprendimento e alla crescita mentale. Il percorso di studio che stai seguendo ti portera piu lontano di quanto immagini — non mollare.',
+      'Mercurio, pianeta dell\'intelletto, ti sostiene. Un esame o una prova importante sta per essere superata. La preparazione che hai fatto vale piu di quanto credi.',
+      'Il sapere che stai accumulando e un investimento nell\'anima oltre che nella carriera. Anche quando le difficolta sembrano insormontabili, ricorda: hai gia superato ostacoli piu grandi.',
+      'Le stelle indicano che il momento di dubbio che attraversi nello studio e una fase normale di ogni processo di crescita. Chi si ferma qui perde; chi persevera trova la svolta.',
+      'Un metodo di studio diverso dal tuo solito potrebbe sbloccare un apprendimento che sembrava bloccato. Le stelle favoriscono la sperimentazione metodologica in questo periodo.',
+      'Non confrontare il tuo progresso con quello degli altri: ogni mente ha il suo ritmo e la sua profondita. Il tuo percorso e unico e sta andando nella direzione giusta.'
+    ],
+    futuro: [
+      'Il futuro non e scritto nella pietra — si plasma con ogni scelta consapevole che fai oggi. Le stelle mostrano potenziale enorme, ma la direzione la scegli tu.',
+      'Una svolta si avvicina. Non tutte le rivoluzioni sono rumorose — spesso il cambiamento piu profondo inizia con un momento di silenzio e chiarezza interiore.',
+      'L\'universo sta riorganizzando le carte del tuo destino. Cio che sembra incerto ora e in realta il suolo che si prepara per qualcosa di straordinario.',
+      'Le stelle ti invitano a smettere di temere il futuro e a iniziare a costruirlo. Ogni azione intenzionale oggi e un mattone nella direzione che desideri.',
+      'Il cambiamento che senti arrivare non e da temere — e il segnale che sei pronto per una versione piu grande di te stesso. Lasciati superare da chi stavi diventando.',
+      'L\'incertezza che provi ora e la stessa che sente il seme prima di germogliare. Le stelle confermano che stai per emergere alla superficie — mantieni la fede nel processo.',
+      'Le stelle mostrano piu strade aperte davanti a te. Non e il momento di aspettare che una si chiuda per prenderne una — e il momento di scegliere con cuore e metodo.'
+    ],
+    paura: [
+      'Le stelle riconoscono il peso che stai portando. Ma l\'ansia e la paura non sono la realta — sono l\'ombra proiettata da pensieri che il futuro non ha ancora confermato.',
+      'Saturno ti invita a guardare in faccia cio che ti spaventa. La paura affrontata perde meta del suo potere — l\'altra meta la perde quando scopri di essere piu forte di lei.',
+      'L\'universo non ti ha messo in questa situazione per spezzarti, ma per mostrarti di cosa sei capace. Anche nel buio piu fitto, una stella si vede sempre.',
+      'Lo stress che senti e reale, ma non e permanente. Le stelle indicano un periodo di transizione — il disagio attuale e il preludio di un equilibrio che sta tornando.',
+      'L\'ansia ha una funzione: ti segnala cio che ti importa davvero. Usala come bussola invece di combatterla — ti dira esattamente dove concentrare la tua energia di cura.',
+      'Non devi affrontare tutto da solo. Le stelle ti invitano a permettere ad altri di sostenerti — la forza vera non e non aver bisogno, ma saper chiedere e ricevere con grazia.',
+      'Un pensiero ripetuto crea la realta che poi si autocertifica. Interrompi il ciclo con un\'azione piccola ma concreta: il movimento fisico piu semplice spezza le spirali mentali.'
+    ],
+    magia: [
+      'L\'energia che stai percependo e reale. Le forze sottili rispondono alle intenzioni pure — chiarisci dentro di te cosa vuoi davvero, poi agisci con rispetto e consapevolezza.',
+      'Le stelle confermano che sei in un periodo di forte sensibilita energetica. Proteggiti con intenzione, sii selettivo sulle persone che lasci entrare nel tuo spazio.',
+      'Cio che mandi nell\'universo ritorna moltiplicato. Prima di qualsiasi rituale, chiediti: agisco dall\'amore o dalla paura? La risposta determina il risultato.',
+      'L\'intenzione e il vero strumento magico. Prima di qualsiasi rituale, fermati e definisci con precisione cosa stai chiedendo — l\'universo risponde alla chiarezza, non all\'urgenza.',
+      'Le stelle confermano che sei in un periodo di heightened sensitivity energetica. I tuoi sogni, le tue intuizioni e le sincronicita che noti sono messaggi reali: annotali.',
+      'La magia piu potente non ha bisogno di strumenti esterni. La tua intenzione chiara, il tuo respiro consapevole e il tuo cuore allineato sono il rituale completo.'
+    ],
+    sogno: [
+      'I sogni sono messaggi dell\'anima in un linguaggio che la mente razionale non riesce a bloccare. Prendi nota di cio che hai visto — contiene un simbolo importante per il tuo percorso.',
+      'Il mondo onirico e un ponte tra il conscio e l\'inconscio. Cio che appare ripetutamente nei sogni chiede di essere ascoltato nella veglia.',
+      'Le stelle confermano: il sogno che ti ha colpito non e casuale. L\'universo parla attraverso di esso. Meditaci sopra con calma — il significato si rivelera.',
+      'Ogni elemento del sogno e un simbolo che parla il linguaggio della tua anima. Il luogo, i colori, le emozioni provate: ognuno di questi e un frammento di risposta.',
+      'Un sogno ricorrente e una lettera che l\'inconscio ti respedisce finche non viene letta. Questa volta fermati e presta attenzione — il messaggio e urgente e necessario.',
+      'Le stelle confermano che il tuo inconscio e in stato di elaborazione intensa. I sogni vividi di questo periodo sono un segnale che stai integrando qualcosa di importante.'
+    ],
+    morte: [
+      'La morte nell\'ottica esoterica e trasformazione, non fine. Qualcosa sta chiudendo un ciclo nella tua vita per fare spazio a qualcosa di completamente nuovo. Onora cio che finisce.',
+      'Le stelle sono con te nel lutto. Il dolore della perdita e il segno di quanto profondo fosse quel legame — e l\'amore non muore con il corpo.',
+      'Ogni grande trasformazione ha la forma di una piccola morte. Cio che stai attraversando sta rimodellando la tua anima. Dall\'altro lato di questa soglia c\'e una versione piu autentica di te.',
+      'L\'aldila esiste nelle tradizioni di ogni civilta come realta parallela. Chi ami e partito, non sparito. La connessione dell\'anima non si interrompe con il corpo fisico.',
+      'Il lutto richiede il suo tempo e non va affrettato. Le stelle ti invitano a onorare il dolore senza affogare in esso — la vita del defunto continua in te attraverso i suoi insegnamenti.',
+      'La perdita di una persona cara lascia un vuoto che nessuno puo colmare, ma che col tempo si trasforma in uno spazio sacro dove il ricordo vive per sempre.'
+    ],
+    vendetta: [
+      'Le stelle ti invitano a riflettere: la vendetta non sana la ferita — la mantiene viva. Cio che vuoi davvero non e punire, ma guarire. Sono strade diverse.',
+      'Il karma e un meccanismo dell\'universo che non ha bisogno del tuo intervento. Chi ti ha fatto del male ricevera cio che ha seminato — il tuo compito e uscire dal ciclo, non alimentarlo.',
+      'L\'energia che stai dirigendo verso la rivalsa puo essere reindirizzata verso la tua crescita. La migliore vendetta e una vita piena e autentica che nulla deve alla tua fonte di dolore.',
+      'La giustizia cosmica non dimentica nulla. Le stelle ti dicono di affidarti al meccanismo universale di riequilibrio — e piu potente e preciso di qualsiasi azione tu possa intraprendere.',
+      'Il rancore e un veleno che avvelena chi lo porta, non chi lo ha causato. Liberartene non e debolezza — e l\'atto di forza piu difficile e piu trasformativo che esista.'
+    ],
+    successo: [
+      'Le stelle confermano che sei sulla strada giusta verso i tuoi obiettivi. Ogni passo, anche quelli che sembrano piccoli, ti avvicina al traguardo che hai nel cuore.',
+      'Giove sorride alle tue ambizioni. Il successo che cerchi non e irraggiungibile — e il risultato naturale della coerenza tra cio che vuoi, cio che pensi e cio che fai ogni giorno.',
+      'Un momento di visibilita si avvicina. Le stelle ti invitano a non sminuire i tuoi risultati quando li presenti agli altri — il tuo valore e reale e merita di essere riconosciuto.',
+      'Il successo autentico non arriva solo — arriva con le persone giuste accanto. Le stelle ti invitano a coltivare le relazioni con chi ti ispira a crescere.',
+      'Non confondere la velocita con il progresso. Le stelle indicano che il tuo percorso verso il successo ha il suo ritmo preciso — forzarlo crea errori che rallentano.'
+    ],
+    creativita: [
+      'Le stelle confermano che la tua creativita e in un periodo di forte attivazione. Cio che senti di voler creare ora ha una ragione profonda — non ignorare quell\'impulso.',
+      'L\'ispirazione che cerchi non arriva aspettando — arriva iniziando. Le stelle ti invitano ad aprire il quaderno, lo schermo o lo strumento e mettere giu il primo segno.',
+      'Il blocco creativo che senti e spesso paura del giudizio travestita da mancanza di idee. Le stelle ti dicono: crea per te prima che per gli altri.',
+      'Mercurio favorisce la comunicazione creativa in questo periodo. E il momento giusto per condividere un progetto o un\'idea che hai tenuto solo per te.',
+      'La creativita autentica nasce dal vissuto reale. Le tue esperienze piu difficili contengono il materiale per la tua opera piu potente. Non aver paura di usarle.',
+      'Le stelle indicano che una collaborazione creativa potrebbe moltiplicare il tuo potenziale in questo periodo. Cerca chi completa cio che tu sai fare con cio che sa fare lui.'
+    ],
+    default: [
+      'Le stelle hanno ricevuto la tua domanda. L\'universo non risponde sempre con parole dirette — a volte risponde con un\'intuizione, un incontro inatteso, un sogno.',
+      'La tua intenzione e stata inviata al cosmo. Cio che stai cercando sta cercando anche te — rimani aperto ai segnali che arriveranno nelle prossime ore e nei prossimi giorni.',
+      'Il cielo vede la tua domanda e la tua ricerca. Confida nel fatto che cio che ti serve davvero arrivera — anche in una forma diversa da quella che ti aspetti.',
+      'L\'universo risponde sempre — ma a volte il silenzio e gia una risposta. Fermati, respira, e ascolta cio che gia sai nel profondo.',
+      'Le stelle vedono la tua intenzione e la tua sincera ricerca. Ogni domanda posta con il cuore aperto merita una risposta — e l\'universo non la nega mai a chi sa ascoltare.',
+      'Cio che cerchi sta gia cercando te. La risposta arrivera nel momento esatto in cui sarai abbastanza quieto da riceverla — fidati del processo e del tempo cosmico.',
+      'Il tuo cammino e osservato dalle stelle con attenzione e cura. Non sei solo in questa ricerca — forze piu grandi di te stanno lavorando a tuo favore anche quando non le senti.'
+    ]
+  };
+
+  var tema = temi.length > 0 ? temi[0] : 'default';
+  var pool = RISPOSTE[tema] || RISPOSTE['default'];
+  var idx = Math.floor(Date.now() / 300000) % pool.length;
+  var risposta = pool[idx];
+
+  // Adatta la risposta al soggetto rilevato
+  var sog = soggetto || { tipo: 'io', label: 'io' };
+
+  if (sog.tipo === 'terza_f') {
+    // Sostituzioni per terza persona femminile
+    risposta = risposta
+      .replace(/\bstai\b/g, 'sta')
+      .replace(/\bhai\b/g, 'ha')
+      .replace(/\bsei\b/g, 'e\'')
+      .replace(/\bsenti\b/g, 'sente')
+      .replace(/\bporti\b/g, 'porta')
+      .replace(/\bvuoi\b/g, 'vuole')
+      .replace(/\bpuoi\b/g, 'puo\'')
+      .replace(/\bfai\b/g, 'fa')
+      .replace(/\bdai\b/g, 'da')
+      .replace(/\bsai\b/g, 'sa')
+      .replace(/\bvai\b/g, 'va')
+      .replace(/\bla tua\b/g, 'la sua')
+      .replace(/\bil tuo\b/g, 'il suo')
+      .replace(/\ble tue\b/g, 'le sue')
+      .replace(/\bi tuoi\b/g, 'i suoi')
+      .replace(/\bte stesso\b/g, 'se stessa')
+      .replace(/\bte stessa\b/g, 'se stessa')
+      .replace(/\bdi te\b/g, 'di lei')
+      .replace(/\bper te\b/g, 'per lei')
+      .replace(/\bcon te\b/g, 'con lei')
+      .replace(/\bsu te\b/g, 'su di lei')
+      .replace(/\ba te\b/g, 'a lei')
+      .replace(/\bintorno a te\b/g, 'intorno a lei')
+      .replace(/\bche sei\b/g, 'che e\'')
+      .replace(/\bche hai\b/g, 'che ha')
+      .replace(/\bche stai\b/g, 'che sta')
+      .replace(/\b ti \b/g, ' le ')
+      .replace(/ ti$/g, ' le')
+      .replace(/ ti,/g, ' le,')
+      .replace(/ ti\./g, ' le.')
+      .replace(/\btuo\b/g, 'suo')
+      .replace(/\btua\b/g, 'sua')
+      .replace(/\bfermarti\b/g, 'fermarsi')
+      .replace(/\bamarti\b/g, 'amarsi')
+      .replace(/\bproteggerti\b/g, 'proteggersi')
+      .replace(/\bcurarti\b/g, 'curarsi')
+      .replace(/\bchiederti\b/g, 'chiedersi')
+      .replace(/\bpermettiti\b/g, 'si permetta')
+      .replace(/\bti libera\b/g, 'la libera')
+      .replace(/\bti seguira\b/g, 'la seguira')
+      .replace(/\bti seguono\b/g, 'la seguono')
+      .replace(/\bti porta\b/g, 'la porta')
+      .replace(/\bti invita\b/g, 'la invita')
+      .replace(/\bLe stelle ti\b/g, 'Le stelle la')
+      .replace(/\bstelle ti\b/g, 'stelle la')
+      .replace(/\binvitano a fermarti\b/g, 'invitano a fermarsi');
+    var labelF = sog.label !== 'lei' ? sog.label.replace('mia ','') : 'lei';
+    var cap = labelF.charAt(0).toUpperCase() + labelF.slice(1);
+    risposta = cap + ': ' + risposta.charAt(0).toLowerCase() + risposta.slice(1);
+  } else if (sog.tipo === 'terza_m') {
+    risposta = risposta
+      .replace(/\bstai\b/g, 'sta')
+      .replace(/\bhai\b/g, 'ha')
+      .replace(/\bsei\b/g, 'e\'')
+      .replace(/\bsenti\b/g, 'sente')
+      .replace(/\bporti\b/g, 'porta')
+      .replace(/\bvuoi\b/g, 'vuole')
+      .replace(/\bpuoi\b/g, 'puo\'')
+      .replace(/\bfai\b/g, 'fa')
+      .replace(/\bdai\b/g, 'da')
+      .replace(/\bsai\b/g, 'sa')
+      .replace(/\bvai\b/g, 'va')
+      .replace(/\bla tua\b/g, 'la sua')
+      .replace(/\bil tuo\b/g, 'il suo')
+      .replace(/\ble tue\b/g, 'le sue')
+      .replace(/\bi tuoi\b/g, 'i suoi')
+      .replace(/\bte stesso\b/g, 'se stesso')
+      .replace(/\bte stessa\b/g, 'se stesso')
+      .replace(/\bdi te\b/g, 'di lui')
+      .replace(/\bper te\b/g, 'per lui')
+      .replace(/\bcon te\b/g, 'con lui')
+      .replace(/\bsu te\b/g, 'su di lui')
+      .replace(/\ba te\b/g, 'a lui')
+      .replace(/\bintorno a te\b/g, 'intorno a lui')
+      .replace(/\bche sei\b/g, 'che e\'')
+      .replace(/\bche hai\b/g, 'che ha')
+      .replace(/\bche stai\b/g, 'che sta')
+      .replace(/\b ti \b/g, ' gli ')
+      .replace(/ ti$/g, ' gli')
+      .replace(/ ti,/g, ' gli,')
+      .replace(/ ti\./g, ' gli.')
+      .replace(/\btuo\b/g, 'suo')
+      .replace(/\btua\b/g, 'sua')
+      .replace(/\bfermarti\b/g, 'fermarsi')
+      .replace(/\bamarti\b/g, 'amarsi')
+      .replace(/\bproteggerti\b/g, 'proteggersi')
+      .replace(/\bcurarti\b/g, 'curarsi')
+      .replace(/\bchiederti\b/g, 'chiedersi')
+      .replace(/\bpermettiti\b/g, 'si permetta')
+      .replace(/\bti libera\b/g, 'lo libera')
+      .replace(/\bti seguira\b/g, 'lo seguira')
+      .replace(/\bti seguono\b/g, 'lo seguono')
+      .replace(/\bti porta\b/g, 'lo porta')
+      .replace(/\bti invita\b/g, 'lo invita')
+      .replace(/\bLe stelle ti\b/g, 'Le stelle lo')
+      .replace(/\bstelle ti\b/g, 'stelle lo')
+      .replace(/\binvitano a fermarti\b/g, 'invitano a fermarsi')
+      .replace(/\bLe stelle gli\b/g, 'Le stelle lo')
+      .replace(/\bstelle gli\b/g, 'stelle lo');
+    var labelM = sog.label !== 'lui' ? sog.label.replace('mio ','') : 'lui';
+    var capM = labelM.charAt(0).toUpperCase() + labelM.slice(1);
+    risposta = capM + ': ' + risposta.charAt(0).toLowerCase() + risposta.slice(1);
+  } else {
+    // Prima persona: aggiungi nome se disponibile
+    if (nome && nome !== 'Viandante') {
+      risposta = nome + ', ' + risposta.charAt(0).toLowerCase() + risposta.slice(1);
+    }
+  }
+
+  // secondo tema rimosso per evitare risposte incoerenti
+
+  return risposta;
+}
+
+function runConsulente() {
+  var input = document.getElementById('consultInput').value.trim();
+  var topic = _consultTopicActive;
+  var btn = document.getElementById('consultBtn');
+  var res = document.getElementById('consultResult');
+
+  if (!input) {
+    try{ showToast('✍️ Scrivi la tua domanda prima di consultare le stelle…'); }catch(e){}
+    return;
+  }
+
+  var raw = localStorage.getItem('myst_v3_profile');
+  var p = null; try{ p = JSON.parse(raw||''); }catch(e){}
+  var segno = p && DB.segni[p.segno] ? DB.segni[p.segno] : null;
+  var nome = p ? p.name : 'Viandante';
+
+  var temiRilevati = _detectKeywords(input);
+  var soggetto = _detectSoggetto(input);
+  var seed = _dailySeedN(input.length * 7 + topic.length * 13);
+  var carta = _arcaniMaggiori[_seededIdx(_arcaniMaggiori, seed + Math.floor(Date.now()/60000))];
+  var luna = _fasi[_seededIdx(_fasi, _dailySeedN(2))];
+  var num = (_dailySeedN(17 + input.length + topic.length) % 9) + 1;
+  var rispostaPersonale = _getRispostaKeyword(temiRilevati, nome, soggetto);
+  var segnoConsiglio = segno ? ('Il ' + segno.n + ' (governato da ' + segno.p + ', elemento ' + segno.el + ') suggerisce di agire con ' + segno.k[Math.floor(Date.now()/300000) % segno.k.length].toLowerCase() + '.') : '';
+
+  btn.textContent = '⏳ Le stelle consultano...';
+  btn.style.opacity = '.6';
+  btn.style.pointerEvents = 'none';
+
+  setTimeout(function(){
+    btn.textContent = '✨ Chiedi all\'Universo';
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+
+    res.style.display = 'block';
+    res.innerHTML = [
+      '<div class="consult-block">',
+      '<h4>🔮 Il Messaggio delle Stelle</h4>',
+      '<p>' + rispostaPersonale + '</p>',
+      '</div>',
+      '<div class="consult-block">',
+      '<h4>' + carta.e + ' Arcano Rivelato — ' + carta.n + '</h4>',
+      '<p>' + carta.msg + '</p>',
+      '</div>',
+      '<div class="consult-block">',
+      '<h4>' + luna.e + ' Energia Lunare — ' + luna.n + '</h4>',
+      '<p>In questo momento lunare, l\'energia è amplificata per ciò che hai nel cuore. Segui l\'istinto.</p>',
+      '</div>',
+      segnoConsiglio ? '<div class="consult-block"><h4>♈ Il Tuo Segno Parla</h4><p>' + segnoConsiglio + '</p></div>' : '',
+      '<div class="consult-block">',
+      '<h4>✦ Numero Guida — ' + num + '</h4>',
+      '<p>' + (DB_NUM && DB_NUM[num] ? DB_NUM[num].keywords.slice(0,2).join(', ') + ': ' + DB_NUM[num].essenza : 'Il ' + num + ' porta con sé energia di trasformazione e crescita.') + '</p>',
+      '</div>',
+      '<button class="btn btn-sec" style="margin-top:4px;font-size:11px" onclick="runConsulente()">🔄 Nuova Lettura</button>'
+    ].join('');
+    try{ playMysticSound('bell'); }catch(e){}
+    try{ burst(); }catch(e){}
+  }, 1400);
+}
+
 function initApp(){
   if (window._mysticaInitDone) return;
   window._mysticaInitDone = true;
@@ -5416,6 +6688,8 @@ function initApp(){
 
   loadProfile();
   refreshWisdom();
+  // ═══ ONBOARDING FLOW ═══
+  setTimeout(initOnboardingFlow, 800);
   initParticles();
   setNavTop();
   window.addEventListener('resize',setNavTop);
@@ -5647,6 +6921,20 @@ function _openMagiaPanel(panel){
   document.querySelectorAll('.magia-tab').forEach(t=>t.classList.toggle('active', t.dataset.panel===panel));
   const el=document.getElementById('magiaPanel-'+panel);
   if(el) el.classList.add('active');
+  if(panel==='sigilli') _renderEnciclopediaSVG();
+}
+
+function _renderEnciclopediaSVG(){
+  const map={
+    'svgSaturno':'saturno','svgGiove':'giove','svgMarte':'marte',
+    'svgSole':'sole','svgVenere':'venere','svgMercurio':'mercurio','svgLuna':'luna'
+  };
+  Object.entries(map).forEach(([elId, geomKey])=>{
+    const container=document.getElementById(elId);
+    if(!container||container.innerHTML.trim()) return;
+    const s=DB_SIGILLI_SALOMONE.find(x=>x.geomFn===geomKey);
+    if(s) container.innerHTML=_generaSigilloSVG(s);
+  });
 }
 
 function openOracolo(id){
@@ -12523,18 +13811,6 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <div id="seo-static-content">
-
-<!-- ── CHI SIAMO – visibile ai crawler AdSense/Google ── -->
-<div style="background:linear-gradient(145deg,#0d0720,#070312);border-top:1px solid #2a174840;padding:14px 16px 10px;font-family:'Crimson Pro',Georgia,serif;font-size:11px;color:#4a3860;line-height:1.7;text-align:center">
-  <strong style="font-family:'Cinzel',serif;letter-spacing:1px;color:#5a4070">Chi siamo</strong> ·
-  MYSTICA è un progetto di intrattenimento esoterico sviluppato da PetroCorporation, Italia.
-  I contenuti (tarocchi, oroscopo, rune, I Ching e tutti gli oracoli) hanno finalità
-  <strong>esclusivamente ludiche e culturali</strong> e non costituiscono consulenza professionale
-  di alcun tipo. Per contatti: <a href="./contatti.html" style="color:#7a5090;text-decoration:underline">contatti.html</a> ·
-  <a href="./privacy.html" style="color:#7a5090;text-decoration:underline">Privacy Policy</a> ·
-  <a href="./termini.html" style="color:#7a5090;text-decoration:underline">Termini di Servizio</a>
-</div>
-
 <div class="seo-accordion" id="seoAccordion">
   <button class="seo-toggle" onclick="var a=document.getElementById('seoAccordion');a.classList.toggle('open')">✦ Scopri tutto su Mystica ✦</button>
   <div class="seo-body">
