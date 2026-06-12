@@ -660,7 +660,7 @@ function chiudiDisclaimer(){
         <div style="padding:0 18px 24px;text-align:center">
           <div class="phc-name" id="phName">Il Mio Profilo</div>
           <div class="phc-zodiac" id="phDates">Le stelle aspettano di conoscerti</div>
-          <div class="phc-dates" id="phPlanet"></div>
+          <div class="phc-dates" id="phPlanet" style="display:none"></div>
           <div class="phc-divider"></div>
           <div class="phc-msg" id="phMsg">✨ Inserisci il tuo nome e la data di nascita per ricevere letture personalizzate e risonanti con la tua anima...</div>
           <div class="phc-edit-btn" onclick="event.stopPropagation();toggleEditProfilo()">
@@ -4612,8 +4612,8 @@ function applyProfile(p){
       // Scurisci il gradiente per leggibilità testo
       const overlay = coverWrap.querySelector('div');
       if(overlay) overlay.style.background = 'linear-gradient(to bottom,rgba(10,5,20,0.1) 0%,rgba(10,5,20,0.4) 50%,rgba(10,5,20,0.95) 100%)';
-      // Mostra il ring e il contenuto sopra l'immagine
-      if(ringWrap){ ringWrap.style.display='block'; ringWrap.style.position='relative'; ringWrap.style.zIndex='2'; ringWrap.style.marginTop='20px'; }
+      // Nascondi il ring (icona segno) quando c'è l'immagine di sfondo
+      if(ringWrap){ ringWrap.style.display='none'; }
       const cDiv = ringWrap ? ringWrap.nextElementSibling : null;
       if(cDiv){ cDiv.style.position='relative'; cDiv.style.zIndex='2'; }
     };
