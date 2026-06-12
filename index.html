@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- AdSense accessibility: no user-scalable=no, no maximum-scale restriction -->
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -503,7 +504,8 @@ body.day-mode .home-intro-chip{background:rgba(139,106,16,0.08);border-color:rgb
     <p class="discl-text">
       MYSTICA è un'app di <strong>puro intrattenimento</strong> esoterico.<br>
       Tarocchi, oroscopi, rune e tutti gli oracoli sono strumenti ludici e culturali
-      — non previsioni reali né consulenze professionali.
+      — non previsioni reali né consulenze professionali di alcun tipo.<br>
+      <span style="font-size:0.82em;opacity:0.75">L'uso dell'app implica l'accettazione dei Termini di Servizio e della Privacy Policy.</span>
     </p>
     <button class="discl-btn" onclick="chiudiDisclaimer()">✦ Ho Capito — Entra nell'App ✦</button>
     <button class="discl-link" onclick="chiudiDisclaimer()">Leggi i <a href="./termini.html" style="color:inherit">Termini di Servizio</a> · <a href="./privacy.html" style="color:inherit">Privacy Policy</a></button>
@@ -2805,7 +2807,7 @@ function chiudiDisclaimer(){
         style="font-size:10px;color:var(--muted);cursor:pointer;letter-spacing:.8px;text-decoration:underline;text-underline-offset:3px">
         Privacy Policy
       </a>
-      <a href="#termini" onclick="event.preventDefault();showLegal('termini')"
+      <a href="./termini.html"
         style="font-size:10px;color:var(--muted);cursor:pointer;letter-spacing:.8px;text-decoration:underline;text-underline-offset:3px">
         Termini di Servizio
       </a>
@@ -12521,6 +12523,18 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <div id="seo-static-content">
+
+<!-- ── CHI SIAMO – visibile ai crawler AdSense/Google ── -->
+<div style="background:linear-gradient(145deg,#0d0720,#070312);border-top:1px solid #2a174840;padding:14px 16px 10px;font-family:'Crimson Pro',Georgia,serif;font-size:11px;color:#4a3860;line-height:1.7;text-align:center">
+  <strong style="font-family:'Cinzel',serif;letter-spacing:1px;color:#5a4070">Chi siamo</strong> ·
+  MYSTICA è un progetto di intrattenimento esoterico sviluppato da PetroCorporation, Italia.
+  I contenuti (tarocchi, oroscopo, rune, I Ching e tutti gli oracoli) hanno finalità
+  <strong>esclusivamente ludiche e culturali</strong> e non costituiscono consulenza professionale
+  di alcun tipo. Per contatti: <a href="./contatti.html" style="color:#7a5090;text-decoration:underline">contatti.html</a> ·
+  <a href="./privacy.html" style="color:#7a5090;text-decoration:underline">Privacy Policy</a> ·
+  <a href="./termini.html" style="color:#7a5090;text-decoration:underline">Termini di Servizio</a>
+</div>
+
 <div class="seo-accordion" id="seoAccordion">
   <button class="seo-toggle" onclick="var a=document.getElementById('seoAccordion');a.classList.toggle('open')">✦ Scopri tutto su Mystica ✦</button>
   <div class="seo-body">
