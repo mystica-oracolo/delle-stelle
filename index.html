@@ -14139,17 +14139,28 @@ const TOPIC_EMOJI = {
   numerologia:'🔢', esperienze:'✨'
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function _initCommChars() {
   const ta = document.getElementById('comm-testo');
-  if(ta) ta.addEventListener('input', () => {
-    const el = document.getElementById('comm-chars');
-    if(el) el.textContent = ta.value.length + '/600';
-  });
-});
+  if(ta) {
+    ta.addEventListener('input', () => {
+      const el = document.getElementById('comm-chars');
+      if(el) el.textContent = ta.value.length + '/600';
+    });
+  }
+}
+if(document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _initCommChars);
+} else {
+  _initCommChars();
+}
 
 document.addEventListener('firebase-ready', () => {
   _avviaListenerCommenti();
 });
+// Fallback: if firebase already ready when this script runs
+if(window._fbReady) {
+  setTimeout(_avviaListenerCommenti, 100);
+}
 
 function _assicuraFirebase(cb) {
   if(window._fbReady) { cb(); return; }
@@ -14359,7 +14370,11 @@ function switchTab(tab) {
     btnR.style.fontWeight = !isCommunity ? '700' : '400';
   }
   if(!isCommunity) {
+    _initRecChars();
     _avviaListenerRecensioni();
+  } else {
+    _initCommChars();
+    _avviaListenerCommenti();
   }
 }
 
@@ -14370,13 +14385,20 @@ let _stelleSelezionate = 0;
 
 const STELLE_LABEL = ['','⭐ Pessima','⭐⭐ Scarsa','⭐⭐⭐ Nella media','⭐⭐⭐⭐ Buona','⭐⭐⭐⭐⭐ Eccellente!'];
 
-document.addEventListener('DOMContentLoaded', () => {
+function _initRecChars() {
   const ta = document.getElementById('rec-testo');
-  if(ta) ta.addEventListener('input', () => {
-    const el = document.getElementById('rec-chars');
-    if(el) el.textContent = ta.value.length + '/400';
-  });
-});
+  if(ta) {
+    ta.addEventListener('input', () => {
+      const el = document.getElementById('rec-chars');
+      if(el) el.textContent = ta.value.length + '/400';
+    });
+  }
+}
+if(document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _initRecChars);
+} else {
+  _initRecChars();
+}
 
 function setStelle(n) {
   _stelleSelezionate = n;
