@@ -14030,16 +14030,16 @@ window.addEventListener('DOMContentLoaded', () => {
   <div id="comm-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
 </div>
 
-<!-- FILTRI -->
-<div class="card" style="padding:12px 16px">
-  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-    <span style="font-size:12px;color:var(--muted)">Filtra:</span>
-    <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="btn btn-gold" style="padding:4px 12px;font-size:12px">Tutti</button>
-    <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="btn btn-sec" style="padding:4px 12px;font-size:12px">🃏</button>
-    <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="btn btn-sec" style="padding:4px 12px;font-size:12px">🌙</button>
-    <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="btn btn-sec" style="padding:4px 12px;font-size:12px">😴</button>
-    <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="btn btn-sec" style="padding:4px 12px;font-size:12px">✨</button>
-    <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="btn btn-sec" style="padding:4px 12px;font-size:12px">🌿</button>
+<!-- FILTRI ESTETICI -->
+<div style="margin-bottom:15px; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; padding: 5px 0;">
+  <div style="display: inline-flex; gap: 8px; padding: 0 5px;">
+    <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="btn btn-gold" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">Tutti</button>
+    <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">🃏 Tarocchi</button>
+    <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">🌙 Astri</button>
+    <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">😴 Sogni</button>
+    <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">✨ Esperienze</button>
+    <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">🌿 Wicca</button>
+    <button onclick="filtraCommenti('generale')" id="filtro-generale" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; flex-shrink: 0;">🔮 Generale</button>
   </div>
 </div>
 
@@ -14373,23 +14373,35 @@ function _mostraFeedback(msg, colore) {
 
 async function likaCommento(id) {
   if(_hoLikato(id)) return;
+  
+  // Feedback visivo immediato e salvataggio locale per prevenire doppi like
   _salvaLike(id);
   
-  // Feedback visivo immediato
-  const btn = event?.currentTarget || document.querySelector('#comm-' + id + ' button');
-  const el = document.getElementById('likes-' + id);
-  if(el) el.textContent = parseInt(el.textContent || 0) + 1;
+  // Trova tutti gli elementi che mostrano i likes per questo commento (pubblico e admin)
+  const contatori = document.querySelectorAll('[id="likes-' + id + '"]');
+  contatori.forEach(el => {
+    el.textContent = parseInt(el.textContent || 0) + 1;
+  });
+
+  // Trova il bottone cliccato (usando l'evento se disponibile)
+  const btn = event?.currentTarget;
   if(btn) {
     btn.style.background = 'rgba(212,175,55,0.2)';
-    btn.style.transform = 'scale(1.1)';
+    btn.style.transition = 'transform 0.2s ease';
+    btn.style.transform = 'scale(1.2)';
     setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
   }
 
   _assicuraFirebase(async () => {
     try {
       const { doc, updateDoc, increment } = window._fbFns;
+      // Usiamo l'ID stringa direttamente come richiesto da Firebase Firestore
       await updateDoc(doc(window._fbDb, 'commenti', id), { likes: increment(1) });
-    } catch(e){ console.warn('Like error:', e); }
+    } catch(e){ 
+      console.warn('Like error:', e);
+      // In caso di errore Firebase, potremmo voler gestire il rollback visivo, 
+      // ma solitamente increment(1) è molto affidabile.
+    }
   });
 }
 
@@ -14397,10 +14409,11 @@ function filtraCommenti(topic) {
   _filtroAttivo = topic;
   document.querySelectorAll('[id^="filtro-"]').forEach(b => {
     b.className = b.id === 'filtro-' + topic ? 'btn btn-gold' : 'btn btn-sec';
-    b.style.cssText = 'padding:4px 12px;font-size:12px';
+    // Manteniamo lo stile arrotondato delle chips
+    b.style.borderRadius = '20px';
+    b.style.padding = '6px 16px';
   });
   _renderCommenti();
-  _avviaListenerCommenti();
 }
 
 const ADMIN_PASS_C = 'Petromystico8@';
