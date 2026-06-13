@@ -14141,18 +14141,22 @@ const TOPIC_EMOJI = {
 
 function _initCommChars() {
   const ta = document.getElementById('comm-testo');
-  if(ta && !ta.dataset.init) {
-    ta.dataset.init = 'true';
-    ta.addEventListener('input', () => {
-      const el = document.getElementById('comm-chars');
-      if(el) el.textContent = ta.value.length + '/600';
-    });
+  const el = document.getElementById('comm-chars');
+  if(ta && el) {
+    el.textContent = ta.value.length + '/600';
+    if(!ta.dataset.init) {
+      ta.dataset.init = 'true';
+      ta.addEventListener('input', () => {
+        el.textContent = ta.value.length + '/600';
+      });
+    }
   }
 }
+// Inizializzazione sicura
 if(document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', _initCommChars);
+  document.addEventListener('DOMContentLoaded', () => { setTimeout(_initCommChars, 100); });
 } else {
-  _initCommChars();
+  setTimeout(_initCommChars, 100);
 }
 
 document.addEventListener('firebase-ready', () => {
@@ -14242,17 +14246,26 @@ function _salvaLike(id) {
 }
 
 async function inviaCommento() {
-  const nome = (document.getElementById('comm-nome') ? document.getElementById('comm-nome').value : '').trim();
-  const testo = (document.getElementById('comm-testo') ? document.getElementById('comm-testo').value : '').trim();
-  const topic = document.getElementById('comm-topic') ? document.getElementById('comm-topic').value : 'generale';
+  console.log('Inizio inviaCommento');
+  const nomeEl = document.getElementById('comm-nome');
+  const testoEl = document.getElementById('comm-testo');
+  const topicEl = document.getElementById('comm-topic');
   const btn = document.getElementById('comm-invia-btn');
+
+  const nome = (nomeEl ? nomeEl.value : '').trim();
+  const testo = (testoEl ? testoEl.value : '').trim();
+  const topic = topicEl ? topicEl.value : 'generale';
+
+  console.log('Dati commento:', { nome, testo, topic });
 
   if(!nome || nome.length < 2) { _mostraFeedback('⚠️ Inserisci un nome (minimo 2 caratteri)', '#e74c3c'); return; }
   if(!testo || testo.length < 10) { _mostraFeedback('⚠️ Il messaggio è troppo corto (minimo 10 caratteri)', '#e74c3c'); return; }
 
   if(btn) { btn.disabled = true; btn.textContent = '⏳ Invio...'; }
 
+  console.log('Chiamata _assicuraFirebase');
   _assicuraFirebase(async () => {
+    console.log('Firebase assicurato, invio a Firestore...');
     try {
       const { collection, addDoc, serverTimestamp } = window._fbFns;
       await addDoc(collection(window._fbDb, 'commenti'), {
@@ -14261,13 +14274,15 @@ async function inviaCommento() {
         likes: 0,
         approvato: true
       });
-      document.getElementById('comm-nome').value = '';
-      document.getElementById('comm-testo').value = '';
-      document.getElementById('comm-chars').textContent = '0/600';
+      console.log('Invio completato con successo');
+      if(nomeEl) nomeEl.value = '';
+      if(testoEl) testoEl.value = '';
+      const charsEl = document.getElementById('comm-chars');
+      if(charsEl) charsEl.textContent = '0/600';
       _mostraFeedback('✨ Messaggio inviato! Grazie per aver condiviso.', '#27ae60');
     } catch(e) {
+      console.error('Errore durante addDoc:', e);
       _mostraFeedback('❌ Errore nell invio. Riprova.', '#e74c3c');
-      console.error(e);
     } finally {
       if(btn) { btn.disabled = false; btn.textContent = '🔮 Invia Messaggio'; }
     }
@@ -14276,11 +14291,12 @@ async function inviaCommento() {
 
 function _mostraFeedback(msg, colore) {
   const fb = document.getElementById('comm-feedback');
-  if(!fb) return;
+  if(!fb) { alert(msg); return; }
   fb.textContent = msg;
   fb.style.color = colore;
   fb.style.display = 'block';
-  setTimeout(() => { fb.style.display = 'none'; }, 4000);
+  fb.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => { fb.style.display = 'none'; }, 5000);
 }
 
 async function likaCommento(id) {
@@ -14357,27 +14373,45 @@ async function adminElimina(id) {
 
 // ═══ TAB SWITCHER ═══
 function switchTab(tab) {
-  const isCommunity = tab === 'community';
-  document.getElementById('tab-community').style.display = isCommunity ? '' : 'none';
-  document.getElementById('tab-recensioni').style.display = isCommunity ? 'none' : '';
+  console.log('Switching to tab:', tab);
+  const isCommunity = (tab === 'community');
+  
+  const tabC = document.getElementById('tab-community');
+  const tabR = document.getElementById('tab-recensioni');
+  
+  // Usiamo display: block per assicurarci che siano visibili
+  if(tabC) tabC.style.setProperty('display', isCommunity ? 'block' : 'none', 'important');
+  if(tabR) tabR.style.setProperty('display', isCommunity ? 'none' : 'block', 'important');
+  
   const btnC = document.getElementById('tab-btn-community');
   const btnR = document.getElementById('tab-btn-recensioni');
-  if(btnC && btnR) {
+  
+  if(btnC) {
     btnC.style.background = isCommunity ? 'var(--gold)' : 'transparent';
     btnC.style.color = isCommunity ? '#1a0a00' : 'var(--gold)';
     btnC.style.fontWeight = isCommunity ? '700' : '400';
+  }
+  if(btnR) {
     btnR.style.background = !isCommunity ? 'var(--gold)' : 'transparent';
     btnR.style.color = !isCommunity ? '#1a0a00' : 'var(--gold)';
     btnR.style.fontWeight = !isCommunity ? '700' : '400';
   }
-  if(!isCommunity) {
-    _initRecChars();
-    _avviaListenerRecensioni();
-  } else {
+  
+  // Re-inizializziamo sempre i contatori quando si cambia tab
+  if(isCommunity) {
     _initCommChars();
     _avviaListenerCommenti();
+  } else {
+    _initRecChars();
+    _avviaListenerRecensioni();
   }
 }
+
+// Funzione globale chiamata quando si entra nella view Community
+window.initCommunityView = function() {
+  console.log('Inizializzazione globale View Community');
+  switchTab('community');
+};
 
 // ═══ RECENSIONI (Firebase) ═══
 let _recensioniTutte = [];
@@ -14388,18 +14422,21 @@ const STELLE_LABEL = ['','⭐ Pessima','⭐⭐ Scarsa','⭐⭐⭐ Nella media','
 
 function _initRecChars() {
   const ta = document.getElementById('rec-testo');
-  if(ta && !ta.dataset.init) {
-    ta.dataset.init = 'true';
-    ta.addEventListener('input', () => {
-      const el = document.getElementById('rec-chars');
-      if(el) el.textContent = ta.value.length + '/400';
-    });
+  const el = document.getElementById('rec-chars');
+  if(ta && el) {
+    el.textContent = ta.value.length + '/400';
+    if(!ta.dataset.init) {
+      ta.dataset.init = 'true';
+      ta.addEventListener('input', () => {
+        el.textContent = ta.value.length + '/400';
+      });
+    }
   }
 }
 if(document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', _initRecChars);
+  document.addEventListener('DOMContentLoaded', () => { setTimeout(_initRecChars, 100); });
 } else {
-  _initRecChars();
+  setTimeout(_initRecChars, 100);
 }
 
 function setStelle(n) {
@@ -14498,14 +14535,15 @@ function _renderRecensioni() {
 }
 
 async function inviaRecensione() {
-  const nome = (document.getElementById('rec-nome') ? document.getElementById('rec-nome').value : '').trim();
-  const testo = (document.getElementById('rec-testo') ? document.getElementById('rec-testo').value : '').trim();
+  const nomeEl = document.getElementById('rec-nome');
+  const testoEl = document.getElementById('rec-testo');
   const btn = document.getElementById('rec-invia-btn');
+  const nome = (nomeEl ? nomeEl.value : '').trim();
+  const testo = (testoEl ? testoEl.value : '').trim();
 
   if(!nome || nome.length < 2) { _mostraFeedbackRec('⚠️ Inserisci un nome (minimo 2 caratteri)', '#e74c3c'); return; }
   if(_stelleSelezionate === 0) { _mostraFeedbackRec('⚠️ Seleziona almeno una stella', '#e74c3c'); return; }
 
-  // Controlla se ha già recensito (localStorage)
   if(localStorage.getItem('myst_recensito')) {
     _mostraFeedbackRec('Hai già inviato una recensione. Grazie!', '#d4af37'); return;
   }
@@ -14521,14 +14559,15 @@ async function inviaRecensione() {
         approvato: true
       });
       localStorage.setItem('myst_recensito', '1');
-      document.getElementById('rec-nome').value = '';
-      document.getElementById('rec-testo').value = '';
-      document.getElementById('rec-chars').textContent = '0/400';
+      if(nomeEl) nomeEl.value = '';
+      if(testoEl) testoEl.value = '';
+      const charsEl = document.getElementById('rec-chars');
+      if(charsEl) charsEl.textContent = '0/400';
       setStelle(0);
       _mostraFeedbackRec('✨ Recensione pubblicata! Grazie mille.', '#27ae60');
     } catch(e) {
+      console.error('Errore invio recensione:', e);
       _mostraFeedbackRec('❌ Errore invio. Riprova.', '#e74c3c');
-      console.error(e);
     } finally {
       if(btn) { btn.disabled = false; btn.textContent = '⭐ Pubblica Recensione'; }
     }
