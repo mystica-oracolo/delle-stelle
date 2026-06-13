@@ -14030,16 +14030,16 @@ window.addEventListener('DOMContentLoaded', () => {
   <div id="comm-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
 </div>
 
-<!-- FILTRI MIGLIORATI -->
-<div style="margin: 15px 0; padding: 10px 0; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
-  <div style="display: flex; gap: 8px; overflow-x: auto; padding: 5px; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-    <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="btn btn-gold" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">Tutti</button>
-    <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">🃏 Tarocchi</button>
-    <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">🌙 Astrologia</button>
-    <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">😴 Sogni</button>
-    <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">✨ Esperienze</button>
-    <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">🌿 Wicca</button>
-    <button onclick="filtraCommenti('generale')" id="filtro-generale" class="btn btn-sec" style="padding:6px 16px; font-size:12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;">🔮 Generale</button>
+<!-- SEZIONE FILTRI ROBUSTA -->
+<div class="card" style="margin: 15px 0; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--gold-dim);">
+  <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
+    <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="btn btn-gold" style="padding:5px 12px; font-size:11px; border-radius: 15px;">Tutti</button>
+    <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🃏 Tarocchi</button>
+    <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🌙 Astri</button>
+    <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">😴 Sogni</button>
+    <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">✨ Esperienze</button>
+    <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🌿 Wicca</button>
+    <button onclick="filtraCommenti('generale')" id="filtro-generale" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🔮 Generale</button>
   </div>
 </div>
 
@@ -14372,38 +14372,31 @@ function _mostraFeedback(msg, colore) {
 }
 
 async function likaCommento(id) {
-  // Se l'ID è numerico (vecchio stile), Firebase non lo accetta come stringa doc id
   const docId = String(id);
   if(_hoLikato(docId)) return;
   
   _salvaLike(docId);
   
-  // Update UI immediato per tutti i contatori con questo ID
-  const contatori = document.querySelectorAll('[id="likes-' + docId + '"]');
-  contatori.forEach(el => {
-    let current = parseInt(el.textContent || 0);
-    el.textContent = current + 1;
-  });
+  // Update UI istantaneo
+  const el = document.getElementById('likes-' + docId);
+  if(el) {
+    let val = parseInt(el.textContent || 0);
+    el.textContent = val + 1;
+  }
 
-  // Animazione pulsante
+  // Animazione
   const btn = event?.currentTarget;
   if(btn) {
-    btn.style.background = 'rgba(212,175,55,0.3)';
-    btn.style.transform = 'scale(1.2)';
-    setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
+    btn.style.background = 'rgba(212,175,55,0.4)';
+    btn.classList.add('pulse');
+    setTimeout(() => btn.classList.remove('pulse'), 300);
   }
 
   _assicuraFirebase(async () => {
     try {
       const { doc, updateDoc, increment } = window._fbFns;
-      const db = window._fbDb;
-      // Firestore increment
-      await updateDoc(doc(db, 'commenti', docId), { 
-        likes: increment(1) 
-      });
-    } catch(e){ 
-      console.error('Errore Firebase Like:', e);
-    }
+      await updateDoc(doc(window._fbDb, 'commenti', docId), { likes: increment(1) });
+    } catch(e){ console.error(e); }
   });
 }
 
