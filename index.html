@@ -14282,6 +14282,19 @@ function annullaRisposta() {
   if(topicRow) topicRow.style.display = '';
 }
 
+function adminPreparaRisposta(id, nome) {
+  // Chiudi il pannello admin per mostrare il form
+  const panel = document.getElementById('admin-panel');
+  if(panel) panel.style.display = 'none';
+  
+  // Imposta il nome admin nel form se è vuoto
+  const nomeEl = document.getElementById('comm-nome');
+  if(nomeEl && !nomeEl.value) nomeEl.value = 'Admin Mystica';
+  
+  // Avvia la logica di risposta standard
+  preparaRisposta(id, nome);
+}
+
 function _renderCommentiErrore() {
   const lista = document.getElementById('commenti-lista');
   if(lista) lista.innerHTML = '<div class="card" style="text-align:center;color:var(--muted);font-size:13px">⚠️ Impossibile caricare i commenti. Controlla la connessione.</div>';
@@ -14658,6 +14671,7 @@ function _renderAdmin() {
         '<button onclick="adminNascondi(\'' + c.id + '\',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
         (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
         '<button onclick="adminElimina(\'' + c.id + '\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
+        (!isRisposta ? '<button onclick="adminPreparaRisposta(\'' + c.id + '\', \'' + _sanitize(c.nome) + '\')" style="background:rgba(212,175,55,0.2);border:1px solid var(--gold);color:var(--gold);padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">💬 Rispondi</button>' : '') +
         '</div></div>';
     }).join('');
   } else {
