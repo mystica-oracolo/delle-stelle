@@ -1,3 +1,13 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║         MYSTICA ORACOLI — mysticaoracoli.it                  ║
+  ║  © 2025-2026 Mago Petro / PetroCorporation                   ║
+  ║  Tutti i diritti riservati. All rights reserved.             ║
+  ║  Vietata la riproduzione, copia o distribuzione              ║
+  ║  anche parziale senza autorizzazione scritta.                ║
+  ║  Sviluppato da: Dott. Petrolese Giovanni                     ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -14189,7 +14199,7 @@ function _renderCommenti() {
     return '<div class="card" style="margin-bottom:10px" id="comm-' + c.id + '">' +
       '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">' +
         '<div>' +
-          '<span style="font-family:'Cinzel',serif;font-size:13px;color:var(--gold)">' + _sanitize(c.nome) + '</span>' +
+          '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">' + _sanitize(c.nome) + '</span>' +
           '<span style="margin-left:8px;background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);color:var(--gold);padding:2px 8px;border-radius:12px;font-size:11px">' + emoji + ' ' + (c.topic || 'generale') + '</span>' +
         '</div>' +
         '<span style="font-size:11px;color:var(--muted)">' + data + '</span>' +
@@ -14454,7 +14464,7 @@ function _renderRecensioni() {
     const stelle = '⭐'.repeat(r.stelle||0) + '☆'.repeat(5-(r.stelle||0));
     return '<div class="card" style="margin-bottom:10px">' +
       '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">' +
-        '<span style="font-family:'Cinzel',serif;font-size:13px;color:var(--gold)">' + _sanitize(r.nome) + '</span>' +
+        '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">' + _sanitize(r.nome) + '</span>' +
         '<span style="font-size:11px;color:var(--muted)">' + data + '</span>' +
       '</div>' +
       '<div style="font-size:18px;margin-bottom:8px">' + stelle + '</div>' +
