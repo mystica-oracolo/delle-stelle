@@ -14132,6 +14132,9 @@ window.addEventListener('DOMContentLoaded', () => {
 let _commentiTutti = [];
 let _filtroAttivo = 'tutti';
 let _commentiUnsubscribe = null;
+let _rispostaA = null; // ID del commento a cui si sta rispondendo
+
+const PAROLE_PROIBITE = ['scemo', 'cretino', 'stronzo', 'vaffanculo', 'merda', 'idiota', 'bastardo', 'cafone'];
 
 const TOPIC_EMOJI = {
   generale:'🔮', tarocchi:'🃏', astrologia:'🌙', sogni:'😴',
@@ -14200,34 +14203,83 @@ function _renderCommenti() {
   const lista = document.getElementById('commenti-lista');
   if(!lista) return;
 
-  const filtrati = _filtroAttivo === 'tutti'
-    ? _commentiTutti.filter(c => c.approvato !== false)
-    : _commentiTutti.filter(c => c.topic === _filtroAttivo && c.approvato !== false);
+  const approvati = _commentiTutti.filter(c => c.approvato !== false);
+  const padri = _filtroAttivo === 'tutti' 
+    ? approvati.filter(c => !c.parentId)
+    : approvati.filter(c => !c.parentId && c.topic === _filtroAttivo);
 
-  if(filtrati.length === 0) {
+  if(padri.length === 0) {
     lista.innerHTML = '<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">🌙</div>Nessun messaggio ancora. Sii il primo a condividere!</div>';
     return;
   }
 
-  lista.innerHTML = filtrati.map(c => {
-    const data = c.timestamp ? new Date(c.timestamp.seconds * 1000).toLocaleDateString("it-IT", {day:"2-digit",month:"short",year:"numeric"}) : "ora";
-    const emoji = TOPIC_EMOJI[c.topic] || "🔮";
-    const likes = c.likes || 0;
-    const hasLiked = _hoLikato(c.id);
-    return '<div class="card" style="margin-bottom:10px" id="comm-' + c.id + '">' +
-      '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">' +
-        '<div>' +
-          '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">' + _sanitize(c.nome) + '</span>' +
-          '<span style="margin-left:8px;background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);color:var(--gold);padding:2px 8px;border-radius:12px;font-size:11px">' + emoji + ' ' + (c.topic || 'generale') + '</span>' +
-        '</div>' +
-        '<span style="font-size:11px;color:var(--muted)">' + data + '</span>' +
+  let html = '';
+  padri.forEach(c => {
+    html += _costruisciHTMLCommento(c, false);
+    // Cerca risposte a questo commento
+    const risposte = approvati.filter(r => r.parentId === c.id);
+    if(risposte.length > 0) {
+      html += '<div style="margin-left:30px;border-left:2px solid var(--gold-dim);padding-left:15px;margin-top:-5px;margin-bottom:15px">';
+      risposte.sort((a,b) => (a.timestamp?.seconds || 0) - (b.timestamp?.seconds || 0));
+      risposte.forEach(r => {
+        html += _costruisciHTMLCommento(r, true);
+      });
+      html += '</div>';
+    }
+  });
+  lista.innerHTML = html;
+}
+
+function _costruisciHTMLCommento(c, isRisposta) {
+  const data = c.timestamp ? new Date(c.timestamp.seconds * 1000).toLocaleDateString("it-IT", {day:"2-digit",month:"short",year:"numeric"}) : "ora";
+  const emoji = TOPIC_EMOJI[c.topic] || "🔮";
+  const likes = c.likes || 0;
+  const hasLiked = _hoLikato(c.id);
+  const shadow = isRisposta ? 'none' : '0 4px 18px rgba(0,0,0,0.08)';
+  
+  return '<div class="card" style="margin-bottom:10px;box-shadow:'+shadow+'" id="comm-' + c.id + '">' +
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">' +
+      '<div>' +
+        '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">' + _sanitize(c.nome) + '</span>' +
+        (!isRisposta ? '<span style="margin-left:8px;background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);color:var(--gold);padding:2px 8px;border-radius:12px;font-size:11px">' + emoji + ' ' + (c.topic || 'generale') + '</span>' : '') +
       '</div>' +
-      '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0 0 10px">' + _sanitize(c.testo) + '</p>' +
-      '<div style="display:flex;gap:10px;align-items:center">' +
-        '<button onclick="likaCommento(' + c.id + ')" style="background:' + (hasLiked ? 'rgba(212,175,55,0.2)' : 'none') + ';border:1px solid var(--gold-dim);color:var(--gold);padding:4px 12px;border-radius:20px;cursor:pointer;font-size:12px">❤️ <span id="likes-' + c.id + '">' + likes + '</span></button>' +
-      '</div>' +
-    '</div>';
-  }).join('');
+      '<span style="font-size:11px;color:var(--muted)">' + data + '</span>' +
+    '</div>' +
+    '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0 0 10px">' + _sanitize(c.testo) + '</p>' +
+    '<div style="display:flex;gap:10px;align-items:center">' +
+      '<button onclick="likaCommento(\'' + c.id + '\')" style="background:' + (hasLiked ? 'rgba(212,175,55,0.2)' : 'none') + ';border:1px solid var(--gold-dim);color:var(--gold);padding:4px 12px;border-radius:20px;cursor:pointer;font-size:12px">❤️ <span id="likes-' + c.id + '">' + likes + '</span></button>' +
+      (!isRisposta ? '<button onclick="preparaRisposta(\'' + c.id + '\', \'' + _sanitize(c.nome) + '\')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:12px;text-decoration:underline">Rispondi</button>' : '') +
+    '</div>' +
+  '</div>';
+}
+
+function preparaRisposta(id, nome) {
+  _rispostaA = id;
+  const formCard = document.getElementById('commenti-form-card');
+  if(formCard) {
+    formCard.scrollIntoView({ behavior: 'smooth' });
+    const info = document.getElementById('comm-risposta-info') || document.createElement('div');
+    info.id = 'comm-risposta-info';
+    info.style.cssText = 'background:rgba(212,175,55,0.1);padding:10px;border-radius:8px;margin-bottom:15px;font-size:13px;display:flex;justify-content:space-between;align-items:center';
+    info.innerHTML = '<span>Stai rispondendo a <b>' + nome + '</b></span>' +
+                     '<button onclick="annullaRisposta()" style="background:none;border:none;color:#e74c3c;cursor:pointer;font-size:12px">Annulla</button>';
+    
+    const container = document.querySelector('#commenti-form-card .card-body') || formCard;
+    if(!document.getElementById('comm-risposta-info')) {
+      container.insertBefore(info, container.firstChild);
+    }
+    // Nascondi selettore topic per le risposte (ereditano quello del padre)
+    const topicRow = document.getElementById('comm-topic')?.closest('div');
+    if(topicRow) topicRow.style.display = 'none';
+  }
+}
+
+function annullaRisposta() {
+  _rispostaA = null;
+  const info = document.getElementById('comm-risposta-info');
+  if(info) info.remove();
+  const topicRow = document.getElementById('comm-topic')?.closest('div');
+  if(topicRow) topicRow.style.display = '';
 }
 
 function _renderCommentiErrore() {
@@ -14248,15 +14300,30 @@ function _salvaLike(id) {
 }
 
 async function inviaCommento() {
-  const nome = (document.getElementById('comm-nome') ? document.getElementById('comm-nome').value : '').trim();
-  const testo = (document.getElementById('comm-testo') ? document.getElementById('comm-testo').value : '').trim();
-  const topic = document.getElementById('comm-topic') ? document.getElementById('comm-topic').value : 'generale';
+  const nomeEl = document.getElementById('comm-nome');
+  const testoEl = document.getElementById('comm-testo');
+  const nome = (nomeEl ? nomeEl.value : '').trim();
+  const testo = (testoEl ? testoEl.value : '').trim();
+  let topic = document.getElementById('comm-topic') ? document.getElementById('comm-topic').value : 'generale';
   const btn = document.getElementById('comm-invia-btn');
 
   if(!nome || nome.length < 2) { _mostraFeedback('⚠️ Inserisci un nome (minimo 2 caratteri)', '#e74c3c'); return; }
   if(!testo || testo.length < 10) { _mostraFeedback('⚠️ Il messaggio è troppo corto (minimo 10 caratteri)', '#e74c3c'); return; }
 
+  // Filtro parole proibite
+  const testoLower = testo.toLowerCase();
+  if(PAROLE_PROIBITE.some(p => testoLower.includes(p))) {
+    _mostraFeedback('⚠️ Il tuo messaggio contiene termini non consentiti. Modificalo per continuare.', '#e74c3c');
+    return;
+  }
+
   if(btn) { btn.disabled = true; btn.textContent = '⏳ Invio...'; }
+
+  // Se è una risposta, eredita il topic del padre
+  if(_rispostaA) {
+    const padre = _commentiTutti.find(c => c.id === _rispostaA);
+    if(padre) topic = padre.topic || 'generale';
+  }
 
   _assicuraFirebase(async () => {
     try {
@@ -14265,11 +14332,13 @@ async function inviaCommento() {
         nome: nome, testo: testo, topic: topic,
         timestamp: serverTimestamp(),
         likes: 0,
-        approvato: true
+        approvato: true,
+        parentId: _rispostaA || null
       });
-      document.getElementById('comm-nome').value = '';
-      document.getElementById('comm-testo').value = '';
+      if(nomeEl) nomeEl.value = '';
+      if(testoEl) testoEl.value = '';
       document.getElementById('comm-chars').textContent = '0/600';
+      annullaRisposta();
       _mostraFeedback('✨ Messaggio inviato! Grazie per aver condiviso.', '#27ae60');
     } catch(e) {
       _mostraFeedback('❌ Errore nell invio. Riprova.', '#e74c3c');
@@ -14292,8 +14361,17 @@ function _mostraFeedback(msg, colore) {
 async function likaCommento(id) {
   if(_hoLikato(id)) return;
   _salvaLike(id);
+  
+  // Feedback visivo immediato
+  const btn = event?.currentTarget || document.querySelector('#comm-' + id + ' button');
   const el = document.getElementById('likes-' + id);
-  if(el) el.textContent = parseInt(el.textContent) + 1;
+  if(el) el.textContent = parseInt(el.textContent || 0) + 1;
+  if(btn) {
+    btn.style.background = 'rgba(212,175,55,0.2)';
+    btn.style.transform = 'scale(1.1)';
+    setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
+  }
+
   _assicuraFirebase(async () => {
     try {
       const { doc, updateDoc, increment } = window._fbFns;
@@ -14328,18 +14406,19 @@ function _renderAdmin() {
     lista.innerHTML = '<p style="color:var(--muted);font-size:13px">Nessun commento.</p>';
     return;
   }
-  lista.innerHTML = _commentiTutti.map(c =>
-    '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px">' +
-    '<strong style="color:var(--gold)">' + _sanitize(c.nome) + '</strong>' +
-    '<span style="color:var(--muted);margin-left:6px">[' + (c.topic||'generale') + ']</span>' +
-    (c.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
-    '<p style="color:var(--text);margin:4px 0">' + _sanitize(c.testo) + '</p>' +
-    '<div style="display:flex;gap:8px;margin-top:4px">' +
-    '<button onclick="adminNascondi(' + c.id + ',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
-    (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
-    '<button onclick="adminElimina(' + c.id + ')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
-    '</div></div>'
-  ).join('');
+  lista.innerHTML = _commentiTutti.map(c => {
+    const isRisposta = !!c.parentId;
+    return '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px;' + (isRisposta ? 'margin-left:20px;border-left:2px solid #e74c3c;padding-left:10px' : '') + '">' +
+      '<strong style="color:var(--gold)">' + _sanitize(c.nome) + '</strong>' +
+      (isRisposta ? ' <span style="color:var(--muted)">(Risposta)</span>' : '<span style="color:var(--muted);margin-left:6px">[' + (c.topic||'generale') + ']</span>') +
+      (c.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
+      '<p style="color:var(--text);margin:4px 0">' + _sanitize(c.testo) + '</p>' +
+      '<div style="display:flex;gap:8px;margin-top:4px">' +
+      '<button onclick="adminNascondi(\'' + c.id + '\',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
+      (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
+      '<button onclick="adminElimina(\'' + c.id + '\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
+      '</div></div>';
+  }).join('');
 }
 
 async function adminNascondi(id, nascondi) {
@@ -14568,18 +14647,19 @@ function _renderAdmin() {
   if(!lista) return;
   if(_adminTabAttivo === 'commenti') {
     if(_commentiTutti.length === 0) { lista.innerHTML = '<p style="color:var(--muted);font-size:13px">Nessun commento.</p>'; return; }
-    lista.innerHTML = _commentiTutti.map(c =>
-      '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px">' +
-      '<strong style="color:var(--gold)">' + _sanitize(c.nome) + '</strong>' +
-      '<span style="color:var(--muted);margin-left:6px">[' + (c.topic||'generale') + ']</span>' +
-      (c.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
-      '<p style="color:var(--text);margin:4px 0">' + _sanitize(c.testo) + '</p>' +
-      '<div style="display:flex;gap:8px;margin-top:4px">' +
-      '<button onclick="adminNascondi(' + c.id + ',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
-      (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
-      '<button onclick="adminElimina(' + c.id + ')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
-      '</div></div>'
-    ).join('');
+    lista.innerHTML = _commentiTutti.map(c => {
+      const isRisposta = !!c.parentId;
+      return '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px;' + (isRisposta ? 'margin-left:20px;border-left:2px solid #e74c3c;padding-left:10px' : '') + '">' +
+        '<strong style="color:var(--gold)">' + _sanitize(c.nome) + '</strong>' +
+        (isRisposta ? ' <span style="color:var(--muted)">(Risposta)</span>' : '<span style="color:var(--muted);margin-left:6px">[' + (c.topic||'generale') + ']</span>') +
+        (c.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
+        '<p style="color:var(--text);margin:4px 0">' + _sanitize(c.testo) + '</p>' +
+        '<div style="display:flex;gap:8px;margin-top:4px">' +
+        '<button onclick="adminNascondi(\'' + c.id + '\',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
+        (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
+        '<button onclick="adminElimina(\'' + c.id + '\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
+        '</div></div>';
+    }).join('');
   } else {
     if(_recensioniTutte.length === 0) { lista.innerHTML = '<p style="color:var(--muted);font-size:13px">Nessuna recensione.</p>'; return; }
     lista.innerHTML = _recensioniTutte.map(r =>
@@ -14589,9 +14669,9 @@ function _renderAdmin() {
       (r.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
       (r.testo ? '<p style="color:var(--text);margin:4px 0">' + _sanitize(r.testo) + '</p>' : '<p style="color:var(--muted);margin:4px 0;font-style:italic">nessun commento</p>') +
       '<div style="display:flex;gap:8px;margin-top:4px">' +
-      '<button onclick="adminNascondiRec(' + r.id + ',' + (r.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
+      '<button onclick="adminNascondiRec(\'' + r.id + '\',' + (r.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
       (r.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
-      '<button onclick="adminEliminaRec(' + r.id + ')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
+      '<button onclick="adminEliminaRec(\'' + r.id + '\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
       '</div></div>'
     ).join('');
   }
