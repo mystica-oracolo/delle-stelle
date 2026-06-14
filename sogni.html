@@ -20,9 +20,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
 
-<title>I Sogni — Interpretazioni e Significato | MYSTICA Oracoli</title>
-<meta name="description" content="Scopri il significato dei sogni, l'oniromanzia e l'interpretazione onirica. Guida completa ai simboli dei sogni, numeri della smorfia, origini e tradizioni. Significato degli oggetti e dei numeri nei sogni.">
-<meta name="keywords" content="significato sogni, oniromanzia, interpretazione sogni, smorfia napoletana numeri, simboli sogni, significato oggetti sogni, numeri sogni, divinazione sogni, onirologia, sognare significato, sogni premonitori, tradizioni sogni, credenze sogni, libro dei sogni, artemidoro, freud sogni, jung sogni, interpretazione onirica, dizionario sogni">
+<title>I Sogni — Interpretazioni, Significati e Smorfia Napoletana | MYSTICA Oracoli</title>
+<meta name="description" content="Guida completa ai sogni e all'oniromanzia: scopri il significato dei simboli onirici, la Smorfia Napoletana completa (1-90), tecniche di interpretazione secondo Freud e Jung, sogni ricorrenti e premonitori. Approfondimenti su onirologia e divinazione onirica.">
+<meta name="keywords" content="significato sogni, oniromanzia, interpretazione sogni, smorfia napoletana numeri 1-90, simboli sogni, significato oggetti sogni, numeri sogni, divinazione sogni, onirologia, sognare significato, sogni premonitori, tradizioni sogni, credenze sogni, libro dei sogni, artemidoro, freud sogni, jung sogni, interpretazione onirica, dizionario sogni, sogni ricorrenti, sogni lucidi, fasi del sonno, archetipi onirici, inconscio collettivo, simboli universali, tecniche interpretazione sogni">
 <meta name="author" content="MYSTICA — Oracolo delle Stelle">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="language" content="it">
@@ -33,8 +33,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mysticaoracoli.it/sogni.html">
-<meta property="og:title" content="I Sogni — Interpretazioni e Significato | MYSTICA">
-<meta property="og:description" content="Guida completa all'oniromanzia: significato dei sogni, simboli, numeri della smorfia, origini e tradizioni antiche.">
+<meta property="og:title" content="I Sogni — Interpretazioni, Significati e Smorfia Napoletana | MYSTICA">
+<meta property="og:description" content="Guida completa all'oniromanzia: significato dei sogni, simboli, numeri della smorfia, origini e tradizioni antiche. Smorfia napoletana 1-90 completa.">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="MYSTICA – Oracolo delle Stelle">
 
@@ -52,8 +52,8 @@
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "I Sogni — Interpretazioni e Significato",
-  "description": "Guida completa all'oniromanzia: significato dei sogni, simboli, numeri della smorfia, origini e tradizioni antiche.",
+  "headline": "I Sogni — Interpretazioni, Significati e Smorfia Napoletana",
+  "description": "Guida completa all'oniromanzia: significato dei sogni, simboli, numeri della smorfia (1-90), origini e tradizioni antiche.",
   "url": "https://mysticaoracoli.it/sogni.html",
   "image": "https://mysticaoracoli.it/og-image.jpg",
   "author": {
@@ -90,6 +90,14 @@ body.day-mode h2{color:#7a5a08}
 body.day-mode h3{color:#1a0e04}
 body.day-mode p{color:#1a0e04}
 body.day-mode .t-muted{color:#6a5a40}
+body.day-mode .category-card{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
+body.day-mode .category-icon{color:#8b6a10}
+body.day-mode .category-title{color:#8b6a10}
+body.day-mode .category-desc{color:#5a4a30}
+body.day-mode .smorfia-table{background:#fff8ee;border-color:rgba(139,106,16,0.2)}
+body.day-mode .smorfia-table tr:hover{background-color:rgba(139,106,16,0.08)}
+body.day-mode .smorfia-num{color:#8b6a10}
+body.day-mode .smorfia-meaning{color:#1a0e04}
 
 :root{--bg:#0a0514;--card:#140c24;--purple:#2a1748;--gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);--text:#f4f1fa;--muted:#b8b2d1;--radius:18px;--success:#4ade80;--warning:#fbbf24;--error:#f87171}
 
@@ -113,11 +121,25 @@ input,select{-webkit-appearance:none}
 
 .header-content{max-width:900px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 
-.header-title{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
-
 .header-back{background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.35);color:var(--gold);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all 0.2s}
 
 .header-back:hover{background:rgba(212,175,55,0.22);transform:scale(1.08)}
+
+.header-title{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;flex:1;text-align:center}
+
+.header-controls{display:flex;gap:8px;align-items:center}
+
+.hdr-btn{background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.35);color:var(--gold);width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;transition:all 0.2s;font-weight:bold;position:relative}
+
+.hdr-btn:hover{background:rgba(212,175,55,0.22);transform:scale(1.08)}
+
+.hdr-audio-waves{position:absolute;bottom:4px;display:flex;gap:1.5px;align-items:flex-end;height:10px;opacity:0;transition:opacity .3s}
+.hdr-btn.playing .hdr-audio-waves{opacity:1}
+.hdr-audio-wave{width:1.5px;background:var(--gold);border-radius:1px;animation:wave-anim 1s infinite ease-in-out}
+.hdr-audio-wave:nth-child(2){animation-delay:.2s;height:14px}
+.hdr-audio-wave:nth-child(3){animation-delay:.4s;height:10px}
+.hdr-audio-wave:nth-child(4){animation-delay:.6s;height:12px}
+@keyframes wave-anim{0%,100%{height:4px}50%{height:10px}}
 
 .content{margin-top:70px;padding-bottom:40px}
 
@@ -132,6 +154,18 @@ input,select{-webkit-appearance:none}
 .hero-subtitle{font-size:1rem;color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto}
 
 .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.3),transparent);margin:40px 0}
+
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:30px}
+
+.category-card{background:linear-gradient(145deg,#100820,#08040f);border:1px solid rgba(212,175,55,0.2);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+
+.category-card:hover{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,0.3);transform:translateY(-4px)}
+
+.category-icon{font-size:2.5rem;margin-bottom:12px;display:block}
+
+.category-title{font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold);letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
+
+.category-desc{font-size:0.8rem;color:var(--muted);line-height:1.5}
 
 .dream-section{background:linear-gradient(145deg,rgba(10,5,20,0.6),rgba(15,7,25,0.8));border-left:4px solid var(--gold);border-radius:12px;padding:24px;margin-bottom:24px}
 
@@ -161,6 +195,18 @@ input,select{-webkit-appearance:none}
 
 .dream-item-number{display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:4px 10px;font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-top:10px}
 
+.smorfia-table{width:100%;border-collapse:collapse;background:linear-gradient(145deg,#0d0620,#09050f);border:1px solid rgba(212,175,55,0.2);border-radius:8px;overflow:hidden;margin-bottom:20px}
+
+.smorfia-table th{background:rgba(212,175,55,0.15);border-bottom:1px solid rgba(212,175,55,0.3);padding:12px;text-align:left;font-family:'Cinzel',serif;color:var(--gold);font-size:0.9rem;letter-spacing:1px}
+
+.smorfia-table td{padding:10px 12px;border-bottom:1px solid rgba(212,175,55,0.1);font-size:0.9rem}
+
+.smorfia-table tr:hover{background:rgba(212,175,55,0.08)}
+
+.smorfia-num{color:var(--gold);font-weight:bold;font-family:'Cinzel',serif}
+
+.smorfia-meaning{color:var(--text)}
+
 .btn{padding:12px 24px;background:linear-gradient(135deg,#d4af37,#b8860b);border:none;border-radius:12px;color:#0a0514;font-family:'Cinzel',serif;font-size:0.9rem;letter-spacing:1px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
 
 .btn:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 4px 12px rgba(212,175,55,0.3)}
@@ -171,6 +217,8 @@ input,select{-webkit-appearance:none}
 
 .footer a:hover{text-decoration:underline}
 
+.hidden{display:none !important}
+
 @media(max-width:768px){
   .header-title{font-size:1rem}
   .hero-title{font-size:1.5rem}
@@ -178,6 +226,9 @@ input,select{-webkit-appearance:none}
   .dream-section{padding:16px}
   .container{padding:15px}
   .content{margin-top:60px}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .smorfia-table{font-size:0.8rem}
+  .smorfia-table td{padding:8px}
 }
 
 @media(max-width:480px){
@@ -187,6 +238,7 @@ input,select{-webkit-appearance:none}
   .hero-title{font-size:1.2rem}
   .dream-grid{grid-template-columns:1fr}
   .dream-section h3{font-size:1.1rem}
+  .category-grid{grid-template-columns:1fr}
 }
 </style>
 
@@ -200,7 +252,16 @@ input,select{-webkit-appearance:none}
   <div class="header-content">
     <div class="header-back" onclick="window.history.back()">←</div>
     <div class="header-title">I Sogni</div>
-    <div style="width:40px"></div>
+    <div class="header-controls">
+      <button class="hdr-btn" id="hdrThemeBtn" onclick="qaToggleTheme()" title="Modalità Giorno">☀️</button>
+      <button class="hdr-btn" id="hdrAudioBtn" onclick="toggleBgAudio()" title="Musica di sottofondo">
+        <span id="hdrAudioIcon">🎵</span>
+        <span class="hdr-audio-waves">
+          <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
+          <span class="hdr-audio-wave"></span><span class="hdr-audio-wave"></span>
+        </span>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -215,290 +276,309 @@ input,select{-webkit-appearance:none}
       <p class="hero-subtitle">Interpretazioni, Significati e Tradizioni Antiche<br>Una guida completa all'oniromanzia e all'arte divinatoria dei sogni</p>
     </div>
 
-    <!-- SEZIONE 1: CHE COS'È L'ONIROMANZIA -->
-    <div class="dream-section">
-      <h3>🔮 Che Cos'è l'Oniromanzia?</h3>
-      <p>L'<strong>oniromanzia</strong> (dal greco "oniro" = sogno, e "manzia" = divinazione) è l'<strong>arte divinatoria basata sull'interpretazione dei sogni</strong>. Si tratta di una pratica antichissima, presente in ogni epoca e cultura, che considera i sogni come veicoli di messaggi spirituali, presagi del futuro e rivelazioni della volontà divina.</p>
-      <p>Diversa dall'<strong>onirologia</strong>, che è lo studio psicologico dei sogni, l'oniromanzia appartiene alla sfera spirituale e esoterica, rappresentando un ponte tra il mondo consapevole e quello inconscio, tra la realtà materiale e quella spirituale.</p>
-      <p>I sogni sono stati considerati per millenni come <strong>strumenti di comunicazione divina</strong>, capaci di rivelare verità nascoste, avvertimenti e opportunità. Antiche civiltà, figure religiose e mistici hanno sempre attribuito grande importanza all'interpretazione onirica.</p>
+    <!-- SEZIONE ANALIZZA IL MIO SOGNO -->
+    <div class="dream-section" id="analizza-sogno" style="background:linear-gradient(145deg,rgba(42,23,72,0.8),rgba(18,8,48,0.9));border-left:4px solid #fbbf24;margin-bottom:30px">
+      <h3 style="color:#fbbf24">✨ Analizza il Mio Sogno</h3>
+      <p style="margin-bottom:15px">Descrivi il tuo sogno qui sotto e riceverai un'interpretazione personalizzata basata sui simboli e gli archetipi onirici. Sii il più dettagliato possibile — includi emozioni, colori, persone e oggetti che ricordi.</p>
+      <textarea id="dream-input" placeholder="Scrivi qui il tuo sogno... Ad esempio: 'Stavo volando sopra una città sconosciuta, mi sentivo libero ma anche un po' spaventato. C'era una casa grande con porte rosse...'" style="width:100%;min-height:120px;padding:12px;background:rgba(10,5,20,0.6);border:1px solid rgba(212,175,55,0.3);border-radius:8px;color:var(--text);font-family:'Crimson Pro',serif;font-size:0.95rem;line-height:1.6;resize:vertical;margin-bottom:15px"></textarea>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn" onclick="analyzeDream()" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);flex:1;max-width:200px">🔮 Analizza Sogno</button>
+        <button class="btn" onclick="clearDreamInput()" style="background:linear-gradient(135deg,#6b7280,#4b5563);flex:1;max-width:200px">🗑️ Cancella</button>
+      </div>
+      <div id="dream-result" style="display:none;margin-top:20px;padding:16px;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);border-radius:8px"></div>
+    </div>
+
+    <!-- MACRO-CATEGORIE -->
+    <div class="category-grid">
+      <div class="category-card" onclick="scrollToSection('oniromanzia')">
+        <span class="category-icon">🔮</span>
+        <div class="category-title">Oniromanzia</div>
+        <div class="category-desc">Origini e storia dell'arte divinatoria</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('simboli')">
+        <span class="category-icon">🌌</span>
+        <div class="category-title">Simboli Onirici</div>
+        <div class="category-desc">Significati e archetipi universali</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('smorfia')">
+        <span class="category-icon">🔢</span>
+        <div class="category-title">Smorfia 1-90</div>
+        <div class="category-desc">Lista completa della Smorfia Napoletana</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('tecniche')">
+        <span class="category-icon">🧠</span>
+        <div class="category-title">Tecniche</div>
+        <div class="category-desc">Freud, Jung e approcci moderni</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('ricorrenti')">
+        <span class="category-icon">✨</span>
+        <div class="category-title">Ricorrenti</div>
+        <div class="category-desc">Sogni che si ripetono e premonitori</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('sonno')">
+        <span class="category-icon">😴</span>
+        <div class="category-title">Sonno e Fasi</div>
+        <div class="category-desc">Scienza del sonno e REM</div>
+      </div>
+      <div class="category-card" onclick="scrollToSection('lucidi')">
+        <span class="category-icon">💡</span>
+        <div class="category-title">Sogni Lucidi</div>
+        <div class="category-desc">Consapevolezza e controllo onirico</div>
+      </div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 2: STORIA DELL'ONIROMANZIA -->
-    <div class="dream-section">
-      <h3>📚 Storia dell'Oniromanzia</h3>
+    <!-- SEZIONE 1: ONIROMANZIA -->
+    <div id="oniromanzia" class="dream-section">
+      <h3>🔮 Che Cos'è l'Oniromanzia?</h3>
+      <p>L'<strong>oniromanzia</strong> (dal greco "oniro" = sogno, e "manzia" = divinazione) è l'<strong>arte divinatoria basata sull'interpretazione dei sogni</strong>. Si tratta di una pratica antichissima, presente in ogni epoca e cultura, che considera i sogni come veicoli di messaggi spirituali, presagi del futuro e rivelazioni della volontà divina.</p>
+      <p>Diversa dall'<strong>onirologia</strong>, che è lo studio scientifico e psicologico dei sogni, l'oniromanzia appartiene alla sfera spirituale ed esoterica, rappresentando un ponte tra il mondo consapevole e quello inconscio, tra la realtà materiale e quella spirituale.</p>
+      <p>I sogni sono stati considerati per millenni come <strong>strumenti di comunicazione divina</strong>, capaci di rivelare verità nascoste, avvertimenti e opportunità. Antiche civiltà, figure religiose e mistici hanno sempre attribuito grande importanza all'interpretazione onirica.</p>
+      
+      <h3 style="margin-top:20px">📚 Storia dell'Oniromanzia</h3>
       <p><strong>Antichità Classica:</strong> Greci e Romani consideravano i sogni come messaggi divini destinati a predire il futuro. Omero e Virgilio parlano delle "due porte dei sogni": una di corno (foriera di presagi buoni) e una di avorio (portatrice di sventure). <strong>Artemidoro di Daldi</strong> (II-I sec. a.C.) scrisse il celebre "Onirocritica", il primo manuale sistematico di interpretazione onirica che ancora oggi influenza la tradizione occidentale.</p>
       <p><strong>Antico Testamento:</strong> Figure come Giuseppe, Gedeone e Samuele erano interpreti della volontà divina attraverso i sogni. Giuseppe interpretò i sogni del Faraone e i propri sogni premonitori che lo condussero al potere.</p>
       <p><strong>Medioevo e Rinascimento:</strong> Con il cristianesimo, i sogni furono visti come potenzialmente divini o diabolici. La Chiesa sviluppò complessi sistemi di interpretazione per distinguere i sogni ispirati da Dio da quelli ingannevoli.</p>
       <p><strong>Era Moderna:</strong> Sigmund Freud rivoluzionò l'interpretazione onirica nel 1899 con "L'Interpretazione dei Sogni", considerando i sogni come espressione dell'inconscio e dei desideri rimossi. Carl Gustav Jung sviluppò ulteriormente la teoria, vedendo i sogni come messaggi dell'inconscio collettivo e dell'individuazione spirituale.</p>
       <p><strong>Tradizione Popolare:</strong> La <strong>Smorfia Napoletana</strong> rappresenta la tradizione popolare italiana di associare i sogni ai numeri da giocare al lotto, mantenendo viva l'antica pratica divinatoria.</p>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 3: ORIGINI E CREDENZE -->
-    <div class="dream-section">
-      <h3>🌍 Origini e Credenze nelle Diverse Culture</h3>
-      <p><strong>Civiltà Mesopotamica:</strong> Gli Assiri e i Babilonesi praticavano l'incubazione onirica nei templi sacri, dormendo in luoghi consacrati per ricevere messaggi divini. Esisteva il "Libro dei Sogni" di Iškar Zaqīqu (XVIII-XI sec. a.C.), uno dei più antichi testi di interpretazione onirica.</p>
-      <p><strong>Antico Egitto:</strong> Gli Egizi credevano che i sogni fossero visite del mondo divino. I Faraoni consultavano gli interpreti di sogni per decisioni importanti. Il sonno era visto come una forma di "morte temporanea" e i sogni come comunicazioni con l'aldilà.</p>
-      <p><strong>Tradizione Islamica:</strong> Muhammad ibn Sīrīn (850 ca.) scrisse il "Tafsīr al-ahlām al-kabīr" (Grande Libro dell'Interpretazione dei Sogni), considerato uno dei testi più autorevoli della tradizione islamica. I sogni sono visti come una delle poche forme di comunicazione profetica dopo la morte del Profeta.</p>
-      <p><strong>Tradizione Ebraica e Cabalistica:</strong> La Cabala attribuisce ai sogni un valore spirituale profondo, collegandoli ai sephirot dell'Albero della Vita. Ogni elemento del sogno ha un significato numerico e simbolico.</p>
-      <p><strong>Sciamanesimo:</strong> Le culture sciamaniche vedono i sogni come viaggi spirituali dell'anima. Lo sciamano utilizza i sogni per guarigione, divinazione e comunicazione con il mondo degli spiriti.</p>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <!-- SEZIONE 4: TEORIE DELL'INTERPRETAZIONE -->
-    <div class="dream-section">
-      <h3>🧠 Teorie Moderne dell'Interpretazione Onirica</h3>
-      <p><strong>Sigmund Freud:</strong> I sogni sono l'espressione dell'inconscio. Attraverso i sogni emergono desideri rimossi, traumi e conflitti psichici. La censura del conscio si rilassa durante il sonno, permettendo ai contenuti rimossi di emergere in forma distorta e simbolica.</p>
-      <p><strong>Carl Gustav Jung:</strong> I sogni sono messaggi dell'inconscio collettivo. Contengono archetipi universali e simboli che guidano il processo di individuazione. Jung vedeva i sogni come strumenti di guarigione psicologica e crescita spirituale.</p>
-      <p><strong>Teoria della Fase Lunare (Cagliostro):</strong> Secondo Cagliostro, la veridicità dei sogni è legata alla fase lunare in cui si verificano. I sogni durante il novilunio sono fortunati, mentre quelli durante il plenilunio sono nefasti. Ogni giorno del ciclo lunare ha un significato specifico.</p>
-      <p><strong>Prospettiva Contemporanea:</strong> La ricerca moderna riconosce i sogni come processi neurofisiologici complessi durante la fase REM del sonno, ma non esclude la loro importanza psicologica e spirituale per l'interpretazione personale e la crescita consapevole.</p>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <!-- SEZIONE 5: SIMBOLI E SIGNIFICATI -->
-    <div class="dream-section">
-      <h3>🎭 Simboli Comuni nei Sogni e i Loro Significati</h3>
-      <p>I simboli nei sogni hanno significati universali, anche se possono variare a seconda del contesto personale del sognatore:</p>
+    <!-- SEZIONE 2: SIMBOLI ONIRICI -->
+    <div id="simboli" class="dream-section">
+      <h3>🌌 Simboli e Archetipi Onirici</h3>
+      <p>I sogni parlano un linguaggio simbolico, un codice universale che l'inconscio utilizza per comunicare con la coscienza. Comprendere i simboli e gli archetipi più comuni è fondamentale per decifrare i messaggi del tuo inconscio. I simboli onirici non hanno un significato fisso e universale, ma la loro interpretazione dipende molto dal contesto personale del sognatore, dalle sue esperienze di vita e dalle sue emozioni.</p>
       
       <div class="dream-grid">
         <div class="dream-grid-item">
-          <div class="dream-grid-label">🏃 Correre/Fuggire</div>
-          <div class="dream-grid-desc">Ansia, paura di affrontare una situazione, desiderio di evitare responsabilità o conflitti</div>
+          <div class="dream-grid-label">💧 Acqua</div>
+          <div class="dream-grid-desc">Emozioni, inconscio, purificazione, rinascita. Acqua calma: serenità; agitata: turbolenza emotiva.</div>
         </div>
         <div class="dream-grid-item">
-          <div class="dream-grid-label">🌊 Acqua</div>
-          <div class="dream-grid-desc">Emozioni, inconscio, purificazione. Acqua calma = pace; acqua agitata = turbamento</div>
-        </div>
-        <div class="dream-grid-item">
-          <div class="dream-grid-label">🏠 Casa</div>
-          <div class="dream-grid-desc">Sé stesso, sicurezza, famiglia. Stanze diverse = aspetti diversi della personalità</div>
-        </div>
-        <div class="dream-grid-item">
-          <div class="dream-grid-label">👥 Persone</div>
-          <div class="dream-grid-desc">Aspetti della propria personalità o relazioni significative. Spesso rappresentano parti di sé</div>
-        </div>
-        <div class="dream-grid-item">
-          <div class="dream-grid-label">🐍 Animali</div>
-          <div class="dream-grid-desc">Istinti, forze primordiali. Ogni animale ha significati specifici (leone = forza, serpente = trasformazione)</div>
+          <div class="dream-grid-label">⬇️ Cadere</div>
+          <div class="dream-grid-desc">Perdita di controllo, insicurezza, paura del fallimento, sensazione di essere sopraffatti.</div>
         </div>
         <div class="dream-grid-item">
           <div class="dream-grid-label">✈️ Volare</div>
-          <div class="dream-grid-desc">Libertà, elevazione spirituale, superamento dei limiti, prospettiva elevata</div>
+          <div class="dream-grid-desc">Libertà, desiderio di evasione, superamento degli ostacoli, ambizione e successo.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">🏃 Inseguimento</div>
+          <div class="dream-grid-desc">Fuga da problemi o responsabilità, ansia, paura di affrontare una situazione.</div>
         </div>
         <div class="dream-grid-item">
           <div class="dream-grid-label">💀 Morte</div>
-          <div class="dream-grid-desc">Trasformazione, fine di un ciclo, rinascita. Non necessariamente morte letterale</div>
+          <div class="dream-grid-desc">Trasformazione, fine di un ciclo, inizio di qualcosa di nuovo, cambiamento radicale.</div>
         </div>
         <div class="dream-grid-item">
-          <div class="dream-grid-label">👑 Oro/Tesoro</div>
-          <div class="dream-grid-desc">Valore, ricchezza spirituale, scoperta di potenziale nascosto, illuminazione</div>
+          <div class="dream-grid-label">🐍 Serpente</div>
+          <div class="dream-grid-desc">Trasformazione, saggezza, guarigione, ma anche paura, tradimento, minaccia nascosta.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">🦷 Denti che Cadono</div>
+          <div class="dream-grid-desc">Incertezza, perdita di potere, paura di invecchiare, problemi di comunicazione.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">👗 Nudità</div>
+          <div class="dream-grid-desc">Vulnerabilità, desiderio di essere accettati, paura del giudizio, autenticità.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">🏠 Casa</div>
+          <div class="dream-grid-desc">Il sé interiore, la personalità. Ogni stanza rappresenta un aspetto diverso della psiche.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">🦁 Animali</div>
+          <div class="dream-grid-desc">Istinti primali, aspetti della personalità, persone nell'ambiente. Il tipo è cruciale.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">🛣️ Strada/Viaggio</div>
+          <div class="dream-grid-desc">Il percorso della vita, decisioni da prendere, cambiamenti imminenti, ricerca di un obiettivo.</div>
+        </div>
+        <div class="dream-grid-item">
+          <div class="dream-grid-label">📝 Esame/Test</div>
+          <div class="dream-grid-desc">Paura del giudizio, ansia da prestazione, sensazione di non essere preparati.</div>
         </div>
         <div class="dream-grid-item">
           <div class="dream-grid-label">🔥 Fuoco</div>
-          <div class="dream-grid-desc">Passione, trasformazione, purificazione, energia vitale, distruzione e rinascita</div>
+          <div class="dream-grid-desc">Passione, distruzione, purificazione, rabbia, trasformazione.</div>
         </div>
         <div class="dream-grid-item">
-          <div class="dream-grid-label">🌙 Luna</div>
-          <div class="dream-grid-desc">Inconscio, femminilità, intuizione, cicli, magia, il lato nascosto della realtà</div>
+          <div class="dream-grid-label">🌳 Alberi</div>
+          <div class="dream-grid-desc">Crescita personale, stabilità, connessione con la natura, famiglia, radici.</div>
         </div>
         <div class="dream-grid-item">
-          <div class="dream-grid-label">☀️ Sole</div>
-          <div class="dream-grid-desc">Consapevolezza, verità, illuminazione, energia maschile, coscienza, chiarezza</div>
+          <div class="dream-grid-label">👶 Bambini</div>
+          <div class="dream-grid-desc">Nuovi inizi, innocenza, vulnerabilità, creatività, aspetti del sé che necessitano cura.</div>
         </div>
         <div class="dream-grid-item">
-          <div class="dream-grid-label">🗝️ Chiave</div>
-          <div class="dream-grid-desc">Soluzione, accesso a nuove possibilità, segreti, potere, apertura di nuove porte</div>
+          <div class="dream-grid-label">💰 Soldi</div>
+          <div class="dream-grid-desc">Potere, valore personale, risorse, opportunità. Perdere: perdita di fiducia.</div>
         </div>
       </div>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 6: LA SMORFIA NAPOLETANA -->
-    <div class="dream-section">
-      <h3>🎲 La Smorfia Napoletana: Sogni e Numeri</h3>
-      <p>La <strong>Smorfia Napoletana</strong> è il "libro dei sogni" che associa elementi sognati a numeri da 1 a 90 da giocare al lotto. Questa tradizione popolare italiana affonda le radici nella Cabala ebraica e rappresenta una fusione tra magia, superstizione e divinazione.</p>
-      <p><strong>Origine del termine:</strong> Il nome "Smorfia" probabilmente deriva da Morfeo, il dio greco dei sogni, anche se alcune teorie lo collegano alla tradizione cabalistica ebraica.</p>
+    <!-- SEZIONE 3: SMORFIA NAPOLETANA -->
+    <div id="smorfia" class="dream-section">
+      <h3>🔢 La Smorfia Napoletana Completa (1-90)</h3>
+      <p>La Smorfia Napoletana è un sistema tradizionale per associare immagini, eventi e concetti presenti nei sogni a numeri specifici, da giocare al lotto. Questa pratica, radicata nella cultura popolare italiana, permette di trasformare i messaggi onirici in "numeri fortunati". Ecco la lista completa dei 90 numeri con i loro significati tradizionali:</p>
       
-      <p><strong>Numeri Principali della Smorfia:</strong></p>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">1 - L'Italia</div>
-        <div class="dream-item-text">Inizio, unità, nuovo inizio</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">8 - La Madonna</div>
-        <div class="dream-item-text">Protezione divina, benedizione, salvezza</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">16 - Il Culo (La Fortuna)</div>
-        <div class="dream-item-text">Fortuna, buona sorte, prosperità</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">17 - La Sfortuna</div>
-        <div class="dream-item-text">Sventura, pericolo, avvertimento</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">33 - Gli Anni di Cristo</div>
-        <div class="dream-item-text">Perfezione spirituale, completezza, illuminazione</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">47 - Il Morto</div>
-        <div class="dream-item-text">Trasformazione, cambiamento, messaggio dall'aldilà</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">52 - La Mamma</div>
-        <div class="dream-item-text">Protezione, amore materno, sicurezza, famiglia</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">77 - I Diavoli</div>
-        <div class="dream-item-text">Tentazione, pericolo, forze oscure, sfida</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">90 - La Paura</div>
-        <div class="dream-item-text">Ansia, terrore, avvertimento, pericolo imminente</div>
-      </div>
-      
-      <p><strong>Come Funziona:</strong> Ogni elemento del sogno (persone, oggetti, azioni, sensazioni) corrisponde a un numero specifico. Molti numeri hanno significati diversi a seconda del contesto in cui appaiono nel sogno. La tradizione vuole che si giochino questi numeri al lotto nella speranza che si realizzino.</p>
+      <table class="smorfia-table">
+        <thead>
+          <tr>
+            <th>Numero</th>
+            <th>Significato</th>
+            <th>Numero</th>
+            <th>Significato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="smorfia-num">1</td><td class="smorfia-meaning">L'Italia</td><td class="smorfia-num">46</td><td class="smorfia-meaning">'E denare (i soldi)</td></tr>
+          <tr><td class="smorfia-num">2</td><td class="smorfia-meaning">'A piccerella (la bambina)</td><td class="smorfia-num">47</td><td class="smorfia-meaning">'O muorto (il morto)</td></tr>
+          <tr><td class="smorfia-num">3</td><td class="smorfia-meaning">'A gatta (la gatta)</td><td class="smorfia-num">48</td><td class="smorfia-meaning">'O muorto che parla</td></tr>
+          <tr><td class="smorfia-num">4</td><td class="smorfia-meaning">'O puorco (il maiale)</td><td class="smorfia-num">49</td><td class="smorfia-meaning">'O piezzo 'e carne</td></tr>
+          <tr><td class="smorfia-num">5</td><td class="smorfia-meaning">'A mana (la mano)</td><td class="smorfia-num">50</td><td class="smorfia-meaning">'O pane (il pane)</td></tr>
+          <tr><td class="smorfia-num">6</td><td class="smorfia-meaning">Chella ca guarda 'nterra</td><td class="smorfia-num">51</td><td class="smorfia-meaning">'O ciardino (il giardino)</td></tr>
+          <tr><td class="smorfia-num">7</td><td class="smorfia-meaning">'O vasetto (il vaso)</td><td class="smorfia-num">52</td><td class="smorfia-meaning">'A mamma (la mamma)</td></tr>
+          <tr><td class="smorfia-num">8</td><td class="smorfia-meaning">'A Madonna (la Madonna)</td><td class="smorfia-num">53</td><td class="smorfia-meaning">'O viecchio (il vecchio)</td></tr>
+          <tr><td class="smorfia-num">9</td><td class="smorfia-meaning">'A figliata (la prole)</td><td class="smorfia-num">54</td><td class="smorfia-meaning">'O cappiello (il cappello)</td></tr>
+          <tr><td class="smorfia-num">10</td><td class="smorfia-meaning">'E fasule (i fagioli)</td><td class="smorfia-num">55</td><td class="smorfia-meaning">'A museca (la musica)</td></tr>
+          <tr><td class="smorfia-num">11</td><td class="smorfia-meaning">'E suricille (i topolini)</td><td class="smorfia-num">56</td><td class="smorfia-meaning">'A caduta (la caduta)</td></tr>
+          <tr><td class="smorfia-num">12</td><td class="smorfia-meaning">'O suldato (il soldato)</td><td class="smorfia-num">57</td><td class="smorfia-meaning">'O scartellato (il gobbo)</td></tr>
+          <tr><td class="smorfia-num">13</td><td class="smorfia-meaning">Sant'Antonio</td><td class="smorfia-num">58</td><td class="smorfia-meaning">'O paccotto (il pacchetto)</td></tr>
+          <tr><td class="smorfia-num">14</td><td class="smorfia-meaning">'O 'mbriaco (l'ubriaco)</td><td class="smorfia-num">59</td><td class="smorfia-meaning">'E pile (i peli)</td></tr>
+          <tr><td class="smorfia-num">15</td><td class="smorfia-meaning">'O guaglione (il ragazzo)</td><td class="smorfia-num">60</td><td class="smorfia-meaning">'O lamiento (il lamento)</td></tr>
+          <tr><td class="smorfia-num">16</td><td class="smorfia-meaning">'O culo (il sedere)</td><td class="smorfia-num">61</td><td class="smorfia-meaning">'O cacciatore (il cacciatore)</td></tr>
+          <tr><td class="smorfia-num">17</td><td class="smorfia-meaning">'A disgrazia (la disgrazia)</td><td class="smorfia-num">62</td><td class="smorfia-meaning">'O sicchio (il secchio)</td></tr>
+          <tr><td class="smorfia-num">18</td><td class="smorfia-meaning">'O sanghe (il sangue)</td><td class="smorfia-num">63</td><td class="smorfia-meaning">'A sposa (la sposa)</td></tr>
+          <tr><td class="smorfia-num">19</td><td class="smorfia-meaning">'A resata (la risata)</td><td class="smorfia-num">64</td><td class="smorfia-meaning">'A sciammerìa (la giacca)</td></tr>
+          <tr><td class="smorfia-num">20</td><td class="smorfia-meaning">'A festa (la festa)</td><td class="smorfia-num">65</td><td class="smorfia-meaning">'O cacciatore (il cacciatore)</td></tr>
+          <tr><td class="smorfia-num">21</td><td class="smorfia-meaning">'A femmena annura (la donna nuda)</td><td class="smorfia-num">66</td><td class="smorfia-meaning">'E ddoje zetelle (le due zitelle)</td></tr>
+          <tr><td class="smorfia-num">22</td><td class="smorfia-meaning">'O pazzo (il pazzo)</td><td class="smorfia-num">67</td><td class="smorfia-meaning">'O totaro (il totano)</td></tr>
+          <tr><td class="smorfia-num">23</td><td class="smorfia-meaning">'O scemo (lo scemo)</td><td class="smorfia-num">68</td><td class="smorfia-meaning">'O malato (il malato)</td></tr>
+          <tr><td class="smorfia-num">24</td><td class="smorfia-meaning">'E gguardie (le guardie)</td><td class="smorfia-num">69</td><td class="smorfia-meaning">Sott'e 'ncoppa (sottosopra)</td></tr>
+          <tr><td class="smorfia-num">25</td><td class="smorfia-meaning">'O Natale (il Natale)</td><td class="smorfia-num">70</td><td class="smorfia-meaning">'O palazzo (il palazzo)</td></tr>
+          <tr><td class="smorfia-num">26</td><td class="smorfia-meaning">Nanninella (Anna)</td><td class="smorfia-num">71</td><td class="smorfia-meaning">L'ommo 'e merda (l'uomo di merda)</td></tr>
+          <tr><td class="smorfia-num">27</td><td class="smorfia-meaning">'O cantero (l'orinale)</td><td class="smorfia-num">72</td><td class="smorfia-meaning">'A meraviglia (la meraviglia)</td></tr>
+          <tr><td class="smorfia-num">28</td><td class="smorfia-meaning">'E zizze (il seno)</td><td class="smorfia-num">73</td><td class="smorfia-meaning">'O spitale (l'ospedale)</td></tr>
+          <tr><td class="smorfia-num">29</td><td class="smorfia-meaning">'O pate d''e criature (il padre dei bambini)</td><td class="smorfia-num">74</td><td class="smorfia-meaning">'A grotta (la grotta)</td></tr>
+          <tr><td class="smorfia-num">30</td><td class="smorfia-meaning">'E palle d''o tenente</td><td class="smorfia-num">75</td><td class="smorfia-meaning">Pulcinella</td></tr>
+          <tr><td class="smorfia-num">31</td><td class="smorfia-meaning">'O padrone 'e casa (il padrone di casa)</td><td class="smorfia-num">76</td><td class="smorfia-meaning">'A funtana (la fontana)</td></tr>
+          <tr><td class="smorfia-num">32</td><td class="smorfia-meaning">'O capitone (il capitone)</td><td class="smorfia-num">77</td><td class="smorfia-meaning">'E diavule (i diavoli)</td></tr>
+          <tr><td class="smorfia-num">33</td><td class="smorfia-meaning">Ll'anne 'e Cristo (gli anni di Cristo)</td><td class="smorfia-num">78</td><td class="smorfia-meaning">'A bella figliola (la bella ragazza)</td></tr>
+          <tr><td class="smorfia-num">34</td><td class="smorfia-meaning">'A capa (la testa)</td><td class="smorfia-num">79</td><td class="smorfia-meaning">'O mariuolo (il ladro)</td></tr>
+          <tr><td class="smorfia-num">35</td><td class="smorfia-meaning">L'auciello (l'uccello)</td><td class="smorfia-num">80</td><td class="smorfia-meaning">'A vocca (la bocca)</td></tr>
+          <tr><td class="smorfia-num">36</td><td class="smorfia-meaning">'E ccastegne (le castagne)</td><td class="smorfia-num">81</td><td class="smorfia-meaning">'E sciure (i fiori)</td></tr>
+          <tr><td class="smorfia-num">37</td><td class="smorfia-meaning">'O monaco (il monaco)</td><td class="smorfia-num">82</td><td class="smorfia-meaning">'A tavula imbandita (la tavola imbandita)</td></tr>
+          <tr><td class="smorfia-num">38</td><td class="smorfia-meaning">'E mmazzate (le botte)</td><td class="smorfia-num">83</td><td class="smorfia-meaning">'O maletiempo (il maltempo)</td></tr>
+          <tr><td class="smorfia-num">39</td><td class="smorfia-meaning">'A funa (la corda)</td><td class="smorfia-num">84</td><td class="smorfia-meaning">'A chiesa (la chiesa)</td></tr>
+          <tr><td class="smorfia-num">40</td><td class="smorfia-meaning">'A noce (la noce)</td><td class="smorfia-num">85</td><td class="smorfia-meaning">'E lampe (i lampi)</td></tr>
+          <tr><td class="smorfia-num">41</td><td class="smorfia-meaning">'O curtiello (il coltello)</td><td class="smorfia-num">86</td><td class="smorfia-meaning">'A puteca (la bottega)</td></tr>
+          <tr><td class="smorfia-num">42</td><td class="smorfia-meaning">'O cafè (il caffè)</td><td class="smorfia-num">87</td><td class="smorfia-meaning">'E perucchie (i pidocchi)</td></tr>
+          <tr><td class="smorfia-num">43</td><td class="smorfia-meaning">'A fenesta (la finestra)</td><td class="smorfia-num">88</td><td class="smorfia-meaning">'E ccase (le case)</td></tr>
+          <tr><td class="smorfia-num">44</td><td class="smorfia-meaning">'E ccancelle (le carceri)</td><td class="smorfia-num">89</td><td class="smorfia-meaning">'A vecchia (la vecchia)</td></tr>
+          <tr><td class="smorfia-num">45</td><td class="smorfia-meaning">'O buon vino (il buon vino)</td><td class="smorfia-num">90</td><td class="smorfia-meaning">'A paura (la paura)</td></tr>
+        </tbody>
+      </table>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 7: TIPI DI SOGNI -->
-    <div class="dream-section">
-      <h3>🌟 Tipologie di Sogni</h3>
+    <!-- SEZIONE 4: TECNICHE DI INTERPRETAZIONE -->
+    <div id="tecniche" class="dream-section">
+      <h3>🧠 Tecniche di Interpretazione</h3>
+      <p>Interpretare i sogni è un'arte che richiede sensibilità, conoscenza e una profonda comprensione della psiche umana. Esistono diverse scuole di pensiero e approcci per decifrare i messaggi onirici, ognuno con le proprie metodologie e focus.</p>
       
       <div class="dream-item">
-        <div class="dream-item-title">Sogni Premonitori</div>
-        <div class="dream-item-text">Sogni che sembrano anticipare eventi futuri. Secondo la tradizione esoterica, sono messaggi dell'inconscio collettivo o di guide spirituali che avvertono il sognatore di cambiamenti imminenti.</div>
+        <div class="dream-item-title">L'Approccio di Sigmund Freud: La Via Regia all'Inconscio</div>
+        <div class="dream-item-text">Per Freud, i sogni sono la "via regia per la conoscenza dell'inconscio". Essi rappresentano la realizzazione camuffata di desideri repressi, spesso di natura sessuale o aggressiva. L'interpretazione freudiana si concentra sull'analisi del "contenuto manifesto" (ciò che si ricorda del sogno) per risalire al "contenuto latente" (i veri desideri e conflitti inconsci). L'associazione libera è il metodo principale per "smontare" il lavoro onirico e rivelare il significato nascosto.</div>
       </div>
-      
+
       <div class="dream-item">
-        <div class="dream-item-title">Sogni Ricorrenti</div>
-        <div class="dream-item-text">Sogni che si ripetono nel tempo, spesso indicando un messaggio importante che l'inconscio sta cercando di comunicare. Possono rappresentare traumi non risolti o lezioni non ancora apprese.</div>
+        <div class="dream-item-title">L'Approccio di Carl Gustav Jung: L'Inconscio Collettivo e gli Archetipi</div>
+        <div class="dream-item-text">Jung sviluppò una teoria che si discostava significativamente da quella di Freud. Per Jung, i sogni non sono solo espressione di desideri repressi individuali, ma anche messaggi dell'inconscio collettivo che mirano all'individuazione e all'equilibrio psichico. Jung introdusse il concetto di "archetipi" (immagini primordiali universali come l'Ombra, l'Anima/Animus, il Vecchio Saggio) e la funzione "compensatoria" dei sogni, che cercano di bilanciare gli atteggiamenti unilaterali della coscienza.</div>
       </div>
-      
+
       <div class="dream-item">
-        <div class="dream-item-title">Incubi</div>
-        <div class="dream-item-text">Sogni angoscianti che riflettono paure, ansie o stress. Nella tradizione antica, gli incubi erano considerati attacchi di demoni o entità oscure. Oggi sono visti come espressione di conflitti psichici.</div>
+        <div class="dream-item-title">Approcci Moderni e Integrati</div>
+        <div class="dream-item-text">Oggi, molti interpreti adottano un approach integrato, combinando elementi della psicologia freudiana e junghiana con nuove scoperte neuroscientifiche e prospettive spirituali. Si riconosce l'importanza di considerare il sogno non solo come un prodotto dell'inconscio individuale, ma anche come un fenomeno complesso influenzato da fattori biologici, psicologici, sociali e culturali.</div>
       </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Sogni Lucidi</div>
-        <div class="dream-item-text">Sogni in cui il sognatore è consapevole di stare sognando e può controllare gli eventi. Rappresentano un ponte tra conscio e inconscio, offrendo opportunità di guarigione e trasformazione.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Sogni Telepatici</div>
-        <div class="dream-item-text">Secondo la tradizione esoterica, sogni in cui si riceve comunicazione da altre persone o entità spirituali. Rappresentano una forma di comunicazione al di là dei limiti fisici.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Sogni di Guarigione</div>
-        <div class="dream-item-text">Sogni che portano consapevolezza, risoluzione di conflitti e trasformazione psicologica. Spesso contengono simboli di rinascita e rigenerazione.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Sogni Spirituali/Mistici</div>
-        <div class="dream-item-text">Sogni che contengono visioni di realtà spirituali, incontri con guide, angeli o maestri spirituali. Rappresentano esperienze di elevazione consapevole e illuminazione.</div>
-      </div>
+
+      <p style="margin-top:20px"><strong>Consigli Pratici per l'Interpretazione:</strong></p>
+      <p>1. <strong>Tieni un Diario dei Sogni:</strong> Appena ti svegli, annota immediatamente tutto ciò che ricordi del sogno, inclusi dettagli visivi, suoni, odori, sensazioni fisiche ed emozioni.</p>
+      <p>2. <strong>Associazione Personale:</strong> Per ogni elemento chiave, chiediti: "Cosa significa per me?" Le tue associazioni personali sono spesso più rilevanti dei significati generici.</p>
+      <p>3. <strong>Considera il Contesto della Tua Vita:</strong> Rifletti sulla tua situazione attuale, sulle sfide che stai affrontando, sui tuoi desideri e paure.</p>
+      <p>4. <strong>Presta Attenzione alle Emozioni:</strong> Le emozioni provate nel sogno sono un indicatore potentissimo del suo messaggio.</p>
+      <p>5. <strong>Cerca Pattern:</strong> Se un simbolo o un tema si ripete in diversi sogni, è un segnale che l'inconscio sta cercando di comunicare un messaggio importante.</p>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 8: TECNICHE DI INTERPRETAZIONE -->
-    <div class="dream-section">
-      <h3>🔍 Tecniche di Interpretazione Onirica</h3>
+    <!-- SEZIONE 5: SOGNI RICORRENTI E PREMONITORI -->
+    <div id="ricorrenti" class="dream-section">
+      <h3>✨ Sogni Ricorrenti e Premonitori</h3>
+      <p>Alcuni sogni si distinguono per la loro persistenza o per la loro apparente capacità di anticipare eventi futuri, suscitando particolare interesse e curiosità.</p>
       
       <div class="dream-item">
-        <div class="dream-item-title">Metodo Associativo</div>
-        <div class="dream-item-text">Associare liberamente ogni elemento del sogno a ricordi, emozioni e significati personali. Questo metodo, sviluppato da Freud, aiuta a scoprire i significati nascosti dietro i simboli.</div>
+        <div class="dream-item-title">Sogni Ricorrenti: Messaggi Insistenti dell'Inconscio</div>
+        <div class="dream-item-text">I sogni ricorrenti sono sogni che si ripetono più volte, a volte per anni, con lo stesso tema o le stesse immagini. Spesso indicano un problema irrisolto, un conflitto interiore, un trauma non elaborato o un messaggio importante che l'inconscio sta cercando di comunicare con insistenza. L'inconscio li ripropone finché il messaggio non viene compreso e il problema sottostante non viene affrontato o risolto nella vita di veglia.</div>
       </div>
-      
+
       <div class="dream-item">
-        <div class="dream-item-title">Analisi Simbolica</div>
-        <div class="dream-item-text">Interpretare i simboli del sogno secondo i significati universali e archetipi. Ogni simbolo rappresenta aspetti della psiche o messaggi spirituali.</div>
+        <div class="dream-item-title">Sogni Premonitori: Vistate sul Futuro?</div>
+        <div class="dream-item-text">I sogni premonitori sono sogni che sembrano anticipare eventi futuri, fornendo informazioni o avvertimenti su ciò che accadrà. Sebbene la scienza non abbia ancora una spiegazione definitiva per questo fenomeno, molte culture e tradizioni credono fermamente nella loro esistenza. Spesso, i sogni premonitori non sono letterali, ma simbolici. L'evento futuro viene rappresentato attraverso metafore e allegorie che richiedono un'attenta interpretazione. È importante approcciare questi sogni con discernimento, distinguendo tra coincidenze significative e veri messaggi importanti.</div>
       </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Metodo Contestuale</div>
-        <div class="dream-item-text">Considerare il contesto del sogno: le circostanze della vita del sognatore, le emozioni, il periodo storico. Lo stesso simbolo può avere significati diversi a seconda del contesto.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Incubazione Onirica</div>
-        <div class="dream-item-text">Pratica antica di dormire in un luogo sacro con l'intenzione di ricevere un sogno significativo. Ancora oggi utilizzata da mistici e ricercatori spirituali per accedere a saggezza superiore.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Diario dei Sogni</div>
-        <div class="dream-item-text">Scrivere i sogni immediatamente al risveglio per preservare i dettagli. Nel tempo, emergono pattern e temi ricorrenti che rivelano messaggi dell'inconscio.</div>
-      </div>
-      
-      <div class="dream-item">
-        <div class="dream-item-title">Meditazione Onirica</div>
-        <div class="dream-item-text">Meditare sui sogni durante il giorno per approfondire la comprensione dei loro significati. Questa pratica facilita l'integrazione dei messaggi onirici nella consapevolezza quotidiana.</div>
-      </div>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 9: USANZE E CREDENZE TRADIZIONALI -->
-    <div class="dream-section">
-      <h3>🕯️ Usanze e Credenze Tradizionali sui Sogni</h3>
+    <!-- SEZIONE 6: SONNO E FASI -->
+    <div id="sonno" class="dream-section">
+      <h3>😴 Il Sonno e le Fasi del Sogno</h3>
+      <p>Per comprendere appieno i sogni, è utile conoscere il contesto fisiologico in cui si manifestano: il ciclo del sonno. Il sonno non è un processo uniforme, ma si articola in diverse fasi, ognuna con caratteristiche specifiche e un ruolo nella generazione dei sogni.</p>
       
-      <p><strong>Fase Lunare:</strong> Molte tradizioni associano l'importanza dei sogni alle fasi lunari. I sogni durante la luna piena sono considerati più potenti e significativi, mentre quelli durante il novilunio sono visti come inizi di nuovi cicli.</p>
-      
-      <p><strong>Primo Sogno della Notte:</strong> Nella tradizione popolare, il primo sogno della notte è considerato il più significativo e veritiero, in quanto la mente è ancora fresca e meno influenzata dalle preoccupazioni quotidiane.</p>
-      
-      <p><strong>Raccontare i Sogni:</strong> Molte culture credono che raccontare un brutto sogno a qualcuno lo "annulli" o lo trasferisca a chi lo ascolta. Al contrario, raccontare un sogno positivo lo rafforza e lo manifesta.</p>
-      
-      <p><strong>Rituali di Protezione:</strong> Nella tradizione esoterica, si praticano rituali prima di dormire per proteggere il sonno da incubi e influenze negative. Cristalli, erbe e preghiere sono utilizzati per purificare lo spazio.</p>
-      
-      <p><strong>Interpretazione Comunitaria:</strong> In molte culture antiche, i sogni erano interpretati collettivamente dalla comunità o da figure autorità spirituale (sciamani, sacerdoti, veggenti), poiché si credeva che contenessero messaggi rilevanti per il gruppo.</p>
-      
-      <p><strong>Digiuno e Purificazione:</strong> Prima di praticare l'incubazione onirica, molte tradizioni prevedono digiuno e purificazione per elevare la vibrazione spirituale e ricevere messaggi più chiari.</p>
+      <div class="dream-item">
+        <div class="dream-item-title">Le Fasi del Sonno: NREM e REM</div>
+        <div class="dream-item-text">Il sonno si divide in due grandi categorie: il sonno NREM (Non-Rapid Eye Movement), che costituisce circa il 75% del sonno totale e si suddivide in tre stadi (N1 sonno leggero, N2 sonno più profondo, N3 sonno a onde lente), e il sonno REM (Rapid Eye Movement), che costituisce circa il 25% del sonno totale ed è la fase in cui si verificano la maggior parte dei sogni vividi e complessi. Durante il sonno REM, gli occhi si muovono rapidamente sotto le palpebre chiuse, l'attività cerebrale è simile a quella della veglia, e i muscoli volontari sono temporaneamente paralizzati. Durante una notte di sonno, si attraversano cicli di NREM e REM che se ripetono ogni 90-110 minuti, con la durata delle fasi REM che aumenta man mano che la notte procede, rendendo i sogni più lunghi e vividi verso il mattino.</div>
+      </div>
+
+      <div class="dream-item">
+        <div class="dream-item-title">L'Importanza del Sonno per i Sogni</div>
+        <div class="dream-item-text">Un sonno di qualità è fondamentale per la salute mentale e fisica, e per la ricchezza della vita onirica. La privazione del sonno può alterare i cicli del sonno e ridurre la capacità di ricordare i sogni. I sogni svolgono un ruolo cruciale nell'elaborazione delle emozioni, nel consolidamento della memoria, nella risoluzione dei problemi e nella creatività.</div>
+      </div>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 10: COME INTERPRETARE I TUOI SOGNI -->
-    <div class="dream-section">
-      <h3>✨ Come Interpretare i Tuoi Sogni: Guida Pratica</h3>
+    <!-- SEZIONE 7: SOGNI LUCIDI -->
+    <div id="lucidi" class="dream-section">
+      <h3>💡 Sogni Lucidi e Controllo Onirico</h3>
+      <p>I sogni lucidi sono un fenomeno affascinante in cui il sognatore diventa consapevole di stare sognando mentre il sogno è ancora in corso. Questa consapevolezza può variare da un semplice riconoscimento a un controllo attivo e intenzionale sul contenuto e sul corso del sogno.</p>
       
-      <p><strong>1. Ricorda il Sogno:</strong> Scrivi il sogno immediatamente al risveglio, prima che i dettagli svaniscano. Includi colori, emozioni, persone e oggetti.</p>
-      
-      <p><strong>2. Identifica i Simboli Principali:</strong> Quali elementi del sogno ti hanno colpito di più? Quali hanno generato emozioni forti?</p>
-      
-      <p><strong>3. Associa Liberamente:</strong> Per ogni simbolo, scrivi le prime associazioni che ti vengono in mente. Cosa significa per te personalmente?</p>
-      
-      <p><strong>4. Considera il Contesto Personale:</strong> Cosa sta accadendo nella tua vita? Il sogno riflette situazioni, relazioni o sfide attuali?</p>
-      
-      <p><strong>5. Consulta i Significati Universali:</strong> Usa dizionari dei sogni e guide di interpretazione per comprendere i significati archetipi dei simboli.</p>
-      
-      <p><strong>6. Ascolta l'Intuizione:</strong> La migliore interpretazione è quella che risuona con il tuo intuito. Fiducia al tuo istinto spirituale.</p>
-      
-      <p><strong>7. Integra il Messaggio:</strong> Cosa il sogno ti sta insegnando? Come puoi applicare questo insegnamento nella tua vita quotidiana?</p>
-      
-      <p><strong>8. Pratica Regolarmente:</strong> Più pratichi l'interpretazione onirica, più i tuoi sogni diventeranno chiari e significativi. La pratica sviluppa la sensibilità spirituale.</p>
+      <div class="dream-item">
+        <div class="dream-item-title">Caratteristiche e Benefici dei Sogni Lucidi</div>
+        <div class="dream-item-text">I sogni lucidi sono estremamente vividi e realistici, con una chiarezza sensoriale superiore ai sogni ordinari. Offrono numerosi potenziali benefici: superamento delle paure e delle fobie in un ambiente sicuro e controllato, sviluppo della creatività attraverso l'esplorazione di nuove idee, auto-esplorazione e approfondimento della conoscenza di sé, divertimento e avventura attraverso esperienze straordinarie e impossibili nella vita di veglia, e guarigione attraverso l'affrontamento di traumi o la promozione del benessere psicologico.</div>
+      </div>
+
+      <div class="dream-item">
+        <div class="dream-item-title">Tecniche per Indurre Sogni Lucidi</div>
+        <div class="dream-item-text">Esistono diverse tecniche per aumentare la probabilità di avere sogni lucidi: i "Test di Realtà" (chiediti regolarmente se stai sognando e prova a fare qualcosa di impossibile), il metodo MILD (Mnemonic Induction of Lucid Dreams - ripeti l'intenzione di avere un sogno lucido prima di addormentarti), il metodo WBTB (Wake-Back-To-Bed - svegliati dopo 4-6 ore di sonno, rimani sveglio per 30-60 minuti e poi torna a dormire), il diario dei sogni (aumenta la consapevolezza e la capacità di ricordare), e la visualizzazione (immagina di diventare consapevole all'interno di un sogno). La pratica costante e la pazienza sono fondamentali per padroneggiare l'arte del sogno lucido.</div>
+      </div>
+      <div style="text-align:center;margin-top:20px"><button class="btn" onclick="scrollToSection('category-grid')" style="background:linear-gradient(135deg,#b8860b,#8b6a10);font-size:0.85rem">↑ Torna alle Categorie</button></div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- SEZIONE 11: CONCLUSIONE -->
+    <!-- CONCLUSIONE -->
     <div class="dream-section">
       <h3>🌙 Conclusione: Il Potere dei Sogni</h3>
       <p>I sogni sono uno dei misteri più affascinanti dell'esperienza umana. Che li consideriamo come espressioni dell'inconscio psicologico, messaggi spirituali o semplicemente processi neurofisiologici, una cosa è certa: i sogni hanno il potere di trasformare la nostra comprensione di noi stessi e del mondo.</p>
@@ -518,12 +598,209 @@ input,select{-webkit-appearance:none}
 </div>
 
 <script>
-// Attiva day-mode se salvato in localStorage
+// ═══ SINCRONIZZAZIONE TEMA E AUDIO CON INDEX.HTML ═══
+
+let _bgAudio=null, _bgAudioPlaying=false;
+
 document.addEventListener('DOMContentLoaded', function(){
-  if(localStorage.getItem('mystica_day_mode')==='1'){
+  // Inizializzazione Tema
+  if(localStorage.getItem('mystica_daymode')==='1'){
     document.body.classList.add('day-mode');
   }
+  updateThemeUI();
+  
+  // Inizializzazione Audio (controllo stato salvato)
+  if(localStorage.getItem('mystica_audio')==='1'){
+    // Non avviamo automaticamente per policy browser, ma prepariamo l'UI
+    _bgAudioPlaying = false; 
+  }
+  updateAudioUI();
 });
+
+// --- GESTIONE TEMA (Sincronizzato con mystica_daymode) ---
+
+function toggleDayMode(on){
+  document.body.classList.toggle('day-mode', on);
+  localStorage.setItem('mystica_daymode', on ? '1' : '0');
+  updateThemeUI();
+}
+
+function qaToggleTheme(){
+  const isDayNow = document.body.classList.contains('day-mode');
+  toggleDayMode(!isDayNow);
+}
+
+function updateThemeUI(){
+  const isDay = document.body.classList.contains('day-mode');
+  const btn = document.getElementById('hdrThemeBtn');
+  if(btn){
+    btn.textContent = isDay ? '🌙' : '☀️';
+    btn.title = isDay ? 'Modalità Notte' : 'Modalità Giorno';
+  }
+}
+
+// --- GESTIONE AUDIO (Sincronizzato con mystica_audio e mystica_audio_vol) ---
+
+function _initBgAudio(){
+  if(_bgAudio) return;
+  _bgAudio = new Audio('./icone/audio/mystica_ambient_432_528.mp3');
+  _bgAudio.loop = true;
+  const savedVol = localStorage.getItem('mystica_audio_vol');
+  _bgAudio.volume = savedVol ? parseInt(savedVol)/100 : 0.15;
+  _bgAudio.preload = 'none';
+}
+
+function toggleBgAudio(){
+  _initBgAudio();
+  const btn = document.getElementById('hdrAudioBtn');
+  if(_bgAudioPlaying){
+    _bgAudio.pause();
+    _bgAudioPlaying = false;
+    localStorage.setItem('mystica_audio', '0');
+    updateAudioUI();
+  } else {
+    _bgAudio.play().then(() => {
+      _bgAudioPlaying = true;
+      localStorage.setItem('mystica_audio', '1');
+      updateAudioUI();
+    }).catch(() => {
+      console.log("Interazione richiesta per avviare audio");
+    });
+  }
+}
+
+function updateAudioUI(){
+  const btn = document.getElementById('hdrAudioBtn');
+  if(btn){
+    if(_bgAudioPlaying){
+      btn.classList.add('playing');
+      btn.style.opacity = '1';
+    } else {
+      btn.classList.remove('playing');
+      btn.style.opacity = '0.6';
+    }
+  }
+}
+
+// ═══ ANALISI DEI SOGNI ═══
+
+const dreamSymbols = {
+  'volare': { emoji: '✈️', interpretazione: 'Libertà, desiderio di evasione, superamento degli ostacoli, ambizione e successo. Stai cercando di liberarti da limitazioni nella tua vita.' },
+  'cadere': { emoji: '⬇️', interpretazione: 'Perdita di controllo, insicurezza, paura del fallimento. Potresti sentire che le cose ti sfuggono di mano in qualche aspetto della tua vita.' },
+  'acqua': { emoji: '💧', interpretazione: 'Emozioni, inconscio, purificazione, rinascita. L\'acqua rappresenta i tuoi sentimenti e il flusso della vita. Se calma, serenità; se agitata, turbolenza emotiva.' },
+  'fuoco': { emoji: '🔥', interpretazione: 'Passione, distruzione, purificazione, rabbia, trasformazione. Il fuoco può rappresentare sia energia creativa che forza distruttiva.' },
+  'casa': { emoji: '🏠', interpretazione: 'Il sé interiore, la personalità, la sicurezza. Ogni stanza rappresenta un aspetto diverso della tua psiche. Esplorare una casa significa scoprire parti di te stesso.' },
+  'inseguimento': { emoji: '🏃', interpretazione: 'Fuga da problemi o responsabilità, ansia, paura di affrontare una situazione. Stai evitando qualcosa nella tua vita conscia?' },
+  'morte': { emoji: '💀', interpretazione: 'Trasformazione, fine di un ciclo, inizio di qualcosa di nuovo, cambiamento radicale. Non è necessariamente negativa, ma rappresenta il passaggio.' },
+  'serpente': { emoji: '🐍', interpretazione: 'Trasformazione, saggezza, guarigione, ma anche paura, tradimento, minaccia nascosta. Dipende dal contesto e dalle tue emozioni nel sogno.' },
+  'denti': { emoji: '🦷', interpretazione: 'Incertezza, perdita di potere, paura di invecchiare, problemi di comunicazione. Spesso legato all\'ansia.' },
+  'nudità': { emoji: '👗', interpretazione: 'Vulnerabilità, desiderio di essere accettati, paura del giudizio, autenticità. Rappresenta l\'esposizione dei tuoi veri sentimenti.' },
+  'animali': { emoji: '🦁', interpretazione: 'Istinti primali, aspetti della personalità, persone nell\'ambiente. Il tipo di animale è cruciale per l\'interpretazione.' },
+  'strada': { emoji: '🛣️', interpretazione: 'Il percorso della vita, decisioni da prendere, cambiamenti imminenti, ricerca di un obiettivo.' },
+  'esame': { emoji: '📝', interpretazione: 'Paura del giudizio, ansia da prestazione, sensazione di non essere preparati.' },
+  'soldi': { emoji: '💰', interpretazione: 'Potere, valore personale, risorse, opportunità. Perdere soldi può rappresentare perdita di fiducia.' },
+  'bambini': { emoji: '👶', interpretazione: 'Nuovi inizi, innocenza, vulnerabilità, creatività, aspetti del sé che necessitano cura.' },
+  'albero': { emoji: '🌳', interpretazione: 'Crescita personale, stabilità, connessione con la natura, famiglia, radici.' },
+  'fiori': { emoji: '🌸', interpretazione: 'Bellezza, crescita, speranza, rinascita, amore. Rappresentano il fiorire di nuove possibilità.' },
+  'buio': { emoji: '🌑', interpretazione: 'L\'ignoto, l\'inconscio, paura, mistero. Spesso rappresenta ciò che non capiamo ancora.' },
+  'luce': { emoji: '💡', interpretazione: 'Consapevolezza, verità, speranza, illuminazione spirituale, chiarezza.' },
+  'montagna': { emoji: '⛰️', interpretazione: 'Sfide, ostacoli, ma anche ascesa spirituale, raggiungimento di obiettivi elevati.' },
+  'mare': { emoji: '🌊', interpretazione: 'Emozioni profonde, l\'inconscio, vastità, libertà, ma anche incertezza e pericolo.' },
+  'persona cara': { emoji: '👥', interpretazione: 'Rappresenta aspetti di quella persona o di te stesso. Rifletti su cosa quella persona significa per te.' },
+  'inseguire': { emoji: '🎯', interpretazione: 'Desiderio, ricerca, perseguimento di un obiettivo. Cosa stai cercando nella tua vita?' },
+  'perdere': { emoji: '❌', interpretazione: 'Paura della perdita, sensazione di mancanza di controllo, ansia.' },
+  'trovare': { emoji: '✅', interpretazione: 'Scoperta, realizzazione, acquisizione di qualcosa di importante.' },
+  'vento': { emoji: '💨', interpretazione: 'Cambiamento, movimento, forze invisibili, trasformazione.' },
+  'tempesta': { emoji: '⛈️', interpretazione: 'Conflitto, turbolenza emotiva, sfide difficili, ma anche purificazione.' },
+  'sole': { emoji: '☀️', interpretazione: 'Consapevolezza, energia positiva, vita, speranza, illuminazione.' },
+  'luna': { emoji: '🌙', interpretazione: 'Inconscio, intuizione, femminilità, cicli, misteri.' },
+  'stella': { emoji: '⭐', interpretazione: 'Speranza, guida, aspirazioni, illuminazione spirituale.' },
+  'specchio': { emoji: '🪞', interpretazione: 'Auto-riflessione, verità su te stesso, consapevolezza di sé.' },
+  'porta': { emoji: '🚪', interpretazione: 'Opportunità, transizione, accesso a nuove parti di te stesso o della tua vita.' },
+  'finestra': { emoji: '🪟', interpretazione: 'Prospettiva, visione, speranza, connessione con il mondo esterno.' },
+  'libro': { emoji: '📖', interpretazione: 'Conoscenza, saggezza, messaggi dall\'inconscio, apprendimento.' },
+  'musica': { emoji: '🎵', interpretazione: 'Armonia, bellezza, emozione, espressione creativa.' },
+  'danza': { emoji: '💃', interpretazione: 'Libertà di movimento, gioia, espressione di sé, armonia.' },
+  'acqua che scorre': { emoji: '🌊', interpretazione: 'Flusso della vita, cambiamento, movimento verso il futuro.' },
+  'acqua stagnante': { emoji: '💧', interpretazione: 'Stagnazione, mancanza di progresso, emozioni bloccate.' },
+  'volo': { emoji: '✈️', interpretazione: 'Libertà, elevazione, superamento dei limiti, prospettiva più ampia.' },
+  'corsa': { emoji: '🏃', interpretazione: 'Urgenza, fretta, fuga, movimento veloce verso qualcosa o lontano da qualcosa.' }
+};
+
+function analyzeDream() {
+  const dreamText = document.getElementById('dream-input').value.trim().toLowerCase();
+  const resultDiv = document.getElementById('dream-result');
+  
+  if (!dreamText) {
+    resultDiv.innerHTML = '<p style="color:#f87171;font-weight:bold">⚠️ Per favore, descrivi il tuo sogno prima di analizzarlo.</p>';
+    resultDiv.style.display = 'block';
+    return;
+  }
+  
+  // Ricerca di simboli nel testo
+  const foundSymbols = [];
+  for (const [key, value] of Object.entries(dreamSymbols)) {
+    if (dreamText.includes(key)) {
+      foundSymbols.push({ key, ...value });
+    }
+  }
+  
+  // Generazione della risposta
+  let html = '<h4 style="color:#fbbf24;margin-bottom:12px;font-size:1.1rem">🔮 Analisi del Tuo Sogno</h4>';
+  
+  if (foundSymbols.length > 0) {
+    html += '<p style="margin-bottom:15px;color:var(--muted)"><strong>Simboli Identificati:</strong></p>';
+    foundSymbols.forEach(symbol => {
+      html += `<div style="margin-bottom:12px;padding:10px;background:rgba(212,175,55,0.08);border-left:3px solid #fbbf24;border-radius:4px">`;
+      html += `<p style="margin:0;color:#fbbf24;font-weight:bold">${symbol.emoji} ${symbol.key.charAt(0).toUpperCase() + symbol.key.slice(1)}</p>`;
+      html += `<p style="margin:5px 0 0 0;color:var(--text);font-size:0.9rem">${symbol.interpretazione}</p>`;
+      html += `</div>`;
+    });
+  } else {
+    html += '<p style="color:var(--muted);margin-bottom:15px">Nessun simbolo specifico riconosciuto nel tuo sogno, ma ecco alcuni consigli generali:</p>';
+  }
+  
+  html += '<div style="margin-top:15px;padding:12px;background:rgba(212,175,55,0.08);border-radius:4px">';
+  html += '<p style="color:#fbbf24;font-weight:bold;margin-bottom:8px">💡 Consigli per l\'Interpretazione:</p>';
+  html += '<ul style="margin:0;padding-left:20px;color:var(--text);font-size:0.9rem">';
+  html += '<li style="margin-bottom:6px"><strong>Considera il Contesto:</strong> Cosa stava accadendo nella tua vita quando hai fatto questo sogno?</li>';
+  html += '<li style="margin-bottom:6px"><strong>Presta Attenzione alle Emozioni:</strong> Come ti sentivi nel sogno? Paura, gioia, confusione? Le emozioni sono chiave.</li>';
+  html += '<li style="margin-bottom:6px"><strong>Associazioni Personali:</strong> Cosa significano questi simboli per TE personalmente? Le tue associazioni sono più importanti di quelle generiche.</li>';
+  html += '<li style="margin-bottom:6px"><strong>Pattern Ricorrenti:</strong> Questo sogno si ripete? I sogni ricorrenti indicano messaggi insistenti dell\'inconscio.</li>';
+  html += '<li><strong>Azione nella Vita Conscia:</strong> Cosa puoi fare nella tua vita di veglia per affrontare i messaggi del sogno?</li>';
+  html += '</ul>';
+  html += '</div>';
+  
+  resultDiv.innerHTML = html;
+  resultDiv.style.display = 'block';
+  
+  // Scroll al risultato
+  setTimeout(() => {
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
+
+function clearDreamInput() {
+  document.getElementById('dream-input').value = '';
+  document.getElementById('dream-result').style.display = 'none';
+}
+
+// Funzione per scrollare alle sezioni
+function scrollToSection(sectionId){
+  const element = document.getElementById(sectionId);
+  if(element){
+    const offset = 80; // Offset per l'header fisso
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
 </script>
 
 </body>
