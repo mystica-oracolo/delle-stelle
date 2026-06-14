@@ -289,7 +289,8 @@ input,select{-webkit-appearance:none}
     </div>
 
     <!-- MACRO-CATEGORIE -->
-    <div class="category-grid">
+    <div id="dream-list-top" style="scroll-margin-top:80px"></div>
+    <div class="category-grid" id="category-grid">
       <div class="category-card" onclick="scrollToSection('oniromanzia')">
         <span class="category-icon">🔮</span>
         <div class="category-title">Oniromanzia</div>
@@ -323,7 +324,7 @@ input,select{-webkit-appearance:none}
       <div class="category-card" onclick="scrollToSection('lucidi')">
         <span class="category-icon">💡</span>
         <div class="category-title">Sogni Lucidi</div>
-        <div class="category-desc">Consapevolezza e controllo onirico</div>
+        <div class="category-desc">Consavevolezza e controllo onirico</div>
       </div>
     </div>
 
@@ -611,13 +612,10 @@ document.addEventListener('DOMContentLoaded', function(){
   
   // Inizializzazione Audio (controllo stato salvato)
   if(localStorage.getItem('mystica_audio')==='1'){
-    // Non avviamo automaticamente per policy browser, ma prepariamo l'UI
     _bgAudioPlaying = false; 
   }
   updateAudioUI();
 });
-
-// --- GESTIONE TEMA (Sincronizzato con mystica_daymode) ---
 
 function toggleDayMode(on){
   document.body.classList.toggle('day-mode', on);
@@ -638,8 +636,6 @@ function updateThemeUI(){
     btn.title = isDay ? 'Modalità Notte' : 'Modalità Giorno';
   }
 }
-
-// --- GESTIONE AUDIO (Sincronizzato con mystica_audio e mystica_audio_vol) ---
 
 function _initBgAudio(){
   if(_bgAudio) return;
@@ -663,9 +659,7 @@ function toggleBgAudio(){
       _bgAudioPlaying = true;
       localStorage.setItem('mystica_audio', '1');
       updateAudioUI();
-    }).catch(() => {
-      console.log("Interazione richiesta per avviare audio");
-    });
+    }).catch(() => {});
   }
 }
 
@@ -684,97 +678,446 @@ function updateAudioUI(){
 
 // ═══ ANALISI DEI SOGNI ═══
 
-const dreamSymbols = {
-  'volare': { emoji: '✈️', interpretazione: 'Libertà, desiderio di evasione, superamento degli ostacoli, ambizione e successo. Stai cercando di liberarti da limitazioni nella tua vita.' },
-  'cadere': { emoji: '⬇️', interpretazione: 'Perdita di controllo, insicurezza, paura del fallimento. Potresti sentire che le cose ti sfuggono di mano in qualche aspetto della tua vita.' },
-  'acqua': { emoji: '💧', interpretazione: 'Emozioni, inconscio, purificazione, rinascita. L\'acqua rappresenta i tuoi sentimenti e il flusso della vita. Se calma, serenità; se agitata, turbolenza emotiva.' },
-  'fuoco': { emoji: '🔥', interpretazione: 'Passione, distruzione, purificazione, rabbia, trasformazione. Il fuoco può rappresentare sia energia creativa che forza distruttiva.' },
-  'casa': { emoji: '🏠', interpretazione: 'Il sé interiore, la personalità, la sicurezza. Ogni stanza rappresenta un aspetto diverso della tua psiche. Esplorare una casa significa scoprire parti di te stesso.' },
-  'inseguimento': { emoji: '🏃', interpretazione: 'Fuga da problemi o responsabilità, ansia, paura di affrontare una situazione. Stai evitando qualcosa nella tua vita conscia?' },
-  'morte': { emoji: '💀', interpretazione: 'Trasformazione, fine di un ciclo, inizio di qualcosa di nuovo, cambiamento radicale. Non è necessariamente negativa, ma rappresenta il passaggio.' },
-  'serpente': { emoji: '🐍', interpretazione: 'Trasformazione, saggezza, guarigione, ma anche paura, tradimento, minaccia nascosta. Dipende dal contesto e dalle tue emozioni nel sogno.' },
-  'denti': { emoji: '🦷', interpretazione: 'Incertezza, perdita di potere, paura di invecchiare, problemi di comunicazione. Spesso legato all\'ansia.' },
-  'nudità': { emoji: '👗', interpretazione: 'Vulnerabilità, desiderio di essere accettati, paura del giudizio, autenticità. Rappresenta l\'esposizione dei tuoi veri sentimenti.' },
-  'animali': { emoji: '🦁', interpretazione: 'Istinti primali, aspetti della personalità, persone nell\'ambiente. Il tipo di animale è cruciale per l\'interpretazione.' },
-  'strada': { emoji: '🛣️', interpretazione: 'Il percorso della vita, decisioni da prendere, cambiamenti imminenti, ricerca di un obiettivo.' },
-  'esame': { emoji: '📝', interpretazione: 'Paura del giudizio, ansia da prestazione, sensazione di non essere preparati.' },
-  'soldi': { emoji: '💰', interpretazione: 'Potere, valore personale, risorse, opportunità. Perdere soldi può rappresentare perdita di fiducia.' },
-  'bambini': { emoji: '👶', interpretazione: 'Nuovi inizi, innocenza, vulnerabilità, creatività, aspetti del sé che necessitano cura.' },
-  'albero': { emoji: '🌳', interpretazione: 'Crescita personale, stabilità, connessione con la natura, famiglia, radici.' },
-  'fiori': { emoji: '🌸', interpretazione: 'Bellezza, crescita, speranza, rinascita, amore. Rappresentano il fiorire di nuove possibilità.' },
-  'buio': { emoji: '🌑', interpretazione: 'L\'ignoto, l\'inconscio, paura, mistero. Spesso rappresenta ciò che non capiamo ancora.' },
-  'luce': { emoji: '💡', interpretazione: 'Consapevolezza, verità, speranza, illuminazione spirituale, chiarezza.' },
-  'montagna': { emoji: '⛰️', interpretazione: 'Sfide, ostacoli, ma anche ascesa spirituale, raggiungimento di obiettivi elevati.' },
-  'mare': { emoji: '🌊', interpretazione: 'Emozioni profonde, l\'inconscio, vastità, libertà, ma anche incertezza e pericolo.' },
-  'persona cara': { emoji: '👥', interpretazione: 'Rappresenta aspetti di quella persona o di te stesso. Rifletti su cosa quella persona significa per te.' },
-  'inseguire': { emoji: '🎯', interpretazione: 'Desiderio, ricerca, perseguimento di un obiettivo. Cosa stai cercando nella tua vita?' },
-  'perdere': { emoji: '❌', interpretazione: 'Paura della perdita, sensazione di mancanza di controllo, ansia.' },
-  'trovare': { emoji: '✅', interpretazione: 'Scoperta, realizzazione, acquisizione di qualcosa di importante.' },
-  'vento': { emoji: '💨', interpretazione: 'Cambiamento, movimento, forze invisibili, trasformazione.' },
-  'tempesta': { emoji: '⛈️', interpretazione: 'Conflitto, turbolenza emotiva, sfide difficili, ma anche purificazione.' },
-  'sole': { emoji: '☀️', interpretazione: 'Consapevolezza, energia positiva, vita, speranza, illuminazione.' },
-  'luna': { emoji: '🌙', interpretazione: 'Inconscio, intuizione, femminilità, cicli, misteri.' },
-  'stella': { emoji: '⭐', interpretazione: 'Speranza, guida, aspirazioni, illuminazione spirituale.' },
-  'specchio': { emoji: '🪞', interpretazione: 'Auto-riflessione, verità su te stesso, consapevolezza di sé.' },
-  'porta': { emoji: '🚪', interpretazione: 'Opportunità, transizione, accesso a nuove parti di te stesso o della tua vita.' },
-  'finestra': { emoji: '🪟', interpretazione: 'Prospettiva, visione, speranza, connessione con il mondo esterno.' },
-  'libro': { emoji: '📖', interpretazione: 'Conoscenza, saggezza, messaggi dall\'inconscio, apprendimento.' },
-  'musica': { emoji: '🎵', interpretazione: 'Armonia, bellezza, emozione, espressione creativa.' },
-  'danza': { emoji: '💃', interpretazione: 'Libertà di movimento, gioia, espressione di sé, armonia.' },
-  'acqua che scorre': { emoji: '🌊', interpretazione: 'Flusso della vita, cambiamento, movimento verso il futuro.' },
-  'acqua stagnante': { emoji: '💧', interpretazione: 'Stagnazione, mancanza di progresso, emozioni bloccate.' },
-  'volo': { emoji: '✈️', interpretazione: 'Libertà, elevazione, superamento dei limiti, prospettiva più ampia.' },
-  'corsa': { emoji: '🏃', interpretazione: 'Urgenza, fretta, fuga, movimento veloce verso qualcosa o lontano da qualcosa.' }
+// Database di azioni specifiche che modificano il significato del simbolo
+const dreamActionsDB = {
+  'cadere': { verbs: ['cade', 'cadono', 'caduto', 'caduta', 'precipita', 'precipitato', 'scivola', 'scivolato'], modifier: 'caduta/perdita', description: 'rappresenta una perdita di controllo, un cedimento della tua sicurezza' },
+  'rompere': { verbs: ['rotto', 'rotta', 'rompe', 'si rompe', 'si è rotto', 'spezzato', 'frattura'], modifier: 'rottura/danno', description: 'indica una frattura, un danno che hai subito o che temi' },
+  'cariato': { verbs: ['cariato', 'cariati', 'carie', 'marcio'], modifier: 'degrado/corruzione', description: 'rappresenta un processo di degrado lento e silenzioso' },
+  'estratto': { verbs: ['estratto', 'estratti', 'tirato', 'tolto', 'rimosso', 'estirpato'], modifier: 'estrazione/violenza', description: 'significa una violenza, un\'estrazione forzata' },
+  'sporco': { verbs: ['sporco', 'sporca', 'lurido', 'macchiato', 'insudiciato'], modifier: 'contaminazione', description: 'rappresenta una contaminazione, una macchia sulla tua immagine' },
+  'bianco': { verbs: ['bianco', 'candido', 'pulito', 'luminoso'], modifier: 'purezza/salute', description: 'indica salute, purezza e forza' },
+  'dolore': { verbs: ['dolore', 'fa male', 'duole', 'dolente', 'sanguina'], modifier: 'sofferenza', description: 'rappresenta una sofferenza fisica o emotiva' }
 };
 
+const dreamSymbolsDB = [
+  { keys: ['acqua', 'acque', 'mare', 'oceano', 'fiume', 'lago', 'pioggia', 'cascata'], emoji: '💧', interpretazione: 'Rappresenta le tue emozioni profonde e l\'inconscio. Acqua limpida indica serenità e chiarezza interiore; acqua torbida o agitata segnala ansia, confusione o emozioni represse che stanno emergendo.' },
+  { keys: ['fuoco', 'fiamme', 'incendio', 'bruciare', 'falò'], emoji: '🔥', interpretazione: 'Simbolo di passione intensa, trasformazione, purificazione o rabbia distruttiva. Può indicare un forte desiderio creativo o una situazione che ti sta "consumando" emotivamente.' },
+  { keys: ['terra', 'terreno', 'fango', 'sabbia', 'polvere'], emoji: '🌱', interpretazione: 'Rappresenta il radicamento, la stabilità, la fertilità e i bisogni materiali. Sognare la terra indica il bisogno di tornare alle origini o di trovare maggiore sicurezza nella vita reale.' },
+  { keys: ['aria', 'vento', 'brezza', 'uragano', 'tornado', 'tempesta'], emoji: '💨', interpretazione: 'Il vento simboleggia il cambiamento, le forze invisibili che muovono la tua vita, l\'intelletto e la comunicazione. Una tempesta indica conflitti imminenti o turbolenza emotiva.' },
+  { keys: ['montagna', 'montagne', 'collina', 'vetta', 'cima'], emoji: '⛰️', interpretazione: 'Rappresenta sfide, ostacoli da superare, ma anche ambizione, ascesa spirituale e il raggiungimento di obiettivi elevati. Scalare indica sforzo verso il successo.' },
+  { keys: ['bosco', 'foresta', 'alberi', 'albero', 'selva'], emoji: '🌳', interpretazione: 'L\'inconscio, il mistero, la crescita personale e le radici familiari. Perdersi in un bosco indica confusione nella vita; un albero forte simboleggia stabilità e salute.' },
+  { keys: ['sole', 'luce', 'alba', 'tramonto', 'raggi'], emoji: '☀️', interpretazione: 'Consapevolezza, energia vitale, speranza, illuminazione e successo. Il sole porta chiarezza su una situazione oscura e promette nuovi inizi positivi.' },
+  { keys: ['luna', 'fasi lunari', 'notte', 'buio', 'oscurità'], emoji: '🌙', interpretazione: 'Rappresenta l\'intuizione, il femminile, i cicli della vita, il mistero e l\'inconscio. Il buio indica ciò che ancora non conosci o che ti fa paura affrontare.' },
+  { keys: ['stella', 'stelle', 'cielo stellato', 'costellazione'], emoji: '⭐', interpretazione: 'Speranza, guida spirituale, aspirazioni elevate e destino. Seguire una stella indica che stai cercando la tua vera strada o vocazione.' },
+  { keys: ['cane', 'cani', 'cucciolo'], emoji: '🐕', interpretazione: 'Simbolo di lealtà, amicizia, protezione e istinti addomesticati. Un cane aggressivo può indicare un amico traditore o un conflitto interiore con i tuoi istinti.' },
+  { keys: ['gatto', 'gatti', 'felino', 'micio'], emoji: '🐈', interpretazione: 'Rappresenta l\'indipendenza, l\'intuizione femminile, il mistero e la sensualità. Può anche indicare una persona sfuggente o imprevedibile nella tua vita.' },
+  { keys: ['serpente', 'serpenti', 'vipera', 'biscia'], emoji: '🐍', interpretazione: 'Un archetipo potente: può significare trasformazione e guarigione (cambio della pelle), saggezza profonda, oppure paura, tradimento e minacce nascoste (energie sessuali o creative represse).' },
+  { keys: ['ragno', 'ragni', 'tarantola'], emoji: '🕷️', interpretazione: 'Spesso legato alla figura materna (la tela che nutre ma intrappola), alla manipolazione, o alla sensazione di essere intrappolati in una situazione complessa.' },
+  { keys: ['cavallo', 'cavalli', 'destriero'], emoji: '🐎', interpretazione: 'Energia vitale, forza fisica, libertà e pulsioni sessuali. Cavalcare un cavallo indica che hai il controllo sulle tue energie istintuali.' },
+  { keys: ['uccello', 'uccelli', 'aquila', 'falco', 'colomba', 'corvo'], emoji: '🦅', interpretazione: 'Libertà, messaggi spirituali, trascendenza e ambizione. L\'aquila rappresenta visione chiara; la colomba pace; il corvo messaggi dall\'inconscio profondo.' },
+  { keys: ['pesce', 'pesci', 'squalo', 'delfino'], emoji: '🐟', interpretazione: 'Contenuti dell\'inconscio che emergono in superficie. Il delfino indica intelligenza emotiva e guida; lo squalo rappresenta paure profonde o persone minacciose.' },
+  { keys: ['insetto', 'insetti', 'mosca', 'zanzara', 'formica'], emoji: '🪲', interpretazione: 'Piccoli fastidi, pensieri ossessivi, ansie quotidiane o sensazione di essere invasi da problemi minori ma persistenti.' },
+  { keys: ['leone', 'tigre', 'pantera', 'belva'], emoji: '🦁', interpretazione: 'Forza, coraggio, aggressività, potere personale e autorità. Affrontare un leone significa confrontarsi con le proprie paure o con una figura autoritaria.' },
+  { keys: ['topo', 'topi', 'ratto'], emoji: '🐁', interpretazione: 'Paure nascoste, insicurezze, sensazione di inadeguatezza o qualcosa che "rode" lentamente le tue risorse o la tua tranquillità.' },
+  { keys: ['volare', 'volo', 'librarsi', 'fluttuare'], emoji: '✈️', interpretazione: 'Desiderio di libertà, superamento degli ostacoli, ambizione, successo o bisogno di fuggire dalla realtà. Indica una prospettiva più elevata sui problemi.' },
+  { keys: ['cadere', 'caduta', 'precipitare', 'scivolare'], emoji: '⬇️', interpretazione: 'Perdita di controllo, insicurezza profonda, paura del fallimento, ansia per una situazione che ti sfugge di mano o abbassamento dell\'autostima.' },
+  { keys: ['correre', 'corsa', 'fuggire', 'scappare'], emoji: '🏃', interpretazione: 'Se scappi: evitamento di responsabilità, paure o conflitti irrisolti. Se corri verso qualcosa: urgenza, determinazione e focalizzazione su un obiettivo.' },
+  { keys: ['inseguimento', 'inseguito', 'inseguire', 'braccato'], emoji: '🏃‍♂️', interpretazione: 'Essere inseguiti rappresenta un problema, un\'emozione o un trauma del passato che ti rifiuti di affrontare. Inseguire indica la ricerca attiva di un desiderio.' },
+  { keys: ['camminare', 'passeggiare', 'viaggiare', 'viaggio'], emoji: '🚶', interpretazione: 'Il percorso della tua vita, l\'evoluzione personale. La condizione della strada (liscia, in salita, tortuosa) riflette come percepisci il tuo attuale percorso di vita.' },
+  { keys: ['nuotare', 'nuoto', 'immergersi', 'affogare', 'annegare'], emoji: '🏊', interpretazione: 'Nuotare indica la capacità di gestire le proprie emozioni. Affogare o annegare segnala che ti senti sopraffatto da sentimenti, stress o situazioni della vita reale.' },
+  { keys: ['piangere', 'pianto', 'lacrime', 'singhiozzare'], emoji: '😢', interpretazione: 'Rilascio emotivo, purificazione, elaborazione di un dolore o di una gioia intensa. Spesso il sogno compensa emozioni trattenute durante la veglia.' },
+  { keys: ['ridere', 'risata', 'sorridere', 'gioia'], emoji: '😂', interpretazione: 'Liberazione dalla tensione, felicità interiore, o talvolta un meccanismo di difesa contro l\'ansia (ridere per non piangere).' },
+  { keys: ['mangiare', 'cibo', 'fame', 'nutrirsi', 'banchetto'], emoji: '🍽️', interpretazione: 'Bisogno di nutrimento fisico, emotivo o spirituale. Fame insaziabile indica un vuoto interiore; un banchetto rappresenta abbondanza e soddisfazione.' },
+  { keys: ['morire', 'morte', 'defunto', 'cadavere', 'uccidere'], emoji: '💀', interpretazione: 'Non è un presagio reale, ma il simbolo supremo di trasformazione, fine di un ciclo, cambiamento radicale e rinascita. Lasciar andare il passato.' },
+  { keys: ['dente', 'denti', 'dentista', 'cadono i denti'], emoji: '🦷', interpretazione: 'Ansia profonda, paura di invecchiare, perdita di potere personale, insicurezza sul proprio aspetto o difficoltà nell\'esprimere se stessi (comunicazione).' },
+  { keys: ['capelli', 'capello', 'calvo', 'tagliare i capelli'], emoji: '💇', interpretazione: 'Forza vitale, seduzione, identità. Perdere i capelli indica paura di perdere attrattiva o potere; tagliarli significa desiderio di rinnovamento.' },
+  { keys: ['sangue', 'sanguinare', 'ferita', 'emorragia'], emoji: '🩸', interpretazione: 'Energia vitale, passione, ma anche dolore emotivo, perdita di energia, sacrifici o ferite psicologiche non rimarginate.' },
+  { keys: ['nudo', 'nudità', 'spogliarsi', 'senza vestiti'], emoji: '👗', interpretazione: 'Vulnerabilità estrema, paura del giudizio altrui, sensazione di essere "scoperti" nei propri difetti, ma anche desiderio di autenticità e liberazione dalle maschere.' },
+  { keys: ['occhi', 'occhio', 'vista', 'cieco', 'cecità'], emoji: '👁️', interpretazione: 'Consapevolezza, percezione, verità. Essere ciechi indica il rifiuto di vedere una verità scomoda o mancanza di chiarezza su una situazione.' },
+  { keys: ['mani', 'mano', 'dita', 'toccare'], emoji: '✋', interpretazione: 'Capacità di agire, creare, dare e ricevere. Mani legate indicano impotenza; mani sporche senso di colpa.' },
+  { keys: ['malattia', 'malato', 'ospedale', 'medico', 'febbre'], emoji: '🏥', interpretazione: 'Disagio interiore, bisogno di cura e attenzione, squilibrio psicofisico o necessità di "guarire" una situazione tossica nella tua vita.' },
+  { keys: ['gravidanza', 'incinta', 'parto', 'partorire'], emoji: '🤰', interpretazione: 'Sviluppo di un nuovo progetto, creatività, maturazione di una nuova parte di te, attesa per un grande cambiamento personale.' },
+  { keys: ['casa', 'appartamento', 'stanza', 'camera', 'edificio'], emoji: '🏠', interpretazione: 'Rappresenta te stesso e la tua psiche. La facciata è la tua immagine pubblica; le stanze interne sono aspetti nascosti; la cantina è l\'inconscio profondo; la soffitta l\'intelletto.' },
+  { keys: ['porta', 'porte', 'cancello', 'soglia'], emoji: '🚪', interpretazione: 'Transizione, nuove opportunità, passaggi di fase nella vita. Una porta chiusa a chiave indica ostacoli o segreti inaccessibili.' },
+  { keys: ['finestra', 'finestre', 'vetro'], emoji: '🪟', interpretazione: 'La tua prospettiva sul mondo, visione, speranza. Guardare fuori indica desiderio di evasione; guardare dentro indica introspezione.' },
+  { keys: ['specchio', 'specchi', 'riflesso'], emoji: '🪞', interpretazione: 'Auto-riflessione, ricerca della propria identità, confronto con la verità su se stessi. Uno specchio rotto indica un\'immagine di sé frammentata.' },
+  { keys: ['soldi', 'denaro', 'monete', 'banconote', 'ricchezza'], emoji: '💰', interpretazione: 'Valore personale, autostima, potere, risorse energetiche e opportunità. Perdere soldi riflette insicurezza e perdita di fiducia in se stessi.' },
+  { keys: ['macchina', 'auto', 'automobile', 'guidare', 'veicolo'], emoji: '🚗', interpretazione: 'Il tuo corpo fisico o il tuo ego che naviga nella vita. Se guidi tu, hai il controllo; se guida un altro, ti senti in balia degli eventi o di altre persone.' },
+  { keys: ['treno', 'treno', 'stazione', 'binari'], emoji: '🚆', interpretazione: 'Il percorso della vita collettiva, il destino, le occasioni (il treno che passa). Perdere il treno indica paura di perdere un\'opportunità importante.' },
+  { keys: ['aereo', 'aeroplano', 'aeroporto'], emoji: '✈️', interpretazione: 'Ideali elevati, progetti ambiziosi, desiderio di fuggire rapidamente da una situazione o di raggiungere velocemente un obiettivo.' },
+  { keys: ['telefono', 'cellulare', 'chiamata', 'telefonare'], emoji: '📱', interpretazione: 'Comunicazione, connessione con gli altri o con parti del tuo inconscio. Un telefono che non funziona indica difficoltà a farsi capire o a comunicare i propri bisogni.' },
+  { keys: ['orologio', 'tempo', 'ora', 'ritardo', 'in ritardo'], emoji: '⌚', interpretazione: 'Ansia per il tempo che passa, scadenze, pressione sociale, paura di invecchiare o sensazione di non avere abbastanza tempo per realizzare i propri desideri.' },
+  { keys: ['chiave', 'chiavi', 'serratura', 'lucchetto'], emoji: '🔑', interpretazione: 'Soluzioni a problemi, accesso a conoscenze nascoste, potere di aprire o chiudere situazioni. Perdere le chiavi indica frustrazione e mancanza di soluzioni.' },
+  { keys: ['libro', 'libri', 'leggere', 'biblioteca'], emoji: '📖', interpretazione: 'Conoscenza, saggezza, ricordi, messaggi dall\'inconscio o il "libro della tua vita". Pagine bianche indicano il futuro ancora da scrivere.' },
+  { keys: ['vestito', 'vestiti', 'abito', 'scarpe', 'indossare'], emoji: '👕', interpretazione: 'La "Persona" junghiana, ovvero la maschera sociale che mostri al mondo, il tuo ruolo. Vestiti inadeguati indicano disagio nel proprio ruolo sociale.' },
+  { keys: ['labirinto', 'labirinti', 'perdersi'], emoji: '🌀', interpretazione: 'Confusione mentale, ricerca di se stessi, situazione complessa da cui è difficile uscire, viaggio iniziatico verso il centro della propria psiche.' },
+  { keys: ['bambino', 'bambini', 'neonato', 'figlio', 'figlia'], emoji: '👶', interpretazione: 'Il tuo "bambino interiore", innocenza, vulnerabilità, potenziale inespresso, nuovi inizi o aspetti di te che necessitano di cura e attenzione.' },
+  { keys: ['madre', 'mamma'], emoji: '👩‍👧', interpretazione: 'L\'archetipo materno: nutrimento, protezione, intuizione, ma anche dipendenza o controllo soffocante. Riflette il tuo rapporto con la cura e l\'affetto.' },
+  { keys: ['padre', 'papà', 'babbo'], emoji: '👨‍👦', interpretazione: 'L\'archetipo paterno: autorità, legge, ordine, logica, protezione esterna. Riflette il tuo rapporto con le regole, la disciplina e il potere.' },
+  { keys: ['es', 'ex', 'ex fidanzato', 'ex fidanzata', 'ex marito', 'ex moglie'], emoji: '💔', interpretazione: 'Questioni irrisolte del passato, nostalgia, ripetizione di vecchi schemi relazionali o l\'integrazione di qualità che quella persona rappresentava per te.' },
+  { keys: ['sconosciuto', 'sconosciuta', 'estraneo', 'ombra'], emoji: '👤', interpretazione: 'L\'archetipo dell\'Ombra (Jung): parti di te stesso che non riconosci, che reprimi o che rifiuti di accettare. Spesso appare minaccioso ma porta messaggi vitali.' },
+  { keys: ['amico', 'amica', 'amici'], emoji: '🤝', interpretazione: 'Rappresentano qualità che ammiri o detesti in te stesso, proiettate su di loro. Oppure riflettono il tuo bisogno di supporto sociale e connessione.' },
+  { keys: ['nemico', 'nemici', 'mostro', 'demone'], emoji: '👹', interpretazione: 'Conflitti interiori, paure profonde, sensi di colpa o aspetti distruttivi della tua personalità che devi affrontare e integrare.' },
+  { keys: ['insegnante', 'maestro', 'professore', 'guida', 'saggio'], emoji: '🧙‍♂️', interpretazione: 'L\'archetipo del Vecchio Saggio: la tua saggezza interiore, intuizione profonda, ricerca di guida spirituale o bisogno di imparare una lezione di vita.' },
+  { keys: ['esame', 'test', 'interrogazione', 'scuola'], emoji: '📝', interpretazione: 'Ansia da prestazione, paura del giudizio, sensazione di essere messi alla prova dalla vita o di non essere all\'altezza delle aspettative (tue o altrui).' }
+];
+
+// ═══ DATABASE AZIONI CONTESTUALI ESTESO ═══
+// Ogni azione modifica radicalmente il significato del simbolo
+const dreamContextDB = {
+  // DENTI — varianti contestuali complete
+  denti: {
+    caduto:    { label: 'Dente caduto', msg: 'Sognare che un dente cade spontaneamente è uno dei sogni più comuni e potenti. Rappresenta una perdita che stai vivendo o che temi: può essere la perdita di una persona cara, di un lavoro, di una certezza o della tua autostima. Il dente che cade da solo indica che qualcosa si sta staccando dalla tua vita senza che tu possa fermarlo. È il momento di accettare ciò che non puoi trattenere.' },
+    rotto:     { label: 'Dente rotto', msg: 'Un dente che si rompe nel sogno parla di una frattura improvvisa: una relazione spezzata, una promessa tradita, un progetto che si è incrinato. La rottura è violenta e inattesa, e il tuo inconscio ti sta dicendo che qualcosa di solido nella tua vita ha ceduto sotto una pressione che forse non hai ancora riconosciuto.' },
+    cariato:   { label: 'Dente cariato', msg: 'Il dente cariato nel sogno rappresenta un problema che si sta consumando lentamente dall’interno: una situazione che ignori ma che si sta deteriorando, una relazione che ha perso vitalità, o un aspetto di te stesso che stai trascurando. La carie è il simbolo del degrado silenzioso: ci vuole tempo, ma alla fine fa male.' },
+    estratto:  { label: 'Dente estratto/tolto', msg: 'Sognare che qualcuno ti estrae un dente, o che viene tolto con forza, indica una perdita subita per mano altrui: qualcuno ti ha tolto qualcosa di importante, forse la fiducia, un’opportunità o la tua voce in una situazione. Se sei tu a toglierlo, stai cercando di liberarti di qualcosa che ti causa dolore.' },
+    dolore:    { label: 'Dente dolorante', msg: 'Il dolore al dente nel sogno è un segnale che qualcosa nella tua vita reale ti sta causando sofferenza ma che stai cercando di ignorare. Il tuo corpo onirico amplifica ciò che la mente diurna minimizza. Ascolta questo segnale: c’è una ferita aperta che ha bisogno di attenzione.' },
+    default:   { label: 'Denti (in generale)', msg: 'I denti nel sogno sono simbolo di potere personale, comunicazione e autostima. Sognare i denti in modo prominente indica che stai attraversando un periodo in cui la tua forza, la tua capacità di esprimerti o la tua immagine di fronte agli altri è messa alla prova.' }
+  },
+  // CADUTA
+  caduta: {
+    default: { label: 'Caduta', msg: 'Sognare di cadere è uno dei sogni più universali. Rappresenta una perdita di controllo su una situazione della tua vita, un cedimento della tua sicurezza o la paura di fallire. Se cadi nel vuoto senza fine, il tuo inconscio ti sta dicendo che ti senti sopraffatto e che non vedi un punto di approdo. Se cadi e ti fai male, c’è una paura concreta di conseguenze reali.' }
+  },
+  // INCIDENTE
+  incidente: {
+    auto:    { label: 'Incidente in auto', msg: 'L’incidente in auto nel sogno parla del tuo percorso di vita: qualcosa ha deviato bruscamente dalla direzione che avevi scelto. Se guidavi tu, il tuo inconscio ti avverte che stai perdendo il controllo delle tue scelte. Se era un altro a guidare, qualcuno nella tua vita sta influenzando negativamente la tua direzione.' },
+    default: { label: 'Incidente', msg: 'Sognare un incidente rappresenta una rottura improvvisa dell’equilibrio: un evento che non hai previsto e che ha cambiato le cose. Può essere un avvertimento dell’inconscio su una situazione rischiosa che stai sottovalutando nella vita reale, oppure l’elaborazione di un trauma già vissuto.' }
+  },
+  // AMORE
+  amore: {
+    tradimento: { label: 'Tradimento in amore', msg: 'Sognare un tradimento amoroso non significa necessariamente che il tuo partner ti stia tradendo. Più spesso riflette una tua insicurezza profonda, la paura di non essere abbastanza o di perdere qualcuno di importante. Può anche indicare che ti senti trascurato o che c’è una mancanza di comunicazione nella relazione.' },
+    default:    { label: 'Amore', msg: 'Sognare l’amore è un riflesso dei tuoi bisogni emotivi più profondi. Se l’amore nel sogno è felice, il tuo inconscio ti sta nutrendo di speranza e connessione. Se è doloroso o irraggiungibile, stai elaborando una ferita o un desiderio insoddisfatto.' }
+  },
+  // PERDITA
+  perdita: {
+    default: { label: 'Perdita', msg: 'Sognare una perdita — di un oggetto, di una persona, di una opportunità — riflette il tuo senso di vulnerabilità e la paura di ciò che non puoi controllare. Il tuo inconscio sta elaborando un lutto, reale o simbolico, e ti invita a fare i conti con ciò che non è più nella tua vita.' }
+  },
+  // FORTUNA / SOLDI
+  fortuna: {
+    vincita: { label: 'Fortuna/Vincita', msg: 'Sognare di vincere o di avere grande fortuna è spesso il segnale di un desiderio intenso di cambiamento materiale o di riconoscimento. Il tuo inconscio proietta ciò che senti mancare nella realtà. Può anche indicare un periodo di opportunità reali che stai per cogliere.' },
+    default:  { label: 'Fortuna', msg: 'La fortuna nel sogno rappresenta il tuo rapporto con il caso, con il merito e con l’abbondanza. Sognare fortuna indica spesso un bisogno di riconoscimento o la speranza di una svolta positiva imminente.' }
+  },
+  // LITIGIO
+  litigio: {
+    default: { label: 'Litigio', msg: 'Sognare un litigio è quasi sempre il riflesso di un conflitto irrisolto nella vita reale: con una persona specifica, con te stesso, o con una situazione che ti pesa. Il tuo inconscio mette in scena ciò che non hai ancora detto o affrontato. Chi litiga con te nel sogno è spesso la chiave per capire dove si trova la tensione.' }
+  },
+  // DIVORZIO / SEPARAZIONE
+  divorzio: {
+    default: { label: 'Divorzio/Separazione', msg: 'Sognare un divorzio o una separazione non è necessariamente un presagio. Più spesso rappresenta la fine di un ciclo, la necessità di separarsi da qualcosa che non ti appartiene più: un’abitudine, un ruolo, una relazione che è già finita emotivamente anche se non formalmente.' }
+  },
+  // PAURA
+  paura: {
+    default: { label: 'Paura', msg: 'La paura nel sogno è un messaggero diretto dell’inconscio: ti sta mostrando esattamente ciò che temi nella vita reale, spesso in forma amplificata o simbolica. Invece di fuggire da questa sensazione, chiediti: di cosa ho veramente paura? La risposta è già dentro di te.' }
+  }
+};
+
+// Funzione per rilevare il contesto specifico del sogno
+function detectDreamContext(textLower) {
+  const contexts = [];
+
+  // DENTI
+  const hasDenti = /\b(dente|denti|dentista)\b/.test(textLower);
+  if (hasDenti) {
+    if (/\b(caduto|cade|cadono|caduta|cade|perso|persa|perde)\b/.test(textLower))
+      contexts.push({ symbol: 'denti', variant: 'caduto', emoji: '🦷' });
+    else if (/\b(rotto|rotta|si rompe|spezzato|frattura|si è rotto)\b/.test(textLower))
+      contexts.push({ symbol: 'denti', variant: 'rotto', emoji: '🦷' });
+    else if (/\b(cariato|cariati|carie|marcio|marcia)\b/.test(textLower))
+      contexts.push({ symbol: 'denti', variant: 'cariato', emoji: '🦷' });
+    else if (/\b(estratto|estratti|tirato|tolto|rimosso|estirpato|strappato)\b/.test(textLower))
+      contexts.push({ symbol: 'denti', variant: 'estratto', emoji: '🦷' });
+    else if (/\b(dolore|fa male|duole|dolente|sanguina|sangue)\b/.test(textLower))
+      contexts.push({ symbol: 'denti', variant: 'dolore', emoji: '🦷' });
+    else
+      contexts.push({ symbol: 'denti', variant: 'default', emoji: '🦷' });
+  }
+
+  // CADUTA
+  if (/\b(caduto|caduta|cado|cade|cadono|precipito|precipita|precipitato|scivolo|scivola|scivolato|volo giù|cadere)\b/.test(textLower) && !hasDenti)
+    contexts.push({ symbol: 'caduta', variant: 'default', emoji: '⬇️' });
+
+  // INCIDENTE
+  if (/\b(incidente|schianto|tamponamento|crash|investito)\b/.test(textLower)) {
+    if (/\b(auto|macchina|automobile|moto|veicolo|guidare)\b/.test(textLower))
+      contexts.push({ symbol: 'incidente', variant: 'auto', emoji: '🚗' });
+    else
+      contexts.push({ symbol: 'incidente', variant: 'default', emoji: '⚠️' });
+  }
+
+  // AMORE
+  if (/\b(amore|amato|amata|innamorato|innamorata|fidanzato|fidanzata|partner|marito|moglie|relazione)\b/.test(textLower)) {
+    if (/\b(tradimento|tradisce|tradito|tradita|cornuto|cornuta|infedele|ingannato|ingannata)\b/.test(textLower))
+      contexts.push({ symbol: 'amore', variant: 'tradimento', emoji: '💔' });
+    else
+      contexts.push({ symbol: 'amore', variant: 'default', emoji: '❤️' });
+  }
+
+  // PERDITA
+  if (/\b(perso|persa|perduto|perduta|smarrito|smarrita|non trovo|ho perso)\b/.test(textLower) && !hasDenti)
+    contexts.push({ symbol: 'perdita', variant: 'default', emoji: '😔' });
+
+  // FORTUNA / SOLDI
+  if (/\b(fortuna|fortunato|vincita|vinto|vincere|lotto|soldi|denaro|ricco|ricchezza|tesoro)\b/.test(textLower)) {
+    if (/\b(vinto|vincita|vincere|jackpot|premio)\b/.test(textLower))
+      contexts.push({ symbol: 'fortuna', variant: 'vincita', emoji: '💰' });
+    else
+      contexts.push({ symbol: 'fortuna', variant: 'default', emoji: '💰' });
+  }
+
+  // LITIGIO
+  if (/\b(litigio|litigato|litigare|lite|discussione|urlo|urlavo|urlava|arrabbiato|arrabbiata|scontro|conflitto)\b/.test(textLower))
+    contexts.push({ symbol: 'litigio', variant: 'default', emoji: '😡' });
+
+  // DIVORZIO
+  if (/\b(divorzio|divorziato|divorziata|separazione|separato|separata|lasciato|lasciata|rottura)\b/.test(textLower))
+    contexts.push({ symbol: 'divorzio', variant: 'default', emoji: '💔' });
+
+  // PAURA
+  if (/\b(paura|terrore|terrificante|spaventato|spaventata|angoscia|incubo|orrore|mostro|demone)\b/.test(textLower))
+    contexts.push({ symbol: 'paura', variant: 'default', emoji: '😨' });
+
+  return contexts;
+}
+
+// Funzione per generare frase empatica personalizzata
+function buildEmpathyText(userName, dreamText, contexts, foundSymbols) {
+  const name = userName && userName !== 'Caro sognatore' ? userName : null;
+  const greeting = name ? name : 'Caro sognatore';
+
+  // Tono in base al contenuto
+  const hasNegative = /\b(paura|dolore|perdita|morte|incidente|litigio|tradimento|divorzio|caduta|sangue|pianto|angoscia|incubo)\b/.test(dreamText.toLowerCase());
+  const hasPositive = /\b(amore|gioia|felice|felicità|volare|luce|sole|fortuna|vincita|bambino|nascita)\b/.test(dreamText.toLowerCase());
+
+  let empathy = '';
+  if (hasNegative && !hasPositive) {
+    empathy = `${greeting}, questo sogno porta con sé emozioni intense e a tratti difficili. Il tuo inconscio non ti sta punendo: ti sta mostrando qualcosa che merita attenzione, qualcosa che forse nella vita di tutti i giorni stai cercando di tenere a bada. Ogni immagine dolorosa in un sogno è un invito a guardarsi dentro con coraggio e compassione.`;
+  } else if (hasPositive && !hasNegative) {
+    empathy = `${greeting}, il tuo sogno è ricco di energia positiva e di simboli che parlano di apertura, speranza e rinnovamento. Il tuo inconscio ti sta nutrendo di possibilità: c’è qualcosa di bello che si sta muovendo nella tua vita, anche se forse non lo vedi ancora chiaramente.`;
+  } else {
+    empathy = `${greeting}, il tuo sogno è un mosaico complesso di emozioni e simboli. Il tuo inconscio non parla mai per caso: ogni immagine, ogni sensazione che hai vissuto in questo sogno è un frammento di un messaggio che ti appartiene profondamente. Leggi questa analisi con apertura e lascia che le parole risuonino con la tua esperienza.`;
+  }
+  return empathy;
+}
+
 function analyzeDream() {
-  const dreamText = document.getElementById('dream-input').value.trim().toLowerCase();
+  const dreamText = document.getElementById('dream-input').value.trim();
   const resultDiv = document.getElementById('dream-result');
-  
+  const dreamTextLower = dreamText.toLowerCase();
+
   if (!dreamText) {
     resultDiv.innerHTML = '<p style="color:#f87171;font-weight:bold">⚠️ Per favore, descrivi il tuo sogno prima di analizzarlo.</p>';
     resultDiv.style.display = 'block';
     return;
   }
-  
-  // Ricerca di simboli nel testo
-  const foundSymbols = [];
-  for (const [key, value] of Object.entries(dreamSymbols)) {
-    if (dreamText.includes(key)) {
-      foundSymbols.push({ key, ...value });
-    }
-  }
-  
-  // Generazione della risposta
-  let html = '<h4 style="color:#fbbf24;margin-bottom:12px;font-size:1.1rem">🔮 Analisi del Tuo Sogno</h4>';
-  
-  if (foundSymbols.length > 0) {
-    html += '<p style="margin-bottom:15px;color:var(--muted)"><strong>Simboli Identificati:</strong></p>';
-    foundSymbols.forEach(symbol => {
-      html += `<div style="margin-bottom:12px;padding:10px;background:rgba(212,175,55,0.08);border-left:3px solid #fbbf24;border-radius:4px">`;
-      html += `<p style="margin:0;color:#fbbf24;font-weight:bold">${symbol.emoji} ${symbol.key.charAt(0).toUpperCase() + symbol.key.slice(1)}</p>`;
-      html += `<p style="margin:5px 0 0 0;color:var(--text);font-size:0.9rem">${symbol.interpretazione}</p>`;
+
+  // Nome dal profilo
+  let userName = localStorage.getItem('mystica_name') || '';
+  if (!userName) userName = '';
+  const displayName = userName || 'Caro sognatore';
+
+  // Rilevamento contesti specifici (denti, caduta, incidente, amore, ecc.)
+  const specificContexts = detectDreamContext(dreamTextLower);
+
+  // Rilevamento simboli generali dal database
+  let foundSymbols = [];
+  const specificSymbolKeys = specificContexts.map(c => c.symbol);
+
+  dreamSymbolsDB.forEach(symbolEntry => {
+    symbolEntry.keys.forEach(key => {
+      if (dreamTextLower.includes(key)) {
+        // Evita duplicati con i contesti specifici già rilevati
+        const alreadyCovered = specificSymbolKeys.some(sk =>
+          key.includes(sk) || sk.includes(key) ||
+          (sk === 'denti' && (key === 'dente' || key === 'denti' || key === 'dentista' || key === 'cadono i denti')) ||
+          (sk === 'caduta' && (key === 'cadere' || key === 'caduta' || key === 'precipitare' || key === 'scivolare')) ||
+          (sk === 'amore' && (key === 'es' || key === 'ex')) ||
+          (sk === 'fortuna' && (key === 'soldi' || key === 'denaro' || key === 'monete' || key === 'banconote' || key === 'ricchezza'))
+        );
+        if (!alreadyCovered) {
+          // Cerca azioni associate
+          let actionModifier = '';
+          let actionDesc = '';
+          for (const [action, actionData] of Object.entries(dreamActionsDB)) {
+            for (const verb of actionData.verbs) {
+              if (dreamTextLower.includes(verb)) {
+                const verbIdx = dreamTextLower.indexOf(verb);
+                const keyIdx = dreamTextLower.indexOf(key);
+                if (Math.abs(verbIdx - keyIdx) < 60) {
+                  actionModifier = actionData.modifier;
+                  actionDesc = actionData.description;
+                  break;
+                }
+              }
+            }
+            if (actionModifier) break;
+          }
+          foundSymbols.push({
+            key: key,
+            emoji: symbolEntry.emoji,
+            interpretazione: symbolEntry.interpretazione,
+            actionModifier: actionModifier,
+            actionDesc: actionDesc
+          });
+        }
+      }
+    });
+  });
+
+  // Rimuovi duplicati sui simboli generali
+  foundSymbols = foundSymbols.filter((item, index, self) =>
+    index === self.findIndex((t) => t.key === item.key)
+  );
+
+  const hasAnyContent = specificContexts.length > 0 || foundSymbols.length > 0;
+
+  let html = '';
+
+  // ═══ BLOCCO 1: EMPATIA ═══
+  html += `<div style="margin-bottom:20px;padding:18px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border-left:4px solid #fbbf24;border-radius:10px">`;
+  html += `<h4 style="color:#fbbf24;margin:0 0 12px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">💫 1. EMPATIA</h4>`;
+  html += `<p style="margin:0;color:var(--text);font-size:0.97rem;line-height:1.8">${buildEmpathyText(userName, dreamText, specificContexts, foundSymbols)}</p>`;
+  html += `</div>`;
+
+  if (hasAnyContent) {
+
+    // ═══ BLOCCO 2: DESCRIZIONE DEI SIMBOLI ═══
+    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
+    html += `<h4 style="color:#d4af37;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">🔍 2. DESCRIZIONE DEI SIMBOLI</h4>`;
+
+    // Prima i contesti specifici (più precisi)
+    specificContexts.forEach(ctx => {
+      const ctxData = dreamContextDB[ctx.symbol] && dreamContextDB[ctx.symbol][ctx.variant]
+        ? dreamContextDB[ctx.symbol][ctx.variant]
+        : (dreamContextDB[ctx.symbol] ? dreamContextDB[ctx.symbol]['default'] : null);
+      if (!ctxData) return;
+      html += `<div style="margin-bottom:14px;padding:14px;background:rgba(10,5,20,0.5);border-radius:8px;border:1px solid rgba(212,175,55,0.15)">`;
+      html += `<p style="margin:0 0 8px 0;color:#fbbf24;font-weight:bold;font-size:1rem">${ctx.emoji} ${ctxData.label}</p>`;
+      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">${ctxData.msg}</p>`;
       html += `</div>`;
     });
+
+    // Poi i simboli generali
+    foundSymbols.forEach(symbol => {
+      html += `<div style="margin-bottom:14px;padding:14px;background:rgba(10,5,20,0.4);border-radius:8px;border:1px solid rgba(212,175,55,0.1)">`;
+      html += `<p style="margin:0 0 8px 0;color:#fbbf24;font-weight:bold;font-size:1rem">${symbol.emoji} ${symbol.key.charAt(0).toUpperCase() + symbol.key.slice(1)}`;
+      if (symbol.actionModifier) {
+        html += ` <span style="color:#f59e0b;font-size:0.85rem">(${symbol.actionModifier})</span>`;
+      }
+      html += `</p>`;
+      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">${symbol.interpretazione}`;
+      if (symbol.actionDesc) {
+        html += ` In questo caso specifico, il simbolo <strong>${symbol.actionModifier}</strong> ${symbol.actionDesc}.`;
+      }
+      html += `</p>`;
+      html += `</div>`;
+    });
+
+    html += `</div>`;
+
+    // ═══ BLOCCO 3: ASSOCIAZIONI DI PIÙ PAROLE E CONTESTO ═══
+    const allSymbolNames = [
+      ...specificContexts.map(c => {
+        const d = dreamContextDB[c.symbol];
+        return d && (d[c.variant] || d['default']) ? (d[c.variant] || d['default']).label : c.symbol;
+      }),
+      ...foundSymbols.map(s => s.key)
+    ];
+
+    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
+    html += `<h4 style="color:#d4af37;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">🔗 3. ASSOCIAZIONI E CONTESTO</h4>`;
+
+    if (allSymbolNames.length > 1) {
+      html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.93rem;line-height:1.75">`;
+      html += `Nel tuo sogno convivono più elementi significativi: <strong style="color:#fbbf24">${allSymbolNames.join(', ')}</strong>. `;
+      html += `Questa combinazione non è casuale: il tuo inconscio sta costruendo una narrazione precisa che intreccia più livelli della tua esperienza interiore.`;
+      html += `</p>`;
+
+      // Associazioni tematiche
+      const hasBodySymbol = specificContexts.some(c => c.symbol === 'denti') || foundSymbols.some(s => ['capelli','sangue','mani','occhi','corpo'].includes(s.key));
+      const hasRelationSymbol = specificContexts.some(c => ['amore','divorzio','litigio'].includes(c.symbol)) || foundSymbols.some(s => ['madre','padre','ex','amico','nemico'].includes(s.key));
+      const hasAnxietySymbol = specificContexts.some(c => ['caduta','paura','incidente'].includes(c.symbol)) || foundSymbols.some(s => ['esame','inseguimento','correre','orologio'].includes(s.key));
+      const hasMaterialSymbol = specificContexts.some(c => c.symbol === 'fortuna') || foundSymbols.some(s => ['soldi','denaro','macchina','casa'].includes(s.key));
+
+      if (hasBodySymbol && hasAnxietySymbol) {
+        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">La presenza di simboli corporei insieme a simboli d’ansia suggerisce che il tuo corpo sta segnalando una tensione emotiva che si manifesta fisicamente. Potresti star vivendo un periodo di stress elevato che il tuo organismo percepisce prima ancora della tua mente conscia.</p>`;
+      }
+      if (hasRelationSymbol && hasAnxietySymbol) {
+        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">I temi relazionali e quelli d’ansia si intrecciano: c’è una relazione o una situazione interpersonale che ti sta creando tensione. Il sogno ti invita a guardare onestamente a questa dinamica.</p>`;
+      }
+      if (hasRelationSymbol && hasMaterialSymbol) {
+        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">La combinazione di temi affettivi e materiali indica che nella tua vita c’è un intreccio tra sicurezza emotiva e sicurezza economica: forse una relazione influenza la tua stabilità materiale, o viceversa.</p>`;
+      }
+      if (hasBodySymbol && hasRelationSymbol) {
+        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">I simboli del corpo e quelli relazionali insieme parlano di come le tue relazioni influenzano la tua percezione di te stesso: la tua immagine, la tua forza, il tuo valore personale sono legati a come ti senti visto e amato dagli altri.</p>`;
+      }
+
+    } else if (allSymbolNames.length === 1) {
+      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">`;
+      html += `Il tuo sogno si concentra con forza su un unico elemento: <strong style="color:#fbbf24">${allSymbolNames[0]}</strong>. `;
+      html += `Quando l’inconscio isola un singolo simbolo con tanta intensità, il messaggio è diretto e urgente: questo è esattamente l’area della tua vita che richiede la tua attenzione in questo momento.`;
+      html += `</p>`;
+    }
+
+    html += `</div>`;
+
+    // ═══ BLOCCO 4: DESCRIZIONE DEL SOGNO — ANALISI COMPLETA ═══
+    html += `<div style="margin-bottom:20px;padding:18px;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04));border-left:4px solid #fbbf24;border-radius:10px">`;
+    html += `<h4 style="color:#fbbf24;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">✨ 4. ANALISI COMPLETA DEL SOGNO</h4>`;
+
+    // Riepilogo del sogno riscritto con le parole dell'analisi
+    html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.97rem;line-height:1.85;font-style:italic;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px">`;
+    html += `"${dreamText.length > 200 ? dreamText.substring(0,200) + '...' : dreamText}"`;
+    html += `</p>`;
+
+    // Analisi narrativa completa
+    const name2 = userName || 'il sognatore';
+    html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.95rem;line-height:1.85">`;
+
+    if (specificContexts.length > 0) {
+      const mainCtx = specificContexts[0];
+      const mainData = dreamContextDB[mainCtx.symbol] &&
+        (dreamContextDB[mainCtx.symbol][mainCtx.variant] || dreamContextDB[mainCtx.symbol]['default']);
+
+      if (mainData) {
+        html += `Il cuore di questo sogno ruota attorno a <strong>${mainData.label.toLowerCase()}</strong>. `;
+        html += `Questo non è un dettaglio marginale: è il simbolo centrale attorno al quale tutto il resto si organizza. `;
+      }
+    } else if (foundSymbols.length > 0) {
+      html += `Il simbolo dominante in questo sogno è <strong>${foundSymbols[0].key}</strong>. `;
+    }
+
+    // Contesto emotivo
+    const hasAnger = /\b(arrabbiato|arrabbiata|furioso|furiosa|rabbia|odio|urlare|urlo)\b/.test(dreamTextLower);
+    const hasFear = /\b(paura|terrore|spaventato|spaventata|angoscia|incubo)\b/.test(dreamTextLower);
+    const hasSadness = /\b(triste|tristezza|pianto|piangere|lacrime|dolore|sofferenza)\b/.test(dreamTextLower);
+    const hasJoy = /\b(felice|felicità|gioia|ridere|sorridere|contento|contenta)\b/.test(dreamTextLower);
+
+    if (hasAnger) html += `La rabbia presente nel sogno è un segnale che qualcosa nella tua vita ti sta comprimendo: c’è una frustrazione che non hai ancora espresso pienamente. `;
+    if (hasFear) html += `La paura che hai vissuto in questo sogno non è un nemico: è una bussola. Ti sta indicando esattamente dove si trova la tua vulnerabilità più autentica. `;
+    if (hasSadness) html += `La tristezza del sogno parla di un lutto interiore, piccolo o grande: qualcosa che stai lasciando andare, o che hai già perso e non hai ancora elaborato del tutto. `;
+    if (hasJoy) html += `La gioia presente nel sogno è un dono del tuo inconscio: ti sta ricordando che dentro di te esiste ancora la capacità di essere felice, anche nei momenti più difficili. `;
+
+    html += `</p>`;
+
+    // Messaggio finale personalizzato
+    html += `<p style="margin:0;color:var(--muted);font-size:0.93rem;line-height:1.8;padding-top:10px;border-top:1px solid rgba(212,175,55,0.15)">`;
+    if (userName && userName !== '') {
+      html += `<strong style="color:#fbbf24">${userName}</strong>, `;
+    }
+    html += `questo sogno è un messaggio che viene da te, per te. Non cercare una risposta definitiva fuori: siediti con queste immagini, lascia che risuonino. `;
+    html += `Cosa cambieresti nella tua vita se sapessi che il tuo inconscio ha ragione? Quella risposta è il vero significato del tuo sogno.`;
+    html += `</p>`;
+
+    html += `</div>`;
+
   } else {
-    html += '<p style="color:var(--muted);margin-bottom:15px">Nessun simbolo specifico riconosciuto nel tuo sogno, ma ecco alcuni consigli generali:</p>';
+    // Nessun simbolo riconosciuto
+    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
+    html += `<h4 style="color:#d4af37;margin:0 0 12px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">💭 Analisi del Sogno</h4>`;
+    html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.95rem;line-height:1.8">`;
+    html += `${displayName}, il tuo sogno contiene immagini e sensazioni che vanno oltre i simboli più comuni. `;
+    html += `Questo non significa che il sogno sia meno significativo: al contrario, i sogni più personali e originali sono spesso i più profondi. `;
+    html += `</p>`;
+    html += `<p style="margin:0;color:var(--muted);font-size:0.93rem;line-height:1.8">`;
+    html += `Prova a rileggere il tuo sogno e chiediti: <em>Quale emozione era più forte?</em> <em>Chi c’era con me?</em> <em>Dove mi trovavo?</em> <em>Cosa volevo fare e non riuscivo?</em> `;
+    html += `Ogni risposta è un filo che porta al significato. Aggiungi più dettagli e riprova per un’analisi più approfondita.`;
+    html += `</p>`;
+    html += `</div>`;
   }
-  
-  html += '<div style="margin-top:15px;padding:12px;background:rgba(212,175,55,0.08);border-radius:4px">';
-  html += '<p style="color:#fbbf24;font-weight:bold;margin-bottom:8px">💡 Consigli per l\'Interpretazione:</p>';
-  html += '<ul style="margin:0;padding-left:20px;color:var(--text);font-size:0.9rem">';
-  html += '<li style="margin-bottom:6px"><strong>Considera il Contesto:</strong> Cosa stava accadendo nella tua vita quando hai fatto questo sogno?</li>';
-  html += '<li style="margin-bottom:6px"><strong>Presta Attenzione alle Emozioni:</strong> Come ti sentivi nel sogno? Paura, gioia, confusione? Le emozioni sono chiave.</li>';
-  html += '<li style="margin-bottom:6px"><strong>Associazioni Personali:</strong> Cosa significano questi simboli per TE personalmente? Le tue associazioni sono più importanti di quelle generiche.</li>';
-  html += '<li style="margin-bottom:6px"><strong>Pattern Ricorrenti:</strong> Questo sogno si ripete? I sogni ricorrenti indicano messaggi insistenti dell\'inconscio.</li>';
-  html += '<li><strong>Azione nella Vita Conscia:</strong> Cosa puoi fare nella tua vita di veglia per affrontare i messaggi del sogno?</li>';
-  html += '</ul>';
-  html += '</div>';
-  
+
   resultDiv.innerHTML = html;
   resultDiv.style.display = 'block';
-  
-  // Scroll al risultato
+
   setTimeout(() => {
     resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 100);
@@ -785,20 +1128,17 @@ function clearDreamInput() {
   document.getElementById('dream-result').style.display = 'none';
 }
 
-// Funzione per scrollare alle sezioni
 function scrollToSection(sectionId){
-  const element = document.getElementById(sectionId);
+  // 'category-grid' punta all'ancora dream-list-top per scroll preciso sopra la griglia
+  const targetId = (sectionId === 'category-grid') ? 'dream-list-top' : sectionId;
+  const element = document.getElementById(targetId);
   if(element){
-    const offset = 80; // Offset per l'header fisso
+    const offset = 80;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }
 }
 </script>
