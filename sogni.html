@@ -744,7 +744,7 @@ const dreamSymbolsDB = [
   { keys: ['bambino', 'bambini', 'neonato', 'figlio', 'figlia'], emoji: '👶', interpretazione: 'Il tuo "bambino interiore", innocenza, vulnerabilità, potenziale inespresso, nuovi inizi o aspetti di te che necessitano di cura e attenzione.' },
   { keys: ['madre', 'mamma'], emoji: '👩‍👧', interpretazione: 'L\'archetipo materno: nutrimento, protezione, intuizione, ma anche dipendenza o controllo soffocante. Riflette il tuo rapporto con la cura e l\'affetto.' },
   { keys: ['padre', 'papà', 'babbo'], emoji: '👨‍👦', interpretazione: 'L\'archetipo paterno: autorità, legge, ordine, logica, protezione esterna. Riflette il tuo rapporto con le regole, la disciplina e il potere.' },
-  { keys: ['es', 'ex', 'ex fidanzato', 'ex fidanzata', 'ex marito', 'ex moglie'], emoji: '💔', interpretazione: 'Questioni irrisolte del passato, nostalgia, ripetizione di vecchi schemi relazionali o l\'integrazione di qualità che quella persona rappresentava per te.' },
+  { keys: ['ex fidanzato', 'ex fidanzata', 'ex marito', 'ex moglie', 'il mio ex', 'la mia ex'], emoji: '💔', interpretazione: 'Questioni irrisolte del passato, nostalgia, ripetizione di vecchi schemi relazionali o l\'integrazione di qualità che quella persona rappresentava per te.' },
   { keys: ['sconosciuto', 'sconosciuta', 'estraneo', 'ombra'], emoji: '👤', interpretazione: 'L\'archetipo dell\'Ombra (Jung): parti di te stesso che non riconosci, che reprimi o che rifiuti di accettare. Spesso appare minaccioso ma porta messaggi vitali.' },
   { keys: ['amico', 'amica', 'amici'], emoji: '🤝', interpretazione: 'Rappresentano qualità che ammiri o detesti in te stesso, proiettate su di loro. Oppure riflettono il tuo bisogno di supporto sociale e connessione.' },
   { keys: ['nemico', 'nemici', 'mostro', 'demone'], emoji: '👹', interpretazione: 'Conflitti interiori, paure profonde, sensi di colpa o aspetti distruttivi della tua personalità che devi affrontare e integrare.' },
@@ -869,24 +869,63 @@ function detectDreamContext(textLower) {
   return contexts;
 }
 
-// Funzione per generare frase empatica personalizzata
-function buildEmpathyText(userName, dreamText, contexts, foundSymbols) {
-  const name = userName && userName !== 'Caro sognatore' ? userName : null;
-  const greeting = name ? name : 'Caro sognatore';
+// Funzione di utilità: rende maiuscola la prima lettera di una stringa
+function capitalizeFirst(str) {
+  if (!str) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-  // Tono in base al contenuto
-  const hasNegative = /\b(paura|dolore|perdita|morte|incidente|litigio|tradimento|divorzio|caduta|sangue|pianto|angoscia|incubo)\b/.test(dreamText.toLowerCase());
-  const hasPositive = /\b(amore|gioia|felice|felicità|volare|luce|sole|fortuna|vincita|bambino|nascita)\b/.test(dreamText.toLowerCase());
+// Genera la frase di apertura personalizzata. Sceglie a caso tra varianti
+// "positive" e varianti più caute/empatiche, in base al tono del sogno,
+// e include sempre il nome dell'utente (se disponibile) in posizione naturale.
+function buildOpeningPhrase(userName, dreamTextLower) {
+  const hasNegative = /\b(paura|terrore|terrificante|spaventato|spaventata|angoscia|incubo|orrore|mostro|demone|dolore|perdita|perso|persa|morte|morire|incidente|litigio|tradimento|divorzio|caduta|cadere|cado|cade|sangue|pianto|piangere|ansia|male|triste|tristezza)\b/.test(dreamTextLower);
+  const hasPositive = /\b(amore|gioia|felice|felicità|volare|volo|luce|sole|fortuna|vincita|vinto|bambino|nascita|sorridere|ridere|sereno|serena|pace|libertà)\b/.test(dreamTextLower);
 
-  let empathy = '';
-  if (hasNegative && !hasPositive) {
-    empathy = `${greeting}, questo sogno porta con sé emozioni intense e a tratti difficili. Il tuo inconscio non ti sta punendo: ti sta mostrando qualcosa che merita attenzione, qualcosa che forse nella vita di tutti i giorni stai cercando di tenere a bada. Ogni immagine dolorosa in un sogno è un invito a guardarsi dentro con coraggio e compassione.`;
-  } else if (hasPositive && !hasNegative) {
-    empathy = `${greeting}, il tuo sogno è ricco di energia positiva e di simboli che parlano di apertura, speranza e rinnovamento. Il tuo inconscio ti sta nutrendo di possibilità: c’è qualcosa di bello che si sta muovendo nella tua vita, anche se forse non lo vedi ancora chiaramente.`;
-  } else {
-    empathy = `${greeting}, il tuo sogno è un mosaico complesso di emozioni e simboli. Il tuo inconscio non parla mai per caso: ogni immagine, ogni sensazione che hai vissuto in questo sogno è un frammento di un messaggio che ti appartiene profondamente. Leggi questa analisi con apertura e lascia che le parole risuonino con la tua esperienza.`;
-  }
-  return empathy;
+  const nameRaw = (userName || '').trim();
+  const N = nameRaw || 'caro sognatore';                              // usato dopo "Ciao "
+  const S = nameRaw ? capitalizeFirst(nameRaw) : 'Caro sognatore';     // usato a inizio frase
+
+  const positivi = [
+    `Ciao ${N}, che bel sogno hai avuto! Lasciami spiegarti cosa significa:`,
+    `${S}, leggendo il tuo racconto percepisco subito un'energia molto positiva:`,
+    `Ciao ${N}! Questo sogno è ricco di segnali incoraggianti, ed ecco perché:`,
+    `Che bella visione, ${N}! Il tuo inconscio ti sta mandando messaggi rassicuranti:`,
+    `Ciao ${N}, sono felice di analizzare questo sogno con te, perché porta con sé buone notizie:`,
+    `${S}, il tuo sogno racconta una storia di crescita e serenità. Vediamo insieme cosa significa:`,
+    `Complimenti per questo sogno, ${N}: è pieno di simboli positivi. Ecco cosa significano:`,
+    `Bellissimo sogno, ${N}! Partiamo dal significato di ciò che hai vissuto:`,
+    `Ciao ${N}, prendi un respiro profondo: questo sogno porta con sé belle notizie, eccole:`,
+    `${S}, in base a quello che hai sognato posso dirti diverse cose positive:`
+  ];
+
+  const negativi = [
+    `Ciao ${N}, mi dispiace che questo sogno possa averti lasciato un po' scosso/a: in realtà è meno spaventoso di quanto sembri, vediamo insieme perché:`,
+    `${S}, capisco che possa essere stato un sogno pesante: stai attento a quello che sto per dirti, perché c'è un messaggio importante dietro:`,
+    `Ciao ${N}, percepisco che potresti essere rimasto/a un po' turbato/a da questo sogno. Andiamo con calma e analizziamolo insieme:`,
+    `${S}, prima di tutto voglio dirti che non sei solo/a: il tuo sogno parla di una difficoltà reale, ed ecco di cosa si tratta:`,
+    `Ciao ${N}, questo sogno potrebbe averti lasciato addosso una sensazione strana. Te la spiego:`,
+    `${S}, attenzione: il tuo inconscio ti sta segnalando qualcosa di importante, forse anche doloroso. Ecco cosa:`,
+    `Ciao ${N}, mi rendo conto che certe immagini di questo sogno possono aver lasciato il segno. Il motivo è questo:`,
+    `${S}, c'è qualcosa in questo sogno che richiede attenzione, ma niente di cui allarmarsi. Ecco la mia lettura:`,
+    `Ciao ${N}, certi sogni sembrano incubi ma in realtà nascondono un messaggio utile. Ecco perché:`,
+    `${S}, in questo sogno percepisco una certa tensione: potrebbe essere un campanello d'allarme. Vediamo su cosa:`
+  ];
+
+  const neutri = [
+    `Ciao ${N}, il tuo sogno è un mosaico di emozioni e simboli. Vediamo insieme cosa significa:`,
+    `${S}, ogni immagine di questo sogno è un frammento di un messaggio che ti appartiene. Analizziamolo insieme:`,
+    `Ciao ${N}, ecco la mia lettura di questo sogno:`,
+    `${S}, il tuo inconscio non parla mai per caso. Analizzando le immagini che hai descritto, ecco cosa emerge:`,
+    `Ciao ${N}, ho letto con attenzione il tuo racconto. Ecco cosa ho colto:`
+  ];
+
+  let pool;
+  if (hasNegative && !hasPositive) pool = negativi;
+  else if (hasPositive && !hasNegative) pool = positivi;
+  else pool = neutri;
+
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 function analyzeDream() {
@@ -900,10 +939,8 @@ function analyzeDream() {
     return;
   }
 
-  // Nome dal profilo
+  // Nome dal profilo (impostato nella pagina principale / menu)
   let userName = localStorage.getItem('mystica_name') || '';
-  if (!userName) userName = '';
-  const displayName = userName || 'Caro sognatore';
 
   // Rilevamento contesti specifici (denti, caduta, incidente, amore, ecc.)
   const specificContexts = detectDreamContext(dreamTextLower);
@@ -960,160 +997,127 @@ function analyzeDream() {
 
   const hasAnyContent = specificContexts.length > 0 || foundSymbols.length > 0;
 
-  let html = '';
+  // Frase di apertura personalizzata (cambia ad ogni analisi)
+  const opening = buildOpeningPhrase(userName, dreamTextLower);
 
-  // ═══ BLOCCO 1: EMPATIA ═══
-  html += `<div style="margin-bottom:20px;padding:18px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border-left:4px solid #fbbf24;border-radius:10px">`;
-  html += `<h4 style="color:#fbbf24;margin:0 0 12px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">💫 1. EMPATIA</h4>`;
-  html += `<p style="margin:0;color:var(--text);font-size:0.97rem;line-height:1.8">${buildEmpathyText(userName, dreamText, specificContexts, foundSymbols)}</p>`;
-  html += `</div>`;
+  let html = `<div style="padding:18px;background:linear-gradient(135deg,rgba(251,191,36,0.10),rgba(212,175,55,0.04));border-left:4px solid #fbbf24;border-radius:10px">`;
 
   if (hasAnyContent) {
 
-    // ═══ BLOCCO 2: DESCRIZIONE DEI SIMBOLI ═══
-    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
-    html += `<h4 style="color:#d4af37;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">🔍 2. DESCRIZIONE DEI SIMBOLI</h4>`;
+    // Raccolgo tutti i simboli/contesti rilevati in un unico elenco "narrativo"
+    const pieces = [];
 
-    // Prima i contesti specifici (più precisi)
     specificContexts.forEach(ctx => {
-      const ctxData = dreamContextDB[ctx.symbol] && dreamContextDB[ctx.symbol][ctx.variant]
-        ? dreamContextDB[ctx.symbol][ctx.variant]
-        : (dreamContextDB[ctx.symbol] ? dreamContextDB[ctx.symbol]['default'] : null);
+      const ctxData = dreamContextDB[ctx.symbol] && (dreamContextDB[ctx.symbol][ctx.variant] || dreamContextDB[ctx.symbol]['default']);
       if (!ctxData) return;
-      html += `<div style="margin-bottom:14px;padding:14px;background:rgba(10,5,20,0.5);border-radius:8px;border:1px solid rgba(212,175,55,0.15)">`;
-      html += `<p style="margin:0 0 8px 0;color:#fbbf24;font-weight:bold;font-size:1rem">${ctx.emoji} ${ctxData.label}</p>`;
-      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">${ctxData.msg}</p>`;
-      html += `</div>`;
+      pieces.push({ label: ctxData.label, text: ctxData.msg, emoji: ctx.emoji });
     });
 
-    // Poi i simboli generali
     foundSymbols.forEach(symbol => {
-      html += `<div style="margin-bottom:14px;padding:14px;background:rgba(10,5,20,0.4);border-radius:8px;border:1px solid rgba(212,175,55,0.1)">`;
-      html += `<p style="margin:0 0 8px 0;color:#fbbf24;font-weight:bold;font-size:1rem">${symbol.emoji} ${symbol.key.charAt(0).toUpperCase() + symbol.key.slice(1)}`;
-      if (symbol.actionModifier) {
-        html += ` <span style="color:#f59e0b;font-size:0.85rem">(${symbol.actionModifier})</span>`;
-      }
-      html += `</p>`;
-      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">${symbol.interpretazione}`;
+      let text = symbol.interpretazione;
       if (symbol.actionDesc) {
-        html += ` In questo caso specifico, il simbolo <strong>${symbol.actionModifier}</strong> ${symbol.actionDesc}.`;
+        text += ` In questo caso specifico, legato a ${symbol.actionModifier}, ${symbol.actionDesc}.`;
       }
-      html += `</p>`;
-      html += `</div>`;
+      pieces.push({ label: capitalizeFirst(symbol.key), text: text, emoji: symbol.emoji });
     });
 
-    html += `</div>`;
-
-    // ═══ BLOCCO 3: ASSOCIAZIONI DI PIÙ PAROLE E CONTESTO ═══
-    const allSymbolNames = [
-      ...specificContexts.map(c => {
-        const d = dreamContextDB[c.symbol];
-        return d && (d[c.variant] || d['default']) ? (d[c.variant] || d['default']).label : c.symbol;
-      }),
-      ...foundSymbols.map(s => s.key)
+    // Connettivi per intrecciare i vari simboli in un discorso fluido, senza ripetizioni
+    const connettivi = [
+      `Un altro elemento che spicca nel tuo racconto riguarda`,
+      `Ho notato anche la presenza di`,
+      `C'è poi un aspetto significativo legato a`,
+      `Non va sottovalutato anche il tema di`,
+      `Voglio richiamare la tua attenzione pure su`,
+      `Un ulteriore tassello di questo sogno riguarda`,
+      `Tra le immagini più rilevanti c'è anche`
     ];
 
-    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
-    html += `<h4 style="color:#d4af37;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">🔗 3. ASSOCIAZIONI E CONTESTO</h4>`;
+    // ── Primo paragrafo: apertura personalizzata + simbolo principale ──
+    const first = pieces[0];
+    let para1 = `${opening} partiamo da ${first.label.toLowerCase()} ${first.emoji || ''}: ${first.text}`;
+    html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.97rem;line-height:1.85">${para1}</p>`;
 
+    // ── Paragrafo successivo: gli altri simboli, intrecciati naturalmente ──
+    if (pieces.length > 1) {
+      let para2 = '';
+      for (let i = 1; i < pieces.length; i++) {
+        const p = pieces[i];
+        const conn = connettivi[(i - 1) % connettivi.length];
+        para2 += `${conn} <strong style="color:#fbbf24">${p.label.toLowerCase()}</strong> ${p.emoji || ''}: ${p.text} `;
+      }
+      html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.95rem;line-height:1.85">${para2.trim()}</p>`;
+    }
+
+    // ── Associazioni tra i simboli, se ce n'è più di uno ──
+    const allSymbolNames = pieces.map(p => p.label);
     if (allSymbolNames.length > 1) {
-      html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.93rem;line-height:1.75">`;
-      html += `Nel tuo sogno convivono più elementi significativi: <strong style="color:#fbbf24">${allSymbolNames.join(', ')}</strong>. `;
-      html += `Questa combinazione non è casuale: il tuo inconscio sta costruendo una narrazione precisa che intreccia più livelli della tua esperienza interiore.`;
-      html += `</p>`;
-
-      // Associazioni tematiche
       const hasBodySymbol = specificContexts.some(c => c.symbol === 'denti') || foundSymbols.some(s => ['capelli','sangue','mani','occhi','corpo'].includes(s.key));
       const hasRelationSymbol = specificContexts.some(c => ['amore','divorzio','litigio'].includes(c.symbol)) || foundSymbols.some(s => ['madre','padre','ex','amico','nemico'].includes(s.key));
       const hasAnxietySymbol = specificContexts.some(c => ['caduta','paura','incidente'].includes(c.symbol)) || foundSymbols.some(s => ['esame','inseguimento','correre','orologio'].includes(s.key));
       const hasMaterialSymbol = specificContexts.some(c => c.symbol === 'fortuna') || foundSymbols.some(s => ['soldi','denaro','macchina','casa'].includes(s.key));
 
+      let assoc = `Questi elementi non sono casuali: il tuo inconscio li ha messi insieme per costruire un messaggio preciso. `;
+      let foundAssoc = false;
+
       if (hasBodySymbol && hasAnxietySymbol) {
-        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">La presenza di simboli corporei insieme a simboli d’ansia suggerisce che il tuo corpo sta segnalando una tensione emotiva che si manifesta fisicamente. Potresti star vivendo un periodo di stress elevato che il tuo organismo percepisce prima ancora della tua mente conscia.</p>`;
+        assoc += `La presenza di simboli corporei insieme a simboli d'ansia suggerisce che il tuo corpo sta segnalando una tensione emotiva che si manifesta fisicamente: potresti vivere un periodo di stress che il corpo percepisce ancora prima della mente conscia. `;
+        foundAssoc = true;
       }
       if (hasRelationSymbol && hasAnxietySymbol) {
-        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">I temi relazionali e quelli d’ansia si intrecciano: c’è una relazione o una situazione interpersonale che ti sta creando tensione. Il sogno ti invita a guardare onestamente a questa dinamica.</p>`;
+        assoc += `I temi relazionali e quelli d'ansia si intrecciano: c'è una relazione o una situazione interpersonale che ti sta creando tensione, e il sogno ti invita a guardarla con onestà. `;
+        foundAssoc = true;
       }
       if (hasRelationSymbol && hasMaterialSymbol) {
-        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">La combinazione di temi affettivi e materiali indica che nella tua vita c’è un intreccio tra sicurezza emotiva e sicurezza economica: forse una relazione influenza la tua stabilità materiale, o viceversa.</p>`;
+        assoc += `La combinazione di temi affettivi e materiali indica un intreccio tra sicurezza emotiva e sicurezza economica: forse una relazione influenza la tua stabilità materiale, o viceversa. `;
+        foundAssoc = true;
       }
       if (hasBodySymbol && hasRelationSymbol) {
-        html += `<p style="margin:0 0 10px 0;color:var(--muted);font-size:0.9rem;line-height:1.7">I simboli del corpo e quelli relazionali insieme parlano di come le tue relazioni influenzano la tua percezione di te stesso: la tua immagine, la tua forza, il tuo valore personale sono legati a come ti senti visto e amato dagli altri.</p>`;
+        assoc += `I simboli del corpo e quelli relazionali insieme parlano di come le tue relazioni influenzano la percezione che hai di te stesso/a, della tua immagine e del tuo valore personale. `;
+        foundAssoc = true;
+      }
+      if (!foundAssoc) {
+        assoc += `Insieme, questi simboli sembrano parlare della stessa area della tua vita, osservata da angolazioni diverse: prova a pensare a cosa hanno in comune nella tua esperienza quotidiana. `;
       }
 
-    } else if (allSymbolNames.length === 1) {
-      html += `<p style="margin:0;color:var(--text);font-size:0.93rem;line-height:1.75">`;
-      html += `Il tuo sogno si concentra con forza su un unico elemento: <strong style="color:#fbbf24">${allSymbolNames[0]}</strong>. `;
-      html += `Quando l’inconscio isola un singolo simbolo con tanta intensità, il messaggio è diretto e urgente: questo è esattamente l’area della tua vita che richiede la tua attenzione in questo momento.`;
-      html += `</p>`;
+      html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.95rem;line-height:1.85">${assoc.trim()}</p>`;
+    } else {
+      html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.95rem;line-height:1.85">Il tuo sogno si concentra con forza su un unico elemento, <strong style="color:#fbbf24">${allSymbolNames[0].toLowerCase()}</strong>: quando l'inconscio isola un solo simbolo con tanta intensità, il messaggio è diretto e urgente. È proprio quest'area della tua vita a richiedere la tua attenzione in questo momento.</p>`;
     }
 
-    html += `</div>`;
-
-    // ═══ BLOCCO 4: DESCRIZIONE DEL SOGNO — ANALISI COMPLETA ═══
-    html += `<div style="margin-bottom:20px;padding:18px;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04));border-left:4px solid #fbbf24;border-radius:10px">`;
-    html += `<h4 style="color:#fbbf24;margin:0 0 14px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">✨ 4. ANALISI COMPLETA DEL SOGNO</h4>`;
-
-    // Riepilogo del sogno riscritto con le parole dell'analisi
-    html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.97rem;line-height:1.85;font-style:italic;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px">`;
-    html += `"${dreamText.length > 200 ? dreamText.substring(0,200) + '...' : dreamText}"`;
-    html += `</p>`;
-
-    // Analisi narrativa completa
-    const name2 = userName || 'il sognatore';
-    html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.95rem;line-height:1.85">`;
-
-    if (specificContexts.length > 0) {
-      const mainCtx = specificContexts[0];
-      const mainData = dreamContextDB[mainCtx.symbol] &&
-        (dreamContextDB[mainCtx.symbol][mainCtx.variant] || dreamContextDB[mainCtx.symbol]['default']);
-
-      if (mainData) {
-        html += `Il cuore di questo sogno ruota attorno a <strong>${mainData.label.toLowerCase()}</strong>. `;
-        html += `Questo non è un dettaglio marginale: è il simbolo centrale attorno al quale tutto il resto si organizza. `;
-      }
-    } else if (foundSymbols.length > 0) {
-      html += `Il simbolo dominante in questo sogno è <strong>${foundSymbols[0].key}</strong>. `;
-    }
-
-    // Contesto emotivo
+    // ── Contesto emotivo ──
     const hasAnger = /\b(arrabbiato|arrabbiata|furioso|furiosa|rabbia|odio|urlare|urlo)\b/.test(dreamTextLower);
     const hasFear = /\b(paura|terrore|spaventato|spaventata|angoscia|incubo)\b/.test(dreamTextLower);
     const hasSadness = /\b(triste|tristezza|pianto|piangere|lacrime|dolore|sofferenza)\b/.test(dreamTextLower);
     const hasJoy = /\b(felice|felicità|gioia|ridere|sorridere|contento|contenta)\b/.test(dreamTextLower);
 
-    if (hasAnger) html += `La rabbia presente nel sogno è un segnale che qualcosa nella tua vita ti sta comprimendo: c’è una frustrazione che non hai ancora espresso pienamente. `;
-    if (hasFear) html += `La paura che hai vissuto in questo sogno non è un nemico: è una bussola. Ti sta indicando esattamente dove si trova la tua vulnerabilità più autentica. `;
-    if (hasSadness) html += `La tristezza del sogno parla di un lutto interiore, piccolo o grande: qualcosa che stai lasciando andare, o che hai già perso e non hai ancora elaborato del tutto. `;
-    if (hasJoy) html += `La gioia presente nel sogno è un dono del tuo inconscio: ti sta ricordando che dentro di te esiste ancora la capacità di essere felice, anche nei momenti più difficili. `;
+    let emo = '';
+    if (hasAnger) emo += `La rabbia che emerge da questo sogno è un segnale che qualcosa nella tua vita ti sta comprimendo: c'è una frustrazione che forse non hai ancora espresso del tutto. `;
+    if (hasFear) emo += `La paura che hai provato non è un nemico, ma una bussola: ti indica con precisione dove si trova la tua vulnerabilità più autentica. `;
+    if (hasSadness) emo += `La tristezza presente nel sogno parla di un lutto interiore, piccolo o grande: qualcosa che stai lasciando andare, o che hai già perso senza averlo del tutto elaborato. `;
+    if (hasJoy) emo += `La gioia che hai sentito è un dono del tuo inconscio: ti ricorda che dentro di te esiste ancora la capacità di essere felice, anche nei momenti più difficili. `;
 
-    html += `</p>`;
-
-    // Messaggio finale personalizzato
-    html += `<p style="margin:0;color:var(--muted);font-size:0.93rem;line-height:1.8;padding-top:10px;border-top:1px solid rgba(212,175,55,0.15)">`;
-    if (userName && userName !== '') {
-      html += `<strong style="color:#fbbf24">${userName}</strong>, `;
+    if (emo) {
+      html += `<p style="margin:0 0 14px 0;color:var(--text);font-size:0.95rem;line-height:1.85">${emo.trim()}</p>`;
     }
-    html += `questo sogno è un messaggio che viene da te, per te. Non cercare una risposta definitiva fuori: siediti con queste immagini, lascia che risuonino. `;
-    html += `Cosa cambieresti nella tua vita se sapessi che il tuo inconscio ha ragione? Quella risposta è il vero significato del tuo sogno.`;
-    html += `</p>`;
 
-    html += `</div>`;
+    // ── Messaggio finale personalizzato ──
+    let closing = '';
+    if (userName && userName.trim() !== '') {
+      closing += `<strong style="color:#fbbf24">${capitalizeFirst(userName.trim())}</strong>, `;
+    }
+    closing += `questo sogno è un messaggio che arriva da te, per te: non cercare una risposta definitiva fuori, ma siediti con queste immagini e lascia che risuonino. Chiediti cosa cambieresti nella tua vita se sapessi che il tuo inconscio ha ragione: quella risposta è il vero significato del tuo sogno.`;
+
+    html += `<p style="margin:0;color:var(--muted);font-size:0.93rem;line-height:1.8;padding-top:10px;border-top:1px solid rgba(212,175,55,0.15)">${closing}</p>`;
 
   } else {
-    // Nessun simbolo riconosciuto
-    html += `<div style="margin-bottom:20px;padding:18px;background:rgba(212,175,55,0.07);border-left:4px solid #d4af37;border-radius:10px">`;
-    html += `<h4 style="color:#d4af37;margin:0 0 12px 0;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:1px">💭 Analisi del Sogno</h4>`;
-    html += `<p style="margin:0 0 12px 0;color:var(--text);font-size:0.95rem;line-height:1.8">`;
-    html += `${displayName}, il tuo sogno contiene immagini e sensazioni che vanno oltre i simboli più comuni. `;
-    html += `Questo non significa che il sogno sia meno significativo: al contrario, i sogni più personali e originali sono spesso i più profondi. `;
-    html += `</p>`;
-    html += `<p style="margin:0;color:var(--muted);font-size:0.93rem;line-height:1.8">`;
-    html += `Prova a rileggere il tuo sogno e chiediti: <em>Quale emozione era più forte?</em> <em>Chi c’era con me?</em> <em>Dove mi trovavo?</em> <em>Cosa volevo fare e non riuscivo?</em> `;
-    html += `Ogni risposta è un filo che porta al significato. Aggiungi più dettagli e riprova per un’analisi più approfondita.`;
-    html += `</p>`;
-    html += `</div>`;
+    // Nessun simbolo riconosciuto: risposta comunque calda e personalizzata
+    let fallback = `${opening} il tuo sogno contiene immagini e sensazioni che vanno oltre i simboli più comuni nel mio archivio. Questo non significa che sia meno importante: al contrario, spesso i sogni più personali e originali sono i più profondi. `;
+    fallback += `Prova a rileggerlo e a chiederti: quale emozione era più forte? Chi c'era con te? Dove ti trovavi? Cosa volevi fare e non riuscivi? Ogni risposta è un filo che porta al significato. Se vuoi, aggiungi qualche dettaglio in più e riprova: più racconti, più precisa sarà l'analisi.`;
+
+    html += `<p style="margin:0;color:var(--text);font-size:0.97rem;line-height:1.85">${fallback}</p>`;
   }
+
+  html += `</div>`;
 
   resultDiv.innerHTML = html;
   resultDiv.style.display = 'block';
