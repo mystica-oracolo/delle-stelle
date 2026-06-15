@@ -14275,7 +14275,7 @@ function _costruisciHTMLCommento(c, isRisposta) {
     '</div>' +
     '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0 0 10px">' + _sanitize(c.testo) + '</p>' +
     '<div style="display:flex;gap:10px;align-items:center">' +
-      '<button onclick="likaCommento(\'' + c.id + '\')" style="background:' + (hasLiked ? 'rgba(212,175,55,0.2)' : 'none') + ';border:1px solid var(--gold-dim);color:var(--gold);padding:4px 12px;border-radius:20px;cursor:pointer;font-size:12px">❤️ <span id="likes-' + c.id + '">' + likes + '</span></button>' +
+      '<button onclick="likaCommento(event,\'' + c.id + '\')" style="background:' + (hasLiked ? 'rgba(212,175,55,0.2)' : 'none') + ';border:1px solid var(--gold-dim);color:var(--gold);padding:4px 12px;border-radius:20px;cursor:pointer;font-size:12px">❤️ <span id="likes-' + c.id + '">' + likes + '</span></button>' +
       (!isRisposta ? '<button onclick="preparaRisposta(\'' + c.id + '\', \'' + _sanitize(c.nome) + '\')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:12px;text-decoration:underline">Rispondi</button>' : '') +
     '</div>' +
   '</div>';
@@ -14399,7 +14399,7 @@ function _mostraFeedback(msg, colore) {
   setTimeout(() => { fb.style.display = 'none'; }, 4000);
 }
 
-async function likaCommento(id) {
+async function likaCommento(evt, id) {
   const docId = String(id);
   if(_hoLikato(docId)) return;
   
@@ -14413,7 +14413,7 @@ async function likaCommento(id) {
   }
 
   // Animazione
-  const btn = event?.currentTarget;
+  const btn = evt?.currentTarget;
   if(btn) {
     btn.style.background = 'rgba(212,175,55,0.4)';
     btn.classList.add('pulse');
