@@ -34,10 +34,11 @@ body.day-mode{--bg:#f5f0e8;--card:#fffdf7;--purple:#f0e8d8;--text:#1a0e04;--mute
 body.day-mode .cosmos{background:radial-gradient(ellipse 80% 60% at 50% 0%,#f8edcc 0%,#f5f0e8 70%);animation:none}
 body.day-mode .header{background:rgba(245,240,232,0.97);border-bottom-color:rgba(139,106,16,0.25)}
 body.day-mode .card{background:#fffdf7;border-color:rgba(139,106,16,0.2);box-shadow:0 4px 18px rgba(0,0,0,0.08)}
-body.day-mode .stone-section{background:#fff3e0;border-left-color:#c8a040;color:#1a0e04}
-body.day-mode .stone-section h3{color:#8b6a10}
 body.day-mode .stone-item{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
 body.day-mode .stone-title{color:#8b6a10}
+body.day-mode .stone-subtitle{color:#7a5a08}
+body.day-mode .stone-list li::before{color:#c8a040}
+body.day-mode .ritual-box{background:#fff8ee;border-color:rgba(139,106,16,0.3)}
 body.day-mode .btn{background:linear-gradient(135deg,#c8a040,#9a7820);color:#fffdf7;border-color:#9a7820}
 
 :root{--bg:#0a0514;--card:#140c24;--purple:#2a1748;--gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);--text:#f4f1fa;--muted:#b8b2d1;--radius:18px}
@@ -58,31 +59,43 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 .content{margin-top:70px;padding-bottom:40px}
 .hero-section{background:linear-gradient(135deg,rgba(42,23,72,0.6),rgba(18,8,48,0.8));border:1px solid rgba(212,175,55,0.25);border-radius:20px;padding:40px 24px;text-align:center;margin-bottom:30px}
 .hero-title{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+.hero-subtitle{font-size:1rem;color:var(--muted);max-width:600px;margin:0 auto}
 
 .card{background:linear-gradient(145deg,#140c24,#0a0514);border:1px solid rgba(212,175,55,0.15);border-radius:var(--radius);padding:24px;margin-bottom:24px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 
-.stone-grid{display:grid;grid-template-columns:1fr;gap:24px}
-.stone-item{background:rgba(42,23,72,0.3);border:1px solid rgba(212,175,55,0.2);border-radius:15px;padding:20px;display:flex;flex-direction:column;gap:15px}
-@media(min-width:768px){ .stone-item{flex-direction:row;align-items:flex-start} }
+.stone-item{background:rgba(42,23,72,0.2);border:1px solid rgba(212,175,55,0.15);border-radius:20px;padding:30px;margin-bottom:40px;display:flex;flex-direction:column;gap:25px}
+@media(min-width:850px){ .stone-item{flex-direction:row;align-items:flex-start} }
 
-.stone-img-placeholder{width:100%;max-width:250px;aspect-ratio:1;background:rgba(212,175,55,0.05);border:2px dashed rgba(212,175,55,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
-.stone-img-placeholder img{width:100%;height:100%;object-fit:cover;display:none} /* Saranno visibili quando caricate */
-.stone-img-placeholder::after{content:'Immagine .webp';color:rgba(212,175,55,0.4);font-family:'Cinzel',serif;font-size:0.8rem}
+.stone-visual{flex-shrink:0;width:100%;max-width:300px;margin:0 auto}
+.stone-img-wrap{width:100%;aspect-ratio:1;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);border-radius:15px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.stone-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.stone-img-wrap:hover img{transform:scale(1.05)}
+.stone-img-wrap::after{content:'Placeholder .webp';position:absolute;color:rgba(212,175,55,0.3);font-family:'Cinzel',serif;font-size:0.7rem;z-index:-1}
 
 .stone-info{flex:1}
-.stone-title{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold);margin-bottom:10px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:5px}
-.stone-power{color:#4ade80;font-weight:bold;margin-bottom:8px;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
-.stone-desc{font-size:1rem;color:var(--text);margin-bottom:15px}
+.stone-title{font-family:'Cinzel',serif;font-size:2.2rem;color:var(--gold);margin-bottom:5px;letter-spacing:1px}
+.stone-tagline{color:#4ade80;font-weight:bold;font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;display:block}
 
-.ritual-box{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:10px;padding:15px;margin-top:10px}
-.ritual-title{font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.ritual-text{font-size:0.85rem;color:var(--muted);font-style:italic}
+.stone-subtitle{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);margin:20px 0 10px;display:flex;align-items:center;gap:10px}
+.stone-text{font-size:1.05rem;color:var(--text);margin-bottom:15px;line-height:1.8}
+.stone-list{list-style:none;margin-bottom:20px}
+.stone-list li{position:relative;padding-left:25px;margin-bottom:10px;font-size:0.95rem;color:var(--text)}
+.stone-list li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.8rem}
+.stone-list strong{color:var(--gold)}
 
-.footer{text-align:center;padding:30px;border-top:1px solid rgba(212,175,55,0.2);margin-top:40px;color:var(--muted);font-size:0.85rem}
+.ritual-box{background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);border-radius:15px;padding:20px;margin-top:25px}
+.ritual-header{font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:1px}
+.ritual-content{font-size:0.95rem;color:var(--muted);line-height:1.7}
+
+.footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(212,175,55,0.2);margin-top:60px;color:var(--muted);font-size:0.85rem}
+.footer strong{color:var(--gold)}
+
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--gold);color:var(--bg);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:100;transition:all 0.3s}
+.back-to-top:hover{transform:translateY(-5px)}
 </style>
 </head>
-<body class="dark-mode">
+<body>
 <div class="cosmos"></div>
 
 <header class="header">
@@ -95,115 +108,322 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 
 <div class="container content">
   <div class="hero-section">
-    <div style="font-size:3rem;margin-bottom:15px">💎</div>
-    <h1 class="hero-title">Usi e Caratteristiche delle Pietre</h1>
-    <p class="hero-subtitle">Antichi segreti racchiusi nei cristalli della Terra. Scopri come risvegliare il loro potere dormiente.</p>
+    <div style="font-size:3.5rem;margin-bottom:15px">💎</div>
+    <h1 class="hero-title">Grimorio dei Cristalli</h1>
+    <p class="hero-subtitle">Antichi alleati della Terra. Una guida profonda al potere esoterico, alla purificazione e al risveglio dei cristalli.</p>
   </div>
 
-  <div class="card">
-    <div class="stone-grid">
+  <!-- PIETRA 1: AMETISTA -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/ametista.webp" alt="Ametista">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Ametista</h2>
+      <span class="stone-tagline">Pietra della Trasmutazione Spirituale</span>
+      <p class="stone-text">L'Ametista è uno dei cristalli più venerati nella storia dell'esoterismo. Considerata un ponte tra il mondo materiale e quello divino, agisce come un potente trasmutatore di energie, elevando la frequenza vibrazionale di chi la possiede.</p>
       
-      <!-- PIETRA 1: AMETISTA -->
-      <div class="stone-item">
-        <div class="stone-img-placeholder">
-          <!-- Qui caricherai ametista.webp -->
-          <img src="./images/pietre/ametista.webp" alt="Ametista">
-        </div>
-        <div class="stone-info">
-          <div class="stone-title">Ametista</div>
-          <div class="stone-power">Potere: Protezione & Spiritualità</div>
-          <p class="stone-desc">L'Ametista è la pietra dell'umiltà e della pace interiore. Favorisce la meditazione, purifica l'aura e aiuta a sviluppare l'intuizione e i sogni lucidi.</p>
-          <div class="ritual-box">
-            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
-            <div class="ritual-text">Passala sotto l'acqua corrente di un ruscello (o acqua fredda di rubinetto) per 1 minuto. Asciugala e tienila tra le mani visualizzando una luce viola che la pervade. Attivala durante la Luna Piena lasciandola esposta ai suoi raggi per una notte intera.</div>
-          </div>
+      <h3 class="stone-subtitle">🔮 Significato Esoterico</h3>
+      <ul class="stone-list">
+        <li><strong>Pietra del Terzo Occhio:</strong> Lavora intensamente sul sesto e settimo chakra, aprendo la mente a visioni superiori e premonizioni.</li>
+        <li><strong>La Trasmutazione Violetta:</strong> Rappresenta la capacità alchemica di trasformare le ombre e le energie pesanti in pura vibrazione d'amore e luce.</li>
+        <li><strong>Connessione Divina:</strong> Facilita il dialogo con le proprie guide spirituali e l'Io Superiore durante la meditazione profonda.</li>
+      </ul>
+
+      <h3 class="stone-subtitle">🌙 Sogni e Intuizione</h3>
+      <ul class="stone-list">
+        <li><strong>Sogni Lucidi:</strong> Collocata sotto il cuscino, stimola l'attività onirica cosciente e aiuta a ricordare i messaggi ricevuti durante il sonno.</li>
+        <li><strong>Scudo Astrale:</strong> Protegge il dormiente da incubi e parassiti energetici che possono infestare lo spazio astrale notturno.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Evita il sale. Lavala sotto acqua corrente fredda per pochi secondi o usa il fumo di Salvia Bianca. <br>
+          <strong>Attivazione:</strong> L'Ametista adora la Luna Piena. Lasciala esposta ai suoi raggi per una notte. <strong>Attenzione:</strong> Non esporla mai al sole diretto, poiché i raggi solari ne sbiadiscono il colore e ne indeboliscono il potere.
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- PIETRA 2: QUARZO ROSA -->
-      <div class="stone-item">
-        <div class="stone-img-placeholder">
-          <!-- Qui caricherai quarzo-rosa.webp -->
-          <img src="./images/pietre/quarzo-rosa.webp" alt="Quarzo Rosa">
-        </div>
-        <div class="stone-info">
-          <div class="stone-title">Quarzo Rosa</div>
-          <div class="stone-power">Potere: Amore & Armonia</div>
-          <p class="stone-desc">Conosciuta come la pietra dell'amore incondizionato, apre il cuore a ogni forma di affetto: verso se stessi, la famiglia, gli amici e il partner. Calma le ferite emotive.</p>
-          <div class="ritual-box">
-            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
-            <div class="ritual-text">Immergila in acqua e petali di rosa per un'ora. Attivala appoggiandola sul centro del petto (chakra del cuore) durante il tramonto, respirando profondamente e recitando: "Io sono amore, io ricevo amore".</div>
-          </div>
+  <!-- PIETRA 2: QUARZO ROSA -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/quarzo-rosa.webp" alt="Quarzo Rosa">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Quarzo Rosa</h2>
+      <span class="stone-tagline">Essenza dell'Amore Incondizionato</span>
+      <p class="stone-text">Il Quarzo Rosa è la pietra del cuore per eccellenza. La sua vibrazione delicata ma profonda insegna la vera essenza dell'amore, partendo dalla guarigione interiore e dal perdono verso se stessi.</p>
+      
+      <h3 class="stone-subtitle">💖 Potere Emotivo</h3>
+      <ul class="stone-list">
+        <li><strong>Chakra del Cuore:</strong> Rimuove i blocchi emotivi e le vecchie ferite, permettendo al cuore di aprirsi nuovamente alla fiducia.</li>
+        <li><strong>Armonia Relazionale:</strong> Attira l'amore e rafforza i legami esistenti, portando pace e comprensione reciproca.</li>
+        <li><strong>Auto-accettazione:</strong> Insegna ad amarsi e a riconoscere il proprio valore divino, dissipando l'insicurezza.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Immergila in acqua pura con petali di fiori rosa o bianchi per un'ora. <br>
+          <strong>Attivazione:</strong> Tienila sul cuore durante il tramonto. Visualizza una luce rosa che si espande dal cristallo verso tutto il tuo corpo. Recita: "Io merito amore, io sono circondato dall'amore".
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- PIETRA 3: TORMALINA NERA -->
-      <div class="stone-item">
-        <div class="stone-img-placeholder">
-          <!-- Qui caricherai tormalina.webp -->
-          <img src="./images/pietre/tormalina.webp" alt="Tormalina Nera">
-        </div>
-        <div class="stone-info">
-          <div class="stone-title">Tormalina Nera</div>
-          <div class="stone-power">Potere: Scudo Energetico</div>
-          <p class="stone-desc">La pietra di protezione per eccellenza. Assorbe le energie negative, lo stress e le radiazioni elettromagnetiche, ancorando l'energia spirituale alla terra.</p>
-          <div class="ritual-box">
-            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
-            <div class="ritual-text">Purificala seppellendola nella terra per 24 ore. Attivala tenendola in mano e visualizzando una cupola di specchi neri che ti circonda, riflettendo ogni negatività verso l'esterno.</div>
-          </div>
+  <!-- PIETRA 3: TORMALINA NERA -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/tormalina.webp" alt="Tormalina Nera">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Tormalina Nera</h2>
+      <span class="stone-tagline">Lo Scudo Invalicabile</span>
+      <p class="stone-text">In esoterismo, la Tormalina Nera è considerata il talismano di protezione più potente. Non assorbe solo le energie negative, ma le neutralizza e le scarica a terra, proteggendo l'aura da attacchi psichici e influenze esterne.</p>
+      
+      <h3 class="stone-subtitle">🛡️ Difesa e Radicamento</h3>
+      <ul class="stone-list">
+        <li><strong>Protezione Psichica:</strong> Crea una barriera impenetrabile contro l'invidia, il malocchio e le proiezioni negative altrui.</li>
+        <li><strong>Ancoraggio alla Terra:</strong> Aiuta a rimanere focalizzati e presenti, impedendo alla mente di disperdersi in ansie e paure.</li>
+        <li><strong>Pulizia Ambientale:</strong> Collocata vicino ai dispositivi elettronici, neutralizza le radiazioni elettromagnetiche nocive.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Seppelliscila nella terra (in un vaso o in giardino) per un intero ciclo di 24 ore per scaricare le energie accumulate. <br>
+          <strong>Attivazione:</strong> Tienila tra le mani e visualizza radici nere che partono dai tuoi piedi e si intrecciano con il cristallo, ancorandoti saldamente al centro della Terra.
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- PIETRA 4: CITRINO -->
-      <div class="stone-item">
-        <div class="stone-img-placeholder">
-          <!-- Qui caricherai citrino.webp -->
-          <img src="./images/pietre/citrino.webp" alt="Citrino">
-        </div>
-        <div class="stone-info">
-          <div class="stone-title">Citrino</div>
-          <div class="stone-power">Potere: Abbondanza & Successo</div>
-          <p class="stone-desc">Il Citrino porta l'energia del Sole. È la pietra della manifestazione, della volontà e della ricchezza. Non accumula negatività, quindi non ha bisogno di purificazioni frequenti.</p>
-          <div class="ritual-box">
-            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
-            <div class="ritual-text">Esponila alla luce diretta del sole per 2 ore (non troppo a lungo per evitare che sbiadisca). Attivala tenendola nel portafoglio o sulla scrivania, focalizzandoti sui tuoi obiettivi di successo.</div>
-          </div>
+  <!-- PIETRA 4: CITRINO -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/citrino.webp" alt="Citrino">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Citrino</h2>
+      <span class="stone-tagline">Il Raggio di Sole Alchemico</span>
+      <p class="stone-text">Il Citrino è la pietra dell'abbondanza, della gioia e della volontà solare. A differenza di molti altri cristalli, il Citrino naturale non trattiene l'energia negativa, ma la trasforma e la dissipa istantaneamente.</p>
+      
+      <h3 class="stone-subtitle">☀️ Manifestazione e Successo</h3>
+      <ul class="stone-list">
+        <li><strong>Plesso Solare:</strong> Potenzia la volontà individuale, la creatività e la capacità di agire con fiducia nel mondo.</li>
+        <li><strong>Magia dell'Abbondanza:</strong> Conosciuta come la "Pietra del Mercante", attira prosperità finanziaria e successo professionale.</li>
+        <li><strong>Energia Vitale:</strong> Combatte la depressione e la stanchezza cronica, portando una ventata di ottimismo e calore.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Raramente ne ha bisogno, ma puoi passarla velocemente sotto l'acqua corrente. <br>
+          <strong>Attivazione:</strong> Esponila alla luce del Sole del mattino (non quella cocente del pomeriggio). Tienila nel portafoglio o sul luogo di lavoro per attivare il flusso dell'abbondanza.
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- PIETRA 5: LAPISLAZZULI -->
-      <div class="stone-item">
-        <div class="stone-img-placeholder">
-          <!-- Qui caricherai lapislazzuli.webp -->
-          <img src="./images/pietre/lapislazzuli.webp" alt="Lapislazzuli">
-        </div>
-        <div class="stone-info">
-          <div class="stone-title">Lapislazzuli</div>
-          <div class="stone-power">Potere: Verità & Saggezza</div>
-          <p class="stone-desc">Pietra regale degli antichi Egizi, favorisce la chiarezza mentale, la comunicazione onesta e la connessione con i regni superiori. Ottima per chi parla in pubblico.</p>
-          <div class="ritual-box">
-            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
-            <div class="ritual-text">Purificala con il fumo di incenso (Sandalo o Palo Santo). Attivala appoggiandola sul "Terzo Occhio" (tra le sopracciglia) durante la meditazione, chiedendo chiarezza di visione e verità.</div>
-          </div>
+  <!-- PIETRA 5: LAPISLAZZULI -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/lapislazzuli.webp" alt="Lapislazzuli">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Lapislazzuli</h2>
+      <span class="stone-tagline">Il Cielo Stellato della Conoscenza</span>
+      <p class="stone-text">Il Lapislazzuli è stato per millenni la pietra di re, sacerdoti e veggenti. È il cristallo della verità universale, capace di risvegliare le facoltà psichiche e di connettere l'individuo con la saggezza degli antichi.</p>
+      
+      <h3 class="stone-subtitle">📜 Verità e Visione</h3>
+      <ul class="stone-list">
+        <li><strong>Chakra della Gola:</strong> Facilita la comunicazione onesta e l'espressione della propria verità interiore senza paura.</li>
+        <li><strong>Chakra del Terzo Occhio:</strong> Stimola la chiaroveggenza e la comprensione dei misteri esoterici più profondi.</li>
+        <li><strong>Illuminazione:</strong> Aiuta a superare la depressione e a trovare il senso spirituale dietro le prove della vita.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Molto sensibile. Usa solo il fumo di incenso nobile (Sandalo o Mirra). Evita l'acqua salata. <br>
+          <strong>Attivazione:</strong> Medita con la pietra appoggiata sulla fronte. Visualizza un cielo notturno pieno di stelle che si riflette dentro di te, portando risposte alle tue domande più profonde.
         </div>
       </div>
+    </div>
+  </div>
 
+  <!-- PIETRA 6: LABRADORITE -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/labradorite.webp" alt="Labradorite">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Labradorite</h2>
+      <span class="stone-tagline">Il Tempio delle Stelle</span>
+      <p class="stone-text">La Labradorite è la pietra dei maghi e dei ricercatori spirituali. I suoi riflessi cangianti (labradorescenza) ricordano le aurore boreali e simboleggiano la luce nascosta dietro il velo della realtà materiale.</p>
+      
+      <h3 class="stone-subtitle">🌌 Magia e Protezione Astrale</h3>
+      <ul class="stone-list">
+        <li><strong>Risveglio dei Poteri:</strong> Amplifica le doti psichiche innate e facilita i viaggi fuori dal corpo (proiezione astrale).</li>
+        <li><strong>Scudo dell'Aura:</strong> Sigilla l'aura impedendo le perdite di energia e proteggendo dai "vampiri energetici".</li>
+        <li><strong>Trasformazione:</strong> Supporta durante i grandi cambiamenti, infondendo forza e perseveranza.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Acqua fredda e fumo di Palo Santo. <br>
+          <strong>Attivazione:</strong> Caricala sotto la luce della Luna Nuova per favorire nuovi inizi magici. Tienila vicina mentre pratichi divinazione (tarocchi o rune) per potenziare la tua visione.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIETRA 7: OSSIDIANA NERA -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/ossidiana.webp" alt="Ossidiana Nera">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Ossidiana Nera</h2>
+      <span class="stone-tagline">Lo Specchio dell'Anima</span>
+      <p class="stone-text">L'Ossidiana è vetro vulcanico nato dal fuoco primordiale. È una pietra senza confini né limitazioni, che agisce con una velocità estrema per rivelare la verità, anche quella più scomoda nascosta nell'ombra.</p>
+      
+      <h3 class="stone-subtitle">🔥 Verità e Pulizia Profonda</h3>
+      <ul class="stone-list">
+        <li><strong>Specchio Interiore:</strong> Costringe a guardare i propri difetti e le proprie paure per poterli finalmente integrare e superare.</li>
+        <li><strong>Taglio dei Legami:</strong> Utilizzata nei rituali per recidere cordoni energetici con persone o situazioni tossiche del passato.</li>
+        <li><strong>Protezione Terrena:</strong> Agisce come un'ancora potente, proteggendo chi lavora con energie molto sottili o pericolose.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Lavala spesso sotto acqua corrente, poiché assorbe molta negatività. <br>
+          <strong>Attivazione:</strong> Usala con cautela. Siediti al buio con una candela accesa e osserva la superficie della pietra (scrying) per ricevere risposte dal tuo inconscio.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIETRA 8: MALACHITE -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/malachite.webp" alt="Malachite">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Malachite</h2>
+      <span class="stone-tagline">Pietra della Trasformazione</span>
+      <p class="stone-text">La Malachite è un potente amplificatore di energie, sia positive che negative. È una pietra "intelligente" che mette in luce ciò che ostacola la crescita spirituale, spingendo verso una trasformazione radicale.</p>
+      
+      <h3 class="stone-subtitle">🌿 Guarigione e Avventura</h3>
+      <ul class="stone-list">
+        <li><strong>Assorbimento del Dolore:</strong> Estrae le energie negative dal corpo fisico ed emotivo (ottima per i traumi).</li>
+        <li><strong>Spirito d'Avventura:</strong> Incoraggia il rischio e il cambiamento, rompendo schemi obsoleti e inibizioni.</li>
+        <li><strong>Sintonia con la Natura:</strong> Facilita la comunicazione con il regno vegetale e gli spiriti della foresta.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Non usare mai acqua o sale (è porosa e tossica se ingerita). Usa solo incenso o una drusa di cristallo. <br>
+          <strong>Attivazione:</strong> Appoggiala sul plesso solare per liberare le emozioni represse. Visualizza il verde intenso della pietra che rigenera ogni tua cellula.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIETRA 9: OCCHIO DI TIGRE -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/occhio-di-tigre.webp" alt="Occhio di Tigre">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Occhio di Tigre</h2>
+      <span class="stone-tagline">Il Coraggio del Guerriero</span>
+      <p class="stone-text">L'Occhio di Tigre combina l'energia della Terra con quella del Sole. È la pietra della fiducia in se stessi, del coraggio e della determinazione necessaria per affrontare le sfide della vita materiale.</p>
+      
+      <h3 class="stone-subtitle:">🐅 Forza e Prosperità</h3>
+      <ul class="stone-list">
+        <li><strong>Protezione dal Malocchio:</strong> Tradizionalmente usata per respingere maledizioni e intenzioni malevole.</li>
+        <li><strong>Equilibrio Mentale:</strong> Aiuta a distinguere tra ciò che desideriamo e ciò di cui abbiamo realmente bisogno.</li>
+        <li><strong>Fortuna Pratica:</strong> Attira ricchezza e stabilità, favorendo il successo nei progetti a lungo termine.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Acqua corrente e sole mattutino. <br>
+          <strong>Attivazione:</strong> Indossala come anello o bracciale sul braccio dominante per proiettare la tua volontà e proteggere i tuoi confini personali durante il giorno.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIETRA 10: CRISTALLO DI ROCCA -->
+  <div class="stone-item">
+    <div class="stone-visual">
+      <div class="stone-img-wrap">
+        <img src="./images/pietre/cristallo-rocca.webp" alt="Cristallo di Rocca">
+      </div>
+    </div>
+    <div class="stone-info">
+      <h2 class="stone-title">Cristallo di Rocca</h2>
+      <span class="stone-tagline">Il Maestro Guaritore</span>
+      <p class="stone-text">Il Quarzo Ialino o Cristallo di Rocca è il cristallo più versatile e potente del regno minerale. Agisce come un amplificatore universale, potenziando l'energia di qualsiasi altra pietra e purificando ogni sistema energetico.</p>
+      
+      <h3 class="stone-subtitle">💎 Chiarezza e Amplificazione</h3>
+      <ul class="stone-list">
+        <li><strong>Purificatore Universale:</strong> Dissipa l'elettricità statica e neutralizza le radiazioni, portando chiarezza mentale assoluta.</li>
+        <li><strong>Programmazione Magica:</strong> Può essere "istruito" con un'intenzione specifica, mantenendo la vibrazione del tuo desiderio nel tempo.</li>
+        <li><strong>Connessione Multidimensionale:</strong> Facilita la comunicazione con i regni superiori e accelera il risveglio spirituale.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <div class="ritual-header">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">
+          <strong>Purificazione:</strong> Acqua pura, incenso, sole, luna o terra. È il cristallo più resistente. <br>
+          <strong>Attivazione:</strong> Tienilo tra le mani e proietta al suo interno un'immagine nitida del tuo obiettivo. Visualizza il cristallo che brilla di luce bianca purissima, sigillando la tua intenzione.
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="card" style="text-align:center">
-    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:15px">Nota per il caricamento immagini</h3>
-    <p style="font-size:0.9rem;color:var(--muted)">Le immagini devono essere caricate nella cartella <code>./images/pietre/</code> con estensione <code>.webp</code>. I nomi file suggeriti sono già impostati nel codice.</p>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:15px">Istruzioni per l'integrazione immagini</h3>
+    <p style="font-size:0.9rem;color:var(--muted)">Assicurati di caricare le immagini <strong>.webp</strong> nella cartella <code>./images/pietre/</code> con i seguenti nomi:</p>
+    <p style="font-size:0.8rem;color:var(--gold);margin-top:10px">ametista.webp · quarzo-rosa.webp · tormalina.webp · citrino.webp · lapislazzuli.webp · labradorite.webp · ossidiana.webp · malachite.webp · occhio-di-tigre.webp · cristallo-rocca.webp</p>
   </div>
 </div>
 
 <footer class="footer">
-  <p>© 2025-2026 PetroCorporation — Sviluppato e creato da "Petro Corporation" by Giovanni Petrolese</p>
-  <p>Tutti i diritti riservati.</p>
+  <p>© 2025-2026 PetroCorporation — Sviluppato e creato da <strong>"Petro Corporation"</strong> by Giovanni Petrolese</p>
+  <p>Tutti i diritti riservati. Vietata la riproduzione anche parziale.</p>
 </footer>
 
+<a href="#" class="back-to-top">↑</a>
+
 <script>
-  // Script per gestire il cambio modalità se necessario (ereditato dal resto del sito)
   if(localStorage.getItem('theme') === 'day') {
     document.body.classList.add('day-mode');
   }
