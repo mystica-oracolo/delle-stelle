@@ -144,6 +144,7 @@ body {
 .card-img { width: 100%; border-radius: 12px; margin: 0 0 14px; object-fit: cover; display: block; aspect-ratio: 16/7; }
 
 .ad-slot { background: rgba(212,175,55,0.04); border: 1px dashed rgba(212,175,55,0.15); border-radius: 12px; min-height: 90px; margin: 6px 0 16px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; }
+.ad-slot:empty, .ad-slot.ad-empty { display: none !important; min-height: 0 !important; margin: 0 !important; }
 
 .cta-app { background: linear-gradient(135deg, #1a0a2e, #0b0520); border: 1px solid var(--gold-dim); border-radius: var(--radius); padding: 22px 18px; text-align: center; margin-bottom: 20px; }
 .cta-app p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
@@ -382,6 +383,16 @@ body {
   const btn = document.getElementById('scrollTop');
   window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 400); }, { passive: true });
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+<script>
+setTimeout(function(){
+  document.querySelectorAll(".ad-slot").forEach(function(slot){
+    var ins=slot.querySelector("ins.adsbygoogle");
+    if(!ins||ins.getAttribute("data-ad-status")==="unfilled"||ins.innerHTML.trim()===""){
+      slot.classList.add("ad-empty");
+    }
+  });
+},2000);
 </script>
 </body>
 </html>
