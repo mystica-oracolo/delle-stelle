@@ -639,7 +639,7 @@ function updateThemeUI(){
 
 function _initBgAudio(){
   if(_bgAudio) return;
-  _bgAudio = new Audio('./icone/audio/mystica_ambient_432_528.mp3');
+  _bgAudio = new Audio('./images/icone/audio/mystica_ambient_432_528.mp3');
   _bgAudio.loop = true;
   const savedVol = localStorage.getItem('mystica_audio_vol');
   _bgAudio.volume = savedVol ? parseInt(savedVol)/100 : 0.15;
