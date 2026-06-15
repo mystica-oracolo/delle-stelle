@@ -1,155 +1,79 @@
-/* ═══════════════════════════════════════════════════════════════
-   MYSTICA — Service Worker v2
-   Strategia: Cache-First per l'app shell + Network-First per CDN
-   © MYSTICA — Oracolo delle Stelle
-   ═══════════════════════════════════════════════════════════════ */
+// ============================================================
+// MYSTICA ORACOLI — Service Worker
+// Versione cache: incrementa questo valore ad ogni deploy
+// ============================================================
+const CACHE_NAME = 'mystica-v3';
 
-const CACHE_NAME    = 'mystica-v2';
-const OFFLINE_URL   = './index.html';
-
-/* Asset da precachare all'installazione (app shell) */
-const PRECACHE = [
+// File da mettere in cache per il funzionamento offline
+const URLS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
   './icon-192.png',
-  './icon-512.png',
-  './apple-touch-icon.png',
+  './apple-touch-icon.png'
 ];
 
-/* Pattern CDN da cachare solo dopo il primo accesso (network-first) */
-const CDN_PATTERNS = [
-  'fonts.googleapis.com',
-  'fonts.gstatic.com',
-  'cdnjs.cloudflare.com',
-];
-
-/* ── INSTALL ────────────────────────────────────────────────── */
+// ── INSTALL ──────────────────────────────────────────────────
+// Pre-cacha le risorse e attiva subito il nuovo SW
+// senza aspettare che tutte le tab vengano chiuse
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(PRECACHE))
-      .then(() => self.skipWaiting())        // attiva subito senza attendere chiusura vecchie tabs
-      .catch(err => console.warn('[SW] Precache parziale:', err))
+      .then(cache => cache.addAll(URLS_TO_CACHE))
+      .then(() => self.skipWaiting()) // ← attivazione immediata
   );
 });
 
-/* ── ACTIVATE ───────────────────────────────────────────────── */
+// ── ACTIVATE ─────────────────────────────────────────────────
+// Elimina le vecchie cache e prende controllo di tutte le tab
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
         keys
-          .filter(k => k !== CACHE_NAME)    // elimina cache vecchie
-          .map(k => {
-            console.log('[SW] Elimino cache obsoleta:', k);
-            return caches.delete(k);
-          })
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
       ))
-      .then(() => self.clients.claim())      // prende il controllo di tutte le tabs aperte
+      .then(() => self.clients.claim()) // ← controlla subito tutte le tab aperte
   );
 });
 
-/* ── FETCH ──────────────────────────────────────────────────── */
+// ── FETCH ────────────────────────────────────────────────────
+// Strategia: Network First per index.html (sempre aggiornato),
+// Cache First per le risorse statiche (icone, manifest)
 self.addEventListener('fetch', event => {
-  const req = event.request;
+  const url = new URL(event.request.url);
 
-  // Ignora richieste non-GET e chrome-extension
-  if(req.method !== 'GET') return;
-  if(req.url.startsWith('chrome-extension://')) return;
-  if(req.url.startsWith('blob:')) return;
+  // Solo richieste same-origin
+  if (url.origin !== self.location.origin) return;
 
-  const url = new URL(req.url);
-  const isCDN = CDN_PATTERNS.some(p => url.hostname.includes(p));
-  const isHTML = req.headers.get('accept')?.includes('text/html');
-  const isMainDoc = isHTML && url.pathname.match(/\.(html?)?$/i);
-
-  if(isCDN){
-    /* CDN — Network-first con fallback alla cache */
-    event.respondWith(networkFirst(req));
-  } else if(isMainDoc || url.pathname === '/' || url.pathname.endsWith('.html')){
-    /* Documento principale — Cache-first (app shell) */
-    event.respondWith(cacheFirst(req));
-  } else {
-    /* Tutto il resto — Stale-While-Revalidate */
-    event.respondWith(staleWhileRevalidate(req));
+  // index.html: sempre network first, fallback cache
+  if (url.pathname.endsWith('/') || url.pathname.endsWith('/index.html')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Aggiorna la cache con la versione fresca
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
   }
+
+  // Risorse statiche: cache first, fallback network
+  event.respondWith(
+    caches.match(event.request)
+      .then(cached => cached || fetch(event.request))
+  );
 });
 
-/* ── STRATEGIE DI CACHE ─────────────────────────────────────── */
-
-/**
- * Cache-First: serve dalla cache, se non c'è va in rete e poi cacha.
- * Ideale per l'app shell (HTML, CSS, JS).
- */
-async function cacheFirst(req){
-  const cached = await caches.match(req);
-  if(cached) return cached;
-  try {
-    const net = await fetch(req);
-    if(net.ok){
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(req, net.clone());
-    }
-    return net;
-  } catch(e){
-    // Offline e non in cache → restituisce la pagina offline
-    const fallback = await caches.match(OFFLINE_URL);
-    return fallback || new Response('<h1>MYSTICA offline</h1><p>Connettiti a internet per la prima apertura.</p>', {
-      headers: {'Content-Type': 'text/html; charset=utf-8'}
-    });
-  }
-}
-
-/**
- * Network-First: prova la rete, fallback alla cache.
- * Ideale per Google Fonts e CDN che si aggiornano frequentemente.
- */
-async function networkFirst(req){
-  try {
-    const net = await fetch(req);
-    if(net.ok){
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(req, net.clone());
-    }
-    return net;
-  } catch(e){
-    const cached = await caches.match(req);
-    return cached || Response.error();
-  }
-}
-
-/**
- * Stale-While-Revalidate: serve subito dalla cache mentre aggiorna in background.
- * Ideale per immagini, icone e asset non critici.
- */
-async function staleWhileRevalidate(req){
-  const cache = await caches.open(CACHE_NAME);
-  const cached = await cache.match(req);
-
-  const networkFetch = fetch(req).then(net => {
-    if(net && net.ok && net.type !== 'opaque'){
-      cache.put(req, net.clone());
-    }
-    return net;
-  }).catch(() => null);
-
-  return cached || await networkFetch || Response.error();
-}
-
-/* ── MESSAGGI DAL CLIENT ────────────────────────────────────── */
+// ── MESSAGE ──────────────────────────────────────────────────
+// Gestisce il messaggio SKIP_WAITING inviato dall'app
+// quando l'utente clicca "Ricarica ora" nel banner
 self.addEventListener('message', event => {
-  // Il client può mandare { type: 'SKIP_WAITING' } per forzare l'aggiornamento
-  if(event.data?.type === 'SKIP_WAITING'){
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
-  }
-
-  // Risposta a ping (utile per debug e health-check)
-  if(event.data?.type === 'PING'){
-    event.ports[0]?.postMessage({
-      type: 'PONG',
-      cache: CACHE_NAME,
-      ts: Date.now()
-    });
   }
 });

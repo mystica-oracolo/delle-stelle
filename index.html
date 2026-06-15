@@ -4042,8 +4042,8 @@ const CFG = {
   kStorico: 'myst_v3_history'
 };
 
-const APP_VERSION = '1.0.0';
-const APP_BUILD_DATE = '2026-01';
+const APP_VERSION = '1.0.1';
+const APP_BUILD_DATE = '2026-06-15';
 const APP_YEAR_RANGE = '2025–2026';
 
 let S = {
@@ -11663,47 +11663,68 @@ function resetSigillo(){
 
 (function registerSW(){
   if(!('serviceWorker' in navigator)) return;
+
+  // Mostra banner aggiornamento con supporto skipWaiting
+  function showUpdateBanner(newWorker){
+    const existing = document.getElementById('_sw-update-banner');
+    if(existing) existing.remove();
+    const banner = document.createElement('div');
+    banner.id = '_sw-update-banner';
+    banner.style.cssText = `
+      position:fixed; bottom:80px; left:50%; transform:translateX(-50%);
+      background:linear-gradient(135deg,#2a1a4e,#1a0a3e);
+      border:1px solid var(--gold,#d4af37);
+      color:var(--gold,#d4af37);
+      padding:12px 18px; border-radius:12px;
+      display:flex; align-items:center; gap:12px;
+      font-family:'Cinzel',serif; font-size:13px;
+      box-shadow:0 4px 20px rgba(212,175,55,0.3);
+      z-index:99999; white-space:nowrap;
+      animation: fadeInUp 0.4s ease;
+    `;
+    banner.innerHTML = `
+      <span>✨ MYSTICA aggiornata!</span>
+      <button id="_sw-reload-btn" style="
+        background:var(--gold,#d4af37); color:#1a0a3e;
+        border:none; border-radius:8px;
+        padding:6px 14px; cursor:pointer;
+        font-family:'Cinzel',serif; font-size:12px; font-weight:700;
+      ">Ricarica ora</button>
+      <button onclick="this.parentElement.remove()" style="
+        background:transparent; color:var(--gold,#d4af37);
+        border:none; cursor:pointer; font-size:16px; padding:0 2px;
+      ">✕</button>
+    `;
+    document.body.appendChild(banner);
+    // Ricarica sicura: skipWaiting → controllerchange → reload
+    // I dati localStorage (premium, preferenze) NON vengono toccati
+    document.getElementById('_sw-reload-btn').addEventListener('click', function(){
+      if(newWorker && newWorker.state !== 'activated'){
+        newWorker.postMessage({type:'SKIP_WAITING'});
+      }
+      navigator.serviceWorker.addEventListener('controllerchange', function(){
+        window.location.reload();
+      }, {once:true});
+      // Fallback se controllerchange non arriva entro 800ms
+      setTimeout(function(){ window.location.reload(); }, 800);
+    });
+  }
+
   navigator.serviceWorker.register('./sw.js', {scope:'./'})
     .then(reg => {
+      // Se c'è già un worker in attesa (es. tab riaperta senza ricarica)
+      if(reg.waiting){ showUpdateBanner(reg.waiting); }
       reg.addEventListener('updatefound', () => {
         const nw = reg.installing;
         if(!nw) return;
         nw.addEventListener('statechange', () => {
           if(nw.state === 'installed' && navigator.serviceWorker.controller){
-            // Banner aggiornamento con pulsante ricarica
-            const existing = document.getElementById('_sw-update-banner');
-            if(existing) existing.remove();
-            const banner = document.createElement('div');
-            banner.id = '_sw-update-banner';
-            banner.style.cssText = `
-              position:fixed; bottom:80px; left:50%; transform:translateX(-50%);
-              background:linear-gradient(135deg,#2a1a4e,#1a0a3e);
-              border:1px solid var(--gold,#d4af37);
-              color:var(--gold,#d4af37);
-              padding:12px 18px; border-radius:12px;
-              display:flex; align-items:center; gap:12px;
-              font-family:'Cinzel',serif; font-size:13px;
-              box-shadow:0 4px 20px rgba(212,175,55,0.3);
-              z-index:99999; white-space:nowrap;
-              animation: fadeInUp 0.4s ease;
-            `;
-            banner.innerHTML = `
-              <span>✨ MYSTICA aggiornata!</span>
-              <button onclick="location.reload()" style="
-                background:var(--gold,#d4af37); color:#1a0a3e;
-                border:none; border-radius:8px;
-                padding:6px 14px; cursor:pointer;
-                font-family:'Cinzel',serif; font-size:12px; font-weight:700;
-              ">Ricarica ora</button>
-              <button onclick="this.parentElement.remove()" style="
-                background:transparent; color:var(--gold,#d4af37);
-                border:none; cursor:pointer; font-size:16px; padding:0 2px;
-              ">✕</button>
-            `;
-            document.body.appendChild(banner);
+            showUpdateBanner(nw);
           }
         });
       });
+      // Controlla aggiornamenti ogni 60s (utile per sessioni lunghe)
+      setInterval(()=>{ reg.update().catch(()=>{}); }, 60000);
     })
     .catch(err => console.warn('[MYSTICA SW]', err));
 })();
