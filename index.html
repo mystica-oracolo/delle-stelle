@@ -14404,6 +14404,12 @@ async function likaCommento(evt, id) {
   if(_hoLikato(docId)) return;
   
   _salvaLike(docId);
+
+  // Aggiorna subito l'array in memoria così onSnapshot non sovrascrive con valore vecchio
+  const commInMemoria = _commentiTutti.find(c => String(c.id) === docId);
+  if(commInMemoria) {
+    commInMemoria.likes = (commInMemoria.likes || 0) + 1;
+  }
   
   // Update UI istantaneo
   const el = document.getElementById('likes-' + docId);
