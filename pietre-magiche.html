@@ -1,0 +1,213 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║         MYSTICA ORACOLI — mysticaoracoli.it                  ║
+  ║  © 2025-2026 Mago Petro / PetroCorporation                   ║
+  ║  Tutti i diritti riservati. All rights reserved.             ║
+  ║  Vietata la riproduzione, copia o distribuzione              ║
+  ║  anche parziale senza autorizzazione scritta.                ║
+  ║  Pagina: Pietre Magiche — Usi e Caratteristiche              ║
+  ║  Sviluppato e creato da "Petro Corporation"                  ║
+  ║  by Giovanni Petrolese                                       ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pietre Magiche: Usi, Poteri e Caratteristiche | MYSTICA Oracoli</title>
+<meta name="description" content="Guida completa alle pietre magiche e ai cristalli: scopri i poteri, come benedirle, attivarle e usarle per il tuo benessere spirituale.">
+<meta name="keywords" content="pietre magiche, cristalli, cristalloterapia, ametista, quarzo rosa, protezione spirituale, attivazione pietre, benedizione cristalli">
+<meta name="author" content="MYSTICA — Oracolo delle Stelle">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="./icon-192.png">
+<meta name="theme-color" content="#d4af37">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ MODALITÀ GIORNO ═══ */
+body.day-mode{--bg:#f5f0e8;--card:#fffdf7;--purple:#f0e8d8;--text:#1a0e04;--muted:#6a5a40;--gold:#8b6a10;--gold-dim:#a07820;--gold-glow:rgba(139,106,16,0.25)}
+body.day-mode .cosmos{background:radial-gradient(ellipse 80% 60% at 50% 0%,#f8edcc 0%,#f5f0e8 70%);animation:none}
+body.day-mode .header{background:rgba(245,240,232,0.97);border-bottom-color:rgba(139,106,16,0.25)}
+body.day-mode .card{background:#fffdf7;border-color:rgba(139,106,16,0.2);box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+body.day-mode .stone-section{background:#fff3e0;border-left-color:#c8a040;color:#1a0e04}
+body.day-mode .stone-section h3{color:#8b6a10}
+body.day-mode .stone-item{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
+body.day-mode .stone-title{color:#8b6a10}
+body.day-mode .btn{background:linear-gradient(135deg,#c8a040,#9a7820);color:#fffdf7;border-color:#9a7820}
+
+:root{--bg:#0a0514;--card:#140c24;--purple:#2a1748;--gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);--text:#f4f1fa;--muted:#b8b2d1;--radius:18px}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;overflow-x:hidden;line-height:1.6}
+
+.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-color:#0a0514;background:radial-gradient(ellipse 60% 40% at 50% 0%,#2a174830 0%,transparent 70%);animation:twinkle 14s infinite alternate}
+@keyframes twinkle{0%{opacity:.35}100%{opacity:.55}}
+
+.container{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:20px}
+.header{position:fixed;top:0;left:0;right:0;background:rgba(10,5,20,0.95);border-bottom:1px solid rgba(212,175,55,0.2);z-index:100;backdrop-filter:blur(10px)}
+.header-content{max-width:900px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.header-back{background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.35);color:var(--gold);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px}
+.header-title{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+
+.content{margin-top:70px;padding-bottom:40px}
+.hero-section{background:linear-gradient(135deg,rgba(42,23,72,0.6),rgba(18,8,48,0.8));border:1px solid rgba(212,175,55,0.25);border-radius:20px;padding:40px 24px;text-align:center;margin-bottom:30px}
+.hero-title{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+
+.card{background:linear-gradient(145deg,#140c24,#0a0514);border:1px solid rgba(212,175,55,0.15);border-radius:var(--radius);padding:24px;margin-bottom:24px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.stone-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.stone-item{background:rgba(42,23,72,0.3);border:1px solid rgba(212,175,55,0.2);border-radius:15px;padding:20px;display:flex;flex-direction:column;gap:15px}
+@media(min-width:768px){ .stone-item{flex-direction:row;align-items:flex-start} }
+
+.stone-img-placeholder{width:100%;max-width:250px;aspect-ratio:1;background:rgba(212,175,55,0.05);border:2px dashed rgba(212,175,55,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+.stone-img-placeholder img{width:100%;height:100%;object-fit:cover;display:none} /* Saranno visibili quando caricate */
+.stone-img-placeholder::after{content:'Immagine .webp';color:rgba(212,175,55,0.4);font-family:'Cinzel',serif;font-size:0.8rem}
+
+.stone-info{flex:1}
+.stone-title{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold);margin-bottom:10px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:5px}
+.stone-power{color:#4ade80;font-weight:bold;margin-bottom:8px;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
+.stone-desc{font-size:1rem;color:var(--text);margin-bottom:15px}
+
+.ritual-box{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:10px;padding:15px;margin-top:10px}
+.ritual-title{font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ritual-text{font-size:0.85rem;color:var(--muted);font-style:italic}
+
+.footer{text-align:center;padding:30px;border-top:1px solid rgba(212,175,55,0.2);margin-top:40px;color:var(--muted);font-size:0.85rem}
+</style>
+</head>
+<body class="dark-mode">
+<div class="cosmos"></div>
+
+<header class="header">
+  <div class="header-content">
+    <a href="index.html" class="header-back">←</a>
+    <div class="header-title">Pietre Magiche</div>
+    <div style="width:40px"></div>
+  </div>
+</header>
+
+<div class="container content">
+  <div class="hero-section">
+    <div style="font-size:3rem;margin-bottom:15px">💎</div>
+    <h1 class="hero-title">Usi e Caratteristiche delle Pietre</h1>
+    <p class="hero-subtitle">Antichi segreti racchiusi nei cristalli della Terra. Scopri come risvegliare il loro potere dormiente.</p>
+  </div>
+
+  <div class="card">
+    <div class="stone-grid">
+      
+      <!-- PIETRA 1: AMETISTA -->
+      <div class="stone-item">
+        <div class="stone-img-placeholder">
+          <!-- Qui caricherai ametista.webp -->
+          <img src="./images/pietre/ametista.webp" alt="Ametista">
+        </div>
+        <div class="stone-info">
+          <div class="stone-title">Ametista</div>
+          <div class="stone-power">Potere: Protezione & Spiritualità</div>
+          <p class="stone-desc">L'Ametista è la pietra dell'umiltà e della pace interiore. Favorisce la meditazione, purifica l'aura e aiuta a sviluppare l'intuizione e i sogni lucidi.</p>
+          <div class="ritual-box">
+            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
+            <div class="ritual-text">Passala sotto l'acqua corrente di un ruscello (o acqua fredda di rubinetto) per 1 minuto. Asciugala e tienila tra le mani visualizzando una luce viola che la pervade. Attivala durante la Luna Piena lasciandola esposta ai suoi raggi per una notte intera.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIETRA 2: QUARZO ROSA -->
+      <div class="stone-item">
+        <div class="stone-img-placeholder">
+          <!-- Qui caricherai quarzo-rosa.webp -->
+          <img src="./images/pietre/quarzo-rosa.webp" alt="Quarzo Rosa">
+        </div>
+        <div class="stone-info">
+          <div class="stone-title">Quarzo Rosa</div>
+          <div class="stone-power">Potere: Amore & Armonia</div>
+          <p class="stone-desc">Conosciuta come la pietra dell'amore incondizionato, apre il cuore a ogni forma di affetto: verso se stessi, la famiglia, gli amici e il partner. Calma le ferite emotive.</p>
+          <div class="ritual-box">
+            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
+            <div class="ritual-text">Immergila in acqua e petali di rosa per un'ora. Attivala appoggiandola sul centro del petto (chakra del cuore) durante il tramonto, respirando profondamente e recitando: "Io sono amore, io ricevo amore".</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIETRA 3: TORMALINA NERA -->
+      <div class="stone-item">
+        <div class="stone-img-placeholder">
+          <!-- Qui caricherai tormalina.webp -->
+          <img src="./images/pietre/tormalina.webp" alt="Tormalina Nera">
+        </div>
+        <div class="stone-info">
+          <div class="stone-title">Tormalina Nera</div>
+          <div class="stone-power">Potere: Scudo Energetico</div>
+          <p class="stone-desc">La pietra di protezione per eccellenza. Assorbe le energie negative, lo stress e le radiazioni elettromagnetiche, ancorando l'energia spirituale alla terra.</p>
+          <div class="ritual-box">
+            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
+            <div class="ritual-text">Purificala seppellendola nella terra per 24 ore. Attivala tenendola in mano e visualizzando una cupola di specchi neri che ti circonda, riflettendo ogni negatività verso l'esterno.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIETRA 4: CITRINO -->
+      <div class="stone-item">
+        <div class="stone-img-placeholder">
+          <!-- Qui caricherai citrino.webp -->
+          <img src="./images/pietre/citrino.webp" alt="Citrino">
+        </div>
+        <div class="stone-info">
+          <div class="stone-title">Citrino</div>
+          <div class="stone-power">Potere: Abbondanza & Successo</div>
+          <p class="stone-desc">Il Citrino porta l'energia del Sole. È la pietra della manifestazione, della volontà e della ricchezza. Non accumula negatività, quindi non ha bisogno di purificazioni frequenti.</p>
+          <div class="ritual-box">
+            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
+            <div class="ritual-text">Esponila alla luce diretta del sole per 2 ore (non troppo a lungo per evitare che sbiadisca). Attivala tenendola nel portafoglio o sulla scrivania, focalizzandoti sui tuoi obiettivi di successo.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIETRA 5: LAPISLAZZULI -->
+      <div class="stone-item">
+        <div class="stone-img-placeholder">
+          <!-- Qui caricherai lapislazzuli.webp -->
+          <img src="./images/pietre/lapislazzuli.webp" alt="Lapislazzuli">
+        </div>
+        <div class="stone-info">
+          <div class="stone-title">Lapislazzuli</div>
+          <div class="stone-power">Potere: Verità & Saggezza</div>
+          <p class="stone-desc">Pietra regale degli antichi Egizi, favorisce la chiarezza mentale, la comunicazione onesta e la connessione con i regni superiori. Ottima per chi parla in pubblico.</p>
+          <div class="ritual-box">
+            <div class="ritual-title">✨ Come Benedirla & Attivarla</div>
+            <div class="ritual-text">Purificala con il fumo di incenso (Sandalo o Palo Santo). Attivala appoggiandola sul "Terzo Occhio" (tra le sopracciglia) durante la meditazione, chiedendo chiarezza di visione e verità.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center">
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:15px">Nota per il caricamento immagini</h3>
+    <p style="font-size:0.9rem;color:var(--muted)">Le immagini devono essere caricate nella cartella <code>./images/pietre/</code> con estensione <code>.webp</code>. I nomi file suggeriti sono già impostati nel codice.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2025-2026 PetroCorporation — Sviluppato e creato da "Petro Corporation" by Giovanni Petrolese</p>
+  <p>Tutti i diritti riservati.</p>
+</footer>
+
+<script>
+  // Script per gestire il cambio modalità se necessario (ereditato dal resto del sito)
+  if(localStorage.getItem('theme') === 'day') {
+    document.body.classList.add('day-mode');
+  }
+</script>
+
+</body>
+</html>

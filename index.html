@@ -957,10 +957,10 @@ function chiudiDisclaimer(){
             <div class="dash-label">Proiezione</div>
             <div class="dash-sub" style="color:#b88fe0">Viaggio astrale</div>
           </div>
-          <div class="dash-card c-teal " onclick="nav('sogni')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/sogni.webp" loading="lazy"></div>
-            <div class="dash-label">Sogni</div>
-            <div class="dash-sub" style="color:#5ecec4">Diario onirico</div>
+          <div class="dash-card c-teal " onclick="window.location.href='./pietre-magiche.html'">
+            <div class="dash-img-wrap"><img src="./images/icone/home/pietre.webp" loading="lazy"></div>
+            <div class="dash-label">Pietre Magiche</div>
+            <div class="dash-sub" style="color:#5ecec4">Usi e caratteristiche</div>
           </div>
           <div class="dash-card c-gold" onclick="nav('archivio')">
             <div class="dash-img-wrap"><img src="./images/icone/home/archivio.webp" loading="lazy"></div>
@@ -2751,105 +2751,7 @@ function chiudiDisclaimer(){
     </div>
 
 
-    <div id="view-sogni" class="view">
-      <div class="card gold-border">
-        <h2>🌙 Oniromanzia &amp; Sogni</h2>
-        <p class="t-muted">Decifra i messaggi notturni dell'inconscio e tieni traccia dei tuoi viaggi onirici</p>
-      </div>
-
-      <div class="eng-section-title">🌙 Oniromanzia — Categorie Simbolo</div>
-      <div class="card">
-        <p style="font-size:13px;opacity:.8;margin-bottom:12px">Scegli la categoria che risuona con il tuo sogno, poi descrivi e ottieni l'interpretazione archetipica completa.</p>
-        <div class="oniro-symbol-grid" id="oniroSymbolGrid">
-          <div class="oniro-sym-btn" data-sym="acqua" onclick="oniroSelectSymbol('acqua',this)">
-            <span class="oniro-sym-ico">🌊</span>
-            <span class="oniro-sym-label">Acqua</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="volo" onclick="oniroSelectSymbol('volo',this)">
-            <span class="oniro-sym-ico">🦅</span>
-            <span class="oniro-sym-label">Volo</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="casa" onclick="oniroSelectSymbol('casa',this)">
-            <span class="oniro-sym-ico">🏠</span>
-            <span class="oniro-sym-label">Casa</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="animali" onclick="oniroSelectSymbol('animali',this)">
-            <span class="oniro-sym-ico">🐺</span>
-            <span class="oniro-sym-label">Animali</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="caduta" onclick="oniroSelectSymbol('caduta',this)">
-            <span class="oniro-sym-ico">🌀</span>
-            <span class="oniro-sym-label">Caduta</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="inseguimento" onclick="oniroSelectSymbol('inseguimento',this)">
-            <span class="oniro-sym-ico">👣</span>
-            <span class="oniro-sym-label">Fuga</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="morte" onclick="oniroSelectSymbol('morte',this)">
-            <span class="oniro-sym-ico">💀</span>
-            <span class="oniro-sym-label">Morte</span>
-          </div>
-          <div class="oniro-sym-btn" data-sym="luce" onclick="oniroSelectSymbol('luce',this)">
-            <span class="oniro-sym-ico">✨</span>
-            <span class="oniro-sym-label">Luce</span>
-          </div>
-        </div>
-        <div id="oniro-sym-preview" style="display:none;margin:14px 0 6px;padding:10px 13px;background:#0b0520;border:1px solid #2a174880;border-radius:10px">
-          <div id="oniro-sym-archetipo" style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px;margin-bottom:5px"></div>
-          <div id="oniro-sym-hint" style="font-size:12px;color:var(--muted);font-style:italic"></div>
-        </div>
-        <textarea id="eng-sogno-t" rows="3" placeholder="Descrivi il tuo sogno: luoghi, figure, sensazioni..."></textarea>
-        <button class="btn" onclick="engOniro()">🌙 Decifra il Tuo Sogno</button>
-        <div class="eng-result" id="eng-r-oniro"></div>
-      </div>
-
-      <div class="eng-section-title">📓 Dream Journal</div>
-      <div class="card">
-        <h3>📓 Diario Onirico</h3>
-        <p style="font-size:13px;opacity:.8;margin-bottom:10px">Registra le emozioni, l'intensità e i temi ricorrenti per scoprire i pattern onirici nel tempo.</p>
-        <input type="date" id="eng-dream-date">
-
-        <div style="margin:10px 0 4px;font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:1.5px">EMOZIONE PREVALENTE</div>
-        <div class="dream-emo-chips" id="dreamEmoChips">
-          <div class="dream-emo-chip" data-emo="meraviglia" onclick="dreamSelectEmo('meraviglia',this)">🌟 Meraviglia</div>
-          <div class="dream-emo-chip" data-emo="paura" onclick="dreamSelectEmo('paura',this)">😨 Paura</div>
-          <div class="dream-emo-chip" data-emo="gioia" onclick="dreamSelectEmo('gioia',this)">😊 Gioia</div>
-          <div class="dream-emo-chip" data-emo="angoscia" onclick="dreamSelectEmo('angoscia',this)">😰 Angoscia</div>
-          <div class="dream-emo-chip" data-emo="nostalgia" onclick="dreamSelectEmo('nostalgia',this)">🌅 Nostalgia</div>
-          <div class="dream-emo-chip" data-emo="confusione" onclick="dreamSelectEmo('confusione',this)">🌀 Confusione</div>
-          <div class="dream-emo-chip" data-emo="pace" onclick="dreamSelectEmo('pace',this)">🕊️ Pace</div>
-          <div class="dream-emo-chip" data-emo="adrenalina" onclick="dreamSelectEmo('adrenalina',this)">⚡ Adrenalina</div>
-        </div>
-
-        <div style="margin:12px 0 4px;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:1.5px">INTENSITÀ ONIRICA</span>
-          <span id="dreamIntensityLabel" style="font-family:'Cinzel',serif;font-size:12px;color:var(--gold)">5 / 10</span>
-        </div>
-        <input type="range" id="eng-dream-intensity" min="1" max="10" value="5"
-          style="width:100%;margin:4px 0 8px;accent-color:var(--gold);cursor:pointer"
-          oninput="document.getElementById('dreamIntensityLabel').textContent=this.value+' / 10'">
-
-        <textarea id="eng-dream-nota" rows="3" placeholder="Note sul sogno: colori, simboli, atmosfera..."></textarea>
-
-        <div style="display:flex;align-items:center;gap:10px;margin:8px 0">
-          <input type="checkbox" id="eng-dream-lucido" style="width:auto;margin:0;accent-color:var(--gold)">
-          <label for="eng-dream-lucido" style="font-size:13px;color:var(--text);cursor:pointer">🌙 Sogno Lucido</label>
-        </div>
-        <button class="btn" onclick="engDreamJournal()">📓 Sigilla nel Diario</button>
-        <div class="eng-result" id="eng-r-dream"></div>
-
-
-        <div id="dreamJournalListWrap" style="margin-top:16px;display:none">
-          <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
-            VOCI SALVATE
-            <span id="dreamJournalCount" style="background:var(--purple);border:1px solid var(--gold-dim);padding:1px 8px;border-radius:10px;font-size:9px;color:var(--text)">0</span>
-            <span style="flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)"></span>
-            <button onclick="dreamClearAll()" style="background:transparent;border:none;color:#f87171;font-size:10px;cursor:pointer;font-family:'Cinzel',serif">Elimina tutto</button>
-          </div>
-          <div id="dreamJournalList"></div>
-        </div>
-      </div>
-    </div>
+<!-- Sezione Sogni Rimossa per Ridondanza -->
 
 
     <div id="view-spazio" class="view">
@@ -4340,7 +4242,7 @@ function particle(size,color,dur){
 }
 function burst(){for(let i=0;i<18;i++)setTimeout(()=>particle(3,'#d4af37',5+Math.random()*5),i*80);}
 
-const NAV_ORDER = ['profilo','tarot','oroscopo','zodiaco','amore','mistico','zodcinese','oracoli','magia','astrale','archivio','energia','sogni','spazio','strumenti'];
+const NAV_ORDER = ['profilo','tarot','oroscopo','zodiaco','amore','mistico','zodcinese','oracoli','magia','astrale','archivio','energia','spazio','strumenti'];
 
 const ZOD_CHAR={
   topo:'鼠',bue:'牛',tigre:'虎',coniglio:'兔',drago:'龍',
@@ -4471,7 +4373,7 @@ const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/aFa6ozfOx2vNcdAdEW4ow00';
 })();
 
 
-const PREMIUM_VIEWS = new Set(['astrale','sogni','energia','spazio','strumenti']);
+const PREMIUM_VIEWS = new Set(['astrale','energia','spazio','strumenti']);
 
 const PREMIUM_ORACOLI = new Set([
   'angeli','geomanzia','numerologia','orespeschio','luna','pianeti',
