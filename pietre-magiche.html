@@ -77,11 +77,11 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 .card{background:linear-gradient(145deg,#140c24,#0a0514);border:1px solid rgba(212,175,55,0.15);border-radius:var(--radius);padding:24px;margin-bottom:24px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 
-.stone-item{background:rgba(42,23,72,0.2);border:1px solid rgba(212,175,55,0.15);border-radius:20px;padding:30px;margin-bottom:40px;display:flex;flex-direction:column;gap:25px}
+.stone-item{background:rgba(42,23,72,0.2);border:1px solid rgba(212,175,55,0.15);border-radius:20px;padding:20px;margin-bottom:40px;display:flex;flex-direction:column;gap:20px}
 @media(min-width:850px){ .stone-item{flex-direction:row;align-items:flex-start} }
 
-.stone-visual{flex-shrink:0;width:100%;max-width:300px;margin:0 auto}
-.stone-img-wrap{width:100%;aspect-ratio:1;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);border-radius:15px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.stone-visual{flex-shrink:0;width:100%;max-width:360px;margin:0 auto}
+.stone-img-wrap{width:100%;aspect-ratio:1;min-height:240px;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);border-radius:15px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
 .stone-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
 .stone-img-wrap:hover img{transform:scale(1.05)}
 .stone-img-wrap::after{content:'Placeholder .webp';position:absolute;color:rgba(212,175,55,0.3);font-family:'Cinzel',serif;font-size:0.7rem;z-index:-1}

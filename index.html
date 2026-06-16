@@ -3068,6 +3068,12 @@ function chiudiDisclaimer(){
              letter-spacing:1.5px;cursor:pointer;touch-action:manipulation;width:100%;display:block">
       📲 Installa App sulla Home
     </button>
+    <button id="check-update-btn" onclick="mysticaCheckUpdate()"
+      style="margin-top:9px;background:transparent;border:1px solid rgba(212,175,55,0.4);color:var(--gold);
+             border-radius:12px;padding:10px 22px;font-family:'Cinzel',serif;font-size:10px;
+             letter-spacing:1.5px;cursor:pointer;touch-action:manipulation;width:100%;display:block">
+      🔄 Controlla nuovi aggiornamenti
+    </button>
 
 
     <input id="mysticaImportFile" type="file" accept="application/json,.json"
@@ -11630,6 +11636,47 @@ function resetSigillo(){
     })
     .catch(err => console.warn('[MYSTICA SW]', err));
 })();
+
+async function mysticaCheckUpdate(){
+  const btn = document.getElementById('check-update-btn');
+  if(btn){ btn.textContent = '⏳ Controllo in corso...'; btn.disabled = true; }
+  try{
+    if(!('serviceWorker' in navigator)){
+      if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
+      alert('Service Worker non supportato su questo browser.');
+      return;
+    }
+    const reg = await navigator.serviceWorker.getRegistration('./');
+    if(!reg){
+      if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
+      alert('Nessun Service Worker registrato.');
+      return;
+    }
+    // Se c'è già un worker in attesa, mostra subito il banner
+    if(reg.waiting){
+      if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
+      // Trigger reload diretto
+      reg.waiting.postMessage({type:'SKIP_WAITING'});
+      navigator.serviceWorker.addEventListener('controllerchange', ()=> window.location.reload(), {once:true});
+      setTimeout(()=> window.location.reload(), 800);
+      return;
+    }
+    await reg.update();
+    // Dopo l'update, controlla se c'è installing/waiting
+    if(reg.waiting || reg.installing){
+      if(btn){ btn.textContent = '✅ Aggiornamento trovato!'; }
+      // Il banner apparirà automaticamente via statechange
+    } else {
+      if(btn){ btn.textContent = '✅ Sei già aggiornato!'; btn.disabled = false; }
+      setTimeout(()=>{
+        if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
+      }, 3000);
+    }
+  } catch(e){
+    if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
+    console.warn('[MYSTICA Update]', e);
+  }
+}
 
 const DISCLAIMER_KEY = 'mystica_disclaimer_v1';
 
