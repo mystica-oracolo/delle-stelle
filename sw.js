@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v16';
+const CACHE_NAME = 'mystica-v17';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
