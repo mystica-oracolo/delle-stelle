@@ -17,6 +17,13 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://mysticaoracoli.it/astrologia-avanzata.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- ═══ ASTROLOGIA ORIENTALE & MODERNA (NUOVE) ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/astrologia-vedica.html</loc>

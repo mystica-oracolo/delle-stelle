@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadrato Magico e Gematria – Numerologia &amp; Simboli Sacri | Mystica Oracoli</title>
+<meta name="description" content="Enciclopedia dei 7 Quadrati Magici planetari (Kamea di Saturno, Giove, Marte, Sole, Venere, Mercurio e Luna) secondo Cornelio Agrippa, e guida completa alla Gematria ebraica: alfabeto, valori numerici e parole sacre. In italiano.">
+<link rel="icon" type="image/png" href="./icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-light:#e8cc6a;
+  --gold-dim:rgba(212,175,55,0.15);
+  --bg:#0a0514;
+  --bg2:#0d0620;
+  --bg3:#130b26;
+  --bg4:#1a0c32;
+  --text:#e8e0f0;
+  --muted:#9a8fb0;
+  --border:rgba(212,175,55,0.18);
+  --border-hover:rgba(212,175,55,0.45);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:17px;line-height:1.75;min-height:100vh}
+header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:18px 20px;text-align:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.logo{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:3px;text-shadow:0 0 20px rgba(212,175,55,0.4)}
+.logo a{color:inherit;text-decoration:none}
+.header-sub{font-size:11px;color:var(--muted);letter-spacing:2px;margin-top:3px}
+main{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+.btn-back{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:rgba(212,175,55,0.08);border:1px solid var(--gold);color:var(--gold);border-radius:50px;font-family:'Cinzel',serif;font-size:11px;text-decoration:none;margin-bottom:28px;transition:all 0.25s;letter-spacing:1px}
+.btn-back:hover{background:var(--gold);color:#0a0514}
+.hero{text-align:center;margin-bottom:44px;padding:44px 28px;background:linear-gradient(145deg,var(--bg4),var(--bg2));border:1px solid var(--border);border-radius:24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.09),transparent 70%);pointer-events:none}
+h1{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;line-height:1.3;position:relative;z-index:1}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.8;max-width:620px;margin:0 auto;position:relative;z-index:1}
+nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:36px}
+nav.breadcrumb a{color:var(--gold);text-decoration:none}
+nav.breadcrumb span{margin:0 6px;opacity:0.5}
+.hero-mini-kamea{display:inline-grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:0 auto 20px;padding:14px;background:var(--bg);border:2px solid var(--gold);border-radius:16px;box-shadow:0 0 32px rgba(212,175,55,0.4);position:relative;z-index:1}
+.hero-mini-kamea div{width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:14px;color:var(--gold);background:linear-gradient(145deg,var(--bg3),var(--bg2));border-radius:5px}
+.topic-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:52px}
+.topic-nav-item{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;padding:30px 14px;background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);transition:all 0.3s;text-align:center}
+.topic-nav-item:hover{border-color:var(--border-hover);background:linear-gradient(145deg,var(--bg4),var(--bg3));transform:translateY(-3px);box-shadow:0 10px 28px rgba(212,175,55,0.14)}
+.topic-nav-icon{font-size:36px;filter:drop-shadow(0 0 14px rgba(212,175,55,0.5))}
+.topic-nav-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:1.5px}
+.topic-nav-sub{font-size:11px;color:var(--muted)}
+@media(max-width:560px){.topic-nav-grid{grid-template-columns:1fr}}
+.planet-section{margin-bottom:64px;scroll-margin-top:80px}
+.planet-section > h2{font-family:'Cinzel',serif;font-size:21px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;border:none;padding:0}
+.section-lead{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.section-lead em{color:var(--text);font-style:italic}
+.kamea-nav{margin-bottom:40px}
+.kamea-nav-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:18px;opacity:0.8}
+.kamea-nav-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.kamea-nav-item{display:flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none;padding:14px 4px;background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);transition:all 0.3s}
+.kamea-nav-item:hover{border-color:var(--border-hover);background:linear-gradient(145deg,var(--bg4),var(--bg3));transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,0.12)}
+.kamea-nav-symbol{font-size:22px;color:var(--gold);filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));line-height:1}
+.kamea-nav-name{font-family:'Cinzel',serif;font-size:8.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;text-align:center}
+.kamea-nav-order{font-size:9px;color:var(--gold);opacity:0.75}
+@media(max-width:720px){.kamea-nav-grid{grid-template-columns:repeat(4,1fr);gap:8px}}
+@media(max-width:480px){.kamea-nav-name{display:none}}
+.kamea-block{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:32px;scroll-margin-top:80px;transition:border-color .3s}
+.kamea-block:hover{border-color:var(--border-hover)}
+.kamea-block-title{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.kamea-symbol-big{font-size:30px;color:var(--gold);filter:drop-shadow(0 0 12px rgba(212,175,55,0.45))}
+.kamea-block-title h3{font-family:'Cinzel',serif;font-size:18px;color:var(--text);letter-spacing:1px}
+.kamea-order{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;opacity:0.85}
+.kamea-wrap{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.kamea-grid{display:grid;gap:3px;background:var(--bg);padding:12px;border:1px solid var(--border);border-radius:14px;flex-shrink:0;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.kamea-cell{display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;color:var(--gold);background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:5px}
+.kamea-3{grid-template-columns:repeat(3,1fr)}
+.kamea-3 .kamea-cell{width:42px;height:42px;font-size:15px}
+.kamea-4{grid-template-columns:repeat(4,1fr)}
+.kamea-4 .kamea-cell{width:40px;height:40px;font-size:14px}
+.kamea-5{grid-template-columns:repeat(5,1fr)}
+.kamea-5 .kamea-cell{width:36px;height:36px;font-size:13px}
+.kamea-6{grid-template-columns:repeat(6,1fr)}
+.kamea-6 .kamea-cell{width:32px;height:32px;font-size:12px}
+.kamea-7{grid-template-columns:repeat(7,1fr)}
+.kamea-7 .kamea-cell{width:30px;height:30px;font-size:11px}
+.kamea-8{grid-template-columns:repeat(8,1fr)}
+.kamea-8 .kamea-cell{width:27px;height:27px;font-size:10px}
+.kamea-9{grid-template-columns:repeat(9,1fr)}
+.kamea-9 .kamea-cell{width:25px;height:25px;font-size:9.5px}
+.kamea-meta{flex:1;min-width:230px}
+.kamea-const{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:50px;padding:5px 14px;font-size:12px;color:var(--gold);margin-bottom:14px}
+.detail-section{margin-bottom:14px}
+.detail-label{font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.detail-label::before{content:'';display:inline-block;width:14px;height:1px;background:var(--gold);opacity:0.5}
+.detail-text{font-size:14px;color:var(--text);opacity:0.88;line-height:1.7}
+.tempistica-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:50px;padding:5px 12px;font-size:12px;color:var(--gold);margin:14px 0;flex-wrap:wrap}
+.cross-link{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:7px 16px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.25);border-radius:50px;color:var(--gold);font-size:12px;text-decoration:none;transition:all 0.2s;font-family:'Cinzel',serif;letter-spacing:.3px}
+.cross-link:hover{background:rgba(212,175,55,0.14);border-color:var(--gold)}
+.back-to-nav{display:flex;justify-content:center;margin-top:20px;margin-bottom:8px}
+.back-to-nav a{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.3);border-radius:50px;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1.5px;text-decoration:none;transition:all 0.2s}
+.back-to-nav a:hover{background:rgba(212,175,55,0.15);border-color:var(--gold)}
+.gem-table-wrap{overflow-x:auto;margin-bottom:34px;border:1px solid var(--border);border-radius:14px}
+.gem-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+.gem-table th{font-family:'Cinzel',serif;font-size:9.5px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;padding:10px 6px;background:rgba(212,175,55,0.06);text-align:center;border-bottom:1px solid var(--border)}
+.gem-table td{padding:9px 6px;text-align:center;border-bottom:1px solid var(--border)}
+.gem-table tr:last-child td{border-bottom:none}
+.gem-letter{font-size:21px;color:var(--gold)}
+.gem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-bottom:14px}
+.gem-card{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color .3s}
+.gem-card:hover{border-color:var(--border-hover)}
+.gem-word{font-size:32px;color:var(--gold);margin-bottom:6px;display:block;text-align:center;line-height:1.3}
+.gem-translit{font-family:'Cinzel',serif;font-size:13px;color:var(--text);text-align:center;margin-bottom:2px;letter-spacing:.5px}
+.gem-meaning{font-size:12px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:12px}
+.gem-value{display:block;width:fit-content;margin:0 auto 14px;background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;padding:4px 16px;border-radius:50px}
+.gem-text{font-size:13.5px;color:var(--text);opacity:0.88;line-height:1.7}
+.traduzione-box{background:rgba(212,175,55,0.05);border-left:2px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:10px;font-size:13px;color:var(--muted);font-style:italic;line-height:1.7}
+.traduzione-box strong{color:var(--gold);font-style:normal;font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;display:block;margin-bottom:4px}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px}
+@media(max-width:600px){.method-grid{grid-template-columns:1fr}}
+.method-card{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:14px;padding:18px}
+.method-card h4{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.method-card p{font-size:13.5px;color:var(--text);opacity:0.88;line-height:1.7}
+.controls-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px;margin:0 auto 32px;padding:0 20px}
+.ctrl-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 10px;border-radius:14px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.5px;cursor:pointer;border:1.5px solid rgba(212,175,55,0.35);background:linear-gradient(135deg,#1a0c32,#0a0520);color:var(--gold);transition:all .25s ease}
+.ctrl-btn:hover{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30)}
+.ctrl-btn.active{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30);box-shadow:0 0 14px rgba(212,175,55,0.25)}
+.ctrl-btn-icon{font-size:15px}
+footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:40px}
+@media(max-width:720px){
+  h1{font-size:22px}
+  main{padding:24px 14px 60px}
+}
+@media(max-width:480px){
+  .kamea-wrap{flex-direction:column;align-items:center}
+  .kamea-block{padding:18px}
+}
+.fab-home{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:8px;padding:12px 22px;background:linear-gradient(135deg,#1a0c32,#0a0520);border:1.5px solid var(--gold);border-radius:50px;color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.7),0 0 16px rgba(212,175,55,0.2);transition:all 0.25s;white-space:nowrap}
+.fab-home:hover{background:var(--gold);color:#0a0514;box-shadow:0 6px 28px rgba(212,175,55,0.4)}
+/* MODALITA GIORNO */
+body.day-mode{--bg:#f5f0e8;--text:#1a0e04;--muted:#6a5a40;--gold:#8b6a10;--gold-light:#a07820;--gold-dim:rgba(139,106,16,0.15);--border:rgba(139,106,16,0.2);--border-hover:rgba(139,106,16,0.5);--bg2:#fdf6e8;--bg3:#fffdf7;--bg4:#faf0d8}
+body.day-mode{background:#f5f0e8;color:#1a0e04}
+body.day-mode header{background:rgba(245,240,232,0.97);border-bottom-color:rgba(139,106,16,0.25)}
+body.day-mode .logo{color:#8b6a10;text-shadow:none}
+body.day-mode h1,body.day-mode h2,body.day-mode h3{color:#7a5a08}
+body.day-mode p,body.day-mode .detail-text,body.day-mode .gem-text{color:#1a0e04;opacity:1}
+body.day-mode .hero{background:linear-gradient(145deg,#fdf6e8,#faf0d8);border-color:rgba(139,106,16,0.3)}
+body.day-mode .hero-sub,body.day-mode .section-lead,body.day-mode .kamea-nav-name,body.day-mode .kamea-nav-order,body.day-mode .gem-meaning,body.day-mode .header-sub{color:#6a5a40}
+body.day-mode .topic-nav-item,body.day-mode .kamea-nav-item,body.day-mode .kamea-block,body.day-mode .gem-card,body.day-mode .method-card,body.day-mode .kamea-grid{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.2)}
+body.day-mode .topic-nav-item:hover,body.day-mode .kamea-nav-item:hover,body.day-mode .kamea-block:hover{border-color:rgba(139,106,16,0.5)}
+body.day-mode .kamea-cell{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.25);color:#8b6a10}
+body.day-mode .kamea-nav-symbol,body.day-mode .kamea-symbol-big,body.day-mode .kamea-order,body.day-mode .detail-label,body.day-mode .gem-letter,body.day-mode .gem-word{color:#8b6a10}
+body.day-mode .tempistica-badge,body.day-mode .kamea-const,body.day-mode .gem-value{background:rgba(139,106,16,0.08);border-color:rgba(139,106,16,0.25);color:#7a5a08}
+body.day-mode .traduzione-box{background:rgba(139,106,16,0.06);border-left-color:#c8a040;color:#4a3a20}
+body.day-mode .traduzione-box strong{color:#7a5a08}
+body.day-mode .btn-back{background:rgba(139,106,16,0.08);border-color:#8b6a10;color:#8b6a10}
+body.day-mode .btn-back:hover{background:#8b6a10;color:#fff}
+body.day-mode .back-to-nav a,body.day-mode .cross-link{background:rgba(139,106,16,0.07);border-color:rgba(139,106,16,0.3);color:#8b6a10}
+body.day-mode .back-to-nav a:hover,body.day-mode .cross-link:hover{background:rgba(139,106,16,0.15);border-color:#8b6a10}
+body.day-mode .fab-home{background:linear-gradient(135deg,#c8a040,#9a7820);border-color:#9a7820;color:#fff;box-shadow:0 4px 24px rgba(0,0,0,0.2)}
+body.day-mode .fab-home:hover{background:#8b6a10}
+body.day-mode .ctrl-btn{background:linear-gradient(135deg,#fdf6e8,#f5ead0);border-color:rgba(139,106,16,0.35);color:#8b6a10}
+body.day-mode .ctrl-btn:hover,body.day-mode .ctrl-btn.active{background:linear-gradient(135deg,#f5ead0,#e8d4a0);border-color:#8b6a10}
+body.day-mode nav.breadcrumb{color:#6a5a40}
+body.day-mode nav.breadcrumb a{color:#8b6a10}
+body.day-mode footer{border-top-color:rgba(139,106,16,0.2);color:#6a5a40}
+body.day-mode .gem-table th{background:rgba(139,106,16,0.08);color:#8b6a10}
+body.day-mode .gem-table td{color:#1a0e04}
+body.day-mode .hero-mini-kamea{border-color:#8b6a10}
+body.day-mode .hero-mini-kamea div{background:linear-gradient(145deg,#fffdf7,#fdf6e8);color:#8b6a10}
+</style>
+<script>
+function goBack(){if(window.history.length>1){window.history.back();}else{window.location.href='index.html';}}
+
+/* AUDIO */
+let _bgAudio=null,_bgPlaying=false;
+function _initAudio(){
+  if(_bgAudio)return;
+  _bgAudio=new Audio('./images/icone/audio/mystica_ambient_432_528.mp3');
+  _bgAudio.loop=true;_bgAudio.volume=0.15;_bgAudio.preload='none';
+}
+function toggleAudio(){
+  _initAudio();
+  if(_bgPlaying){
+    _bgAudio.pause();_bgPlaying=false;
+  } else {
+    _bgAudio.play().then(()=>{_bgPlaying=true;}).catch(()=>{});
+  }
+  updateAudioBtn();
+}
+function updateAudioBtn(){
+  const icon=document.getElementById('ctrlAudioIcon');
+  const lbl=document.getElementById('ctrlAudioLabel');
+  const btn=document.getElementById('ctrlAudioBtn');
+  if(_bgPlaying){
+    if(icon)icon.textContent='🔊';if(lbl)lbl.textContent='Musica On';if(btn)btn.classList.add('active');
+  } else {
+    if(icon)icon.textContent='🎵';if(lbl)lbl.textContent='Musica Off';if(btn)btn.classList.remove('active');
+  }
+}
+
+/* TEMA */
+function toggleTheme(){
+  const isDay=document.body.classList.contains('day-mode');
+  const goDay=!isDay;
+  document.body.classList.toggle('day-mode',goDay);
+  localStorage.setItem('mystica_daymode',goDay?'1':'0');
+  const icon=document.getElementById('ctrlThemeIcon');
+  const lbl=document.getElementById('ctrlThemeLabel');
+  const btn=document.getElementById('ctrlThemeBtn');
+  if(goDay){
+    if(icon)icon.textContent='🌙';if(lbl)lbl.textContent='Modalità Notte';if(btn)btn.classList.add('active');
+  } else {
+    if(icon)icon.textContent='☀️';if(lbl)lbl.textContent='Modalità Giorno';if(btn)btn.classList.remove('active');
+  }
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  if(localStorage.getItem('mystica_daymode')==='1'){
+    document.body.classList.add('day-mode');
+    const icon=document.getElementById('ctrlThemeIcon');
+    const lbl=document.getElementById('ctrlThemeLabel');
+    const btn=document.getElementById('ctrlThemeBtn');
+    if(icon)icon.textContent='🌙';if(lbl)lbl.textContent='Modalità Notte';if(btn)btn.classList.add('active');
+  }
+});
+</script>
+<link rel="canonical" href="https://mysticaoracoli.it/numerologia-simboli.html">
+<meta property="og:url" content="https://mysticaoracoli.it/numerologia-simboli.html">
+<meta property="og:title" content="Quadrato Magico e Gematria – Numerologia & Simboli Sacri | Mystica Oracoli">
+<meta property="og:description" content="I 7 Kamea planetari di Agrippa e la Gematria ebraica: alfabeto, valori numerici e parole sacre. Enciclopedia esoterica in italiano.">
+<meta name="twitter:title" content="Quadrato Magico e Gematria – Numerologia & Simboli Sacri | Mystica Oracoli">
+<meta name="twitter:description" content="I 7 Kamea planetari e la Gematria ebraica spiegati in italiano: storia, calcoli e significati.">
+<style>.seo-crosslinks{max-width:1100px;margin:32px auto;padding:24px 16px;border:1px solid rgba(212,175,55,.18);border-radius:16px}.seo-crosslinks h2{margin-bottom:12px;font-family:'Cinzel',serif;font-size:18px;color:var(--gold)}.seo-crosslinks ul{padding-left:20px}.seo-crosslinks li{margin:8px 0}.seo-crosslinks a{color:var(--gold)}</style>
+</head>
+<body>
+<header>
+  <div class="logo"><a href="index.html" onclick="event.preventDefault();goBack();">✦ MYSTICA ✦</a></div>
+  <div class="header-sub">Oracolo delle Stelle</div>
+</header>
+<main>
+  <a href="index.html" onclick="event.preventDefault();goBack();" class="btn-back">⇠ Torna a Mystica</a>
+  <nav class="breadcrumb">
+    <a href="index.html" onclick="event.preventDefault();goBack();">Mystica</a>
+    <span>›</span>
+    <span>Numerologia &amp; Simboli</span>
+  </nav>
+  <div class="controls-bar">
+    <button id="ctrlAudioBtn" class="ctrl-btn" onclick="toggleAudio()">
+      <span id="ctrlAudioIcon" class="ctrl-btn-icon">🎵</span>
+      <span id="ctrlAudioLabel">Musica Off</span>
+    </button>
+    <button id="ctrlThemeBtn" class="ctrl-btn" onclick="toggleTheme()">
+      <span id="ctrlThemeIcon" class="ctrl-btn-icon">☀️</span>
+      <span id="ctrlThemeLabel">Modalità Giorno</span>
+    </button>
+  </div>
+
+  <div class="hero">
+    <div class="hero-mini-kamea" aria-hidden="true">
+      <div>4</div><div>9</div><div>2</div>
+      <div>3</div><div>5</div><div>7</div>
+      <div>8</div><div>1</div><div>6</div>
+    </div>
+    <h1>Quadrato Magico &amp; Gematria</h1>
+    <p class="hero-sub">Due antichi sistemi che leggono il sacro nei numeri. I <strong>Kamea</strong> — i sette Quadrati Magici planetari descritti da Cornelio Agrippa — sono la struttura geometrica su cui si fondano i Pentacoli di Re Salomone. La <strong>Gematria</strong> ebraica assegna un valore a ogni lettera, svelando connessioni nascoste fra le parole della tradizione cabalistica.</p>
+  </div>
+
+  <nav class="topic-nav-grid" aria-label="Scegli l'argomento">
+    <a href="#quadrato-magico" class="topic-nav-item">
+      <div class="topic-nav-icon">🔢</div>
+      <div class="topic-nav-title">Quadrato Magico</div>
+      <div class="topic-nav-sub">I 7 Kamea Planetari</div>
+    </a>
+    <a href="#gematria" class="topic-nav-item">
+      <div class="topic-nav-icon">✡</div>
+      <div class="topic-nav-title">Gematria</div>
+      <div class="topic-nav-sub">Il Valore Sacro delle Lettere</div>
+    </a>
+  </nav>
+
+  <!-- ══════════════════════════ QUADRATO MAGICO ══════════════════════════ -->
+  <section id="quadrato-magico" class="planet-section">
+    <h2>🔢 Il Quadrato Magico (Kamea Planetari)</h2>
+    <p class="section-lead">Un quadrato magico è una tabella di numeri interi distinti in cui ogni riga, ogni colonna e ogni diagonale principale dà sempre la stessa somma, detta <em>costante magica</em>. Conosciuti già nella Cina antica con il nome di Lo Shu, in Occidente furono sistematizzati da <em>Cornelio Agrippa</em> nel capitolo 22 del secondo libro della sua <em>De Occulta Philosophia</em> (1531-1533), che assegnò un quadrato — detto <em>Kamea</em>, dall'ebraico "talismano" — a ciascuno dei sette pianeti classici, in ordine crescente di lati: da Saturno (3×3) alla Luna (9×9). Da questi stessi numeri, tracciando linee attraverso le caselle corrispondenti alle lettere di un nome sacro, si ottengono i sigilli planetari e angelici — la stessa tecnica geometrica che sta alla base dei <a href="./pentacoli-salomone.html" style="color:var(--gold)">Pentacoli di Re Salomone</a> già presenti nell'enciclopedia di Mystica.</p>
+
+    <nav class="kamea-nav" aria-label="Naviga tra i Quadrati">
+      <div class="kamea-nav-title">✦ Scegli il Quadrato ✦</div>
+      <div class="kamea-nav-grid">
+        <a href="#kamea-saturno" class="kamea-nav-item"><span class="kamea-nav-symbol">♄</span><span class="kamea-nav-name">Saturno</span><span class="kamea-nav-order">Ordine 3</span></a>
+        <a href="#kamea-giove" class="kamea-nav-item"><span class="kamea-nav-symbol">♃</span><span class="kamea-nav-name">Giove</span><span class="kamea-nav-order">Ordine 4</span></a>
+        <a href="#kamea-marte" class="kamea-nav-item"><span class="kamea-nav-symbol">♂</span><span class="kamea-nav-name">Marte</span><span class="kamea-nav-order">Ordine 5</span></a>
+        <a href="#kamea-sole" class="kamea-nav-item"><span class="kamea-nav-symbol">☉</span><span class="kamea-nav-name">Sole</span><span class="kamea-nav-order">Ordine 6</span></a>
+        <a href="#kamea-venere" class="kamea-nav-item"><span class="kamea-nav-symbol">♀</span><span class="kamea-nav-name">Venere</span><span class="kamea-nav-order">Ordine 7</span></a>
+        <a href="#kamea-mercurio" class="kamea-nav-item"><span class="kamea-nav-symbol">☿</span><span class="kamea-nav-name">Mercurio</span><span class="kamea-nav-order">Ordine 8</span></a>
+        <a href="#kamea-luna" class="kamea-nav-item"><span class="kamea-nav-symbol">☽</span><span class="kamea-nav-name">Luna</span><span class="kamea-nav-order">Ordine 9</span></a>
+      </div>
+    </nav>
+
+    <!-- SATURNO -->
+    <div id="kamea-saturno" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">♄</span><h3>Quadrato Magico di Saturno</h3></div>
+      <div class="kamea-order">Ordine 3 · Costante Magica 15</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-3">
+          <div class="kamea-cell">4</div><div class="kamea-cell">9</div><div class="kamea-cell">2</div>
+          <div class="kamea-cell">3</div><div class="kamea-cell">5</div><div class="kamea-cell">7</div>
+          <div class="kamea-cell">8</div><div class="kamea-cell">1</div><div class="kamea-cell">6</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Il più semplice e antico dei sette Kamea, conosciuto in Cina come Lo Shu fin dal III secolo a.C. Agrippa lo colloca per primo, assegnandolo al pianeta più lento e più esterno del sistema classico.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Saturno governa il tempo, la struttura e il limite necessario. Le sole nove cifre da 1 a 9, ridotte alla loro essenza, sommano sempre 15 — numero della forma che si cristallizza in materia.</p>
+          </div>
+          <div class="tempistica-badge">♄ Sabato · Ora di Saturno · Piombo</div>
+          <a href="./pentacoli-salomone.html#saturno" class="cross-link">✦ Vedi i Pentacoli di Saturno</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GIOVE -->
+    <div id="kamea-giove" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">♃</span><h3>Quadrato Magico di Giove</h3></div>
+      <div class="kamea-order">Ordine 4 · Costante Magica 34</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-4">
+          <div class="kamea-cell">4</div><div class="kamea-cell">14</div><div class="kamea-cell">15</div><div class="kamea-cell">1</div>
+          <div class="kamea-cell">9</div><div class="kamea-cell">7</div><div class="kamea-cell">6</div><div class="kamea-cell">12</div>
+          <div class="kamea-cell">5</div><div class="kamea-cell">11</div><div class="kamea-cell">10</div><div class="kamea-cell">8</div>
+          <div class="kamea-cell">16</div><div class="kamea-cell">2</div><div class="kamea-cell">3</div><div class="kamea-cell">13</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Forse il quadrato più celebre in assoluto: una sua variante compare nell'incisione <em>Melencolia I</em> di Albrecht Dürer (1514), con l'anno dell'opera nascosto nella riga inferiore.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Giove è espansione, generosità e giustizia. Qui ogni riga, colonna, diagonale e persino i quattro quadranti interni sommano 34: un'armonia che si moltiplica su più livelli, immagine dell'abbondanza che si autoalimenta.</p>
+          </div>
+          <div class="tempistica-badge">♃ Giovedì · Ora di Giove · Stagno</div>
+          <a href="./pentacoli-salomone.html#giove" class="cross-link">✦ Vedi i Pentacoli di Giove</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARTE -->
+    <div id="kamea-marte" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">♂</span><h3>Quadrato Magico di Marte</h3></div>
+      <div class="kamea-order">Ordine 5 · Costante Magica 65</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-5">
+          <div class="kamea-cell">11</div><div class="kamea-cell">24</div><div class="kamea-cell">7</div><div class="kamea-cell">20</div><div class="kamea-cell">3</div>
+          <div class="kamea-cell">4</div><div class="kamea-cell">12</div><div class="kamea-cell">25</div><div class="kamea-cell">8</div><div class="kamea-cell">16</div>
+          <div class="kamea-cell">17</div><div class="kamea-cell">5</div><div class="kamea-cell">13</div><div class="kamea-cell">21</div><div class="kamea-cell">9</div>
+          <div class="kamea-cell">10</div><div class="kamea-cell">18</div><div class="kamea-cell">1</div><div class="kamea-cell">14</div><div class="kamea-cell">22</div>
+          <div class="kamea-cell">23</div><div class="kamea-cell">6</div><div class="kamea-cell">19</div><div class="kamea-cell">2</div><div class="kamea-cell">15</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Le 25 caselle del Kamea marziano seguono metodi di costruzione già noti ai matematici arabi e indiani medievali, fra i primi a studiare sistematicamente i quadrati di ordine dispari.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Marte è azione, conflitto necessario e volontà. Entrambe le diagonali passano per il numero centrale 13, il punto di rottura e trasformazione che la tradizione marziale lega al coraggio.</p>
+          </div>
+          <div class="tempistica-badge">♂ Martedì · Ora di Marte · Ferro</div>
+          <a href="./pentacoli-salomone.html#marte" class="cross-link">✦ Vedi i Pentacoli di Marte</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOLE -->
+    <div id="kamea-sole" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">☉</span><h3>Quadrato Magico del Sole</h3></div>
+      <div class="kamea-order">Ordine 6 · Costante Magica 111</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-6">
+          <div class="kamea-cell">6</div><div class="kamea-cell">32</div><div class="kamea-cell">3</div><div class="kamea-cell">34</div><div class="kamea-cell">35</div><div class="kamea-cell">1</div>
+          <div class="kamea-cell">7</div><div class="kamea-cell">11</div><div class="kamea-cell">27</div><div class="kamea-cell">28</div><div class="kamea-cell">8</div><div class="kamea-cell">30</div>
+          <div class="kamea-cell">19</div><div class="kamea-cell">14</div><div class="kamea-cell">16</div><div class="kamea-cell">15</div><div class="kamea-cell">23</div><div class="kamea-cell">24</div>
+          <div class="kamea-cell">18</div><div class="kamea-cell">20</div><div class="kamea-cell">22</div><div class="kamea-cell">21</div><div class="kamea-cell">17</div><div class="kamea-cell">13</div>
+          <div class="kamea-cell">25</div><div class="kamea-cell">29</div><div class="kamea-cell">10</div><div class="kamea-cell">9</div><div class="kamea-cell">26</div><div class="kamea-cell">12</div>
+          <div class="kamea-cell">36</div><div class="kamea-cell">5</div><div class="kamea-cell">33</div><div class="kamea-cell">4</div><div class="kamea-cell">2</div><div class="kamea-cell">31</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Descritto da Agrippa come il sigillo del pianeta che "tutto illumina e nulla trattiene"; una sua variante compare già nei manoscritti italiani del Trecento, come il Trattato d'Abaco di Paolo Dagomari.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Il Sole è coscienza che irradia e successo meritato. La sua costante, 111, si riduce numerologicamente a 3 (1+1+1) — il numero della piena espressione del sé.</p>
+          </div>
+          <div class="tempistica-badge">☀️ Domenica · Ora del Sole · Oro</div>
+          <a href="./pentacoli-salomone.html#sole" class="cross-link">✦ Vedi i Pentacoli del Sole</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENERE -->
+    <div id="kamea-venere" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">♀</span><h3>Quadrato Magico di Venere</h3></div>
+      <div class="kamea-order">Ordine 7 · Costante Magica 175</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-7">
+          <div class="kamea-cell">22</div><div class="kamea-cell">47</div><div class="kamea-cell">16</div><div class="kamea-cell">41</div><div class="kamea-cell">10</div><div class="kamea-cell">35</div><div class="kamea-cell">4</div>
+          <div class="kamea-cell">5</div><div class="kamea-cell">23</div><div class="kamea-cell">48</div><div class="kamea-cell">17</div><div class="kamea-cell">42</div><div class="kamea-cell">11</div><div class="kamea-cell">29</div>
+          <div class="kamea-cell">30</div><div class="kamea-cell">6</div><div class="kamea-cell">24</div><div class="kamea-cell">49</div><div class="kamea-cell">18</div><div class="kamea-cell">36</div><div class="kamea-cell">12</div>
+          <div class="kamea-cell">13</div><div class="kamea-cell">31</div><div class="kamea-cell">7</div><div class="kamea-cell">25</div><div class="kamea-cell">43</div><div class="kamea-cell">19</div><div class="kamea-cell">37</div>
+          <div class="kamea-cell">38</div><div class="kamea-cell">14</div><div class="kamea-cell">32</div><div class="kamea-cell">1</div><div class="kamea-cell">26</div><div class="kamea-cell">44</div><div class="kamea-cell">20</div>
+          <div class="kamea-cell">21</div><div class="kamea-cell">39</div><div class="kamea-cell">8</div><div class="kamea-cell">33</div><div class="kamea-cell">2</div><div class="kamea-cell">27</div><div class="kamea-cell">45</div>
+          <div class="kamea-cell">46</div><div class="kamea-cell">15</div><div class="kamea-cell">40</div><div class="kamea-cell">9</div><div class="kamea-cell">34</div><div class="kamea-cell">3</div><div class="kamea-cell">28</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Dalle 49 caselle di questo Kamea si traccia il celebre Sigillo di Venere: una figura stellata ottenuta collegando le caselle corrispondenti alle lettere — convertite in numeri — di un nome o di un'intenzione d'amore.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Venere governa attrazione, bellezza e armonia. Sette è anche il numero dei pianeti classici stessi: un simbolo di completezza ciclica applicato al sentimento.</p>
+          </div>
+          <div class="tempistica-badge">♀ Venerdì · Ora di Venere · Rame</div>
+          <a href="./pentacoli-salomone.html#venere" class="cross-link">✦ Vedi i Pentacoli di Venere</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MERCURIO -->
+    <div id="kamea-mercurio" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">☿</span><h3>Quadrato Magico di Mercurio</h3></div>
+      <div class="kamea-order">Ordine 8 · Costante Magica 260</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-8">
+          <div class="kamea-cell">8</div><div class="kamea-cell">58</div><div class="kamea-cell">59</div><div class="kamea-cell">5</div><div class="kamea-cell">4</div><div class="kamea-cell">62</div><div class="kamea-cell">63</div><div class="kamea-cell">1</div>
+          <div class="kamea-cell">49</div><div class="kamea-cell">15</div><div class="kamea-cell">14</div><div class="kamea-cell">52</div><div class="kamea-cell">53</div><div class="kamea-cell">11</div><div class="kamea-cell">10</div><div class="kamea-cell">56</div>
+          <div class="kamea-cell">41</div><div class="kamea-cell">23</div><div class="kamea-cell">22</div><div class="kamea-cell">44</div><div class="kamea-cell">45</div><div class="kamea-cell">19</div><div class="kamea-cell">18</div><div class="kamea-cell">48</div>
+          <div class="kamea-cell">32</div><div class="kamea-cell">34</div><div class="kamea-cell">35</div><div class="kamea-cell">29</div><div class="kamea-cell">28</div><div class="kamea-cell">38</div><div class="kamea-cell">39</div><div class="kamea-cell">25</div>
+          <div class="kamea-cell">40</div><div class="kamea-cell">26</div><div class="kamea-cell">27</div><div class="kamea-cell">37</div><div class="kamea-cell">36</div><div class="kamea-cell">30</div><div class="kamea-cell">31</div><div class="kamea-cell">33</div>
+          <div class="kamea-cell">17</div><div class="kamea-cell">47</div><div class="kamea-cell">46</div><div class="kamea-cell">20</div><div class="kamea-cell">21</div><div class="kamea-cell">43</div><div class="kamea-cell">42</div><div class="kamea-cell">24</div>
+          <div class="kamea-cell">9</div><div class="kamea-cell">55</div><div class="kamea-cell">54</div><div class="kamea-cell">12</div><div class="kamea-cell">13</div><div class="kamea-cell">51</div><div class="kamea-cell">50</div><div class="kamea-cell">16</div>
+          <div class="kamea-cell">64</div><div class="kamea-cell">2</div><div class="kamea-cell">3</div><div class="kamea-cell">61</div><div class="kamea-cell">60</div><div class="kamea-cell">6</div><div class="kamea-cell">7</div><div class="kamea-cell">57</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Le 64 celle si costruiscono tradizionalmente combinando quattro blocchi minori derivati dal quadrato di Giove — un quadrato fatto di quadrati più piccoli, coerente con la natura mercuriale del "messaggero che collega".</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">Mercurio domina comunicazione, studio e commercio. 64 richiama anche le caselle della scacchiera e i 64 esagrammi dell'I Ching, segno della versatilità di questo pianeta.</p>
+          </div>
+          <div class="tempistica-badge">☿ Mercoledì · Ora di Mercurio · Argento vivo</div>
+          <a href="./pentacoli-salomone.html#mercurio" class="cross-link">✦ Vedi i Pentacoli di Mercurio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUNA -->
+    <div id="kamea-luna" class="kamea-block">
+      <div class="kamea-block-title"><span class="kamea-symbol-big">☽</span><h3>Quadrato Magico della Luna</h3></div>
+      <div class="kamea-order">Ordine 9 · Costante Magica 369</div>
+      <div class="kamea-wrap">
+        <div class="kamea-grid kamea-9">
+          <div class="kamea-cell">47</div><div class="kamea-cell">58</div><div class="kamea-cell">69</div><div class="kamea-cell">80</div><div class="kamea-cell">1</div><div class="kamea-cell">12</div><div class="kamea-cell">23</div><div class="kamea-cell">34</div><div class="kamea-cell">45</div>
+          <div class="kamea-cell">57</div><div class="kamea-cell">68</div><div class="kamea-cell">79</div><div class="kamea-cell">9</div><div class="kamea-cell">11</div><div class="kamea-cell">22</div><div class="kamea-cell">33</div><div class="kamea-cell">44</div><div class="kamea-cell">46</div>
+          <div class="kamea-cell">67</div><div class="kamea-cell">78</div><div class="kamea-cell">8</div><div class="kamea-cell">10</div><div class="kamea-cell">21</div><div class="kamea-cell">32</div><div class="kamea-cell">43</div><div class="kamea-cell">54</div><div class="kamea-cell">56</div>
+          <div class="kamea-cell">77</div><div class="kamea-cell">7</div><div class="kamea-cell">18</div><div class="kamea-cell">20</div><div class="kamea-cell">31</div><div class="kamea-cell">42</div><div class="kamea-cell">53</div><div class="kamea-cell">55</div><div class="kamea-cell">66</div>
+          <div class="kamea-cell">6</div><div class="kamea-cell">17</div><div class="kamea-cell">19</div><div class="kamea-cell">30</div><div class="kamea-cell">41</div><div class="kamea-cell">52</div><div class="kamea-cell">63</div><div class="kamea-cell">65</div><div class="kamea-cell">76</div>
+          <div class="kamea-cell">16</div><div class="kamea-cell">27</div><div class="kamea-cell">29</div><div class="kamea-cell">40</div><div class="kamea-cell">51</div><div class="kamea-cell">62</div><div class="kamea-cell">64</div><div class="kamea-cell">75</div><div class="kamea-cell">5</div>
+          <div class="kamea-cell">26</div><div class="kamea-cell">28</div><div class="kamea-cell">39</div><div class="kamea-cell">50</div><div class="kamea-cell">61</div><div class="kamea-cell">72</div><div class="kamea-cell">74</div><div class="kamea-cell">4</div><div class="kamea-cell">15</div>
+          <div class="kamea-cell">36</div><div class="kamea-cell">38</div><div class="kamea-cell">49</div><div class="kamea-cell">60</div><div class="kamea-cell">71</div><div class="kamea-cell">73</div><div class="kamea-cell">3</div><div class="kamea-cell">14</div><div class="kamea-cell">25</div>
+          <div class="kamea-cell">37</div><div class="kamea-cell">48</div><div class="kamea-cell">59</div><div class="kamea-cell">70</div><div class="kamea-cell">81</div><div class="kamea-cell">2</div><div class="kamea-cell">13</div><div class="kamea-cell">24</div><div class="kamea-cell">35</div>
+        </div>
+        <div class="kamea-meta">
+          <div class="detail-section">
+            <div class="detail-label">Origine</div>
+            <p class="detail-text">Il più grande e complesso dei sette Kamea chiude la serie planetaria. Diverse versioni manoscritte circolano nella tradizione rinascimentale; quella qui riportata segue il classico "metodo diagonale" (o siamese), che genera correttamente la costante 369 su ogni riga, colonna e diagonale.</p>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Significato</div>
+            <p class="detail-text">La Luna riflette, non produce luce propria: governa inconscio, sogni e cicli interiori. Nove è il numero del completamento prima del ritorno all'unità (9+1=10) — coerente con la natura lunare di soglia fra i mondi.</p>
+          </div>
+          <div class="tempistica-badge">☽ Lunedì · Ora della Luna · Argento</div>
+          <a href="./pentacoli-salomone.html#luna" class="cross-link">✦ Vedi i Pentacoli della Luna</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-to-nav"><a href="#" onclick="document.querySelector('.kamea-nav').scrollIntoView({behavior:'smooth'});return false;">▲ Scegli un altro Quadrato</a></div>
+  </section>
+
+  <!-- ══════════════════════════════ GEMATRIA ══════════════════════════════ -->
+  <section id="gematria" class="planet-section">
+    <h2>✡ Gematria — Il Valore Sacro delle Lettere</h2>
+    <p class="section-lead">La Gematria (dal greco <em>geometria</em>, passato all'ebraico come גימטריה) è il sistema della tradizione ebraica che assegna a ciascuna delle 22 lettere dell'alfabeto un valore numerico preciso. Praticata già nel Talmud e divenuta centrale nell'esegesi cabalistica medievale — dal <em>Sefer Yetzirah</em> al <em>Zohar</em> — la Gematria parte da un'idea semplice: se due parole condividono la stessa somma, la tradizione le considera spiritualmente connesse. È lo stesso principio numerico che struttura molte delle iscrizioni ebraiche incise sui Pentacoli di Re Salomone e sull'Albero della Vita già esplorato nella sezione <em>Cabala</em> di Mystica.</p>
+
+    <h3 style="font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:1px;margin-bottom:14px">L'Alfabeto e i Suoi Numeri</h3>
+    <div class="gem-table-wrap">
+      <table class="gem-table">
+        <tr><th>Lettera</th><th>Nome</th><th>Valore</th><th>Lettera</th><th>Nome</th><th>Valore</th></tr>
+        <tr><td class="gem-letter">א</td><td>Aleph</td><td>1</td><td class="gem-letter">ל</td><td>Lamed</td><td>30</td></tr>
+        <tr><td class="gem-letter">ב</td><td>Bet</td><td>2</td><td class="gem-letter">מ</td><td>Mem</td><td>40</td></tr>
+        <tr><td class="gem-letter">ג</td><td>Ghimel</td><td>3</td><td class="gem-letter">נ</td><td>Nun</td><td>50</td></tr>
+        <tr><td class="gem-letter">ד</td><td>Dalet</td><td>4</td><td class="gem-letter">ס</td><td>Samekh</td><td>60</td></tr>
+        <tr><td class="gem-letter">ה</td><td>He</td><td>5</td><td class="gem-letter">ע</td><td>Ayin</td><td>70</td></tr>
+        <tr><td class="gem-letter">ו</td><td>Vav</td><td>6</td><td class="gem-letter">פ</td><td>Pe</td><td>80</td></tr>
+        <tr><td class="gem-letter">ז</td><td>Zayin</td><td>7</td><td class="gem-letter">צ</td><td>Tsadi</td><td>90</td></tr>
+        <tr><td class="gem-letter">ח</td><td>Het</td><td>8</td><td class="gem-letter">ק</td><td>Qof</td><td>100</td></tr>
+        <tr><td class="gem-letter">ט</td><td>Tet</td><td>9</td><td class="gem-letter">ר</td><td>Resh</td><td>200</td></tr>
+        <tr><td class="gem-letter">י</td><td>Yod</td><td>10</td><td class="gem-letter">ש</td><td>Shin</td><td>300</td></tr>
+        <tr><td class="gem-letter">כ</td><td>Kaf</td><td>20</td><td class="gem-letter">ת</td><td>Tav</td><td>400</td></tr>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:1px;margin-bottom:14px">Parole che Custodiscono lo Stesso Segreto</h3>
+    <div class="gem-grid">
+      <div class="gem-card">
+        <span class="gem-word">אחד</span>
+        <div class="gem-translit">Echad</div>
+        <div class="gem-meaning">"Uno"</div>
+        <span class="gem-value">Valore 13</span>
+        <p class="gem-text">Il numero dell'unità assoluta — e condivide il suo valore con la parola Amore, come se la tradizione volesse dirci che l'unità si rivela proprio attraverso l'amore.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">אהבה</span>
+        <div class="gem-translit">Ahavah</div>
+        <div class="gem-meaning">"Amore"</div>
+        <span class="gem-value">Valore 13</span>
+        <p class="gem-text">Identico valore di Echad (Uno): l'amore autentico, insegna la Cabala, è ciò che rivela l'unità dietro l'apparente molteplicità del mondo.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">חי</span>
+        <div class="gem-translit">Chai</div>
+        <div class="gem-meaning">"Vita"</div>
+        <span class="gem-value">Valore 18</span>
+        <p class="gem-text">Da qui l'usanza ebraica di donare somme in multipli di 18 ("dare Chai"): un gesto che augura vita in abbondanza a chi lo riceve.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">שלום</span>
+        <div class="gem-translit">Shalom</div>
+        <div class="gem-meaning">"Pace, completezza"</div>
+        <span class="gem-value">Valore 376</span>
+        <p class="gem-text">Più che assenza di conflitto, Shalom indica una pienezza in cui nulla manca: il suo valore alto rispecchia la ricchezza di significato del termine.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">אמת</span>
+        <div class="gem-translit">Emet</div>
+        <div class="gem-meaning">"Verità"</div>
+        <span class="gem-value">Valore 441</span>
+        <p class="gem-text">Le sue tre lettere sono la prima (Aleph), una di mezzo (Mem) e l'ultima (Tav) dell'alfabeto ebraico: la verità, insegna la tradizione, abbraccia l'intero spettro dell'esistenza dall'inizio alla fine.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">תורה</span>
+        <div class="gem-translit">Torah</div>
+        <div class="gem-meaning">"Insegnamento, Legge"</div>
+        <span class="gem-value">Valore 611</span>
+        <p class="gem-text">Nella tradizione rabbinica, 611 più i due comandamenti che il popolo avrebbe ricevuto direttamente dalla voce divina dà 613 — il numero tradizionale dei precetti (mitzvot) della legge ebraica.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">משיח</span>
+        <div class="gem-translit">Mashiach</div>
+        <div class="gem-meaning">"Messia, l'Unto"</div>
+        <span class="gem-value">Valore 358</span>
+        <p class="gem-text">Condivide il valore con Nachash, "serpente" (358): un celebre insegnamento cabalistico secondo cui il potenziale messianico e quello ingannevole condividono la stessa radice, e va saputo discernere l'uno dall'altro.</p>
+      </div>
+      <div class="gem-card">
+        <span class="gem-word">יהוה</span>
+        <div class="gem-translit">Tetragramma</div>
+        <div class="gem-meaning">Nome divino impronunciabile</div>
+        <span class="gem-value">Valore 26</span>
+        <p class="gem-text">Il valore 26 è considerato dalla tradizione cabalistica il "numero del Nome" per eccellenza, ed è uno dei riferimenti numerici più ricorrenti nell'esegesi mistica ebraica.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:1px;margin:30px 0 14px">I Metodi di Calcolo</h3>
+    <div class="method-grid">
+      <div class="method-card">
+        <h4>Gematria Hechrachi (normativa)</h4>
+        <p>Il metodo standard, quello usato in questa pagina: ogni lettera riceve il valore mostrato nella tabella dell'alfabeto, dal più semplice (Aleph=1) al più alto (Tav=400).</p>
+      </div>
+      <div class="method-card">
+        <h4>Gematria Katan (ridotta)</h4>
+        <p>Riduce ogni somma a una sola cifra tramite riduzione teosofica: Shalom (376) diventa 3+7+6=16, poi 1+6=7 — utile per confronti rapidi fra parole di lunghezza diversa.</p>
+      </div>
+      <div class="method-card">
+        <h4>Gematria Sofit (lettere finali)</h4>
+        <p>Le cinque lettere che cambiano forma a fine parola (Kaf, Mem, Nun, Pe, Tsadi sofit) ricevono qui valori più alti — 500, 600, 700, 800, 900 — ampliando il campo dei collegamenti possibili.</p>
+      </div>
+      <div class="method-card">
+        <h4>Atbash</h4>
+        <p>Non è una gematria numerica ma un cifrario di sostituzione: la prima lettera dell'alfabeto si scambia con l'ultima, la seconda con la penultima e così via. Usato per "velare" nomi sacri nei testi profetici.</p>
+      </div>
+    </div>
+
+    <div class="traduzione-box">
+      <strong>Una Lettura Connessa</strong>
+      La Gematria è la chiave numerica che la tradizione cabalistica usa per leggere i testi sacri in profondità: per approfondire l'Albero della Vita e i 10 Sephirot a cui queste lettere e questi numeri sono collegati, visita la sezione <em>Cabala</em> di Mystica.
+    </div>
+  </section>
+
+</main>
+
+<section class="seo-crosslinks" aria-labelledby="seo-crosslinks-title">
+<h2 id="seo-crosslinks-title">Approfondimenti correlati</h2>
+<ul>
+<li><a href="https://mysticaoracoli.it/pentacoli-salomone.html">I 44 Pentacoli di Re Salomone</a></li>
+<li><a href="https://mysticaoracoli.it/enciclopedia.html">Enciclopedia Esoterica</a></li>
+<li><a href="https://mysticaoracoli.it/strega.html">Come diventare strega o stregone</a></li>
+<li><a href="https://mysticaoracoli.it/pietre-magiche.html">Pietre magiche e cristalli</a></li>
+</ul>
+</section>
+
+<a href="index.html" onclick="event.preventDefault();goBack();" class="fab-home">⇠ MYSTICA</a>
+<footer>
+  <p>&copy; 2026 MYSTICA – Oracolo delle Stelle. Tutti i diritti riservati.</p>
+</footer>
+</body>
+</html>

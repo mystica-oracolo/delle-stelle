@@ -1,0 +1,955 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║         MYSTICA ORACOLI — mysticaoracoli.it                  ║
+  ║  © 2025-2026 Mago Petro / PetroCorporation                   ║
+  ║  Tutti i diritti riservati. All rights reserved.             ║
+  ║  Vietata la riproduzione, copia o distribuzione              ║
+  ║  anche parziale senza autorizzazione scritta.                ║
+  ║  Sviluppato da: Dott. Petrolese Giovanni                     ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="google-adsense-account" content="ca-pub-0522720046244970">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Pratica Quotidiana Esoterica – Diario Mistico, Affermazioni, Altare Virtuale | MYSTICA</title>
+<meta name="description" content="Strumenti di pratica quotidiana esoterica: Diario Mistico, Affermazioni & Decreti personalizzati, Sigillazione dell'Intenzione e Altare Virtuale guidato. Coltiva la tua spiritualità ogni giorno con MYSTICA.">
+<meta name="keywords" content="diario mistico, journaling esoterico, affermazioni spirituali, decreti magici, sigillazione intenzione, altare virtuale, pratica quotidiana esoterica, manifestazione, rituale quotidiano, spiritualità pratica">
+<meta name="author" content="MYSTICA — Oracolo delle Stelle">
+<link rel="canonical" href="https://mysticaoracoli.it/pratica-quotidiana.html">
+<link rel="icon" type="image/png" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="theme-color" content="#d4af37">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #d4af37;
+  --gold-dim: rgba(212,175,55,0.45);
+  --gold-glow: rgba(212,175,55,0.18);
+  --bg: #060212;
+  --bg2: #0c0422;
+  --card-bg: linear-gradient(145deg,#100820,#08040f);
+  --border: rgba(42,23,72,0.7);
+  --text: #e8dfc8;
+  --muted: #7a6a90;
+  --purple: #b88fe0;
+  --teal: #5ecec4;
+  --green: #6fcf97;
+  --blue: #7eb8f7;
+  --pink: #f07ac0;
+  --orange: #f0a060;
+  --red: #f07070;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ═══ SFONDO COSMICO ═══ */
+.cosmos{
+  position:fixed;inset:0;
+  background:radial-gradient(ellipse at 20% 20%,rgba(42,23,72,0.6) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 80%,rgba(10,4,30,0.8) 0%,transparent 60%),
+             radial-gradient(ellipse at 50% 50%,rgba(6,2,18,1) 0%,transparent 100%);
+  z-index:0;pointer-events:none;
+}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite var(--delay,0s)}
+@keyframes twinkle{0%,100%{opacity:var(--min,0.1)}50%{opacity:var(--max,0.8)}}
+
+/* ═══ HEADER ═══ */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(180deg,rgba(6,2,18,0.98) 70%,transparent);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(212,175,55,0.12);
+  padding:14px 20px 12px;
+  display:flex;align-items:center;gap:14px;
+}
+.back-btn{
+  background:none;border:1px solid var(--border);border-radius:10px;
+  color:var(--muted);padding:8px 12px;cursor:pointer;
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;
+  transition:all .2s;white-space:nowrap;
+}
+.back-btn:hover{border-color:var(--gold-dim);color:var(--gold)}
+.header-title{
+  font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
+  letter-spacing:.08em;font-weight:700;flex:1;text-align:center;
+}
+.header-icon{font-size:20px;filter:drop-shadow(0 0 8px var(--gold-glow))}
+
+/* ═══ HERO ═══ */
+.hero{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:40px 20px 28px;
+}
+.hero-glyph{
+  font-size:52px;
+  filter:drop-shadow(0 0 20px rgba(212,175,55,0.5));
+  margin-bottom:14px;
+  animation:breathe 4s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.hero-title{
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.5rem,5vw,2.2rem);
+  color:var(--gold);letter-spacing:.06em;
+  text-shadow:0 0 30px rgba(212,175,55,0.3);
+  margin-bottom:10px;
+}
+.hero-sub{
+  font-size:1rem;color:var(--muted);line-height:1.7;
+  max-width:500px;margin:0 auto;font-style:italic;
+}
+.hero-divider{
+  width:80px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+  margin:18px auto 0;
+}
+
+/* ═══ LAYOUT ═══ */
+.main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 16px 60px}
+
+/* ═══ TOOL TABS ═══ */
+.tab-nav{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:8px;
+  margin-bottom:24px;
+}
+@media(min-width:600px){.tab-nav{grid-template-columns:repeat(4,1fr)}}
+.tab-btn{
+  background:linear-gradient(145deg,rgba(16,8,32,0.8),rgba(8,4,15,0.9));
+  border:1.5px solid var(--border);border-radius:14px;
+  padding:14px 8px;cursor:pointer;text-align:center;
+  transition:all .25s cubic-bezier(.34,1.56,.64,1);
+  touch-action:manipulation;
+}
+.tab-btn:hover,.tab-btn.active{
+  border-color:var(--gold);
+  background:linear-gradient(135deg,#2a1748,#160d30);
+  box-shadow:0 0 18px var(--gold-glow);
+}
+.tab-ico{font-size:24px;display:block;margin-bottom:6px;filter:drop-shadow(0 0 6px rgba(212,175,55,0.3))}
+.tab-name{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.05em;display:block;line-height:1.3}
+
+/* ═══ PANEL ═══ */
+.panel{display:none;animation:fadeIn .35s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══ CARD ═══ */
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:20px;padding:22px 18px;
+  position:relative;overflow:hidden;
+  margin-bottom:14px;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:15%;right:15%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-glow),transparent);
+}
+.card-title{
+  font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
+  letter-spacing:.06em;margin-bottom:6px;
+}
+.card-desc{font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
+
+/* ═══ INPUTS ═══ */
+textarea,input[type=text],select{
+  width:100%;background:rgba(6,2,18,0.6);
+  border:1px solid var(--border);border-radius:12px;
+  color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;
+  padding:12px 14px;resize:vertical;
+  transition:border-color .2s;outline:none;
+}
+textarea:focus,input:focus,select:focus{border-color:var(--gold-dim)}
+textarea{min-height:120px}
+label{
+  font-family:'Cinzel',serif;font-size:11px;color:var(--muted);
+  letter-spacing:.06em;display:block;margin-bottom:6px;margin-top:14px;
+}
+label:first-child{margin-top:0}
+
+/* ═══ BOTTONI ═══ */
+.btn{
+  display:block;width:100%;padding:14px;
+  background:linear-gradient(135deg,#2a1748,#160d30);
+  border:1.5px solid var(--gold);border-radius:14px;
+  color:var(--gold);font-family:'Cinzel',serif;font-size:13px;
+  letter-spacing:.08em;cursor:pointer;
+  transition:all .25s;margin-top:14px;text-align:center;
+}
+.btn:hover{background:linear-gradient(135deg,#3a2058,#200f40);box-shadow:0 0 18px var(--gold-glow)}
+.btn-sec{
+  background:rgba(42,23,72,0.2);border-color:var(--border);color:var(--muted);
+}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,0.4)}
+
+/* ═══ RISULTATO ═══ */
+.result-box{
+  background:linear-gradient(145deg,rgba(10,4,24,0.9),rgba(6,2,12,0.95));
+  border:1px solid var(--gold-dim);border-radius:16px;
+  padding:18px;margin-top:16px;
+  border-left:3px solid var(--gold);
+  animation:fadeIn .4s ease;
+}
+.result-box p{font-size:1rem;line-height:1.85;color:var(--text)}
+.result-title{
+  font-family:'Cinzel',serif;font-size:10px;color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;
+}
+
+/* ═══ DIARIO ENTRIES ═══ */
+.entry-list{margin-top:16px}
+.entry-item{
+  background:rgba(10,4,24,0.6);border:1px solid var(--border);
+  border-radius:12px;padding:14px;margin-bottom:10px;
+  cursor:pointer;transition:border-color .2s;
+}
+.entry-item:hover{border-color:var(--gold-dim)}
+.entry-date{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:5px}
+.entry-preview{font-size:.9rem;color:var(--muted);line-height:1.5;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.entry-mood{font-size:16px;float:right}
+
+/* ═══ SIGILLO ═══ */
+.sigillo-canvas-wrap{
+  text-align:center;margin:16px 0;
+  position:relative;
+}
+#sigilloCanvas{
+  border-radius:50%;border:2px solid var(--gold-dim);
+  box-shadow:0 0 30px var(--gold-glow);
+  max-width:240px;width:100%;aspect-ratio:1;
+  background:radial-gradient(circle,#100820,#060212);
+}
+.sigillo-pulse{animation:sigPulse 3s ease-in-out infinite}
+@keyframes sigPulse{0%,100%{box-shadow:0 0 20px var(--gold-glow)}50%{box-shadow:0 0 40px rgba(212,175,55,0.35)}}
+
+/* ═══ ALTARE ═══ */
+.altare-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;
+}
+.altare-slot{
+  aspect-ratio:1;border-radius:14px;
+  background:rgba(10,4,24,0.7);border:1.5px dashed var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  cursor:pointer;transition:all .25s;
+  font-size:28px;position:relative;overflow:hidden;
+}
+.altare-slot.filled{border-style:solid;border-color:var(--gold-dim);background:rgba(42,23,72,0.3)}
+.altare-slot:hover{border-color:var(--gold-dim);background:rgba(42,23,72,0.2)}
+.altare-slot-label{font-family:'Cinzel',serif;font-size:8px;color:var(--muted);letter-spacing:.05em;text-align:center;padding:0 4px}
+.altare-slot.filled .altare-slot-label{color:var(--gold)}
+.altare-info{
+  font-family:'Cinzel',serif;font-size:10px;color:var(--gold);
+  letter-spacing:1.5px;text-align:center;margin-bottom:10px;text-transform:uppercase;
+}
+
+/* ═══ AFFERMAZIONI ═══ */
+.afferm-tag{
+  display:inline-block;background:rgba(212,175,55,0.08);
+  border:1px solid rgba(212,175,55,0.2);border-radius:20px;
+  padding:4px 10px;font-size:.8rem;color:var(--gold);
+  font-family:'Cinzel',serif;letter-spacing:.03em;cursor:pointer;margin:3px;
+  transition:all .2s;
+}
+.afferm-tag:hover,.afferm-tag.active{background:rgba(212,175,55,0.2);border-color:var(--gold)}
+.afferm-display{
+  font-family:'Crimson Pro',serif;font-size:1.3rem;font-style:italic;
+  color:var(--text);line-height:1.8;text-align:center;
+  padding:24px 16px;
+  background:linear-gradient(135deg,rgba(42,23,72,0.2),rgba(10,4,24,0.4));
+  border-radius:14px;border:1px solid var(--border);
+  margin:14px 0;min-height:100px;
+  display:flex;align-items:center;justify-content:center;
+}
+.afferm-number{
+  font-family:'Cinzel',serif;font-size:10px;color:var(--muted);
+  text-align:center;letter-spacing:1px;margin-bottom:4px;
+}
+
+/* ═══ LOADING ═══ */
+.loading-dot{
+  display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--gold);animation:ldot 1.4s ease-in-out infinite;margin:0 2px;
+}
+.loading-dot:nth-child(2){animation-delay:.2s}
+.loading-dot:nth-child(3){animation-delay:.4s}
+@keyframes ldot{0%,80%,100%{transform:scale(0.4);opacity:0.3}40%{transform:scale(1);opacity:1}}
+
+/* ═══ MOOD SELECTOR ═══ */
+.mood-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.mood-btn{
+  background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:10px;
+  padding:8px 10px;cursor:pointer;font-size:20px;transition:all .2s;
+}
+.mood-btn:hover,.mood-btn.active{border-color:var(--gold);box-shadow:0 0 10px var(--gold-glow)}
+
+/* ═══ TOAST ═══ */
+#toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);
+  background:linear-gradient(135deg,#2a1748,#160d30);
+  border:1px solid var(--gold-dim);border-radius:12px;
+  padding:12px 20px;font-family:'Cinzel',serif;font-size:12px;color:var(--gold);
+  letter-spacing:.05em;z-index:999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  white-space:nowrap;pointer-events:none;
+}
+#toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ═══ MEDIA ═══ */
+@media(min-width:600px){
+  .hero{padding:50px 24px 32px}
+  .card{padding:28px 24px}
+  .altare-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="cosmos"></div>
+<div class="stars" id="stars"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <button class="back-btn" onclick="history.back()">← Torna</button>
+  <span class="header-title">Pratica Quotidiana</span>
+  <span class="header-icon">💎</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glyph">💎</div>
+  <h1 class="hero-title">Pratica Quotidiana</h1>
+  <p class="hero-sub">Il tuo spazio sacro personale. Coltiva l'anima ogni giorno attraverso la scrittura, le intenzioni e il rituale.</p>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TAB NAV -->
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" onclick="switchTab('diario')" id="tab-diario" role="tab">
+      <span class="tab-ico">📖</span>
+      <span class="tab-name">Diario Mistico</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('affermazioni')" id="tab-affermazioni" role="tab">
+      <span class="tab-ico">✨</span>
+      <span class="tab-name">Affermazioni & Decreti</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('sigillo')" id="tab-sigillo" role="tab">
+      <span class="tab-ico">🔮</span>
+      <span class="tab-name">Sigillazione</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('altare')" id="tab-altare" role="tab">
+      <span class="tab-ico">🕯️</span>
+      <span class="tab-name">Altare Virtuale</span>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════ -->
+  <!-- PANEL 1: DIARIO MISTICO         -->
+  <!-- ════════════════════════════════ -->
+  <div class="panel active" id="panel-diario">
+
+    <div class="card">
+      <div class="card-title">📖 Diario dell'Anima</div>
+      <div class="card-desc">Ogni giorno, uno spazio per ascoltarti. Il giornale esoterico guidato ti aiuta a tracciare il tuo cammino interiore.</div>
+
+      <label>Stato d'animo di oggi</label>
+      <div class="mood-row" id="moodRow">
+        <button class="mood-btn" onclick="selMood(this,'🌑')">🌑</button>
+        <button class="mood-btn" onclick="selMood(this,'🌒')">🌒</button>
+        <button class="mood-btn" onclick="selMood(this,'🌓')">🌓</button>
+        <button class="mood-btn" onclick="selMood(this,'🌕')">🌕</button>
+        <button class="mood-btn" onclick="selMood(this,'⚡')">⚡</button>
+        <button class="mood-btn" onclick="selMood(this,'🔥')">🔥</button>
+        <button class="mood-btn" onclick="selMood(this,'💧')">💧</button>
+        <button class="mood-btn" onclick="selMood(this,'🌿')">🌿</button>
+      </div>
+
+      <label style="margin-top:18px">Domanda del giorno (generata o libera)</label>
+      <div id="questioneGiorno" style="font-style:italic;color:var(--muted);font-size:.95rem;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all .2s" onclick="nuovaDomanda()" title="Tocca per cambiare domanda">
+        Caricando la domanda del giorno...
+      </div>
+      <button class="btn btn-sec" style="margin-top:0;font-size:11px;padding:8px" onclick="nuovaDomanda()">↻ Nuova domanda</button>
+
+      <label style="margin-top:16px">La tua riflessione</label>
+      <textarea id="dReflection" placeholder="Scrivi liberamente… lascia fluire i pensieri, le visioni, i sogni, le intuizioni di oggi."></textarea>
+
+      <label>Parola o simbolo del giorno (opzionale)</label>
+      <input type="text" id="dSymbol" placeholder="es. Luna, Serpente, Trasformazione…">
+
+      <label>Intenzione per domani</label>
+      <input type="text" id="dIntention" placeholder="es. Portare più luce nelle conversazioni">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">
+        <button class="btn btn-sec" onclick="guidaDiario()">🌟 Guida AI</button>
+        <button class="btn" onclick="salvaEntrata()">💾 Salva Entrata</button>
+      </div>
+
+      <div id="dGuidaBox" style="display:none" class="result-box">
+        <div class="result-title">✦ La Voce dell'Anima</div>
+        <div id="dGuidaText"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div>
+      </div>
+    </div>
+
+    <!-- ENTRATE SALVATE -->
+    <div class="card">
+      <div class="card-title">📚 Le Tue Entrate</div>
+      <div class="card-desc">Il tuo archivio dell'anima — le riflessioni che hai custodito nel tempo.</div>
+      <div id="entryList" class="entry-list">
+        <p style="color:var(--muted);font-size:.9rem;text-align:center;padding:10px 0">Nessuna entrata ancora. Scrivi il tuo primo pensiero ✦</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <!-- PANEL 2: AFFERMAZIONI & DECRETI -->
+  <!-- ════════════════════════════════ -->
+  <div class="panel" id="panel-affermazioni">
+
+    <div class="card">
+      <div class="card-title">✨ Affermazioni & Decreti</div>
+      <div class="card-desc">Le parole sono incantesimi. Scegli la tua intenzione e ricevi affermazioni personalizzate da ripetere come decreto quotidiano.</div>
+
+      <label>Area della tua vita</label>
+      <div style="margin-bottom:12px">
+        <span class="afferm-tag active" onclick="selArea(this,'amore')">💗 Amore</span>
+        <span class="afferm-tag" onclick="selArea(this,'abbondanza')">💰 Abbondanza</span>
+        <span class="afferm-tag" onclick="selArea(this,'guarigione')">🌿 Guarigione</span>
+        <span class="afferm-tag" onclick="selArea(this,'protezione')">🛡️ Protezione</span>
+        <span class="afferm-tag" onclick="selArea(this,'fiducia')">🌟 Fiducia in sé</span>
+        <span class="afferm-tag" onclick="selArea(this,'creativita')">🎨 Creatività</span>
+        <span class="afferm-tag" onclick="selArea(this,'intuizione')">🔮 Intuizione</span>
+        <span class="afferm-tag" onclick="selArea(this,'liberazione')">🌙 Liberazione</span>
+      </div>
+
+      <label>Tonalità del decreto</label>
+      <select id="toneSelect">
+        <option value="potente">⚡ Potente & deciso</option>
+        <option value="gentile">🌸 Gentile & nurturing</option>
+        <option value="mistico">🌌 Mistico & simbolico</option>
+        <option value="solenne">🕯️ Solenne & rituale</option>
+      </select>
+
+      <label>Intenzione personale (opzionale)</label>
+      <input type="text" id="affermIntenzione" placeholder="es. Attirare un amore autentico nella mia vita">
+
+      <button class="btn" onclick="generaAffermazioni()">✨ Genera Affermazioni</button>
+
+      <div id="affermResult" style="display:none">
+        <div class="afferm-number" id="affermCounter">Affermazione 1 di 7</div>
+        <div class="afferm-display" id="affermDisplay"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="prevAfferm()">← Prec</button>
+          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="copyAfferm()">📋 Copia</button>
+          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="nextAfferm()">Succ →</button>
+        </div>
+        <button class="btn" style="margin-top:10px" onclick="generaAffermazioni()">🔄 Nuove Affermazioni</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🕯️ Rito del Decreto</div>
+      <div class="card-desc">Trasforma l'affermazione in un decreto rituale. Ripetilo 3, 7 o 21 volte con voce e intenzione chiari.</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(3)">× 3<br><small>Attivazione</small></button>
+        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(7)">× 7<br><small>Manifestazione</small></button>
+        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(21)">× 21<br><small>Ancoraggio</small></button>
+      </div>
+      <div id="ritoBox" style="display:none;text-align:center">
+        <div style="font-family:'Cinzel',serif;font-size:36px;color:var(--gold);margin:10px 0" id="ritoCount">0</div>
+        <div style="font-size:.9rem;color:var(--muted)" id="ritoStatus">Tocca per contare ogni ripetizione</div>
+        <button class="btn" style="margin-top:14px" onclick="tapRito()">✦ Conta</button>
+        <button class="btn btn-sec" style="margin-top:8px;padding:10px;font-size:11px" onclick="resetRito()">Reset</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <!-- PANEL 3: SIGILLAZIONE           -->
+  <!-- ════════════════════════════════ -->
+  <div class="panel" id="panel-sigillo">
+
+    <div class="card">
+      <div class="card-title">🔮 Sigillazione dell'Intenzione</div>
+      <div class="card-desc">Diverso dai sigilli magici — qui si tratta di <em>cristallizzare un'intenzione</em> in una forma visiva unica, consacrarla e rilasciarla all'universo.</div>
+
+      <label>La tua intenzione (scrivi al presente, come già avvenuta)</label>
+      <textarea id="sigIntenzione" placeholder="es. Sono circondato da amore e abbondanza. La mia mente è serena e il mio cuore è aperto…" style="min-height:80px"></textarea>
+
+      <label>Elemento di potere</label>
+      <select id="sigElemento">
+        <option value="fuoco">🔥 Fuoco — trasformazione & volontà</option>
+        <option value="acqua">💧 Acqua — emozione & fluidità</option>
+        <option value="terra">🌿 Terra — stabilità & manifestazione</option>
+        <option value="aria">💨 Aria — comunicazione & chiarezza</option>
+        <option value="etere">🌌 Etere — spirito & connessione cosmica</option>
+      </select>
+
+      <label>Fase lunare ideale</label>
+      <select id="sigLuna">
+        <option value="nuova">🌑 Luna Nuova — semina l'intenzione</option>
+        <option value="crescente">🌒 Luna Crescente — nutri la crescita</option>
+        <option value="piena">🌕 Luna Piena — manifesta & amplifica</option>
+        <option value="calante">🌘 Luna Calante — rilascia & lascia andare</option>
+      </select>
+
+      <button class="btn" onclick="creaSignature()">🔮 Crea il Sigillo</button>
+
+      <div id="sigilloResult" style="display:none">
+        <div class="sigillo-canvas-wrap">
+          <canvas id="sigilloCanvas" width="240" height="240" class="sigillo-pulse"></canvas>
+        </div>
+        <div class="result-box">
+          <div class="result-title">✦ Il Tuo Decreto di Sigillazione</div>
+          <div id="sigilloText"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+          <button class="btn btn-sec" onclick="downloadSigillo()">⬇ Salva Sigillo</button>
+          <button class="btn" onclick="creaSignature()">🔄 Ricrea</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📜 Come usare il Sigillo</div>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.8">
+        <strong style="color:var(--gold)">1. Crea</strong> — Scrivi la tua intenzione con chiarezza e genera il sigillo.<br>
+        <strong style="color:var(--gold)">2. Contempla</strong> — Osserva il sigillo in silenzio per qualche minuto, respirando profondamente.<br>
+        <strong style="color:var(--gold)">3. Carica</strong> — Tieni il sigillo tra le mani e visualizza la tua intenzione già realizzata.<br>
+        <strong style="color:var(--gold)">4. Rilascia</strong> — Salva il sigillo e poi <em>dimentica</em> — l'universo si occupa del resto.<br>
+        <strong style="color:var(--gold)">5. Ringrazia</strong> — Dopo la manifestazione, esprimi gratitudine.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <!-- PANEL 4: ALTARE VIRTUALE        -->
+  <!-- ════════════════════════════════ -->
+  <div class="panel" id="panel-altare">
+
+    <div class="card">
+      <div class="card-title">🕯️ Il Tuo Altare Virtuale</div>
+      <div class="card-desc">Allestisci il tuo spazio sacro digitale. Scegli gli elementi che risuonano con te e la tua pratica di oggi.</div>
+
+      <div class="altare-info">✦ Tocca ogni slot per scegliere un elemento ✦</div>
+
+      <div class="altare-grid" id="altareGrid">
+        <!-- Generati via JS -->
+      </div>
+
+      <label>Intenzione dell'altare</label>
+      <input type="text" id="altareIntenzione" placeholder="es. Protezione, amore, chiarezza, gratitudine…">
+
+      <label>Preghiera o mantra (opzionale)</label>
+      <textarea id="altareMantra" placeholder="Scrivi un breve mantra, preghiera o invocazione per consacrare il tuo altare…" style="min-height:80px"></textarea>
+
+      <button class="btn" onclick="consacraAltare()">🕯️ Consacra l'Altare</button>
+
+      <div id="altareResult" style="display:none" class="result-box">
+        <div class="result-title">✦ La Benedizione del Tuo Spazio</div>
+        <div id="altareText"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📿 Guida agli Elementi dell'Altare</div>
+      <div style="font-size:.9rem;color:var(--muted);line-height:1.9">
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">🕯️ Candele</span> — Luce, intenzione e trasformazione. Colori diversi per energie diverse.</div>
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">💎 Cristalli</span> — Amplificatori energetici. Ogni pietra porta la sua vibrazione unica.</div>
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌿 Erbe</span> — Connessione alla natura e alla terra. Brucia o disponi le erbe con intenzione.</div>
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌺 Fiori</span> — Bellezza, devozione e offerta alle forze spirituali.</div>
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌙 Simboli</span> — Pentacolo, luna, triskele, ankh — focus energetico e protezione.</div>
+        <div style="margin-bottom:8px"><span style="color:var(--gold)">🔥 Incenso</span> — Purificazione dell'aria e elevazione vibrazionale.</div>
+        <div><span style="color:var(--gold)">🌊 Acqua</span> — Purificazione emotiva e connessione all'inconscio.</div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- TOAST -->
+<div id="toast">✦ Salvato</div>
+
+<script>
+// ═══════════════════════════════════════
+// STELLE
+// ═══════════════════════════════════════
+(function(){
+  const c=document.getElementById('stars');
+  for(let i=0;i<90;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=Math.random()*2+.5;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*3}s;--min:${0.05+Math.random()*.1};--max:${0.5+Math.random()*.5}`;
+    c.appendChild(s);
+  }
+})();
+
+// ═══════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════
+function switchTab(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+// ═══════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// ═══════════════════════════════════════
+// ANTHROPIC API
+// ═══════════════════════════════════════
+async function callClaude(prompt, systemPrompt){
+  const body={
+    model:'claude-sonnet-4-6',
+    max_tokens:1000,
+    system: systemPrompt || 'Sei un guida spirituale mistico dell\'app MYSTICA. Rispondi sempre in italiano con tono poetico, evocativo e sapienziale. Non superare mai 200 parole per risposta. Non usare elenchi puntati a meno che non siano richiesti.',
+    messages:[{role:'user',content:prompt}]
+  };
+  const r=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  });
+  const d=await r.json();
+  return d.content?.map(c=>c.text||'').join('')||'';
+}
+
+// ═══════════════════════════════════════
+// DIARIO MISTICO
+// ═══════════════════════════════════════
+const DOMANDE=[
+  'Cosa sta cercando di trasformarsi in te in questo momento?',
+  'Qual è il sogno che il tuo cuore non ha ancora osato sussurrare?',
+  'Dove senti resistenza oggi, e cosa ti starebbe insegnando?',
+  'Se il tuo spirito guida ti parlasse stanotte, cosa ti direbbe?',
+  'Qual è la verità che conosci già ma non hai ancora accettato?',
+  'Cosa vorresti lasciare andare con la prossima luna calante?',
+  'In quale aspetto della tua vita senti il richiamo alla trasformazione?',
+  'Qual è il dono nascosto nella difficoltà che stai attraversando?',
+  'Come sta rispondendo il tuo corpo all\'energia di oggi?',
+  'Quale simbolo o immagine ritorna di frequente nei tuoi pensieri?',
+  'Cosa saresti se non avessi paura di essere ciò che sei davvero?',
+  'Dove hai bisogno di più gentilezza — verso te stesso?',
+];
+let domandaIndex=Math.floor(Math.random()*DOMANDE.length);
+
+function nuovaDomanda(){
+  domandaIndex=(domandaIndex+1)%DOMANDE.length;
+  document.getElementById('questioneGiorno').textContent='✦ '+DOMANDE[domandaIndex];
+}
+nuovaDomanda(); domandaIndex=Math.floor(Math.random()*DOMANDE.length); // random start
+document.getElementById('questioneGiorno').textContent='✦ '+DOMANDE[domandaIndex];
+
+let selectedMood='';
+function selMood(btn,mood){
+  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');selectedMood=mood;
+}
+
+async function guidaDiario(){
+  const refl=document.getElementById('dReflection').value.trim();
+  if(!refl){showToast('✦ Scrivi la tua riflessione prima');return;}
+  const box=document.getElementById('dGuidaBox');
+  const txt=document.getElementById('dGuidaText');
+  box.style.display='block';
+  txt.innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
+  try{
+    const risposta=await callClaude(
+      `L'utente ha scritto nel suo diario mistico: "${refl}"\nUmore: ${selectedMood||'non specificato'}\nOggi la domanda era: "${DOMANDE[domandaIndex]}"\nOffri una riflessione spirituale profonda e poetica che rispecchi i temi emersi, con un piccolo consiglio pratico per il cammino.`
+    );
+    txt.innerHTML=`<p style="font-style:italic">${risposta.replace(/\n/g,'<br>')}</p>`;
+  }catch(e){txt.innerHTML='<p style="color:var(--muted)">Connessione al piano superiore interrotta. Riprova.</p>';}
+}
+
+function salvaEntrata(){
+  const refl=document.getElementById('dReflection').value.trim();
+  if(!refl){showToast('✦ Scrivi qualcosa prima di salvare');return;}
+  const entries=JSON.parse(localStorage.getItem('mystica_diario')||'[]');
+  const entry={
+    id:Date.now(),
+    data:new Date().toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}),
+    mood:selectedMood,
+    domanda:DOMANDE[domandaIndex],
+    testo:refl,
+    simbolo:document.getElementById('dSymbol').value,
+    intenzione:document.getElementById('dIntention').value
+  };
+  entries.unshift(entry);
+  if(entries.length>50)entries.pop();
+  localStorage.setItem('mystica_diario',JSON.stringify(entries));
+  document.getElementById('dReflection').value='';
+  document.getElementById('dSymbol').value='';
+  document.getElementById('dIntention').value='';
+  document.getElementById('dGuidaBox').style.display='none';
+  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
+  selectedMood='';
+  renderEntries();
+  showToast('✦ Entrata salvata nell\'archivio dell\'anima');
+}
+
+function renderEntries(){
+  const entries=JSON.parse(localStorage.getItem('mystica_diario')||'[]');
+  const list=document.getElementById('entryList');
+  if(!entries.length){
+    list.innerHTML='<p style="color:var(--muted);font-size:.9rem;text-align:center;padding:10px 0">Nessuna entrata ancora. Scrivi il tuo primo pensiero ✦</p>';
+    return;
+  }
+  list.innerHTML=entries.map(e=>`
+    <div class="entry-item">
+      <div class="entry-date">${e.data} ${e.mood?'<span class="entry-mood">'+e.mood+'</span>':''}</div>
+      <div class="entry-preview">${e.testo}</div>
+    </div>
+  `).join('');
+}
+renderEntries();
+
+// ═══════════════════════════════════════
+// AFFERMAZIONI & DECRETI
+// ═══════════════════════════════════════
+let selectedArea='amore';
+let affermList=[];
+let affermIdx=0;
+let ritoTarget=0,ritoCount=0;
+
+function selArea(el,area){
+  document.querySelectorAll('.afferm-tag').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');selectedArea=area;
+}
+
+async function generaAffermazioni(){
+  const tone=document.getElementById('toneSelect').value;
+  const intenzione=document.getElementById('affermIntenzione').value.trim();
+  document.getElementById('affermResult').style.display='none';
+  showToast('✦ Generando le affermazioni…');
+  try{
+    const resp=await callClaude(
+      `Genera esattamente 7 affermazioni personalizzate per l'area: "${selectedArea}". Tono: ${tone}. ${intenzione?'Intenzione specifica: '+intenzione+'.':''} Scrivi ogni affermazione al presente, in prima persona. Separale con il carattere | (pipe). Nessuna numerazione, nessuna spiegazione. Solo le 7 affermazioni separate da |`,
+      'Sei un maestro delle affermazioni mistiche e del linguaggio del potere. Genera affermazioni brevi, potenti, in italiano, al presente, in prima persona. Rispondi SOLO con le affermazioni separate da | senza nient\'altro.'
+    );
+    affermList=resp.split('|').map(s=>s.trim()).filter(s=>s.length>5).slice(0,7);
+    if(affermList.length<3)throw new Error('poche affermazioni');
+    affermIdx=0;
+    mostraAfferm();
+    document.getElementById('affermResult').style.display='block';
+  }catch(e){
+    affermList=['Sono in perfetta armonia con il flusso della vita.','La mia luce interiore guida ogni mio passo.','Ricevo con gratitudine tutto ciò che mi appartiene.','Il mio cuore è aperto all\'amore in tutte le sue forme.','Sono protetto/a da forze invisibili e potenti.','Ogni giorno cresco e mi evolvo con grazia.','Manifesto con facilità ciò che serve alla mia anima.'];
+    affermIdx=0;mostraAfferm();
+    document.getElementById('affermResult').style.display='block';
+  }
+}
+
+function mostraAfferm(){
+  document.getElementById('affermDisplay').textContent='"'+affermList[affermIdx]+'"';
+  document.getElementById('affermCounter').textContent=`Affermazione ${affermIdx+1} di ${affermList.length}`;
+}
+function nextAfferm(){affermIdx=(affermIdx+1)%affermList.length;mostraAfferm();}
+function prevAfferm(){affermIdx=(affermIdx-1+affermList.length)%affermList.length;mostraAfferm();}
+function copyAfferm(){
+  if(!affermList.length)return;
+  navigator.clipboard?.writeText(affermList[affermIdx]).then(()=>showToast('✦ Copiata negli appunti'));
+}
+
+function startRito(n){
+  ritoTarget=n;ritoCount=0;
+  document.getElementById('ritoBox').style.display='block';
+  document.getElementById('ritoCount').textContent='0 / '+n;
+  document.getElementById('ritoStatus').textContent='Tocca per contare ogni ripetizione';
+}
+function tapRito(){
+  if(ritoCount>=ritoTarget)return;
+  ritoCount++;
+  document.getElementById('ritoCount').textContent=ritoCount+' / '+ritoTarget;
+  if(ritoCount>=ritoTarget){
+    document.getElementById('ritoStatus').textContent='✦ Decreto completato — Grazie, Universo ✦';
+    showToast('✦ Il decreto è stato pronunciato');
+  }
+}
+function resetRito(){ritoCount=0;document.getElementById('ritoCount').textContent='0 / '+ritoTarget;document.getElementById('ritoStatus').textContent='Tocca per contare ogni ripetizione';}
+
+// ═══════════════════════════════════════
+// SIGILLAZIONE
+// ═══════════════════════════════════════
+async function creaSignature(){
+  const intenzione=document.getElementById('sigIntenzione').value.trim();
+  if(!intenzione){showToast('✦ Scrivi la tua intenzione prima');return;}
+  const elemento=document.getElementById('sigElemento').value;
+  const luna=document.getElementById('sigLuna').value;
+  document.getElementById('sigilloResult').style.display='block';
+  document.getElementById('sigilloText').innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
+  disegnaSigillo(elemento);
+  try{
+    const txt=await callClaude(
+      `Crea un breve decreto di sigillazione (max 80 parole) per questa intenzione: "${intenzione}". Elemento: ${elemento}. Fase lunare: ${luna}. Il decreto deve essere potente, rituale, in prima persona, presente, poetico. Inizia con "Io sigillo" o "Con il potere di".`
+    );
+    document.getElementById('sigilloText').innerHTML=`<p style="font-style:italic;line-height:1.9">${txt}</p>`;
+  }catch(e){
+    document.getElementById('sigilloText').innerHTML=`<p style="font-style:italic;line-height:1.9">Io sigillo questa intenzione nel cuore dell'universo. Con la forza del ${elemento} e la grazia della ${luna}, affido al cosmo questa semenza sacra. Che sia fatto, che sia scritto, che sia manifesto.</p>`;
+  }
+}
+
+const ELEMENT_COLORS={fuoco:['#f07070','#ff4500','#d4af37'],acqua:['#7eb8f7','#4169e1','#5ecec4'],terra:['#6fcf97','#228b22','#d4af37'],aria:['#c8a0f0','#e0d0ff','#7eb8f7'],etere:['#b88fe0','#d4af37','#5ecec4']};
+
+function disegnaSigillo(elemento){
+  const canvas=document.getElementById('sigilloCanvas');
+  const ctx=canvas.getContext('2d');
+  const W=240,H=240,cx=120,cy=120,R=90;
+  ctx.clearRect(0,0,W,H);
+  const cols=ELEMENT_COLORS[elemento]||ELEMENT_COLORS.etere;
+  // sfondo radiale
+  const bg=ctx.createRadialGradient(cx,cy,10,cx,cy,R+20);
+  bg.addColorStop(0,'rgba(42,23,72,0.6)');bg.addColorStop(1,'rgba(6,2,18,0.9)');
+  ctx.fillStyle=bg;ctx.beginPath();ctx.arc(cx,cy,R+20,0,Math.PI*2);ctx.fill();
+  // cerchio esterno
+  ctx.strokeStyle=cols[0]+'80';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.stroke();
+  ctx.beginPath();ctx.arc(cx,cy,R-6,0,Math.PI*2);ctx.stroke();
+  // punti sul cerchio
+  const nPoints=7+Math.floor(Math.random()*3);
+  const points=[];
+  for(let i=0;i<nPoints;i++){
+    const a=(i/nPoints)*Math.PI*2-Math.PI/2;
+    points.push({x:cx+R*Math.cos(a),y:cy+R*Math.sin(a)});
+  }
+  // linee intrecciate
+  const grd=ctx.createLinearGradient(cx-R,cy-R,cx+R,cy+R);
+  grd.addColorStop(0,cols[0]);grd.addColorStop(0.5,cols[1]);grd.addColorStop(1,cols[2]);
+  ctx.strokeStyle=grd;ctx.lineWidth=1.2;ctx.globalAlpha=0.7;
+  for(let i=0;i<nPoints;i++){
+    for(let j=i+2;j<nPoints;j+=2){
+      ctx.beginPath();ctx.moveTo(points[i].x,points[i].y);ctx.lineTo(points[j].x,points[j].y);ctx.stroke();
+    }
+  }
+  ctx.globalAlpha=1;
+  // glifi sui punti
+  const simboli=['☽','☿','♀','♂','♃','♄','⊕','✦','✧','⊗'];
+  ctx.font='10px serif';ctx.fillStyle=cols[0];ctx.textAlign='center';ctx.textBaseline='middle';
+  points.forEach((p,i)=>{ctx.fillText(simboli[i%simboli.length],p.x,p.y);});
+  // simbolo centrale
+  ctx.font='bold 28px serif';
+  const centroSimboli={fuoco:'🔥',acqua:'💧',terra:'🌿',aria:'💨',etere:'🌌'};
+  ctx.fillText(centroSimboli[elemento]||'✦',cx,cy);
+}
+
+function downloadSigillo(){
+  const canvas=document.getElementById('sigilloCanvas');
+  const a=document.createElement('a');
+  a.download='sigillo-mystica.png';a.href=canvas.toDataURL('image/png');a.click();
+  showToast('✦ Sigillo salvato');
+}
+
+// ═══════════════════════════════════════
+// ALTARE VIRTUALE
+// ═══════════════════════════════════════
+const ALTARE_SLOTS=[
+  {id:'candela',label:'Candela',emoji:'🕯️',opzioni:['🕯️ Bianca','🕯️🔴 Rossa','🕯️🟣 Viola','🕯️🟡 Oro','🕯️🟢 Verde','🕯️🔵 Blu']},
+  {id:'cristallo',label:'Cristallo',emoji:'💎',opzioni:['💎 Quarzo','🟣 Ametista','🌹 Quarzo Rosa','⚫ Ossidiana','🟤 Occhio di Tigre','🔵 Lapislazzuli']},
+  {id:'erba',label:'Erba',emoji:'🌿',opzioni:['🌿 Salvia','🌹 Rosa','🌸 Lavanda','🌱 Rosmarino','🍀 Trifoglio','🌾 Artemisia']},
+  {id:'elemento',label:'Elemento',emoji:'🌊',opzioni:['🌊 Acqua','🔥 Fuoco','🌿 Terra','💨 Aria','🌌 Etere']},
+  {id:'simbolo',label:'Simbolo',emoji:'⭐',opzioni:['⭐ Pentacolo','🌙 Luna','☀️ Sole','✡️ Stella di Davide','☯️ Yin Yang','🔯 Sigillo']},
+  {id:'offerta',label:'Offerta',emoji:'🌺',opzioni:['🌺 Fiori','🍎 Frutta','🌾 Grano','🧂 Sale','🍯 Miele','🌰 Ghianda']},
+  {id:'incenso',label:'Incenso',emoji:'🔥',opzioni:['🌫️ Mirra','🌫️ Sandalo','🌫️ Francoincenso','🌫️ Palo Santo','🌫️ Nag Champa']},
+  {id:'sacro',label:'Sacro',emoji:'📿',opzioni:['📿 Rosario','🏺 Calice','🗡️ Athame','🪄 Bacchetta','🔔 Campanella']},
+];
+const altareSelections={};
+
+function buildAltare(){
+  const grid=document.getElementById('altareGrid');
+  grid.innerHTML=ALTARE_SLOTS.map(slot=>`
+    <div class="altare-slot" id="slot-${slot.id}" onclick="openSlotMenu('${slot.id}')">
+      <span style="font-size:26px">${altareSelections[slot.id]?.emoji||slot.emoji}</span>
+      <span class="altare-slot-label">${altareSelections[slot.id]?.label||slot.label}</span>
+    </div>
+  `).join('');
+}
+buildAltare();
+
+let activeSlot=null;
+function openSlotMenu(id){
+  activeSlot=id;
+  const slot=ALTARE_SLOTS.find(s=>s.id===id);
+  if(!slot)return;
+  const old=document.getElementById('slotMenuOverlay');if(old)old.remove();
+  const overlay=document.createElement('div');
+  overlay.id='slotMenuOverlay';
+  overlay.style.cssText='position:fixed;inset:0;z-index:200;background:rgba(6,2,18,0.85);display:flex;align-items:flex-end;justify-content:center;padding:20px';
+  overlay.innerHTML=`
+    <div style="background:linear-gradient(145deg,#100820,#08040f);border:1px solid rgba(212,175,55,0.3);border-radius:20px;padding:20px;width:100%;max-width:400px">
+      <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px;letter-spacing:.06em;margin-bottom:14px;text-align:center">Scegli ${slot.label}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        ${slot.opzioni.map((o,i)=>`<button onclick="selezionaSlot('${id}','${o}')" style="background:rgba(42,23,72,0.3);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px;color:#e8dfc8;font-size:.9rem;cursor:pointer;text-align:left;transition:all .2s" onmouseover="this.style.borderColor='rgba(212,175,55,0.4)'" onmouseout="this.style.borderColor='rgba(42,23,72,0.7)'">${o}</button>`).join('')}
+        <button onclick="this.closest('#slotMenuOverlay').remove()" style="background:none;border:1px solid rgba(42,23,72,0.5);border-radius:10px;padding:10px;color:#7a6a90;font-size:.85rem;cursor:pointer;grid-column:span 2">✕ Annulla</button>
+      </div>
+    </div>`;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove();});
+  document.body.appendChild(overlay);
+}
+
+function selezionaSlot(id,opzione){
+  const parts=opzione.split(' ');
+  altareSelections[id]={label:parts.slice(1).join(' ')||opzione,emoji:parts[0]};
+  document.getElementById('slotMenuOverlay')?.remove();
+  const slotEl=document.getElementById('slot-'+id);
+  if(slotEl){
+    slotEl.classList.add('filled');
+    slotEl.innerHTML=`<span style="font-size:26px">${parts[0]}</span><span class="altare-slot-label">${parts.slice(1).join(' ')||opzione}</span>`;
+  }
+  showToast('✦ '+opzione+' aggiunto all\'altare');
+}
+
+async function consacraAltare(){
+  const intenzione=document.getElementById('altareIntenzione').value.trim();
+  const mantra=document.getElementById('altareMantra').value.trim();
+  const elementi=Object.values(altareSelections).map(s=>s.label).join(', ');
+  const resultBox=document.getElementById('altareResult');
+  const resultText=document.getElementById('altareText');
+  resultBox.style.display='block';
+  resultText.innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
+  try{
+    const txt=await callClaude(
+      `L'utente ha allestito un altare virtuale con questi elementi: ${elementi||'non specificati'}. Intenzione: ${intenzione||'non specificata'}. Mantra/preghiera: ${mantra||'nessuno'}. Scrivi una breve benedizione rituale (max 80 parole) per consacrare questo spazio sacro, poetica e potente.`
+    );
+    resultText.innerHTML=`<p style="font-style:italic;line-height:1.9">${txt}</p>`;
+    showToast('✦ Altare consacrato');
+  }catch(e){
+    resultText.innerHTML=`<p style="font-style:italic;line-height:1.9">Questo spazio è ora sacro. Con gli elementi scelti, costruisco un ponte tra il visibile e l'invisibile. Ogni oggetto porta la sua luce, ogni simbolo la sua forza. Che questo altare sia un faro nella mia pratica quotidiana. Così è, così sia.</p>`;
+  }
+}
+</script>
+
+</body>
+</html>
