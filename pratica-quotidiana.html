@@ -2,10 +2,7 @@
   ╔══════════════════════════════════════════════════════════════╗
   ║         MYSTICA ORACOLI — mysticaoracoli.it                  ║
   ║  © 2025-2026 Mago Petro / PetroCorporation                   ║
-  ║  Tutti i diritti riservati. All rights reserved.             ║
-  ║  Vietata la riproduzione, copia o distribuzione              ║
-  ║  anche parziale senza autorizzazione scritta.                ║
-  ║  Sviluppato da: Dott. Petrolese Giovanni                     ║
+  ║  Tutti i diritti riservati.                                  ║
   ╚══════════════════════════════════════════════════════════════╝
 -->
 <!DOCTYPE html>
@@ -16,425 +13,267 @@
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Pratica Quotidiana Esoterica – Diario Mistico, Affermazioni, Altare Virtuale | MYSTICA</title>
-<meta name="description" content="Strumenti di pratica quotidiana esoterica: Diario Mistico, Affermazioni & Decreti personalizzati, Sigillazione dell'Intenzione e Altare Virtuale guidato. Coltiva la tua spiritualità ogni giorno con MYSTICA.">
-<meta name="keywords" content="diario mistico, journaling esoterico, affermazioni spirituali, decreti magici, sigillazione intenzione, altare virtuale, pratica quotidiana esoterica, manifestazione, rituale quotidiano, spiritualità pratica">
-<meta name="author" content="MYSTICA — Oracolo delle Stelle">
+<title>Pratica Quotidiana Esoterica | MYSTICA</title>
+<meta name="description" content="Diario Mistico, Affermazioni e Decreti, Sigillazione dell'Intenzione e Altare Virtuale. Gratis, senza registrazione.">
 <link rel="canonical" href="https://mysticaoracoli.it/pratica-quotidiana.html">
 <link rel="icon" type="image/png" href="./icon-192.png">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <meta name="theme-color" content="#d4af37">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --gold: #d4af37;
-  --gold-dim: rgba(212,175,55,0.45);
-  --gold-glow: rgba(212,175,55,0.18);
-  --bg: #060212;
-  --bg2: #0c0422;
-  --card-bg: linear-gradient(145deg,#100820,#08040f);
-  --border: rgba(42,23,72,0.7);
-  --text: #e8dfc8;
-  --muted: #7a6a90;
-  --purple: #b88fe0;
-  --teal: #5ecec4;
-  --green: #6fcf97;
-  --blue: #7eb8f7;
-  --pink: #f07ac0;
-  --orange: #f0a060;
-  --red: #f07070;
+:root{
+  --gold:#d4af37;--gold-dim:rgba(212,175,55,0.45);--gold-glow:rgba(212,175,55,0.15);
+  --bg:#060212;--card-bg:linear-gradient(145deg,#100820,#08040f);
+  --border:rgba(42,23,72,0.7);--text:#e8dfc8;--muted:#7a6a90;
+  --purple:#b88fe0;--teal:#5ecec4;--green:#6fcf97;--blue:#7eb8f7;--orange:#f0a060;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Crimson Pro',Georgia,serif;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-/* ═══ SFONDO COSMICO ═══ */
-.cosmos{
-  position:fixed;inset:0;
-  background:radial-gradient(ellipse at 20% 20%,rgba(42,23,72,0.6) 0%,transparent 60%),
-             radial-gradient(ellipse at 80% 80%,rgba(10,4,30,0.8) 0%,transparent 60%),
-             radial-gradient(ellipse at 50% 50%,rgba(6,2,18,1) 0%,transparent 100%);
-  z-index:0;pointer-events:none;
-}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;overflow-x:hidden}
+.cosmos{position:fixed;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(42,23,72,0.55) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(10,4,30,0.7) 0%,transparent 60%);z-index:0;pointer-events:none}
 .stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite var(--delay,0s)}
 @keyframes twinkle{0%,100%{opacity:var(--min,0.1)}50%{opacity:var(--max,0.8)}}
-
-/* ═══ HEADER ═══ */
-.header{
-  position:sticky;top:0;z-index:100;
-  background:linear-gradient(180deg,rgba(6,2,18,0.98) 70%,transparent);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(212,175,55,0.12);
-  padding:14px 20px 12px;
-  display:flex;align-items:center;gap:14px;
-}
-.back-btn{
-  background:none;border:1px solid var(--border);border-radius:10px;
-  color:var(--muted);padding:8px 12px;cursor:pointer;
-  font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;
-  transition:all .2s;white-space:nowrap;
-}
+.header{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,rgba(6,2,18,0.98) 70%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,55,0.12);padding:14px 20px 12px;display:flex;align-items:center;gap:14px}
+.back-btn{background:none;border:1px solid var(--border);border-radius:10px;color:var(--muted);padding:8px 12px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;transition:all .2s;white-space:nowrap}
 .back-btn:hover{border-color:var(--gold-dim);color:var(--gold)}
-.header-title{
-  font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
-  letter-spacing:.08em;font-weight:700;flex:1;text-align:center;
-}
-.header-icon{font-size:20px;filter:drop-shadow(0 0 8px var(--gold-glow))}
-
-/* ═══ HERO ═══ */
-.hero{
-  position:relative;z-index:1;
-  text-align:center;
-  padding:40px 20px 28px;
-}
-.hero-glyph{
-  font-size:52px;
-  filter:drop-shadow(0 0 20px rgba(212,175,55,0.5));
-  margin-bottom:14px;
-  animation:breathe 4s ease-in-out infinite;
-}
-@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-.hero-title{
-  font-family:'Cinzel',serif;
-  font-size:clamp(1.5rem,5vw,2.2rem);
-  color:var(--gold);letter-spacing:.06em;
-  text-shadow:0 0 30px rgba(212,175,55,0.3);
-  margin-bottom:10px;
-}
-.hero-sub{
-  font-size:1rem;color:var(--muted);line-height:1.7;
-  max-width:500px;margin:0 auto;font-style:italic;
-}
-.hero-divider{
-  width:80px;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
-  margin:18px auto 0;
-}
-
-/* ═══ LAYOUT ═══ */
-.main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 16px 60px}
-
-/* ═══ TOOL TABS ═══ */
-.tab-nav{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:8px;
-  margin-bottom:24px;
-}
-@media(min-width:600px){.tab-nav{grid-template-columns:repeat(4,1fr)}}
-.tab-btn{
-  background:linear-gradient(145deg,rgba(16,8,32,0.8),rgba(8,4,15,0.9));
-  border:1.5px solid var(--border);border-radius:14px;
-  padding:14px 8px;cursor:pointer;text-align:center;
-  transition:all .25s cubic-bezier(.34,1.56,.64,1);
-  touch-action:manipulation;
-}
-.tab-btn:hover,.tab-btn.active{
-  border-color:var(--gold);
-  background:linear-gradient(135deg,#2a1748,#160d30);
-  box-shadow:0 0 18px var(--gold-glow);
-}
-.tab-ico{font-size:24px;display:block;margin-bottom:6px;filter:drop-shadow(0 0 6px rgba(212,175,55,0.3))}
-.tab-name{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.05em;display:block;line-height:1.3}
-
-/* ═══ PANEL ═══ */
-.panel{display:none;animation:fadeIn .35s ease}
+.header-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:.08em;font-weight:700;flex:1;text-align:center}
+.hero{position:relative;z-index:1;text-align:center;padding:36px 20px 24px}
+.hero-glyph{font-size:52px;filter:drop-shadow(0 0 22px rgba(212,175,55,0.5));margin-bottom:12px;animation:breathe 4s ease-in-out infinite;display:block}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,5vw,2.1rem);color:var(--gold);letter-spacing:.06em;text-shadow:0 0 30px rgba(212,175,55,0.3);margin-bottom:8px}
+.hero-sub{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:500px;margin:0 auto;font-style:italic}
+.hero-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:16px auto 0}
+.main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 16px 70px}
+.tab-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:22px}
+@media(min-width:560px){.tab-nav{grid-template-columns:repeat(4,1fr)}}
+.tab-btn{background:linear-gradient(145deg,rgba(16,8,32,0.85),rgba(8,4,15,0.9));border:1.5px solid var(--border);border-radius:14px;padding:13px 6px;cursor:pointer;text-align:center;transition:all .25s;touch-action:manipulation}
+.tab-btn:hover,.tab-btn.active{border-color:var(--gold);background:linear-gradient(135deg,#2a1748,#160d30);box-shadow:0 0 18px var(--gold-glow)}
+.tab-ico{font-size:22px;display:block;margin-bottom:5px}
+.tab-name{font-family:'Cinzel',serif;font-size:9.5px;color:var(--gold);letter-spacing:.05em;display:block;line-height:1.3}
+.panel{display:none;animation:fadeIn .3s ease}
 .panel.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* ═══ CARD ═══ */
-.card{
-  background:var(--card-bg);
-  border:1px solid var(--border);
-  border-radius:20px;padding:22px 18px;
-  position:relative;overflow:hidden;
-  margin-bottom:14px;
-}
-.card::before{
-  content:'';position:absolute;top:0;left:15%;right:15%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold-glow),transparent);
-}
-.card-title{
-  font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
-  letter-spacing:.06em;margin-bottom:6px;
-}
-.card-desc{font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
-
-/* ═══ INPUTS ═══ */
-textarea,input[type=text],select{
-  width:100%;background:rgba(6,2,18,0.6);
-  border:1px solid var(--border);border-radius:12px;
-  color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;
-  padding:12px 14px;resize:vertical;
-  transition:border-color .2s;outline:none;
-}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:22px 18px;position:relative;overflow:hidden;margin-bottom:14px}
+.card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-glow),transparent)}
+.card-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--gold);letter-spacing:.06em;margin-bottom:6px}
+.card-desc{font-size:.93rem;color:var(--muted);line-height:1.72;margin-bottom:14px}
+textarea,input[type=text],select{width:100%;background:rgba(6,2,18,0.65);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;padding:12px 14px;resize:vertical;transition:border-color .2s;outline:none;-webkit-appearance:none}
 textarea:focus,input:focus,select:focus{border-color:var(--gold-dim)}
-textarea{min-height:120px}
-label{
-  font-family:'Cinzel',serif;font-size:11px;color:var(--muted);
-  letter-spacing:.06em;display:block;margin-bottom:6px;margin-top:14px;
-}
+textarea{min-height:100px}
+label{font-family:'Cinzel',serif;font-size:10.5px;color:var(--muted);letter-spacing:.06em;display:block;margin-bottom:6px;margin-top:14px}
 label:first-child{margin-top:0}
-
-/* ═══ BOTTONI ═══ */
-.btn{
-  display:block;width:100%;padding:14px;
-  background:linear-gradient(135deg,#2a1748,#160d30);
-  border:1.5px solid var(--gold);border-radius:14px;
-  color:var(--gold);font-family:'Cinzel',serif;font-size:13px;
-  letter-spacing:.08em;cursor:pointer;
-  transition:all .25s;margin-top:14px;text-align:center;
-}
-.btn:hover{background:linear-gradient(135deg,#3a2058,#200f40);box-shadow:0 0 18px var(--gold-glow)}
-.btn-sec{
-  background:rgba(42,23,72,0.2);border-color:var(--border);color:var(--muted);
-}
-.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,0.4)}
-
-/* ═══ RISULTATO ═══ */
-.result-box{
-  background:linear-gradient(145deg,rgba(10,4,24,0.9),rgba(6,2,12,0.95));
-  border:1px solid var(--gold-dim);border-radius:16px;
-  padding:18px;margin-top:16px;
-  border-left:3px solid var(--gold);
-  animation:fadeIn .4s ease;
-}
-.result-box p{font-size:1rem;line-height:1.85;color:var(--text)}
-.result-title{
-  font-family:'Cinzel',serif;font-size:10px;color:var(--gold);
-  letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;
-}
-
-/* ═══ DIARIO ENTRIES ═══ */
-.entry-list{margin-top:16px}
-.entry-item{
-  background:rgba(10,4,24,0.6);border:1px solid var(--border);
-  border-radius:12px;padding:14px;margin-bottom:10px;
-  cursor:pointer;transition:border-color .2s;
-}
+.btn{display:block;width:100%;padding:13px;background:linear-gradient(135deg,#2a1748,#160d30);border:1.5px solid var(--gold);border-radius:14px;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.08em;cursor:pointer;transition:all .25s;margin-top:12px;text-align:center}
+.btn:hover{background:linear-gradient(135deg,#3a2058,#200f40);box-shadow:0 0 16px var(--gold-glow)}
+.btn-sec{background:rgba(42,23,72,0.18);border-color:var(--border);color:var(--muted)}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,0.35)}
+.result-box{background:linear-gradient(145deg,rgba(10,4,24,0.92),rgba(6,2,12,0.97));border:1px solid var(--gold-dim);border-left:3px solid var(--gold);border-radius:16px;padding:18px;margin-top:14px;animation:fadeIn .4s ease}
+.result-box p{font-size:1rem;line-height:1.9;color:var(--text)}
+.result-title{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.mood-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.mood-btn{background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:10px;padding:8px 9px;cursor:pointer;font-size:19px;transition:all .2s;touch-action:manipulation}
+.mood-btn:hover,.mood-btn.active{border-color:var(--gold);box-shadow:0 0 10px var(--gold-glow);background:rgba(42,23,72,0.35)}
+.entry-list{margin-top:12px;max-height:360px;overflow-y:auto}
+.entry-list::-webkit-scrollbar{width:4px}
+.entry-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.entry-item{background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:9px;cursor:pointer;transition:border-color .2s}
 .entry-item:hover{border-color:var(--gold-dim)}
-.entry-date{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:5px}
-.entry-preview{font-size:.9rem;color:var(--muted);line-height:1.5;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.entry-mood{font-size:16px;float:right}
-
-/* ═══ SIGILLO ═══ */
-.sigillo-canvas-wrap{
-  text-align:center;margin:16px 0;
-  position:relative;
-}
-#sigilloCanvas{
-  border-radius:50%;border:2px solid var(--gold-dim);
-  box-shadow:0 0 30px var(--gold-glow);
-  max-width:240px;width:100%;aspect-ratio:1;
-  background:radial-gradient(circle,#100820,#060212);
-}
-.sigillo-pulse{animation:sigPulse 3s ease-in-out infinite}
-@keyframes sigPulse{0%,100%{box-shadow:0 0 20px var(--gold-glow)}50%{box-shadow:0 0 40px rgba(212,175,55,0.35)}}
-
-/* ═══ ALTARE ═══ */
-.altare-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;
-}
-.altare-slot{
-  aspect-ratio:1;border-radius:14px;
-  background:rgba(10,4,24,0.7);border:1.5px dashed var(--border);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  cursor:pointer;transition:all .25s;
-  font-size:28px;position:relative;overflow:hidden;
-}
-.altare-slot.filled{border-style:solid;border-color:var(--gold-dim);background:rgba(42,23,72,0.3)}
-.altare-slot:hover{border-color:var(--gold-dim);background:rgba(42,23,72,0.2)}
-.altare-slot-label{font-family:'Cinzel',serif;font-size:8px;color:var(--muted);letter-spacing:.05em;text-align:center;padding:0 4px}
-.altare-slot.filled .altare-slot-label{color:var(--gold)}
-.altare-info{
-  font-family:'Cinzel',serif;font-size:10px;color:var(--gold);
-  letter-spacing:1.5px;text-align:center;margin-bottom:10px;text-transform:uppercase;
-}
-
-/* ═══ AFFERMAZIONI ═══ */
-.afferm-tag{
-  display:inline-block;background:rgba(212,175,55,0.08);
-  border:1px solid rgba(212,175,55,0.2);border-radius:20px;
-  padding:4px 10px;font-size:.8rem;color:var(--gold);
-  font-family:'Cinzel',serif;letter-spacing:.03em;cursor:pointer;margin:3px;
-  transition:all .2s;
-}
+.entry-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.entry-date{font-family:'Cinzel',serif;font-size:9.5px;color:var(--gold);letter-spacing:1px}
+.entry-preview{font-size:.88rem;color:var(--muted);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.entry-tags{margin-top:6px;display:flex;gap:5px;flex-wrap:wrap}
+.entry-tag{font-family:'Cinzel',serif;font-size:8px;color:var(--purple);border:1px solid rgba(184,143,224,0.25);border-radius:8px;padding:2px 7px}
+.domanda-box{font-style:italic;color:var(--text);font-size:1rem;padding:14px 16px;border:1px solid var(--border);border-radius:12px;line-height:1.7;background:rgba(42,23,72,0.12);cursor:pointer;transition:all .25s;position:relative}
+.domanda-box:hover{border-color:var(--gold-dim);background:rgba(42,23,72,0.22)}
+.domanda-hint{font-family:'Cinzel',serif;font-size:8px;color:var(--muted);letter-spacing:1px;position:absolute;bottom:7px;right:10px}
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat-box{background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
+.stat-num{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);display:block}
+.stat-lbl{font-family:'Cinzel',serif;font-size:8px;color:var(--muted);letter-spacing:.05em;display:block;margin-top:3px}
+.streak-bar{display:flex;gap:4px;justify-content:center;margin:10px 0;flex-wrap:wrap}
+.streak-day{width:28px;height:28px;border-radius:6px;background:rgba(10,4,24,0.6);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'Cinzel',serif;color:var(--muted)}
+.streak-day.done{background:rgba(42,23,72,0.5);border-color:var(--gold-dim);color:var(--gold)}
+.streak-day.today{border-color:var(--gold);box-shadow:0 0 8px var(--gold-glow)}
+.afferm-tag{display:inline-block;background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.18);border-radius:20px;padding:5px 11px;font-size:.78rem;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.03em;cursor:pointer;margin:3px;transition:all .2s;touch-action:manipulation}
 .afferm-tag:hover,.afferm-tag.active{background:rgba(212,175,55,0.2);border-color:var(--gold)}
-.afferm-display{
-  font-family:'Crimson Pro',serif;font-size:1.3rem;font-style:italic;
-  color:var(--text);line-height:1.8;text-align:center;
-  padding:24px 16px;
-  background:linear-gradient(135deg,rgba(42,23,72,0.2),rgba(10,4,24,0.4));
-  border-radius:14px;border:1px solid var(--border);
-  margin:14px 0;min-height:100px;
-  display:flex;align-items:center;justify-content:center;
-}
-.afferm-number{
-  font-family:'Cinzel',serif;font-size:10px;color:var(--muted);
-  text-align:center;letter-spacing:1px;margin-bottom:4px;
-}
-
-/* ═══ LOADING ═══ */
-.loading-dot{
-  display:inline-block;width:6px;height:6px;border-radius:50%;
-  background:var(--gold);animation:ldot 1.4s ease-in-out infinite;margin:0 2px;
-}
-.loading-dot:nth-child(2){animation-delay:.2s}
-.loading-dot:nth-child(3){animation-delay:.4s}
-@keyframes ldot{0%,80%,100%{transform:scale(0.4);opacity:0.3}40%{transform:scale(1);opacity:1}}
-
-/* ═══ MOOD SELECTOR ═══ */
-.mood-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.mood-btn{
-  background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:10px;
-  padding:8px 10px;cursor:pointer;font-size:20px;transition:all .2s;
-}
-.mood-btn:hover,.mood-btn.active{border-color:var(--gold);box-shadow:0 0 10px var(--gold-glow)}
-
-/* ═══ TOAST ═══ */
-#toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);
-  background:linear-gradient(135deg,#2a1748,#160d30);
-  border:1px solid var(--gold-dim);border-radius:12px;
-  padding:12px 20px;font-family:'Cinzel',serif;font-size:12px;color:var(--gold);
-  letter-spacing:.05em;z-index:999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);
-  white-space:nowrap;pointer-events:none;
-}
+.afferm-display{font-family:'Crimson Pro',serif;font-size:1.25rem;font-style:italic;color:var(--text);line-height:1.85;text-align:center;padding:22px 16px;background:linear-gradient(135deg,rgba(42,23,72,0.18),rgba(10,4,24,0.35));border-radius:14px;border:1px solid var(--border);margin:12px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+.afferm-counter{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);text-align:center;letter-spacing:1px;margin-bottom:4px}
+.afferm-dots{display:flex;justify-content:center;gap:5px;margin-top:8px}
+.afferm-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .2s;cursor:pointer}
+.afferm-dot.active{background:var(--gold);box-shadow:0 0 6px var(--gold-glow)}
+.rito-set-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+.rito-set-btn{background:rgba(42,23,72,0.2);border:1px solid var(--border);border-radius:10px;padding:8px 4px;cursor:pointer;text-align:center;font-family:'Cinzel',serif;font-size:11px;color:var(--muted);transition:all .2s;touch-action:manipulation}
+.rito-set-btn:hover,.rito-set-btn.active{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,0.4)}
+.rito-set-num{font-size:18px;display:block;color:var(--gold)}
+.rito-set-lbl{font-size:8px;letter-spacing:.05em;display:block;margin-top:2px}
+.rito-wrap{text-align:center;padding:10px 0}
+.rito-number{font-family:'Cinzel',serif;font-size:52px;color:var(--gold);text-shadow:0 0 20px var(--gold-glow);line-height:1;margin-bottom:6px}
+.rito-sub{font-size:.88rem;color:var(--muted);letter-spacing:.03em}
+.rito-tap{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#2a1748,#160d30);border:2px solid var(--gold);margin:16px auto;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;box-shadow:0 0 20px var(--gold-glow);font-size:28px;touch-action:manipulation}
+.rito-tap:active{transform:scale(.93);box-shadow:0 0 35px rgba(212,175,55,0.35)}
+.rito-progress{height:5px;background:rgba(42,23,72,0.4);border-radius:5px;overflow:hidden;margin:12px 0}
+.rito-progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--gold));border-radius:5px;transition:width .3s ease}
+.sigillo-canvas-wrap{text-align:center;margin:14px 0}
+#sigilloCanvas{border-radius:50%;border:2px solid var(--gold-dim);box-shadow:0 0 30px var(--gold-glow),0 0 60px rgba(212,175,55,0.07);max-width:260px;width:100%;aspect-ratio:1;background:radial-gradient(circle,#120a22,#060212)}
+.sigillo-pulse{animation:sigPulse 3s ease-in-out infinite}
+@keyframes sigPulse{0%,100%{box-shadow:0 0 20px var(--gold-glow)}50%{box-shadow:0 0 45px rgba(212,175,55,0.3)}}
+.sigillo-steps{display:flex;flex-direction:column;gap:10px}
+.sigillo-step{display:flex;gap:12px;align-items:flex-start;padding:11px 13px;background:rgba(10,4,24,0.5);border:1px solid var(--border);border-radius:12px;font-size:.9rem;color:var(--muted);line-height:1.65}
+.sigillo-step-num{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);min-width:20px;margin-top:2px}
+.altare-scene{position:relative;width:100%;max-width:380px;margin:0 auto 16px;aspect-ratio:4/3;background:radial-gradient(ellipse at 50% 90%,rgba(42,23,72,0.55),rgba(6,2,18,0.9));border-radius:20px;border:1px solid var(--border);overflow:hidden}
+.altare-shelf{position:absolute;bottom:0;left:0;right:0;height:18%;background:linear-gradient(180deg,rgba(42,23,72,0.25),rgba(20,8,40,0.7));border-top:2px solid rgba(212,175,55,0.2)}
+.altare-cloth{position:absolute;bottom:16%;left:5%;right:5%;height:4%;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.2),transparent);border-radius:2px}
+.altare-item{position:absolute;font-size:clamp(22px,5vw,32px);cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);user-select:none;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));touch-action:manipulation}
+.altare-item:hover{transform:scale(1.18) translateY(-3px) !important}
+.altare-item.pulsing{animation:itemPulse 2.5s ease-in-out infinite}
+@keyframes itemPulse{0%,100%{filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5))}50%{filter:drop-shadow(0 0 14px rgba(212,175,55,0.5))}}
+.altare-slot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.altare-slot{aspect-ratio:1;border-radius:13px;background:rgba(10,4,24,0.7);border:1.5px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:all .22s;font-size:26px;touch-action:manipulation}
+.altare-slot.filled{border-style:solid;border-color:var(--gold-dim);background:rgba(42,23,72,0.28)}
+.altare-slot:hover{border-color:var(--gold-dim);background:rgba(42,23,72,0.2)}
+.altare-slot-label{font-family:'Cinzel',serif;font-size:7.5px;color:var(--muted);letter-spacing:.04em;text-align:center;padding:0 3px}
+.altare-slot.filled .altare-slot-label{color:var(--gold)}
+.altare-aura{width:70px;height:70px;border-radius:50%;position:absolute;top:10%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(212,175,55,0.12),transparent 70%);animation:auraBreath 3s ease-in-out infinite;pointer-events:none}
+@keyframes auraBreath{0%,100%{transform:translateX(-50%) scale(1);opacity:.6}50%{transform:translateX(-50%) scale(1.3);opacity:1}}
+.breath-type-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px}
+.breath-type-btn{background:rgba(10,4,24,0.6);border:1px solid var(--border);border-radius:10px;padding:9px 6px;cursor:pointer;text-align:center;transition:all .2s;touch-action:manipulation}
+.breath-type-btn:hover,.breath-type-btn.active{border-color:var(--gold-dim);background:rgba(42,23,72,0.3)}
+.breath-type-ico{font-size:18px;display:block;margin-bottom:4px}
+.breath-type-name{font-family:'Cinzel',serif;font-size:8px;color:var(--gold);letter-spacing:.04em;display:block}
+.breath-type-desc{font-size:7.5px;color:var(--muted);display:block;margin-top:2px}
+.breath-circle-wrap{display:flex;justify-content:center;margin:16px 0}
+.breath-circle{width:150px;height:150px;border-radius:50%;border:2px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;touch-action:manipulation;transition:transform .5s ease;box-shadow:0 0 20px var(--gold-glow)}
+.breath-ring{position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(212,175,55,0.2)}
+.breath-ring2{position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(212,175,55,0.08)}
+.breath-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.08em;text-align:center;pointer-events:none;white-space:pre-line;line-height:1.4}
+.breath-phase{font-size:9px;color:var(--muted);display:block;margin-top:5px}
+.breath-active .breath-ring{animation:breathRing 3s ease-in-out infinite}
+.breath-active .breath-ring2{animation:breathRing2 3s ease-in-out infinite}
+@keyframes breathRing{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.18);opacity:.9}}
+@keyframes breathRing2{0%,100%{transform:scale(1);opacity:.2}50%{transform:scale(1.28);opacity:.6}}
+.breath-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.overlay{position:fixed;inset:0;z-index:200;background:rgba(6,2,18,0.88);display:flex;align-items:flex-end;justify-content:center;padding:16px}
+.overlay-inner{background:linear-gradient(145deg,#100820,#08040f);border:1px solid rgba(212,175,55,0.28);border-radius:20px;padding:20px;width:100%;max-width:420px;max-height:82vh;overflow-y:auto}
+.overlay-title{font-family:'Cinzel',serif;color:var(--gold);font-size:12px;letter-spacing:.06em;margin-bottom:14px;text-align:center}
+.overlay-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.overlay-opt{background:rgba(42,23,72,0.28);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px;color:var(--text);font-size:.88rem;cursor:pointer;text-align:center;transition:all .2s;width:100%}
+.overlay-opt:hover{border-color:rgba(212,175,55,0.35);background:rgba(42,23,72,0.5)}
+.overlay-cancel{background:none;border:1px solid rgba(42,23,72,0.5);border-radius:10px;padding:10px;color:var(--muted);font-size:.85rem;cursor:pointer;width:100%;margin-top:8px;font-family:'Cinzel',serif;letter-spacing:.04em}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:linear-gradient(135deg,#2a1748,#160d30);border:1px solid var(--gold-dim);border-radius:12px;padding:11px 20px;font-family:'Cinzel',serif;font-size:11.5px;color:var(--gold);letter-spacing:.05em;z-index:999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;pointer-events:none}
 #toast.show{transform:translateX(-50%) translateY(0)}
-
-/* ═══ MEDIA ═══ */
-@media(min-width:600px){
-  .hero{padding:50px 24px 32px}
-  .card{padding:28px 24px}
-  .altare-grid{grid-template-columns:repeat(4,1fr)}
-}
+@media(min-width:600px){.hero{padding:46px 24px 28px}.card{padding:26px 22px}.altare-slot-grid{grid-template-columns:repeat(5,1fr)}}
 </style>
 </head>
 <body>
-
 <div class="cosmos"></div>
 <div class="stars" id="stars"></div>
-
-<!-- HEADER -->
 <header class="header">
   <button class="back-btn" onclick="history.back()">← Torna</button>
   <span class="header-title">Pratica Quotidiana</span>
-  <span class="header-icon">💎</span>
+  <span style="font-size:20px">💎</span>
 </header>
-
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-glyph">💎</div>
+  <span class="hero-glyph">💎</span>
   <h1 class="hero-title">Pratica Quotidiana</h1>
-  <p class="hero-sub">Il tuo spazio sacro personale. Coltiva l'anima ogni giorno attraverso la scrittura, le intenzioni e il rituale.</p>
+  <p class="hero-sub">Il tuo spazio sacro personale. Coltiva l'anima ogni giorno attraverso scrittura, intenzioni, respiro e rituale.</p>
   <div class="hero-divider"></div>
 </div>
-
-<!-- MAIN -->
 <main class="main">
-
-  <!-- TAB NAV -->
   <nav class="tab-nav" role="tablist">
-    <button class="tab-btn active" onclick="switchTab('diario')" id="tab-diario" role="tab">
-      <span class="tab-ico">📖</span>
-      <span class="tab-name">Diario Mistico</span>
-    </button>
-    <button class="tab-btn" onclick="switchTab('affermazioni')" id="tab-affermazioni" role="tab">
-      <span class="tab-ico">✨</span>
-      <span class="tab-name">Affermazioni & Decreti</span>
-    </button>
-    <button class="tab-btn" onclick="switchTab('sigillo')" id="tab-sigillo" role="tab">
-      <span class="tab-ico">🔮</span>
-      <span class="tab-name">Sigillazione</span>
-    </button>
-    <button class="tab-btn" onclick="switchTab('altare')" id="tab-altare" role="tab">
-      <span class="tab-ico">🕯️</span>
-      <span class="tab-name">Altare Virtuale</span>
-    </button>
+    <button class="tab-btn active" onclick="switchTab('diario')" id="tab-diario"><span class="tab-ico">📖</span><span class="tab-name">Diario Mistico</span></button>
+    <button class="tab-btn" onclick="switchTab('affermazioni')" id="tab-affermazioni"><span class="tab-ico">✨</span><span class="tab-name">Affermazioni</span></button>
+    <button class="tab-btn" onclick="switchTab('sigillo')" id="tab-sigillo"><span class="tab-ico">🔮</span><span class="tab-name">Sigillazione</span></button>
+    <button class="tab-btn" onclick="switchTab('altare')" id="tab-altare"><span class="tab-ico">🕯️</span><span class="tab-name">Altare & Respiro</span></button>
   </nav>
-
-  <!-- ════════════════════════════════ -->
-  <!-- PANEL 1: DIARIO MISTICO         -->
-  <!-- ════════════════════════════════ -->
+  <!-- PANEL 1: DIARIO -->
   <div class="panel active" id="panel-diario">
-
+    <div class="stats-strip">
+      <div class="stat-box"><span class="stat-num" id="statEntrate">0</span><span class="stat-lbl">Entrate</span></div>
+      <div class="stat-box"><span class="stat-num" id="statStreak">0</span><span class="stat-lbl">Giorni Fila</span></div>
+      <div class="stat-box"><span class="stat-num" id="statParole">0</span><span class="stat-lbl">Parole Totali</span></div>
+    </div>
     <div class="card">
-      <div class="card-title">📖 Diario dell'Anima</div>
-      <div class="card-desc">Ogni giorno, uno spazio per ascoltarti. Il giornale esoterico guidato ti aiuta a tracciare il tuo cammino interiore.</div>
-
-      <label>Stato d'animo di oggi</label>
+      <div class="card-title">🗓️ La Tua Costanza</div>
+      <div class="streak-bar" id="streakBar"></div>
+      <p id="streakMsg" style="text-align:center;font-size:.85rem;color:var(--muted);margin-top:6px"></p>
+    </div>
+    <div class="card">
+      <div class="card-title">📖 Nuova Entrata dell'Anima</div>
+      <label>Come ti senti in questo momento?</label>
       <div class="mood-row" id="moodRow">
-        <button class="mood-btn" onclick="selMood(this,'🌑')">🌑</button>
-        <button class="mood-btn" onclick="selMood(this,'🌒')">🌒</button>
-        <button class="mood-btn" onclick="selMood(this,'🌓')">🌓</button>
-        <button class="mood-btn" onclick="selMood(this,'🌕')">🌕</button>
-        <button class="mood-btn" onclick="selMood(this,'⚡')">⚡</button>
-        <button class="mood-btn" onclick="selMood(this,'🔥')">🔥</button>
-        <button class="mood-btn" onclick="selMood(this,'💧')">💧</button>
-        <button class="mood-btn" onclick="selMood(this,'🌿')">🌿</button>
+        <button class="mood-btn" onclick="selMood(this,'🌑','Buio interiore')">🌑</button>
+        <button class="mood-btn" onclick="selMood(this,'🌒','In movimento')">🌒</button>
+        <button class="mood-btn" onclick="selMood(this,'🌓','In equilibrio')">🌓</button>
+        <button class="mood-btn" onclick="selMood(this,'🌕','Piena luce')">🌕</button>
+        <button class="mood-btn" onclick="selMood(this,'⚡','Energia viva')">⚡</button>
+        <button class="mood-btn" onclick="selMood(this,'🔥','Fuoco creativo')">🔥</button>
+        <button class="mood-btn" onclick="selMood(this,'💧','Fluidità')">💧</button>
+        <button class="mood-btn" onclick="selMood(this,'🌿','Radicato')">🌿</button>
+        <button class="mood-btn" onclick="selMood(this,'🌪️','Caotico')">🌪️</button>
+        <button class="mood-btn" onclick="selMood(this,'💜','Aperto')">💜</button>
       </div>
-
-      <label style="margin-top:18px">Domanda del giorno (generata o libera)</label>
-      <div id="questioneGiorno" style="font-style:italic;color:var(--muted);font-size:.95rem;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all .2s" onclick="nuovaDomanda()" title="Tocca per cambiare domanda">
-        Caricando la domanda del giorno...
+      <div id="moodDesc" style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:1px;margin-top:6px;min-height:14px;text-align:center"></div>
+      <label style="margin-top:14px">Domanda del giorno <span style="color:var(--gold);font-size:9px">(tocca per cambiare)</span></label>
+      <div class="domanda-box" id="questioneGiorno" onclick="nuovaDomanda()">
+        <span id="dTestoDomanda"></span>
+        <span class="domanda-hint">↻ cambia</span>
       </div>
-      <button class="btn btn-sec" style="margin-top:0;font-size:11px;padding:8px" onclick="nuovaDomanda()">↻ Nuova domanda</button>
-
-      <label style="margin-top:16px">La tua riflessione</label>
-      <textarea id="dReflection" placeholder="Scrivi liberamente… lascia fluire i pensieri, le visioni, i sogni, le intuizioni di oggi."></textarea>
-
-      <label>Parola o simbolo del giorno (opzionale)</label>
-      <input type="text" id="dSymbol" placeholder="es. Luna, Serpente, Trasformazione…">
-
+      <label style="margin-top:14px">La tua riflessione libera</label>
+      <textarea id="dReflection" placeholder="Scrivi senza filtri… sogni, visioni, paure, gratitudine. Questo spazio è solo tuo." style="min-height:130px"></textarea>
+      <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--muted);text-align:right;margin-top:4px" id="wordCount">0 parole</div>
+      <label>Tema / Parola chiave del giorno</label>
+      <input type="text" id="dTema" placeholder="es. Trasformazione · Luna · Radici · Confini…">
+      <label>Ho notato (sincronicità, sogni, segnali)</label>
+      <textarea id="dSincro" placeholder="es. Ho visto tre corvi. Mi è tornato in mente quel sogno ricorrente…" style="min-height:70px"></textarea>
       <label>Intenzione per domani</label>
-      <input type="text" id="dIntention" placeholder="es. Portare più luce nelle conversazioni">
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">
-        <button class="btn btn-sec" onclick="guidaDiario()">🌟 Guida AI</button>
-        <button class="btn" onclick="salvaEntrata()">💾 Salva Entrata</button>
+      <input type="text" id="dIntention" placeholder="es. Ascoltare di più. Creare spazio per me. Ringraziare la vita.">
+      <label>Energia dell'entrata</label>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px" id="energiaRow">
+        <button class="mood-btn" onclick="selEnergia(this,'🌱','Semente')" title="Semente">🌱</button>
+        <button class="mood-btn" onclick="selEnergia(this,'🌺','Fioritura')" title="Fioritura">🌺</button>
+        <button class="mood-btn" onclick="selEnergia(this,'🍂','Rilascio')" title="Rilascio">🍂</button>
+        <button class="mood-btn" onclick="selEnergia(this,'❄️','Riposo')" title="Riposo">❄️</button>
+        <button class="mood-btn" onclick="selEnergia(this,'🔥','Azione')" title="Azione">🔥</button>
+        <button class="mood-btn" onclick="selEnergia(this,'💧','Flusso')" title="Flusso">💧</button>
+        <button class="mood-btn" onclick="selEnergia(this,'⚡','Risveglio')" title="Risveglio">⚡</button>
+        <button class="mood-btn" onclick="selEnergia(this,'🌌','Mistero')" title="Mistero">🌌</button>
       </div>
-
-      <div id="dGuidaBox" style="display:none" class="result-box">
-        <div class="result-title">✦ La Voce dell'Anima</div>
-        <div id="dGuidaText"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div>
-      </div>
+      <button class="btn" onclick="salvaEntrata()">💾 Salva nel Libro dell'Anima</button>
     </div>
-
-    <!-- ENTRATE SALVATE -->
     <div class="card">
-      <div class="card-title">📚 Le Tue Entrate</div>
-      <div class="card-desc">Il tuo archivio dell'anima — le riflessioni che hai custodito nel tempo.</div>
-      <div id="entryList" class="entry-list">
-        <p style="color:var(--muted);font-size:.9rem;text-align:center;padding:10px 0">Nessuna entrata ancora. Scrivi il tuo primo pensiero ✦</p>
+      <div class="card-title">📚 Archivio dell'Anima</div>
+      <div class="card-desc">Le tue riflessioni custodite nel tempo.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px">
+        <select id="filtraMood" style="font-size:.82rem;padding:8px 10px" onchange="renderEntries()">
+          <option value="">Tutti gli umori</option>
+          <option value="🌑">🌑 Buio interiore</option>
+          <option value="🌒">🌒 In movimento</option>
+          <option value="🌓">🌓 In equilibrio</option>
+          <option value="🌕">🌕 Piena luce</option>
+          <option value="⚡">⚡ Energia viva</option>
+          <option value="🔥">🔥 Fuoco creativo</option>
+          <option value="💧">💧 Fluidità</option>
+          <option value="🌿">🌿 Radicato</option>
+          <option value="🌪️">🌪️ Caotico</option>
+          <option value="💜">💜 Aperto</option>
+        </select>
+        <select id="filtraTema" style="font-size:.82rem;padding:8px 10px" onchange="renderEntries()">
+          <option value="">Tutti i temi</option>
+        </select>
       </div>
+      <div id="entryList" class="entry-list"></div>
+      <button class="btn btn-sec" style="margin-top:10px;font-size:10px;padding:9px" onclick="exportDiario()">⬇ Esporta Diario (.txt)</button>
     </div>
-
   </div>
 
-  <!-- ════════════════════════════════ -->
-  <!-- PANEL 2: AFFERMAZIONI & DECRETI -->
-  <!-- ════════════════════════════════ -->
+  <!-- PANEL 2: AFFERMAZIONI -->
   <div class="panel" id="panel-affermazioni">
-
     <div class="card">
-      <div class="card-title">✨ Affermazioni & Decreti</div>
-      <div class="card-desc">Le parole sono incantesimi. Scegli la tua intenzione e ricevi affermazioni personalizzate da ripetere come decreto quotidiano.</div>
-
-      <label>Area della tua vita</label>
-      <div style="margin-bottom:12px">
+      <div class="card-title">✨ Scegli la Tua Intenzione</div>
+      <div class="card-desc">Ogni parola è un incantesimo. Scegli area, tonalità e ricevi le tue affermazioni personali.</div>
+      <label>Area di vita</label>
+      <div id="areaRow">
         <span class="afferm-tag active" onclick="selArea(this,'amore')">💗 Amore</span>
         <span class="afferm-tag" onclick="selArea(this,'abbondanza')">💰 Abbondanza</span>
         <span class="afferm-tag" onclick="selArea(this,'guarigione')">🌿 Guarigione</span>
@@ -443,513 +282,484 @@ label:first-child{margin-top:0}
         <span class="afferm-tag" onclick="selArea(this,'creativita')">🎨 Creatività</span>
         <span class="afferm-tag" onclick="selArea(this,'intuizione')">🔮 Intuizione</span>
         <span class="afferm-tag" onclick="selArea(this,'liberazione')">🌙 Liberazione</span>
+        <span class="afferm-tag" onclick="selArea(this,'salute')">💚 Salute</span>
+        <span class="afferm-tag" onclick="selArea(this,'scopo')">🔥 Scopo</span>
+        <span class="afferm-tag" onclick="selArea(this,'pace')">☮️ Pace</span>
+        <span class="afferm-tag" onclick="selArea(this,'coraggio')">⚡ Coraggio</span>
       </div>
-
-      <label>Tonalità del decreto</label>
+      <label>Stile del decreto</label>
       <select id="toneSelect">
         <option value="potente">⚡ Potente & deciso</option>
-        <option value="gentile">🌸 Gentile & nurturing</option>
+        <option value="gentile">🌸 Gentile & amorevole</option>
         <option value="mistico">🌌 Mistico & simbolico</option>
         <option value="solenne">🕯️ Solenne & rituale</option>
+        <option value="sacro">🙏 Sacro & devoto</option>
       </select>
-
-      <label>Intenzione personale (opzionale)</label>
-      <input type="text" id="affermIntenzione" placeholder="es. Attirare un amore autentico nella mia vita">
-
-      <button class="btn" onclick="generaAffermazioni()">✨ Genera Affermazioni</button>
-
-      <div id="affermResult" style="display:none">
-        <div class="afferm-number" id="affermCounter">Affermazione 1 di 7</div>
-        <div class="afferm-display" id="affermDisplay"></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
-          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="prevAfferm()">← Prec</button>
-          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="copyAfferm()">📋 Copia</button>
-          <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:11px" onclick="nextAfferm()">Succ →</button>
-        </div>
-        <button class="btn" style="margin-top:10px" onclick="generaAffermazioni()">🔄 Nuove Affermazioni</button>
+      <label>Intenzione specifica (opzionale)</label>
+      <input type="text" id="affermIntenzione" placeholder="es. Attirare un amore vero, superare un blocco creativo…">
+      <button class="btn" onclick="generaAffermazioni()">✨ Genera le Mie Affermazioni</button>
+    </div>
+    <div class="card" id="affermCard" style="display:none">
+      <div class="card-title">📜 Le Tue Affermazioni</div>
+      <div class="afferm-counter" id="affermCounter">1 / 9</div>
+      <div class="afferm-display" id="affermDisplay"></div>
+      <div class="afferm-dots" id="affermDots"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:12px">
+        <button class="btn btn-sec" style="margin-top:0;padding:9px" onclick="prevAfferm()">← Prec</button>
+        <button class="btn btn-sec" style="margin-top:0;padding:9px" onclick="copyAfferm()">📋 Copia</button>
+        <button class="btn btn-sec" style="margin-top:0;padding:9px" onclick="nextAfferm()">Succ →</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px">
+        <button class="btn btn-sec" style="margin-top:0;padding:9px;font-size:10px" onclick="salvaAfferm()">💾 Salva Preferita</button>
+        <button class="btn" style="margin-top:0;padding:9px;font-size:10px" onclick="generaAffermazioni()">🔄 Rigenera</button>
       </div>
     </div>
-
+    <div class="card">
+      <div class="card-title">⭐ Affermazioni Preferite</div>
+      <div id="affermSalvateList" style="min-height:40px"></div>
+    </div>
     <div class="card">
       <div class="card-title">🕯️ Rito del Decreto</div>
-      <div class="card-desc">Trasforma l'affermazione in un decreto rituale. Ripetilo 3, 7 o 21 volte con voce e intenzione chiari.</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
-        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(3)">× 3<br><small>Attivazione</small></button>
-        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(7)">× 7<br><small>Manifestazione</small></button>
-        <button class="btn btn-sec" style="margin-top:0;padding:10px;font-size:12px" onclick="startRito(21)">× 21<br><small>Ancoraggio</small></button>
+      <div class="card-desc">Ripeti la tua affermazione con voce ferma. Scegli il numero rituale e conta ogni ripetizione.</div>
+      <div class="rito-set-btns">
+        <button class="rito-set-btn active" onclick="selRitoTarget(this,3)"><span class="rito-set-num">3</span><span class="rito-set-lbl">Attivazione</span></button>
+        <button class="rito-set-btn" onclick="selRitoTarget(this,7)"><span class="rito-set-num">7</span><span class="rito-set-lbl">Manifestaz.</span></button>
+        <button class="rito-set-btn" onclick="selRitoTarget(this,21)"><span class="rito-set-num">21</span><span class="rito-set-lbl">Ancoraggio</span></button>
+        <button class="rito-set-btn" onclick="selRitoTarget(this,40)"><span class="rito-set-num">40</span><span class="rito-set-lbl">Trasformaz.</span></button>
       </div>
-      <div id="ritoBox" style="display:none;text-align:center">
-        <div style="font-family:'Cinzel',serif;font-size:36px;color:var(--gold);margin:10px 0" id="ritoCount">0</div>
-        <div style="font-size:.9rem;color:var(--muted)" id="ritoStatus">Tocca per contare ogni ripetizione</div>
-        <button class="btn" style="margin-top:14px" onclick="tapRito()">✦ Conta</button>
-        <button class="btn btn-sec" style="margin-top:8px;padding:10px;font-size:11px" onclick="resetRito()">Reset</button>
+      <div class="rito-wrap">
+        <div class="rito-number" id="ritoNum">0</div>
+        <div class="rito-sub">di <span id="ritoTargetLbl">3</span> ripetizioni</div>
+        <div class="rito-progress"><div class="rito-progress-fill" id="ritoFill" style="width:0%"></div></div>
+        <div class="rito-tap" onclick="tapRito()">✦</div>
+        <div id="ritoMsg" style="font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:.05em;margin-top:6px;min-height:16px;text-align:center"></div>
       </div>
+      <button class="btn btn-sec" style="margin-top:4px;font-size:10px;padding:9px" onclick="resetRito()">↺ Ricomincia</button>
     </div>
-
   </div>
 
-  <!-- ════════════════════════════════ -->
-  <!-- PANEL 3: SIGILLAZIONE           -->
-  <!-- ════════════════════════════════ -->
+  <!-- PANEL 3: SIGILLAZIONE -->
   <div class="panel" id="panel-sigillo">
-
     <div class="card">
       <div class="card-title">🔮 Sigillazione dell'Intenzione</div>
-      <div class="card-desc">Diverso dai sigilli magici — qui si tratta di <em>cristallizzare un'intenzione</em> in una forma visiva unica, consacrarla e rilasciarla all'universo.</div>
-
-      <label>La tua intenzione (scrivi al presente, come già avvenuta)</label>
-      <textarea id="sigIntenzione" placeholder="es. Sono circondato da amore e abbondanza. La mia mente è serena e il mio cuore è aperto…" style="min-height:80px"></textarea>
-
-      <label>Elemento di potere</label>
-      <select id="sigElemento">
-        <option value="fuoco">🔥 Fuoco — trasformazione & volontà</option>
-        <option value="acqua">💧 Acqua — emozione & fluidità</option>
-        <option value="terra">🌿 Terra — stabilità & manifestazione</option>
-        <option value="aria">💨 Aria — comunicazione & chiarezza</option>
-        <option value="etere">🌌 Etere — spirito & connessione cosmica</option>
-      </select>
-
-      <label>Fase lunare ideale</label>
+      <div class="card-desc">Cristallizza un'intenzione in una forma visiva unica, consacrala e rilasciala all'universo. Pura manifestazione interiore.</div>
+      <label>La tua intenzione — scrivi al presente, già avvenuta</label>
+      <textarea id="sigIntenzione" placeholder="es. Sono circondato da amore e abbondanza. La mia mente è serena, il mio cammino è chiaro…" style="min-height:90px"></textarea>
+      <label>Elemento guida</label>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:4px" id="elemRow">
+        <button class="mood-btn" onclick="selElem(this,'fuoco')" style="flex-direction:column;gap:3px;display:flex;align-items:center;justify-content:center;padding:10px 5px;border-radius:12px;font-size:22px">🔥<span style="font-family:'Cinzel',serif;font-size:7px;color:var(--muted)">Fuoco</span></button>
+        <button class="mood-btn" onclick="selElem(this,'acqua')" style="flex-direction:column;gap:3px;display:flex;align-items:center;justify-content:center;padding:10px 5px;border-radius:12px;font-size:22px">💧<span style="font-family:'Cinzel',serif;font-size:7px;color:var(--muted)">Acqua</span></button>
+        <button class="mood-btn" onclick="selElem(this,'terra')" style="flex-direction:column;gap:3px;display:flex;align-items:center;justify-content:center;padding:10px 5px;border-radius:12px;font-size:22px">🌿<span style="font-family:'Cinzel',serif;font-size:7px;color:var(--muted)">Terra</span></button>
+        <button class="mood-btn" onclick="selElem(this,'aria')" style="flex-direction:column;gap:3px;display:flex;align-items:center;justify-content:center;padding:10px 5px;border-radius:12px;font-size:22px">💨<span style="font-family:'Cinzel',serif;font-size:7px;color:var(--muted)">Aria</span></button>
+        <button class="mood-btn" onclick="selElem(this,'etere')" style="flex-direction:column;gap:3px;display:flex;align-items:center;justify-content:center;padding:10px 5px;border-radius:12px;font-size:22px">🌌<span style="font-family:'Cinzel',serif;font-size:7px;color:var(--muted)">Etere</span></button>
+      </div>
+      <label>Fase lunare</label>
       <select id="sigLuna">
         <option value="nuova">🌑 Luna Nuova — semina l'intenzione</option>
         <option value="crescente">🌒 Luna Crescente — nutri la crescita</option>
         <option value="piena">🌕 Luna Piena — manifesta & amplifica</option>
         <option value="calante">🌘 Luna Calante — rilascia & lascia andare</option>
       </select>
-
-      <button class="btn" onclick="creaSignature()">🔮 Crea il Sigillo</button>
-
-      <div id="sigilloResult" style="display:none">
-        <div class="sigillo-canvas-wrap">
-          <canvas id="sigilloCanvas" width="240" height="240" class="sigillo-pulse"></canvas>
-        </div>
-        <div class="result-box">
-          <div class="result-title">✦ Il Tuo Decreto di Sigillazione</div>
-          <div id="sigilloText"></div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
-          <button class="btn btn-sec" onclick="downloadSigillo()">⬇ Salva Sigillo</button>
-          <button class="btn" onclick="creaSignature()">🔄 Ricrea</button>
-        </div>
+      <label>Numero sacro</label>
+      <select id="sigNumero">
+        <option value="3">3 — La Triade (mente, corpo, spirito)</option>
+        <option value="7">7 — Il Numero Cosmico (chakra, pianeti)</option>
+        <option value="9">9 — Completamento & Saggezza</option>
+        <option value="11">11 — Porta del Risveglio</option>
+        <option value="22">22 — Maestro Costruttore</option>
+      </select>
+      <button class="btn" onclick="creaSignature()">🔮 Genera il Mio Sigillo</button>
+    </div>
+    <div class="card" id="sigilloResultCard" style="display:none">
+      <div class="card-title">✦ Il Tuo Sigillo Personale</div>
+      <div class="sigillo-canvas-wrap">
+        <canvas id="sigilloCanvas" width="280" height="280" class="sigillo-pulse"></canvas>
+      </div>
+      <div class="result-box">
+        <div class="result-title">✦ Decreto di Sigillazione</div>
+        <div id="sigilloDecretoText"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:12px">
+        <button class="btn btn-sec" style="margin-top:0;padding:9px;font-size:10px" onclick="downloadSigillo()">⬇ Salva PNG</button>
+        <button class="btn btn-sec" style="margin-top:0;padding:9px;font-size:10px" onclick="copySigillo()">📋 Copia</button>
+        <button class="btn" style="margin-top:0;padding:9px;font-size:10px" onclick="creaSignature()">🔄 Rigenera</button>
       </div>
     </div>
-
     <div class="card">
-      <div class="card-title">📜 Come usare il Sigillo</div>
-      <p style="font-size:.9rem;color:var(--muted);line-height:1.8">
-        <strong style="color:var(--gold)">1. Crea</strong> — Scrivi la tua intenzione con chiarezza e genera il sigillo.<br>
-        <strong style="color:var(--gold)">2. Contempla</strong> — Osserva il sigillo in silenzio per qualche minuto, respirando profondamente.<br>
-        <strong style="color:var(--gold)">3. Carica</strong> — Tieni il sigillo tra le mani e visualizza la tua intenzione già realizzata.<br>
-        <strong style="color:var(--gold)">4. Rilascia</strong> — Salva il sigillo e poi <em>dimentica</em> — l'universo si occupa del resto.<br>
-        <strong style="color:var(--gold)">5. Ringrazia</strong> — Dopo la manifestazione, esprimi gratitudine.
-      </p>
+      <div class="card-title">📜 Il Rito della Sigillazione</div>
+      <div class="sigillo-steps">
+        <div class="sigillo-step"><span class="sigillo-step-num">I</span><span><strong style="color:var(--gold)">Crea</strong> — Scrivi l'intenzione con chiarezza assoluta. Il linguaggio al presente la chiama nel reale.</span></div>
+        <div class="sigillo-step"><span class="sigillo-step-num">II</span><span><strong style="color:var(--gold)">Contempla</strong> — Fissa il sigillo in silenzio per qualche minuto. Lascia che la forma penetri nell'inconscio.</span></div>
+        <div class="sigillo-step"><span class="sigillo-step-num">III</span><span><strong style="color:var(--gold)">Carica</strong> — Tieni le mani sullo schermo. Visualizza l'intenzione già realizzata con tutti i sensi.</span></div>
+        <div class="sigillo-step"><span class="sigillo-step-num">IV</span><span><strong style="color:var(--gold)">Rilascia</strong> — Salva il sigillo, poi <em>dimentica deliberatamente</em>. L'universo lavora nell'ombra del dimenticare.</span></div>
+        <div class="sigillo-step"><span class="sigillo-step-num">V</span><span><strong style="color:var(--gold)">Ringrazia</strong> — Quando la manifestazione arriva, celebra. La gratitudine chiama altra abbondanza.</span></div>
+      </div>
     </div>
-
+    <div class="card">
+      <div class="card-title">🗂️ Sigilli Precedenti</div>
+      <div id="sigilliSalvati"></div>
+    </div>
   </div>
 
-  <!-- ════════════════════════════════ -->
-  <!-- PANEL 4: ALTARE VIRTUALE        -->
-  <!-- ════════════════════════════════ -->
+  <!-- PANEL 4: ALTARE & RESPIRO -->
   <div class="panel" id="panel-altare">
-
     <div class="card">
       <div class="card-title">🕯️ Il Tuo Altare Virtuale</div>
-      <div class="card-desc">Allestisci il tuo spazio sacro digitale. Scegli gli elementi che risuonano con te e la tua pratica di oggi.</div>
-
-      <div class="altare-info">✦ Tocca ogni slot per scegliere un elemento ✦</div>
-
-      <div class="altare-grid" id="altareGrid">
-        <!-- Generati via JS -->
+      <div class="card-desc">Allestisci il tuo spazio sacro digitale. Tocca ogni slot per scegliere gli elementi che risuonano con te oggi.</div>
+      <div class="altare-scene" id="altareScene">
+        <div class="altare-aura"></div>
+        <div class="altare-shelf"></div>
+        <div class="altare-cloth"></div>
       </div>
-
+      <div class="altare-slot-grid" id="altareSlotGrid"></div>
       <label>Intenzione dell'altare</label>
-      <input type="text" id="altareIntenzione" placeholder="es. Protezione, amore, chiarezza, gratitudine…">
-
-      <label>Preghiera o mantra (opzionale)</label>
-      <textarea id="altareMantra" placeholder="Scrivi un breve mantra, preghiera o invocazione per consacrare il tuo altare…" style="min-height:80px"></textarea>
-
-      <button class="btn" onclick="consacraAltare()">🕯️ Consacra l'Altare</button>
-
-      <div id="altareResult" style="display:none" class="result-box">
+      <input type="text" id="altareIntenzione" placeholder="es. Protezione, amore, chiarezza, guarigione…">
+      <label>Preghiera, mantra o invocazione</label>
+      <textarea id="altareMantra" placeholder="Scrivi la tua invocazione personale…" style="min-height:75px"></textarea>
+      <button class="btn" onclick="consacraAltare()">🕯️ Consacra il Mio Altare</button>
+      <div id="altareResult" class="result-box" style="display:none">
         <div class="result-title">✦ La Benedizione del Tuo Spazio</div>
         <div id="altareText"></div>
       </div>
     </div>
-
     <div class="card">
-      <div class="card-title">📿 Guida agli Elementi dell'Altare</div>
-      <div style="font-size:.9rem;color:var(--muted);line-height:1.9">
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">🕯️ Candele</span> — Luce, intenzione e trasformazione. Colori diversi per energie diverse.</div>
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">💎 Cristalli</span> — Amplificatori energetici. Ogni pietra porta la sua vibrazione unica.</div>
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌿 Erbe</span> — Connessione alla natura e alla terra. Brucia o disponi le erbe con intenzione.</div>
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌺 Fiori</span> — Bellezza, devozione e offerta alle forze spirituali.</div>
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">🌙 Simboli</span> — Pentacolo, luna, triskele, ankh — focus energetico e protezione.</div>
-        <div style="margin-bottom:8px"><span style="color:var(--gold)">🔥 Incenso</span> — Purificazione dell'aria e elevazione vibrazionale.</div>
-        <div><span style="color:var(--gold)">🌊 Acqua</span> — Purificazione emotiva e connessione all'inconscio.</div>
-      </div>
+      <div class="card-title">📿 Guida agli Elementi</div>
+      <div id="altareGuida" style="font-size:.9rem;color:var(--muted);line-height:1.9"></div>
     </div>
-
+    <div class="card">
+      <div class="card-title">🌬️ Respiro Sacro</div>
+      <div class="card-desc">Il respiro è il primo rituale. Ogni tecnica attiva stati diversi di coscienza.</div>
+      <div class="breath-type-btns">
+        <button class="breath-type-btn active" onclick="selBreath(this,'478')"><span class="breath-type-ico">🌙</span><span class="breath-type-name">4-7-8</span><span class="breath-type-desc">Calma profonda</span></button>
+        <button class="breath-type-btn" onclick="selBreath(this,'box')"><span class="breath-type-ico">⬜</span><span class="breath-type-name">Box Breathing</span><span class="breath-type-desc">Focus & equilibrio</span></button>
+        <button class="breath-type-btn" onclick="selBreath(this,'fuoco')"><span class="breath-type-ico">🔥</span><span class="breath-type-name">Respiro del Fuoco</span><span class="breath-type-desc">Energia & purifica</span></button>
+        <button class="breath-type-btn" onclick="selBreath(this,'luna')"><span class="breath-type-ico">🌕</span><span class="breath-type-name">Nadi Shodhana</span><span class="breath-type-desc">Equilibrio canali</span></button>
+        <button class="breath-type-btn" onclick="selBreath(this,'coerenza')"><span class="breath-type-ico">💜</span><span class="breath-type-name">Coerenza Cardiaca</span><span class="breath-type-desc">5s inspira/espira</span></button>
+        <button class="breath-type-btn" onclick="selBreath(this,'wim')"><span class="breath-type-ico">❄️</span><span class="breath-type-name">Holotropico</span><span class="breath-type-desc">Espansione</span></button>
+      </div>
+      <div class="breath-circle-wrap">
+        <div class="breath-circle" id="breathCircle" onclick="toggleBreath()">
+          <div class="breath-ring"></div>
+          <div class="breath-ring2"></div>
+          <div class="breath-label"><span id="breathActionLabel">TOCCA</span><span class="breath-phase" id="breathPhaseLabel">per iniziare</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-bottom:12px">
+        <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:.05em" id="breathDesc">Respira per 4, trattieni 7, espira per 8</div>
+      </div>
+      <div class="breath-stats">
+        <div class="stat-box"><span class="stat-num" id="breathCycles">0</span><span class="stat-lbl">Cicli</span></div>
+        <div class="stat-box"><span class="stat-num" id="breathMinutes">0:00</span><span class="stat-lbl">Durata</span></div>
+        <div class="stat-box"><span class="stat-num" id="breathTotalSess">0</span><span class="stat-lbl">Sessioni Tot.</span></div>
+      </div>
+      <button class="btn btn-sec" style="margin-top:10px;font-size:10px;padding:9px" onclick="resetBreath()">↺ Reset</button>
+    </div>
   </div>
-
 </main>
-
-<!-- TOAST -->
-<div id="toast">✦ Salvato</div>
-
+<div id="toast">✦</div>
 <script>
-// ═══════════════════════════════════════
 // STELLE
-// ═══════════════════════════════════════
-(function(){
-  const c=document.getElementById('stars');
-  for(let i=0;i<90;i++){
-    const s=document.createElement('div');
-    s.className='star';
-    const sz=Math.random()*2+.5;
-    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*3}s;--min:${0.05+Math.random()*.1};--max:${0.5+Math.random()*.5}`;
-    c.appendChild(s);
-  }
-})();
+(function(){const c=document.getElementById('stars');for(let i=0;i<100;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*5}s;--delay:${Math.random()*4}s;--min:${0.04+Math.random()*.08};--max:${0.4+Math.random()*.6}`;c.appendChild(s);}})();
 
-// ═══════════════════════════════════════
 // TABS
-// ═══════════════════════════════════════
-function switchTab(id){
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  document.getElementById('tab-'+id).classList.add('active');
-}
+function switchTab(id){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('panel-'+id).classList.add('active');document.getElementById('tab-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+if(location.hash){const h=location.hash.replace('#','');if(['diario','affermazioni','sigillo','altare'].includes(h))switchTab(h);}
 
-// ═══════════════════════════════════════
 // TOAST
-// ═══════════════════════════════════════
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2200);
-}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2400);}
 
-// ═══════════════════════════════════════
-// ANTHROPIC API
-// ═══════════════════════════════════════
-async function callClaude(prompt, systemPrompt){
-  const body={
-    model:'claude-sonnet-4-6',
-    max_tokens:1000,
-    system: systemPrompt || 'Sei un guida spirituale mistico dell\'app MYSTICA. Rispondi sempre in italiano con tono poetico, evocativo e sapienziale. Non superare mai 200 parole per risposta. Non usare elenchi puntati a meno che non siano richiesti.',
-    messages:[{role:'user',content:prompt}]
-  };
-  const r=await fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(body)
-  });
-  const d=await r.json();
-  return d.content?.map(c=>c.text||'').join('')||'';
-}
+// STORAGE
+function lsGet(k,def){try{const v=localStorage.getItem(k);return v?JSON.parse(v):def;}catch{return def;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}}
 
-// ═══════════════════════════════════════
-// DIARIO MISTICO
-// ═══════════════════════════════════════
-const DOMANDE=[
-  'Cosa sta cercando di trasformarsi in te in questo momento?',
-  'Qual è il sogno che il tuo cuore non ha ancora osato sussurrare?',
-  'Dove senti resistenza oggi, e cosa ti starebbe insegnando?',
-  'Se il tuo spirito guida ti parlasse stanotte, cosa ti direbbe?',
-  'Qual è la verità che conosci già ma non hai ancora accettato?',
-  'Cosa vorresti lasciare andare con la prossima luna calante?',
-  'In quale aspetto della tua vita senti il richiamo alla trasformazione?',
-  'Qual è il dono nascosto nella difficoltà che stai attraversando?',
-  'Come sta rispondendo il tuo corpo all\'energia di oggi?',
-  'Quale simbolo o immagine ritorna di frequente nei tuoi pensieri?',
-  'Cosa saresti se non avessi paura di essere ciò che sei davvero?',
-  'Dove hai bisogno di più gentilezza — verso te stesso?',
-];
-let domandaIndex=Math.floor(Math.random()*DOMANDE.length);
-
-function nuovaDomanda(){
-  domandaIndex=(domandaIndex+1)%DOMANDE.length;
-  document.getElementById('questioneGiorno').textContent='✦ '+DOMANDE[domandaIndex];
-}
-nuovaDomanda(); domandaIndex=Math.floor(Math.random()*DOMANDE.length); // random start
-document.getElementById('questioneGiorno').textContent='✦ '+DOMANDE[domandaIndex];
-
-let selectedMood='';
-function selMood(btn,mood){
-  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');selectedMood=mood;
-}
-
-async function guidaDiario(){
-  const refl=document.getElementById('dReflection').value.trim();
-  if(!refl){showToast('✦ Scrivi la tua riflessione prima');return;}
-  const box=document.getElementById('dGuidaBox');
-  const txt=document.getElementById('dGuidaText');
-  box.style.display='block';
-  txt.innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
-  try{
-    const risposta=await callClaude(
-      `L'utente ha scritto nel suo diario mistico: "${refl}"\nUmore: ${selectedMood||'non specificato'}\nOggi la domanda era: "${DOMANDE[domandaIndex]}"\nOffri una riflessione spirituale profonda e poetica che rispecchi i temi emersi, con un piccolo consiglio pratico per il cammino.`
-    );
-    txt.innerHTML=`<p style="font-style:italic">${risposta.replace(/\n/g,'<br>')}</p>`;
-  }catch(e){txt.innerHTML='<p style="color:var(--muted)">Connessione al piano superiore interrotta. Riprova.</p>';}
-}
+// ─── DIARIO ───────────────────────────────────────────
+const DOMANDE=['Cosa sta cercando di trasformarsi in te in questo momento?','Qual è il sogno che il tuo cuore non ha ancora osato sussurrare?','Dove senti resistenza oggi, e cosa ti sta insegnando?','Se il tuo spirito guida ti parlasse stanotte, cosa ti direbbe?','Qual è la verità che conosci già ma non hai ancora accettato?','Cosa vorresti lasciare andare con la prossima luna calante?','In quale aspetto della tua vita senti il richiamo alla trasformazione?','Qual è il dono nascosto nella difficoltà che stai attraversando?','Come sta rispondendo il tuo corpo all\'energia di oggi?','Quale simbolo o immagine ritorna spesso nei tuoi pensieri?','Cosa saresti se non avessi paura di essere ciò che sei davvero?','Dove hai bisogno di più gentilezza — verso te stesso?','Qual è l\'emozione che eviti di sentire completamente?','Cosa ti rende vivo al di là di ogni ragione pratica?','Quale parte di te è rimasta bambina, e cosa vuole dirti oggi?','Se questo momento fosse un insegnamento cosmico, quale sarebbe?','Cosa coltivi ogni giorno senza rendertene conto?','Qual è il confine che la tua anima ti chiede di tracciare?','Di cosa sei grato, anche nelle difficoltà di oggi?','Quale parola descrive l\'essenza di questo momento della tua vita?','Cosa stai costruendo lentamente che un giorno amerai?','Come suona la voce della tua intuizione quando la ascolti davvero?','Qual è il passo più piccolo verso ciò che desideri?','Chi sei quando nessuno ti guarda?','Quale credenza su te stesso è pronta a dissolversi?','Cosa ti hanno insegnato i tuoi sogni notturni ultimamente?','Dove smetti di fidarti di te stesso, e perché?','Quale relazione sta chiamando la tua attenzione consapevole?','Se la tua vita fosse un libro, a quale capitolo sei?','Cosa provi quando pensi al futuro — e cosa ti dice questo?'];
+let domIdx=Math.floor(Math.random()*DOMANDE.length);
+let selMoodVal='',selMoodDesc='',selEnergiaVal='';
+function nuovaDomanda(){domIdx=(domIdx+1)%DOMANDE.length;document.getElementById('dTestoDomanda').textContent=DOMANDE[domIdx];}
+document.getElementById('dTestoDomanda').textContent=DOMANDE[domIdx];
+function selMood(btn,e,d){document.querySelectorAll('#moodRow .mood-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selMoodVal=e;selMoodDesc=d;document.getElementById('moodDesc').textContent='✦ '+d;}
+function selEnergia(btn,e,d){document.querySelectorAll('#energiaRow .mood-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selEnergiaVal=e+' '+d;}
+document.getElementById('dReflection').addEventListener('input',function(){const w=this.value.trim()?this.value.trim().split(/\s+/).length:0;document.getElementById('wordCount').textContent=w+' '+(w===1?'parola':'parole');});
 
 function salvaEntrata(){
   const refl=document.getElementById('dReflection').value.trim();
-  if(!refl){showToast('✦ Scrivi qualcosa prima di salvare');return;}
-  const entries=JSON.parse(localStorage.getItem('mystica_diario')||'[]');
-  const entry={
-    id:Date.now(),
-    data:new Date().toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}),
-    mood:selectedMood,
-    domanda:DOMANDE[domandaIndex],
-    testo:refl,
-    simbolo:document.getElementById('dSymbol').value,
-    intenzione:document.getElementById('dIntention').value
-  };
-  entries.unshift(entry);
-  if(entries.length>50)entries.pop();
-  localStorage.setItem('mystica_diario',JSON.stringify(entries));
-  document.getElementById('dReflection').value='';
-  document.getElementById('dSymbol').value='';
-  document.getElementById('dIntention').value='';
-  document.getElementById('dGuidaBox').style.display='none';
-  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
-  selectedMood='';
-  renderEntries();
-  showToast('✦ Entrata salvata nell\'archivio dell\'anima');
+  if(!refl){showToast('✦ Scrivi la tua riflessione prima');return;}
+  const entries=lsGet('mystica_diario',[]);
+  const today=new Date();
+  entries.unshift({id:Date.now(),data:today.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}),dataISO:today.toISOString().slice(0,10),mood:selMoodVal,moodDesc:selMoodDesc,energia:selEnergiaVal,domanda:DOMANDE[domIdx],testo:refl,sincro:document.getElementById('dSincro').value.trim(),tema:document.getElementById('dTema').value.trim(),intenzione:document.getElementById('dIntention').value.trim(),parole:refl.split(/\s+/).length});
+  if(entries.length>200)entries.pop();
+  lsSet('mystica_diario',entries);
+  ['dReflection','dSincro','dTema','dIntention'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('wordCount').textContent='0 parole';
+  document.getElementById('moodDesc').textContent='';
+  document.querySelectorAll('#moodRow .mood-btn,#energiaRow .mood-btn').forEach(b=>b.classList.remove('active'));
+  selMoodVal='';selMoodDesc='';selEnergiaVal='';
+  renderStats();renderStreak();renderEntries();
+  showToast('✦ Entrata salvata nel Libro dell\'Anima');
+}
+
+function renderStats(){
+  const e=lsGet('mystica_diario',[]);
+  document.getElementById('statEntrate').textContent=e.length;
+  document.getElementById('statParole').textContent=e.reduce((a,x)=>a+(x.parole||0),0);
+  const days=new Set(e.map(x=>x.dataISO||''));let streak=0;const d=new Date();
+  while(true){const k=d.toISOString().slice(0,10);if(days.has(k)){streak++;d.setDate(d.getDate()-1);}else break;}
+  document.getElementById('statStreak').textContent=streak;
+}
+
+function renderStreak(){
+  const e=lsGet('mystica_diario',[]);const days=new Set(e.map(x=>x.dataISO||''));
+  const bar=document.getElementById('streakBar');bar.innerHTML='';
+  for(let i=13;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const k=d.toISOString().slice(0,10);const el=document.createElement('div');el.className='streak-day'+(days.has(k)?' done':'')+(i===0?' today':'');el.textContent=d.getDate();bar.appendChild(el);}
+  const streak=parseInt(document.getElementById('statStreak').textContent)||0;
+  const msgs=['Scrivi oggi la tua prima entrata ✦','Un primo passo coraggioso ✦','La costanza è magia ✦','Tre giorni — la triade ✦','Il seme sta germogliando ✦','Stai costruendo qualcosa di reale ✦','Sette giorni — numero cosmico ✦'];
+  document.getElementById('streakMsg').textContent=streak>0?(msgs[Math.min(streak-1,msgs.length-1)]):'Scrivi oggi la tua prima entrata ✦';
 }
 
 function renderEntries(){
-  const entries=JSON.parse(localStorage.getItem('mystica_diario')||'[]');
+  const entries=lsGet('mystica_diario',[]);
+  const fMood=document.getElementById('filtraMood').value;
+  const fTema=document.getElementById('filtraTema').value;
+  const temi=[...new Set(entries.map(e=>e.tema).filter(Boolean))];
+  const sel=document.getElementById('filtraTema');const cur=sel.value;
+  sel.innerHTML='<option value="">Tutti i temi</option>';
+  temi.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.appendChild(o);});sel.value=cur;
+  let filtered=entries;
+  if(fMood)filtered=filtered.filter(e=>e.mood===fMood);
+  if(fTema)filtered=filtered.filter(e=>e.tema===fTema);
   const list=document.getElementById('entryList');
-  if(!entries.length){
-    list.innerHTML='<p style="color:var(--muted);font-size:.9rem;text-align:center;padding:10px 0">Nessuna entrata ancora. Scrivi il tuo primo pensiero ✦</p>';
-    return;
-  }
-  list.innerHTML=entries.map(e=>`
-    <div class="entry-item">
-      <div class="entry-date">${e.data} ${e.mood?'<span class="entry-mood">'+e.mood+'</span>':''}</div>
-      <div class="entry-preview">${e.testo}</div>
-    </div>
-  `).join('');
-}
-renderEntries();
-
-// ═══════════════════════════════════════
-// AFFERMAZIONI & DECRETI
-// ═══════════════════════════════════════
-let selectedArea='amore';
-let affermList=[];
-let affermIdx=0;
-let ritoTarget=0,ritoCount=0;
-
-function selArea(el,area){
-  document.querySelectorAll('.afferm-tag').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');selectedArea=area;
+  if(!filtered.length){list.innerHTML='<p style="color:var(--muted);font-size:.88rem;text-align:center;padding:14px 0;font-style:italic">Nessuna entrata trovata ✦</p>';return;}
+  list.innerHTML=filtered.map(e=>`<div class="entry-item" onclick="leggiEntrata(${e.id})"><div class="entry-header"><span class="entry-date">${e.data}</span><span style="font-size:14px">${e.mood||''} ${e.energia?e.energia.split(' ')[0]:''}</span></div><div class="entry-preview">${e.testo}</div>${(e.tema||e.intenzione)?`<div class="entry-tags">${e.tema?`<span class="entry-tag">◆ ${e.tema}</span>`:''}${e.intenzione?`<span class="entry-tag" style="color:var(--teal);border-color:rgba(94,206,196,0.2)">→ ${e.intenzione}</span>`:''}</div>`:''}</div>`).join('');
 }
 
-async function generaAffermazioni(){
+function leggiEntrata(id){
+  const e=lsGet('mystica_diario',[]).find(x=>x.id===id);if(!e)return;
+  const old=document.getElementById('entryOv');if(old)old.remove();
+  const ov=document.createElement('div');ov.id='entryOv';ov.className='overlay';
+  ov.innerHTML=`<div class="overlay-inner" style="max-height:85vh"><div class="overlay-title">${e.data} ${e.mood||''}</div>${e.domanda?`<div style="font-style:italic;font-size:.85rem;color:var(--muted);margin-bottom:10px;padding:8px 12px;border:1px solid var(--border);border-radius:8px">✦ ${e.domanda}</div>`:''}<p style="font-size:.97rem;line-height:1.85;color:var(--text);white-space:pre-wrap;margin-bottom:12px">${e.testo}</p>${e.sincro?`<div style="font-size:.85rem;color:var(--purple);margin-bottom:8px;padding:8px 12px;border-left:2px solid var(--purple)">🔮 ${e.sincro}</div>`:''}${e.tema?`<div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-bottom:4px">◆ TEMA: ${e.tema}</div>`:''}${e.intenzione?`<div style="font-family:'Cinzel',serif;font-size:9px;color:var(--teal);margin-bottom:10px">→ INTENZIONE: ${e.intenzione}</div>`:''}<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:4px"><button class="overlay-cancel" onclick="eliminaEntrata(${id})">🗑 Elimina</button><button class="overlay-cancel" onclick="document.getElementById('entryOv').remove()">✕ Chiudi</button></div></div>`;
+  ov.addEventListener('click',ev=>{if(ev.target===ov)ov.remove();});document.body.appendChild(ov);
+}
+
+function eliminaEntrata(id){let e=lsGet('mystica_diario',[]).filter(x=>x.id!==id);lsSet('mystica_diario',e);document.getElementById('entryOv')?.remove();renderStats();renderStreak();renderEntries();showToast('✦ Entrata eliminata');}
+
+function exportDiario(){
+  const entries=lsGet('mystica_diario',[]);if(!entries.length){showToast('✦ Nessuna entrata da esportare');return;}
+  let txt='MYSTICA — DIARIO DELL\'ANIMA\nEsportato il '+new Date().toLocaleDateString('it-IT')+'\n'+'═'.repeat(50)+'\n\n';
+  entries.forEach(e=>{txt+=`📅 ${e.data} ${e.mood||''}\n${e.domanda?'✦ '+e.domanda+'\n\n':''}${e.testo}\n${e.sincro?'\n🔮 '+e.sincro:''}${e.tema?'\n◆ '+e.tema:''}${e.intenzione?'\n→ '+e.intenzione:''}\n\n${'─'.repeat(40)}\n\n`;});
+  const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(txt);a.download='mystica-diario.txt';a.click();showToast('✦ Diario esportato');
+}
+renderStats();renderStreak();renderEntries();
+
+// ─── AFFERMAZIONI ─────────────────────────────────────
+const AFFERMAZIONI={amore:{potente:['Sono degno di amare ed essere amato profondamente.','L\'amore vero mi trova ogni volta che mi apro a riceverlo.','Porto amore autentico in ogni mio incontro.','Il mio cuore è capace di amare senza perdersi.','Attiro relazioni che nutrono la mia anima.','Sono amore. Do amore. Ricevo amore.','La mia capacità di amare cresce ogni giorno.','Sono un magnete per connessioni autentiche e profonde.','L\'amore vive in me prima ancora di essere ricevuto.'],gentile:['Mi merito amore gentile e costante.','Il mio cuore si apre dolcemente a ogni nuova possibilità.','Sono al sicuro nell\'amare e nell\'essere amato.','Lascio che l\'amore mi raggiunga nel modo che mi serve.','Sono abbastanza. Sono amabile. Sono amato.','Con dolcezza accolgo l\'amore nella mia vita.','Mi tratto con la stessa tenerezza che darei a chi amo.','L\'amore mi segue ovunque vada.','Ogni giorno ricevo piccoli doni d\'amore.'],mistico:['Sono un canale dell\'amore cosmico.','Il mio cuore pulsa al ritmo dell\'universo che ama.','L\'amore mi abita come la luna abita la notte.','Sono intessuto di stelle e di amore antico.','Il cosmo mi abbraccia e io sono amato.','La mia anima ricorda l\'amore che è la sua origine.','Ogni respiro porta amore dal centro del creato.','Sono un figlio della luce — e la luce è amore.','Nel silenzio del cuore l\'amore parla sempre.'],solenne:['Con questa intenzione apro il mio cuore all\'amore.','Dichiaro: l\'amore è la mia natura originale.','Consacro il mio cuore all\'amore vero.','Con tutta la mia essenza: sono pronto ad amare.','Che l\'amore mi trovi, mi riconosca, mi riempia.','Sigillo questa verità: sono fatto per amare.','In nome della mia anima: l\'amore mi appartiene.','Che sia scritto: attiro l\'amore autentico.','Con fede e intenzione creo spazio per l\'amore.'],sacro:['Che il cielo benedica il mio cammino d\'amore.','Ogni amore nella mia vita è un dono sacro.','Il divino mi ama attraverso ogni persona che incontro.','Prego perché l\'amore nella mia vita sia puro e autentico.','Sono grato per ogni forma di amore nella mia vita.','Affido il mio cuore alle mani dell\'universo amorevole.','Mi inginocchio di fronte al mistero dell\'amore.','La generosità del cuore è la mia preghiera quotidiana.','Con umiltà ricevo e dono amore ogni giorno.']},abbondanza:{potente:['Sono un magnete per l\'abbondanza in tutte le sue forme.','Il denaro mi trova facilmente e spesso.','Merito prosperità, successo e abbondanza reale.','L\'universo mi supporta nel costruire la mia ricchezza.','Sono ricco di opportunità, energia e risorse.','L\'abbondanza è il mio stato naturale.','Creo valore nel mondo e ricevo valore in cambio.','Ogni giorno mi avvicino alla libertà finanziaria.','La prosperità scorre verso di me naturalmente.'],gentile:['Ricevo l\'abbondanza con mani aperte e cuore grato.','Mi permetto di avere di più senza sentirmi in colpa.','Merito una vita agiata e serena.','L\'abbondanza arriva a me con facilità e grazia.','Sono degno di ricevere tutto il bene che desidero.','La ricchezza mi permette di dare di più.','Sono al sicuro nell\'abbondanza.','Lascio che la prosperità mi nutra.','Ogni giorno porto gratitudine per ciò che ho.'],mistico:['Sono uno con il flusso infinito dell\'abbondanza universale.','Come le stelle sono infinite, infinite sono le mie possibilità.','L\'abbondanza è il respiro del cosmo che passa attraverso me.','Sono un canale per la prosperità del creato.','L\'universo è generoso — e io sono parte dell\'universo.','Il mio campo energetico attrae risorse e occasioni.','Come la luna cresce, cresce la mia prosperità.','Sono allineato con la frequenza dell\'abbondanza.','Ricevo perché sono parte del tutto che si dona.'],solenne:['Decreto: merito prosperità e abbondanza totale.','Sigillo questa intenzione: l\'abbondanza è mia.','Con intenzione ferma attiro abbondanza ora.','La scarsità non mi appartiene più.','Decreto: la prosperità è il mio diritto di nascita.','Che il flusso della prosperità non si arresti mai.','Con ogni respiro, respiro abbondanza.','Consacro questa certezza: sono prospero.','Che sia testimone di questa verità: sono abbondante.'],sacro:['Ringrazio per ogni forma di abbondanza nella mia vita.','Sono grato per il pane, il tetto, la salute.','Affido il mio percorso di prosperità al divino.','L\'abbondanza che ricevo serve anche al mondo.','Prego per ricevere ciò di cui ho davvero bisogno.','Sono uno strumento della generosità cosmica.','Che io possa ricevere e redistribuire con saggezza.','Ogni risorsa che ricevo è un dono da custodire.','La generosità dell\'universo mi ispira ogni giorno.']},guarigione:{potente:['Il mio corpo guarisce con potenza sorprendente.','Ogni cellula si rinnova in salute perfetta.','Sono più forte di qualunque ferita.','Il mio organismo sa sempre come tornare all\'equilibrio.','Guarisco a livello fisico, emotivo, spirituale.','Sono in perfetto allineamento con la salute totale.','Il mio corpo è la mia casa sacra — lo onoro.','Guarire è il mio diritto naturale.','Porto salute e vitalità in ogni mio respiro.'],gentile:['Mi prendo cura di me con tenerezza ogni giorno.','Il mio corpo merita attenzione, rispetto e amore.','Mi permetto di guarire al mio ritmo.','Ogni giorno mi sento un po\' meglio di ieri.','Mi tratto con la dolcezza di una madre.','Mi do il permesso di riposare e rigenerarmi.','La guarigione avviene quando mi amo davvero.','Ascolto il mio corpo quando parla.','Accolgo ogni passo del mio percorso di salute.'],mistico:['La luce universale guarisce ogni parte di me.','Sono connesso alla fonte inesauribile di vita.','Come la terra si rinnova in primavera, mi rinnovo io.','Ogni ferita porta in sé il seme della guarigione.','Il fiume della vita scorre libero attraverso di me.','La forza vitale del cosmo abita nel mio respiro.','Ogni alba porta nuova guarigione.','Sono intessuto di luce — e la luce guarisce.','Sono energia pura che si riallinea continuamente.'],solenne:['Decreto: il mio corpo si guarisce completamente.','Che la guarigione si manifesti in ogni livello del mio essere.','Con tutta la mia volontà: guarisco completamente.','Sigillo questa verità: la salute è il mio stato naturale.','Consacro il mio corpo alla vita piena e sana.','Che la luce guaritrice abiti in ogni mia cellula.','La salute è il mio diritto e la mia realtà.','Decreto con fermezza: sono sano, vitale, integro.','Che la guarigione operi in me ora e sempre.'],sacro:['Il mio corpo è un tempio sacro che merito di curare.','Ringrazio per la vita che scorre in me ogni giorno.','Affido la mia salute alla saggezza dell\'universo.','Sono grato per ogni momento di benessere.','Il mio corpo è sacro — lo tratto come tale.','Prego perché la salute si radichi in ogni parte di me.','Confido nel processo naturale di rigenerazione.','Che le mani invisibili del divino mi guariscano.','Sono grato per ogni respiro, ogni battito.']},protezione:{potente:['Sono circondato da uno scudo di luce invincibile.','Nulla di oscuro può penetrare il mio campo energetico.','Sono protetto su tutti i piani: fisico, emotivo, spirituale.','La mia aura è un bastione di luce dorata.','Espello ogni energia che non mi appartiene.','Sono inattaccabile dalle energie basse altrui.','La mia protezione è totale e assoluta.','Ogni limite che traccio è sacro e rispettato.','Sono al sicuro ovunque mi trovi.'],gentile:['Mi sento al sicuro nel mondo e nelle relazioni.','Sono protetto dall\'amore di tutto il creato.','Mi permetto di stare al sicuro senza difendermi.','Sono al sicuro. Sono protetto. Sono amato.','Mi fido della bontà fondamentale della vita.','Il confine tra me e gli altri è chiaro e amorevole.','Ricevo protezione naturalmente ovunque vada.','La vita mi abbraccia e mi tiene al sicuro.','Lascio che la protezione mi avvolga come un mantello.'],mistico:['Gli angeli custodi vegliano su ogni mio passo.','Il mio spirito è sigillato con la luce del primo sole.','Come la luna custodisce la notte, sono custodito.','Il mio campo energetico respinge ogni oscurità.','Entità di luce camminano al mio fianco.','L\'universo è il mio guardiano fedele.','Ogni porta che chiudo sigilla il mio benessere.','Sono segnato dalla protezione cosmica.','Come la roccia non si muove al vento, così la mia protezione.'],solenne:['In questo rito sigillo la mia protezione totale.','Decreto: nessuna energia avversa mi raggiunge.','Costruisco un bastione di luce con questa intenzione.','Che ogni confine che traccio sia sacro e rispettato.','Sigillo ogni varco — solo il bene entra in me.','Con tutta la mia volontà: sono protetto ora.','Che la luce divina mi circondi su ogni lato.','Questa protezione è reale, totale, eterna.','Dichiaro: sono al sicuro in questo corpo, in questa vita.'],sacro:['Mi affido alla protezione degli esseri di luce.','Ringrazio i miei antenati che vegliano su di me.','Il divino è il mio scudo e la mia roccia.','Sono grato per la protezione invisibile che mi segue.','Prego perché nessun male raggiunga me o i miei cari.','Sotto il cielo stellato sono sempre al sicuro.','Che gli angeli custodi mi guidino e proteggano.','La saggezza del cosmo mi protegge in ogni passo.','Affido la mia protezione alle mani dell\'universo.']},fiducia:{potente:['Mi fido pienamente di me stesso in ogni situazione.','Sono capace, degno e pronto ad affrontare qualunque sfida.','La mia autostima è incrollabile come una montagna.','Agisco con fiducia anche nell\'incertezza.','Ogni giorno sono più sicuro di me.','So chi sono e non ho bisogno di dimostrarlo.','Mi fido del mio processo interiore.','Sono abbastanza esattamente così come sono.','Confido nella mia intelligenza, intuizione e forza.'],gentile:['Mi do il permesso di essere orgoglioso di chi sono.','Sono abbastanza, ho abbastanza, faccio abbastanza.','Mi perdono per i miei errori e vado avanti.','La mia voce interiore è gentile e incoraggiante.','Riconosco e celebro le mie qualità uniche.','Scelgo di credere in me stesso anche quando è difficile.','Mi tratto con rispetto e fiducia ogni giorno.','Merito di occupare spazio in questo mondo.','Cresco ogni giorno nella fiducia in me stesso.'],mistico:['Sono un essere di luce che porta una missione unica.','La mia presenza ha un significato cosmico.','Vengo da stelle antiche — porto la loro saggezza.','Il mio percorso è scritto da una mano invisibile e saggia.','Sono allineato con il mio destino superiore.','La mia anima sa già tutto ciò che mi serve sapere.','Mi fido del disegno più grande di cui sono parte.','Sono un filo prezioso nell\'arazzo cosmico dell\'esistenza.','La mia unicità è il mio dono al mondo.'],solenne:['Decreto: mi fido completamente di me stesso.','Sigillo questa verità: la mia autostima è intera.','Dichiaro con fermezza: conosco il mio valore.','Consacro questa certezza: sono abbastanza.','Questa è la mia dichiarazione: sono pienamente me.','Con tutta la mia anima: mi fido del mio cammino.','Decreto: la sicurezza interiore è la mia roccia.','Che il dubbio si dissolva davanti alla mia fiducia.','Con questa voce: sono degno, capace, prezioso.'],sacro:['Sono grato per il dono di essere esattamente chi sono.','Affido il mio cammino alla saggezza superiore.','Prego per la grazia di vedermi come mi vede l\'universo.','Sono un dono unico in questo universo.','Confido nel processo sacro della mia crescita.','Ringrazio per i talenti e le qualità che porto.','Con umiltà e fiducia cammino nel mio destino.','Sono figlio della luce — e la luce crede in me.','Che il divino mi sostenga quando dubito di me.']},creativita:{potente:['La creatività scorre attraverso di me come un fiume in piena.','Sono un canale inesauribile di idee e visioni.','La mia espressione creativa è unica e potente.','Ogni giorno creo qualcosa che non esisteva prima.','L\'ispirazione mi cerca e mi trova sempre.','Sono audace nella mia espressione artistica.','Il mio talento cresce ogni volta che lo esprimo.','Creo con coraggio e senza censura.','Sono un artista, un creatore, un visionario.'],gentile:['Mi do il permesso di creare liberamente.','La mia creatività non ha bisogno di essere perfetta.','Creo per il puro piacere di creare.','Mi permetto di giocare, sbagliare, scoprire.','Ogni creazione ha valore, anche imperfetta.','La mia voce creativa merita di essere ascoltata.','Accolgo le mie idee con gentilezza e curiosità.','Creo con gioia senza aspettarmi il risultato perfetto.','Il mio processo creativo è valido esattamente com\'è.'],mistico:['Sono uno strumento del creato che crea attraverso me.','Le muse dell\'universo mi visitano ogni giorno.','Creo come le stelle — spontaneamente, magnificamente.','La mia creatività è connessa alla fonte originale.','Ogni atto creativo è un atto di co-creazione cosmica.','L\'ispirazione è un messaggio dal campo invisibile.','Sono un ponte tra l\'inesistente e il manifesto.','Creo perché sono fatto a immagine del Creatore.','Le visioni che ricevo sono doni da mondi sottili.'],solenne:['Decreto: la mia creatività è libera e potente.','Sblocco ogni blocco creativo con questa intenzione.','Dichiaro: creo con facilità, gioia e abbondanza.','Con tutta la mia forza: esprimo il mio dono al mondo.','Che ogni ostacolo creativo si dissolva ora.','Sigillo: l\'ispirazione è sempre disponibile per me.','Questa è la mia promessa: creo ogni giorno.','Che la creatività fluisca senza impedimenti.','Consacro la mia vita all\'espressione creativa.'],sacro:['Ringrazio per il dono della creatività che porto.','Il mio talento è un dono sacro da condividere.','Affido la mia espressione alle mani del divino.','Prego perché il mio talento fiorisca pienamente.','Sono grato per ogni scintilla di ispirazione.','Che ogni creazione porti luce a chi la riceve.','Con umiltà offro la mia creatività al mondo.','Che il creato usi le mie mani per creare bellezza.','Sono grato per ogni momento di ispirazione.']},intuizione:{potente:['La mia intuizione è affilata, precisa e infallibile.','Mi fido ciecamente della voce interiore.','Ricevo chiaramente segnali, visioni e messaggi.','La mia sensibilità è un superpotere.','Ascolto prima di agire — la mia intuizione non sbaglia.','Sono un essere altamente intuitivo e consapevole.','La mia terza vista si apre sempre di più.','Percepisco l\'energia delle situazioni con precisione.','La mia intuizione mi guida sempre verso il bene.'],gentile:['Mi fido dei segnali sottili che ricevo ogni giorno.','Mi permetto di fidarmi di ciò che sento senza spiegazioni.','Accolgo le mie percezioni senza giudicarle.','La voce del mio intuito è gentile e saggia.','Creo spazio nel silenzio per la mia guida interiore.','Mi fido del mio "lo sento" anche senza prove.','L\'intuizione è un dono che onoro ogni giorno.','La mia intuizione parla piano — io la ascolto.','Mi do il permesso di sapere senza sapere come.'],mistico:['Sono un essere senziente connesso ai piani sottili.','La mia terza vista percepisce ciò che gli occhi non vedono.','Ricevo messaggi attraverso sogni, simboli e sincronicità.','Sono in comunicazione costante con la mia anima guida.','Il velo tra i mondi è sottile per me.','Leggo l\'energia del campo invisibile.','I miei chakra superiori sono aperti e ricettivi.','Sono un sensitivo — ogni percezione ha significato.','L\'universo mi parla continuamente — io lo ascolto.'],solenne:['Decreto: la mia intuizione è la mia bussola infallibile.','Sigillo: il mio canale intuitivo è aperto e puro.','Affino la mia percezione sottile con questa intenzione.','Dichiaro: mi fido completamente della mia guida interiore.','Consacro il mio ascolto interiore come pratica sacra.','Che ogni segnale mi raggiunga chiaro e inequivocabile.','Questo rito potenzia la mia connessione intuitiva.','Con tutta la mia presenza: percepisco la verità.','Che la mia intuizione mi guidi con precisione.'],sacro:['Ringrazio per il dono della sensibilità.','Affido la mia guida alla saggezza del cosmo.','Prego perché la mia intuizione mi mostri la via.','Sono uno strumento della saggezza universale.','Che gli esseri di luce guidino le mie percezioni.','Con umiltà ascolto la voce dell\'anima.','Confido nella saggezza che mi parla nel silenzio.','Sono grato per ogni segnale ricevuto.','Che il divino mi parli attraverso l\'intuizione.']},liberazione:{potente:['Mi libero completamente da tutto ciò che non mi serve.','Taglio ogni catena che limita la mia crescita.','Sono libero da paure, condizionamenti e credenze vecchie.','Nulla del passato ha il potere di tenermi fermo.','Sono padrone della mia mente, del mio cuore, della mia vita.','La mia libertà interiore è totale e inviolabile.','Mi libero con coraggio da ogni schema negativo.','Sono pronto a lasciare andare tutto per diventare chi sono.','Mi libero con determinazione da ciò che non mi appartiene.'],gentile:['Con dolcezza lascio andare ciò che non mi appartiene più.','Mi do il permesso di cambiare, crescere, evolvere.','Libero me stesso dai giudizi che porto sulle spalle.','Mi permetto di essere diverso da chi ero ieri.','Ogni giorno mi libero un po\' di più.','Lascio che il passato mi insegni senza tenermi prigioniero.','Mi libero lentamente, amorevolmente, completamente.','Accolgo il cambiamento con gentilezza e curiosità.','Lascio andare con amore ciò che era e non è più.'],mistico:['Il serpente muta pelle — anch\'io mi rinnovo completamente.','Come la luna lascia andare il buio, io lascio andare il peso.','Sono come il fuoco che brucia ciò che non serve.','Ogni tramonto porta via qualcosa di vecchio in me.','La luna calante porta via le mie catene.','Come l\'alba dissolve la notte, mi dissolvo da ogni limite.','Come l\'acqua cambio forma senza perdere la mia essenza.','Sono il vento che spazza via ciò che era pronto ad andare.','La liberazione è un atto cosmico — vi partecipo pienamente.'],solenne:['Decreto solennemente: mi libero ora da ogni peso.','Sigillo questa liberazione: il passato non ha potere su di me.','Con questa intenzione taglio ogni legame che mi limita.','Che ogni catena si dissolva nella luce di questa intenzione.','Dichiaro: sono libero, leggero, aperto al nuovo.','Consacro questo momento come il mio rito di liberazione.','Con piena volontà: mi libero, mi trasformo, mi rinnovo.','Che ciò che era finisce qui — e comincia la libertà.','In questo rito di liberazione, lascio andare tutto.'],sacro:['Ringrazio le lezioni del passato e le lascio andare con amore.','Affido al divino tutto ciò che non riesco a liberare da solo.','Sono grato per ogni esperienza, anche quella che mi ha ferito.','Prego per la grazia di lasciar andare ciò che trattieni.','Con umiltà chiedo il dono della liberazione interiore.','Consegno al fuoco sacro i miei pesi e le mie paure.','Il divino mi aiuta a fare spazio per il nuovo che arriva.','Lascio andare — e mi affido con fede al flusso della vita.','Che il cielo mi aiuti a portare il perdono nel cuore.']},salute:{potente:['Il mio corpo è forte, sano e pieno di vitalità.','Ogni sistema del mio organismo funziona perfettamente.','La mia salute migliora ogni giorno.','Sono pieno di energia vitale e forza fisica.','Il mio corpo sa come mantenersi in salute.','Scelgo ogni giorno ciò che nutre il mio corpo.','Vivo in un corpo che onoro e rispetto.','La mia vitalità è un patrimonio che custodisco.','Mi prendo cura di me con disciplina e amore.'],gentile:['Mi prendo cura del mio corpo con amore e pazienza.','Merito di stare bene — mi do ciò di cui ho bisogno.','Ascolto i segnali del mio corpo con rispetto.','Mi muovo, respiro e mangio con consapevolezza.','Il mio corpo mi porta in questo mondo — lo ringrazio.','Scelgo la salute perché mi amo.','Mi do il permesso di riposare quando ne ho bisogno.','Ogni atto di cura verso me stesso è un atto d\'amore.','Onoro il mio corpo nel bene e nel male.'],mistico:['Il mio corpo è un tempio dove abita la scintilla divina.','La forza vitale cosmica scorre libera attraverso di me.','Come la natura si rigenera, il mio corpo si rigenera.','Il prana universale nutre ogni mia cellula.','Sono in armonia con i ritmi naturali del mio essere.','Il mio campo bioenergetico è luminoso e in salute.','Sono vita che celebra se stessa.','La luce sana scorre nei miei meridiani e chakra.','Sono connesso alla sorgente inesauribile di energia vitale.'],solenne:['Decreto: la salute totale è il mio stato naturale.','Con questa intenzione sigillo la mia vitalità.','Che ogni cellula riceva il messaggio di salute e forza.','Decreto: il benessere è la mia realtà permanente.','Consacro il mio corpo alla vita piena e vitale.','Che la vita scorra in me potente e ininterrotta.','Con piena volontà: scelgo la salute ogni giorno.','Dichiaro: ogni giorno il mio corpo si rinnova in salute.','Sigillo questo rito con l\'intenzione di guarire e fiorire.'],sacro:['Ringrazio per ogni giorno di salute e benessere.','Sono grato per il miracolo quotidiano del mio corpo.','Affido la mia salute alla saggezza del creato.','Onoro il tempio del mio corpo come dono sacro.','Il divino dimora nel mio corpo — lo curo di conseguenza.','Prego perché la guarigione operi in ogni parte di me.','Sono grato per ogni respiro, ogni battito, ogni passo.','Con gratitudine e fede: sono sano, vivo, intero.','Che le forze naturali mi supportino nella salute.']},scopo:{potente:['Vivo con uno scopo chiaro e una missione potente.','Sono qui per un motivo preciso — e lo so.','Ogni giorno agisco in allineamento con la mia missione.','Il mio contributo al mondo è unico e necessario.','Sono determinato a realizzare il mio massimo potenziale.','La mia vita ha un significato profondo e reale.','Avanzo con coraggio verso il mio destino.','Creo un impatto reale nel mondo che mi circonda.','Sono pronto a rispondere al richiamo della mia anima.'],gentile:['Esploro il mio scopo con curiosità e gentilezza.','Il mio cammino si rivela un passo alla volta.','Ogni esperienza mi insegna qualcosa sulla mia missione.','Sono in pace con il mio processo di scoperta.','Mi fido che il mio percorso ha senso anche quando non lo vedo.','Non devo avere tutte le risposte — cammino con fiducia.','Mi do il permesso di cambiare direzione se necessario.','Il mio scopo si manifesta nel modo più adatto a me.','Ogni piccolo passo conta nel disegno più grande.'],mistico:['Sono incarnato con uno scopo cosmico da compiere.','La mia anima ha scelto questo tempo, questo luogo.','Sono un pezzo necessario del puzzle dell\'universo.','Il mio dharma mi aspetta — lo sto già vivendo.','Vengo da stelle antiche con una missione specifica.','Il mio passaggio sulla terra lascia una traccia di luce.','L\'universo mi ha chiamato qui per un compito preciso.','La mia missione è scritta nel libro dell\'anima.','Sono un agente di cambiamento in questo mondo.'],solenne:['Decreto: rispondo al richiamo della mia anima.','Consacro la mia vita alla realizzazione del mio scopo.','Sigillo questa intenzione: agisco in linea con la mia missione.','Con tutta la mia volontà: vivo con scopo ogni giorno.','Decreto: il mio scopo si manifesta con chiarezza.','Dichiaro con fermezza: so perché sono qui.','In questo rito mi impegno alla mia missione di vita.','Che ogni scelta mi avvicini alla mia versione più alta.','Che la mia vita sia un\'opera degna della mia anima.'],sacro:['Ringrazio per il dono di una vita con significato.','Affido il mio scopo alla saggezza divina.','Prego perché la mia missione si riveli con chiarezza.','Sono grato di essere vivo in questo momento storico.','Che il divino guidi i miei passi verso il mio scopo.','Confido che la vita mi mostri la via al momento giusto.','Il mio scopo è un dono — lo accolgo con gratitudine.','Con umiltà mi metto al servizio della mia anima.','Sono grato per ogni tappa del mio cammino.']},pace:{potente:['La pace interiore è la mia roccia incrollabile.','Mantengo la calma in qualunque tempesta.','La serenità è il mio stato default.','Nulla scalfisce la mia pace profonda.','Scelgo la pace sopra ogni altra cosa.','La mia mente è quieta, chiara, centrata.','Genero pace attorno a me irradiando pace da dentro.','Sono immovibile nella mia pace interiore.','Sono un porto tranquillo nel caos del mondo.'],gentile:['Mi do il permesso di stare in pace.','La pace non va guadagnata — è già in me.','Mi fermo, respiro e torno al centro.','Ogni momento è un\'opportunità di scegliere la pace.','Mi tratto con la dolcezza che genera serenità.','Mi do il permesso di rallentare quando ne ho bisogno.','La pace mi appartiene — scelgo di abitarla.','Creo ambienti e relazioni che nutrono la mia pace.','Lascio andare ciò che non posso controllare.'],mistico:['Sono l\'occhio del ciclone — fermo nel caos.','Come il lago riflette il cielo in perfetta quiete, così io.','La pace è il suono originale del cosmo — lo ascolto.','Sono connesso al centro silenzioso dell\'universo.','Il mio silenzio interiore è vasto come lo spazio.','Sono un\'isola di pace in un oceano di cambiamento.','La quiete del cosmo abita nel profondo del mio cuore.','Sono pace — non ho bisogno di cercarla fuori.','Come la roccia non si muove al vento, così la mia pace.'],solenne:['Decreto: la pace è il mio diritto e la mia realtà.','Sigillo: nulla può turbare la mia pace profonda.','Dichiaro: sono in pace con me e con la vita.','Che la tempesta si plachi — dentro e fuori di me.','Con tutta la mia anima: scelgo la pace.','In questo rito ancoro la pace nel profondo del mio essere.','Decreto: la serenità mi appartiene ora e sempre.','Che la pace che è in me si irradi a tutto il mondo.','Consacro questa serenità con tutta la mia intenzione.'],sacro:['Ringrazio per i momenti di pace nella mia vita.','Affido le mie preoccupazioni alle mani del divino.','Sono grato per ogni istante di serenità.','Confido che tutto vada come deve andare.','Il divino è pace — e io sono parte del divino.','Sono in pace con il mistero della vita.','Che il cielo mi doni la grazia della pace interiore.','Con umiltà mi affranco dal caos e scelgo la quiete.','Prego perché la pace mi raggiunga nei momenti difficili.']},coraggio:{potente:['Affronto ogni sfida con coraggio incrollabile.','La paura non mi ferma — mi informa e poi agisco.','Sono più coraggioso di quanto io creda.','Avanzo anche quando tremo.','Il mio coraggio cresce ogni volta che lo metto alla prova.','Non mi tiro indietro di fronte a ciò che conta davvero.','Sono audace, deciso, coraggioso.','Scelgo il coraggio sopra la comodità ogni giorno.','Sono un guerriero di luce — affronto ogni oscurità.'],gentile:['Mi do il permesso di essere coraggioso al mio ritmo.','Il coraggio non è assenza di paura — è agire nonostante.','Mi incoraggio a fare il prossimo passo, anche piccolo.','Ogni atto di coraggio, piccolo o grande, conta.','Mi congratulo con me stesso per il coraggio che già ho.','Sono più forte di quanto penso.','Mi do la mano quando ho paura e avanzo lo stesso.','Il mio coraggio non deve essere perfetto per essere reale.','Ogni giorno trovo un piccolo atto di coraggio.'],mistico:['Sono un guerriero dell\'anima che non conosce resa.','Come il sole sorge ogni mattina nonostante la notte, io sorgo.','Il mio spirito è fatto di fuoco che non si spegne.','Sono discendente di eroi — porto il loro coraggio in me.','L\'universo mette sul mio cammino solo ciò che posso reggere.','Sono temprato dalle tempeste — ne esco più forte.','Il mio coraggio viene da un luogo cosmico profondo.','Come il tuono non chiede permesso, non lo chiedo nemmeno io.','Sono il fuoco che brucia le proprie paure.'],solenne:['Decreto con tutta la mia voce: sono coraggioso.','Consacro la mia vita al coraggio di essere me stesso.','Sigillo: la paura non mi governa più.','Dichiaro con fermezza: avanzo, scelgo, agisco.','Con tutta la mia forza: scelgo il coraggio oggi.','Che ogni esitazione bruci nel fuoco della mia intenzione.','In questo rito abbraccio il guerriero che vive in me.','Decreto: il coraggio è la mia risposta naturale alla vita.','Che la mia vita sia un atto di coraggio quotidiano.'],sacro:['Ringrazio per ogni volta che ho scelto il coraggio.','Affido le mie paure alla saggezza del divino.','Sono grato per la forza invisibile che mi sostiene.','Il divino cammina con me — non ho nulla da temere.','Confido che l\'universo mi sorregga in ogni atto coraggioso.','Prego perché il coraggio mi accompagni dove la ragione si ferma.','Sono grato per ogni prova che mi ha reso più forte.','Con umiltà e determinazione avanzo sul mio cammino.','Che il cielo mi dia il coraggio di vivere pienamente.']}};
+
+let selAreaVal='amore',affermList=[],affermIdx=0;
+function selArea(el,area){document.querySelectorAll('#areaRow .afferm-tag').forEach(t=>t.classList.remove('active'));el.classList.add('active');selAreaVal=area;}
+function generaAffermazioni(){
   const tone=document.getElementById('toneSelect').value;
-  const intenzione=document.getElementById('affermIntenzione').value.trim();
-  document.getElementById('affermResult').style.display='none';
-  showToast('✦ Generando le affermazioni…');
-  try{
-    const resp=await callClaude(
-      `Genera esattamente 7 affermazioni personalizzate per l'area: "${selectedArea}". Tono: ${tone}. ${intenzione?'Intenzione specifica: '+intenzione+'.':''} Scrivi ogni affermazione al presente, in prima persona. Separale con il carattere | (pipe). Nessuna numerazione, nessuna spiegazione. Solo le 7 affermazioni separate da |`,
-      'Sei un maestro delle affermazioni mistiche e del linguaggio del potere. Genera affermazioni brevi, potenti, in italiano, al presente, in prima persona. Rispondi SOLO con le affermazioni separate da | senza nient\'altro.'
-    );
-    affermList=resp.split('|').map(s=>s.trim()).filter(s=>s.length>5).slice(0,7);
-    if(affermList.length<3)throw new Error('poche affermazioni');
-    affermIdx=0;
-    mostraAfferm();
-    document.getElementById('affermResult').style.display='block';
-  }catch(e){
-    affermList=['Sono in perfetta armonia con il flusso della vita.','La mia luce interiore guida ogni mio passo.','Ricevo con gratitudine tutto ciò che mi appartiene.','Il mio cuore è aperto all\'amore in tutte le sue forme.','Sono protetto/a da forze invisibili e potenti.','Ogni giorno cresco e mi evolvo con grazia.','Manifesto con facilità ciò che serve alla mia anima.'];
-    affermIdx=0;mostraAfferm();
-    document.getElementById('affermResult').style.display='block';
-  }
+  const base=(AFFERMAZIONI[selAreaVal]||AFFERMAZIONI.amore)[tone]||(AFFERMAZIONI[selAreaVal]||AFFERMAZIONI.amore).potente||[];
+  affermList=[...base].sort(()=>Math.random()-.5).slice(0,9);affermIdx=0;
+  document.getElementById('affermDisplay').textContent='« '+affermList[0]+' »';
+  document.getElementById('affermCounter').textContent='1 / '+affermList.length;
+  const dots=document.getElementById('affermDots');dots.innerHTML=affermList.map((_,i)=>`<div class="afferm-dot${i===0?' active':''}" onclick="goAfferm(${i})"></div>`).join('');
+  document.getElementById('affermCard').style.display='block';
+  renderAffermSalvate();showToast('✦ '+affermList.length+' affermazioni generate');
 }
+function renderAfferm(){
+  document.getElementById('affermDisplay').textContent='« '+affermList[affermIdx]+' »';
+  document.getElementById('affermCounter').textContent=(affermIdx+1)+' / '+affermList.length;
+  document.querySelectorAll('.afferm-dot').forEach((d,i)=>d.classList.toggle('active',i===affermIdx));
+}
+function nextAfferm(){affermIdx=(affermIdx+1)%affermList.length;renderAfferm();}
+function prevAfferm(){affermIdx=(affermIdx-1+affermList.length)%affermList.length;renderAfferm();}
+function goAfferm(i){affermIdx=i;renderAfferm();}
+function copyAfferm(){if(!affermList.length)return;navigator.clipboard?.writeText(affermList[affermIdx]).then(()=>showToast('✦ Copiata negli appunti'));}
+function salvaAfferm(){
+  if(!affermList.length)return;const saved=lsGet('mystica_afferm_saved',[]);const txt=affermList[affermIdx];
+  if(saved.includes(txt)){showToast('✦ Già nelle preferite');return;}
+  saved.unshift(txt);if(saved.length>30)saved.pop();lsSet('mystica_afferm_saved',saved);renderAffermSalvate();showToast('✦ Aggiunta alle preferite');
+}
+function renderAffermSalvate(){
+  const saved=lsGet('mystica_afferm_saved',[]);const el=document.getElementById('affermSalvateList');
+  if(!saved.length){el.innerHTML='<p style="font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;padding:10px 0">Nessuna preferita ancora ✦</p>';return;}
+  el.innerHTML=saved.map((t,i)=>`<div style="display:flex;align-items:flex-start;gap:8px;padding:10px 12px;background:rgba(10,4,24,0.5);border:1px solid var(--border);border-radius:10px;margin-bottom:7px"><span style="color:var(--gold);font-size:.9rem;flex:1;font-style:italic;line-height:1.7">${t}</span><button onclick="rimuoviAfferm(${i})" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:2px;flex-shrink:0">✕</button></div>`).join('');
+}
+function rimuoviAfferm(i){const s=lsGet('mystica_afferm_saved',[]);s.splice(i,1);lsSet('mystica_afferm_saved',s);renderAffermSalvate();}
+renderAffermSalvate();
 
-function mostraAfferm(){
-  document.getElementById('affermDisplay').textContent='"'+affermList[affermIdx]+'"';
-  document.getElementById('affermCounter').textContent=`Affermazione ${affermIdx+1} di ${affermList.length}`;
-}
-function nextAfferm(){affermIdx=(affermIdx+1)%affermList.length;mostraAfferm();}
-function prevAfferm(){affermIdx=(affermIdx-1+affermList.length)%affermList.length;mostraAfferm();}
-function copyAfferm(){
-  if(!affermList.length)return;
-  navigator.clipboard?.writeText(affermList[affermIdx]).then(()=>showToast('✦ Copiata negli appunti'));
-}
-
-function startRito(n){
-  ritoTarget=n;ritoCount=0;
-  document.getElementById('ritoBox').style.display='block';
-  document.getElementById('ritoCount').textContent='0 / '+n;
-  document.getElementById('ritoStatus').textContent='Tocca per contare ogni ripetizione';
-}
+let ritoTarget=3,ritoCount=0;
+function selRitoTarget(btn,n){document.querySelectorAll('.rito-set-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');ritoTarget=n;ritoCount=0;document.getElementById('ritoTargetLbl').textContent=n;document.getElementById('ritoNum').textContent='0';document.getElementById('ritoFill').style.width='0%';document.getElementById('ritoMsg').textContent='';}
+const RITO_FINE={3:'La triade è attivata ✦',7:'Il numero cosmico è sigillato ✦',21:'Il ciclo è completo. La trasformazione è avviata ✦',40:'Il rito del maestro è compiuto. Così è ✦'};
 function tapRito(){
-  if(ritoCount>=ritoTarget)return;
-  ritoCount++;
-  document.getElementById('ritoCount').textContent=ritoCount+' / '+ritoTarget;
-  if(ritoCount>=ritoTarget){
-    document.getElementById('ritoStatus').textContent='✦ Decreto completato — Grazie, Universo ✦';
-    showToast('✦ Il decreto è stato pronunciato');
-  }
+  if(ritoCount>=ritoTarget)return;ritoCount++;
+  document.getElementById('ritoNum').textContent=ritoCount;
+  document.getElementById('ritoFill').style.width=(ritoCount/ritoTarget*100)+'%';
+  if(ritoCount>=ritoTarget){document.getElementById('ritoMsg').textContent=RITO_FINE[ritoTarget]||'Completato ✦';showToast('✦ Decreto completato — Grazie, Universo');}
+  else{document.getElementById('ritoMsg').textContent=ritoCount+'…';}
 }
-function resetRito(){ritoCount=0;document.getElementById('ritoCount').textContent='0 / '+ritoTarget;document.getElementById('ritoStatus').textContent='Tocca per contare ogni ripetizione';}
+function resetRito(){ritoCount=0;document.getElementById('ritoNum').textContent='0';document.getElementById('ritoFill').style.width='0%';document.getElementById('ritoMsg').textContent='';}
 
-// ═══════════════════════════════════════
-// SIGILLAZIONE
-// ═══════════════════════════════════════
-async function creaSignature(){
-  const intenzione=document.getElementById('sigIntenzione').value.trim();
-  if(!intenzione){showToast('✦ Scrivi la tua intenzione prima');return;}
-  const elemento=document.getElementById('sigElemento').value;
+// ─── SIGILLAZIONE ─────────────────────────────────────
+let selElemVal='etere';
+function selElem(btn,e){document.querySelectorAll('#elemRow button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selElemVal=e;}
+const ELEM_PAL={fuoco:{c1:'#f07060',c2:'#ff6030',c3:'#d4af37',glow:'rgba(240,96,60,0.35)'},acqua:{c1:'#7eb8f7',c2:'#4169e1',c3:'#5ecec4',glow:'rgba(94,206,196,0.3)'},terra:{c1:'#6fcf97',c2:'#2d8a50',c3:'#d4af37',glow:'rgba(111,207,151,0.3)'},aria:{c1:'#c8a8f0',c2:'#9060d0',c3:'#7eb8f7',glow:'rgba(200,168,240,0.3)'},etere:{c1:'#b88fe0',c2:'#d4af37',c3:'#5ecec4',glow:'rgba(212,175,55,0.3)'}};
+const DECRETI={fuoco:{nuova:'Con il fuoco della volontà semino questa intenzione nel ventre del mondo. La fiamma trasforma ogni ostacolo in cenere fertile. Ciò che desidero cresce adesso, potente e inarrestabile. Così è.',crescente:'Il fuoco crescente alimenta il mio desiderio verso la luce. Come la fiamma si eleva, si eleva la mia intenzione. Nutro questa semenza con la forza del mio spirito. Manifesto con ardore.',piena:'Sotto la luna piena, il fuoco della mia intenzione brucia al massimo splendore. Ogni cosa che ho desiderato si manifesta ora nella pienezza della luce. Il cerchio si chiude. È fatto.',calante:'Lascio andare ciò che bruciava senza scopo. Il fuoco sacro purifica e libera. Con questa luna calante, rilascio il vecchio perché il nuovo possa nascere dalle sue ceneri. Così sia.'},acqua:{nuova:'Come l\'acqua trova sempre la sua via, la mia intenzione trova il suo compimento. Nelle profondità della luna nuova pianto questo seme nell\'oceano del possibile. Il flusso porta ciò che cerco.',crescente:'L\'acqua cresce con la luna — e così la mia intenzione. Nutro questo desiderio con la fluidità della mia fede. Ogni goccia di volontà si unisce all\'oceano del manifesto.',piena:'Le acque dell\'inconscio si illuminano nella pienezza della luna. Tutto ciò che ho coltivato emerge ora in superficie. La marea porta il mio desiderio a riva. Accolgo il manifesto.',calante:'Come le acque si ritirano lasciando la riva più pulita, mi ritiro da ciò che non serve. L\'oceano accoglie il mio rilascio e mi dona libertà.'},terra:{nuova:'Semino questa intenzione nella terra oscura e fertile della luna nuova. Radici invisibili già scendono in profondità. La terra custodisce ogni seme affidato con fede.',crescente:'La terra nutre la mia intenzione che cresce verso la luce. Come il grano emerge dal suolo, emerge la mia manifestazione. Sono radicato nella certezza. Cresco con la luna.',piena:'Il raccolto è pronto. Tutto ciò che ho seminato raggiunge la piena maturità. La terra ha mantenuto la sua promessa. Raccolgo con gratitudine.',calante:'Lascio che la terra si riposi. Compost dal vecchio, nutrimento per il nuovo. Con questa luna calante affido alla terra ciò che devo lasciare andare. Il ciclo si compie.'},aria:{nuova:'Con il primo respiro di questa luna nuova lancio la mia intenzione nel vento del possibile. L\'aria porta i semi ovunque servano. Il mio desiderio vola verso il suo compimento.',crescente:'Il vento porta notizie di crescita. La mia intenzione viaggia sulle correnti invisibili. Con la chiarezza dell\'aria vedo già il mio desiderio avverato.',piena:'L\'aria sotto la luna piena risuona con la vibrazione del mio desiderio manifesto. Ogni parola pronunciata è già realtà. Il vento testimonia: è fatto, è vero, è mio.',calante:'Come il vento porta via le foglie d\'autunno, porta via i miei attaccamenti. Libero, leggero, aperto. La brezza porta via il vecchio e prepara l\'aria per il nuovo.'},etere:{nuova:'Dal vuoto primordiale faccio emergere questa intenzione. L\'etere è la tela su cui dipingo la mia realtà. In questa luna nuova la mia volontà risuona attraverso tutti i piani dell\'essere.',crescente:'L\'etere amplifica ogni intenzione che cresce con la luna. I piani sottili vibrano al suono del mio desiderio. Ciò che chiedo è già risposto nelle dimensioni invisibili.',piena:'Nella pienezza cosmica di questa luna, l\'etere riflette la mia intenzione come uno specchio. Sopra e sotto, dentro e fuori — tutto è allineato. Il manifesto incontra il desiderio.',calante:'L\'etere si libera di ciò che non risuona più. Rilascio nel vasto spazio cosmico ogni limite, ogni paura. Lo spazio vuoto è il terreno della nuova creazione.'}};
+
+function creaSignature(){
+  const int=document.getElementById('sigIntenzione').value.trim();
+  if(!int){showToast('✦ Scrivi prima la tua intenzione');return;}
   const luna=document.getElementById('sigLuna').value;
-  document.getElementById('sigilloResult').style.display='block';
-  document.getElementById('sigilloText').innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
-  disegnaSigillo(elemento);
-  try{
-    const txt=await callClaude(
-      `Crea un breve decreto di sigillazione (max 80 parole) per questa intenzione: "${intenzione}". Elemento: ${elemento}. Fase lunare: ${luna}. Il decreto deve essere potente, rituale, in prima persona, presente, poetico. Inizia con "Io sigillo" o "Con il potere di".`
-    );
-    document.getElementById('sigilloText').innerHTML=`<p style="font-style:italic;line-height:1.9">${txt}</p>`;
-  }catch(e){
-    document.getElementById('sigilloText').innerHTML=`<p style="font-style:italic;line-height:1.9">Io sigillo questa intenzione nel cuore dell'universo. Con la forza del ${elemento} e la grazia della ${luna}, affido al cosmo questa semenza sacra. Che sia fatto, che sia scritto, che sia manifesto.</p>`;
-  }
+  const numero=parseInt(document.getElementById('sigNumero').value);
+  disegnaSigillo(selElemVal,int,numero);
+  document.getElementById('sigilloDecretoText').innerHTML=`<p style="font-style:italic;line-height:1.95;font-size:1rem">${DECRETI[selElemVal][luna]}</p>`;
+  document.getElementById('sigilloResultCard').style.display='block';
+  const stored=lsGet('mystica_sigilli',[]);
+  stored.unshift({id:Date.now(),data:new Date().toLocaleDateString('it-IT',{day:'numeric',month:'long'}),intenzione:int.slice(0,60),elemento:selElemVal,luna,numero});
+  if(stored.length>10)stored.pop();lsSet('mystica_sigilli',stored);renderSigilliSalvati();
+  document.getElementById('sigilloResultCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-const ELEMENT_COLORS={fuoco:['#f07070','#ff4500','#d4af37'],acqua:['#7eb8f7','#4169e1','#5ecec4'],terra:['#6fcf97','#228b22','#d4af37'],aria:['#c8a0f0','#e0d0ff','#7eb8f7'],etere:['#b88fe0','#d4af37','#5ecec4']};
-
-function disegnaSigillo(elemento){
-  const canvas=document.getElementById('sigilloCanvas');
-  const ctx=canvas.getContext('2d');
-  const W=240,H=240,cx=120,cy=120,R=90;
-  ctx.clearRect(0,0,W,H);
-  const cols=ELEMENT_COLORS[elemento]||ELEMENT_COLORS.etere;
-  // sfondo radiale
-  const bg=ctx.createRadialGradient(cx,cy,10,cx,cy,R+20);
-  bg.addColorStop(0,'rgba(42,23,72,0.6)');bg.addColorStop(1,'rgba(6,2,18,0.9)');
-  ctx.fillStyle=bg;ctx.beginPath();ctx.arc(cx,cy,R+20,0,Math.PI*2);ctx.fill();
-  // cerchio esterno
-  ctx.strokeStyle=cols[0]+'80';ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.stroke();
-  ctx.beginPath();ctx.arc(cx,cy,R-6,0,Math.PI*2);ctx.stroke();
-  // punti sul cerchio
-  const nPoints=7+Math.floor(Math.random()*3);
-  const points=[];
-  for(let i=0;i<nPoints;i++){
-    const a=(i/nPoints)*Math.PI*2-Math.PI/2;
-    points.push({x:cx+R*Math.cos(a),y:cy+R*Math.sin(a)});
-  }
-  // linee intrecciate
-  const grd=ctx.createLinearGradient(cx-R,cy-R,cx+R,cy+R);
-  grd.addColorStop(0,cols[0]);grd.addColorStop(0.5,cols[1]);grd.addColorStop(1,cols[2]);
-  ctx.strokeStyle=grd;ctx.lineWidth=1.2;ctx.globalAlpha=0.7;
-  for(let i=0;i<nPoints;i++){
-    for(let j=i+2;j<nPoints;j+=2){
-      ctx.beginPath();ctx.moveTo(points[i].x,points[i].y);ctx.lineTo(points[j].x,points[j].y);ctx.stroke();
-    }
-  }
+function disegnaSigillo(elem,testo,numero){
+  const canvas=document.getElementById('sigilloCanvas');const ctx=canvas.getContext('2d');const W=280,H=280,cx=140,cy=140;
+  ctx.clearRect(0,0,W,H);const p=ELEM_PAL[elem]||ELEM_PAL.etere;
+  const bg=ctx.createRadialGradient(cx,cy,8,cx,cy,W*.6);bg.addColorStop(0,'rgba(30,14,60,0.92)');bg.addColorStop(1,'rgba(6,2,18,0.98)');
+  ctx.fillStyle=bg;ctx.beginPath();ctx.arc(cx,cy,W*.52,0,Math.PI*2);ctx.fill();
+  [90,77,62].forEach((r,i)=>{ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle=i===0?p.c1+'88':i===1?p.c2+'44':p.c3+'22';ctx.lineWidth=i===0?1.8:1;ctx.stroke();});
+  const pts=Math.max(numero,3);const R1=78,R2=34;
+  ctx.beginPath();
+  for(let i=0;i<pts*2;i++){const a=Math.PI/pts*i-Math.PI/2;const r=i%2===0?R1:R2;const x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+  ctx.closePath();
+  const sg=ctx.createLinearGradient(cx-R1,cy-R1,cx+R1,cy+R1);sg.addColorStop(0,p.c1);sg.addColorStop(.5,p.c2);sg.addColorStop(1,p.c3);
+  ctx.strokeStyle=sg;ctx.lineWidth=1.5;ctx.globalAlpha=.88;ctx.stroke();ctx.fillStyle=sg;ctx.globalAlpha=.1;ctx.fill();ctx.globalAlpha=1;
+  const rune=['ᚠ','ᚢ','ᚦ','ᚨ','ᚱ','ᚲ','ᚷ','ᚹ','ᚺ','ᚾ','ᛁ','ᛃ','ᛇ','ᛈ','ᛉ','ᛊ','ᛏ','ᛒ','ᛖ','ᛗ','ᛚ','ᛞ','ᛟ'];
+  const chars=[...testo.toUpperCase().replace(/[^A-Z]/g,'')];
+  ctx.font='11px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=p.c1;ctx.globalAlpha=.75;
+  for(let i=0;i<Math.min(pts,chars.length);i++){const a=Math.PI*2/pts*i-Math.PI/2;const x=cx+(R1+11)*Math.cos(a),y=cy+(R1+11)*Math.sin(a);ctx.fillText(rune[i%rune.length],x,y);}
   ctx.globalAlpha=1;
-  // glifi sui punti
-  const simboli=['☽','☿','♀','♂','♃','♄','⊕','✦','✧','⊗'];
-  ctx.font='10px serif';ctx.fillStyle=cols[0];ctx.textAlign='center';ctx.textBaseline='middle';
-  points.forEach((p,i)=>{ctx.fillText(simboli[i%simboli.length],p.x,p.y);});
-  // simbolo centrale
-  ctx.font='bold 28px serif';
-  const centroSimboli={fuoco:'🔥',acqua:'💧',terra:'🌿',aria:'💨',etere:'🌌'};
-  ctx.fillText(centroSimboli[elemento]||'✦',cx,cy);
+  const cEmoji={fuoco:'🔥',acqua:'💧',terra:'🌿',aria:'💨'};
+  if(cEmoji[elem]){ctx.font='28px serif';ctx.fillText(cEmoji[elem],cx,cy);}
+  else{ctx.font='bold 20px serif';ctx.fillStyle=p.c3;ctx.fillText('✦',cx,cy);}
+  ctx.font='bold 10px sans-serif';ctx.fillStyle=p.c2;ctx.globalAlpha=.5;ctx.fillText(numero,cx,cy+45);ctx.globalAlpha=1;
+  const gl=ctx.createRadialGradient(cx,cy,58,cx,cy,130);gl.addColorStop(0,p.glow);gl.addColorStop(1,'transparent');
+  ctx.fillStyle=gl;ctx.beginPath();ctx.arc(cx,cy,130,0,Math.PI*2);ctx.globalAlpha=.35;ctx.fill();ctx.globalAlpha=1;
 }
 
-function downloadSigillo(){
-  const canvas=document.getElementById('sigilloCanvas');
-  const a=document.createElement('a');
-  a.download='sigillo-mystica.png';a.href=canvas.toDataURL('image/png');a.click();
-  showToast('✦ Sigillo salvato');
+function downloadSigillo(){const c=document.getElementById('sigilloCanvas');const a=document.createElement('a');a.download='sigillo-mystica.png';a.href=c.toDataURL('image/png');a.click();showToast('✦ Sigillo salvato come PNG');}
+function copySigillo(){const t=document.getElementById('sigilloDecretoText').innerText;navigator.clipboard?.writeText(t).then(()=>showToast('✦ Decreto copiato'));}
+function renderSigilliSalvati(){
+  const s=lsGet('mystica_sigilli',[]);const el=document.getElementById('sigilliSalvati');
+  if(!s.length){el.innerHTML='<p style="font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;padding:10px 0">Nessun sigillo ancora ✦</p>';return;}
+  const ee={fuoco:'🔥',acqua:'💧',terra:'🌿',aria:'💨',etere:'🌌'};
+  el.innerHTML=s.map(x=>`<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(10,4,24,0.5);border:1px solid var(--border);border-radius:10px;margin-bottom:7px"><span style="font-size:20px">${ee[x.elemento]||'🔮'}</span><div style="flex:1;min-width:0"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:1px">${x.data} · ${x.numero} punte</div><div style="font-size:.85rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px">${x.intenzione}</div></div></div>`).join('');
 }
+renderSigilliSalvati();
 
-// ═══════════════════════════════════════
-// ALTARE VIRTUALE
-// ═══════════════════════════════════════
-const ALTARE_SLOTS=[
-  {id:'candela',label:'Candela',emoji:'🕯️',opzioni:['🕯️ Bianca','🕯️🔴 Rossa','🕯️🟣 Viola','🕯️🟡 Oro','🕯️🟢 Verde','🕯️🔵 Blu']},
-  {id:'cristallo',label:'Cristallo',emoji:'💎',opzioni:['💎 Quarzo','🟣 Ametista','🌹 Quarzo Rosa','⚫ Ossidiana','🟤 Occhio di Tigre','🔵 Lapislazzuli']},
-  {id:'erba',label:'Erba',emoji:'🌿',opzioni:['🌿 Salvia','🌹 Rosa','🌸 Lavanda','🌱 Rosmarino','🍀 Trifoglio','🌾 Artemisia']},
-  {id:'elemento',label:'Elemento',emoji:'🌊',opzioni:['🌊 Acqua','🔥 Fuoco','🌿 Terra','💨 Aria','🌌 Etere']},
-  {id:'simbolo',label:'Simbolo',emoji:'⭐',opzioni:['⭐ Pentacolo','🌙 Luna','☀️ Sole','✡️ Stella di Davide','☯️ Yin Yang','🔯 Sigillo']},
-  {id:'offerta',label:'Offerta',emoji:'🌺',opzioni:['🌺 Fiori','🍎 Frutta','🌾 Grano','🧂 Sale','🍯 Miele','🌰 Ghianda']},
-  {id:'incenso',label:'Incenso',emoji:'🔥',opzioni:['🌫️ Mirra','🌫️ Sandalo','🌫️ Francoincenso','🌫️ Palo Santo','🌫️ Nag Champa']},
-  {id:'sacro',label:'Sacro',emoji:'📿',opzioni:['📿 Rosario','🏺 Calice','🗡️ Athame','🪄 Bacchetta','🔔 Campanella']},
+// ─── ALTARE ───────────────────────────────────────────
+const ALTARE_CFG=[
+  {id:'candela',label:'Candela',def:'🕯️',opzioni:[{e:'🕯️',n:'Bianca – purificazione'},{e:'🔴',n:'Rossa – passione'},{e:'🟣',n:'Viola – spiritualità'},{e:'🟡',n:'Gialla – mente'},{e:'🟢',n:'Verde – guarigione'},{e:'🔵',n:'Blu – pace'}]},
+  {id:'cristallo',label:'Cristallo',def:'💎',opzioni:[{e:'💎',n:'Quarzo – amplifica'},{e:'🟣',n:'Ametista – intuizione'},{e:'🌹',n:'Q. Rosa – amore'},{e:'⚫',n:'Ossidiana – protez.'},{e:'🟤',n:'Occhio Tigre – forza'},{e:'🔵',n:'Lapislazzuli – verità'}]},
+  {id:'incenso',label:'Incenso',def:'🌫️',opzioni:[{e:'🌫️',n:'Mirra – sacro'},{e:'🪵',n:'Palo Santo – purif.'},{e:'🌸',n:'Lavanda – calma'},{e:'🌿',n:'Salvia – libera'},{e:'🌲',n:'Sandalo – protezione'},{e:'✨',n:'Francoincenso – eleva'}]},
+  {id:'elemento',label:'Elemento',def:'🌊',opzioni:[{e:'🌊',n:'Acqua – emozione'},{e:'🔥',n:'Fuoco – trasforma'},{e:'🌿',n:'Terra – stabilità'},{e:'💨',n:'Aria – pensiero'},{e:'🌌',n:'Etere – spirito'}]},
+  {id:'simbolo',label:'Simbolo',def:'⭐',opzioni:[{e:'⭐',n:'Pentacolo – protez.'},{e:'🌙',n:'Luna – cicli'},{e:'☀️',n:'Sole – vitalità'},{e:'☯️',n:'Yin Yang – equilib.'},{e:'🔯',n:'Sigillo – sigillatura'},{e:'🪬',n:'Hamsa – protez.'}]},
+  {id:'erba',label:'Erba',def:'🌿',opzioni:[{e:'🌿',n:'Salvia – purifica'},{e:'🌹',n:'Rosa – amore'},{e:'🌸',n:'Lavanda – pace'},{e:'🌱',n:'Rosmarino – mem.'},{e:'🌾',n:'Artemisia – sogni'},{e:'🍀',n:'Trifoglio – fortuna'}]},
+  {id:'offerta',label:'Offerta',def:'🌺',opzioni:[{e:'🌺',n:'Fiori – bellezza'},{e:'🍎',n:'Frutto – abbond.'},{e:'🧂',n:'Sale – purifica'},{e:'🍯',n:'Miele – dolcezza'},{e:'🌾',n:'Grano – nutrimento'},{e:'🌰',n:'Ghianda – forza'}]},
+  {id:'oggetto',label:'Oggetto',def:'📿',opzioni:[{e:'📿',n:'Rosario – devoz.'},{e:'🏺',n:'Calice – ricevere'},{e:'🪄',n:'Bacchetta – volontà'},{e:'🔔',n:'Campanella – risveg.'},{e:'🗝️',n:'Chiave – apertura'},{e:'🪞',n:'Specchio – rifless.'}]},
 ];
-const altareSelections={};
+const ALTARE_POS=[{l:'45%',b:'30%',s:1.4},{l:'20%',b:'26%',s:1.1},{l:'70%',b:'26%',s:1.1},{l:'10%',b:'20%',s:.9},{l:'80%',b:'20%',s:.9},{l:'35%',b:'22%',s:1.0},{l:'58%',b:'22%',s:1.0},{l:'47%',b:'17%',s:.85}];
+const altareSel={};
 
 function buildAltare(){
-  const grid=document.getElementById('altareGrid');
-  grid.innerHTML=ALTARE_SLOTS.map(slot=>`
-    <div class="altare-slot" id="slot-${slot.id}" onclick="openSlotMenu('${slot.id}')">
-      <span style="font-size:26px">${altareSelections[slot.id]?.emoji||slot.emoji}</span>
-      <span class="altare-slot-label">${altareSelections[slot.id]?.label||slot.label}</span>
-    </div>
-  `).join('');
+  const scene=document.getElementById('altareScene');scene.querySelectorAll('.altare-item').forEach(e=>e.remove());
+  ALTARE_CFG.forEach((slot,i)=>{
+    const pos=ALTARE_POS[i]||{l:'50%',b:'20%',s:1};
+    const item=document.createElement('div');item.className='altare-item'+(altareSel[slot.id]?'':' pulsing');
+    item.style.cssText=`left:${pos.l};bottom:${pos.b};transform:scale(${pos.s});transform-origin:bottom center`;
+    item.textContent=altareSel[slot.id]?.e||slot.def;item.title=slot.label;
+    item.onclick=()=>openAltareMenu(slot.id);scene.appendChild(item);
+  });
+  const grid=document.getElementById('altareSlotGrid');
+  grid.innerHTML=ALTARE_CFG.map(s=>`<div class="altare-slot${altareSel[s.id]?' filled':''}" onclick="openAltareMenu('${s.id}')"><span style="font-size:24px">${altareSel[s.id]?.e||s.def}</span><span class="altare-slot-label">${altareSel[s.id]?.n?.split('–')[0].trim()||s.label}</span></div>`).join('');
 }
 buildAltare();
 
-let activeSlot=null;
-function openSlotMenu(id){
-  activeSlot=id;
-  const slot=ALTARE_SLOTS.find(s=>s.id===id);
-  if(!slot)return;
-  const old=document.getElementById('slotMenuOverlay');if(old)old.remove();
-  const overlay=document.createElement('div');
-  overlay.id='slotMenuOverlay';
-  overlay.style.cssText='position:fixed;inset:0;z-index:200;background:rgba(6,2,18,0.85);display:flex;align-items:flex-end;justify-content:center;padding:20px';
-  overlay.innerHTML=`
-    <div style="background:linear-gradient(145deg,#100820,#08040f);border:1px solid rgba(212,175,55,0.3);border-radius:20px;padding:20px;width:100%;max-width:400px">
-      <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px;letter-spacing:.06em;margin-bottom:14px;text-align:center">Scegli ${slot.label}</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        ${slot.opzioni.map((o,i)=>`<button onclick="selezionaSlot('${id}','${o}')" style="background:rgba(42,23,72,0.3);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px;color:#e8dfc8;font-size:.9rem;cursor:pointer;text-align:left;transition:all .2s" onmouseover="this.style.borderColor='rgba(212,175,55,0.4)'" onmouseout="this.style.borderColor='rgba(42,23,72,0.7)'">${o}</button>`).join('')}
-        <button onclick="this.closest('#slotMenuOverlay').remove()" style="background:none;border:1px solid rgba(42,23,72,0.5);border-radius:10px;padding:10px;color:#7a6a90;font-size:.85rem;cursor:pointer;grid-column:span 2">✕ Annulla</button>
-      </div>
-    </div>`;
-  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove();});
-  document.body.appendChild(overlay);
-}
+document.getElementById('altareGuida').innerHTML=[
+  {ico:'🕯️',nome:'Candele',desc:'Luce e intenzione. Ogni colore porta un\'energia: bianca per purificare, rossa per passione, viola per il piano spirituale, verde per guarire.'},
+  {ico:'💎',nome:'Cristalli',desc:'Amplificatori del campo energetico. Quarzo per potenziare qualsiasi intenzione, ametista per l\'intuizione, ossidiana per la protezione.'},
+  {ico:'🌫️',nome:'Incenso',desc:'Eleva la vibrazione, purifica l\'energia stagnante, crea un ponte tra il piano fisico e quello sottile.'},
+  {ico:'🌊',nome:'Elementi',desc:'I quattro elementi (acqua, fuoco, terra, aria) e l\'etere rappresentano le forze fondamentali. Porta quello che risuona oggi.'},
+  {ico:'⭐',nome:'Simboli sacri',desc:'Focus energetico e protezione. Il pentacolo connette i 5 elementi, la luna evoca i cicli, il sole la vitalità manifesta.'},
+  {ico:'🌿',nome:'Erbe magiche',desc:'Ogni erba ha la sua firma: salvia purifica, lavanda calma, rosa evoca amore, artemisia apre i sogni lucidi.'},
+  {ico:'🌺',nome:'Offerte',desc:'Un dono alle forze spirituali. Fiori per bellezza, sale per purificazione, miele per attirare dolcezza, frutta per abbondanza.'},
+  {ico:'📿',nome:'Oggetti sacri',desc:'Strumenti rituali: il calice per ricevere, la bacchetta per dirigere l\'energia, la campanella per risvegliare lo spazio.'},
+].map(g=>`<div style="display:flex;gap:10px;margin-bottom:12px;align-items:flex-start"><span style="font-size:20px;flex-shrink:0;margin-top:2px">${g.ico}</span><div><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px">${g.nome}</strong><br>${g.desc}</div></div>`).join('');
 
-function selezionaSlot(id,opzione){
-  const parts=opzione.split(' ');
-  altareSelections[id]={label:parts.slice(1).join(' ')||opzione,emoji:parts[0]};
-  document.getElementById('slotMenuOverlay')?.remove();
-  const slotEl=document.getElementById('slot-'+id);
-  if(slotEl){
-    slotEl.classList.add('filled');
-    slotEl.innerHTML=`<span style="font-size:26px">${parts[0]}</span><span class="altare-slot-label">${parts.slice(1).join(' ')||opzione}</span>`;
-  }
-  showToast('✦ '+opzione+' aggiunto all\'altare');
+function openAltareMenu(id){
+  const slot=ALTARE_CFG.find(s=>s.id===id);if(!slot)return;
+  const old=document.getElementById('altOv');if(old)old.remove();
+  const ov=document.createElement('div');ov.id='altOv';ov.className='overlay';
+  ov.innerHTML=`<div class="overlay-inner"><div class="overlay-title">✦ Scegli ${slot.label}</div><div class="overlay-grid">${slot.opzioni.map(o=>`<button class="overlay-opt" onclick="selAltSlot('${id}','${o.e}','${o.n.replace(/'/g,"\\'")}')"><span style="font-size:22px;display:block;margin-bottom:4px">${o.e}</span><span style="font-size:.78rem;color:var(--muted)">${o.n}</span></button>`).join('')}</div><button class="overlay-cancel" onclick="document.getElementById('altOv').remove()">✕ Annulla</button></div>`;
+  ov.addEventListener('click',ev=>{if(ev.target===ov)ov.remove();});document.body.appendChild(ov);
 }
+function selAltSlot(id,emoji,nome){altareSel[id]={e:emoji,n:nome};document.getElementById('altOv')?.remove();buildAltare();showToast('✦ '+nome.split('–')[0].trim()+' aggiunto');}
 
-async function consacraAltare(){
-  const intenzione=document.getElementById('altareIntenzione').value.trim();
+const BENED=['Allestisci il tuo altare scegliendo gli elementi che risuonano. Ogni scelta è già un atto sacro.','Il primo elemento è posato. Lo spazio inizia a respirare.','Due forze si uniscono. Il dialogo tra gli elementi comincia.','La triade è presente. Corpo, anima, spirito trovano il loro riflesso.','Quattro elementi. I punti cardinali sono presidiati. Lo spazio è custodito.','Cinque presenze sacre. Il pentacolo invisibile è completo. Lo spazio è consacrato.','Sei forze si armonizzano. L\'altare canta la sua canzone di luce.','Sette energie cosmiche sono riunite. Ogni chakra trova eco in questo spazio.','Tutti gli elementi in armonia perfetta. Il tuo altare è un microcosmo del creato.'];
+function consacraAltare(){
+  const int=document.getElementById('altareIntenzione').value.trim();
   const mantra=document.getElementById('altareMantra').value.trim();
-  const elementi=Object.values(altareSelections).map(s=>s.label).join(', ');
-  const resultBox=document.getElementById('altareResult');
-  const resultText=document.getElementById('altareText');
-  resultBox.style.display='block';
-  resultText.innerHTML='<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>';
-  try{
-    const txt=await callClaude(
-      `L'utente ha allestito un altare virtuale con questi elementi: ${elementi||'non specificati'}. Intenzione: ${intenzione||'non specificata'}. Mantra/preghiera: ${mantra||'nessuno'}. Scrivi una breve benedizione rituale (max 80 parole) per consacrare questo spazio sacro, poetica e potente.`
-    );
-    resultText.innerHTML=`<p style="font-style:italic;line-height:1.9">${txt}</p>`;
-    showToast('✦ Altare consacrato');
-  }catch(e){
-    resultText.innerHTML=`<p style="font-style:italic;line-height:1.9">Questo spazio è ora sacro. Con gli elementi scelti, costruisco un ponte tra il visibile e l'invisibile. Ogni oggetto porta la sua luce, ogni simbolo la sua forza. Che questo altare sia un faro nella mia pratica quotidiana. Così è, così sia.</p>`;
-  }
+  const n=Object.keys(altareSel).length;
+  const elems=Object.values(altareSel).map(s=>s.n.split('–')[0].trim()).join(', ');
+  let txt=`<p style="font-style:italic;line-height:1.95;margin-bottom:12px">${BENED[n]||BENED[8]}</p>`;
+  if(int)txt+=`<p style="line-height:1.8;margin-bottom:10px"><strong style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:1px">INTENZIONE</strong><br>${int}</p>`;
+  const preghiera=mantra||(int?`Con questi elementi — ${elems||'del cuore'} — consacro questo spazio all'intenzione di ${int}. Che ogni forza presente amplifichi la mia volontà. Così è.`:'');
+  if(preghiera)txt+=`<p style="font-style:italic;line-height:1.85;color:var(--purple)">"${preghiera}"</p>`;
+  document.getElementById('altareText').innerHTML=txt;
+  document.getElementById('altareResult').style.display='block';
+  document.querySelectorAll('.altare-item').forEach(el=>el.classList.add('pulsing'));
+  showToast('✦ Altare consacrato');
 }
-</script>
 
+// ─── RESPIRO ──────────────────────────────────────────
+const BREATH_TYPES={
+  '478':{desc:'Inspira 4s · Trattieni 7s · Espira 8s',phases:[{label:'INSPIRA',sub:'4 secondi',dur:4000,scale:1.2},{label:'TRATTIENI',sub:'7 secondi',dur:7000,scale:1.2},{label:'ESPIRA',sub:'8 secondi',dur:8000,scale:.85}]},
+  'box':{desc:'Inspira 4s · Trattieni 4s · Espira 4s · Trattieni 4s',phases:[{label:'INSPIRA',sub:'4s',dur:4000,scale:1.18},{label:'TRATTIENI',sub:'4s',dur:4000,scale:1.18},{label:'ESPIRA',sub:'4s',dur:4000,scale:.85},{label:'TRATTIENI',sub:'4s',dur:4000,scale:.85}]},
+  'fuoco':{desc:'Respiri brevi e ritmici · Purifica e attiva',phases:[{label:'INSPIRA',sub:'breve',dur:600,scale:1.1},{label:'ESPIRA',sub:'forte',dur:600,scale:.9}]},
+  'luna':{desc:'Narici alternate · Bilancia i canali energetici',phases:[{label:'INSPIRA\nSX',sub:'4s',dur:4000,scale:1.18},{label:'TRATTIENI',sub:'4s',dur:4000,scale:1.18},{label:'ESPIRA\nDX',sub:'8s',dur:8000,scale:.85},{label:'INSPIRA\nDX',sub:'4s',dur:4000,scale:1.18},{label:'TRATTIENI',sub:'4s',dur:4000,scale:1.18},{label:'ESPIRA\nSX',sub:'8s',dur:8000,scale:.85}]},
+  'coerenza':{desc:'Inspira 5s · Espira 5s · Sincronizza cuore e mente',phases:[{label:'INSPIRA',sub:'5 secondi',dur:5000,scale:1.2},{label:'ESPIRA',sub:'5 secondi',dur:5000,scale:.85}]},
+  'wim':{desc:'30 respiri profondi · Pausa · Ciclo che apre la coscienza',phases:[...Array(30).fill(null).map(()=>({label:'RESPIRA',sub:'profondo',dur:1200,scale:1.1})),{label:'PAUSA',sub:'trattieni',dur:12000,scale:1}]}
+};
+let breathType='478',breathActive=false,breathPhaseIdx=0,breathTimer=null,breathCyclesN=0,breathStartTime=null,breathDurTimer=null;
+
+function selBreath(btn,type){document.querySelectorAll('.breath-type-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');breathType=type;if(breathActive)stopBreath();document.getElementById('breathDesc').textContent=BREATH_TYPES[type].desc;document.getElementById('breathActionLabel').textContent='TOCCA';document.getElementById('breathPhaseLabel').textContent='per iniziare';}
+
+function toggleBreath(){breathActive?stopBreath():startBreath();}
+function startBreath(){breathActive=true;breathPhaseIdx=0;breathStartTime=Date.now();document.getElementById('breathCircle').classList.add('breath-active');breathDurTimer=setInterval(()=>{const s=Math.floor((Date.now()-breathStartTime)/1000);document.getElementById('breathMinutes').textContent=Math.floor(s/60)+':'+(s%60<10?'0':'')+s%60;},1000);runPhase();}
+
+function runPhase(){
+  if(!breathActive)return;const phases=BREATH_TYPES[breathType].phases;const ph=phases[breathPhaseIdx];
+  document.getElementById('breathActionLabel').textContent=ph.label;document.getElementById('breathPhaseLabel').textContent=ph.sub;
+  const c=document.getElementById('breathCircle');c.style.transform=`scale(${ph.scale})`;c.style.transition=`transform ${ph.dur}ms ease-in-out`;
+  breathTimer=setTimeout(()=>{
+    if(!breathActive)return;breathPhaseIdx++;
+    if(breathPhaseIdx>=BREATH_TYPES[breathType].phases.length){breathPhaseIdx=0;breathCyclesN++;document.getElementById('breathCycles').textContent=breathCyclesN;}
+    runPhase();
+  },ph.dur);
+}
+
+function stopBreath(){
+  breathActive=false;clearTimeout(breathTimer);clearInterval(breathDurTimer);
+  const c=document.getElementById('breathCircle');c.classList.remove('breath-active');c.style.transform='scale(1)';c.style.transition='transform .6s ease';
+  document.getElementById('breathActionLabel').textContent='TOCCA';document.getElementById('breathPhaseLabel').textContent='per riprendere';
+  const sess=lsGet('mystica_breath_sessions',0)+1;lsSet('mystica_breath_sessions',sess);document.getElementById('breathTotalSess').textContent=sess;
+  if(breathCyclesN>0)showToast('✦ Sessione completata — '+breathCyclesN+' cicli');
+}
+
+function resetBreath(){
+  stopBreath();breathCyclesN=0;breathStartTime=null;
+  document.getElementById('breathCycles').textContent='0';document.getElementById('breathMinutes').textContent='0:00';
+  document.getElementById('breathActionLabel').textContent='TOCCA';document.getElementById('breathPhaseLabel').textContent='per iniziare';
+}
+document.getElementById('breathTotalSess').textContent=lsGet('mystica_breath_sessions',0);
+</script>
 </body>
 </html>
