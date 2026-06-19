@@ -3,717 +3,1178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Astrologia Vedica (Jyotish): Guida Completa a Pianeti, Segni e Nakshatra | MYSTICA</title>
-  <meta name="description" content="Dallo zodiaco siderale ai Nava Graha, dalle Nakshatra al sistema delle Dasha: il viaggio completo nell'astrologia indiana." />
+  <title>Astrologia Vedica (Jyotish): Guida Completa | MYSTICA</title>
+  <meta name="description" content="Guida completa all'Astrologia Vedica (Jyotish): zodiaco siderale, Nava Graha, Nakshatra, sistema delle Dasha e molto altro." />
   <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8c96a;
-      --deep-purple: #1a0a2e;
-      --mid-purple: #2d1b4e;
-      --light-purple: #3d2b5e;
-      --text-light: #e8dff5;
-      --text-muted: #a89bc0;
-      --accent: #7b4fa6;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-dark:   #8a6a20;
+      --bg-deep:     #0a0612;
+      --bg-card:     #12091e;
+      --bg-card2:    #1a0f2e;
+      --text:        #e8dfc8;
+      --text-muted:  #a89880;
+      --accent:      #7b3fa0;
+      --accent2:     #4a2070;
+      --border:      rgba(201,168,76,0.25);
+      --radius:      12px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Georgia', serif;
-      background: var(--deep-purple);
-      color: var(--text-light);
+      background: var(--bg-deep);
+      color: var(--text);
       line-height: 1.8;
+      font-size: 16px;
     }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', serif;
+      color: var(--gold-light);
+      line-height: 1.3;
+    }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 2.5rem 0 1rem; }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin: 2rem 0 0.8rem; }
+    p  { margin-bottom: 1.2rem; }
+    a  { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); text-decoration: underline; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* ── HEADER ── */
     header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(180deg, #0d0520 0%, var(--mid-purple) 100%);
-      border-bottom: 1px solid rgba(201,168,76,.3);
+      background: linear-gradient(180deg, #1a0a2e 0%, var(--bg-deep) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
     }
-
-    header .symbol {
-      font-size: 3rem;
-      display: block;
-      margin-bottom: 12px;
-      filter: drop-shadow(0 0 12px rgba(201,168,76,.6));
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-
-    header h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
       color: var(--gold-light);
-      letter-spacing: .04em;
-      margin-bottom: 14px;
+      letter-spacing: 0.1em;
     }
+    .breadcrumb { font-size: 0.85rem; color: var(--text-muted); }
+    .breadcrumb a { color: var(--text-muted); }
+    .breadcrumb a:hover { color: var(--gold); }
 
-    header p.subtitle {
-      max-width: 700px;
-      margin: 0 auto;
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a0a2e 0%, #2d1060 50%, #0a0612 100%);
+      padding: 4rem 0 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(123,63,160,0.15) 0%, transparent 70%);
+    }
+    .hero-om {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 12px rgba(201,168,76,0.5));
+    }
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: var(--text-muted);
-      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
       font-style: italic;
     }
 
-    /* ── NAV ── */
-    nav.breadcrumb {
-      text-align: center;
-      padding: 12px 20px;
-      font-size: .85rem;
-      color: var(--text-muted);
-      background: rgba(0,0,0,.2);
-    }
-    nav.breadcrumb a { color: var(--gold); text-decoration: none; }
-    nav.breadcrumb a:hover { text-decoration: underline; }
+    /* ── MAIN CONTENT ── */
+    main { padding: 3rem 0 4rem; }
 
-    /* ── MAIN LAYOUT ── */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
+    section { margin-bottom: 4rem; }
 
-    /* ── SECTIONS ── */
-    section {
-      margin-bottom: 64px;
+    /* ── INFO BOX ── */
+    .info-box {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
     }
-
-    section h2 {
-      font-size: clamp(1.35rem, 3vw, 1.9rem);
+    .info-box.tip  { border-left-color: #4a9a6a; }
+    .info-box.warn { border-left-color: #c0392b; }
+    .info-box-title {
+      font-weight: bold;
       color: var(--gold-light);
-      border-bottom: 1px solid rgba(201,168,76,.25);
-      padding-bottom: 10px;
-      margin-bottom: 24px;
-      letter-spacing: .03em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    section h3 {
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin: 28px 0 12px;
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
     }
 
-    p { margin-bottom: 16px; }
-
-    /* ── CALLOUT BOX ── */
-    .callout {
-      background: rgba(123,79,166,.15);
-      border-left: 3px solid var(--gold);
-      border-radius: 6px;
-      padding: 16px 20px;
-      margin: 24px 0;
-      font-size: .97rem;
-      color: var(--text-light);
+    /* ── GRAHA GRID ── */
+    .graha-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
     }
-    .callout strong { color: var(--gold-light); }
-
-    /* ── IMMAGINI CON CONTESTO ── */
-    .image-block {
-      margin: 32px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(201,168,76,.2);
+    .graha-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-
-    .image-block img {
-      width: 100%;
-      height: 320px;
+    .graha-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.15);
+    }
+    .graha-card img {
+      width: 80px;
+      height: 80px;
       object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--gold-dark);
+      margin-bottom: 0.7rem;
+      background: var(--bg-card);
+    }
+    .graha-card .graha-name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--gold-light);
+      display: block;
+    }
+    .graha-card .graha-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .graha-card .graha-desc {
+      font-size: 0.8rem;
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .graha-card .graha-day {
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      font-style: italic;
+    }
+
+    /* ── RASHI GRID ── */
+    .rashi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .rashi-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .rashi-card:hover { transform: translateY(-3px); }
+    .rashi-card img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--gold-dark);
+      margin-bottom: 0.6rem;
+      background: var(--bg-card);
+    }
+    .rashi-card .rashi-name {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--gold-light);
+      display: block;
+    }
+    .rashi-card .rashi-equiv {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .rashi-card .rashi-el {
+      font-size: 0.75rem;
+      color: var(--text);
+      display: block;
+    }
+    .rashi-card .rashi-ruler {
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      font-style: italic;
+    }
+
+    /* ── NAKSHATRA GRID ── */
+    .nakshatra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.9rem;
+      margin: 2rem 0;
+    }
+    .nakshatra-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.8rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .nakshatra-card:hover { transform: translateY(-2px); }
+    .nakshatra-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--gold-dark);
+      margin-bottom: 0.5rem;
+      background: var(--bg-card2);
+    }
+    .nakshatra-card .nak-num {
+      font-size: 0.7rem;
+      color: var(--gold-dark);
+      display: block;
+    }
+    .nakshatra-card .nak-name {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--gold-light);
+      display: block;
+    }
+    .nakshatra-card .nak-ruler {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .nakshatra-card .nak-symbol {
+      font-size: 0.72rem;
+      color: var(--text);
+      font-style: italic;
       display: block;
     }
 
-    .image-block .image-caption {
-      padding: 16px 20px;
-      background: rgba(0,0,0,.35);
-    }
-
-    .image-block .image-caption h4 {
-      color: var(--gold-light);
-      font-size: 1rem;
-      margin-bottom: 6px;
-      letter-spacing: .03em;
-    }
-
-    .image-block .image-caption p {
-      color: var(--text-muted);
-      font-size: .88rem;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    /* ── TABELLE ── */
-    .table-wrap { overflow-x: auto; margin: 24px 0; }
-
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: .93rem;
+      font-size: 0.9rem;
     }
-
-    thead tr {
-      background: rgba(201,168,76,.15);
+    th {
+      background: var(--bg-card2);
       color: var(--gold-light);
-    }
-
-    th, td {
-      padding: 10px 14px;
-      border: 1px solid rgba(201,168,76,.15);
+      padding: 0.7rem 1rem;
       text-align: left;
-      vertical-align: top;
+      border-bottom: 2px solid var(--gold-dark);
     }
-
-    tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
-    tbody tr:hover { background: rgba(201,168,76,.06); }
-
-    /* ── GRAHA CARDS ── */
-    .graha-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-      margin: 24px 0;
+    td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      vertical-align: middle;
     }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    tr:hover td { background: rgba(201,168,76,0.05); }
 
-    .graha-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,168,76,.2);
-      border-radius: 10px;
-      padding: 18px 16px;
-      text-align: center;
-      transition: transform .2s, border-color .2s;
-    }
-
-    .graha-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--gold);
-    }
-
-    .graha-card .symbol { font-size: 2rem; display: block; margin-bottom: 8px; }
-    .graha-card h4 { color: var(--gold-light); font-size: .95rem; margin-bottom: 4px; }
-    .graha-card p { color: var(--text-muted); font-size: .82rem; margin: 0; line-height: 1.5; }
-
-    /* ── CASE GRID ── */
+    /* ── BHAVA GRID ── */
     .bhava-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 14px;
-      margin: 24px 0;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
     }
-
     .bhava-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,168,76,.15);
-      border-radius: 8px;
-      padding: 14px 16px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
     }
-
-    .bhava-card .num {
-      font-size: 1.4rem;
+    .bhava-num {
+      font-size: 1.5rem;
+      color: var(--gold);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 0.2rem;
     }
+    .bhava-name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .bhava-desc { font-size: 0.85rem; color: var(--text-muted); }
 
-    .bhava-card h4 { color: var(--gold); font-size: .95rem; margin-bottom: 4px; }
-    .bhava-card p { color: var(--text-muted); font-size: .85rem; margin: 0; }
-
-    /* ── DASHA TABLE highlight ── */
-    .dasha-highlight td:first-child { color: var(--gold-light); font-weight: bold; }
+    /* ── DASHA TABLE ── */
+    .dasha-table { max-width: 500px; }
 
     /* ── YOGA / DOSHA ── */
-    .yoga-list, .dosha-list {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-    }
-
+    .yoga-list, .dosha-list { list-style: none; margin: 1.5rem 0; }
     .yoga-list li, .dosha-list li {
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      font-size: .95rem;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
     }
-
-    .yoga-list li {
-      background: rgba(100,200,100,.07);
-      border-left: 3px solid #6ec97a;
-    }
-
-    .dosha-list li {
-      background: rgba(220,100,80,.07);
-      border-left: 3px solid #e07060;
-    }
-
     .yoga-list li strong, .dosha-list li strong {
       color: var(--gold-light);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 0.3rem;
     }
 
-    /* ── RIMEDI ── */
+    /* ── RIMEDI GRID ── */
     .rimedi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 16px;
-      margin: 24px 0;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
     }
-
-    .rimedio-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,168,76,.18);
-      border-radius: 10px;
-      padding: 18px 16px;
+    .rimedi-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      text-align: center;
     }
-
-    .rimedio-card .icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
-    .rimedio-card h4 { color: var(--gold-light); font-size: .95rem; margin-bottom: 8px; }
-    .rimedio-card p { color: var(--text-muted); font-size: .85rem; margin: 0; line-height: 1.6; }
+    .rimedi-card .rimedi-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+    .rimedi-card strong { color: var(--gold-light); display: block; margin-bottom: 0.4rem; }
+    .rimedi-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
 
     /* ── FAQ ── */
     details {
-      border: 1px solid rgba(201,168,76,.2);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      background: rgba(255,255,255,.02);
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.7rem;
+      padding: 0;
     }
-
     summary {
-      padding: 14px 18px;
+      padding: 1rem 1.2rem;
       cursor: pointer;
       color: var(--gold-light);
-      font-size: .97rem;
+      font-weight: bold;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    summary::after { content: '+'; font-size: 1.3rem; color: var(--gold); }
+    details[open] summary::after { content: '−'; }
+    details > div { padding: 0 1.2rem 1rem; color: var(--text-muted); font-size: 0.95rem; }
 
-    summary::after { content: '＋'; color: var(--gold); font-size: 1.1rem; }
-    details[open] summary::after { content: '－'; }
-
-    details p {
-      padding: 0 18px 16px;
-      color: var(--text-muted);
-      font-size: .92rem;
-      margin: 0;
-    }
-
-    /* ── CTA / FOOTER ── */
-    .cta-box {
+    /* ── CTA FOOTER ── */
+    .cta-section {
+      background: linear-gradient(135deg, #1a0a2e, #2d1060);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
       text-align: center;
-      background: linear-gradient(135deg, rgba(123,79,166,.25), rgba(201,168,76,.1));
-      border: 1px solid rgba(201,168,76,.35);
-      border-radius: 14px;
-      padding: 40px 24px;
-      margin: 48px 0 0;
+      margin: 3rem 0 0;
     }
-
-    .cta-box h3 { color: var(--gold-light); font-size: 1.3rem; margin-bottom: 10px; }
-    .cta-box p { color: var(--text-muted); margin-bottom: 24px; }
-
-    .cta-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-
-    .cta-links a {
-      display: inline-block;
-      padding: 10px 22px;
-      background: rgba(201,168,76,.12);
-      border: 1px solid var(--gold);
-      border-radius: 50px;
-      color: var(--gold-light);
-      text-decoration: none;
-      font-size: .92rem;
-      transition: background .2s;
+    .cta-section h2 { margin-top: 0; }
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-
-    .cta-links a:hover { background: rgba(201,168,76,.25); }
-
-    .cta-primary {
-      display: inline-block;
-      padding: 14px 36px;
-      background: linear-gradient(135deg, var(--gold), #a07030);
-      color: #1a0a2e;
+    .cta-btn {
+      background: var(--gold-dark);
+      color: var(--bg-deep);
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
       font-weight: bold;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1rem;
-      margin-top: 10px;
-      letter-spacing: .03em;
-      transition: opacity .2s;
+      font-size: 0.9rem;
+      transition: background 0.2s;
     }
+    .cta-btn:hover { background: var(--gold); text-decoration: none; }
 
-    .cta-primary:hover { opacity: .85; }
-
+    /* ── FOOTER ── */
     footer {
+      background: #070310;
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
       text-align: center;
-      padding: 30px 20px;
-      font-size: .82rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(201,168,76,.15);
     }
+    footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    footer a:hover { color: var(--gold); }
 
-    footer a { color: var(--gold); text-decoration: none; margin: 0 8px; }
-    footer a:hover { text-decoration: underline; }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      .image-block img { height: 200px; }
-      .graha-grid { grid-template-columns: repeat(2, 1fr); }
-      .bhava-grid { grid-template-columns: 1fr 1fr; }
+      .graha-grid  { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+      .rashi-grid  { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      .nakshatra-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+      .bhava-grid  { grid-template-columns: 1fr 1fr; }
+      .rimedi-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════ HEADER -->
+<!-- ══ HEADER ══ -->
 <header>
-  <span class="symbol">🕉️</span>
-  <h1>Astrologia Vedica (Jyotish): Guida Completa</h1>
-  <p class="subtitle">Dallo zodiaco siderale ai Nava Graha, dalle Nakshatra al sistema delle Dasha: il viaggio completo nell'astrologia indiana, una delle tradizioni divinatorie più antiche e precise al mondo.</p>
+  <div class="container header-inner">
+    <span class="logo">✦ MYSTICA</span>
+    <nav class="breadcrumb">
+      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/)">MYSTICA</a> › Astrologia Vedica
+    </nav>
+  </div>
 </header>
 
-<nav class="breadcrumb">
-  <a href="[mysticaoracoli.it](https://mysticaoracoli.it/)">MYSTICA</a> › Astrologia Vedica
-</nav>
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="container">
+    <span class="hero-om">ॐ</span>
+    <h1>Astrologia Vedica (Jyotish)</h1>
+    <p class="hero-subtitle">
+      Dallo zodiaco siderale ai Nava Graha, dalle Nakshatra al sistema delle Dasha:
+      il viaggio completo nell'astrologia indiana, una delle tradizioni divinatorie
+      più antiche e precise al mondo.
+    </p>
+  </div>
+</div>
 
-<!-- ═══════════════════════════════════════════ MAIN -->
+<!-- ══ MAIN ══ -->
 <main>
+<div class="container">
 
-  <!-- ── 1. STORIA E ORIGINI ── -->
+  <!-- STORIA -->
   <section id="storia">
     <h2>Storia e Origini del Jyotish</h2>
+    <p>
+      L'astrologia vedica, in sanscrito <strong>Jyotish</strong> ("scienza della luce"),
+      è uno dei sei <em>Vedanga</em>, le discipline ausiliarie tradizionali che accompagnano
+      lo studio dei Veda, i testi sacri più antichi dell'induismo. Le sue radici affondano
+      in osservazioni astronomiche già presenti nel Rigveda, ma il sistema predittivo che
+      conosciamo oggi si è codificato soprattutto nei secoli successivi.
+    </p>
+    <p>
+      Il testo classico di riferimento è il <strong>Brihat Parashara Hora Shastra</strong>,
+      attribuito al saggio Parashara, che descrive in modo sistematico pianeti, case, segni
+      e periodi planetari. Un altro testo fondamentale è il <strong>Surya Siddhanta</strong>,
+      trattato astronomico che ha fissato per secoli i calcoli delle posizioni planetarie
+      nel subcontinente indiano.
+    </p>
 
-    <p>L'astrologia vedica, in sanscrito <strong>Jyotish</strong> ("scienza della luce"), è uno dei sei <em>Vedanga</em>, le discipline ausiliarie tradizionali che accompagnano lo studio dei Veda, i testi sacri più antichi dell'induismo. Le sue radici affondano in osservazioni astronomiche già presenti nel Rigveda, ma il sistema predittivo che conosciamo oggi si è codificato soprattutto nei secoli successivi.</p>
-
-    <p>Il testo classico di riferimento è il <strong>Brihat Parashara Hora Shastra</strong>, attribuito al saggio Parashara, che descrive in modo sistematico pianeti, case, segni e periodi planetari. Un altro testo fondamentale è il <strong>Surya Siddhanta</strong>, trattato astronomico che ha fissato per secoli i calcoli delle posizioni planetarie nel subcontinente indiano.</p>
-
-    <!-- Immagine contestuale: manoscritto antico -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/jyotish-manoscritto-vedico.jpg)"
-        alt="Manoscritto vedico antico con calcoli astronomici Jyotish"
-        onerror="this.style.display='none'; this.nextElementSibling.style.borderRadius='0'; this.nextElementSibling.style.background='rgba(201,168,76,.07)'"
-      />
-      <div class="image-caption">
-        <h4>📜 Il Brihat Parashara Hora Shastra</h4>
-        <p>Uno dei testi fondativi del Jyotish, attribuito al saggio Parashara. I manoscritti originali, tramandati per generazioni di guru in guru, contenevano non solo regole astrologiche ma interi sistemi di calcolo astronomico per determinare le posizioni planetarie con precisione matematica.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">📜 Il Brihat Parashara Hora Shastra</div>
+      Uno dei testi fondativi del Jyotish, attribuito al saggio Parashara. I manoscritti
+      originali, tramandati per generazioni di guru in guru, contenevano non solo regole
+      astrologiche ma interi sistemi di calcolo astronomico per determinare le posizioni
+      planetarie con precisione matematica.
     </div>
 
-    <p>A differenza dell'astrologia occidentale moderna, spesso orientata all'introspezione psicologica, il Jyotish è nato come strumento pratico legato alla vita religiosa e sociale indiana: scegliere il momento propizio (<em>muhurta</em>) per un matrimonio, un'inaugurazione o un viaggio, comprendere il proprio dharma (dovere/scopo di vita) e il karma accumulato nelle vite precedenti.</p>
+    <p>
+      A differenza dell'astrologia occidentale moderna, spesso orientata all'introspezione
+      psicologica, il Jyotish è nato come strumento pratico legato alla vita religiosa e
+      sociale indiana: scegliere il momento propizio (<em>muhurta</em>) per un matrimonio,
+      un'inaugurazione o un viaggio, comprendere il proprio dharma (dovere/scopo di vita)
+      e il karma accumulato nelle vite precedenti.
+    </p>
   </section>
 
-  <!-- ── 2. VEDICA VS OCCIDENTALE ── -->
-  <section id="confronto">
+  <hr class="divider" />
+
+  <!-- VEDICA VS OCCIDENTALE -->
+  <section id="vs-occidentale">
     <h2>Astrologia Vedica vs Occidentale: Sidereale contro Tropicale</h2>
+    <p>
+      La differenza più importante tra i due sistemi riguarda il punto di partenza dello
+      zodiaco. L'astrologia occidentale usa lo <strong>zodiaco tropicale</strong>, ancorato
+      all'equinozio di primavera (0° Ariete coincide sempre con l'inizio della primavera).
+      L'astrologia vedica usa invece lo <strong>zodiaco siderale</strong>, ancorato alla
+      posizione reale delle costellazioni fisse nel cielo.
+    </p>
 
-    <p>La differenza più importante tra i due sistemi riguarda il punto di partenza dello zodiaco. L'astrologia occidentale usa lo <strong>zodiaco tropicale</strong>, ancorato all'equinozio di primavera (0° Ariete coincide sempre con l'inizio della primavera). L'astrologia vedica usa invece lo <strong>zodiaco siderale</strong>, ancorato alla posizione reale delle costellazioni fisse nel cielo.</p>
-
-    <div class="callout">
-      <strong>💡 L'Ayanamsa:</strong> a causa della precessione degli equinozi, oggi i due zodiaci sono sfasati di circa 24 gradi. Questo scarto si chiama <em>Ayanamsa</em> (il più usato è quello di Lahiri). Per questo chi è Leone in Occidente può scoprire di essere Cancro nel proprio tema vedico.
+    <div class="info-box tip">
+      <div class="info-box-title">💡 L'Ayanamsa</div>
+      A causa della precessione degli equinozi, oggi i due zodiaci sono sfasati di circa
+      24 gradi. Questo scarto si chiama <em>Ayanamsa</em> (il più usato è quello di Lahiri).
+      Per questo chi è Leone in Occidente può scoprire di essere Cancro nel proprio tema vedico.
     </div>
 
-    <!-- Immagine contestuale: zodiaco siderale / costellazioni -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/zodiaco-siderale-costellazioni.jpg)"
-        alt="Mappa delle costellazioni dello zodiaco siderale"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>🌌 Zodiaco Siderale: lo Zodiaco delle Stelle Fisse</h4>
-        <p>A differenza del sistema tropicale occidentale, il Jyotish ancora i suoi segni alle costellazioni reali nel cielo. L'eclittica — il percorso apparente del Sole — viene divisa in base alle stelle di riferimento, non all'equinozio. Questo rende il sistema vedico più astronomicamente letterale, ma introduce lo scarto dell'Ayanamsa rispetto ai calcoli occidentali.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">🌌 Zodiaco Siderale: lo Zodiaco delle Stelle Fisse</div>
+      A differenza del sistema tropicale occidentale, il Jyotish ancora i suoi segni alle
+      costellazioni reali nel cielo. L'eclittica — il percorso apparente del Sole — viene
+      divisa in base alle stelle di riferimento, non all'equinozio. Questo rende il sistema
+      vedico più astronomicamente letterale, ma introduce lo scarto dell'Ayanamsa rispetto
+      ai calcoli occidentali.
     </div>
 
-    <p>Ci sono anche differenze di metodo: il Jyotish dà un peso enorme alla <strong>Luna</strong> e alla Nakshatra in cui si trova alla nascita (più che al Sole), usa il sistema predittivo delle Dasha per collocare gli eventi nel tempo con precisione, e si affida a carte divisionali (<em>varga</em>) multiple per analizzare aspetti specifici della vita, come il matrimonio o la carriera.</p>
+    <p>
+      Ci sono anche differenze di metodo: il Jyotish dà un peso enorme alla <strong>Luna</strong>
+      e alla Nakshatra in cui si trova alla nascita (più che al Sole), usa il sistema predittivo
+      delle Dasha per collocare gli eventi nel tempo con precisione, e si affida a carte
+      divisionali (<em>varga</em>) multiple per analizzare aspetti specifici della vita,
+      come il matrimonio o la carriera.
+    </p>
   </section>
 
-  <!-- ── 3. NAVA GRAHA ── -->
+  <hr class="divider" />
+
+  <!-- NAVA GRAHA -->
   <section id="graha">
     <h2>I Nava Graha: I Nove Pianeti Vedici</h2>
+    <p>
+      Il Jyotish lavora con nove corpi celesti, i <strong>Nava Graha</strong>
+      ("nove afferratori"), che includono anche i due nodi lunari, assenti
+      nell'astrologia occidentale classica.
+    </p>
 
-    <p>Il Jyotish lavora con nove corpi celesti, i <strong>Nava Graha</strong> ("nove afferratori"), che includono anche i due nodi lunari, assenti nell'astrologia occidentale classica.</p>
-
-    <!-- Immagine contestuale: rappresentazione artistica dei Nava Graha -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/nava-graha-divinita.jpg)"
-        alt="Rappresentazione artistica dei Nava Graha, i nove pianeti vedici"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>🪐 I Nava Graha: Pianeti come Divinità</h4>
-        <p>Nel Jyotish i nove pianeti non sono semplici corpi celesti ma entità cosmiche con personalità, poteri e influenze proprie. Nella tradizione indiana sono rappresentati come divinità in forma umana o animale, spesso raffigurati insieme nei templi dedicati al loro culto (<em>Navagraha mandala</em>). Rahu e Ketu, i due nodi lunari, sono privi di corpo fisico e simboleggiano rispettivamente il desiderio materiale e il distacco spirituale.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">🪐 I Nava Graha: Pianeti come Divinità</div>
+      Nel Jyotish i nove pianeti non sono semplici corpi celesti ma entità cosmiche con
+      personalità, poteri e influenze proprie. Nella tradizione indiana sono rappresentati
+      come divinità in forma umana o animale, spesso raffigurati insieme nei templi dedicati
+      al loro culto (<em>Navagraha mandala</em>). Rahu e Ketu, i due nodi lunari, sono
+      privi di corpo fisico e simboleggiano rispettivamente il desiderio materiale e il
+      distacco spirituale.
     </div>
 
     <div class="graha-grid">
-      <div class="graha-card">
-        <span class="symbol">☀️</span>
-        <h4>Surya · Sole</h4>
-        <p>Anima, ego, autorità, padre<br><em>Giorno: Domenica</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">🌙</span>
-        <h4>Chandra · Luna</h4>
-        <p>Mente, emozioni, madre<br><em>Giorno: Lunedì</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">♂️</span>
-        <h4>Mangala · Marte</h4>
-        <p>Energia, coraggio, conflitto<br><em>Giorno: Martedì</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">☿️</span>
-        <h4>Budha · Mercurio</h4>
-        <p>Intelletto, comunicazione<br><em>Giorno: Mercoledì</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">♃</span>
-        <h4>Guru · Giove</h4>
-        <p>Saggezza, espansione, fortuna<br><em>Giorno: Giovedì</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">♀️</span>
-        <h4>Shukra · Venere</h4>
-        <p>Amore, bellezza, piacere<br><em>Giorno: Venerdì</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">♄</span>
-        <h4>Shani · Saturno</h4>
-        <p>Disciplina, karma, limiti<br><em>Giorno: Sabato</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">☊</span>
-        <h4>Rahu · Nodo Nord</h4>
-        <p>Desiderio, illusione, ambizione<br><em>Privo di giorno fisso</em></p>
-      </div>
-      <div class="graha-card">
-        <span class="symbol">☋</span>
-        <h4>Ketu · Nodo Sud</h4>
-        <p>Distacco, karma passato, spiritualità<br><em>Privo di giorno fisso</em></p>
-      </div>
-    </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Graha</th><th>Corpo</th><th>Simbolismo</th><th>Giorno</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>☀️ Surya</td><td>Sole</td><td>Anima, ego, autorità, padre</td><td>Domenica</td></tr>
-          <tr><td>🌙 Chandra</td><td>Luna</td><td>Mente, emozioni, madre</td><td>Lunedì</td></tr>
-          <tr><td>♂️ Mangala</td><td>Marte</td><td>Energia, coraggio, conflitto</td><td>Martedì</td></tr>
-          <tr><td>☿️ Budha</td><td>Mercurio</td><td>Intelletto, comunicazione</td><td>Mercoledì</td></tr>
-          <tr><td>♃ Guru</td><td>Giove</td><td>Saggezza, espansione, fortuna</td><td>Giovedì</td></tr>
-          <tr><td>♀️ Shukra</td><td>Venere</td><td>Amore, bellezza, piacere</td><td>Venerdì</td></tr>
-          <tr><td>♄ Shani</td><td>Saturno</td><td>Disciplina, karma, limiti</td><td>Sabato</td></tr>
-          <tr><td>☊ Rahu</td><td>Nodo Nord</td><td>Desiderio, illusione, ambizione</td><td>—</td></tr>
-          <tr><td>☋ Ketu</td><td>Nodo Sud</td><td>Distacco, karma passato, spiritualità</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <!-- Surya -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-surya.webp)"
+          alt="Surya – il Sole, divinità solare del Jyotish"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">☀️ Surya</span>
+        <span class="graha-body">Sole</span>
+        <span class="graha-desc">Anima, ego, autorità, padre</span>
+        <span class="graha-day">Domenica</span>
+      </div>
+
+      <!-- Chandra -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-chandra.webp)"
+          alt="Chandra – la Luna, divinità lunare del Jyotish"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">🌙 Chandra</span>
+        <span class="graha-body">Luna</span>
+        <span class="graha-desc">Mente, emozioni, madre</span>
+        <span class="graha-day">Lunedì</span>
+      </div>
+
+      <!-- Mangala -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-mangala.webp)"
+          alt="Mangala – Marte, pianeta dell'energia e del coraggio"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">♂️ Mangala</span>
+        <span class="graha-body">Marte</span>
+        <span class="graha-desc">Energia, coraggio, conflitto</span>
+        <span class="graha-day">Martedì</span>
+      </div>
+
+      <!-- Budha -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-budha.webp)"
+          alt="Budha – Mercurio, pianeta dell'intelletto e comunicazione"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">☿️ Budha</span>
+        <span class="graha-body">Mercurio</span>
+        <span class="graha-desc">Intelletto, comunicazione</span>
+        <span class="graha-day">Mercoledì</span>
+      </div>
+
+      <!-- Guru -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-guru.webp)"
+          alt="Guru – Giove, pianeta della saggezza e della fortuna"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">♃ Guru</span>
+        <span class="graha-body">Giove</span>
+        <span class="graha-desc">Saggezza, espansione, fortuna</span>
+        <span class="graha-day">Giovedì</span>
+      </div>
+
+      <!-- Shukra -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-shukra.webp)"
+          alt="Shukra – Venere, pianeta dell'amore e della bellezza"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">♀️ Shukra</span>
+        <span class="graha-body">Venere</span>
+        <span class="graha-desc">Amore, bellezza, piacere</span>
+        <span class="graha-day">Venerdì</span>
+      </div>
+
+      <!-- Shani -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-shani.webp)"
+          alt="Shani – Saturno, pianeta del karma e della disciplina"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">♄ Shani</span>
+        <span class="graha-body">Saturno</span>
+        <span class="graha-desc">Disciplina, karma, limiti</span>
+        <span class="graha-day">Sabato</span>
+      </div>
+
+      <!-- Rahu -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-rahu.webp)"
+          alt="Rahu – Nodo Nord lunare, simbolo di desiderio e illusione"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">☊ Rahu</span>
+        <span class="graha-body">Nodo Nord</span>
+        <span class="graha-desc">Desiderio, illusione, ambizione</span>
+        <span class="graha-day">—</span>
+      </div>
+
+      <!-- Ketu -->
+      <div class="graha-card">
+        <img
+          src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/graha-ketu.webp)"
+          alt="Ketu – Nodo Sud lunare, simbolo di distacco e spiritualità"
+          loading="lazy"
+          onerror="this.style.opacity='0.3'"
+        />
+        <span class="graha-name">☋ Ketu</span>
+        <span class="graha-body">Nodo Sud</span>
+        <span class="graha-desc">Distacco, karma passato, spiritualità</span>
+        <span class="graha-day">—</span>
+      </div>
+
+    </div><!-- /graha-grid -->
   </section>
 
-  <!-- ── 4. RASHI ── -->
+  <hr class="divider" />
+
+  <!-- 12 RASHI -->
   <section id="rashi">
     <h2>Le 12 Rashi: I Segni Zodiacali Vedici</h2>
+    <p>
+      Le Rashi corrispondono ai dodici segni, ma calcolati sullo zodiaco siderale.
+      I nomi e i simboli sono molto simili a quelli occidentali, ma la loro posizione
+      nel cielo è sfasata dall'Ayanamsa.
+    </p>
 
-    <p>Le Rashi corrispondono ai dodici segni, ma calcolati sullo zodiaco siderale. I nomi e i simboli sono molto simili a quelli occidentali, ma la loro posizione nel cielo è sfasata dall'Ayanamsa.</p>
+    <div class="info-box">
+      <div class="info-box-title">♈ Le 12 Rashi: Il Cerchio dello Zodiaco Siderale</div>
+      La ruota delle Rashi divide l'eclittica in dodici settori di 30° ciascuno.
+      A differenza della ruota zodiacale occidentale, il punto 0° di Mesha (Ariete)
+      è ancorato alla stella Spica e all'asterismo di Ashwini, non all'equinozio
+      di primavera. Ogni Rashi è governata da un pianeta specifico che ne colora
+      profondamente il significato.
+    </div>
 
-    <!-- Immagine contestuale: ruota zodiacale vedica -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/rashi-zodiaco-vedico.jpg)"
-        alt="Ruota zodiacale vedica con le 12 Rashi"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>♈ Le 12 Rashi: Il Cerchio dello Zodiaco Siderale</h4>
-        <p>La ruota delle Rashi divide l'eclittica in dodici settori di 30° ciascuno. A differenza della ruota zodiacale occidentale, il punto 0° di Mesha (Ariete) è ancorato alla stella Spica e all'asterismo di Ashwini, non all'equinozio di primavera. Ogni Rashi è governata da un pianeta specifico che ne colora profondamente il significato.</p>
+    <div class="rashi-grid">
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-01-mesha.webp)" alt="Mesha – Ariete vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Mesha</span>
+        <span class="rashi-equiv">Ariete</span>
+        <span class="rashi-el">🔥 Fuoco</span>
+        <span class="rashi-ruler">Marte</span>
       </div>
-    </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Rashi</th><th>Equivalente</th><th>Elemento</th><th>Pianeta regente</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Mesha</td><td>Ariete</td><td>Fuoco</td><td>Marte</td></tr>
-          <tr><td>Vrishabha</td><td>Toro</td><td>Terra</td><td>Venere</td></tr>
-          <tr><td>Mithuna</td><td>Gemelli</td><td>Aria</td><td>Mercurio</td></tr>
-          <tr><td>Karka</td><td>Cancro</td><td>Acqua</td><td>Luna</td></tr>
-          <tr><td>Simha</td><td>Leone</td><td>Fuoco</td><td>Sole</td></tr>
-          <tr><td>Kanya</td><td>Vergine</td><td>Terra</td><td>Mercurio</td></tr>
-          <tr><td>Tula</td><td>Bilancia</td><td>Aria</td><td>Venere</td></tr>
-          <tr><td>Vrischika</td><td>Scorpione</td><td>Acqua</td><td>Marte</td></tr>
-          <tr><td>Dhanu</td><td>Sagittario</td><td>Fuoco</td><td>Giove</td></tr>
-          <tr><td>Makara</td><td>Capricorno</td><td>Terra</td><td>Saturno</td></tr>
-          <tr><td>Kumbha</td><td>Acquario</td><td>Aria</td><td>Saturno</td></tr>
-          <tr><td>Meena</td><td>Pesci</td><td>Acqua</td><td>Giove</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-02-vrishabha.webp)" alt="Vrishabha – Toro vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Vrishabha</span>
+        <span class="rashi-equiv">Toro</span>
+        <span class="rashi-el">🌍 Terra</span>
+        <span class="rashi-ruler">Venere</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-03-mithuna.webp)" alt="Mithuna – Gemelli vedici" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Mithuna</span>
+        <span class="rashi-equiv">Gemelli</span>
+        <span class="rashi-el">💨 Aria</span>
+        <span class="rashi-ruler">Mercurio</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-04-karka.webp)" alt="Karka – Cancro vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Karka</span>
+        <span class="rashi-equiv">Cancro</span>
+        <span class="rashi-el">💧 Acqua</span>
+        <span class="rashi-ruler">Luna</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-05-simha.webp)" alt="Simha – Leone vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Simha</span>
+        <span class="rashi-equiv">Leone</span>
+        <span class="rashi-el">🔥 Fuoco</span>
+        <span class="rashi-ruler">Sole</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-06-kanya.webp)" alt="Kanya – Vergine vedica" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Kanya</span>
+        <span class="rashi-equiv">Vergine</span>
+        <span class="rashi-el">🌍 Terra</span>
+        <span class="rashi-ruler">Mercurio</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-07-tula.webp)" alt="Tula – Bilancia vedica" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Tula</span>
+        <span class="rashi-equiv">Bilancia</span>
+        <span class="rashi-el">💨 Aria</span>
+        <span class="rashi-ruler">Venere</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-08-vrischika.webp)" alt="Vrischika – Scorpione vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Vrischika</span>
+        <span class="rashi-equiv">Scorpione</span>
+        <span class="rashi-el">💧 Acqua</span>
+        <span class="rashi-ruler">Marte</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-09-dhanu.webp)" alt="Dhanu – Sagittario vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Dhanu</span>
+        <span class="rashi-equiv">Sagittario</span>
+        <span class="rashi-el">🔥 Fuoco</span>
+        <span class="rashi-ruler">Giove</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-10-makara.webp)" alt="Makara – Capricorno vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Makara</span>
+        <span class="rashi-equiv">Capricorno</span>
+        <span class="rashi-el">🌍 Terra</span>
+        <span class="rashi-ruler">Saturno</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-11-kumbha.webp)" alt="Kumbha – Acquario vedico" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Kumbha</span>
+        <span class="rashi-equiv">Acquario</span>
+        <span class="rashi-el">💨 Aria</span>
+        <span class="rashi-ruler">Saturno</span>
+      </div>
+
+      <div class="rashi-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/rashi-12-meena.webp)" alt="Meena – Pesci vedici" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="rashi-name">Meena</span>
+        <span class="rashi-equiv">Pesci</span>
+        <span class="rashi-el">💧 Acqua</span>
+        <span class="rashi-ruler">Giove</span>
+      </div>
+
+    </div><!-- /rashi-grid -->
   </section>
 
-  <!-- ── 5. NAKSHATRA ── -->
+  <hr class="divider" />
+
+  <!-- 27 NAKSHATRA -->
   <section id="nakshatra">
     <h2>Le 27 Nakshatra: Le Costellazioni Lunari</h2>
+    <p>
+      Le Nakshatra sono il vero cuore distintivo del Jyotish: 27 settori di 13°20' ciascuno
+      in cui è divisa l'eclittica, che tracciano il cammino mensile della Luna. La Nakshatra
+      in cui si trovava la Luna al momento della nascita influenza profondamente carattere,
+      compatibilità di coppia e — soprattutto — il punto di partenza del sistema delle Dasha.
+    </p>
 
-    <p>Le Nakshatra sono il vero cuore distintivo del Jyotish: 27 settori di 13°20' ciascuno in cui è divisa l'eclittica, che tracciano il cammino mensile della Luna. La Nakshatra in cui si trovava la Luna al momento della nascita influenza profondamente carattere, compatibilità di coppia e — soprattutto — il punto di partenza del sistema delle Dasha.</p>
+    <div class="info-box">
+      <div class="info-box-title">🌕 Il Cammino della Luna tra le 27 Dimore</div>
+      Le Nakshatra nascono dall'osservazione che la Luna impiega circa 27,3 giorni a
+      completare il suo giro attorno alla Terra, sostando ogni notte in una diversa
+      "dimora stellare". Questo sistema è molto più antico dello zodiaco solare: alcune
+      Nakshatra sono menzionate già nell'Atharva Veda, e paralleli si ritrovano nella
+      tradizione astrologica cinese (<em>Xiu</em>) e araba (<em>Manazil al-Qamar</em>).
+    </div>
 
-    <!-- Immagine contestuale: Luna tra le stelle, cammino lunare -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/nakshatra-luna-stelle.jpg)"
-        alt="La Luna che percorre le 27 Nakshatra nel cielo stellato"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>🌕 Il Cammino della Luna tra le 27 Dimore</h4>
-        <p>Le Nakshatra nascono dall'osservazione che la Luna impiega circa 27,3 giorni a completare il suo giro attorno alla Terra, sostando ogni notte in una diversa "dimora stellare". Questo sistema è molto più antico dello zodiaco solare: alcune Nakshatra sono menzionate già nell'Atharva Veda, e paralleli si ritrovano nella tradizione astrologica cinese (<em>Xiu</em>) e araba (<em>Manazil al-Qamar</em>).</p>
+    <div class="nakshatra-grid">
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-01-ashvini.webp)" alt="Ashwini – prima Nakshatra, testa di cavallo" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">1</span>
+        <span class="nak-name">Ashwini</span>
+        <span class="nak-ruler">Ketu</span>
+        <span class="nak-symbol">Testa di cavallo</span>
       </div>
-    </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>N°</th><th>Nakshatra</th><th>Pianeta regente</th><th>Simbolo</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Ashwini</td><td>Ketu</td><td>Testa di cavallo</td></tr>
-          <tr><td>2</td><td>Bharani</td><td>Venere</td><td>Yoni</td></tr>
-          <tr><td>3</td><td>Krittika</td><td>Sole</td><td>Lama, rasoio</td></tr>
-          <tr><td>4</td><td>Rohini</td><td>Luna</td><td>Carro</td></tr>
-          <tr><td>5</td><td>Mrigashira</td><td>Marte</td><td>Testa di cervo</td></tr>
-          <tr><td>6</td><td>Ardra</td><td>Rahu</td><td>Lacrima, diamante</td></tr>
-          <tr><td>7</td><td>Punarvasu</td><td>Giove</td><td>Faretra</td></tr>
-          <tr><td>8</td><td>Pushya</td><td>Saturno</td><td>Fiore, cerchio</td></tr>
-          <tr><td>9</td><td>Ashlesha</td><td>Mercurio</td><td>Serpente attorcigliato</td></tr>
-          <tr><td>10</td><td>Magha</td><td>Ketu</td><td>Trono</td></tr>
-          <tr><td>11</td><td>Purva Phalguni</td><td>Venere</td><td>Amaca</td></tr>
-          <tr><td>12</td><td>Uttara Phalguni</td><td>Sole</td><td>Letto</td></tr>
-          <tr><td>13</td><td>Hasta</td><td>Luna</td><td>Mano</td></tr>
-          <tr><td>14</td><td>Chitra</td><td>Marte</td><td>Perla</td></tr>
-          <tr><td>15</td><td>Swati</td><td>Rahu</td><td>Germoglio</td></tr>
-          <tr><td>16</td><td>Vishakha</td><td>Giove</td><td>Arco trionfale</td></tr>
-          <tr><td>17</td><td>Anuradha</td><td>Saturno</td><td>Fiore di loto</td></tr>
-          <tr><td>18</td><td>Jyeshtha</td><td>Mercurio</td><td>Orecchino, ombrello</td></tr>
-          <tr><td>19</td><td>Mula</td><td>Ketu</td><td>Radici</td></tr>
-          <tr><td>20</td><td>Purva Ashadha</td><td>Venere</td><td>Ventaglio</td></tr>
-          <tr><td>21</td><td>Uttara Ashadha</td><td>Sole</td><td>Zanna d'elefante</td></tr>
-          <tr><td>22</td><td>Shravana</td><td>Luna</td><td>Orecchio, tre impronte</td></tr>
-          <tr><td>23</td><td>Dhanishta</td><td>Marte</td><td>Tamburo</td></tr>
-          <tr><td>24</td><td>Shatabhisha</td><td>Rahu</td><td>Cerchio vuoto</td></tr>
-          <tr><td>25</td><td>Purva Bhadrapada</td><td>Giove</td><td>Spada</td></tr>
-          <tr><td>26</td><td>Uttara Bhadrapada</td><td>Saturno</td><td>Serpente d'acqua</td></tr>
-          <tr><td>27</td><td>Revati</td><td>Mercurio</td><td>Pesce, tamburo</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-02-bharani.webp)" alt="Bharani – seconda Nakshatra, yoni" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">2</span>
+        <span class="nak-name">Bharani</span>
+        <span class="nak-ruler">Venere</span>
+        <span class="nak-symbol">Yoni</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-03-krittika.webp)" alt="Krittika – terza Nakshatra, lama" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">3</span>
+        <span class="nak-name">Krittika</span>
+        <span class="nak-ruler">Sole</span>
+        <span class="nak-symbol">Lama, rasoio</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-04-rohini.webp)" alt="Rohini – quarta Nakshatra, carro" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">4</span>
+        <span class="nak-name">Rohini</span>
+        <span class="nak-ruler">Luna</span>
+        <span class="nak-symbol">Carro</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-05-mrigashira.webp)" alt="Mrigashira – quinta Nakshatra, testa di cervo" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">5</span>
+        <span class="nak-name">Mrigashira</span>
+        <span class="nak-ruler">Marte</span>
+        <span class="nak-symbol">Testa di cervo</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-06-ardra.webp)" alt="Ardra – sesta Nakshatra, lacrima" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">6</span>
+        <span class="nak-name">Ardra</span>
+        <span class="nak-ruler">Rahu</span>
+        <span class="nak-symbol">Lacrima, diamante</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-07-punarvasu.webp)" alt="Punarvasu – settima Nakshatra, faretra" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">7</span>
+        <span class="nak-name">Punarvasu</span>
+        <span class="nak-ruler">Giove</span>
+        <span class="nak-symbol">Faretra</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-08-pushya.webp)" alt="Pushya – ottava Nakshatra, fiore" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">8</span>
+        <span class="nak-name">Pushya</span>
+        <span class="nak-ruler">Saturno</span>
+        <span class="nak-symbol">Fiore, cerchio</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-09-ashlesha.webp)" alt="Ashlesha – nona Nakshatra, serpente" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">9</span>
+        <span class="nak-name">Ashlesha</span>
+        <span class="nak-ruler">Mercurio</span>
+        <span class="nak-symbol">Serpente attorcigliato</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-10-magha.webp)" alt="Magha – decima Nakshatra, trono" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">10</span>
+        <span class="nak-name">Magha</span>
+        <span class="nak-ruler">Ketu</span>
+        <span class="nak-symbol">Trono</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-11-purva-phalguni.webp)" alt="Purva Phalguni – undicesima Nakshatra, amaca" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">11</span>
+        <span class="nak-name">Purva Phalguni</span>
+        <span class="nak-ruler">Venere</span>
+        <span class="nak-symbol">Amaca</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-12-uttara-phalguni.webp)" alt="Uttara Phalguni – dodicesima Nakshatra, letto" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">12</span>
+        <span class="nak-name">Uttara Phalguni</span>
+        <span class="nak-ruler">Sole</span>
+        <span class="nak-symbol">Letto</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-13-hasta.webp)" alt="Hasta – tredicesima Nakshatra, mano" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">13</span>
+        <span class="nak-name">Hasta</span>
+        <span class="nak-ruler">Luna</span>
+        <span class="nak-symbol">Mano</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-14-chitra.webp)" alt="Chitra – quattordicesima Nakshatra, perla" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">14</span>
+        <span class="nak-name">Chitra</span>
+        <span class="nak-ruler">Marte</span>
+        <span class="nak-symbol">Perla</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-15-swati.webp)" alt="Swati – quindicesima Nakshatra, germoglio" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">15</span>
+        <span class="nak-name">Swati</span>
+        <span class="nak-ruler">Rahu</span>
+        <span class="nak-symbol">Germoglio</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-16-vishakha.webp)" alt="Vishakha – sedicesima Nakshatra, arco trionfale" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">16</span>
+        <span class="nak-name">Vishakha</span>
+        <span class="nak-ruler">Giove</span>
+        <span class="nak-symbol">Arco trionfale</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-17-anuradha.webp)" alt="Anuradha – diciassettesima Nakshatra, fiore di loto" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">17</span>
+        <span class="nak-name">Anuradha</span>
+        <span class="nak-ruler">Saturno</span>
+        <span class="nak-symbol">Fiore di loto</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-18-jyeshtha.webp)" alt="Jyeshtha – diciottesima Nakshatra, orecchino" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">18</span>
+        <span class="nak-name">Jyeshtha</span>
+        <span class="nak-ruler">Mercurio</span>
+        <span class="nak-symbol">Orecchino, ombrello</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-19-mula.webp)" alt="Mula – diciannovesima Nakshatra, radici" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">19</span>
+        <span class="nak-name">Mula</span>
+        <span class="nak-ruler">Ketu</span>
+        <span class="nak-symbol">Radici</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-20-purva-ashadha.webp)" alt="Purva Ashadha – ventesima Nakshatra, ventaglio" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">20</span>
+        <span class="nak-name">Purva Ashadha</span>
+        <span class="nak-ruler">Venere</span>
+        <span class="nak-symbol">Ventaglio</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-21-uttara-ashadha.webp)" alt="Uttara Ashadha – ventunesima Nakshatra, zanna d'elefante" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">21</span>
+        <span class="nak-name">Uttara Ashadha</span>
+        <span class="nak-ruler">Sole</span>
+        <span class="nak-symbol">Zanna d'elefante</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-22-shravana.webp)" alt="Shravana – ventiduesima Nakshatra, orecchio" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">22</span>
+        <span class="nak-name">Shravana</span>
+        <span class="nak-ruler">Luna</span>
+        <span class="nak-symbol">Orecchio, tre impronte</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-23-dhanishta.webp)" alt="Dhanishta – ventitreesima Nakshatra, tamburo" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">23</span>
+        <span class="nak-name">Dhanishta</span>
+        <span class="nak-ruler">Marte</span>
+        <span class="nak-symbol">Tamburo</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-24-shatabhisha.webp)" alt="Shatabhisha – ventiquattresima Nakshatra, cerchio vuoto" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">24</span>
+        <span class="nak-name">Shatabhisha</span>
+        <span class="nak-ruler">Rahu</span>
+        <span class="nak-symbol">Cerchio vuoto</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-25-purva-bhadrapada.webp)" alt="Purva Bhadrapada – venticinquesima Nakshatra, spada" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">25</span>
+        <span class="nak-name">Purva Bhadrapada</span>
+        <span class="nak-ruler">Giove</span>
+        <span class="nak-symbol">Spada</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-26-uttara-bhadrapada.webp)" alt="Uttara Bhadrapada – ventiseiesima Nakshatra, serpente d'acqua" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">26</span>
+        <span class="nak-name">Uttara Bhadrapada</span>
+        <span class="nak-ruler">Saturno</span>
+        <span class="nak-symbol">Serpente d'acqua</span>
+      </div>
+
+      <div class="nakshatra-card">
+        <img src="[raw.githubusercontent.com](https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/vedica/nakshatra-27-revati.webp)" alt="Revati – ventisettesima Nakshatra, pesce" loading="lazy" onerror="this.style.opacity='0.3'" />
+        <span class="nak-num">27</span>
+        <span class="nak-name">Revati</span>
+        <span class="nak-ruler">Mercurio</span>
+        <span class="nak-symbol">Pesce, tamburo</span>
+      </div>
+
+    </div><!-- /nakshatra-grid -->
   </section>
 
-  <!-- ── 6. CASE / BHAVA ── -->
-  <section id="bhava">
+  <hr class="divider" />
+
+  <!-- 12 BHAVA (CASE) -->
+  <section id="case">
     <h2>Le 12 Case (Bhava)</h2>
+    <p>
+      Come in Occidente, anche il Jyotish divide il cielo natale in 12 case, ma con nomi
+      e sfumature proprie legate alla filosofia indiana del dharma, artha, kama e moksha
+      (i quattro scopi della vita).
+    </p>
 
-    <p>Come in Occidente, anche il Jyotish divide il cielo natale in 12 case, ma con nomi e sfumature proprie legate alla filosofia indiana del dharma, artha, kama e moksha (i quattro scopi della vita).</p>
-
-    <!-- Immagine contestuale: Kundali chart schema -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/bhava-kundali-schema.jpg)"
-        alt="Schema delle 12 case (Bhava) nella carta natale vedica Kundali"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>🏠 Le 12 Bhava: I Dodici Campi dell'Esperienza</h4>
-        <p>Le case nella carta vedica non sono mai vuote di significato: anche in assenza di pianeti, la casa è attivata dal suo signore (<em>Bhavesh</em>) e dalla Rashi che la occupa. La lettura incrociata tra pianeti, segni e case è il nucleo della pratica astrologica vedica classica.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">🏠 Le 12 Bhava: I Dodici Campi dell'Esperienza</div>
+      Le case nella carta vedica non sono mai vuote di significato: anche in assenza di
+      pianeti, la casa è attivata dal suo signore (<em>Bhavesh</em>) e dalla Rashi che
+      la occupa. La lettura incrociata tra pianeti, segni e case è il nucleo della
+      pratica astrologica vedica classica.
     </div>
 
     <div class="bhava-grid">
-      <div class="bhava-card"><span class="num">1️⃣</span><h4>Tanu Bhava</h4><p>Sé, corpo, personalità, vitalità</p></div>
-      <div class="bhava-card"><span class="num">2️⃣</span><h4>Dhana Bhava</h4><p>Ricchezza, famiglia, parola</p></div>
-      <div class="bhava-card"><span class="num">3️⃣</span><h4>Sahaja Bhava</h4><p>Coraggio, fratelli, comunicazione</p></div>
-      <div class="bhava-card"><span class="num">4️⃣</span><h4>Sukha Bhava</h4><p>Casa, madre, radici, felicità</p></div>
-      <div class="bhava-card"><span class="num">5️⃣</span><h4>Putra Bhava</h4><p>Figli, creatività, intelletto</p></div>
-      <div class="bhava-card"><span class="num">6️⃣</span><h4>Roga Bhava</h4><p>Malattie, nemici, ostacoli</p></div>
-      <div class="bhava-card"><span class="num">7️⃣</span><h4>Kalatra Bhava</h4><p>Matrimonio, partner, relazioni</p></div>
-      <div class="bhava-card"><span class="num">8️⃣</span><h4>Ayur Bhava</h4><p>Trasformazione, occulto, longevità</p></div>
-      <div class="bhava-card"><span class="num">9️⃣</span><h4>Bhagya Bhava</h4><p>Fortuna, dharma, padre, spiritualità</p></div>
-      <div class="bhava-card"><span class="num">🔟</span><h4>Karma Bhava</h4><p>Carriera, status sociale, azione</p></div>
-      <div class="bhava-card"><span class="num">1️⃣1️⃣</span><h4>Labha Bhava</h4><p>Guadagni, desideri, amicizie</p></div>
-      <div class="bhava-card"><span class="num">1️⃣2️⃣</span><h4>Moksha Bhava</h4><p>Perdite, spiritualità, liberazione</p></div>
+      <div class="bhava-card"><span class="bhava-num">1</span><span class="bhava-name">Tanu Bhava</span><p class="bhava-desc">Sé, corpo, personalità, vitalità</p></div>
+      <div class="bhava-card"><span class="bhava-num">2</span><span class="bhava-name">Dhana Bhava</span><p class="bhava-desc">Ricchezza, famiglia, parola</p></div>
+      <div class="bhava-card"><span class="bhava-num">3</span><span class="bhava-name">Sahaja Bhava</span><p class="bhava-desc">Coraggio, fratelli, comunicazione</p></div>
+      <div class="bhava-card"><span class="bhava-num">4</span><span class="bhava-name">Sukha Bhava</span><p class="bhava-desc">Casa, madre, radici, felicità</p></div>
+      <div class="bhava-card"><span class="bhava-num">5</span><span class="bhava-name">Putra Bhava</span><p class="bhava-desc">Figli, creatività, intelletto</p></div>
+      <div class="bhava-card"><span class="bhava-num">6</span><span class="bhava-name">Roga Bhava</span><p class="bhava-desc">Malattie, nemici, ostacoli</p></div>
+      <div class="bhava-card"><span class="bhava-num">7</span><span class="bhava-name">Kalatra Bhava</span><p class="bhava-desc">Matrimonio, partner, relazioni</p></div>
+      <div class="bhava-card"><span class="bhava-num">8</span><span class="bhava-name">Ayur Bhava</span><p class="bhava-desc">Trasformazione, occulto, longevità</p></div>
+      <div class="bhava-card"><span class="bhava-num">9</span><span class="bhava-name">Bhagya Bhava</span><p class="bhava-desc">Fortuna, dharma, padre, spiritualità</p></div>
+      <div class="bhava-card"><span class="bhava-num">10</span><span class="bhava-name">Karma Bhava</span><p class="bhava-desc">Carriera, status sociale, azione</p></div>
+      <div class="bhava-card"><span class="bhava-num">11</span><span class="bhava-name">Labha Bhava</span><p class="bhava-desc">Guadagni, desideri, amicizie</p></div>
+      <div class="bhava-card"><span class="bhava-num">12</span><span class="bhava-name">Moksha Bhava</span><p class="bhava-desc">Perdite, spiritualità, liberazione</p></div>
     </div>
   </section>
 
-  <!-- ── 7. LAGNA E KUNDALI ── -->
+  <hr class="divider" />
+
+  <!-- LAGNA / KUNDALI -->
   <section id="kundali">
     <h2>Il Lagna e la Carta Natale (Kundali)</h2>
+    <p>
+      Il <strong>Lagna</strong> (Ascendente) è il segno che sorgeva all'orizzonte est nel
+      momento esatto della nascita, e nel Jyotish è il vero punto di ancoraggio del tema
+      natale, la lente attraverso cui si leggono tutte le altre posizioni. La carta natale
+      completa si chiama <em>Janma Kundali</em> ed è tradizionalmente disegnata come un
+      quadrato o un diamante (a seconda dello stile nord o sud indiano), molto diversa
+      visivamente dalla ruota circolare occidentale.
+    </p>
 
-    <p>Il <strong>Lagna</strong> (Ascendente) è il segno che sorgeva all'orizzonte est nel momento esatto della nascita, e nel Jyotish è il vero punto di ancoraggio del tema natale, la lente attraverso cui si leggono tutte le altre posizioni. La carta natale completa si chiama <strong>Janma Kundali</strong> ed è tradizionalmente disegnata come un quadrato o un diamante (a seconda dello stile nord o sud indiano), molto diversa visivamente dalla ruota circolare occidentale.</p>
-
-    <!-- Immagine contestuale: esempio di Kundali nord-indiano vs sud-indiano -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/kundali-nord-sud-indiano.jpg)"
-        alt="Confronto tra carta natale vedica in stile nord-indiano e sud-indiano"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>📐 Janma Kundali: Due Stili, Un'Unica Carta</h4>
-        <p>Lo stile <strong>nord-indiano</strong> disegna la carta come un diamante con le case fisse e i segni che ruotano; lo stile <strong>sud-indiano</strong> usa una griglia quadrata in cui i segni sono fissi e le case variano. Entrambi contengono le stesse informazioni astrologiche: cambiano solo la convenzione visiva e il modo di leggere il layout. Accanto alla carta principale (D1), il Jyotish utilizza la <em>Navamsa</em> (D9) come carta secondaria fondamentale per matrimonio e vita spirituale.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">📐 Janma Kundali: Due Stili, Un'Unica Carta</div>
+      Lo stile <strong>nord-indiano</strong> disegna la carta come un diamante con le
+      case fisse e i segni che ruotano; lo stile <strong>sud-indiano</strong> usa una
+      griglia quadrata in cui i segni sono fissi e le case variano. Entrambi contengono
+      le stesse informazioni astrologiche: cambiano solo la convenzione visiva e il modo
+      di leggere il layout. Accanto alla carta principale (D1), il Jyotish utilizza la
+      <em>Navamsa</em> (D9) come carta secondaria fondamentale per matrimonio e vita spirituale.
     </div>
 
-    <p>Oltre alla carta principale (Rashi chart o D1), il Jyotish utilizza numerose carte divisionali (<em>varga</em>) per analizzare aspetti specifici: la più importante è la <strong>Navamsa</strong> (D9), usata soprattutto per approfondire matrimonio e vita spirituale, che raffina e a volte corregge le indicazioni della carta principale.</p>
+    <p>
+      Oltre alla carta principale (Rashi chart o D1), il Jyotish utilizza numerose carte
+      divisionali (<em>varga</em>) per analizzare aspetti specifici: la più importante è
+      la <strong>Navamsa</strong> (D9), usata soprattutto per approfondire matrimonio e
+      vita spirituale, che raffina e a volte corregge le indicazioni della carta principale.
+    </p>
   </section>
 
-  <!-- ── 8. DASHA ── -->
+  <hr class="divider" />
+
+  <!-- DASHA -->
   <section id="dasha">
     <h2>Il Sistema delle Dasha</h2>
+    <p>
+      Ciò che rende il Jyotish unico nel panorama mondiale è il suo sofisticato sistema
+      predittivo basato sui tempi: le <strong>Dasha</strong>, periodi planetari che si
+      succedono durante l'intera vita di una persona. Il sistema più diffuso è la
+      <strong>Vimshottari Dasha</strong>, calcolata a partire dalla Nakshatra della Luna
+      alla nascita, per un ciclo totale di 120 anni.
+    </p>
 
-    <p>Ciò che rende il Jyotish unico nel panorama mondiale è il suo sofisticato sistema predittivo basato sui tempi: le <strong>Dasha</strong>, periodi planetari che si succedono durante l'intera vita di una persona. Il sistema più diffuso è la <strong>Vimshottari Dasha</strong>, calcolata a partire dalla Nakshatra della Luna alla nascita, per un ciclo totale di 120 anni.</p>
-
-    <!-- Immagine contestuale: linea del tempo delle Dasha -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/dasha-vimshottari-timeline.jpg)"
-        alt="Schema visivo del sistema delle Dasha Vimshottari nel Jyotish"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>⏳ Vimshottari Dasha: La Mappa del Tempo</h4>
-        <p>Il sistema Vimshottari ("centoventi") assegna a ciascuno dei nove pianeti un periodo di anni che si succedono in un ordine fisso, a partire dal pianeta che governa la Nakshatra lunare natale. Il punto esatto della Luna all'interno della Nakshatra determina quanti anni rimangono nel primo periodo, permettendo calcoli precisi degli inizi e delle fini di ogni fase della vita.</p>
-      </div>
+    <div class="info-box">
+      <div class="info-box-title">⏳ Vimshottari Dasha: La Mappa del Tempo</div>
+      Il sistema Vimshottari ("centoventi") assegna a ciascuno dei nove pianeti un periodo
+      di anni che si succedono in un ordine fisso, a partire dal pianeta che governa la
+      Nakshatra lunare natale. Il punto esatto della Luna all'interno della Nakshatra
+      determina quanti anni rimangono nel primo periodo, permettendo calcoli precisi
+      degli inizi e delle fini di ogni fase della vita.
     </div>
 
-    <div class="callout">
-      <strong>💡 Mahadasha e Antardasha:</strong> ogni periodo planetario maggiore (Mahadasha) si suddivide a sua volta in sottoperiodi (Antardasha) governati dagli altri pianeti, permettendo una lettura molto più fine e dettagliata degli eventi nel tempo.
+    <div class="info-box tip">
+      <div class="info-box-title">💡 Mahadasha e Antardasha</div>
+      Ogni periodo planetario maggiore (Mahadasha) si suddivide a sua volta in sottoperiodi
+      (Antardasha) governati dagli altri pianeti, permettendo una lettura molto più fine
+      e dettagliata degli eventi nel tempo.
     </div>
 
-    <div class="table-wrap">
-      <table class="dasha-highlight">
+    <div class="table-wrap dasha-table">
+      <table>
         <thead>
           <tr><th>Pianeta (Mahadasha)</th><th>Durata</th></tr>
         </thead>
         <tbody>
-          <tr><td>Ketu</td><td>7 anni</td></tr>
-          <tr><td>Venere (Shukra)</td><td>20 anni</td></tr>
-          <tr><td>Sole (Surya)</td><td>6 anni</td></tr>
-          <tr><td>Luna (Chandra)</td><td>10 anni</td></tr>
-          <tr><td>Marte (Mangala)</td><td>7 anni</td></tr>
-          <tr><td>Rahu</td><td>18 anni</td></tr>
-          <tr><td>Giove (Guru)</td><td>16 anni</td></tr>
-          <tr><td>Saturno (Shani)</td><td>19 anni</td></tr>
-          <tr><td>Mercurio (Budha)</td><td>17 anni</td></tr>
+          <tr><td>☋ Ketu</td><td>7 anni</td></tr>
+          <tr><td>♀️ Venere (Shukra)</td><td>20 anni</td></tr>
+          <tr><td>☀️ Sole (Surya)</td><td>6 anni</td></tr>
+          <tr><td>🌙 Luna (Chandra)</td><td>10 anni</td></tr>
+          <tr><td>♂️ Marte (Mangala)</td><td>7 anni</td></tr>
+          <tr><td>☊ Rahu</td><td>18 anni</td></tr>
+          <tr><td>♃ Giove (Guru)</td><td>16 anni</td></tr>
+          <tr><td>♄ Saturno (Shani)</td><td>19 anni</td></tr>
+          <tr><td>☿️ Mercurio (Budha)</td><td>17 anni</td></tr>
+          <tr><td colspan="2" style="text-align:right;font-style:italic;color:var(--gold-dark)"><strong>Totale: 120 anni</strong></td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- ── 9. YOGA E DOSHA ── -->
+  <hr class="divider" />
+
+  <!-- YOGA E DOSHA -->
   <section id="yoga-dosha">
     <h2>Yoga e Dosha Principali</h2>
 
@@ -723,15 +1184,19 @@
     <ul class="yoga-list">
       <li>
         <strong>Raj Yoga — "Combinazione Regale"</strong>
-        Indica potenziale di successo, autorità e prestigio. Si forma quando i signori di case di dharma (1ª, 5ª, 9ª) si combinano con i signori di case di artha (2ª, 6ª, 10ª) o kama (3ª, 7ª, 11ª).
+        Indica potenziale di successo, autorità e prestigio. Si forma quando i signori di
+        case di dharma (1ª, 5ª, 9ª) si combinano con i signori di case di artha (2ª, 6ª, 10ª)
+        o kama (3ª, 7ª, 11ª).
       </li>
       <li>
         <strong>Gajakesari Yoga — Luna e Giove in relazione</strong>
-        Associato a fama, intelligenza e buona reputazione. Tradizionalmente si forma quando Giove è in kendras (1ª, 4ª, 7ª, 10ª) dalla Luna.
+        Associato a fama, intelligenza e buona reputazione. Tradizionalmente si forma
+        quando Giove è in kendras (1ª, 4ª, 7ª, 10ª) dalla Luna.
       </li>
       <li>
         <strong>Dhana Yoga — Combinazioni di Prosperità</strong>
-        Configurazioni che indicano potenziale di ricchezza materiale, solitamente coinvolgendo i signori della 2ª, 5ª, 9ª e 11ª casa.
+        Configurazioni che indicano potenziale di ricchezza materiale, solitamente
+        coinvolgendo i signori della 2ª, 5ª, 9ª e 11ª casa.
       </li>
     </ul>
 
@@ -741,121 +1206,188 @@
     <ul class="dosha-list">
       <li>
         <strong>Mangal Dosha (Kuja Dosha)</strong>
-        Riguarda posizioni di Marte ritenute critiche per l'armonia matrimoniale, in particolare nella 1ª, 4ª, 7ª, 8ª o 12ª casa. La tradizione suggerisce l'unione tra due persone con lo stesso Dosha per bilanciarne l'effetto.
+        Riguarda posizioni di Marte ritenute critiche per l'armonia matrimoniale,
+        in particolare nella 1ª, 4ª, 7ª, 8ª o 12ª casa. La tradizione suggerisce
+        l'unione tra due persone con lo stesso Dosha per bilanciarne l'effetto.
       </li>
       <li>
         <strong>Kaal Sarp Dosha</strong>
-        Si verifica quando tutti i pianeti si trovano racchiusi tra Rahu e Ketu. Indica sfide karmatiche significative ma anche potenziale per una crescita spirituale profonda.
+        Si verifica quando tutti i pianeti si trovano racchiusi tra Rahu e Ketu.
+        Indica sfide karmatiche significative ma anche potenziale per una crescita
+        spirituale profonda.
       </li>
       <li>
         <strong>Pitra Dosha</strong>
-        Collegato al karma ereditato dalla linea ancestrale, spesso associato all'afflizione del Sole o del nono signore. Le pratiche rituale di <em>pitru tarpan</em> sono i rimedi tradizionali principali.
+        Collegato al karma ereditato dalla linea ancestrale, spesso associato
+        all'afflizione del Sole o del nono signore. Le pratiche rituali di
+        <em>pitru tarpan</em> sono i rimedi tradizionali principali.
       </li>
     </ul>
   </section>
 
-  <!-- ── 10. RIMEDI ── -->
+  <hr class="divider" />
+
+  <!-- RIMEDI -->
   <section id="rimedi">
     <h2>Rimedi Vedici Tradizionali</h2>
-
-    <p>Il Jyotish non è solo un sistema di lettura del destino ma anche una tradizione pratica di intervento sul karma attraverso rimedi (<em>upaaya</em>) che mirano ad armonizzare le energie planetarie.</p>
-
-    <!-- Immagine contestuale: gemme planetarie Navaratna -->
-    <div class="image-block">
-      <img
-        src="[mysticaoracoli.it](https://mysticaoracoli.it/images/navaratna-gemme-planetarie.jpg)"
-        alt="Le nove gemme planetarie Navaratna dell'astrologia vedica"
-        onerror="this.style.display='none'"
-      />
-      <div class="image-caption">
-        <h4>💎 Navaratna: Le Nove Gemme dei Pianeti</h4>
-        <p>Ogni pianeta è associato a una gemma specifica che, indossata a contatto con la pelle, sarebbe in grado di amplificarne o armonizzarne l'energia. Il set completo dei nove gioielli — rubino, perla, corallo, smeraldo, zaffiro giallo, diamante, zaffiro blu, hessonite e occhio di gatto — prende il nome di <em>Navaratna</em> e rappresenta simbolicamente l'armonia dei nove pianeti. La scelta della gemma richiede una lettura astrologica accurata: indossare la pietra del pianeta sbagliato può amplificare energie indesiderate.</p>
-      </div>
-    </div>
+    <p>
+      Il Jyotish non è solo un sistema di lettura del destino ma anche una tradizione
+      pratica di intervento sul karma attraverso rimedi (<em>upaaya</em>) che mirano
+      ad armonizzare le energie planetarie.
+    </p>
 
     <div class="rimedi-grid">
-      <div class="rimedio-card">
-        <span class="icon">💎</span>
-        <h4>Gemme Planetarie (Navaratna)</h4>
-        <p>Rubino (Sole), perla (Luna), corallo rosso (Marte), smeraldo (Mercurio), zaffiro giallo (Giove), diamante (Venere), zaffiro blu (Saturno), hessonite (Rahu), occhio di gatto (Ketu).</p>
+
+      <div class="rimedi-card">
+        <span class="rimedi-icon">💎</span>
+        <strong>Gemme Planetarie (Navaratna)</strong>
+        <p>
+          Ogni pianeta è associato a una gemma specifica da indossare a contatto con
+          la pelle. Il set completo — rubino (Sole), perla (Luna), corallo rosso (Marte),
+          smeraldo (Mercurio), zaffiro giallo (Giove), diamante (Venere), zaffiro blu
+          (Saturno), hessonite (Rahu), occhio di gatto (Ketu) — prende il nome di
+          <em>Navaratna</em>. La scelta richiede una lettura astrologica accurata.
+        </p>
       </div>
-      <div class="rimedio-card">
-        <span class="icon">🔔</span>
-        <h4>Mantra Planetari</h4>
-        <p>Ogni pianeta ha un <em>beej mantra</em> (mantra-seme) associato, recitato in numero specifico di ripetizioni per armonizzarne l'energia nel proprio campo vibrazionale.</p>
+
+      <div class="rimedi-card">
+        <span class="rimedi-icon">🔔</span>
+        <strong>Mantra Planetari</strong>
+        <p>
+          Ogni pianeta ha un <em>beej mantra</em> (mantra-seme) associato, recitato
+          in un numero specifico di ripetizioni per armonizzarne l'energia nel proprio
+          campo vibrazionale.
+        </p>
       </div>
-      <div class="rimedio-card">
-        <span class="icon">🎨</span>
-        <h4>Colori e Giorni</h4>
-        <p>Indossare il colore associato a un pianeta nel suo giorno della settimana è una pratica comune: ad esempio rosso il martedì per Marte, giallo il giovedì per Giove.</p>
+
+      <div class="rimedi-card">
+        <span class="rimedi-icon">🎨</span>
+        <strong>Colori e Giorni</strong>
+        <p>
+          Indossare il colore associato a un pianeta nel suo giorno della settimana
+          è una pratica comune: rosso il martedì per Marte, giallo il giovedì per
+          Giove, bianco il lunedì per la Luna.
+        </p>
       </div>
-      <div class="rimedio-card">
-        <span class="icon">🙏</span>
-        <h4>Daan (Carità)</h4>
-        <p>Fare donazioni specifiche nei giorni planetari è considerato un modo tradizionale per placare un pianeta sfavorevole, donando gli oggetti, i cibi o i colori a esso associati.</p>
+
+      <div class="rimedi-card">
+        <span class="rimedi-icon">🙏</span>
+        <strong>Daan (Carità)</strong>
+        <p>
+          Fare donazioni specifiche nei giorni planetari è considerato un modo
+          tradizionale per placare un pianeta sfavorevole, donando gli oggetti,
+          i cibi o i colori a esso associati.
+        </p>
       </div>
-      <div class="rimedio-card">
-        <span class="icon">🔷</span>
-        <h4>Yantra</h4>
-        <p>Diagrammi geometrici sacri usati come supporto alla meditazione e alla concentrazione rituale. Ogni pianeta ha il proprio Yantra, un pattern matematico preciso che ne rappresenta l'essenza.</p>
+
+      <div class="rimedi-card">
+        <span class="rimedi-icon">🔷</span>
+        <strong>Yantra</strong>
+        <p>
+          Diagrammi geometrici sacri usati come supporto alla meditazione e alla
+          concentrazione rituale. Ogni pianeta ha il proprio Yantra, un pattern
+          matematico preciso che ne rappresenta l'essenza energetica.
+        </p>
       </div>
+
     </div>
   </section>
 
-  <!-- ── 11. FAQ ── -->
+  <hr class="divider" />
+
+  <!-- FAQ -->
   <section id="faq">
     <h2>Domande Frequenti sull'Astrologia Vedica</h2>
 
     <details>
       <summary>Cos'è l'astrologia vedica e in cosa differisce da quella occidentale?</summary>
-      <p>Il Jyotish è il sistema astrologico tradizionale indiano, basato sullo <strong>zodiaco siderale</strong> invece di quello tropicale. Dà grande importanza alla Luna, alle Nakshatra e al sistema delle Dasha per collocare gli eventi nel tempo.</p>
+      <div>
+        L'astrologia vedica (Jyotish) è un sistema astrologico originario dell'India antica,
+        parte dei Vedanga. Si distingue dall'astrologia occidentale principalmente per l'uso
+        dello zodiaco siderale (ancorato alle stelle fisse) anziché tropicale (ancorato
+        all'equinozio), per il ruolo centrale della Luna e delle Nakshatra, e per il
+        sofisticato sistema predittivo delle Dasha.
+      </div>
     </details>
 
     <details>
       <summary>Cos'è l'Ayanamsa e perché il mio segno vedico è diverso?</summary>
-      <p>È lo scarto angolare, oggi di circa <strong>24 gradi</strong>, tra zodiaco tropicale e siderale, causato dalla precessione degli equinozi. Per questo un segno occidentale spesso "scivola" in quello precedente nel sistema vedico.</p>
+      <div>
+        L'Ayanamsa è lo scarto angolare tra i due zodiaci, causato dalla precessione degli
+        equinozi. Attualmente è di circa 24°. Per convertire la posizione di un pianeta
+        dallo zodiaco tropicale a quello siderale si sottrae l'Ayanamsa: ecco perché molte
+        persone risultano nel segno precedente nel sistema vedico rispetto a quello occidentale.
+      </div>
     </details>
 
     <details>
       <summary>Cosa sono le Nakshatra?</summary>
-      <p>Sono le <strong>27 costellazioni lunari</strong> in cui è divisa l'eclittica, ciascuna di 13°20'. Indicano la posizione precisa della Luna alla nascita e sono la base del calcolo delle Dasha.</p>
+      <div>
+        Le Nakshatra sono 27 "dimore lunari" che dividono l'eclittica in settori di 13°20'
+        ciascuno. Rappresentano le stazioni mensili della Luna e sono alla base del sistema
+        delle Dasha e della compatibilità di coppia (sindrome). Ogni Nakshatra ha un pianeta
+        reggente, un simbolo, una divinità tutelare e qualità specifiche che influenzano
+        chi nasce sotto la sua influenza.
+      </div>
     </details>
 
     <details>
       <summary>Cos'è una Dasha e come funziona?</summary>
-      <p>È il sistema predittivo del Jyotish: divide la vita in periodi planetari. La <strong>Vimshottari Dasha</strong> dura in totale 120 anni, durante i quali un pianeta specifico domina e ne influenza gli eventi. Ogni Mahadasha si suddivide ulteriormente in Antardasha per una lettura più precisa.</p>
+      <div>
+        Una Dasha è un periodo planetario nel sistema predittivo del Jyotish. Il sistema
+        Vimshottari Dasha assegna a ciascuno dei 9 pianeti una durata specifica (da 6 a
+        20 anni) per un totale di 120 anni. Il pianeta che governa la Nakshatra lunare
+        natale determina la Dasha di partenza. Ogni Mahadasha si suddivide in Antardasha
+        (sottoperiodi), permettendo previsioni molto dettagliate.
+      </div>
     </details>
 
     <details>
       <summary>L'astrologia vedica è una scienza riconosciuta?</summary>
-      <p>È una <strong>tradizione spirituale e culturale</strong> antica di migliaia di anni, parte del patrimonio induista, ma non riconosciuta come scienza dalla comunità scientifica moderna. Va vissuta come un sistema simbolico di riflessione e autoconoscenza.</p>
+      <div>
+        Il Jyotish è riconosciuto come disciplina accademica in India, dove alcune
+        università offrono corsi e lauree in astrologia vedica. Dal punto di vista
+        scientifico occidentale, non è considerata una scienza empirica ma una tradizione
+        culturale e filosofica millenaria. Il suo valore risiede nel sistema simbolico,
+        nella profondità psicologica e nella ricca tradizione interpretativa.
+      </div>
     </details>
+
   </section>
 
-  <!-- ── CTA ── -->
-  <div class="cta-box">
-    <h3>🕉️ Scopri l'Oroscopo su MYSTICA</h3>
-    <p>MYSTICA offre oroscopo personalizzato, tarocchi, I Ching, rune e 25+ oracoli antichi. Gratis, senza registrazione.</p>
+  <!-- CTA -->
+  <div class="cta-section">
+    <span style="font-size:2.5rem">ॐ</span>
+    <h2>Scopri l'Oroscopo su MYSTICA</h2>
+    <p style="color:var(--text-muted)">
+      MYSTICA offre oroscopo personalizzato, tarocchi, I Ching, rune e 25+ oracoli antichi.
+      Gratis, senza registrazione.
+    </p>
     <div class="cta-links">
-      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/oroscopo-segni.html)">⭐ Segni Zodiacali</a>
-      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/guida-tarocchi.html)">🎴 Guida Tarocchi</a>
-      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/guida-i-ching.html)">☯️ Guida I Ching</a>
+      <a class="cta-btn" href="[mysticaoracoli.it](https://mysticaoracoli.it/oroscopo-segni.html)">⭐ Segni Zodiacali</a>
+      <a class="cta-btn" href="[mysticaoracoli.it](https://mysticaoracoli.it/guida-tarocchi.html)">🎴 Guida Tarocchi</a>
+      <a class="cta-btn" href="[mysticaoracoli.it](https://mysticaoracoli.it/guida-i-ching.html)">☯️ Guida I Ching</a>
+      <a class="cta-btn" href="[mysticaoracoli.it](https://mysticaoracoli.it/)">✦ Apri l'App ✦</a>
     </div>
-    <br />
-    <a href="[mysticaoracoli.it](https://mysticaoracoli.it/)" class="cta-primary">✦ Apri l'App ✦</a>
   </div>
 
+</div><!-- /container -->
 </main>
 
-<!-- ═══════════════════════════════════════════ FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
-  <p>— Sviluppato e creato da <strong>Giovanni Petrolese</strong> · Tutti i diritti riservati. Vietata la riproduzione anche parziale.</p>
-  <p style="margin-top:10px;">
-    <a href="[mysticaoracoli.it](https://mysticaoracoli.it/about.html)">Chi Siamo</a>
-    <a href="[mysticaoracoli.it](https://mysticaoracoli.it/contatti.html)">Contatti</a>
-    <a href="[mysticaoracoli.it](https://mysticaoracoli.it/privacy.html)">Privacy Policy</a>
-    <a href="[mysticaoracoli.it](https://mysticaoracoli.it/termini.html)">Termini di Servizio</a>
-  </p>
+  <div class="container">
+    <p style="margin-bottom:0.8rem">
+      Sviluppato e creato da <strong>Giovanni Petrolese</strong> · Tutti i diritti riservati.
+      Vietata la riproduzione anche parziale.
+    </p>
+    <nav>
+      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/about.html)">Chi Siamo</a>
+      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/contatti.html)">Contatti</a>
+      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/privacy.html)">Privacy Policy</a>
+      <a href="[mysticaoracoli.it](https://mysticaoracoli.it/termini.html)">Termini di Servizio</a>
+    </nav>
+  </div>
 </footer>
 
 </body>
