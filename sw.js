@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v22';
+const CACHE_NAME = 'mystica-v23';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -10,7 +10,21 @@ const URLS_TO_CACHE = [
   './index.html',
   './manifest.json',
   './icon-192.png',
-  './apple-touch-icon.png'
+  './apple-touch-icon.png',
+  // Icone home — nuove immagini aggiunte
+  './images/icone/home/astrologia-avanzata.webp',
+  './images/icone/home/cartomanzia.webp',
+  './images/icone/home/lenormand.webp',
+  './images/icone/home/oracolo-angeli.webp',
+  './images/icone/home/oracolo-celti.webp',
+  './images/icone/home/specchio-nero.webp',
+  './images/icone/home/cromomanzia.webp',
+  './images/icone/home/meditazione.webp',
+  './images/icone/home/pranayama.webp',
+  './images/icone/home/ipnosi.webp',
+  './images/icone/home/eft-tapping.webp',
+  './images/icone/home/sincronicita.webp',
+  './images/icone/home/voodoo-hoodoo.webp'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
