@@ -780,11 +780,16 @@ function chiudiDisclaimer(){
 
 
           <div class="dash-card c-purple" onclick="nav('mistico')">
-            <div class="dash-img-wrap"><img id="dcMisticoImg" src="./images/icone/zodiaco/ariete.webp"></div>
+            <div class="dash-img-wrap"><img id="dcMisticoImg" src="./images/icone/zodiaco/ariete.webp" loading="lazy"></div>
             <div class="dash-label">Profilo</div>
             <div class="dash-sub">Mistico</div>
           </div>
 
+          <div class="dash-card c-orange" onclick="nav('zodcinese')">
+            <div class="dash-img-wrap"><img id="dcZodImg2" src="./images/icone/cinese/maiale%20int.webp" loading="lazy"></div>
+            <div class="dash-label" id="dcZodName2">Zodiaco Cinese</div>
+            <div class="dash-sub" style="color:#f0a060">Anno & segno lunare</div>
+          </div>
 
         </div>
       </div>
@@ -794,27 +799,27 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌌 Astrologia Occidentale</div>
         <div class="dash-grid">
           <div class="dash-card c-gold" onclick="nav('oroscopo')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/oroscopo.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/oroscopo.webp"></div>
             <div class="dash-label">Oroscopo</div>
             <div class="dash-sub" style="color:#d4af37">Il tuo destino astrale</div>
           </div>
           <div class="dash-card c-blue" onclick="nav('amore')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/amore.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/amore.webp"></div>
             <div class="dash-label">Compatibilità</div>
             <div class="dash-sub" style="color:#7eb8f7">Affinità zodiacale</div>
           </div>
           <div class="dash-card c-teal" onclick="openOracoloHome('luna')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/fasi-lunari.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/fasi-lunari.webp"></div>
             <div class="dash-label">Luna</div>
             <div class="dash-sub" style="color:#5ecec4">Fasi & energie lunari</div>
           </div>
           <div class="dash-card c-purple" onclick="openOracoloHome('pianeti')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/transiti.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/transiti.webp"></div>
             <div class="dash-label">Pianeti</div>
             <div class="dash-sub" style="color:#b88fe0">Transiti planetari</div>
           </div>
           <div class="dash-card c-gold" onclick="window.location.href='./astrologia-avanzata.html'" style="grid-column:span 2">
-            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img src="./images/icone/home/astrologia-avanzata.webp"></div>
+            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img loading="lazy" src="./images/icone/home/astrologia-avanzata.webp"></div>
             <div class="dash-label">Astrologia Avanzata</div>
             <div class="dash-sub" style="color:#d4af37">Carta Natale · Sinastria · Oraria · Karmica</div>
           </div>
@@ -826,22 +831,24 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌏 Astrologia Orientale &amp; Moderna</div>
         <div class="dash-grid">
           <div class="dash-card c-orange" onclick="window.location.href='./astrologia-vedica.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/astrologia-vedica.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/astrologia-vedica.webp"></div>
             <div class="dash-label">Astrologia Vedica</div>
             <div class="dash-sub" style="color:#f0a060">Jyotish — luce divina</div>
           </div>
-          <div class="dash-card c-orange" onclick="nav('zodcinese')">
-            <div class="dash-img-wrap"><img id="dcZodImg2" src="./images/icone/cinese/maiale.webp"></div>
-            <div class="dash-label" id="dcZodName2">Zodiaco Cinese</div>
-            <div class="dash-sub" style="color:#f0a060">Anno & segno lunare</div>
+          <div class="dash-card c-orange" onclick="" style="opacity:0.7;cursor:default">
+            <div class="dash-img-wrap" style="display:flex;align-items:center;justify-content:center;background:#1a0d2e">
+              <span style="font-size:38px;filter:drop-shadow(0 0 12px #f0a06080)">🏮</span>
+            </div>
+            <div class="dash-label">Oroscopo Cinese</div>
+            <div class="dash-sub" style="color:#f0a060">In arrivo</div>
           </div>
           <div class="dash-card c-red" onclick="window.location.href='./bazi-cinese.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/bazi-cinese.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/bazi-cinese.webp"></div>
             <div class="dash-label">BaZi Cinese</div>
             <div class="dash-sub" style="color:#f07070">I Quattro Pilastri</div>
           </div>
           <div class="dash-card c-gold" onclick="window.location.href='./zi-wei-dou-shu.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/zi-wei-dou-shu.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/zi-wei-dou-shu.webp"></div>
             <div class="dash-label">Zi Wei Dou Shu</div>
             <div class="dash-sub" style="color:#d4af37">La Stella Polare</div>
           </div>
@@ -853,22 +860,22 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌙 Cicli &amp; Tempo</div>
         <div class="dash-grid">
           <div class="dash-card c-teal" onclick="window.location.href='./cicli-tempo.html#calendario-lunare'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/calendario-lunare.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/calendario-lunare.webp"></div>
             <div class="dash-label">Calendario Lunare</div>
             <div class="dash-sub" style="color:#5ecec4">Pianifica con la Luna</div>
           </div>
           <div class="dash-card c-orange" onclick="window.location.href='./cicli-tempo.html#tzolkin'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/calendario-maya.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/calendario-maya.webp"></div>
             <div class="dash-label">Calendario Maya</div>
             <div class="dash-sub" style="color:#f0a060">Tzolkin — 13 toni · 20 segni</div>
           </div>
           <div class="dash-card c-gold" onclick="window.location.href='./cicli-tempo.html#ore-planetarie'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/giorni-e-ore.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/giorni-e-ore.webp"></div>
             <div class="dash-label">Giorni & Ore Planetarie</div>
             <div class="dash-sub" style="color:#d4af37">Ogni ora ha il suo pianeta</div>
           </div>
           <div class="dash-card c-green" onclick="window.location.href='./cicli-tempo.html#stagioni-magiche'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/stagioni-magiche.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/stagioni-magiche.webp"></div>
             <div class="dash-label">Stagioni Magiche</div>
             <div class="dash-sub" style="color:#6fcf97">Equinozi & solstizi</div>
           </div>
@@ -880,12 +887,12 @@ function chiudiDisclaimer(){
         <div class="dash-title">🧬 Sistemi di Consapevolezza</div>
         <div class="dash-grid">
           <div class="dash-card c-teal" onclick="window.location.href='./human-design.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/human-design.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/human-design.webp"></div>
             <div class="dash-label">Human Design</div>
             <div class="dash-sub" style="color:#5ecec4">Il tuo progetto di vita</div>
           </div>
           <div class="dash-card c-green" onclick="window.location.href='./gene-keys.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/gene-keys.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/gene-keys.webp"></div>
             <div class="dash-label">Gene Keys</div>
             <div class="dash-sub" style="color:#6fcf97">Chiavi dell'evoluzione</div>
           </div>
@@ -897,42 +904,42 @@ function chiudiDisclaimer(){
         <div class="dash-title">🃏 Divinazione</div>
         <div class="dash-grid">
           <div class="dash-card c-gold" onclick="nav('tarot')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/tarocchi.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/tarocchi.webp"></div>
             <div class="dash-label">Tarocchi</div>
             <div class="dash-sub" style="color:#d4af37">78 carte arcane</div>
           </div>
           <div class="dash-card c-orange" onclick="openOracoloHome('rune')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/rune.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/rune.webp"></div>
             <div class="dash-label">Rune</div>
             <div class="dash-sub" style="color:#f0a060">Alfabeto norreno</div>
           </div>
           <div class="dash-card c-teal" onclick="openOracoloHome('iching')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/i-ching.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/i-ching.webp"></div>
             <div class="dash-label">I Ching</div>
             <div class="dash-sub" style="color:#5ecec4">Oracolo cinese</div>
           </div>
           <div class="dash-card c-blue" onclick="openOracoloHome('libro')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/libro-delle-risposte.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/libro-delle-risposte.webp"></div>
             <div class="dash-label">Libro</div>
             <div class="dash-sub" style="color:#7eb8f7">Delle Risposte</div>
           </div>
           <div class="dash-card c-green" onclick="openOracoloHome('geomanzia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/geomanzia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/geomanzia.webp"></div>
             <div class="dash-label">Geomanzia</div>
             <div class="dash-sub" style="color:#6fcf97">Segni della terra</div>
           </div>
           <div class="dash-card c-gold" onclick="openOracoloHome('bibliomanzia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/bibliomanzia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/bibliomanzia.webp"></div>
             <div class="dash-label">Bibliomanzia</div>
             <div class="dash-sub" style="color:#d4af37">Oracolo dei libri</div>
           </div>
           <div class="dash-card c-delfi" id="dcDelfi" onclick="openOracoloHome('delfi')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-di-delfi.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/oracolo-di-delfi.webp"></div>
             <div class="dash-label">Delfi</div>
             <div class="dash-sub" style="color:#c8a0f0">Oracolo della Pizia</div>
           </div>
           <div class="dash-card c-purple" onclick="window.location.href='./sogni.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/i-sogni.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/i-sogni.webp"></div>
             <div class="dash-label">Il Libro dei Sogni</div>
             <div class="dash-sub" style="color:#b88fe0">Oniromanzia</div>
           </div>
@@ -944,32 +951,32 @@ function chiudiDisclaimer(){
         <div class="dash-title">🎴 Divinazione Alternativa</div>
         <div class="dash-grid">
           <div class="dash-card c-red" onclick="window.location.href='./divinazione-alternativa.html#cartomanzia'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/cartomanzia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/cartomanzia.webp"></div>
             <div class="dash-label">Cartomanzia</div>
             <div class="dash-sub" style="color:#f07070">52 carte classiche</div>
           </div>
           <div class="dash-card c-green" onclick="window.location.href='./divinazione-alternativa.html#lenormand'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/lenormand.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/lenormand.webp"></div>
             <div class="dash-label">Lenormand</div>
             <div class="dash-sub" style="color:#6fcf97">Mazzo da 36 carte</div>
           </div>
           <div class="dash-card c-blue" onclick="window.location.href='./divinazione-alternativa.html#angeli-oracolo'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-angeli.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/oracolo-angeli.webp"></div>
             <div class="dash-label">Oracolo Angeli</div>
             <div class="dash-sub" style="color:#7eb8f7">Messaggi celesti</div>
           </div>
           <div class="dash-card c-orange" onclick="window.location.href='./divinazione-alternativa.html#celti'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-celti.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/oracolo-celti.webp"></div>
             <div class="dash-label">Oracolo Celti</div>
             <div class="dash-sub" style="color:#f0a060">Alfabeto Ogham</div>
           </div>
           <div class="dash-card c-purple" onclick="window.location.href='./divinazione-alternativa.html#specchio'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/specchio-nero.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/specchio-nero.webp"></div>
             <div class="dash-label">Specchio Nero</div>
             <div class="dash-sub" style="color:#b88fe0">Scrying & visioni</div>
           </div>
           <div class="dash-card c-pink" onclick="window.location.href='./divinazione-alternativa.html#cromomanzia'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/cromomanzia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/cromomanzia.webp"></div>
             <div class="dash-label">Cromomanzia</div>
             <div class="dash-sub" style="color:#f07ac0">Il linguaggio dei colori</div>
           </div>
@@ -981,22 +988,22 @@ function chiudiDisclaimer(){
         <div class="dash-title">🔢 Oracoli Numerici &amp; Simbolici</div>
         <div class="dash-grid">
           <div class="dash-card c-gold" onclick="openOracoloHome('numerologia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/numerologia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/numerologia.webp"></div>
             <div class="dash-label">Numerologia</div>
             <div class="dash-sub" style="color:#d4af37">Il numero del destino</div>
           </div>
           <div class="dash-card c-purple" onclick="openOracoloHome('orespeschio')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/ore-specchio.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/ore-specchio.webp"></div>
             <div class="dash-label">Ore Specchio</div>
             <div class="dash-sub" style="color:#b88fe0">Messaggi nascosti</div>
           </div>
           <div class="dash-card c-orange" onclick="openOracoloHome('totem')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/animali-guida.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/animali-guida.webp"></div>
             <div class="dash-label">Totem</div>
             <div class="dash-sub" style="color:#f0a060">Animali guida</div>
           </div>
           <div class="dash-card c-blue" onclick="openOracoloHome('angeli')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/angelologia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/angelologia.webp"></div>
             <div class="dash-label">Angeli</div>
             <div class="dash-sub" style="color:#7eb8f7">Messaggeri celesti</div>
           </div>
@@ -1008,37 +1015,37 @@ function chiudiDisclaimer(){
         <div class="dash-title">💜 Amore &amp; Magia Rituale</div>
         <div class="dash-grid">
           <div class="dash-card c-pink" onclick="nav('amore')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/amore.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/amore.webp"></div>
             <div class="dash-label">Amore</div>
             <div class="dash-sub" style="color:#f07ac0">Compatibilità & cuore</div>
           </div>
           <div class="dash-card c-blue" onclick="navMagia('bianca')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/magia-bianca.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/magia-bianca.webp"></div>
             <div class="dash-label">Magia Bianca</div>
             <div class="dash-sub" style="color:#7eb8f7">Luce & protezione</div>
           </div>
           <div class="dash-card c-red" onclick="navMagia('rossa')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/magia-rossa.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/magia-rossa.webp"></div>
             <div class="dash-label">Magia Rossa</div>
             <div class="dash-sub" style="color:#f07070">Passione & desiderio</div>
           </div>
           <div class="dash-card c-purple" onclick="navMagia('nera')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/magia-nera.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/magia-nera.webp"></div>
             <div class="dash-label">Magia Nera</div>
             <div class="dash-sub" style="color:#b88fe0">Ombre & potere</div>
           </div>
           <div class="dash-card c-teal" onclick="navMagia('malocchio')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/malocchio.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/malocchio.webp"></div>
             <div class="dash-label">Malocchio</div>
             <div class="dash-sub" style="color:#5ecec4">Rimozione & scudo</div>
           </div>
           <div class="dash-card c-purple" onclick="navMagia('sigilli')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/sigilli.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/sigilli.webp"></div>
             <div class="dash-label">Sigilli</div>
             <div class="dash-sub" style="color:#b88fe0">Simboli di potere</div>
           </div>
           <div class="dash-card c-orange" onclick="MysticaRituali.apri()">
-            <div class="dash-img-wrap"><img src="./images/icone/home/60magie.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/60magie.webp"></div>
             <div class="dash-label">Rituali</div>
             <div class="dash-sub" style="color:#f0a060">Cerimonie & incantesimi</div>
           </div>
@@ -1050,32 +1057,32 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌿 Tradizioni Esoteriche</div>
         <div class="dash-grid">
           <div class="dash-card c-teal" onclick="openOracoloHome('wicca')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/stregoneria.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/stregoneria.webp"></div>
             <div class="dash-label">Wicca</div>
             <div class="dash-sub" style="color:#5ecec4">Antica stregoneria</div>
           </div>
           <div class="dash-card c-orange" onclick="openOracoloHome('alchimia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/alchimia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/alchimia.webp"></div>
             <div class="dash-label">Alchimia</div>
             <div class="dash-sub" style="color:#f0a060">Arte della trasformazione</div>
           </div>
           <div class="dash-card c-blue" onclick="openOracoloHome('cabala')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/cabala.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/cabala.webp"></div>
             <div class="dash-label">Cabala</div>
             <div class="dash-sub" style="color:#7eb8f7">Mistica ebraica</div>
           </div>
           <div class="dash-card c-gold" onclick="openOracoloHome('ermetismo')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/ermetismo.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/ermetismo.webp"></div>
             <div class="dash-label">Ermetismo</div>
             <div class="dash-sub" style="color:#d4af37">Sapienza universale</div>
           </div>
           <div class="dash-card c-purple" onclick="openOracoloHome('negromanzia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/negromanzia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/negromanzia.webp"></div>
             <div class="dash-label">Negromanzia</div>
             <div class="dash-sub" style="color:#b88fe0">Arte oscura</div>
           </div>
           <div class="dash-card c-purple" onclick="MysticaAngeli.apri()">
-            <div class="dash-img-wrap"><img src="./images/icone/home/angeli-e-diavoli.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/angeli-e-diavoli.webp"></div>
             <div class="dash-label">Demoni</div>
             <div class="dash-sub" style="color:#b88fe0">Figure dell'ombra</div>
           </div>
@@ -1087,32 +1094,32 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌍 Tradizioni & Spiritualità del Mondo</div>
         <div class="dash-grid">
           <div class="dash-card c-orange" onclick="window.location.href='./tradizioni-spirituali.html#sciamanesimo'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/sciamanesimo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🪶</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/sciamanesimo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🪶</div>'"></div>
             <div class="dash-label">Sciamanesimo</div>
             <div class="dash-sub" style="color:#f0a060">Spiriti guida & trance</div>
           </div>
           <div class="dash-card c-pink" onclick="window.location.href='./tradizioni-spirituali.html#buddismo-esoterico'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/buddismo-esoterico.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>☸️</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/buddismo-esoterico.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>☸️</div>'"></div>
             <div class="dash-label">Buddismo Esoterico</div>
             <div class="dash-sub" style="color:#e893c4">Tantra, mantra, mandala</div>
           </div>
           <div class="dash-card c-blue" onclick="window.location.href='./tradizioni-spirituali.html#sufismo'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/sufismo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>☪️</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/sufismo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>☪️</div>'"></div>
             <div class="dash-label">Sufismo</div>
             <div class="dash-sub" style="color:#7eb8f7">Mistica islamica</div>
           </div>
           <div class="dash-card c-green" onclick="window.location.href='./tradizioni-spirituali.html#druidismo'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/druidismo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🌳</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/druidismo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🌳</div>'"></div>
             <div class="dash-label">Druidismo</div>
             <div class="dash-sub" style="color:#6fcf97">Tradizione celtica</div>
           </div>
           <div class="dash-card c-purple" onclick="window.location.href='./tradizioni-spirituali.html#voodoo'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/voodoo-hoodoo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🕯️</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/voodoo-hoodoo.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🕯️</div>'"></div>
             <div class="dash-label">Voodoo & Hoodoo</div>
             <div class="dash-sub" style="color:#b88fe0">Tradizione afrocaraibica</div>
           </div>
           <div class="dash-card c-gold" onclick="window.location.href='./tradizioni-spirituali.html#rosacroce'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/rosacroce.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🌹</div>'"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/rosacroce.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;text-align:center;padding:14px 0&quot;>🌹</div>'"></div>
             <div class="dash-label">Rosacroce</div>
             <div class="dash-sub" style="color:#d4af37">Ordine esoterico</div>
           </div>
@@ -1124,22 +1131,22 @@ function chiudiDisclaimer(){
         <div class="dash-title">🌌 Anima, Energia &amp; Strumenti</div>
         <div class="dash-grid">
           <div class="dash-card c-purple" onclick="nav('astrale')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/viaggio-astrale.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/viaggio-astrale.webp"></div>
             <div class="dash-label">Proiezione</div>
             <div class="dash-sub" style="color:#b88fe0">Viaggio astrale</div>
           </div>
           <div class="dash-card c-orange" onclick="nav('energia')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/energia.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/energia.webp"></div>
             <div class="dash-label">Energia</div>
             <div class="dash-sub" style="color:#f0a060">Chakra & cristalli</div>
           </div>
           <div class="dash-card c-green" onclick="nav('spazio')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/spazio.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/spazio.webp"></div>
             <div class="dash-label">Spazio Sacro</div>
             <div class="dash-sub" style="color:#6fcf97">Purificazione & altare</div>
           </div>
           <div class="dash-card c-gold" onclick="nav('strumenti')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/strumenti.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/strumenti.webp"></div>
             <div class="dash-label">Strumenti</div>
             <div class="dash-sub" style="color:#d4af37">Pendolo & aura</div>
           </div>
@@ -1149,7 +1156,7 @@ function chiudiDisclaimer(){
             <div class="dash-sub" style="color:#5ecec4">Usi e caratteristiche</div>
           </div>
           <div class="dash-card c-gold" onclick="nav('archivio')">
-            <div class="dash-img-wrap"><img src="./images/icone/home/archivio.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/archivio.webp"></div>
             <div class="dash-label">Archivio</div>
             <div class="dash-sub" style="color:#d4af37">Le tue letture</div>
           </div>
@@ -1162,31 +1169,31 @@ function chiudiDisclaimer(){
         <div class="dash-grid">
 
           <div class="dash-card c-purple" onclick="window.location.href='./mente-energia.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/meditazione.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/meditazione.webp"></div>
             <div class="dash-label">Meditazione</div>
             <div class="dash-sub" style="color:#b88fe0">Percorsi guidati</div>
           </div>
 
           <div class="dash-card c-teal" onclick="window.location.href='./mente-energia.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/pranayama.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/pranayama.webp"></div>
             <div class="dash-label">Pranayama</div>
             <div class="dash-sub" style="color:#5ecec4">Breathwork guidato</div>
           </div>
 
           <div class="dash-card c-blue" onclick="window.location.href='./mente-energia.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/ipnosi.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/ipnosi.webp"></div>
             <div class="dash-label">Ipnosi</div>
             <div class="dash-sub" style="color:#7eb8f7">Vite passate</div>
           </div>
 
           <div class="dash-card c-gold" onclick="window.location.href='./mente-energia.html'">
-            <div class="dash-img-wrap"><img src="./images/icone/home/eft-tapping.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/home/eft-tapping.webp"></div>
             <div class="dash-label">EFT Tapping</div>
             <div class="dash-sub" style="color:#d4af37">Libera i blocchi</div>
           </div>
 
           <div class="dash-card c-green" style="grid-column:span 2" onclick="window.location.href='./mente-energia.html'">
-            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img src="./images/icone/home/sincronicita.webp"></div>
+            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img loading="lazy" src="./images/icone/home/sincronicita.webp"></div>
             <div class="dash-label">Sincronicità</div>
             <div class="dash-sub" style="color:#6fcf97">Segni &amp; coincidenze significative</div>
           </div>
@@ -1199,7 +1206,7 @@ function chiudiDisclaimer(){
         <div class="dash-title">📚 Enciclopedia &amp; Conoscenza</div>
         <div class="dash-grid">
           <div class="dash-card c-gold" onclick="nav('blog')" style="grid-column:span 2;padding:3px;aspect-ratio:2/1">
-            <div class="dash-img-wrap" style="width:100%;height:100%;aspect-ratio:unset;margin:0;border-radius:14px;overflow:hidden"><img src="./images/icone/home/icona_enciclopedia.webp" style="width:100%;height:100%;object-fit:cover;border-radius:14px;display:block"></div>
+            <div class="dash-img-wrap" style="width:100%;height:100%;aspect-ratio:unset;margin:0;border-radius:14px;overflow:hidden"><img loading="lazy" src="./images/icone/home/icona_enciclopedia.webp" style="width:100%;height:100%;object-fit:cover;border-radius:14px;display:block"></div>
           </div>
           <div class="dash-card c-gold" onclick="window.location.href='./pentacoli-salomone.html'">
             <div class="dash-img-wrap"><img src="./images/pentacoliresalomone/pentacoli/pentacoli-di-re-salomone.webp"></div>
@@ -1212,22 +1219,22 @@ function chiudiDisclaimer(){
             <div class="dash-sub" style="color:#d4af37">Quadrato Magico & Gematria</div>
           </div>
           <div class="dash-card c-teal" onclick="nav('strega')">
-            <div class="dash-img-wrap"><img src="./images/icone/enciclopedia/IMG_COM_202606051305402050.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/enciclopedia/IMG_COM_202606051305402050.webp"></div>
             <div class="dash-label">Diventa una Strega</div>
             <div class="dash-sub" style="color:#5ecec4">Guida completa</div>
           </div>
           <div class="dash-card c-purple" onclick="nav('ouija')">
-            <div class="dash-img-wrap"><img src="./images/icone/enciclopedia/IMG_COM_202606051305409996.webp"></div>
+            <div class="dash-img-wrap"><img loading="lazy" src="./images/icone/enciclopedia/IMG_COM_202606051305409996.webp"></div>
             <div class="dash-label">Tavola Ouija</div>
             <div class="dash-sub" style="color:#b88fe0">Istruzioni e regole</div>
           </div>
           <div class="dash-card c-gold" onclick="nav('pratiche')" style="grid-column:span 2">
-            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img src="./images/icone/enciclopedia/IMG_COM_2026060513054130810.webp" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img loading="lazy" src="./images/icone/enciclopedia/IMG_COM_2026060513054130810.webp" style="width:100%;height:100%;object-fit:cover"></div>
             <div class="dash-label">Figure del Mistico</div>
             <div class="dash-sub" style="color:#d4af37">Streghe · Maghi · Medium · Veggenti</div>
           </div>
           <div class="dash-card c-purple" onclick="nav('commenti')" style="grid-column:span 2">
-            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img src="./images/icone/home/community-commenti.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;padding:16px 0 8px;text-align:center&quot;>💬</div>'"></div>
+            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img loading="lazy" src="./images/icone/home/community-commenti.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;padding:16px 0 8px;text-align:center&quot;>💬</div>'"></div>
             <div class="dash-label">Community & Commenti</div>
             <div class="dash-sub" style="color:#b88fe0;padding-bottom:8px">Condividi le tue esperienze mistiche</div>
           </div>
@@ -1239,7 +1246,7 @@ function chiudiDisclaimer(){
         <div class="dash-title">⚙️ Impostazioni</div>
         <div class="dash-grid">
           <div class="dash-card c-teal" onclick="nav('opzioni')" style="grid-column:span 2">
-            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img src="./images/icone/home/opzioni.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;padding:16px 0 8px;text-align:center&quot;>⚙️</div>'"></div>
+            <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img loading="lazy" src="./images/icone/home/opzioni.webp" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;padding:16px 0 8px;text-align:center&quot;>⚙️</div>'"></div>
             <div class="dash-label">Opzioni</div>
             <div class="dash-sub" style="color:#5ecec4;padding-bottom:8px">Audio · Tema · Backup · Dati</div>
           </div>
@@ -1460,17 +1467,17 @@ function chiudiDisclaimer(){
           <p style="font-family:'Cinzel',serif;font-size:11px;color:var(--muted);text-align:center;letter-spacing:1.5px;margin-bottom:12px">✦ I 12 ANIMALI DELLO ZODIACO CINESE ✦</p>
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
             <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><span style="font-size:24px">🐭</span><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Ratto</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Acqua</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/bue%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Bue</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/tigre%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Tigre</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/coniglio%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Coniglio</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/drago%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Drago</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/serpente%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Serpente</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/cavallo%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cavallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/capra%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Capra</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/scimmia%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Scimmia</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/gallo%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Gallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/cane%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cane</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
-            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img src="./images/icone/cinese/maiale%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Maiale</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Acqua</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/bue%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Bue</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/tigre%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Tigre</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/coniglio%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Coniglio</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Legno</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/drago%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Drago</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/serpente%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Serpente</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/cavallo%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cavallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Fuoco</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/capra%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Capra</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/scimmia%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Scimmia</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/gallo%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Gallo</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Metallo</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/cane%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Cane</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Terra</div></div>
+            <div style="background:#0b0520;border:1px solid #2a174870;border-radius:12px;padding:10px 6px;text-align:center"><img loading="lazy" src="./images/icone/cinese/maiale%20int.webp" style="width:48px;height:72px;object-fit:cover;border-radius:8px"><div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);margin-top:4px">Maiale</div><div style="font-size:9px;color:var(--muted);margin-top:1px">Acqua</div></div>
           </div>
           <div class="horosec"><h4>🏮 Zodiaco Cinese</h4><p>Lo zodiaco cinese si basa sull'anno di nascita e assegna uno dei 12 animali con il relativo elemento. Ogni animale porta qualità uniche: forza, intelligenza, creatività o diplomazia. Inserisci la tua data di nascita per scoprire il tuo animale.</p></div>
           <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">🏮 Scopri il tuo Animale</button>
@@ -1488,55 +1495,55 @@ function chiudiDisclaimer(){
           <p class="t-muted" style="margin-bottom:14px">Saggezze millenarie che parlano all'anima</p>
           <div class="g2" style="margin:0">
             <div class="menu-item" onclick="openOracolo('totem')">
-              <span class="mi-icon"><img src="./images/icone/home/animali-guida.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Animali Guida</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/animali-guida.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Animali Guida</div>
             </div>
             <div class="menu-item" onclick="openOracolo('angeli')">
-              <span class="mi-icon"><img src="./images/icone/home/angelologia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Angelologia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/angelologia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Angelologia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('geomanzia')">
-              <span class="mi-icon"><img src="./images/icone/home/geomanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Geomanzia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/geomanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Geomanzia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('numerologia')">
-              <span class="mi-icon"><img src="./images/icone/home/numerologia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Numerologia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/numerologia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Numerologia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('orespeschio')">
-              <span class="mi-icon"><img src="./images/icone/home/ore-specchio.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Ore Specchio</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/ore-specchio.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Ore Specchio</div>
             </div>
             <div class="menu-item" onclick="openOracolo('delfi')">
-              <span class="mi-icon"><img src="./images/icone/home/oracolo-di-delfi.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Oracolo di Delfi</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/oracolo-di-delfi.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Oracolo di Delfi</div>
             </div>
             <div class="menu-item" onclick="openOracolo('luna')">
-              <span class="mi-icon"><img src="./images/icone/home/fasi-lunari.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Fasi Lunari</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/fasi-lunari.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Fasi Lunari</div>
             </div>
             <div class="menu-item" onclick="openOracolo('pianeti')">
-              <span class="mi-icon"><img src="./images/icone/home/transiti.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Transiti Planetari</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/transiti.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Transiti Planetari</div>
             </div>
             <div class="menu-item" onclick="openOracolo('rune')">
-              <span class="mi-icon"><img src="./images/icone/home/rune.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Runologia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/rune.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Runologia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('iching')">
-              <span class="mi-icon"><img src="./images/icone/home/i-ching.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">I Ching</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/i-ching.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">I Ching</div>
             </div>
             <div class="menu-item" onclick="openOracolo('libro')">
-              <span class="mi-icon"><img src="./images/icone/home/libro-delle-risposte.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Libro Risposte</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/libro-delle-risposte.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Libro Risposte</div>
             </div>
             <div class="menu-item" onclick="openOracolo('wicca')">
-              <span class="mi-icon"><img src="./images/icone/home/stregoneria.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Stregoneria &amp; Wicca</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/stregoneria.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Stregoneria &amp; Wicca</div>
             </div>
             <div class="menu-item" onclick="openOracolo('alchimia')">
-              <span class="mi-icon"><img src="./images/icone/home/alchimia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Alchimia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/alchimia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Alchimia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('cabala')">
-              <span class="mi-icon"><img src="./images/icone/home/cabala.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Cabala (Kabbalah)</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/cabala.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Cabala (Kabbalah)</div>
             </div>
             <div class="menu-item" onclick="openOracolo('ermetismo')">
-              <span class="mi-icon"><img src="./images/icone/home/ermetismo.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Ermetismo</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/ermetismo.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Ermetismo</div>
             </div>
             <div class="menu-item" onclick="openOracolo('negromanzia')">
-              <span class="mi-icon"><img src="./images/icone/home/negromanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Negromanzia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/negromanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Negromanzia</div>
             </div>
             <div class="menu-item" onclick="openOracolo('bibliomanzia')">
-              <span class="mi-icon"><img src="./images/icone/home/bibliomanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Bibliomanzia &amp; Tasseomanzia</div>
+              <span class="mi-icon"><img loading="lazy" src="./images/icone/home/bibliomanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;"></span><div class="mi-label">Bibliomanzia &amp; Tasseomanzia</div>
             </div>
           </div>
         </div>
@@ -4811,7 +4818,7 @@ function applyProfile(p){
   const dcZodImg=$('#dcZodImg2');
   const dcZodName=$('#dcZodName2');
   if(cz){
-  if(dcZodImg){dcZodImg.src='./images/icone/cinese/'+cz.n.toLowerCase()+'.webp';}
+  if(dcZodImg){dcZodImg.src='./images/icone/cinese/'+cz.n.toLowerCase()+'%20int.webp';}
   if(dcZodName)  dcZodName.textContent=cz.n;
   }
 
@@ -4946,7 +4953,7 @@ function showZodCinese(){
 
   cont.innerHTML=`
   <div style="text-align:center;padding:14px 0 18px;position:relative">
-  <img src="./images/icone/cinese/${cz.n.toLowerCase()}%20int.webp" style="width:200px;height:300px;object-fit:cover;border-radius:16px;margin-bottom:6px;filter:drop-shadow(0 0 20px rgba(212,175,55,0.5))">
+  <img loading="lazy" src="./images/icone/cinese/${cz.n.toLowerCase()}%20int.webp" style="width:200px;height:300px;object-fit:cover;border-radius:16px;margin-bottom:6px;filter:drop-shadow(0 0 20px rgba(212,175,55,0.5))">
   <div style="display:inline-flex;align-items:center;gap:10px;justify-content:center">
   <span style="font-size:36px;color:var(--gold);font-weight:bold;
   filter:drop-shadow(0 0 14px rgba(212,175,55,.8));line-height:1">${czChar}</span>
