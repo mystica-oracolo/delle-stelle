@@ -115,6 +115,10 @@
 <!-- Preconnect per ridurre latenza Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.gstatic.com">
+<link rel="dns-prefetch" href="https://firestore.googleapis.com">
+<link rel="preload" href="app.js" as="script">
+<script src="app.js" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 /* font-display: swap — evita FOIT (testo invisibile durante caricamento font) */
@@ -780,13 +784,13 @@ function chiudiDisclaimer(){
 
 
           <div class="dash-card c-purple" onclick="nav('mistico')">
-            <div class="dash-img-wrap"><img id="dcMisticoImg" src="./images/icone/zodiaco/ariete.webp" loading="lazy"></div>
+            <div class="dash-img-wrap"><img id="dcMisticoImg" src="./images/icone/zodiaco/ariete.webp" fetchpriority="high"></div>
             <div class="dash-label">Profilo</div>
             <div class="dash-sub">Mistico</div>
           </div>
 
           <div class="dash-card c-orange" onclick="nav('zodcinese')">
-            <div class="dash-img-wrap"><img id="dcZodImg2" src="./images/icone/cinese/topo.webp" loading="lazy"></div>
+            <div class="dash-img-wrap"><img id="dcZodImg2" src="./images/icone/cinese/topo.webp" fetchpriority="high"></div>
             <div class="dash-label" id="dcZodName2">Zodiaco Cinese</div>
             <div class="dash-sub" style="color:#f0a060">Anno & segno lunare</div>
           </div>
@@ -3619,8 +3623,6 @@ function chiudiDisclaimer(){
     <div id="consultResult" style="display:none;margin-top:16px"></div>
   </div>
 </div>
-
-<script src="app.js" defer></script>
 
 <div class="affirmation-overlay" id="affirmationOverlay"></div>
 <div class="affirmation-box" id="affirmationBox">
