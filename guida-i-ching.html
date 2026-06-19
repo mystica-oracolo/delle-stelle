@@ -142,6 +142,19 @@ footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);fo
 footer a{color:var(--gold);text-decoration:none;margin:0 8px}
 footer a:hover{text-decoration:underline}
 .footer-links{margin-bottom:10px;line-height:2}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 </head>
 <body>
@@ -175,7 +188,8 @@ footer a:hover{text-decoration:underline}
   </nav>
 
   <section id="storia-iching">
-    <h2>Storia e Origini dell'I Ching</h2>
+    <h2>Storia e Origini dell'I Ching</h2><div class="img-section"><img src="./images/icone/home/i-ching.webp" alt="I Ching" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+
     <div class="card">
       <p>L'I Ching (易經, "Libro dei Mutamenti") è uno dei testi più antichi della civiltà umana. Le sue radici affondano nella Cina preistorica, con le prime forme di divinazione tramite ossa oracolari risalenti alla Dinastia Shang (1600-1046 a.C.).</p>
       <p>La tradizione attribuisce la creazione al leggendario imperatore Fu Xi, che contemplando i motivi sul guscio di una tartaruga ricavò i primi otto trigrammi. Il Re Wen (XII secolo a.C.) elaborò poi i 64 esagrammi. Confucio (551-479 a.C.) studiò l'I Ching così intensamente da consumare tre volte i legacci del suo rotolo di bambù, aggiungendo i "Dieci Appendici" filosofici che trasformarono il testo in un'opera di metafisica profonda.</p>

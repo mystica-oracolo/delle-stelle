@@ -204,6 +204,19 @@ strong{color:var(--text);opacity:1}
 a{color:var(--gold);text-decoration:none}
 a:hover{text-decoration:underline}
 h3{font-family:'Cinzel',serif;font-size:15px;color:var(--text);letter-spacing:.5px;margin:18px 0 10px}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 </head>
 <body>
@@ -245,6 +258,10 @@ h3{font-family:'Cinzel',serif;font-size:15px;color:var(--text);letter-spacing:.5
       <div class="tool-title-block">
         <div class="tool-label">Strumento 01</div>
         <h2>La Carta Natale</h2>
+<div class="img-section"><img src="./images/karma-darma/dharma.webp" alt="Dharma" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+<div class="img-section"><img src="./images/karma-darma/karma.webp" alt="Karma" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+<div class="img-section"><img src="./images/karma-darma/dharma.webp" alt="Dharma" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+<div class="img-section"><img src="./images/karma-darma/karma.webp" alt="Karma" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
       </div>
     </div>
 

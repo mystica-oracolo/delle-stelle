@@ -548,6 +548,19 @@ body {
   .stagioni-grid { grid-template-columns: 1fr; }
   .ore-day-strip { grid-template-columns: repeat(4,1fr); }
 }
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 </head>
 <body>
@@ -590,6 +603,18 @@ body {
        SEZIONE 1: CALENDARIO LUNARE
   ═══════════════════════════════════ -->
   <section class="section-panel active" id="panel-calendario-lunare">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0">
+      <div style="text-align:center"><img src="./images/vedica/graha-surya.webp" alt="Surya" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Surya · Sole</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-chandra.webp" alt="Chandra" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Chandra · Luna</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-mangala.webp" alt="Mangala" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Mangala · Marte</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-budha.webp" alt="Budha" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Budha · Mercurio</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-guru.webp" alt="Guru" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Guru · Giove</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-shukra.webp" alt="Shukra" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Shukra · Venere</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-shani.webp" alt="Shani" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Shani · Saturno</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-rahu.webp" alt="Rahu" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Rahu · Nodo Nord</span></div>
+      <div style="text-align:center"><img src="./images/vedica/graha-ketu.webp" alt="Ketu" loading="lazy" style="width:100%;border-radius:8px"><span style="font-family:Cinzel,serif;font-size:10px;color:#d4af37;display:block;margin-top:4px">Ketu · Nodo Sud</span></div>
+    </div>
+
 
     <div class="card">
       <div class="card-title">🌕 La Luna come Orologio Cosmico</div>
@@ -741,6 +766,36 @@ body {
        SEZIONE 2: MAYA TZOLKIN
   ═══════════════════════════════════ -->
   <section class="section-panel" id="panel-tzolkin">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0">
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-01-ashvini.webp" alt="Ashwini" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Ashwini</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-02-bharani.webp" alt="Bharani" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Bharani</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-03-krittika.webp" alt="Krittika" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Krittika</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-04-rohini.webp" alt="Rohini" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Rohini</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-05-mrigashira.webp" alt="Mrigashira" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Mrigashira</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-06-ardra.webp" alt="Ardra" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Ardra</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-07-punarvasu.webp" alt="Punarvasu" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Punarvasu</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-08-pushya.webp" alt="Pushya" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Pushya</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-09-ashlesha.webp" alt="Ashlesha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Ashlesha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-10-magha.webp" alt="Magha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Magha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-11-purva-phalguni.webp" alt="Purva Ph." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Purva Phalg.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-12-uttara-phalguni.webp" alt="Uttara Ph." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Uttara Phalg.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-13-hasta.webp" alt="Hasta" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Hasta</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-14-chitra.webp" alt="Chitra" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Chitra</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-15-swati.webp" alt="Swati" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Swati</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-16-vishakha.webp" alt="Vishakha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Vishakha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-17-anuradha.webp" alt="Anuradha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Anuradha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-18-jyeshtha.webp" alt="Jyeshtha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Jyeshtha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-19-mula.webp" alt="Mula" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Mula</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-20-purva-ashadha.webp" alt="Purva As." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Purva Ash.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-21-uttara-ashadha.webp" alt="Uttara As." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Uttara Ash.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-22-shravana.webp" alt="Shravana" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Shravana</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-23-dhanishta.webp" alt="Dhanishta" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Dhanishta</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-24-shatabhisha.webp" alt="Shatabhisha" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Shatabhisha</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-25-purva-bhadrapada.webp" alt="Purva Bh." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Purva Bh.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-26-uttara-bhadrapada.webp" alt="Uttara Bh." loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Uttara Bh.</span></div>
+      <div style="text-align:center"><img src="./images/vedica/nakshatra-27-revati.webp" alt="Revati" loading="lazy" style="width:100%;border-radius:6px"><span style="font-size:9px;color:#d4af37;display:block">Revati</span></div>
+    </div>
+
 
     <div class="card">
       <div class="card-title">🌀 Il Calendario Maya Tzolkin</div>

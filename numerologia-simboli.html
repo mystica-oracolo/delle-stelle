@@ -167,6 +167,19 @@ body.day-mode .gem-table th{background:rgba(139,106,16,0.08);color:#8b6a10}
 body.day-mode .gem-table td{color:#1a0e04}
 body.day-mode .hero-mini-kamea{border-color:#8b6a10}
 body.day-mode .hero-mini-kamea div{background:linear-gradient(145deg,#fffdf7,#fdf6e8);color:#8b6a10}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 <script>
 function goBack(){if(window.history.length>1){window.history.back();}else{window.location.href='index.html';}}
@@ -280,7 +293,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- ══════════════════════════ QUADRATO MAGICO ══════════════════════════ -->
   <section id="quadrato-magico" class="planet-section">
-    <h2>🔢 Il Quadrato Magico (Kamea Planetari)</h2>
+    <h2>🔢 Il Quadrato Magico (Kamea Planetari)</h2><div class="img-section"><img src="./images/icone/home/numerologia.webp" alt="Numerologia" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+
     <p class="section-lead">Un quadrato magico è una tabella di numeri interi distinti in cui ogni riga, ogni colonna e ogni diagonale principale dà sempre la stessa somma, detta <em>costante magica</em>. Conosciuti già nella Cina antica con il nome di Lo Shu, in Occidente furono sistematizzati da <em>Cornelio Agrippa</em> nel capitolo 22 del secondo libro della sua <em>De Occulta Philosophia</em> (1531-1533), che assegnò un quadrato — detto <em>Kamea</em>, dall'ebraico "talismano" — a ciascuno dei sette pianeti classici, in ordine crescente di lati: da Saturno (3×3) alla Luna (9×9). Da questi stessi numeri, tracciando linee attraverso le caselle corrispondenti alle lettere di un nome sacro, si ottengono i sigilli planetari e angelici — la stessa tecnica geometrica che sta alla base dei <a href="./pentacoli-salomone.html" style="color:var(--gold)">Pentacoli di Re Salomone</a> già presenti nell'enciclopedia di Mystica.</p>
 
     <nav class="kamea-nav" aria-label="Naviga tra i Quadrati">

@@ -137,6 +137,19 @@ footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);fo
 footer a{color:var(--gold);text-decoration:none;margin:0 8px}
 footer a:hover{text-decoration:underline}
 .footer-links{margin-bottom:10px;line-height:2}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 </head>
 <body>
@@ -171,6 +184,36 @@ footer a:hover{text-decoration:underline}
 
   <section id="astrologia">
     <h2>Cos'è l'Astrologia e Come Funziona</h2>
+<div class="img-grid img-grid-4" style="margin:20px 0 16px">
+  <div class="img-card"><img src="./images/vedica/rashi-01-mesha.webp" alt="Mesha Ariete" loading="lazy"><span class="img-card-label">Mesha · Ariete</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-02-vrishabha.webp" alt="Vrishabha Toro" loading="lazy"><span class="img-card-label">Vrishabha · Toro</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-03-mithuna.webp" alt="Mithuna Gemelli" loading="lazy"><span class="img-card-label">Mithuna · Gemelli</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-04-karka.webp" alt="Karka Cancro" loading="lazy"><span class="img-card-label">Karka · Cancro</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-05-simha.webp" alt="Simha Leone" loading="lazy"><span class="img-card-label">Simha · Leone</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-06-kanya.webp" alt="Kanya Vergine" loading="lazy"><span class="img-card-label">Kanya · Vergine</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-07-tula.webp" alt="Tula Bilancia" loading="lazy"><span class="img-card-label">Tula · Bilancia</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-08-vrischika.webp" alt="Vrischika Scorpione" loading="lazy"><span class="img-card-label">Vrischika · Scorpione</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-09-dhanu.webp" alt="Dhanu Sagittario" loading="lazy"><span class="img-card-label">Dhanu · Sagittario</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-10-makara.webp" alt="Makara Capricorno" loading="lazy"><span class="img-card-label">Makara · Capricorno</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-11-kumbha.webp" alt="Kumbha Acquario" loading="lazy"><span class="img-card-label">Kumbha · Acquario</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-12-meena.webp" alt="Meena Pesci" loading="lazy"><span class="img-card-label">Meena · Pesci</span></div>
+</div>
+
+<div class="img-grid img-grid-4" style="margin:20px 0 16px">
+  <div class="img-card"><img src="./images/vedica/rashi-01-mesha.webp" alt="Mesha Ariete" loading="lazy"><span class="img-card-label">Mesha · Ariete</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-02-vrishabha.webp" alt="Vrishabha Toro" loading="lazy"><span class="img-card-label">Vrishabha · Toro</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-03-mithuna.webp" alt="Mithuna Gemelli" loading="lazy"><span class="img-card-label">Mithuna · Gemelli</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-04-karka.webp" alt="Karka Cancro" loading="lazy"><span class="img-card-label">Karka · Cancro</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-05-simha.webp" alt="Simha Leone" loading="lazy"><span class="img-card-label">Simha · Leone</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-06-kanya.webp" alt="Kanya Vergine" loading="lazy"><span class="img-card-label">Kanya · Vergine</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-07-tula.webp" alt="Tula Bilancia" loading="lazy"><span class="img-card-label">Tula · Bilancia</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-08-vrischika.webp" alt="Vrischika Scorpione" loading="lazy"><span class="img-card-label">Vrischika · Scorpione</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-09-dhanu.webp" alt="Dhanu Sagittario" loading="lazy"><span class="img-card-label">Dhanu · Sagittario</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-10-makara.webp" alt="Makara Capricorno" loading="lazy"><span class="img-card-label">Makara · Capricorno</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-11-kumbha.webp" alt="Kumbha Acquario" loading="lazy"><span class="img-card-label">Kumbha · Acquario</span></div>
+  <div class="img-card"><img src="./images/vedica/rashi-12-meena.webp" alt="Meena Pesci" loading="lazy"><span class="img-card-label">Meena · Pesci</span></div>
+</div>
+
     <div class="card">
       <p>L'astrologia è un sistema di credenze che interpreta le influenze dei corpi celesti — Sole, Luna, pianeti — sulle personalità umane e sugli eventi terrestri. Ha origini antichissime: i Babilonesi svilupparono i primi sistemi astrologici già nel II millennio a.C., e l'astrologia occidentale affonda le radici nella Grecia ellenistica del IV-II secolo a.C.</p>
       <p>Il fondamento è lo zodiaco: una fascia celeste divisa in 12 sezioni di 30° ciascuna. Il <strong>segno solare</strong> — quello che comunemente chiamiamo "il nostro segno" — è determinato dalla posizione del Sole al momento della nascita. Ma il tema natale completo include anche il segno lunare (emozioni), l'ascendente (come ci presentiamo al mondo) e le posizioni di tutti i pianeti.</p>

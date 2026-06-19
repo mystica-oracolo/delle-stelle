@@ -70,6 +70,19 @@
   nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:32px}
   nav.breadcrumb a{color:var(--gold);text-decoration:none}
   nav.breadcrumb span{margin:0 6px;opacity:0.5}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 <meta property="og:url" content="https://mysticaoracoli.it/about.html">
 <meta property="og:title" content="Chi Siamo – MYSTICA | App Tarocchi Online Gratis in Italiano">
@@ -101,6 +114,17 @@
 
   <section>
     <h2>La Nostra Missione</h2>
+<div class="img-grid img-grid-4" style="margin:24px 0">
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305402050.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305405331.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305406212.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305407153.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305408124.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305409105.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305409996.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+  <div class="img-card"><img src="./images/icone/enciclopedia/IMG_COM_202606051305410747.webp" alt="Mystica - Arte Esoterica" loading="lazy"></div>
+</div>
+
     <div class="card">
       <p>MYSTICA nasce con un obiettivo preciso: rendere la divinazione, l'astrologia e le tradizioni esoteriche accessibili a tutti, gratuitamente, in lingua italiana. Crediamo che la conoscenza di sé attraverso gli strumenti del mistico — tarocchi, oroscopo, rune, I Ching — sia un diritto, non un privilegio.</p>
       <p>In un panorama dominato da app a pagamento, abbonamenti ricorrenti e muri di registrazione, MYSTICA offre un'alternativa completa e gratuita: oltre 25 oracoli, tarocchi con 78 carte, oroscopo personalizzato, I Ching con 64 esagrammi, rune norrene, numerologia e molto altro — tutto accessibile da browser, senza scaricare nulla, senza creare un account.</p>

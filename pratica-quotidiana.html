@@ -163,6 +163,19 @@ label:first-child{margin-top:0}
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:linear-gradient(135deg,#2a1748,#160d30);border:1px solid var(--gold-dim);border-radius:12px;padding:11px 20px;font-family:'Cinzel',serif;font-size:11.5px;color:var(--gold);letter-spacing:.05em;z-index:999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;pointer-events:none}
 #toast.show{transform:translateX(-50%) translateY(0)}
 @media(min-width:600px){.hero{padding:46px 24px 28px}.card{padding:26px 22px}.altare-slot-grid{grid-template-columns:repeat(5,1fr)}}
+<style>
+.img-section{text-align:center;margin:20px 0 10px}
+.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
+.img-grid{display:grid;gap:12px;margin:20px 0}
+.img-grid-2{grid-template-columns:1fr 1fr}
+.img-grid-3{grid-template-columns:1fr 1fr 1fr}
+.img-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:520px){.img-grid-2,.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.img-grid-3,.img-grid-4{grid-template-columns:1fr 1fr}}
+.img-card{text-align:center}
+.img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
+.img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
+</style>
 </style>
 </head>
 <body>
@@ -188,6 +201,7 @@ label:first-child{margin-top:0}
   </nav>
   <!-- PANEL 1: DIARIO -->
   <div class="panel active" id="panel-diario">
+    <div style="text-align:center;margin:16px 0 8px"><img src="./images/icone/home/i-sogni.webp" alt="Diario Mistico" loading="lazy" style="max-height:160px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
     <div class="stats-strip">
       <div class="stat-box"><span class="stat-num" id="statEntrate">0</span><span class="stat-lbl">Entrate</span></div>
       <div class="stat-box"><span class="stat-num" id="statStreak">0</span><span class="stat-lbl">Giorni Fila</span></div>
@@ -269,6 +283,7 @@ label:first-child{margin-top:0}
 
   <!-- PANEL 2: AFFERMAZIONI -->
   <div class="panel" id="panel-affermazioni">
+    <div style="text-align:center;margin:16px 0 8px"><img src="./images/icone/home/energia.webp" alt="Affermazioni ed Energia" loading="lazy" style="max-height:160px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
     <div class="card">
       <div class="card-title">✨ Scegli la Tua Intenzione</div>
       <div class="card-desc">Ogni parola è un incantesimo. Scegli area, tonalità e ricevi le tue affermazioni personali.</div>
@@ -340,6 +355,7 @@ label:first-child{margin-top:0}
 
   <!-- PANEL 3: SIGILLAZIONE -->
   <div class="panel" id="panel-sigillo">
+    <div style="text-align:center;margin:16px 0 8px"><img src="./images/icone/home/sigilli.webp" alt="Sigillazione Magica" loading="lazy" style="max-height:160px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
     <div class="card">
       <div class="card-title">🔮 Sigillazione dell'Intenzione</div>
       <div class="card-desc">Cristallizza un'intenzione in una forma visiva unica, consacrala e rilasciala all'universo. Pura manifestazione interiore.</div>
@@ -403,6 +419,7 @@ label:first-child{margin-top:0}
 
   <!-- PANEL 4: ALTARE & RESPIRO -->
   <div class="panel" id="panel-altare">
+    <div style="text-align:center;margin:16px 0 8px"><img src="./images/icone/home/meditazione.webp" alt="Meditazione e Altare" loading="lazy" style="max-height:160px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
     <div class="card">
       <div class="card-title">🕯️ Il Tuo Altare Virtuale</div>
       <div class="card-desc">Allestisci il tuo spazio sacro digitale. Tocca ogni slot per scegliere gli elementi che risuonano con te oggi.</div>
