@@ -90,6 +90,53 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mysticaoracoli.it/divinazione-alternativa.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ NUMEROLOGIA & SIMBOLI ═══ -->
+  <url>
+    <loc>https://mysticaoracoli.it/numerologia-simboli.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ CICLI & TEMPO ═══ -->
+  <url>
+    <loc>https://mysticaoracoli.it/cicli-tempo.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ MENTE & ENERGIA ═══ -->
+  <url>
+    <loc>https://mysticaoracoli.it/mente-energia.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ PRATICA QUOTIDIANA ═══ -->
+  <url>
+    <loc>https://mysticaoracoli.it/pratica-quotidiana.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══ TRADIZIONI & SPIRITUALITÀ DEL MONDO ═══ -->
+  <url>
+    <loc>https://mysticaoracoli.it/tradizioni-spirituali.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ═══ TRADIZIONI & MAGIA ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/pietre-magiche.html</loc>
