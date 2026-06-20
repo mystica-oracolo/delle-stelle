@@ -79,7 +79,62 @@
   },
   "author": { "@type": "Organization", "name": "MYSTICA" },
   "datePublished": "2026-06-17",
-  "dateModified": "2026-06-17"
+  "dateModified": "2026-06-20"
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cos'è l'Human Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'Human Design è un sistema di autoconoscenza nato nel 1987 che integra Astrologia, I Ching, Cabala, Chakra vedici e Fisica Quantistica. Produce il Bodygraph, una mappa energetica che rivela il tuo Tipo, l'Autorità Interiore, i Centri e i Gate attivi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanti tipi ci sono nell'Human Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ci sono 5 Tipi energetici: Generatore (37%), Manifesting Generator (33%), Proiettore (20%), Manifestatore (9%) e Riflettore (1%). Ogni tipo ha una Strategia di vita, un'Autorità decisionale e una firma emotiva di benessere specifica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come si calcola la carta Human Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per calcolare il Bodygraph servono: data di nascita precisa, orario di nascita (fondamentale: anche 30 minuti cambiano il risultato) e luogo di nascita. Siti gratuiti come jovianarchive.com o mybodygraph.com generano la carta in pochi secondi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è l'Autorità Interiore nell'Human Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'Autorità Interiore è il sistema con cui prendi le decisioni più allineate con il tuo Design. Esistono 7 tipi di Autorità: Emotiva (Solar Plexus), Sacrale, Splenica, dell'Ego, del Sé (G Center), della Mente e Lunare (esclusiva dei Riflettori)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa sono i 64 Gate dell'Human Design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I 64 Gate corrispondono ai 64 esagrammi dell'I Ching e sono distribuiti nei 9 Centri del Bodygraph. Un Gate attivo (definito) rappresenta una qualità costante del tuo essere. Quando due Gate opposti sono entrambi attivi si forma un Canale, che esprime un talento pienamente manifestato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è la differenza tra Generatore e Manifesting Generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entrambi hanno il Centro Sacrale definito, ma il Manifesting Generator ha anche una connessione motore verso la Gola che gli consente di agire quasi come un Manifestatore. Il MG è multitasking, può saltare passaggi e spesso porta avanti più progetti contemporaneamente, mentre il Generatore tende a un percorso più lineare e approfondito."
+      }
+    }
+  ]
 }</script>
 
 <!-- Google Analytics 4 -->
@@ -911,7 +966,111 @@ body {
 .img-card{text-align:center}
 .img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
 .img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
-</style>
+
+/* ── HD HERO IMG ── */
+.hd-hero-img {
+  width: 100%;
+  margin: 12px 0 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.2);
+  background: linear-gradient(145deg, #0d0625, #07031a);
+  min-height: 80px;
+}
+.hd-hero-img img {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+/* ── HD TIPO IMG ── */
+.tipo-img {
+  width: 100%;
+  margin: 10px 0 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.15);
+  background: linear-gradient(145deg, #0d0625, #07031a);
+}
+.tipo-img img {
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ── FONDATORI BOX ── */
+.fondatori-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+.fondatore-card {
+  background: rgba(212,175,55,0.04);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.fondatore-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,0.15);
+  margin-bottom: 8px;
+  background: #0d0625;
+  display: block;
+}
+.fondatore-nome {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+.fondatore-ruolo {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* ── COME CALCOLARE BOX ── */
+.calcola-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+.calcola-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(212,175,55,0.04);
+  border: 1px solid rgba(212,175,55,0.12);
+  border-radius: 12px;
+  padding: 11px 12px;
+}
+.step-num {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  min-width: 28px;
+  line-height: 1;
+}
+.step-text {
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.step-text strong { color: var(--gold); }
 </style>
 </head>
 <body>
@@ -950,6 +1109,7 @@ body {
     <p>Esplora i contenuti</p>
     <div class="topic-pills">
       <a href="#cos-e">Cos'è</a>
+      <a href="#come-calcolare">Calcola</a>
       <a href="#tipi">I 5 Tipi</a>
       <a href="#centri">I 9 Centri</a>
       <a href="#autorita">Autorità</a>
@@ -967,15 +1127,10 @@ body {
   <section class="card gold-border" id="cos-e" aria-labelledby="cosè-title">
     <div class="section-label">Introduzione</div>
     <h2 id="cosè-title">Cos'è l'Human Design?</h2>
-    <div class="img-section"><img src="./images/icone/home/human-design.webp" alt="Human Design" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/human-design.webp" alt="Human Design" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/human-design.webp" alt="Human Design" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/human-design.webp" alt="Human Design" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/human-design.webp" alt="Human Design" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+    <!-- Immagine hero sezione -->
+    <div class="hd-hero-img">
+      <img src="./images/human-design/human_design_hero.webp" alt="Human Design Bodygraph - mappa energetica dei 9 centri" loading="lazy">
+    </div>
 
     <p>L'Human Design è un sistema di autoconoscenza sintetico nato nel 1987 grazie alle visioni di <em>Ra Uru Hu</em> (Alan Robert Krakower). In otto giorni ricevette quello che definì un "trasferimento di conoscenza" che integrava quattro antiche tradizioni sapienziali con la fisica moderna.</p>
     <p>Il sistema si basa su quattro pilastri:</p>
@@ -987,10 +1142,43 @@ body {
     </ul>
     <p>Il risultato è il <em>Bodygraph</em>: una mappa corporea unica che rivela il tuo Tipo energetico, l'Autorità Interiore, i Centri definiti e aperti, i Canali e i Gate attivi. Non è astrologia, non è psicologia — è una cartografia energetica del modo in cui sei progettato per vivere e decidere.</p>
 
+    <h3>Storia e Origini</h3>
+    <p>Ra Uru Hu (1948–2011) era un ex pubblicitario e musicista canadese quando, nel gennaio 1987 a Ibiza, visse quella che descrisse come un'esperienza mistica di otto giorni con una "Voce". Il sistema che ne emerse fu inizialmente chiamato <em>Human Design System</em> e presentato negli anni '90 attraverso seminari e libri.</p>
+    <p>L'anno 1987 non fu casuale: in agosto ci fu la Convergenza Armonica, un allineamento planetario raro. Nello stesso periodo la supernova SN 1987A era visibile a occhio nudo — Ra Uru Hu la citò come evento sincronico collegato alla sua esperienza.</p>
+
     <div class="storico-box">
       <p class="storico-text">«Non ti sto chiedendo di credere a nulla di ciò che ti dico. Ti sto chiedendo di sperimentarlo. Vivi il tuo Design per novanta giorni e guarda cosa succede.»</p>
       <p class="storico-source">— Ra Uru Hu</p>
     </div>
+  </section>
+
+  <!-- COME CALCOLARE -->
+  <section class="card" id="come-calcolare" aria-labelledby="calcola-title">
+    <div class="section-label">Inizia dal tuo Design</div>
+    <h2 id="calcola-title">Come Calcolare la Tua Carta</h2>
+    <p>Per generare il tuo Bodygraph personale hai bisogno di tre dati precisi. La carta è unica come un'impronta digitale: due persone nate lo stesso giorno ma in luoghi o orari diversi avranno design differenti.</p>
+
+    <div class="info-badge">
+      <span class="info-badge-icon">⚠️</span>
+      <span>L'orario di nascita è fondamentale: anche 30 minuti di differenza possono cambiare il Tipo o l'Autorità.</span>
+    </div>
+
+    <div class="calcola-steps">
+      <div class="calcola-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Data di nascita</strong> — giorno, mese e anno esatti. Serve anche per calcolare i Gate "Design" (88 giorni prima della nascita).</div>
+      </div>
+      <div class="calcola-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Orario di nascita</strong> — il più preciso possibile. Recuperalo dal certificato di nascita o chiedilo ai tuoi genitori.</div>
+      </div>
+      <div class="calcola-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Luogo di nascita</strong> — città e paese, necessari per calcolare le posizioni planetarie con fuso orario corretto.</div>
+      </div>
+    </div>
+
+    <p style="margin-top:14px;font-size:13px;color:var(--muted);">Siti gratuiti per la carta: <em>jovianarchive.com</em>, <em>mybodygraph.com</em>, <em>humandesign.tools</em>. La lettura professionale con un analista certificato approfondisce ogni elemento.</p>
   </section>
 
   <!-- BODYGRAPH SVG -->
@@ -1086,6 +1274,9 @@ body {
           <span class="tipo-pop">~37%</span>
         </div>
         <div class="tipo-body">
+          <div class="tipo-img">
+            <img src="./images/human-design/human_design_tipi.webp" alt="I 5 Tipi Energetici Human Design" loading="lazy">
+          </div>
           <div class="tipo-badges">
             <span class="tipo-badge">Strategia: Aspettare e Rispondere</span>
             <span class="tipo-badge">Non-Sé: Frustrazione</span>
@@ -1104,6 +1295,9 @@ body {
           <span class="tipo-pop">~33%</span>
         </div>
         <div class="tipo-body">
+          <div class="tipo-img">
+            <img src="./images/human-design/human_design_tipi.webp" alt="Manifesting Generator Human Design" loading="lazy">
+          </div>
           <div class="tipo-badges">
             <span class="tipo-badge">Strategia: Informare poi Rispondere</span>
             <span class="tipo-badge">Non-Sé: Rabbia/Frustrazione</span>
@@ -1122,6 +1316,9 @@ body {
           <span class="tipo-pop">~9%</span>
         </div>
         <div class="tipo-body">
+          <div class="tipo-img">
+            <img src="./images/human-design/human_design_tipi.webp" alt="Manifestatore Human Design" loading="lazy">
+          </div>
           <div class="tipo-badges">
             <span class="tipo-badge">Strategia: Informare</span>
             <span class="tipo-badge">Non-Sé: Rabbia</span>
@@ -1140,6 +1337,9 @@ body {
           <span class="tipo-pop">~20%</span>
         </div>
         <div class="tipo-body">
+          <div class="tipo-img">
+            <img src="./images/human-design/human_design_tipi.webp" alt="Proiettore Human Design" loading="lazy">
+          </div>
           <div class="tipo-badges">
             <span class="tipo-badge">Strategia: Aspettare l'Invito</span>
             <span class="tipo-badge">Non-Sé: Amarezza</span>
@@ -1158,6 +1358,9 @@ body {
           <span class="tipo-pop">~1%</span>
         </div>
         <div class="tipo-body">
+          <div class="tipo-img">
+            <img src="./images/human-design/human_design_tipi.webp" alt="Riflettore Human Design" loading="lazy">
+          </div>
           <div class="tipo-badges">
             <span class="tipo-badge">Strategia: Aspettare il Ciclo Lunare</span>
             <span class="tipo-badge">Non-Sé: Delusione</span>
@@ -1178,6 +1381,9 @@ body {
   <section class="card" id="centri" aria-labelledby="centri-title">
     <div class="section-label">I 9 Centri Energetici</div>
     <h2 id="centri-title">Definito o Aperto?</h2>
+    <div class="hd-hero-img" style="margin:12px 0 14px">
+      <img src="./images/human-design/human_design_centri.webp" alt="I 9 Centri Energetici del Bodygraph Human Design" loading="lazy">
+    </div>
     <p>I Centri sono come trasformatori energetici nel corpo. Un Centro <strong>definito</strong> (colorato nel Bodygraph) funziona in modo costante e affidabile: è una qualità stabile della tua personalità. Un Centro <strong>aperto</strong> (bianco) è amplificatore: assorbe e amplifica l'energia degli altri, diventando terreno fertile sia per la saggezza che per il condizionamento.</p>
 
     <div class="centri-grid">
@@ -1248,6 +1454,9 @@ body {
       <span>Ogni Tipo ha una o più Autorità possibili. La tua è determinata dal primo Centro motore definito scendendo dall'alto nel Bodygraph.</span>
     </div>
 
+    <div class="hd-hero-img" style="margin:0 0 14px">
+      <img src="./images/human-design/human_design_autorita.webp" alt="Autorità Interiore Human Design - come prendere decisioni" loading="lazy">
+    </div>
     <div class="autorita-list">
       <div class="aut-item">
         <span class="aut-icon">🌊</span>
@@ -1308,6 +1517,9 @@ body {
   <section class="card" id="gate" aria-labelledby="gate-title">
     <div class="section-label">I 64 Gate</div>
     <h2 id="gate-title">Le Porte dell'I Ching</h2>
+    <div class="hd-hero-img" style="margin:0 0 14px">
+      <img src="./images/human-design/human_design_gate.webp" alt="I 64 Gate dell'Human Design e i 64 esagrammi dell'I Ching" loading="lazy">
+    </div>
     <p>I 64 Gate dell'Human Design corrispondono ai 64 esagrammi dell'I Ching. Ogni Gate è una porta energetica all'interno dei 9 Centri: se attivo (colorato) nel tuo Bodygraph, è una qualità costante del tuo essere. Tocca un Gate per vederne il significato.</p>
 
     <div class="gate-tabs" role="tablist">
@@ -1404,6 +1616,9 @@ body {
     <div class="section-label">I 12 Profili</div>
     <h2 id="profili-title">Il Ruolo della Tua Vita</h2>
     <p>Il Profilo è il "costume" che indossi in questa incarnazione. Deriva dalle linee delle due hexagram dell'I Ching associate ai tuoi Gate di Personalità e Design. Ci sono 12 profili possibili, formati da combinazioni delle 6 linee di base.</p>
+    <div class="hd-hero-img" style="margin:12px 0 14px">
+      <img src="./images/human-design/human_design_profili_quiz.webp" alt="I 12 Profili Human Design - il ruolo della tua vita" loading="lazy">
+    </div>
     <div class="profili-grid">
       <div class="profilo-item">
         <span class="profilo-num">1/3</span>
