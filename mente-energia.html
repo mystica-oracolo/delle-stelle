@@ -221,6 +221,18 @@ textarea::placeholder{color:var(--muted)}
 .me-footer{text-align:center;padding:20px 0 6px;font-size:10px;color:rgba(184,178,209,0.35);font-family:'Cinzel',serif;letter-spacing:1px}
 @media(min-width:768px){#app{max-width:860px}.bpat-grid{grid-template-columns:repeat(4,1fr)}.tap-grid{grid-template-columns:repeat(5,1fr)}.num-db-grid{grid-template-columns:repeat(6,1fr)}.animal-grid{grid-template-columns:repeat(6,1fr)}}
 </style>
+<style>
+.esplora-section{background:linear-gradient(135deg,#130b26,#1a0c32);border-top:1px solid rgba(212,175,55,0.25);padding:40px 20px;text-align:center}
+.esplora-section h2{font-family:"Cinzel",serif;color:var(--gold,#d4af37);font-size:1.2rem;letter-spacing:2px;margin-bottom:24px}
+.esplora-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:800px;margin:0 auto}
+.esplora-card{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);border-radius:8px;padding:10px 18px;color:var(--gold,#d4af37);text-decoration:none;font-family:"Cinzel",serif;font-size:0.82rem;letter-spacing:1px;transition:background 0.3s,border-color 0.3s}
+.esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6)}
+</style>
+<meta property="og:title" content="Mente & Energia – Meditazione, Pranayama, EFT e Ipnosi | MYSTICA">
+<meta property="og:description" content="Guida completa a meditazione guidata, respirazione Pranayama, ipnosi, regressione e tecniche EFT per riequilibrare mente ed energia.">
+<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 </head>
 <body>
 <div class="cosmos"></div>
@@ -1144,5 +1156,16 @@ function renderSync(){
 function delSync(i){syncNotes.splice(i,1);localStorage.setItem('mystica_sync',JSON.stringify(syncNotes));renderSync();}
 renderSync();
 </script>
+<section class="esplora-section" aria-label="Esplora MYSTICA">
+<h2>✨ Esplora Anche</h2>
+<div class="esplora-grid">
+  <a href="./pratica-quotidiana.html" class="esplora-card">📿 Pratica Quotidiana</a>
+  <a href="./strega.html" class="esplora-card">🧙 Percorso Strega</a>
+  <a href="./tradizioni-spirituali.html" class="esplora-card">🌍 Tradizioni Spirituali</a>
+  <a href="./sogni.html" class="esplora-card">🌙 Interpretazione Sogni</a>
+  <a href="./pietre-magiche.html" class="esplora-card">💎 Pietre Magiche</a>
+  <a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a>
+</div>
+</section>
 </body>
 </html>
