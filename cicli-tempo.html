@@ -61,6 +61,15 @@
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mysticaoracoli.it/cicli-tempo.html" }
 }</script>
 
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MYSTICA", "item": "https://mysticaoracoli.it/" },
+    { "@type": "ListItem", "position": 2, "name": "Cicli & Tempo Magico", "item": "https://mysticaoracoli.it/cicli-tempo.html" }
+  ]
+}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -570,7 +579,7 @@ body {
   <a href="./index.html" class="back-btn">← MYSTICA</a>
   <div>
     <div class="header-title">🌙 Cicli &amp; Tempo</div>
-    <div class="header-sub">Pianifica con le energie cosmiche</div>
+    <div class="header-sub" id="headerSub">Pianifica con le energie cosmiche</div>
   </div>
 </header>
 
@@ -579,7 +588,6 @@ body {
   <!-- HERO -->
   <div class="hero">
     <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/01_hero_cicli_tempo.webp" alt="Cicli e Tempo Magico - calendario lunare, tzolkin maya, ore planetarie, stagioni" loading="lazy" width="500" height="160" style="width:100%;max-height:160px;object-fit:cover;border-radius:14px;margin-bottom:14px">
-    <span class="hero-emoji">🌙 🌀 ⏳ 🍂</span>
     <h1>Cicli &amp; Tempo Magico</h1>
     <p>Il tempo non è lineare — è ciclico, pulsante, vivo. Ogni momento porta la firma di un pianeta, di una fase lunare, di un'energia cosmica. Impara a leggere i cicli e agire nel momento giusto.</p>
   </div>
@@ -607,7 +615,7 @@ body {
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/02_fasi_lunari_8.webp" alt="Le otto fasi lunari del calendario esoterico" title="Le 8 Fasi Lunari" loading="lazy" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%;border-radius:12px"></div>
 
     <div class="card">
-      <div class="card-title">🌕 La Luna come Orologio Cosmico</div>
+      <h2 class="card-title">🌕 La Luna come Orologio Cosmico</h2>
       <div class="card-body">
         <p>La Luna completa il suo ciclo sinodico in circa <strong style="color:var(--gold)">29,5 giorni</strong>, passando attraverso otto fasi distinte. Ogni fase porta un'energia specifica che influenza non solo le maree e i cicli biologici, ma — secondo la tradizione esoterica — anche le nostre intenzioni, rituali e decisioni.</p>
         <p>Pianificare secondo il calendario lunare significa agire <em>in armonia con il flusso cosmico</em>, scegliendo il momento più favorevole per seminare intenzioni, agire, fare il punto e lasciar andare.</p>
@@ -633,7 +641,7 @@ body {
 
     <!-- 8 Fasi -->
     <div class="card">
-      <div class="card-title">🌑 Le Otto Fasi Lunari</div>
+      <h2 class="card-title">🌑 Le Otto Fasi Lunari</h2>
       <div class="phase-grid">
         <div class="phase-card">
           <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/luna-nuova.webp" alt="Luna Nuova" loading="lazy" width="80" height="80" style="width:48px;height:48px;border-radius:50%;object-fit:cover;margin:0 auto 6px;display:block">
@@ -680,7 +688,7 @@ body {
 
     <!-- Pianificazione -->
     <div class="card">
-      <div class="card-title">📅 Pianificazione Lunare — Cosa Fare</div>
+      <h2 class="card-title">📅 Pianificazione Lunare — Cosa Fare</h2>
       <table class="plan-table">
         <tr>
           <th>Fase</th>
@@ -723,7 +731,7 @@ body {
 
     <!-- Luna nei segni -->
     <div class="card">
-      <div class="card-title">♈ La Luna nei Segni Zodiacali</div>
+      <h2 class="card-title">♈ La Luna nei Segni Zodiacali</h2>
       <div class="card-body">
         <p>La Luna transita in un nuovo segno zodiacale ogni <strong style="color:var(--gold)">2-3 giorni</strong>, colorando le energie con la qualità del segno ospite. Unire la fase lunare con il segno occupato offre una guida ancora più precisa.</p>
       </div>
@@ -759,7 +767,7 @@ body {
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/04_tzolkin_20_sigilli.webp" alt="I 20 sigilli solari del calendario Maya Tzolkin" title="Tzolkin - 20 Sigilli Solari" loading="lazy" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%;border-radius:12px"></div>
 
     <div class="card">
-      <div class="card-title">🌀 Il Calendario Maya Tzolkin</div>
+      <h2 class="card-title">🌀 Il Calendario Maya Tzolkin</h2>
       <div class="card-body">
         <p>Il <strong style="color:var(--gold)">Tzolkin</strong> è il sacro calendario divinatorio Maya, composto da <strong style="color:var(--gold)">260 giorni</strong> — il prodotto di 13 Toni × 20 Segni Solari. Ogni giorno porta una combinazione unica di tono e sigillo che rivela l'energia cosmica in gioco.</p>
         <p>Non è un calendario solare come il Gregoriano: è una <em>mappa dell'energia dell'anima</em>, usata dai Maya per conoscere il proprio Kin natale — la firma vibrante della propria incarnazione.</p>
@@ -779,7 +787,7 @@ body {
 
     <!-- Calcolo Kin Natale -->
     <div class="card">
-      <div class="card-title">🎂 Calcola il Tuo Kin Natale</div>
+      <h2 class="card-title">🎂 Calcola il Tuo Kin Natale</h2>
       <div class="card-body">
         <p>Inserisci la tua data di nascita per scoprire il tuo Kin — la firma energetica che ti accompagna per tutta la vita secondo la tradizione Maya.</p>
       </div>
@@ -793,7 +801,7 @@ body {
 
     <!-- I 13 Toni -->
     <div class="card">
-      <div class="card-title">🔢 I 13 Toni della Creazione</div>
+      <h2 class="card-title">🔢 I 13 Toni della Creazione</h2>
       <div class="card-body">
         <p>I 13 Toni rappresentano le forze universali della Creazione. Ogni tono porta un'intenzione e una qualità vibratoria specifica.</p>
       </div>
@@ -802,7 +810,7 @@ body {
 
     <!-- I 20 Segni -->
     <div class="card">
-      <div class="card-title">☀️ I 20 Segni Solari (Sigilli)</div>
+      <h2 class="card-title">☀️ I 20 Segni Solari (Sigilli)</h2>
       <div class="card-body">
         <p>I 20 Segni Solari o Sigilli rappresentano 20 archetipi — forze cosmiche che modellano il carattere e il destino. Si raggruppano in quattro colori-direzioni.</p>
       </div>
@@ -823,7 +831,7 @@ body {
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/03_ore_planetarie_7.webp" alt="Le ore planetarie e i 7 pianeti classici dell'astrologia ermetica" title="Le 7 Ore Planetarie" loading="lazy" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%;border-radius:12px;margin-bottom:16px"></div>
 
     <div class="card">
-      <div class="card-title">⏳ Il Sistema delle Ore Planetarie</div>
+      <h2 class="card-title">⏳ Il Sistema delle Ore Planetarie</h2>
       <div class="card-body">
         <p>Nell'astrologia classica ogni giorno della settimana è governato da un pianeta (da cui i nomi: Lunedì = Luna, Martedì = Marte, ecc.). Ma la tradizione ermetica va oltre: ogni ora del giorno porta la firma di un pianeta diverso, seguendo una <strong style="color:var(--gold)">sequenza caldeica</strong> immutabile.</p>
         <p>Usare le ore planetarie significa scegliere il momento energeticamente più adatto per rituali, decisioni, comunicazioni o intenzioni specifiche.</p>
@@ -839,7 +847,7 @@ body {
 
     <!-- Selezione giorno -->
     <div class="card">
-      <div class="card-title">📅 Seleziona il Giorno</div>
+      <h2 class="card-title">📅 Seleziona il Giorno</h2>
       <div class="ore-day-strip" id="oreDayStrip"></div>
       <div class="ore-table-wrap" style="margin-top:14px">
         <table class="ore-table" id="oreTable">
@@ -851,7 +859,7 @@ body {
 
     <!-- I 7 Pianeti -->
     <div class="card">
-      <div class="card-title">🪐 I 7 Pianeti Classici</div>
+      <h2 class="card-title">🪐 I 7 Pianeti Classici</h2>
       <div id="pianeti7Grid"></div>
     </div>
 
@@ -870,7 +878,7 @@ body {
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/05_ruota_anno_8_sabbat.webp" alt="La Ruota dell'Anno con gli otto Sabbat pagani" title="La Ruota dell'Anno - 8 Sabbat" loading="lazy" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%;border-radius:12px;margin-bottom:16px"></div>
 
     <div class="card">
-      <div class="card-title">🍂 La Ruota dell'Anno</div>
+      <h2 class="card-title">🍂 La Ruota dell'Anno</h2>
       <div class="card-body">
         <p>Le Stagioni Magiche non sono solo meteorologia — sono porte cosmiche. I quattro punti cardinali dell'anno (due solstizi e due equinozi) segnano momenti di potere straordinario, riconosciuti da praticamente tutte le tradizioni spirituali del mondo: dalla Wicca al Druidismo, dallo Sciamanesimo alle tradizioni popolari italiane.</p>
         <p>A questi si aggiungono le quattro feste di croce — i punti di mezzo tra un solstizio e un equinozio — per formare la <strong style="color:var(--gold)">Ruota dell'Anno a otto raggi</strong>.</p>
@@ -914,7 +922,7 @@ body {
 
     <!-- I 4 Sabbat di Croce -->
     <div class="card">
-      <div class="card-title">🕯️ I Quattro Sabbat di Croce</div>
+      <h2 class="card-title">🕯️ I Quattro Sabbat di Croce</h2>
       <div class="info-block purple-block" style="display:flex;gap:12px;align-items:flex-start">
         <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/sabbat-samhain.webp" alt="Samhain" loading="lazy" width="64" height="64" style="width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0">
         <div>
@@ -947,7 +955,7 @@ body {
 
     <!-- Visione universale -->
     <div class="card">
-      <div class="card-title">🌍 Oltre la Wicca — Tradizioni Universali</div>
+      <h2 class="card-title">🌍 Oltre la Wicca — Tradizioni Universali</h2>
       <div class="card-body">
         <p>Questi cicli stagionali non appartengono a una sola tradizione. I solstizi e gli equinozi sono stati celebrati da culture di ogni latitudine e tempo storico:</p>
       </div>
@@ -971,7 +979,7 @@ body {
 
     <!-- Come lavorare -->
     <div class="card">
-      <div class="card-title">✨ Come Lavorare con le Stagioni</div>
+      <h2 class="card-title">✨ Come Lavorare con le Stagioni</h2>
       <div class="card-body">
         <p>Ogni transizione stagionale è un portale energetico che può essere usato intenzionalmente, indipendentemente dalla tradizione spirituale che si segue.</p>
       </div>
@@ -998,7 +1006,7 @@ body {
   <!-- CTA ritorno app -->
   <div class="card" style="text-align:center;margin-top:24px">
     <div style="font-size:36px;margin-bottom:10px">🔮</div>
-    <div class="card-title" style="justify-content:center">Esplora tutta la Magia di MYSTICA</div>
+    <h2 class="card-title" style="justify-content:center">Esplora tutta la Magia di MYSTICA</h2>
     <div class="card-body" style="margin-bottom:14px">Tarocchi, Oroscopo, I Ching, Rune e oltre 25 oracoli ti aspettano nell'app principale.</div>
     <a href="./index.html" class="btn" style="display:inline-block;max-width:300px;text-decoration:none">✨ Torna all'App</a>
   </div>
@@ -1014,11 +1022,20 @@ body {
 /* ═══════════════════════════════════════
    TAB SWITCHING
 ═══════════════════════════════════════ */
+const TAB_SUBTITLES = {
+  'calendario-lunare': 'Fasi lunari e pianificazione rituale',
+  'tzolkin': 'Il calendario sacro Maya a 260 giorni',
+  'ore-planetarie': 'Il pianeta che governa ogni ora del giorno',
+  'stagioni-magiche': 'Solstizi, equinozi e gli otto Sabbat'
+};
+
 function switchTab(id) {
   document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-' + id).classList.add('active');
   document.getElementById('tab-' + id).classList.add('active');
+  const sub = document.getElementById('headerSub');
+  if (sub && TAB_SUBTITLES[id]) sub.textContent = TAB_SUBTITLES[id];
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1100,26 +1117,26 @@ const TONI = [
 ];
 
 const SIGILLI = [
-  { n:0,  nome:'Dragone',      color:'#e05050', dir:'Est',  ico:'🐉', qualita:'Nascita, nutrimento, Madre cosmica' },
-  { n:1,  nome:'Vento',        color:'#7eb8f7', dir:'Nord', ico:'💨', qualita:'Comunicazione, respiro, spirito' },
-  { n:2,  nome:'Notte',        color:'#3a3a7a', dir:'Ovest',ico:'🌙', qualita:'Abbondanza, sogno, inconscio' },
-  { n:3,  nome:'Seme',         color:'#6fcf97', dir:'Sud',  ico:'🌱', qualita:'Fioritura, consapevolezza, obiettivi' },
-  { n:4,  nome:'Serpente',     color:'#e05050', dir:'Est',  ico:'🐍', qualita:'Sopravvivenza, vitalità, istinto' },
-  { n:5,  nome:'Trapassato',   color:'#7eb8f7', dir:'Nord', ico:'💀', qualita:'Trasformazione, morte e rinascita' },
-  { n:6,  nome:'Ponticello',   color:'#3a3a7a', dir:'Ovest',ico:'🌈', qualita:'Opportunità, cambiamento, pari opportunità' },
-  { n:7,  nome:'Mano',         color:'#6fcf97', dir:'Sud',  ico:'🖐️', qualita:'Guarigione, realizzazione, conoscenza' },
-  { n:8,  nome:'Stella',       color:'#e05050', dir:'Est',  ico:'⭐', qualita:'Eleganza, bellezza, armonia, arte' },
-  { n:9,  nome:'Luna',         color:'#7eb8f7', dir:'Nord', ico:'🌕', qualita:'Flusso universale, purificazione, emozione' },
-  { n:10, nome:'Cane',         color:'#3a3a7a', dir:'Ovest',ico:'🐕', qualita:'Amore, cuore, fedeltà, lealtà' },
-  { n:11, nome:'Scimmia',      color:'#6fcf97', dir:'Sud',  ico:'🐒', qualita:'Gioco, magia, illusione, trickster' },
-  { n:12, nome:'Essere Umano', color:'#e05050', dir:'Est',  ico:'🧍', qualita:'Libero arbitrio, saggezza, abbondanza' },
-  { n:13, nome:'Camminatore',  color:'#7eb8f7', dir:'Nord', ico:'👣', qualita:'Spazio, espansione, corpo del sogno' },
-  { n:14, nome:'Mago',         color:'#3a3a7a', dir:'Ovest',ico:'🧙', qualita:'Tempestività, senza tempo, ricettività' },
-  { n:15, nome:'Aquila',       color:'#6fcf97', dir:'Sud',  ico:'🦅', qualita:'Visione, creatività, mente' },
-  { n:16, nome:'Guerriero',    color:'#e05050', dir:'Est',  ico:'⚔️', qualita:'Intelligence, paura, karma, questioni' },
-  { n:17, nome:'Terra',        color:'#7eb8f7', dir:'Nord', ico:'🌍', qualita:'Evoluzione, sincronizzazione, navigazione' },
-  { n:18, nome:'Specchio',     color:'#3a3a7a', dir:'Ovest',ico:'🪞', qualita:'Riflessione, infinità, ordine di Dio' },
-  { n:19, nome:'Tempesta',     color:'#6fcf97', dir:'Sud',  ico:'⚡', qualita:'Catalisi, energia, auto-generazione' }
+  { n:0,  nome:'Dragone',      color:'#e05050', dir:'Est',  ico:'🐉', qualita:'Nascita, nutrimento, Madre cosmica', desc:'Apre il ciclo dei 20 sigilli. Rappresenta la forza materna primordiale che dà vita e nutre ogni nuovo inizio, l\'energia della nascita e della cura incondizionata.' },
+  { n:1,  nome:'Vento',        color:'#7eb8f7', dir:'Nord', ico:'💨', qualita:'Comunicazione, respiro, spirito', desc:'Porta lo spirito e il respiro divino. Governa la comunicazione, il linguaggio e lo scambio di idee — il soffio vitale che collega corpo e mente allo spirito.' },
+  { n:2,  nome:'Notte',        color:'#3a3a7a', dir:'Ovest',ico:'🌙', qualita:'Abbondanza, sogno, inconscio', desc:'Custodisce i sogni e l\'abbondanza nascosta. Invita ad ascoltare l\'inconscio, ad affidarsi all\'oscurità fertile da cui nasce ogni intuizione.' },
+  { n:3,  nome:'Seme',         color:'#6fcf97', dir:'Sud',  ico:'🌱', qualita:'Fioritura, consapevolezza, obiettivi', desc:'Simbolo della consapevolezza che germina. Spinge a fissare obiettivi chiari e a coltivare con disciplina ciò che si vuole far fiorire.' },
+  { n:4,  nome:'Serpente',     color:'#e05050', dir:'Est',  ico:'🐍', qualita:'Sopravvivenza, vitalità, istinto', desc:'Energia vitale pura e istinto di sopravvivenza. Insegna ad ascoltare il corpo, la passione e la forza vitale che muove ogni azione.' },
+  { n:5,  nome:'Trapassato',   color:'#7eb8f7', dir:'Nord', ico:'💀', qualita:'Trasformazione, morte e rinascita', desc:'Maestro della trasformazione radicale. Rappresenta la morte simbolica necessaria per ogni rinascita, l\'abbandono delle vecchie strutture.' },
+  { n:6,  nome:'Ponticello',   color:'#3a3a7a', dir:'Ovest',ico:'🌈', qualita:'Opportunità, cambiamento, pari opportunità', desc:'Il ponte tra mondi diversi. Apre opportunità inattese e insegna a connettere prospettive opposte con equità e flessibilità.' },
+  { n:7,  nome:'Mano',         color:'#6fcf97', dir:'Sud',  ico:'🖐️', qualita:'Guarigione, realizzazione, conoscenza', desc:'Lo strumento della realizzazione concreta. Governa la guarigione, l\'abilità manuale e la conoscenza che si trasforma in azione tangibile.' },
+  { n:8,  nome:'Stella',       color:'#e05050', dir:'Est',  ico:'⭐', qualita:'Eleganza, bellezza, armonia, arte', desc:'Porta l\'armonia e la grazia estetica. Risveglia il senso della bellezza, dell\'arte e dell\'eleganza in ogni espressione della vita.' },
+  { n:9,  nome:'Luna',         color:'#7eb8f7', dir:'Nord', ico:'🌕', qualita:'Flusso universale, purificazione, emozione', desc:'Il flusso universale delle emozioni. Insegna la purificazione attraverso il fluire, lasciando che le acque emotive si rinnovino in continuazione.' },
+  { n:10, nome:'Cane',         color:'#3a3a7a', dir:'Ovest',ico:'🐕', qualita:'Amore, cuore, fedeltà, lealtà', desc:'Il custode del cuore e della lealtà. Rappresenta l\'amore incondizionato, la fedeltà verso sé stessi e verso chi si ama.' },
+  { n:11, nome:'Scimmia',      color:'#6fcf97', dir:'Sud',  ico:'🐒', qualita:'Gioco, magia, illusione, trickster', desc:'Lo spirito giocoso e l\'illusionista cosmico. Mostra come la magia e la leggerezza possano sciogliere ciò che appare troppo serio o rigido.' },
+  { n:12, nome:'Essere Umano', color:'#e05050', dir:'Est',  ico:'🧍', qualita:'Libero arbitrio, saggezza, abbondanza', desc:'Incarna il libero arbitrio e la saggezza pratica. Ricorda che ogni essere umano ha il potere di scegliere e creare la propria abbondanza.' },
+  { n:13, nome:'Camminatore',  color:'#7eb8f7', dir:'Nord', ico:'👣', qualita:'Spazio, espansione, corpo del sogno', desc:'Il viaggiatore tra i mondi onirici. Espande lo spazio interiore ed esteriore, invitando a esplorare territori ancora ignoti.' },
+  { n:14, nome:'Mago',         color:'#3a3a7a', dir:'Ovest',ico:'🧙', qualita:'Tempestività, senza tempo, ricettività', desc:'Maestro della tempestività perfetta. Insegna la ricettività senza tempo, il saper agire — o attendere — nel momento esattamente giusto.' },
+  { n:15, nome:'Aquila',       color:'#6fcf97', dir:'Sud',  ico:'🦅', qualita:'Visione, creatività, mente', desc:'La visione dall\'alto e la mente creativa. Dona lucidità mentale e la capacità di vedere il quadro d\'insieme da una prospettiva superiore.' },
+  { n:16, nome:'Guerriero',    color:'#e05050', dir:'Est',  ico:'⚔️', qualita:'Intelligence, paura, karma, questioni', desc:'L\'intelligenza che affronta la paura. Spinge a porsi le domande giuste e ad agire con coraggio consapevole davanti al proprio karma.' },
+  { n:17, nome:'Terra',        color:'#7eb8f7', dir:'Nord', ico:'🌍', qualita:'Evoluzione, sincronizzazione, navigazione', desc:'Il navigatore evolutivo del pianeta. Sincronizza l\'individuo con i ritmi naturali e con il cammino evolutivo collettivo.' },
+  { n:18, nome:'Specchio',     color:'#3a3a7a', dir:'Ovest',ico:'🪞', qualita:'Riflessione, infinità, ordine di Dio', desc:'Riflette la verità senza filtri. Rappresenta l\'infinità degli ordini cosmici e la chiarezza che nasce dall\'auto-osservazione onesta.' },
+  { n:19, nome:'Tempesta',     color:'#6fcf97', dir:'Sud',  ico:'⚡', qualita:'Catalisi, energia, auto-generazione', desc:'Forza catalizzatrice e auto-generante. Chiude il ciclo con un\'energia purificatrice che rinnova tutto ciò che tocca, come un temporale liberatorio.' }
 ];
 
 const COLORI_DIR = { 'Est':'🔴 Rosso', 'Nord':'🔵 Bianco', 'Ovest':'⚫ Blu/Notte', 'Sud':'🟡 Giallo' };
@@ -1190,15 +1207,21 @@ function initToniGrid() {
 
 function initSigilliGrid() {
   const c = document.getElementById('sigiliGrid');
-  c.innerHTML = `<div class="maya-grid">${
-    SIGILLI.map(s => `
-      <div class="maya-card">
-        <div class="maya-card-title">${COLORI_DIR[s.dir]} · ${s.dir}</div>
-        <div style="font-size:22px;text-align:center;margin:4px 0">${s.ico}</div>
-        <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--text);text-align:center">${s.nome}</div>
-        <div class="maya-card-body">${s.qualita}</div>
+  c.innerHTML = `<div class="maya-grid" style="grid-template-columns:1fr">${
+    SIGILLI.map(s => {
+      const slug = s.nome.toLowerCase().replace(/\s+/g,'-');
+      return `
+      <div class="maya-card" style="display:flex;gap:12px;align-items:flex-start;text-align:left">
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/sigilli/${slug}.webp" alt="Sigillo ${s.nome}" loading="lazy" width="56" height="56" style="width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0;background:rgba(0,0,0,0.25)" onerror="this.outerHTML='<div style=&quot;width:52px;height:52px;border-radius:10px;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0&quot;>${s.ico}</div>'">
+        <div>
+          <div class="maya-card-title">${COLORI_DIR[s.dir]} · ${s.dir}</div>
+          <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--text);margin-bottom:3px">${s.nome}</div>
+          <div class="maya-card-body" style="margin-bottom:4px"><strong style="color:var(--orange)">${s.qualita}</strong></div>
+          <div class="maya-card-body">${s.desc}</div>
+        </div>
       </div>
-    `).join('')
+    `;
+    }).join('')
   }</div>`;
 }
 
