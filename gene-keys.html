@@ -66,7 +66,7 @@
   "image": "https://mysticaoracoli.it/og-image.jpg",
   "author": { "@type": "Organization", "name": "MYSTICA" },
   "datePublished": "2026-06-17",
-  "dateModified": "2026-06-17",
+  "dateModified": "2026-06-20",
   "inLanguage": "it",
   "isPartOf": {
     "@type": "WebSite",
@@ -637,7 +637,6 @@ body {
   flex-shrink: 0;
 }
 .theme-btn:hover { background: rgba(212,175,55,0.12); }
-<style>
 .img-section{text-align:center;margin:20px 0 10px}
 .img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
 .img-grid{display:grid;gap:12px;margin:20px 0}
@@ -649,7 +648,24 @@ body {
 .img-card{text-align:center}
 .img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
 .img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
-</style>
+
+/* ── GK SECTION IMAGES ── */
+.gk-section-img {
+  width: 100%;
+  margin: 12px 0 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.2);
+  background: linear-gradient(145deg, #07031a, #0a1a2e);
+}
+.gk-section-img img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
 </style>
 </head>
 <body>
@@ -680,7 +696,7 @@ body {
   <section class="hero">
     <span class="hero-icon">🧬</span>
     <h1>Gene Keys</h1>
-    <p>Le 64 Chiavi Genetiche per sbloccare il tuo potenziale più elevato: dall'Ombra al Dono, fino al Siddhi</p>
+    <p>Le 64 Chiavi Genetiche di <strong style="color:var(--gold)">Richard Rudd</strong> per sbloccare il tuo potenziale più elevato: dall'Ombra al Dono, fino al Siddhi. Il sistema che unisce I Ching, DNA e coscienza.</p>
   </section>
 
   <!-- INDICE RAPIDO -->
@@ -693,6 +709,7 @@ body {
       <a href="#le-64-chiavi">🔑 Le 64 Chiavi</a>
       <a href="#sequenze">🌊 Le Sequenze</a>
       <a href="#iching">☯️ I Ching e DNA</a>
+      <a href="#come-iniziare">🌿 Inizia</a>
       <a href="#faq">❓ FAQ</a>
     </div>
   </nav>
@@ -711,15 +728,9 @@ body {
   <!-- ═══ COSA SONO LE GENE KEYS ═══ -->
   <article class="card" id="cosa-sono">
     <h2>🌱 Cosa Sono le Gene Keys?</h2>
-    <div class="img-section"><img src="./images/icone/home/gene-keys.webp" alt="Gene Keys" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/gene-keys.webp" alt="Gene Keys" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/gene-keys.webp" alt="Gene Keys" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/gene-keys.webp" alt="Gene Keys" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
-
-    <div class="img-section"><img src="./images/icone/home/gene-keys.webp" alt="Gene Keys" loading="lazy" style="max-height:220px;object-fit:cover;width:100%"></div>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_hero.webp" alt="Gene Keys di Richard Rudd - Le 64 Chiavi Genetiche" loading="lazy">
+    </div>
 
     <p>Le <em>Gene Keys</em> sono un sistema di saggezza interiore e autoconoscenza sviluppato dall'autore e filosofo britannico <strong>Richard Rudd</strong>, presentato nel suo libro omonimo pubblicato nel 2009 e ampliato negli anni successivi. Il sistema parte da una domanda radicale: <em>cosa accadrebbe se le nostre paure più profonde fossero in realtà doni nascosti in attesa di essere scoperti?</em></p>
 
@@ -737,6 +748,9 @@ body {
   <!-- ═══ TRE LIVELLI ═══ -->
   <article class="card" id="tre-livelli">
     <h2>🌗 I Tre Livelli Vibrazionali: Ombra, Dono, Siddhi</h2>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_livelli.webp" alt="I tre livelli vibrazionali Gene Keys: Ombra Dono Siddhi" loading="lazy">
+    </div>
     <p>Il cuore del sistema Gene Keys è la <em>triade vibrazionale</em>: ogni Chiave Genetica esiste simultaneamente su tre frequenze di coscienza. Comprendere questa struttura è fondamentale per lavorare con il sistema.</p>
 
     <div class="levels-grid">
@@ -789,6 +803,9 @@ body {
   <!-- ═══ OLOGRAMMA AURICO ═══ -->
   <article class="card emerald-accent" id="ologramma">
     <h2>✨ L'Ologramma Aurico — Il Tuo Profilo Personale</h2>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_ologramma.webp" alt="Ologramma Aurico Gene Keys - Profilo Personale" loading="lazy">
+    </div>
     <p>Ogni persona ha un profilo Gene Keys unico, chiamato <em>Ologramma Aurico</em> o <em>Profilo Gene Keys</em>. Questo profilo si calcola in base alla data, ora e luogo di nascita — proprio come un tema natale astrologico o una carta Human Design. Il profilo rivela quali Gene Keys sono più attive nella tua vita e come sono interconnesse.</p>
 
     <p>L'Ologramma Aurico è suddiviso in tre grandi <strong>Sequenze</strong>, ognuna con una funzione specifica nel percorso di evoluzione personale:</p>
@@ -827,6 +844,9 @@ body {
   <!-- ═══ LE 64 CHIAVI ═══ -->
   <article class="card" id="le-64-chiavi">
     <h2>🔑 Le 64 Chiavi Genetiche — Tavola Completa</h2>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_64chiavi.webp" alt="Le 64 Gene Keys - tabella completa Ombra Dono Siddhi" loading="lazy">
+    </div>
     <p>Di seguito la lista completa delle 64 Gene Keys con la corrispondente triade vibrazionale <em>Ombra → Dono → Siddhi</em>. Ogni numero corrisponde a un esagramma dell'I Ching e a un codone del DNA umano.</p>
 
     <div class="keys-table-wrap">
@@ -923,6 +943,9 @@ body {
   <!-- ═══ LE TRE SEQUENZE ═══ -->
   <article class="card" id="sequenze">
     <h2>🌊 Le Tre Sequenze del Percorso</h2>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_sequenze.webp" alt="Le tre Sequenze Gene Keys: Attivazione, Venere, Perla" loading="lazy">
+    </div>
     <p>Il viaggio Gene Keys si svolge attraverso tre grandi Sequenze, che possono essere percorse in parallelo o progressivamente. Ognuna affronta una dimensione diversa dell'esistenza umana e attiva specifiche Gene Keys del profilo personale.</p>
 
     <div class="dream-section">
@@ -946,6 +969,9 @@ body {
   <!-- ═══ I CHING E DNA ═══ -->
   <article class="card" id="iching">
     <h2>☯️ I Ching, DNA e la Matrice del Cosmo</h2>
+    <div class="gk-section-img">
+      <img src="./images/gene-keys/gene_keys_iching_dna.webp" alt="I Ching e DNA - 64 codoni e 64 esagrammi Gene Keys" loading="lazy">
+    </div>
     <p>La struttura fondamentale delle Gene Keys poggia su un'intuizione straordinaria: il codice binario che costituisce gli 64 esagrammi dell'<em>I Ching</em> — il più antico sistema divinatorio cinese, risalente a oltre 3000 anni fa — corrisponde esattamente ai 64 codoni del DNA, le unità che codificano tutte le proteine della vita.</p>
 
     <div class="dream-section">
