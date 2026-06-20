@@ -131,6 +131,22 @@ p{color:var(--text);font-size:14.5px;line-height:1.75;margin-bottom:8px}
 .metodo-text{font-size:13px;color:var(--text);line-height:1.65}
 .metodo-text strong{color:var(--gold)}
 .section-divider{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin:16px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(212,175,55,0.1)}
+
+/* ── LENORMAND ── */
+.len-section-img{width:100%;margin:14px 0 16px;border-radius:13px;overflow:hidden;border:1px solid rgba(212,175,55,0.2);background:#07031a}
+.len-section-img img{width:100%;height:auto;max-height:200px;object-fit:cover;display:block;border-radius:13px}
+.len-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.len-card-item{background:#0b0520;border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:9px 8px;text-align:center;cursor:default;transition:border-color .2s}
+.len-card-item:hover{border-color:rgba(212,175,55,0.4)}
+.len-card-ico{font-size:18px;display:block;margin-bottom:4px}
+.len-card-name{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.03em;display:block;margin-bottom:3px}
+.len-card-key{font-size:10px;color:var(--muted);line-height:1.4}
+.len-combo-list{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.len-combo-row{background:#0b0520;border-left:3px solid rgba(212,175,55,0.35);border-radius:0 10px 10px 0;padding:10px 12px}
+.len-combo-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:.04em;margin-bottom:4px}
+.len-combo-desc{font-size:12px;color:var(--text);line-height:1.6}
+.len-info-badge{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));border:1px solid rgba(212,175,55,0.25);border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:var(--gold)}
+.len-info-badge-ico{font-size:17px;flex-shrink:0}
 .img-section{text-align:center;margin:20px 0 10px}
 .img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
 .img-grid{display:grid;gap:12px;margin:20px 0}
@@ -330,13 +346,145 @@ p{color:var(--text);font-size:14.5px;line-height:1.75;margin-bottom:8px}
 
     <!-- ═══ LENORMAND ═══ -->
     <div class="panel" id="panel-lenormand">
+
+      <!-- INTRO STORICO -->
       <div class="card">
         <h2>🍀 Oracolo Lenormand</h2>
-        <p>Il Lenormand è un mazzo di 36 carte, diffusissimo in Francia, Germania ed Europa dell'Est, che prende il nome dalla celebre cartomante Marie Anne Lenormand. A differenza dei Tarocchi, le immagini sono oggetti e simboli quotidiani (la Casa, la Lettera, l'Ancora...) letti in modo concreto e diretto.</p>
-        <p class="t-muted">Estrai tre carte per una lettura Situazione · Influenza · Esito.</p>
+        <div class="len-section-img">
+          <img src="./images/lenormand/lenormand_hero.webp"
+               srcset="./images/lenormand/lenormand_hero.webp 400w, ./images/lenormand/lenormand_hero@2x.webp 800w"
+               sizes="(max-width:480px) 100vw, 400px"
+               alt="Mazzo Lenormand - le 36 carte dell'oracolo di Marie Anne Lenormand"
+               loading="lazy">
+        </div>
+        <p>Il <strong>Lenormand</strong> è un sistema oracolare di 36 carte nato nell'Europa del XVIII secolo, popolarissimo ancora oggi in Francia, Germania, Svizzera e nei paesi dell'Est. Il nome viene da <em>Marie Anne Lenormand</em> (1772–1843), la cartomante più famosa della storia europea: consultata da Napoleone Bonaparte, Joséphine de Beauharnais, Alessandro I di Russia e dall'imperatrice Giuseppina.</p>
+        <p>In realtà il mazzo che oggi chiamiamo "Lenormand" — conosciuto anche come <em>Petit Lenormand</em> o <em>Das Spiel der Hoffnung</em> ("Il Gioco della Speranza") — fu pubblicato in Germania nel 1799, quando Marie Anne aveva soli 27 anni. Il suo nome fu associato al mazzo solo postumo, dopo la sua morte nel 1843, per sfruttare la fama leggendaria della veggente.</p>
+        <div class="storia-box">
+          <p class="storia-text">«Marie Anne Lenormand fu processata e incarcerata più volte per le sue profezie, considerate pericolose dai regimi napoleonici. Eppure continuò a leggere le carte per decenni, diventando la figura più influente della cartomanzia europea moderna.»</p>
+          <p class="storia-source">— Storia della cartomanzia europea, XVIII-XIX sec.</p>
+        </div>
+        <p class="t-muted" style="margin-top:10px">Estrai tre carte per una lettura Situazione · Influenza · Esito.</p>
         <button class="btn" onclick="drawLenormand()">🍀 Estrai 3 Carte</button>
         <div id="resLenormand"></div>
       </div>
+
+      <!-- DIFFERENZA CON TAROCCHI -->
+      <div class="card">
+        <div class="section-divider">Lenormand vs Tarocchi</div>
+        <h2>⚖️ Come Differisce dai Tarocchi</h2>
+        <div class="len-section-img">
+          <img src="./images/lenormand/lenormand_vs_tarocchi.webp"
+               srcset="./images/lenormand/lenormand_vs_tarocchi.webp 400w, ./images/lenormand/lenormand_vs_tarocchi@2x.webp 800w"
+               sizes="(max-width:480px) 100vw, 400px"
+               alt="Differenza tra Lenormand e Tarocchi - confronto tra i due sistemi di carte"
+               loading="lazy">
+        </div>
+        <div class="len-info-badge"><span class="len-info-badge-ico">🃏</span><span>Il Lenormand usa <strong>36 carte</strong> con simboli concreti. I Tarocchi ne hanno <strong>78</strong> con archetipi universali.</span></div>
+        <p>La differenza fondamentale non è solo numerica. Il Lenormand è un oracolo <strong>diretto e narrativo</strong>: le carte si combinano tra loro come parole in una frase, creando significati che vanno oltre il singolo simbolo. I Tarocchi invece lavorano per archetipi e simbolismi profondi, lasciando spazio a molte interpretazioni.</p>
+        <p>Nel Lenormand non esistono Arcani Maggiori o Minori: tutte le 36 carte hanno lo stesso peso. I simboli sono <em>oggetti del mondo reale</em> — una casa, una lettera, un cane — interpretati concretamente. La Bara non significa morte ma fine di un ciclo; la Volpe non è il male ma l'astuzia necessaria.</p>
+        <div class="len-combo-list">
+          <div class="len-combo-row">
+            <div class="len-combo-title">🎴 Tarocchi — Approccio psicologico e archetipico</div>
+            <div class="len-combo-desc">Esplora il mondo interiore, le emozioni profonde, gli archetipi dell'inconscio. Ideale per domande sul sé, sulla crescita spirituale e su dinamiche emotive complesse.</div>
+          </div>
+          <div class="len-combo-row">
+            <div class="len-combo-title">🍀 Lenormand — Approccio pratico e narrativo</div>
+            <div class="len-combo-desc">Risponde a domande concrete su lavoro, relazioni, casa, denaro, viaggi. Le carte si combinano come soggetto + verbo + oggetto, creando frasi precise e leggibili.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LE 36 CARTE -->
+      <div class="card">
+        <div class="section-divider">Le 36 Carte del Mazzo</div>
+        <h2>🔑 Le 36 Carte Principali</h2>
+        <div class="len-section-img">
+          <img src="./images/lenormand/lenormand_carte.webp"
+               srcset="./images/lenormand/lenormand_carte.webp 400w, ./images/lenormand/lenormand_carte@2x.webp 800w"
+               sizes="(max-width:480px) 100vw, 400px"
+               alt="Le 36 carte del mazzo Lenormand con simboli e significati"
+               loading="lazy">
+        </div>
+        <p>Ogni carta del Lenormand porta un simbolo quotidiano e un significato diretto. Toccale o usale come riferimento durante la tua lettura.</p>
+        <div class="len-cards-grid">
+          <div class="len-card-item"><span class="len-card-ico">🏇</span><span class="len-card-name">Il Cavaliere</span><span class="len-card-key">Notizie rapide in arrivo</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🍀</span><span class="len-card-name">Il Quadrifoglio</span><span class="len-card-key">Piccola fortuna inaspettata</span></div>
+          <div class="len-card-item"><span class="len-card-ico">⛵</span><span class="len-card-name">La Nave</span><span class="len-card-key">Viaggio, lontananza</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🏠</span><span class="len-card-name">La Casa</span><span class="len-card-key">Famiglia, sicurezza, base</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🌳</span><span class="len-card-name">L'Albero</span><span class="len-card-key">Salute, crescita radicata</span></div>
+          <div class="len-card-item"><span class="len-card-ico">☁️</span><span class="len-card-name">Le Nuvole</span><span class="len-card-key">Confusione, dubbio</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐍</span><span class="len-card-name">Il Serpente</span><span class="len-card-key">Inganno o astuzia</span></div>
+          <div class="len-card-item"><span class="len-card-ico">⚰️</span><span class="len-card-name">La Bara</span><span class="len-card-key">Fine di un ciclo</span></div>
+          <div class="len-card-item"><span class="len-card-ico">💐</span><span class="len-card-name">I Fiori</span><span class="len-card-key">Regalo, sorpresa dolce</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🌾</span><span class="len-card-name">La Falce</span><span class="len-card-key">Decisione rapida, taglio</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🪃</span><span class="len-card-name">La Frusta</span><span class="len-card-key">Conflitto, ripetizione</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐦</span><span class="len-card-name">Gli Uccelli</span><span class="len-card-key">Chiacchiere, nervosismo</span></div>
+          <div class="len-card-item"><span class="len-card-ico">👶</span><span class="len-card-name">Il Bambino</span><span class="len-card-key">Nuovo inizio, fragilità</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🦊</span><span class="len-card-name">La Volpe</span><span class="len-card-key">Astuzia, inganno al lavoro</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐻</span><span class="len-card-name">L'Orso</span><span class="len-card-key">Forza, protezione</span></div>
+          <div class="len-card-item"><span class="len-card-ico">⭐</span><span class="len-card-name">Le Stelle</span><span class="len-card-key">Speranza, guida superiore</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🦢</span><span class="len-card-name">La Cicogna</span><span class="len-card-key">Cambiamento positivo</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐕</span><span class="len-card-name">Il Cane</span><span class="len-card-key">Fedeltà, amicizia</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🗼</span><span class="len-card-name">La Torre</span><span class="len-card-key">Istituzione, solitudine</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🌷</span><span class="len-card-name">Il Giardino</span><span class="len-card-key">Vita sociale, comunità</span></div>
+          <div class="len-card-item"><span class="len-card-ico">⛰️</span><span class="len-card-name">La Montagna</span><span class="len-card-key">Ostacolo, blocco</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🛤️</span><span class="len-card-name">Le Strade</span><span class="len-card-key">Scelta, bivio</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐀</span><span class="len-card-name">I Topi</span><span class="len-card-key">Perdita lenta, stress</span></div>
+          <div class="len-card-item"><span class="len-card-ico">❤️</span><span class="len-card-name">Il Cuore</span><span class="len-card-key">Amore, sentimenti sinceri</span></div>
+          <div class="len-card-item"><span class="len-card-ico">💍</span><span class="len-card-name">L'Anello</span><span class="len-card-key">Impegno, contratto</span></div>
+          <div class="len-card-item"><span class="len-card-ico">📖</span><span class="len-card-name">Il Libro</span><span class="len-card-key">Segreto, conoscenza</span></div>
+          <div class="len-card-item"><span class="len-card-ico">✉️</span><span class="len-card-name">La Lettera</span><span class="len-card-key">Comunicazione scritta</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🧑</span><span class="len-card-name">L'Uomo</span><span class="len-card-key">Figura maschile chiave</span></div>
+          <div class="len-card-item"><span class="len-card-ico">👩</span><span class="len-card-name">La Donna</span><span class="len-card-key">Figura femminile chiave</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🌸</span><span class="len-card-name">Il Giglio</span><span class="len-card-key">Maturità, pace</span></div>
+          <div class="len-card-item"><span class="len-card-ico">☀️</span><span class="len-card-name">Il Sole</span><span class="len-card-key">Successo, vittoria</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🌙</span><span class="len-card-name">La Luna</span><span class="len-card-key">Intuito, riconoscimento</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🗝️</span><span class="len-card-name">La Chiave</span><span class="len-card-key">Soluzione, svolta</span></div>
+          <div class="len-card-item"><span class="len-card-ico">🐟</span><span class="len-card-name">I Pesci</span><span class="len-card-key">Abbondanza, denaro</span></div>
+          <div class="len-card-item"><span class="len-card-ico">⚓</span><span class="len-card-name">L'Ancora</span><span class="len-card-key">Stabilità, porto sicuro</span></div>
+          <div class="len-card-item"><span class="len-card-ico">✝️</span><span class="len-card-name">La Croce</span><span class="len-card-key">Peso del destino</span></div>
+        </div>
+      </div>
+
+      <!-- COME SI LEGGE -->
+      <div class="card">
+        <div class="section-divider">Come Leggere il Lenormand</div>
+        <h2>📖 Come Si Legge</h2>
+        <div class="len-section-img">
+          <img src="./images/lenormand/lenormand_lettura.webp"
+               srcset="./images/lenormand/lenormand_lettura.webp 400w, ./images/lenormand/lenormand_lettura@2x.webp 800w"
+               sizes="(max-width:480px) 100vw, 400px"
+               alt="Come leggere il Lenormand - combinazioni di carte e posizioni"
+               loading="lazy">
+        </div>
+        <p>Il segreto del Lenormand è la <strong>combinazione</strong>: le carte non si leggono isolatamente ma come parole di una frase. La carta centrale risponde alla domanda, quella a sinistra indica l'influenza passata o la causa, quella a destra la direzione futura o la conseguenza.</p>
+        <div class="len-combo-list">
+          <div class="len-combo-row">
+            <div class="len-combo-title">🐕 Cane + ❤️ Cuore</div>
+            <div class="len-combo-desc">Un amico fedele porta amore, oppure una relazione basata sull'amicizia profonda. L'amicizia si trasforma in amore.</div>
+          </div>
+          <div class="len-combo-row">
+            <div class="len-combo-title">💍 Anello + 🐀 Topi</div>
+            <div class="len-combo-desc">Un contratto o un impegno si sta sgretolando lentamente. Attenzione a clausole nascoste o accordi che perdono valore.</div>
+          </div>
+          <div class="len-combo-row">
+            <div class="len-combo-title">☀️ Sole + 🗝️ Chiave</div>
+            <div class="len-combo-desc">Il successo è la soluzione. La chiave del problema è il coraggio e l'azione decisa. Una svolta positiva è garantita.</div>
+          </div>
+          <div class="len-combo-row">
+            <div class="len-combo-title">☁️ Nuvole + 🏠 Casa</div>
+            <div class="len-combo-desc">Confusione in ambito familiare o domestico. Problemi in casa che non sono ancora chiari nella loro natura.</div>
+          </div>
+          <div class="len-combo-row">
+            <div class="len-combo-title">🌙 Luna + 🦊 Volpe</div>
+            <div class="len-combo-desc">Un inganno legato all'ambiente lavorativo avviene nell'ombra. Qualcuno usa l'astuzia di nascosto per tornaconto personale.</div>
+          </div>
+        </div>
+        <p class="t-muted" style="margin-top:10px">Prova la lettura a tre carte: Situazione · Influenza · Esito.</p>
+        <button class="btn" onclick="drawLenormand()">🍀 Estrai 3 Carte Lenormand</button>
+        <div id="resLenormand2"></div>
+      </div>
+
     </div>
 
     <!-- ═══ ORACOLO ANGELI ═══ -->
@@ -583,7 +731,10 @@ function drawLenormand(){
     html+=`<div class="oracle-block"><div class="ob-tag">${positions[i]}</div><div class="ob-name">${c.n}</div><p>${c.meaning}</p></div>`;
   });
   html+='</div>';
-  document.getElementById('resLenormand').innerHTML=html;
+  const el1=document.getElementById('resLenormand');
+  const el2=document.getElementById('resLenormand2');
+  if(el1)el1.innerHTML=html;
+  if(el2)el2.innerHTML=html;
 }
 
 // ═══════════ ANGELI ═══════════
