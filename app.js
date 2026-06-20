@@ -8237,10 +8237,18 @@ async function mysticaCheckUpdate(){
       alert('Service Worker non supportato su questo browser.');
       return;
     }
-    const reg = await navigator.serviceWorker.getRegistration('./');
+    let reg = await navigator.serviceWorker.getRegistration('./');
+    if(!reg){
+      // SW non ancora registrato — tenta la registrazione al volo
+      try {
+        reg = await navigator.serviceWorker.register('./sw.js', {scope:'./'});
+        await new Promise(r => setTimeout(r, 1500)); // attendi attivazione
+        reg = await navigator.serviceWorker.getRegistration('./');
+      } catch(regErr) { /* ignora */ }
+    }
     if(!reg){
       if(btn){ btn.textContent = '🔄 Controlla nuovi aggiornamenti'; btn.disabled = false; }
-      alert('Nessun Service Worker registrato.');
+      alert('⚠️ Service Worker non disponibile.\nAssicurati di usare MYSTICA online (non offline) e ricarica la pagina.');
       return;
     }
     // Se c'è già un worker in attesa, mostra subito il banner
