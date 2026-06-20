@@ -557,7 +557,6 @@ body {
   .stagioni-grid { grid-template-columns: 1fr; }
   .ore-day-strip { grid-template-columns: repeat(4,1fr); }
 }
-<style>
 .img-section{text-align:center;margin:20px 0 10px}
 .img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
 .img-grid{display:grid;gap:12px;margin:20px 0}
@@ -569,7 +568,6 @@ body {
 .img-card{text-align:center}
 .img-card img{width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.15)}
 .img-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold,#d4af37);letter-spacing:.8px;margin-top:6px;display:block;opacity:.85}
-</style>
 </style>
 </head>
 <body>
@@ -1205,14 +1203,23 @@ function initToniGrid() {
   `).join('');
 }
 
+// Mappa esplicita sigillo → filename reale in images/cicli-e-tempo/sigilli-solari/
+const SIGILLI_IMG = [
+  '01_dragone','02_vento','03_notte','04_seme','05_serpente',
+  '06_allacciatore_dei_mondi','07_mano','08_stella','09_luna','10_cane',
+  '11_scimmia','12_umano','13_viandante_del_cielo','14_mago','15_aquila',
+  '16_guerriero','17_terra','18_specchio','19_tempesta','20_sole'
+];
+
 function initSigilliGrid() {
   const c = document.getElementById('sigiliGrid');
+  const BASE = 'https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/sigilli-solari/';
   c.innerHTML = `<div class="maya-grid" style="grid-template-columns:1fr">${
-    SIGILLI.map(s => {
-      const slug = s.nome.toLowerCase().replace(/\s+/g,'-');
+    SIGILLI.map((s, i) => {
+      const filename = SIGILLI_IMG[i] || (String(i+1).padStart(2,'0') + '_' + s.nome.toLowerCase().replace(/\s+/g,'_'));
       return `
       <div class="maya-card" style="display:flex;gap:12px;align-items:flex-start;text-align:left">
-        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/cicli-e-tempo/sigilli/${slug}.webp" alt="Sigillo ${s.nome}" loading="lazy" width="56" height="56" style="width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0;background:rgba(0,0,0,0.25)" onerror="this.outerHTML='<div style=&quot;width:52px;height:52px;border-radius:10px;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0&quot;>${s.ico}</div>'">
+        <img src="${BASE}${filename}.webp" alt="Sigillo ${s.nome}" loading="lazy" width="56" height="56" style="width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0;background:rgba(0,0,0,0.25)" onerror="this.outerHTML='<div style=&quot;width:52px;height:52px;border-radius:10px;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0&quot;>${s.ico}</div>'">
         <div>
           <div class="maya-card-title">${COLORI_DIR[s.dir]} · ${s.dir}</div>
           <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--text);margin-bottom:3px">${s.nome}</div>
