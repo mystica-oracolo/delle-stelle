@@ -2323,11 +2323,11 @@ function clearArch(){
 function initParticles(){
   const colors=['#d4af37','#d4af37cc','#ffffffcc','#ffffff'];
   const sizes=[2,3,2.5,1.8];
-  for(let i=0;i<10;i++)
-  setTimeout(()=>particle(rnd(sizes),rnd(colors),5+Math.random()*6),i*500);
+  for(let i=0;i<18;i++)
+  setTimeout(()=>particle(rnd(sizes),rnd(colors),5+Math.random()*6),i*200);
   setInterval(()=>{
-  if(Math.random()>.6) particle(rnd(sizes),rnd(colors),5+Math.random()*6);
-  },2600);
+  if(Math.random()>.15) particle(rnd(sizes),rnd(colors),5+Math.random()*6);
+  },650);
   setInterval(()=>{
   if(Math.random()>.55) shootingStar();
   },4500);
