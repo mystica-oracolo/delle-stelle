@@ -96,8 +96,8 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
 .trad-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent);margin:14px 0}
 
 .trad-block{background:#0b0520;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 14px;margin-bottom:10px}
-.block-img{text-align:center;margin:0 0 10px}
-.block-img img{width:100%;max-width:320px;height:140px;object-fit:cover;border-radius:10px;border:1px solid rgba(212,175,55,0.25);display:block;margin:0 auto}
+.block-img{display:flex;justify-content:center;margin:0 0 10px;width:100%}
+.block-img img{display:block;width:100%;max-width:320px;height:140px;object-fit:cover;object-position:center;border-radius:10px;border:1px solid rgba(212,175,55,0.25)}
 .trad-block h3{font-family:'Cinzel',serif;color:var(--gold);font-size:9.5px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .trad-block p{font-size:13.5px;line-height:1.75;color:var(--text);margin:0}
 .trad-block p+p{margin-top:8px}
@@ -119,8 +119,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
 
 .footer{text-align:center;padding:14px;font-size:10px;color:var(--muted);border-top:1px solid #2a174840;margin-top:14px}
 <style>
-.img-section{text-align:center;margin:20px 0 10px}
-.img-section img{max-width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.2);display:block;margin:0 auto}
 .img-grid{display:grid;gap:12px;margin:20px 0}
 .img-grid-2{grid-template-columns:1fr 1fr}
 .img-grid-3{grid-template-columns:1fr 1fr 1fr}
@@ -181,7 +179,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/sciamanesimo.webp" alt="Sciamanesimo - Il viaggio tra i mondi" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/sciamanesimo/origini-e-diffusione.webp" alt="Origini e diffusione" width="320" height="140" loading="lazy"></div>
           <h3>🌍 Origini e diffusione</h3>
@@ -257,7 +254,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/buddismo-esoterico.webp" alt="Buddismo Esoterico e Tantra" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/buddismo-esoterico/origini-e-via-rapida.webp" alt="Origini e via rapida" width="320" height="140" loading="lazy"></div>
           <h3>🪷 Origini e via rapida</h3>
@@ -329,7 +325,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/sufismo.webp" alt="Sufismo - La Via del Cuore" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/sufismo/origini-storiche.webp" alt="Origini storiche" width="320" height="140" loading="lazy"></div>
           <h3>🌙 Origini storiche</h3>
@@ -401,7 +396,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/druidismo.webp" alt="Druidismo e Tradizione Celtica" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/druidismo/chi-erano-i-druidi.webp" alt="Chi erano i Druidi" width="320" height="140" loading="lazy"></div>
           <h3>🍃 Chi erano i Druidi</h3>
@@ -477,7 +471,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/voodoo-hoodoo.webp" alt="Voodoo e Hoodoo" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/voodoo/origini-e-sincretismo.webp" alt="Origini e sincretismo" width="320" height="140" loading="lazy"></div>
           <h3>🌍 Origini e sincretismo</h3>
@@ -551,7 +544,6 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
         <div class="trad-toggle">▾</div>
       </div>
       <div class="trad-body">
-        <div class="img-section" style="margin:12px 16px 6px"><img src="./images/icone/home/rosacroce.webp" alt="Ordine della Rosacroce" loading="lazy" style="max-height:200px;object-fit:cover;width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.2)"></div>
         <div class="trad-block">
           <div class="block-img"><img src="./images/icone/tradizioni/rosacroce/i-manifesti-misteriosi.webp" alt="I manifesti misteriosi" width="320" height="140" loading="lazy"></div>
           <h3>📜 I manifesti misteriosi</h3>
