@@ -829,15 +829,42 @@ function mysticaConfirm(msg, onOk){
 function particle(size,color,dur){
   const p=document.createElement('div');
   p.className='particle';
+  const startTop=-6+Math.random()*30;
+  const startLeft=-6+Math.random()*45;
+  const dx=(60+Math.random()*55)+'vw';
+  const dy=(75+Math.random()*55)+'vh';
   p.style.cssText=`
-  left:${Math.random()*100}%;
+  top:${startTop}%;
+  left:${startLeft}%;
   width:${size}px;height:${size}px;
   background:${color};
+  box-shadow:0 0 ${size*3}px ${size}px ${color};
+  --dx:${dx};--dy:${dy};
   animation-duration:${dur}s;
   animation-delay:${Math.random()*dur}s;
   `;
   $('#particles').appendChild(p);
   setTimeout(()=>p.remove(),(dur+6)*1000);
+}
+function shootingStar(){
+  const s=document.createElement('div');
+  s.className='shooting-star';
+  const startTop=-8+Math.random()*25;
+  const startLeft=-10+Math.random()*30;
+  const distVw=75+Math.random()*45;
+  const distVh=85+Math.random()*55;
+  const dxPx=distVw/100*window.innerWidth;
+  const dyPx=distVh/100*window.innerHeight;
+  const ang=Math.atan2(dyPx,dxPx)*180/Math.PI;
+  const dur=0.85+Math.random()*0.6;
+  s.style.cssText=`
+  top:${startTop}%;
+  left:${startLeft}%;
+  --dx:${distVw}vw;--dy:${distVh}vh;--ang:${ang}deg;
+  animation-duration:${dur}s;
+  `;
+  $('#particles').appendChild(s);
+  setTimeout(()=>s.remove(),(dur+1)*1000);
 }
 function burst(){for(let i=0;i<18;i++)setTimeout(()=>particle(3,'#d4af37',5+Math.random()*5),i*80);}
 
@@ -2294,13 +2321,16 @@ function clearArch(){
 }
 
 function initParticles(){
-  const colors=['#d4af37','#d4af3780','#ffffff60'];
-  const sizes=[2,3,2,1.5];
+  const colors=['#d4af37','#d4af37cc','#ffffffcc','#ffffff'];
+  const sizes=[2,3,2.5,1.8];
   for(let i=0;i<10;i++)
   setTimeout(()=>particle(rnd(sizes),rnd(colors),5+Math.random()*6),i*500);
   setInterval(()=>{
-  if(Math.random()>.65) particle(rnd(sizes),rnd(colors),5+Math.random()*6);
-  },2800);
+  if(Math.random()>.6) particle(rnd(sizes),rnd(colors),5+Math.random()*6);
+  },2600);
+  setInterval(()=>{
+  if(Math.random()>.55) shootingStar();
+  },4500);
 }
 
 function setNavTop(){

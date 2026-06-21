@@ -2,15 +2,15 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v25';
+const CACHE_NAME = 'mystica-v30';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './apple-touch-icon.png',
+  './icon-192-v2.png',
+  './apple-touch-icon-v2.png',
   // Icone home — nuove immagini aggiunte
   './images/icone/home/astrologia-avanzata.webp',
   './images/icone/home/cartomanzia.webp',
