@@ -1165,6 +1165,14 @@ function segnoFromDate(ds){
 }
 
 function applyProfile(p){
+  // Nascondi sempre il card e popola i campi, anche se segno non ancora riconosciuto
+  const _editCard=$('#cardEditProfilo');
+  if(_editCard) _editCard.style.display='none';
+  if($('#inpName'))      $('#inpName').value=p.name||'';
+  if($('#inpDate'))      $('#inpDate').value=p.date||'';
+  if($('#inpGender'))    $('#inpGender').value=p.gender||'';
+  if($('#inpInterests')) $('#inpInterests').value=p.interests||'';
+
   const sg=DB.segni[p.segno];
   if(!sg) return;
 
@@ -1226,13 +1234,6 @@ function applyProfile(p){
   if(dcZodName)  dcZodName.textContent=cz.n;
   }
 
-  const editCard=$('#cardEditProfilo');
-  if(editCard) editCard.style.display='none';
-
-  if($('#inpName')) $('#inpName').value=p.name;
-  if($('#inpDate')) $('#inpDate').value=p.date;
-  if($('#inpGender')) $('#inpGender').value=p.gender||'';
-  if($('#inpInterests')) $('#inpInterests').value=p.interests||'';
   S.segno=p.segno;
 }
 
@@ -1244,6 +1245,7 @@ let _useLS = (function(){
 
 function _lsGet(key){
   if(_useLS){ try{ return localStorage.getItem(key); }catch(e){ _useLS=false; } }
+  try{ const v=sessionStorage.getItem(key); if(v!==null) return v; }catch(e){}
   return (_memStore[key]!==undefined) ? _memStore[key] : null;
 }
 function _lsSet(key,val){
@@ -1282,6 +1284,7 @@ function saveProfile(){
   const segno=segnoFromDate(date);
   const p={name,date,segno,gender,interests};
   _lsSet(CFG.kProfilo,JSON.stringify(p));
+  try{ sessionStorage.setItem(CFG.kProfilo,JSON.stringify(p)); }catch(e){}
   applyProfile(p);
   playMysticSound('bell');
   const editCard=$('#cardEditProfilo');
@@ -1504,8 +1507,11 @@ function completeWelcome(){
   toast('⚠️ Anno non valido');return;
   }
   const segno=segnoFromDate(date);
-  const p={name,date,segno};
+  const genderEl=document.getElementById('wGender');
+  const gender=genderEl ? genderEl.value : '';
+  const p={name,date,segno,gender};
   _lsSet(CFG.kProfilo,JSON.stringify(p));
+  try{ sessionStorage.setItem(CFG.kProfilo,JSON.stringify(p)); }catch(e){}
 
   $('#modalWelcome').classList.remove('open');
   try{ applyProfile(p); }catch(e){ console.warn('applyProfile error:',e); }
