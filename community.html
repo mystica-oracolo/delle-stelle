@@ -1,0 +1,1110 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║         MYSTICA ORACOLI — mysticaoracoli.it                  ║
+  ║  © 2025-2026 PetroCorporation — Dott. Petrolese Giovanni     ║
+  ║  Community & Recensioni — pagina standalone                  ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="google-adsense-account" content="ca-pub-0522720046244970">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Community & Recensioni — MYSTICA Oracoli</title>
+<meta name="description" content="Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mysticaoracoli.it/community.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Community & Recensioni — MYSTICA Oracoli">
+<meta property="og:description" content="Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.">
+<meta property="og:url" content="https://mysticaoracoli.it/community.html">
+<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<meta name="theme-color" content="#d4af37">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Fonts non-bloccanti -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
+
+<!-- AdSense asincrono post-load -->
+<script>window.adsbygoogle = window.adsbygoogle || { push: function(){} };</script>
+<script>window.addEventListener('load', function(){
+  var s = document.createElement('script');
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970';
+  s.async = true; s.crossOrigin = 'anonymous';
+  document.head.appendChild(s);
+});</script>
+
+<style>
+/* ═══ CSS VARIABLES & RESET ═══ */
+:root {
+  --bg: #0a0514;
+  --card: #140c24;
+  --purple: #2a1748;
+  --gold: #d4af37;
+  --gold-dim: #b8860b;
+  --gold-glow: rgba(212,175,55,0.4);
+  --text: #f4f1fa;
+  --muted: #b8b2d1;
+  --radius: 18px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+button { touch-action: manipulation; -webkit-appearance: none; cursor: pointer; }
+input, select, textarea { -webkit-appearance: none; }
+
+/* ═══ SFONDO COSMICO ═══ */
+.cosmos {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+              radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+              radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+              radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+              radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+              #0a0514;
+  animation: twinkle 14s infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: .35; } 50% { opacity: .6; } 100% { opacity: .5; }
+}
+
+/* ═══ LAYOUT ═══ */
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══ HEADER ═══ */
+.comm-header {
+  background: rgba(10,5,20,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 16px;
+  padding-top: max(14px, calc(14px + env(safe-area-inset-top, 0px)));
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: 480px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.comm-back-btn {
+  background: rgba(42,23,72,0.5);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--gold);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.comm-back-btn:hover { background: rgba(42,23,72,0.8); border-color: var(--gold); }
+.comm-header-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px var(--gold-glow);
+  flex: 1;
+  text-align: center;
+}
+.comm-header-spacer { width: 70px; flex-shrink: 0; }
+
+/* ═══ CONTENT ═══ */
+.comm-content {
+  flex: 1;
+  padding: 13px;
+  padding-top: calc(70px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ═══ CARD ═══ */
+.card {
+  background: var(--card);
+  border: 1.5px solid rgba(42,23,72,0.9);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: .5;
+}
+.card.gold-border { border-color: var(--gold-dim); box-shadow: 0 0 20px var(--gold-glow); }
+
+/* ═══ TYPOGRAPHY ═══ */
+h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 18px; margin-bottom: 14px; text-align: center; letter-spacing: 1px; }
+h3 { color: var(--text); font-size: 16px; margin-bottom: 8px; font-weight: 600; }
+p { color: var(--text); font-size: 16px; line-height: 1.75; margin-bottom: 10px; }
+.t-muted { color: var(--muted); font-size: 12px; text-align: center; }
+
+/* ═══ BUTTONS ═══ */
+.btn {
+  width: 100%; padding: 15px; margin-top: 12px;
+  background: linear-gradient(135deg, #2a1748, #160d30);
+  border: 1.5px solid var(--gold);
+  color: var(--gold); border-radius: 12px;
+  font-size: 15px; font-weight: 700;
+  text-align: center;
+  transition: all .25s cubic-bezier(.34,1.56,.64,1);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: 'Cinzel', serif; letter-spacing: 1px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.btn:hover { background: linear-gradient(135deg, #381f5a, #1e1040); box-shadow: 0 0 24px var(--gold-glow); }
+.btn:active { transform: scale(.97); }
+.btn-sec {
+  background: transparent;
+  border: 1px solid #2a174880;
+  color: var(--muted);
+  font-family: 'Crimson Pro', serif;
+}
+.btn-sec:hover { border-color: var(--gold-dim); color: var(--text); }
+
+/* ═══ FORM INPUTS ═══ */
+input, select {
+  width: 100%; padding: 12px; margin: 5px 0;
+  background: #09050f;
+  border: 1px solid #2a174880;
+  color: var(--text); border-radius: 10px;
+  font-size: 14px; font-family: 'Crimson Pro', serif;
+  transition: border-color .2s;
+}
+input:focus, select:focus { outline: none; border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+input::placeholder { color: var(--muted); }
+select option { background: #0e0618; }
+textarea {
+  width: 100%; padding: 12px;
+  background: #09050f;
+  border: 1px solid #2a174880;
+  color: var(--text); border-radius: 10px;
+  font-size: 14px; font-family: 'Crimson Pro', serif;
+  resize: none; transition: border-color .2s;
+  margin: 5px 0; display: block;
+}
+textarea:focus { outline: none; border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
+textarea::placeholder { color: var(--muted); }
+
+/* ═══ TABS ═══ */
+.tab-switcher {
+  display: flex; gap: 0;
+  background: #09050f;
+  border: 1px solid var(--gold-dim);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 0 4px;
+}
+.tab-switcher button {
+  flex: 1; padding: 12px 0;
+  font-family: 'Cinzel', serif; font-size: 13px;
+  border: none;
+  transition: all .3s;
+}
+.tab-active { background: var(--gold); color: #1a0a00; font-weight: 700; }
+.tab-inactive { background: transparent; color: var(--gold); }
+
+/* ═══ LOADING OVERLAY ═══ */
+#fb-loading {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 40px;
+  color: var(--muted); font-family: 'Cinzel', serif;
+  font-size: 13px; letter-spacing: 1px; text-align: center;
+}
+.ld-ring {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 3px solid rgba(212,175,55,0.2);
+  border-top-color: var(--gold);
+  animation: spin .8s linear infinite;
+  margin-bottom: 14px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══ FILTRI ═══ */
+.filtri-wrap {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  margin: 0 0 4px;
+}
+.filtro-btn {
+  padding: 5px 12px; font-size: 11px;
+  border-radius: 15px; cursor: pointer;
+  font-family: 'Cinzel', serif;
+  transition: all .2s;
+}
+.filtro-gold { background: linear-gradient(135deg, #2a1748, #160d30); border: 1.5px solid var(--gold); color: var(--gold); }
+.filtro-sec { background: transparent; border: 1px solid #2a174880; color: var(--muted); }
+.filtro-sec:hover { border-color: var(--gold-dim); color: var(--text); }
+
+/* ═══ STELLE RATING ═══ */
+#rec-stelle-input span {
+  font-size: 36px; cursor: pointer;
+  transition: transform .15s; filter: grayscale(1);
+  display: inline-block;
+}
+
+/* ═══ ADMIN PANEL ═══ */
+#admin-panel { display: none; }
+
+/* ═══ ADSLOT ═══ */
+.ad-wrap {
+  margin: 14px 0; padding: 10px;
+  background: #09030f;
+  border-radius: 12px; border: 1px solid #2a174850;
+  text-align: center; overflow: hidden;
+}
+.ad-label { font-size: 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+
+/* ═══ PULSE ANIMATION ═══ */
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+.pulse { animation: pulse 0.3s ease; }
+
+/* ═══ FADE IN ═══ */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fadeIn .35s ease; }
+
+/* ═══ RISPOSTA INFO ═══ */
+#comm-risposta-info {
+  background: rgba(212,175,55,0.1);
+  padding: 10px; border-radius: 8px;
+  margin-bottom: 15px; font-size: 13px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+</style>
+</head>
+<body>
+
+<div class="cosmos"></div>
+
+<div id="app">
+
+  <!-- HEADER FISSO -->
+  <header class="comm-header">
+    <button class="comm-back-btn" onclick="history.back()">← Torna</button>
+    <div class="comm-header-title">✨ Community</div>
+    <div class="comm-header-spacer"></div>
+  </header>
+
+  <main class="comm-content">
+
+    <!-- HERO CARD -->
+    <div class="card gold-border">
+      <h2 style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px">✨ Community & Recensioni</h2>
+      <p class="t-muted">Condividi esperienze mistiche e valuta l'app</p>
+    </div>
+
+    <!-- TAB SWITCHER -->
+    <div class="tab-switcher" style="margin-bottom:12px">
+      <button id="tab-btn-community" class="tab-active" onclick="switchTab('community')">💬 Community</button>
+      <button id="tab-btn-recensioni" class="tab-inactive" onclick="switchTab('recensioni')">⭐ Recensioni</button>
+    </div>
+
+    <!-- LOADING FIREBASE -->
+    <div id="fb-loading">
+      <div class="ld-ring"></div>
+      Connessione alla sfera mistica...
+    </div>
+
+    <!-- ══════════ TAB COMMUNITY ══════════ -->
+    <div id="tab-community" style="display:none">
+
+      <!-- FORM COMMENTO -->
+      <div class="card" id="commenti-form-card">
+        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">✍️ Lascia un messaggio</h3>
+        <div style="margin-bottom:10px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
+          <input id="comm-nome" type="text" maxlength="40" placeholder="Es: Luna, Arcano, Stella...">
+        </div>
+        <div style="margin-bottom:10px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Argomento</label>
+          <select id="comm-topic">
+            <option value="generale">🔮 Generale</option>
+            <option value="tarocchi">🃏 Tarocchi</option>
+            <option value="astrologia">🌙 Astrologia</option>
+            <option value="sogni">😴 Sogni & Visioni</option>
+            <option value="rune">ᚱ Rune</option>
+            <option value="chakra">🕉️ Chakra & Energia</option>
+            <option value="wicca">🌿 Wicca & Magia</option>
+            <option value="iching">☯️ I Ching</option>
+            <option value="numerologia">🔢 Numerologia</option>
+            <option value="esperienze">✨ Esperienze Mistiche</option>
+          </select>
+        </div>
+        <div style="margin-bottom:14px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo messaggio *</label>
+          <textarea id="comm-testo" maxlength="600" placeholder="Condividi la tua esperienza, una domanda o una riflessione spirituale..." style="min-height:90px"></textarea>
+          <div style="text-align:right;font-size:11px;color:var(--muted)" id="comm-chars">0/600</div>
+        </div>
+        <button class="btn" id="comm-invia-btn" onclick="inviaCommento()">🔮 Invia Messaggio</button>
+        <div id="comm-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
+      </div>
+
+      <!-- FILTRI -->
+      <div class="filtri-wrap">
+        <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="filtro-btn filtro-gold">Tutti</button>
+        <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="filtro-btn filtro-sec">🃏 Tarocchi</button>
+        <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="filtro-btn filtro-sec">🌙 Astri</button>
+        <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="filtro-btn filtro-sec">😴 Sogni</button>
+        <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="filtro-btn filtro-sec">✨ Esperienze</button>
+        <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="filtro-btn filtro-sec">🌿 Wicca</button>
+        <button onclick="filtraCommenti('generale')" id="filtro-generale" class="filtro-btn filtro-sec">🔮 Generale</button>
+      </div>
+
+      <!-- ADSLOT COMMUNITY -->
+      <div class="ad-wrap">
+        <div class="ad-label">Sponsorizzato</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+
+      <!-- LISTA COMMENTI -->
+      <div id="commenti-lista">
+        <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
+          <div style="font-size:32px;margin-bottom:8px">🔮</div>
+          In attesa della connessione...
+        </div>
+      </div>
+
+    </div><!-- fine tab-community -->
+
+    <!-- ══════════ TAB RECENSIONI ══════════ -->
+    <div id="tab-recensioni" style="display:none">
+
+      <!-- MEDIA VOTI -->
+      <div class="card gold-border" id="rec-media-card" style="text-align:center;padding:20px 16px">
+        <div id="rec-media-numero" style="font-size:52px;font-family:'Cinzel Decorative',serif;color:var(--gold);line-height:1">—</div>
+        <div id="rec-media-stelle" style="font-size:24px;margin:6px 0">☆☆☆☆☆</div>
+        <div id="rec-media-count" style="font-size:12px;color:var(--muted)">Nessuna recensione ancora</div>
+        <div id="rec-barre" style="margin-top:14px;text-align:left"></div>
+      </div>
+
+      <!-- SCRIVI RECENSIONE -->
+      <div class="card">
+        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">⭐ Scrivi una recensione</h3>
+        <div style="margin-bottom:10px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
+          <input id="rec-nome" type="text" maxlength="40" placeholder="Es: Marco, Stella, Arianna...">
+        </div>
+        <div style="margin-bottom:10px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:8px">Valutazione *</label>
+          <div id="rec-stelle-input" style="display:flex;gap:6px;justify-content:center">
+            <span onclick="setStelle(1)">⭐</span>
+            <span onclick="setStelle(2)">⭐</span>
+            <span onclick="setStelle(3)">⭐</span>
+            <span onclick="setStelle(4)">⭐</span>
+            <span onclick="setStelle(5)">⭐</span>
+          </div>
+          <div id="rec-stelle-label" style="text-align:center;font-size:12px;color:var(--muted);margin-top:6px">Tocca le stelle</div>
+        </div>
+        <div style="margin-bottom:14px">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Commento (opzionale)</label>
+          <textarea id="rec-testo" maxlength="400" placeholder="Racconta la tua esperienza con Mystica Oracoli..." style="min-height:80px"></textarea>
+          <div style="text-align:right;font-size:11px;color:var(--muted)" id="rec-chars">0/400</div>
+        </div>
+        <button class="btn" id="rec-invia-btn" onclick="inviaRecensione()">⭐ Pubblica Recensione</button>
+        <div id="rec-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
+      </div>
+
+      <!-- ADSLOT RECENSIONI -->
+      <div class="ad-wrap">
+        <div class="ad-label">Sponsorizzato</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+
+      <!-- LISTA RECENSIONI -->
+      <div id="recensioni-lista">
+        <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
+          <div style="font-size:32px;margin-bottom:8px">⭐</div>
+          In attesa della connessione...
+        </div>
+      </div>
+
+    </div><!-- fine tab-recensioni -->
+
+    <!-- ADMIN PANEL (nascosto) -->
+    <div id="admin-panel">
+      <div class="card" style="border:1px solid #e74c3c;margin-top:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h3 style="font-family:'Cinzel',serif;color:#e74c3c;font-size:14px;margin:0">🔐 Admin Panel</h3>
+          <div style="display:flex;gap:8px">
+            <button onclick="adminTab('commenti')" id="atab-commenti" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">Commenti</button>
+            <button onclick="adminTab('recensioni')" id="atab-recensioni" style="background:none;border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">Recensioni</button>
+            <button onclick="document.getElementById('admin-panel').style.display='none'" style="background:none;border:none;color:var(--muted);font-size:18px">×</button>
+          </div>
+        </div>
+        <div id="admin-lista"></div>
+      </div>
+    </div>
+
+    <!-- PULSANTE ADMIN SEGRETO -->
+    <div style="text-align:center;margin:10px 0 20px">
+      <button onclick="apriAdmin()" style="background:none;border:none;color:transparent;font-size:8px;padding:10px">admin</button>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center;padding:16px 0 8px;border-top:1px solid rgba(212,175,55,0.15)">
+      <a href="index.html" style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);text-decoration:none;letter-spacing:1px">✦ MYSTICA ✦</a>
+      <p style="font-size:10px;color:var(--muted);margin-top:6px">© 2026 PetroCorporation — Dott. Petrolese Giovanni</p>
+    </div>
+
+  </main>
+</div><!-- fine #app -->
+
+<script>
+/* ═══════════════════════════════════════════════
+   COMMUNITY.HTML — Firebase lazy (solo questa pagina)
+   Firebase si carica UNA SOLA VOLTA al DOMContentLoaded
+   di questa pagina dedicata.
+═══════════════════════════════════════════════ */
+
+/* ===== COSTANTI ===== */
+const PAROLE_PROIBITE = ['scemo','cretino','stronzo','vaffanculo','merda','idiota','bastardo','cafone'];
+const TOPIC_EMOJI = {
+  generale:'🔮', tarocchi:'🃏', astrologia:'🌙', sogni:'😴',
+  rune:'ᚱ', chakra:'🕉️', wicca:'🌿', iching:'☯️',
+  numerologia:'🔢', esperienze:'✨'
+};
+const STELLE_LABEL = ['','⭐ Pessima','⭐⭐ Scarsa','⭐⭐⭐ Nella media','⭐⭐⭐⭐ Buona','⭐⭐⭐⭐⭐ Eccellente!'];
+const ADMIN_PASS_HASH = '95e720954c3ddfc1fb735b35f849bb19494c2c46354af71897dcf8db5c6237d9';
+
+/* ===== STATO ===== */
+let _commentiTutti = [];
+let _filtroAttivo = 'tutti';
+let _commentiUnsubscribe = null;
+let _recensioniTutte = [];
+let _recensioniUnsubscribe = null;
+let _stelleSelezionate = 0;
+let _rispostaA = null;
+let _adminTabAttivo = 'commenti';
+
+/* ===== FIREBASE LAZY (una sola init, no duplicati) ===== */
+let _fbInitDone = false;
+
+async function _initFirebase() {
+  if (_fbInitDone) return;
+  _fbInitDone = true;
+
+  try {
+    const [appMod, fsMod] = await Promise.all([
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js')
+    ]);
+    const { initializeApp, getApps, getApp } = appMod;
+    const { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot } = fsMod;
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDy8uh1IbW6QEWFheW3HDFzLza9SmgAGBo",
+      authDomain: "mysticaoracoli.firebaseapp.com",
+      projectId: "mysticaoracoli",
+      storageBucket: "mysticaoracoli.firebasestorage.app",
+      messagingSenderId: "301300952494",
+      appId: "1:301300952494:web:f6cb04ba2e118e863f2c3f"
+    };
+
+    const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
+
+    window._fbDb = db;
+    window._fbFns = { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot };
+    window._fbReady = true;
+
+    // Nascondi loading, mostra tab attivo
+    document.getElementById('fb-loading').style.display = 'none';
+    const activeTab = document.getElementById('tab-btn-community').classList.contains('tab-active') ? 'community' : 'recensioni';
+    document.getElementById('tab-' + activeTab).style.display = '';
+
+    // Avvia listener in base al tab visibile
+    if (activeTab === 'community') {
+      _avviaListenerCommenti();
+    } else {
+      _avviaListenerRecensioni();
+    }
+
+  } catch(e) {
+    console.error('Firebase init error:', e);
+    _fbInitDone = false; // permetti retry
+    document.getElementById('fb-loading').innerHTML =
+      '<div style="color:#e74c3c;font-size:13px;font-family:Cinzel,serif">⚠️ Errore connessione.<br><button onclick="_initFirebase()" style="margin-top:10px;background:rgba(212,175,55,0.1);border:1px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:10px;font-family:Cinzel,serif;font-size:11px;cursor:pointer">Riprova</button></div>';
+  }
+}
+
+/* ===== ESCAPE HELPERS ===== */
+function _escJS(str) {
+  return String(str || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, "\\'")
+    .replace(/</g, '\\x3c')
+    .replace(/>/g, '\\x3e');
+}
+function _sanitize(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+/* ===== HASH PASSWORD ===== */
+async function _hashPassword(pwd) {
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(pwd));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+/* ===== TAB SWITCHER ===== */
+function switchTab(tab) {
+  const isCommunity = tab === 'community';
+  const btnC = document.getElementById('tab-btn-community');
+  const btnR = document.getElementById('tab-btn-recensioni');
+  btnC.className = isCommunity ? 'tab-active' : 'tab-inactive';
+  btnR.className = isCommunity ? 'tab-inactive' : 'tab-active';
+
+  if (!window._fbReady) {
+    // Firebase non ancora pronto: non fare nulla, l'init lo gesirà
+    return;
+  }
+
+  document.getElementById('tab-community').style.display = isCommunity ? '' : 'none';
+  document.getElementById('tab-recensioni').style.display = isCommunity ? 'none' : '';
+
+  if (isCommunity) {
+    _initCommChars();
+    _avviaListenerCommenti();
+  } else {
+    _initRecChars();
+    _avviaListenerRecensioni();
+  }
+}
+
+/* ===== CHAR COUNTERS ===== */
+function _initCommChars() {
+  const ta = document.getElementById('comm-testo');
+  if (!ta || ta._charInit) return;
+  ta.addEventListener('input', () => {
+    const el = document.getElementById('comm-chars');
+    if (el) el.textContent = ta.value.length + '/600';
+  });
+  ta._charInit = true;
+}
+function _initRecChars() {
+  const ta = document.getElementById('rec-testo');
+  if (!ta || ta._charInit) return;
+  ta.addEventListener('input', () => {
+    const el = document.getElementById('rec-chars');
+    if (el) el.textContent = ta.value.length + '/400';
+  });
+  ta._charInit = true;
+}
+
+/* ===== LISTENER COMMENTI ===== */
+let _commListenerOn = false;
+function _avviaListenerCommenti() {
+  if (_commListenerOn || !window._fbReady) return;
+  _commListenerOn = true;
+  try {
+    const { collection, query, orderBy, onSnapshot } = window._fbFns;
+    const q = query(collection(window._fbDb, 'commenti'), orderBy('timestamp', 'desc'));
+    _commentiUnsubscribe = onSnapshot(q, snap => {
+      _commentiTutti = [];
+      snap.forEach(d => _commentiTutti.push({ id: d.id, ...d.data() }));
+      _renderCommenti();
+      _renderAdmin();
+    }, err => {
+      console.warn('Listener commenti error:', err);
+      _commListenerOn = false;
+      _renderCommentiErrore();
+    });
+  } catch(e) {
+    console.warn('Listener commenti init error:', e);
+    _commListenerOn = false;
+  }
+}
+
+/* ===== LISTENER RECENSIONI ===== */
+let _recListenerOn = false;
+function _avviaListenerRecensioni() {
+  if (_recListenerOn || !window._fbReady) return;
+  _recListenerOn = true;
+  try {
+    const { collection, query, orderBy, onSnapshot } = window._fbFns;
+    const q = query(collection(window._fbDb, 'recensioni'), orderBy('timestamp', 'desc'));
+    _recensioniUnsubscribe = onSnapshot(q, snap => {
+      _recensioniTutte = [];
+      snap.forEach(d => _recensioniTutte.push({ id: d.id, ...d.data() }));
+      _renderRecensioni();
+      _renderMedia();
+    }, err => {
+      console.warn('Listener recensioni error:', err);
+      _recListenerOn = false;
+    });
+  } catch(e) {
+    console.warn('Listener recensioni init error:', e);
+    _recListenerOn = false;
+  }
+}
+
+/* ===== RENDER COMMENTI ===== */
+function _renderCommenti() {
+  const lista = document.getElementById('commenti-lista');
+  if (!lista) return;
+  const approvati = _commentiTutti.filter(c => c.approvato !== false);
+  const padri = _filtroAttivo === 'tutti'
+    ? approvati.filter(c => !c.parentId)
+    : approvati.filter(c => !c.parentId && c.topic === _filtroAttivo);
+
+  if (padri.length === 0) {
+    lista.innerHTML = '<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">🌙</div>Nessun messaggio ancora. Sii il primo a condividere!</div>';
+    return;
+  }
+
+  let html = '';
+  padri.forEach(c => {
+    html += _costruisciHTMLCommento(c, false);
+    const risposte = approvati.filter(r => r.parentId === c.id);
+    if (risposte.length > 0) {
+      html += '<div style="margin-left:30px;border-left:2px solid var(--gold-dim);padding-left:15px;margin-top:-5px;margin-bottom:15px">';
+      risposte.sort((a,b)=>(a.timestamp?.seconds||0)-(b.timestamp?.seconds||0));
+      risposte.forEach(r => { html += _costruisciHTMLCommento(r, true); });
+      html += '</div>';
+    }
+  });
+  lista.innerHTML = html;
+}
+
+function _costruisciHTMLCommento(c, isRisposta) {
+  const data = c.timestamp
+    ? new Date(c.timestamp.seconds*1000).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'})
+    : 'ora';
+  const emoji = TOPIC_EMOJI[c.topic] || '🔮';
+  const likes = c.likes || 0;
+  const hasLiked = _hoLikato(c.id);
+  const shadow = isRisposta ? 'none' : '0 4px 18px rgba(0,0,0,0.08)';
+  const safeId = _escJS(c.id);
+  const safeNome = _escJS(c.nome);
+
+  return '<div class="card" style="margin-bottom:10px;box-shadow:'+shadow+'" id="comm-'+c.id+'">' +
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">' +
+      '<div>' +
+        '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">'+_sanitize(c.nome)+'</span>' +
+        (!isRisposta ? '<span style="margin-left:8px;background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);color:var(--gold);padding:2px 8px;border-radius:12px;font-size:11px">'+emoji+' '+_sanitize(c.topic||'generale')+'</span>' : '') +
+      '</div>' +
+      '<span style="font-size:11px;color:var(--muted)">'+data+'</span>' +
+    '</div>' +
+    '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0 0 10px">'+_sanitize(c.testo)+'</p>' +
+    '<div style="display:flex;gap:10px;align-items:center">' +
+      '<button onclick="likaCommento(event,\''+safeId+'\')" id="like-btn-'+c.id+'" ' +
+        'style="background:'+(hasLiked?'rgba(212,175,55,0.3)':'none')+';border:1px solid var(--gold-dim);color:var(--gold);cursor:'+(hasLiked?'default':'pointer')+';font-size:12px;padding:3px 10px;border-radius:12px;display:flex;gap:5px;align-items:center">' +
+        '❤️ <span id="likes-'+c.id+'">'+likes+'</span>' +
+      '</button>' +
+      (!isRisposta ? '<button onclick="preparaRisposta(\''+safeId+'\',\''+safeNome+'\')" style="background:none;border:none;color:var(--gold);font-size:12px;text-decoration:underline">Rispondi</button>' : '') +
+    '</div>' +
+  '</div>';
+}
+
+function _renderCommentiErrore() {
+  const lista = document.getElementById('commenti-lista');
+  if (lista) lista.innerHTML = '<div class="card" style="text-align:center;color:var(--muted);font-size:13px">⚠️ Impossibile caricare i commenti. Controlla la connessione.</div>';
+}
+
+/* ===== LIKE ===== */
+function _hoLikato(id) {
+  try { return JSON.parse(localStorage.getItem('myst_likes')||'[]').includes(id); } catch(e) { return false; }
+}
+function _salvaLike(id) {
+  try {
+    const l = JSON.parse(localStorage.getItem('myst_likes')||'[]');
+    if (!l.includes(id)) { l.push(id); localStorage.setItem('myst_likes', JSON.stringify(l)); }
+  } catch(e) {}
+}
+
+async function likaCommento(evt, id) {
+  const docId = String(id);
+  if (_hoLikato(docId)) return;
+  _salvaLike(docId);
+  const commInMem = _commentiTutti.find(c=>String(c.id)===docId);
+  if (commInMem) commInMem.likes = (commInMem.likes||0)+1;
+  const el = document.getElementById('likes-'+docId);
+  if (el) el.textContent = parseInt(el.textContent||0)+1;
+  const btn = document.getElementById('like-btn-'+docId);
+  if (btn) {
+    btn.style.background = 'rgba(212,175,55,0.3)';
+    btn.style.cursor = 'default';
+    btn.classList.add('pulse');
+    setTimeout(()=>btn.classList.remove('pulse'),300);
+  }
+  if (!window._fbReady) return;
+  try {
+    const { doc, updateDoc, increment } = window._fbFns;
+    await updateDoc(doc(window._fbDb,'commenti',docId),{ likes: increment(1) });
+  } catch(e) { console.error('Errore like:', e); }
+}
+
+/* ===== PREPARA RISPOSTA ===== */
+function preparaRisposta(id, nome) {
+  _rispostaA = id;
+  const formCard = document.getElementById('commenti-form-card');
+  if (!formCard) return;
+  formCard.scrollIntoView({ behavior:'smooth' });
+  const vecchio = document.getElementById('comm-risposta-info');
+  if (vecchio) vecchio.remove();
+  const info = document.createElement('div');
+  info.id = 'comm-risposta-info';
+  info.innerHTML = '<span>Stai rispondendo a <b>'+_sanitize(nome)+'</b></span>' +
+    '<button onclick="annullaRisposta()" style="background:none;border:none;color:#e74c3c;cursor:pointer;font-size:12px">Annulla</button>';
+  formCard.insertBefore(info, formCard.firstChild);
+  const topicRow = document.getElementById('comm-topic')?.closest('div');
+  if (topicRow) topicRow.style.display = 'none';
+}
+
+function annullaRisposta() {
+  _rispostaA = null;
+  const info = document.getElementById('comm-risposta-info');
+  if (info) info.remove();
+  const topicRow = document.getElementById('comm-topic')?.closest('div');
+  if (topicRow) topicRow.style.display = '';
+}
+
+function adminPreparaRisposta(id, nome) {
+  const panel = document.getElementById('admin-panel');
+  if (panel) panel.style.display = 'none';
+  const nomeEl = document.getElementById('comm-nome');
+  if (nomeEl && !nomeEl.value) nomeEl.value = 'Admin Mystica';
+  // Assicurati che il tab community sia visibile
+  switchTab('community');
+  preparaRisposta(id, nome);
+}
+
+/* ===== INVIA COMMENTO ===== */
+async function inviaCommento() {
+  if (!window._fbReady) { _mostraFeedback('⚠️ Firebase non ancora pronto, riprova tra un momento.','#e74c3c'); return; }
+  const nomeEl = document.getElementById('comm-nome');
+  const testoEl = document.getElementById('comm-testo');
+  const nome = (nomeEl?nomeEl.value:'').trim();
+  const testo = (testoEl?testoEl.value:'').trim();
+  let topic = document.getElementById('comm-topic')?document.getElementById('comm-topic').value:'generale';
+  const btn = document.getElementById('comm-invia-btn');
+
+  if (!nome||nome.length<2) { _mostraFeedback('⚠️ Inserisci un nome (minimo 2 caratteri)','#e74c3c'); return; }
+  if (!testo||testo.length<10) { _mostraFeedback('⚠️ Il messaggio è troppo corto (minimo 10 caratteri)','#e74c3c'); return; }
+  if (PAROLE_PROIBITE.some(p=>testo.toLowerCase().includes(p))) { _mostraFeedback('⚠️ Il messaggio contiene termini non consentiti.','#e74c3c'); return; }
+
+  if (btn) { btn.disabled=true; btn.textContent='⏳ Invio...'; }
+
+  if (_rispostaA) {
+    const padre = _commentiTutti.find(c=>c.id===_rispostaA);
+    if (padre) topic = padre.topic||'generale';
+  }
+
+  try {
+    const { collection, addDoc, serverTimestamp } = window._fbFns;
+    await addDoc(collection(window._fbDb,'commenti'), {
+      nome, testo, topic,
+      timestamp: serverTimestamp(),
+      likes: 0, approvato: true,
+      parentId: _rispostaA || null
+    });
+    if (nomeEl) nomeEl.value='';
+    if (testoEl) testoEl.value='';
+    const chars = document.getElementById('comm-chars');
+    if (chars) chars.textContent='0/600';
+    annullaRisposta();
+    _mostraFeedback('✨ Messaggio inviato! Grazie per aver condiviso.','#27ae60');
+  } catch(e) {
+    _mostraFeedback('❌ Errore nell\'invio. Riprova.','#e74c3c');
+    console.error(e);
+  } finally {
+    if (btn) { btn.disabled=false; btn.textContent='🔮 Invia Messaggio'; }
+  }
+}
+
+function _mostraFeedback(msg, colore) {
+  const fb = document.getElementById('comm-feedback');
+  if (!fb) return;
+  fb.textContent=msg; fb.style.color=colore; fb.style.display='block';
+  setTimeout(()=>{ fb.style.display='none'; }, 4000);
+}
+
+/* ===== FILTRI COMMENTI ===== */
+function filtraCommenti(topic) {
+  _filtroAttivo = topic;
+  document.querySelectorAll('.filtro-btn').forEach(b => {
+    const isActive = b.id === 'filtro-' + topic;
+    b.className = 'filtro-btn ' + (isActive ? 'filtro-gold' : 'filtro-sec');
+  });
+  _renderCommenti();
+}
+
+/* ===== STELLE ===== */
+function setStelle(n) {
+  _stelleSelezionate = n;
+  const stars = document.querySelectorAll('#rec-stelle-input span');
+  stars.forEach((s,i) => {
+    s.style.filter = i<n ? 'grayscale(0) drop-shadow(0 0 6px #d4af37)' : 'grayscale(1)';
+    s.style.transform = i<n ? 'scale(1.15)' : 'scale(1)';
+  });
+  const lbl = document.getElementById('rec-stelle-label');
+  if (lbl) { lbl.textContent=STELLE_LABEL[n]; lbl.style.color='var(--gold)'; }
+}
+
+/* ===== INVIA RECENSIONE ===== */
+async function inviaRecensione() {
+  if (!window._fbReady) { _mostraFeedbackRec('⚠️ Firebase non ancora pronto, riprova.','#e74c3c'); return; }
+  const nomeEl = document.getElementById('rec-nome');
+  const testoEl = document.getElementById('rec-testo');
+  const nome = (nomeEl?nomeEl.value:'').trim();
+  const testo = (testoEl?testoEl.value:'').trim();
+  const btn = document.getElementById('rec-invia-btn');
+
+  if (!nome||nome.length<2) { _mostraFeedbackRec('⚠️ Inserisci un nome (minimo 2 caratteri)','#e74c3c'); return; }
+  if (_stelleSelezionate===0) { _mostraFeedbackRec('⚠️ Seleziona almeno una stella','#e74c3c'); return; }
+  if (localStorage.getItem('myst_recensito')) { _mostraFeedbackRec('Hai già inviato una recensione. Grazie!','#d4af37'); return; }
+
+  if (btn) { btn.disabled=true; btn.textContent='⏳ Invio...'; }
+
+  try {
+    const { collection, addDoc, serverTimestamp } = window._fbFns;
+    await addDoc(collection(window._fbDb,'recensioni'), {
+      nome, testo, stelle: _stelleSelezionate,
+      timestamp: serverTimestamp(),
+      approvato: true
+    });
+    localStorage.setItem('myst_recensito','1');
+    if (nomeEl) nomeEl.value='';
+    if (testoEl) testoEl.value='';
+    const chars = document.getElementById('rec-chars');
+    if (chars) chars.textContent='0/400';
+    setStelle(0);
+    _mostraFeedbackRec('✨ Recensione pubblicata! Grazie mille.','#27ae60');
+  } catch(e) {
+    _mostraFeedbackRec('❌ Errore invio. Riprova.','#e74c3c');
+    console.error(e);
+  } finally {
+    if (btn) { btn.disabled=false; btn.textContent='⭐ Pubblica Recensione'; }
+  }
+}
+
+function _mostraFeedbackRec(msg, colore) {
+  const fb = document.getElementById('rec-feedback');
+  if (!fb) return;
+  fb.textContent=msg; fb.style.color=colore; fb.style.display='block';
+  setTimeout(()=>{ fb.style.display='none'; }, 4000);
+}
+
+/* ===== RENDER RECENSIONI ===== */
+function _renderRecensioni() {
+  const lista = document.getElementById('recensioni-lista');
+  if (!lista) return;
+  const approvate = _recensioniTutte.filter(r=>r.approvato!==false);
+  if (approvate.length===0) {
+    lista.innerHTML='<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">⭐</div>Nessuna recensione ancora. Sii il primo!</div>';
+    return;
+  }
+  lista.innerHTML = approvate.map(r => {
+    const data = r.timestamp ? new Date(r.timestamp.seconds*1000).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'}) : 'ora';
+    const stelle = '⭐'.repeat(r.stelle||0)+'☆'.repeat(5-(r.stelle||0));
+    return '<div class="card" style="margin-bottom:10px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">' +
+        '<span style="font-family:Cinzel,serif;font-size:13px;color:var(--gold)">'+_sanitize(r.nome)+'</span>' +
+        '<span style="font-size:11px;color:var(--muted)">'+data+'</span>' +
+      '</div>' +
+      '<div style="font-size:18px;margin-bottom:8px">'+stelle+'</div>' +
+      (r.testo ? '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0">'+_sanitize(r.testo)+'</p>' : '') +
+    '</div>';
+  }).join('');
+}
+
+function _renderMedia() {
+  const approvate = _recensioniTutte.filter(r=>r.approvato!==false);
+  const n = approvate.length;
+  const elN = document.getElementById('rec-media-numero');
+  const elS = document.getElementById('rec-media-stelle');
+  const elC = document.getElementById('rec-media-count');
+  const elB = document.getElementById('rec-barre');
+  if (!elN) return;
+  if (n===0) {
+    elN.textContent='—';
+    if (elS) elS.textContent='☆☆☆☆☆';
+    if (elC) elC.textContent='Nessuna recensione ancora';
+    if (elB) elB.innerHTML='';
+    return;
+  }
+  const media = approvate.reduce((s,r)=>s+(r.stelle||0),0)/n;
+  elN.textContent = media.toFixed(1);
+  if (elC) elC.textContent = n+(n===1?' recensione':' recensioni');
+  if (elS) {
+    const piene = Math.round(media);
+    elS.textContent = '⭐'.repeat(piene)+'☆'.repeat(5-piene);
+  }
+  const dist = [0,0,0,0,0];
+  approvate.forEach(r=>{ if(r.stelle>=1&&r.stelle<=5) dist[r.stelle-1]++; });
+  if (elB) {
+    elB.innerHTML = [5,4,3,2,1].map(v=>{
+      const count=dist[v-1], pct=Math.round(count/n*100);
+      return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">' +
+        '<span style="font-size:11px;color:var(--gold);width:14px;text-align:right">'+v+'</span>' +
+        '<span style="font-size:11px">⭐</span>' +
+        '<div style="flex:1;background:rgba(212,175,55,0.1);border-radius:6px;height:8px;overflow:hidden">' +
+          '<div style="width:'+pct+'%;height:100%;background:var(--gold);border-radius:6px;transition:width .4s"></div>' +
+        '</div>' +
+        '<span style="font-size:11px;color:var(--muted);width:28px">'+count+'</span>' +
+      '</div>';
+    }).join('');
+  }
+}
+
+/* ===== ADMIN ===== */
+async function apriAdmin() {
+  const p = prompt('Password admin:');
+  if (p===null) return;
+  const hash = await _hashPassword(p);
+  if (hash!==ADMIN_PASS_HASH) { alert('Password errata'); return; }
+  const panel = document.getElementById('admin-panel');
+  if (panel) panel.style.display='block';
+  _renderAdmin();
+}
+
+function adminTab(t) {
+  _adminTabAttivo = t;
+  _renderAdmin();
+  document.getElementById('atab-commenti').style.background = t==='commenti' ? 'rgba(231,76,60,0.3)' : 'none';
+  document.getElementById('atab-recensioni').style.background = t==='recensioni' ? 'rgba(231,76,60,0.3)' : 'none';
+}
+
+function _renderAdmin() {
+  const lista = document.getElementById('admin-lista');
+  if (!lista) return;
+  if (_adminTabAttivo==='commenti') {
+    if (_commentiTutti.length===0) { lista.innerHTML='<p style="color:var(--muted);font-size:13px">Nessun commento.</p>'; return; }
+    lista.innerHTML = _commentiTutti.map(c=>{
+      const isRisposta=!!c.parentId;
+      const safeId=_escJS(c.id), safeNome=_escJS(c.nome);
+      return '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px;'+(isRisposta?'margin-left:20px;border-left:2px solid #e74c3c;padding-left:10px':'')+'">'+
+        '<strong style="color:var(--gold)">'+_sanitize(c.nome)+'</strong>'+
+        (isRisposta?' <span style="color:var(--muted)">(Risposta)</span>':'<span style="color:var(--muted);margin-left:6px">['+_sanitize(c.topic||'generale')+']</span>')+
+        (c.approvato===false?'<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>':'')+
+        '<p style="color:var(--text);margin:4px 0">'+_sanitize(c.testo)+'</p>'+
+        '<div style="display:flex;gap:8px;margin-top:4px">'+
+        '<button onclick="adminNascondi(\''+safeId+'\','+(c.approvato!==false)+')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">'+
+        (c.approvato!==false?'🚫 Nascondi':'✅ Mostra')+'</button>'+
+        '<button onclick="adminElimina(\''+safeId+'\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">🗑 Elimina</button>'+
+        (!isRisposta?'<button onclick="adminPreparaRisposta(\''+safeId+'\',\''+safeNome+'\')" style="background:rgba(212,175,55,0.2);border:1px solid var(--gold);color:var(--gold);padding:3px 10px;border-radius:8px;font-size:11px">💬 Rispondi</button>':'')+
+        '</div></div>';
+    }).join('');
+  } else {
+    if (_recensioniTutte.length===0) { lista.innerHTML='<p style="color:var(--muted);font-size:13px">Nessuna recensione.</p>'; return; }
+    lista.innerHTML = _recensioniTutte.map(r=>{
+      const safeId=_escJS(r.id);
+      return '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px">'+
+        '<strong style="color:var(--gold)">'+_sanitize(r.nome)+'</strong>'+
+        '<span style="margin-left:6px">'+'⭐'.repeat(r.stelle||0)+'</span>'+
+        (r.approvato===false?'<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>':'')+
+        (r.testo?'<p style="color:var(--text);margin:4px 0">'+_sanitize(r.testo)+'</p>':'<p style="color:var(--muted);margin:4px 0;font-style:italic">nessun commento</p>')+
+        '<div style="display:flex;gap:8px;margin-top:4px">'+
+        '<button onclick="adminNascondiRec(\''+safeId+'\','+(r.approvato!==false)+')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">'+
+        (r.approvato!==false?'🚫 Nascondi':'✅ Mostra')+'</button>'+
+        '<button onclick="adminEliminaRec(\''+safeId+'\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;font-size:11px">🗑 Elimina</button>'+
+        '</div></div>';
+    }).join('');
+  }
+}
+
+async function adminNascondi(id, nascondi) {
+  if (!window._fbReady) return;
+  try {
+    const { doc, updateDoc } = window._fbFns;
+    await updateDoc(doc(window._fbDb,'commenti',id),{ approvato: !nascondi });
+  } catch(e) { alert('Errore: '+e.message); }
+}
+async function adminElimina(id) {
+  if (!confirm('Eliminare definitivamente questo commento?')) return;
+  if (!window._fbReady) return;
+  try {
+    const { doc, deleteDoc } = window._fbFns;
+    await deleteDoc(doc(window._fbDb,'commenti',id));
+  } catch(e) { alert('Errore: '+e.message); }
+}
+async function adminNascondiRec(id, nascondi) {
+  if (!window._fbReady) return;
+  try {
+    const { doc, updateDoc } = window._fbFns;
+    await updateDoc(doc(window._fbDb,'recensioni',id),{ approvato: !nascondi });
+  } catch(e) { alert('Errore: '+e.message); }
+}
+async function adminEliminaRec(id) {
+  if (!confirm('Eliminare questa recensione?')) return;
+  if (!window._fbReady) return;
+  try {
+    const { doc, deleteDoc } = window._fbFns;
+    await deleteDoc(doc(window._fbDb,'recensioni',id));
+  } catch(e) { alert('Errore: '+e.message); }
+}
+
+/* ===== AVVIO ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  _initCommChars();
+  _initRecChars();
+  // Firebase si carica subito: siamo già in questa pagina
+  _initFirebase();
+});
+
+// AdSense push sicuro
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

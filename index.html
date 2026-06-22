@@ -115,7 +115,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.gstatic.com">
-<link rel="dns-prefetch" href="https://firestore.googleapis.com">
+<!-- dns-prefetch firebase rimosso (Firebase solo in community.html) -->
 <!-- app.js caricato dopo il primo render per non bloccare FCP/LCP -->
 <script>
 (function(){
@@ -140,31 +140,7 @@
 <!-- AdSense caricato in modo asincrono dopo il contenuto -->
 <script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970';s.async=true;s.crossOrigin='anonymous';document.head.appendChild(s);});</script>
 
-<!-- ═══ FIREBASE SDK ═══ -->
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-  import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDy8uh1IbW6QEWFheW3HDFzLza9SmgAGBo",
-    authDomain: "mysticaoracoli.firebaseapp.com",
-    projectId: "mysticaoracoli",
-    storageBucket: "mysticaoracoli.firebasestorage.app",
-    messagingSenderId: "301300952494",
-    appId: "1:301300952494:web:f6cb04ba2e118e863f2c3f"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Esponi globalmente
-  window._fbDb = db;
-  window._fbFns = { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot };
-  window._fbReady = true;
-
-  // Notifica che Firebase è pronto
-  document.dispatchEvent(new Event('firebase-ready'));
-</script>
+<!-- Firebase rimosso da index.html — caricato solo in community.html -->
 
 <meta property="og:url" content="https://mysticaoracoli.it/">
 <meta property="og:title" content="MYSTICA – App Tarocchi Online Gratis in Italiano | Oroscopo, Rune, I Ching">
@@ -820,7 +796,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
             <div class="dash-label">Figure del Mistico</div>
             <div class="dash-sub" style="color:#d4af37">Streghe · Maghi · Medium · Veggenti</div>
           </div>
-          <div class="dash-card c-purple" onclick="nav('commenti')" style="grid-column:span 2">
+          <div class="dash-card c-purple" onclick="window.location.href='community.html'" style="grid-column:span 2">
             <div class="dash-img-wrap" style="aspect-ratio:2/1;width:100%"><img width="1440" height="816" data-src="./images/icone/home/community-commenti.webp" alt="Community commenti e recensioni MYSTICA" onerror="this.closest('.dash-img-wrap').outerHTML='<div style=&quot;font-size:42px;padding:16px 0 8px;text-align:center&quot;>💬</div>'"></div>
             <div class="dash-label">Community & Commenti</div>
             <div class="dash-sub" style="color:#b88fe0;padding-bottom:8px">Condividi le tue esperienze mistiche</div>
@@ -3401,158 +3377,10 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     VIEW: COMMUNITY & COMMENTI
-     Sistema commenti + blog con Firebase Firestore
-══════════════════════════════════════════════════════════ -->
-<div id="view-commenti" class="view">
-
-<!-- HEADER -->
-<div class="card gold-border">
-  <h2 style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px">✨ Community & Recensioni</h2>
-  <p class="t-muted" style="text-align:center;font-size:13px">Condividi esperienze e valuta l'app</p>
-</div>
-
-<!-- TAB SWITCHER -->
-<div style="display:flex;gap:0;background:#09050f;border:1px solid var(--gold-dim);border-radius:14px;overflow:hidden;margin:0 0 4px">
-  <button id="tab-btn-community" onclick="switchTab('community')" style="flex:1;padding:12px 0;font-family:'Cinzel',serif;font-size:13px;border:none;cursor:pointer;background:var(--gold);color:#1a0a00;font-weight:700;transition:all .3s">💬 Community</button>
-  <button id="tab-btn-recensioni" onclick="switchTab('recensioni')" style="flex:1;padding:12px 0;font-family:'Cinzel',serif;font-size:13px;border:none;cursor:pointer;background:transparent;color:var(--gold);transition:all .3s">⭐ Recensioni</button>
-</div>
-
-<!-- ══════════ TAB COMMUNITY ══════════ -->
-<div id="tab-community">
-
-<!-- SCRIVI UN COMMENTO -->
-<div class="card" id="commenti-form-card">
-  <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">✍️ Lascia un messaggio</h3>
-  <div style="margin-bottom:10px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
-    <input id="comm-nome" type="text" maxlength="40" placeholder="Es: Luna, Arcano, Stella..." style="width:100%;box-sizing:border-box;background:#09050f;border:1px solid var(--gold-dim);border-radius:10px;color:var(--text);padding:10px 12px;font-size:14px;outline:none">
-  </div>
-  <div style="margin-bottom:10px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Argomento</label>
-    <select id="comm-topic" style="width:100%;box-sizing:border-box;background:#09050f;border:1px solid var(--gold-dim);border-radius:10px;color:var(--text);padding:10px 12px;font-size:14px;outline:none;-webkit-appearance:none">
-      <option value="generale">🔮 Generale</option>
-      <option value="tarocchi">🃏 Tarocchi</option>
-      <option value="astrologia">🌙 Astrologia</option>
-      <option value="sogni">😴 Sogni & Visioni</option>
-      <option value="rune">ᚱ Rune</option>
-      <option value="chakra">🕉️ Chakra & Energia</option>
-      <option value="wicca">🌿 Wicca & Magia</option>
-      <option value="iching">☯️ I Ching</option>
-      <option value="numerologia">🔢 Numerologia</option>
-      <option value="esperienze">✨ Esperienze Mistiche</option>
-    </select>
-  </div>
-  <div style="margin-bottom:14px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo messaggio *</label>
-    <textarea id="comm-testo" maxlength="600" placeholder="Condividi la tua esperienza, una domanda o una riflessione spirituale..." style="width:100%;box-sizing:border-box;background:#09050f;border:1px solid var(--gold-dim);border-radius:10px;color:var(--text);padding:10px 12px;font-size:14px;outline:none;resize:none;min-height:90px;font-family:inherit"></textarea>
-    <div style="text-align:right;font-size:11px;color:var(--muted)" id="comm-chars">0/600</div>
-  </div>
-  <button class="btn btn-gold" id="comm-invia-btn" onclick="inviaCommento()" style="width:100%">🔮 Invia Messaggio</button>
-  <div id="comm-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
-</div>
-
-<!-- SEZIONE FILTRI ROBUSTA -->
-<div class="card" style="margin: 15px 0; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--gold-dim);">
-  <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
-    <button onclick="filtraCommenti('tutti')" id="filtro-tutti" class="btn btn-gold" style="padding:5px 12px; font-size:11px; border-radius: 15px;">Tutti</button>
-    <button onclick="filtraCommenti('tarocchi')" id="filtro-tarocchi" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🃏 Tarocchi</button>
-    <button onclick="filtraCommenti('astrologia')" id="filtro-astrologia" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🌙 Astri</button>
-    <button onclick="filtraCommenti('sogni')" id="filtro-sogni" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">😴 Sogni</button>
-    <button onclick="filtraCommenti('esperienze')" id="filtro-esperienze" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">✨ Esperienze</button>
-    <button onclick="filtraCommenti('wicca')" id="filtro-wicca" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🌿 Wicca</button>
-    <button onclick="filtraCommenti('generale')" id="filtro-generale" class="btn btn-sec" style="padding:5px 12px; font-size:11px; border-radius: 15px;">🔮 Generale</button>
-  </div>
-</div>
-
-<!-- LISTA COMMENTI -->
-<div id="commenti-lista">
-  <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
-    <div style="font-size:32px;margin-bottom:8px">🔮</div>
-    Caricamento messaggi in corso...
-  </div>
-</div>
-
-</div><!-- fine tab-community -->
-
-<!-- ══════════ TAB RECENSIONI ══════════ -->
-<div id="tab-recensioni" style="display:none">
-
-<!-- MEDIA VOTI -->
-<div class="card gold-border" id="rec-media-card" style="text-align:center;padding:20px 16px">
-  <div id="rec-media-numero" style="font-size:52px;font-family:'Cinzel Decorative',serif;color:var(--gold);line-height:1">—</div>
-  <div id="rec-media-stelle" style="font-size:24px;margin:6px 0">☆☆☆☆☆</div>
-  <div id="rec-media-count" style="font-size:12px;color:var(--muted)">Nessuna recensione ancora</div>
-  <!-- Barre distribuzione -->
-  <div id="rec-barre" style="margin-top:14px;text-align:left"></div>
-</div>
-
-<!-- SCRIVI RECENSIONE -->
-<div class="card">
-  <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">⭐ Scrivi una recensione</h3>
-  <div style="margin-bottom:10px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
-    <input id="rec-nome" type="text" maxlength="40" placeholder="Es: Marco, Stella, Arianna..." style="width:100%;box-sizing:border-box;background:#09050f;border:1px solid var(--gold-dim);border-radius:10px;color:var(--text);padding:10px 12px;font-size:14px;outline:none">
-  </div>
-  <!-- STELLE INTERATTIVE -->
-  <div style="margin-bottom:10px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:8px">Valutazione *</label>
-    <div id="rec-stelle-input" style="display:flex;gap:6px;justify-content:center">
-      <span onclick="setStelle(1)" data-v="1" style="font-size:36px;cursor:pointer;transition:transform .15s;filter:grayscale(1)">⭐</span>
-      <span onclick="setStelle(2)" data-v="2" style="font-size:36px;cursor:pointer;transition:transform .15s;filter:grayscale(1)">⭐</span>
-      <span onclick="setStelle(3)" data-v="3" style="font-size:36px;cursor:pointer;transition:transform .15s;filter:grayscale(1)">⭐</span>
-      <span onclick="setStelle(4)" data-v="4" style="font-size:36px;cursor:pointer;transition:transform .15s;filter:grayscale(1)">⭐</span>
-      <span onclick="setStelle(5)" data-v="5" style="font-size:36px;cursor:pointer;transition:transform .15s;filter:grayscale(1)">⭐</span>
-    </div>
-    <div id="rec-stelle-label" style="text-align:center;font-size:12px;color:var(--muted);margin-top:6px">Tocca le stelle</div>
-  </div>
-  <div style="margin-bottom:14px">
-    <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Commento (opzionale)</label>
-    <textarea id="rec-testo" maxlength="400" placeholder="Racconta la tua esperienza con Mystica Oracoli..." style="width:100%;box-sizing:border-box;background:#09050f;border:1px solid var(--gold-dim);border-radius:10px;color:var(--text);padding:10px 12px;font-size:14px;outline:none;resize:none;min-height:80px;font-family:inherit"></textarea>
-    <div style="text-align:right;font-size:11px;color:var(--muted)" id="rec-chars">0/400</div>
-  </div>
-  <button class="btn btn-gold" id="rec-invia-btn" onclick="inviaRecensione()" style="width:100%">⭐ Pubblica Recensione</button>
-  <div id="rec-feedback" style="margin-top:10px;text-align:center;font-size:13px;display:none"></div>
-</div>
-
-<!-- LISTA RECENSIONI -->
-<div id="recensioni-lista">
-  <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
-    <div style="font-size:32px;margin-bottom:8px">⭐</div>
-    Caricamento recensioni...
-  </div>
-</div>
-
-</div><!-- fine tab-recensioni -->
-
-<!-- ADMIN PANEL (nascosto) -->
-<div id="admin-panel" style="display:none">
-  <div class="card" style="border:1px solid #e74c3c;margin-top:10px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <h3 style="font-family:'Cinzel',serif;color:#e74c3c;font-size:14px;margin:0">🔐 Admin Panel</h3>
-      <div style="display:flex;gap:8px">
-        <button onclick="adminTab('commenti')" id="atab-commenti" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">Commenti</button>
-        <button onclick="adminTab('recensioni')" id="atab-recensioni" style="background:none;border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">Recensioni</button>
-        <button onclick="document.getElementById('admin-panel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px">×</button>
-      </div>
-    </div>
-    <div id="admin-lista"></div>
-  </div>
-</div>
-
-<!-- PULSANTE ADMIN SEGRETO -->
-<div style="text-align:center;margin:10px 0 20px">
-  <button onclick="apriAdmin()" style="background:none;border:none;color:transparent;font-size:8px;cursor:pointer;padding:10px">admin</button>
-</div>
-
-</div>
-<!-- ═══ FINE VIEW COMMENTI ═══ -->
+<!-- VIEW COMMENTI spostata in community.html -->
 
 
-<script>
-// ═══ COMMENTI & COMMUNITY (Firebase) ═══
-<script src="commenti.js" defer></script>
+<!-- commenti.js rimosso: Firebase solo in community.html -->
 
 <script>
 // ═══ AUDIO SOTTOFONDO ═══
