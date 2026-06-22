@@ -1528,7 +1528,8 @@ function completeWelcome(){
 function loadProfile(){
   const raw=_lsGet(CFG.kProfilo);
   if(!raw){
-    // Nuovo utente: mostra app (dietro al modal welcome che è già open)
+    // Nuovo utente: mostra il modal di benvenuto
+    document.getElementById('modalWelcome').classList.add('open');
     document.getElementById('app').style.visibility='visible';
     return;
   }
