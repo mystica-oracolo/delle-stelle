@@ -162,9 +162,10 @@
 <meta name="twitter:description" content="MYSTICA: app web gratuita di divinazione in italiano, senza registrazione. Tarocchi 78 carte online, oroscopo personalizzato, I Ching, Rune, Numerologia, 25+ oracoli antichi. Funziona su smartphone e PC. Gratis!">
 <!-- CSS critico inline per primo render veloce (evita FOUC) -->
 <style>
-body{background:#07031200;font-family:Georgia,'Times New Roman',serif}
+body{background:#070312;font-family:Georgia,'Times New Roman',serif}
 .logo,.discl-title{font-family:Georgia,serif}
-#disclaimerOverlay{position:fixed;inset:0;z-index:9999;background:#070312;display:flex;align-items:center;justify-content:center}
+#disclaimerOverlay{display:none;position:fixed;inset:0;z-index:9999;background:#070312;align-items:center;justify-content:center}
+#disclaimerOverlay.show{display:flex}
 #disclaimerBox{background:linear-gradient(145deg,#0d0720,#070312);border:1px solid #d4af3760;border-radius:20px;padding:32px 24px;max-width:380px;width:90%;text-align:center}
 </style>
 </head>
@@ -186,15 +187,15 @@ body{background:#07031200;font-family:Georgia,'Times New Roman',serif}
 </div>
 <script>
 (function(){
-  if(localStorage.getItem('mystica_discl_ok')==='1'){
+  if(localStorage.getItem('mystica_discl_ok')!=='1'){
     var el=document.getElementById('disclaimerOverlay');
-    if(el)el.classList.add('hidden');
+    if(el)el.classList.add('show');
   }
 })();
 function chiudiDisclaimer(){
   localStorage.setItem('mystica_discl_ok','1');
   var el=document.getElementById('disclaimerOverlay');
-  if(el){el.style.transition='opacity .35s ease';el.style.opacity='0';setTimeout(function(){el.classList.add('hidden');el.style.opacity='';},350);}
+  if(el){el.style.transition='opacity .35s ease';el.style.opacity='0';setTimeout(function(){el.classList.remove('show');el.style.opacity='';},350);}
 }
 </script>
 
