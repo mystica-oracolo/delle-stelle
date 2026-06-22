@@ -563,8 +563,11 @@ function _getRispostaKeyword(temi, nome, soggetto) {
   var tema = temi.length > 0 ? temi[0] : 'default';
   var poolGenerale = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].generale ? RISPOSTE_AI[tema].generale : RISPOSTE_AI['default'].generale;
   var poolConsiglio = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].consiglio ? RISPOSTE_AI[tema].consiglio : RISPOSTE_AI['default'].consiglio;
-  var idxGenerale = Math.floor(Date.now() / 300000) % poolGenerale.length;
-  var idxConsiglio = Math.floor(Date.now() / 150000) % poolConsiglio.length; // Usa un seed diverso per il consiglio
+  // Seed basato su testo + ora: risposta diversa per ogni domanda e non fissa nel tempo
+  var _txtSeed = temi.join('').split('').reduce(function(a,c){ return a + c.charCodeAt(0); }, 0);
+  var _timeSeed = Math.floor(Date.now() / 60000); // cambia ogni minuto, non ogni 5 min
+  var idxGenerale = (_txtSeed * 31 + _timeSeed * 7) % poolGenerale.length;
+  var idxConsiglio = (_txtSeed * 17 + _timeSeed * 13 + 3) % poolConsiglio.length;
   var rispostaGenerale = poolGenerale[idxGenerale];
   var rispostaConsiglio = poolConsiglio[idxConsiglio];
   var risposta = rispostaGenerale + ' ' + rispostaConsiglio; // Combina le due risposte
