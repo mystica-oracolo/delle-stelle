@@ -1539,7 +1539,7 @@ function loadProfile(){
   $('#modalWelcome').classList.remove('open');
   // Profilo già presente: mostra app senza flicker
   document.getElementById('app').style.visibility='visible';
-  }catch(e){ _lsRemove(CFG.kProfilo); document.getElementById('app').style.visibility='visible'; }
+  }catch(e){ _lsRemove(CFG.kProfilo); document.getElementById('modalWelcome').classList.add('open'); document.getElementById('app').style.visibility='visible'; }
 }
 
 function refreshWisdom(){
@@ -9889,7 +9889,7 @@ function dismissRating(){
 
 window.addEventListener('DOMContentLoaded', () => {
   if (typeof initApp === 'function') {
-    setTimeout(initApp, 300);
+    initApp();
   } else {
     console.log("Mystica avviata correttamente.");
   }
