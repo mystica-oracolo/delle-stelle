@@ -1,3 +1,32 @@
+/* ===== Firebase, inizializzato solo quando si apre la sezione Community/Recensioni ===== */
+let _fbInitPromise = null;
+function _initFirebaseCommenti(){
+  if(_fbInitPromise) return _fbInitPromise;
+  _fbInitPromise = Promise.all([
+    import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+    import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js')
+  ]).then(([appMod, fsMod]) => {
+    const { initializeApp } = appMod;
+    const { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot } = fsMod;
+    const firebaseConfig = {
+      apiKey: "AIzaSyDy8uh1IbW6QEWFheW3HDFzLza9SmgAGBo",
+      authDomain: "mysticaoracoli.firebaseapp.com",
+      projectId: "mysticaoracoli",
+      storageBucket: "mysticaoracoli.firebasestorage.app",
+      messagingSenderId: "301300952494",
+      appId: "1:301300952494:web:f6cb04ba2e118e863f2c3f"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    window._fbDb = db;
+    window._fbFns = { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot };
+    window._fbReady = true;
+    document.dispatchEvent(new Event('firebase-ready'));
+  }).catch(e => console.warn('Errore caricamento Firebase:', e));
+  return _fbInitPromise;
+}
+_initFirebaseCommenti();
+
 let _commentiTutti = [];
 let _filtroAttivo = 'tutti';
 let _commentiUnsubscribe = null;
@@ -292,28 +321,6 @@ function apriAdmin() {
   const panel = document.getElementById('admin-panel');
   if(panel) panel.style.display = 'block';
   _renderAdmin();
-}
-
-function _renderAdmin() {
-  const lista = document.getElementById('admin-lista');
-  if(!lista) return;
-  if(_commentiTutti.length === 0) {
-    lista.innerHTML = '<p style="color:var(--muted);font-size:13px">Nessun commento.</p>';
-    return;
-  }
-  lista.innerHTML = _commentiTutti.map(c => {
-    const isRisposta = !!c.parentId;
-    return '<div style="border-bottom:1px solid var(--gold-dim);padding:8px 0;font-size:12px;' + (isRisposta ? 'margin-left:20px;border-left:2px solid #e74c3c;padding-left:10px' : '') + '">' +
-      '<strong style="color:var(--gold)">' + _sanitize(c.nome) + '</strong>' +
-      (isRisposta ? ' <span style="color:var(--muted)">(Risposta)</span>' : '<span style="color:var(--muted);margin-left:6px">[' + (c.topic||'generale') + ']</span>') +
-      (c.approvato === false ? '<span style="color:#e74c3c;margin-left:6px">● NASCOSTO</span>' : '') +
-      '<p style="color:var(--text);margin:4px 0">' + _sanitize(c.testo) + '</p>' +
-      '<div style="display:flex;gap:8px;margin-top:4px">' +
-      '<button onclick="adminNascondi(\'' + c.id + '\',' + (c.approvato !== false) + ')" style="background:rgba(231,76,60,0.2);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">' +
-      (c.approvato !== false ? '🚫 Nascondi' : '✅ Mostra') + '</button>' +
-      '<button onclick="adminElimina(\'' + c.id + '\')" style="background:rgba(231,76,60,0.3);border:1px solid #e74c3c;color:#e74c3c;padding:3px 10px;border-radius:8px;cursor:pointer;font-size:11px">🗑 Elimina</button>' +
-      '</div></div>';
-  }).join('');
 }
 
 async function adminNascondi(id, nascondi) {

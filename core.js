@@ -923,6 +923,7 @@ function _switchView(v){
   if(v==='mistico') showProfiloMistico();
   if(v==='zodcinese') showZodCinese();
   if(v==='strumenti') requestAnimationFrame(()=>requestAnimationFrame(pendoloDrawStatic));
+  if(v==='commenti') _loadChunk('commenti');
   if(v==='oracoli'){
   $('#oracoliHome').style.display='block';
   document.querySelectorAll('[id^="oracolo-"]').forEach(el=>el.style.display='none');
@@ -3188,3 +3189,37 @@ function oniroSelectSymbol(...args){ return _loadChunk('extra').then(()=> window
 function engOniro(...args){ return _loadChunk('extra').then(()=> window.engOniro.apply(window,args)); }
 function toggleBgMusic(...args){ return _loadChunk('extra').then(()=> window.toggleBgMusic.apply(window,args)); }
 function dismissRating(...args){ return _loadChunk('extra').then(()=> window.dismissRating.apply(window,args)); }
+
+// chunk: commenti.js
+function _assicuraFirebase(...args){ return _loadChunk('commenti').then(()=> window._assicuraFirebase.apply(window,args)); }
+function _avviaListenerCommenti(...args){ return _loadChunk('commenti').then(()=> window._avviaListenerCommenti.apply(window,args)); }
+function _avviaListenerRecensioni(...args){ return _loadChunk('commenti').then(()=> window._avviaListenerRecensioni.apply(window,args)); }
+function _costruisciHTMLCommento(...args){ return _loadChunk('commenti').then(()=> window._costruisciHTMLCommento.apply(window,args)); }
+function _hoLikato(...args){ return _loadChunk('commenti').then(()=> window._hoLikato.apply(window,args)); }
+function _initCommChars(...args){ return _loadChunk('commenti').then(()=> window._initCommChars.apply(window,args)); }
+function _initFirebaseCommenti(...args){ return _loadChunk('commenti').then(()=> window._initFirebaseCommenti.apply(window,args)); }
+function _initRecChars(...args){ return _loadChunk('commenti').then(()=> window._initRecChars.apply(window,args)); }
+function _mostraFeedback(...args){ return _loadChunk('commenti').then(()=> window._mostraFeedback.apply(window,args)); }
+function _mostraFeedbackRec(...args){ return _loadChunk('commenti').then(()=> window._mostraFeedbackRec.apply(window,args)); }
+function _renderAdmin(...args){ return _loadChunk('commenti').then(()=> window._renderAdmin.apply(window,args)); }
+function _renderCommenti(...args){ return _loadChunk('commenti').then(()=> window._renderCommenti.apply(window,args)); }
+function _renderCommentiErrore(...args){ return _loadChunk('commenti').then(()=> window._renderCommentiErrore.apply(window,args)); }
+function _renderMedia(...args){ return _loadChunk('commenti').then(()=> window._renderMedia.apply(window,args)); }
+function _renderRecensioni(...args){ return _loadChunk('commenti').then(()=> window._renderRecensioni.apply(window,args)); }
+function _salvaLike(...args){ return _loadChunk('commenti').then(()=> window._salvaLike.apply(window,args)); }
+function _sanitize(...args){ return _loadChunk('commenti').then(()=> window._sanitize.apply(window,args)); }
+function adminElimina(...args){ return _loadChunk('commenti').then(()=> window.adminElimina.apply(window,args)); }
+function adminEliminaRec(...args){ return _loadChunk('commenti').then(()=> window.adminEliminaRec.apply(window,args)); }
+function adminNascondi(...args){ return _loadChunk('commenti').then(()=> window.adminNascondi.apply(window,args)); }
+function adminNascondiRec(...args){ return _loadChunk('commenti').then(()=> window.adminNascondiRec.apply(window,args)); }
+function adminPreparaRisposta(...args){ return _loadChunk('commenti').then(()=> window.adminPreparaRisposta.apply(window,args)); }
+function adminTab(...args){ return _loadChunk('commenti').then(()=> window.adminTab.apply(window,args)); }
+function annullaRisposta(...args){ return _loadChunk('commenti').then(()=> window.annullaRisposta.apply(window,args)); }
+function apriAdmin(...args){ return _loadChunk('commenti').then(()=> window.apriAdmin.apply(window,args)); }
+function filtraCommenti(...args){ return _loadChunk('commenti').then(()=> window.filtraCommenti.apply(window,args)); }
+function inviaCommento(...args){ return _loadChunk('commenti').then(()=> window.inviaCommento.apply(window,args)); }
+function inviaRecensione(...args){ return _loadChunk('commenti').then(()=> window.inviaRecensione.apply(window,args)); }
+function likaCommento(...args){ return _loadChunk('commenti').then(()=> window.likaCommento.apply(window,args)); }
+function preparaRisposta(...args){ return _loadChunk('commenti').then(()=> window.preparaRisposta.apply(window,args)); }
+function setStelle(...args){ return _loadChunk('commenti').then(()=> window.setStelle.apply(window,args)); }
+function switchTab(...args){ return _loadChunk('commenti').then(()=> window.switchTab.apply(window,args)); }
