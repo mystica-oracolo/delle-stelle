@@ -14,7 +14,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
@@ -118,10 +117,18 @@
 <link rel="dns-prefetch" href="https://www.gstatic.com">
 <link rel="dns-prefetch" href="https://firestore.googleapis.com">
 <link rel="preload" href="app.js" as="script">
+<!-- Preload immagine LCP (prima icona dashboard visibile) -->
+<link rel="preload" href="./images/icone/zodiaco/ariete.webp" as="image" fetchpriority="high">
+<!-- mystica.css preloaded for faster render -->
+<link rel="preload" href="mystica.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="mystica.css"></noscript>
+<!-- Google Fonts non-bloccante -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
 <script src="app.js" defer></script>
 <script src="lazy-load.js" defer></script>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="mystica.css">
+<!-- AdSense caricato in modo asincrono dopo il contenuto -->
+<script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970';s.async=true;s.crossOrigin='anonymous';document.head.appendChild(s);});</script>
 
 <!-- ═══ FIREBASE SDK ═══ -->
 <script type="module">
@@ -154,6 +161,13 @@
 <meta property="og:description" content="MYSTICA: app web gratuita di divinazione in italiano, senza registrazione. Tarocchi 78 carte online, oroscopo personalizzato, I Ching, Rune, Numerologia, 25+ oracoli antichi. Funziona su smartphone e PC. Gratis!">
 <meta name="twitter:title" content="MYSTICA – App Tarocchi Online Gratis in Italiano | Oroscopo, Rune, I Ching">
 <meta name="twitter:description" content="MYSTICA: app web gratuita di divinazione in italiano, senza registrazione. Tarocchi 78 carte online, oroscopo personalizzato, I Ching, Rune, Numerologia, 25+ oracoli antichi. Funziona su smartphone e PC. Gratis!">
+<!-- CSS critico inline per primo render veloce (evita FOUC) -->
+<style>
+body{background:#07031200;font-family:Georgia,'Times New Roman',serif}
+.logo,.discl-title{font-family:Georgia,serif}
+#disclaimerOverlay{position:fixed;inset:0;z-index:9999;background:#070312;display:flex;align-items:center;justify-content:center}
+#disclaimerBox{background:linear-gradient(145deg,#0d0720,#070312);border:1px solid #d4af3760;border-radius:20px;padding:32px 24px;max-width:380px;width:90%;text-align:center}
+</style>
 </head>
 <body>
 
