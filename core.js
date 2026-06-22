@@ -3197,3 +3197,16 @@ function oniroSelectSymbol(...args){ return _loadChunk('extra').then(()=> window
 function engOniro(...args){ return _loadChunk('extra').then(()=> window.engOniro.apply(window,args)); }
 function toggleBgMusic(...args){ return _loadChunk('extra').then(()=> window.toggleBgMusic.apply(window,args)); }
 function dismissRating(...args){ return _loadChunk('extra').then(()=> window.dismissRating.apply(window,args)); }
+
+// ═══ AUTO-INIT ═══
+// initApp() non veniva chiamata da nessun file esterno.
+// core.js viene caricato con defer, quindi il DOM è già pronto
+// quando questo codice gira — ma usiamo la guardia readyState
+// per sicurezza assoluta (es. cache SW che serve il file velocissimo).
+(function(){
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ if(typeof initApp==='function') initApp(); });
+  } else {
+    if(typeof initApp==='function') initApp();
+  }
+})();
