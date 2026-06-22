@@ -149,7 +149,7 @@
 <meta name="twitter:description" content="MYSTICA: app web gratuita di divinazione in italiano, senza registrazione. Tarocchi 78 carte online, oroscopo personalizzato, I Ching, Rune, Numerologia, 25+ oracoli antichi. Funziona su smartphone e PC. Gratis!">
 <!-- CSS critico inline per primo render veloce (evita FOUC) -->
 <style>
-body{background:#070312;font-family:Georgia,'Times New Roman',serif}
+body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-behavior-y:contain}
 .logo,.discl-title{font-family:Georgia,serif}
 #disclaimerOverlay{display:none;position:fixed;inset:0;z-index:9999;background:#070312;align-items:center;justify-content:center}
 #disclaimerOverlay.show{display:flex}
@@ -306,7 +306,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
         <span style="font-size:10px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:2px 8px;margin-left:4px">NUOVO</span>
       </button>
 
-      <div class="card" id="cardEditProfilo">
+      <div class="card" id="cardEditProfilo" style="display:none">
         <h2>🔮 Il Tuo Profilo Mistico</h2>
         <p class="t-muted">Le stelle hanno bisogno di sapere chi sei per parlarti con precisione</p>
         <input type="text" id="inpName" placeholder="Come vuoi essere chiamato?" maxlength="20">
@@ -3091,6 +3091,13 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
     <input type="hidden" id="wDate" autocomplete="bday">
     <p style="font-size:10px;color:var(--muted);text-align:center;margin:5px 0 4px">📅 Scegli giorno, mese e anno di nascita (richiesti per il tuo segno)</p>
     <p style="font-size:10px;color:var(--gold);text-align:center;margin:0 0 14px;opacity:.85">📱 <strong>Su iPhone:</strong> ruota la rotella e tocca "Fine" per confermare ogni valore</p>
+    <select id="wGender" style="width:100%;margin-bottom:14px" aria-label="Sesso">
+      <option value="">— Sesso (facoltativo) —</option>
+      <option value="f">Femminile</option>
+      <option value="m">Maschile</option>
+      <option value="nb">Non binario</option>
+      <option value="x">Preferisco non dirlo</option>
+    </select>
     <button class="btn" data-testid="welcome-submit-btn" onclick="completeWelcome()">✨ Entra nel Tempio delle Stelle</button>
   </div>
 </div>

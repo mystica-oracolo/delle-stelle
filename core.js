@@ -1535,6 +1535,9 @@ function loadProfile(){
   const raw=_lsGet(CFG.kProfilo);
   if(!raw){
     // Nuovo utente: apre il modal welcome via JS
+    // Mostra anche la card di profilo come fallback visivo
+    const editCard = document.getElementById('cardEditProfilo');
+    if(editCard) editCard.style.display = 'block';
     document.getElementById('modalWelcome').classList.add('open');
     document.getElementById('app').style.visibility='visible';
     return;
