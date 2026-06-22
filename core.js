@@ -1173,6 +1173,11 @@ function applyProfile(p){
   if($('#inpGender'))    $('#inpGender').value=p.gender||'';
   if($('#inpInterests')) $('#inpInterests').value=p.interests||'';
 
+  // Self-healing: se il segno manca o non esiste in DB, ricalcolalo dalla data
+  if(!DB.segni[p.segno] && p.date){
+    p.segno = segnoFromDate(p.date);
+    try{ _lsSet(CFG.kProfilo, JSON.stringify(p)); }catch(e){}
+  }
   const sg=DB.segni[p.segno];
   if(!sg) return;
 
