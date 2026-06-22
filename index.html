@@ -140,9 +140,31 @@
 <!-- AdSense caricato in modo asincrono dopo il contenuto -->
 <script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970';s.async=true;s.crossOrigin='anonymous';document.head.appendChild(s);});</script>
 
+<!-- ═══ FIREBASE SDK ═══ -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+  import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyDy8uh1IbW6QEWFheW3HDFzLza9SmgAGBo",
+    authDomain: "mysticaoracoli.firebaseapp.com",
+    projectId: "mysticaoracoli",
+    storageBucket: "mysticaoracoli.firebasestorage.app",
+    messagingSenderId: "301300952494",
+    appId: "1:301300952494:web:f6cb04ba2e118e863f2c3f"
+  };
 
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
+  // Esponi globalmente
+  window._fbDb = db;
+  window._fbFns = { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, orderBy, where, increment, serverTimestamp, onSnapshot };
+  window._fbReady = true;
+
+  // Notifica che Firebase è pronto
+  document.dispatchEvent(new Event('firebase-ready'));
+</script>
 
 <meta property="og:url" content="https://mysticaoracoli.it/">
 <meta property="og:title" content="MYSTICA – App Tarocchi Online Gratis in Italiano | Oroscopo, Rune, I Ching">
@@ -186,7 +208,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
 <div class="cosmos"></div>
 <div class="particles" id="particles"></div>
 
-<div id="app" style="visibility:hidden">
+<div id="app" style="visibility:visible">
 
   <div class="header">
     <div class="moon-widget" id="moonWidget" onclick="showMoonInfo()" title="Fase Lunare Attuale">
@@ -2882,7 +2904,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
   </div>
 </div>
 
-<div class="modal" id="modalWelcome">
+<div class="modal open" id="modalWelcome">
   <div class="mbox">
     <div class="mwelcome-icon">✦ 🔮 ✦</div>
     <h2 style="color:var(--gold);font-size:16px;line-height:1.4">Benvenuto nel Tempio<br>di MYSTICA</h2>
@@ -3519,7 +3541,9 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif}
 <!-- ═══ FINE VIEW COMMENTI ═══ -->
 
 
-<!-- commenti.js ora caricato in modo lazy da core.js (_loadChunk) solo all'apertura di questa sezione -->
+<script>
+// ═══ COMMENTI & COMMUNITY (Firebase) ═══
+<script src="commenti.js" defer></script>
 
 <script>
 // ═══ AUDIO SOTTOFONDO ═══
