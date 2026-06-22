@@ -1,7 +1,9 @@
+var _consultTopicActive = 'destino';
+
 function selectConsultTopic(btn) {
   document.querySelectorAll('.consult-topic').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  _consultTopicActive = btn.dataset.t;
+  _consultTopicActive = btn.dataset.t || 'destino';
 }
 
 function openConsulente() {
@@ -717,6 +719,7 @@ function runConsulente() {
   btn.style.pointerEvents = 'none';
 
   setTimeout(function(){
+    try {
     btn.textContent = '✨ Chiedi all\'Universo';
     btn.style.opacity = '1';
     btn.style.pointerEvents = 'auto';
@@ -747,6 +750,14 @@ function runConsulente() {
     ].join('');
     try{ playMysticSound('bell'); }catch(e){}
     try{ burst(); }catch(e){}
+    } catch(err) {
+      console.error('Consulente error:', err);
+      btn.textContent = '✨ Chiedi all\'Universo';
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      res.style.display = 'block';
+      res.innerHTML = '<div class="consult-block"><p style="color:var(--gold)">🔮 Le stelle hanno captato la tua domanda. Riprova tra un momento.</p></div>';
+    }
   }, 1400);
 }
 
