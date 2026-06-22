@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v352';
+const CACHE_NAME = 'mystica-v353';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -24,7 +24,25 @@ const URLS_TO_CACHE = [
   './images/icone/home/ipnosi.webp',
   './images/icone/home/eft-tapping.webp',
   './images/icone/home/sincronicita.webp',
-  './images/icone/home/voodoo-hoodoo.webp'
+  './images/icone/home/voodoo-hoodoo.webp',
+  // Chunk JS lazy-loaded — necessari per funzionamento offline
+  './core.js',
+  './mystica.css',
+  './lazy-load.js',
+  './consulente.js',
+  './tarocchi.js',
+  './oracoli.js',
+  './totem.js',
+  './angeli.js',
+  './geomanzia.js',
+  './numerologia.js',
+  './ore-specchio.js',
+  './luna.js',
+  './pianeti.js',
+  './rune.js',
+  './iching.js',
+  './rituali.js',
+  './extra.js'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
