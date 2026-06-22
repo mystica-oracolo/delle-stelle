@@ -1,143 +1,371 @@
+const DB_ANGELI = [
+  {n:'Vehuiah',       emoji:'👼', trono:'Serafino',  periodo:'20 Mar – 24 Mar', num:1,
+   dominio:'Nuovi inizi, volontà, luce della creazione',
+   missione:'Vehuiah è il primo Angelo, portatore della fiamma primordiale. Protegge i pionieri, coloro che aprono strade inesistenti. Se è il tuo Angelo, sei qui per iniziare qualcosa di nuovo — ogni volta che ti fermi, soffochi una parte di te.',
+   preghiera:'Vehuiah, illumina il mio cammino nei momenti di oscurità e dammi il coraggio di iniziare quando ogni cosa intorno a me dice di attendere.'},
+  {n:'Jeliel',        emoji:'👼', trono:'Serafino',  periodo:'25 Mar – 29 Mar', num:2,
+   dominio:'Amore, fedeltà, armonia tra gli opposti',
+   missione:'Jeliel supervisiona le unioni benedette — amorose, spirituali e creative. La tua presenza porta pace nelle relazioni conflittuali. Sei nato per essere un costruttore di ponti tra mondi e persone apparentemente incompatibili.',
+   preghiera:'Jeliel, guida il mio cuore verso l\'amore che eleva e proteggimi dall\'amore che consuma senza nutrire.'},
+  {n:'Sitael',        emoji:'👼', trono:'Serafino',  periodo:'30 Mar – 3 Apr', num:3,
+   dominio:'Costruzione, struttura, prosperità materiale',
+   missione:'Sitael è l\'Angelo degli architetti del mondo materiale. Se lo guida sei un costruttore — non necessariamente di edifici, ma di strutture: istituzioni, famiglie, progetti, legami duraturi. La tua sfida è costruire su fondamenta vere.',
+   preghiera:'Sitael, aiutami a costruire ciò che dura, non ciò che brilla solo nel momento.'},
+  {n:'Elemiah',       emoji:'👼', trono:'Serafino',  periodo:'4 Apr – 8 Apr', num:4,
+   dominio:'Viaggio interiore, trasformazione, scoperta del sé',
+   missione:'Elemiah protegge i viaggiatori — dell\'esterno e dell\'interno. Il tuo percorso di vita è marcato da cambiamenti significativi che all\'inizio sembrano ostacoli ma sono in realtà portali. Sei destinato a conoscere parti di te attraverso l\'esperienza diretta.',
+   preghiera:'Elemiah, trasforma ogni mia crisi in un portale verso una versione più autentica di me stesso.'},
+  {n:'Mahasiah',      emoji:'👼', trono:'Serafino',  periodo:'9 Apr – 13 Apr', num:5,
+   dominio:'Pace, rettifica, apprendimento sacro',
+   missione:'Mahasiah cura le ferite karmiche. Se è il tuo Angelo, porti con te il compito di risolvere qualcosa di lasciato irrisolto — sia in questa vita che in cicli precedenti. Hai una predisposizione naturale all\'apprendimento spirituale.',
+   preghiera:'Mahasiah, aiutami a rettificare ciò che ho sbagliato e a imparare ciò che l\'anima mia è venuta a imparare.'},
+  {n:'Lelahel',       emoji:'👼', trono:'Serafino',  periodo:'14 Apr – 18 Apr', num:6,
+   dominio:'Arte, bellezza, scienza, guarigione',
+   missione:'Lelahel è l\'Angelo che ispira gli artisti e i guaritori. Sei un canale per qualcosa di più grande — la tua creatività non è solo espressione personale, è guarigione collettiva. Quando crei, sani. Quando smetti di creare, ti ammali.',
+   preghiera:'Lelahel, fa\' di me un canale puro della bellezza divina, affinché ciò che creo porti luce.'},
+  {n:'Achaiah',       emoji:'👼', trono:'Serafino',  periodo:'19 Apr – 23 Apr', num:7,
+   dominio:'Pazienza, scoperta, svelamento dei segreti della natura',
+   missione:'Achaiah è l\'Angelo dei filosofi e degli scopritori. Sei attratto dai misteri profondi della realtà — la tua mente non si accontenta delle risposte di superficie. La pazienza è la tua virtù da coltivare: i grandi segreti si svelano solo ai cuori che sanno attendere.',
+   preghiera:'Achaiah, dammi la pazienza di chi sa che la verità si svela nel suo tempo, non nel mio.'},
+  {n:'Cahethel',      emoji:'👼', trono:'Serafino',  periodo:'24 Apr – 28 Apr', num:8,
+   dominio:'Abbondanza, agricoltura, connessione con la terra',
+   missione:'Cahethel benedice i campi e i raccolti — interiori ed esteriori. Se è il tuo Angelo, hai un legame sacro con la terra e con i cicli naturali. La tua prosperità viene quando sei in allineamento con i ritmi della natura, non quando li combatti.',
+   preghiera:'Cahethel, aiutami a piantare i semi giusti nel momento giusto e a fidarmi del raccolto.'},
+  {n:'Haziel',        emoji:'👼', trono:'Cherubino', periodo:'29 Apr – 3 Mag', num:9,
+   dominio:'Misericordia, perdono, grazia divina',
+   missione:'Haziel è l\'Angelo della misericordia universale. Il tuo compito spirituale riguarda il perdono — non come atto morale ma come liberazione personale. Ogni volta che perdoni, liberi te stesso da catene invisibili che ti hanno tenuto prigioniero.',
+   preghiera:'Haziel, scioglia i nodi del mio cuore e donami la grazia di perdonare senza dimenticare la lezione.'},
+  {n:'Aladiah',       emoji:'👼', trono:'Cherubino', periodo:'4 Mag – 8 Mag', num:10,
+   dominio:'Protezione karmica, innocenza, grazia nelle prove',
+   missione:'Aladiah protegge coloro che affrontano prove karmiche difficili. Se è il tuo Angelo, le difficoltà della tua vita non sono punizioni — sono opportunità di liberazione da debiti che l\'anima porta da lontano. Ogni sfida superata ti alleggerisce.',
+   preghiera:'Aladiah, proteggimi nelle prove che il karma mi porta e aiutami a comprenderle invece di subirle.'},
+  {n:'Lauviah',       emoji:'👼', trono:'Cherubino', periodo:'9 Mag – 13 Mag', num:11,
+   dominio:'Vittoria, fama, rivelazione onirica',
+   missione:'Lauviah è l\'Angelo dei sogni rivelatori e delle vittorie spirituali. Se è il tuo Angelo, i tuoi sogni sono messaggi — impara a ricordarli e decodificarli. Le tue intuizioni notturne sono spesso più accurate delle analisi diurne.',
+   preghiera:'Lauviah, parla alla mia anima mentre il corpo riposa e portami le risposte che il giorno nasconde.'},
+  {n:'Hahaiah',       emoji:'👼', trono:'Cherubino', periodo:'14 Mag – 18 Mag', num:12,
+   dominio:'Rifugio interiore, interpretazione dei sogni, protezione',
+   missione:'Hahaiah è il guardiano del santuario interiore. Se è il tuo Angelo, hai bisogno di spazio sacro — fisico e interiore — per funzionare pienamente. Il tuo potere si rigenera nella solitudine; le folle ti esauriscono.',
+   preghiera:'Hahaiah, proteggimi nelle profondità del mio essere e mostrami come il silenzio interiore parla.'},
+  {n:'Yezalel',       emoji:'👼', trono:'Cherubino', periodo:'19 Mag – 23 Mag', num:13,
+   dominio:'Fedeltà, memoria, riconciliazione',
+   missione:'Yezalel è l\'Angelo della memoria sacra e della fedeltà. Hai una relazione profonda con il passato — a volte un peso, a volte un dono. La tua missione è usare ciò che ricordi come saggezza, non come catena.',
+   preghiera:'Yezalel, aiutami a portare con me i ricordi come saggezza e a liberarmi da quelli che mi tengono prigioniero.'},
+  {n:'Mebahel',       emoji:'👼', trono:'Cherubino', periodo:'24 Mag – 28 Mag', num:14,
+   dominio:'Giustizia, verità, liberazione dei perseguitati',
+   missione:'Mebahel è il paladino della giustizia divina. Se è il tuo Angelo, hai un senso innato di ciò che è giusto o sbagliato che spesso contrasta con le convenzioni sociali. Sei chiamato a parlare la tua verità anche quando è scomoda.',
+   preghiera:'Mebahel, dammi il coraggio di dire la verità e la saggezza di scegliere il momento giusto per farlo.'},
+  {n:'Hariel',        emoji:'👼', trono:'Cherubino', periodo:'29 Mag – 2 Giu', num:15,
+   dominio:'Purificazione, liberazione dalle dipendenze, chiarezza',
+   missione:'Hariel purifica ciò che è diventato opaco. Se è il tuo Angelo, hai la capacità di vedere con chiarezza — ma questa chiarezza va prima applicata a te stesso. La tua evoluzione richiede il coraggio di guardare i tuoi pattern più oscuri.',
+   preghiera:'Hariel, illumina le parti di me che ho paura di vedere e aiutami a trasformarle senza giudizio.'},
+  {n:'Hekamiah',      emoji:'👼', trono:'Cherubino', periodo:'3 Giu – 7 Giu', num:16,
+   dominio:'Lealtà, onore, leadership spirituale',
+   missione:'Hekamiah è l\'Angelo dei leader e dei guardiani. Se è il tuo Angelo, sei chiamato a responsabilità di guida — non necessariamente in modo formale, ma come presenza che stabilizza e orienta chi ti è intorno.',
+   preghiera:'Hekamiah, aiutami a guidare con l\'esempio e a portare sulle spalle solo il peso che mi spetta, non quello degli altri.'},
+  {n:'Lauviah II',    emoji:'👼', trono:'Trono',     periodo:'8 Giu – 12 Giu', num:17,
+   dominio:'Rivelazione, illuminazione, gnosi interiore',
+   missione:'Questo secondo Lauviah governa l\'illuminazione interiore. Hai un\'attrazione naturale per il misticismo e per le esperienze di espansione della coscienza. La tua mente è un laboratorio alchemico.',
+   preghiera:'Lauviah, apri le porte della percezione interiore e guidami attraverso i misteri della coscienza.'},
+  {n:'Caliel',        emoji:'👼', trono:'Trono',     periodo:'13 Giu – 17 Giu', num:18,
+   dominio:'Giustizia, chiarimento della verità, processi',
+   missione:'Caliel è l\'Angelo della verità assoluta. Se è il tuo Angelo, hai una tolleranza zero per le menzogne — anche quelle bianche, anche quelle confortanti. Questa radicalità verso la verità è la tua forza e la tua sfida.',
+   preghiera:'Caliel, guidami a discernere la verità dalla menzogna e a parlare con chiarezza senza crudeltà.'},
+  {n:'Leuviah',       emoji:'👼', trono:'Trono',     periodo:'18 Giu – 22 Giu', num:19,
+   dominio:'Intelligenza espansiva, accettazione del destino',
+   missione:'Leuviah governa l\'accettazione intelligente. Non la rassegnazione passiva, ma la saggezza di riconoscere cosa possiamo cambiare e cosa dobbiamo abbracciare. Il tuo equilibrio interiore viene dall\'accettare la vita come maestra.',
+   preghiera:'Leuviah, aiutami ad accettare ciò che non posso cambiare con grazia e a cambiare tutto il resto con coraggio.'},
+  {n:'Pahaliah',      emoji:'👼', trono:'Trono',     periodo:'23 Giu – 27 Giu', num:20,
+   dominio:'Redenzione, vocazione spirituale, moralità',
+   missione:'Pahaliah chiama alla vocazione spirituale autentica. Se è il tuo Angelo, hai una missione che va oltre il personale. Qualcosa in te sa già — il compito è obbedire a quella voce interiore con meno paura.',
+   preghiera:'Pahaliah, rivelami la mia vera vocazione e dammi il coraggio di viverla senza scuse.'},
+  {n:'Nelchael',      emoji:'👼', trono:'Trono',     periodo:'28 Giu – 2 Lug', num:21,
+   dominio:'Apprendimento esoterico, astronomia, scienze sacre',
+   missione:'Nelchael guida i ricercatori delle scienze invisibili. Se è il tuo Angelo, sei naturalmente attratto dai saperi nascosti — astrologia, cabala, alchimia, simbolismo. Non è curiosità vana: è una vocazione cognitiva.',
+   preghiera:'Nelchael, guidami nei labirinti del sapere esoterico e proteggimi dalle illusioni che si travestono da verità.'},
+  {n:'Yeiayel',       emoji:'👼', trono:'Trono',     periodo:'3 Lug – 7 Lug', num:22,
+   dominio:'Fama, fortuna, protezione dei viaggi',
+   missione:'Yeiayel è l\'Angelo del destino favorevole. Se è il tuo Angelo, hai una qualità naturale che attira l\'attenzione e la fortuna — ma solo quando sei allineato con la tua vera essenza. Quando ti tradisci per compiacere, la fortuna si ritira.',
+   preghiera:'Yeiayel, aiutami a rimanere fedele a me stesso anche quando la tentazione di compiacere il mondo è forte.'},
+  {n:'Melahel',       emoji:'👼', trono:'Trono',     periodo:'8 Lug – 12 Lug', num:23,
+   dominio:'Guarigione, piante medicinali, armonia con la natura',
+   missione:'Melahel è l\'Angelo dei guaritori e dei botanici dell\'anima. Se è il tuo Angelo, hai un legame speciale con il mondo vegetale e con la guarigione naturale. Il tuo corpo è sensibile agli ambienti — cura il tuo spazio come un tempio.',
+   preghiera:'Melahel, insegnami i segreti della guarigione naturale e aiutami a usare questo dono per servire.'},
+  {n:'Haheuiah',      emoji:'👼', trono:'Trono',     periodo:'13 Lug – 17 Lug', num:24,
+   dominio:'Protezione, esilio interiore, rifugio',
+   missione:'Haheuiah protegge chi attraversa l\'esilio — geografico, spirituale, emotivo. Se è il tuo Angelo, conosci la sensazione di non appartenere. Questa "estraneità" non è un difetto: è il segno che sei qui a portare qualcosa di nuovo.',
+   preghiera:'Haheuiah, trasforma il mio senso di non appartenere nella consapevolezza di essere un ponte tra mondi.'},
+  {n:'Nith-Haiah',    emoji:'👼', trono:'Dominazione',periodo:'18 Lug – 22 Lug', num:25,
+   dominio:'Saggezza esoterica, magia bianca, pace interiore',
+   missione:'Nith-Haiah è l\'Angelo dei sapienti mistici. Se è il tuo Angelo, hai accesso naturale agli stati espansi di coscienza. Mediti facilmente, sogni vividamente, percepisci l\'invisibile. Il pericolo è perderti nel mondo interiore a discapito di quello esteriore.',
+   preghiera:'Nith-Haiah, guidami nella saggezza esoterica e aiutami a radicarla nella vita quotidiana.'},
+  {n:'Haaiah',        emoji:'👼', trono:'Dominazione',periodo:'23 Lug – 27 Lug', num:26,
+   dominio:'Diplomazia, politica, segreti rivelati',
+   missione:'Haaiah è l\'Angelo dei diplomatici e degli strateghi. Se è il tuo Angelo, hai un\'intelligenza politica naturale — capisci le strutture di potere e come navigarle. Questa capacità va usata per costruire, non per manipolare.',
+   preghiera:'Haaiah, guidami nelle strutture del potere e aiutami a usare la strategia al servizio del bene comune.'},
+  {n:'Yerathel',      emoji:'👼', trono:'Dominazione',periodo:'28 Lug – 1 Ago', num:27,
+   dominio:'Propagazione della luce, civiltà, liberazione',
+   missione:'Yerathel è l\'Angelo della civilizzazione e della diffusione della luce. Se è il tuo Angelo, hai qualcosa di importante da comunicare al mondo — un\'idea, un messaggio, un modo di essere che altri hanno bisogno di vedere incarnato.',
+   preghiera:'Yerathel, aiutami a portare la mia luce nel mondo con coraggio e senza la paura del giudizio altrui.'},
+  {n:'Seheiah',       emoji:'👼', trono:'Dominazione',periodo:'2 Ago – 6 Ago', num:28,
+   dominio:'Longevità, protezione dalle malattie e dagli incidenti',
+   missione:'Seheiah protegge la vita fisica e la salute. Se è il tuo Angelo, hai una missione a lungo termine — la tua vita è un investimento lento. Non cercare risultati rapidi: le fondamenta che stai costruendo diventeranno evidenti nel tempo.',
+   preghiera:'Seheiah, proteggimi nelle avversità fisiche e aiutami a prendermi cura del tempio che è il mio corpo.'},
+  {n:'Reyel',         emoji:'👼', trono:'Dominazione',periodo:'7 Ago – 11 Ago', num:29,
+   dominio:'Liberazione spirituale, rivelazione, sconfiggere il male',
+   missione:'Reyel è l\'Angelo della liberazione spirituale. Se è il tuo Angelo, sei qui per liberare — te stesso prima, gli altri dopo. Hai la capacità di dissolvere gli inganni e di mostrare la realtà con una chiarezza a volte brutale.',
+   preghiera:'Reyel, libera la mia coscienza da ogni illusione che si spaccia per verità.'},
+  {n:'Omael',         emoji:'👼', trono:'Dominazione',periodo:'12 Ago – 16 Ago', num:30,
+   dominio:'Pazienza, moltiplicazione, regno animale',
+   missione:'Omael benedice la moltiplicazione — di idee, di risorse, di connessioni vitali. Se è il tuo Angelo, hai un dono speciale con gli animali e la natura. La pazienza non è tua virtù naturale, ma è la chiave di volta della tua missione.',
+   preghiera:'Omael, insegnami la pazienza dei cicli naturali e aiutami a moltiplicare ciò che è buono in me e intorno a me.'},
+  {n:'Lecabel',       emoji:'👼', trono:'Dominazione',periodo:'17 Ago – 22 Ago', num:31,
+   dominio:'Talento, scienze, risoluzione dei problemi',
+   missione:'Lecabel è l\'Angelo del talento tecnico e dell\'intelligenza pratica. Se è il tuo Angelo, hai abilità naturali in qualche campo — scoprirle e svilupparle non è un capriccio, è la tua vocazione. Il talento non sfruttato è un\'offesa al dono ricevuto.',
+   preghiera:'Lecabel, illumina il mio talento e guidami a svilupparlo al massimo delle sue possibilità.'},
+  {n:'Vasariah',      emoji:'👼', trono:'Dominazione',periodo:'23 Ago – 27 Ago', num:32,
+   dominio:'Clemenza, giustizia equilibrata, eloquenza',
+   missione:'Vasariah è l\'Angelo della clemenza e dell\'eloquenza sacra. Se è il tuo Angelo, le parole sono il tuo strumento principale. Parlare con chiarezza, bellezza e verità è la tua forma di servizio spirituale.',
+   preghiera:'Vasariah, fa\' delle mie parole ponti di comprensione, non muri di separazione.'},
+  {n:'Yehuiah',       emoji:'👼', trono:'Virtù',     periodo:'28 Ago – 1 Set', num:33,
+   dominio:'Subordinazione agli ordini divini, smascheramento dei traditori',
+   missione:'Yehuiah è l\'Angelo che svela i tradimenti — esterni e interni. Se è il tuo Angelo, hai vissuto tradimenti significativi che ti hanno insegnato a distinguere chi vuole il tuo bene da chi vuole la tua energia. Questa sapienza è un dono.',
+   preghiera:'Yehuiah, proteggimi dai tradimenti e aiutami a vedere chiaramente le intenzioni di chi mi circonda.'},
+  {n:'Lehahiah',      emoji:'👼', trono:'Virtù',     periodo:'2 Set – 6 Set', num:34,
+   dominio:'Calma, ordine, obbedienza alla legge divina',
+   missione:'Lehahiah porta ordine dove c\'è caos. Se è il tuo Angelo, hai una capacità naturale di creare struttura e di portare calma in situazioni turbolente. La tua presenza stabilizza.',
+   preghiera:'Lehahiah, aiutami a portare ordine al mio interno affinché si rifletta nel mio esterno.'},
+  {n:'Chavakiah',     emoji:'👼', trono:'Virtù',     periodo:'7 Set – 11 Set', num:35,
+   dominio:'Riconciliazione, eredità, armonia familiare',
+   missione:'Chavakiah è l\'Angelo della pace familiare e delle eredità risanate. Se è il tuo Angelo, la tua famiglia di origine è centrale nella tua crescita — non necessariamente come fonte di gioia, ma come campo di trasformazione karmico.',
+   preghiera:'Chavakiah, guarisci le ferite che mi porto dalla famiglia e aiutami a trasmettere benedizioni invece di traumi.'},
+  {n:'Menadel',       emoji:'👼', trono:'Virtù',     periodo:'12 Set – 16 Set', num:36,
+   dominio:'Lavoro, vocazione, liberazione dalla schiavitù del lavoro',
+   missione:'Menadel è l\'Angelo della vocazione professionale autentica. Se è il tuo Angelo, il tuo lavoro non è separato dalla tua missione spirituale — sono la stessa cosa. Quando lavori con passione, sei in preghiera.',
+   preghiera:'Menadel, guidami verso il lavoro che è vocazione e liberami dai lavori che soffocano il mio spirito.'},
+  {n:'Aniel',         emoji:'👼', trono:'Virtù',     periodo:'17 Set – 21 Set', num:37,
+   dominio:'Rottura delle abitudini negative, scienze, contemplazione',
+   missione:'Aniel è l\'Angelo della rottura creativa. Se è il tuo Angelo, sei qui per rompere pattern — i tuoi prima, quelli del sistema dopo. Ogni tua crisi è in realtà una rottura di un pattern che aveva esaurito il suo compito.',
+   preghiera:'Aniel, aiutami a rompere le abitudini che mi tengono piccolo e a costruire nuovi pattern che mi servano davvero.'},
+  {n:'Haamiah',       emoji:'👼', trono:'Virtù',     periodo:'22 Set – 26 Set', num:38,
+   dominio:'Rituali, cerimonie, ricerca del sacro',
+   missione:'Haamiah è il guardiano dei riti sacri. Se è il tuo Angelo, hai bisogno di cerimonia e rituale nella tua vita — routine spirituali che strutturano il caos quotidiano. Il sacro non ti trova nel disordine: devi creare le condizioni per incontrarlo.',
+   preghiera:'Haamiah, insegnami a creare spazi sacri nella quotidianità e a trattare ogni momento come un rito.'},
+  {n:'Rehael',        emoji:'👼', trono:'Virtù',     periodo:'27 Set – 1 Ott', num:39,
+   dominio:'Guarigione, paternità/maternità spirituale, rispetto',
+   missione:'Rehael è l\'Angelo della guarigione attraverso l\'amore. Se è il tuo Angelo, sei un guaritore naturale — la tua presenza sana, le tue parole guariscono. Ma prima devi guarire la relazione con la tua famiglia di origine.',
+   preghiera:'Rehael, sana la mia relazione con i miei genitori — reali o archetipi — affinché io possa dare senza ferite aperte.'},
+  {n:'Yeiazal',       emoji:'👼', trono:'Virtù',     periodo:'2 Ott – 6 Ott', num:40,
+   dominio:'Consolazione, memoria, arti',
+   missione:'Yeiazal è l\'Angelo della consolazione e delle arti. Se è il tuo Angelo, la creatività è la tua medicina — non solo per te ma per chi ti circonda. In momenti di dolore, crei. In momenti di gioia, crei. È il tuo respiro.',
+   preghiera:'Yeiazal, consolami nei momenti di dolore e fa\' della mia arte un balsamo per le anime ferite.'},
+  {n:'Hahahel',       emoji:'👼', trono:'Principato',periodo:'7 Ott – 11 Ott', num:41,
+   dominio:'Missione spirituale, fede incrollabile, ministero',
+   missione:'Hahahel è l\'Angelo della fede in azione. Se è il tuo Angelo, hai una fede profonda — non necessariamente religiosa — nella vita, nel senso, nel cosmo. Questa fede è la tua armatura nei momenti più bui.',
+   preghiera:'Hahahel, rafforza la mia fede quando il dubbio mi assale e ricordami che sono parte di un disegno più grande.'},
+  {n:'Mikael',        emoji:'💙', trono:'Principato',periodo:'12 Ott – 16 Ott', num:42,
+   dominio:'Ordine politico, lealtà, obbedienza alla volontà divina',
+   missione:'Mikael (distinto dall\'Arcangelo) è l\'Angelo dell\'ordine cosmico. Se è il tuo Angelo, sei un portatore di struttura — aiuti a costruire sistemi giusti e duraturi. La tua sfida è non diventare rigido.',
+   preghiera:'Mikael, aiutami a portare ordine nel caos con saggezza e flessibilità, non con rigidità.'},
+  {n:'Veuliah',       emoji:'👼', trono:'Principato',periodo:'17 Ott – 21 Ott', num:43,
+   dominio:'Prosperità, regno, vittoria sulle forze oscure',
+   missione:'Veuliah governa la prosperità guadagnata con integrità. Se è il tuo Angelo, sei destinato a una certa forma di abbondanza — ma solo quando i tuoi valori sono allineati con le tue azioni. Il tuo successo è etico o non è.',
+   preghiera:'Veuliah, guidami verso la prosperità che nasce dall\'integrità e proteggimi dalle tentazioni del successo facile.'},
+  {n:'Yelaiah',       emoji:'👼', trono:'Principato',periodo:'22 Ott – 26 Ott', num:44,
+   dominio:'Vittoria, coraggioso, energia marziale',
+   missione:'Yelaiah è l\'Angelo del guerriero spirituale. Se è il tuo Angelo, hai un\'energia combattiva naturale che può diventare forza al servizio della giustizia oppure aggressività distruttiva. Scegli consapevolmente dove dirigerla.',
+   preghiera:'Yelaiah, trasforma la mia energia combattiva in forza al servizio del bene e proteggimi dall\'aggressività senza causa.'},
+  {n:'Sealiah',       emoji:'👼', trono:'Principato',periodo:'27 Ott – 31 Ott', num:45,
+   dominio:'Motivazione, umiliazione degli orgogliosi, equilibrio',
+   missione:'Sealiah è l\'Angelo dell\'equilibrio attraverso l\'umiltà. Se è il tuo Angelo, le cadute della tua vita non sono punizioni ma insegnamenti di equilibrio. Ogni volta che l\'ego si gonfia troppo, la vita ti riequilibra — è meglio farlo tu prima.',
+   preghiera:'Sealiah, insegnami l\'umiltà come forza, non come vergogna, e aiutami a mantenere l\'equilibrio nelle vittorie.'},
+  {n:'Ariel',         emoji:'🌿', trono:'Principato',periodo:'1 Nov – 5 Nov', num:46,
+   dominio:'Percezione acuta, rivelazioni attraverso la natura',
+   missione:'Ariel è l\'Angelo della natura rivelata. Se è il tuo Angelo, il mondo naturale ti parla in modo diretto e simbolico. Gli animali ti inviano messaggi, le piante ti guariscono, le montagne ti ricaricano. Ascolta più spesso.',
+   preghiera:'Ariel, affina la mia percezione del sacro che si nasconde nella natura e insegnami a leggere i suoi messaggi.'},
+  {n:'Asaliah',       emoji:'👼', trono:'Principato',periodo:'6 Nov – 10 Nov', num:47,
+   dominio:'Contemplazione, giustizia divina, elevazione',
+   missione:'Asaliah è l\'Angelo della contemplazione elevante. Se è il tuo Angelo, i momenti di quiete assoluta sono i più produttivi della tua vita. Le tue grandi intuizioni non vengono dall\'analisi ma dallo svuotamento.',
+   preghiera:'Asaliah, guidami nell\'arte della contemplazione e aiutami a trovare le risposte nel silenzio.'},
+  {n:'Mihael',        emoji:'👼', trono:'Principato',periodo:'11 Nov – 15 Nov', num:48,
+   dominio:'Fertilità, fedeltà coniugale, pace nell\'unione',
+   missione:'Mihael benedice le unioni fedeli e le famiglie armoniose. Se è il tuo Angelo, le tue relazioni più profonde sono il tuo percorso di crescita principale. Ciò che impari nell\'intimità non puoi impararlo altrove.',
+   preghiera:'Mihael, benedici le mie relazioni più profonde e aiutami a costruire unioni dove entrambi cresciamo.'},
+  {n:'Vehuel',        emoji:'👼', trono:'Arcangelo', periodo:'16 Nov – 20 Nov', num:49,
+   dominio:'Elevazione, grandezza, benedizione e lode',
+   missione:'Vehuel è l\'Angelo della grandezza interiore. Se è il tuo Angelo, sei destinato a qualcosa di grande — ma la tua sfida è non lasciare che questa consapevolezza si trasformi in arroganza. La vera grandezza è servizio, non trono.',
+   preghiera:'Vehuel, aiutami a incarnare la mia grandezza interiore con umiltà e al servizio di qualcosa più grande di me.'},
+  {n:'Daniel',        emoji:'👼', trono:'Arcangelo', periodo:'21 Nov – 25 Nov', num:50,
+   dominio:'Eloquenza, manifesti i segni divini, decisioni',
+   missione:'Daniel è l\'Angelo dell\'eloquenza sacra. Se è il tuo Angelo, la parola è la tua arte e la tua responsabilità. Ciò che dici ha effetti reali sulle persone — usala con intenzione e con cura, mai con negligenza.',
+   preghiera:'Daniel, fa\' della mia voce uno strumento di chiarezza e trasformazione, mai di confusione o ferita.'},
+  {n:'Hahasiah',      emoji:'👼', trono:'Arcangelo', periodo:'26 Nov – 30 Nov', num:51,
+   dominio:'Medicina universale, segreti della natura, alchimia',
+   missione:'Hahasiah è l\'alchimista divino. Se è il tuo Angelo, sei attratto dalla trasformazione della materia in spirito — sia in senso letterale (medicina, chimica) che metaforico. Ogni crisi è per te un laboratorio alchemico.',
+   preghiera:'Hahasiah, insegnami l\'alchimia della trasformazione e aiutami a trovare la medicina giusta per le ferite dell\'anima.'},
+  {n:'Imamiah',       emoji:'👼', trono:'Arcangelo', periodo:'1 Dic – 5 Dic', num:52,
+   dominio:'Espiazione, riparazione degli errori, forza nei viaggi difficili',
+   missione:'Imamiah è l\'Angelo della riparazione coraggiosa. Se è il tuo Angelo, sai cosa significa fare ammenda — e questa capacità di guardare i tuoi errori senza autodistruggerti è una delle tue virtù più rare.',
+   preghiera:'Imamiah, aiutami a riparare ciò che ho rotto con coraggio e a imparare dagli errori senza esserne prigioniero.'},
+  {n:'Nanael',        emoji:'👼', trono:'Arcangelo', periodo:'6 Dic – 10 Dic', num:53,
+   dominio:'Comunicazione spirituale, scienze astratte, contemplazione',
+   missione:'Nanael governa la comunicazione tra il visibile e l\'invisibile. Se è il tuo Angelo, hai naturalmente accesso a dimensioni della realtà che altri non percepiscono. Il tuo compito è portare quel sapere in forma comprensibile.',
+   preghiera:'Nanael, apri i canali tra il mondo visibile e quello invisibile e aiutami a tradurre ciò che percepisco in saggezza utile.'},
+  {n:'Nithael',       emoji:'👼', trono:'Arcangelo', periodo:'11 Dic – 15 Dic', num:54,
+   dominio:'Eternità, giovinezza interiore, legittimità reale',
+   missione:'Nithael è l\'Angelo dell\'eternità incarnata. Se è il tuo Angelo, hai una qualità senza tempo — un\'energia che non invecchia nell\'essenziale. La tua sfida è portare questa qualità nelle strutture temporali della vita concreta.',
+   preghiera:'Nithael, aiutami a portare la qualità eterna che sento in me nelle strutture temporali della mia vita quotidiana.'},
+  {n:'Mebahiah',      emoji:'👼', trono:'Arcangelo', periodo:'16 Dic – 20 Dic', num:55,
+   dominio:'Moralità, chiarezza delle idee, fecondità intellettuale',
+   missione:'Mebahiah nutre la mente con idee fertili. Se è il tuo Angelo, la tua mente genera idee più velocemente di quanto tu riesca a realizzarle. Il tuo compito è imparare a selezionare e portare a compimento.',
+   preghiera:'Mebahiah, aiutami a selezionare le idee migliori tra le tante che genero e a portarle a realizzazione concreta.'},
+  {n:'Poyel',         emoji:'👼', trono:'Arcangelo', periodo:'21 Dic – 25 Dic', num:56,
+   dominio:'Fortuna, supporto, modestia nella ricchezza',
+   missione:'Poyel è l\'Angelo della fortuna generosa. Se è il tuo Angelo, hai una qualità naturale di fare appello alla generosità degli altri — non per egoismo, ma perché sai ricevere come un talento spirituale. Ricevere con grazia è raro quanto dare.',
+   preghiera:'Poyel, insegnami a ricevere la generosità altrui con grazia e a distribuire la mia fortuna con saggezza.'},
+  {n:'Nemamiah',      emoji:'👼', trono:'Arcangelo', periodo:'26 Dic – 30 Dic', num:57,
+   dominio:'Chiaroveggenza, guerrieri, cause giuste',
+   missione:'Nemamiah è l\'Angelo delle cause giuste. Se è il tuo Angelo, non riesci a restare neutrale di fronte all\'ingiustizia. Questo impegno è la tua forza — fai attenzione che non diventi fanatismo.',
+   preghiera:'Nemamiah, guidami nelle battaglie giuste e aiutami a riconoscere quando una causa chiede il mio fuoco e quando chiede la mia pace.'},
+  {n:'Yeialel',       emoji:'👼', trono:'Arcangelo', periodo:'31 Dic – 4 Gen', num:58,
+   dominio:'Forza mentale, volontà curativa, coraggio interiore',
+   missione:'Yeialel è l\'Angelo della volontà curativa. Se è il tuo Angelo, hai una capacità speciale di guarire attraverso la forza di volontà e l\'intenzione consapevole. La tua mente ha potere diretto sulla tua biologia.',
+   preghiera:'Yeialel, aiutami a usare la mia volontà per guarire me stesso e a comprendere i limiti di questa forza.'},
+  {n:'Harahel',       emoji:'👼', trono:'Arcangelo', periodo:'5 Gen – 9 Gen', num:59,
+   dominio:'Ricchezza intellettuale, archivi, biblioteche',
+   missione:'Harahel è il guardiano della conoscenza accumulata. Se è il tuo Angelo, sei un conservatore e trasmettitore di sapere — sai che la vera ricchezza è nel conoscere, nel comprendere, nel condividere ciò che si è appreso.',
+   preghiera:'Harahel, guidami verso il sapere che trasforma e aiutami a condividere ciò che so con generosità.'},
+  {n:'Mitzrael',      emoji:'👼', trono:'Arcangelo', periodo:'10 Gen – 14 Gen', num:60,
+   dominio:'Riparazione, guarigione delle malattie mentali, fedeltà',
+   missione:'Mitzrael è l\'Angelo della guarigione delle ferite psichiche. Se è il tuo Angelo, hai vissuto o incontrato molte forme di sofferenza mentale ed emotiva. Questa familiarità con il dolore interiore è la base della tua capacità di comprendere e aiutare.',
+   preghiera:'Mitzrael, guarisci le ferite che porto nella mente e nell\'anima e aiutami a usare questa guarigione per servire.'},
+  {n:'Umabel',        emoji:'👼', trono:'Arcangelo', periodo:'15 Gen – 19 Gen', num:61,
+   dominio:'Affinità con gli amici, astrologia, fisica',
+   missione:'Umabel governa le amicizie sacre e le affinità elettive. Se è il tuo Angelo, le tue amicizie più profonde non sono casuali — sono incontri karmici. Coltivale come giardini: hanno bisogno di attenzione, acqua e luce.',
+   preghiera:'Umabel, guidami verso le amicizie che mi elevano e aiutami a essere per gli altri l\'amico che vorrei avere.'},
+  {n:'Iah-Hel',       emoji:'👼', trono:'Arcangelo', periodo:'20 Gen – 24 Gen', num:62,
+   dominio:'Filosofia, saggezza universale, ritiro spirituale',
+   missione:'Iah-Hel è l\'Angelo del ritiro spirituale necessario. Se è il tuo Angelo, hai cicli naturali di ritiro dal mondo che non sono fughe ma necessità di reintegrazione. Onora questi cicli invece di combatterli.',
+   preghiera:'Iah-Hel, aiutami a onorare i miei cicli di ritiro e a emergere da essi rinnovato invece di colpevolizzato.'},
+  {n:'Anauel',        emoji:'👼', trono:'Arcangelo', periodo:'25 Gen – 29 Gen', num:63,
+   dominio:'Unità, protezione degli affari, percezione della santità',
+   missione:'Anauel percepisce il sacro in tutto — anche nel lavoro, nel denaro, nelle strutture ordinarie. Se è il tuo Angelo, hai la capacità di trovare significato spirituale nelle cose più mondane. Non c\'è separazione tra sacro e profano per te.',
+   preghiera:'Anauel, aiutami a trovare il sacro nel quotidiano e a portare questa consapevolezza in ogni mia azione.'},
+  {n:'Mehiel',        emoji:'👼', trono:'Arcangelo', periodo:'30 Gen – 3 Feb', num:64,
+   dominio:'Ispirazione, protezione dei letterati, forza vitale',
+   missione:'Mehiel è l\'Angelo dell\'ispirazione e della scrittura sacra. Se è il tuo Angelo, le parole scritte hanno per te un peso e un potere speciali. Scrivere è per te un atto di guarigione, di chiarezza, di connessione con qualcosa di superiore.',
+   preghiera:'Mehiel, ispira la mia penna e aiutami a scrivere ciò che l\'anima sa ma la mente ancora non ha formulato.'},
+  {n:'Damabiah',      emoji:'👼', trono:'Angelo',    periodo:'4 Feb – 8 Feb', num:65,
+   dominio:'Fonte di saggezza, mari, fortuna nelle imprese nautiche',
+   missione:'Damabiah è l\'Angelo delle acque primordiali della saggezza. Se è il tuo Angelo, la tua intelligenza è di tipo fluido — non segue linee rette ma trova percorsi intorno agli ostacoli. L\'acqua non si spezza: si adatta.',
+   preghiera:'Damabiah, insegnami la saggezza fluida delle acque e aiutami a trovare il percorso naturale intorno agli ostacoli.'},
+  {n:'Manakel',       emoji:'👼', trono:'Angelo',    periodo:'9 Feb – 13 Feb', num:66,
+   dominio:'Conoscenza del bene e del male, sonno guaritore',
+   missione:'Manakel è il guardiano del discernimento morale. Se è il tuo Angelo, sai distinguere il bene dal male in modo quasi istintivo — quella voce interiore che ti avverte quando qualcosa non è allineato è la sua presenza. Fidatene.',
+   preghiera:'Manakel, affina il mio discernimento e aiutami a fidarmi della voce interiore che mi guida verso il bene.'},
+  {n:'Eyael',         emoji:'👼', trono:'Angelo',    periodo:'14 Feb – 18 Feb', num:67,
+   dominio:'Trasformazione verso il sublime, piaceri della filosofia',
+   missione:'Eyael è l\'Angelo della sublimazione. Se è il tuo Angelo, sei capace di trasformare qualunque esperienza — bella o brutta — in saggezza. Questa alchimia interiore è il tuo dono più grande.',
+   preghiera:'Eyael, aiutami a sublimare ogni esperienza in saggezza e a trovare il significato anche nel dolore più incomprensibile.'},
+  {n:'Habuhiah',      emoji:'👼', trono:'Angelo',    periodo:'19 Feb – 23 Feb', num:68,
+   dominio:'Guarigione, natura, fertilità della terra',
+   missione:'Habuhiah guarisce attraverso il ritorno alle origini. Se è il tuo Angelo, la natura è la tua farmacia e il tuo tempio. Periodi di disconnessione dalla natura ti indeboliscono più di quanto tu pensi.',
+   preghiera:'Habuhiah, riconnettimi alle radici naturali della mia salute e aiutami a trovare nella terra la guarigione che cerco altrove.'},
+  {n:'Rochel',        emoji:'👼', trono:'Angelo',    periodo:'24 Feb – 28 Feb', num:69,
+   dominio:'Fama, ritrovo di oggetti perduti, successione',
+   missione:'Rochel è l\'Angelo del ritrovamento — di oggetti, di persone, di parti di sé che credevi perse. Se è il tuo Angelo, hai una capacità speciale di recuperare ciò che sembrava andato per sempre.',
+   preghiera:'Rochel, aiutami a ritrovare ciò che ho perso — oggetti, relazioni e parti di me stesso — e a riconoscere quando qualcosa è perso per sempre.'},
+  {n:'Jabamiah',      emoji:'👼', trono:'Angelo',    periodo:'29 Feb – 4 Mar', num:70,
+   dominio:'Alchimia, rigenerazione, parola creatrice',
+   missione:'Jabamiah è l\'Angelo della parola creatrice primordiale. Se è il tuo Angelo, le tue affermazioni hanno un potere insolito — parli e le cose accadono più spesso di quanto ti aspetti. Scegli le tue parole come atti magici.',
+   preghiera:'Jabamiah, aiutami a usare la parola come atto creativo e a costruire con le mie affermazioni la realtà che voglio abitare.'},
+  {n:'Haiaiel',       emoji:'👼', trono:'Angelo',    periodo:'5 Mar – 9 Mar', num:71,
+   dominio:'Armi della luce, vittoria sulla malvagità, coraggio',
+   missione:'Haiaiel è il guerriero cosmico che protegge con la luce. Se è il tuo Angelo, sei qui per combattere battaglie spirituali — non fisiche. La tua arma è la verità; il tuo scudo, l\'integrità.',
+   preghiera:'Haiaiel, armami con la luce della verità e aiutami a combattere le battaglie giuste con le armi giuste.'},
+  {n:'Mumiah',        emoji:'👼', trono:'Angelo',    periodo:'10 Mar – 14 Mar', num:72,
+   dominio:'Fine dei cicli, rinascita, alchimia della morte-rinascita',
+   missione:'Mumiah governa le grandi fini e le grandi rinascite. Se è il tuo Angelo, sei un essere di soglie — arrivi nelle vite delle persone durante le transizioni importanti. La tua presenza accompagna le trasformazioni radicali.',
+   preghiera:'Mumiah, aiutami ad abbracciare i finali come inizi travestiti e guidami attraverso le soglie della mia vita.'}
+];
 
-(function(){
-  const ANGELI = [
-    {id:1,free:true,nome:'Michele',emoji:'⚔️',grado:'Arcangelo — Principe delle Milizie Celesti',
-    html:`<h4>📖 Chi è</h4><p>Michele è il più potente degli arcangeli, comandante dell'esercito celeste. Il suo nome significa <em>"Chi è come Dio?"</em> — una sfida diretta a Satana. È raffigurato con spada fiammeggiante e armatura d'oro.</p><h4>🌟 Attributi</h4><p>Forza, giustizia, protezione, coraggio. Governa il pianeta Sole e il giorno domenicale. Il suo colore è il blu reale e il dorato.</p><h4>🔮 Curiosità</h4><p>In quasi tutte le tradizioni monoteiste Michele è citato: nella Bibbia, nel Corano come Mīkāl, nella Cabala come capo della Sephira Hesed. Si dice che abbia combattuto Satana durante la caduta degli angeli ribelli.</p><h4>📜 Storie</h4><p>Secondo il Libro di Daniele, Michele è il protettore d'Israele. Nella tradizione cristiana medievale pesava le anime dei defunti durante il Giudizio. Giovanna d'Arco affermava di sentire la sua voce che la guidava in battaglia.</p>`},
-    {id:2,free:false,nome:'Gabriele',emoji:'📯',grado:'Arcangelo — Messaggero di Dio',
-    html:`<h4>📖 Chi è</h4><p>Gabriele è il messaggero per eccellenza del divino. Il suo nome significa <em>"Forza di Dio"</em>. Annunciò la nascita di Giovanni Battista e l'Incarnazione a Maria. Nel Corano è Jibrīl, colui che rivelò il testo sacro a Maometto.</p><h4>🌟 Attributi</h4><p>Comunicazione, rivelazione, intuizione, arte. Governa la Luna e il lunedì. I suoi colori sono il bianco e l'argento.</p><h4>🔮 Curiosità</h4><p>Nella Cabala Gabriele presiede alla Sephira Yesod, legata ai sogni e all'inconscio. Nell'esoterismo islamico è considerato il Sanctus Spiritus, il soffio vitale dell'universo.</p><h4>📜 Storie</h4><p>William Blake lo dipinse come una figura androgina avvolta di luce lunare. Nella tradizione etiope, Gabriele è patrono delle donne incinte e gli viene dedicata una festa mensile.</p>`},
-    {id:3,free:false,nome:'Raffaele',emoji:'🌿',grado:'Arcangelo — Angelo della Guarigione',
-    html:`<h4>📖 Chi è</h4><p>Raffaele — <em>"Dio guarisce"</em> — è l'arcangelo della salute, del viaggio e della scienza medica. È protagonista del Libro di Tobia, dove guarisce la cecità del vecchio Tobi e accompagna il figlio nel lungo pellegrinaggio.</p><h4>🌟 Attributi</h4><p>Guarigione, viaggi, scienza, medicina. Governa Mercurio e il mercoledì. Il suo colore è il verde smeraldo e il giallo dorato.</p><h4>🔮 Curiosità</h4><p>La tradizione lo vuole guardiano del paradiso terrestre. È patrono dei farmacisti, dei medici e dei viaggiatori. Nel Libro di Enoch è uno dei quattro angeli che sorvegliano i punti cardinali.</p><h4>📜 Storie</h4><p>Nell'alchimia medievale era invocato durante le operazioni di sublimazione. Bandì Asmodeo in Egitto mediante il fumo di fegato di pesce, uno dei rituali più bizzarri della letteratura angelica.</p>`},
-    {id:4,free:false,nome:'Uriel',emoji:'🕯️',grado:'Arcangelo — Fuoco di Dio',
-    html:`<h4>📖 Chi è</h4><p>Uriel, <em>"Fuoco di Dio"</em> o "Luce di Dio", è l'arcangelo della saggezza e dell'illuminazione interiore. Nella tradizione ebraica vigilò con spada fiammeggiante sull'Eden dopo la cacciata di Adamo.</p><h4>🌟 Attributi</h4><p>Saggezza, profezia, scienza occulta, luce interiore. Governa il Nord e la Terra. Il suo colore è il rosso rubino e l'ambra.</p><h4>🔮 Curiosità</h4><p>Uriel fu rimosso dal canone cattolico nel Concilio di Roma del 745 d.C. Rimane centrale nella tradizione esoterica, nella Cabala e nell'angeleologia etiope.</p><h4>📜 Storie</h4><p>Il Libro di Enoch descrive Uriel come colui che mostrò ai profeti i segreti del calendario cosmico. John Milton nel Paradiso Perduto lo chiama "il più acuto degli angeli" e lo colloca come guardiano del Sole.</p>`},
-    {id:5,free:false,nome:'Azrael',emoji:'🖤',grado:'Angelo della Morte',
-    html:`<h4>📖 Chi è</h4><p>Azrael, l'Angelo della Morte nell'Islam e nella tradizione ebraica, separa l'anima dal corpo al momento della morte. Non è il "falciatore" della tradizione popolare, ma un accompagnatore misericordioso nel passaggio.</p><h4>🌟 Attributi</h4><p>Transizione, commiato, pace dei defunti. Governa Saturno e il sabato. I suoi colori sono il nero e il viola scuro.</p><h4>🔮 Curiosità</h4><p>Secondo la leggenda islamica il suo corpo è così grande da abbracciare l'universo intero. Ogni volta che muore qualcuno nel mondo, un foglio cade dal suo albero cosmico che conta le vite di ogni essere.</p><h4>📜 Storie</h4><p>Una storia sufi narra di un uomo che, incontrato Azrael al mercato, fuggì a Samarcanda. Azrael disse a Salomone: "Ero sorpreso di vederlo a Baghdad, avevo un appuntamento con lui domani a Samarcanda."</p>`},
-    {id:6,free:false,nome:'Metatron',emoji:'👁️',grado:'Angelo del Trono — Il Re degli Angeli',
-    html:`<h4>📖 Chi è</h4><p>Metatron è considerato il più alto degli angeli nella mistica ebraica. Secondo alcune tradizioni è il profeta Enoch trasformato in essere celeste dopo essere salito al cielo in vita.</p><h4>🌟 Attributi</h4><p>Scrittura sacra, record akashici, volontà divina. Il suo sigillo è il Cubo di Metatron, figura geometrica sacra contenente tutti i solidi platonici.</p><h4>🔮 Curiosità</h4><p>Nella Cabala presiede alla Sephira Keter, la corona, il punto più alto dell'Albero della Vita. È lo scriba celeste che registra ogni azione umana e custodisce i misteri dell'universo.</p><h4>📜 Storie</h4><p>Il Talmud narra che quando un rabbino vide Metatron seduto come se fosse Dio, credette ci fossero due potenze celesti. Per questo Metatron ricevette 60 colpi di fuoco — episodio unico nella letteratura angelica.</p>`},
-    {id:7,free:false,nome:'Sandalfon',emoji:'🌲',grado:'Angelo della Preghiera — Fratello Gemello di Metatron',
-    html:`<h4>📖 Chi è</h4><p>Sandalfon è identificato con il profeta Elia, asceso al cielo senza morire. È il gemello di Metatron e il suo nome in greco significa "co-fratello". La Cabala lo pone alla Sephira Malkuth, il regno terrestre, il polo opposto di Metatron.</p><h4>🌟 Attributi</h4><p>Preghiera, musica, trasmissione dei desideri al divino. È talmente alto che persino Michele teme la sua statura. Governa la Terra e la manifestazione materiale.</p><h4>🔮 Curiosità</h4><p>Longfellow gli dedicò un'intera poesia, "Sandalphon", dove lo descrive nell'atto di raccogliere tutte le preghiere dell'umanità e intrecciarle in una ghirlanda per portarle a Dio.</p><h4>📜 Storie</h4><p>Secondo la mistica ebraica, Sandalfon è così alto che ci vogliono 500 anni per percorrere la distanza tra i suoi piedi e la sua testa. Trasforma le preghiere in corone di fiori per la testa del Creatore.</p>`},
-    {id:8,free:false,nome:'Samael',emoji:'🐍',grado:'Angelo del Veleno — Principe della Giustizia Divina',
-    html:`<h4>📖 Chi è</h4><p>Samael è una delle figure più ambigue della angelologia ebraica. Il suo nome significa "Veleno di Dio" o "Angelo di Dio". È contemporaneamente il grande accusatore, l'Angelo della Morte, e il principe di Roma nella mistica rabbinica.</p><h4>🌟 Attributi</h4><p>Prova, castigo, giustizia severa. È identificato con il serpente del Paradiso. Nella Cabala governa Geburah, la Sephira della severità e della forza.</p><h4>🔮 Curiosità</h4><p>A differenza di Satana, che nella Bibbia ebraica è una funzione (l'avversario), Samael è un essere con una propria personalità. Nella tradizione mistica è il marito di Lilith e padre di demoni.</p><h4>📜 Storie</h4><p>Il Midrash narra che Samael scese dal cielo per tentare Adamo ed Eva in forma di serpente. Combatté con Giacobbe lungo il guado del fiume Yabbok — l'episodio in cui il patriarca lottò tutta la notte con un "uomo" e ottenne la benedizione.</p>`},
-    {id:9,free:false,nome:'Chamuel',emoji:'💗',grado:'Arcangelo dell\'Amore e delle Relazioni',
-    html:`<h4>📖 Chi è</h4><p>Chamuel, il cui nome significa "Colui che vede Dio" o "Chi cerca Dio", è l'arcangelo dell'amore compassionevole. Non è citato nelle Scritture canoniche ma è centrale nella tradizione esoterica cristiana e nella New Age.</p><h4>🌟 Attributi</h4><p>Amore incondizionato, relazioni, pace interiore, riconciliazione. Il suo colore è il rosa pallido. È invocato per ritrovare oggetti perduti, relazioni in crisi e autostima.</p><h4>🔮 Curiosità</h4><p>Alcune tradizioni lo identificano con l'angelo che confortò Gesù nel Getsemani prima della Passione. È patrono dell'amore romantico ma anche dell'amor proprio, spesso trascurato nella spiritualità tradizionale.</p><h4>📜 Storie</h4><p>Nella teosofia ottocentesca di Helena Blavatsky e poi in Alice Bailey, Chamuel è uno dei Sette Raggi, ciascuno governato da un Elohim o Arcangelo. Il suo Raggio Rosa è il raggio dell'amore attivo nel mondo.</p>`},
-    {id:10,free:false,nome:'Jofiel',emoji:'🌸',grado:'Arcangelo della Bellezza e della Saggezza',
-    html:`<h4>📖 Chi è</h4><p>Jofiel, "Bellezza di Dio", è l'arcangelo dell'illuminazione intellettuale e della bellezza in tutte le sue forme. Alcune tradizioni lo identificano con il cherubino che custodì l'Eden con la spada fiammeggiante dopo la caduta.</p><h4>🌟 Attributi</h4><p>Arte, bellezza, saggezza, creatività, comprensione profonda. Il suo colore è il giallo brillante o il rosa dorato. È l'angelo da invocare durante lo studio e la creazione artistica.</p><h4>🔮 Curiosità</h4><p>Nel Libro di Enoch, Jofiel è menzionato come uno dei principi celesti che governano il sapere. La tradizione esoterica lo vuole custode dell'Albero della Conoscenza, da non confondere con la Conoscenza del Bene e del Male.</p><h4>📜 Storie</h4><p>In alcune tradizioni cabalistiche, Jofiel era il tutore dei figli di Noè e istruì Sem nella trasmissione della sapienza primordiale. È patrono degli artisti, degli scrittori e di chiunque cerchi di incarnare il divino nella materia.</p>`},
-    {id:11,free:false,nome:'Haniel',emoji:'🌙',grado:'Angelo della Luna e delle Virtù',
-    html:`<h4>📖 Chi è</h4><p>Haniel, "Grazia di Dio" o "Gloria di Dio", governa il pianeta Venere e la Luna nella tradizione esoterica. È l'arcangelo dei cicli lunari, dell'intuizione femminile e delle energie naturali stagionali.</p><h4>🌟 Attributi</h4><p>Intuizione, cicli lunari, magia naturale, grazia. Il suo colore è il blu-verde lunare o il turchese. È l'angelo da invocare durante le fasi di luna piena e nei rituali di guarigione emotiva.</p><h4>🔮 Curiosità</h4><p>Nella tradizione cabbalistica Haniel governa la Sephira Netzach, legata alle emozioni, alla natura e alla creatività erotica. È uno dei principi angelici dell'Ordine delle Virtù.</p><h4>📜 Storie</h4><p>La leggenda vuole che Haniel avesse accompagnato il profeta Enoch durante la sua ascesa al cielo, guidandolo tra le sfere celesti. Il suo nome veniva scritto sugli amuleti delle donne in gravidanza nel Medio Oriente medievale.</p>`},
-    {id:12,free:false,nome:'Azael',emoji:'🌪️',grado:'Angelo Vigilante — Custode dei Segreti Celesti',
-    html:`<h4>📖 Chi è</h4><p>Azael (da non confondere con Azazel) è uno degli angeli Vigilanti del Libro di Enoch, coloro che discesero sulla Terra e si unirono alle figlie degli uomini. Il suo nome significa "Dio si è reso forte".</p><h4>🌟 Attributi</h4><p>Segreti cosmici, magia proibita, conoscenza delle erbe e degli incantesimi. Fu uno dei principali Vigilanti che trasmisero all'umanità conoscenze che il cielo aveva riservato agli angeli.</p><h4>🔮 Curiosità</h4><p>Il Libro di Enoch distingue accuratamente Azael da Azazel, sebbene i due nomi vengano spesso confusi. I Vigilanti, detti Benei Elohim ("figli di Dio"), sono il soggetto di una delle tradizioni più enigmatiche di tutta la letteratura apocalittica.</p><h4>📜 Storie</h4><p>Secondo Enoch, gli angeli Vigilanti insegnarono alle donne l'arte del trucco e ai guerrieri la forgiatura delle armi. Per questo crimine furono incatenati nelle profondità della terra fino al Giudizio Finale.</p>`},
-    {id:13,free:false,nome:'Raziel',emoji:'📚',grado:'Angelo dei Misteri — Custode dei Segreti Divini',
-    html:`<h4>📖 Chi è</h4><p>Raziel, "Segreto di Dio", è l'angelo che custodisce la conoscenza di tutti i misteri dell'universo. Si dice che abbia donato ad Adamo un libro — il Sefer Raziel HaMalakh — contenente i segreti della creazione.</p><h4>🌟 Attributi</h4><p>Conoscenza occulta, alchimia, scienza sacra, magia cerimoniale. È il principe dell'Ordine dei Cherubini e sta ai piedi del Trono divino ad ascoltare e registrare tutto.</p><h4>🔮 Curiosità</h4><p>Il Sefer Raziel è un vero testo kabbalistico medievale, ancora pubblicato oggi. Contiene angeli, nomi divini, astrologia, amuleti e rituali. Si dice che chi lo possiede nella propria casa è protetto dagli incendi.</p><h4>📜 Storie</h4><p>Secondo il Midrash, dopo che Raziel donò il libro ad Adamo, gli angeli lo gettarono nell'oceano per gelosia. Dio ordinò a Rahab, principe del mare, di recuperarlo e restituirlo. In seguito il libro passò ad Enoch, poi a Noè, poi a Salomone.</p>`},
-    {id:14,free:false,nome:'Zadkiel',emoji:'💜',grado:'Arcangelo della Misericordia e del Perdono',
-    html:`<h4>📖 Chi è</h4><p>Zadkiel, "Giustizia di Dio", è l'arcangelo della misericordia, del perdono e della trasformazione. Nella tradizione ebraica è identificato con l'angelo che fermò la mano di Abramo nell'atto di sacrificare Isacco.</p><h4>🌟 Attributi</h4><p>Perdono, compassione, trasformazione positiva, memoria. Il suo colore è il viola profondo. Governa Giove nella tradizione astrologica esoterica.</p><h4>🔮 Curiosità</h4><p>Nella teosofia e nella tradizione dei "Chierici Violet Flame", Zadkiel è associato alla Fiamma Viola, energia trasmutatrice capace di purificare il karma. La sua invocazione è centrale nella pratica dei cercatori spirituali moderni.</p><h4>📜 Storie</h4><p>Il Zohar, il testo fondamentale della Cabala, descrive Zadkiel come uno dei sette arcangeli che circondano il Trono. È il patrono di chi chiede perdono e di chi deve concederlo — entrambe le operazioni spirituali più difficili per l'essere umano.</p>`},
-    {id:15,free:false,nome:'Baraquiel',emoji:'⚡',grado:'Angelo del Fulmine — Principe delle Stelle',
-    html:`<h4>📖 Chi è</h4><p>Baraquiel, "Fulmine di Dio", è uno degli arcangeli menzionati nel Libro di Enoch. Governa i fenomeni atmosferici e in particolare i fulmini. Il suo nome appare anche come Barachiel o Barakiel.</p><h4>🌟 Attributi</h4><p>Fortuna, benedizione, stelle e fenomeni celesti. Nella tradizione cristiana orientale è considerato patrono della fortuna e dell'abbondanza. I suoi simboli sono il fulmine e il rosa bianco.</p><h4>🔮 Curiosità</h4><p>Nel Libro di Enoch, Baraquiel è uno dei secondi capi dei Vigilanti. La Chiesa ortodossa greca lo venera come arcangelo il 8 novembre, giorno in cui si commemora il Sinassi degli Angeli.</p><h4>📜 Storie</h4><p>Nella tradizione popolare greca, Baraquiel è invocato dai pescatori prima delle tempeste. Si narra che appaia come una luce bianca in mezzo ai lampi, portando con sé la promessa che la tempesta passerà senza vittime.</p>`},
-    {id:16,free:false,nome:'Anael',emoji:'🌹',grado:'Angelo di Venere — Signore degli Amori',
-    html:`<h4>📖 Chi è</h4><p>Anael (o Hanael, Aniel) è l'angelo che governa il pianeta Venere nella magia cerimoniale medievale. Appare nei grimori rinascimentali come signore del venerdì, giorno sacro a Venere, e presiede alle questioni d'amore e bellezza.</p><h4>🌟 Attributi</h4><p>Amore romantico, desiderio, arte, musica, fertilità. Il suo sigillo veniva inciso su lamine di rame (metallo di Venere) per i rituali amorosi. Governa il tramonto e le prime ore della notte.</p><h4>🔮 Curiosità</h4><p>Nel Clavicola di Salomone e nel Picatrix, Anael è invocato per ottenere favori in amore, per placare le liti tra amanti e per rendere una persona attraente agli occhi degli altri. La sua stella è quella della sera.</p><h4>📜 Storie</h4><p>Un grimorio del XVI secolo descrive Anael come un giovane bellissimo con una corona di rose, seduto su un leone dorato. La sua invocazione richiedeva incenso di sandalo e rose, candele verdi, e doveva essere compiuta il venerdì sera quando Venere era visibile all'orizzonte.</p>`},
-    {id:17,free:false,nome:'Cassiel',emoji:'⏳',grado:'Angelo di Saturno — Custode del Tempo',
-    html:`<h4>📖 Chi è</h4><p>Cassiel è l'angelo che governa il pianeta Saturno nella tradizione della magia planetaria medievale. Il suo nome significa "Velocità di Dio". È associato al tempo, alla solitudine, alle lacrime e alla contemplazione profonda.</p><h4>🌟 Attributi</h4><p>Tempo, karma, disciplina, solitudine feconda, saggezza degli anziani. Governa il sabato. I suoi colori sono il nero e il grigio piombo. È invocato per questioni di disciplina, studio e concentrazione.</p><h4>🔮 Curiosità</h4><p>Il Picatrix lo descrive come un vecchio con barba lunga, che regge una falce — immagine che si confonde con quella di Crono/Saturno. È il patrono degli eremiti, dei monaci e di coloro che scelgono la via della rinuncia.</p><h4>📜 Storie</h4><p>Nell'alchimia Cassiel presiede alla "nigredo", la fase oscura e decomposizione della materia prima. Era invocato dai filosofi durante la notte del sabato per ricevere visioni sulla natura del tempo e sull'eternità.</p>`},
-    {id:18,free:false,nome:'Sachiel',emoji:'🌊',grado:'Angelo di Giove — Dispensatore di Ricchezza',
-    html:`<h4>📖 Chi è</h4><p>Sachiel governa il pianeta Giove e il giovedì nella magia planetaria. Il suo nome significa "Copertura di Dio" o "Abbondanza di Dio". Presiede alla prosperità materiale, all'espansione e alla generosità.</p><h4>🌟 Attributi</h4><p>Abbondanza, successo, benessere, giustizia, onore. I suoi colori sono il blu reale e il viola. È invocato per questioni finanziarie, legali e per ottenere posizioni di potere.</p><h4>🔮 Curiosità</h4><p>Nel Clavicola di Salomone, Sachiel appare come un uomo maestoso con un bastone e un'aquila ai piedi. I rituali a lui dedicati si compivano con incenso di cedro e legno di quercia, entrambi simboli di regalità e longevità.</p><h4>📜 Storie</h4><p>Una leggenda medievale racconta che un mercante in rovina invocò Sachiel con i dovuti riti. Quella stessa notte trovò una mappa del tesoro in un sogno così vivido da sembrare reale. Il tesoro esisteva davvero, sepolto sotto la pavimentazione della sua bottega.</p>`},
-    {id:19,free:false,nome:'Camael',emoji:'🔥',grado:'Angelo di Marte — Principe della Forza',
-    html:`<h4>📖 Chi è</h4><p>Camael (o Camiel, Chamuel) è l'angelo che governa il pianeta Marte. Nella tradizione esoterica è il principe dell'ordine delle Potestà. Alcuni lo identificano con l'angelo che lottò con Giacobbe, altri con colui che apparve a Gesù nel Getsemani per confortarlo.</p><h4>🌟 Attributi</h4><p>Forza, coraggio, conflitto giusto, iniziazione attraverso la prova. Governa il martedì. Il suo colore è il rosso fuoco. È invocato da guerrieri, atleti e da chi affronta prove difficili.</p><h4>🔮 Curiosità</h4><p>Nella Cabala Camael presiede alla Sephira Geburah, la severità. È il bilanciamento necessario: senza forza e severità, la gentilezza diventa debolezza. Il suo nome appare inciso su amuleti protettivi ritrovati in scavi medievali.</p><h4>📜 Storie</h4><p>John Dee, il matematico e occultista elisabettiano, comunicò con Camael durante le sue sessioni di scrying con Edward Kelley. L'angelo avrebbe rivelato l'alfabeto enochiano, ancora oggi usato nella magia cerimoniale.</p>`},
-    {id:20,free:false,nome:'Ariel',emoji:'🦁',grado:'Angelo della Natura — Signore degli Elementi',
-    html:`<h4>📖 Chi è</h4><p>Ariel, "Leone di Dio", è l'angelo che presiede alla natura selvaggia, agli elementi e agli animali selvatici. Appare sia nelle tradizioni giudaiche che nei grimori rinascimentali come spirito della terra e dell'aria.</p><h4>🌟 Attributi</h4><p>Natura, elementi, animali, ecologia spirituale. Si manifesta spesso sotto forma di leone o aquila. I suoi colori sono il verde foresta e il dorato della savana.</p><h4>🔮 Curiosità</h4><p>Shakespeare lo usò come personaggio nella Tempesta, dove Ariel è uno spirito dell'aria al servizio del mago Prospero. Questa scelta non fu casuale: il nome era noto agli studiosi rinascimentali dell'occultismo.</p><h4>📜 Storie</h4><p>Nelle tradizioni degli sciamani europei medievali, Ariel era invocato prima di entrare nelle foreste per ricevere protezione dagli animali pericolosi e per comprendere il linguaggio della natura. Ancora oggi alcuni cercatori spirituali lo invocano per connettersi con gli spiriti della terra.</p>`},
-  ];
+function resetAngeli(){
+  $('#angeliForm').style.display='block';
+  $('#angeliResult').style.display='none';
+  $('#angelTime').value='';
 
-  const DIAVOLI = [
-    {id:1,free:true,nome:'Lucifero',emoji:'🌟',grado:'Portatore di Luce — Principe Caduto',
-    html:`<h4>📖 Chi è</h4><p>Il nome Lucifero — <em>"Portatore di Luce"</em> — deriva dal latino e indicava la stella del mattino (Venere). Nella tradizione cristiana divenne il nome dell'angelo caduto per superbia, identificato con Satana. Per i Gnostici era invece un eroe che sfidò il demiurgo ignorante.</p><h4>🌟 Attributi</h4><p>Intelligenza suprema, bellezza devastante, orgoglio cosmico, conoscenza proibita. Nelle arti esoteriche rappresenta il principio dell'illuminazione attraverso la ribellione.</p><h4>🔮 Curiosità</h4><p>La poesia romantica ne ha fatto un simbolo di libertà e intelletto ribelle. Byron, Shelley e Baudelaire scrissero su di lui con ammirazione. Il filosofo Hegel lo citò come la dialettica stessa.</p><h4>📜 Storie</h4><p>John Milton nel Paradiso Perduto crea un Lucifero tragico: "Meglio regnare all'Inferno che servire in Paradiso." Dante lo colloca nel punto più basso dell'Inferno, incastrato nel ghiaccio, che batte le ali in eterno senza poter volare.</p>`},
-    {id:2,free:false,nome:'Asmodeo',emoji:'👹',grado:'Re dei Demoni della Lussuria',
-    html:`<h4>📖 Chi è</h4><p>Asmodeo è uno dei demoni più antichi e potenti, citato nel Libro di Tobia dove tormenta Sara uccidendo sette mariti nella notte di nozze. Il nome deriva dal persiano Aēšma-daēva, demone dell'ira e della bramosia.</p><h4>🌟 Attributi</h4><p>Lussuria, gelosia, gioco d'azzardo, vendetta amorosa. La Lemegeton lo descrive con tre teste (toro, uomo, ariete) e coda di serpente, che cavalca un drago sputafuoco. Comanda 72 legioni di demoni.</p><h4>🔮 Curiosità</h4><p>Aiutò Salomone nella costruzione del Tempio ma fu poi incatenato con l'Anello del Re. In Francia nel XVII secolo fu al centro del caso di possessione di Loudun.</p><h4>📜 Storie</h4><p>La leggenda talmudica narra che Asmodeo si spacciò per Salomone stesso, regnando al suo posto per tre anni mentre il vero re vagava mendicando per le strade di Gerusalemme — la più audace impostura demoniaca della storia.</p>`},
-    {id:3,free:false,nome:'Belzebù',emoji:'🪰',grado:'Signore delle Mosche — Principe dell\'Inferno',
-    html:`<h4>📖 Chi è</h4><p>Belzebù, letteralmente "Signore delle Mosche" (dall'ebraico Baal Zebub), era originariamente una divinità cananea degli insetti. La Bibbia lo cita come "principe dei demoni". Nell'Inferno di Dante è il nome stesso di Satana.</p><h4>🌟 Attributi</h4><p>Superbia, gola, corruzione delle cose sacre. Spesso dipinto come mosca gigantesca o uomo obeso e putrescente. Secondo la Lemegeton comanda 66 legioni di demoni.</p><h4>🔮 Curiosità</h4><p>Nel Medioevo fu considerato il secondo nella gerarchia infernale. Il caso di possessione di Loudun nel 1634 vide Belzebù accusato insieme ad Asmodeo e Leviatano di aver corrotto un intero convento di suore.</p><h4>📜 Storie</h4><p>William Golding intitolò "Il Signore delle Mosche" il suo romanzo sulla corruzione dell'innocenza infantile. La scelta non fu casuale: Belzebù rappresenta esattamente quel momento in cui la civiltà crolla e la bestia emerge dall'interno.</p>`},
-    {id:4,free:false,nome:'Lilith',emoji:'🦇',grado:'Regina dei Demoni — Prima Donna',
-    html:`<h4>📖 Chi è</h4><p>Lilith è la figura femminile demoniaca della mitologia ebraica. Secondo il Midrash fu la prima moglie di Adamo, creata dalla polvere insieme a lui. Rifiutandosi di sottomettersi, abbandonò il Paradiso e divenne regina dei demoni.</p><h4>🌟 Attributi</h4><p>Indipendenza, sessualità selvaggia, maternità oscura. Consorte di Samael e regina degli spiriti notturni. Nella tradizione popolare rapisce i bambini nella notte.</p><h4>🔮 Curiosità</h4><p>Il suo nome potrebbe derivare dall'ebraico "lilit" (notte) o dall'accadico "lilitu" (spirito del vento). Nel femminismo contemporaneo è stata reinterpretata come simbolo di emancipazione. Carl Jung la usò come archetipo dell'ombra femminile.</p><h4>📜 Storie</h4><p>Gli amuleti "shir ha-maalot" erano affissi nelle stanze dei neonati per proteggerli da Lilith. In astrologia moderna il "Lilith Nera" è un punto lunare che rappresenta l'energia selvaggia repressa in ognuno di noi.</p>`},
-    {id:5,free:false,nome:'Azazel',emoji:'🐐',grado:'Il Capro Espiatorio — Angelo Caduto',
-    html:`<h4>📖 Chi è</h4><p>Azazel compare nel Levitico come entità a cui veniva consacrato il "capro espiatorio" nel Giorno dell'Espiazione. Nel Libro di Enoch è uno degli angeli Vigilanti caduti che insegnò all'umanità l'arte della guerra e il trucco femminile.</p><h4>🌟 Attributi</h4><p>Conoscenza proibita, tecnologia della guerra, seduzione. È legato al deserto e al capro. Secondo Enoch fu incatenato in un deserto buio fino al Giorno del Giudizio.</p><h4>🔮 Curiosità</h4><p>Il termine "capro espiatorio" nasce proprio da questo rito biblico. I Yezidi del Kurdistan veneravano Melek Taus (Angelo Pavone) identificato da alcuni con Azazel, causando secoli di incomprensioni e persecuzioni.</p><h4>📜 Storie</h4><p>In Enoch, Azazel viene incolpato di aver corrotto l'umanità più di qualsiasi altro Vigilante. "Tutto il peccato della terra è colpa tua" gli disse Dio prima di incatenarlo. Il suo insegnamento principale: forgiare spade e scudi. Il secondo: belletti e ornamenti per le donne.</p>`},
-    {id:6,free:false,nome:'Mefistofele',emoji:'🎭',grado:'Il Tentatore — Demone del Dubbio',
-    html:`<h4>📖 Chi è</h4><p>Mefistofele è il demone del contratto faustiano. Il nome ha origine incerta, probabilmente tedesco medievale. Non appare nei grimori ma nelle opere letterarie: il Faust di Marlowe e di Goethe lo rese immortale come tentatore raffinato e ironico.</p><h4>🌟 Attributi</h4><p>Ingegno diabolico, ironia, seduzione intellettuale, nichilismo. Non è violento ma sottile: convince attraverso la logica, il dubbio, il piacere.</p><h4>🔮 Curiosità</h4><p>Nel Faust di Goethe si definisce: "Parte di quella forza che sempre vuole il male e sempre compie il bene." È il perfetto antagonista dialettico che stimola la ricerca pur portando all'autodistruzione.</p><h4>📜 Storie</h4><p>La storia si basa su Johann Georg Faust, alchimista tedesco del XVI secolo. Il "Faustbuch" del 1587 creò il template del patto col diavolo, da cui attinsero Marlowe, Goethe, Berlioz, Thomas Mann e molti altri.</p>`},
-    {id:7,free:false,nome:'Leviatano',emoji:'🌊',grado:'Bestia dell\'Abisso — Drago delle Profondità',
-    html:`<h4>📖 Chi è</h4><p>Leviatano è il mostro marino primordiale della Bibbia, creatura del caos che Dio sconfisse all'alba del tempo. Nel Libro di Giobbe Dio lo usa per mostrare la propria onnipotenza. Nella demonologia medievale divenne uno dei principi dell'Inferno.</p><h4>🌟 Attributi</h4><p>Eresia, invidia, acque primordiali, caos. Peter Binsfeld nel 1589 lo associò al peccato capitale dell'invidia. È raffigurato come drago marino o serpente immenso che avvolge il mondo.</p><h4>🔮 Curiosità</h4><p>Thomas Hobbes intitolò il suo trattato di filosofia politica "Leviatano" (1651), usando il mostro biblico come metafora dello Stato onnipotente. Anton LaVey usò il nome nella sua fondazione della Chiesa di Satana nel 1966.</p><h4>📜 Storie</h4><p>Nella mitologia ebraica, Dio uccise la femmina di Leviatano per impedire che si riproducesse — se due Leviataní si fossero accoppiati avrebbero distrutto il mondo. La sua carne è riservata al banchetto dei giusti alla fine dei tempi.</p>`},
-    {id:8,free:false,nome:'Mammon',emoji:'💰',grado:'Demone dell\'Avarizia — Signore della Ricchezza Corrotta',
-    html:`<h4>📖 Chi è</h4><p>Mammon deriva dall'aramaico "mamona" (ricchezza). Gesù lo menziona nel Discorso della Montagna: "Non potete servire Dio e Mammon." Nel Medioevo divenne un demone personificato, simbolo dell'avarizia e della ricchezza che corrompe l'anima.</p><h4>🌟 Attributi</h4><p>Avarizia, ricchezza materiale ossessiva, corruzione per denaro. Peter Binsfeld lo associò al peccato di avarizia. È rappresentato come un essere che cammina curvo, con gli occhi fissi a terra cercando l'oro.</p><h4>🔮 Curiosità</h4><p>John Milton nel Paradiso Perduto lo descrive come il più basso degli angeli anche in cielo, perché aveva gli occhi sempre rivolti verso il suolo a contemplare le ricchezze del pavimento celeste. Fu il primo ad esclamare "arricchiamoci!" dopo la caduta.</p><h4>📜 Storie</h4><p>Nel Medioevo Mammon era invocato (clandestinamente) da mercanti senza scrupoli. Il nome sopravvive nell'inglese "mammon" che indica la bramosia di ricchezza. Karl Marx lo citò come il dio terreno degli Ebrei, in uno dei suoi scritti giovanili più controversi.</p>`},
-    {id:9,free:false,nome:'Belial',emoji:'🎪',grado:'Il Senza Valore — Principe dell\'Anarchia',
-    html:`<h4>📖 Chi è</h4><p>Belial è uno dei demoni più antichi, il cui nome ebraico significa "senza valore" o "inutile". Appare nell'Antico Testamento come espressione di malvagità totale. Nei Rotoli del Mar Morto è il capo delle forze del Male, opposto all'Angelo della Luce.</p><h4>🌟 Attributi</h4><p>Anarchia, menzogna, corruzione della legge, tentazione sessuale. Nella Lemegeton ha il grado di re e governa 80 legioni. Si manifesta come due angeli che cavalcano carri di fuoco.</p><h4>🔮 Curiosità</h4><p>La comunità di Qumran, gli Esseni, viveva nella convinzione di essere in guerra cosmica contro Belial e i suoi figli. I loro "Rotoli della Guerra" (1QM) descrivono l'apocalittica battaglia finale tra la luce e le tenebre.</p><h4>📜 Storie</h4><p>Milton nel Paradiso Perduto lo ritrae come il più bello e il più eloquente degli angeli caduti, ma anche il più vile: "Nessuna azione vile mancò dell'approvazione di Belial." È il demone che convinge con parole belle a fare cose ignobili.</p>`},
-    {id:10,free:false,nome:'Astaroth',emoji:'🦅',grado:'Duca dell\'Inferno — Grande Duca della Tenebra Occidentale',
-    html:`<h4>📖 Chi è</h4><p>Astaroth deriva dalla dea fenicia Astarte (Ishtar), divinità dell'amore e della guerra. La sua trasformazione in demone avvenne gradualmente con la demonizzazione delle divinità pagane. Nella Lemegeton è un Grande Duca che governa 40 legioni.</p><h4>🌟 Attributi</h4><p>Conoscenza del passato e del futuro, scienze liberali, segreti. Si manifesta come un angelo brutto che cavalca un drago infernale e regge una vipera in mano. Il suo alito è pestilenziale.</p><h4>🔮 Curiosità</h4><p>I maghi medievali dovevano tenere un anello d'argento sotto il naso durante l'evocazione per sopportare il fetore di Astaroth. Nonostante ciò, era uno dei demoni più evocati per ottenere conoscenza occulta.</p><h4>📜 Storie</h4><p>La trasformazione di Astarte — la grande dea madre del Medio Oriente — in un demone maschio e ripugnante è uno degli episodi più significativi della guerra religiosa tra paganesimo e monoteismo. Ci racconta come i vincitori riscrivano la storia.</p>`},
-    {id:11,free:false,nome:'Moloch',emoji:'🔥',grado:'Il Divoratore di Bambini — Dio del Fuoco',
-    html:`<h4>📖 Chi è</h4><p>Moloch è la divinità cananea a cui, secondo la Bibbia, venivano sacrificati i bambini passandoli attraverso il fuoco. La natura esatta di questo culto è ancora dibattuta dagli storici. Nella demonologia è diventato simbolo del sacrificio degli innocenti.</p><h4>🌟 Attributi</h4><p>Sacrificio, fanatismo religioso, potere ottenuto tramite il dolore altrui. Nella demonologia è associato al pianto, poiché i tamburi coprivano le urla dei bambini durante i riti.</p><h4>🔮 Curiosità</h4><p>L'archeologia moderna ha messo in dubbio i racconti biblici sui sacrifici di bambini a Moloch. Molti studiosi ritengono si trattasse di un rituale di dedicazione simbolica, non di un sacrificio reale. Ma il mito ha una potenza che supera la storia.</p><h4>📜 Storie</h4><p>Milton nel Paradiso Perduto descrive Moloch come il più feroce dei demoni caduti, che ancora gronda del sangue dei bambini. Allen Ginsberg nel poema "Howl" (1956) usa Moloch come metafora del capitalismo e dell'industria che divora le giovani generazioni.</p>`},
-    {id:12,free:false,nome:'Bael',emoji:'🐸',grado:'Primo Re dell\'Inferno — Signore dell\'Invisibilità',
-    html:`<h4>📖 Chi è</h4><p>Bael (o Baal) è il primo e più potente dei 72 demoni della Lemegeton. Comanda 66 legioni di demoni. Il suo nome deriva dal semita Baal, "Signore", originariamente un titolo dato alle divinità locali dei Cananei.</p><h4>🌟 Attributi</h4><p>Invisibilità, saggezza, inganno. Si manifesta con tre teste: rospo, uomo e gatto, al centro una testa di ragno. Chi lo evoca ottiene il potere di rendersi invisibile e di parlare con voce rauca ma sapiente.</p><h4>🔮 Curiosità</h4><p>Il profeta Elia sfidò i sacerdoti di Baal sul Monte Carmelo in uno dei duelli religiosi più drammatici della Bibbia. Quattrocentocinquanta sacerdoti di Baal non riuscirono a far scendere il fuoco dal cielo, mentre Elia lo fece con una sola preghiera.</p><h4>📜 Storie</h4><p>I grimori medievali descrivono riti elaboratissimi per evocare Bael in sicurezza. L'operatore doveva essere protetto all'interno di un triangolo magico tracciato con carbone, recitare preghiere specifiche e non fare contatto visivo diretto con le tre teste del demone.</p>`},
-    {id:13,free:false,nome:'Pazuzu',emoji:'💨',grado:'Re dei Venti — Demone della Tempesta',
-    html:`<h4>📖 Chi è</h4><p>Pazuzu è un demone dell'antica Mesopotamia, re dei venti del sud-ovest, portatori di siccità e carestia. Paradossalmente era anche usato come protettore contro Lamashtu, la demone infanticida. La sua statua veniva portata in casa per difendere i neonati.</p><h4>🌟 Attributi</h4><p>Venti portatori di malattia, siccità, carestia. Ma anche protezione contro demoni femminili. È raffigurato con corpo umano, testa di leone, ali d'aquila, zampe di rapace e coda di scorpione.</p><h4>🔮 Curiosità</h4><p>Pazuzu conobbe la fama mondiale nel 1973 grazie al film "L'Esorcista" di William Friedkin. La statua che lo rappresenta è la stessa che la protagonista raccoglie in Iraq all'inizio del film. Il vero Pazuzu è visibile al Museo del Louvre di Parigi.</p><h4>📜 Storie</h4><p>Nella visione mesopotamica del mondo, i demoni non erano puramente malvagi: avevano funzioni cosmiche. Pazuzu portava malattie ma cacciava anche Lamashtu — dimostrando che anche nell'oscurità esistono gerarchie e regole.</p>`},
-    {id:14,free:false,nome:'Andromalio',emoji:'🐍',grado:'Conte dell\'Inferno — Il Recuperatore',
-    html:`<h4>📖 Chi è</h4><p>Andromalio è il 72° e ultimo demone della Lemegeton, Conte dell'Inferno che governa 36 legioni. È famoso come demone paradossalmente "utile": riporta indietro ladri e oggetti rubati, punisce chi ha compiuto ingiustizie e rivela dove si trovano i tesori nascosti.</p><h4>🌟 Attributi</h4><p>Giustizia sommaria, recupero dei beni rubati, rivelazione delle frodi. Si manifesta come un uomo che regge un serpente. Era uno dei demoni più praticamente evocati nel Rinascimento.</p><h4>🔮 Curiosità</h4><p>L'uso di Andromalio per recuperare oggetti rubati era così comune che i grimori includevano istruzioni semplificate "per i laici". È uno dei pochi casi in cui la demonologia medievale aveva uno scopo puramente pratico e quotidiano.</p><h4>📜 Storie</h4><p>Un aneddoto del XVIII secolo racconta di un libraio veneziano che evocò Andromalio dopo il furto del suo magazzino. Il giorno dopo, un uomo sconosciuto si presentò con tutti i libri rubati, dichiarandosi "costretto da una forza invisibile" a restituirli. Non fu mai identificato.</p>`},
-    {id:15,free:false,nome:'Vepar',emoji:'⚓',grado:'Duca del Mare — Signore delle Acque Oscure',
-    html:`<h4>📖 Chi è</h4><p>Vepar è un Grande Duca dell'Inferno che governa 29 legioni di spiriti. Governa le acque e le navi in mare. Si manifesta come sirena armata. Può provocare tempeste, fare infettare le ferite fino alla cancrena e fare morire gli uomini in tre giorni.</p><h4>🌟 Attributi</h4><p>Mare, tempeste, ferite che marciscono, guida delle navi. Paradossalmente è anche uno dei demoni che può essere evocato per guarire: conosce le erbe e i rimedi, ma li usa raramente a fin di bene.</p><h4>🔮 Curiosità</h4><p>La sua apparizione come sirena armata è uno dei più insoliti nella demonologia. Mescola il femminile e il bellico in un'immagine che anticipa certe figure delle mitologie nordiche, come le Valchirie del mare.</p><h4>📜 Storie</h4><p>Marinai medievali che si credevano stregati dai demoni del mare ricorrevano a esorcismi specifici che invocavano Vepar per nome, chiedendogli di rilasciare le navi o i corpi dei compagni. Il mare era il territorio demoniaco per eccellenza nella cosmologia medievale.</p>`},
-    {id:16,free:false,nome:'Satana',emoji:'😈',grado:'L\'Avversario — Il Grande Accusatore',
-    html:`<h4>📖 Chi è</h4><p>Satana (dall'ebraico "ha-satan", "l'avversario") non è originariamente un nome proprio ma un ruolo: l'accusatore nel tribunale celeste. Nel Libro di Giobbe è un membro del consiglio divino, non un ribelle. Solo con il tempo divenne il signore del Male.</p><h4>🌟 Attributi</h4><p>Tentazione, accusa, dubbio sulla bontà divina, signoria sul mondo materiale. Nel Nuovo Testamento diventa "il principe di questo mondo" e "il padre della menzogna".</p><h4>🔮 Curiosità</h4><p>Nella sua evoluzione storica, Satana assorbe caratteristiche di divinità avversarie: il persiano Angra Mainyu, il cananeo Mot, l'egiziano Set. È un'entità composita formatasi lungo mille anni di sincretismo religioso.</p><h4>📜 Storie</h4><p>Mark Twain scrisse "Lettere dalla Terra", in cui Satana visita la Terra e scrive lettere ironiche agli arcangeli, stupito dell'assurdità degli esseri umani. Dostoevskij nei "Fratelli Karamazov" lo fece comparire come un gentiluomo squallido che ammette candidamente di non credere nell'Inferno.</p>`},
-    {id:17,free:false,nome:'Marchosias',emoji:'🐺',grado:'Marchese dell\'Inferno — Il Guerriero',
-    html:`<h4>📖 Chi è</h4><p>Marchosias è il 35° demone della Lemegeton, Marchese dell'Inferno con 30 legioni al suo comando. Si manifesta come lupa con ali di grifone e coda di serpente, ma può assumere forma umana se richiesto dall'evocatore.</p><h4>🌟 Attributi</h4><p>Combattimento, lealtà insolita per un demone, risposta alle domande difficili. È considerato uno dei demoni "affidabili" della Lemegeton, nel senso che mantiene i patti senza ingannare chi lo evoca.</p><h4>🔮 Curiosità</h4><p>Marchosias è uno dei pochissimi demoni che si lamenta della propria condizione: secondo la Lemegeton spera ancora di tornare in Paradiso dopo 1.200 anni. I grimori lo presentano quasi con simpatia, come un soldato onorevole in una guerra sbagliata.</p><h4>📜 Storie</h4><p>Nella tradizione degli esorcismi medievali, Marchosias era considerato uno dei demoni più "trattabili". Confessava i peccati nascosti delle persone possedute e indicava i rimedi. Questo aspetto ambiguo — un demone che aiuta — ha affascinato i teologi per secoli.</p>`},
-    {id:18,free:false,nome:'Agares',emoji:'🐊',grado:'Duca dell\'Inferno — Maestro delle Lingue',
-    html:`<h4>📖 Chi è</h4><p>Agares è il secondo demone della Lemegeton, Duca dell'Inferno che governa 31 legioni. Si manifesta come un vecchio gentile che cavalca un coccodrillo e regge uno sparviero sul pugno. Insegna tutte le lingue del mondo e fa ballare i nemici.</p><h4>🌟 Attributi</h4><p>Lingue e idiomi, viaggio, terremoti, umiliazione dei nemici. Può fermare i fuggitivi, far avanzare i pusillanimi e recuperare i beni perduti. È un demone di grande utilità pratica.</p><h4>🔮 Curiosità</h4><p>L'immagine di un anziano su un coccodrillo con uno sparviero è curiosamente simile alle raffigurazioni egiziane di Sobek, il dio-coccodrillo. Molti studiosi vedono nei demoni della Lemegeton sopravvivenze di antiche divinità mediterranee e medio-orientali.</p><h4>📜 Storie</h4><p>Un grimorio del XVII secolo descrive come invocare Agares per imparare rapidamente una lingua straniera: il rito richiedeva 40 giorni di invocazioni all'alba, un vaso di terracotta con terra presa da tre incroci, e la promessa di non usare la nuova conoscenza a scopo di frode.</p>`},
-    {id:19,free:false,nome:'Baphomet',emoji:'🐏',grado:'L\'Idolo dei Templari — Il Capro Sabbatario',
-    html:`<h4>📖 Chi è</h4><p>Baphomet è un'entità enigmatica, accusata di essere l'idolo segreto dei Cavalieri Templari al processo del 1307. Il nome ha origini incerte — forse una corruzione di "Maometto" o dal greco "baphe metis" (battesimo di saggezza). La sua iconografia moderna è creazione di Eliphas Lévi nel 1856.</p><h4>🌟 Attributi</h4><p>Dualità, equilibrio tra opposti, conoscenza proibita, androginia sacra. Il Baphomet di Lévi unisce maschile e femminile, bestia e uomo, luce e oscurità — è un simbolo alchemico prima che demoniaco.</p><h4>🔮 Curiosità</h4><p>Storicamente, è molto probabile che i Templari non adorassero affatto Baphomet: le "confessioni" furono estorte sotto tortura da Filippo IV di Francia che voleva impossessarsi dei loro beni. La storia di Baphomet è anzitutto una storia di propaganda politica medievale.</p><h4>📜 Storie</h4><p>La statua moderna di Baphomet del Satanic Temple, installata in Oklahoma nel 2015 accanto ai Dieci Comandamenti, scatenò una tempesta legale e mediatica. Il Satanic Temple la usa come simbolo di separazione tra chiesa e stato, non di culto satanico.</p>`},
-    {id:20,free:false,nome:'Abaddon',emoji:'🌑',grado:'Angelo dell\'Abisso — Il Distruttore',
-    html:`<h4>📖 Chi è</h4><p>Abaddon appare nell'Apocalisse di Giovanni come "l'angelo del baratro senza fondo", re delle locuste infernali che tormentano l'umanità. Il nome ebraico significa "distruzione" o "abisso". In greco il suo nome è Apollyon, il Distruttore.</p><h4>🌟 Attributi</h4><p>Distruzione, caos escatologico, fine delle cose. È uno dei pochi esseri demoniaci direttamente menzionati nel Nuovo Testamento con nome e titolo. Governa le locuste con teste d'uomo e code di scorpione.</p><h4>🔮 Curiosità</h4><p>Nell'Antico Testamento Abaddon è semplicemente un luogo — il regno dei morti — non un essere. La sua personificazione avviene nell'Apocalisse. Questa evoluzione da "luogo" a "persona" è uno dei processi più affascinanti della mitologia religiosa.</p><h4>📜 Storie</h4><p>John Bunyan nel "Pellegrinaggio del Cristiano" (1678) lo rende uno dei più memorabili antagonisti della letteratura cristiana: un mostro alato che combatte con il protagonista nella Valle dell'Umiliazione, urlando "Ti ho vinto!" mentre il pellegrino cade, ma che viene sconfitto da una preghiera.</p>`},
-  ];
-
-  function checkPremium(){
-    if(typeof isPremium==='function') return isPremium();
-    try{return localStorage.getItem('MYSTICA_PREMIUM_ACTIVE')==='true';}catch(e){return false;}
+  try{
+  const p = JSON.parse(_lsGet(CFG.kProfilo)||'{}');
+  const angelDateEl = $('#angelDate');
+  if(angelDateEl){
+  const maxD=new Date(); maxD.setFullYear(maxD.getFullYear()-10);
+  angelDateEl.max = maxD.toISOString().split('T')[0];
+  angelDateEl.min = '1900-01-01';
+  if(p.date) angelDateEl.value = p.date;
   }
+  }catch(e){}
+}
 
-  function renderList(data,panelId,isDevil){
-    const panel=document.getElementById(panelId);
-    if(!panel) return;
-    const premium=checkPremium();
-    panel.innerHTML='';
-    data.forEach(item=>{
-      const locked=!item.free&&!premium;
-      const div=document.createElement('div');
-      div.className='angeli-card'+(isDevil?' diavoli-card':'')+(locked?' locked':'');
-      div.innerHTML=`<div class="angeli-card-header">
-        <span class="angeli-card-icon">${item.emoji}</span>
-        <div class="angeli-card-title">${item.nome}<br><small style="font-size:10px;color:var(--muted);font-family:Crimson Pro,serif;font-weight:normal">${item.grado}</small></div>
-        <span class="angeli-card-badge ${locked?'locked':''}">${item.free?'✨ Gratuito':(premium?'⭐ Premium':'🔒 Premium')}</span>
-      </div>
-      <div class="angeli-card-content" id="ac-${isDevil?'d':'a'}-${item.id}">${item.html}</div>`;
-      div.addEventListener('click',()=>{
-        if(locked){
-          if(typeof showPremiumModal==='function') showPremiumModal(()=>{renderList(data,panelId,isDevil);});
-          else if(typeof requirePremium==='function') requirePremium(()=>{});
-          return;
-        }
-        const content=document.getElementById(`ac-${isDevil?'d':'a'}-${item.id}`);
-        if(!content) return;
-        const isOpen=content.classList.contains('open');
-        document.querySelectorAll('.angeli-card-content.open').forEach(el=>el.classList.remove('open'));
-        if(!isOpen) content.classList.add('open');
-      });
-      panel.appendChild(div);
-    });
-  }
+function calcAngelo(){
+  const dateVal = $('#angelDate').value;
+  const timeVal = ($('#angelTime').value||'').trim();
+  if(!dateVal){ toast('⚠️ Inserisci la data di nascita'); return; }
 
-  window.MysticaAngeli={
-    apri:()=>{
-      const sec=document.getElementById('angeli-sezione');
-      sec.style.display='block';
-      sec.scrollTop=0;
-      renderList(ANGELI,'angeli-panel',false);
-      renderList(DIAVOLI,'diavoli-panel',true);
-    },
-    chiudi:()=>{document.getElementById('angeli-sezione').style.display='none';},
-    tab:(which)=>{
-      document.querySelectorAll('.angeli-tab').forEach(t=>t.classList.remove('active-angeli'));
-      document.querySelectorAll('.angeli-panel').forEach(p=>p.classList.remove('active'));
-      const idx=which==='angeli'?0:1;
-      document.querySelectorAll('.angeli-tab')[idx].classList.add('active-angeli');
-      document.getElementById(which+'-panel').classList.add('active');
-    }
-  };
-})();
+  const [yyyy,mm,dd] = dateVal.split('-').map(Number);
+  const [hh,min] = timeVal ? timeVal.split(':').map(Number) : [12,0];
+  const d = new Date(yyyy, mm-1, dd, hh||12, min||0, 0);
+  if(isNaN(d.getTime())){ toast('⚠️ Data non valida'); return; }
+
+  const giorno = d.getDate();
+  const mese = d.getMonth() + 1; // 1-12
+  const ora = d.getHours();
+
+  const giornoAnno = Math.floor((d - new Date(d.getFullYear(),0,0)) / (1000*60*60*24));
+
+  const fasciaOraria = Math.floor(ora/4); // 0-5
+  const idxBase = Math.floor(((giornoAnno - 1) / 365) * 72);
+
+  const aggiustamento = fasciaOraria % 3 === 0 ? 0 : (fasciaOraria % 3 === 1 ? 1 : -1);
+  const idx = Math.max(0, Math.min(71, idxBase + aggiustamento));
+
+  const angelo = DB_ANGELI[idx] || DB_ANGELI[0];
+  _showAngeloResult(angelo, dateVal, timeVal);
+}
+
+function _showAngeloResult(a, dateVal, timeVal){
+  $('#angeliForm').style.display='none';
+  const el = $('#angeliResult');
+
+  const [yyyy,mm,dd] = (dateVal||'2000-01-01').split('-').map(Number);
+  const dataFmt = new Date(yyyy, mm-1, dd).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});
+  const oraFmt = timeVal ? ` alle ore ${timeVal}` : '';
+
+  el.innerHTML = `
+  <div class="angel-res">
+  <div class="angel-symbol">${a.emoji}</div>
+  <div class="angel-name">${a.n}</div>
+  <div class="angel-realm">${a.trono} · Angelo n. ${a.num}</div>
+  <div class="angel-number">✦ Periodo: ${a.periodo} ✦</div>
+  <p class="t-muted" style="margin-bottom:14px;font-size:11px">
+  Nato/a il ${dataFmt}${oraFmt}
+  </p>
+  <div class="angel-block">
+  <h4>🌟 Dominio Spirituale</h4>
+  <p>${a.dominio}</p>
+  </div>
+  <div class="angel-block">
+  <h4>📜 La Tua Missione con ${a.n}</h4>
+  <p>${a.missione}</p>
+  </div>
+  <div class="angel-block">
+  <h4>🙏 Preghiera / Invocazione</h4>
+  <p style="font-style:italic;color:var(--muted)">"${a.preghiera}"</p>
+  </div>
+  <button class="btn btn-sec" onclick="resetAngeli()" style="margin-top:10px">🔄 Calcola di Nuovo</button>
+  </div>
+  `;
+  el.style.display = 'block';
+  burst();
+  saveHistory('Angelologia', a.n + ' — ' + a.trono);
+}
 
