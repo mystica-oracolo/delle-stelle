@@ -764,10 +764,10 @@ function runConsulente() {
 }
 
 
-// Esponi le funzioni su window per il lazy-loading tramite _loadChunk
-window.selectConsultTopic = selectConsultTopic;
-window.openConsulente = openConsulente;
-window._detectKeywords = _detectKeywords;
-window._detectSoggetto = _detectSoggetto;
-window._getRispostaKeyword = _getRispostaKeyword;
-window.runConsulente = runConsulente;
+// Esponi su window con nomi univoci per evitare conflitto con gli stub di core.js
+window._consulente_selectConsultTopic = selectConsultTopic;
+window._consulente_openConsulente = openConsulente;
+window._consulente_detectKeywords = _detectKeywords;
+window._consulente_detectSoggetto = _detectSoggetto;
+window._consulente_getRispostaKeyword = _getRispostaKeyword;
+window._consulente_runConsulente = runConsulente;
