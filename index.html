@@ -315,7 +315,10 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           <span id="wisdomDate" style="font-size:10px;color:var(--muted)"></span>
         </div>
         <p id="wisdomQ" style="font-style:italic;color:var(--muted);margin:10px 0;line-height:1.7"></p>
-        <p style="font-size:10px;color:#4a4262;text-align:center;margin-top:4px"><button class="btn btn-sec" style="font-size:11px;margin-bottom:10px" onclick="openShareModal('messaggio')">📲 Condividi</button><br>✦ L'oracolo parla una volta al giorno — torna domani ✦</p>
+        <div style="text-align:center;margin-top:8px">
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin-bottom:10px;padding:12px" onclick="hapticFeedback();openShareModal('messaggio')">📲 Condividi</button>
+          <div style="font-size:10px;color:#4a4262">✦ L'oracolo parla una volta al giorno — torna domani ✦</div>
+        </div>
       </div>
 
       <div class="card" id="cardMistico" style="display:none">
@@ -3340,6 +3343,9 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <div class="opt-btn-row">
       <button class="opt-action-btn" onclick="shareApp()">🔗 Condividi Mystica</button>
       <button class="opt-action-btn" onclick="mysticaInstall()">📲 Installa App</button>
+    </div>
+    <div class="opt-btn-row">
+      <button class="opt-action-btn" id="btnPushToggle" onclick="togglePushFromSettings()" style="width:100%">🔔 Attiva Notifiche Giornaliere</button>
     </div>
   </div>
   <h3 style="font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin:0 0 8px">⭐ Premium</h3>

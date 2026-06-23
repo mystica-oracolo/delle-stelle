@@ -108,3 +108,27 @@ self.addEventListener('message', event => {
     self.skipWaiting();
   }
 });
+
+// ── PUSH ─────────────────────────────────────────────────────
+self.addEventListener('push', event => {
+  let data = { title: '✨ MYSTICA', body: 'Il tuo messaggio delle stelle ti aspetta.', icon: './icon-192-v2.png', badge: './icon-192-v2.png', tag: 'mystica-daily' };
+  if (event.data) { try { data = { ...data, ...event.data.json() }; } catch(e) {} }
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body, icon: data.icon, badge: data.badge, tag: data.tag,
+      vibrate: [200, 100, 200], data: { url: './' }
+    })
+  );
+});
+
+// ── NOTIFICATION CLICK ───────────────────────────────────────
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  const targetUrl = (event.notification.data && event.notification.data.url) ? event.notification.data.url : './';
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+      for (const client of list) { if ('focus' in client) return client.focus(); }
+      return clients.openWindow(targetUrl);
+    })
+  );
+});
