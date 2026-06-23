@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v361';
+const CACHE_NAME = 'mystica-v362';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -97,7 +97,7 @@ self.addEventListener('activate', event => {
           .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       ))
-      .then(() => self.clients.claim()) // ← controlla subito tutte le tab aperte
+      // clients.claim() rimosso: causava freeze con AdGate aperto
   );
 });
 
