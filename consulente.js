@@ -557,8 +557,7 @@ function _getRispostaKeyword(temi, nome, soggetto) {
             "Non sei solo. Forze più grandi ti stanno guidando e sostenendo."
         ]
     }
-}
-;
+  };
 
   var tema = temi.length > 0 ? temi[0] : 'default';
   var poolGenerale = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].generale ? RISPOSTE_AI[tema].generale : RISPOSTE_AI['default'].generale;
