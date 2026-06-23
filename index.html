@@ -299,13 +299,6 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         </button>
       </div>
 
-      <!-- ═══ CONSULENTE MISTICO BUTTON ═══ -->
-      <button onclick="openConsulente()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;margin-bottom:14px;background:linear-gradient(135deg,#1e0e38,#0f0720);border:1.5px solid rgba(212,175,55,.55);border-radius:16px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;cursor:pointer;touch-action:manipulation;transition:all .25s ease;box-shadow:0 0 20px rgba(212,175,55,.1)">
-        <span style="font-size:22px;animation:logoGlow 4s infinite">🔮</span>
-        <span>Consulente Mistico</span>
-        <span style="font-size:10px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:2px 8px;margin-left:4px">NUOVO</span>
-      </button>
-
       <div class="card" id="cardEditProfilo" style="display:none">
         <h2>🔮 Il Tuo Profilo Mistico</h2>
         <p class="t-muted">Le stelle hanno bisogno di sapere chi sei per parlarti con precisione</p>
@@ -3176,27 +3169,6 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <div style="background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(184,134,11,.05));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:14px;margin-bottom:20px;font-style:italic;font-size:14px;color:var(--text);line-height:1.8" id="wowEnergy"></div>
     <button class="btn" onclick="enterApp()">✦ Entra nel Tempio delle Stelle ✦</button>
     <p style="font-size:10px;color:#3a2e50;margin-top:12px">Questo messaggio si rinnova ogni giorno all'alba</p>
-  </div>
-</div>
-
-<!-- ═══ CONSULENTE MISTICO MODAL ═══ -->
-<div class="modal" id="modalConsulente">
-  <div class="mbox" style="max-width:420px;position:relative">
-    <button onclick="document.getElementById('modalConsulente').classList.remove('open')" style="position:absolute;top:12px;right:14px;background:transparent;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;z-index:2">✕</button>
-    <div style="text-align:center;margin-bottom:16px">
-      <div style="font-size:40px;margin-bottom:8px;animation:logoGlow 4s infinite">🔮</div>
-      <h2 style="font-size:17px;margin-bottom:4px">Consulente Mistico</h2>
-      <div style="font-size:11px;color:var(--muted);letter-spacing:1px">Tarocchi · Astrologia · Numerologia · Energia</div>
-    </div>
-    <textarea id="consultInput" placeholder="Descrivi la tua situazione o fai la tua domanda all'universo..." style="height:90px;margin-bottom:12px"></textarea>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
-      <button class="consult-topic active" data-t="amore" onclick="selectConsultTopic(this)">💜 Amore</button>
-      <button class="consult-topic" data-t="lavoro" onclick="selectConsultTopic(this)">💼 Lavoro</button>
-      <button class="consult-topic" data-t="salute" onclick="selectConsultTopic(this)">🌿 Salute</button>
-      <button class="consult-topic" data-t="destino" onclick="selectConsultTopic(this)">⭐ Destino</button>
-    </div>
-    <button class="btn" onclick="runConsulente()" id="consultBtn">✨ Chiedi all'Universo</button>
-    <div id="consultResult" style="display:none;margin-top:16px"></div>
   </div>
 </div>
 

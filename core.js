@@ -3035,14 +3035,6 @@ function buildSynthesis(...args){ return _loadChunk('tarocchi').then(()=> window
 function resetTarot(...args){ return _loadChunk('tarocchi').then(()=> window.resetTarot.apply(window,args)); }
 function saveTarot(...args){ return _loadChunk('tarocchi').then(()=> window.saveTarot.apply(window,args)); }
 
-// chunk: consulente.js
-function selectConsultTopic(...args){ return _loadChunk('consulente').then(()=> window._consulente_selectConsultTopic.apply(window,args)); }
-function openConsulente(...args){ return _loadChunk('consulente').then(()=> window._consulente_openConsulente.apply(window,args)); }
-function _detectKeywords(...args){ return _loadChunk('consulente').then(()=> window._consulente_detectKeywords.apply(window,args)); }
-function _detectSoggetto(...args){ return _loadChunk('consulente').then(()=> window._consulente_detectSoggetto.apply(window,args)); }
-function _getRispostaKeyword(...args){ return _loadChunk('consulente').then(()=> window._consulente_getRispostaKeyword.apply(window,args)); }
-function runConsulente(...args){ return _loadChunk('consulente').then(()=> window._consulente_runConsulente.apply(window,args)); }
-
 // chunk: oracoli.js
 function initDelfiIcons(...args){ return _loadChunk('oracoli').then(()=> window.initDelfiIcons.apply(window,args)); }
 function resetDelfi(...args){ return _loadChunk('oracoli').then(()=> window.resetDelfi.apply(window,args)); }
