@@ -862,11 +862,14 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           <div id="tarotResult" style="display:none">
             <div class="divider"></div>
             <div id="tarotContent"></div>
+          </div>
 
-            <div class="btn-grp" style="margin-top:14px">
-              <button class="btn btn-sec" onclick="resetTarot()">🔄 Nuova Lettura</button>
-              <button class="btn" onclick="saveTarot()">💾 Salva</button>
-            </div>
+          <!-- Pulsante Condividi per Tarocchi -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('tarot')">📲 Condividi la Lettura</button>
+
+          <div class="btn-grp" style="margin-top:14px">
+            <button class="btn btn-sec" onclick="resetTarot()">🔄 Nuova Lettura</button>
+            <button class="btn" onclick="saveTarot()">💾 Salva</button>
           </div>
 
           <button class="btn btn-sec" style="margin-top:10px" onclick="resetTarot()">← Scegli Modalità</button>
@@ -925,6 +928,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           <div class="horosec"><h4>🌟 Oroscopo del Giorno</h4><p>Crea il tuo profilo con nome e data di nascita per ricevere l'oroscopo personalizzato giornaliero, settimanale e mensile per il tuo segno zodiacale. Le stelle guidano il tuo cammino ogni giorno.</p></div>
           <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">✏️ Crea il tuo Profilo Astrologico</button>
         </div>
+        <!-- Pulsante Condividi per Oroscopo Giorno -->
+        <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('oroscopo_giorno')">📲 Condividi l'Oroscopo</button>
         </div><!-- fine oroPannelloGiorno -->
 
         <!-- PANNELLO MESE -->
@@ -940,6 +945,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
 
           <!-- Risultato Mensile (nascosto finché non si sceglie il segno) -->
           <div id="oroMeseContent" style="display:none"></div>
+          <!-- Pulsante Condividi per Oroscopo Mese -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('oroscopo_mese')">📲 Condividi l'Oroscopo Mensile</button>
         </div>
 
       </div>
@@ -987,6 +994,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         <button class="btn" onclick="calcCompat()">💫 Calcola Affinità</button>
       </div>
       <div id="compatResult" style="display:none"></div>
+      <!-- Pulsante Condividi per Compatibilità -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('amore')">📲 Condividi la Compatibilità</button>
     </div>
 
 
@@ -1008,6 +1017,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
           <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:4px">✨ Crea il tuo Profilo Mistico</button>
         </div>
+        <!-- Pulsante Condividi per Profilo Mistico -->
+        <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('mistico')">📲 Condividi il Profilo Mistico</button>
       </div>
     </div>
 
@@ -1035,6 +1046,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           <div class="horosec"><h4>🏮 Zodiaco Cinese</h4><p>Lo zodiaco cinese si basa sull'anno di nascita e assegna uno dei 12 animali con il relativo elemento. Ogni animale porta qualità uniche: forza, intelligenza, creatività o diplomazia. Inserisci la tua data di nascita per scoprire il tuo animale.</p></div>
           <button class="btn btn-sec" onclick="hapticFeedback();nav('profilo')" style="margin-top:8px">🏮 Scopri il tuo Animale</button>
         </div>
+        <!-- Pulsante Condividi per Zodiaco Cinese -->
+        <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('zodcinese')">📲 Condividi il Tuo Zodiaco Cinese</button>
       </div>
     </div>
 
@@ -1099,6 +1112,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
               <span class="mi-icon"><img width="300" height="300" src="./images/icone/home/bibliomanzia.webp" style="width:44px;height:44px;object-fit:cover;border-radius:8px;" alt="Bibliomanzia oracolo dei libri"></span><div class="mi-label">Bibliomanzia &amp; Tasseomanzia</div>
             </div>
           </div>
+          <!-- Pulsante Condividi per la sezione Oracoli -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('oracoli')">📲 Condividi questa Sezione</button>
         </div>
       </div>
 
@@ -1171,6 +1186,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             </div>
           </div>
           <div id="totemResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Totem -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('totem')">📲 Condividi il Totem</button>
         </div>
       </div>
 
@@ -1196,6 +1213,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             <button class="btn" onclick="requirePremium(calcAngelo)" style="margin-top:13px">✨ Rivela il Mio Angelo</button>
           </div>
           <div id="angeliResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Angelologia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('angeli')">📲 Condividi l'Angelologia</button>
         </div>
       </div>
 
@@ -1249,6 +1268,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="geoResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Geomanzia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('geomanzia')">📲 Condividi la Geomanzia</button>
         </div>
       </div>
 
@@ -1306,6 +1327,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="numResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Numerologia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('numerologia')">📲 Condividi la Numerologia</button>
         </div>
       </div>
 
@@ -1341,6 +1364,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="oreResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Ore Specchio -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('orespeschio')">📲 Condividi le Ore Specchio</button>
         </div>
       </div>
 
@@ -1396,6 +1421,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
 
 
           <div id="delfiResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Oracolo di Delfi -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('delfi')">📲 Condividi l'Oracolo di Delfi</button>
         </div>
       </div>
 
@@ -1424,6 +1451,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="lunaResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Fasi Lunari -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('luna')">📲 Condividi le Fasi Lunari</button>
         </div>
       </div>
 
@@ -1451,6 +1480,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="planetiResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Transiti Planetari -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('pianeti')">📲 Condividi i Transiti Planetari</button>
         </div>
       </div>
 
@@ -1495,6 +1526,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="runeResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Rune -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('rune')">📲 Condividi le Rune</button>
         </div>
       </div>
 
@@ -1541,6 +1574,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="ichingResult" style="display:none"></div>
+          <!-- Pulsante Condividi per I Ching -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('iching')">📲 Condividi l'I Ching</button>
         </div>
       </div>
 
@@ -1606,6 +1641,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
               <div style="position:absolute;bottom:1%;left:0;right:0;padding:0 12px;display:flex;gap:8px">
                 <button onclick="resetLibro()" style="flex:1;padding:11px;background:rgba(10,5,20,0.88);border:1px solid rgba(212,175,55,0.6);color:var(--gold);border-radius:10px;font-family:'Cinzel',serif;font-size:12px;cursor:pointer;letter-spacing:0.5px">🔄 Nuova</button>
                 <button onclick="altraRisposta()" style="flex:1;padding:11px;background:linear-gradient(135deg,rgba(212,175,55,0.9),rgba(184,134,11,0.9));color:#0a0514;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.5px">📖 Altra Pagina</button>
+                <!-- Pulsante Condividi per Libro delle Risposte -->
+                <button onclick="hapticFeedback();openShareModal('libro')" style="flex:1;padding:11px;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);color:var(--gold);border-radius:10px;font-family:'Cinzel',serif;font-size:12px;cursor:pointer;letter-spacing:0.5px">📲 Condividi</button>
               </div>
             </div>
           </div>
@@ -1660,6 +1697,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="wiccaResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Wicca -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('wicca')">📲 Condividi la Wicca</button>
         </div>
       </div>
 
@@ -1698,6 +1737,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             <button class="btn btn-sec" onclick="alchRandom()" style="margin-top:6px">✨ Lascia che il Laboratorio scelga</button>
           </div>
           <div id="alchResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Alchimia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('alchimia')">📲 Condividi l'Alchimia</button>
         </div>
       </div>
 
@@ -1733,6 +1774,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             <button class="btn btn-sec" onclick="kabRandom()" style="margin-top:6px">✨ Lascia che l'Albero scelga</button>
           </div>
           <div id="cabalaResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Cabala -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('cabala')">📲 Condividi la Cabala</button>
         </div>
       </div>
 
@@ -1765,6 +1808,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             <button class="btn btn-sec" onclick="herRandom()" style="margin-top:6px">✨ Lascia che la Tavola scelga</button>
           </div>
           <div id="hermetResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Ermetismo -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('ermetismo')">📲 Condividi l'Ermetismo</button>
         </div>
       </div>
 
@@ -1803,6 +1848,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
             <button class="btn btn-sec" onclick="necroRandom()" style="margin-top:6px">✨ Lascia che l'Ombra scelga</button>
           </div>
           <div id="necroResult" style="display:none"></div>
+          <!-- Pulsante Condividi per Negromanzia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('negromanzia')">📲 Condividi la Negromanzia</button>
         </div>
       </div>
 
@@ -1840,6 +1887,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
 
           <div id="biblioResult" style="display:none;margin-top:16px"></div>
+          <!-- Pulsante Condividi per Bibliomanzia -->
+          <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('bibliomanzia')">📲 Condividi la Bibliomanzia</button>
         </div>
       </div>
 
@@ -2211,7 +2260,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
       <!-- ═══ FINE ENCICLOPEDIA PENTACOLI ═══ -->
       </div><!-- fine magiaPanel-sigilli -->
-
+      <!-- Pulsante Condividi per la sezione Magia -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('magia')">📲 Condividi questa Sezione</button>
     </div>
 
 
@@ -2404,6 +2454,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         </div>
 
       </div>
+      <!-- Pulsante Condividi per Viaggio Astrale -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('astrale')">📲 Condividi il Viaggio Astrale</button>
     </div>
 
     <div id="view-archivio" class="view">
@@ -2411,6 +2463,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         <h2>📜 Le Tue Letture</h2>
         <p class="t-muted">Il tuo diario mistico personale</p>
         <div id="archList"></div>
+        <!-- Pulsante Condividi per Archivio -->
+        <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('archivio')">📲 Condividi l'Archivio</button>
         <button class="btn btn-sec" id="archClearBtn" onclick="clearArch()" style="display:none;margin-top:10px">🗑️ Svuota Archivio</button>
       </div>
     </div>
@@ -2517,6 +2571,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         <button class="btn" style="margin-top:10px" onclick="engCristalli()">💎 Rivela la Tua Pietra</button>
         <div class="eng-result" id="eng-r-cristalli"></div>
       </div>
+      <!-- Pulsante Condividi per Energia -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('energia')">📲 Condividi questa Sezione</button>
     </div>
 
 
@@ -2631,7 +2687,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
         <button class="btn" style="margin-top:10px" onclick="engElementi()">☯️ Esplora l'Elemento</button>
         <div class="eng-result" id="eng-r-elementi"></div>
       </div>
-
+      <!-- Pulsante Condividi per Spazio -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('spazio')">📲 Condividi questa Sezione</button>
     </div>
 
 
@@ -2729,6 +2786,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
           </div>
         </div>
       </div>
+      <!-- Pulsante Condividi per Strumenti -->
+      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('strumenti')">📲 Condividi questa Sezione</button>
     </div>
 
   </div>
@@ -3354,6 +3413,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       <button class="opt-action-btn" onclick="showPremiumModal(null)" style="border-color:var(--gold)">⭐ Sblocca Premium — 3,99€</button>
     </div>
   </div>
+  <!-- Pulsante Condividi per Opzioni -->
+  <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('opzioni')">📲 Condividi questa Sezione</button>
 </div>
 </div>
 
@@ -3364,6 +3425,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:18px;margin-bottom:10px">Diventa una Strega</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:18px">Il percorso iniziatico completo — dalla prima intenzione ai riti avanzati</p>
     <a href="https://mysticaoracoli.it/strega.html" class="btn" style="display:inline-block;text-decoration:none" title="Guida completa alla Stregoneria">🌿 Apri la Guida Completa</a>
+    <!-- Pulsante Condividi per Diventa una Strega -->
+    <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('strega')">📲 Condividi questa Guida</button>
   </div>
 </div>
 
@@ -3374,6 +3437,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:18px;margin-bottom:10px">Tavola Ouija</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:18px">Storia, utilizzo corretto e regole di sicurezza</p>
     <a href="https://mysticaoracoli.it/ouija.html" class="btn" style="display:inline-block;text-decoration:none" title="Guida completa alla Tavola Ouija">👁️ Apri la Guida Completa</a>
+    <!-- Pulsante Condividi per Tavola Ouija -->
+    <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('ouija')">📲 Condividi questa Guida</button>
   </div>
 </div>
 
@@ -3384,6 +3449,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:18px;margin-bottom:10px">Le Figure del Mistico</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:18px">Streghe, maghi, veggenti e sensitivi — chi sono davvero</p>
     <a href="https://mysticaoracoli.it/pratiche.html" class="btn" style="display:inline-block;text-decoration:none" title="Pratiche esoteriche avanzate">🔮 Apri la Guida Completa</a>
+    <!-- Pulsante Condividi per Figure del Mistico -->
+    <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('pratiche')">📲 Condividi questa Guida</button>
   </div>
 </div>
 
@@ -3394,6 +3461,8 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:18px;margin-bottom:10px">Enciclopedia Esoterica</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:18px">Guide complete su Tarocchi, Rune, I Ching, Astrologia, Cabala, Alchimia e molto altro</p>
     <a href="https://mysticaoracoli.it/enciclopedia.html" class="btn" style="display:inline-block;text-decoration:none" title="Enciclopedia Esoterica MYSTICA">📚 Apri l'Enciclopedia</a>
+    <!-- Pulsante Condividi per Enciclopedia -->
+    <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('blog')">📲 Condividi l'Enciclopedia</button>
   </div>
 </div>
 
@@ -3401,6 +3470,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
 
 
 <!-- commenti.js rimosso: Firebase solo in community.html -->
+
 
 <script>
 // ═══ AUDIO SOTTOFONDO ═══
