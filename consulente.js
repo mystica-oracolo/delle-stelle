@@ -1,3 +1,7 @@
+// consulente.js — lazy chunk
+// Tutte le funzioni sono locali all'IIFE, nessuna dipende da stub globali
+(function(){
+
 var _consultTopicActive = 'destino';
 
 function selectConsultTopic(btn) {
@@ -764,10 +768,12 @@ function runConsulente() {
 }
 
 
-// Esponi su window con nomi univoci per evitare conflitto con gli stub di core.js
+// Esponi su window con nomi univoci — le stub di core.js puntano a questi
 window._consulente_selectConsultTopic = selectConsultTopic;
 window._consulente_openConsulente = openConsulente;
 window._consulente_detectKeywords = _detectKeywords;
 window._consulente_detectSoggetto = _detectSoggetto;
 window._consulente_getRispostaKeyword = _getRispostaKeyword;
 window._consulente_runConsulente = runConsulente;
+
+})(); // fine IIFE
