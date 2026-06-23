@@ -918,7 +918,21 @@ function _switchView(v){
   if(v==='zodiaco') showZodiaco();
   if(v==='amore') initCompatSelects();
   if(v==='archivio') showArchivio();
-  if(v==='magia') initMagia();
+  if(v==='magia'){
+    // initMagia è asincrona (carica rituali.js lazy). navMagia la gestisce già
+    // correttamente con Promise. _switchView la chiama solo come fallback
+    // (es. navigazione da history/backbutton). In quel caso aspettiamo la Promise.
+    const _p = (typeof initMagia === 'function') ? initMagia() : Promise.resolve();
+    Promise.resolve(_p).then(() => {
+      const activePanel = document.querySelector('.magia-panel.active');
+      if(!activePanel){
+        const first = document.getElementById('magiaPanel-bianca');
+        if(first) first.classList.add('active');
+        const firstTab = document.querySelector('.magia-tab[data-panel="bianca"]');
+        if(firstTab){ document.querySelectorAll('.magia-tab').forEach(t=>t.classList.remove('active')); firstTab.classList.add('active'); }
+      }
+    });
+  }
   if(v==='astrale') initAstrale();
   if(v==='mistico') showProfiloMistico();
   if(v==='zodcinese') showZodCinese();
