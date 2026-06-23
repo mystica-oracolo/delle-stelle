@@ -763,3 +763,11 @@ function runConsulente() {
   }, 1400);
 }
 
+
+// Esponi le funzioni su window per il lazy-loading tramite _loadChunk
+window.selectConsultTopic = selectConsultTopic;
+window.openConsulente = openConsulente;
+window._detectKeywords = _detectKeywords;
+window._detectSoggetto = _detectSoggetto;
+window._getRispostaKeyword = _getRispostaKeyword;
+window.runConsulente = runConsulente;
