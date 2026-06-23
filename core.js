@@ -961,7 +961,7 @@ const LABELS={
   ouija:'Tavola Ouija',
   pratiche:'Figure del Mistico'
 };
-const AD_SECTIONS=new Set(['tarot','oroscopo','zodiaco','amore','oracoli','magia','mistico','zodcinese','energia','sogni','spazio','strumenti']);
+const AD_SECTIONS=new Set(['tarot','oroscopo','zodiaco','amore','oracoli','magia','mistico','zodcinese','energia','sogni','spazio','strumenti','blog','commenti','strega','ouija','pratiche']);
 
 const _adSeen = new Set(
   (()=>{ try{ return JSON.parse(sessionStorage.getItem('myst_adSeen')||'[]'); }catch(e){ return []; } })()
