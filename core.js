@@ -1929,33 +1929,7 @@ function setNavTop(){
   },{passive:true});
 })();
 
-function filterAppContent(query) {
-  query = query.toLowerCase().trim();
-  const cards = document.querySelectorAll('.dash-card');
-  cards.forEach(card => {
-  const text = card.innerText.toLowerCase();
-  if (text.includes(query)) {
-  card.style.display = 'flex';
-  card.style.opacity = '1';
-  } else {
-  card.style.display = 'none';
-  card.style.opacity = '0';
-  }
-  });
 
-  document.querySelectorAll('.dash-title').forEach(title => {
-  let next = title.nextElementSibling;
-  let hasVisible = false;
-  while (next && next.classList.contains('dash-grid')) {
-  if (next.querySelector('.dash-card[style*="display: flex"]')) {
-  hasVisible = true;
-  break;
-  }
-  next = next.nextElementSibling;
-  }
-  title.style.display = (hasVisible || query === '') ? 'block' : 'none';
-  });
-}
 
 const DB_AFFIRMAZIONI = [
   "La mia intuizione è una bussola infallibile.",
@@ -2598,27 +2572,92 @@ function showLegal(tipo){
   if(modal) modal.classList.add('open');
 }
 
-function shareApp(){
-  const url = window.location.href.split('#')[0];
-  const shareData = {
-  title: 'MYSTICA — Oracolo delle Stelle',
-  text: '🔮 Ho scoperto MYSTICA, un\'app mistica con tarocchi, oroscopo, rune e rituali. Prova anche tu!',
-  url: url
-  };
-  try{
-  if(navigator.share){
-  navigator.share(shareData).catch(()=>{});
-  } else if(navigator.clipboard){
-  navigator.clipboard.writeText(url).then(()=>{
-  if(typeof toast === 'function') toast('🔗 Link copiato negli appunti');
-  });
-  } else {
+/* ── Share System ────────────────────────────────────────────── */
+let _shareData = {};
 
-  prompt('Copia questo link e condividilo:', url);
+function openShareModal(type){
+  const url = window.location.href.split('#')[0];
+  if(type === 'messaggio'){
+    const msg = document.getElementById('wisdomQ');
+    const text = msg ? msg.textContent.trim() : '';
+    const preview = document.getElementById('shareModalPreview');
+    const title = document.getElementById('shareModalTitle');
+    if(title) title.textContent = 'Condividi il Messaggio';
+    if(preview) preview.textContent = text ? '"' + text + '"' : '';
+    _shareData = {
+      text: '✨ Il messaggio delle stelle di oggi:\n\n"' + text + '"\n\n🔮 Scopri il tuo oracolo su MYSTICA',
+      url: url,
+      title: 'Messaggio delle Stelle — MYSTICA'
+    };
+  } else {
+    const preview = document.getElementById('shareModalPreview');
+    const title = document.getElementById('shareModalTitle');
+    if(title) title.textContent = 'Condividi MYSTICA';
+    if(preview) preview.textContent = 'Tarocchi · Oroscopo · Rune · Rituali e molto altro';
+    _shareData = {
+      text: '🔮 Ho scoperto MYSTICA, l\'oracolo delle stelle! Tarocchi, oroscopo, rune e rituali. Prova anche tu ✨',
+      url: url,
+      title: 'MYSTICA — Oracolo delle Stelle'
+    };
   }
-  }catch(e){
-  if(typeof toast === 'function') toast('Errore nella condivisione');
+  document.getElementById('modalShare').classList.add('open');
+}
+
+function doShare(platform){
+  const url = encodeURIComponent(_shareData.url || window.location.href.split('#')[0]);
+  const text = encodeURIComponent(_shareData.text || '');
+  const rawUrl = _shareData.url || window.location.href.split('#')[0];
+  const rawText = _shareData.text || '';
+
+  switch(platform){
+    case 'whatsapp':
+      window.open('https://wa.me/?text=' + text + '%20' + url, '_blank');
+      break;
+    case 'telegram':
+      window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+      break;
+    case 'facebook':
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+      break;
+    case 'twitter':
+      window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
+      break;
+    case 'instagram':
+      // Instagram non ha API di condivisione web diretta; copia il testo
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(rawText + '\n' + rawUrl).then(()=>{
+          if(typeof toast === 'function') toast('📋 Testo copiato! Aprì Instagram e incollalo');
+          document.getElementById('modalShare').classList.remove('open');
+        });
+      }
+      return;
+    case 'copy':
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(rawUrl).then(()=>{
+          if(typeof toast === 'function') toast('🔗 Link copiato negli appunti');
+          document.getElementById('modalShare').classList.remove('open');
+        });
+      } else {
+        prompt('Copia questo link:', rawUrl);
+      }
+      return;
+    case 'native':
+      if(navigator.share){
+        navigator.share({ title: _shareData.title, text: rawText, url: rawUrl }).catch(()=>{});
+      } else if(navigator.clipboard){
+        navigator.clipboard.writeText(rawUrl).then(()=>{
+          if(typeof toast === 'function') toast('🔗 Link copiato');
+        });
+      }
+      return;
+    default:
+      return;
   }
+  document.getElementById('modalShare').classList.remove('open');
+}
+
+function shareApp(){
+  openShareModal('app');
 }
 
 /* ── trackAppUse ─────────────────────────────────────────────── */
