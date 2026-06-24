@@ -40,6 +40,7 @@ const URLS_TO_CACHE = [
   './strega.html',
   './termini.html',
   './tradizioni-spirituali.html',
+  './malocchio.html',
   './zi-wei-dou-shu.html',
   // Icone home — nuove immagini aggiunte
   './images/icone/home/astrologia-avanzata.webp',
