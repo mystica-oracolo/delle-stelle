@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v366';
+const CACHE_NAME = 'mystica-v367';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -41,6 +41,18 @@ const URLS_TO_CACHE = [
   './termini.html',
   './tradizioni-spirituali.html',
   './malocchio.html',
+  './magia-bianca.html',
+  './magia-rossa.html',
+  './magia-nera.html',
+  './sigilli-salomone.html',
+  './libro-delle-risposte.html',
+  './viaggio-astrale.html',
+  './stregoneria-wicca.html',
+  './alchimia.html',
+  './cabala.html',
+  './ermetismo.html',
+  './negromanzia.html',
+  './bibliomanzia-tasseomanzia.html',
   './zi-wei-dou-shu.html',
   // Icone home — nuove immagini aggiunte
   './images/icone/home/astrologia-avanzata.webp',
@@ -71,10 +83,9 @@ const URLS_TO_CACHE = [
   './pianeti.js',
   './rune.js',
   './iching.js',
-  './rituali.js',
   './extra.js',
   './commenti.js',
-  './consulente.js'
+  './consulente.js',
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
