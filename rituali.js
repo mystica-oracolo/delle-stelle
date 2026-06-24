@@ -143,12 +143,7 @@ const DB_MAGIA = {
 let _magiaInited = false;
 
 function initMagia(){
-  // Se già inited E i container sono già popolati, esci subito
-  if(_magiaInited){
-    const check = document.getElementById('magiaList-bianca');
-    if(check && check.innerHTML.trim()) return Promise.resolve();
-    _magiaInited = false;
-  }
+  if(_magiaInited) return Promise.resolve();
   _magiaInited = true;
 
   ['bianca','rossa','nera','malocchio'].forEach(tipo => {
