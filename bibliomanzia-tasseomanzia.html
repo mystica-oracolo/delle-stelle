@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 Bibliomanzia & Tasseomanzia — MYSTICA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0b14;
+    --bg2: #1a1726;
+    --bg3: #09040f;
+    --gold: #d4af37;
+    --gold-dim: rgba(212,175,55,0.35);
+    --gold-glow: rgba(212,175,55,0.15);
+    --purple: #9d4edd;
+    --purple-dim: rgba(157,78,221,0.25);
+    --text: #e6e0f0;
+    --muted: #a89bc2;
+    --teal: #3da88e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── STARS BG ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(212,175,55,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(157,78,221,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 15%, rgba(212,175,55,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 45%, rgba(157,78,221,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 80%, rgba(212,175,55,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 20% 85%, rgba(157,78,221,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 70%, rgba(212,175,55,0.25) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,11,20,0.97);
+    border-bottom: 1px solid var(--gold-dim);
+    backdrop-filter: blur(10px);
+    padding: 14px 20px;
+    text-align: center;
+  }
+  .back-btn {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(157,78,221,0.15);
+    border: 1px solid var(--purple);
+    color: #c79eff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .back-btn:hover { background: rgba(157,78,221,0.3); }
+  .header-emoji { font-size: 28px; display: block; margin-bottom: 4px; }
+  .header-title {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--gold), #e8d5a3, var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+  }
+  .header-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-top: 2px;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 100px;
+  }
+
+  /* ── STORIA SECTION ── */
+  .storia-section {
+    margin-bottom: 28px;
+  }
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: linear-gradient(135deg, #1a0a3e 0%, #0d0b14 50%, #1a1000 100%);
+    border: 1px solid var(--gold-dim);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    overflow: hidden;
+    position: relative;
+  }
+  .img-placeholder .img-icon { font-size: 52px; filter: drop-shadow(0 0 18px rgba(212,175,55,0.5)); }
+  .img-placeholder .img-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: var(--gold-dim);
+    letter-spacing: 3px;
+    margin-top: 8px;
+  }
+  .img-placeholder img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    opacity: 0.85;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-dim);
+  }
+  .storia-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #d1c9e8;
+    margin-bottom: 14px;
+  }
+  .storia-text em { color: var(--gold); font-style: italic; }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    background: rgba(212,175,55,0.06);
+    border: 1px solid var(--gold-dim);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .info-box h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .info-box p, .info-box li {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #cfc6e8;
+  }
+  .info-box ul { padding-left: 18px; }
+  .info-box li { margin-bottom: 5px; }
+
+  .purple-box {
+    background: rgba(157,78,221,0.08);
+    border: 1px solid rgba(157,78,221,0.3);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .purple-box h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: #c79eff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .purple-box p { font-size: 14px; line-height: 1.75; color: #cfc6e8; }
+
+  /* ── PERSONAGGI ── */
+  .personaggi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .personaggio-card {
+    background: rgba(26,23,38,0.9);
+    border: 1px solid var(--gold-dim);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .personaggio-card .p-emoji { font-size: 28px; margin-bottom: 6px; }
+  .personaggio-card .p-name {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .personaggio-card .p-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* ── DIVISORE ── */
+  .divider {
+    text-align: center;
+    color: var(--gold-dim);
+    letter-spacing: 6px;
+    font-size: 12px;
+    margin: 24px 0;
+  }
+
+  /* ── TAB SWITCHER ── */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    background: rgba(9,4,15,0.8);
+    border: 1px solid var(--gold-dim);
+    border-radius: 14px;
+    padding: 6px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 10px 8px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.25s;
+    letter-spacing: 0.5px;
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(157,78,221,0.15));
+    color: var(--gold);
+    border: 1px solid var(--gold-dim);
+  }
+
+  /* ── ORACLE CARD ── */
+  .oracle-card {
+    background: rgba(212,175,55,0.06);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 16px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  .oracle-card.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .oracle-book-icon { font-size: 42px; margin-bottom: 12px; display: block; }
+  .oracle-source {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .oracle-text {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .oracle-divider {
+    color: var(--gold-dim);
+    letter-spacing: 8px;
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  /* ── TASSEO ── */
+  .tasseo-primary {
+    background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 14px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  .tasseo-primary.visible { display: block; }
+  .tasseo-symbol { font-size: 54px; margin-bottom: 10px; display: block; }
+  .tasseo-name {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .tasseo-meaning { font-size: 15px; line-height: 1.75; color: var(--text); }
+
+  .tasseo-secondary {
+    background: rgba(157,78,221,0.07);
+    border: 1px solid rgba(157,78,221,0.25);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.6s ease;
+  }
+  .tasseo-secondary.visible { display: block; }
+  .sec-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+  }
+  .sec-symbol { font-size: 32px; margin-bottom: 6px; }
+  .sec-name {
+    font-family: 'Cinzel', serif;
+    color: #c79eff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .sec-meaning { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  /* ── DOMANDA INPUT ── */
+  .domanda-wrap {
+    margin-bottom: 16px;
+  }
+  .domanda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .domanda-input {
+    width: 100%;
+    background: rgba(9,4,15,0.8);
+    border: 1px solid var(--gold-dim);
+    border-radius: 12px;
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    padding: 12px 16px;
+    outline: none;
+    resize: none;
+    min-height: 70px;
+    transition: border-color 0.2s;
+  }
+  .domanda-input:focus { border-color: var(--gold); }
+  .domanda-input::placeholder { color: rgba(168,155,194,0.5); }
+
+  /* ── ISTRUZIONI BOX ── */
+  .istr-box {
+    background: rgba(61,168,142,0.08);
+    border: 1px solid rgba(61,168,142,0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #b3e0d8;
+  }
+  .istr-box strong { color: #3da88e; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; }
+
+  /* ── BUTTON ── */
+  .btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(157,78,221,0.15));
+    border: 1px solid var(--gold-dim);
+    border-radius: 14px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-bottom: 10px;
+  }
+  .btn:hover {
+    background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(157,78,221,0.25));
+    box-shadow: 0 4px 20px rgba(212,175,55,0.25);
+  }
+  .btn-sec {
+    background: rgba(9,4,15,0.8);
+    border: 1px solid rgba(157,78,221,0.3);
+    color: #c79eff;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+  }
+  .btn-sec:hover { background: rgba(157,78,221,0.1); }
+
+  /* ── LIBRI DB ── */
+  .libri-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .libro-card {
+    background: rgba(26,23,38,0.7);
+    border: 1px solid var(--gold-dim);
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .libro-card .l-icon { font-size: 22px; margin-bottom: 4px; }
+  .libro-card .l-name {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── SIMBOLI GRID ── */
+  .simboli-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .simbolo-card {
+    background: rgba(26,23,38,0.7);
+    border: 1px solid var(--gold-dim);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+  .simbolo-card .s-icon { font-size: 24px; margin-bottom: 4px; }
+  .simbolo-card .s-name {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: rgba(26,23,38,0.97);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── LEGENDE ── */
+  .legenda-card {
+    background: linear-gradient(135deg, rgba(26,23,38,0.95) 0%, rgba(15,10,30,0.95) 100%);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-left: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .legenda-card .leg-title {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .legenda-card p { font-size: 14px; line-height: 1.78; color: #cfc6e8; }
+
+  /* ── MODO D'USO ── */
+  .uso-steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .uso-steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #d1c9e8;
+  }
+  .uso-steps li::before {
+    content: counter(step);
+    min-width: 26px;
+    height: 26px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-dim);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <a class="back-btn" onclick="history.back()">← Indietro</a>
+  <span class="header-emoji">📚</span>
+  <div class="header-title">Bibliomanzia & Tasseomanzia</div>
+  <div class="header-sub">ARTE DIVINATORIA • MYSTICA</div>
+</header>
+
+<main class="main">
+
+  <!-- ══════════════════════════════════════════════
+       PARTE I — BIBLIOMANZIA
+  ══════════════════════════════════════════════ -->
+
+  <div class="storia-section">
+    <div class="section-title">📖 BIBLIOMANZIA</div>
+
+    <!-- IMMAGINE SEZIONE -->
+    <div class="img-placeholder">
+      <span class="img-icon">📖</span>
+      <span class="img-label">IMMAGINE · BIBLIOMANZIA</span>
+    </div>
+
+    <p class="storia-text">
+      La <em>Bibliomanzia</em> (dal greco <em>biblion</em>, libro, e <em>manteia</em>, divinazione) è l'arte antichissima di
+      trarre responsi aprendo a caso un testo sacro o sapienziale. Il libro diventa specchio dell'anima e portale
+      verso la voce del destino: la pagina che si rivela non è casuale — è la risposta che l'universo ha preparato per te.
+    </p>
+    <p class="storia-text">
+      Le prime testimonianze risalgono all'antica Grecia, dove si aprivano a caso le opere di Omero (<em>Rapsodomanzia</em>).
+      I Romani usavano Virgilio (<em>Sortes Virgilianae</em>). Nel Medioevo cristiano si consultava la Bibbia —
+      pratica diffusissima sia tra i fedeli semplici sia tra re e imperatori che prendevano decisioni militari
+      aprendo il testo sacro con gli occhi chiusi.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h4>⏳ STORIA E ORIGINI</h4>
+    <ul>
+      <li><strong>Antichità greca:</strong> La <em>Rapsodomanzia</em> usava Omero (Iliade, Odissea) come oracolo vivente.</li>
+      <li><strong>Roma antica:</strong> Le <em>Sortes Virgilianae</em> — si apriva l'Eneide per ricevere presagi, pratica che durerà per secoli.</li>
+      <li><strong>Tradizione islamica:</strong> Le <em>Sortes Coranicae</em> — apertura del Corano con preghiera, ancora in uso oggi in molte comunità.</li>
+      <li><strong>Ebraismo:</strong> Consultazione casuale della Torah o dei Salmi in momenti di crisi spirituale.</li>
+      <li><strong>Induismo:</strong> Apertura delle Upanishad o del Bhagavad Gita come oracolo del dharma personale.</li>
+    </ul>
+  </div>
+
+  <!-- IMG STORIA -->
+  <div class="img-placeholder" style="aspect-ratio:16/6; margin-bottom:18px;">
+    <span class="img-icon">🏛️</span>
+    <span class="img-label">IMMAGINE · SORTES VIRGILIANAE — ROMA ANTICA</span>
+  </div>
+
+  <div class="section-title">📜 LIBRI SACRI USATI</div>
+  <p class="storia-text">
+    Non esiste un unico testo "corretto" per la Bibliomanzia. La tradizione accetta qualsiasi libro considerato sacro
+    o portatore di saggezza profonda dall'oracolo e da chi consulta. I più usati nella storia:
+  </p>
+
+  <div class="libri-grid">
+    <div class="libro-card"><div class="l-icon">✝️</div><div class="l-name">Bibbia</div></div>
+    <div class="libro-card"><div class="l-icon">☪️</div><div class="l-name">Corano</div></div>
+    <div class="libro-card"><div class="l-icon">☸️</div><div class="l-name">Tao Tê Ching</div></div>
+    <div class="libro-card"><div class="l-icon">🕉️</div><div class="l-name">Bhagavad Gita</div></div>
+    <div class="libro-card"><div class="l-icon">⚡</div><div class="l-name">I Ching</div></div>
+    <div class="libro-card"><div class="l-icon">📜</div><div class="l-name">Corpus Hermeticum</div></div>
+    <div class="libro-card"><div class="l-icon">🌿</div><div class="l-name">Upanishad</div></div>
+    <div class="libro-card"><div class="l-icon">🎭</div><div class="l-name">Omero / Virgilio</div></div>
+  </div>
+
+  <div class="section-title">👤 PERSONAGGI CELEBRI</div>
+
+  <div class="personaggi-grid">
+    <div class="personaggio-card">
+      <div class="p-emoji">👑</div>
+      <div class="p-name">Carlo Magno</div>
+      <div class="p-desc">Prima di ogni campagna militare, consultava le Sortes Virgilianae per avere un presagio dalla fortuna.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">✝️</div>
+      <div class="p-name">Sant'Agostino</div>
+      <div class="p-desc">Descrive nelle Confessioni come un passo casuale di Paolo lo scosse così profondamente da cambiargli la vita.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">⚔️</div>
+      <div class="p-name">Giuliano l'Apostata</div>
+      <div class="p-desc">L'imperatore romano consultava Omero come oracolo prima di ogni spedizione militare.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">📖</div>
+      <div class="p-name">Rabelais</div>
+      <div class="p-desc">Nel Gargantua e Pantagruele dedica interi capitoli satirici alla Sortes Virgilianae, segno della sua diffusione popolare.</div>
+    </div>
+  </div>
+
+  <div class="section-title">🌙 LEGGENDE</div>
+
+  <div class="legenda-card">
+    <div class="leg-title">📖 La Leggenda di Virgilio Mago</div>
+    <p>Nel Medioevo, Virgilio non era solo il grande poeta latino — era considerato un mago e profeta. Si credeva che nell'Eneide avesse nascosto profezie codificate sul destino di Roma e sui secoli a venire. Consultare il testo a caso equivaleva a interrogare direttamente lo spirito del poeta, ritenuto capace di dialogare con le forze del destino anche dall'oltretomba.</p>
+  </div>
+
+  <div class="legenda-card">
+    <div class="leg-title">☪️ Il Libro che Risponde da Solo</div>
+    <p>Nella tradizione islamica esiste una leggenda sufi secondo cui il Corano, aperto con cuore puro in stato di preghiera, non restituisce mai il passo "sbagliato". Il testo stesso saprebbe riconoscere la sincerità del cercatore e offrire la parola di cui ha bisogno. Questa credenza sopravvive intatta in molte comunità devote del Medio Oriente e dell'Asia centrale.</p>
+  </div>
+
+  <div class="legenda-card">
+    <div class="leg-title">🌿 Il Tao che Parla</div>
+    <p>Nella Cina taoista, il Tao Tê Ching era considerato un essere vivente — non un testo inerte ma un'entità sapienziale che "sceglieva" quale verso rivelare al cercatore. I monaci taoisti lo aprivano dopo un lungo periodo di meditazione immobile, credendo che la mente svuotata permettesse alla mano di muoversi guidata direttamente dal Tao stesso.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ORACOLO BIBLIOMANZIA
+  ══════════════════════════════════════════════ -->
+
+  <div class="divider">✦ ✦ ✦</div>
+  <div class="section-title">🔮 CONSULTA L'ORACOLO</div>
+
+  <div class="tabs">
+    <button class="tab-btn active" id="tab0" onclick="selMode(0)">📖 Bibliomanzia</button>
+    <button class="tab-btn" id="tab1" onclick="selMode(1)">☕ Tasseomanzia</button>
+  </div>
+
+  <!-- BIBLIO FORM -->
+  <div id="biblioForm">
+    <div id="biblioDesc" class="istr-box">
+      <strong>📖 COME FUNZIONA</strong><br>
+      La <strong>Bibliomanzia</strong> consiste nell'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall'universo. Tieni la tua domanda nel cuore, chiudi gli occhi, e premi il pulsante.
+    </div>
+
+    <div class="domanda-wrap">
+      <label class="domanda-label">LA TUA DOMANDA (opzionale)</label>
+      <textarea class="domanda-input" id="domandaInput" placeholder="Scrivi la tua domanda, o lascia vuoto per ricevere il messaggio del giorno…"></textarea>
+    </div>
+
+    <button class="btn" onclick="consulta()">✨ Apri il Libro Sacro</button>
+  </div>
+
+  <!-- BIBLIO RESULT -->
+  <div class="oracle-card" id="oracleResult">
+    <span class="oracle-book-icon" id="oracleIcon">📖</span>
+    <span class="oracle-source" id="oracleSource"></span>
+    <p class="oracle-text" id="oracleText"></p>
+    <div class="oracle-divider">✦ ✦ ✦</div>
+    <button class="btn-sec" onclick="reset()">🔄 Nuova Pagina</button>
+  </div>
+
+  <!-- TASSEO RESULT -->
+  <div class="tasseo-primary" id="tasseoResult">
+    <span class="tasseo-symbol" id="tasseoSym"></span>
+    <div class="tasseo-name" id="tasseoName"></div>
+    <p class="tasseo-meaning" id="tasseoMean"></p>
+  </div>
+
+  <div class="tasseo-secondary" id="tasseoSec">
+    <div class="sec-label">SIMBOLO SECONDARIO</div>
+    <div class="sec-symbol" id="secSym"></div>
+    <div class="sec-name" id="secName"></div>
+    <p class="sec-meaning" id="secMean"></p>
+    <div style="margin-top:14px;">
+      <button class="btn-sec" onclick="reset()">☕ Nuova Lettura</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PARTE II — TASSEOMANZIA
+  ══════════════════════════════════════════════ -->
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="storia-section" style="margin-top:8px;">
+    <div class="section-title">☕ TASSEOMANZIA</div>
+
+    <!-- IMMAGINE SEZIONE -->
+    <div class="img-placeholder" style="margin-bottom:18px;">
+      <span class="img-icon">☕</span>
+      <span class="img-label">IMMAGINE · LETTURA DEI FONDI DI TÈ</span>
+    </div>
+
+    <p class="storia-text">
+      La <em>Tasseomanzia</em> (dal turco <em>tassa</em>, tazza, e greco <em>manteia</em>) è la divinazione attraverso
+      la lettura dei fondi di tè, caffè o vino rimasti nella tazza dopo la bevanda. Ogni forma, macchia e simbolo
+      che si forma casualmente nel residuo è un messaggio del subconscio e delle forze invisibili che ci circondano.
+    </p>
+    <p class="storia-text">
+      Le origini affondano nell'Asia Centrale e nel Medio Oriente, diffondendosi in Europa attraverso le rotte
+      commerciali ottomane nel XVII secolo. In Turchia e Grecia la lettura del caffè (<em>tasseomanzia del caffè</em>)
+      è ancora oggi una tradizione quotidiana e sociale, parte integrante della cultura ospitale.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h4>🌍 DIFFUSIONE NEL MONDO</h4>
+    <ul>
+      <li><strong>Turchia e Grecia:</strong> La <em>fal bakma</em> (lettura del caffè turco) è una pratica quotidiana, spesso condivisa tra amiche dopo il pasto.</li>
+      <li><strong>Irlanda e Inghilterra:</strong> La lettura dei fondi di tè (<em>tasseography</em>) è storicamente radicata nella cultura celtica e vittoriana.</li>
+      <li><strong>Romania:</strong> Le <em>babele ghicitoare</em> (nonne indovine) leggevano fondi di vino e caffè in cerimonie familiari.</li>
+      <li><strong>Cina:</strong> Lettura dei residui di tè verde in ciotole di porcellana bianca — tecnica che richiede anni di apprendistato.</li>
+      <li><strong>Persia:</strong> Collegata alle pratiche degli specchi magici e alla tradizione dei dervish sufi.</li>
+    </ul>
+  </div>
+
+  <!-- IMG COFFEE READING -->
+  <div class="img-placeholder" style="aspect-ratio:16/6; margin-bottom:18px;">
+    <span class="img-icon">🫖</span>
+    <span class="img-label">IMMAGINE · LETTURA DEL CAFFÈ TURCO</span>
+  </div>
+
+  <div class="section-title">🔣 I SIMBOLI PRINCIPALI</div>
+  <p class="storia-text" style="margin-bottom:14px;">
+    I tasseomanti riconoscono oltre 200 simboli nella tradizione classica. Ecco i più comuni e il loro significato universalmente accettato:
+  </p>
+
+  <div class="simboli-grid">
+    <div class="simbolo-card"><div class="s-icon">🐍</div><div class="s-name">Serpente</div></div>
+    <div class="simbolo-card"><div class="s-icon">🦅</div><div class="s-name">Aquila</div></div>
+    <div class="simbolo-card"><div class="s-icon">🌙</div><div class="s-name">Luna</div></div>
+    <div class="simbolo-card"><div class="s-icon">⚓</div><div class="s-name">Ancora</div></div>
+    <div class="simbolo-card"><div class="s-icon">🌺</div><div class="s-name">Fiore</div></div>
+    <div class="simbolo-card"><div class="s-icon">🔑</div><div class="s-name">Chiave</div></div>
+    <div class="simbolo-card"><div class="s-icon">💧</div><div class="s-name">Goccia</div></div>
+    <div class="simbolo-card"><div class="s-icon">⭐</div><div class="s-name">Stella</div></div>
+    <div class="simbolo-card"><div class="s-icon">🏔️</div><div class="s-name">Montagna</div></div>
+    <div class="simbolo-card"><div class="s-icon">🌊</div><div class="s-name">Onda</div></div>
+  </div>
+
+  <div class="section-title">📋 MODO D'USO</div>
+
+  <div class="img-placeholder" style="aspect-ratio:16/5; margin-bottom:18px;">
+    <span class="img-icon">🍵</span>
+    <span class="img-label">IMMAGINE · PREPARAZIONE DELLA TAZZA</span>
+  </div>
+
+  <div class="purple-box" style="margin-bottom:18px;">
+    <h4>🍵 RITUALE CLASSICO PASSO PER PASSO</h4>
+    <p>Per praticare la vera Tasseomanzia seguendo la tradizione turca e celtica:</p>
+  </div>
+
+  <ul class="uso-steps">
+    <li>Prepara una tazza di tè o caffè macinato <strong>senza filtro</strong> — i fondi devono rimanere nella tazza.</li>
+    <li>Mentre bevi, tieni la tua domanda nel cuore. Bevi lentamente, pensando intensamente a ciò che vuoi sapere.</li>
+    <li>Lascia solo un piccolo residuo di liquido. Copri la tazza con il piattino e <strong>capovolgi in senso orario</strong>.</li>
+    <li>Aspetta che la tazza raffreddi completamente (3–5 minuti). In questo tempo, il tuo subconscio lavora sui simboli.</li>
+    <li>Rigira la tazza e inizia a leggere dal bordo (il presente) verso il centro (il futuro distante).</li>
+    <li>Cerca forme, animali, oggetti, lettere. Non forzare — lascia che le immagini emergano spontaneamente.</li>
+    <li>Il simbolo vicino all'ansa della tazza indica ciò che è <em>vicino a te</em>; il lato opposto è ciò che è <em>lontano</em>.</li>
+  </ul>
+
+  <div class="section-title">👤 MAESTRE E TRADIZIONI CELEBRI</div>
+
+  <div class="personaggi-grid">
+    <div class="personaggio-card">
+      <div class="p-emoji">🇹🇷</div>
+      <div class="p-name">Falcı Hayriye</div>
+      <div class="p-desc">Celebre tasseomante ottomana del XVIII sec., si dice consultasse le concubine del sultano Selim III.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">🍃</div>
+      <div class="p-name">Tradizione Romany</div>
+      <div class="p-desc">I Rom d'Europa portarono la tasseomanzia dall'India all'Europa, integrandola con cartomanzia e chiromanzia.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
+      <div class="p-name">Streghe delle Highlands</div>
+      <div class="p-desc">Nelle Highlands scozzesi, le <em>wisewomen</em> leggevano i fondi di tè nelle lunghe serate invernali.</div>
+    </div>
+    <div class="personaggio-card">
+      <div class="p-emoji">📚</div>
+      <div class="p-name">Miss Miniver</div>
+      <div class="p-desc">Personaggio letterario di H.G. Wells, rappresenta la "tipica" lettrice di fondi di tè vittoriana, colta e mistica.</div>
+    </div>
+  </div>
+
+  <div class="section-title">🌀 LEGGENDE E STORIE</div>
+
+  <div class="legenda-card">
+    <div class="leg-title">☕ La Tazza dell'Amante Tradito</div>
+    <p>Una leggenda ottomana del XVII secolo narra di una giovane donna che ogni mattina leggeva il fondo del caffè del marito mercante. Un giorno vide nella tazza il simbolo della nave capovolta e della spada — tradimento e pericolo in viaggio. Convinse il marito a posticipare la partenza. La nave su cui sarebbe dovuto imbarcarsi affondò. Da allora nel bazaar di Istanbul si dice: <em>"Non schernire la lettrice del caffè"</em>.</p>
+  </div>
+
+  <div class="legenda-card">
+    <div class="leg-title">🍃 Il Tè dei Monaci Zen</div>
+    <p>In Giappone esiste una pratica segreta delle scuole Zen chiamata <em>chanomantic</em> — la meditazione sui fondi del tè matcha. I monaci non cercano simboli: osservano il fondo con mente vuota finché un'immagine emerge da sola. Si dice che questo processo, praticato per decenni, sviluppi la capacità di vedere il futuro non come previsione ma come <em>probabilità del karma</em>.</p>
+  </div>
+
+  <div class="legenda-card">
+    <div class="leg-title">🌙 La Profetessa di Vienna</div>
+    <p>Nel 1800, a Vienna viveva una donna di origine ungherese nota come <em>die Kaffeeseherin</em> (la Veggente del Caffè). Si racconta che abbia predetto con precisione la battaglia di Austerlitz leggendo una tazza di caffè turco per un ufficiale bonapartista. Quando questi tornò vittorioso, la cercò per ringraziarla. Aveva lasciato la città il giorno prima, lasciando sulla porta una sola tazza rovesciata.</p>
+  </div>
+
+  <!-- Simboli di connessione tra le due sezioni -->
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="info-box">
+    <h4>🌐 BIBLIOMANZIA & TASSEOMANZIA — DIFFERENZE E SINERGIE</h4>
+    <p>Entrambe le arti si basano sul principio della <em>sincronicità</em> jungiana: l'idea che eventi apparentemente casuali contengano significato per chi li osserva con mente aperta. La Bibliomanzia lavora sull'<strong>intelletto e la parola</strong>; la Tasseomanzia lavora sull'<strong>immagine e l'intuizione visiva</strong>. Usate insieme nella stessa sessione, si dice completino una lettura integrale: la parola del libro fornisce il messaggio razionale, i simboli nella tazza quello simbolico-emotivo.</p>
+  </div>
+
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATI ──
+const FRASI_BIBLIO = [
+  { titolo:'📖 Libro della Saggezza', testo:'Ogni cosa ha il suo tempo e la sua stagione sotto il cielo. Questo momento richiede pazienza e fiducia nel processo naturale della vita.' },
+  { titolo:'📖 Upanishad', testo:"L'Atman è Brahman — il tuo Sé profondo è tutt'uno con l'universo. Ciò che cerchi fuori è già dentro di te." },
+  { titolo:'📖 Tao Tê Ching', testo:"Il Tao che può essere detto non è l'eterno Tao. Agisci senza forzare. La via dell'acqua supera la roccia senza sforzo." },
+  { titolo:'📖 I Ching — Mutamento', testo:"Il cambiamento è l'unica costante. Abbandona la resistenza e lascia che la trasformazione avvenga naturalmente." },
+  { titolo:'📖 Vangelo di Tommaso', testo:'Conosci ciò che è davanti a te, e ciò che è nascosto ti sarà rivelato. La luce è dentro di te.' },
+  { titolo:'📖 Corpus Hermeticum', testo:'Come in alto, così in basso. Le forze cosmiche rispecchiano la tua situazione interiore. Osserva i segni.' },
+  { titolo:'📖 Libro dei Salmi', testo:"Il Signore è il mio pastore, nulla mi mancherà. Attraversa la valle oscura sapendo di non essere solo." },
+  { titolo:'📖 Bhagavad Gita', testo:"Esegui il tuo dovere senza attaccarti ai frutti dell'azione. L'azione giusta porta la sua ricompensa nel momento giusto." },
+  { titolo:'📖 Libro di Giobbe', testo:"Dove eri tu quando ho posto le fondamenta della terra? Il mistero è più grande del tuo dolore — e lo contiene." },
+  { titolo:'📖 Dhammapada', testo:'La mente è tutto. Ciò che pensi, diventi. Con la mente creiamo il mondo.' },
+  { titolo:'📖 Libro di Rumi — Masnavi', testo:'Il suono del flauto di canna è il canto della separazione. Ogni dolore è in realtà il desiderio di ritornare alla fonte.' },
+  { titolo:'📖 Vangelo di Giovanni', testo:"In principio era il Logos, la Parola. E la Parola si fece carne. Ciò che dici e pensi ha il potere di incarnarsi." }
+];
+
+const SIMBOLI_TASSEO = [
+  { simbolo:'🐍', nome:'Serpente', significato:'Trasformazione profonda in atto. Lascia andare la vecchia pelle — una nuova versione di te sta emergendo.' },
+  { simbolo:'🦅', nome:'Aquila', significato:"Visione d'insieme. Sei chiamato a elevarti sopra le preoccupazioni quotidiane per vedere la situazione dall'alto." },
+  { simbolo:'🌙', nome:'Luna Crescente', significato:'Nuovi inizi e crescita intuitiva. Fidati dei tuoi sogni e delle sensazioni notturne nelle prossime settimane.' },
+  { simbolo:'⚓', nome:'Ancora', significato:'Stabilità e radicamento. È il momento di costruire fondamenta solide, non di vagare.' },
+  { simbolo:'🌺', nome:'Fiore', significato:'Fioritura imminente. Qualcosa che hai coltivato con cura sta per sbocciare in modo inaspettato e bellissimo.' },
+  { simbolo:'🔑', nome:'Chiave', significato:'La risposta che cerchi è più vicina di quanto pensi. Una porta si sta aprendo — riconosci l\'opportunità.' },
+  { simbolo:'💧', nome:"Goccia d'Acqua", significato:'Emozioni da elaborare. Permettiti di sentire pienamente — le lacrime e la gioia portano entrambe chiarezza.' },
+  { simbolo:'⭐', nome:'Stella a cinque punte', significato:'Protezione spirituale e guida superiore. Non sei solo in questo cammino — forze benigne ti accompagnano.' },
+  { simbolo:'🏔️', nome:'Montagna', significato:"Una sfida importante da affrontare. La fatica della salita è reale, ma dalla vetta la vista cambierà tutto." },
+  { simbolo:'🌊', nome:'Onda', significato:"Un'ondata di cambiamento è in arrivo. Impara a cavalcarla piuttosto che resisterle." },
+  { simbolo:'🕊️', nome:'Colomba', significato:'Pace in arrivo dopo una tempesta. Lascia andare le battaglie che non ti appartengono più.' },
+  { simbolo:'🌳', nome:'Albero', significato:"Radici forti, crescita costante. Il tuo passato non è un peso — è la terra da cui cresci." },
+  { simbolo:'🔥', nome:'Fiamma', significato:'Passione e trasformazione. Il fuoco brucia per purificare, non per distruggere.' },
+  { simbolo:'🦋', nome:'Farfalla', significato:'Metamorfosi completata o in corso. La crisalide che senti intorno a te è temporanea.' },
+  { simbolo:'🌹', nome:'Rosa', significato:'Amore in tutte le sue forme — romantico, familiare, verso se stessi. Apriti al ricevere.' }
+];
+
+let mode = 0;
+
+function selMode(m) {
+  mode = m;
+  document.getElementById('tab0').classList.toggle('active', m===0);
+  document.getElementById('tab1').classList.toggle('active', m===1);
+  reset();
+  const desc = document.getElementById('biblioDesc');
+  if (desc) {
+    if (m === 0) {
+      desc.innerHTML = '<strong>📖 COME FUNZIONA</strong><br>La <strong>Bibliomanzia</strong> consiste nell\'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall\'universo. Tieni la tua domanda nel cuore, chiudi gli occhi, e premi il pulsante.';
+    } else {
+      desc.innerHTML = '<strong>☕ COME FUNZIONA</strong><br>La <strong>Tasseomanzia</strong> legge i fondi di tè o caffè come mappa simbolica dell\'anima. Concentrati sulla tua domanda, poi premi per rivelare i simboli che l\'universo ha tracciato per te.';
+    }
+  }
+}
+
+function consulta() {
+  const biblioForm = document.getElementById('biblioForm');
+  const oracleResult = document.getElementById('oracleResult');
+  const tasseoResult = document.getElementById('tasseoResult');
+  const tasseoSec = document.getElementById('tasseoSec');
+
+  // nascondo form
+  if (biblioForm) biblioForm.style.display = 'none';
+
+  if (mode === 0) {
+    // BIBLIOMANZIA
+    const item = FRASI_BIBLIO[Math.floor(Math.random() * FRASI_BIBLIO.length)];
+    document.getElementById('oracleIcon').textContent = '📖';
+    document.getElementById('oracleSource').textContent = item.titolo;
+    document.getElementById('oracleText').textContent = '"' + item.testo + '"';
+    oracleResult.classList.add('visible');
+    tasseoResult.classList.remove('visible');
+    tasseoSec.classList.remove('visible');
+  } else {
+    // TASSEOMANZIA
+    const pool = [...SIMBOLI_TASSEO];
+    const idx1 = Math.floor(Math.random() * pool.length);
+    const primary = pool.splice(idx1, 1)[0];
+    const secondary = pool[Math.floor(Math.random() * pool.length)];
+
+    document.getElementById('tasseoSym').textContent = primary.simbolo;
+    document.getElementById('tasseoName').textContent = primary.nome;
+    document.getElementById('tasseoMean').textContent = primary.significato;
+    tasseoResult.classList.add('visible');
+
+    document.getElementById('secSym').textContent = secondary.simbolo;
+    document.getElementById('secName').textContent = secondary.nome;
+    document.getElementById('secMean').textContent = secondary.significato;
+    tasseoSec.classList.add('visible');
+
+    oracleResult.classList.remove('visible');
+  }
+}
+
+function reset() {
+  const biblioForm = document.getElementById('biblioForm');
+  const oracleResult = document.getElementById('oracleResult');
+  const tasseoResult = document.getElementById('tasseoResult');
+  const tasseoSec = document.getElementById('tasseoSec');
+  const domanda = document.getElementById('domandaInput');
+
+  if (biblioForm) biblioForm.style.display = 'block';
+  if (domanda) domanda.value = '';
+  oracleResult.classList.remove('visible');
+  tasseoResult.classList.remove('visible');
+  tasseoSec.classList.remove('visible');
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+</script>
+</body>
+</html>
