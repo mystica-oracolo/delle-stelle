@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v360';
+const CACHE_NAME = 'mystica-v349';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -24,24 +24,7 @@ const URLS_TO_CACHE = [
   './images/icone/home/ipnosi.webp',
   './images/icone/home/eft-tapping.webp',
   './images/icone/home/sincronicita.webp',
-  './images/icone/home/voodoo-hoodoo.webp',
-  // Chunk JS lazy-loaded — necessari per funzionamento offline
-  './core.js',
-  './mystica.css',
-  './lazy-load.js',
-  './tarocchi.js',
-  './oracoli.js',
-  './totem.js',
-  './angeli.js',
-  './geomanzia.js',
-  './numerologia.js',
-  './ore-specchio.js',
-  './luna.js',
-  './pianeti.js',
-  './rune.js',
-  './iching.js',
-  './rituali.js',
-  './extra.js'
+  './images/icone/home/voodoo-hoodoo.webp'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
@@ -107,28 +90,4 @@ self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-});
-
-// ── PUSH ─────────────────────────────────────────────────────
-self.addEventListener('push', event => {
-  let data = { title: '✨ MYSTICA', body: 'Il tuo messaggio delle stelle ti aspetta.', icon: './icon-192-v2.png', badge: './icon-192-v2.png', tag: 'mystica-daily' };
-  if (event.data) { try { data = { ...data, ...event.data.json() }; } catch(e) {} }
-  event.waitUntil(
-    self.registration.showNotification(data.title, {
-      body: data.body, icon: data.icon, badge: data.badge, tag: data.tag,
-      vibrate: [200, 100, 200], data: { url: './' }
-    })
-  );
-});
-
-// ── NOTIFICATION CLICK ───────────────────────────────────────
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-  const targetUrl = (event.notification.data && event.notification.data.url) ? event.notification.data.url : './';
-  event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
-      for (const client of list) { if ('focus' in client) return client.focus(); }
-      return clients.openWindow(targetUrl);
-    })
-  );
 });
