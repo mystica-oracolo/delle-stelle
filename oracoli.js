@@ -132,14 +132,21 @@ function openOracoloHome(id){
 }
 
 function navMagia(panel){
+  // Precarica rituali.js PRIMA di aprire la view, così initMagia reale è già disponibile
+  // quando _switchView('magia') la invoca — elimina la race condition sfondo-nero
+  var _doOpen = function(){
+    _loadChunk('rituali').then(function(){
+      _switchView('magia');
+      _openMagiaPanel(panel);
+    });
+  };
 
   if(!_adSeen.has('magia')){
-  _adSeenAdd('magia');
-  const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio'};
-  showAdGate(labels[panel]||'Libri di Magia', ()=>{ _switchView('magia'); _openMagiaPanel(panel); });
+    _adSeenAdd('magia');
+    const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio'};
+    showAdGate(labels[panel]||'Libri di Magia', _doOpen);
   } else {
-  _switchView('magia');
-  _openMagiaPanel(panel);
+    _doOpen();
   }
 }
 
