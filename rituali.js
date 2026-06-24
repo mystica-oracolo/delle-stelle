@@ -143,13 +143,14 @@ const DB_MAGIA = {
 let _magiaInited = false;
 
 function initMagia(){
-  if(_magiaInited) return Promise.resolve();
+  if(_magiaInited) return;
   _magiaInited = true;
 
   ['bianca','rossa','nera','malocchio'].forEach(tipo => {
-  const container = document.getElementById('magiaList-'+tipo);
+  const container = $('#magiaList-'+tipo);
   if(!container) return;
   const rituali = DB_MAGIA[tipo];
+  const accentColors = { bianca:'var(--gold-dim)', rossa:'#c05050', nera:'#606080', malocchio:'#1a6b90' };
   container.innerHTML = rituali.map((r,i) => `
   <div class="magia-ritual" onclick="toggleRituale(this)">
   <div class="magia-ritual-head">
@@ -179,10 +180,6 @@ function initMagia(){
   const magiaView = document.getElementById('view-magia');
   if (magiaView) {
   magiaView.querySelectorAll('.magia-tab').forEach(tab => {
-    const fresh = tab.cloneNode(true);
-    tab.parentNode.replaceChild(fresh, tab);
-  });
-  magiaView.querySelectorAll('.magia-tab').forEach(tab => {
   tab.addEventListener('click', () => {
   magiaView.querySelectorAll('.magia-tab').forEach(t => t.classList.remove('active'));
   magiaView.querySelectorAll('.magia-panel').forEach(p => p.classList.remove('active'));
@@ -192,7 +189,6 @@ function initMagia(){
   });
   });
   }
-  return Promise.resolve();
 }
 
 function toggleRituale(el){

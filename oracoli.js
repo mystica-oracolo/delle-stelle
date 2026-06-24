@@ -132,32 +132,14 @@ function openOracoloHome(id){
 }
 
 function navMagia(panel){
-  const _doOpen = () => {
-    // Assicura che rituali.js sia caricato e initMagia completata prima di aprire il pannello
-    const chunk = window._loadedChunks && window._loadedChunks['rituali'];
-    const afterInit = () => {
-      _switchView('magia');
-      // Aspetta che initMagia (che popola i magiaList-*) abbia finito
-      const initResult = window.initMagia ? window.initMagia() : Promise.resolve();
-      Promise.resolve(initResult).then(() => {
-        requestAnimationFrame(() => _openMagiaPanel(panel));
-      });
-    };
-    if(chunk){
-      chunk.then(afterInit);
-    } else if(typeof _loadChunk === 'function'){
-      _loadChunk('rituali').then(afterInit);
-    } else {
-      afterInit();
-    }
-  };
 
   if(!_adSeen.has('magia')){
-    _adSeenAdd('magia');
-    const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio',sigilli:'Sigilli di Salomone'};
-    showAdGate(labels[panel]||'Libri di Magia', _doOpen);
+  _adSeenAdd('magia');
+  const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio'};
+  showAdGate(labels[panel]||'Libri di Magia', ()=>{ _switchView('magia'); _openMagiaPanel(panel); });
   } else {
-    _doOpen();
+  _switchView('magia');
+  _openMagiaPanel(panel);
   }
 }
 

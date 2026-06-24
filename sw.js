@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v362';
+const CACHE_NAME = 'mystica-v360';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -11,36 +11,6 @@ const URLS_TO_CACHE = [
   './manifest.json',
   './icon-192-v2.png',
   './apple-touch-icon-v2.png',
-  // Pagine satellite
-  './about.html',
-  './astrologia-avanzata.html',
-  './astrologia-vedica.html',
-  './bazi-cinese.html',
-  './cicli-tempo.html',
-  './community.html',
-  './contatti.html',
-  './divinazione-alternativa.html',
-  './enciclopedia.html',
-  './gene-keys.html',
-  './guida-i-ching.html',
-  './guida-tarocchi.html',
-  './human-design.html',
-  './mente-energia.html',
-  './numerologia-simboli.html',
-  './oroscopo-cinese.html',
-  './oroscopo-segni.html',
-  './ouija.html',
-  './pentacoli-salomone.html',
-  './pietre-magiche.html',
-  './pratica-quotidiana.html',
-  './pratiche.html',
-  './privacy.html',
-  './significato-rune.html',
-  './sogni.html',
-  './strega.html',
-  './termini.html',
-  './tradizioni-spirituali.html',
-  './zi-wei-dou-shu.html',
   // Icone home — nuove immagini aggiunte
   './images/icone/home/astrologia-avanzata.webp',
   './images/icone/home/cartomanzia.webp',
@@ -71,9 +41,7 @@ const URLS_TO_CACHE = [
   './rune.js',
   './iching.js',
   './rituali.js',
-  './extra.js',
-  './commenti.js',
-  './consulente.js'
+  './extra.js'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
@@ -97,7 +65,7 @@ self.addEventListener('activate', event => {
           .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       ))
-      // clients.claim() rimosso: causava freeze con AdGate aperto
+      .then(() => self.clients.claim()) // ← controlla subito tutte le tab aperte
   );
 });
 
