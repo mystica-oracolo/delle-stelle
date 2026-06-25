@@ -1572,9 +1572,39 @@ function resetSigillo(){
 
 
 (function(){
-  let _magiaInitPatched=false;
-  const _oldInitMagia=window.initMagia;
-  window.initMagia=function(){ if(_magiaInitPatched) return; _magiaInitPatched=true; try{ if(typeof _oldInitMagia==='function') _oldInitMagia(); }catch(e){} };
-  const _oldToggleRituale=window.toggleRituale;
-  window.toggleRituale=function(el){ try{ if(!el) return; document.querySelectorAll('.magia-ritual').forEach(x=>{ if(x!==el) x.classList.remove('open'); }); el.classList.toggle('open'); try{ el.scrollIntoView({behavior:'smooth', block:'start'}); }catch(_){ try{ el.scrollIntoView(); }catch(__){} } }catch(e){ try{ if(typeof _oldToggleRituale==='function') return _oldToggleRituale(el); }catch(_){} } };
+  function safe(fn){ try{ return fn(); } catch(e){ console.warn('mystica safe patch', e); } }
+  function lightToggle(el){
+    if(!el) return;
+    document.querySelectorAll('.magia-ritual').forEach(x=>{ if(x!==el) x.classList.remove('open'); });
+    el.classList.toggle('open');
+    try{ el.scrollIntoView({behavior:'smooth', block:'start'}); }catch(_){ try{ el.scrollIntoView(); }catch(__){} }
+  }
+  window.initMagia = function(){
+    safe(()=>{
+      ['bianca','rossa','nera','malocchio'].forEach(tipo=>{
+        const c = document.getElementById('magiaList-'+tipo);
+        if(!c) return;
+        const rows = (window.DBMAGIA && DBMAGIA[tipo]) ? DBMAGIA[tipo] : [];
+        c.innerHTML = rows.map((r,i)=>'<div class="magia-ritual" onclick="toggleRituale(this)"><div class="magia-ritual-head"><span class="magia-ritual-num">'+String(i+1).padStart(2,'0')+'</span><span class="magia-ritual-title">'+r.t+'</span><span class="magia-ritual-toggle"></span></div><div class="magia-ritual-body"><div class="magia-field"><div class="magia-field-label">Scopo</div><div class="magia-field-text">'+r.scopo+'</div></div><div class="magia-field"><div class="magia-field-label">Materiali</div><div class="magia-field-text">'+r.mat+'</div></div><div class="magia-field"><div class="magia-field-label">Procedura</div><div class="magia-field-text">'+r.proc+'</div></div>'+(r.nota?'<div class="magia-field"><div class="magia-field-label">Nota</div><div class="magia-field-text">'+r.nota+'</div></div>':'')+'</div></div>').join('');
+      });
+    });
+  };
+  window.toggleRituale = function(el){ safe(()=>lightToggle(el)); };
+  window.necroSelReame = function(i){
+    safe(()=>{
+      window.necroReame = i;
+      for(let k=0;k<5;k++){
+        const b = document.getElementById('necroTab'+k);
+        if(b) b.classList.toggle('active',k===i);
+      }
+    });
+  };
+  window.necroRandom = function(){ safe(()=>{ window.necroReame = Math.floor(Math.random()*4); window.necroSelReame(window.necroReame); }); };
+  const oldCalcNegromanzia = window.calcNegromanzia;
+  window.calcNegromanzia = function(){
+    try{
+      if(document.querySelectorAll('.magia-ritual.open').length > 0) document.querySelectorAll('.magia-ritual.open').forEach(x=>x.classList.remove('open'));
+    }catch(_){}
+    return safe(()=> typeof oldCalcNegromanzia === 'function' ? oldCalcNegromanzia() : undefined);
+  };
 })();
