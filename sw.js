@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v362';
+const CACHE_NAME = 'mystica-v400';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -11,37 +11,80 @@ const URLS_TO_CACHE = [
   './manifest.json',
   './icon-192-v2.png',
   './apple-touch-icon-v2.png',
-  // Pagine satellite
-  './about.html',
+  // ── Oracoli principali (nuovi HTML standalone) ──
+  './tarocchi.html',
+  './oroscopo.html',
+  './compatibilita.html',
+  './profilo-mistico.html',
+  './rune.html',
+  './iching.html',
+  './numerologia.html',
+  './ore-specchio.html',
+  './totem.html',
+  './angeli.html',
+  './geomanzia.html',
+  './oracoli.html',
+  './luna-pianeti.html',
+  // ── Energia & Spazio ──
+  './energia-chakra.html',
+  './mente-energia.html',
+  './pietre-magiche.html',
+  './strumenti.html',
+  // ── Magia ──
+  './magia-bianca.html',
+  './magia-rossa.html',
+  './magia-nera.html',
+  './malocchio.html',
+  './sigilli-salomone.html',
+  './stregoneria-wicca.html',
+  './negromanzia.html',
+  './alchimia.html',
+  // ── Astrologia ──
   './astrologia-avanzata.html',
   './astrologia-vedica.html',
   './bazi-cinese.html',
+  './zi-wei-dou-shu.html',
   './cicli-tempo.html',
-  './community.html',
-  './contatti.html',
-  './divinazione-alternativa.html',
-  './enciclopedia.html',
-  './gene-keys.html',
-  './guida-i-ching.html',
-  './guida-tarocchi.html',
   './human-design.html',
-  './mente-energia.html',
-  './numerologia-simboli.html',
+  './gene-keys.html',
   './oroscopo-cinese.html',
   './oroscopo-segni.html',
-  './ouija.html',
-  './pentacoli-salomone.html',
-  './pietre-magiche.html',
-  './pratica-quotidiana.html',
-  './pratiche.html',
-  './privacy.html',
-  './significato-rune.html',
-  './sogni.html',
-  './strega.html',
-  './termini.html',
+  './oroscopo-zodcinese.html',
+  // ── Esoterismo & Tradizioni ──
+  './cabala.html',
+  './ermetismo.html',
+  './divinazione-alternativa.html',
   './tradizioni-spirituali.html',
-  './zi-wei-dou-shu.html',
-  // Icone home — nuove immagini aggiunte
+  './numerologia-simboli.html',
+  './pentacoli-salomone.html',
+  './viaggio-astrale.html',
+  './sogni.html',
+  './libro-delle-risposte.html',
+  './bibliomanzia-tasseomanzia.html',
+  // ── Guide & Enciclopedia ──
+  './enciclopedia.html',
+  './pratiche.html',
+  './ouija.html',
+  './strega.html',
+  './guida-i-ching.html',
+  './guida-tarocchi.html',
+  './significato-rune.html',
+  './pratica-quotidiana.html',
+  // ── Archivio & Community ──
+  './archivio.html',
+  './blog.html',
+  './community.html',
+  // ── Info ──
+  './about.html',
+  './contatti.html',
+  './privacy.html',
+  './termini.html',
+  // ── JS ancora attivi ──
+  './sw.js',
+  './commenti.js',
+  './consulente.js',
+  './mystica.css',
+  // ── Icone home ──
   './images/icone/home/astrologia-avanzata.webp',
   './images/icone/home/cartomanzia.webp',
   './images/icone/home/lenormand.webp',
@@ -54,26 +97,7 @@ const URLS_TO_CACHE = [
   './images/icone/home/ipnosi.webp',
   './images/icone/home/eft-tapping.webp',
   './images/icone/home/sincronicita.webp',
-  './images/icone/home/voodoo-hoodoo.webp',
-  // Chunk JS lazy-loaded — necessari per funzionamento offline
-  './core.js',
-  './mystica.css',
-  './lazy-load.js',
-  './tarocchi.js',
-  './oracoli.js',
-  './totem.js',
-  './angeli.js',
-  './geomanzia.js',
-  './numerologia.js',
-  './ore-specchio.js',
-  './luna.js',
-  './pianeti.js',
-  './rune.js',
-  './iching.js',
-  './rituali.js',
-  './extra.js',
-  './commenti.js',
-  './consulente.js'
+  './images/icone/home/voodoo-hoodoo.webp'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
