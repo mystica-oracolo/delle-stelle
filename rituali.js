@@ -1569,3 +1569,12 @@ function resetSigillo(){
     .catch(err => console.warn('[MYSTICA SW]', err));
 })();
 
+
+
+(function(){
+  let _magiaInitPatched=false;
+  const _oldInitMagia=window.initMagia;
+  window.initMagia=function(){ if(_magiaInitPatched) return; _magiaInitPatched=true; try{ if(typeof _oldInitMagia==='function') _oldInitMagia(); }catch(e){} };
+  const _oldToggleRituale=window.toggleRituale;
+  window.toggleRituale=function(el){ try{ if(!el) return; document.querySelectorAll('.magia-ritual').forEach(x=>{ if(x!==el) x.classList.remove('open'); }); el.classList.toggle('open'); try{ el.scrollIntoView({behavior:'smooth', block:'start'}); }catch(_){ try{ el.scrollIntoView(); }catch(__){} } }catch(e){ try{ if(typeof _oldToggleRituale==='function') return _oldToggleRituale(el); }catch(_){} } };
+})();
