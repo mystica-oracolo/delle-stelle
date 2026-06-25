@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v375';
+const CACHE_NAME = 'mystica-v349';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -11,49 +11,6 @@ const URLS_TO_CACHE = [
   './manifest.json',
   './icon-192-v2.png',
   './apple-touch-icon-v2.png',
-  // Pagine satellite
-  './about.html',
-  './astrologia-avanzata.html',
-  './astrologia-vedica.html',
-  './bazi-cinese.html',
-  './cicli-tempo.html',
-  './community.html',
-  './contatti.html',
-  './divinazione-alternativa.html',
-  './enciclopedia.html',
-  './gene-keys.html',
-  './guida-i-ching.html',
-  './guida-tarocchi.html',
-  './human-design.html',
-  './mente-energia.html',
-  './numerologia-simboli.html',
-  './oroscopo-cinese.html',
-  './oroscopo-segni.html',
-  './ouija.html',
-  './pentacoli-salomone.html',
-  './pietre-magiche.html',
-  './pratica-quotidiana.html',
-  './pratiche.html',
-  './privacy.html',
-  './significato-rune.html',
-  './sogni.html',
-  './strega.html',
-  './termini.html',
-  './tradizioni-spirituali.html',
-  './malocchio.html',
-  './magia-bianca.html',
-  './magia-rossa.html',
-  './magia-nera.html',
-  './sigilli-salomone.html',
-  './libro-delle-risposte.html',
-  './viaggio-astrale.html',
-  './stregoneria-wicca.html',
-  './alchimia.html',
-  './cabala.html',
-  './ermetismo.html',
-  './negromanzia.html',
-  './bibliomanzia-tasseomanzia.html',
-  './zi-wei-dou-shu.html',
   // Icone home — nuove immagini aggiunte
   './images/icone/home/astrologia-avanzata.webp',
   './images/icone/home/cartomanzia.webp',
@@ -67,25 +24,7 @@ const URLS_TO_CACHE = [
   './images/icone/home/ipnosi.webp',
   './images/icone/home/eft-tapping.webp',
   './images/icone/home/sincronicita.webp',
-  './images/icone/home/voodoo-hoodoo.webp',
-  // Chunk JS lazy-loaded — necessari per funzionamento offline
-  './core.js',
-  './mystica.css',
-  './lazy-load.js',
-  './tarocchi.js',
-  './oracoli.js',
-  './totem.js',
-  './angeli.js',
-  './geomanzia.js',
-  './numerologia.js',
-  './ore-specchio.js',
-  './luna.js',
-  './pianeti.js',
-  './rune.js',
-  './iching.js',
-  './extra.js',
-  './commenti.js',
-  './consulente.js',
+  './images/icone/home/voodoo-hoodoo.webp'
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────
@@ -151,28 +90,4 @@ self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-});
-
-// ── PUSH ─────────────────────────────────────────────────────
-self.addEventListener('push', event => {
-  let data = { title: '✨ MYSTICA', body: 'Il tuo messaggio delle stelle ti aspetta.', icon: './icon-192-v2.png', badge: './icon-192-v2.png', tag: 'mystica-daily' };
-  if (event.data) { try { data = { ...data, ...event.data.json() }; } catch(e) {} }
-  event.waitUntil(
-    self.registration.showNotification(data.title, {
-      body: data.body, icon: data.icon, badge: data.badge, tag: data.tag,
-      vibrate: [200, 100, 200], data: { url: './' }
-    })
-  );
-});
-
-// ── NOTIFICATION CLICK ───────────────────────────────────────
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-  const targetUrl = (event.notification.data && event.notification.data.url) ? event.notification.data.url : './';
-  event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
-      for (const client of list) { if ('focus' in client) return client.focus(); }
-      return clients.openWindow(targetUrl);
-    })
-  );
 });

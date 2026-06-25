@@ -4,7 +4,7 @@
   <!-- ═══ HOME ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,58 +12,51 @@
   <!-- ═══ ASTROLOGIA OCCIDENTALE ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/oroscopo-segni.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/astrologia-avanzata.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ═══ ASTROLOGIA ORIENTALE & MODERNA ═══ -->
+  <!-- ═══ ASTROLOGIA ORIENTALE & MODERNA (NUOVE) ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/astrologia-vedica.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/bazi-cinese.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/zi-wei-dou-shu.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://mysticaoracoli.it/oroscopo-cinese.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ═══ SISTEMI DI CONSAPEVOLEZZA ═══ -->
+  <!-- ═══ SISTEMI DI CONSAPEVOLEZZA (NUOVE) ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/human-design.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/gene-keys.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -71,35 +64,35 @@
   <!-- ═══ DIVINAZIONE ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/guida-tarocchi.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/significato-rune.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/guida-i-ching.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/sogni.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/divinazione-alternativa.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -107,7 +100,7 @@
   <!-- ═══ NUMEROLOGIA & SIMBOLI ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/numerologia-simboli.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -115,7 +108,7 @@
   <!-- ═══ CICLI & TEMPO ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/cicli-tempo.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -123,7 +116,7 @@
   <!-- ═══ MENTE & ENERGIA ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/mente-energia.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -131,7 +124,7 @@
   <!-- ═══ PRATICA QUOTIDIANA ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/pratica-quotidiana.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -139,7 +132,7 @@
   <!-- ═══ TRADIZIONI & SPIRITUALITÀ DEL MONDO ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/tradizioni-spirituali.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -147,28 +140,28 @@
   <!-- ═══ TRADIZIONI & MAGIA ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/pietre-magiche.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/pentacoli-salomone.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/strega.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/ouija.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -176,53 +169,50 @@
   <!-- ═══ ENCICLOPEDIA ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/enciclopedia.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/pratiche.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ═══ COMMUNITY ═══ -->
-  <url>
-    <loc>https://mysticaoracoli.it/community.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- ═══ ISTITUZIONALI ═══ -->
   <url>
     <loc>https://mysticaoracoli.it/about.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/contatti.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/privacy.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://mysticaoracoli.it/termini.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://mysticaoracoli.it/oroscopo-cinese.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

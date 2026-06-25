@@ -961,7 +961,7 @@ const LABELS={
   ouija:'Tavola Ouija',
   pratiche:'Figure del Mistico'
 };
-const AD_SECTIONS=new Set(['tarot','oroscopo','zodiaco','amore','oracoli','magia','mistico','zodcinese','energia','sogni','spazio','strumenti','blog','commenti','strega','ouija','pratiche']);
+const AD_SECTIONS=new Set(['tarot','oroscopo','zodiaco','amore','oracoli','magia','mistico','zodcinese','energia','sogni','spazio','strumenti']);
 
 const _adSeen = new Set(
   (()=>{ try{ return JSON.parse(sessionStorage.getItem('myst_adSeen')||'[]'); }catch(e){ return []; } })()
@@ -1130,8 +1130,12 @@ function nav(v, isBack = false){
   }
   };
 
-  // Ad gate disabilitato: causava schermo nero su alcune sezioni (magia, alchimia, ecc.)
+  if(!AD_SECTIONS.has(v)||_adSeen.has(v)){
   proceed();
+  } else {
+  _adSeenAdd(v);
+  showAdGate(LABELS[v]||v, proceed);
+  }
 }
 
 function segnoFromDate(ds){
@@ -1786,7 +1790,7 @@ function initCompatSelects(){
 function calcCompat(){
   const u=$('#cUser').value, pa=$('#cPartner').value;
   if(!u||!pa){toast('⚠️ Seleziona entrambi i segni');return;}
-  _doCalcCompat(u,pa);
+  showAdGate('Affinità Cosmica', ()=>_doCalcCompat(u,pa));
 }
 
 function _doCalcCompat(u,pa){
@@ -1925,7 +1929,33 @@ function setNavTop(){
   },{passive:true});
 })();
 
+function filterAppContent(query) {
+  query = query.toLowerCase().trim();
+  const cards = document.querySelectorAll('.dash-card');
+  cards.forEach(card => {
+  const text = card.innerText.toLowerCase();
+  if (text.includes(query)) {
+  card.style.display = 'flex';
+  card.style.opacity = '1';
+  } else {
+  card.style.display = 'none';
+  card.style.opacity = '0';
+  }
+  });
 
+  document.querySelectorAll('.dash-title').forEach(title => {
+  let next = title.nextElementSibling;
+  let hasVisible = false;
+  while (next && next.classList.contains('dash-grid')) {
+  if (next.querySelector('.dash-card[style*="display: flex"]')) {
+  hasVisible = true;
+  break;
+  }
+  next = next.nextElementSibling;
+  }
+  title.style.display = (hasVisible || query === '') ? 'block' : 'none';
+  });
+}
 
 const DB_AFFIRMAZIONI = [
   "La mia intuizione è una bussola infallibile.",
@@ -2349,7 +2379,6 @@ function initApp(){
   initCookieConsent();
 
   trackAppUse();
-  setTimeout(initPushNotifications, 3000); // Push notifications init
 
   if(typeof gtag !== 'undefined'){
   gtag('consent', 'default', {
@@ -2569,101 +2598,27 @@ function showLegal(tipo){
   if(modal) modal.classList.add('open');
 }
 
-/* ── Share System ────────────────────────────────────────────── */
-let _shareData = {};
-
-function openShareModal(type){
-  const url = window.location.href.split('#')[0];
-  if(type === 'messaggio'){
-    const msg = document.getElementById('wisdomQ');
-    const text = msg ? msg.textContent.trim() : '';
-    const preview = document.getElementById('shareModalPreview');
-    const title = document.getElementById('shareModalTitle');
-    if(title) title.textContent = 'Condividi il Messaggio';
-    if(preview) preview.textContent = text ? '"' + text + '"' : '';
-    _shareData = {
-      text: '✨ Il messaggio delle stelle di oggi:\n\n"' + text + '"\n\n🔮 Scopri il tuo oracolo su MYSTICA',
-      url: url,
-      title: 'Messaggio delle Stelle — MYSTICA'
-    };
-  } else {
-    const preview = document.getElementById('shareModalPreview');
-    const title = document.getElementById('shareModalTitle');
-    if(title) title.textContent = 'Condividi MYSTICA';
-    if(preview) preview.textContent = 'Tarocchi · Oroscopo · Rune · Rituali e molto altro';
-    _shareData = {
-      text: '🔮 Ho scoperto MYSTICA, l\'oracolo delle stelle! Tarocchi, oroscopo, rune e rituali. Prova anche tu ✨',
-      url: url,
-      title: 'MYSTICA — Oracolo delle Stelle'
-    };
-  }
-  const modal = document.getElementById('modalShare');
-  if(modal){
-    modal.classList.add('open');
-  } else {
-    if(navigator.share){
-      navigator.share({ title: _shareData.title, text: _shareData.text, url: _shareData.url }).catch(()=>{});
-    } else if(navigator.clipboard){
-      navigator.clipboard.writeText(_shareData.url).then(()=>{ if(typeof toast==='function') toast('🔗 Link copiato'); });
-    }
-  }
-}
-
-function doShare(platform){
-  const url = encodeURIComponent(_shareData.url || window.location.href.split('#')[0]);
-  const text = encodeURIComponent(_shareData.text || '');
-  const rawUrl = _shareData.url || window.location.href.split('#')[0];
-  const rawText = _shareData.text || '';
-
-  switch(platform){
-    case 'whatsapp':
-      window.open('https://wa.me/?text=' + text + '%20' + url, '_blank');
-      break;
-    case 'telegram':
-      window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
-      break;
-    case 'facebook':
-      window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
-      break;
-    case 'twitter':
-      window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
-      break;
-    case 'instagram':
-      // Instagram non ha API di condivisione web diretta; copia il testo
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(rawText + '\n' + rawUrl).then(()=>{
-          if(typeof toast === 'function') toast('📋 Testo copiato! Aprì Instagram e incollalo');
-          document.getElementById('modalShare').classList.remove('open');
-        });
-      }
-      return;
-    case 'copy':
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(rawUrl).then(()=>{
-          if(typeof toast === 'function') toast('🔗 Link copiato negli appunti');
-          document.getElementById('modalShare').classList.remove('open');
-        });
-      } else {
-        prompt('Copia questo link:', rawUrl);
-      }
-      return;
-    case 'native':
-      if(navigator.share){
-        navigator.share({ title: _shareData.title, text: rawText, url: rawUrl }).catch(()=>{});
-      } else if(navigator.clipboard){
-        navigator.clipboard.writeText(rawUrl).then(()=>{
-          if(typeof toast === 'function') toast('🔗 Link copiato');
-        });
-      }
-      return;
-    default:
-      return;
-  }
-  document.getElementById('modalShare').classList.remove('open');
-}
-
 function shareApp(){
-  openShareModal('app');
+  const url = window.location.href.split('#')[0];
+  const shareData = {
+  title: 'MYSTICA — Oracolo delle Stelle',
+  text: '🔮 Ho scoperto MYSTICA, un\'app mistica con tarocchi, oroscopo, rune e rituali. Prova anche tu!',
+  url: url
+  };
+  try{
+  if(navigator.share){
+  navigator.share(shareData).catch(()=>{});
+  } else if(navigator.clipboard){
+  navigator.clipboard.writeText(url).then(()=>{
+  if(typeof toast === 'function') toast('🔗 Link copiato negli appunti');
+  });
+  } else {
+
+  prompt('Copia questo link e condividilo:', url);
+  }
+  }catch(e){
+  if(typeof toast === 'function') toast('Errore nella condivisione');
+  }
 }
 
 /* ── trackAppUse ─────────────────────────────────────────────── */
@@ -3080,6 +3035,14 @@ function buildSynthesis(...args){ return _loadChunk('tarocchi').then(()=> window
 function resetTarot(...args){ return _loadChunk('tarocchi').then(()=> window.resetTarot.apply(window,args)); }
 function saveTarot(...args){ return _loadChunk('tarocchi').then(()=> window.saveTarot.apply(window,args)); }
 
+// chunk: consulente.js
+function selectConsultTopic(...args){ return _loadChunk('consulente').then(()=> window.selectConsultTopic.apply(window,args)); }
+function openConsulente(...args){ return _loadChunk('consulente').then(()=> window.openConsulente.apply(window,args)); }
+function _detectKeywords(...args){ return _loadChunk('consulente').then(()=> window._detectKeywords.apply(window,args)); }
+function _detectSoggetto(...args){ return _loadChunk('consulente').then(()=> window._detectSoggetto.apply(window,args)); }
+function _getRispostaKeyword(...args){ return _loadChunk('consulente').then(()=> window._getRispostaKeyword.apply(window,args)); }
+function runConsulente(...args){ return _loadChunk('consulente').then(()=> window.runConsulente.apply(window,args)); }
+
 // chunk: oracoli.js
 function initDelfiIcons(...args){ return _loadChunk('oracoli').then(()=> window.initDelfiIcons.apply(window,args)); }
 function resetDelfi(...args){ return _loadChunk('oracoli').then(()=> window.resetDelfi.apply(window,args)); }
@@ -3252,240 +3215,3 @@ function dismissRating(...args){ return _loadChunk('extra').then(()=> window.dis
     if(typeof initApp==='function') initApp();
   }
 })();
-
-/* ══════════════════════════════════════════════════════════════
-   MYSTICA — SISTEMA PUSH NOTIFICATIONS
-   Notifica giornaliera + lunedì settimanale
-   ══════════════════════════════════════════════════════════════ */
-
-const PUSH_DAILY_MSGS = [
-  '✨ Il messaggio delle stelle di oggi ti aspetta',
-  '🔮 Il tuo oroscopo quotidiano è pronto',
-  '🌙 L\'universo ha qualcosa da dirti oggi',
-  '⭐ Tira le rune — il destino parla',
-  '🃏 I Tarocchi rivelano i tuoi segreti di oggi',
-  '✦ Le energie cosmiche di oggi ti attendono',
-  '🌟 Apri MYSTICA — le stelle sono eloquenti',
-  '🔮 Il tuo messaggio mistico quotidiano è pronto',
-  '🌙 Consulta l\'oracolo — nuove rivelazioni oggi',
-  '✨ Le stelle hanno captato la tua energia',
-];
-
-const PUSH_WEEKLY_MSGS = [
-  '🌟 Lunedì mistico: scopri le stelle della settimana',
-  '✨ Inizia la settimana con l\'energia giusta — consulta MYSTICA',
-  '🔮 Le previsioni astrali settimanali sono pronte',
-  '🌙 Una nuova settimana cosmica ti aspetta su MYSTICA',
-];
-
-function _pushDailyMsg() {
-  const seed = Math.floor(Date.now() / 86400000); // cambia ogni giorno
-  return PUSH_DAILY_MSGS[seed % PUSH_DAILY_MSGS.length];
-}
-
-function _pushWeeklyMsg() {
-  const seed = Math.floor(Date.now() / (86400000 * 7));
-  return PUSH_WEEKLY_MSGS[seed % PUSH_WEEKLY_MSGS.length];
-}
-
-// ── Mostra il banner opt-in notifiche ──────────────────────────
-function showPushOptIn() {
-  if (document.getElementById('pushOptInBanner')) return;
-  const banner = document.createElement('div');
-  banner.id = 'pushOptInBanner';
-  banner.style.cssText = `
-    position:fixed; bottom:calc(80px + env(safe-area-inset-bottom,0px)); left:12px; right:12px;
-    background:linear-gradient(135deg,#1e0e38,#0f0720);
-    border:1.5px solid rgba(212,175,55,.6); border-radius:16px;
-    padding:14px 16px; z-index:2000; box-shadow:0 8px 32px rgba(0,0,0,.6);
-    animation:mslide .4s cubic-bezier(.34,1.56,.64,1);
-    display:flex; flex-direction:column; gap:10px;
-  `;
-  banner.innerHTML = `
-    <div style="display:flex;align-items:flex-start;gap:10px">
-      <span style="font-size:28px;flex-shrink:0">🔔</span>
-      <div>
-        <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--gold);margin-bottom:3px">Ricevi il messaggio delle stelle</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5">Una notifica al giorno con il tuo messaggio cosmico. Niente spam, solo magia.</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button onclick="acceptPushNotifications()" style="flex:2;padding:10px;background:var(--gold);color:#0a0514;border:none;border-radius:10px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;cursor:pointer;touch-action:manipulation;font-weight:700">✨ Attiva</button>
-      <button onclick="declinePushNotifications()" style="flex:1;padding:10px;background:transparent;border:1px solid rgba(42,23,72,.8);color:var(--muted);border-radius:10px;font-size:11px;cursor:pointer;touch-action:manipulation">No grazie</button>
-    </div>
-  `;
-  document.body.appendChild(banner);
-}
-
-function hidePushOptIn() {
-  const b = document.getElementById('pushOptInBanner');
-  if (b) b.remove();
-}
-
-// ── Utente accetta le notifiche ────────────────────────────────
-async function acceptPushNotifications() {
-  hidePushOptIn();
-  if (!('Notification' in window)) {
-    if (typeof toast === 'function') toast('⚠️ Notifiche non supportate su questo browser');
-    return;
-  }
-  try {
-    const perm = await Notification.requestPermission();
-    if (perm === 'granted') {
-      localStorage.setItem('MYSTICA_PUSH_OPT', 'yes');
-      localStorage.setItem('MYSTICA_PUSH_ASKED', Date.now().toString());
-      scheduleMysticaNotifications();
-      if (typeof toast === 'function') toast('🔔 Notifiche attivate! Le stelle ti contatteranno ogni giorno ✨');
-    } else {
-      localStorage.setItem('MYSTICA_PUSH_OPT', 'denied');
-      if (typeof toast === 'function') toast('Notifiche non abilitate');
-    }
-  } catch(e) {
-    if (typeof toast === 'function') toast('Errore nell\'attivazione delle notifiche');
-  }
-}
-
-function declinePushNotifications() {
-  hidePushOptIn();
-  localStorage.setItem('MYSTICA_PUSH_OPT', 'declined');
-  localStorage.setItem('MYSTICA_PUSH_ASKED', Date.now().toString());
-}
-
-// ── Schedula le notifiche locali via SW ────────────────────────
-async function scheduleMysticaNotifications() {
-  if (!('serviceWorker' in navigator) || !('Notification' in window)) return;
-  if (Notification.permission !== 'granted') return;
-
-  try {
-    const reg = await navigator.serviceWorker.ready;
-    const now = new Date();
-
-    // --- Notifica giornaliera: ogni giorno alle 09:00 ---
-    const nextDaily = new Date(now);
-    nextDaily.setHours(9, 0, 0, 0);
-    if (nextDaily <= now) nextDaily.setDate(nextDaily.getDate() + 1);
-    const msDaily = nextDaily.getTime() - now.getTime();
-
-    setTimeout(() => {
-      _showLocalNotification(reg, {
-        title: '✨ MYSTICA — Messaggio delle Stelle',
-        body: _pushDailyMsg(),
-        tag: 'mystica-daily',
-      });
-      // Ripeti ogni 24 ore
-      setInterval(() => {
-        _showLocalNotification(reg, {
-          title: '✨ MYSTICA — Messaggio delle Stelle',
-          body: _pushDailyMsg(),
-          tag: 'mystica-daily',
-        });
-      }, 86400000);
-    }, msDaily);
-
-    // --- Notifica settimanale: ogni lunedì alle 08:30 ---
-    const nextMonday = new Date(now);
-    const dayOfWeek = nextMonday.getDay(); // 0=Dom, 1=Lun
-    const daysToMonday = dayOfWeek === 1 ? (now.getHours() < 8 ? 0 : 7) : (8 - dayOfWeek) % 7 || 7;
-    nextMonday.setDate(nextMonday.getDate() + daysToMonday);
-    nextMonday.setHours(8, 30, 0, 0);
-    const msWeekly = nextMonday.getTime() - now.getTime();
-
-    setTimeout(() => {
-      _showLocalNotification(reg, {
-        title: '🌟 MYSTICA — Oroscopo Settimanale',
-        body: _pushWeeklyMsg(),
-        tag: 'mystica-weekly',
-      });
-      // Ripeti ogni 7 giorni
-      setInterval(() => {
-        _showLocalNotification(reg, {
-          title: '🌟 MYSTICA — Oroscopo Settimanale',
-          body: _pushWeeklyMsg(),
-          tag: 'mystica-weekly',
-        });
-      }, 86400000 * 7);
-    }, msWeekly);
-
-    // Invia dati utente al SW per personalizzazione futura
-    if (reg.active) {
-      const prof = JSON.parse(localStorage.getItem('MYSTICA_PROFILO') || '{}');
-      reg.active.postMessage({ type: 'MYSTICA_USER_DATA', name: prof.name || '', sign: prof.sign || '' });
-    }
-
-  } catch(e) { console.warn('Push schedule error', e); }
-}
-
-function _showLocalNotification(reg, opts) {
-  const prof = JSON.parse(localStorage.getItem('MYSTICA_PROFILO') || '{}');
-  const name = prof.name ? ', ' + prof.name : '';
-  reg.showNotification(opts.title, {
-    body: opts.body + name,
-    icon: './icon-192-v2.png',
-    badge: './icon-192-v2.png',
-    tag: opts.tag,
-    vibrate: [200, 100, 200],
-    data: { url: './' },
-    requireInteraction: false,
-  });
-}
-
-// ── Punto di ingresso — chiamato da initApp ────────────────────
-function initPushNotifications() {
-  if (!('Notification' in window) || !('serviceWorker' in navigator)) return;
-
-  const opt = localStorage.getItem('MYSTICA_PUSH_OPT');
-  const asked = parseInt(localStorage.getItem('MYSTICA_PUSH_ASKED') || '0');
-  const daysSinceAsked = (Date.now() - asked) / 86400000;
-
-  // Se già concesso, ri-schedula (utente ha riaperto l'app)
-  if (opt === 'yes' && Notification.permission === 'granted') {
-    scheduleMysticaNotifications();
-    return;
-  }
-
-  // Non chiedere se ha già risposto di no di recente (30 giorni)
-  if ((opt === 'declined' || opt === 'denied') && daysSinceAsked < 30) return;
-
-  // Mostra banner dopo 45 secondi (non subito al primo avvio)
-  const opens = parseInt(localStorage.getItem('MYSTICA_OPEN_COUNT') || '0') + 1;
-  localStorage.setItem('MYSTICA_OPEN_COUNT', opens.toString());
-
-  // Mostra solo dalla 2a apertura in poi, con 45s di ritardo
-  if (opens >= 2) {
-    setTimeout(showPushOptIn, 45000);
-  }
-}
-
-// ── Toggle notifiche dalle impostazioni ────────────────────────
-async function togglePushFromSettings() {
-  if (!('Notification' in window)) {
-    if (typeof toast === 'function') toast('⚠️ Notifiche non supportate su questo browser');
-    return;
-  }
-  const perm = Notification.permission;
-  const opt = localStorage.getItem('MYSTICA_PUSH_OPT');
-
-  if (perm === 'granted' && opt === 'yes') {
-    // Disattiva
-    localStorage.setItem('MYSTICA_PUSH_OPT', 'declined');
-    updatePushBtn();
-    if (typeof toast === 'function') toast('🔕 Notifiche disattivate');
-  } else if (perm === 'denied') {
-    if (typeof toast === 'function') toast('⚠️ Abilita le notifiche nelle impostazioni del browser/app');
-  } else {
-    await acceptPushNotifications();
-    updatePushBtn();
-  }
-}
-
-function updatePushBtn() {
-  const btn = document.getElementById('btnPushToggle');
-  if (!btn) return;
-  const active = Notification.permission === 'granted' && localStorage.getItem('MYSTICA_PUSH_OPT') === 'yes';
-  btn.textContent = active ? '🔔 Notifiche Attive ✓' : '🔔 Attiva Notifiche Giornaliere';
-  btn.style.borderColor = active ? 'var(--gold)' : '';
-  btn.style.color = active ? 'var(--gold)' : '';
-}
-
-// Aggiorna stato bottone quando si apre la sezione impostazioni
-document.addEventListener('DOMContentLoaded', () => { setTimeout(updatePushBtn, 500); });

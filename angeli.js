@@ -369,25 +369,3 @@ function _showAngeloResult(a, dateVal, timeVal){
   saveHistory('Angelologia', a.n + ' — ' + a.trono);
 }
 
-/* ── MysticaAngeli overlay controller ── */
-window.MysticaAngeli = {
-  apri: function(){
-    hapticFeedback('mystical');
-    const el = document.getElementById('angeli-sezione');
-    if(el){ el.style.display = 'block'; window.scrollTo(0,0); }
-  },
-  chiudi: function(){
-    const el = document.getElementById('angeli-sezione');
-    if(el){ el.style.display = 'none'; }
-  },
-  tab: function(nome){
-    document.querySelectorAll('.angeli-panel').forEach(p=>p.classList.remove('active'));
-    document.querySelectorAll('.angeli-tab').forEach(t=>t.classList.remove('active-angeli'));
-    const panelId = nome === 'angeli' ? 'angeli-panel' : (nome === 'diavoli' ? 'diavoli-panel' : nome+'-panel');
-    const panel = document.getElementById(panelId);
-    if(panel) panel.classList.add('active');
-    document.querySelectorAll('.angeli-tab').forEach(t=>{
-      if(t.getAttribute('onclick') && t.getAttribute('onclick').indexOf("'"+nome+"'")>=0) t.classList.add('active-angeli');
-    });
-  }
-};

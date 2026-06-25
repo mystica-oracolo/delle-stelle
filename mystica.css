@@ -397,7 +397,18 @@ body.day-mode .discl-link{color:rgba(139,106,16,0.5)}
 .onb-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.5px}
 .onb-sub{font-size:10px;color:var(--muted);text-align:center;line-height:1.4}
 /* ═══ CONSULENTE TOPIC BUTTONS ═══ */
+.consult-topic{padding:10px 6px;background:rgba(42,23,72,.25);border:1px solid rgba(42,23,72,.6);border-radius:10px;color:var(--muted);font-family:'Cinzel',serif;font-size:11px;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.consult-topic:hover,.consult-topic.active{border-color:var(--gold-dim);color:var(--gold);background:rgba(42,23,72,.6)}
+.consult-topic.active{border-color:var(--gold);background:rgba(42,23,72,.7);box-shadow:0 0 10px var(--gold-glow)}
 /* ═══ CONSULENTE RESULT BLOCKS ═══ */
+.consult-block{background:#0b0520;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px}
+.consult-block h4{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase}
+.consult-block p{font-size:13.5px;line-height:1.75;margin:0;color:var(--text)}
+.consult-response{background:linear-gradient(135deg,rgba(218,165,32,0.05) 0%,rgba(75,0,130,0.05) 100%);border-left:3px solid var(--gold);padding:1.5rem;border-radius:8px;margin-top:1rem;line-height:1.7;font-style:italic;color:var(--text)}
+.consult-response-general{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(218,165,32,0.2)}
+.consult-response-advice{font-style:normal;color:var(--gold);font-weight:500;display:block;margin-top:0.5rem}
+.consult-loading{display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;animation:consult-pulse 1.5s infinite;margin-left:0.5rem}
+@keyframes consult-pulse{0%,100%{opacity:0.3}50%{opacity:1}}
 body.day-mode .home-intro-block{background:linear-gradient(145deg,#fffdf7,#fdf6e8);border-color:rgba(139,106,16,0.18)}
 body.day-mode .home-intro-title{color:#8b6a10}
 body.day-mode .home-intro-text{color:#5a4a30}

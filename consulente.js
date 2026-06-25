@@ -1,13 +1,7 @@
-// consulente.js — lazy chunk
-// Tutte le funzioni sono locali all'IIFE, nessuna dipende da stub globali
-(function(){
-
-var _consultTopicActive = 'destino';
-
 function selectConsultTopic(btn) {
   document.querySelectorAll('.consult-topic').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  _consultTopicActive = btn.dataset.t || 'destino';
+  _consultTopicActive = btn.dataset.t;
 }
 
 function openConsulente() {
@@ -561,16 +555,14 @@ function _getRispostaKeyword(temi, nome, soggetto) {
             "Non sei solo. Forze più grandi ti stanno guidando e sostenendo."
         ]
     }
-  };
+}
+;
 
   var tema = temi.length > 0 ? temi[0] : 'default';
   var poolGenerale = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].generale ? RISPOSTE_AI[tema].generale : RISPOSTE_AI['default'].generale;
   var poolConsiglio = RISPOSTE_AI[tema] && RISPOSTE_AI[tema].consiglio ? RISPOSTE_AI[tema].consiglio : RISPOSTE_AI['default'].consiglio;
-  // Seed basato su testo + ora: risposta diversa per ogni domanda e non fissa nel tempo
-  var _txtSeed = temi.join('').split('').reduce(function(a,c){ return a + c.charCodeAt(0); }, 0);
-  var _timeSeed = Math.floor(Date.now() / 60000); // cambia ogni minuto, non ogni 5 min
-  var idxGenerale = (_txtSeed * 31 + _timeSeed * 7) % poolGenerale.length;
-  var idxConsiglio = (_txtSeed * 17 + _timeSeed * 13 + 3) % poolConsiglio.length;
+  var idxGenerale = Math.floor(Date.now() / 300000) % poolGenerale.length;
+  var idxConsiglio = Math.floor(Date.now() / 150000) % poolConsiglio.length; // Usa un seed diverso per il consiglio
   var rispostaGenerale = poolGenerale[idxGenerale];
   var rispostaConsiglio = poolConsiglio[idxConsiglio];
   var risposta = rispostaGenerale + ' ' + rispostaConsiglio; // Combina le due risposte
@@ -725,7 +717,6 @@ function runConsulente() {
   btn.style.pointerEvents = 'none';
 
   setTimeout(function(){
-    try {
     btn.textContent = '✨ Chiedi all\'Universo';
     btn.style.opacity = '1';
     btn.style.pointerEvents = 'auto';
@@ -756,24 +747,6 @@ function runConsulente() {
     ].join('');
     try{ playMysticSound('bell'); }catch(e){}
     try{ burst(); }catch(e){}
-    } catch(err) {
-      console.error('Consulente error:', err);
-      btn.textContent = '✨ Chiedi all\'Universo';
-      btn.style.opacity = '1';
-      btn.style.pointerEvents = 'auto';
-      res.style.display = 'block';
-      res.innerHTML = '<div class="consult-block"><p style="color:var(--gold)">🔮 Le stelle hanno captato la tua domanda. Riprova tra un momento.</p></div>';
-    }
   }, 1400);
 }
 
-
-// Esponi su window con nomi univoci — le stub di core.js puntano a questi
-window._consulente_selectConsultTopic = selectConsultTopic;
-window._consulente_openConsulente = openConsulente;
-window._consulente_detectKeywords = _detectKeywords;
-window._consulente_detectSoggetto = _detectSoggetto;
-window._consulente_getRispostaKeyword = _getRispostaKeyword;
-window._consulente_runConsulente = runConsulente;
-
-})(); // fine IIFE
