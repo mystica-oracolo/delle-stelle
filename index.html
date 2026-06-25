@@ -1561,7 +1561,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-libro" style="display:none">
+      <div id="oracolo-libro" style="display:none" data-redirect="./libro-delle-risposte.html">
         <div class="card" style="padding:0;overflow:hidden;border:none;background:transparent;box-shadow:none">
           <button class="oracle-back" onclick="backToOracoli()" style="margin:12px 0 0 14px">Oracoli</button>
 
@@ -1633,7 +1633,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
 
 
 
-      <div id="oracolo-wicca" style="display:none">
+      <div id="oracolo-wicca" style="display:none" data-redirect="./stregoneria-wicca.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>🌿 Stregoneria &amp; Wicca</h2>
@@ -1684,7 +1684,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-alchimia" style="display:none">
+      <div id="oracolo-alchimia" style="display:none" data-redirect="./alchimia.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>⚗️ Alchimia</h2>
@@ -1724,7 +1724,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-cabala" style="display:none">
+      <div id="oracolo-cabala" style="display:none" data-redirect="./cabala.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>🕎 Cabala (Kabbalah)</h2>
@@ -1761,7 +1761,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-ermetismo" style="display:none">
+      <div id="oracolo-ermetismo" style="display:none" data-redirect="./ermetismo.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>📜 Ermetismo</h2>
@@ -1795,7 +1795,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-negromanzia" style="display:none">
+      <div id="oracolo-negromanzia" style="display:none" data-redirect="./negromanzia.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>💀 Negromanzia</h2>
@@ -1835,7 +1835,7 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
       </div>
 
 
-      <div id="oracolo-bibliomanzia" style="display:none">
+      <div id="oracolo-bibliomanzia" style="display:none" data-redirect="./bibliomanzia-tasseomanzia.html">
         <div class="card">
           <button class="oracle-back" onclick="backToOracoli()">Oracoli</button>
           <h2>📚 Bibliomanzia &amp; Tasseomanzia</h2>
@@ -1881,556 +1881,24 @@ body{background:#070312;font-family:Georgia,'Times New Roman',serif;overscroll-b
     <div id="view-magia" class="view">
       <div class="card gold-border">
         <h2>📚 Libri di Magia</h2>
-        <p class="t-muted">Rituali antichi e pratiche esoteriche — tre libri per tre vie</p>
-        <div class="magia-tabs">
-          <button class="magia-tab active" data-panel="bianca" onclick="mysticaNav('./magia-bianca.html',true,'Magia Bianca')">🤍 Bianca</button>
-          <button class="magia-tab" data-panel="rossa" onclick="mysticaNav('./magia-rossa.html',true,'Magia Rossa')">❤️ Rossa</button>
-          <button class="magia-tab" data-panel="nera" onclick="mysticaNav('./magia-nera.html',true,'Magia Nera')">🖤 Nera</button>
-          <button class="magia-tab" data-panel="malocchio" onclick="mysticaNav('./malocchio.html',true,'Malocchio')">🧿 Malocchio</button>
-          <button class="magia-tab" data-panel="sigilli" onclick="mysticaNav('./sigilli-salomone.html',true,'Sigilli di Salomone')">🔯 Sigilli</button>
-        </div>
+        <p class="t-muted">Scegli il tuo percorso</p>
       </div>
-
-      <!-- PANNELLI MAGIA -->
-      <div id="magiaPanel-bianca" class="magia-panel active">
-        <div class="card" style="border-color:#c8c8f050">
-          <div class="magia-book-header">
-            <span class="magia-book-icon">🤍</span>
-            <div>
-              <h2 style="text-align:left;margin-bottom:3px">Magia Bianca</h2>
-              <p class="t-muted" style="font-size:11px">Purificazione · Protezione · Guarigione · Benedizione</p>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.65;margin-bottom:4px">Lavora in armonia con le energie naturali e il libero arbitrio degli esseri.</p>
-        </div>
-        <div id="magiaList-bianca"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:4px 0">
+        <a href="./magia-bianca.html" style="text-decoration:none"><div class="card" style="text-align:center;padding:20px 10px;border-color:rgba(200,200,255,0.2)"><div style="font-size:32px">🤍</div><div style="font-family:'Cinzel',serif;font-size:13px;color:#e0d8f0;margin-top:8px">Magia Bianca</div></div></a>
+        <a href="./magia-rossa.html" style="text-decoration:none"><div class="card" style="text-align:center;padding:20px 10px;border-color:rgba(200,80,80,0.2)"><div style="font-size:32px">❤️</div><div style="font-family:'Cinzel',serif;font-size:13px;color:#e0d8f0;margin-top:8px">Magia Rossa</div></div></a>
+        <a href="./magia-nera.html" style="text-decoration:none"><div class="card" style="text-align:center;padding:20px 10px;border-color:rgba(100,100,140,0.2)"><div style="font-size:32px">🖤</div><div style="font-family:'Cinzel',serif;font-size:13px;color:#e0d8f0;margin-top:8px">Magia Nera</div></div></a>
+        <a href="./malocchio.html" style="text-decoration:none"><div class="card" style="text-align:center;padding:20px 10px;border-color:rgba(0,180,160,0.2)"><div style="font-size:32px">🧿</div><div style="font-family:'Cinzel',serif;font-size:13px;color:#e0d8f0;margin-top:8px">Malocchio</div></div></a>
+        <a href="./sigilli-salomone.html" style="text-decoration:none;grid-column:span 2"><div class="card" style="text-align:center;padding:20px 10px;border-color:rgba(180,140,60,0.2)"><div style="font-size:32px">🔯</div><div style="font-family:'Cinzel',serif;font-size:13px;color:#e0d8f0;margin-top:8px">Sigilli di Salomone</div></div></a>
       </div>
-
-      <div id="magiaPanel-rossa" class="magia-panel">
-        <div class="card" style="border-color:#c05050a0">
-          <div class="magia-book-header">
-            <span class="magia-book-icon">❤️</span>
-            <div>
-              <h2 style="text-align:left;margin-bottom:3px;color:#e88">Magia Rossa</h2>
-              <p class="t-muted" style="font-size:11px">Amore · Attrazione · Passione · Connessione</p>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.65;margin-bottom:4px">Sempre nel rispetto del consenso e del libero arbitrio di ogni essere.</p>
-        </div>
-        <div id="magiaList-rossa"></div>
-      </div>
-
-      <div id="magiaPanel-nera" class="magia-panel">
-        <div class="card" style="border-color:#60608050">
-          <div class="magia-book-header">
-            <span class="magia-book-icon">🖤</span>
-            <div>
-              <h2 style="text-align:left;margin-bottom:3px;color:#aaa">Magia Nera</h2>
-              <p class="t-muted" style="font-size:11px">Ombra · Difesa · Allontanamento · Trasformazione</p>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.65;margin-bottom:4px">Pratiche etiche, difensive e di crescita interiore. Non per nuocere.</p>
-        </div>
-        <div id="magiaList-nera"></div>
-      </div>
-
-      <div id="magiaPanel-malocchio" class="magia-panel">
-        <div class="card" style="border-color:#1a6b9080">
-          <div class="magia-book-header">
-            <span class="magia-book-icon">🧿</span>
-            <div>
-              <h2 style="text-align:left;margin-bottom:3px;color:#5bc8e8">Il Malocchio</h2>
-              <p class="t-muted" style="font-size:11px">Riconoscimento · Rimozione · Protezione · Tradizione</p>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.65;margin-bottom:4px">Tradizione popolare mediterranea. Solo protezione etica — mai offesa.</p>
-        </div>
-        <div id="magiaList-malocchio"></div>
-      </div>
-
-      <div id="magiaPanel-sigilli" class="magia-panel">
-        <div class="card" style="border-color:var(--gold)">
-          <div class="magia-book-header">
-            <span class="magia-book-icon">🔯</span>
-            <div>
-              <h2 style="text-align:left;margin-bottom:3px;color:var(--gold)">Sigilli di Re Salomone</h2>
-              <p class="t-muted" style="font-size:11px">Antica Sapienza · Pentacoli Planetari · Potere Divino</p>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.65;margin-bottom:14px">
-            Accedi all'archivio sacro della Clavicula Salomonis. Inserisci il tuo nome e la tua intenzione per trovare il sigillo planetario più affine al tuo desiderio.
-          </p>
-
-          <div id="sigilloForm">
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-family:'Cinzel',serif;letter-spacing:1px">✦ La Tua Intenzione (es: "Protezione", "Ricchezza")</label>
-            <input type="text" id="sigilloIntento" placeholder="Cosa desideri manifestare?..." maxlength="30" style="margin-bottom:12px">
-
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-family:'Cinzel',serif;letter-spacing:1px">✦ Il Tuo Nome</label>
-            <input type="text" id="sigilloNome" placeholder="Il tuo nome..." maxlength="20" style="margin-bottom:16px">
-
-            <button class="btn" onclick="trovaSigilloSalomone()">🔯 Evoca Sigillo di Salomone</button>
-          </div>
-
-          <div id="sigilloResult" style="display:none;text-align:center;margin-top:20px">
-            <h3 id="sigilloTitolo" style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:10px;font-size:16px"></h3>
-            <div id="sigilloImageContainer" style="background:radial-gradient(ellipse at center,#1a0a2e 0%,#06020f 100%);border:1px solid var(--gold-dim);border-radius:16px;padding:24px;margin-bottom:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:220px;gap:10px">
-              <div id="sigilloSVG" style="width:100%;max-width:220px;filter:drop-shadow(0 0 14px rgba(212,175,55,0.45))"></div>
-              <div id="sigilloPianeta" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-align:center"></div>
-            </div>
-            <div id="sigilloDescrizione" style="font-size:13px;color:var(--text);margin-bottom:12px;line-height:1.5;padding:0 10px"></div>
-            <button class="btn btn-sec" onclick="resetSigillo()">🔄 Cerca un altro Sigillo</button>
-          </div>
-        </div>
-
-        <!-- ═══ ENCICLOPEDIA DEI SETTE PENTACOLI ═══ -->
-        <div id="enciclopediaPentacoli" style="margin-top:10px">
-          <div class="card" style="border-color:var(--gold-dim);text-align:center;padding:20px 16px 16px">
-            <div style="font-size:44px;margin-bottom:8px;filter:drop-shadow(0 0 18px rgba(212,175,55,0.5));animation:logoGlow 4s infinite">🔯</div>
-            <h2 style="font-family:'Cinzel',serif;color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:6px">I SETTE PENTACOLI<br>DI RE SALOMONE</h2>
-            <p style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px">Clavicula Salomonis · Sigilli Planetari · Arte Ermetica</p>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 0 14px"></div>
-            <p style="font-size:13px;color:var(--text);line-height:1.75;text-align:left">
-              I Pentacoli di Re Salomone sono i sette sigilli planetari descritti nella <em>Clavicula Salomonis</em> e nella <em>Grande Chiave di Salomone</em>, testi di magia cerimoniale risalenti al Medioevo e attribuiti alla saggezza del leggendario re biblico. Ogni pentacolo è legato a un pianeta del sistema solare classico, porta un simbolo geometrico sacro, un nome divino e un potere specifico. La tradizione ermetica insegna che incidere il pentacolo sul metallo corrispondente, nelle ore planetarie giuste, attiva una connessione diretta con la forza cosmica di quel pianeta.
-            </p>
-          </div>
-
-          <!-- SATURNO -->
-          <div class="card" style="border-color:#6b6b8a80;background:linear-gradient(145deg,#0d0d18,#08080f)" id="pentacolo-saturno">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#6b6b8a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">I° Pentacolo Planetario</div>
-              <div id="svgSaturno" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(107,107,138,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#9090b8;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Saturno ✦</h3>
-              <div style="font-size:13px;color:#6b6b8a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♄ SATURNUS</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#6b6b8a,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Piombo</span>
-              <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Nero · Grigio</span>
-              <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Sabato</span>
-              <span style="background:#6b6b8a20;border:1px solid #6b6b8a50;color:#9090b8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 3</span>
-            </div>
-            <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Saturno è il Signore del Tempo, della Legge Cosmica e della Morte come trasformazione. Il suo pentacolo incarna il principio della <strong style="color:#9090b8">limitazione necessaria</strong>: ciò che delimita definisce, ciò che definisce protegge. È il sigillo della saggezza acquisita attraverso la prova, il sudore e la perseveranza. Nella tradizione cabalistica corrisponde alla Sephirah Binah, l'Intelligenza, terza emanazione dell'Albero della Vita.</p>
-            </div>
-            <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Saturno è invocato per <strong style="color:#9090b8">protezione dagli spiriti malevoli</strong>, per rompere maledizioni antiche e per acquisire disciplina interiore. I maghi cerimoniali lo usano per evocare spiriti del piano saturnino, per comprendere le leggi karmiche e per lavori di magia funeraria e ancestrale. È anche il sigillo della longevità: portarlo inciso nel piombo si dice prolunghi la vita e rafforzi le ossa.</p>
-            </div>
-            <div style="background:#0b0b18;border-left:3px solid #6b6b8a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#9090b8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#9090b8">Agiel</strong> (intelligenza di Saturno) · <strong style="color:#9090b8">Zazel</strong> (spirito di Saturno) · <strong style="color:#9090b8">YHWH Elohim</strong> (nome divino). Quadrato magico: la somma di ogni riga, colonna e diagonale è 15. I numeri da 1 a 9 disposti nel quadrato di Saturno producono la somma totale di 45, numero sacro al pianeta.</p>
-            </div>
-            <div style="background:rgba(107,107,138,0.1);padding:14px;border-radius:8px;border:1px dashed #6b6b8a60;text-align:center">
-              <div style="font-size:10px;color:#6b6b8a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#9090b8;font-weight:600;margin:0">« Per Saturnum, fundamentum aeternum »</p>
-            </div>
-          </div>
-
-          <!-- GIOVE -->
-          <div class="card" style="border-color:#4a7fbf80;background:linear-gradient(145deg,#090e18,#050810)" id="pentacolo-giove">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#4a7fbf;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">II° Pentacolo Planetario</div>
-              <div id="svgGiove" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(74,127,191,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Giove ✦</h3>
-              <div style="font-size:13px;color:#4a7fbf;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♃ IUPPITER</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#4a7fbf,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Stagno</span>
-              <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Blu Reale · Viola</span>
-              <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Giovedì</span>
-              <span style="background:#4a7fbf20;border:1px solid #4a7fbf50;color:#7ab0e8;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 4</span>
-            </div>
-            <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Giove è il Re degli Dèi, il Grande Benefattore, patrono di giustizia, espansione e abbondanza. Il suo pentacolo porta in sé il principio della <strong style="color:#7ab0e8">moltiplicazione generosa</strong>: chi lo porta con fede vede amplificarsi le proprie risorse materiali e spirituali. Nella Cabala corrisponde a Chesed, la Misericordia, quarta sephirah, sede dell'amore divino incondizionato e della benevolenza cosmica.</p>
-            </div>
-            <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Giove è il più celebre talismano di <strong style="color:#7ab0e8">prosperità e fortuna</strong> dell'intera tradizione salomoniana. Si usa per attirare ricchezza, onori, promozioni lavorative e vittorie legali. I maghi lo tracciano su lamine di stagno durante l'ora di Giove del giovedì mattina. È anche invocato per ottenere favori dai potenti, per la giustizia nelle cause difficili e per amplificare la generosità altrui verso di noi.</p>
-            </div>
-            <div style="background:#090e18;border-left:3px solid #4a7fbf;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#7ab0e8;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#7ab0e8">Iophiel</strong> (intelligenza di Giove) · <strong style="color:#7ab0e8">Hismael</strong> (spirito di Giove) · <strong style="color:#7ab0e8">El</strong> (nome divino della Misericordia). Il quadrato magico di Giove è un quadrato 4×4 con somma di riga 34 e somma totale 136. Ogni numero è diverso e la simmetria del quadrato simboleggia l'ordine divino che distribuisce i doni.</p>
-            </div>
-            <div style="background:rgba(74,127,191,0.1);padding:14px;border-radius:8px;border:1px dashed #4a7fbf60;text-align:center">
-              <div style="font-size:10px;color:#4a7fbf;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#7ab0e8;font-weight:600;margin:0">« Iuppiter omnipotens, dator bonorum »</p>
-            </div>
-          </div>
-
-          <!-- MARTE -->
-          <div class="card" style="border-color:#c84a3a80;background:linear-gradient(145deg,#180a08,#0d0604)" id="pentacolo-marte">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#c84a3a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">III° Pentacolo Planetario</div>
-              <div id="svgMarte" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(200,74,58,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#e87a6a;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Marte ✦</h3>
-              <div style="font-size:13px;color:#c84a3a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♂ MARS</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#c84a3a,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Ferro</span>
-              <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Rosso Scarlatto</span>
-              <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Martedì</span>
-              <span style="background:#c84a3a20;border:1px solid #c84a3a50;color:#e87a6a;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 5</span>
-            </div>
-            <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Marte è il Guerriero Cosmico, il principe del fuoco e dell'azione. Il suo pentacolo non è solo uno strumento di violenza — è il sigillo della <strong style="color:#e87a6a">volontà che penetra la resistenza</strong>. Nella tradizione salomonica Marte governa il coraggio necessario per affrontare le paure più profonde. Corrisponde a Geburah nella Cabala, la Severità, la forza che taglia il superfluo e difende l'essenziale.</p>
-            </div>
-            <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Marte è usato per <strong style="color:#e87a6a">protezione in situazioni di pericolo</strong>, per vincere nelle competizioni e nei conflitti, e per rafforzare la determinazione personale. I guerrieri medievali lo incidevano sulle armature. È anche efficace per spezzare incantesimi ostili: la geometria stellare a cinque punte — il Pentagono di Marte — respinge le energie aggressive e le rimanda alla loro origine.</p>
-            </div>
-            <div style="background:#180a08;border-left:3px solid #c84a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#e87a6a;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#e87a6a">Graphiel</strong> (intelligenza di Marte) · <strong style="color:#e87a6a">Barzabel</strong> (spirito di Marte) · <strong style="color:#e87a6a">Elohim Gibor</strong> (Dio della forza, nome divino). Il quadrato 5×5 di Marte ha somma di riga 65 e somma totale 325. I 25 numeri disposti nel quadrato formano una struttura di simmetria perfetta che simboleggia la forza nell'ordine.</p>
-            </div>
-            <div style="background:rgba(200,74,58,0.1);padding:14px;border-radius:8px;border:1px dashed #c84a3a60;text-align:center">
-              <div style="font-size:10px;color:#c84a3a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#e87a6a;font-weight:600;margin:0">« Mars potens, vincere et superare »</p>
-            </div>
-          </div>
-
-          <!-- SOLE -->
-          <div class="card" style="border-color:#e6b80080;background:linear-gradient(145deg,#1a1400,#0d0a00)" id="pentacolo-sole">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#e6b800;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">IV° Pentacolo Planetario</div>
-              <div id="svgSole" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 22px rgba(230,184,0,0.7))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#ffd700;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo del Sole ✦</h3>
-              <div style="font-size:13px;color:#e6b800;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☉ SOL INVICTUS</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#e6b800,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Oro</span>
-              <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Oro · Giallo Solare</span>
-              <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Domenica</span>
-              <span style="background:#e6b80020;border:1px solid #e6b80050;color:#ffd700;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 6</span>
-            </div>
-            <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Sole è il cuore pulsante del sistema planetario esoterico: rappresenta la <strong style="color:#ffd700">coscienza solare</strong>, la divinità immanente nel creato e la gloria che irradia senza trattenere nulla. Il suo pentacolo porta in sé il numero 6 — il numero della bellezza e dell'armonia, la Sephirah Tiphereth — centro assoluto dell'Albero della Vita, dove la forza divina si manifesta come luce visibile e comprensibile.</p>
-            </div>
-            <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo del Sole è il talismano della <strong style="color:#ffd700">gloria, del successo e del riconoscimento</strong>. Si invoca per ottenere fama, per essere favoriti dai potenti, per guarire malattie legate all'energia vitale. L'oro inciso con i 12 raggi solari durante la domenica all'alba crea uno dei talismani più potenti dell'intera tradizione salomoniana. È anche usato dagli esorcisti: la luce solare dissolve le tenebre dell'oppressione demoniaca.</p>
-            </div>
-            <div style="background:#1a1400;border-left:3px solid #e6b800;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#ffd700;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#ffd700">Nakhiel</strong> (intelligenza del Sole) · <strong style="color:#ffd700">Sorath</strong> (spirito del Sole) · <strong style="color:#ffd700">YHWH Eloah Va-Da'ath</strong> (nome divino di Tiphereth). Il quadrato 6×6 del Sole ha somma di riga 111 e somma totale 666 — numero mistico interpretato dai cabalisti come la pienezza della luce manifesta nel mondo materiale.</p>
-            </div>
-            <div style="background:rgba(230,184,0,0.1);padding:14px;border-radius:8px;border:1px dashed #e6b80060;text-align:center">
-              <div style="font-size:10px;color:#e6b800;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#ffd700;font-weight:600;margin:0">« Sol invictus, lux mundi »</p>
-            </div>
-          </div>
-
-          <!-- VENERE -->
-          <div class="card" style="border-color:#3da88e80;background:linear-gradient(145deg,#061410,#030a08)" id="pentacolo-venere">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#3da88e;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">V° Pentacolo Planetario</div>
-              <div id="svgVenere" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(61,168,142,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#6dd8be;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Venere ✦</h3>
-              <div style="font-size:13px;color:#3da88e;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">♀ VENUS</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#3da88e,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Rame</span>
-              <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Verde · Smeraldo</span>
-              <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Venerdì</span>
-              <span style="background:#3da88e20;border:1px solid #3da88e50;color:#6dd8be;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 7</span>
-            </div>
-            <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Venere è la Dea dell'Amore, della Bellezza e dell'Armonia cosmica. Il suo pentacolo governa il principio di <strong style="color:#6dd8be">attrazione magnetica</strong>: come il magnete attira il ferro senza sforzo, così il portatore del sigillo venusiano diventa un centro di attrazione naturale per l'amore e le fortune. Nella Cabala corrisponde a Netzach, la Vittoria, settima sephirah, sede delle emozioni pure, dell'estetica e dell'istinto vitale.</p>
-            </div>
-            <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Venere è il talismano dell'<strong style="color:#6dd8be">amore, della bellezza e della fertilità</strong>. Si usa per attirare un partner, per rafforzare legami esistenti, per vincere il cuore di una persona amata. Inciso sul rame con inchiostro verde durante il venerdì mattina — mentre Venere è all'orizzonte — crea una potente calamita amorosa. È anche usato per lavori artistici, per il successo nella musica e nelle arti visive.</p>
-            </div>
-            <div style="background:#061410;border-left:3px solid #3da88e;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#6dd8be;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#6dd8be">Hagiel</strong> (intelligenza di Venere) · <strong style="color:#6dd8be">Kedemel</strong> (spirito di Venere) · <strong style="color:#6dd8be">YHWH Tzabaoth</strong> (Signore degli Eserciti Celesti, nome di Netzach). Il quadrato 7×7 di Venere ha somma di riga 175 e somma totale 1225. Il numero 7 è sacro a Venere e alla luna crescente: sette note musicali, sette chakra, sette colori dell'iride.</p>
-            </div>
-            <div style="background:rgba(61,168,142,0.1);padding:14px;border-radius:8px;border:1px dashed #3da88e60;text-align:center">
-              <div style="font-size:10px;color:#3da88e;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#6dd8be;font-weight:600;margin:0">« Venus dea, amoris flamma »</p>
-            </div>
-          </div>
-
-          <!-- MERCURIO -->
-          <div class="card" style="border-color:#d97a3a80;background:linear-gradient(145deg,#160c00,#0a0600)" id="pentacolo-mercurio">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#d97a3a;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">VI° Pentacolo Planetario</div>
-              <div id="svgMercurio" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(217,122,58,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#f0a060;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo di Mercurio ✦</h3>
-              <div style="font-size:13px;color:#d97a3a;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☿ MERCURIUS</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#d97a3a,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Argento-Mercurio</span>
-              <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Arancione · Giallo</span>
-              <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Mercoledì</span>
-              <span style="background:#d97a3a20;border:1px solid #d97a3a50;color:#f0a060;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 8</span>
-            </div>
-            <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Mercurio è il Messaggero degli Dèi, il principio dell'<strong style="color:#f0a060">intelligenza che collega</strong>: collega la terra al cielo, il pensiero alla parola, l'intuizione all'azione. Il suo pentacolo porta in sé la rapidità dell'ermes, la capacità di muoversi tra i mondi senza perdere mai l'orientamento. Nella Cabala corrisponde a Hod, lo Splendore, ottava sephirah, sede della logica, della magia pratica e delle arti divinatorie.</p>
-            </div>
-            <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo di Mercurio è il talismano dello <strong style="color:#f0a060">studio, della parola e del commercio</strong>. Si usa per superare esami, per migliorare la memoria e la capacità di apprendimento, per favorire trattative commerciali e contratti vantaggiosi. I viaggiatori lo portano come protezione durante i cammini. Gli scrittori e gli oratori lo invocano per trovare le parole giuste. È anche il sigillo della divinazione: amplifica i poteri profetici di chi lo porta.</p>
-            </div>
-            <div style="background:#160c00;border-left:3px solid #d97a3a;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#f0a060;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#f0a060">Tiriel</strong> (intelligenza di Mercurio) · <strong style="color:#f0a060">Taphthartharath</strong> (spirito di Mercurio) · <strong style="color:#f0a060">Elohim Tzabaoth</strong> (Dio degli Eserciti, nome di Hod). Il quadrato 8×8 di Mercurio ha somma di riga 260 e somma totale 2080. Le sue 64 celle corrispondono alle 64 caselle degli scacchi — il gioco di Mercurio per eccellenza.</p>
-            </div>
-            <div style="background:rgba(217,122,58,0.1);padding:14px;border-radius:8px;border:1px dashed #d97a3a60;text-align:center">
-              <div style="font-size:10px;color:#d97a3a;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#f0a060;font-weight:600;margin:0">« Mercurius velox, sermo et sapientia »</p>
-            </div>
-          </div>
-
-          <!-- LUNA -->
-          <div class="card" style="border-color:#b8a8d480;background:linear-gradient(145deg,#0a0818,#060510)" id="pentacolo-luna">
-            <div style="text-align:center;padding:8px 0 18px">
-              <div style="font-size:11px;color:#b8a8d4;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-family:'Cinzel',serif">VII° Pentacolo Planetario</div>
-              <div id="svgLuna" style="width:180px;height:180px;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(184,168,212,0.6))"></div>
-              <h3 style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:18px;letter-spacing:2px;margin-bottom:4px">✦ Pentacolo della Luna ✦</h3>
-              <div style="font-size:13px;color:#b8a8d4;letter-spacing:3px;font-family:'Cinzel',serif;margin-bottom:14px">☾ LUNA MATER</div>
-            </div>
-            <div style="height:1px;background:linear-gradient(90deg,transparent,#b8a8d4,transparent);margin-bottom:14px;opacity:.5"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px">
-              <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Metallo: Argento</span>
-              <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Colore: Argento · Bianco</span>
-              <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Giorno: Lunedì</span>
-              <span style="background:#b8a8d420;border:1px solid #b8a8d450;color:#d8c8f0;font-size:10px;padding:3px 10px;border-radius:8px;font-family:'Cinzel',serif">Numero Magico: 9</span>
-            </div>
-            <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⬡ Significato Esoterico</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">La Luna è il Grande Specchio del cosmo, il principio del <strong style="color:#d8c8f0">mistero riflesso</strong>: non produce luce propria ma la trasforma, la modula e la riversa nel mondo delle ombre. Il suo pentacolo governa le maree dell'inconscio, i cicli del tempo e le porte del sogno. Nella Cabala corrisponde a Yesod, il Fondamento, nona sephirah, custode dell'immaginazione cosmica e del passaggio tra il visibile e l'invisibile.</p>
-            </div>
-            <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">⚡ Poteri e Usi Rituali</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0">Il Pentacolo della Luna è il talismano dell'<strong style="color:#d8c8f0">intuizione, dei sogni profetici e della divinazione</strong>. Si usa per amplificare i poteri psichici, per ricevere sogni guida, per proteggersi durante i viaggi notturni — fisici e astrali. Inciso sull'argento durante la luna crescente, apre le porte della percezione extrasensoriale. È anche il sigillo della protezione degli anziani e dei bambini, i più vulnerabili alle energie lunari destabilizzate.</p>
-            </div>
-            <div style="background:#0a0818;border-left:3px solid #b8a8d4;border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px">
-              <div style="font-family:'Cinzel',serif;color:#d8c8f0;font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase">📜 Nomi Divini e Parole di Potere</div>
-              <p style="font-size:13.5px;line-height:1.75;margin:0"><strong style="color:#d8c8f0">Malka be-Tarshishim ve-Ruachoth ha-Schahalim</strong> (intelligenza della Luna) · <strong style="color:#d8c8f0">Chasmodai</strong> (spirito della Luna) · <strong style="color:#d8c8f0">Shaddai El Chai</strong> (Dio Onnipotente Vivente, nome di Yesod). Il quadrato 9×9 della Luna ha somma di riga 369 e somma totale 3321. Il 9 è il numero della Luna: ogni multiplo di 9 ridotto per somma delle cifre torna a 9 — l'infinito che si riflette su sé stesso.</p>
-            </div>
-            <div style="background:rgba(184,168,212,0.1);padding:14px;border-radius:8px;border:1px dashed #b8a8d460;text-align:center">
-              <div style="font-size:10px;color:#b8a8d4;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-family:'Cinzel',serif">Formula di Attivazione</div>
-              <p style="font-style:italic;font-size:14px;color:#d8c8f0;font-weight:600;margin:0">« Luna mater, regina noctis »</p>
-            </div>
-          </div>
-
-          <!-- FOOTER ENCICLOPEDIA -->
-          <div class="card" style="border-color:var(--gold-dim);text-align:center;padding:18px">
-            <p style="font-size:12px;color:var(--muted);font-style:italic;line-height:1.75">
-              I sette Pentacoli di Re Salomone formano un sistema completo di magia planetaria trasmesso attraverso i secoli nei testi della <em>Clavicula Salomonis</em>, del <em>Lemegeton</em> e delle tradizioni ermetiche dell'Ordine della Golden Dawn. Il loro uso richiede rispetto, intenzione pura e consapevolezza delle proprie responsabilità spirituali.
-            </p>
-            <div style="margin-top:12px;font-family:'Cinzel',serif;font-size:10px;color:var(--gold-dim);letter-spacing:2px">✦ Saturnо · Giove · Marte · Sole · Venere · Mercurio · Luna ✦</div>
-          </div>
-        </div>
-        <!-- ═══ FINE ENCICLOPEDIA PENTACOLI ═══ -->
-      </div><!-- fine magiaPanel-sigilli -->
-      <!-- Pulsante Condividi per la sezione Magia -->
-      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('magia')">📲 Condividi questa Sezione</button>
     </div>
 
-
     <div id="view-astrale" class="view">
-      <div class="astral-app-header card gold-border" style="text-align:center;padding:14px 12px 10px;margin-bottom:10px">
-        <h2 style="margin-bottom:4px">🌌 Libro del Viaggio Astrale</h2>
-        <p class="t-muted" style="font-size:11px">Tecniche OBE · Frequenze Theta · Diario di Bordo</p>
-        <div class="astral-progress-bar" style="margin-top:10px"><div class="astral-progress-fill"></div></div>
+      <div class="card gold-border" style="text-align:center;padding:30px 20px">
+        <div style="font-size:48px;margin-bottom:12px">🌌</div>
+        <h2 style="margin-bottom:8px">Viaggio Astrale</h2>
+        <p class="t-muted" style="margin-bottom:20px">Tecniche OBE · Frequenze Theta · Diario di Bordo</p>
+        <a href="./viaggio-astrale.html" class="btn" style="display:block;text-decoration:none;text-align:center">🌌 Apri il Viaggio Astrale</a>
       </div>
-
-
-      <div class="astral-toc-mobile card" style="margin-bottom:10px">
-        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:4px">
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap1');return false" title="Introduzione al viaggio astrale">1.Intro</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap2');return false" title="Preparazione alla proiezione astrale">2.Prep</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap3');return false" title="Stato ipnagogico e tecniche di rilassamento">3.Ipnagogico</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap4');return false" title="Separazione del corpo astrale">4.Separazione</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap5');return false" title="Ritorno al corpo fisico">5.Ritorno</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap6');return false" title="Diario del viaggio astrale">6.Diario</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap7');return false" title="Sicurezza nella proiezione astrale">7.Sicurezza</a>
-          <a class="astral-toc-pill" href="#" onclick="scrollChapter('cap8');return false" title="Piano di allenamento astrale">8.Piano</a>
-        </div>
-      </div>
-
-
-      <div class="astral-chapters-wrap">
-
-        <div id="acap1" class="astral-chapter card">
-          <h2>📖 1. Cos'è il Viaggio Astrale</h2>
-          <p>L'uscita dal corpo (OBE, Out-of-Body Experience) è uno <strong>stato di coscienza modificato</strong> in cui la percezione di sé si separa temporaneamente dalla localizzazione fisica. Non è un fenomeno soprannaturale, ma una capacità naturale del cervello documentata dalla neuroscienza, dalla psicologia del sonno e dalle tradizioni meditative millenarie.</p>
-          <p><strong>Cosa aspettarsi:</strong> Sensazione di leggerezza, vibrazioni, ronzii, visione del proprio corpo dall'alto, percezione di ambienti non fisici. L'esperienza varia da persona a persona e può richiedere pratica costante.</p>
-          <p><strong>Principio fondamentale:</strong> Non si "esce" fisicamente. Si espande la consapevolezza in uno stato ipnagogico/onirico lucido. La paura è il principale ostacolo: l'accettazione serena apre la via.</p>
-        </div>
-
-        <div id="acap2" class="astral-chapter card">
-          <h2>🧘 2. Preparazione del Corpo e della Mente</h2>
-          <p style="margin-bottom:10px">La riuscita dipende al 70% dalla preparazione quotidiana. Segui questi passi per almeno 7 giorni prima di tentare la separazione.</p>
-          <ul class="astral-checklist">
-            <li><label><input type="checkbox"> <strong>Sonno regolare:</strong> 7–8 ore, orari fissi. Evita schermi 1h prima di dormire.</label></li>
-            <li><label><input type="checkbox"> <strong>Alimentazione leggera:</strong> Niente pasti pesanti, alcol o caffeina dopo le 18:00.</label></li>
-            <li><label><input type="checkbox"> <strong>Ambiente:</strong> Stanza buia, silenziosa, temperatura 18–20°C. Niente orologi luminosi.</label></li>
-            <li><label><input type="checkbox"> <strong>Intenzione scritta:</strong> Prima di dormire: <em>"Stanotte ricorderò e sperimenterò il distacco con calma"</em>.</label></li>
-            <li><label><input type="checkbox"> <strong>Diario dei sogni:</strong> Quaderno sul comodino. Al risveglio, annota tutto, anche frammenti.</label></li>
-          </ul>
-        </div>
-
-        <div id="acap3" class="astral-chapter card">
-          <h2>🌙 3. Induzione dello Stato Ipnagogico</h2>
-          <p>Lo stato ipnagogico è la soglia tra veglia e sonno. Il cervello produce onde theta (4–8 Hz), ideali per il distacco percettivo.</p>
-          <h2 style="font-size:14px;margin-top:12px">🔹 Body Scan Progressivo (10–15 min)</h2>
-          <p>Sdraiati supino, braccia lungo i fianchi. Parti dalle dita dei piedi: contrai 3 sec, rilassa completamente. Sali lentamente: caviglie → polpacci → cosce → bacino → addome → petto → spalle → braccia → collo → viso. Ogni zona diventa <em>pesante e calda</em>.</p>
-          <h2 style="font-size:14px;margin-top:12px">🔹 Respirazione 4-7-8</h2>
-          <p>Inspira 4 sec dal naso → trattieni 7 sec → espira 8 sec dalla bocca. Ripeti 6 cicli. Rallenta il battito, attiva il sistema parasimpatico.</p>
-
-
-          <div class="astral-audio-player">
-            <h2 style="font-size:15px;margin-bottom:4px">🎧 Frequenze Theta Binaurali</h2>
-            <p>Indossa le <strong>cuffie</strong>. Il suono è generato in tempo reale — zero peso, funziona offline.</p>
-            <div class="player-controls">
-              <button id="thetaPlayBtn" class="theta-btn" onclick="toggleTheta()">▶ Avvia</button>
-              <div style="display:flex;align-items:center;gap:6px">
-                <span style="font-size:11px;color:#aaa">Vol</span>
-                <input type="range" id="thetaVol" min="0" max="0.25" step="0.01" value="0.1" oninput="updateThetaVol()">
-              </div>
-              <select id="thetaFreq" class="theta-select" onchange="changeThetaFreq()">
-                <option value="4">4 Hz — Theta profondo</option>
-                <option value="5.5">5.5 Hz — Theta mediano</option>
-                <option value="7">7 Hz — Theta leggero</option>
-              </select>
-            </div>
-            <div class="theta-visualizer" id="thetaViz"></div>
-            <p class="player-note">⚠️ Non usare durante la guida o con macchinari. Volume basso consigliato.</p>
-          </div>
-
-          <h2 style="font-size:14px;margin-top:12px">🔹 Visualizzazione della Sfera di Luce</h2>
-          <p>Immagina una sfera dorata che entra dalla sommità del capo, scende lentamente riempiendo ogni cellula di calma. Quando arrivi ai piedi, la sfera si espande di 1 metro oltre il corpo. Rimani in questa bolla. <strong>Non combattere il sonno, non aggrapparti alla veglia</strong>.</p>
-        </div>
-
-        <div id="acap4" class="astral-chapter card">
-          <h2>🌠 4. Tecniche di Separazione</h2>
-          <p>Quando senti vibrazioni, ronzii, senso di galleggiamento, sei pronto. Scegli <strong>una sola tecnica</strong> e praticala con costanza.</p>
-          <div class="tech-card-app">
-            <h2 style="font-size:14px;color:#f1c40f">🪢 Tecnica della Corda</h2>
-            <p>Visualizza una corda di seta che scende dal soffitto. Immagina le tue "mani astrali" che la afferrano. Tira lentamente verso l'alto senza muovere il corpo fisico. Concentrati sulla <em>sensazione tattile</em>. Quando senti un "strappo leggero", accetta e osservati dall'esterno.</p>
-          </div>
-          <div class="tech-card-app">
-            <h2 style="font-size:14px;color:#f1c40f">🔄 Roll-Out (Rotolamento)</h2>
-            <p>Senza muovere i muscoli, immagina di girarti sul fianco destro come se ti alzassi dal letto. La mente deve credere al movimento. Se senti resistenza, torna al body scan e riprova dopo 5 minuti.</p>
-          </div>
-          <div class="tech-card-app">
-            <h2 style="font-size:14px;color:#f1c40f">🌊 Onde di Frequenza</h2>
-            <p>Quando le vibrazioni iniziano, non spaventarti. Respira profondamente e immagina di <em>sintonizzarti</em> su una frequenza più alta. Le vibrazioni diventeranno un'onda continua. Lasciati trasportare verso l'alto o attraverso un "corridoio" luminoso.</p>
-          </div>
-          <p style="margin-top:10px"><strong>Regola d'oro:</strong> Mai forzare. La separazione avviene quando il corpo è profondamente rilassato e la mente è vigile ma distaccata — <em>mind awake, body asleep</em>.</p>
-        </div>
-
-        <div id="acap5" class="astral-chapter card">
-          <h2>🕊️ 5. Ritorno e Integrazione</h2>
-          <p>Il ritorno è automatico e sicuro. Il corpo fisico non "resta vuoto": il legame energetico è istantaneo.</p>
-          <ul class="astral-steps">
-            <li>💭 <strong>Se senti paura:</strong> Di' mentalmente <em>"Torno ora"</em>. Il corpo risponderà con un sussulto. È normale.</li>
-            <li>🌅 <strong>Al risveglio:</strong> Non muoverti subito. 2 minuti ad occhi chiusi, respira profondamente, ringrazia.</li>
-            <li>🌱 <strong>Grounding immediato:</strong> Bevi acqua, tocca terra o legno, fai 3 respiri profondi. Mangia qualcosa di semplice.</li>
-            <li>📝 <strong>Non analizzare subito:</strong> Il cervello impiega 24–48h a integrare. Scrivi solo impressioni, non giudizi.</li>
-          </ul>
-        </div>
-
-        <div id="acap6" class="astral-chapter card">
-          <h2>📝 6. Diario di Bordo</h2>
-          <p style="margin-bottom:10px">La memoria extra-corporea svanisce in 10–15 minuti. Registra subito le impressioni della sessione.</p>
-
-          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
-            <div style="display:flex;gap:8px">
-              <div style="flex:1">
-                <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">📅 DATA</label>
-                <input type="date" id="astral-log-date" style="width:100%;padding:9px 10px;background:#09050f;border:1px solid #2a174880;color:var(--text);border-radius:10px;font-size:13px;font-family:'Crimson Pro',serif">
-              </div>
-              <div style="flex:1">
-                <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">🕐 ORA</label>
-                <input type="time" id="astral-log-time" style="width:100%;padding:9px 10px;background:#09050f;border:1px solid #2a174880;color:var(--text);border-radius:10px;font-size:13px;font-family:'Crimson Pro',serif">
-              </div>
-            </div>
-            <div>
-              <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">🛠 TECNICA USATA</label>
-              <select id="astral-log-tech" style="width:100%;padding:9px 10px;background:#09050f;border:1px solid #2a174880;color:var(--text);border-radius:10px;font-size:13px;font-family:'Crimson Pro',serif">
-                <option value="">— Seleziona —</option>
-                <option>Tecnica della Corda</option>
-                <option>Roll-Out</option>
-                <option>Onde di Frequenza</option>
-                <option>Body Scan + Corda</option>
-                <option>Altra tecnica</option>
-              </select>
-            </div>
-            <div>
-              <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">⚡ SENSAZIONI PRE-SEPARAZIONE</label>
-              <textarea id="astral-log-sensazioni" rows="2" placeholder="Vibrazioni, ronzii, leggerezza, paralisi..."></textarea>
-            </div>
-            <div>
-              <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">🌐 COSA HAI PERCEPITO / VISITATO</label>
-              <textarea id="astral-log-visione" rows="3" placeholder="Luoghi, entità, colori, sensazioni durante il viaggio..."></textarea>
-            </div>
-            <div>
-              <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">❤️ STATO EMOTIVO (1–10): <span id="astral-log-emo-val" style="color:var(--gold)">5</span></label>
-              <input type="range" id="astral-log-emo" min="1" max="10" value="5" style="width:100%;accent-color:var(--gold);cursor:pointer" oninput="document.getElementById('astral-log-emo-val').textContent=this.value">
-            </div>
-            <div>
-              <label style="font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;display:block;margin-bottom:3px">🔁 NOTE PER LA PROSSIMA VOLTA</label>
-              <textarea id="astral-log-note" rows="2" placeholder="Cosa migliorare, ostacoli, durata..."></textarea>
-            </div>
-          </div>
-
-          <button class="btn" onclick="astralSaveLog()">📝 Sigilla nel Diario di Bordo</button>
-          <div class="eng-result" id="astral-log-result"></div>
-
-
-          <div id="astralLogListWrap" style="margin-top:16px;display:none">
-            <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
-              SESSIONI REGISTRATE
-              <span id="astralLogCount" style="background:var(--purple);border:1px solid var(--gold-dim);padding:1px 8px;border-radius:10px;font-size:9px;color:var(--text)">0</span>
-              <span style="flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)"></span>
-              <button onclick="astralClearLogs()" style="background:transparent;border:none;color:#f87171;font-size:10px;cursor:pointer;font-family:'Cinzel',serif">Elimina tutto</button>
-            </div>
-            <div id="astralLogList"></div>
-          </div>
-
-          <p style="margin-top:14px;font-size:12px;color:var(--muted)">Dopo 10 sessioni, cerca pattern: orari migliori, tecniche più efficaci, ostacoli ricorrenti. <strong>La costanza batte il talento.</strong></p>
-        </div>
-
-        <div id="acap7" class="astral-chapter card" style="border-color:#f8717160">
-          <h2>⚠️ 7. Sicurezza e Avvertenze</h2>
-          <ul class="astral-warnings">
-            <li>❌ <strong>Non praticare</strong> se hai epilessia, disturbi psicotici, attacchi di panico severi o assumi psicofarmaci senza consulto medico.</li>
-            <li>❌ <strong>Non cercare</strong> esperienze per sfuggire alla realtà o a traumi irrisolti. La terapia psicologica è prioritaria.</li>
-            <li>✅ <strong>Non temere</strong> di "restare bloccati". Il legame corpo-mente si ripristina automaticamente al primo stimolo fisico o emotivo.</li>
-            <li>✅ <strong>Evita</strong> sostanze, alcol o privazione di sonno per "forzare" l'uscita. Danneggiano la neuroplasticità e aumentano rischi.</li>
-            <li>✅ <strong>Interrompi</strong> se provi ansia persistente, insonnia o derealizzazione. Riprendi solo dopo 2–3 settimane di stabilità.</li>
-          </ul>
-          <p style="font-style:italic;color:var(--muted);margin-top:10px">Il viaggio astrale è un'arte della consapevolezza, non una fuga. Chi lo pratica con rispetto, ne trae chiarezza, non dipendenza.</p>
-        </div>
-
-        <div id="acap8" class="astral-chapter card">
-          <h2>✨ 8. Programma di 4 Settimane</h2>
-          <div class="weekly-plan-app">
-            <div class="week-item"><span class="week-label">Sett. 1</span><p>Solo preparazione + diario dei sogni + body scan serale. Zero tentativi di separazione.</p></div>
-            <div class="week-item"><span class="week-label">Sett. 2</span><p>Aggiungi respirazione 4-7-8 + sfera di luce. Prova la corda <strong>solo</strong> se senti vibrazioni naturali.</p></div>
-            <div class="week-item"><span class="week-label">Sett. 3</span><p>Mantieni la routine. Se non accade nulla, è normale: il cervello sta costruendo nuovi pathway neurali. Registra tutto.</p></div>
-            <div class="week-item"><span class="week-label">Sett. 4</span><p>Valuta i progressi. Se hai avuto micro-uscite, continua. Se nulla, ripeti 2 settimane con sonno anticipato di 30 min.</p></div>
-          </div>
-          <p style="text-align:center;font-style:italic;color:#b0b8d0;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1)">🌙 <em>Le stelle non si inseguono. Si osservano con pazienza, e un giorno, ti rivelano il cielo intero.</em></p>
-        </div>
-
-      </div>
-      <!-- Pulsante Condividi per Viaggio Astrale -->
-      <button class="btn btn-sec" style="font-size:12px;width:100%;margin:14px 0 10px;padding:12px" onclick="hapticFeedback();openShareModal('astrale')">📲 Condividi il Viaggio Astrale</button>
     </div>
 
     <div id="view-archivio" class="view">
@@ -3999,6 +3467,33 @@ window.trackEvent = function(eventName, params){
   s.async = true;
   s.crossOrigin = 'anonymous';
   document.body.appendChild(s);
+})();
+</script>
+
+
+<script>
+// Intercetta la navigazione verso pannelli oracolo con data-redirect
+// Viene chiamato ogni volta che un div con display:none diventa visibile
+(function(){
+  var _orig = window._switchView || null;
+  function checkRedirect(v) {
+    var el = document.getElementById('oracolo-' + v);
+    if (!el) return false;
+    var dest = el.getAttribute('data-redirect');
+    if (dest) { window.location.href = dest; return true; }
+    return false;
+  }
+  // Sovrascrive openOracolo e openOracoloHome per intercettare
+  var _origOpenO = window.openOracolo;
+  var _origOpenOH = window.openOracoloHome;
+  window.openOracolo = function(v) {
+    if (checkRedirect(v)) return;
+    if (_origOpenO) _origOpenO.apply(this, arguments);
+  };
+  window.openOracoloHome = function(v) {
+    if (checkRedirect(v)) return;
+    if (_origOpenOH) _origOpenOH.apply(this, arguments);
+  };
 })();
 </script>
 
