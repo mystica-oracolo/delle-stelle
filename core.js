@@ -1130,12 +1130,8 @@ function nav(v, isBack = false){
   }
   };
 
-  if(!AD_SECTIONS.has(v)||_adSeen.has(v)){
+  // Ad gate disabilitato: causava schermo nero su alcune sezioni (magia, alchimia, ecc.)
   proceed();
-  } else {
-  _adSeenAdd(v);
-  showAdGate(LABELS[v]||v, proceed);
-  }
 }
 
 function segnoFromDate(ds){
