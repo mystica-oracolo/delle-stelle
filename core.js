@@ -1786,7 +1786,7 @@ function initCompatSelects(){
 function calcCompat(){
   const u=$('#cUser').value, pa=$('#cPartner').value;
   if(!u||!pa){toast('⚠️ Seleziona entrambi i segni');return;}
-  showAdGate('Affinità Cosmica', ()=>_doCalcCompat(u,pa));
+  _doCalcCompat(u,pa);
 }
 
 function _doCalcCompat(u,pa){

@@ -206,20 +206,8 @@ if (typeof initMagia === 'undefined') {
 function openOracoloHome(id){
   if(typeof trackEvent !== 'undefined') trackEvent('Oracle','open',id);
 
-  if(!_adSeen.has('oracolo_'+id)){
-    _adSeenAdd('oracolo_'+id);
-    const labels={totem:'Animali Guida',angeli:'Angelologia',geomanzia:'Geomanzia',
-    numerologia:'Numerologia',orespeschio:'Ore Specchio',luna:'Fasi Lunari',
-    pianeti:'Transiti Planetari',rune:'Runologia',iching:'I Ching',libro:'Libro Risposte',
-    wicca:'Stregoneria &amp; Wicca',alchimia:'Alchimia — Grande Opera',
-    cabala:'Cabala — Albero della Vita',ermetismo:'Ermetismo — Tavola Smeraldina',
-    negromanzia:'Negromanzia — Dialoghi con l\'Ombra',
-    delfi:'Oracolo di Delfi — Apollo &amp; Pizia'};
-    showAdGate(labels[id]||id, function(){ _switchView('oracoli'); _openOracoloPanel(id); });
-  } else {
-    _switchView('oracoli');
-    _openOracoloPanel(id);
-  }
+  _switchView('oracoli');
+  _openOracoloPanel(id);
 }
 
 function navMagia(panel){
@@ -240,13 +228,7 @@ function navMagia(panel){
     }
   };
 
-  if(!_adSeen.has('magia')){
-    _adSeenAdd('magia');
-    const labels={bianca:'Magia Bianca',rossa:'Magia Rossa',nera:'Magia Nera',malocchio:'Il Malocchio',sigilli:'Sigilli di Re Salomone'};
-    showAdGate(labels[panel]||'Libri di Magia', _doOpen);
-  } else {
-    _doOpen();
-  }
+  _doOpen();
 }
 
 function _openMagiaPanel(panel){
@@ -308,12 +290,7 @@ function openOracolo(id){
     bibliomanzia:'Bibliomanzia & Tasseomanzia',
     delfi:'Oracolo di Delfi — Apollo & Pizia'
   };
-  if(!ORACOLI_AD_SEEN.has(id)){
-    ORACOLI_AD_SEEN.add(id);
-    showAdGate(labels[id]||id, function(){ _openOracoloPanel(id); });
-  } else {
-    _openOracoloPanel(id);
-  }
+  _openOracoloPanel(id);
 }
 
 function _openOracoloPanel(id, isBack){

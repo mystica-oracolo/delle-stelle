@@ -5,7 +5,7 @@ function startTarot(){
   return;
   }
 
-  showAdGate(S.tMode==='semplice'?'Lettura Semplice · 3 Carte':'Lettura Approfondita · 5 Carte', _doStartTarot);
+  _doStartTarot();
 }
 
 function _doStartTarot(){
