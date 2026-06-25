@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Scopri la compatibilità zodiacale tra i 12 segni. Calcola l'affinità cosmica tra te e il tuo partner con la tavola di compatibilità astrologica di Mystica Oracoli.">
+<meta name="keywords" content="compatibilità zodiacale, compatibilità segni zodiacali, affinità amorosa, oroscopo coppia, compatibilità astrologica, segni compatibili, amore zodiaco, mysticaoracoli">
+<title>Compatibilità Zodiacale — Affinità Cosmica tra Segni | MYSTICA</title>
+<link rel="canonical" href="https://mysticaoracoli.it/compatibilita.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:title" content="Compatibilità Zodiacale — Affinità Cosmica | MYSTICA">
+<meta property="og:description" content="Calcola la compatibilità astrologica tra i segni zodiacali. Scopri l'affinità cosmica con il tuo partner.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/compatibilita.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/compatibilita.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compatibilità Zodiacale | MYSTICA">
+<meta name="twitter:description" content="Calcola l'affinità cosmica tra i segni zodiacali con Mystica Oracoli.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Compatibilità Zodiacale — MYSTICA",
+  "url": "https://mysticaoracoli.it/compatibilita.html",
+  "description": "Calcola la compatibilità astrologica tra due segni zodiacali e scopri l'affinità cosmica.",
+  "applicationCategory": "EntertainmentApplication",
+  "inLanguage": "it",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mystica Oracoli",
+    "url": "https://mysticaoracoli.it"
+  }
+}
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+
+  /* HEADER */
+  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
+  .btn-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
+  .btn-back:hover{background:rgba(255,255,255,0.15)}
+  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#ffffff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .page-subtitle{color:#a89bc2;font-size:12px}
+
+  /* CONTENT */
+  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+
+  /* SELECTOR CARD */
+  .selector-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,215,0,0.25);border-radius:18px;padding:22px 18px;margin-bottom:20px;text-align:center}
+  .selector-card h2{font-size:17px;color:#ffd700;margin-bottom:6px}
+  .selector-card p{font-size:13px;color:#a89bc2;margin-bottom:18px;line-height:1.5}
+
+  .selectors-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:18px}
+  .heart-divider{font-size:24px;text-align:center;color:#ff6b9d}
+
+  select{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);color:#e6e0f0;padding:12px 10px;border-radius:12px;font-size:15px;appearance:none;-webkit-appearance:none;cursor:pointer;text-align:center}
+  select:focus{outline:none;border-color:rgba(255,215,0,0.5)}
+
+  .btn-calc{background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;border:none;padding:14px 32px;border-radius:25px;font-size:16px;cursor:pointer;width:100%;font-weight:600;letter-spacing:0.5px;transition:opacity 0.2s}
+  .btn-calc:hover{opacity:0.9}
+  .btn-calc:active{transform:scale(0.98)}
+
+  /* RISULTATO */
+  .result-card{background:rgba(26,23,38,0.95);border:2px solid rgba(255,215,0,0.3);border-radius:18px;padding:24px 20px;margin-bottom:20px;display:none;animation:fadeInUp 0.4s ease}
+
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+  .signs-display{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px}
+  .sign-box{text-align:center}
+  .sign-emoji{font-size:44px;display:block;line-height:1}
+  .sign-name{font-size:12px;color:#a89bc2;margin-top:4px}
+
+  .hearts-anim{font-size:28px;animation:pulse 1.2s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+  .score-ring{width:110px;height:110px;margin:0 auto 12px;position:relative}
+  .score-ring svg{transform:rotate(-90deg)}
+  .score-ring .score-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;font-weight:700;color:#ffd700}
+  .score-ring .score-pct{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:11px;color:#a89bc2}
+
+  .compat-level{font-size:16px;font-weight:700;text-align:center;margin-bottom:12px}
+  .divider{height:1px;background:rgba(255,255,255,0.1);margin:14px 0}
+  .compat-text{font-size:14px;color:#c8c0e0;line-height:1.7;text-align:center}
+
+  /* DETTAGLI */
+  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  .detail-box{background:rgba(255,255,255,0.05);border-radius:12px;padding:12px 10px;text-align:center}
+  .detail-box .label{font-size:10px;color:#a89bc2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+  .detail-box .value{font-size:13px;color:#e6e0f0;font-weight:500}
+
+  /* TAVOLA */
+  .table-section{margin-bottom:20px}
+  .section-title{font-size:16px;color:#ffd700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px}
+  .compat-table{border-collapse:collapse;font-size:10px;min-width:480px;width:100%}
+  .compat-table th,.compat-table td{padding:6px 5px;text-align:center;border:1px solid rgba(255,255,255,0.07)}
+  .compat-table th{background:rgba(26,23,38,0.95);color:#a89bc2;font-weight:600;font-size:11px;position:sticky;top:0;z-index:2}
+  .compat-table td:first-child{background:rgba(26,23,38,0.95);font-size:11px;color:#a89bc2;font-weight:600;position:sticky;left:0;z-index:1}
+  .compat-table .cell{border-radius:6px;display:inline-block;width:100%;padding:3px 0;font-weight:600;font-size:10px}
+  .cell-high{background:rgba(34,197,94,0.25);color:#4ade80}
+  .cell-good{background:rgba(255,215,0,0.2);color:#ffd700}
+  .cell-med{background:rgba(249,115,22,0.2);color:#fb923c}
+  .cell-low{background:rgba(239,68,68,0.2);color:#f87171}
+
+  /* INFO SEGNI */
+  .signs-info{margin-top:20px}
+  .sign-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px;margin-bottom:10px}
+  .sign-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .sign-card-emoji{font-size:32px}
+  .sign-card-title{flex:1}
+  .sign-card-title h3{font-size:16px;color:#ffd700;margin-bottom:2px}
+  .sign-card-title .sign-data{font-size:11px;color:#a89bc2}
+  .sign-card-body{font-size:13px;color:#c8c0e0;line-height:1.6}
+  .keywords{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .kw{background:rgba(255,255,255,0.08);padding:3px 10px;border-radius:20px;font-size:11px;color:#a89bc2}
+
+  /* TOP COMPATIBILI */
+  .top-compat{margin-top:14px}
+  .top-compat h4{font-size:13px;color:#ffd700;margin-bottom:8px}
+  .top-list{display:flex;flex-wrap:wrap;gap:6px}
+  .top-tag{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);padding:4px 10px;border-radius:20px;font-size:11px;color:#4ade80;cursor:pointer;transition:all 0.2s}
+  .top-tag:hover{background:rgba(34,197,94,0.25)}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.3);color:#ffd700;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="btn-back" href="index.html">← Home</a>
+  <h1>💕 Compatibilità Zodiacale</h1>
+  <div class="page-subtitle">Affinità cosmica tra i segni</div>
+</div>
+
+<div class="content">
+
+  <!-- SELETTORI -->
+  <div class="selector-card">
+    <h2>Calcola l'Affinità Cosmica</h2>
+    <p>Seleziona due segni zodiacali per scoprire il loro grado di compatibilità secondo le stelle</p>
+    <div class="selectors-row">
+      <select id="selUser" onchange="updateSigns()">
+        <option value="">Tu — Segno</option>
+      </select>
+      <div class="heart-divider">💕</div>
+      <select id="selPartner" onchange="updateSigns()">
+        <option value="">Partner — Segno</option>
+      </select>
+    </div>
+    <button class="btn-calc" onclick="calcCompat()">✨ Calcola Compatibilità</button>
+  </div>
+
+  <!-- RISULTATO -->
+  <div class="result-card" id="resultCard">
+    <div class="signs-display">
+      <div class="sign-box">
+        <span class="sign-emoji" id="resEmoji1">♈</span>
+        <div class="sign-name" id="resName1">—</div>
+      </div>
+      <div class="hearts-anim" id="resHeart">💕</div>
+      <div class="sign-box">
+        <span class="sign-emoji" id="resEmoji2">♈</span>
+        <div class="sign-name" id="resName2">—</div>
+      </div>
+    </div>
+
+    <div class="score-ring">
+      <svg viewBox="0 0 110 110" width="110" height="110">
+        <circle cx="55" cy="55" r="45" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+        <circle id="scoreArc" cx="55" cy="55" r="45" fill="none" stroke="#ffd700" stroke-width="10"
+          stroke-dasharray="282.7" stroke-dashoffset="282.7" stroke-linecap="round" style="transition:stroke-dashoffset 1s ease,stroke 0.5s"/>
+      </svg>
+      <div class="score-text" id="scoreNum">0%</div>
+    </div>
+
+    <div class="compat-level" id="compatLevel">—</div>
+    <div class="divider"></div>
+    <p class="compat-text" id="compatText"></p>
+
+    <div class="detail-grid" id="detailGrid"></div>
+  </div>
+
+  <!-- TAVOLA SINOPTICA -->
+  <div class="table-section">
+    <div class="section-title">📊 Tavola Sinoptica Completa</div>
+    <div class="table-scroll">
+      <table class="compat-table" id="compatTable"></table>
+    </div>
+  </div>
+
+  <!-- INFO SEGNI -->
+  <div class="signs-info" id="signsInfo"></div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SEGNI = {
+  ariete:    {n:"Ariete",    e:"♈",s:"🐏",p:"Marte",    el:"Fuoco", d:"21 Mar – 20 Apr",k:["Coraggio","Leadership","Passione","Iniziativa"]},
+  toro:      {n:"Toro",      e:"♉",s:"🐂",p:"Venere",   el:"Terra",  d:"21 Apr – 20 Mag",k:["Stabilità","Sensualità","Tenacia","Costanza"]},
+  gemelli:   {n:"Gemelli",   e:"♊",s:"👯",p:"Mercurio", el:"Aria",   d:"21 Mag – 21 Giu",k:["Comunicazione","Curiosità","Intelligenza","Adattabilità"]},
+  cancro:    {n:"Cancro",    e:"♋",s:"🦀",p:"Luna",     el:"Acqua",  d:"22 Giu – 22 Lug",k:["Intuizione","Empatia","Protezione","Memoria"]},
+  leone:     {n:"Leone",     e:"♌",s:"🦁",p:"Sole",     el:"Fuoco",  d:"23 Lug – 22 Ago",k:["Carisma","Creatività","Generosità","Vitalità"]},
+  vergine:   {n:"Vergine",   e:"♍",s:"🌾",p:"Mercurio", el:"Terra",  d:"23 Ago – 22 Set",k:["Precisione","Servizio","Analisi","Salute"]},
+  bilancia:  {n:"Bilancia",  e:"♎",s:"⚖️",p:"Venere",   el:"Aria",   d:"23 Set – 22 Ott",k:["Armonia","Giustizia","Diplomazia","Bellezza"]},
+  scorpione: {n:"Scorpione", e:"♏",s:"🦂",p:"Plutone",  el:"Acqua",  d:"23 Ott – 22 Nov",k:["Intensità","Trasformazione","Potere","Mistero"]},
+  sagittario:{n:"Sagittario",e:"♐",s:"🏹",p:"Giove",    el:"Fuoco",  d:"23 Nov – 21 Dic",k:["Libertà","Filosofia","Avventura","Ottimismo"]},
+  capricorno:{n:"Capricorno",e:"♑",s:"🐐",p:"Saturno",  el:"Terra",  d:"22 Dic – 20 Gen",k:["Ambizione","Disciplina","Resilienza","Struttura"]},
+  acquario:  {n:"Acquario",  e:"♒",s:"🏺",p:"Urano",    el:"Aria",   d:"21 Gen – 19 Feb",k:["Innovazione","Originalità","Umanità","Libertà"]},
+  pesci:     {n:"Pesci",     e:"♓",s:"🐟",p:"Nettuno",  el:"Acqua",  d:"20 Feb – 20 Mar",k:["Intuizione","Compassione","Arte","Spiritualità"]}
+};
+
+const COMPAT = {
+  ariete:    {toro:50,gemelli:80,cancro:45,leone:95,vergine:55,bilancia:70,scorpione:65,sagittario:95,capricorno:55,acquario:75,pesci:55},
+  toro:      {ariete:50,gemelli:45,cancro:80,leone:50,vergine:95,bilancia:60,scorpione:70,sagittario:45,capricorno:90,acquario:50,pesci:75},
+  gemelli:   {ariete:80,toro:45,cancro:50,leone:75,vergine:50,bilancia:95,scorpione:45,sagittario:70,capricorno:45,acquario:90,pesci:60},
+  cancro:    {ariete:45,toro:80,gemelli:50,leone:50,vergine:80,bilancia:55,scorpione:95,sagittario:40,capricorno:70,acquario:45,pesci:90},
+  leone:     {ariete:95,toro:50,gemelli:75,cancro:50,vergine:45,bilancia:80,scorpione:55,sagittario:90,capricorno:50,acquario:65,pesci:60},
+  vergine:   {ariete:55,toro:95,gemelli:50,cancro:80,leone:45,bilancia:60,scorpione:75,sagittario:40,capricorno:90,acquario:50,pesci:70},
+  bilancia:  {ariete:70,toro:60,gemelli:95,cancro:55,leone:80,vergine:60,scorpione:50,sagittario:75,capricorno:55,acquario:90,pesci:65},
+  scorpione: {ariete:65,toro:70,gemelli:45,cancro:95,leone:55,vergine:75,bilancia:50,sagittario:50,capricorno:75,acquario:45,pesci:90},
+  sagittario:{ariete:95,toro:45,gemelli:70,cancro:40,leone:90,vergine:40,bilancia:75,scorpione:50,capricorno:50,acquario:75,pesci:60},
+  capricorno:{ariete:55,toro:90,gemelli:45,cancro:70,leone:50,vergine:90,bilancia:55,scorpione:75,sagittario:50,acquario:50,pesci:75},
+  acquario:  {ariete:75,toro:50,gemelli:90,cancro:45,leone:65,vergine:50,bilancia:90,scorpione:45,sagittario:75,capricorno:50,pesci:60},
+  pesci:     {ariete:55,toro:75,gemelli:60,cancro:90,leone:60,vergine:70,bilancia:65,scorpione:90,sagittario:60,capricorno:75,acquario:60}
+};
+
+const KEYS = Object.keys(SEGNI);
+
+function getScore(a,b){
+  if(a===b) return 68+Math.floor(Math.random()*15);
+  return COMPAT[a]?.[b] ?? COMPAT[b]?.[a] ?? 50;
+}
+
+function rnd(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// Popola select
+function initSelects(){
+  const u=document.getElementById('selUser'), pa=document.getElementById('selPartner');
+  const opts=KEYS.map(k=>`<option value="${k}">${SEGNI[k].e} ${SEGNI[k].n}</option>`).join('');
+  const def='<option value="">— Seleziona —</option>';
+  u.innerHTML=def+opts; pa.innerHTML=def+opts;
+
+  // Prova a leggere profilo salvato
+  try{
+    const p=JSON.parse(localStorage.getItem('myst_v3_profile')||'{}')||{};
+    if(p.segno && SEGNI[p.segno]) u.value=p.segno;
+  }catch(e){}
+}
+
+function updateSigns(){
+  const u=document.getElementById('selUser').value;
+  const pa=document.getElementById('selPartner').value;
+  if(u && pa) buildSignsInfo(u,pa);
+}
+
+function calcCompat(){
+  const u=document.getElementById('selUser').value;
+  const pa=document.getElementById('selPartner').value;
+  if(!u||!pa){ toast('⚠️ Seleziona entrambi i segni'); return; }
+
+  const su=SEGNI[u], sp=SEGNI[pa];
+  const sc=getScore(u,pa);
+
+  // Animazione score ring
+  const arc=document.getElementById('scoreArc');
+  const circ=282.7;
+  const offset=circ-(circ*(sc/100));
+  let col='#f87171';
+  if(sc>=85) col='#4ade80';
+  else if(sc>=70) col='#ffd700';
+  else if(sc>=55) col='#fb923c';
+  arc.style.stroke=col;
+  setTimeout(()=>{ arc.style.strokeDashoffset=offset; },50);
+
+  let livello,nota,heartEmoji;
+  if(sc>=85){
+    livello='✨ Affinità Cosmica Profonda';
+    heartEmoji='💗';
+    nota=rnd([
+      `${su.n} e ${sp.n} risuonano sulle stesse frequenze cosmiche. Questa connessione va oltre il razionale: è riconoscimento d'anima. Costruite qualcosa di grande insieme — le stelle sono dalla vostra parte.`,
+      `Un'alchimia rara. ${su.n} porta ${su.el} e ${sp.n} porta ${sp.el}: insieme creano qualcosa di completo che nessuno dei due potrebbe creare da solo.`,
+      `Le carte del cosmo li hanno segnati come compatibili in profondità. Non è fortuna — è affinità di valori, di ritmi, di visione del mondo. Curatela.`
+    ]);
+  } else if(sc>=70){
+    livello='🌟 Buona Affinità';
+    heartEmoji='💕';
+    nota=rnd([
+      `${su.n} e ${sp.n} hanno terreno fertile su cui costruire. Le differenze esistono ma si complementano — l'uno porta ciò che l'altro non ha.`,
+      `Connessione solida con potenziale di crescita. Le sfide che incontrate non sono ostacoli — sono opportunità di maturazione reciproca.`,
+      `Buona base con potenziale reale. ${su.el} e ${sp.el} dialogano bene tra loro quando entrambi portano consapevolezza.`
+    ]);
+  } else if(sc>=55){
+    livello='⚡ Affinità con Sfide';
+    heartEmoji='💛';
+    nota=rnd([
+      `Connessione che richiede lavoro consapevole. Le differenze tra ${su.n} e ${sp.n} sono reali — ma le differenze gestite con maturità arricchiscono più delle somiglianze.`,
+      `Sfida stimolante. Non è la compatibilità più naturale, ma le coppie che superano le differenze costruiscono legami più profondi.`,
+      `Terreno impervio ma fertile. Serve comunicazione continua e volontà autentica di incontrarsi a metà strada.`
+    ]);
+  } else {
+    livello='🌊 Connessione Complessa';
+    heartEmoji='💜';
+    nota=rnd([
+      `Correnti contrarie: si attrae e si contraddice. Non è impossibile — ma richiede una maturità eccezionale da entrambi.`,
+      `Le energie di ${su.n} e ${sp.n} guardano in direzioni diverse. L'amore diventa una scelta quotidiana invece di un dono naturale.`,
+      `Sfida autentica. Il cosmo li mette alla prova: chi sceglie di restare cresce come non avrebbe potuto da solo.`
+    ]);
+  }
+
+  // Aggiorna UI
+  document.getElementById('resEmoji1').textContent=su.e;
+  document.getElementById('resName1').textContent=su.n;
+  document.getElementById('resEmoji2').textContent=sp.e;
+  document.getElementById('resName2').textContent=sp.n;
+  document.getElementById('resHeart').textContent=heartEmoji;
+  document.getElementById('scoreNum').textContent=sc+'%';
+  document.getElementById('compatLevel').textContent=livello;
+  document.getElementById('compatLevel').style.color=col;
+  document.getElementById('compatText').textContent=nota;
+
+  // Dettagli
+  const el1=su.el, el2=sp.el;
+  const elCompat=checkElements(el1,el2);
+  document.getElementById('detailGrid').innerHTML=`
+    <div class="detail-box">
+      <div class="label">Elemento ${su.n}</div>
+      <div class="value">${elIcon(el1)} ${el1}</div>
+    </div>
+    <div class="detail-box">
+      <div class="label">Elemento ${sp.n}</div>
+      <div class="value">${elIcon(el2)} ${el2}</div>
+    </div>
+    <div class="detail-box">
+      <div class="label">Pianeta ${su.n}</div>
+      <div class="value">${su.p}</div>
+    </div>
+    <div class="detail-box">
+      <div class="label">Pianeta ${sp.n}</div>
+      <div class="value">${sp.p}</div>
+    </div>
+    <div class="detail-box" style="grid-column:span 2">
+      <div class="label">Affinità Elementi</div>
+      <div class="value">${elCompat}</div>
+    </div>
+  `;
+
+  const card=document.getElementById('resultCard');
+  card.style.display='block';
+  card.scrollIntoView({behavior:'smooth',block:'start'});
+
+  buildSignsInfo(u,pa);
+
+  // Salva storico
+  try{
+    let h=JSON.parse(localStorage.getItem('myst_v3_history')||'[]');
+    h.unshift({tipo:'Compatibilità',dettaglio:`${su.n} + ${sp.n}: ${sc}%`,data:new Date().toLocaleString('it-IT'),ts:Date.now()});
+    if(h.length>60) h.pop();
+    localStorage.setItem('myst_v3_history',JSON.stringify(h));
+  }catch(e){}
+}
+
+function elIcon(el){
+  return {'Fuoco':'🔥','Terra':'🌍','Aria':'💨','Acqua':'💧'}[el]||'✨';
+}
+
+function checkElements(a,b){
+  if(a===b) return 'Stesso elemento — grande sintonia naturale';
+  const pairs={'Fuoco+Aria':'Si nutrono a vicenda — sinergia forte','Aria+Fuoco':'Si nutrono a vicenda — sinergia forte',
+    'Terra+Acqua':'Si completano — stabilità e fluidità','Acqua+Terra':'Si completano — stabilità e fluidità',
+    'Fuoco+Terra':'Sfida costruttiva — fuoco e solidità a confronto','Terra+Fuoco':'Sfida costruttiva — fuoco e solidità a confronto',
+    'Fuoco+Acqua':'Polarità intensa — attenzione al bilanciamento','Acqua+Fuoco':'Polarità intensa — attenzione al bilanciamento',
+    'Aria+Acqua':'Connessione fluida — intelletto ed emozioni','Acqua+Aria':'Connessione fluida — intelletto ed emozioni',
+    'Aria+Terra':'Diversità stimolante — mente pratica','Terra+Aria':'Diversità stimolante — mente pratica'
+  };
+  return pairs[a+'+'+b]||'Energia complementare';
+}
+
+function buildSignsInfo(u,pa){
+  const su=SEGNI[u], sp=SEGNI[pa];
+  const div=document.getElementById('signsInfo');
+
+  function topCompat(key){
+    const row=COMPAT[key]||{};
+    return Object.entries(row).sort(([,a],[,b])=>b-a).slice(0,3).map(([k,sc])=>
+      `<span class="top-tag" onclick="quickSet('${key}','${k}')">${SEGNI[k].e} ${SEGNI[k].n} ${sc}%</span>`
+    ).join('');
+  }
+
+  div.innerHTML=`
+    <div class="section-title">🔮 Profili Astrologici</div>
+    ${signCard(su,u,topCompat(u))}
+    ${signCard(sp,pa,topCompat(pa))}
+  `;
+}
+
+function signCard(s,key,top){
+  return `<div class="sign-card">
+    <div class="sign-card-header">
+      <div class="sign-card-emoji">${s.e}</div>
+      <div class="sign-card-title">
+        <h3>${s.s} ${s.n}</h3>
+        <div class="sign-data">${s.d} · ${s.p} · ${s.el}</div>
+      </div>
+    </div>
+    <div class="sign-card-body">
+      <div class="keywords">${s.k.map(k=>`<span class="kw">${k}</span>`).join('')}</div>
+      <div class="top-compat">
+        <h4>💚 Più compatibili:</h4>
+        <div class="top-list">${top}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function quickSet(user, partner){
+  document.getElementById('selUser').value=user;
+  document.getElementById('selPartner').value=partner;
+  calcCompat();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Costruisce tavola sinoptica
+function buildTable(){
+  const short={ariete:'♈',toro:'♉',gemelli:'♊',cancro:'♋',leone:'♌',vergine:'♍',bilancia:'♎',scorpione:'♏',sagittario:'♐',capricorno:'♑',acquario:'♒',pesci:'♓'};
+  let th='<tr><th></th>'+KEYS.map(k=>`<th title="${SEGNI[k].n}">${short[k]}</th>`).join('')+'</tr>';
+  let rows=KEYS.map(u=>{
+    let cells=KEYS.map(pa=>{
+      const sc=u===pa?'♥':getScoreStatic(u,pa);
+      if(u===pa) return `<td><span class="cell" style="background:rgba(255,215,0,0.15);color:#ffd700">♥</span></td>`;
+      let cls='cell-low'; if(sc>=85)cls='cell-high'; else if(sc>=70)cls='cell-good'; else if(sc>=55)cls='cell-med';
+      return `<td><span class="cell ${cls}" style="cursor:pointer" onclick="quickSet('${u}','${pa}')" title="${SEGNI[u].n} + ${SEGNI[pa].n}">${sc}</span></td>`;
+    }).join('');
+    return `<tr><td>${short[u]}</td>${cells}</tr>`;
+  }).join('');
+  document.getElementById('compatTable').innerHTML=th+rows;
+}
+
+function getScoreStatic(a,b){
+  return COMPAT[a]?.[b] ?? COMPAT[b]?.[a] ?? 50;
+}
+
+// INIT
+initSelects();
+buildTable();
+</script>
+
+</body>
+</html>

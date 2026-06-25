@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zodiaco Cinese — Scopri il Tuo Animale | MYSTICA</title>
+<meta name="description" content="Scopri il tuo animale dello Zodiaco Cinese inserendo l'anno di nascita. Carattere, colori fortunati, compatibilità e oggetto totemico per i 12 animali dello Shengxiao.">
+<meta name="keywords" content="zodiaco cinese, animale zodiaco cinese, segno cinese anno nascita, topo bue tigre coniglio drago serpente cavallo capra scimmia gallo cane maiale, compatibilità cinese, shengxiao">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mysticaoracoli.it/oroscopo-zodcinese.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/oroscopo-zodcinese.html">
+<meta property="og:title" content="Zodiaco Cinese — Scopri il Tuo Animale | MYSTICA">
+<meta property="og:description" content="Inserisci il tuo anno di nascita e scopri il tuo animale dello Zodiaco Cinese: carattere, fortuna, compatibilità e oggetto totemico.">
+<meta property="og:image" content="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/cinese/oroscopoint.webp">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/cinese/oroscopoint.webp">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zodiaco Cinese — Scopri il Tuo Animale",
+  "description": "Calcola il tuo segno zodiacale cinese dall'anno di nascita. Carattere, colori fortunati, compatibilità tra i 12 animali dello Shengxiao.",
+  "url": "https://mysticaoracoli.it/oroscopo-zodcinese.html",
+  "applicationCategory": "LifestyleApplication",
+  "inLanguage": "it",
+  "author": {"@type": "Person", "name": "Giovanni Petrolese", "url": "https://mysticaoracoli.it/about.html"},
+  "publisher": {"@type": "Organization", "name": "MYSTICA", "url": "https://mysticaoracoli.it/"},
+  "isPartOf": {"@type": "WebSite", "name": "MYSTICA – Oracolo delle Stelle", "url": "https://mysticaoracoli.it/"}
+}
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#d4af37;
+  --gold-dim:rgba(212,175,55,0.25);
+  --gold-glow:rgba(212,175,55,0.08);
+  --bg:#0a0514;
+  --bg2:#0d0620;
+  --bg3:#130b26;
+  --bg4:#1a0c32;
+  --text:#e8e0f0;
+  --muted:#9a8ab0;
+  --border:rgba(212,175,55,0.25);
+  --red:#c0392b;
+}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh}
+
+/* ── HEADER ── */
+header{background:linear-gradient(135deg,var(--bg4),#0a0520);border-bottom:1px solid var(--border);padding:16px 20px;text-align:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.logo{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:3px;text-shadow:0 0 20px rgba(212,175,55,0.4)}
+.logo a{color:inherit;text-decoration:none}
+.header-sub{font-size:11px;color:var(--muted);letter-spacing:2px;margin-top:3px}
+
+/* ── LAYOUT ── */
+main{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:28px}
+nav.breadcrumb a{color:var(--gold);text-decoration:none}
+nav.breadcrumb span{margin:0 6px;opacity:0.5}
+
+/* ── HERO ── */
+.hero{text-align:center;margin-bottom:36px;padding:36px 24px 32px;background:linear-gradient(145deg,var(--bg4),var(--bg2));border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
+.hero-hanzi{font-size:68px;line-height:1;margin-bottom:10px;display:block;filter:drop-shadow(0 0 24px rgba(212,175,55,0.45));letter-spacing:8px;color:var(--gold)}
+h1{font-family:'Cinzel',serif;font-size:24px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto}
+.hero-badge{display:inline-block;margin-top:16px;padding:5px 16px;border:1px solid var(--gold-dim);border-radius:50px;font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px}
+
+/* ── CALC CARD ── */
+.calc-card{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:20px;padding:28px 24px;margin-bottom:32px;text-align:center}
+.calc-card h2{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:1.5px;margin-bottom:20px;text-transform:uppercase}
+.input-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.inp-year{background:var(--bg4);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Cinzel',serif;font-size:18px;padding:12px 20px;width:140px;text-align:center;outline:none;transition:border-color 0.2s}
+.inp-year:focus{border-color:var(--gold)}
+.btn-calc{background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(212,175,55,0.1));border:1px solid var(--gold-dim);border-radius:10px;color:var(--gold);cursor:pointer;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;padding:12px 24px;transition:all 0.2s}
+.btn-calc:hover{background:linear-gradient(135deg,rgba(212,175,55,0.35),rgba(212,175,55,0.15));border-color:var(--gold)}
+.calc-hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* ── RESULT ── */
+#result{display:none;margin-bottom:32px}
+.result-card{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.result-img-wrap{text-align:center;padding:28px 24px 16px;background:linear-gradient(to bottom,rgba(212,175,55,0.05),transparent)}
+.result-img-wrap img{width:180px;height:270px;object-fit:cover;border-radius:14px;filter:drop-shadow(0 0 20px rgba(212,175,55,0.45))}
+.result-title{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:3px;margin-top:12px}
+.result-hanzi{font-size:40px;color:var(--gold);filter:drop-shadow(0 0 14px rgba(212,175,55,.8));line-height:1;margin-top:4px}
+.result-year-tag{display:inline-block;font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:6px}
+.result-body{padding:0 24px 28px}
+.divider{height:1px;background:var(--border);margin:18px 0}
+.result-body h3{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.result-body p{font-size:15px;color:var(--text);opacity:0.9;line-height:1.75}
+.tags-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{background:rgba(212,175,55,0.1);border:1px solid var(--gold-dim);border-radius:20px;font-family:'Cinzel',serif;font-size:11px;color:var(--gold);padding:4px 12px;letter-spacing:0.5px}
+.fortuna-colors{font-size:15px;color:var(--gold);font-style:italic}
+.compat-intro{font-size:12px;color:var(--muted);margin-bottom:10px}
+
+/* ── ANIMALS GRID ── */
+.section-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.animals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:36px}
+@media(max-width:500px){.animals-grid{grid-template-columns:repeat(2,1fr)}}
+.animal-btn{background:linear-gradient(145deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.2s;text-align:center;padding:0 0 10px}
+.animal-btn:hover{border-color:var(--gold);transform:translateY(-2px)}
+.animal-btn img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.animal-btn-name{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px;margin-top:8px}
+.animal-btn-anni{font-size:9px;color:var(--muted);margin-top:2px;padding:0 4px;line-height:1.4}
+
+/* ── INFO BOX ── */
+.info-box{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);border-radius:14px;padding:18px 20px;margin-bottom:32px}
+.info-box p{font-size:14px;color:var(--text);opacity:0.85;margin-bottom:8px}
+.info-box p:last-child{margin-bottom:0}
+
+/* ── FOOTER NAV ── */
+.footer-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.footer-nav a{background:rgba(212,175,55,0.08);border:1px solid var(--gold-dim);border-radius:8px;color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;padding:8px 16px;text-decoration:none;transition:all 0.2s}
+.footer-nav a:hover{background:rgba(212,175,55,0.15);border-color:var(--gold)}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+footer a{color:var(--gold);text-decoration:none}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,12,50,0.97);border:1px solid var(--gold-dim);border-radius:12px;color:var(--text);font-size:14px;opacity:0;padding:12px 22px;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:400px){
+  h1{font-size:20px}
+  .hero-hanzi{font-size:52px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="./">✦ MYSTICA ✦</a></div>
+  <div class="header-sub">ORACOLO DELLE STELLE</div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="./">Home</a><span>›</span>
+    <a href="./oroscopo-cinese.html">Oroscopo Cinese</a><span>›</span>
+    Zodiaco Interattivo
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-hanzi">生肖</span>
+    <h1>Zodiaco Cinese</h1>
+    <p class="hero-sub">Inserisci l'anno di nascita e scopri il tuo animale totemico orientale — carattere, colori fortunati, oggetto magico e compatibilità tra i 12 animali dello Shengxiao.</p>
+    <span class="hero-badge">✦ CICLO DEI 12 ANIMALI ✦</span>
+  </div>
+
+  <!-- CALC -->
+  <div class="calc-card">
+    <h2>🔮 Calcola il Tuo Segno Cinese</h2>
+    <div class="input-row">
+      <input class="inp-year" id="inpAnno" type="number" min="1900" max="2099" placeholder="Es. 1990" inputmode="numeric">
+      <button class="btn-calc" onclick="calcolaSegno()">Scopri ✦</button>
+    </div>
+    <p class="calc-hint">Inserisci l'anno di nascita per vedere il tuo animale</p>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result">
+    <div class="result-card">
+      <div class="result-img-wrap">
+        <img id="resImg" src="" alt="">
+        <div class="result-title" id="resNome"></div>
+        <div class="result-hanzi" id="resHanzi"></div>
+        <div class="result-year-tag" id="resYearTag"></div>
+      </div>
+      <div class="result-body">
+        <h3>✨ Il Tuo Profilo Orientale</h3>
+        <p id="resDesc"></p>
+        <div class="divider"></div>
+        <h3>📅 Gli Anni del <span id="resAnniLabel"></span></h3>
+        <div class="tags-row" id="resAnni"></div>
+        <div class="divider"></div>
+        <h3>🎨 Colori Fortunati</h3>
+        <p class="fortuna-colors" id="resFortuna"></p>
+        <div id="resOggettoWrap" style="display:none">
+          <div class="divider"></div>
+          <h3>🔮 Oggetto Totemico</h3>
+          <p id="resOggetto"></p>
+        </div>
+        <div id="resCompatWrap">
+          <div class="divider"></div>
+          <h3>💞 Compatibilità Cinese</h3>
+          <p class="compat-intro">Animali con cui il tuo segno vibra in perfetta armonia</p>
+          <div class="tags-row" id="resCompat"></div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:11px;color:var(--muted);text-align:center">✦ Il ciclo dei 12 animali si ripete ogni 12 anni — la tua essenza orientale è eterna ✦</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL ANIMALS GRID -->
+  <div class="section-title">🐾 I 12 Animali dello Zodiaco</div>
+  <div class="animals-grid" id="animalsGrid"></div>
+
+  <!-- INFO BOX -->
+  <div class="info-box">
+    <p>⚠️ <strong>Nota sul Capodanno Cinese:</strong> Il ciclo zodiacale cinese inizia con il Capodanno lunare, che cade tra fine gennaio e metà febbraio — non il 1° gennaio. Se sei nato prima del Capodanno cinese del tuo anno, il tuo animale potrebbe essere quello dell'anno precedente.</p>
+    <p>Per un calcolo preciso considera la data esatta del Capodanno cinese del tuo anno di nascita. Il 2026, ad esempio, inizia il 17 febbraio con l'Anno del Cavallo di Fuoco.</p>
+  </div>
+
+  <!-- FOOTER NAV -->
+  <div class="footer-nav">
+    <a href="./">🌟 Home</a>
+    <a href="./oroscopo-cinese.html">📖 Guida Cinese</a>
+    <a href="./oroscopo.html">♈ Oroscopo</a>
+    <a href="./bazi-cinese.html">☯ BaZi</a>
+    <a href="./compatibilita.html">💞 Compatibilità</a>
+    <a href="./numerologia.html">🔢 Numerologia</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 <a href="./">MYSTICA – Oracolo delle Stelle</a> · <a href="./about.html">Chi Siamo</a> · <a href="./contatti.html">Contatti</a></p>
+  <p style="margin-top:8px;font-size:11px">A scopo esoterico e intrattenimento · Non sostituisce il parere professionale</p>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────
+const DB = {
+  topo:     {n:"Topo",     e:"🐭",char:"鼠",anni:"1912 · 1924 · 1936 · 1948 · 1960 · 1972 · 1984 · 1996 · 2008 · 2020",
+    desc:"Intelligente, adattabile, carismatico e perspicace. Il Topo sa sempre trovare la strada, anche nel labirinto. Accumula risorse con intelligenza e trasforma le difficoltà in opportunità.",
+    fortuna:"Viola · Blu marino · Nero",oggetto:"Formaggio d'oro — simbolo dell'abbondanza trovata nell'ingegno"},
+  bue:      {n:"Bue",      e:"🐮",char:"牛",anni:"1913 · 1925 · 1937 · 1949 · 1961 · 1973 · 1985 · 1997 · 2009 · 2021",
+    desc:"Laborioso, affidabile, determinato e paziente come la terra. Il Bue costruisce ciò che dura per generazioni. La sua forza non è nell'esplosione, ma nella costanza inesorabile.",
+    fortuna:"Bianco · Giallo · Verde",oggetto:"Giogo dorato — il lavoro come via sacra"},
+  tigre:    {n:"Tigre",    e:"🐯",char:"虎",anni:"1914 · 1926 · 1938 · 1950 · 1962 · 1974 · 1986 · 1998 · 2010 · 2022",
+    desc:"Coraggiosa, carismatica, ribelle e magnetica. La Tigre non chiede il permesso — prende il suo posto nel mondo con grazia feroce. Nata per guidare, odia le catene.",
+    fortuna:"Blu · Grigio · Arancione",oggetto:"Zampa di tigre in giada — coraggio e protezione"},
+  coniglio: {n:"Coniglio", e:"🐰",char:"兔",anni:"1915 · 1927 · 1939 · 1951 · 1963 · 1975 · 1987 · 1999 · 2011 · 2023",
+    desc:"Gentile, elegante, acuto e diplomatico. Il Coniglio vive nell'arte di creare armonia senza perdere la sua natura. Porta fortuna naturalmente, senza cercarla.",
+    fortuna:"Rosa · Rosso · Viola",oggetto:"Coniglio di giada bianca — fortuna silenziosa"},
+  drago:    {n:"Drago",    e:"🐲",char:"龍",anni:"1916 · 1928 · 1940 · 1952 · 1964 · 1976 · 1988 · 2000 · 2012 · 2024",
+    desc:"Il più potente dello zodiaco cinese. Il Drago incarna la forza cosmica, la creatività divina e il destino eccezionale. Chi nasce Drago è qui per lasciare un segno impossibile da ignorare.",
+    fortuna:"Oro · Argento · Verde imperiale",oggetto:"Drago in giada imperiale — potere e protezione celeste"},
+  serpente: {n:"Serpente", e:"🐍",char:"蛇",anni:"1917 · 1929 · 1941 · 1953 · 1965 · 1977 · 1989 · 2001 · 2013 · 2025",
+    desc:"Saggio, intuitivo, misterioso e profondo. Il Serpente vede ciò che gli altri non vedono e sa quando agire e quando attendere. La sua saggezza nasce dal silenzio.",
+    fortuna:"Nero · Rosso · Giallo",oggetto:"Serpente in giada — saggezza e rinnovamento ciclico"},
+  cavallo:  {n:"Cavallo",  e:"🐴",char:"馬",anni:"1918 · 1930 · 1942 · 1954 · 1966 · 1978 · 1990 · 2002 · 2014 · 2026",
+    desc:"Energico, libero, entusiasta e indipendente. Il Cavallo è nato per galoppare verso l'orizzonte. La sua forza è il movimento, la sua anima è la libertà.",
+    fortuna:"Giallo · Verde · Viola",oggetto:"Ferro di cavallo dorato — velocità verso il successo"},
+  capra:    {n:"Capra",    e:"🐐",char:"羊",anni:"1919 · 1931 · 1943 · 1955 · 1967 · 1979 · 1991 · 2003 · 2015 · 2027",
+    desc:"Creativa, gentile, artistica e intuitiva. La Capra vive nel mondo della bellezza e della sensibilità. Trova il sacro nel quotidiano e trasforma il dolore in arte.",
+    fortuna:"Verde · Rosso · Viola",oggetto:"Flauto di bambù — arte come medicina"},
+  scimmia:  {n:"Scimmia",  e:"🐵",char:"猴",anni:"1920 · 1932 · 1944 · 1956 · 1968 · 1980 · 1992 · 2004 · 2016 · 2028",
+    desc:"Brillante, ingegnosa, versatile e irresistibile. La Scimmia risolve in dieci minuti ciò che altri non risolverebbero in dieci giorni. Il suo talento è l'adattamento creativo.",
+    fortuna:"Bianco · Blu · Oro",oggetto:"Peach — frutto dell'immortalità e dell'ingegno"},
+  gallo:    {n:"Gallo",    e:"🐓",char:"雞",anni:"1921 · 1933 · 1945 · 1957 · 1969 · 1981 · 1993 · 2005 · 2017 · 2029",
+    desc:"Osservatore, preciso, onesto e perfezionista. Il Gallo vede i dettagli che gli altri ignorano e non ha paura di dire la verità. La sua integrità è la sua vera corona.",
+    fortuna:"Oro · Marrone · Giallo",oggetto:"Cresta dorata — fierezza e autenticità"},
+  cane:     {n:"Cane",     e:"🐕",char:"狗",anni:"1922 · 1934 · 1946 · 1958 · 1970 · 1982 · 1994 · 2006 · 2018 · 2030",
+    desc:"Leale, onesto, protettivo e giusto. Il Cane è il guardiano del tempio del cuore. Non tradisce chi ama, non abbandona chi protegge. La sua fedeltà è assoluta.",
+    fortuna:"Verde · Rosso · Viola",oggetto:"Cane di ceramica — guardiano della soglia"},
+  maiale:   {n:"Maiale",   e:"🐷",char:"豬",anni:"1923 · 1935 · 1947 · 1959 · 1971 · 1983 · 1995 · 2007 · 2019 · 2031",
+    desc:"Generoso, sincero, fortunato e gioioso. Il Maiale porta abbondanza dove va — non per calcolo, ma per natura. La sua fortuna è genuina come il suo cuore.",
+    fortuna:"Giallo · Grigio · Oro",oggetto:"Lingotto dorato — abbondanza che condivide"}
+};
+
+const ANIMALS_ORDER = ['topo','bue','tigre','coniglio','drago','serpente','cavallo','capra','scimmia','gallo','cane','maiale'];
+
+const COMPAT = {
+  topo:['drago','scimmia'],bue:['serpente','gallo'],
+  tigre:['cavallo','cane'],coniglio:['capra','maiale'],
+  drago:['topo','scimmia'],serpente:['bue','gallo'],
+  cavallo:['tigre','cane'],capra:['coniglio','maiale'],
+  scimmia:['topo','drago'],gallo:['bue','serpente'],
+  cane:['tigre','cavallo'],maiale:['coniglio','capra']
+};
+
+// ── HELPERS ────────────────────────────────────────────────────────────────
+function zodicineseFromYear(year){
+  const idx = ((year - 1900) % 12 + 12) % 12;
+  return ANIMALS_ORDER[idx];
+}
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── CALC ───────────────────────────────────────────────────────────────────
+function calcolaSegno(){
+  const val = parseInt(document.getElementById('inpAnno').value, 10);
+  if(!val || val < 1900 || val > 2099){
+    toast('⚠️ Inserisci un anno valido tra 1900 e 2099');
+    return;
+  }
+  const key = zodicineseFromYear(val);
+  mostraRisultato(key, val);
+}
+
+function mostraRisultato(key, anno){
+  const d = DB[key];
+  if(!d) return;
+
+  // Immagine
+  document.getElementById('resImg').src = './images/icone/cinese/' + d.n.toLowerCase() + 'int.webp';
+  document.getElementById('resImg').alt = d.n;
+  document.getElementById('resNome').textContent = d.n;
+  document.getElementById('resHanzi').textContent = d.char;
+  document.getElementById('resYearTag').textContent = anno ? 'Anno di nascita: ' + anno : '';
+  document.getElementById('resAnniLabel').textContent = d.n;
+
+  // Descrizione
+  document.getElementById('resDesc').textContent = d.desc;
+
+  // Anni
+  const anniContainer = document.getElementById('resAnni');
+  anniContainer.innerHTML = d.anni.split(' · ').map(a =>
+    `<span class="tag" style="font-family:'Cinzel',serif;font-size:11px">${a}</span>`
+  ).join('');
+
+  // Fortuna
+  document.getElementById('resFortuna').textContent = d.fortuna;
+
+  // Oggetto
+  if(d.oggetto){
+    document.getElementById('resOggetto').textContent = d.oggetto;
+    document.getElementById('resOggettoWrap').style.display = 'block';
+  } else {
+    document.getElementById('resOggettoWrap').style.display = 'none';
+  }
+
+  // Compatibilità
+  const compat = COMPAT[key] || [];
+  const compatHtml = compat.map(k => {
+    const a = DB[k];
+    return a ? `<span class="tag">${a.e} ${a.n}</span>` : '';
+  }).join('');
+  document.getElementById('resCompat').innerHTML = compatHtml;
+  document.getElementById('resCompatWrap').style.display = compat.length ? 'block' : 'none';
+
+  // Mostra
+  const resultEl = document.getElementById('result');
+  resultEl.style.display = 'block';
+  setTimeout(() => resultEl.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+  toast('✨ Il tuo animale è il ' + d.n + '!');
+}
+
+// ── GRIGLIA TUTTI GLI ANIMALI ──────────────────────────────────────────────
+function buildGrid(){
+  const grid = document.getElementById('animalsGrid');
+  grid.innerHTML = ANIMALS_ORDER.map(key => {
+    const d = DB[key];
+    // Mostra anni in modo compatto (es. ultime 3 ricorrenze)
+    const last3 = d.anni.split(' · ').slice(-3).join(' · ');
+    return `<div class="animal-btn" onclick="clickAnimal('${key}')">
+      <img loading="lazy" src="./images/icone/cinese/${d.n.toLowerCase()}.webp" alt="${d.n}">
+      <div class="animal-btn-name">${d.e} ${d.n}</div>
+      <div class="animal-btn-anni">${last3}</div>
+    </div>`;
+  }).join('');
+}
+
+function clickAnimal(key){
+  mostraRisultato(key, null);
+  // Svuota input
+  document.getElementById('inpAnno').value = '';
+}
+
+// ── INPUT ENTER ─────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+  buildGrid();
+  const inp = document.getElementById('inpAnno');
+  inp.addEventListener('keydown', function(e){ if(e.key === 'Enter') calcolaSegno(); });
+});
+</script>
+
+</body>
+</html>

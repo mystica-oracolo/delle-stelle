@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Scopri il tuo profilo mistico personalizzato: segno zodiacale, animale cinese, numero del destino, pietre mistiche e oggetti fortunati. La tua mappa cosmica completa su Mystica Oracoli.">
+<meta name="keywords" content="profilo mistico, mappa cosmica, segno zodiacale, animale cinese, numero destino, pietre magiche, oroscopo personale, mysticaoracoli">
+<title>Profilo Mistico Personale — La Tua Mappa Cosmica | MYSTICA</title>
+<link rel="canonical" href="https://mysticaoracoli.it/profilo-mistico.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:title" content="Profilo Mistico Personale | MYSTICA">
+<meta property="og:description" content="La tua mappa cosmica completa: segno zodiacale, animale cinese, numero del destino, pietre e oggetti fortunati.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/profilo-mistico.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Profilo Mistico — MYSTICA",
+  "url": "https://mysticaoracoli.it/profilo-mistico.html",
+  "description": "Genera il tuo profilo mistico personale con segno zodiacale, animale cinese, numero del destino e oggetti fortunati.",
+  "applicationCategory": "EntertainmentApplication",
+  "inLanguage": "it",
+  "publisher": {"@type":"Organization","name":"Mystica Oracoli","url":"https://mysticaoracoli.it"}
+}
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+
+  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
+  .btn-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
+  .btn-back:hover{background:rgba(255,255,255,0.15)}
+  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#ffffff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .page-subtitle{color:#a89bc2;font-size:12px}
+
+  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+
+  /* FORM INPUT */
+  .form-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,215,0,0.25);border-radius:18px;padding:22px 18px;margin-bottom:20px}
+  .form-card h2{font-size:16px;color:#ffd700;margin-bottom:4px}
+  .form-card p{font-size:13px;color:#a89bc2;margin-bottom:16px;line-height:1.5}
+
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;color:#a89bc2;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+  .field input,.field select{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);color:#e6e0f0;padding:12px 14px;border-radius:12px;font-size:15px;-webkit-appearance:none;appearance:none}
+  .field input:focus,.field select:focus{outline:none;border-color:rgba(255,215,0,0.5)}
+  .field input::placeholder{color:#6b6080}
+
+  .date-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+  .btn-gen{background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;border:none;padding:14px;border-radius:25px;font-size:16px;cursor:pointer;width:100%;font-weight:600;transition:opacity 0.2s;margin-top:4px}
+  .btn-gen:active{transform:scale(0.98)}
+
+  /* PROFILO GENERATO */
+  .profile-output{display:none;animation:fadeIn 0.5s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* HERO CARD */
+  .hero-card{background:linear-gradient(145deg,rgba(26,23,38,0.95),rgba(40,30,60,0.9));border:1px solid rgba(255,215,0,0.3);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:16px;position:relative;overflow:hidden}
+  .hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,215,0,0.08),transparent 70%);pointer-events:none}
+  .hero-sign-emoji{font-size:64px;display:block;margin-bottom:10px;filter:drop-shadow(0 0 20px rgba(212,175,55,0.5))}
+  .hero-name{font-size:24px;color:#ffd700;font-weight:700;letter-spacing:1px;margin-bottom:4px}
+  .hero-sign{font-size:15px;color:#e6e0f0;margin-bottom:3px}
+  .hero-dates{font-size:12px;color:#a89bc2;margin-bottom:12px}
+  .hero-meta{font-size:12px;color:#c8c0e0;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+  .hero-meta span{display:flex;align-items:center;gap:4px}
+  .keywords-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
+  .kw{background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:20px;font-size:11px;color:#a89bc2}
+
+  /* SEZIONI */
+  .section-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 16px;margin-bottom:12px}
+  .section-card h3{font-size:15px;color:#ffd700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .divider{height:1px;background:rgba(255,255,255,0.08);margin:12px 0}
+
+  /* NUMERO DESTINO */
+  .destiny-display{display:flex;align-items:center;gap:16px}
+  .destiny-num{font-size:52px;font-weight:800;color:#ffd700;line-height:1;min-width:60px;text-align:center;filter:drop-shadow(0 0 12px rgba(255,215,0,0.4))}
+  .destiny-info h4{font-size:15px;color:#e6e0f0;margin-bottom:4px}
+  .destiny-info p{font-size:13px;color:#c8c0e0;line-height:1.6}
+
+  /* PIETRE E OGGETTI */
+  .list-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .list-item:last-child{border-bottom:none}
+  .list-item-icon{font-size:18px;min-width:24px;text-align:center;margin-top:1px}
+  .list-item-text{font-size:13px;color:#c8c0e0;line-height:1.5}
+
+  /* ANIMALE CINESE */
+  .cinese-display{display:flex;align-items:center;gap:14px}
+  .cinese-emoji{font-size:48px;filter:drop-shadow(0 0 10px rgba(255,215,0,0.3))}
+  .cinese-info h4{font-size:16px;color:#ffd700;margin-bottom:3px}
+  .cinese-info .anni{font-size:11px;color:#a89bc2;margin-bottom:6px}
+  .cinese-info p{font-size:13px;color:#c8c0e0;line-height:1.5}
+
+  /* MESSAGGIO COSMICO */
+  .cosmic-msg{background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(219,39,119,0.1));border:1px solid rgba(124,58,237,0.3);border-radius:14px;padding:16px;margin-bottom:12px;text-align:center}
+  .cosmic-msg .msg-text{font-size:14px;color:#e6e0f0;line-height:1.7;font-style:italic}
+  .cosmic-msg .msg-src{font-size:11px;color:#a89bc2;margin-top:8px}
+
+  /* BTN RESET */
+  .btn-reset{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#a89bc2;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:13px;width:100%;margin-top:8px}
+  .btn-reset:hover{background:rgba(255,255,255,0.1)}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.3);color:#ffd700;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ERROR BORDER */
+  .field-error input,.field-error select{border-color:#ff5a5a !important;box-shadow:0 0 0 3px rgba(255,90,90,0.2)}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="btn-back" href="index.html">← Home</a>
+  <h1>🔮 Profilo Mistico</h1>
+  <div class="page-subtitle">La tua mappa cosmica personale</div>
+</div>
+
+<div class="content">
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <h2>✨ Inserisci i tuoi dati</h2>
+    <p>Il profilo mistico viene generato dalla tua data di nascita e custodito solo sul tuo dispositivo</p>
+
+    <div class="field" id="fieldName">
+      <label>Il tuo nome</label>
+      <input type="text" id="inpName" placeholder="Come ti chiami?" maxlength="40" autocomplete="given-name">
+    </div>
+
+    <div class="field">
+      <label>Data di nascita</label>
+      <div class="date-row">
+        <select id="wDay"><option value="">Giorno</option></select>
+        <select id="wMonth"><option value="">Mese</option></select>
+        <select id="wYear"><option value="">Anno</option></select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Genere (opzionale)</label>
+      <select id="inpGender">
+        <option value="">— Non specificato —</option>
+        <option value="f">Femminile</option>
+        <option value="m">Maschile</option>
+        <option value="o">Altro</option>
+      </select>
+    </div>
+
+    <button class="btn-gen" onclick="generaProfilo()">🌟 Genera il Mio Profilo Mistico</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="profile-output" id="profileOutput">
+
+    <!-- HERO -->
+    <div class="hero-card" id="heroCard">
+      <span class="hero-sign-emoji" id="heroEmoji">♈</span>
+      <div class="hero-name" id="heroName">—</div>
+      <div class="hero-sign" id="heroSign">—</div>
+      <div class="hero-dates" id="heroDates">—</div>
+      <div class="hero-meta" id="heroMeta"></div>
+      <div class="keywords-row" id="heroKw"></div>
+    </div>
+
+    <!-- MESSAGGIO COSMICO -->
+    <div class="cosmic-msg">
+      <div class="msg-text" id="cosmicMsg"></div>
+      <div class="msg-src">✦ Messaggio dell'Universo ✦</div>
+    </div>
+
+    <!-- NUMERO DESTINO -->
+    <div class="section-card">
+      <h3>🔢 Numero del Destino</h3>
+      <div class="destiny-display">
+        <div class="destiny-num" id="destNum">—</div>
+        <div class="destiny-info">
+          <h4 id="destTitle">—</h4>
+          <p id="destDesc">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANIMALE CINESE -->
+    <div class="section-card" id="cineseCard">
+      <h3>🐉 Animale dello Zodiaco Cinese</h3>
+      <div class="cinese-display">
+        <div class="cinese-emoji" id="cineseEmoji">🐭</div>
+        <div class="cinese-info">
+          <h4 id="cineseName">—</h4>
+          <div class="anni" id="cineseAnni">—</div>
+          <p id="cineseDesc">—</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div style="font-size:13px;color:#a89bc2">🎨 Colori fortunati: <span id="cineseFortuna" style="color:#ffd700"></span></div>
+      <div style="font-size:13px;color:#a89bc2;margin-top:6px">🔮 Oggetto totemico: <span id="cineseOggetto" style="color:#e6e0f0"></span></div>
+    </div>
+
+    <!-- PIETRE -->
+    <div class="section-card">
+      <h3>💎 Le Tue Pietre Mistiche</h3>
+      <div id="pietreList"></div>
+    </div>
+
+    <!-- OGGETTI -->
+    <div class="section-card">
+      <h3>🔮 I Tuoi Oggetti Fortunati</h3>
+      <div id="oggettiList"></div>
+    </div>
+
+    <!-- COMPATIBILI TOP -->
+    <div class="section-card">
+      <h3>💞 Segni Più Compatibili con Te</h3>
+      <div id="compatTop"></div>
+    </div>
+
+    <!-- RESET -->
+    <button class="btn-reset" onclick="resetProfilo()">↩ Modifica Profilo</button>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── DATI ───
+const SEGNI = {
+  ariete:    {n:"Ariete",    e:"♈",s:"🐏",p:"Marte",    el:"Fuoco", d:"21 Mar – 20 Apr",k:["Coraggio","Leadership","Passione","Iniziativa"],
+    pietre:["Rubino — amplifica il coraggio e la forza vitale","Diamante — chiarezza e invincibilità","Corniola rossa — energia e determinazione","Ematite — protezione e ancoraggio"],
+    oggetti:["🔑 Chiave di ferro — apre le porte del destino","🐴 Ferro di cavallo — devia le energie negative","🌶️ Corno rosso — protezione mediterranea antica","🗡️ Pugnale in miniatura — simbolo di volontà"]},
+  toro:      {n:"Toro",      e:"♉",s:"🐂",p:"Venere",   el:"Terra",  d:"21 Apr – 20 Mag",k:["Stabilità","Sensualità","Tenacia","Costanza"],
+    pietre:["Smeraldo — abbondanza e fertilità della terra","Malachite — trasformazione e protezione del cuore","Quarzo rosa — amore incondizionato e pace","Rodonite — guarigione emotiva e fiducia"],
+    oggetti:["🌿 Ramo di quercia — forza e radicamento","💰 Moneta d'oro antica — magnete per l'abbondanza","🌹 Rosa essiccata — amore duraturo","🐂 Toro in terracotta — stabilità della casa"]},
+  gemelli:   {n:"Gemelli",   e:"♊",s:"👯",p:"Mercurio", el:"Aria",   d:"21 Mag – 21 Giu",k:["Comunicazione","Curiosità","Intelligenza","Adattabilità"],
+    pietre:["Agata — equilibrio tra le due nature","Citrino — chiarezza mentale e comunicazione","Tormalina bicolore — dualità in armonia","Acquamarina — espressione autentica del pensiero"],
+    oggetti:["📖 Libro segreto con chiave — conoscenza protetta","🎲 Dado antico — lascia scegliere al caso sacro","✍️ Penna d'oca — parola come magia","🗝️ Chiave doppia — accesso a mondi paralleli"]},
+  cancro:    {n:"Cancro",    e:"♋",s:"🦀",p:"Luna",     el:"Acqua",  d:"22 Giu – 22 Lug",k:["Intuizione","Empatia","Protezione","Memoria"],
+    pietre:["Pietra di luna — intuizione lunare e cicli femminili","Perla — saggezza accumulata e purezza","Acquamarina — connessione con le acque dell'inconscio","Calcedonio bianco — pace interiore e protezione"],
+    oggetti:["🌙 Luna crescente in argento — protezione notturna","🐚 Conchiglia di nautilus — spirale della vita","💧 Ampolla d'acqua di mare — forza degli oceani","🪞 Specchio piccolo — riflessione interiore"]},
+  leone:     {n:"Leone",     e:"♌",s:"🦁",p:"Sole",     el:"Fuoco",  d:"23 Lug – 22 Ago",k:["Carisma","Creatività","Generosità","Vitalità"],
+    pietre:["Occhio di tigre — potere e coraggio visibile","Granato arancio — vitalità solare e passione creativa","Ambra — calore antico e luce solare intrappolata","Citrino dorato — abbondanza e generosità"],
+    oggetti:["👑 Corona dorata in miniatura — regalità dello spirito","🦁 Leone in pietra — custodia e forza","☀️ Amuleto solare egizio — benedizione del Ra","🔆 Cristallo di quarzo al sole — amplificatore di luce"]},
+  vergine:   {n:"Vergine",   e:"♍",s:"🌾",p:"Mercurio", el:"Terra",  d:"23 Ago – 22 Set",k:["Precisione","Servizio","Analisi","Salute"],
+    pietre:["Ametista — purificazione e chiarezza analitica","Giada verde — salute e lunga vita","Diaspro verde — connessione con la terra guaritrice","Fluorite — ordine mentale e discernimento"],
+    oggetti:["🌾 Spiga di grano — ciclo del nutrimento","⚗️ Alambicco in miniatura — alchimia quotidiana","📿 Rosario di semi — preghiera e ritmo","🌿 Fascio di erbe aromatiche essiccate — purificazione dello spazio"]},
+  bilancia:  {n:"Bilancia",  e:"♎",s:"⚖️",p:"Venere",   el:"Aria",   d:"23 Set – 22 Ott",k:["Armonia","Giustizia","Diplomazia","Bellezza"],
+    pietre:["Opale — iridescenza e bellezza nascosta","Lapislazzuli — verità e armonia cosmica","Turchese — protezione e comunicazione","Quarzo rosa — amore e relazioni armoniose"],
+    oggetti:["⚖️ Bilancia in miniatura — equilibrio delle forze","🪭 Ventaglio di piume — eleganza che deflette il caos","🌸 Fiore di loto essiccato — bellezza nell'impermanenza","💎 Pendente in pietra preziosa — bellezza come protezione"]},
+  scorpione: {n:"Scorpione", e:"♏",s:"🦂",p:"Plutone",  el:"Acqua",  d:"23 Ott – 22 Nov",k:["Intensità","Trasformazione","Potere","Mistero"],
+    pietre:["Ossidiana nera — specchio delle ombre e protezione totale","Granato rosso scuro — fuoco interno e trasformazione","Malachite — svela la verità nascosta","Labradorite — magia e accesso ai misteri"],
+    oggetti:["🖤 Ossidiana in forma di serpente — guardiano dei segreti","🦂 Scorpione in argento — simbolo di rinascita","🕯️ Candela nera — brucia ciò che non serve","🔮 Sfera di ossidiana — visione nel profondo"]},
+  sagittario:{n:"Sagittario",e:"♐",s:"🏹",p:"Giove",    el:"Fuoco",  d:"23 Nov – 21 Dic",k:["Libertà","Filosofia","Avventura","Ottimismo"],
+    pietre:["Turchese — protezione del viaggiatore e fortuna","Zaffiro — saggezza e connessione con il cielo","Sodalite — pensiero filosofico e intuizione","Topazio azzurro — chiarezza della visione"],
+    oggetti:["🏹 Freccia in legno — direzione e intenzione precisa","🗺️ Mappa antica arrotolata — l'avventura è la meta","🧭 Bussola in ottone — trova sempre il nord interiore","📿 Mala di turchese — meditazione del viaggiatore"]},
+  capricorno:{n:"Capricorno",e:"♑",s:"🐐",p:"Saturno",  el:"Terra",  d:"22 Dic – 20 Gen",k:["Ambizione","Disciplina","Resilienza","Struttura"],
+    pietre:["Onice nero — resilienza e potere della struttura","Quarzo fumé — ancoraggio e purificazione delle energie dense","Tormalina nera — protezione assoluta e scudo","Ossidiana fiocco di neve — equilibrio tra luce e ombra"],
+    oggetti:["⏱️ Orologio antico — il tempo è il tuo alleato","🪨 Pietra di montagna levigata — calma indistruttibile","🏺 Vaso in terracotta — contenitore del lavoro","📐 Squadra in legno — costruzione con precisione"]},
+  acquario:  {n:"Acquario",  e:"♒",s:"🏺",p:"Urano",    el:"Aria",   d:"21 Gen – 19 Feb",k:["Innovazione","Originalità","Umanità","Libertà"],
+    pietre:["Acquamarina — libertà e comunicazione autentica","Ametista — mente aperta e innovazione spirituale","Fluorite arcobaleno — espansione della coscienza","Angelite — connessione con dimensioni superiori"],
+    oggetti:["∞ Simbolo dell'infinito in argento — oltre i confini","🔭 Piccolo telescopio — vedi ciò che altri non vedono","💫 Cristallo di quarzo rutilato — elettricità dell'anima","🌐 Globo di vetro — il mondo è casa tua"]},
+  pesci:     {n:"Pesci",     e:"♓",s:"🐟",p:"Nettuno",  el:"Acqua",  d:"20 Feb – 20 Mar",k:["Intuizione","Compassione","Arte","Spiritualità"],
+    pietre:["Acquamarina — purezza delle acque e connessione psichica","Ametista — protezione spirituale e sogni lucidi","Pietra di luna — intuizione e magia femminile","Kunzite — amore universale e apertura del cuore"],
+    oggetti:["🐚 Conchiglia di nautilus — spirale della coscienza","🌊 Ampolla d'acqua di fonte sacra — purificazione","🪷 Fiore di loto in argento — illuminazione nel fango","🔮 Sfera di vetro azzurro — visione attraverso le acque"]}
+};
+
+const ZODCINESE = {
+  topo:     {n:"Topo",    e:"🐭",anni:"1912·1924·1936·1948·1960·1972·1984·1996·2008·2020",fortuna:"Viola · Blu marino · Nero",oggetto:"Formaggio d'oro — simbolo dell'abbondanza trovata nell'ingegno",desc:"Intelligente, adattabile, carismatico e perspicace. Il Topo sa sempre trovare la strada, anche nel labirinto. Accumula risorse con intelligenza e trasforma le difficoltà in opportunità."},
+  bue:      {n:"Bue",     e:"🐮",anni:"1913·1925·1937·1949·1961·1973·1985·1997·2009·2021",fortuna:"Bianco · Giallo · Verde",oggetto:"Giogo dorato — il lavoro come via sacra",desc:"Laborioso, affidabile, determinato e paziente come la terra. Il Bue costruisce ciò che dura per generazioni. La sua forza non è nell'esplosione, ma nella costanza inesorabile."},
+  tigre:    {n:"Tigre",   e:"🐯",anni:"1914·1926·1938·1950·1962·1974·1986·1998·2010·2022",fortuna:"Blu · Grigio · Arancione",oggetto:"Zampa di tigre in giada — coraggio e protezione",desc:"Coraggiosa, carismatica, ribelle e magnetica. La Tigre non chiede il permesso — prende il suo posto nel mondo con grazia feroce. Nata per guidare, odia le catene."},
+  coniglio: {n:"Coniglio",e:"🐰",anni:"1915·1927·1939·1951·1963·1975·1987·1999·2011·2023",fortuna:"Rosa · Rosso · Viola",oggetto:"Coniglio di giada bianca — fortuna silenziosa",desc:"Gentile, elegante, acuto e diplomatico. Il Coniglio vive nell'arte di creare armonia senza perdere la sua natura. Porta fortuna naturalmente, senza cercarla."},
+  drago:    {n:"Drago",   e:"🐲",anni:"1916·1928·1940·1952·1964·1976·1988·2000·2012·2024",fortuna:"Oro · Argento · Verde imperiale",oggetto:"Drago in giada imperiale — potere e protezione celeste",desc:"Il più potente dello zodiaco cinese. Il Drago incarna la forza cosmica, la creatività divina e il destino eccezionale. Chi nasce Drago è qui per lasciare un segno impossibile da ignorare."},
+  serpente: {n:"Serpente",e:"🐍",anni:"1917·1929·1941·1953·1965·1977·1989·2001·2013·2025",fortuna:"Nero · Rosso · Giallo",oggetto:"Serpente in giada — saggezza e rinnovamento ciclico",desc:"Saggio, intuitivo, misterioso e profondo. Il Serpente vede ciò che gli altri non vedono e sa quando agire e quando attendere. La sua saggezza nasce dal silenzio."},
+  cavallo:  {n:"Cavallo", e:"🐴",anni:"1918·1930·1942·1954·1966·1978·1990·2002·2014·2026",fortuna:"Giallo · Verde · Viola",oggetto:"Ferro di cavallo dorato — velocità verso il successo",desc:"Energico, libero, entusiasta e indipendente. Il Cavallo è nato per galoppare verso l'orizzonte. La sua forza è il movimento, la sua anima è la libertà."},
+  capra:    {n:"Capra",   e:"🐐",anni:"1919·1931·1943·1955·1967·1979·1991·2003·2015·2027",fortuna:"Verde · Rosso · Viola",oggetto:"Flauto di bambù — arte come medicina",desc:"Creativa, gentile, artistica e intuitiva. La Capra vive nel mondo della bellezza e della sensibilità. Trova il sacro nel quotidiano e trasforma il dolore in arte."},
+  scimmia:  {n:"Scimmia", e:"🐵",anni:"1920·1932·1944·1956·1968·1980·1992·2004·2016·2028",fortuna:"Bianco · Blu · Oro",oggetto:"Peach — frutto dell'immortalità e dell'ingegno",desc:"Brillante, ingegnosa, versatile e irresistibile. La Scimmia risolve in dieci minuti ciò che altri non risolverebbero in dieci giorni. Il suo talento è l'adattamento creativo."},
+  gallo:    {n:"Gallo",   e:"🐓",anni:"1921·1933·1945·1957·1969·1981·1993·2005·2017·2029",fortuna:"Oro · Marrone · Giallo",oggetto:"Cresta dorata — fierezza e autenticità",desc:"Osservatore, preciso, onesto e perfezionista. Il Gallo vede i dettagli che gli altri ignorano e non ha paura di dire la verità. La sua integrità è la sua vera corona."},
+  cane:     {n:"Cane",    e:"🐕",anni:"1922·1934·1946·1958·1970·1982·1994·2006·2018·2030",fortuna:"Verde · Rosso · Viola",oggetto:"Cane di ceramica — guardiano della soglia",desc:"Leale, onesto, protettivo e giusto. Il Cane è il guardiano del tempio del cuore. Non tradisce chi ama, non abbandona chi protegge. La sua fedeltà è assoluta."},
+  maiale:   {n:"Maiale",  e:"🐷",anni:"1923·1935·1947·1959·1971·1983·1995·2007·2019·2031",fortuna:"Giallo · Grigio · Oro",oggetto:"Lingotto dorato — abbondanza che condivide",desc:"Generoso, sincero, fortunato e gioioso. Il Maiale porta abbondanza dove va — non per calcolo, ma per natura. La sua fortuna è genuina come il suo cuore."}
+};
+
+const COMPAT = {
+  ariete:{toro:50,gemelli:80,cancro:45,leone:95,vergine:55,bilancia:70,scorpione:65,sagittario:95,capricorno:55,acquario:75,pesci:55},
+  toro:{ariete:50,gemelli:45,cancro:80,leone:50,vergine:95,bilancia:60,scorpione:70,sagittario:45,capricorno:90,acquario:50,pesci:75},
+  gemelli:{ariete:80,toro:45,cancro:50,leone:75,vergine:50,bilancia:95,scorpione:45,sagittario:70,capricorno:45,acquario:90,pesci:60},
+  cancro:{ariete:45,toro:80,gemelli:50,leone:50,vergine:80,bilancia:55,scorpione:95,sagittario:40,capricorno:70,acquario:45,pesci:90},
+  leone:{ariete:95,toro:50,gemelli:75,cancro:50,vergine:45,bilancia:80,scorpione:55,sagittario:90,capricorno:50,acquario:65,pesci:60},
+  vergine:{ariete:55,toro:95,gemelli:50,cancro:80,leone:45,bilancia:60,scorpione:75,sagittario:40,capricorno:90,acquario:50,pesci:70},
+  bilancia:{ariete:70,toro:60,gemelli:95,cancro:55,leone:80,vergine:60,scorpione:50,sagittario:75,capricorno:55,acquario:90,pesci:65},
+  scorpione:{ariete:65,toro:70,gemelli:45,cancro:95,leone:55,vergine:75,bilancia:50,sagittario:50,capricorno:75,acquario:45,pesci:90},
+  sagittario:{ariete:95,toro:45,gemelli:70,cancro:40,leone:90,vergine:40,bilancia:75,scorpione:50,capricorno:50,acquario:75,pesci:60},
+  capricorno:{ariete:55,toro:90,gemelli:45,cancro:70,leone:50,vergine:90,bilancia:55,scorpione:75,sagittario:50,acquario:50,pesci:75},
+  acquario:{ariete:75,toro:50,gemelli:90,cancro:45,leone:65,vergine:50,bilancia:90,scorpione:45,sagittario:75,capricorno:50,pesci:60},
+  pesci:{ariete:55,toro:75,gemelli:60,cancro:90,leone:60,vergine:70,bilancia:65,scorpione:90,sagittario:60,capricorno:75,acquario:60}
+};
+
+const MESSAGGI_COSMICI = [
+  "La tua anima ha scelto questo momento per incarnarsi: non è un caso, è un progetto cosmico.",
+  "Le stelle al momento della tua nascita hanno disegnato una mappa unica e irripetibile: la tua.",
+  "Sei nato in un momento preciso del tempo cosmico. Quella scintilla originale è ancora in te.",
+  "Il cielo ha firmato la tua nascita con una firma speciale: portala nel mondo con consapevolezza.",
+  "Ogni tratto del tuo carattere è un dono delle stelle che brillavano quando sei arrivato.",
+  "La tua presenza in questo universo è necessaria e calcolata dall'intelligenza cosmica.",
+  "Le stelle non si sono disposte per caso nel momento della tua nascita: hai una missione unica.",
+  "Il tuo profilo cosmico è la chiave per capire i tuoi doni e le tue sfide più profonde."
+];
+
+const NUMERI_DESTINO = {
+  1:{titolo:"Il Pioniere",desc:"Nato per guidare e iniziare. Leadership innata, indipendenza e capacità di aprire strade nuove dove non ne esistono."},
+  2:{titolo:"Il Mediatore",desc:"Diplomazia, empatia e capacità di creare armonia. Il tuo dono è costruire ponti tra persone e mondi diversi."},
+  3:{titolo:"Il Creativo",desc:"Espressione, creatività e comunicazione come missione di vita. Il tuo talento porta gioia e ispirazione agli altri."},
+  4:{titolo:"Il Costruttore",desc:"Solidità, praticità e capacità di costruire cose durature. La tua forza è nella disciplina e nel metodo."},
+  5:{titolo:"Il Libero",desc:"Libertà, cambiamento e adattabilità. Sei qui per esplorare e portare nuove esperienze nella tua vita e in quella degli altri."},
+  6:{titolo:"Il Guaritore",desc:"Amore, cura e responsabilità verso la famiglia e la comunità. Il tuo dono è creare armonia e guarire le relazioni."},
+  7:{titolo:"Il Mistico",desc:"Ricerca spirituale, profondità interiore e saggezza. La tua missione è scoprire le verità nascoste dell'esistenza."},
+  8:{titolo:"Il Manifestore",desc:"Potere, abbondanza e capacità di manifestare nel mondo materiale. Sei nato per costruire qualcosa di grande."},
+  9:{titolo:"Il Saggio",desc:"Saggezza universale, compassione e completamento. Sei qui per servire l'umanità con la tua profonda comprensione."},
+  11:{titolo:"Il Visionario",desc:"Numero maestro: intuizione elevata, ispirazione e capacità di illuminare gli altri con la tua visione spirituale."},
+  22:{titolo:"Il Grande Costruttore",desc:"Numero maestro: capacità di costruire qualcosa di enorme e duraturo. Hai un potenziale cosmico straordinario."},
+  33:{titolo:"Il Maestro Guaritore",desc:"Numero maestro: amore incondizionato e capacità di elevare la coscienza collettiva. Il più spirituale dei numeri."}
+};
+
+// ─── UTILITY ───
+function rnd(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+function segnoFromDate(ds){
+  const parts=ds.split('-').map(Number);
+  const d=new Date(parts[0],parts[1]-1,parts[2],12,0,0);
+  if(isNaN(d.getTime())) return 'ariete';
+  const day=d.getDate(), m=d.getMonth()+1;
+  if((m==3&&day>=21)||(m==4&&day<=20)) return 'ariete';
+  if((m==4&&day>=21)||(m==5&&day<=20)) return 'toro';
+  if((m==5&&day>=21)||(m==6&&day<=21)) return 'gemelli';
+  if((m==6&&day>=22)||(m==7&&day<=22)) return 'cancro';
+  if((m==7&&day>=23)||(m==8&&day<=22)) return 'leone';
+  if((m==8&&day>=23)||(m==9&&day<=22)) return 'vergine';
+  if((m==9&&day>=23)||(m==10&&day<=22)) return 'bilancia';
+  if((m==10&&day>=23)||(m==11&&day<=22)) return 'scorpione';
+  if((m==11&&day>=23)||(m==12&&day<=21)) return 'sagittario';
+  if((m==12&&day>=22)||(m==1&&day<=20)) return 'capricorno';
+  if((m==1&&day>=21)||(m==2&&day<=19)) return 'acquario';
+  return 'pesci';
+}
+
+function zodCineseFromYear(year){
+  const animals=['topo','bue','tigre','coniglio','drago','serpente','cavallo','capra','scimmia','gallo','cane','maiale'];
+  return animals[((year-1900)%12+12)%12];
+}
+
+function calcNumeroDestino(dateStr){
+  const digits=dateStr.replace(/-/g,'').split('').map(Number);
+  let sum=digits.reduce((a,b)=>a+b,0);
+  while(sum>9 && sum!==11 && sum!==22 && sum!==33){
+    sum=String(sum).split('').map(Number).reduce((a,b)=>a+b,0);
+  }
+  return sum;
+}
+
+// ─── INIT SELECTS ───
+function initSelects(){
+  const dSel=document.getElementById('wDay');
+  const mSel=document.getElementById('wMonth');
+  const ySel=document.getElementById('wYear');
+  const mesi=['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+  for(let i=1;i<=31;i++){
+    const o=document.createElement('option');
+    o.value=String(i).padStart(2,'0'); o.textContent=String(i);
+    dSel.appendChild(o);
+  }
+  for(let i=1;i<=12;i++){
+    const o=document.createElement('option');
+    o.value=String(i).padStart(2,'0'); o.textContent=mesi[i-1];
+    mSel.appendChild(o);
+  }
+  const curY=new Date().getFullYear();
+  for(let y=curY;y>=1900;y--){
+    const o=document.createElement('option');
+    o.value=String(y); o.textContent=String(y);
+    ySel.appendChild(o);
+  }
+}
+
+// ─── CARICA PROFILO SALVATO ───
+function tryLoadSaved(){
+  try{
+    const raw=localStorage.getItem('myst_v3_profile');
+    if(!raw) return;
+    const p=JSON.parse(raw);
+    if(p.name) document.getElementById('inpName').value=p.name;
+    if(p.date){
+      const parts=p.date.split('-');
+      if(parts.length===3){
+        document.getElementById('wYear').value=parts[0];
+        document.getElementById('wMonth').value=parts[1];
+        document.getElementById('wDay').value=parts[2];
+      }
+    }
+    if(p.gender) document.getElementById('inpGender').value=p.gender;
+    // Genera automaticamente se profilo già salvato
+    setTimeout(()=>generaProfilo(true),100);
+  }catch(e){}
+}
+
+// ─── GENERA PROFILO ───
+function generaProfilo(silent){
+  const name=document.getElementById('inpName').value.trim();
+  const day=document.getElementById('wDay').value;
+  const month=document.getElementById('wMonth').value;
+  const year=document.getElementById('wYear').value;
+  const gender=document.getElementById('inpGender').value;
+
+  // Validazione
+  if(!name){
+    document.getElementById('fieldName').classList.add('field-error');
+    if(!silent) toast('⚠️ Inserisci il tuo nome');
+    return;
+  }
+  document.getElementById('fieldName').classList.remove('field-error');
+
+  if(!day||!month||!year){
+    if(!silent) toast('⚠️ Seleziona giorno, mese e anno');
+    return;
+  }
+
+  const dateStr=`${year}-${month}-${day}`;
+  const parts=[parseInt(year),parseInt(month),parseInt(day)];
+  const testDate=new Date(parts[0],parts[1]-1,parts[2]);
+  if(isNaN(testDate.getTime())||testDate.getDate()!==parts[2]){
+    if(!silent) toast('⚠️ Data non valida');
+    return;
+  }
+
+  // Calcoli
+  const segnoKey=segnoFromDate(dateStr);
+  const sg=SEGNI[segnoKey];
+  const cKey=zodCineseFromYear(parts[0]);
+  const cz=ZODCINESE[cKey];
+  const numDest=calcNumeroDestino(dateStr);
+  const ndInfo=NUMERI_DESTINO[numDest]||NUMERI_DESTINO[9];
+
+  // Salva
+  try{
+    const p={name,date:dateStr,segno:segnoKey,gender};
+    localStorage.setItem('myst_v3_profile',JSON.stringify(p));
+  }catch(e){}
+
+  // Popola hero
+  document.getElementById('heroEmoji').textContent=sg.s;
+  document.getElementById('heroName').textContent=name;
+  document.getElementById('heroSign').textContent=`${sg.e} ${sg.n}`;
+  document.getElementById('heroDates').textContent=sg.d;
+  document.getElementById('heroMeta').innerHTML=`
+    <span>🪐 ${sg.p}</span>
+    <span>🌿 ${sg.el}</span>
+    <span>🐉 ${cz.n}</span>
+    <span>🔢 Destino ${numDest}</span>
+  `;
+  document.getElementById('heroKw').innerHTML=sg.k.map(k=>`<span class="kw">${k}</span>`).join('');
+
+  // Messaggio cosmico
+  document.getElementById('cosmicMsg').textContent=rnd(MESSAGGI_COSMICI);
+
+  // Numero destino
+  document.getElementById('destNum').textContent=numDest;
+  document.getElementById('destTitle').textContent=ndInfo.titolo;
+  document.getElementById('destDesc').textContent=ndInfo.desc;
+
+  // Animale cinese
+  document.getElementById('cineseEmoji').textContent=cz.e;
+  document.getElementById('cineseName').textContent=cz.n;
+  document.getElementById('cineseAnni').textContent=`Anno di nascita: ${year} · Anni del ${cz.n}: ${cz.anni}`;
+  document.getElementById('cineseDesc').textContent=cz.desc;
+  document.getElementById('cineseFortuna').textContent=cz.fortuna;
+  document.getElementById('cineseOggetto').textContent=cz.oggetto;
+
+  // Pietre
+  document.getElementById('pietreList').innerHTML=sg.pietre.map(p=>`
+    <div class="list-item">
+      <div class="list-item-icon">💎</div>
+      <div class="list-item-text">${p}</div>
+    </div>`).join('');
+
+  // Oggetti
+  document.getElementById('oggettiList').innerHTML=sg.oggetti.map(o=>`
+    <div class="list-item">
+      <div class="list-item-icon">${o.split(' ')[0]}</div>
+      <div class="list-item-text">${o.slice(o.indexOf(' ')+1)}</div>
+    </div>`).join('');
+
+  // Compatibili top 3
+  const row=COMPAT[segnoKey]||{};
+  const top3=Object.entries(row).sort(([,a],[,b])=>b-a).slice(0,3);
+  document.getElementById('compatTop').innerHTML=`
+    <div style="display:flex;flex-direction:column;gap:10px">
+      ${top3.map(([k,sc])=>{
+        const s=SEGNI[k];
+        const col=sc>=85?'#4ade80':sc>=70?'#ffd700':'#fb923c';
+        return `<div style="display:flex;align-items:center;gap:12px;padding:10px;background:rgba(255,255,255,0.04);border-radius:12px">
+          <span style="font-size:28px">${s.e}</span>
+          <div style="flex:1">
+            <div style="font-size:14px;color:#e6e0f0;font-weight:600">${s.n}</div>
+            <div style="font-size:11px;color:#a89bc2">${s.p} · ${s.el}</div>
+          </div>
+          <div style="font-size:18px;font-weight:700;color:${col}">${sc}%</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <p style="font-size:12px;color:#a89bc2;margin-top:10px;text-align:center">
+      <a href="compatibilita.html" style="color:#ffd700;text-decoration:none">→ Calcola compatibilità completa</a>
+    </p>
+  `;
+
+  // Mostra output
+  document.getElementById('formCard').style.display='none';
+  const out=document.getElementById('profileOutput');
+  out.style.display='block';
+
+  if(!silent) toast('✨ Profilo mistico generato!');
+}
+
+function resetProfilo(){
+  document.getElementById('formCard').style.display='block';
+  document.getElementById('profileOutput').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ─── AVVIO ───
+initSelects();
+tryLoadSaved();
+</script>
+
+</body>
+</html>

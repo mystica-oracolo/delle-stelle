@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Scopri il tuo Angelo Custode tra i 72 Angeli della Tradizione Cabbalistica. Calcola il tuo angelo con data e ora di nascita. Oracolo degli Angeli e messaggi angelici.">
+<meta name="keywords" content="angelo custode, 72 angeli, angelologia, cabala angeli, angeli custodi nascita, oracolo angeli, arcangeli, numeri angelici, angeli tradizione ebraica, mysticaoracoli">
+<title>Angelologia: 72 Angeli Custodi & Oracolo degli Angeli | MYSTICA</title>
+<link rel="canonical" href="https://mysticaoracoli.it/angeli.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:title" content="Angelologia: 72 Angeli Custodi — MYSTICA">
+<meta property="og:description" content="Scopri il tuo Angelo Custode tra i 72 Angeli della Tradizione Cabbalistica. Calcolo personalizzato per data e ora di nascita.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/angeli.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/angelologia.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Angelologia 72 Angeli Custodi — MYSTICA">
+<meta name="twitter:description" content="Scopri il tuo Angelo Custode con data e ora di nascita. Tradizione cabbalistica dei 72 Angeli.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+
+  /* ── HEADER ── */
+  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(212,175,55,0.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
+  .btn-back{background:rgba(212,175,55,0.12);border:1px solid #d4af37;color:#d4af37;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
+  .btn-back:hover{background:rgba(212,175,55,0.22)}
+  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#d4af37,#c8a0f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-family:'Georgia',serif}
+  .page-subtitle{color:#a89bc2;font-size:12px}
+
+  /* ── LAYOUT ── */
+  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+
+  /* ── TABS ── */
+  .tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:20px}
+  .tab-btn{padding:11px 6px;border-radius:12px;cursor:pointer;text-align:center;font-size:13px;font-weight:600;letter-spacing:.4px;transition:all .2s ease;border:2px solid rgba(212,175,55,0.2);background:rgba(20,12,36,0.6);color:#a89bc2}
+  .tab-btn.active{border-color:#d4af37;background:linear-gradient(135deg,#2a1748,#160d30);color:#d4af37;box-shadow:0 0 14px rgba(212,175,55,0.2)}
+
+  .panel{display:none}
+  .panel.active{display:block;animation:fadeIn .35s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ── CARD ── */
+  .card{background:rgba(26,23,38,0.9);border:1px solid rgba(212,175,55,0.15);border-radius:14px;padding:18px 16px;margin-bottom:14px}
+  .card h2{font-size:18px;color:#f0e6ff;margin-bottom:10px;font-family:'Georgia',serif}
+  .card p{font-size:14px;color:#c8c0e0;line-height:1.7;margin-bottom:10px}
+
+  /* ── FORM CALCOLO ANGELO ── */
+  label.field-label{display:block;font-size:11px;color:#d4af37;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin:12px 0 5px;font-family:'Georgia',serif}
+  input[type="date"], input[type="time"]{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(212,175,55,0.25);border-radius:10px;padding:12px 14px;color:#f0e6ff;font-size:15px;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;margin-bottom:4px}
+  input[type="date"]:focus, input[type="time"]:focus{border-color:#d4af37;background:rgba(212,175,55,0.07)}
+  .btn{display:block;width:100%;padding:14px;border-radius:12px;border:none;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0d0b14;font-size:15px;font-weight:700;cursor:pointer;margin-top:14px;transition:opacity .2s}
+  .btn:hover{opacity:.88}
+  .btn-sec{display:block;width:100%;padding:12px;border-radius:12px;border:1px solid rgba(212,175,55,0.4);background:rgba(212,175,55,0.08);color:#d4af37;font-size:14px;font-weight:600;cursor:pointer;margin-top:10px;transition:all .2s}
+  .btn-sec:hover{background:rgba(212,175,55,0.15)}
+
+  /* ── RISULTATO ANGELO ── */
+  .angel-res{text-align:center}
+  .angel-symbol{font-size:60px;margin-bottom:12px;filter:drop-shadow(0 0 16px rgba(212,175,55,0.6))}
+  .angel-name{font-size:28px;font-weight:700;color:#f0e6ff;font-family:'Georgia',serif;margin-bottom:4px}
+  .angel-realm{color:#d4af37;font-size:13px;margin-bottom:4px;font-weight:600}
+  .angel-period{color:#a89bc2;font-size:12px;margin-bottom:14px}
+  .angel-block{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:14px;margin-bottom:10px;text-align:left}
+  .angel-block h4{color:#d4af37;font-size:13px;margin-bottom:6px;font-family:'Georgia',serif}
+  .angel-block p{font-size:13.5px;color:#d1c9e8;line-height:1.7}
+  .angel-prayer{font-style:italic;color:#a89bc2}
+  .t-muted{color:#a89bc2;font-size:12px}
+
+  /* ── ANGELI CARD LIST ── */
+  .angel-card{background:rgba(26,23,38,0.9);border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:0;margin-bottom:10px;overflow:hidden;transition:border-color .3s}
+  .angel-card:hover{border-color:rgba(212,175,55,0.35)}
+  .angel-card-head{display:flex;align-items:center;gap:10px;padding:13px 15px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+  .angel-card-ico{font-size:22px;flex-shrink:0}
+  .angel-card-info{flex:1;min-width:0}
+  .angel-card-name{font-size:15px;font-weight:600;color:#f0e6ff}
+  .angel-card-sub{font-size:11px;color:#a89bc2;margin-top:2px}
+  .angel-card-badge{font-size:10px;padding:3px 8px;border-radius:10px;background:rgba(212,175,55,0.12);color:#d4af37;white-space:nowrap;flex-shrink:0}
+  .angel-card-arrow{color:#666;font-size:13px;flex-shrink:0;transition:transform .3s}
+  .angel-card.open .angel-card-arrow{transform:rotate(180deg)}
+  .angel-card-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(0.4,0,0.2,1)}
+  .angel-card.open .angel-card-body{max-height:1200px}
+  .angel-card-body-inner{padding:0 15px 14px;border-top:1px solid rgba(255,255,255,0.06);padding-top:12px}
+  .field-lbl{font-size:10px;font-weight:700;color:#d4af37;text-transform:uppercase;letter-spacing:.7px;margin:8px 0 3px}
+  .field-val{font-size:13.5px;color:#c8c0e0;line-height:1.65}
+  .field-val em{font-style:italic;color:#a89bc2}
+
+  /* ── TRONO BADGE ── */
+  .trono-serafino{background:rgba(255,200,50,0.12);color:#ffd700}
+  .trono-cherubino{background:rgba(100,200,255,0.12);color:#64c8ff}
+  .trono-trono{background:rgba(180,100,255,0.12);color:#b464ff}
+  .trono-dominazione{background:rgba(255,130,50,0.12);color:#ff8232}
+  .trono-virtù{background:rgba(100,255,180,0.12);color:#64ffb4}
+  .trono-principato{background:rgba(255,100,100,0.12);color:#ff6464}
+  .trono-arcangelo{background:rgba(255,180,50,0.12);color:#ffb432}
+  .trono-angelo{background:rgba(200,180,255,0.12);color:#c8b4ff}
+
+  /* ── SEARCH ── */
+  .search-wrap{position:relative;margin-bottom:14px}
+  .search-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(212,175,55,0.2);border-radius:10px;padding:11px 14px 11px 38px;color:#f0e6ff;font-size:14px;outline:none}
+  .search-input:focus{border-color:#d4af37}
+  .search-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#888;font-size:15px;pointer-events:none}
+  .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .filter-btn{padding:5px 10px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid rgba(212,175,55,0.2);background:rgba(20,12,36,0.5);color:#a89bc2;transition:all .2s;white-space:nowrap}
+  .filter-btn.active-f{border-color:#d4af37;color:#d4af37;background:rgba(212,175,55,0.1)}
+  .angels-count{text-align:center;font-size:11px;color:#666;margin-bottom:10px}
+
+  /* ── ORACOLO ANGELI ── */
+  .storia-box{background:rgba(212,175,55,0.07);border-left:3px solid #d4af37;border-radius:0 8px 8px 0;padding:12px 14px;margin:12px 0}
+  .storia-text{font-style:italic;color:#c8b4e8;font-size:13.5px;line-height:1.65}
+  .storia-source{font-size:11px;color:#888;margin-top:6px}
+  .figure-list{margin:12px 0;display:flex;flex-direction:column;gap:8px}
+  .figura-row{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 12px}
+  .figura-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+  .figura-name{font-size:14px;font-weight:600;color:#f0e6ff;margin-bottom:3px}
+  .figura-desc{font-size:13px;color:#a89bc2;line-height:1.5}
+  .metodo-steps{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+  .metodo-step{display:flex;align-items:flex-start;gap:12px;background:rgba(212,175,55,0.05);border-radius:8px;padding:10px 12px}
+  .metodo-num{background:linear-gradient(135deg,#d4af37,#b8860b);color:#0d0b14;font-weight:800;font-size:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .metodo-text{font-size:13.5px;color:#c8c0e0;line-height:1.6;padding-top:2px}
+  .oracle-block{background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:16px;margin-top:14px;text-align:center}
+  .ob-tag{font-size:10px;font-weight:700;color:#d4af37;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+  .ob-name{font-size:20px;font-weight:700;color:#f0e6ff;margin-bottom:8px;font-family:'Georgia',serif}
+  .oracle-block p{font-size:14px;color:#c8c0e0;line-height:1.7}
+  .ritual-box{background:rgba(100,200,255,0.06);border:1px solid rgba(100,200,255,0.2);border-radius:8px;padding:12px 14px;font-size:13px;color:#c8c0e0;line-height:1.6;margin-top:12px}
+  .section-divider{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+  .len-section-img{margin:12px 0;border-radius:10px;overflow:hidden}
+  .len-section-img img{width:100%;display:block;border-radius:10px}
+
+  /* ── NUMERI ANGELICI ── */
+  .numeri-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+  .numero-card{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:12px 10px;text-align:center}
+  .numero-seq{font-size:20px;font-weight:800;color:#d4af37;font-family:'Georgia',serif;margin-bottom:4px}
+  .numero-label{font-size:12px;font-weight:600;color:#f0e6ff;margin-bottom:4px}
+  .numero-msg{font-size:11px;color:#a89bc2;line-height:1.5}
+
+  /* ── ARCANGELI ── */
+  .arcangeli-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+  .arcangelo-card{background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(200,160,240,0.06));border:1px solid rgba(212,175,55,0.2);border-radius:12px;padding:14px 12px;text-align:center}
+  .arcangelo-ico{font-size:28px;margin-bottom:6px}
+  .arcangelo-name{font-size:14px;font-weight:700;color:#f0e6ff;margin-bottom:4px;font-family:'Georgia',serif}
+  .arcangelo-desc{font-size:11.5px;color:#a89bc2;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="btn-back" href="javascript:history.back()">← Indietro</a>
+  <h1>😇 Angelologia</h1>
+  <p class="page-subtitle">72 Angeli Custodi · Tradizione Cabbalistica · Oracolo</p>
+</div>
+
+<div class="content">
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab-btn active" onclick="switchTab('custode')">👼 Il Tuo Angelo</div>
+    <div class="tab-btn" onclick="switchTab('72angeli')">📜 72 Angeli</div>
+    <div class="tab-btn" onclick="switchTab('oracolo')">✨ Oracolo</div>
+  </div>
+
+  <!-- ══════════════ TAB 1: CALCOLA ANGELO CUSTODE ══════════════ -->
+  <div class="panel active" id="panel-custode">
+
+    <div class="card">
+      <h2>👼 Scopri il Tuo Angelo Custode</h2>
+      <p>Ogni essere umano nasce sotto la protezione di un Angelo Custode specifico, determinato dalla propria data e ora di nascita. Nella tradizione cabbalistica, <strong>72 Angeli</strong> derivati dai versetti 72–74 del Libro dell'Esodo governano periodi specifici del calendario e influenzano le qualità dell'anima di chi nasce sotto la loro guida.</p>
+
+      <div id="angeliForm">
+        <label class="field-label">Data di nascita</label>
+        <input type="date" id="angelDate">
+        <label class="field-label">Ora di nascita (più precisa è, meglio è)</label>
+        <input type="time" id="angelTime" placeholder="es. 14:30">
+        <button class="btn" onclick="calcAngelo()">✨ Rivela il Mio Angelo</button>
+      </div>
+
+      <div id="angeliResult" style="display:none"></div>
+    </div>
+
+    <!-- ARCANGELI PRINCIPALI -->
+    <div class="card">
+      <div class="section-divider">Tradizione</div>
+      <h2>⚔️ I Quattro Arcangeli Principali</h2>
+      <p>Alla sommità della gerarchia angelica, quattro Arcangeli ricorrono in quasi tutte le tradizioni giudaico-cristiane e islamiche, ciascuno con un dominio simbolico preciso.</p>
+      <div class="arcangeli-grid">
+        <div class="arcangelo-card">
+          <div class="arcangelo-ico">⚔️</div>
+          <div class="arcangelo-name">Michele</div>
+          <div class="arcangelo-desc">Protezione e Coraggio — guida nelle decisioni difficili, allontana le paure</div>
+        </div>
+        <div class="arcangelo-card">
+          <div class="arcangelo-ico">📯</div>
+          <div class="arcangelo-name">Gabriele</div>
+          <div class="arcangelo-desc">Comunicazione e Nuovi Inizi — portatore di annunci, aiuta ad accogliere il cambiamento</div>
+        </div>
+        <div class="arcangelo-card">
+          <div class="arcangelo-ico">🌿</div>
+          <div class="arcangelo-name">Raffaele</div>
+          <div class="arcangelo-desc">Guarigione — il suo nome significa "Dio guarisce", invocato per la salute</div>
+        </div>
+        <div class="arcangelo-card">
+          <div class="arcangelo-ico">🔥</div>
+          <div class="arcangelo-name">Uriel</div>
+          <div class="arcangelo-desc">Chiarezza e Saggezza — "luce di Dio", illumina situazioni confuse</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- I CORI ANGELICI -->
+    <div class="card">
+      <div class="section-divider">Gerarchia</div>
+      <h2>🕊️ I 9 Cori Angelici</h2>
+      <p>Nella tradizione di Pseudo-Dionigi l'Areopagita (V sec.), gli angeli sono organizzati in tre triadi di tre cori ciascuna, dall'alto verso il basso:</p>
+      <div class="figure-list">
+        <div class="figura-row"><span class="figura-ico">🌟</span><div><div class="figura-name">Prima Triade — Serafini, Cherubini, Troni</div><div class="figura-desc">Il cerchio interno: circondano il divino direttamente. I Serafini bruciano d'amore, i Cherubini custodiscono la conoscenza, i Troni reggono il trono celeste.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">✨</span><div><div class="figura-name">Seconda Triade — Dominazioni, Virtù, Potestà</div><div class="figura-desc">Governano l'ordine cosmico: le Dominazioni regolano i cori inferiori, le Virtù compiono miracoli, le Potestà proteggono l'ordine naturale.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">👼</span><div><div class="figura-name">Terza Triade — Principati, Arcangeli, Angeli</div><div class="figura-desc">I messaggeri verso il mondo umano: i Principati guidano le nazioni, gli Arcangeli portano messaggi importanti, gli Angeli custodi vegliano sulle singole anime.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ANGELO CUSTODE VS SPIRITO GUIDA -->
+    <div class="card">
+      <div class="section-divider">Approfondimento</div>
+      <h2>🕊️ Angelo Custode o Spirito Guida?</h2>
+      <p>Chi si avvicina per la prima volta alla pratica oracolare spesso confonde due figure che, pur simili, hanno origini e funzioni distinte.</p>
+      <div class="figure-list">
+        <div class="figura-row"><span class="figura-ico">🕊️</span><div><div class="figura-name">Angelo Custode</div><div class="figura-desc">Presenza costante e universale assegnata dalla nascita, non legata a esperienze terrene. Di matrice religiosa occidentale: cristiana, ebraica, islamica.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🐺</span><div><div class="figura-name">Spirito Guida</div><div class="figura-desc">Presenza che può cambiare nel tempo, spesso identificata con antenati, animali totemici o maestri spirituali. Più diffusa in sciamanesimo e correnti New Age.</div></div></div>
+      </div>
+      <p style="margin-top:8px">Molti praticanti scelgono semplicemente di chiamare questa presenza "la mia guida", senza necessità di etichettarla rigidamente.</p>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ TAB 2: 72 ANGELI ══════════════ -->
+  <div class="panel" id="panel-72angeli">
+
+    <div class="card" style="padding:14px 16px">
+      <h2 style="margin-bottom:8px">📜 I 72 Angeli della Tradizione Cabbalistica</h2>
+      <p style="font-size:13px">I 72 Angeli derivano dai tre versetti (72, 73, 74) del capitolo 14 dell'Esodo, ciascuno di 72 lettere ebraiche. Ogni angelo governa un periodo di 5 giorni del calendario e influenza le qualità dell'anima di chi vi nasce.</p>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-ico">🔍</span>
+      <input class="search-input" type="text" id="searchAngeli" placeholder="Cerca per nome, periodo, dominio..." oninput="filterAngeli()">
+    </div>
+
+    <div class="filter-row" id="tronoFilters">
+      <button class="filter-btn active-f" onclick="setTrono('')">Tutti</button>
+      <button class="filter-btn" onclick="setTrono('Serafino')">Serafini</button>
+      <button class="filter-btn" onclick="setTrono('Cherubino')">Cherubini</button>
+      <button class="filter-btn" onclick="setTrono('Trono')">Troni</button>
+      <button class="filter-btn" onclick="setTrono('Dominazione')">Dominazioni</button>
+      <button class="filter-btn" onclick="setTrono('Virtù')">Virtù</button>
+      <button class="filter-btn" onclick="setTrono('Principato')">Principati</button>
+      <button class="filter-btn" onclick="setTrono('Arcangelo')">Arcangeli</button>
+      <button class="filter-btn" onclick="setTrono('Angelo')">Angeli</button>
+    </div>
+
+    <div class="angels-count" id="angelsCount"></div>
+    <div id="angeliList"></div>
+  </div>
+
+  <!-- ══════════════ TAB 3: ORACOLO DEGLI ANGELI ══════════════ -->
+  <div class="panel" id="panel-oracolo">
+
+    <div class="card">
+      <h2>👼 Oracolo degli Angeli</h2>
+      <div class="len-section-img">
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_hero.webp"
+             srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_hero.webp 400w, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_hero@2x.webp 800w"
+             sizes="(max-width:480px) 100vw, 400px"
+             alt="Oracolo degli Angeli - mazzo di carte con messaggi angelici per guida e conforto spirituale"
+             loading="lazy">
+      </div>
+      <p>L'<strong>Oracolo degli Angeli</strong> è un mazzo divinatorio moderno che offre risposte dirette e confortanti. A differenza dei Tarocchi, non racconta una storia complessa: porta un singolo messaggio di guida per il momento presente.</p>
+      <div class="storia-box">
+        <p class="storia-text">«La credenza in messaggeri celesti che vegliano sull'uomo attraversa l'ebraismo, il cristianesimo, l'islam e numerose tradizioni popolari europee: dagli angeli custodi medievali ai nove cori angelici descritti da Pseudo-Dionigi l'Areopagita nel V secolo.»</p>
+        <p class="storia-source">— Tradizione angelologica occidentale</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">Il Metodo</div>
+      <h2>📖 Come Interpretare il Messaggio</h2>
+      <div class="len-section-img">
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_lettura.webp"
+             srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_lettura.webp 400w, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_lettura@2x.webp 800w"
+             sizes="(max-width:480px) 100vw, 400px"
+             alt="Come interpretare il messaggio dell'Oracolo degli Angeli"
+             loading="lazy">
+      </div>
+      <div class="metodo-steps">
+        <div class="metodo-step"><span class="metodo-num">1</span><div class="metodo-text"><strong>Formula una domanda aperta</strong> — non "sì/no", ma qualcosa come "di cosa ho bisogno ora?".</div></div>
+        <div class="metodo-step"><span class="metodo-num">2</span><div class="metodo-text"><strong>Fai un respiro profondo</strong> e lascia la mente libera da aspettative prima di estrarre.</div></div>
+        <div class="metodo-step"><span class="metodo-num">3</span><div class="metodo-text"><strong>Estrai un solo messaggio</strong> e leggilo come un consiglio, non come una previsione fissa.</div></div>
+        <div class="metodo-step"><span class="metodo-num">4</span><div class="metodo-text"><strong>Rifletti su dove, nella tua vita reale, quel concetto si applica</strong> in questo momento.</div></div>
+      </div>
+      <button class="btn" onclick="drawAngelo()">👼 Estrai un Messaggio Angelico</button>
+      <div id="resAngelo"></div>
+    </div>
+
+    <!-- I QUATTRO ARCANGELI -->
+    <div class="card">
+      <div class="section-divider">Le Figure di Riferimento</div>
+      <h2>✨ I Quattro Arcangeli Principali</h2>
+      <div class="len-section-img">
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_arcangeli.webp"
+             srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_arcangeli.webp 400w, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_arcangeli@2x.webp 800w"
+             sizes="(max-width:480px) 100vw, 400px"
+             alt="I quattro Arcangeli - Michele, Gabriele, Raffaele e Uriel nella tradizione angelica"
+             loading="lazy">
+      </div>
+      <div class="figure-list">
+        <div class="figura-row"><span class="figura-ico">⚔️</span><div><div class="figura-name">Michele — Protezione e Coraggio</div><div class="figura-desc">Guida nelle decisioni difficili, allontana le paure e dona la forza per affrontare ostacoli e conflitti.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">📯</span><div><div class="figura-name">Gabriele — Comunicazione e Nuovi Inizi</div><div class="figura-desc">Associato agli annunci e ai messaggi importanti, aiuta a esprimere la verità e ad accogliere un cambiamento.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🌿</span><div><div class="figura-name">Raffaele — Guarigione</div><div class="figura-desc">Il suo nome significa "Dio guarisce": è invocato per il benessere fisico, emotivo e per i percorsi di recupero.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🔥</span><div><div class="figura-name">Uriel — Chiarezza e Saggezza</div><div class="figura-desc">Il suo nome significa "luce di Dio": illumina situazioni confuse e aiuta a vedere con lucidità ciò che prima sfuggiva.</div></div></div>
+      </div>
+    </div>
+
+    <!-- NUMERI ANGELICI -->
+    <div class="card">
+      <div class="section-divider">Approfondimento</div>
+      <h2>🔢 I Numeri Angelici</h2>
+      <p>I <strong>numeri angelici</strong> sono sequenze ripetute come 11:11, 222 o 444 che molte persone notano con insistenza su orologi, targhe o ricevute. Ogni sequenza è letta come un messaggio sintetico:</p>
+      <div class="numeri-grid">
+        <div class="numero-card"><div class="numero-seq">111</div><div class="numero-label">Nuovi Inizi</div><div class="numero-msg">I tuoi pensieri si stanno manifestando rapidamente: presta attenzione a ciò su cui ti concentri.</div></div>
+        <div class="numero-card"><div class="numero-seq">222</div><div class="numero-label">Equilibrio</div><div class="numero-msg">Sei sulla strada giusta, anche se i risultati non sono ancora visibili: continua con costanza.</div></div>
+        <div class="numero-card"><div class="numero-seq">333</div><div class="numero-label">Supporto</div><div class="numero-msg">Presenze spirituali ti circondano e sostengono in questo momento.</div></div>
+        <div class="numero-card"><div class="numero-seq">444</div><div class="numero-label">Protezione</div><div class="numero-msg">Una presenza di sostegno è vicina: è un segnale di rassicurazione nei momenti di dubbio.</div></div>
+        <div class="numero-card"><div class="numero-seq">555</div><div class="numero-label">Cambiamento</div><div class="numero-msg">Un cambiamento importante sta per arrivare: preparati ad accoglierlo.</div></div>
+        <div class="numero-card"><div class="numero-seq">777</div><div class="numero-label">Allineamento</div><div class="numero-msg">Stai vivendo una fase di crescita interiore in sintonia con il tuo percorso più autentico.</div></div>
+        <div class="numero-card"><div class="numero-seq">888</div><div class="numero-label">Abbondanza</div><div class="numero-msg">L'abbondanza in tutte le sue forme sta fluendo nella tua direzione.</div></div>
+        <div class="numero-card"><div class="numero-seq">1111</div><div class="numero-label">Portale</div><div class="numero-msg">Un portale spirituale è aperto: ciò che pensi ora si manifesta con potenza insolita.</div></div>
+      </div>
+      <div class="ritual-box"><strong>Un consiglio pratico:</strong> tieni un piccolo diario dei messaggi ricevuti — sia dalle carte sia dai numeri notati casualmente. Con il tempo, riconoscerai pattern personali che la lettura isolata non potrebbe rivelare.</div>
+    </div>
+
+    <!-- SEGNALI ANGELICI -->
+    <div class="card">
+      <div class="section-divider">Articolo</div>
+      <h2>🪶 I Segnali Angelici nella Vita Quotidiana</h2>
+      <div class="len-section-img">
+        <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_segnali.webp"
+             srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_segnali.webp 400w, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/angeli/angeli_segnali@2x.webp 800w"
+             sizes="(max-width:480px) 100vw, 400px"
+             alt="Segnali angelici nella vita quotidiana - piume bianche, farfalle e altri segni simbolici"
+             loading="lazy">
+      </div>
+      <p>Oltre alle carte e ai numeri ripetuti, la tradizione oracolare contemporanea attribuisce significato a una serie di piccoli eventi quotidiani, interpretati come "segnali" di una presenza protettiva.</p>
+      <div class="figure-list">
+        <div class="figura-row"><span class="figura-ico">🪶</span><div><div class="figura-name">Piume Bianche</div><div class="figura-desc">Il segnale più citato nella tradizione popolare: trovarne una nel posto e nel momento "giusto" è letto come una conferma o un saluto.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🦋</span><div><div class="figura-name">Farfalle e Libellule</div><div class="figura-desc">Associate alla trasformazione e, in molte culture, a visite simboliche di persone care che non ci sono più.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🌟</span><div><div class="figura-name">Luci e Scintille Improvvise</div><div class="figura-desc">Bagliori percepiti con la coda dell'occhio, spesso riportati durante meditazioni o momenti di forte emozione.</div></div></div>
+        <div class="figura-row"><span class="figura-ico">🎵</span><div><div class="figura-name">Canzoni "al Momento Giusto"</div><div class="figura-desc">Una canzone significativa che riappare in un momento di dubbio, vissuta come un piccolo promemoria.</div></div></div>
+      </div>
+    </div>
+
+  </div><!-- /panel-oracolo -->
+
+</div><!-- /content -->
+
+<script>
+// ══════════════════════════════════════════════════
+// DB: 72 ANGELI DELLA TRADIZIONE CABBALISTICA
+// ══════════════════════════════════════════════════
+const DB_ANGELI = [
+  {n:'Vehuiah',emoji:'👼',trono:'Serafino',periodo:'20 Mar – 24 Mar',num:1,dominio:'Nuovi inizi, volontà, luce della creazione',missione:'Vehuiah è il primo Angelo, portatore della fiamma primordiale. Protegge i pionieri, coloro che aprono strade inesistenti. Se è il tuo Angelo, sei qui per iniziare qualcosa di nuovo — ogni volta che ti fermi, soffochi una parte di te.',preghiera:'Vehuiah, illumina il mio cammino nei momenti di oscurità e dammi il coraggio di iniziare quando ogni cosa intorno a me dice di attendere.'},
+  {n:'Jeliel',emoji:'👼',trono:'Serafino',periodo:'25 Mar – 29 Mar',num:2,dominio:'Amore, fedeltà, armonia tra gli opposti',missione:'Jeliel supervisiona le unioni benedette — amorose, spirituali e creative. La tua presenza porta pace nelle relazioni conflittuali. Sei nato per essere un costruttore di ponti tra mondi e persone apparentemente incompatibili.',preghiera:'Jeliel, guida il mio cuore verso l\'amore che eleva e proteggimi dall\'amore che consuma senza nutrire.'},
+  {n:'Sitael',emoji:'👼',trono:'Serafino',periodo:'30 Mar – 3 Apr',num:3,dominio:'Costruzione, struttura, prosperità materiale',missione:'Sitael è l\'Angelo degli architetti del mondo materiale. Sei un costruttore — non necessariamente di edifici, ma di strutture: istituzioni, famiglie, progetti, legami duraturi. La tua sfida è costruire su fondamenta vere.',preghiera:'Sitael, aiutami a costruire ciò che dura, non ciò che brilla solo nel momento.'},
+  {n:'Elemiah',emoji:'👼',trono:'Serafino',periodo:'4 Apr – 8 Apr',num:4,dominio:'Viaggio interiore, trasformazione, scoperta del sé',missione:'Elemiah protegge i viaggiatori — dell\'esterno e dell\'interno. Il tuo percorso di vita è marcato da cambiamenti significativi che all\'inizio sembrano ostacoli ma sono in realtà portali. Sei destinato a conoscere parti di te attraverso l\'esperienza diretta.',preghiera:'Elemiah, trasforma ogni mia crisi in un portale verso una versione più autentica di me stesso.'},
+  {n:'Mahasiah',emoji:'👼',trono:'Serafino',periodo:'9 Apr – 13 Apr',num:5,dominio:'Pace, rettifica, apprendimento sacro',missione:'Mahasiah cura le ferite karmiche. Se è il tuo Angelo, porti con te il compito di risolvere qualcosa di lasciato irrisolto — sia in questa vita che in cicli precedenti. Hai una predisposizione naturale all\'apprendimento spirituale.',preghiera:'Mahasiah, aiutami a rettificare ciò che ho sbagliato e a imparare ciò che l\'anima mia è venuta a imparare.'},
+  {n:'Lelahel',emoji:'👼',trono:'Serafino',periodo:'14 Apr – 18 Apr',num:6,dominio:'Arte, bellezza, scienza, guarigione',missione:'Lelahel è l\'Angelo che ispira gli artisti e i guaritori. Sei un canale per qualcosa di più grande — la tua creatività non è solo espressione personale, è guarigione collettiva. Quando crei, sani. Quando smetti di creare, ti ammali.',preghiera:'Lelahel, fa\' di me un canale puro della bellezza divina, affinché ciò che creo porti luce.'},
+  {n:'Achaiah',emoji:'👼',trono:'Serafino',periodo:'19 Apr – 23 Apr',num:7,dominio:'Pazienza, scoperta, svelamento dei segreti della natura',missione:'Achaiah è l\'Angelo dei filosofi e degli scopritori. Sei attratto dai misteri profondi della realtà — la tua mente non si accontenta delle risposte di superficie. La pazienza è la tua virtù da coltivare: i grandi segreti si svelano solo ai cuori che sanno attendere.',preghiera:'Achaiah, dammi la pazienza di chi sa che la verità si svela nel suo tempo, non nel mio.'},
+  {n:'Cahethel',emoji:'👼',trono:'Serafino',periodo:'24 Apr – 28 Apr',num:8,dominio:'Abbondanza, agricoltura, connessione con la terra',missione:'Cahethel benedice i campi e i raccolti — interiori ed esteriori. Hai un legame sacro con la terra e con i cicli naturali. La tua prosperità viene quando sei in allineamento con i ritmi della natura, non quando li combatti.',preghiera:'Cahethel, aiutami a piantare i semi giusti nel momento giusto e a fidarmi del raccolto.'},
+  {n:'Haziel',emoji:'👼',trono:'Cherubino',periodo:'29 Apr – 3 Mag',num:9,dominio:'Misericordia, perdono, grazia divina',missione:'Haziel è l\'Angelo della misericordia universale. Il tuo compito spirituale riguarda il perdono — non come atto morale ma come liberazione personale. Ogni volta che perdoni, liberi te stesso da catene invisibili che ti hanno tenuto prigioniero.',preghiera:'Haziel, scioglia i nodi del mio cuore e donami la grazia di perdonare senza dimenticare la lezione.'},
+  {n:'Aladiah',emoji:'👼',trono:'Cherubino',periodo:'4 Mag – 8 Mag',num:10,dominio:'Protezione karmica, innocenza, grazia nelle prove',missione:'Aladiah protegge coloro che affrontano prove karmiche difficili. Le difficoltà della tua vita non sono punizioni — sono opportunità di liberazione da debiti che l\'anima porta da lontano. Ogni sfida superata ti alleggerisce.',preghiera:'Aladiah, proteggimi nelle prove che il karma mi porta e aiutami a comprenderle invece di subirle.'},
+  {n:'Lauviah',emoji:'👼',trono:'Cherubino',periodo:'9 Mag – 13 Mag',num:11,dominio:'Vittoria, fama, rivelazione onirica',missione:'Lauviah è l\'Angelo dei sogni rivelatori e delle vittorie spirituali. I tuoi sogni sono messaggi — impara a ricordarli e decodificarli. Le tue intuizioni notturne sono spesso più accurate delle analisi diurne.',preghiera:'Lauviah, parla alla mia anima mentre il corpo riposa e portami le risposte che il giorno nasconde.'},
+  {n:'Hahaiah',emoji:'👼',trono:'Cherubino',periodo:'14 Mag – 18 Mag',num:12,dominio:'Rifugio interiore, interpretazione dei sogni, protezione',missione:'Hahaiah è il guardiano del santuario interiore. Hai bisogno di spazio sacro — fisico e interiore — per funzionare pienamente. Il tuo potere si rigenera nella solitudine; le folle ti esauriscono.',preghiera:'Hahaiah, proteggimi nelle profondità del mio essere e mostrami come il silenzio interiore parla.'},
+  {n:'Yezalel',emoji:'👼',trono:'Cherubino',periodo:'19 Mag – 23 Mag',num:13,dominio:'Fedeltà, memoria, riconciliazione',missione:'Yezalel è l\'Angelo della memoria sacra e della fedeltà. Hai una relazione profonda con il passato — a volte un peso, a volte un dono. La tua missione è usare ciò che ricordi come saggezza, non come catena.',preghiera:'Yezalel, aiutami a portare con me i ricordi come saggezza e a liberarmi da quelli che mi tengono prigioniero.'},
+  {n:'Mebahel',emoji:'👼',trono:'Cherubino',periodo:'24 Mag – 28 Mag',num:14,dominio:'Giustizia, verità, liberazione dei perseguitati',missione:'Mebahel è il paladino della giustizia divina. Hai un senso innato di ciò che è giusto o sbagliato che spesso contrasta con le convenzioni sociali. Sei chiamato a parlare la tua verità anche quando è scomoda.',preghiera:'Mebahel, dammi il coraggio di dire la verità e la saggezza di scegliere il momento giusto per farlo.'},
+  {n:'Hariel',emoji:'👼',trono:'Cherubino',periodo:'29 Mag – 2 Giu',num:15,dominio:'Purificazione, liberazione dalle dipendenze, chiarezza',missione:'Hariel purifica ciò che è diventato opaco. Hai la capacità di vedere con chiarezza — ma questa chiarezza va prima applicata a te stesso. La tua evoluzione richiede il coraggio di guardare i tuoi pattern più oscuri.',preghiera:'Hariel, illumina le parti di me che ho paura di vedere e aiutami a trasformarle senza giudizio.'},
+  {n:'Hekamiah',emoji:'👼',trono:'Cherubino',periodo:'3 Giu – 7 Giu',num:16,dominio:'Lealtà, onore, leadership spirituale',missione:'Hekamiah è l\'Angelo dei leader e dei guardiani. Sei chiamato a responsabilità di guida — non necessariamente in modo formale, ma come presenza che stabilizza e orienta chi ti è intorno.',preghiera:'Hekamiah, aiutami a guidare con l\'esempio e a portare sulle spalle solo il peso che mi spetta, non quello degli altri.'},
+  {n:'Lauviah II',emoji:'👼',trono:'Trono',periodo:'8 Giu – 12 Giu',num:17,dominio:'Rivelazione, illuminazione, gnosi interiore',missione:'Questo secondo Lauviah governa l\'illuminazione interiore. Hai un\'attrazione naturale per il misticismo e per le esperienze di espansione della coscienza. La tua mente è un laboratorio alchemico.',preghiera:'Lauviah, apri le porte della percezione interiore e guidami attraverso i misteri della coscienza.'},
+  {n:'Caliel',emoji:'👼',trono:'Trono',periodo:'13 Giu – 17 Giu',num:18,dominio:'Giustizia, chiarimento della verità, processi',missione:'Caliel è l\'Angelo della verità assoluta. Hai una tolleranza zero per le menzogne — anche quelle bianche, anche quelle confortanti. Questa radicalità verso la verità è la tua forza e la tua sfida.',preghiera:'Caliel, guidami a discernere la verità dalla menzogna e a parlare con chiarezza senza crudeltà.'},
+  {n:'Leuviah',emoji:'👼',trono:'Trono',periodo:'18 Giu – 22 Giu',num:19,dominio:'Intelligenza espansiva, accettazione del destino',missione:'Leuviah governa l\'accettazione intelligente. Non la rassegnazione passiva, ma la saggezza di riconoscere cosa possiamo cambiare e cosa dobbiamo abbracciare. Il tuo equilibrio interiore viene dall\'accettare la vita come maestra.',preghiera:'Leuviah, aiutami ad accettare ciò che non posso cambiare con grazia e a cambiare tutto il resto con coraggio.'},
+  {n:'Pahaliah',emoji:'👼',trono:'Trono',periodo:'23 Giu – 27 Giu',num:20,dominio:'Redenzione, vocazione spirituale, moralità',missione:'Pahaliah chiama alla vocazione spirituale autentica. Hai una missione che va oltre il personale. Qualcosa in te sa già — il compito è obbedire a quella voce interiore con meno paura.',preghiera:'Pahaliah, rivelami la mia vera vocazione e dammi il coraggio di viverla senza scuse.'},
+  {n:'Nelchael',emoji:'👼',trono:'Trono',periodo:'28 Giu – 2 Lug',num:21,dominio:'Apprendimento esoterico, astronomia, scienze sacre',missione:'Nelchael guida i ricercatori delle scienze invisibili. Sei naturalmente attratto dai saperi nascosti — astrologia, cabala, alchimia, simbolismo. Non è curiosità vana: è una vocazione cognitiva.',preghiera:'Nelchael, guidami nei labirinti del sapere esoterico e proteggimi dalle illusioni che si travestono da verità.'},
+  {n:'Yeiayel',emoji:'👼',trono:'Trono',periodo:'3 Lug – 7 Lug',num:22,dominio:'Fama, fortuna, protezione dei viaggi',missione:'Yeiayel è l\'Angelo del destino favorevole. Hai una qualità naturale che attira l\'attenzione e la fortuna — ma solo quando sei allineato con la tua vera essenza. Quando ti tradisci per compiacere, la fortuna si ritira.',preghiera:'Yeiayel, aiutami a rimanere fedele a me stesso anche quando la tentazione di compiacere il mondo è forte.'},
+  {n:'Melahel',emoji:'👼',trono:'Trono',periodo:'8 Lug – 12 Lug',num:23,dominio:'Guarigione, piante medicinali, armonia con la natura',missione:'Melahel è l\'Angelo dei guaritori e dei botanici dell\'anima. Hai un legame speciale con il mondo vegetale e con la guarigione naturale. Il tuo corpo è sensibile agli ambienti — cura il tuo spazio come un tempio.',preghiera:'Melahel, insegnami i segreti della guarigione naturale e aiutami a usare questo dono per servire.'},
+  {n:'Haheuiah',emoji:'👼',trono:'Trono',periodo:'13 Lug – 17 Lug',num:24,dominio:'Protezione, esilio interiore, rifugio',missione:'Haheuiah protegge chi attraversa l\'esilio — geografico, spirituale, emotivo. Conosci la sensazione di non appartenere. Questa "estraneità" non è un difetto: è il segno che sei qui a portare qualcosa di nuovo.',preghiera:'Haheuiah, trasforma il mio senso di non appartenere nella consapevolezza di essere un ponte tra mondi.'},
+  {n:'Nith-Haiah',emoji:'👼',trono:'Dominazione',periodo:'18 Lug – 22 Lug',num:25,dominio:'Saggezza esoterica, magia bianca, pace interiore',missione:'Nith-Haiah è l\'Angelo dei sapienti mistici. Hai accesso naturale agli stati espansi di coscienza. Mediti facilmente, sogni vividamente, percepisci l\'invisibile. Il pericolo è perderti nel mondo interiore a discapito di quello esteriore.',preghiera:'Nith-Haiah, guidami nella saggezza esoterica e aiutami a radicarla nella vita quotidiana.'},
+  {n:'Haaiah',emoji:'👼',trono:'Dominazione',periodo:'23 Lug – 27 Lug',num:26,dominio:'Diplomazia, politica, segreti rivelati',missione:'Haaiah è l\'Angelo dei diplomatici e degli strateghi. Hai un\'intelligenza politica naturale — capisci le strutture di potere e come navigarle. Questa capacità va usata per costruire, non per manipolare.',preghiera:'Haaiah, guidami nelle strutture del potere e aiutami a usare la strategia al servizio del bene comune.'},
+  {n:'Yerathel',emoji:'👼',trono:'Dominazione',periodo:'28 Lug – 1 Ago',num:27,dominio:'Propagazione della luce, civiltà, liberazione',missione:'Yerathel è l\'Angelo della civilizzazione e della diffusione della luce. Hai qualcosa di importante da comunicare al mondo — un\'idea, un messaggio, un modo di essere che altri hanno bisogno di vedere incarnato.',preghiera:'Yerathel, aiutami a portare la mia luce nel mondo con coraggio e senza la paura del giudizio altrui.'},
+  {n:'Seheiah',emoji:'👼',trono:'Dominazione',periodo:'2 Ago – 6 Ago',num:28,dominio:'Longevità, protezione dalle malattie e dagli incidenti',missione:'Seheiah protegge la vita fisica e la salute. Hai una missione a lungo termine — la tua vita è un investimento lento. Non cercare risultati rapidi: le fondamenta che stai costruendo diventeranno evidenti nel tempo.',preghiera:'Seheiah, proteggimi nelle avversità fisiche e aiutami a prendermi cura del tempio che è il mio corpo.'},
+  {n:'Reyel',emoji:'👼',trono:'Dominazione',periodo:'7 Ago – 11 Ago',num:29,dominio:'Liberazione spirituale, rivelazione, sconfiggere il male',missione:'Reyel è l\'Angelo della liberazione spirituale. Sei qui per liberare — te stesso prima, gli altri dopo. Hai la capacità di dissolvere gli inganni e di mostrare la realtà con una chiarezza a volte brutale.',preghiera:'Reyel, libera la mia coscienza da ogni illusione che si spaccia per verità.'},
+  {n:'Omael',emoji:'👼',trono:'Dominazione',periodo:'12 Ago – 16 Ago',num:30,dominio:'Pazienza, moltiplicazione, regno animale',missione:'Omael benedice la moltiplicazione — di idee, di risorse, di connessioni vitali. Hai un dono speciale con gli animali e la natura. La pazienza non è tua virtù naturale, ma è la chiave di volta della tua missione.',preghiera:'Omael, insegnami la pazienza dei cicli naturali e aiutami a moltiplicare ciò che è buono in me e intorno a me.'},
+  {n:'Lecabel',emoji:'👼',trono:'Dominazione',periodo:'17 Ago – 22 Ago',num:31,dominio:'Talento, scienze, risoluzione dei problemi',missione:'Lecabel è l\'Angelo del talento tecnico e dell\'intelligenza pratica. Hai abilità naturali in qualche campo — scoprirle e svilupparle non è un capriccio, è la tua vocazione. Il talento non sfruttato è un\'offesa al dono ricevuto.',preghiera:'Lecabel, illumina il mio talento e guidami a svilupparlo al massimo delle sue possibilità.'},
+  {n:'Vasariah',emoji:'👼',trono:'Dominazione',periodo:'23 Ago – 27 Ago',num:32,dominio:'Clemenza, giustizia equilibrata, eloquenza',missione:'Vasariah è l\'Angelo della clemenza e dell\'eloquenza sacra. Le parole sono il tuo strumento principale. Parlare con chiarezza, bellezza e verità è la tua forma di servizio spirituale.',preghiera:'Vasariah, fa\' delle mie parole ponti di comprensione, non muri di separazione.'},
+  {n:'Yehuiah',emoji:'👼',trono:'Virtù',periodo:'28 Ago – 1 Set',num:33,dominio:'Subordinazione agli ordini divini, smascheramento dei traditori',missione:'Yehuiah è l\'Angelo che svela i tradimenti — esterni e interni. Hai vissuto tradimenti significativi che ti hanno insegnato a distinguere chi vuole il tuo bene da chi vuole la tua energia. Questa sapienza è un dono.',preghiera:'Yehuiah, proteggimi dai tradimenti e aiutami a vedere chiaramente le intenzioni di chi mi circonda.'},
+  {n:'Lehahiah',emoji:'👼',trono:'Virtù',periodo:'2 Set – 6 Set',num:34,dominio:'Calma, ordine, obbedienza alla legge divina',missione:'Lehahiah porta ordine dove c\'è caos. Hai una capacità naturale di creare struttura e di portare calma in situazioni turbolente. La tua presenza stabilizza.',preghiera:'Lehahiah, aiutami a portare ordine al mio interno affinché si rifletta nel mio esterno.'},
+  {n:'Chavakiah',emoji:'👼',trono:'Virtù',periodo:'7 Set – 11 Set',num:35,dominio:'Riconciliazione, eredità, armonia familiare',missione:'Chavakiah è l\'Angelo della pace familiare e delle eredità risanate. La tua famiglia di origine è centrale nella tua crescita — non necessariamente come fonte di gioia, ma come campo di trasformazione karmico.',preghiera:'Chavakiah, guarisci le ferite che mi porto dalla famiglia e aiutami a trasmettere benedizioni invece di traumi.'},
+  {n:'Menadel',emoji:'👼',trono:'Virtù',periodo:'12 Set – 16 Set',num:36,dominio:'Lavoro, vocazione, liberazione dalla schiavitù del lavoro',missione:'Menadel è l\'Angelo della vocazione professionale autentica. Il tuo lavoro non è separato dalla tua missione spirituale — sono la stessa cosa. Quando lavori con passione, sei in preghiera.',preghiera:'Menadel, guidami verso il lavoro che è vocazione e liberami dai lavori che soffocano il mio spirito.'},
+  {n:'Aniel',emoji:'👼',trono:'Virtù',periodo:'17 Set – 21 Set',num:37,dominio:'Rottura delle abitudini negative, scienze, contemplazione',missione:'Aniel è l\'Angelo della rottura creativa. Sei qui per rompere pattern — i tuoi prima, quelli del sistema dopo. Ogni tua crisi è in realtà una rottura di un pattern che aveva esaurito il suo compito.',preghiera:'Aniel, aiutami a rompere le abitudini che mi tengono piccolo e a costruire nuovi pattern che mi servano davvero.'},
+  {n:'Haamiah',emoji:'👼',trono:'Virtù',periodo:'22 Set – 26 Set',num:38,dominio:'Rituali, cerimonie, ricerca del sacro',missione:'Haamiah è il guardiano dei riti sacri. Hai bisogno di cerimonia e rituale nella tua vita — routine spirituali che strutturano il caos quotidiano. Il sacro non ti trova nel disordine: devi creare le condizioni per incontrarlo.',preghiera:'Haamiah, insegnami a creare spazi sacri nella quotidianità e a trattare ogni momento come un rito.'},
+  {n:'Rehael',emoji:'👼',trono:'Virtù',periodo:'27 Set – 1 Ott',num:39,dominio:'Guarigione, paternità/maternità spirituale, rispetto',missione:'Rehael è l\'Angelo della guarigione attraverso l\'amore. Sei un guaritore naturale — la tua presenza sana, le tue parole guariscono. Ma prima devi guarire la relazione con la tua famiglia di origine.',preghiera:'Rehael, sana la mia relazione con i miei genitori — reali o archetipi — affinché io possa dare senza ferite aperte.'},
+  {n:'Yeiazal',emoji:'👼',trono:'Virtù',periodo:'2 Ott – 6 Ott',num:40,dominio:'Consolazione, memoria, arti',missione:'Yeiazal è l\'Angelo della consolazione e delle arti. La creatività è la tua medicina — non solo per te ma per chi ti circonda. In momenti di dolore, crei. In momenti di gioia, crei. È il tuo respiro.',preghiera:'Yeiazal, consolami nei momenti di dolore e fa\' della mia arte un balsamo per le anime ferite.'},
+  {n:'Hahahel',emoji:'👼',trono:'Principato',periodo:'7 Ott – 11 Ott',num:41,dominio:'Missione spirituale, fede incrollabile, ministero',missione:'Hahahel è l\'Angelo della fede in azione. Hai una fede profonda — non necessariamente religiosa — nella vita, nel senso, nel cosmo. Questa fede è la tua armatura nei momenti più bui.',preghiera:'Hahahel, rafforza la mia fede quando il dubbio mi assale e ricordami che sono parte di un disegno più grande.'},
+  {n:'Mikael',emoji:'💙',trono:'Principato',periodo:'12 Ott – 16 Ott',num:42,dominio:'Ordine politico, lealtà, obbedienza alla volontà divina',missione:'Mikael (distinto dall\'Arcangelo) è l\'Angelo dell\'ordine cosmico. Sei un portatore di struttura — aiuti a costruire sistemi giusti e duraturi. La tua sfida è non diventare rigido.',preghiera:'Mikael, aiutami a portare ordine nel caos con saggezza e flessibilità, non con rigidità.'},
+  {n:'Veuliah',emoji:'👼',trono:'Principato',periodo:'17 Ott – 21 Ott',num:43,dominio:'Prosperità, regno, vittoria sulle forze oscure',missione:'Veuliah governa la prosperità guadagnata con integrità. Sei destinato a una certa forma di abbondanza — ma solo quando i tuoi valori sono allineati con le tue azioni. Il tuo successo è etico o non è.',preghiera:'Veuliah, guidami verso la prosperità che nasce dall\'integrità e proteggimi dalle tentazioni del successo facile.'},
+  {n:'Yelaiah',emoji:'👼',trono:'Principato',periodo:'22 Ott – 26 Ott',num:44,dominio:'Vittoria, coraggioso, energia marziale',missione:'Yelaiah è l\'Angelo del guerriero spirituale. Hai un\'energia combattiva naturale che può diventare forza al servizio della giustizia oppure aggressività distruttiva. Scegli consapevolmente dove dirigerla.',preghiera:'Yelaiah, trasforma la mia energia combattiva in forza al servizio del bene e proteggimi dall\'aggressività senza causa.'},
+  {n:'Sealiah',emoji:'👼',trono:'Principato',periodo:'27 Ott – 31 Ott',num:45,dominio:'Motivazione, umiliazione degli orgogliosi, equilibrio',missione:'Sealiah è l\'Angelo dell\'equilibrio attraverso l\'umiltà. Le cadute della tua vita non sono punizioni ma insegnamenti di equilibrio. Ogni volta che l\'ego si gonfia troppo, la vita ti riequilibra — è meglio farlo tu prima.',preghiera:'Sealiah, insegnami l\'umiltà come forza, non come vergogna, e aiutami a mantenere l\'equilibrio nelle vittorie.'},
+  {n:'Ariel',emoji:'🌿',trono:'Principato',periodo:'1 Nov – 5 Nov',num:46,dominio:'Percezione acuta, rivelazioni attraverso la natura',missione:'Ariel è l\'Angelo della natura rivelata. Il mondo naturale ti parla in modo diretto e simbolico. Gli animali ti inviano messaggi, le piante ti guariscono, le montagne ti ricaricano. Ascolta più spesso.',preghiera:'Ariel, affina la mia percezione del sacro che si nasconde nella natura e insegnami a leggere i suoi messaggi.'},
+  {n:'Asaliah',emoji:'👼',trono:'Principato',periodo:'6 Nov – 10 Nov',num:47,dominio:'Contemplazione, giustizia divina, elevazione',missione:'Asaliah è l\'Angelo della contemplazione elevante. I momenti di quiete assoluta sono i più produttivi della tua vita. Le tue grandi intuizioni non vengono dall\'analisi ma dallo svuotamento.',preghiera:'Asaliah, guidami nell\'arte della contemplazione e aiutami a trovare le risposte nel silenzio.'},
+  {n:'Mihael',emoji:'👼',trono:'Principato',periodo:'11 Nov – 15 Nov',num:48,dominio:'Fertilità, fedeltà coniugale, pace nell\'unione',missione:'Mihael benedice le unioni fedeli e le famiglie armoniose. Le tue relazioni più profonde sono il tuo percorso di crescita principale. Ciò che impari nell\'intimità non puoi impararlo altrove.',preghiera:'Mihael, benedici le mie relazioni più profonde e aiutami a costruire unioni dove entrambi cresciamo.'},
+  {n:'Vehuel',emoji:'👼',trono:'Arcangelo',periodo:'16 Nov – 20 Nov',num:49,dominio:'Elevazione, grandezza, benedizione e lode',missione:'Vehuel è l\'Angelo della grandezza interiore. Sei destinato a qualcosa di grande — ma la tua sfida è non lasciare che questa consapevolezza si trasformi in arroganza. La vera grandezza è servizio, non trono.',preghiera:'Vehuel, aiutami a incarnare la mia grandezza interiore con umiltà e al servizio di qualcosa più grande di me.'},
+  {n:'Daniel',emoji:'👼',trono:'Arcangelo',periodo:'21 Nov – 25 Nov',num:50,dominio:'Eloquenza, manifesti i segni divini, decisioni',missione:'Daniel è l\'Angelo dell\'eloquenza sacra. La parola è la tua arte e la tua responsabilità. Ciò che dici ha effetti reali sulle persone — usala con intenzione e con cura, mai con negligenza.',preghiera:'Daniel, fa\' della mia voce uno strumento di chiarezza e trasformazione, mai di confusione o ferita.'},
+  {n:'Hahasiah',emoji:'👼',trono:'Arcangelo',periodo:'26 Nov – 30 Nov',num:51,dominio:'Medicina universale, segreti della natura, alchimia',missione:'Hahasiah è l\'alchimista divino. Sei attratto dalla trasformazione della materia in spirito — sia in senso letterale che metaforico. Ogni crisi è per te un laboratorio alchemico.',preghiera:'Hahasiah, insegnami l\'alchimia della trasformazione e aiutami a trovare la medicina giusta per le ferite dell\'anima.'},
+  {n:'Imamiah',emoji:'👼',trono:'Arcangelo',periodo:'1 Dic – 5 Dic',num:52,dominio:'Espiazione, riparazione degli errori, forza nei viaggi difficili',missione:'Imamiah è l\'Angelo della riparazione coraggiosa. Sai cosa significa fare ammenda — e questa capacità di guardare i tuoi errori senza autodistruggerti è una delle tue virtù più rare.',preghiera:'Imamiah, aiutami a riparare ciò che ho rotto con coraggio e a imparare dagli errori senza esserne prigioniero.'},
+  {n:'Nanael',emoji:'👼',trono:'Arcangelo',periodo:'6 Dic – 10 Dic',num:53,dominio:'Comunicazione spirituale, scienze astratte, contemplazione',missione:'Nanael governa la comunicazione tra il visibile e l\'invisibile. Hai naturalmente accesso a dimensioni della realtà che altri non percepiscono. Il tuo compito è portare quel sapere in forma comprensibile.',preghiera:'Nanael, apri i canali tra il mondo visibile e quello invisibile e aiutami a tradurre ciò che percepisco in saggezza utile.'},
+  {n:'Nithael',emoji:'👼',trono:'Arcangelo',periodo:'11 Dic – 15 Dic',num:54,dominio:'Eternità, giovinezza interiore, legittimità reale',missione:'Nithael è l\'Angelo dell\'eternità incarnata. Hai una qualità senza tempo — un\'energia che non invecchia nell\'essenziale. La tua sfida è portare questa qualità nelle strutture temporali della vita concreta.',preghiera:'Nithael, aiutami a portare la qualità eterna che sento in me nelle strutture temporali della mia vita quotidiana.'},
+  {n:'Mebahiah',emoji:'👼',trono:'Arcangelo',periodo:'16 Dic – 20 Dic',num:55,dominio:'Moralità, chiarezza delle idee, fecondità intellettuale',missione:'Mebahiah nutre la mente con idee fertili. La tua mente genera idee più velocemente di quanto tu riesca a realizzarle. Il tuo compito è imparare a selezionare e portare a compimento.',preghiera:'Mebahiah, aiutami a selezionare le idee migliori tra le tante che genero e a portarle a realizzazione concreta.'},
+  {n:'Poyel',emoji:'👼',trono:'Arcangelo',periodo:'21 Dic – 25 Dic',num:56,dominio:'Fortuna, supporto, modestia nella ricchezza',missione:'Poyel è l\'Angelo della fortuna generosa. Hai una qualità naturale di fare appello alla generosità degli altri — non per egoismo, ma perché sai ricevere come un talento spirituale. Ricevere con grazia è raro quanto dare.',preghiera:'Poyel, insegnami a ricevere la generosità altrui con grazia e a distribuire la mia fortuna con saggezza.'},
+  {n:'Nemamiah',emoji:'👼',trono:'Arcangelo',periodo:'26 Dic – 30 Dic',num:57,dominio:'Chiaroveggenza, guerrieri, cause giuste',missione:'Nemamiah è l\'Angelo delle cause giuste. Non riesci a restare neutrale di fronte all\'ingiustizia. Questo impegno è la tua forza — fai attenzione che non diventi fanatismo.',preghiera:'Nemamiah, guidami nelle battaglie giuste e aiutami a riconoscere quando una causa chiede il mio fuoco e quando chiede la mia pace.'},
+  {n:'Yeialel',emoji:'👼',trono:'Arcangelo',periodo:'31 Dic – 4 Gen',num:58,dominio:'Forza mentale, volontà curativa, coraggio interiore',missione:'Yeialel è l\'Angelo della volontà curativa. Hai una capacità speciale di guarire attraverso la forza di volontà e l\'intenzione consapevole. La tua mente ha potere diretto sulla tua biologia.',preghiera:'Yeialel, aiutami a usare la mia volontà per guarire me stesso e a comprendere i limiti di questa forza.'},
+  {n:'Harahel',emoji:'👼',trono:'Arcangelo',periodo:'5 Gen – 9 Gen',num:59,dominio:'Ricchezza intellettuale, archivi, biblioteche',missione:'Harahel è il guardiano della conoscenza accumulata. Sei un conservatore e trasmettitore di sapere — sai che la vera ricchezza è nel conoscere, nel comprendere, nel condividere ciò che si è appreso.',preghiera:'Harahel, guidami verso il sapere che trasforma e aiutami a condividere ciò che so con generosità.'},
+  {n:'Mitzrael',emoji:'👼',trono:'Arcangelo',periodo:'10 Gen – 14 Gen',num:60,dominio:'Riparazione, guarigione delle malattie mentali, fedeltà',missione:'Mitzrael è l\'Angelo della guarigione delle ferite psichiche. Hai vissuto o incontrato molte forme di sofferenza mentale ed emotiva. Questa familiarità con il dolore interiore è la base della tua capacità di comprendere e aiutare.',preghiera:'Mitzrael, guarisci le ferite che porto nella mente e nell\'anima e aiutami a usare questa guarigione per servire.'},
+  {n:'Umabel',emoji:'👼',trono:'Arcangelo',periodo:'15 Gen – 19 Gen',num:61,dominio:'Affinità con gli amici, astrologia, fisica',missione:'Umabel governa le amicizie sacre e le affinità elettive. Le tue amicizie più profonde non sono casuali — sono incontri karmici. Coltivale come giardini: hanno bisogno di attenzione, acqua e luce.',preghiera:'Umabel, guidami verso le amicizie che mi elevano e aiutami a essere per gli altri l\'amico che vorrei avere.'},
+  {n:'Iah-Hel',emoji:'👼',trono:'Arcangelo',periodo:'20 Gen – 24 Gen',num:62,dominio:'Filosofia, saggezza universale, ritiro spirituale',missione:'Iah-Hel è l\'Angelo del ritiro spirituale necessario. Hai cicli naturali di ritiro dal mondo che non sono fughe ma necessità di reintegrazione. Onora questi cicli invece di combatterli.',preghiera:'Iah-Hel, aiutami a onorare i miei cicli di ritiro e a emergere da essi rinnovato invece di colpevolizzato.'},
+  {n:'Anauel',emoji:'👼',trono:'Arcangelo',periodo:'25 Gen – 29 Gen',num:63,dominio:'Unità, protezione degli affari, percezione della santità',missione:'Anauel percepisce il sacro in tutto — anche nel lavoro, nel denaro, nelle strutture ordinarie. Hai la capacità di trovare significato spirituale nelle cose più mondane. Non c\'è separazione tra sacro e profano per te.',preghiera:'Anauel, aiutami a trovare il sacro nel quotidiano e a portare questa consapevolezza in ogni mia azione.'},
+  {n:'Mehiel',emoji:'👼',trono:'Arcangelo',periodo:'30 Gen – 3 Feb',num:64,dominio:'Ispirazione, protezione dei letterati, forza vitale',missione:'Mehiel è l\'Angelo dell\'ispirazione e della scrittura sacra. Le parole scritte hanno per te un peso e un potere speciali. Scrivere è per te un atto di guarigione, di chiarezza, di connessione con qualcosa di superiore.',preghiera:'Mehiel, ispira la mia penna e aiutami a scrivere ciò che l\'anima sa ma la mente ancora non ha formulato.'},
+  {n:'Damabiah',emoji:'👼',trono:'Angelo',periodo:'4 Feb – 8 Feb',num:65,dominio:'Fonte di saggezza, mari, fortuna nelle imprese nautiche',missione:'Damabiah è l\'Angelo delle acque primordiali della saggezza. La tua intelligenza è di tipo fluido — non segue linee rette ma trova percorsi intorno agli ostacoli. L\'acqua non si spezza: si adatta.',preghiera:'Damabiah, insegnami la saggezza fluida delle acque e aiutami a trovare il percorso naturale intorno agli ostacoli.'},
+  {n:'Manakel',emoji:'👼',trono:'Angelo',periodo:'9 Feb – 13 Feb',num:66,dominio:'Conoscenza del bene e del male, sonno guaritore',missione:'Manakel è il guardiano del discernimento morale. Sai distinguere il bene dal male in modo quasi istintivo — quella voce interiore che ti avverte quando qualcosa non è allineato è la sua presenza. Fidatene.',preghiera:'Manakel, affina il mio discernimento e aiutami a fidarmi della voce interiore che mi guida verso il bene.'},
+  {n:'Eyael',emoji:'👼',trono:'Angelo',periodo:'14 Feb – 18 Feb',num:67,dominio:'Trasformazione verso il sublime, piaceri della filosofia',missione:'Eyael è l\'Angelo della sublimazione. Sei capace di trasformare qualunque esperienza — bella o brutta — in saggezza. Questa alchimia interiore è il tuo dono più grande.',preghiera:'Eyael, aiutami a sublimare ogni esperienza in saggezza e a trovare il significato anche nel dolore più incomprensibile.'},
+  {n:'Habuhiah',emoji:'👼',trono:'Angelo',periodo:'19 Feb – 23 Feb',num:68,dominio:'Guarigione, natura, fertilità della terra',missione:'Habuhiah guarisce attraverso il ritorno alle origini. La natura è la tua farmacia e il tuo tempio. Periodi di disconnessione dalla natura ti indeboliscono più di quanto tu pensi.',preghiera:'Habuhiah, riconnettimi alle radici naturali della mia salute e aiutami a trovare nella terra la guarigione che cerco altrove.'},
+  {n:'Rochel',emoji:'👼',trono:'Angelo',periodo:'24 Feb – 28 Feb',num:69,dominio:'Fama, ritrovo di oggetti perduti, successione',missione:'Rochel è l\'Angelo del ritrovamento — di oggetti, di persone, di parti di sé che credevi perse. Hai una capacità speciale di recuperare ciò che sembrava andato per sempre.',preghiera:'Rochel, aiutami a ritrovare ciò che ho perso — oggetti, relazioni e parti di me stesso — e a riconoscere quando qualcosa è perso per sempre.'},
+  {n:'Jabamiah',emoji:'👼',trono:'Angelo',periodo:'29 Feb – 4 Mar',num:70,dominio:'Alchimia, rigenerazione, parola creatrice',missione:'Jabamiah è l\'Angelo della parola creatrice primordiale. Le tue affermazioni hanno un potere insolito — parli e le cose accadono più spesso di quanto ti aspetti. Scegli le tue parole come atti magici.',preghiera:'Jabamiah, aiutami a usare la parola come atto creativo e a costruire con le mie affermazioni la realtà che voglio abitare.'},
+  {n:'Haiaiel',emoji:'👼',trono:'Angelo',periodo:'5 Mar – 9 Mar',num:71,dominio:'Armi della luce, vittoria sulla malvagità, coraggio',missione:'Haiaiel è il guerriero cosmico che protegge con la luce. Sei qui per combattere battaglie spirituali — non fisiche. La tua arma è la verità; il tuo scudo, l\'integrità.',preghiera:'Haiaiel, armami con la luce della verità e aiutami a combattere le battaglie giuste con le armi giuste.'},
+  {n:'Mumiah',emoji:'👼',trono:'Angelo',periodo:'10 Mar – 14 Mar',num:72,dominio:'Fine dei cicli, rinascita, alchimia della morte-rinascita',missione:'Mumiah governa le grandi fini e le grandi rinascite. Sei un essere di soglie — arrivi nelle vite delle persone durante le transizioni importanti. La tua presenza accompagna le trasformazioni radicali.',preghiera:'Mumiah, aiutami ad abbracciare i finali come inizi travestiti e guidami attraverso le soglie della mia vita.'}
+];
+
+// ══════════════════════════════════════════════════
+// ORACOLO ANGELI
+// ══════════════════════════════════════════════════
+const ANGELI_ORACLE = [
+  {t:'Fiducia',m:"Lascia andare il controllo: l'universo ti sta sostenendo più di quanto pensi."},
+  {t:'Guarigione',m:"Un processo di guarigione, fisica o emotiva, è già iniziato dentro di te."},
+  {t:'Nuovi Inizi',m:"Una porta si sta aprendo: trova il coraggio di attraversarla."},
+  {t:'Protezione',m:"Sei circondato da una protezione invisibile in questo momento delicato."},
+  {t:'Pazienza',m:"I tempi giusti non sono i tuoi tempi: la fretta ora ti farebbe del male."},
+  {t:'Abbondanza',m:"Le risorse di cui hai bisogno stanno arrivando, anche se non nella forma che ti aspetti."},
+  {t:'Perdono',m:"Liberarti da un rancore ti restituirà l'energia che stai trattenendo."},
+  {t:'Chiarezza',m:"Una risposta che cercavi da tempo sta per emergere con naturalezza."},
+  {t:'Coraggio',m:"Hai dentro di te la forza per affrontare ciò che temi."},
+  {t:'Connessione',m:"Una relazione importante merita più attenzione e presenza da parte tua."},
+  {t:'Gratitudine',m:"Riconoscere ciò che già hai apre la porta a ciò che desideri."},
+  {t:'Equilibrio',m:"Stai dando troppo in una direzione: è tempo di riequilibrare le energie."},
+  {t:'Verità',m:"Una verità che eviti di guardare richiede ora la tua onestà."},
+  {t:'Lasciare Andare',m:"Qualcosa che hai già superato ti sta ancora trattenendo: è il momento di lasciarlo andare."},
+  {t:'Intuizione',m:"La tua voce interiore sa già la risposta: fidati di essa."},
+  {t:'Celebrazione',m:"Un traguardo merita di essere riconosciuto e festeggiato, anche se piccolo."},
+  {t:'Pace Interiore',m:"La calma che cerchi non arriverà dall'esterno: coltivala dentro di te."},
+  {t:'Sostegno',m:"Non sei solo: chiedi aiuto, qualcuno è pronto a darlo."},
+  {t:'Trasformazione',m:"Stai cambiando più velocemente di quanto te ne accorgi."},
+  {t:'Speranza',m:"Anche nel momento più buio, una luce si sta facendo strada."},
+  {t:'Allineamento',m:"Le tue azioni e i tuoi valori stanno per tornare in armonia."},
+  {t:'Manifestazione',m:"Ciò che pensi con costanza si sta avvicinando alla realtà."},
+  {t:'Compassione',m:"Sii gentile con te stesso tanto quanto lo sei con gli altri."},
+  {t:'Risveglio',m:"Stai diventando consapevole di qualcosa che prima non vedevi."}
+];
+
+// ══════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════
+let currentTrono = '';
+let currentSearch = '';
+
+// ══════════════════════════════════════════════════
+// TAB SWITCHING
+// ══════════════════════════════════════════════════
+function switchTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  const tabs = ['custode','72angeli','oracolo'];
+  const btns = document.querySelectorAll('.tab-btn');
+  btns[tabs.indexOf(id)].classList.add('active');
+  if(id === '72angeli') renderAngeli();
+}
+
+// ══════════════════════════════════════════════════
+// CALCOLA ANGELO CUSTODE
+// ══════════════════════════════════════════════════
+function calcAngelo() {
+  const dateVal = document.getElementById('angelDate').value;
+  const timeVal = (document.getElementById('angelTime').value || '').trim();
+  if (!dateVal) { alert('⚠️ Inserisci la data di nascita'); return; }
+
+  const [yyyy, mm, dd] = dateVal.split('-').map(Number);
+  const [hh, min] = timeVal ? timeVal.split(':').map(Number) : [12, 0];
+  const d = new Date(yyyy, mm - 1, dd, hh || 12, min || 0, 0);
+  if (isNaN(d.getTime())) { alert('⚠️ Data non valida'); return; }
+
+  const ora = d.getHours();
+  const giornoAnno = Math.floor((d - new Date(d.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+  const fasciaOraria = Math.floor(ora / 4);
+  const idxBase = Math.floor(((giornoAnno - 1) / 365) * 72);
+  const aggiustamento = fasciaOraria % 3 === 0 ? 0 : (fasciaOraria % 3 === 1 ? 1 : -1);
+  const idx = Math.max(0, Math.min(71, idxBase + aggiustamento));
+  const angelo = DB_ANGELI[idx] || DB_ANGELI[0];
+
+  showAngeloResult(angelo, dateVal, timeVal);
+}
+
+function showAngeloResult(a, dateVal, timeVal) {
+  document.getElementById('angeliForm').style.display = 'none';
+  const [yyyy, mm, dd] = (dateVal || '2000-01-01').split('-').map(Number);
+  const dataFmt = new Date(yyyy, mm - 1, dd).toLocaleDateString('it-IT', {day:'numeric', month:'long', year:'numeric'});
+  const oraFmt = timeVal ? ` alle ore ${timeVal}` : '';
+  const el = document.getElementById('angeliResult');
+  el.innerHTML = `
+    <div class="angel-res">
+      <div class="angel-symbol">${a.emoji}</div>
+      <div class="angel-name">${a.n}</div>
+      <div class="angel-realm">${a.trono} · Angelo n. ${a.num}</div>
+      <div class="angel-period">✦ Periodo: ${a.periodo} ✦</div>
+      <p class="t-muted" style="margin-bottom:14px;font-size:11px">Nato/a il ${dataFmt}${oraFmt}</p>
+      <div class="angel-block">
+        <h4>🌟 Dominio Spirituale</h4>
+        <p>${a.dominio}</p>
+      </div>
+      <div class="angel-block">
+        <h4>📜 La Tua Missione con ${a.n}</h4>
+        <p>${a.missione}</p>
+      </div>
+      <div class="angel-block">
+        <h4>🙏 Preghiera / Invocazione</h4>
+        <p class="angel-prayer">"${a.preghiera}"</p>
+      </div>
+      <button class="btn-sec" onclick="resetAngeli()">🔄 Calcola di Nuovo</button>
+    </div>`;
+  el.style.display = 'block';
+}
+
+function resetAngeli() {
+  document.getElementById('angeliForm').style.display = 'block';
+  document.getElementById('angeliResult').style.display = 'none';
+  document.getElementById('angeliResult').innerHTML = '';
+  document.getElementById('angelDate').value = '';
+  document.getElementById('angelTime').value = '';
+}
+
+// ══════════════════════════════════════════════════
+// LISTA 72 ANGELI
+// ══════════════════════════════════════════════════
+function getTronoClass(t) {
+  return 'trono-' + t.toLowerCase().replace('à','a');
+}
+
+function renderAngeli() {
+  const q = currentSearch.toLowerCase();
+  const filtered = DB_ANGELI.filter(a => {
+    const matchTrono = !currentTrono || a.trono === currentTrono;
+    const matchSearch = !q || a.n.toLowerCase().includes(q) || a.periodo.toLowerCase().includes(q) || a.dominio.toLowerCase().includes(q);
+    return matchTrono && matchSearch;
+  });
+
+  document.getElementById('angelsCount').textContent = `${filtered.length} angeli`;
+
+  const html = filtered.map((a, i) => `
+    <div class="angel-card" id="ac-${a.num}" onclick="toggleAngelCard(${a.num})">
+      <div class="angel-card-head">
+        <span class="angel-card-ico">${a.emoji}</span>
+        <div class="angel-card-info">
+          <div class="angel-card-name">${a.n}</div>
+          <div class="angel-card-sub">${a.periodo}</div>
+        </div>
+        <span class="angel-card-badge ${getTronoClass(a.trono)}">${a.trono}</span>
+        <span class="angel-card-arrow">▼</span>
+      </div>
+      <div class="angel-card-body">
+        <div class="angel-card-body-inner">
+          <div class="field-lbl">Dominio</div>
+          <div class="field-val">${a.dominio}</div>
+          <div class="field-lbl">Missione</div>
+          <div class="field-val">${a.missione}</div>
+          <div class="field-lbl">Preghiera / Invocazione</div>
+          <div class="field-val"><em>"${a.preghiera}"</em></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('angeliList').innerHTML = html || '<p style="color:#888;text-align:center;padding:20px">Nessun angelo trovato</p>';
+}
+
+function toggleAngelCard(num) {
+  const card = document.getElementById('ac-' + num);
+  if (card) card.classList.toggle('open');
+}
+
+function setTrono(trono) {
+  currentTrono = trono;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-f'));
+  event.target.classList.add('active-f');
+  renderAngeli();
+}
+
+function filterAngeli() {
+  currentSearch = document.getElementById('searchAngeli').value;
+  renderAngeli();
+}
+
+// ══════════════════════════════════════════════════
+// ORACOLO
+// ══════════════════════════════════════════════════
+function drawAngelo() {
+  const a = ANGELI_ORACLE[Math.floor(Math.random() * ANGELI_ORACLE.length)];
+  document.getElementById('resAngelo').innerHTML = `
+    <div class="oracle-block">
+      <div class="ob-tag">Messaggio Angelico</div>
+      <div class="ob-name">👼 ${a.t}</div>
+      <p>${a.m}</p>
+    </div>`;
+}
+
+// INIT
+renderAngeli();
+</script>
+</body>
+</html>

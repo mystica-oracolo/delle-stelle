@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luna & Pianeti — Delle Stelle</title>
+<meta name="description" content="Scopri la fase lunare di oggi e i transiti planetari in tempo reale. Fasi della Luna, pianeti retrogradi, aspetti astrologici e rituali lunari.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;--gold-dim:#d4af3750;--gold-glow:#d4af3720;
+  --purple:#6a0dad;--purple-light:#9b30d0;
+  --bg:#07031a;--bg2:#0b0520;--card:#110830;--card2:#160a38;
+  --muted:#8a78a0;--text:#e0d8f0;--accent:#c8b4ff;
+  --border:#2a1a5a;--border-light:#3a2a7a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Raleway',sans-serif;min-height:100vh;overflow-x:hidden}
+
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) infinite var(--delay,0s)}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+
+.z1{position:relative;z-index:1}
+.container{max-width:740px;margin:0 auto;padding:0 18px}
+
+header{position:relative;z-index:1;text-align:center;padding:44px 20px 10px}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;
+  letter-spacing:1.5px;text-decoration:none;font-family:'Cinzel',serif;margin-bottom:20px;transition:.2s}
+.back-link:hover{color:var(--gold)}
+.hero-symbol{font-size:64px;line-height:1;margin-bottom:14px;filter:drop-shadow(0 0 24px var(--gold-dim));animation:float 5s ease-in-out infinite}
+h1.page-title{font-family:'Cinzel',serif;font-size:clamp(26px,6vw,44px);color:var(--gold);
+  letter-spacing:3px;margin-bottom:8px;text-shadow:0 0 40px var(--gold-dim)}
+.page-sub{color:var(--muted);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.divider-gold{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes lunaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* SECTION */
+.section{position:relative;z-index:1;padding:48px 0 20px}
+.section-header{text-align:center;margin-bottom:28px}
+.section-eyebrow{font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cinzel',serif;margin-bottom:10px;opacity:.8}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,26px);color:var(--text);
+  letter-spacing:1.5px;margin-bottom:8px}
+.section-intro{color:var(--muted);font-size:14px;line-height:1.7;max-width:560px;margin:0 auto}
+
+.prose{color:var(--text);font-size:15px;line-height:1.8;margin-bottom:14px}
+.prose em{color:var(--gold);font-style:normal;font-weight:600}
+
+/* IMG PLACEHOLDER */
+.img-placeholder{
+  width:200px;height:200px;border-radius:16px;
+  background:linear-gradient(135deg,#1a0e3a 0%,#0b0520 100%);
+  border:1px solid var(--border-light);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 20px;position:relative;overflow:hidden;
+}
+.img-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--gold-glow) 0%,transparent 70%)}
+.img-placeholder .ph-icon{font-size:36px;margin-bottom:8px;opacity:.5}
+.img-placeholder .ph-label{font-size:10px;color:var(--muted);letter-spacing:1.5px;font-family:'Cinzel',serif;text-align:center;padding:0 10px}
+.img-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
+
+/* HIGHLIGHT */
+.highlight{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.highlight h4{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.highlight p{color:var(--text);font-size:14px;line-height:1.7}
+
+/* ORACLE BOX */
+.oracle-box{background:linear-gradient(135deg,#110830,#0b0520);border:1px solid var(--border-light);
+  border-radius:20px;padding:28px 24px;margin-top:16px}
+.oracle-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);text-align:center;
+  letter-spacing:2px;margin-bottom:6px}
+.oracle-sub{font-size:12px;color:var(--muted);text-align:center;letter-spacing:1.5px;margin-bottom:24px}
+
+/* FORM */
+.form-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.date-input{background:var(--card2);border:1px solid var(--border-light);border-radius:12px;
+  padding:12px 16px;color:var(--text);font-family:'Raleway',sans-serif;font-size:14px;
+  outline:none;cursor:pointer;min-width:180px}
+.date-input:focus{border-color:var(--gold-dim)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:1.5px;border:none;cursor:pointer;transition:.25s}
+.btn-gold{background:linear-gradient(135deg,#d4af37,#a07d20);color:#0d0520;font-weight:700}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--gold-dim)}
+.btn-sec{background:transparent;border:1px solid var(--border-light);color:var(--muted)}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold)}
+.btn-grp{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
+/* ── LUNA RESULT ── */
+.luna-res{text-align:center}
+.luna-emoji-big{font-size:90px;margin-bottom:10px;animation:lunaFloat 4s ease-in-out infinite;display:block}
+.luna-phase-name{font-family:'Cinzel',serif;font-size:clamp(20px,5vw,30px);color:var(--gold);
+  letter-spacing:2px;margin-bottom:4px;text-shadow:0 0 30px var(--gold-dim)}
+.luna-date-sub{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:8px}
+.luna-illumination{font-size:13px;color:var(--accent);margin-bottom:14px}
+.luna-illumination span{color:var(--gold);font-weight:600}
+
+.luna-cycle-bar{position:relative;margin:0 auto 20px;max-width:440px}
+.luna-cycle-track{height:4px;background:var(--border);border-radius:2px;position:relative}
+.luna-cycle-cursor{position:absolute;top:-5px;width:14px;height:14px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 10px var(--gold-dim);transform:translateX(-50%);
+  transition:left .5s ease}
+.luna-cycle-labels{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);
+  margin-top:8px;font-family:'Cinzel',serif;letter-spacing:.5px}
+
+.num-kw{border:1px solid var(--gold-dim);border-radius:20px;padding:6px 18px;
+  font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;color:var(--gold)}
+
+.luna-block{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:16px 18px;margin-bottom:12px;text-align:left}
+.luna-block h4{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.luna-block p{font-size:14px;line-height:1.8;color:var(--text)}
+
+.luna-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+@media(min-width:480px){.luna-grid{grid-template-columns:repeat(4,1fr)}}
+.luna-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:12px 10px;text-align:center}
+.luna-card-ico{font-size:22px;margin-bottom:6px}
+.luna-card-title{font-size:9px;color:var(--muted);letter-spacing:1.5px;font-family:'Cinzel',serif;margin-bottom:4px}
+.luna-card-val{font-size:11px;color:var(--text);line-height:1.5}
+
+.luna-do-dont{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.luna-do,.luna-dont{background:var(--card);border-radius:12px;padding:14px}
+.luna-do h5{font-family:'Cinzel',serif;font-size:11px;color:#4caf50;letter-spacing:1px;margin-bottom:10px}
+.luna-dont h5{font-family:'Cinzel',serif;font-size:11px;color:#e57373;letter-spacing:1px;margin-bottom:10px}
+.luna-do ul,.luna-dont ul{list-style:none;padding:0}
+.luna-do li,.luna-dont li{font-size:12px;color:var(--text);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.5}
+.luna-do li:last-child,.luna-dont li:last-child{border-bottom:none}
+.luna-do li::before{content:'✓ ';color:#4caf50}
+.luna-dont li::before{content:'✗ ';color:#e57373}
+
+/* ── PIANETI RESULT ── */
+.pianeti-sky{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px}
+.pianeti-header{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;
+  text-align:center;margin-bottom:14px;opacity:.8}
+
+.pianeta-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;
+  margin-bottom:6px;background:var(--bg2);border:1px solid var(--border);transition:.2s}
+.pianeta-row.retro{border-color:#c8a0a050;background:#200a0a}
+.pianeta-emoji{font-size:22px;flex-shrink:0;width:30px;text-align:center}
+.pianeta-info{flex:1;min-width:0}
+.pianeta-nome{font-family:'Cinzel',serif;font-size:13px;color:var(--text);margin-bottom:2px}
+.pianeta-gradi{font-size:10px;color:var(--muted);font-family:'Raleway',sans-serif;font-weight:400}
+.pianeta-segno{font-size:12px;color:var(--accent)}
+.pianeta-badge{font-size:10px;border-radius:20px;padding:3px 10px;letter-spacing:.5px;white-space:nowrap}
+.pianeta-badge.normale{background:var(--card2);color:var(--muted);border:1px solid var(--border)}
+.pianeta-badge.retro{background:#3a0a0a;color:#e57373;border:1px solid #c8303050}
+
+.pianeti-alert{border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid}
+.pianeti-alert.gold{background:#1a1500;border-color:var(--gold)}
+.pianeti-alert.gold h4{color:var(--gold)}
+.pianeti-alert.info{background:#0a1520;border-color:#4a90d9}
+.pianeti-alert.info h4{color:#4a90d9}
+.pianeti-alert.danger{background:#200a0a;border-color:#e57373}
+.pianeti-alert.danger h4{color:#e57373}
+.pianeti-alert h4{font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;margin-bottom:8px}
+.pianeti-alert p{font-size:13px;line-height:1.7;color:var(--text)}
+
+.pianeti-aspetti{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
+.pianeti-aspetti-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;
+  text-align:center;margin-bottom:12px}
+.aspetto-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);
+  font-size:12px;color:var(--text)}
+.aspetto-row:last-child{border-bottom:none}
+.aspetto-simbolo{font-size:16px;color:var(--gold);width:24px;text-align:center}
+.aspetto-desc{color:var(--muted);font-size:11px}
+
+/* PHASE ICONS STRIP */
+.fasi-strip{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.fase-pill{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
+  padding:8px 12px;border-radius:12px;background:var(--card);border:1px solid var(--border);
+  transition:.2s;min-width:64px}
+.fase-pill:hover{border-color:var(--gold-dim);background:var(--card2)}
+.fase-pill-icon{font-size:24px}
+.fase-pill-name{font-size:9px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:.5px;text-align:center}
+
+/* PAGE TABS */
+.page-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:0;position:sticky;top:0;
+  z-index:10;background:var(--bg);padding:0 4px}
+.page-tab{flex:1;padding:14px 8px;text-align:center;font-family:'Cinzel',serif;font-size:12px;
+  letter-spacing:1.5px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;
+  transition:.2s;background:none;border-top:none;border-left:none;border-right:none}
+.page-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.page-tab:hover:not(.active){color:var(--text)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+footer{position:relative;z-index:1;text-align:center;padding:40px 20px;border-top:1px solid var(--border)}
+footer p{color:var(--muted);font-size:12px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="stars" id="starsContainer"></div>
+
+<header>
+  <a href="index.html" class="back-link z1">← DELLE STELLE</a>
+  <div class="hero-symbol">🌙</div>
+  <h1 class="page-title">Luna & Pianeti</h1>
+  <p class="page-sub">Fasi Lunari · Transiti Planetari · Rituali Cosmici</p>
+  <div class="divider-gold"></div>
+</header>
+
+<div class="container">
+  <div class="page-tabs z1">
+    <button class="page-tab active" onclick="switchTab('luna')">🌙 Fasi Lunari</button>
+    <button class="page-tab" onclick="switchTab('pianeti')">🪐 Pianeti</button>
+    <button class="page-tab" onclick="switchTab('guida')">📖 Guida</button>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- ══ TAB: LUNA ══ -->
+  <div id="tabLuna" class="tab-panel active">
+    <section class="section z1">
+      <div class="section-header">
+        <div class="section-eyebrow">Calendario Lunare</div>
+        <h2 class="section-title">Fase della Luna</h2>
+        <p class="section-intro">La Luna percorre il suo ciclo di 29,5 giorni governando le maree del corpo, delle emozioni e della vita energetica. Scopri in quale fase si trova oggi — o in qualsiasi data.</p>
+      </div>
+
+      <div class="oracle-box" id="lunaOracolo">
+        <div class="oracle-title">🌕 Calcolo Fase Lunare</div>
+        <div class="oracle-sub">OGGI O UNA DATA A SCELTA</div>
+        <div id="lunaForm">
+          <div class="fasi-strip">
+            <div class="fase-pill"><span class="fase-pill-icon">🌑</span><span class="fase-pill-name">Nuova</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌒</span><span class="fase-pill-name">Crescente</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌓</span><span class="fase-pill-name">Primo Q.</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌔</span><span class="fase-pill-name">Gibbosa</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌕</span><span class="fase-pill-name">Piena</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌖</span><span class="fase-pill-name">Gibbosa ↓</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌗</span><span class="fase-pill-name">Ultimo Q.</span></div>
+            <div class="fase-pill"><span class="fase-pill-icon">🌘</span><span class="fase-pill-name">Calante</span></div>
+          </div>
+          <div class="form-row">
+            <input type="date" id="lunaDate" class="date-input">
+            <button class="btn btn-gold" onclick="calcLunaData()">🌙 Calcola Data</button>
+          </div>
+          <div class="btn-grp">
+            <button class="btn btn-gold" onclick="calcLunaOggi()">⚡ Luna di Oggi</button>
+          </div>
+        </div>
+        <div id="lunaResult" style="display:none"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ TAB: PIANETI ══ -->
+  <div id="tabPianeti" class="tab-panel">
+    <section class="section z1">
+      <div class="section-header">
+        <div class="section-eyebrow">Astrocartografia Live</div>
+        <h2 class="section-title">Transiti Planetari</h2>
+        <p class="section-intro">Le posizioni dei 10 corpi celesti principali, i pianeti retrogradi attivi e gli aspetti planetari dominanti per qualsiasi data.</p>
+      </div>
+
+      <div class="oracle-box" id="pianetiOracolo">
+        <div class="oracle-title">🪐 Posizioni Planetarie</div>
+        <div class="oracle-sub">DOVE SI TROVANO I PIANETI OGGI</div>
+        <div id="planetiForm">
+          <div class="form-row">
+            <input type="date" id="planetiDate" class="date-input">
+            <button class="btn btn-gold" onclick="calcPianetiData()">🪐 Calcola Data</button>
+          </div>
+          <div class="btn-grp">
+            <button class="btn btn-gold" onclick="calcPianeti()">⚡ Cielo di Oggi</button>
+          </div>
+        </div>
+        <div id="planetiResult" style="display:none"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ TAB: GUIDA ══ -->
+  <div id="tabGuida" class="tab-panel">
+    <section class="section z1">
+      <div class="img-placeholder">
+        <img src="images/luna/luna-copertina.webp" alt="Luna e Pianeti" onerror="this.style.display='none'">
+        <span class="ph-icon">🌙</span>
+        <span class="ph-label">ASTRONOMIA SACRA</span>
+      </div>
+      <div class="section-header">
+        <div class="section-eyebrow">Mitologia & Simbolismo</div>
+        <h2 class="section-title">La Luna nell'Occulto</h2>
+      </div>
+      <p class="prose">La Luna è il grande specchio del cielo — riflette la luce del Sole e la trasforma in qualcosa di più misterioso, onirico, emotivo. Nell'astrologia classica è la <em>Notte</em> che completa il <em>Giorno</em> del Sole. Governa l'inconscio, la memoria ancestrale, i cicli del corpo, il femminino cosmico.</p>
+      <p class="prose">Le otto fasi lunari non sono semplici fenomeni astronomici: sono <em>stati di coscienza cosmica</em> che influenzano le maree oceaniche, i fluidi corporei, i campi elettromagnetici e — secondo millenni di osservazione sciamanica e astrologica — le energie sottili della vita quotidiana.</p>
+
+      <div class="highlight">
+        <h4>🌑 Luna Nuova — Il Potenziale Assoluto</h4>
+        <p>Nelle tradizioni esoteriche, la Luna Nuova è paragonata al Caos primordiale — il punto zero da cui tutto emerge. In numerologia corrisponde all'1, l'inizio di ogni ciclo. Nella Cabala, è associata alla Sephirah Kether — la Corona, l'origine di tutto. È il momento in cui le intenzioni hanno maggiore forza germinativa.</p>
+      </div>
+      <div class="highlight">
+        <h4>🌕 Luna Piena — Il Culmine della Manifestazione</h4>
+        <p>La Luna Piena è il momento in cui l'energia lunare raggiunge il suo apice. Nelle tradizioni wicca, è la notte più potente per i rituali di ringraziamento, liberazione e manifestazione. Influenza il sonno, aumenta l'attività emotiva e psichica. In molte culture indigene, la Luna Piena ha un nome proprio per ogni mese — Lupo, Neve, Verme, Rosa, Fragola — che riflette i cicli naturali della terra.</p>
+      </div>
+
+      <div class="section-header" style="margin-top:40px">
+        <div class="section-eyebrow">I Sette Pianeti Classici</div>
+        <h2 class="section-title">Corpi Celesti & Governo</h2>
+        <p class="section-intro">Nell'astrologia tradizionale, sette pianeti governano sette sfere della vita — e sette giorni della settimana.</p>
+      </div>
+
+      <div class="highlight">
+        <h4>☀️ Sole — Domenica · Leo · Identità</h4>
+        <p>Il Sole governa l'ego cosciente, la vitalità, la creatività e il principio maschile. Nelle tradizioni alchemiche è l'Oro — la perfezione, la completezza. I faraoni egizi erano figli di Ra, il dio solare. Il Sole in astrologia determina il "segno zodiacale" e rappresenta il nucleo dell'identità.</p>
+      </div>
+      <div class="highlight">
+        <h4>🌙 Luna — Lunedì · Cancro · Emozione</h4>
+        <p>La Luna governa le emozioni, l'inconscio, la memoria e il principio femminino. In alchimia è l'Argento — riflesso, purezza lunare. Artemide/Diana, Selene, Iside, Ecate — le dee lunari di ogni cultura incarnano aspetti diversi della psiche femminile. Il "segno della luna" in un tema natale rivela le esigenze emotive più profonde.</p>
+      </div>
+      <div class="highlight">
+        <h4>☿ Mercurio — Mercoledì · Gemelli e Vergine · Mente</h4>
+        <p>Mercurio governa la mente, la comunicazione, i viaggi brevi e i commerci. Era il messaggero degli dei nella mitologia romana — l'unico a poter viaggiare liberamente tra il mondo dei vivi e dei morti. Il suo stato retrogrado (3-4 volte l'anno) porta la famosa confusione comunicativa.</p>
+      </div>
+      <div class="highlight">
+        <h4>♀️ Venere — Venerdì · Toro e Bilancia · Amore</h4>
+        <p>Venere governa l'amore, la bellezza, il piacere sensoriale e i valori. In alchimia è il Rame — malleabile, bello, conduttore di calore. Afrodite/Venere è la dea dell'amore in tutte le sue forme. Il ciclo di Venere disegna un pentagramma perfetto nel cielo ogni 8 anni — coincidenza geometrica che i Pitagorici consideravano prova della matematica divina dell'universo.</p>
+      </div>
+      <div class="highlight">
+        <h4>♂️ Marte — Martedì · Ariete e Scorpione · Azione</h4>
+        <p>Marte governa l'azione, il desiderio, la passione e la guerra. In alchimia è il Ferro — duro, determinato, tagliente. Ares/Marte è il dio della guerra, ma anche dell'energia vitale che muove ogni azione. Marte retrogrado (ogni 2 anni circa) porta revisioni di obiettivi e frenata dell'energia.</p>
+      </div>
+      <div class="highlight">
+        <h4>♃ Giove — Giovedì · Sagittario e Pesci · Espansione</h4>
+        <p>Giove governa l'espansione, la fortuna, la filosofia e la giustizia. In alchimia è lo Stagno — abbondante, espansivo. Zeus/Giove è il padre degli dei, il re dell'Olimpo. Il suo transito nel tuo segno solare (ogni 12 anni) porta tradizionalmente opportunità di crescita e fortuna.</p>
+      </div>
+      <div class="highlight">
+        <h4>♄ Saturno — Sabato · Capricorno e Acquario · Struttura</h4>
+        <p>Saturno governa la struttura, il karma, la disciplina e i limiti. In alchimia è il Piombo — pesante, oscuro, materiale — ma anche la materia prima da trasmutare in oro. Crono/Saturno è il dio del Tempo. Il "Ritorno di Saturno" (intorno ai 29 anni) è uno dei transiti astrologici più significativi della vita adulta.</p>
+      </div>
+
+      <div class="section-header" style="margin-top:40px">
+        <div class="section-eyebrow">Pianeti Moderni</div>
+        <h2 class="section-title">I Pianeti Transpersonali</h2>
+        <p class="section-intro">Urano, Nettuno e Plutone — scoperti tra il 1781 e il 1930 — governano le forze collettive che trascendono l'individuo.</p>
+      </div>
+      <div class="highlight">
+        <h4>⛢ Urano — Rivoluzione & Innovazione</h4>
+        <p>Scoperto nel 1781 durante la Rivoluzione Americana e Francese, Urano governa le rivoluzioni, le scoperte improvvise, l'originalità e la tecnologia. I suoi transiti segnano momenti di rottura radicale con il passato. Il suo ciclo di 84 anni significa che vediamo un solo "giro" completo nella vita umana.</p>
+      </div>
+      <div class="highlight">
+        <h4>♆ Nettuno — Sogno & Dissoluzione</h4>
+        <p>Scoperto nel 1846 durante l'epoca romantica, Nettuno governa i sogni, le illusioni, la spiritualità e l'arte. La sua energia dissolve i confini dell'ego — per elevazione spirituale o per confusione. Il suo ciclo di 165 anni lo rende un pianeta generazionale.</p>
+      </div>
+      <div class="highlight">
+        <h4>⯓ Plutone — Trasformazione & Potere</h4>
+        <p>Scoperto nel 1930 durante l'ascesa dei totalitarismi, Plutone governa le trasformazioni radicali, il potere, la morte simbolica e la rinascita. Il suo transito in un segno dura tra 12 e 31 anni — segna interi capitoli della storia collettiva. Plutone in Capricorno (2008-2023) ha coinciso con la crisi finanziaria globale e le trasformazioni delle istituzioni.</p>
+      </div>
+
+      <div class="section-header" style="margin-top:40px">
+        <div class="section-eyebrow">Pratica Astrologica</div>
+        <h2 class="section-title">Come Usare i Transiti</h2>
+      </div>
+      <div class="highlight">
+        <h4>🌙 Rituali con la Luna</h4>
+        <p>La pratica più semplice e potente: allinea le tue intenzioni al ciclo lunare. <strong>Luna Nuova</strong> → avvia nuovi obiettivi, pianta semi di intenzione. <strong>Luna Piena</strong> → celebra i risultati, rilascia ciò che non serve. <strong>Quarto Calante</strong> → pulisci, elimina, lascia andare. <strong>Luna Calante</strong> → riposa, rifletti, prepara il prossimo ciclo.</p>
+      </div>
+      <div class="highlight">
+        <h4>℞ Come Vivere i Pianeti Retrogradi</h4>
+        <p>Quando un pianeta è retrogrado (ℛ), la sua energia si rivolge verso l'interno. <strong>Mercurio ℛ</strong> → rivedi, rifletti, riesamina le comunicazioni. <strong>Venere ℛ</strong> → riconsidera i valori e le relazioni. <strong>Marte ℛ</strong> → riorientati, non formare conflitti. I retrogradi non sono "cattivi" — sono inviti alla profondità interiore.</p>
+      </div>
+      <div class="highlight">
+        <h4>✦ Aspetti Planetari — Il Linguaggio dei Pianeti</h4>
+        <p>Gli aspetti descrivono le relazioni geometriche tra pianeti. <strong>Congiunzione (☌)</strong> — energie fuse, potenti ma complesse. <strong>Trigono (△)</strong> — armonia naturale, flusso facile. <strong>Sextile (⚹)</strong> — opportunità disponibili con un minimo sforzo. <strong>Quadratura (□)</strong> — tensione creativa, crescita attraverso la sfida. <strong>Opposizione (☍)</strong> — polarità da integrare.</p>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <p>🌙 Delle Stelle · Luna & Pianeti · Astronomia Sacra</p>
+</footer>
+
+<script>
+/* ── STARFIELD ── */
+(function(){
+  const c=document.getElementById('starsContainer');
+  for(let i=0;i<130;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2+.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${(Math.random()*4+2).toFixed(1)}s;--delay:${(Math.random()*6).toFixed(1)}s;opacity:${(Math.random()*.5+.2).toFixed(2)}`;
+    c.appendChild(s);
+  }
+})();
+
+const $=id=>document.getElementById(id);
+
+/* ── PAGE TABS ── */
+function switchTab(id){
+  document.querySelectorAll('.page-tab').forEach((t,i)=>{
+    const ids=['luna','pianeti','guida'];
+    t.classList.toggle('active', ids[i]===id);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  $('tab'+id.charAt(0).toUpperCase()+id.slice(1)).classList.add('active');
+}
+
+/* ── INIT DATE INPUTS ── */
+(function(){
+  const today=new Date().toISOString().split('T')[0];
+  ['lunaDate','planetiDate'].forEach(id=>{
+    const el=$(id); if(!el) return;
+    el.value=today; el.max=today; el.min='1900-01-01';
+  });
+})();
+
+/* ═══════════════════ LUNA ═══════════════════ */
+
+const DB_LUNA = {
+  'nuova': {
+    nome:'Luna Nuova', emoji:'🌑', illuminazione:0,
+    keyword:'Inizio · Intenzione · Semina',
+    descrizione:'La Luna Nuova è il respiro trattenuto dell\'universo prima di una nuova espirazione. Il cielo è buio, l\'energia è tutta potenziale, non ancora manifestata. Questo è il momento più potente per piantare sementi intenzionali — non necessariamente fisiche, ma mentali, emotive, spirituali. Ciò che intendi con chiarezza durante la Luna Nuova ha un DNA cosmico particolarmente forte.',
+    umore:'Energia bassa ma focalizzata. È normale sentirsi più introversi e riflessivi. Non combatterlo: questo raccoglimento è produttivo.',
+    capelli:'❌ Evita tagli — la luna nuova ritarda la crescita. Ideale per trattamenti nutrienti in profondità.',
+    piante:'✅ Semina in terra o pota le radici. Le radici assorbono nutrimento più facilmente.',
+    progetti:'✅ Avvia nuovi progetti, firma contratti, lancia campagne. Il timing cosmico è dalla tua parte.',
+    fa:['Meditare e impostare intenzioni chiare','Avviare nuovi progetti','Trattamenti di bellezza nutrienti','Semina in giardino','Scrivere nel diario i desideri'],
+    nonFa:['Tagliare i capelli','Fare grandi confronti emotivi','Lanciare feste o eventi sociali importanti','Prendere decisioni impulsive'],
+    rituale:'Scrivi 3 intenzioni su carta e tienile alla luce della luna (anche attraverso il vetro). Rileggile ad ogni fase successiva.'
+  },
+  'crescente': {
+    nome:'Luna Crescente', emoji:'🌒', illuminazione:25,
+    keyword:'Crescita · Azione · Costruzione',
+    descrizione:'La Luna Crescente è la fase dell\'espansione e dell\'azione. Come la pianta che spinge verso la luce dopo la semina, ora è il momento di muoversi, costruire, agire sui piani fatti durante la Luna Nuova. L\'energia è in ascesa e con lei la tua vitalità, la tua motivazione e la tua capacità di attrarre ciò che hai intenzione di creare.',
+    umore:'Energia in crescita, motivazione alta, ottimismo naturale. Il tuo corpo e la tua mente sono al massimo della ricettività alle nuove esperienze.',
+    capelli:'✅ Taglio ideale per stimolare la crescita veloce. I capelli cresceranno più forti e rapidi.',
+    piante:'✅ Irrigazione abbondante, concimazione. Le foglie e i fusti si sviluppano energicamente.',
+    progetti:'✅ Implementa, esegui, espandi. Ogni azione ha una spinta cosmica aggiuntiva.',
+    fa:['Tagliare i capelli per favorire la crescita','Iniziare nuove abitudini','Socializzare e creare connessioni','Investire e acquistare','Praticare sport intenso'],
+    nonFa:['Rimandare azioni importanti','Sottrarsi alle opportunità','Diete restrittive — il corpo assorbe tutto','Stare in isolamento'],
+    rituale:'Crea una lista di azioni concrete verso il tuo obiettivo principale e completa almeno una ogni giorno fino alla luna piena.'
+  },
+  'primo-quarto': {
+    nome:'Primo Quarto', emoji:'🌓', illuminazione:50,
+    keyword:'Decisione · Sfida · Perseveranza',
+    descrizione:'Il Primo Quarto è il momento della tensione creativa — metà del ciclo, il punto in cui incontri la resistenza. Le intenzioni della Luna Nuova vengono testate dalla realtà. Non mollare: questa resistenza non è un segnale che il progetto è sbagliato, è il test naturale che separa i semi forti da quelli deboli. Chi persevera ora raccoglie alla Luna Piena.',
+    umore:'Tensione e determinazione. Potresti sentirti sfidato o frustrato. È normale: stai attraversando il momento critico del ciclo.',
+    capelli:'✅ Taglio ideale per rinforzare la struttura. I capelli diventano più resistenti e folti.',
+    piante:'✅ Irrigazione moderata. Rafforzare i supporti (tutori) per le piante rampicanti.',
+    progetti:'✅ Affronta gli ostacoli a testa alta. Le decisioni difficili prese ora consolidano il futuro.',
+    fa:['Prendere decisioni difficili rimaste in sospeso','Affrontare conversazioni scomode','Rinforzare abitudini nuove','Tagliare i capelli per volume','Esercizio fisico di forza'],
+    nonFa:['Arrendersi di fronte agli ostacoli','Rimandare decisioni per paura','Evitare i conflitti necessari','Stagnare in zone di comfort'],
+    rituale:'Identifica l\'ostacolo principale al tuo obiettivo e scrivi una strategia concreta per superarlo entro la luna piena.'
+  },
+  'gibbosa-crescente': {
+    nome:'Luna Gibbosa Crescente', emoji:'🌔', illuminazione:75,
+    keyword:'Raffinamento · Pazienza · Perfezione',
+    descrizione:'La Luna Gibbosa Crescente è la fase della rifinitura — siamo quasi alla pienezza ma non ancora. L\'energia è alta ma c\'è ancora spazio per aggiustamenti. Questo è il momento per perfezionare i dettagli, non per grandi cambiamenti di rotta. Osserva ciò che hai costruito finora e chiediti: cosa può essere migliorato prima della manifestazione completa?',
+    umore:'Anticipo e impazienza. Senti che qualcosa di grande si avvicina. Usa questo stato per rifinire invece di forzare.',
+    capelli:'✅ Ottimo momento per trattamenti di lucentezza e volume.',
+    piante:'✅ Irrigazione abbondante. I frutti e i fiori sono in fase di sviluppo accelerato.',
+    progetti:'✅ Revisioni finali, test, correzioni. Non lanciare ancora — affina.',
+    fa:['Revisionare e migliorare il lavoro','Pratiche di gratitudine per ciò che sta arrivando','Cura della bellezza e del corpo','Connessioni sociali significative','Organizzare e preparare'],
+    nonFa:['Lanciare qualcosa di non ancora pronto','Fare grandi acquisti impulsivi','Iniziare nuovi cicli — aspetta la luna nuova','Trascurare i dettagli'],
+    rituale:'Fai una lista di 3 cose che puoi migliorare nel tuo progetto principale prima che la luna sia piena.'
+  },
+  'piena': {
+    nome:'Luna Piena', emoji:'🌕', illuminazione:100,
+    keyword:'Manifestazione · Chiarezza · Culmine',
+    descrizione:'La Luna Piena è il culmine del ciclo lunare — il momento in cui tutto ciò che è stato seminato, cresciuto e affinato raggiunge la sua espressione massima. Le emozioni sono amplificate, la chiarezza è massima (anche se a volte è dolorosa), e ciò che era nascosto viene portato alla luce. Le energie sono al picco — per il bene e per il caos. Sii consapevole.',
+    umore:'Intensità emotiva alta. Potresti sentirti più sensibile, emotivo, ecstatico o agitato. Tutto è amplificato: anche la gioia e anche l\'ansia.',
+    capelli:'✅ Taglio ideale per massimizzare la crescita. Massima potenza di crescita.',
+    piante:'❌ Evita di seminare — non è il momento dell\'inizio. Raccogli i frutti maturi.',
+    progetti:'✅ Lancia, presenta, celebra. Il massimo di visibilità cosmica per la tua manifestazione.',
+    fa:['Lanciare progetti, prodotti, annunci importanti','Celebrare i traguardi','Tagliare i capelli per crescita massima','Raccogliere dal giardino','Rituali di gratitudine e liberazione'],
+    nonFa:['Iniziare cose nuove — aspetta la luna nuova','Prendere decisioni in stati di forte agitazione emotiva','Confronti accesi — le emozioni distorcono la percezione','Stare da soli se hai tendenza alla solitudine depressiva'],
+    rituale:'Scrivi su carta tutto ciò che vuoi rilasciare e bruciala (in sicurezza) alla luce della luna. Poi scrivi 3 cose per cui sei grato che si sono manifestate.'
+  },
+  'gibbosa-calante': {
+    nome:'Luna Gibbosa Calante', emoji:'🌖', illuminazione:75,
+    keyword:'Gratitudine · Condivisione · Distribuzione',
+    descrizione:'Dopo il culmine della Luna Piena, inizia la fase di distribuzione. Come un frutto maturo che cade dall\'albero per nutrire la terra, ora è il momento di condividere ciò che hai ricevuto, imparato, creato. L\'energia calante invita alla generosità, alla gratitudine e al rilascio graduale di ciò che non serve più.',
+    umore:'Energia in lieve calo ma senso di pienezza e soddisfazione. Momento ideale per la riflessione e la condivisione.',
+    capelli:'🌗 Taglio neutro — né stimola né rallenta la crescita.',
+    piante:'✅ Concimazione fogliare. Potatura leggera per ridistribuire le energie.',
+    progetti:'✅ Condividi il tuo lavoro, ricevi feedback, distribuisci valore.',
+    fa:['Condividere conoscenza e risorse','Riflettere sulle lezioni apprese','Dare feedback e riceverne','Donare ciò che non usi più','Diete detox moderate'],
+    nonFa:['Fare grandi investimenti','Avviare nuove iniziative importanti','Stressarsi sui piccoli dettagli','Stare in conflitto con persone care'],
+    rituale:'Dona qualcosa a qualcuno — un oggetto, un complimento sincero, del tempo. Il rilascio consapevole genera spazio per il prossimo ciclo.'
+  },
+  'ultimo-quarto': {
+    nome:'Ultimo Quarto', emoji:'🌗', illuminazione:50,
+    keyword:'Rilascio · Pulizia · Revisione',
+    descrizione:'L\'Ultimo Quarto è la fase della pulizia profonda — fisica, emotiva, mentale. Come il corpo che elimina le tossine, ora è il momento di liberarsi di tutto ciò che non ha servito il ciclo appena passato. Abitudini, relazioni, pensieri, oggetti: cosa puoi lasciare andare per arrivare alla prossima Luna Nuova più leggero?',
+    umore:'Energia bassa, stanchezza possibile. Momento di introversione necessaria e salutare. Non combatterla con stimolanti — assecondala.',
+    capelli:'❌ Evita il taglio — rallenta la crescita. Ideale per maschere nutrienti e trattamenti rigeneranti.',
+    piante:'✅ Pota vigorosamente ciò che non serve. La potatura ora favorisce una ricrescita più forte al prossimo ciclo.',
+    progetti:'✅ Chiudi, archivia, sistema. È il momento di completare l\'incompleto prima del nuovo ciclo.',
+    fa:['Fare pulizie profonde (casa, ufficio, mente)','Eliminare ciò che non serve','Terminare progetti aperti','Riposo e recupero fisico','Digiuno o detox leggero'],
+    nonFa:['Iniziare cose nuove — aspetta la luna nuova','Fare grandi acquisti','Prendere decisioni importanti mentre sei stanco','Tagliare i capelli'],
+    rituale:'Fai una pulizia fisica di un ambiente (stanza, cassetto, cartella digitale) mentre visualizzi di liberarti anche del peso emotivo corrispondente.'
+  },
+  'calante': {
+    nome:'Luna Calante', emoji:'🌘', illuminazione:25,
+    keyword:'Dissoluzione · Silenzio · Preparazione',
+    descrizione:'La Luna Calante è il lungo respiro prima del silenzio della Luna Nuova. L\'energia è al suo minimo del ciclo — non è debolezza, è preparazione. Come la terra in inverno che sembra morta ma sta concentrando tutte le sue energie nelle radici, tu stai raccogliendo ciò che hai imparato per portarlo nel prossimo ciclo trasformato in saggezza.',
+    umore:'Riflessivo, silenzioso, forse melanconico. Questo stato favorisce insight profondi se non si combatte. Stai con te stesso.',
+    capelli:'❌ Evita il taglio — crescita lentissima. Perfetto per trattamenti di ristrutturazione profonda.',
+    piante:'✅ Irrigazione minima. Periodo di riposo vegetativo. Rispetta la pausa.',
+    progetti:'✅ Pianifica il prossimo ciclo. Rifletti, impara, riorganizza mentalmente.',
+    fa:['Meditazione profonda','Journaling e riflessione','Trattamenti di bellezza nutrienti e rigeneranti','Riposo abbondante','Pianificare il prossimo ciclo'],
+    nonFa:['Iniziative importanti','Tagli di capelli','Prendere decisioni vitali mentre sei esausto','Forzare produttività'],
+    rituale:'Scrivi 3 lezioni apprese nell\'ultimo ciclo lunare (28 giorni). Cosa hai imparato su te stesso che non sapevi prima?'
+  }
+};
+
+function getLunaPhase(date){
+  const known=new Date('2024-01-11T00:00:00Z');
+  const lunation=29.53058867;
+  const diff=(date.getTime()-known.getTime())/86400000;
+  let phase=((diff%lunation)+lunation)%lunation;
+  let key='';
+  if(phase<1.85) key='nuova';
+  else if(phase<7.38) key='crescente';
+  else if(phase<9.22) key='primo-quarto';
+  else if(phase<14.77) key='gibbosa-crescente';
+  else if(phase<16.61) key='piena';
+  else if(phase<22.15) key='gibbosa-calante';
+  else if(phase<24.00) key='ultimo-quarto';
+  else key='calante';
+  const illuminazione=DB_LUNA[key].illuminazione;
+  return {key,phase:parseFloat(phase.toFixed(2)),illuminazione};
+}
+
+function _renderLuna(date){
+  const {key,phase,illuminazione}=getLunaPhase(date);
+  const dati=DB_LUNA[key];
+  const progressPercent=(phase/29.53)*100;
+  const dateStr=date.toLocaleDateString('it-IT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const faHtml=dati.fa.map(i=>`<li>${i}</li>`).join('');
+  const nonFaHtml=dati.nonFa.map(i=>`<li>${i}</li>`).join('');
+  const el=$('lunaResult');
+  el.innerHTML=`
+  <div class="luna-res">
+    <span class="luna-emoji-big">${dati.emoji}</span>
+    <div class="luna-phase-name">${dati.nome}</div>
+    <div class="luna-date-sub">${dateStr}</div>
+    <div class="luna-illumination">Illuminazione: <span>${illuminazione}%</span> · Giorno del ciclo: <span>${Math.round(phase)+1}/29</span></div>
+    <div class="luna-cycle-bar">
+      <div class="luna-cycle-track"></div>
+      <div class="luna-cycle-cursor" style="left:${progressPercent}%"></div>
+      <div class="luna-cycle-labels">
+        <span>🌑 Nuova</span><span>🌓 Q1</span><span>🌕 Piena</span><span>🌗 Q3</span><span>🌑 Nuova</span>
+      </div>
+    </div>
+    <div class="num-kw">${dati.keyword}</div>
+    <div class="luna-block" style="margin-top:14px"><h4>🌙 Influenza del Momento</h4><p>${dati.descrizione}</p></div>
+    <div class="luna-block"><h4>💭 Effetto sull'Umore</h4><p>${dati.umore}</p></div>
+    <div class="luna-grid">
+      <div class="luna-card"><div class="luna-card-ico">💇</div><div class="luna-card-title">Capelli</div><div class="luna-card-val">${dati.capelli}</div></div>
+      <div class="luna-card"><div class="luna-card-ico">🌿</div><div class="luna-card-title">Piante</div><div class="luna-card-val">${dati.piante}</div></div>
+      <div class="luna-card"><div class="luna-card-ico">💼</div><div class="luna-card-title">Progetti</div><div class="luna-card-val">${dati.progetti}</div></div>
+      <div class="luna-card"><div class="luna-card-ico">🕯️</div><div class="luna-card-title">Rituale</div><div class="luna-card-val" style="font-size:10px">${dati.rituale.substring(0,55)}…</div></div>
+    </div>
+    <div class="luna-do-dont">
+      <div class="luna-do"><h5>✓ FAI ORA</h5><ul>${faHtml}</ul></div>
+      <div class="luna-dont"><h5>✗ EVITA</h5><ul>${nonFaHtml}</ul></div>
+    </div>
+    <div class="luna-block"><h4>🕯️ Rituale Consigliato</h4><p>${dati.rituale}</p></div>
+    <div class="btn-grp">
+      <button class="btn btn-sec" onclick="resetLuna()">🔄 Altra Data</button>
+    </div>
+  </div>`;
+  el.style.display='block';
+  $('lunaForm').style.display='none';
+  _burst();
+}
+
+function calcLunaOggi(){ _renderLuna(new Date()); }
+function calcLunaData(){
+  const val=$('lunaDate').value;
+  if(!val){ _toast('⚠️ Seleziona una data'); return; }
+  const [y,m,d]=val.split('-').map(Number);
+  _renderLuna(new Date(y,m-1,d,12,0,0));
+}
+function resetLuna(){
+  $('lunaResult').style.display='none';
+  $('lunaForm').style.display='block';
+  const today=new Date().toISOString().split('T')[0];
+  $('lunaDate').value=today;
+}
+
+/* ═══════════════════ PIANETI ═══════════════════ */
+
+const DB_PIANETI={
+  sole:{nome:'Sole',emoji:'☀️',desc:'Identità, ego, forza vitale'},
+  luna:{nome:'Luna',emoji:'🌙',desc:'Emozioni, istinto, cicli'},
+  mercurio:{nome:'Mercurio',emoji:'☿',desc:'Comunicazione, intelletto, viaggi'},
+  venere:{nome:'Venere',emoji:'♀️',desc:'Amore, bellezza, valori, piacere'},
+  marte:{nome:'Marte',emoji:'♂️',desc:'Azione, desiderio, energia fisica'},
+  giove:{nome:'Giove',emoji:'♃',desc:'Espansione, fortuna, filosofia'},
+  saturno:{nome:'Saturno',emoji:'♄',desc:'Struttura, karma, disciplina, limiti'},
+  urano:{nome:'Urano',emoji:'⛢',desc:'Rivoluzione, innovazione, rotture'},
+  nettuno:{nome:'Nettuno',emoji:'♆',desc:'Sogni, illusione, spiritualità, arte'},
+  plutone:{nome:'Plutone',emoji:'⯓',desc:'Trasformazione, potere, morte e rinascita'}
+};
+
+const DB_PIANETI_RETROGRADI={
+  mercurio:'Mercurio Retrogrado porta revisioni e incomprensioni in comunicazione, tecnologia e contratti. Non il momento per firmare impegni importanti. Rivedi, rifletti, riconsiderati.',
+  venere:'Venere Retrograda porta rivalutazione di valori, amore e denaro. Vecchie relazioni riemergono. Evita grandi cambiamenti estetici e spese di lusso.',
+  marte:'Marte Retrogrado rallenta energia e motivazione. Azioni impulsive portano rimpianti. Pazienza e strategia ora valgono più del coraggio improvvisato.',
+  giove:'Giove Retrogrado (circa 4 mesi/anno) invita a riconsiderare filosofia di vita e crescita interiore. La vera espansione avviene dentro.',
+  saturno:'Saturno Retrogrado porta i conti con responsabilità e karma irrisolto. Le lezioni evitate tornano con urgenza. Costruisci basi più solide.',
+  urano:'Urano Retrogrado porta rivoluzioni interiori invece di rotture esterne. Liberati da dentro — strutture mentali e limitazioni auto-imposte.',
+  nettuno:'Nettuno Retrogrado porta chiarezza attraverso la nebbia. Distingui sogno da illusione, fede autentica da auto-inganno. Meditazione amplificata.',
+  plutone:'Plutone Retrogrado intensifica la trasformazione interiore. Fai i conti con il potere e lascia morire ciò che deve rinascere.'
+};
+
+const SEGNI=['Ariete','Toro','Gemelli','Cancro','Leone','Vergine','Bilancia','Scorpione','Sagittario','Capricorno','Acquario','Pesci'];
+const SEGNI_EMOJI=['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+const SEGNI_ELEM=['🔥','🌍','💨','💧','🔥','🌍','💨','💧','🔥','🌍','💨','💧'];
+
+function getJulianDay(date){
+  const Y=date.getUTCFullYear(),M=date.getUTCMonth()+1,D=date.getUTCDate();
+  const A=Math.floor(Y/100),B=2-A+Math.floor(A/4);
+  return Math.floor(365.25*(Y+4716))+Math.floor(30.6001*(M+1))+D+B-1524.5;
+}
+function normDeg(d){return((d%360)+360)%360}
+function lonToSegno(lon){
+  const idx=Math.floor(lon/30);
+  return{idx,nome:SEGNI[idx],emoji:SEGNI_EMOJI[idx],elemento:SEGNI_ELEM[idx],gradi:(lon%30).toFixed(1)};
+}
+
+function calcPlanetPos(JD){
+  const T=(JD-2451545.0)/36525;
+  const pos={};
+  const sunL=normDeg(280.46646+36000.76983*T);
+  const sunM=normDeg(357.52911+35999.05029*T-0.0001537*T*T);
+  const sunMr=sunM*Math.PI/180;
+  const sunEq=(1.914602-0.004817*T)*Math.sin(sunMr)+(0.019993-0.000101*T)*Math.sin(2*sunMr);
+  pos.sole={lon:normDeg(sunL+sunEq),retro:false};
+  pos.luna={lon:normDeg(218.3165+481267.8813*T),retro:false};
+  const merL=normDeg(178.179+149474.0*T);
+  const merSyn=((JD-2451545.0)%116+116)%116;
+  pos.mercurio={lon:normDeg(merL),retro:merSyn>=48&&merSyn<=69};
+  const venL=normDeg(342.767+58518.0*T);
+  const venSyn=((JD-2451545.0)%584+584)%584;
+  pos.venere={lon:normDeg(venL),retro:venSyn>=271&&venSyn<=313};
+  const marL=normDeg(293.737+19141.0*T);
+  const marSyn=((JD-2451545.0)%780+780)%780;
+  pos.marte={lon:normDeg(marL),retro:marSyn>=354&&marSyn<=426};
+  const jupL=normDeg(34.4+3036.0*T);
+  const jupSid=((JD-2451545.0)%4333+4333)%4333;
+  pos.giove={lon:normDeg(jupL),retro:jupSid>=1900&&jupSid<=2020};
+  const satL=normDeg(50.078+1223.0*T);
+  const satSid=((JD-2451545.0)%10759+10759)%10759;
+  pos.saturno={lon:normDeg(satL),retro:satSid>=4700&&satSid<=4838};
+  const uraL=normDeg(314.055+429.0*T);
+  const uraSid=((JD-2451545.0)%30688+30688)%30688;
+  pos.urano={lon:normDeg(uraL),retro:uraSid>=13500&&uraSid<=13651};
+  const netL=normDeg(304.349+219.0*T);
+  const netSid=((JD-2451545.0)%60182+60182)%60182;
+  pos.nettuno={lon:normDeg(netL),retro:netSid>=26800&&netSid<=26958};
+  const pluL=normDeg(238.929+145.0*T);
+  const pluSid=((JD-2451545.0)%90520+90520)%90520;
+  pos.plutone={lon:normDeg(pluL),retro:pluSid>=40200&&pluSid<=40360};
+  return pos;
+}
+
+function calcAspetti(pos){
+  const keys=Object.keys(pos),aspetti=[];
+  const ASPETTI_MSG=[
+    {tipo:'congiunzione',simbolo:'☌',desc:'Energie unificate — potenza amplificata'},
+    {tipo:'trigono',simbolo:'△',desc:'Armonia naturale — facilità e flusso'},
+    {tipo:'sextile',simbolo:'⚹',desc:'Opportunità — sinergia costruttiva'},
+    {tipo:'quadratura',simbolo:'□',desc:'Tensione creativa — crescita attraverso la sfida'},
+    {tipo:'opposizione',simbolo:'☍',desc:'Polarità — equilibrio tra forze opposte'}
+  ];
+  for(let i=0;i<keys.length;i++){
+    for(let j=i+1;j<keys.length;j++){
+      const p1=pos[keys[i]],p2=pos[keys[j]];
+      let diff=Math.abs(p1.lon-p2.lon);
+      if(diff>180) diff=360-diff;
+      let tipo=null;
+      if(diff<=8) tipo='congiunzione';
+      else if(Math.abs(diff-60)<=6) tipo='sextile';
+      else if(Math.abs(diff-90)<=6) tipo='quadratura';
+      else if(Math.abs(diff-120)<=8) tipo='trigono';
+      else if(Math.abs(diff-180)<=8) tipo='opposizione';
+      if(tipo){
+        const asp=ASPETTI_MSG.find(x=>x.tipo===tipo)||{simbolo:'?',desc:''};
+        aspetti.push({p1:keys[i],p2:keys[j],tipo,simbolo:asp.simbolo,desc:asp.desc});
+      }
+    }
+  }
+  return aspetti.slice(0,6);
+}
+
+function _renderPianeti(date){
+  const JD=getJulianDay(date);
+  const pos=calcPlanetPos(JD);
+  const dateStr=date.toLocaleDateString('it-IT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const retrogradi=Object.entries(pos).filter(([k,v])=>v.retro).map(([k])=>k);
+  const aspetti=calcAspetti(pos);
+  const ordine=['sole','luna','mercurio','venere','marte','giove','saturno','urano','nettuno','plutone'];
+  const righeHtml=ordine.map(key=>{
+    const p=pos[key],db=DB_PIANETI[key],segno=lonToSegno(p.lon);
+    const badge=p.retro
+      ?`<span class="pianeta-badge retro">℞ Retrogrado</span>`
+      :`<span class="pianeta-badge normale">${segno.gradi}°</span>`;
+    return`<div class="pianeta-row ${p.retro?'retro':''}">
+      <span class="pianeta-emoji">${db.emoji}</span>
+      <div class="pianeta-info">
+        <div class="pianeta-nome">${db.nome} <span class="pianeta-gradi">${db.desc}</span></div>
+        <div class="pianeta-segno">${segno.emoji} ${segno.nome} ${segno.elemento}</div>
+      </div>
+      ${badge}
+    </div>`;
+  }).join('');
+  const retroHtml=retrogradi.map(key=>{
+    const msg=DB_PIANETI_RETROGRADI[key]||'';
+    return msg?`<div class="pianeti-alert danger"><h4>℞ ${DB_PIANETI[key]?.nome||key} Retrogrado</h4><p>${msg}</p></div>`:'';
+  }).join('');
+  const aspettiHtml=aspetti.length?`
+    <div class="pianeti-aspetti">
+      <div class="pianeti-aspetti-title">✦ Aspetti Planetari Attivi</div>
+      ${aspetti.map(a=>{
+        const db1=DB_PIANETI[a.p1],db2=DB_PIANETI[a.p2];
+        return`<div class="aspetto-row">
+          <span class="aspetto-simbolo">${a.simbolo}</span>
+          <span>${db1?.emoji||''} ${db1?.nome||a.p1} — ${db2?.emoji||''} ${db2?.nome||a.p2}</span>
+          <span class="aspetto-desc">· ${a.desc}</span>
+        </div>`;
+      }).join('')}
+    </div>`:''
+  ;
+  const nRetro=retrogradi.length;
+  let climaMsg,climaClass;
+  if(nRetro===0){climaMsg='Tutti i pianeti in moto diretto — cielo favorevole per azioni, lanci e decisioni importanti.';climaClass='gold';}
+  else if(nRetro<=2){climaMsg=`${nRetro} pianeta${nRetro>1?'i':''} in retrogrado. Revisione e riflessione sono più potenti dell\'azione impulsiva.`;climaClass='info';}
+  else{climaMsg=`${nRetro} pianeti in retrogrado — periodo intenso di revisione cosmica. Il ritiro interiore è più produttivo di qualsiasi lancio esteriore.`;climaClass='danger';}
+  const el=$('planetiResult');
+  el.innerHTML=`
+    <div class="pianeti-alert ${climaClass}" style="margin-bottom:14px">
+      <h4>🪐 Clima Astrale — ${dateStr}</h4>
+      <p>${climaMsg}</p>
+    </div>
+    <div class="pianeti-sky">
+      <div class="pianeti-header">✦ Posizioni Planetarie ✦</div>
+      ${righeHtml}
+    </div>
+    ${retroHtml}
+    ${aspettiHtml}
+    <div class="btn-grp"><button class="btn btn-sec" onclick="resetPianeti()">🔄 Altra Data</button></div>`;
+  el.style.display='block';
+  $('planetiForm').style.display='none';
+  _burst();
+}
+
+function calcPianeti(){_renderPianeti(new Date());}
+function calcPianetiData(){
+  const v=$('planetiDate').value;
+  if(!v){_toast('⚠️ Seleziona una data');return;}
+  const[y,m,d]=v.split('-').map(Number);
+  _renderPianeti(new Date(y,m-1,d,12,0,0));
+}
+function resetPianeti(){
+  $('planetiResult').style.display='none';
+  $('planetiForm').style.display='block';
+  $('planetiDate').value=new Date().toISOString().split('T')[0];
+}
+
+/* ── UTILS ── */
+function _toast(msg){
+  const t=document.createElement('div');
+  Object.assign(t.style,{position:'fixed',bottom:'20px',left:'50%',transform:'translateX(-50%)',
+    background:'#160a38',border:'1px solid #d4af3760',borderRadius:'12px',padding:'10px 20px',
+    color:'#e0d8f0',fontSize:'13px',zIndex:'9999',fontFamily:'Cinzel,serif',letterSpacing:'1px',
+    transition:'opacity .3s'});
+  t.textContent=msg;document.body.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),400);},2200);
+}
+function _burst(){
+  const colors=['#d4af37','#c8b4ff','#fff'];
+  for(let i=0;i<24;i++){
+    const p=document.createElement('div');
+    Object.assign(p.style,{position:'fixed',left:'50%',top:'40%',width:'6px',height:'6px',
+      borderRadius:'50%',background:colors[i%3],pointerEvents:'none',zIndex:'9999',
+      transform:`translate(-50%,-50%) translate(${(Math.random()-.5)*180}px,${(Math.random()-.5)*180}px)`,
+      opacity:'0',transition:`opacity .2s, transform ${(Math.random()*.5+.5).toFixed(2)}s ease-out`});
+    document.body.appendChild(p);
+    setTimeout(()=>p.style.opacity='1',10);
+    setTimeout(()=>{p.style.opacity='0';setTimeout(()=>p.remove(),400);},600);
+  }
+}
+</script>
+</body>
+</html>

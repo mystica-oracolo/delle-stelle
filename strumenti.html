@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Strumenti del Praticante — MYSTICA</title>
+<meta name="description" content="Grimorio personale, Japamala dei 108, Oracolo del Pendolo con animazione. I tuoi strumenti sacri per la pratica esoterica quotidiana.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Strumenti del Praticante — MYSTICA">
+<meta property="og:description" content="Grimorio, Japamala e Pendolo interattivo animato. Strumenti esoterici digitali per ogni praticante.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://mysticaoracoli.it/strumenti.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0514;--card:#140c24;--purple:#2a1748;
+  --gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);
+  --text:#f4f1fa;--muted:#b8b2d1;--radius:18px;
+  --success:#4ade80;--warning:#fbbf24;--error:#f87171;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;
+  min-height:100vh;overflow-x:hidden;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+button{touch-action:manipulation;-webkit-appearance:none;cursor:pointer}
+input,textarea{-webkit-appearance:none}
+
+/* ── Sfondo cosmico ── */
+.cosmos{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%,#2a174830 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%,#1a073820 0%,transparent 60%),
+    radial-gradient(2px 2px at 15% 25%,#fff9 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%,#fff7 0%,transparent 100%),
+    radial-gradient(2px 2px at 45% 70%,#d4af3780 0%,transparent 100%),
+    radial-gradient(1px 1px at 88% 45%,#fff6 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%,#fff5 0%,transparent 100%),
+    radial-gradient(2px 2px at 60% 35%,#d4af3760 0%,transparent 100%);
+  animation:twinkle 14s infinite alternate;
+}
+@keyframes twinkle{
+  0%{opacity:.35;transform:scale(1)}
+  50%{opacity:.55}
+  100%{opacity:.45;transform:scale(1.015)}
+}
+
+/* ── Layout ── */
+#app{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
+
+/* ── Header ── */
+.header{
+  background:rgba(10,5,20,0.85);backdrop-filter:blur(12px);
+  padding:18px 20px 13px;
+  padding-top:max(18px,calc(18px + env(safe-area-inset-top,0px)));
+  text-align:center;border-bottom:1px solid rgba(212,175,55,0.2);
+  position:sticky;top:0;z-index:20;
+}
+.logo{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:6px;text-shadow:0 0 30px var(--gold-glow);animation:logoGlow 4s infinite}
+@keyframes logoGlow{
+  0%,100%{text-shadow:0 0 20px var(--gold-glow),0 0 40px transparent}
+  50%{text-shadow:0 0 40px #d4af3750,0 0 80px #d4af3725}
+}
+.header-sub{font-size:11px;color:var(--gold-dim);letter-spacing:5px;text-transform:uppercase;margin-top:4px}
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;border:1px solid rgba(212,175,55,0.3);
+  color:var(--gold-dim);border-radius:20px;padding:6px 14px;
+  font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;
+  margin-top:10px;transition:all .2s;
+}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Content ── */
+.content{
+  flex:1;padding:14px;
+  padding-bottom:calc(30px + env(safe-area-inset-bottom,0px));
+}
+
+/* ── Card ── */
+.card{
+  background:var(--card);border:1.5px solid rgba(42,23,72,0.9);
+  border-radius:var(--radius);padding:18px;margin-bottom:16px;
+  position:relative;overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:box-shadow .3s ease,border-color .3s ease;
+}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+.card.gold-border{border-color:var(--gold-dim);box-shadow:0 0 20px var(--gold-glow)}
+
+/* ── Typography ── */
+h2{font-family:'Cinzel',serif;color:var(--gold);font-size:18px;margin-bottom:14px;text-align:center;letter-spacing:1px}
+h3{color:var(--text);font-size:16px;margin-bottom:8px;font-weight:600;letter-spacing:0.5px}
+p{color:var(--text);font-size:16px;line-height:1.75;margin-bottom:10px}
+.t-muted{color:var(--muted);font-size:12px;text-align:center}
+
+/* ── Section title ── */
+.eng-section-title{
+  font-family:'Cinzel',serif;color:var(--gold);font-size:12px;
+  letter-spacing:2px;text-transform:uppercase;
+  margin:22px 0 10px;padding-left:2px;
+  display:flex;align-items:center;gap:7px;
+}
+.eng-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)}
+
+/* ── Inputs ── */
+textarea,input[type="text"]{
+  width:100%;padding:12px;
+  background:#09050f;border:1px solid #2a174880;
+  color:var(--text);border-radius:10px;font-size:14px;
+  font-family:'Crimson Pro',serif;resize:none;
+  transition:border-color .2s;margin:5px 0;display:block;
+}
+textarea:focus,input[type="text"]:focus{outline:none;border-color:var(--gold-dim);box-shadow:0 0 0 3px var(--gold-glow)}
+textarea::placeholder,input[type="text"]::placeholder{color:var(--muted)}
+
+/* ── Buttons ── */
+.btn{
+  width:100%;padding:15px;margin-top:12px;
+  background:linear-gradient(135deg,#2a1748,#160d30);
+  border:1.5px solid var(--gold);color:var(--gold);border-radius:12px;
+  font-size:15px;font-weight:700;text-align:center;
+  transition:all .25s cubic-bezier(.34,1.56,.64,1);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Cinzel',serif;letter-spacing:1px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+.btn:hover{background:linear-gradient(135deg,#381f5a,#1e1040);box-shadow:0 0 24px var(--gold-glow),0 4px 16px #00000060}
+.btn:active{transform:scale(.97)}
+.btn-sec{background:transparent;border:1px solid #2a174880;color:var(--muted);font-family:'Crimson Pro',serif}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--text)}
+.btn-grp{display:flex;gap:9px;margin-top:11px}
+.btn-grp .btn{flex:1;margin-top:0}
+
+/* ── Eng result ── */
+.eng-result{
+  margin-top:12px;padding:14px;background:#0b0518;
+  border-radius:12px;border-left:3px solid var(--gold);
+  display:none;font-size:13.5px;line-height:1.7;color:var(--text);
+}
+.eng-result.visible{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.eng-r-block{background:#0b0520;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px;margin-bottom:10px}
+.eng-r-block h4{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;letter-spacing:1.5px;margin-bottom:7px;text-transform:uppercase}
+.eng-r-block p{font-size:13.5px;line-height:1.7;margin:0}
+
+/* ── Grimorio list ── */
+.diary-item{
+  background:rgba(20,12,36,0.6);border:1px solid rgba(212,175,55,0.2);
+  border-radius:12px;padding:15px;margin-bottom:12px;
+  transition:all 0.3s ease;position:relative;
+}
+.diary-item:hover{border-color:var(--gold);background:rgba(20,12,36,0.8)}
+.diary-date{font-size:10px;color:var(--gold-dim);margin-bottom:5px;display:block}
+.diary-content{font-size:13px;color:var(--text);line-height:1.4}
+.grimorio-header{
+  font-family:'Cinzel',serif;font-size:10px;color:var(--gold);
+  letter-spacing:2px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.grimorio-count-badge{
+  background:var(--purple);border:1px solid var(--gold-dim);
+  padding:1px 8px;border-radius:10px;font-size:9px;color:var(--text);
+}
+.grimorio-spacer{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)}
+
+/* ── Mala ── */
+.eng-mala-count{
+  font-family:'Cinzel',serif;font-size:44px;color:var(--gold);
+  font-weight:700;text-align:center;text-shadow:0 0 24px var(--gold-glow);
+  display:block;letter-spacing:2px;margin:10px 0 4px;
+}
+.eng-mala-row{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 8px}
+.eng-mala-of{font-size:13px;color:var(--muted);font-family:'Cinzel',serif}
+.eng-prog{height:6px;border-radius:3px;background:#2a174840;margin:8px 0 4px;overflow:hidden}
+.eng-prog-bar{height:100%;border-radius:3px;transition:width .3s ease;background:linear-gradient(90deg,var(--gold-dim),var(--gold));width:0%}
+
+/* ── Mala perle ── */
+.mala-perle{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:4px;margin:10px 0;padding:12px;
+  background:rgba(9,5,15,.5);border-radius:14px;
+  border:1px solid rgba(42,23,72,.5);
+}
+.perla{
+  width:12px;height:12px;border-radius:50%;
+  background:rgba(42,23,72,.6);border:1px solid rgba(212,175,55,.2);
+  transition:all .2s ease;
+}
+.perla.attiva{
+  background:radial-gradient(circle at 35% 35%,#c8a0f0,#7a3db8);
+  border-color:var(--gold);
+  box-shadow:0 0 6px rgba(212,175,55,.5);
+}
+
+/* ── Pendolo ── */
+.pendolo-stage{
+  display:flex;justify-content:center;align-items:center;
+  margin:14px 0 10px;
+  background:radial-gradient(ellipse 70% 90% at 50% 20%,rgba(42,23,72,.35) 0%,transparent 70%);
+  border-radius:12px;padding:6px 0;
+}
+#pendoloCanvas{display:block;border-radius:8px}
+
+/* Dizionario movimenti */
+.pendolo-dict-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(42,23,72,.5)}
+.pendolo-dict-item:last-child{border-bottom:none}
+.pendolo-dict-sym{font-size:20px;width:26px;flex-shrink:0;text-align:center;margin-top:1px}
+.pendolo-dict-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:3px}
+.pendolo-dict-desc{font-size:12px;color:var(--muted);line-height:1.55}
+
+/* ── Guide strumenti ── */
+.strumento-card{
+  background:linear-gradient(135deg,rgba(20,12,36,.8),rgba(9,5,20,.9));
+  border:1px solid rgba(42,23,72,.6);border-radius:14px;
+  padding:14px;margin-bottom:10px;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:border-color .2s;
+}
+.strumento-card:hover{border-color:rgba(212,175,55,.35)}
+.strumento-ico{font-size:28px;flex-shrink:0;line-height:1;filter:drop-shadow(0 0 6px rgba(212,175,55,.4))}
+.strumento-body h4{font-family:'Cinzel',serif;color:var(--gold);font-size:13px;letter-spacing:.5px;margin-bottom:4px}
+.strumento-body p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+
+/* ── Toast ── */
+.toast{
+  position:fixed;bottom:30px;left:50%;transform:translateX(-50%);
+  background:rgba(20,12,36,.95);border:1px solid var(--gold-dim);
+  color:var(--text);padding:12px 22px;border-radius:24px;
+  font-size:14px;z-index:999;opacity:0;pointer-events:none;
+  transition:opacity .3s;white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.6);
+}
+.toast.show{opacity:1}
+
+/* ── AdSense slot ── */
+.ad-slot{
+  background:rgba(20,12,36,.4);border:1px solid rgba(42,23,72,.4);
+  border-radius:12px;padding:12px;margin:16px 0;
+  min-height:100px;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:11px;text-align:center;
+}
+</style>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="cosmos"></div>
+<div id="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">MYSTICA</div>
+    <div class="header-sub">Strumenti del Praticante</div>
+    <div style="text-align:center">
+      <button class="back-btn" onclick="history.back()">← Torna all'Oracolo</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- Hero -->
+    <div class="card gold-border">
+      <h2>🔮 Strumenti del Praticante</h2>
+      <p class="t-muted">Grimorio · Japamala · Pendolo — i tuoi strumenti sacri</p>
+    </div>
+
+    <!-- AdSense -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:90px"
+           data-ad-client="ca-pub-0522720046244970"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SEZIONE 1 — GRIMORIO
+    ══════════════════════════════════════ -->
+    <div class="eng-section-title">📓 Grimorio</div>
+    <div class="card">
+      <h3>📓 Book of Shadows</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:8px">Il tuo diario esoterico. Annota rituali, intenzioni, sogni e riflessioni magiche.</p>
+      <textarea id="eng-grimorio-nota" rows="4" placeholder="Scrivi un'intenzione, un rituale, una visione..."></textarea>
+      <button class="btn" onclick="engSalvaGrimorio()">📓 Sigilla nel Grimorio</button>
+      <div class="eng-result" id="eng-r-grimorio"></div>
+
+      <div id="grimorioListWrap" style="margin-top:16px;display:none">
+        <div class="grimorio-header">
+          PAGINE DEL GRIMORIO
+          <span class="grimorio-count-badge" id="grimorioCount">0</span>
+          <span class="grimorio-spacer"></span>
+          <button onclick="grimorioClearAll()" style="background:transparent;border:none;color:#f87171;font-size:10px;cursor:pointer;font-family:'Cinzel',serif">Elimina tutto</button>
+        </div>
+        <div id="grimorioList"></div>
+      </div>
+    </div>
+
+    <!-- Guida al grimorio -->
+    <div class="card">
+      <h3 style="font-size:14px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.5px;margin-bottom:12px">📜 Cos'è un Grimorio</h3>
+      <div class="strumento-card">
+        <div class="strumento-ico">🌿</div>
+        <div class="strumento-body">
+          <h4>Erbe & Corrispondenze</h4>
+          <p>Annota le erbe che usi nei rituali, i loro pianeti reggenti, le stagioni e le intenzioni. Ogni osservazione personale ha valore magico.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🕯️</div>
+        <div class="strumento-body">
+          <h4>Rituali & Incantesimi</h4>
+          <p>Registra procedure, materiali e risultati di ogni rito. Il grimorio è la memoria vivente della tua pratica — migliora con ogni aggiunta.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🌙</div>
+        <div class="strumento-body">
+          <h4>Sogni & Visioni</h4>
+          <p>Appunta i sogni significativi al risveglio. L'inconscio parla in simboli — il grimorio li conserva finché non sei pronto a decodificarli.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">⭐</div>
+        <div class="strumento-body">
+          <h4>Intenzioni & Manifestazioni</h4>
+          <p>Scrivi le tue intenzioni con data e luna. Rileggerle dopo settimane svela quali si sono avverate e come l'universo ha risposto.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SEZIONE 2 — JAPAMALA
+    ══════════════════════════════════════ -->
+    <div class="eng-section-title">📿 Japamala &amp; Mantra</div>
+    <div class="card">
+      <h3>📿 Ciclo dei 108</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:8px">Il 108 è il numero sacro dell'universo. Conta i tuoi mantra, preghiere o respiri.</p>
+
+      <input type="text" id="eng-mala-mantra" placeholder="Inserisci il tuo mantra · Es: Om Mani Padme Hum">
+
+      <span class="eng-mala-count" id="eng-mala-n">0</span>
+      <div class="eng-prog"><div class="eng-prog-bar" id="eng-mala-bar"></div></div>
+      <div class="eng-mala-row">
+        <span class="eng-mala-of" id="eng-mala-of">0 / 108</span>
+      </div>
+
+      <!-- Visualizzazione perle -->
+      <div class="mala-perle" id="malaPerle" aria-label="Perle del mala"></div>
+
+      <div class="btn-grp">
+        <button class="btn" onclick="engMalaInc()">📿 +1 Perla</button>
+        <button class="btn btn-sec" onclick="engMalaReset()">↺ Ricomincia</button>
+      </div>
+    </div>
+
+    <!-- Info japamala -->
+    <div class="card">
+      <h3 style="font-size:14px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.5px;margin-bottom:12px">🙏 Il Significato del 108</h3>
+      <div class="strumento-card">
+        <div class="strumento-ico">🔢</div>
+        <div class="strumento-body">
+          <h4>Il Numero Sacro</h4>
+          <p>108 = 1 (unità divina) × 4 (quattro direzioni) × 27 (nakshatra lunari). È la distanza Sole-Terra misurata in diametri solari. Un numero che unisce astronomia e spiritualità.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🕉️</div>
+        <div class="strumento-body">
+          <h4>Tradizioni del Mondo</h4>
+          <p>Induismo, Buddismo tibetano, Yoga — tutte le tradizioni contemplative orientali usano il 108 per completare un ciclo di meditazione o preghiera.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">💫</div>
+        <div class="strumento-body">
+          <h4>Come Usare il Mala</h4>
+          <p>Tieni il mala nella mano destra. Con il pollice fai scorrere ogni perla recitando il mantra. La perla guru (più grande) non si conta — segna l'inizio e la fine.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SEZIONE 3 — PENDOLO
+    ══════════════════════════════════════ -->
+    <div class="eng-section-title">🔮 Pendolo &amp; Radiestesia</div>
+    <div class="card">
+      <h3>🔮 Oracolo del Pendolo</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:12px">Concentrati sulla tua domanda. Visualizza il pendolo immobile, poi chiedi all'universo.</p>
+
+      <textarea id="pendolo-domanda" rows="2" placeholder="Scrivi la tua domanda (risposta sì/no)..."></textarea>
+
+      <div class="pendolo-stage">
+        <canvas id="pendoloCanvas" width="200" height="220"></canvas>
+      </div>
+
+      <div class="btn-grp">
+        <button class="btn" onclick="pendoloConsulta()">🔮 Consulta il Pendolo</button>
+        <button class="btn btn-sec" id="pendolo-btn-ferma" onclick="pendoloFerma()" style="display:none">⏹ Ferma</button>
+      </div>
+      <div class="eng-result" id="pendolo-result"></div>
+
+      <!-- Dizionario movimenti -->
+      <div style="margin-top:18px">
+        <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          DIZIONARIO DEI MOVIMENTI
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)"></span>
+        </div>
+        <div class="pendolo-dict-item">
+          <div class="pendolo-dict-sym">↔️</div>
+          <div>
+            <div class="pendolo-dict-label">OSCILLAZIONE LATERALE — SÌ</div>
+            <div class="pendolo-dict-desc">Il pendolo oscilla da sinistra a destra. Risposta positiva — energia in accordo con la domanda.</div>
+          </div>
+        </div>
+        <div class="pendolo-dict-item">
+          <div class="pendolo-dict-sym">↕️</div>
+          <div>
+            <div class="pendolo-dict-label">OSCILLAZIONE VERTICALE — NO</div>
+            <div class="pendolo-dict-desc">Oscilla avanti e indietro (verso di te e lontano). Risposta negativa o resistenza energetica.</div>
+          </div>
+        </div>
+        <div class="pendolo-dict-item">
+          <div class="pendolo-dict-sym">🔄</div>
+          <div>
+            <div class="pendolo-dict-label">ROTAZIONE CIRCOLARE — FORSE / NEUTRO</div>
+            <div class="pendolo-dict-desc">Oraria = energia positiva in crescita. Antioraria = rilascio necessario. Risposta non ancora definita.</div>
+          </div>
+        </div>
+        <div class="pendolo-dict-item">
+          <div class="pendolo-dict-sym">🌀</div>
+          <div>
+            <div class="pendolo-dict-label">MOVIMENTI IRREGOLARI — CHIEDI ANCORA</div>
+            <div class="pendolo-dict-desc">Interferenza energetica. Purifica lo spazio, respira tre volte e ripeti.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guida radiestesia -->
+    <div class="card">
+      <h3 style="font-size:14px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.5px;margin-bottom:12px">🔭 Guida alla Radiestesia</h3>
+      <div class="strumento-card">
+        <div class="strumento-ico">💎</div>
+        <div class="strumento-body">
+          <h4>Tipi di Pendolo</h4>
+          <p>Cristallo di quarzo (universale), Ossidiana nera (protezione), Ametista (intuizione spirituale), Rame (conduttività energetica), Legno (contatto con la terra).</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🧘</div>
+        <div class="strumento-body">
+          <h4>Preparazione</h4>
+          <p>Siediti in silenzio, respira tre volte profondamente. Tieni il filo tra pollice e indice, lascia il pendolo libero. Aspetta che si stabilizzi prima di chiedere.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🌬️</div>
+        <div class="strumento-body">
+          <h4>Purificazione del Pendolo</h4>
+          <p>Prima di usarlo: passalo sul fumo di salvia o palo santo. Lascialo su selenite tutta la notte. Immergilo brevemente in acqua salata se ha assorbito energie pesanti.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">❓</div>
+        <div class="strumento-body">
+          <h4>Come Formulare le Domande</h4>
+          <p>Solo domande con risposta sì/no. Formula in modo chiaro e specifico. Evita domande doppie o negazioni. Es: "Questa opportunità è favorevole per me in questo momento?"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SEZIONE 4 — STRUMENTI MAGICI (guida)
+    ══════════════════════════════════════ -->
+    <div class="eng-section-title">⚗️ Strumenti dell'Altare</div>
+    <div class="card">
+      <h3>Gli Strumenti Tradizionali</h3>
+      <p style="font-size:13px;opacity:.75;margin-bottom:14px">Ogni oggetto sull'altare è un simbolo e un amplificatore di intenzione.</p>
+
+      <div class="strumento-card">
+        <div class="strumento-ico">🗡️</div>
+        <div class="strumento-body">
+          <h4>Athame</h4>
+          <p>Il coltello rituale a doppio filo rappresenta l'elemento Aria e la volontà. Non si usa per tagliare fisicamente ma per dirigere l'energia.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🪄</div>
+        <div class="strumento-body">
+          <h4>Bacchetta</h4>
+          <p>Simbolo del Fuoco e della creatività. Usata per invocare, disegnare il cerchio magico e guidare l'energia verso l'intenzione. Tradizionalmente di quercia o salice.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🏺</div>
+        <div class="strumento-body">
+          <h4>Calderone</h4>
+          <p>Simbolo dell'elemento Acqua e della trasformazione. Usato per bruciare erbe, mescolare pozioni, ospitare il fuoco sacro nei rituali.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">⭐</div>
+        <div class="strumento-body">
+          <h4>Pentacolo</h4>
+          <p>Disco con pentagramma, simbolo della Terra. Posto al centro dell'altare, benedice e protegge tutti gli oggetti posati sopra.</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🥢</div>
+        <div class="strumento-body">
+          <h4>Incenso &amp; Incensiere</h4>
+          <p>Il fumo purifica e eleva le preghiere verso il divino. Ogni resina ha una corrispondenza: olibano (sole/purificazione), mirra (luna/protezione), benzoino (mercurio/chiarezza).</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">🕯️</div>
+        <div class="strumento-body">
+          <h4>Candele</h4>
+          <p>Il fuoco è il tramite tra i mondi. Il colore ha un significato specifico: bianco (purezza), rosso (passione), verde (prosperità), nero (protezione/banimento), viola (spiritualità).</p>
+        </div>
+      </div>
+      <div class="strumento-card">
+        <div class="strumento-ico">💧</div>
+        <div class="strumento-body">
+          <h4>Calice</h4>
+          <p>Il calice rappresenta il femminile divino, l'accoglienza e l'abbondanza. Contiene acqua sacra o bevanda rituale. Simboleggia il grembo dell'universo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AdSense bottom -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:90px"
+           data-ad-client="ca-pub-0522720046244970"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- Link navigazione -->
+    <div class="card" style="text-align:center">
+      <p class="t-muted" style="margin-bottom:14px">Esplora altri strumenti di MYSTICA</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <a href="./sogni.html" style="text-decoration:none">
+          <div class="strumento-card" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:14px 8px">
+            <span style="font-size:24px">🌙</span>
+            <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold)">Sogni</span>
+          </div>
+        </a>
+        <a href="./mente-energia.html" style="text-decoration:none">
+          <div class="strumento-card" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:14px 8px">
+            <span style="font-size:24px">🧘</span>
+            <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold)">Mente &amp; Energia</span>
+          </div>
+        </a>
+        <a href="./pietre-magiche.html" style="text-decoration:none">
+          <div class="strumento-card" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:14px 8px">
+            <span style="font-size:24px">💎</span>
+            <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold)">Pietre Magiche</span>
+          </div>
+        </a>
+        <a href="./index.html" style="text-decoration:none">
+          <div class="strumento-card" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:14px 8px">
+            <span style="font-size:24px">🔮</span>
+            <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold)">Home MYSTICA</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center;padding:20px 0 10px">
+      <p style="font-size:11px;color:var(--muted)">
+        <a href="./privacy.html" style="color:var(--muted);text-decoration:none">Privacy</a> ·
+        <a href="./termini.html" style="color:var(--muted);text-decoration:none">Termini</a> ·
+        <a href="./contatti.html" style="color:var(--muted);text-decoration:none">Contatti</a>
+      </p>
+      <p style="font-size:10px;color:#4a4262;margin-top:6px">© MYSTICA · mysticaoracoli.it</p>
+      <p style="font-size:10px;color:#4a4262;margin-top:4px">Strumenti per uso ludico e meditativo</p>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────
+   UTILS
+───────────────────────────────────────── */
+const GRIMORIO_KEY = 'myst_grimorio_v1';
+
+function _lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function _lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
+function toast(msg){
+  const el = document.getElementById('toast');
+  if(!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+/* ─────────────────────────────────────────
+   GRIMORIO
+───────────────────────────────────────── */
+function grimorioRenderList(){
+  const list = document.getElementById('grimorioList');
+  const wrap = document.getElementById('grimorioListWrap');
+  const cnt  = document.getElementById('grimorioCount');
+  if(!list) return;
+  let entries = [];
+  try{ entries = JSON.parse(_lsGet(GRIMORIO_KEY)||'[]'); }catch(e){}
+  if(cnt) cnt.textContent = entries.length;
+  if(!entries.length){ if(wrap) wrap.style.display='none'; return; }
+  if(wrap) wrap.style.display='block';
+  list.innerHTML = entries.map((e,i)=>`
+    <div class="diary-item" style="position:relative">
+      <span class="diary-date">${new Date(e.ts||Date.now()).toLocaleDateString('it-IT', {day:'2-digit',month:'long',year:'numeric'})}</span>
+      <span class="diary-content" style="display:block;margin-top:5px">${(e.nota||'').replace(/\n/g,'<br>')}</span>
+      <button onclick="grimorioDeleteEntry(${i})" style="position:absolute;top:10px;right:10px;background:transparent;border:none;color:#f87171;font-size:14px;cursor:pointer">✕</button>
+    </div>
+  `).join('');
+}
+
+function engSalvaGrimorio(){
+  const nota = ((document.getElementById('eng-grimorio-nota')||{}).value||'').trim();
+  const res  = document.getElementById('eng-r-grimorio');
+  if(!nota){ toast('📓 Scrivi qualcosa prima di sigillare'); return; }
+  let entries = [];
+  try{ entries = JSON.parse(_lsGet(GRIMORIO_KEY)||'[]'); }catch(e){}
+  entries.unshift({ nota, ts: Date.now() });
+  try{ _lsSet(GRIMORIO_KEY, JSON.stringify(entries)); }catch(e){}
+  if(res){ res.innerHTML=`<div class="eng-r-block" style="margin-top:10px"><p>📓 Sigillato nel Grimorio ✨</p></div>`; res.classList.add('visible'); }
+  const el = document.getElementById('eng-grimorio-nota');
+  if(el) el.value='';
+  grimorioRenderList();
+}
+
+function grimorioDeleteEntry(i){
+  let entries=[];
+  try{ entries=JSON.parse(_lsGet(GRIMORIO_KEY)||'[]'); }catch(e){}
+  entries.splice(i,1);
+  try{ _lsSet(GRIMORIO_KEY,JSON.stringify(entries)); }catch(e){}
+  grimorioRenderList();
+}
+
+function grimorioClearAll(){
+  if(!confirm('Eliminare tutte le pagine del grimorio?')) return;
+  try{ _lsSet(GRIMORIO_KEY,'[]'); }catch(e){}
+  grimorioRenderList();
+}
+
+/* ─────────────────────────────────────────
+   JAPAMALA
+───────────────────────────────────────── */
+let _malaCount = 0;
+const MALA_TOTAL = 108;
+
+function renderMalaPerle(){
+  const container = document.getElementById('malaPerle');
+  if(!container) return;
+  let html = '';
+  for(let i=0;i<MALA_TOTAL;i++){
+    html += `<div class="perla${i<_malaCount?' attiva':''}" title="Perla ${i+1}"></div>`;
+  }
+  container.innerHTML = html;
+}
+
+function engMalaInc(){
+  if(_malaCount >= MALA_TOTAL){ toast('🙏 Ciclo completato! Ricomincia per un nuovo giro.'); return; }
+  _malaCount++;
+  const pct = (_malaCount / MALA_TOTAL * 100).toFixed(1);
+  document.getElementById('eng-mala-n').textContent = _malaCount;
+  document.getElementById('eng-mala-of').textContent = _malaCount + ' / ' + MALA_TOTAL;
+  const bar = document.getElementById('eng-mala-bar');
+  if(bar) bar.style.width = pct + '%';
+  renderMalaPerle();
+  if(_malaCount === MALA_TOTAL){
+    const mantra = (document.getElementById('eng-mala-mantra')||{}).value||'il tuo mantra';
+    toast('🙏 108 perle completate! Il ciclo di "' + mantra.slice(0,30) + '" è sigillato.');
+  }
+}
+
+function engMalaReset(){
+  _malaCount = 0;
+  document.getElementById('eng-mala-n').textContent = '0';
+  document.getElementById('eng-mala-of').textContent = '0 / 108';
+  const bar = document.getElementById('eng-mala-bar');
+  if(bar) bar.style.width = '0%';
+  renderMalaPerle();
+}
+
+/* ─────────────────────────────────────────
+   PENDOLO
+───────────────────────────────────────── */
+const _pendolo = {
+  animId: null,
+  angle: 0,
+  mode: 'static',
+  t: 0,
+  answer: null
+};
+
+function pendoloDrawStatic(){
+  const canvas = document.getElementById('pendoloCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W / 2, pivotY = 18;
+  const L = 140, angle = _pendolo.angle || 0;
+  const bx = cx + Math.sin(angle) * L;
+  const by = pivotY + Math.cos(angle) * L;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Sfondo radiale
+  const bg = ctx.createRadialGradient(cx, H*0.4, 10, cx, H*0.4, 110);
+  bg.addColorStop(0, 'rgba(42,23,72,0.25)');
+  bg.addColorStop(1, 'rgba(10,5,20,0)');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Perno
+  ctx.beginPath();
+  ctx.arc(cx, pivotY, 5, 0, Math.PI*2);
+  ctx.fillStyle = '#d4af37';
+  ctx.shadowColor = 'rgba(212,175,55,0.8)';
+  ctx.shadowBlur = 10;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  // Filo
+  const grad = ctx.createLinearGradient(cx, pivotY, bx, by);
+  grad.addColorStop(0, 'rgba(212,175,55,0.9)');
+  grad.addColorStop(1, 'rgba(180,130,30,0.6)');
+  ctx.beginPath();
+  ctx.moveTo(cx, pivotY);
+  ctx.lineTo(bx, by);
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Cristallo
+  const r = 13;
+  const glowColor = _pendolo.mode === 'si' ? 'rgba(80,220,120,0.7)'
+    : _pendolo.mode === 'no' ? 'rgba(248,113,113,0.7)'
+    : _pendolo.mode === 'forse' ? 'rgba(140,100,220,0.7)'
+    : _pendolo.mode === 'irregolare' ? 'rgba(255,180,50,0.7)'
+    : 'rgba(212,175,55,0.5)';
+
+  ctx.shadowColor = glowColor;
+  ctx.shadowBlur = 18;
+
+  // Forma rombo allungato
+  ctx.beginPath();
+  ctx.moveTo(bx, by - r*1.4);
+  ctx.lineTo(bx + r*0.7, by);
+  ctx.lineTo(bx, by + r*0.6);
+  ctx.lineTo(bx - r*0.7, by);
+  ctx.closePath();
+
+  const cGrad = ctx.createRadialGradient(bx - r*0.2, by - r*0.3, 1, bx, by, r*1.2);
+  cGrad.addColorStop(0, '#f0e0ff');
+  cGrad.addColorStop(0.4, '#c8a0f0');
+  cGrad.addColorStop(1, '#7a3db8');
+  ctx.fillStyle = cGrad;
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(212,175,55,0.8)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // Riflesso
+  ctx.beginPath();
+  ctx.moveTo(bx - r*0.3, by - r*0.8);
+  ctx.lineTo(bx + r*0.1, by - r*0.2);
+  ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // Traccia oscillazione
+  if(_pendolo.mode !== 'static' && Math.abs(_pendolo.angle) > 0.02){
+    ctx.beginPath();
+    ctx.arc(cx, pivotY, L, Math.PI/2 - 0.35, Math.PI/2 + 0.35);
+    ctx.strokeStyle = 'rgba(212,175,55,0.1)';
+    ctx.lineWidth = 28;
+    ctx.stroke();
+  }
+}
+
+function _pendoloAnimate(){
+  _pendolo.t += 0.04;
+  const amp = 0.38;
+
+  if(_pendolo.mode === 'si'){
+    _pendolo.angle = amp * Math.sin(_pendolo.t * 2.2) * Math.exp(-_pendolo.t * 0.012);
+  } else if(_pendolo.mode === 'no'){
+    _pendolo.angle = amp * 0.6 * Math.sin(_pendolo.t * 1.8 + Math.PI/4) * Math.exp(-_pendolo.t * 0.01);
+  } else if(_pendolo.mode === 'forse'){
+    _pendolo.angle = amp * 0.5 * Math.sin(_pendolo.t * 1.4) + amp * 0.3 * Math.cos(_pendolo.t * 2.1);
+    _pendolo.angle *= Math.exp(-_pendolo.t * 0.008);
+  } else if(_pendolo.mode === 'irregolare'){
+    _pendolo.angle = amp * 0.4 * (Math.sin(_pendolo.t * 3.1) + Math.sin(_pendolo.t * 1.7 + 1.2) * 0.5);
+    _pendolo.angle *= Math.exp(-_pendolo.t * 0.015);
+  }
+
+  const decay = Math.exp(-_pendolo.t * 0.012);
+  if(decay < 0.05 && _pendolo.animId){
+    _pendolo.angle = 0;
+    pendoloDrawStatic();
+    if(_pendolo.answer) _pendoloShowAnswer(_pendolo.answer);
+    _pendolo.animId = null;
+    const btnFerma = document.getElementById('pendolo-btn-ferma');
+    if(btnFerma) btnFerma.style.display = 'none';
+    return;
+  }
+
+  pendoloDrawStatic();
+  _pendolo.animId = requestAnimationFrame(_pendoloAnimate);
+}
+
+function _pendoloShowAnswer(ans){
+  const res = document.getElementById('pendolo-result');
+  if(!res) return;
+  const map = {
+    si:         { ico:'↔️', col:'#4ade80', tit:'SÌ — Energia in Accordo',    txt:'Il pendolo oscilla lateralmente: risposta positiva. L\'universo è allineato con la tua intenzione. Agisci con fiducia.' },
+    no:         { ico:'↕️', col:'#f87171', tit:'NO — Resistenza Energetica',  txt:'Il pendolo oscilla verticalmente: risposta negativa. C\'è una forza contraria. Rifletti sull\'ostacolo prima di procedere.' },
+    forse:      { ico:'🔄', col:'#b88fe0', tit:'FORSE — Energia Non Definita', txt:'Il pendolo ruota circolarmente: il momento non è ancora maturo per una risposta. Aspetta, medita, poi richiedi.' },
+    irregolare: { ico:'🌀', col:'#fbbf24', tit:'CHIEDI DI NUOVO',              txt:'Interferenza energetica rilevata. Purifica lo spazio, fai tre respiri profondi e ripeti la consultazione.' }
+  };
+  const d = map[ans] || map.forse;
+  res.innerHTML = `<div style="text-align:center;padding:10px 0">
+    <div style="font-size:36px;margin-bottom:8px">${d.ico}</div>
+    <div style="font-family:'Cinzel',serif;font-size:14px;color:${d.col};letter-spacing:1px;margin-bottom:10px">${d.tit}</div>
+    <p style="font-size:13.5px;line-height:1.7;color:var(--text);margin:0">${d.txt}</p>
+  </div>`;
+  res.classList.add('visible');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function pendoloConsulta(){
+  const domanda = ((document.getElementById('pendolo-domanda')||{}).value||'').trim();
+  if(!domanda){ toast('🔮 Scrivi prima la tua domanda'); return; }
+
+  if(_pendolo.animId){ cancelAnimationFrame(_pendolo.animId); _pendolo.animId = null; }
+  const res = document.getElementById('pendolo-result');
+  if(res){ res.classList.remove('visible'); res.innerHTML = ''; }
+
+  const outcomes = ['si','si','si','no','no','forse','forse','irregolare'];
+  const ans = outcomes[Math.floor(Math.random() * outcomes.length)];
+  _pendolo.answer = ans;
+  _pendolo.mode = ans;
+  _pendolo.t = 0;
+  _pendolo.angle = 0;
+
+  const btnFerma = document.getElementById('pendolo-btn-ferma');
+  if(btnFerma) btnFerma.style.display = 'flex';
+
+  _pendolo.animId = requestAnimationFrame(_pendoloAnimate);
+}
+
+function pendoloFerma(){
+  if(_pendolo.animId){ cancelAnimationFrame(_pendolo.animId); _pendolo.animId = null; }
+  _pendolo.angle = 0;
+  pendoloDrawStatic();
+  const btnFerma = document.getElementById('pendolo-btn-ferma');
+  if(btnFerma) btnFerma.style.display = 'none';
+  if(_pendolo.answer) _pendoloShowAnswer(_pendolo.answer);
+}
+
+/* ─────────────────────────────────────────
+   INIT
+───────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function(){
+  grimorioRenderList();
+  renderMalaPerle();
+  pendoloDrawStatic();
+
+  // AdSense
+  try{
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }catch(e){}
+});
+</script>
+</body>
+</html>

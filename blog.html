@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Esoterico – Articoli su Tarocchi, Astrologia, Rune e Magia | MYSTICA</title>
+<meta name="description" content="Articoli esoterici approfonditi su Tarocchi, Astrologia, Rune, I Ching, Numerologia, Cabala, Alchimia, Wicca, Chakra, Sogni e Magia. Guide spirituali gratuite in italiano.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mysticaoracoli.it/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/blog.html">
+<meta property="og:title" content="Blog Esoterico MYSTICA – Guide e Articoli Spirituali">
+<meta property="og:description" content="Approfondimenti gratuiti su Tarocchi, Astrologia, Rune, I Ching, Numerologia, Cabala, Alchimia, Wicca, Chakra, Sogni e Magia in italiano.">
+<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog Esoterico MYSTICA",
+  "url": "https://mysticaoracoli.it/blog.html",
+  "description": "Articoli esoterici approfonditi su Tarocchi, Astrologia, Rune, I Ching, Numerologia, Cabala, Alchimia, Wicca, Chakra, Sogni e Magia.",
+  "inLanguage": "it",
+  "publisher": {"@type": "Organization", "name": "MYSTICA", "url": "https://mysticaoracoli.it/"},
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mysticaoracoli.it/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog Esoterico"}
+    ]
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#d4af37;--bg:#0a0514;--text:#e8e0f0;--muted:#9a8ab0;--border:rgba(212,175,55,0.25)}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh}
+header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:18px 20px;text-align:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.logo{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:3px;text-shadow:0 0 20px rgba(212,175,55,0.4)}
+.logo a{color:inherit;text-decoration:none}
+.header-sub{font-size:11px;color:var(--muted);letter-spacing:2px;margin-top:3px}
+main{max-width:900px;margin:0 auto;padding:40px 20px 60px}
+.hero{text-align:center;margin-bottom:40px;padding:36px 24px;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
+.hero-icon{font-size:52px;margin-bottom:14px;display:block}
+h1{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto}
+nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:32px}
+nav.breadcrumb a{color:var(--gold);text-decoration:none}
+nav.breadcrumb span{margin:0 6px;opacity:0.5}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Filter tabs */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;align-items:center}
+.filter-label{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-right:4px}
+.ftab{background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:.8px;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all 0.2s;user-select:none}
+.ftab:hover{border-color:rgba(212,175,55,0.4);color:var(--gold)}
+.ftab.active{background:rgba(212,175,55,0.12);border-color:rgba(212,175,55,0.5);color:var(--gold)}
+
+/* Articles grid */
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:40px}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
+/* Article card */
+.blog-card{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.18);border-radius:16px;overflow:hidden;transition:all 0.25s;display:flex;flex-direction:column}
+.blog-card:hover{border-color:rgba(212,175,55,0.45);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.blog-card-img{width:100%;height:160px;object-fit:cover;display:block;border-bottom:1px solid rgba(212,175,55,0.12)}
+.blog-card-img-placeholder{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:52px;background:linear-gradient(145deg,#1a0c32,#0d0620);border-bottom:1px solid rgba(212,175,55,0.12)}
+.blog-card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.blog-card-cat{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.blog-card-cat-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.6;flex-shrink:0}
+.blog-card-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:.5px;line-height:1.4;margin-bottom:10px}
+.blog-card-excerpt{font-size:13px;color:var(--text);opacity:0.8;line-height:1.6;flex:1;margin-bottom:14px}
+.blog-card-footer{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted)}
+.blog-card-read{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:1px;border:1px solid rgba(212,175,55,0.3);border-radius:20px;padding:5px 14px;transition:all 0.2s;display:inline-block;text-decoration:none}
+.blog-card-read:hover{background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.6);text-decoration:none}
+
+/* Featured card (full width) */
+.blog-card.featured{grid-column:1/-1;flex-direction:row}
+@media(max-width:600px){.blog-card.featured{flex-direction:column}}
+.blog-card.featured .blog-card-img{width:260px;height:auto;flex-shrink:0;border-right:1px solid rgba(212,175,55,0.12);border-bottom:none}
+@media(max-width:600px){.blog-card.featured .blog-card-img{width:100%;height:180px;border-right:none;border-bottom:1px solid rgba(212,175,55,0.12)}}
+.blog-card.featured .blog-card-img-placeholder{width:260px;height:auto;min-height:180px;border-right:1px solid rgba(212,175,55,0.12);border-bottom:none}
+@media(max-width:600px){.blog-card.featured .blog-card-img-placeholder{width:100%;min-height:160px}}
+.blog-card.featured .blog-card-title{font-size:17px}
+.blog-card.featured .blog-card-body{padding:24px}
+
+/* Section heading */
+.section-title{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Guide rapide */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:40px}
+@media(max-width:540px){.guide-grid{grid-template-columns:1fr 1fr}}
+.guide-card{background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:16px 12px;text-align:center;text-decoration:none;transition:all 0.2s;display:block}
+.guide-card:hover{background:rgba(212,175,55,0.09);border-color:rgba(212,175,55,0.4);transform:translateY(-2px);text-decoration:none}
+.guide-card-icon{font-size:26px;margin-bottom:6px;display:block}
+.guide-card-title{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.5px;line-height:1.3;display:block}
+.guide-card-sub{font-size:11px;color:var(--muted);margin-top:3px;display:block}
+
+/* Newsletter / CTA */
+.cta-box{background:linear-gradient(145deg,#1e0e38,#0a0520);border:1px solid rgba(212,175,55,0.4);border-radius:20px;padding:32px 28px;text-align:center;margin-bottom:40px}
+.cta-icon{font-size:36px;margin-bottom:12px;display:block}
+.cta-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;margin-bottom:10px}
+.cta-sub{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;border-radius:50px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-decoration:none;transition:all 0.2s}
+.cta-btn:hover{box-shadow:0 4px 24px rgba(212,175,55,0.5);transform:translateY(-1px);text-decoration:none}
+
+/* Topics sidebar strip */
+.topics{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.topic-pill{display:inline-block;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);border-radius:20px;padding:6px 16px;font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.8px;text-decoration:none;transition:all 0.2s}
+.topic-pill:hover{background:rgba(212,175,55,0.14);border-color:rgba(212,175,55,0.5);text-decoration:none}
+
+/* Related */
+.related{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:10px}
+.related-title{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:500px){.related-grid{grid-template-columns:1fr 1fr}}
+.related-link{display:block;background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:12px;text-align:center;text-decoration:none;transition:border-color 0.2s}
+.related-link:hover{border-color:rgba(212,175,55,0.4)}
+.related-link-icon{font-size:22px;margin-bottom:4px;display:block}
+.related-link-text{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.5px}
+
+/* Esplora */
+.esplora-section{background:linear-gradient(135deg,#130b26,#1a0c32);border-top:1px solid rgba(212,175,55,0.25);padding:40px 20px;text-align:center}
+.esplora-section h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.2rem;letter-spacing:2px;margin-bottom:24px}
+.esplora-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:800px;margin:0 auto}
+.esplora-card{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);border-radius:8px;padding:10px 18px;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:1px;transition:background 0.3s,border-color 0.3s}
+.esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6)}
+footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:20px}
+footer a{color:var(--gold);text-decoration:none;margin:0 8px}
+footer a:hover{text-decoration:underline}
+.footer-links{margin-bottom:10px;line-height:2}
+
+/* Hidden cards for filter */
+.blog-card[data-cat].hidden{display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="https://mysticaoracoli.it/">✦ MYSTICA ✦</a></div>
+  <div class="header-sub">ORACOLO DELLE STELLE</div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="https://mysticaoracoli.it/">Home</a>
+    <span>›</span>
+    <span>Blog Esoterico</span>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-icon">📜</span>
+    <h1>Blog Esoterico</h1>
+    <p class="hero-sub">Approfondimenti, guide e articoli sulla saggezza antica: Tarocchi, Astrologia, Rune, Cabala, Magia e molto altro. Conoscenza esoterica gratuita in italiano.</p>
+  </div>
+
+  <!-- Topic pills -->
+  <div class="topics">
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-tarocchi" class="topic-pill">🃏 Tarocchi</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-astrologia" class="topic-pill">🌙 Astrologia</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-rune" class="topic-pill">ᚱ Rune</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-iching" class="topic-pill">☯️ I Ching</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-numerologia" class="topic-pill">🔢 Numerologia</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-cabala" class="topic-pill">🕎 Cabala</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-alchimia" class="topic-pill">⚗️ Alchimia</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-wicca" class="topic-pill">🌿 Wicca</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-chakra" class="topic-pill">🕉️ Chakra</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-sogni" class="topic-pill">💤 Sogni</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-magia" class="topic-pill">✨ Magia</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-animali" class="topic-pill">🦅 Totem</a>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-bar">
+    <span class="filter-label">Filtra:</span>
+    <div class="ftab active" data-f="all" onclick="filterCards('all',this)">✨ Tutti</div>
+    <div class="ftab" data-f="divinazione" onclick="filterCards('divinazione',this)">🔮 Divinazione</div>
+    <div class="ftab" data-f="astrologia" onclick="filterCards('astrologia',this)">🌙 Astrologia</div>
+    <div class="ftab" data-f="magia" onclick="filterCards('magia',this)">✨ Magia</div>
+    <div class="ftab" data-f="spiritualita" onclick="filterCards('spiritualita',this)">🕉️ Spiritualità</div>
+    <div class="ftab" data-f="guide" onclick="filterCards('guide',this)">📖 Guide</div>
+  </div>
+
+  <!-- Blog grid -->
+  <div class="blog-grid" id="blogGrid">
+
+    <!-- FEATURED -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-tarocchi" class="blog-card featured" data-cat="divinazione guide">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054212520.webp"
+           alt="Storia dei Tarocchi" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🃏</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Divinazione · Guide</div>
+        <div class="blog-card-title">Storia dei Tarocchi: Dalle Corti Rinascimentali all'Oracolo Moderno</div>
+        <p class="blog-card-excerpt">Dalle origini come gioco di carte nelle corti del XV secolo fino all'oracolo che milioni di persone usano oggi per la lettura dell'anima. Un viaggio attraverso cinque secoli di simbolismo, esoterismo e trasformazione culturale.</p>
+        <div class="blog-card-footer">
+          <span>📖 Lettura approfondita</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Rune -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-rune" class="blog-card" data-cat="divinazione guide">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054246224.webp"
+           alt="Rune nordiche" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">ᚱ</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Divinazione</div>
+        <div class="blog-card-title">Rune: L'Alfabeto Sacro dei Popoli Nordici</div>
+        <p class="blog-card-excerpt">Il Futhark Antico, i 24 simboli, le tre Ætt. Origini, significati e uso divinatorio delle rune dalla tradizione germanica al mondo moderno.</p>
+        <div class="blog-card-footer">
+          <span>ᚱ Esoterismo nordico</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- I Ching -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-iching" class="blog-card" data-cat="divinazione spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054254225.webp"
+           alt="I Ching" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">☯️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Divinazione · Spiritualità</div>
+        <div class="blog-card-title">I Ching: Il Libro dei Mutamenti nella Filosofia Cinese</div>
+        <p class="blog-card-excerpt">3000 anni di saggezza condensati in 64 esagrammi. Come funziona, da dove viene e perché il Libro dei Mutamenti è ancora la guida più profonda per navigare il cambiamento.</p>
+        <div class="blog-card-footer">
+          <span>☯️ Filosofia orientale</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Astrologia -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-astrologia" class="blog-card" data-cat="astrologia">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054221121.webp"
+           alt="Astrologia" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🌙</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Astrologia</div>
+        <div class="blog-card-title">Astrologia: La Mappa Celeste della Tua Anima</div>
+        <p class="blog-card-excerpt">Dal tema natale ai transiti planetari: come leggere il cielo, cosa significano i 12 segni, le case e gli aspetti. Una guida completa all'astrologia moderna.</p>
+        <div class="blog-card-footer">
+          <span>🌙 Astrologia occidentale</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Numerologia -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-numerologia" class="blog-card" data-cat="divinazione spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054261726.webp"
+           alt="Numerologia" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🔢</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Divinazione</div>
+        <div class="blog-card-title">Numerologia: Il Linguaggio Segreto dei Numeri</div>
+        <p class="blog-card-excerpt">Pitagora, i numeri maestri, il numero del destino. Come calcolare il tuo numero di vita e cosa rivela sulla tua missione karmica.</p>
+        <div class="blog-card-footer">
+          <span>🔢 Numerologia pitagorica</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Cabala -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-cabala" class="blog-card" data-cat="spiritualita magia">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054298631.webp"
+           alt="Cabala" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🕎</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Spiritualità · Magia</div>
+        <div class="blog-card-title">Cabala: L'Albero della Vita e i Segreti della Torah</div>
+        <p class="blog-card-excerpt">Le dieci Sefirot, i 22 sentieri, lo Zohar. La mistica ebraica dal Medioevo al misticismo cristiano e all'ermetismo moderno.</p>
+        <div class="blog-card-footer">
+          <span>🕎 Mistica ebraica</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Alchimia -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-alchimia" class="blog-card" data-cat="magia spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054238423.webp"
+           alt="Alchimia" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">⚗️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Magia · Storia</div>
+        <div class="blog-card-title">Alchimia: La Grande Opera tra Scienza e Mistica</div>
+        <p class="blog-card-excerpt">Nigredo, Albedo, Citrinitas, Rubedo. Le quattro fasi della trasformazione alchemica e il significato simbolico della pietra filosofale.</p>
+        <div class="blog-card-footer">
+          <span>⚗️ Alchimia ermetica</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Wicca -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-wicca" class="blog-card" data-cat="magia spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054269427.webp"
+           alt="Wicca" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🌿</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Magia · Spiritualità</div>
+        <div class="blog-card-title">Wicca e Stregoneria Moderna: La Ruota dell'Anno</div>
+        <p class="blog-card-excerpt">Gli otto Sabbat, la Triplice Dea, il Dio Cornuto. Come funziona la Wicca, da Gerald Gardner alle pratiche contemporanee.</p>
+        <div class="blog-card-footer">
+          <span>🌿 Wicca moderna</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Chakra -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-chakra" class="blog-card" data-cat="spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054276728.webp"
+           alt="Chakra e Kundalini" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🕉️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Spiritualità</div>
+        <div class="blog-card-title">Chakra e Kundalini: Il Sistema Energetico del Corpo Sottile</div>
+        <p class="blog-card-excerpt">I sette chakra principali, dalla radice alla corona. Come riconoscere blocchi energetici e pratiche per il riequilibrio.</p>
+        <div class="blog-card-footer">
+          <span>🕉️ Tradizione induista</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sogni -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-sogni" class="blog-card" data-cat="divinazione spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054284129.webp"
+           alt="Oniromanzia" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">💤</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Divinazione · Sogni</div>
+        <div class="blog-card-title">Oniromanzia: L'Arte di Interpretare i Sogni</div>
+        <p class="blog-card-excerpt">Da Artemidoro a Jung: come i sogni parlano l'inconscio. Simboli onirici universali, sogni lucidi e il metodo per tenere un diario dei sogni.</p>
+        <div class="blog-card-footer">
+          <span>💤 Onirologia</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Magia Cerimoniale -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-magia" class="blog-card" data-cat="magia">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054229922.webp"
+           alt="Magia cerimoniale" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">✨</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Magia</div>
+        <div class="blog-card-title">Magia Cerimoniale: Simboli, Rituali e Trasformazione</div>
+        <p class="blog-card-excerpt">Dalla Golden Dawn a Aleister Crowley: la struttura del rituale magico, il ruolo dei simboli, il cerchio magico e la volontà come strumento di trasformazione.</p>
+        <div class="blog-card-footer">
+          <span>✨ Ermetismo occidentale</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Animali Totem -->
+    <a href="https://mysticaoracoli.it/enciclopedia.html#art-animali" class="blog-card" data-cat="spiritualita">
+      <img src="./images/icone/enciclopedia/IMG_COM_2026060513054291330.webp"
+           alt="Animali Totem" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🦅</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Spiritualità · Sciamanesimo</div>
+        <div class="blog-card-title">Animali Totem: Guide Spirituali nelle Tradizioni Sciamaniche</div>
+        <p class="blog-card-excerpt">Lo sciamanesimo siberiano, i medicine animals dei nativi americani, il dreamtime aborigeno. Come trovare e lavorare con il proprio animale guida.</p>
+        <div class="blog-card-footer">
+          <span>🦅 Sciamanesimo</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Pentacoli Salomone -->
+    <a href="https://mysticaoracoli.it/pentacoli-salomone.html" class="blog-card" data-cat="magia">
+      <img src="./images/pentacoliresalomone/pentacoli/pentacoli-di-re-salomone.webp"
+           alt="Pentacoli di Re Salomone" class="blog-card-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="blog-card-img-placeholder" style="display:none">🔯</div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat"><span class="blog-card-cat-dot"></span> Magia · Sigilli</div>
+        <div class="blog-card-title">I 44 Pentacoli di Re Salomone: Sigilli di Potere Planetario</div>
+        <p class="blog-card-excerpt">I sigilli magici della Chiave di Salomone: storia, significati e funzioni di ciascun pentacolo nei sette pianeti dell'astrologia tradizionale.</p>
+        <div class="blog-card-footer">
+          <span>🔯 Magia salomonico</span>
+          <span class="blog-card-read">Leggi →</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /blog-grid -->
+
+  <!-- Guide rapide -->
+  <div class="section-title">✦ Guide Pratiche</div>
+  <div class="guide-grid">
+    <a href="https://mysticaoracoli.it/guida-tarocchi.html" class="guide-card">
+      <span class="guide-card-icon">🃏</span>
+      <span class="guide-card-title">Guida ai Tarocchi</span>
+      <span class="guide-card-sub">78 carte, arcani, letture</span>
+    </a>
+    <a href="https://mysticaoracoli.it/significato-rune.html" class="guide-card">
+      <span class="guide-card-icon">ᚱ</span>
+      <span class="guide-card-title">Significato delle Rune</span>
+      <span class="guide-card-sub">24 rune del Futhark</span>
+    </a>
+    <a href="https://mysticaoracoli.it/guida-i-ching.html" class="guide-card">
+      <span class="guide-card-icon">☯️</span>
+      <span class="guide-card-title">Guida all'I Ching</span>
+      <span class="guide-card-sub">64 esagrammi spiegati</span>
+    </a>
+    <a href="https://mysticaoracoli.it/oroscopo-segni.html" class="guide-card">
+      <span class="guide-card-icon">🌙</span>
+      <span class="guide-card-title">I 12 Segni Zodiacali</span>
+      <span class="guide-card-sub">Caratteristiche e compatibilità</span>
+    </a>
+    <a href="https://mysticaoracoli.it/astrologia-avanzata.html" class="guide-card">
+      <span class="guide-card-icon">🌠</span>
+      <span class="guide-card-title">Astrologia Avanzata</span>
+      <span class="guide-card-sub">Tema natale, aspetti, case</span>
+    </a>
+    <a href="https://mysticaoracoli.it/numerologia-simboli.html" class="guide-card">
+      <span class="guide-card-icon">🔢</span>
+      <span class="guide-card-title">Numerologia & Simboli</span>
+      <span class="guide-card-sub">Numeri, significati, calcoli</span>
+    </a>
+    <a href="https://mysticaoracoli.it/pietre-magiche.html" class="guide-card">
+      <span class="guide-card-icon">💎</span>
+      <span class="guide-card-title">Pietre Magiche</span>
+      <span class="guide-card-sub">Cristalli, proprietà, usi</span>
+    </a>
+    <a href="https://mysticaoracoli.it/alchimia.html" class="guide-card">
+      <span class="guide-card-icon">⚗️</span>
+      <span class="guide-card-title">Alchimia</span>
+      <span class="guide-card-sub">La Grande Opera</span>
+    </a>
+    <a href="https://mysticaoracoli.it/cabala.html" class="guide-card">
+      <span class="guide-card-icon">🕎</span>
+      <span class="guide-card-title">Cabala</span>
+      <span class="guide-card-sub">Albero della Vita</span>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <span class="cta-icon">⭐</span>
+    <div class="cta-title">Prova l'Oracolo dal Vivo</div>
+    <p class="cta-sub">Leggi i Tarocchi, consulta l'Oroscopo personale, lancia le Rune e molto altro. Gratis, in italiano, senza registrazione.</p>
+    <a href="https://mysticaoracoli.it/" class="cta-btn">✦ Entra nell'Oracolo ✦</a>
+  </div>
+
+  <div class="related">
+    <div class="related-title">✦ Approfondisci su MYSTICA</div>
+    <div class="related-grid">
+      <a href="https://mysticaoracoli.it/enciclopedia.html" class="related-link">
+        <span class="related-link-icon">📖</span>
+        <div class="related-link-text">Enciclopedia Completa</div>
+      </a>
+      <a href="https://mysticaoracoli.it/tradizioni-spirituali.html" class="related-link">
+        <span class="related-link-icon">🌍</span>
+        <div class="related-link-text">Tradizioni Spirituali</div>
+      </a>
+      <a href="https://mysticaoracoli.it/sogni.html" class="related-link">
+        <span class="related-link-icon">💤</span>
+        <div class="related-link-text">Interpretazione Sogni</div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="esplora-section" aria-label="Esplora MYSTICA">
+  <h2>✨ Esplora Anche</h2>
+  <div class="esplora-grid">
+    <a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a>
+    <a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a>
+    <a href="./oroscopo-cinese.html" class="esplora-card">🐉 Oroscopo Cinese</a>
+    <a href="./cicli-tempo.html" class="esplora-card">🌙 Cicli e Tempo</a>
+    <a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a>
+    <a href="./guida-tarocchi.html" class="esplora-card">🃏 Guida Tarocchi</a>
+    <a href="./significato-rune.html" class="esplora-card">ᚱ Guida Rune</a>
+    <a href="./guida-i-ching.html" class="esplora-card">☯️ Guida I Ching</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://mysticaoracoli.it/">Home</a>
+    <a href="https://mysticaoracoli.it/about.html">Chi Siamo</a>
+    <a href="https://mysticaoracoli.it/guida-tarocchi.html">Guida Tarocchi</a>
+    <a href="https://mysticaoracoli.it/significato-rune.html">Guida Rune</a>
+    <a href="https://mysticaoracoli.it/oroscopo-segni.html">Segni Zodiacali</a>
+    <a href="https://mysticaoracoli.it/enciclopedia.html">Enciclopedia</a>
+    <a href="https://mysticaoracoli.it/privacy.html">Privacy Policy</a>
+  </div>
+  <div>PetroCorporation © 2025–2026 · MYSTICA – Oracolo delle Stelle</div>
+</footer>
+
+<script>
+function filterCards(cat, el){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('#blogGrid .blog-card').forEach(card=>{
+    if(cat === 'all'){
+      card.classList.remove('hidden');
+    } else {
+      const cats = (card.dataset.cat || '').split(' ');
+      card.classList.toggle('hidden', !cats.includes(cat));
+    }
+  });
+}
+</script>
+</body>
+</html>

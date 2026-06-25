@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Geomanzia — Le 16 Figure | Mystica Oracoli</title>
+  <meta name="description" content="Geomanzia: traccia 4 righe per ottenere una delle 16 figure geomantiche con interpretazione completa, significati in amore, lavoro e consiglio personale.">
+  <meta name="theme-color" content="#0a0a15">
+  <!-- Immagine da: https://raw.githubusercontent.com/mysticaoracoli/mysticaoracoli.github.io/main/images/geomanzia.webp -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg:#0a0a15;
+      --gold:#d4af37;
+      --purple:#9d4edd;
+      --muted:#a8a8a8;
+      --card:#1a1a2e;
+      --border:rgba(255,255,255,.08);
+    }
+    body {
+      font-family:'Crimson Pro',serif;
+      background:var(--bg);
+      color:#e0e0e0;
+      line-height:1.6;
+      padding:20px;
+    }
+    .header {
+      text-align:center;
+      margin-bottom:40px;
+      padding:30px 0 10px;
+      border-bottom:1px solid var(--border);
+    }
+    .header h1 {
+      font-size:3.5rem;
+      color:var(--gold);
+      font-weight:300;
+      letter-spacing:2px;
+      margin-bottom:8px;
+    }
+    .header p {
+      font-size:1.1rem;
+      color:var(--muted);
+      font-style:italic;
+    }
+    .container {
+      max-width:900px;
+      margin:0 auto;
+    }
+    .form-block {
+      background:var(--card);
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      margin-bottom:30px;
+    }
+    .form-group {
+      margin-bottom:20px;
+    }
+    .form-group label {
+      display:block;
+      font-size:1.1rem;
+      color:var(--gold);
+      margin-bottom:10px;
+      font-weight:600;
+    }
+    .form-group input {
+      width:100%;
+      padding:12px 15px;
+      background:#0f0f1a;
+      border:1px solid var(--border);
+      color:#e0e0e0;
+      border-radius:6px;
+      font-family:inherit;
+      font-size:1rem;
+    }
+    .form-group input::placeholder {
+      color:var(--muted);
+    }
+    .form-group input:focus {
+      outline:none;
+      border-color:var(--gold);
+      box-shadow:0 0 10px rgba(212,175,55,.2);
+    }
+    
+    .geo-slots {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
+      margin-bottom:30px;
+    }
+    .geo-slot {
+      background:#0f0f1a;
+      border:2px solid var(--border);
+      border-radius:8px;
+      padding:20px;
+      text-align:center;
+      cursor:pointer;
+      transition:all .3s ease;
+      min-height:120px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .geo-slot.active {
+      border-color:var(--gold);
+      background:rgba(212,175,55,.05);
+    }
+    .geo-slot.done {
+      border-color:var(--purple);
+    }
+    .geo-row-label {
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:12px;
+      display:block;
+    }
+    .geo-dots-placeholder {
+      font-size:1.8rem;
+      letter-spacing:4px;
+      color:var(--gold);
+      opacity:.5;
+    }
+    .geo-dots-rendered {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:center;
+      margin:10px 0;
+    }
+    .geo-dot-group {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+    }
+    .geo-dot {
+      width:12px;
+      height:12px;
+      background:var(--gold);
+      border-radius:50%;
+      box-shadow:0 0 8px rgba(212,175,55,.5);
+    }
+    .geo-dot.dim {
+      opacity:.4;
+      box-shadow:none;
+    }
+    .geo-row-type {
+      font-size:.85rem;
+      color:var(--purple);
+      margin-top:8px;
+    }
+    
+    .btn {
+      padding:12px 24px;
+      border:none;
+      border-radius:6px;
+      font-family:inherit;
+      font-size:1rem;
+      cursor:pointer;
+      transition:all .3s ease;
+    }
+    .btn-primary {
+      background:var(--gold);
+      color:var(--bg);
+      font-weight:600;
+      width:100%;
+      padding:15px;
+      font-size:1.1rem;
+    }
+    .btn-primary:hover {
+      background:#e5c158;
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(212,175,55,.3);
+    }
+    .btn-primary:disabled {
+      opacity:.5;
+      cursor:not-allowed;
+    }
+    .btn-sec {
+      background:var(--card);
+      color:var(--gold);
+      border:1px solid var(--gold);
+    }
+    .btn-sec:hover {
+      background:rgba(212,175,55,.1);
+    }
+    
+    .label-info {
+      font-size:.95rem;
+      color:var(--muted);
+      margin-top:10px;
+      font-style:italic;
+    }
+    
+    #geoResult {
+      display:none;
+    }
+    .geo-res {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:40px 30px;
+      animation:fadeInScale .5s ease;
+    }
+    @keyframes fadeInScale {
+      from { opacity:0; transform:scale(.95); }
+      to { opacity:1; transform:scale(1); }
+    }
+    .geo-figure-name {
+      font-size:2.5rem;
+      color:var(--gold);
+      font-weight:300;
+      margin-bottom:8px;
+      letter-spacing:1px;
+    }
+    .geo-figure-latin {
+      font-size:1rem;
+      color:var(--purple);
+      margin-bottom:20px;
+      font-style:italic;
+    }
+    .geo-figure-visual {
+      background:rgba(212,175,55,.05);
+      border:1px solid var(--border);
+      border-radius:6px;
+      padding:20px;
+      margin-bottom:25px;
+      display:grid;
+      gap:15px;
+    }
+    .geo-frow {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:.95rem;
+    }
+    .geo-fdot {
+      width:16px;
+      height:16px;
+      background:var(--gold);
+      border-radius:50%;
+      flex-shrink:0;
+      box-shadow:0 0 10px rgba(212,175,55,.5);
+    }
+    .geo-element-label {
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    
+    .num-keywords {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:30px;
+    }
+    .num-kw {
+      background:rgba(157,78,221,.15);
+      border:1px solid var(--purple);
+      color:var(--purple);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:.85rem;
+    }
+    
+    .geo-question-shown {
+      background:rgba(212,175,55,.1);
+      border-left:3px solid var(--gold);
+      padding:12px 15px;
+      margin-bottom:20px;
+      border-radius:4px;
+      color:#e0e0e0;
+      font-style:italic;
+    }
+    
+    .geo-block {
+      margin-bottom:25px;
+      padding-bottom:25px;
+      border-bottom:1px solid var(--border);
+    }
+    .geo-block:last-of-type {
+      border-bottom:none;
+    }
+    .geo-block h4 {
+      color:var(--gold);
+      font-size:1.2rem;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+    .geo-block p {
+      color:#d0d0d0;
+      line-height:1.8;
+    }
+    
+    .info-box {
+      background:rgba(212,175,55,.05);
+      border-left:3px solid var(--gold);
+      padding:15px;
+      margin-bottom:20px;
+      border-radius:4px;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+    
+    @media(max-width:768px) {
+      .header h1 { font-size:2.2rem; }
+      .geo-res { padding:25px 15px; }
+      .geo-figure-name { font-size:1.8rem; }
+      .form-block { padding:20px; }
+      .geo-slots { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>⛰️ Geomanzia</h1>
+    <p>Le Sedici Figure della Terra — Saggezza Geomantica Antica</p>
+  </div>
+
+  <div class="container">
+    <div class="form-block">
+      <div class="form-group">
+        <label for="geoQuestion">✍️ La tua domanda (opzionale)</label>
+        <input type="text" id="geoQuestion" placeholder="Scrivi una domanda specifica o lascia vuoto per una lettura generale...">
+      </div>
+
+      <div class="info-box">
+        🌍 <strong>Come funziona:</strong> Tocca il pulsante per tracciare 4 righe. Ogni riga sarà attiva (un punto) o passiva (due punti). Le 4 righe insieme formeranno una delle 16 figure geomantiche.
+      </div>
+
+      <div class="geo-slots">
+        <div class="geo-slot active" id="geoSlot0">
+          <span class="geo-row-label">I riga — Fuoco</span>
+          <span class="geo-dots-placeholder">· · · · ·</span>
+        </div>
+        <div class="geo-slot" id="geoSlot1">
+          <span class="geo-row-label">II riga — Aria</span>
+          <span class="geo-dots-placeholder">· · · · ·</span>
+        </div>
+        <div class="geo-slot" id="geoSlot2">
+          <span class="geo-row-label">III riga — Acqua</span>
+          <span class="geo-dots-placeholder">· · · · ·</span>
+        </div>
+        <div class="geo-slot" id="geoSlot3">
+          <span class="geo-row-label">IV riga — Terra</span>
+          <span class="geo-dots-placeholder">· · · · ·</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="geoTapBtn" onclick="geoTapRow()">
+        <span id="geoTapLabel">✋ Traccia la Prima Riga</span>
+      </button>
+      <div class="label-info" id="geoForm">Ogni tocco genera una riga casuale: attiva (punto singolo) o passiva (due punti doppi).</div>
+    </div>
+
+    <div id="geoResult"></div>
+  </div>
+
+  <script>
+    // DATABASE GEOMANZIA - 16 FIGURE
+    const DB_GEO = [
+      { nome:'Via', latino:'Via', emoji:'🛤️', righe:[1,1,1,1], elemento:'Acqua · Luna', keywords:['Viaggio','Movimento','Cambiamento','Destino aperto'], significato:'La Via è la figura del cammino in movimento. La tua risposta è chiara: ciò che stai cercando si trova nel movimento stesso, non nella meta. Non aspettare che le cose si sistemino — inizia a muoverti e il percorso si rivelerà sotto i tuoi piedi. La Via promette risultati, ma solo a chi accetta di lasciare la terraferma conosciuta.', amore:'In amore, la Via annuncia incontri attraverso spostamenti, viaggi o nuove situazioni. Se sei in una relazione, un cambiamento di scenario ravviverà la connessione.', lavoro:'Opportunità che richiedono mobilità e adattabilità. Un progetto itinerante o una collaborazione a distanza si rivelerà più fruttifera dell\'atteso.', consiglio:'Muoviti. Cambia prospettiva. La risposta alla tua domanda non arriverà nell\'attesa ma nell\'azione.' },
+      { nome:'Popolo', latino:'Populus', emoji:'👥', righe:[2,2,2,2], elemento:'Acqua · Luna', keywords:['Comunità','Stabilità','Collettivo','Attesa'], significato:'Il Popolo è la figura della folla e della stabilità collettiva. Nulla si muove — tutto è sospeso. Questa non è passività: è la quiete prima della semina. La tua situazione attuale richiede di consolidare, non di lanciare. Raccogli persone intorno a te, consolida le alleanze esistenti, e aspetta il momento giusto.', amore:'Numerose relazioni sociali ma nulla di esclusivo in questo momento. La persona giusta è già nel tuo cerchio — aspetta che la connessione si approfondisca naturalmente.', lavoro:'Clima neutro, né avanzamenti né perdite. Rafforza le relazioni professionali e prepara il terreno per l\'azione futura.', consiglio:'La pazienza ora è più produttiva dell\'azione frettolosa. Consolida prima di espanderti.' },
+      { nome:'Grande Fortuna', latino:'Fortuna Major', emoji:'🏆', righe:[2,2,1,1], elemento:'Sole · Leone', keywords:['Successo','Protezione','Vittoria','Aiuto divino'], significato:'La Grande Fortuna è la figura più benevolente di tutta la geomanzia. Annuncia successo reale, solido, guadagnato — non fortuna passeggera ma risultato che dura. Se hai una domanda specifica, la risposta è sì con piena fiducia. Le forze cosmiche sono allineate con la tua intenzione. Agisci con coraggio perché sei protetto.', amore:'Una relazione importante si approfondisce o un incontro significativo è imminente. Se stai attraversando difficoltà, la Grande Fortuna porta risoluzione duratura.', lavoro:'Periodo eccellente per presentazioni, negoziazioni, accordi importanti. I tuoi sforzi vengono riconosciuti e premiati con generosità.', consiglio:'Hai la protezione cosmica. Non esitare — agisci con la fiducia che ti spetta.' },
+      { nome:'Piccola Fortuna', latino:'Fortuna Minor', emoji:'🍀', righe:[1,1,2,2], elemento:'Sole · Leone', keywords:['Aiuto esterno','Successo rapido','Transitorietà','Supporto'], significato:'La Piccola Fortuna porta successo, ma di natura temporanea o parziale. L\'aiuto che ricevi viene dall\'esterno — da persone, circostanze fortunate, coincidenze. Non puoi contarci sempre, ma ora è disponibile. Usa questa finestra favorevole con intelligenza e costruisci qualcosa che regga anche quando la fortuna si ritira.', amore:'Un aiuto inatteso in amore — un amico che fa da tramite, una coincidenza che crea l\'incontro. Sfrutta l\'occasione che si presenta.', lavoro:'Supporto temporaneo da colleghi o superiori. Completa ora i progetti che hai in sospeso: il momento è favorevole ma breve.', consiglio:'La finestra è aperta ora — passa. Non aspettare un momento migliore che potrebbe non arrivare.' },
+      { nome:'Acquisizione', latino:'Acquisitio', emoji:'💰', righe:[2,1,2,1], elemento:'Giove · Sagittario', keywords:['Guadagno','Profitto','Successo materiale','Abbondanza'], significato:'Acquisitio è la figura del guadagno in tutte le sue forme. Ciò che hai dato sta per tornare moltiplicato. Soldi, conoscenza, salute, amore — quello che cerchi è in arrivo. La figura indica però che devi essere attivo: l\'abbondanza non cade dall\'alto, viene conquistata attraverso l\'azione consapevole e il merito genuino.', amore:'In amore si guadagna: affetto, impegno, profondità. Una relazione diventa più seria e stabile. Una persona rivela sentimenti importanti.', lavoro:'Periodo eccellente per transazioni finanziarie, aumenti, nuovi contratti. La semina del passato è pronta per il raccolto.', consiglio:'Avanza con fiducia nelle tue richieste. Meriti quello che chiedi — non svalutarti in questo momento.' },
+      { nome:'Perdita', latino:'Amissio', emoji:'🍂', righe:[1,2,1,2], elemento:'Venere · Toro', keywords:['Perdita','Lasciar andare','Liberazione','Fine di ciclo'], significato:'Amissio annuncia una perdita — ma non necessariamente una tragedia. Spesso ciò che si perde era già un peso. Questa figura insegna che la vera abbondanza richiede spazio: devi rilasciare ciò che trattieni per fare posto a ciò che viene. La perdita indicata da questa figura porta, nel lungo termine, a una libertà che non immaginavi.', amore:'Una relazione che si allontana o una fase emotiva che si chiude. Invece di combatterla, accompagna questo cambiamento con grazia — libera entrambi.', lavoro:'Un progetto o una fonte di reddito si riduce. È il momento di diversificare e non dipendere da una sola fonte.', consiglio:'Non stringere le mani su ciò che sta andando. Lascia andare con coscienza e prepara le mani per ricevere.' },
+      { nome:'Letizia', latino:'Laetitia', emoji:'🌟', righe:[1,1,1,2], elemento:'Giove · Ariete', keywords:['Gioia','Salute','Buone notizie','Ottimismo'], significato:'Laetitia è la figura della gioia genuina e della salute che fiorisce. Una notizia positiva, un momento di celebrazione o un recupero tanto atteso è in arrivo. Questo non è solo piacere superficiale — è la gioia profonda dell\'anima che riconosce di essere nel posto giusto al momento giusto. Permetti a te stesso di godere di questo momento senza sensi di colpa.', amore:'Gioia in amore: momenti felici condivisi, leggerezza ritrovata, possibilità di nuovo inizio se c\'è stata una rottura.', lavoro:'Clima lavorativo positivo, buone notizie in arrivo. Un progetto che ti stava pesando prende una svolta allegra e promettente.', consiglio:'Apri le braccia alla gioia che si avvicina. Non sabotarla con il pensiero che non duri — esisti in questo momento.' },
+      { nome:'Tristezza', latino:'Tristitia', emoji:'🌧️', righe:[2,1,1,1], elemento:'Saturno · Acquario', keywords:['Difficoltà','Lentezza','Prova','Profondità'], significato:'Tristitia indica un periodo di lentezza, prove interiori, o lutto (di persone, situazioni, o versioni di sé). Non è la figura del disastro ma della profondità necessaria. Come l\'inverno prepara la primavera, questo periodo di raccoglimento ti sta costruendo qualcosa che l\'estate non potrebbe. Accettalo come un dono travestito da peso.', amore:'Periodo di riflessione in amore. Una relazione richiede un lavoro interiore serio prima di poter fiorire. La solitudine attuale è nutritiva, non punitiva.', lavoro:'Progressi lenti, ostacoli, ritardi. Non è il momento per grandi lanci — è il momento per radici più profonde.', consiglio:'Scendi nella profondità invece di correre in superficie. Ciò che stai costruendo nel silenzio durerà generazioni.' },
+      { nome:'Fanciullo', latino:'Puer', emoji:'⚔️', righe:[1,2,1,1], elemento:'Marte · Ariete', keywords:['Azione','Impulsività','Coraggio','Sfida'], significato:'Il Fanciullo è l\'energia marziale allo stato puro: coraggio senza cautela, azione senza strategia. È sia la sua forza che il suo pericolo. In questo momento hai l\'energia per sfide che terrorizzerebbero gli altri — usala, ma affiancala a un briciolo di saggezza. La testa calda vince le battaglie; la testa fredda vince le guerre.', amore:'Attrazione intensa, passionale, forse conflittuale. Un amore che brucia forte. Attenzione all\'impulsività nelle discussioni.', lavoro:'Forza e determinazione nel lavoro — questa è la tua arma. Ma calcola i rischi prima di lanciarti: il coraggio cieco ha un costo.', consiglio:'Agisci, ma con una domanda prima dell\'azione: "Questa mossa serve la mia strategia o solo il mio ego?"' },
+      { nome:'Fanciulla', latino:'Puella', emoji:'🌸', righe:[2,1,2,2], elemento:'Venere · Bilancia/Toro', keywords:['Bellezza','Armonia','Piacere','Mediazione'], significato:'La Fanciulla porta armonia, grazia e la capacità di risolvere conflitti attraverso la bellezza del gesto. Dove il Fanciullo batte i pugni, la Fanciulla trova soluzioni attraverso l\'intelligenza relazionale. Questo è il momento delle relazioni — cura le connessioni esistenti, investi nella pace intorno a te, e lascia che la tua parte dolce guidi la situazione.', amore:'Figura eccellente per l\'amore e le relazioni. Una connessione armoniosa si rafforza. È il momento di esprimere affetto e tenerezza apertamente.', lavoro:'Usare il fascino, la diplomazia e le relazioni per avanzare. Un alleato inaspettato si fa avanti. Evita i conflitti diretti.', consiglio:'La dolcezza non è debolezza. In questa situazione, la via gentile è quella che porta più lontano.' },
+      { nome:'Rosso', latino:'Rubeus', emoji:'🔴', righe:[2,2,2,1], elemento:'Marte · Scorpione', keywords:['Pericolo','Passione intensa','Attenzione','Ombre'], significato:'Rubeus è la figura della passione fuori controllo e dell\'energia caotica. Non è una figura necessariamente negativa, ma è un segnale d\'allarme chiaro: c\'è qualcosa nella tua situazione che richiede attenzione, o un comportamento tuo che sta creando danni che non vedi ancora. In amore e nei conflitti, Rubeus chiede di raffreddare il fuoco prima che divampi.', amore:'Passioni intense che possono bruciare anziché scaldare. Gelosia, possessività o segreti non detti rischiano di fare più danni dei problemi reali.', lavoro:'Tensioni nascoste nell\'ambiente lavorativo. Qualcuno o qualcosa non è quello che sembra. Massima prudenza nelle alleanze.', consiglio:'Fermati. Respira. La situazione ha più sfumature di quanto la tua emozione attuale ti permetta di vedere.' },
+      { nome:'Bianco', latino:'Albus', emoji:'🕊️', righe:[2,2,1,2], elemento:'Mercurio · Gemelli', keywords:['Saggezza','Chiarezza','Purezza d\'intenzione','Pace'], significato:'Albus è la figura della mente chiara e dell\'intenzione pura. Quando questa figura appare, sei sulla strada giusta — la tua intenzione è allineata con il bene. La saggezza è disponibile se la cerchi: in persone anziane o esperte, in libri, in momenti di meditazione. Questa è la figura del maestro, del consigliere, del saggio.', amore:'Relazioni basate su rispetto e comprensione autentica. Una persona saggia entra nella tua vita con intenzioni pure. O sei tu a dover offrire saggezza a qualcuno.', lavoro:'Chiarezza mentale eccellente per decisioni, contratti e negoziazioni. Il consiglio di un esperto risolverà un nodo che ti bloccava.', consiglio:'Fidati della tua intuizione più intellettuale. La risposta che cerchi è già in te — silenzio e riflessione la faranno emergere.' },
+      { nome:'Congiunzione', latino:'Coniunctio', emoji:'🤝', righe:[1,2,2,1], elemento:'Mercurio · Vergine', keywords:['Unione','Incontro','Recupero','Nodo'], significato:'La Congiunzione indica l\'incontro di energie: persone, situazioni, opportunità che si uniscono. Qualcosa di perso può essere recuperato. Una connessione che sembrava spezzata può essere riannodato. Ma attenzione: non tutto quello che si unisce è positivo — Coniunctio indica anche il nodo di un problema. Discerni cosa si sta unendo nella tua vita.', amore:'Riavvicinamenti possibili o nuovi incontri significativi. Se stai cercando di recuperare qualcosa o qualcuno, questa figura è incoraggiante.', lavoro:'Collaborazioni, partnership, riunioni importanti. Metti insieme le risorse disperse e crea qualcosa di nuovo dall\'unione.', consiglio:'Ciò che si unisce porta sia opportunità che sfide. Scegli con consapevolezza cosa intrecciare nella tua vita.' },
+      { nome:'Carcere', latino:'Carcer', emoji:'🔗', righe:[1,1,2,1], elemento:'Saturno · Capricorno', keywords:['Limitazione','Blocco','Lezione','Contrazione'], significato:'Il Carcere non è una sentenza: è una contrazione necessaria. Sei in un momento di limitazione — forse imposta, forse scelta — ma è uno spazio di insegnamento. Come il seme deve restare compresso nel suolo per germogliare, questo blocco apparente contiene una lezione vitale. Non combattere il vincolo — comprendi cosa ti sta insegnando.', amore:'Limitazioni relazionali o spazi forzati. Possibile distanza, incomprensione o aspettativa. Usa questo tempo per capire profondamente i tuoi reali bisogni.', lavoro:'Progetti bloccati, restrizioni esterne, burocrazia. Non è frustrazione senza fine — è pausa per ripianificare con più saggezza.', consiglio:'Dentro ogni gabbia c\'è una chiave. Non cercarla fuori — guardata dentro di te stesso.' },
+      { nome:'Croce', latino:'Crux', emoji:'⛔', righe:[2,1,2,2], elemento:'Saturno · Libra', keywords:['Scelta difficile','Incrocio','Sacrificio','Decisione'], significato:'La Croce è il punto di incrocio dove devi scegliere. Non è una scelta facile né ovvia: entrambi i percorsi hanno pro e contro. Ma devi scegliere consapevolmente. La figura dice che non puoi andare dritto oltre l\'incrocio senza decidere. Se non fai scelta consapevole, le circostanze sceglieranno per te — e il risultato potrebbe non piacerti.', amore:'Una decisione amorosa attende: impegno maggiore o distacco, verità o conforto. Qualsiasi scelta ha conseguenze — scegli quella che puoi portare.', lavoro:'Bivio professionale. Non ci sono scorciatoie. Entrambi i percorsi portano a successo ma con costi diversi. Scegli quale prezzo sei disposto a pagare.', consiglio:'Non puoi evitare la scelta. E nessuna scelta è perfetta. Scegli quella che ti permette di guardarti allo specchio.' },
+      { nome:'Corona', latino:'Corona', emoji:'👑', righe:[1,1,2,2], elemento:'Sole · Leo', keywords:['Successo completo','Autorità','Realizzazione','Gloria'], significato:'La Corona è la figura della realizzazione totale. Non è il successo rapido della Piccola Fortuna — è il successo che hai guadagnato pagando il prezzo. La Corona ti dice che stai raggiungendo una posizione di autorità, riconoscimento o maestria. Questo non è arroganza: è l\'eco di tutto il lavoro che hai fatto. Indossala con consapevolezza e umiltà.', amore:'Relazione elevata a un livello superiore: matrimonio, impegno profondo, o il tuo status relazionale cambia in modo definitivo e pubblico.', lavoro:'Raggiungimento di una posizione desiderata. Riconoscimento professionale che non è temporaneo ma stabile. Sei ora in posizione di influenza.', consiglio:'Ora che hai raggiunto la cima, il prossimo compito è mantenerlo. La vera grandezza è dimostrata nel come tratti chi è sotto di te.' },
+      { nome:'Prigionia', latino:'Carcer', emoji:'🔒', righe:[2,1,1,2], elemento:'Saturno · Scorpione', keywords:['Intrappolamento','Ossessione','Stasi','Ciclo interrotto'], significato:'La Prigionia è simile al Carcere ma più profonda: non è solo una limitazione esterna ma una trappola che hai creato intorno a te stesso. Ossessioni, attaccamenti, paure radicate — questi sono i muri della tua prigione. La figura non dice che sei senza speranza: dice che la chiave è nelle tue mani, ma devi essere disposto a usarla.', amore:'Legami amorose che diventano gabbie. Dipendenza emotiva, gelosia, controllo reciproco. Amore che ha smesso di nutrire.', lavoro:'Cicli di lavoro ripetitivi che si auto-perpetuano. Ti senti intrappolato ma non vedi l\'uscita. Spesso è una scelta psicologica, non una realtà.', consiglio:'La prigione è costruita di abitudine e paura. Tocca uno, e cade. Quale abitudine sei disposto a rompere per primo?' },
+      { nome:'Gioia', latino:'Laetitia/Gaudium', emoji:'🎆', righe:[1,2,2,2], elemento:'Venera · Sagittario', keywords:['Celebrazione','Abbondanza emotiva','Festa','Liberazione'], significato:'La Gioia è la figura dell\'esplosione emotiva positiva. Non è la gioia calma della Letizia — è la gioia che esplode, che si espande, che si condivide. Festa, celebrazione, liberazione da una tensione lungamente portata. Questo è il momento di sentire, di celebrare, di permetterti di strabordare di emozione positiva. La vita è questo: non sempre è così, apprezzalo completamente.', amore:'Amore in forma di celebrazione. Vittoria emotiva, passione condivisa, momento di connessione profonda. Festa insieme.', lavoro:'Progetto completato con grande successo. Riconoscimento pubblico, celebrazione, festa del team. Merito riconosciuto ampiamente.', consiglio:'Non sospendere il piacere. Non rimandare la celebrazione. Questa è la ricompensa — vivila completamente.' }
+    ];
+
+    let geoCurrentRow = 0;
+    let geoRows = [];
+
+    function getElementId(id) {
+      return document.getElementById(id);
+    }
+
+    function resetGeomanzia() {
+      geoCurrentRow = 0;
+      geoRows = [];
+
+      for(let i = 0; i < 4; i++) {
+        const slot = getElementId('geoSlot' + i);
+        slot.classList.remove('active', 'done');
+        slot.innerHTML = '<span class="geo-row-label">' + ['I riga — Fuoco', 'II riga — Aria', 'III riga — Acqua', 'IV riga — Terra'][i] + '</span><span class="geo-dots-placeholder">· · · · ·</span>';
+      }
+      getElementId('geoSlot0').classList.add('active');
+      getElementId('geoTapBtn').style.display = 'block';
+      getElementId('geoTapLabel').textContent = '✋ Traccia la Prima Riga';
+      getElementId('geoForm').style.display = 'block';
+      getElementId('geoResult').style.display = 'none';
+    }
+
+    function geoTapRow() {
+      if(geoCurrentRow >= 4) return;
+
+      const total = 7 + Math.floor(Math.random() * 9);
+      const isOdd = total % 2 !== 0;
+      geoRows.push(isOdd ? 1 : 2);
+
+      const slot = getElementId('geoSlot' + geoCurrentRow);
+      slot.classList.remove('active');
+      slot.classList.add('done');
+
+      const dotsHtml = isOdd
+        ? '<div class="geo-dot-group"><div class="geo-dot"></div></div>'
+        : '<div class="geo-dot-group"><div class="geo-dot"></div><div class="geo-dot dim"></div></div>';
+
+      const rowLabels = ['I riga — Fuoco', 'II riga — Aria', 'III riga — Acqua', 'IV riga — Terra'];
+      slot.innerHTML = '<span class="geo-row-label">' + rowLabels[geoCurrentRow] + '</span><div class="geo-dots-rendered">' + dotsHtml + '</div><span class="geo-row-type">' + (isOdd ? '✦ Attivo' : '✦✦ Passivo') + '</span>';
+
+      geoCurrentRow++;
+
+      if(geoCurrentRow < 4) {
+        const labels = ['Prima', 'Seconda', 'Terza', 'Quarta'];
+        getElementId('geoSlot' + geoCurrentRow).classList.add('active');
+        getElementId('geoTapLabel').textContent = '✋ Traccia la ' + labels[geoCurrentRow] + ' Riga';
+      } else {
+        setTimeout(function() { geoCalcFigura(); }, 400);
+      }
+    }
+
+    function geoCalcFigura() {
+      const pattern = geoRows;
+      let figura = DB_GEO.find(function(f) {
+        return f.righe[0] === pattern[0] && f.righe[1] === pattern[1] && f.righe[2] === pattern[2] && f.righe[3] === pattern[3];
+      });
+      if(!figura) figura = DB_GEO[Math.floor(Math.random() * DB_GEO.length)];
+
+      const question = getElementId('geoQuestion').value.trim();
+      getElementId('geoTapBtn').style.display = 'none';
+
+      const el = getElementId('geoResult');
+
+      const figureVisual = figura.righe.map(function(r, i) {
+        const elLabel = ['🔥 Fuoco', '💨 Aria', '💧 Acqua', '🌍 Terra'][i];
+        if(r === 1) {
+          return '<div class="geo-frow"><div class="geo-fdot"></div><span class="geo-element-label">' + elLabel + '</span></div>';
+        } else {
+          return '<div class="geo-frow"><div class="geo-fdot"></div><div style="width:18px"></div><div class="geo-fdot" style="opacity:.5"></div><span class="geo-element-label">' + elLabel + '</span></div>';
+        }
+      }).join('');
+
+      const kwHtml = figura.keywords.map(function(k) { return '<span class="num-kw">' + k + '</span>'; }).join('');
+      const questionHtml = question ? '<div class="geo-question-shown">❓ "' + question + '"</div>' : '';
+
+      el.innerHTML = '<div class="geo-res"><div style="font-size:48px;margin-bottom:8px;filter:drop-shadow(0 0 15px #d4af3760)">' + figura.emoji + '</div><div class="geo-figure-name">' + figura.nome + '</div><div class="geo-figure-latin">' + figura.latino + ' · ' + figura.elemento + '</div><div class="geo-figure-visual">' + figureVisual + '</div><div class="num-keywords">' + kwHtml + '</div>' + questionHtml + '<div class="geo-block"><h4>🌍 Il Messaggio della Terra</h4><p>' + figura.significato + '</p></div><div class="geo-block"><h4>💕 In Amore</h4><p>' + figura.amore + '</p></div><div class="geo-block"><h4>💼 Nel Lavoro</h4><p>' + figura.lavoro + '</p></div><div class="geo-block"><h4>🌟 Il Consiglio Geomantico</h4><p style="font-style:italic;color:var(--muted)">"' + figura.consiglio + '"</p></div><button class="btn btn-sec" onclick="resetGeomanzia()" style="margin-top:10px;width:100%">🔄 Nuova Consultazione</button></div>';
+      el.style.display = 'block';
+    }
+
+    resetGeomanzia();
+  </script>
+</body>
+</html>

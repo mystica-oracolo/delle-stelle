@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Animale Totem — Delle Stelle</title>
+<meta name="description" content="Scopri il tuo Animale Totem con il test dei 5 archetipi. Aquila, Lupo, Orso, Delfino, Serpente, Cervo, Gufo, Leone — quale spirito guida la tua anima?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;--gold-dim:#d4af3750;--gold-glow:#d4af3720;
+  --purple:#6a0dad;--purple-light:#9b30d0;
+  --bg:#07031a;--bg2:#0b0520;--card:#110830;--card2:#160a38;
+  --muted:#8a78a0;--text:#e0d8f0;--accent:#c8b4ff;
+  --border:#2a1a5a;--border-light:#3a2a7a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Raleway',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* ── STARFIELD ── */
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) infinite var(--delay,0s)}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+
+/* ── LAYOUT ── */
+.z1{position:relative;z-index:1}
+.container{max-width:740px;margin:0 auto;padding:0 18px}
+
+/* ── HEADER ── */
+header{position:relative;z-index:1;text-align:center;padding:44px 20px 10px}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;
+  letter-spacing:1.5px;text-decoration:none;font-family:'Cinzel',serif;margin-bottom:20px;transition:.2s}
+.back-link:hover{color:var(--gold)}
+.hero-symbol{font-size:64px;line-height:1;margin-bottom:14px;filter:drop-shadow(0 0 24px var(--gold-dim));animation:float 5s ease-in-out infinite}
+h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:var(--gold);
+  letter-spacing:3px;margin-bottom:8px;text-shadow:0 0 40px var(--gold-dim)}
+.page-sub{color:var(--muted);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.divider-gold{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ── IMAGE PLACEHOLDER ── */
+.img-placeholder{
+  width:200px;height:200px;border-radius:16px;
+  background:linear-gradient(135deg,#1a0e3a 0%,#0b0520 100%);
+  border:1px solid var(--border-light);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 20px;position:relative;overflow:hidden;
+}
+.img-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--gold-glow) 0%,transparent 70%)}
+.img-placeholder .ph-icon{font-size:36px;margin-bottom:8px;opacity:.5}
+.img-placeholder .ph-label{font-size:10px;color:var(--muted);letter-spacing:1.5px;font-family:'Cinzel',serif;text-align:center;padding:0 10px}
+.img-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
+
+/* ── SECTIONS ── */
+.section{position:relative;z-index:1;padding:48px 0 20px}
+.section-header{text-align:center;margin-bottom:28px}
+.section-eyebrow{font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cinzel',serif;margin-bottom:10px;opacity:.8}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,26px);color:var(--text);
+  letter-spacing:1.5px;margin-bottom:8px}
+.section-intro{color:var(--muted);font-size:14px;line-height:1.7;max-width:560px;margin:0 auto}
+
+/* ── PROSE ── */
+.prose{color:var(--text);font-size:15px;line-height:1.8;margin-bottom:14px}
+.prose em{color:var(--gold);font-style:normal;font-weight:600}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.highlight h4{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.highlight p{color:var(--text);font-size:14px;line-height:1.7}
+
+/* ── TOTEM FIGURE CARDS ── */
+.totem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:12px}
+.totem-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 16px;
+  text-align:center;transition:.3s;cursor:default}
+.totem-card:hover{border-color:var(--gold-dim);transform:translateY(-3px);background:var(--card2)}
+.totem-card-emoji{font-size:40px;margin-bottom:10px;display:block}
+.totem-card-name{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:6px}
+.totem-card-tribe{font-size:11px;color:var(--muted);line-height:1.4}
+.totem-card-keys{margin-top:10px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.tag{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:3px 10px;
+  font-size:10px;color:var(--accent);letter-spacing:.5px}
+
+/* ── QUIZ ── */
+.oracle-box{background:linear-gradient(135deg,#110830,#0b0520);border:1px solid var(--border-light);
+  border-radius:20px;padding:28px 24px;margin-top:16px}
+.oracle-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);text-align:center;
+  letter-spacing:2px;margin-bottom:6px}
+.oracle-sub{font-size:12px;color:var(--muted);text-align:center;letter-spacing:1.5px;margin-bottom:24px}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.quiz-progress{text-align:center;font-size:10px;color:var(--muted);letter-spacing:2px;
+  font-family:'Cinzel',serif;margin-bottom:16px}
+.quiz-q{font-family:'Cinzel',serif;font-size:15px;color:var(--text);text-align:center;
+  margin-bottom:20px;line-height:1.6;letter-spacing:.5px}
+.totem-opts{display:grid;gap:10px}
+.totem-opt{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;
+  text-align:left;color:var(--text);font-family:'Raleway',sans-serif;font-size:14px;
+  cursor:pointer;transition:.25s;width:100%}
+.totem-opt:hover:not(:disabled){background:var(--card2);border-color:var(--gold-dim);color:var(--gold)}
+.totem-opt:disabled{cursor:default}
+.totem-opt .opt-emoji{margin-right:8px}
+
+/* ── RESULT ── */
+#totemResult{display:none;margin-top:20px}
+.totem-res{text-align:center}
+.totem-img-container{margin-bottom:14px}
+.totem-img-hd{width:160px;height:160px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--gold-dim);box-shadow:0 0 30px var(--gold-glow)}
+.totem-animal{font-size:90px;margin-bottom:10px;filter:drop-shadow(0 0 20px var(--gold-dim));
+  animation:float 5s ease-in-out infinite}
+.totem-name{font-family:'Cinzel',serif;font-size:clamp(24px,5vw,36px);color:var(--gold);
+  letter-spacing:3px;margin-bottom:4px;text-shadow:0 0 30px var(--gold-dim)}
+.totem-tribe{font-size:12px;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;
+  font-family:'Cinzel',serif;margin-bottom:16px}
+.totem-msg{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:18px 20px;margin-bottom:14px;text-align:left}
+.totem-msg h4{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.totem-msg p{color:var(--text);font-size:14px;line-height:1.8}
+
+/* ── MYTH CARDS ── */
+.myth-grid{display:grid;gap:20px;margin-top:12px}
+.myth-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.myth-card-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.myth-img{width:80px;height:80px;flex-shrink:0;border-radius:12px;
+  background:linear-gradient(135deg,#1a0e3a,#0b0520);border:1px solid var(--border-light);
+  display:flex;align-items:center;justify-content:center;font-size:36px}
+.myth-img img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.myth-card h3{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:4px}
+.myth-card .myth-sub{font-size:11px;color:var(--muted);letter-spacing:1.5px}
+.myth-card p{font-size:14px;line-height:1.8;color:var(--text)}
+
+/* ── TRADITION TABS ── */
+.trad-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.trad-tab{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:8px 16px;
+  font-size:12px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;cursor:pointer;transition:.2s}
+.trad-tab.active,.trad-tab:hover{background:var(--card2);border-color:var(--gold-dim);color:var(--gold)}
+.trad-panel{display:none}
+.trad-panel.active{display:block}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:1.5px;border:none;cursor:pointer;transition:.25s}
+.btn-gold{background:linear-gradient(135deg,#d4af37,#a07d20);color:#0d0520;font-weight:700}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--gold-dim)}
+.btn-sec{background:transparent;border:1px solid var(--border-light);color:var(--muted)}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold)}
+.btn-grp{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+/* ── FOOTER ── */
+footer{position:relative;z-index:1;text-align:center;padding:40px 20px;border-top:1px solid var(--border)}
+footer p{color:var(--muted);font-size:12px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="stars" id="starsContainer"></div>
+
+<header>
+  <a href="index.html" class="back-link z1">← DELLE STELLE</a>
+  <div class="hero-symbol">🐾</div>
+  <h1 class="page-title">Animale Totem</h1>
+  <p class="page-sub">Lo Spirito Guida della Tua Anima</p>
+  <div class="divider-gold"></div>
+</header>
+
+<main class="container">
+
+  <!-- INTRO -->
+  <section class="section z1">
+    <div class="img-placeholder">
+      <img src="images/totem/totem-copertina.webp" alt="Animale Totem" onerror="this.style.display='none'">
+      <span class="ph-icon">🐺</span>
+      <span class="ph-label">SPIRITI ANIMALI</span>
+    </div>
+    <div class="section-header">
+      <div class="section-eyebrow">Tradizioni Sciamaniche</div>
+      <h2 class="section-title">Il Linguaggio degli Spiriti</h2>
+      <p class="section-intro">In ogni tradizione sciamanica del mondo — dalle Americhe indigene alle steppe siberiane, dall'Africa subsahariana alle Isole del Pacifico — gli animali non sono semplici creature: sono <strong>messaggeri</strong> tra il mondo fisico e quello spirituale, custodi di saggezze primordiali.</p>
+    </div>
+    <p class="prose">L'<em>Animale Totem</em> è uno spirito guida che ti accompagna nell'arco della vita, incarnando qualità archetipiche che rispecchiano la tua essenza più profonda. Non è un'identità fissa — può cambiare con le stagioni dell'anima — ma esiste sempre un animale primario che riflette il tuo modo fondamentale di stare nel mondo.</p>
+    <p class="prose">Lo sciamanesimo insegna che non sei tu a <em>scegliere</em> il tuo totem: è lui a trovarti. Il test che segue non è arbitrario — è una mappa psicologico-archetipica basata su cinque domande che esplorano le tue reazioni profonde a situazioni fondamentali dell'esistenza.</p>
+    <div class="highlight">
+      <h4>✦ Cos'è uno Spirito Animale?</h4>
+      <p>Nelle tradizioni native americane, ogni essere umano nasce con almeno sette spiriti animali che lo accompagnano attraverso la vita. Il totem primario — il <em>Main Power Animal</em> — rappresenta la tua energia dominante e i tuoi doni naturali. Gli altri sei proteggono i punti cardinali e offrono supporto in diversi ambiti dell'esistenza.</p>
+    </div>
+  </section>
+
+  <!-- GLI OTTO TOTEM -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="section-eyebrow">Galleria degli Spiriti</div>
+      <h2 class="section-title">Gli Otto Archetipi</h2>
+      <p class="section-intro">Otto spiriti animali custodiscono le qualità fondamentali dell'anima umana. Ognuno porta con sé doni, sfide e un messaggio unico per chi lo riceve.</p>
+    </div>
+    <div class="totem-grid">
+      <div class="totem-card">
+        <span class="totem-card-emoji">🦅</span>
+        <div class="totem-card-name">Aquila</div>
+        <div class="totem-card-tribe">Guardiano dell'Alto</div>
+        <div class="totem-card-keys">
+          <span class="tag">Visione</span>
+          <span class="tag">Libertà</span>
+          <span class="tag">Chiaroveggenza</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🐺</span>
+        <div class="totem-card-name">Lupo</div>
+        <div class="totem-card-tribe">Custode del Branco</div>
+        <div class="totem-card-keys">
+          <span class="tag">Lealtà</span>
+          <span class="tag">Intuizione</span>
+          <span class="tag">Famiglia</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🐻</span>
+        <div class="totem-card-name">Orso</div>
+        <div class="totem-card-tribe">Il Grande Guaritore</div>
+        <div class="totem-card-keys">
+          <span class="tag">Forza</span>
+          <span class="tag">Guarigione</span>
+          <span class="tag">Cicli</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🐬</span>
+        <div class="totem-card-name">Delfino</div>
+        <div class="totem-card-tribe">Messaggero delle Acque</div>
+        <div class="totem-card-keys">
+          <span class="tag">Gioia</span>
+          <span class="tag">Comunicazione</span>
+          <span class="tag">Connessione</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🐍</span>
+        <div class="totem-card-name">Serpente</div>
+        <div class="totem-card-tribe">Custode della Trasformazione</div>
+        <div class="totem-card-keys">
+          <span class="tag">Trasformazione</span>
+          <span class="tag">Kundalini</span>
+          <span class="tag">Ombra</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🦌</span>
+        <div class="totem-card-name">Cervo</div>
+        <div class="totem-card-tribe">Il Cammino Gentile</div>
+        <div class="totem-card-keys">
+          <span class="tag">Grazia</span>
+          <span class="tag">Gentilezza</span>
+          <span class="tag">Armonia</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🦉</span>
+        <div class="totem-card-name">Gufo</div>
+        <div class="totem-card-tribe">Veggente del Notturno</div>
+        <div class="totem-card-keys">
+          <span class="tag">Saggezza</span>
+          <span class="tag">Visione notturna</span>
+          <span class="tag">Magia</span>
+        </div>
+      </div>
+      <div class="totem-card">
+        <span class="totem-card-emoji">🦁</span>
+        <div class="totem-card-name">Leone</div>
+        <div class="totem-card-tribe">Re del Cuore</div>
+        <div class="totem-card-keys">
+          <span class="tag">Coraggio</span>
+          <span class="tag">Leadership</span>
+          <span class="tag">Generosità</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIGURE MITOLOGICHE -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="section-eyebrow">Mito & Simbolismo</div>
+      <h2 class="section-title">Spiriti Animali nella Mitologia</h2>
+      <p class="section-intro">Dal chamán siberiano all'Apache del deserto, dagli sciamani amazzonici ai druidi celtici — il rapporto tra uomo e animale guida attraversa ogni cultura e ogni epoca.</p>
+    </div>
+    <div class="myth-grid">
+      <div class="myth-card">
+        <div class="myth-card-header">
+          <div class="myth-img">
+            <img src="images/totem/totem-aquila.webp" alt="Aquila" onerror="this.style.display='none'; this.parentElement.textContent='🦅'">
+          </div>
+          <div>
+            <h3>L'Aquila di Thunderbird</h3>
+            <div class="myth-sub">TRADIZIONI NATIVE AMERICANE</div>
+          </div>
+        </div>
+        <p>Nelle culture dei nativi americani delle Grandi Pianure, l'Aquila è il <em>Thunderbird</em> — l'essere soprannaturale che porta le tempeste e comunica con il Grande Spirito. Le piume d'aquila sono tra gli oggetti più sacri delle cerimonie: simboleggiano la connessione diretta tra la terra e il cielo, tra l'umano e il divino. Solo i guerrieri e gli sciamani più degni ricevono l'Aquila come spirito guida.</p>
+      </div>
+      <div class="myth-card">
+        <div class="myth-card-header">
+          <div class="myth-img">
+            <img src="images/totem/totem-lupo.webp" alt="Lupo" onerror="this.style.display='none'; this.parentElement.textContent='🐺'">
+          </div>
+          <div>
+            <h3>Lupus — Il Maestro dei Cammini</h3>
+            <div class="myth-sub">TRADIZIONI NORDICHE & CELTICHE</div>
+          </div>
+        </div>
+        <p>Nella mitologia norrena, Odin è sempre accompagnato da due lupi — Geri e Freki — che percorrono il mondo raccogliendo informazioni per il dio della saggezza. Nella tradizione Cherokee, il Lupo insegna l'importanza della famiglia e della cooperazione: il branco che caccia insieme sopravvive sempre meglio del lupo solitario. I guerrieri lupo — i <em>berserker</em> — indossavano pelli di lupo per evocare la ferocia e l'istinto dell'animale.</p>
+      </div>
+      <div class="myth-card">
+        <div class="myth-card-header">
+          <div class="myth-img">
+            <img src="images/totem/totem-orso.webp" alt="Orso" onerror="this.style.display='none'; this.parentElement.textContent='🐻'">
+          </div>
+          <div>
+            <h3>Artio — La Dea Orsa</h3>
+            <div class="myth-sub">TRADIZIONI CELTICHE & SIBERIANE</div>
+          </div>
+        </div>
+        <p>Tra i celti, <em>Artio</em> era la dea orsa della fertilità e della guarigione. La parola stessa "Arte" in gaelico significa orso — e da qui deriverebbe il nome del leggendario Re Artù, il cui regno era protetto dallo spirito dell'orso. In Siberia, l'orso è considerato il progenitore dell'umanità: alcuni popoli lo chiamano "Nonno" con reverenza, e mangiarne la carne è un atto rituale che trasferisce la sua forza a chi lo consuma.</p>
+      </div>
+      <div class="myth-card">
+        <div class="myth-card-header">
+          <div class="myth-img">
+            <img src="images/totem/totem-delfino.webp" alt="Delfino" onerror="this.style.display='none'; this.parentElement.textContent='🐬'">
+          </div>
+          <div>
+            <h3>Delphinus — Il Messaggero di Poseidone</h3>
+            <div class="myth-sub">MITOLOGIA GRECA & ROMANA</div>
+          </div>
+        </div>
+        <p>Nella mitologia greca, i delfini erano considerati salvatori dei naufraghi e messaggeri degli dei. Il dio Apollo si trasformò in delfino per guidare i marinai cretesi verso Delfi — da qui il nome del famoso oracolo. Poseidone inviò un delfino come ambasciatore per convincere la ninfa Anfitrite a sposarlo: gesto riuscito, tanto che il dio del mare pose l'immagine del delfino tra le stelle come costellazione di Delphinus.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRADIZIONI -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="section-eyebrow">Percorsi Sciamanici</div>
+      <h2 class="section-title">Il Totem nelle Tradizioni del Mondo</h2>
+    </div>
+    <div class="trad-tabs" id="tradTabs">
+      <button class="trad-tab active" onclick="switchTrad(0)">🪶 Nativi Americani</button>
+      <button class="trad-tab" onclick="switchTrad(1)">🌿 Celtica</button>
+      <button class="trad-tab" onclick="switchTrad(2)">🌏 Sciamanesimo Siberiano</button>
+      <button class="trad-tab" onclick="switchTrad(3)">🐉 Taoismo & Zen</button>
+    </div>
+    <div id="tradPanel0" class="trad-panel active">
+      <div class="highlight">
+        <h4>🪶 Medicine Animals — Nativi Americani</h4>
+        <p>Le culture indigene del Nord America svilupparono il sistema totemico più elaborato al mondo. I <em>totem pole</em> dei popoli della Costa Nord-Ovest (Haida, Tlingit, Tsimshian) sono racconti genealogici scolpiti: ogni figura animale rappresenta un antenato, un evento fondativo, o un potere ricevuto in visione. Il <em>Vision Quest</em> — il digiuno solitario nella natura per ricevere il proprio spirito guida — è un rito di passaggio praticato ancora oggi. L'animale che appare in sogno o visione durante il quest diventa il compagno spirituale per la vita.</p>
+      </div>
+    </div>
+    <div id="tradPanel1" class="trad-panel">
+      <div class="highlight">
+        <h4>🌿 Clan Animali — Tradizione Celtica</h4>
+        <p>I Celti organizzavano le loro tribù in <em>clan totemici</em>: famiglie che discendevano da un antenato animale mitico. Il clan del Cervo portava l'antler come simbolo; il clan del Corvo era guardiano dei segreti. I druidi — i sacerdoti-sciamani celti — si addestravano per anni a comunicare con gli spiriti animali attraverso sogni, divinazione e trance rituale. Lo <em>shapeshifting</em> — la trasformazione in animale — era considerato un'abilità druidica avanzata: chi padroneggiava il proprio totem poteva "diventarlo" temporaneamente in spirito.</p>
+      </div>
+    </div>
+    <div id="tradPanel2" class="trad-panel">
+      <div class="highlight">
+        <h4>🌏 Spiriti Assistenti — Sciamanesimo Siberiano</h4>
+        <p>Lo sciamanesimo siberiano è forse la tradizione più antica che conosciamo: risale a 40.000 anni fa secondo alcuni studi archeologici. Lo sciamano — il <em>kam</em> — riceve i suoi spiriti assistenti (animali guida) attraverso una "malattia iniziatica": una crisi profonda che lo porta ai confini della morte. È in questo viaggio agli inferi che l'animale si manifesta e decide di accompagnarlo. L'Orso è il più potente spirito sciamano siberiano; il Cervo è la sua cavalcatura nel viaggio verso il cielo; il Corvo è il messaggero tra i mondi.</p>
+      </div>
+    </div>
+    <div id="tradPanel3" class="trad-panel">
+      <div class="highlight">
+        <h4>🐉 Animali Auspici — Taoismo & Tradizione Cinese</h4>
+        <p>Nella cosmologia cinese, quattro grandi animali mitologici proteggono i punti cardinali: il <em>Drago Verde</em> (Est, primavera, rinascita), la <em>Fenice Rossa</em> (Sud, estate, trasformazione), la <em>Tigre Bianca</em> (Ovest, autunno, forza), la <em>Tartaruga Nera</em> (Nord, inverno, saggezza). Nel Taoismo, ogni essere umano è associato a uno di questi archetipi in base alla data di nascita. Il Feng Shui utilizza questi animali cosmici per armonizzare gli spazi: posizionare simboli del tuo animale guida nell'angolo corretto amplifica la tua energia naturale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORACLE / QUIZ -->
+  <section class="section z1" id="oracolo">
+    <div class="section-header">
+      <div class="section-eyebrow">Test Psico-Archetipico</div>
+      <h2 class="section-title">Scopri il Tuo Totem</h2>
+      <p class="section-intro">Cinque domande per rivelare lo spirito animale che rispecchia la tua anima. Rispondi con il cuore, non con la mente.</p>
+    </div>
+
+    <div class="oracle-box">
+      <div class="oracle-title">🐾 Rivelazione dello Spirito Guida</div>
+      <div class="oracle-sub">RISPONDI ISTINTIVAMENTE · NON ESISTE RISPOSTA GIUSTA</div>
+
+      <div id="totemQuiz">
+        <!-- Step 0 -->
+        <div class="quiz-step active" id="totemStep0">
+          <div class="quiz-progress">DOMANDA 1 DI 5</div>
+          <div class="quiz-q">Sei in un bosco all'alba. Senti un rumore tra gli alberi. Qual è la tua prima reazione?</div>
+          <div class="totem-opts">
+            <button class="totem-opt" onclick="totemAnswer(0,0)"><span class="opt-emoji">🦅</span>Mi fermo e scansiono l'intera area dall'alto, cercando di capire il quadro completo</button>
+            <button class="totem-opt" onclick="totemAnswer(0,1)"><span class="opt-emoji">🐺</span>Mi avvicino con cautela — il mio istinto mi dice se è pericoloso o no</button>
+            <button class="totem-opt" onclick="totemAnswer(0,2)"><span class="opt-emoji">🐻</span>Mi ritiro lentamente — il mio territorio, le mie regole</button>
+            <button class="totem-opt" onclick="totemAnswer(0,3)"><span class="opt-emoji">🐬</span>Emetto un suono per vedere se risponde — la comunicazione è tutto</button>
+          </div>
+        </div>
+        <!-- Step 1 -->
+        <div class="quiz-step" id="totemStep1">
+          <div class="quiz-progress">DOMANDA 2 DI 5</div>
+          <div class="quiz-q">Un tuo caro amico ti confida un segreto doloroso. Come lo accompagni?</div>
+          <div class="totem-opts">
+            <button class="totem-opt" onclick="totemAnswer(1,0)"><span class="opt-emoji">🦉</span>Ascolto in silenzio, poi offro una prospettiva che non aveva considerato</button>
+            <button class="totem-opt" onclick="totemAnswer(1,1)"><span class="opt-emoji">🦌</span>Lo abbraccio e piango con lui — sentire insieme è più importante delle parole</button>
+            <button class="totem-opt" onclick="totemAnswer(1,2)"><span class="opt-emoji">🦁</span>Lo incoraggio con forza — lo spingo a trovare la propria soluzione</button>
+            <button class="totem-opt" onclick="totemAnswer(1,3)"><span class="opt-emoji">🐍</span>Lo aiuto a vedere come questa crisi è in realtà una trasformazione necessaria</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="quiz-step" id="totemStep2">
+          <div class="quiz-progress">DOMANDA 3 DI 5</div>
+          <div class="quiz-q">Qual è il tuo rapporto con la solitudine?</div>
+          <div class="totem-opts">
+            <button class="totem-opt" onclick="totemAnswer(2,0)"><span class="opt-emoji">🦅</span>La cerco — ho bisogno di spazio per vedere le cose con chiarezza</button>
+            <button class="totem-opt" onclick="totemAnswer(2,1)"><span class="opt-emoji">🐺</span>Mi pesa — ho bisogno del mio branco per sentirmi completo</button>
+            <button class="totem-opt" onclick="totemAnswer(2,2)"><span class="opt-emoji">🐻</span>Entro in ibernazione periodica — i ritiri mi rigenerano profondamente</button>
+            <button class="totem-opt" onclick="totemAnswer(2,3)"><span class="opt-emoji">🐬</span>La uso per ricaricarmi, ma poi ho bisogno di connessione</button>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="quiz-step" id="totemStep3">
+          <div class="quiz-progress">DOMANDA 4 DI 5</div>
+          <div class="quiz-q">Di fronte a un grande cambiamento nella tua vita, la tua tendenza naturale è...</div>
+          <div class="totem-opts">
+            <button class="totem-opt" onclick="totemAnswer(3,0)"><span class="opt-emoji">🦁</span>Prendere il comando — il cambiamento mi energizza</button>
+            <button class="totem-opt" onclick="totemAnswer(3,1)"><span class="opt-emoji">🐍</span>Abbracciare la trasformazione — lascio andare il vecchio senza rimpianti</button>
+            <button class="totem-opt" onclick="totemAnswer(3,2)"><span class="opt-emoji">🦉</span>Osservare prima di agire — studio le implicazioni profonde</button>
+            <button class="totem-opt" onclick="totemAnswer(3,3)"><span class="opt-emoji">🦌</span>Cerco armonia — tento di portare tutti sulla stessa onda</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="quiz-step" id="totemStep4">
+          <div class="quiz-progress">DOMANDA 5 DI 5</div>
+          <div class="quiz-q">Quale ambiente ti ricarica più profondamente?</div>
+          <div class="totem-opts">
+            <button class="totem-opt" onclick="totemAnswer(4,0)"><span class="opt-emoji">🏔️</span>Le vette e i luoghi elevati — aria rarefatta, visione sconfinata</button>
+            <button class="totem-opt" onclick="totemAnswer(4,1)"><span class="opt-emoji">🌲</span>La foresta fitta — suoni animali, ombre, misteri</button>
+            <button class="totem-opt" onclick="totemAnswer(4,2)"><span class="opt-emoji">🌊</span>Il mare o i fiumi — l'acqua come specchio dell'anima</button>
+            <button class="totem-opt" onclick="totemAnswer(4,3)"><span class="opt-emoji">🌙</span>La notte stellata — silenzio, profondità, cosmo infinito</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="totemResult"></div>
+
+    </div>
+  </section>
+
+  <!-- NOTA PRATICA -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="section-eyebrow">Pratica Sciamanica</div>
+      <h2 class="section-title">Come Lavorare con il Tuo Totem</h2>
+    </div>
+    <div class="highlight">
+      <h4>🌿 Il Sogno di Potere</h4>
+      <p>La via tradizionale per incontrare il proprio spirito animale è il <em>sogno guidato</em>. Prima di dormire, formula l'intenzione di incontrare il tuo animale guida. Tieni un diario accanto al letto. Annota ogni sogno che coinvolge animali — i messaggi arrivano spesso in forma simbolica, non letterale.</p>
+    </div>
+    <div class="highlight">
+      <h4>🥁 Il Viaggio Sciamanico</h4>
+      <p>Il tamburo sciamanico (4-7 battiti al secondo) induce uno stato di coscienza alterata che facilita il contatto con gli spiriti guida. Siediti in posizione comoda, chiudi gli occhi, e lascia che il ritmo del tamburo ti porti nel Lowerworld — il mondo degli spiriti animali. Chiedi al primo animale che incontri: "Sei il mio spirito guida?" Un totem autentico si presenterà da solo, ripetutamente.</p>
+    </div>
+    <div class="highlight">
+      <h4>🪶 Onorare il Tuo Totem</h4>
+      <p>Una volta identificato il tuo spirito animale, onoralo: studia il suo comportamento in natura, porta con te un suo simbolo (piuma, pietra, immagine), medita sulla qualità che incarna. Il totem non è solo un simbolo — è una relazione viva. Più la coltivi, più la sua guida diventa chiara nella tua vita quotidiana.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>🐾 Delle Stelle · Spiriti Guida & Animali Totem</p>
+</footer>
+
+<script>
+/* ── STARFIELD ── */
+(function(){
+  const c=document.getElementById('starsContainer');
+  for(let i=0;i<130;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2+.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${(Math.random()*4+2).toFixed(1)}s;--delay:${(Math.random()*6).toFixed(1)}s;opacity:${(Math.random()*.5+.2).toFixed(2)}`;
+    c.appendChild(s);
+  }
+})();
+
+const $=id=>document.getElementById(id);
+
+/* ── DB TOTEM ── */
+const DB_TOTEM = [
+  {
+    id:'aquila', name:'Aquila', emoji:'🦅', img:'./images/totem-aquila.webp',
+    tribe:'Guardiano dell\'Alto',
+    keywords:['Visione','Libertà','Autorità spirituale','Chiaroveggenza'],
+    messaggio:'L\'Aquila ti chiama ad elevare lo sguardo oltre le preoccupazioni del momento. Sei dotato di una visione rara — quella capacità di vedere il quadro completo quando tutti gli altri vedono solo frammenti. Il tuo compito è usare questa visione per guidare, non per dominare. Vola alto, ma non dimenticare la terra sotto di te.',
+    sfida:'La tua sfida è non isolarti nella tua visione superiore. L\'aquila deve imparare che la vera forza sta nel condividere ciò che vede con il branco, non nel volare sola nell\'infinito.',
+    pregio:'La tua presenza porta chiarezza dove c\'è confusione. Quando parli, le persone si fermano ad ascoltare — anche quando non lo sanno ancora.'
+  },
+  {
+    id:'lupo', name:'Lupo', emoji:'🐺', img:'./images/totem-lupo.webp',
+    tribe:'Custode del Branco',
+    keywords:['Lealtà','Intuizione','Insegnamento','Famiglia spirituale'],
+    messaggio:'Il Lupo è l\'animale che ti guida attraverso le foreste oscure della vita. Sei un essere profondamente sociale che trova il suo senso nel legame con gli altri, ma hai anche un\'anima selvaggia che ha bisogno di spazio. La luna ti chiama: ascolta la tua intuizione più degli accordi sociali.',
+    sfida:'Il Lupo a volte porta troppo peso del branco sulle spalle. Impara a ricevere aiuto quanto ne dai. Non devi proteggere tutti da solo.',
+    pregio:'Sei un insegnante naturale. Le persone imparano da te non attraverso le parole ma attraverso ciò che incarni. La tua presenza trasforma.'
+  },
+  {
+    id:'orso', name:'Orso', emoji:'🐻', img:'./images/totem-orso.webp',
+    tribe:'Il Grande Guaritore',
+    keywords:['Forza interiore','Guarigione','Introversione sacra','Cicli'],
+    messaggio:'L\'Orso entra nella caverna del tuo essere per ricordarti che la vera forza nasce dal silenzio. Hai bisogno di periodi di raccoglimento per ritrovare te stesso — e queste "ibernazioni" non sono debolezze, sono il tuo modo di ricaricare un potere immenso.',
+    sfida:'Fai attenzione alla tendenza a chiuderti al mondo nei momenti di stress. Il tuo ritiro interiore è sacro, ma c\'è un limite oltre il quale diventa isolamento.',
+    pregio:'Sei un guaritore naturale. La tua energia è profondamente rassicurante — le persone si sentono al sicuro con te in modi che non riescono a spiegare.'
+  },
+  {
+    id:'delfino', name:'Delfino', emoji:'🐬', img:'./images/totem-delfino.webp',
+    tribe:'Messaggero delle Acque',
+    keywords:['Gioia','Comunicazione','Intelligenza emotiva','Connessione'],
+    messaggio:'Il Delfino porta il messaggio della gioia come pratica spirituale, non come stato d\'umore. Sei nato per connettere mondi diversi — sei un ponte tra le persone, tra le idee, tra le dimensioni dell\'esistenza. La tua intelligenza è più emotiva che razionale, e questo è il tuo superpotere.',
+    sfida:'La tua sensibilità alle energie altrui può diventare un fardello se non impari a filtrare. Assorbi troppo degli altri — crea confini energetici chiari.',
+    pregio:'Porti leggerezza dove c\'è pesantezza. Il tuo senso dell\'umorismo è un dono spirituale, non una frivolezza. Fai ridere le anime.'
+  },
+  {
+    id:'serpente', name:'Serpente', emoji:'🐍', img:'',
+    tribe:'Custode della Trasformazione',
+    keywords:['Trasformazione','Saggezza ombra','Guarigione','Kundalini'],
+    messaggio:'Il Serpente non striscia — danza. È l\'animale della trasformazione radicale, del rinnovarsi lasciando cadere ciò che non serve più. Sei in un periodo di muta: qualcosa di fondamentale nella tua vita sta cambiando pelle. Non resistere.',
+    sfida:'La tua intensità può intimorire gli altri. Non tutti reggono la profondità che porti nelle conversazioni e nelle relazioni. Calibra la tua energia.',
+    pregio:'Sei un alchimista delle crisi. Dove altri vedono disastri, tu vedi occasioni di trasformazione. Questa è una rara forma di saggezza.'
+  },
+  {
+    id:'cervo', name:'Cervo', emoji:'🦌', img:'',
+    tribe:'Il Cammino Gentile',
+    keywords:['Grazia','Gentilezza come forza','Intuizione del cuore','Armonia'],
+    messaggio:'Il Cervo ti insegna che la gentilezza non è debolezza — è una delle forme più evolute di forza. Il tuo cuore è la tua bussola più affidabile. Segui la via della grazia anche quando il mondo intorno a te sembra richiedere durezza.',
+    sfida:'La tua sensibilità ai conflitti può portarti a evitare confronti necessari. Non tutte le tensioni vanno evitate — alcune vanno attraversate con coraggio gentile.',
+    pregio:'La tua presenza calma le situazioni tese senza che tu faccia nulla di intenzionale. Sei un portatore di pace naturale.'
+  },
+  {
+    id:'gufo', name:'Gufo', emoji:'🦉', img:'',
+    tribe:'Veggente del Notturno',
+    keywords:['Saggezza','Visione notturna','Verità nascosta','Magia'],
+    messaggio:'Il Gufo vede nell\'oscurità ciò che il giorno nasconde. Sei attratto dai misteri, dalle domande profonde, dalle verità scomode che altri preferiscono ignorare. La tua saggezza è di tipo intuitivo — arriva in flash, in sogni, in momenti di silenzio.',
+    sfida:'Fai attenzione a non diventare un osservatore distaccato della vita. La saggezza del Gufo serve quando viene condivisa, non trattenuta.',
+    pregio:'Hai la capacità di vedere le motivazioni reali dietro le azioni umane. Questo dono, usato con compassione, fa di te un consigliore straordinario.'
+  },
+  {
+    id:'leone', name:'Leone', emoji:'🦁', img:'',
+    tribe:'Re del Cuore',
+    keywords:['Coraggio','Creatività','Leadership','Generosità solare'],
+    messaggio:'Il Leone governa con il cuore aperto, non con la forza bruta. Il tuo compito è imparare la leadership dal luogo della generosità — dare il tuo calore senza aspettare riconoscimento. Il sole non chiede gratitudine per brillare.',
+    sfida:'L\'ego del Leone può oscurare il suo cuore. Quando cerchi riconoscimento a tutti i costi, perdi la tua vera grandezza. La tua luce brilla di più quando non ci pensi.',
+    pregio:'La tua energia vitale è contagiosa. Quando sei pienamente presente, accendi qualcosa nelle persone che non sapevano di avere.'
+  }
+];
+
+const TOTEM_MATRIX = [
+  [[3,1,1,0,0,1,2,1],[0,2,1,3,2,0,1,0],[1,3,2,0,0,2,0,1],[1,0,1,0,1,2,0,3]],
+  [[1,1,0,0,0,0,1,3],[3,1,0,0,1,0,2,1],[0,2,0,1,3,0,1,0],[0,1,2,1,0,3,1,0]],
+  [[3,1,1,0,0,1,1,0],[1,1,0,0,1,1,0,3],[1,2,2,1,1,2,1,0],[0,1,0,2,2,0,3,1]],
+  [[1,3,1,0,0,1,0,1],[0,0,2,3,1,2,0,0],[2,1,3,0,1,0,2,0],[0,0,0,1,0,1,0,3]],
+  [[1,3,2,0,0,1,1,1],[3,0,0,0,1,0,2,0],[0,0,3,2,2,2,0,0],[2,1,0,1,2,0,1,2]]
+];
+
+let _totemAnswers = [];
+
+function resetTotem(){
+  _totemAnswers = [];
+  for(let i=0;i<5;i++){
+    const s=$('totemStep'+i);
+    if(s){
+      s.classList.toggle('active', i===0);
+      s.querySelectorAll('.totem-opt').forEach(b=>{b.disabled=false;b.style.opacity='1';});
+    }
+  }
+  $('totemResult').style.display='none';
+  $('totemResult').innerHTML='';
+  $('totemQuiz').style.display='block';
+}
+
+function totemAnswer(step, answerIdx){
+  _totemAnswers[step] = answerIdx;
+  const opts=$('totemStep'+step).querySelectorAll('.totem-opt');
+  opts.forEach((b,i)=>{
+    b.style.opacity = i===answerIdx?'1':'0.4';
+    b.disabled=true;
+  });
+  setTimeout(()=>{
+    if(step<4){
+      $('totemStep'+step).classList.remove('active');
+      $('totemStep'+(step+1)).classList.add('active');
+    } else {
+      _calcTotem();
+    }
+  }, 500);
+}
+
+function _calcTotem(){
+  const TOTEM_IDS=['aquila','lupo','orso','delfino','serpente','cervo','gufo','leone'];
+  const scores=new Array(8).fill(0);
+  _totemAnswers.forEach((ans,q)=>{
+    TOTEM_MATRIX[q][ans].forEach((v,t)=>scores[t]+=v);
+  });
+  const maxIdx=scores.indexOf(Math.max(...scores));
+  const totem=DB_TOTEM.find(t=>t.id===TOTEM_IDS[maxIdx])||DB_TOTEM[0];
+  _showTotemResult(totem);
+}
+
+function _showTotemResult(t){
+  $('totemQuiz').style.display='none';
+  const el=$('totemResult');
+  el.style.display='block';
+  const imgHtml = t.img
+    ? `<img src="${t.img}" class="totem-img-hd" alt="${t.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">`+`<div class="totem-animal" style="display:none">${t.emoji}</div>`
+    : `<div class="totem-animal">${t.emoji}</div>`;
+  el.innerHTML=`
+  <div class="totem-res">
+    <div class="totem-img-container">${imgHtml}</div>
+    <div class="totem-name">${t.name}</div>
+    <div class="totem-tribe">${t.tribe}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:20px">
+      ${t.keywords.map(k=>`<span class="tag">✦ ${k}</span>`).join('')}
+    </div>
+    <div class="totem-msg">
+      <h4>📜 Il Messaggio del Tuo Totem</h4>
+      <p>${t.messaggio}</p>
+    </div>
+    <div class="totem-msg">
+      <h4>⚠️ La Tua Sfida Spirituale</h4>
+      <p>${t.sfida}</p>
+    </div>
+    <div class="totem-msg">
+      <h4>✨ Il Tuo Dono Naturale</h4>
+      <p>${t.pregio}</p>
+    </div>
+    <div class="btn-grp">
+      <button class="btn btn-sec" onclick="resetTotem()">🔄 Rifai il Test</button>
+      <a href="index.html" class="btn btn-sec">← Torna all\'App</a>
+    </div>
+  </div>`;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+  _burst();
+}
+
+/* ── TRADITION TABS ── */
+function switchTrad(i){
+  document.querySelectorAll('.trad-tab').forEach((t,idx)=>t.classList.toggle('active',idx===i));
+  document.querySelectorAll('.trad-panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
+}
+
+/* ── BURST ── */
+function _burst(){
+  const colors=['#d4af37','#c8b4ff','#fff'];
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div');
+    Object.assign(p.style,{
+      position:'fixed',left:'50%',top:'50%',width:'6px',height:'6px',borderRadius:'50%',
+      background:colors[i%3],pointerEvents:'none',zIndex:'9999',
+      transform:`translate(-50%,-50%) translate(${(Math.random()-0.5)*200}px,${(Math.random()-0.5)*200}px)`,
+      opacity:'0',transition:`opacity .2s, transform ${(Math.random()*.5+.5).toFixed(2)}s ease-out`
+    });
+    document.body.appendChild(p);
+    setTimeout(()=>p.style.opacity='1',10);
+    setTimeout(()=>{ p.style.opacity='0'; setTimeout(()=>p.remove(),400); },600);
+  }
+}
+</script>
+</body>
+</html>

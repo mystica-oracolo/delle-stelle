@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archivio Mistico – Le Tue Letture Salvate | MYSTICA</title>
+<meta name="description" content="Il tuo archivio mistico personale: ritrova tutte le letture dei tarocchi, oroscopi, rune, I Ching, numerologia e molto altro salvate nel tempo.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://mysticaoracoli.it/archivio.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/archivio.html">
+<meta property="og:title" content="Archivio Mistico – Le Tue Letture | MYSTICA">
+<meta property="og:description" content="Ritrova tutte le tue letture mistiche salvate: tarocchi, oroscopi, rune, I Ching, numerologia e altro.">
+<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#d4af37;--bg:#0a0514;--text:#e8e0f0;--muted:#9a8ab0;--border:rgba(212,175,55,0.25)}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh}
+header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:18px 20px;text-align:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.logo{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:3px;text-shadow:0 0 20px rgba(212,175,55,0.4)}
+.logo a{color:inherit;text-decoration:none}
+.header-sub{font-size:11px;color:var(--muted);letter-spacing:2px;margin-top:3px}
+main{max-width:760px;margin:0 auto;padding:40px 20px 60px}
+.hero{text-align:center;margin-bottom:40px;padding:36px 24px;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
+.hero-icon{font-size:52px;margin-bottom:14px;display:block}
+h1{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto}
+nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:32px}
+nav.breadcrumb a{color:var(--gold);text-decoration:none}
+nav.breadcrumb span{margin:0 6px;opacity:0.5}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Toolbar */
+.arch-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.arch-count{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.arch-count span{color:var(--gold)}
+.btn-clear{background:transparent;border:1px solid rgba(212,175,55,0.3);color:var(--muted);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;padding:8px 18px;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.btn-clear:hover{border-color:rgba(212,175,55,0.7);color:var(--gold)}
+
+/* Filter tabs */
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-tab{background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all 0.2s;user-select:none}
+.filter-tab:hover{border-color:rgba(212,175,55,0.4);color:var(--gold)}
+.filter-tab.active{background:rgba(212,175,55,0.12);border-color:rgba(212,175,55,0.5);color:var(--gold)}
+
+/* Archive list */
+#archList{display:flex;flex-direction:column;gap:12px}
+.arch-item{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.18);border-radius:14px;padding:18px 20px;transition:border-color 0.2s;animation:fadeIn 0.3s ease}
+.arch-item:hover{border-color:rgba(212,175,55,0.4)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.arch-type{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:6px}
+.arch-detail{font-size:15px;color:var(--text);opacity:0.9;line-height:1.5;margin-bottom:6px}
+.arch-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.arch-meta-dot{opacity:0.4}
+.arch-badge{display:inline-block;font-size:9px;font-family:'Cinzel',serif;letter-spacing:.8px;color:var(--muted);background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:1px 8px}
+
+/* Empty state */
+.arch-empty{text-align:center;padding:50px 20px}
+.arch-empty-icon{font-size:56px;opacity:0.35;margin-bottom:16px;display:block}
+.arch-empty-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.arch-empty-sub{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
+.btn-start{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;border-radius:50px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-decoration:none;margin:4px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-start:hover{box-shadow:0 4px 20px rgba(212,175,55,0.4);transform:translateY(-1px)}
+.btn-sec{display:inline-block;padding:11px 26px;background:transparent;border:1px solid rgba(212,175,55,0.4);color:var(--gold);border-radius:50px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;text-decoration:none;margin:4px;transition:all 0.2s;cursor:pointer}
+.btn-sec:hover{background:rgba(212,175,55,0.08);border-color:rgba(212,175,55,0.7)}
+
+/* Stats */
+.arch-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
+@media(max-width:480px){.arch-stats{grid-template-columns:1fr 1fr}}
+.stat-card{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:16px;text-align:center}
+.stat-num{font-family:'Cinzel',serif;font-size:24px;color:var(--gold);display:block;margin-bottom:4px}
+.stat-label{font-size:11px;color:var(--muted);letter-spacing:.5px}
+
+/* Toast */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(20,10,40,0.96);border:1px solid rgba(212,175,55,0.4);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:12px 24px;border-radius:50px;opacity:0;transition:all 0.35s;z-index:9999;pointer-events:none;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Confirm overlay */
+.myst-confirm-overlay{position:fixed;inset:0;background:rgba(10,5,20,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.myst-confirm-box{background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid rgba(212,175,55,0.35);border-radius:20px;padding:32px 28px;max-width:340px;width:90%;text-align:center}
+.myst-confirm-box p{font-size:15px;color:var(--text);margin-bottom:24px;line-height:1.6}
+.myst-confirm-actions{display:flex;gap:12px;justify-content:center}
+.myst-confirm-cancel{background:transparent;border:1px solid rgba(212,175,55,0.3);color:var(--muted);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:10px 22px;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.myst-confirm-cancel:hover{border-color:rgba(212,175,55,0.6);color:var(--gold)}
+.myst-confirm-ok{background:linear-gradient(135deg,#8b0000,#600000);border:none;color:#f0d0d0;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:10px 22px;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.myst-confirm-ok:hover{background:linear-gradient(135deg,#a00000,#700000)}
+
+/* Quick links grid */
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
+@media(max-width:540px){.quick-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:380px){.quick-grid{grid-template-columns:repeat(2,1fr)}}
+.quick-card{background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:14px 8px;text-align:center;text-decoration:none;transition:all 0.2s;display:block}
+.quick-card:hover{background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.4);text-decoration:none;transform:translateY(-2px)}
+.quick-card-icon{font-size:24px;margin-bottom:6px;display:block}
+.quick-card-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.5px;line-height:1.3}
+
+/* Section header */
+.section-title{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* Export section */
+.export-box{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.15);border-radius:14px;padding:22px;margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.export-icon{font-size:30px;flex-shrink:0}
+.export-text{flex:1;min-width:180px}
+.export-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.5px;margin-bottom:4px}
+.export-sub{font-size:13px;color:var(--muted);line-height:1.5}
+.btn-export{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;padding:9px 20px;border-radius:50px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.btn-export:hover{background:rgba(212,175,55,0.16);border-color:rgba(212,175,55,0.6)}
+
+/* Related */
+.related{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:40px}
+.related-title{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:500px){.related-grid{grid-template-columns:1fr 1fr}}
+.related-link{display:block;background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:12px;text-align:center;text-decoration:none;transition:border-color 0.2s}
+.related-link:hover{border-color:rgba(212,175,55,0.4)}
+.related-link-icon{font-size:22px;margin-bottom:4px;display:block}
+.related-link-text{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.5px}
+
+/* Esplora */
+.esplora-section{background:linear-gradient(135deg,#130b26,#1a0c32);border-top:1px solid rgba(212,175,55,0.25);padding:40px 20px;text-align:center}
+.esplora-section h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.2rem;letter-spacing:2px;margin-bottom:24px}
+.esplora-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:800px;margin:0 auto}
+.esplora-card{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);border-radius:8px;padding:10px 18px;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:1px;transition:background 0.3s,border-color 0.3s}
+.esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6)}
+
+footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:20px}
+footer a{color:var(--gold);text-decoration:none;margin:0 8px}
+footer a:hover{text-decoration:underline}
+.footer-links{margin-bottom:10px;line-height:2}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="https://mysticaoracoli.it/">✦ MYSTICA ✦</a></div>
+  <div class="header-sub">ORACOLO DELLE STELLE</div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="https://mysticaoracoli.it/">Home</a>
+    <span>›</span>
+    <span>Archivio Mistico</span>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-icon">📿</span>
+    <h1>Archivio Mistico</h1>
+    <p class="hero-sub">Qui riposano tutte le tue letture mistiche. Ogni consultazione è un filo nel tessuto del tuo cammino spirituale — custodito per te.</p>
+  </div>
+
+  <!-- Stats (visibili solo se ci sono letture) -->
+  <div id="statsSection" style="display:none">
+    <div class="arch-stats">
+      <div class="stat-card">
+        <span class="stat-num" id="statTotale">0</span>
+        <div class="stat-label">Letture totali</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="statTipi">0</span>
+        <div class="stat-label">Discipline diverse</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="statGiorni">0</span>
+        <div class="stat-label">Giorni di pratica</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar + filtri (visibili solo se ci sono letture) -->
+  <div id="toolbarSection" style="display:none">
+    <div class="arch-toolbar">
+      <div class="arch-count">Storico: <span id="archCountLabel">0</span> letture</div>
+      <button class="btn-clear" id="archClearBtn" onclick="clearArch()">🗑️ Svuota archivio</button>
+    </div>
+    <div class="filter-tabs" id="filterTabs">
+      <div class="filter-tab active" data-filter="all" onclick="setFilter('all',this)">✨ Tutte</div>
+    </div>
+  </div>
+
+  <!-- Lista letture -->
+  <div id="archList"></div>
+
+  <!-- Export (visibile solo se ci sono letture) -->
+  <div class="export-box" id="exportBox" style="display:none">
+    <div class="export-icon">📋</div>
+    <div class="export-text">
+      <div class="export-title">Esporta il tuo archivio</div>
+      <div class="export-sub">Salva una copia delle tue letture in formato testo — utile per tenere un diario mistico.</div>
+    </div>
+    <button class="btn-export" onclick="exportArchivio()">⬇ Esporta .txt</button>
+  </div>
+
+  <!-- Link rapidi alle pratiche -->
+  <div id="quickSection" style="margin-top:40px">
+    <div class="section-title">✦ Inizia una Nuova Lettura</div>
+    <div class="quick-grid">
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🃏</span>
+        <span class="quick-card-label">Tarocchi</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🌙</span>
+        <span class="quick-card-label">Oroscopo</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">ᚱ</span>
+        <span class="quick-card-label">Rune</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">☯️</span>
+        <span class="quick-card-label">I Ching</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🔢</span>
+        <span class="quick-card-label">Numerologia</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">💕</span>
+        <span class="quick-card-label">Compatibilità</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🦅</span>
+        <span class="quick-card-label">Totem</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🕐</span>
+        <span class="quick-card-label">Ore Specchio</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">👼</span>
+        <span class="quick-card-label">Angeli</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🌍</span>
+        <span class="quick-card-label">Geomanzia</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🌕</span>
+        <span class="quick-card-label">Luna</span>
+      </a>
+      <a href="https://mysticaoracoli.it/" class="quick-card">
+        <span class="quick-card-icon">🪐</span>
+        <span class="quick-card-label">Pianeti</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="related" style="margin-top:40px">
+    <div class="related-title">✦ Approfondisci su MYSTICA</div>
+    <div class="related-grid">
+      <a href="https://mysticaoracoli.it/guida-tarocchi.html" class="related-link">
+        <span class="related-link-icon">🎴</span>
+        <div class="related-link-text">Guida Tarocchi</div>
+      </a>
+      <a href="https://mysticaoracoli.it/significato-rune.html" class="related-link">
+        <span class="related-link-icon">ᚱ</span>
+        <div class="related-link-text">Guida Rune</div>
+      </a>
+      <a href="https://mysticaoracoli.it/guida-i-ching.html" class="related-link">
+        <span class="related-link-icon">☯️</span>
+        <div class="related-link-text">Guida I Ching</div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="esplora-section" aria-label="Esplora MYSTICA">
+  <h2>✨ Esplora Anche</h2>
+  <div class="esplora-grid">
+    <a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a>
+    <a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a>
+    <a href="./oroscopo-cinese.html" class="esplora-card">🐉 Oroscopo Cinese</a>
+    <a href="./cicli-tempo.html" class="esplora-card">🌙 Cicli e Tempo</a>
+    <a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a>
+    <a href="./guida-tarocchi.html" class="esplora-card">🃏 Guida Tarocchi</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://mysticaoracoli.it/">Home</a>
+    <a href="https://mysticaoracoli.it/about.html">Chi Siamo</a>
+    <a href="https://mysticaoracoli.it/guida-tarocchi.html">Guida Tarocchi</a>
+    <a href="https://mysticaoracoli.it/significato-rune.html">Guida Rune</a>
+    <a href="https://mysticaoracoli.it/oroscopo-segni.html">Segni Zodiacali</a>
+    <a href="https://mysticaoracoli.it/guida-i-ching.html">Guida I Ching</a>
+    <a href="https://mysticaoracoli.it/privacy.html">Privacy Policy</a>
+  </div>
+  <div>PetroCorporation © 2025–2026 · MYSTICA – Oracolo delle Stelle</div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+// ─── Storage helpers ───────────────────────────────────────────────
+const K_STORICO = 'myst_v3_history';
+let _useLS = true;
+const _mem = {};
+
+function _lsGet(k){
+  if(_useLS){try{return localStorage.getItem(k);}catch(e){_useLS=false;}}
+  try{const v=sessionStorage.getItem(k);if(v!==null)return v;}catch(e){}
+  return(_mem[k]!==undefined)?_mem[k]:null;
+}
+function _lsSet(k,v){
+  if(_useLS){try{localStorage.setItem(k,v);return;}catch(e){_useLS=false;}}
+  _mem[k]=v;
+}
+function _lsRemove(k){
+  if(_useLS){try{localStorage.removeItem(k);return;}catch(e){_useLS=false;}}
+  delete _mem[k];
+}
+
+// ─── Toast ─────────────────────────────────────────────────────────
+let _toastTimer=null;
+function toast(msg){
+  const t=document.getElementById('toast');
+  if(_toastTimer){clearTimeout(_toastTimer);t.classList.remove('show');}
+  setTimeout(()=>{
+    t.textContent=msg;
+    t.classList.add('show');
+    _toastTimer=setTimeout(()=>{t.classList.remove('show');_toastTimer=null;},3200);
+  },_toastTimer?80:0);
+}
+
+// ─── Confirm dialog ────────────────────────────────────────────────
+function mysticaConfirm(msg,onOk){
+  const overlay=document.createElement('div');
+  overlay.className='myst-confirm-overlay';
+  overlay.innerHTML=`<div class="myst-confirm-box"><p>${msg}</p><div class="myst-confirm-actions"><button class="myst-confirm-cancel" id="_mcCancel">Annulla</button><button class="myst-confirm-ok" id="_mcOk">Conferma</button></div></div>`;
+  document.body.appendChild(overlay);
+  const close=()=>overlay.remove();
+  overlay.querySelector('#_mcOk').onclick=()=>{close();onOk();};
+  overlay.querySelector('#_mcCancel').onclick=close;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+}
+
+// ─── Icons map ─────────────────────────────────────────────────────
+const ICONS = {
+  'Oroscopo':'🌙',
+  'Lettura Semplice':'🃏',
+  'Lettura Approfondita':'🔮',
+  'Compatibilità':'💕',
+  'Runologia':'ᚱ',
+  'Runologia 3 Rune':'ᚱ',
+  'I Ching':'☯️',
+  'Numerologia':'🔢',
+  'Geomanzia':'🌍',
+  'Angelologia':'👼',
+  'Fasi Lunari':'🌕',
+  'Transiti Planetari':'🪐',
+  'Ore Specchio':'🕐',
+  'Totem':'🦅',
+  'Japamala':'📿',
+  'Pendolo':'⚖️'
+};
+
+// ─── State ─────────────────────────────────────────────────────────
+let _history = [];
+let _activeFilter = 'all';
+
+// ─── Load & render ─────────────────────────────────────────────────
+function loadHistory(){
+  try{ _history = JSON.parse(_lsGet(K_STORICO)||'[]'); }catch(e){ _history=[]; }
+  renderAll();
+}
+
+function renderAll(){
+  const statsEl   = document.getElementById('statsSection');
+  const toolbarEl = document.getElementById('toolbarSection');
+  const exportEl  = document.getElementById('exportBox');
+  const listEl    = document.getElementById('archList');
+
+  if(_history.length === 0){
+    statsEl.style.display   = 'none';
+    toolbarEl.style.display = 'none';
+    exportEl.style.display  = 'none';
+    listEl.innerHTML = `
+      <div class="arch-empty">
+        <span class="arch-empty-icon">📿</span>
+        <div class="arch-empty-title">Archivio ancora vuoto</div>
+        <p class="arch-empty-sub">
+          Ogni lettura che esegui viene custodita qui automaticamente.<br>
+          Inizia la tua prima consultazione per popolare il tuo archivio mistico.
+        </p>
+        <a href="https://mysticaoracoli.it/" class="btn-start">✦ Vai all'Oracolo</a>
+      </div>`;
+    return;
+  }
+
+  // Show sections
+  statsEl.style.display   = '';
+  toolbarEl.style.display = '';
+  exportEl.style.display  = '';
+
+  // Compute stats
+  const tipi = [...new Set(_history.map(x=>x.tipo))];
+  const giorni = [...new Set(_history.map(x=>{
+    try{ return new Date(x.ts).toDateString(); }catch(e){ return x.data; }
+  }))];
+  document.getElementById('statTotale').textContent = _history.length;
+  document.getElementById('statTipi').textContent   = tipi.length;
+  document.getElementById('statGiorni').textContent = giorni.length;
+  document.getElementById('archCountLabel').textContent = _history.length;
+
+  // Build filter tabs
+  buildFilterTabs(tipi);
+
+  // Filter list
+  const filtered = _activeFilter === 'all'
+    ? _history
+    : _history.filter(x => x.tipo === _activeFilter);
+
+  if(filtered.length === 0){
+    listEl.innerHTML = `<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">Nessuna lettura trovata per questo filtro.</div>`;
+    return;
+  }
+
+  listEl.innerHTML = filtered.map((x,i) => {
+    const icon = ICONS[x.tipo] || '✨';
+    const segnoTxt = x.segno ? `<span class="arch-meta-dot">·</span><span class="arch-badge">${x.segno}</span>` : '';
+    return `
+      <div class="arch-item" style="animation-delay:${Math.min(i,15)*30}ms">
+        <div class="arch-type">${icon} ${x.tipo}</div>
+        <div class="arch-detail">${escHtml(x.dettaglio||'')}</div>
+        <div class="arch-meta">
+          <span>${x.data||''}</span>
+          ${segnoTxt}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function buildFilterTabs(tipi){
+  const container = document.getElementById('filterTabs');
+  const existing  = [...container.querySelectorAll('.filter-tab')].map(t=>t.dataset.filter);
+  tipi.forEach(t=>{
+    if(existing.includes(t)) return;
+    const tab = document.createElement('div');
+    tab.className = 'filter-tab';
+    tab.dataset.filter = t;
+    tab.textContent = (ICONS[t]||'✨') + ' ' + t;
+    tab.onclick = function(){ setFilter(t, this); };
+    container.appendChild(tab);
+  });
+}
+
+function setFilter(f, el){
+  _activeFilter = f;
+  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const listEl = document.getElementById('archList');
+  listEl.innerHTML = '';
+  renderAll();
+}
+
+// ─── Clear ─────────────────────────────────────────────────────────
+function clearArch(){
+  mysticaConfirm("Svuotare l'archivio mistico? Questa azione è irreversibile.", ()=>{
+    _lsRemove(K_STORICO);
+    _history = [];
+    _activeFilter = 'all';
+    // Reset filter tabs
+    const tabs = document.getElementById('filterTabs');
+    tabs.innerHTML = '<div class="filter-tab active" data-filter="all" onclick="setFilter(\'all\',this)">✨ Tutte</div>';
+    renderAll();
+    toast('🗑️ Archivio svuotato');
+  });
+}
+
+// ─── Export ────────────────────────────────────────────────────────
+function exportArchivio(){
+  if(_history.length === 0){ toast('⚠️ Archivio vuoto'); return; }
+  const lines = ['MYSTICA – Archivio Mistico', '═'.repeat(40), ''];
+  _history.forEach((x,i)=>{
+    lines.push(`[${i+1}] ${x.tipo}`);
+    lines.push(`    ${x.dettaglio||''}`);
+    lines.push(`    ${x.data||''}${x.segno?' · '+x.segno:''}`);
+    lines.push('');
+  });
+  lines.push('─'.repeat(40));
+  lines.push(`Esportato il ${new Date().toLocaleString('it-IT')}`);
+  lines.push('mysticaoracoli.it');
+
+  const blob = new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `mystica-archivio-${new Date().toISOString().slice(0,10)}.txt`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('✅ Archivio esportato');
+}
+
+// ─── Utility ───────────────────────────────────────────────────────
+function escHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ─── Init ──────────────────────────────────────────────────────────
+loadHistory();
+</script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lancia le Rune Elder Futhark online: estrazione singola o diffusione Passato-Presente-Futuro con 25 rune, significati dettagliati, verso diritta e rovesciata. Oracolo runico gratuito.">
+<meta name="keywords" content="rune elder futhark, lancio rune online, oracolo runico, rune significato, runologia, rune divinazione, fehu uruz ansuz, rune italiane, mysticaoracoli">
+<title>Oracolo Runico — Elder Futhark Online | MYSTICA</title>
+<link rel="canonical" href="https://mysticaoracoli.it/rune.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:title" content="Oracolo Runico Elder Futhark | MYSTICA">
+<meta property="og:description" content="Estrai le rune Elder Futhark online. Lettura singola o Passato-Presente-Futuro con 25 rune e significati completi.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/rune.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/rune.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Oracolo Runico Elder Futhark — MYSTICA",
+  "url": "https://mysticaoracoli.it/rune.html",
+  "description": "Estrai le rune Elder Futhark online con lettura singola o diffusione Passato-Presente-Futuro.",
+  "applicationCategory": "EntertainmentApplication",
+  "inLanguage": "it",
+  "publisher": {"@type":"Organization","name":"Mystica Oracoli","url":"https://mysticaoracoli.it"}
+}
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+
+  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
+  .btn-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
+  .btn-back:hover{background:rgba(255,255,255,0.15)}
+  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#ffffff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .page-subtitle{color:#a89bc2;font-size:12px}
+
+  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+
+  /* FORM CARD */
+  .form-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,215,0,0.2);border-radius:18px;padding:22px 18px;margin-bottom:16px}
+  .form-card h2{font-size:16px;color:#ffd700;margin-bottom:6px}
+  .form-card p{font-size:13px;color:#a89bc2;margin-bottom:16px;line-height:1.5}
+
+  /* TABS MODALITÀ */
+  .mode-tabs{display:flex;gap:8px;margin-bottom:16px}
+  .mode-tab{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#a89bc2;padding:10px 8px;border-radius:12px;cursor:pointer;font-size:13px;text-align:center;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
+  .mode-tab.active{background:rgba(255,215,0,0.15);border-color:rgba(255,215,0,0.4);color:#ffd700;font-weight:600}
+
+  textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e6e0f0;padding:12px 14px;border-radius:12px;font-size:14px;resize:none;height:80px;margin-bottom:14px;font-family:inherit}
+  textarea::placeholder{color:#6b6080}
+  textarea:focus{outline:none;border-color:rgba(255,215,0,0.4)}
+
+  .btn-draw{background:linear-gradient(135deg,#1a0a2e,#4a0e6e);border:1px solid rgba(255,215,0,0.4);color:#ffd700;padding:16px;border-radius:25px;font-size:18px;cursor:pointer;width:100%;font-weight:700;letter-spacing:2px;transition:all 0.2s}
+  .btn-draw:hover{background:linear-gradient(135deg,#2a1048,#6a2090)}
+  .btn-draw:active{transform:scale(0.97)}
+
+  /* SACCHETTO ANIMATO */
+  .bag-anim{text-align:center;padding:16px 0 4px;font-size:56px;cursor:pointer;user-select:none;animation:sway 3s ease-in-out infinite}
+  @keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+  .bag-hint{text-align:center;font-size:12px;color:#6b6080;margin-bottom:14px}
+
+  /* RISULTATO */
+  .result-wrap{display:none;animation:fadeUp 0.5s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+  /* RUNA SINGOLA */
+  .rune-single{background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.25);border-radius:18px;padding:24px 18px;text-align:center}
+  .rune-symbol-big{font-size:96px;color:#ffd700;line-height:1;margin:10px 0;filter:drop-shadow(0 0 20px rgba(255,215,0,0.4));display:inline-block;transition:transform 0.3s}
+  .rune-name{font-size:22px;font-weight:700;color:#e6e0f0;margin-bottom:4px}
+  .rune-trasl{font-size:12px;color:#a89bc2;margin-bottom:10px}
+  .verso-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:12px}
+  .verso-badge.diritta{background:rgba(74,222,128,0.15);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
+  .verso-badge.rovesciata{background:rgba(248,113,113,0.15);color:#f87171;border:1px solid rgba(248,113,113,0.3)}
+  .rune-parola{display:inline-block;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);padding:4px 16px;border-radius:20px;font-size:13px;color:#ffd700;margin-bottom:16px}
+  .divider{height:1px;background:rgba(255,255,255,0.08);margin:14px 0}
+  .rune-block{text-align:left;margin-bottom:12px}
+  .rune-block h4{font-size:13px;color:#ffd700;margin-bottom:6px}
+  .rune-block p{font-size:14px;color:#c8c0e0;line-height:1.7}
+
+  /* TRE RUNE SPREAD */
+  .spread-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+  .spread-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px 8px;text-align:center}
+  .spread-pos{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+  .spread-sym{font-size:52px;color:#ffd700;line-height:1;margin-bottom:4px;display:inline-block}
+  .spread-rname{font-size:12px;color:#e6e0f0;font-weight:600;margin-bottom:4px}
+  .spread-verso{font-size:11px}
+
+  .spread-detail{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px;margin-bottom:10px}
+  .spread-detail h4{font-size:14px;color:#ffd700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spread-detail p{font-size:13px;color:#c8c0e0;line-height:1.7}
+
+  /* DOMANDA MOSTRATA */
+  .question-shown{background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,215,0,0.4);padding:10px 14px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:13px;color:#a89bc2;font-style:italic;text-align:left}
+
+  /* BTN RESET */
+  .btn-reset{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:12px 24px;border-radius:20px;cursor:pointer;font-size:14px;margin-top:14px;width:100%}
+  .btn-reset:hover{background:rgba(255,255,255,0.12)}
+
+  /* CATALOGO RUNE */
+  .catalog-toggle{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#a89bc2;padding:12px;border-radius:12px;cursor:pointer;font-size:14px;width:100%;text-align:center;margin-top:16px;margin-bottom:0}
+  .catalog-wrap{display:none;margin-top:12px}
+  .catalog-wrap.open{display:block}
+  .catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+  .catalog-item{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer;transition:border-color 0.2s}
+  .catalog-item:hover{border-color:rgba(255,215,0,0.3)}
+  .catalog-item .sym{font-size:30px;color:#ffd700;display:block;margin-bottom:4px}
+  .catalog-item .nom{font-size:12px;color:#e6e0f0;font-weight:600}
+  .catalog-item .par{font-size:10px;color:#a89bc2}
+
+  /* MODAL CATALOGO */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;display:none;align-items:flex-end;justify-content:center}
+  .modal-overlay.open{display:flex}
+  .modal-sheet{background:#0d0b14;border:1px solid rgba(255,215,0,0.2);border-radius:20px 20px 0 0;width:100%;max-width:650px;padding:20px 18px 40px;max-height:85vh;overflow-y:auto}
+  .modal-close{float:right;background:rgba(255,255,255,0.08);border:none;color:#c8c0e0;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:14px;margin-bottom:12px}
+  .modal-rune-sym{font-size:80px;color:#ffd700;display:block;text-align:center;margin:10px 0;filter:drop-shadow(0 0 16px rgba(255,215,0,0.4))}
+  .modal-rune-title{font-size:20px;font-weight:700;text-align:center;margin-bottom:4px}
+  .modal-rune-sub{font-size:12px;color:#a89bc2;text-align:center;margin-bottom:14px}
+  .modal-block{margin-bottom:12px}
+  .modal-block h4{font-size:13px;color:#ffd700;margin-bottom:6px}
+  .modal-block p{font-size:13px;color:#c8c0e0;line-height:1.7}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.3);color:#ffd700;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="btn-back" href="index.html">← Home</a>
+  <h1>ᚱ Oracolo Runico</h1>
+  <div class="page-subtitle">Elder Futhark · 25 Rune</div>
+</div>
+
+<div class="content">
+
+  <!-- FORM -->
+  <div class="form-card" id="runeForm">
+    <h2>Consulta le Rune</h2>
+    <p>Le rune Elder Futhark sono un antico alfabeto nordico usato come oracolo. Concentrati sulla tua domanda e lascia che le rune parlino.</p>
+
+    <div class="mode-tabs">
+      <div class="mode-tab active" id="tab0" onclick="selectMode(0)">ᚠ Runa Singola</div>
+      <div class="mode-tab" id="tab1" onclick="selectMode(1)">ᚱᚢᚾ Tre Rune</div>
+    </div>
+
+    <textarea id="runeDomanda" placeholder="Scrivi qui la tua domanda (opzionale)…"></textarea>
+
+    <div class="bag-anim" onclick="draw()" title="Clicca per estrarre">🎒</div>
+    <div class="bag-hint">Tocca il sacchetto o il pulsante per estrarre</div>
+
+    <button class="btn-draw" id="drawBtn" onclick="draw()">ᚠ Estrai la Runa</button>
+  </div>
+
+  <!-- RISULTATO -->
+  <div class="result-wrap" id="resultWrap"></div>
+
+  <!-- CATALOGO -->
+  <button class="catalog-toggle" onclick="toggleCatalog()">📖 Catalogo delle 25 Rune ▾</button>
+  <div class="catalog-wrap" id="catalogWrap">
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+
+</div>
+
+<!-- MODAL DETTAGLIO RUNA -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-sheet" id="modalSheet">
+    <button class="modal-close" onclick="closeModalBtn()">✕ Chiudi</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DB_RUNE = [
+  { sim:'ᚠ', nome:'Fehu', trasl:'F', invertibile:true,
+    diritta:'Fehu è la runa della ricchezza guadagnata — non ereditata, non rubata, ma creata con le mani e la mente. Annuncia abbondanza materiale, successo nei progetti finanziari e il frutto di un lavoro onesto. È anche la runa del fuoco primordiale che anima ogni creazione. In questo momento le forze del fuoco cosmico sono con te: ciò che hai seminato sta per dare frutti.',
+    rovesciata:'Fehu rovesciata segnala perdita finanziaria, frustrazione nei progetti o energie mal indirizzate. Il denaro che non circola marcisce — controlla se stai trattenendo risorse (materiali o emotivi) invece di metterle in circolazione. Rivedi i tuoi investimenti di tempo e energia.',
+    amore:'Prosperità emotiva in arrivo. Una relazione si arricchisce di nuova vitalità.',
+    parola:'Abbondanza', elemento:'Fuoco' },
+
+  { sim:'ᚢ', nome:'Uruz', trasl:'U', invertibile:true,
+    diritta:'Uruz è la forza bruta del bisonte selvatico — potenza fisica, vitalità, capacità di superare ostacoli con pura energia. Questa runa ti dice che hai più forza di quanta tu creda. Un\'opportunità si presenta improvvisamente e richiede coraggio per essere colta. La tua salute è in ascesa o si sta rafforzando.',
+    rovesciata:'Uruz rovesciata segnala energia mal indirizzata, debolezza temporanea o opportunità mancate. Forse stai combattendo la resistenza giusta invece di piegarti intelligentemente come il bambù.',
+    amore:'Passione e vitalità in amore. Attrazione fisica intensa.',
+    parola:'Forza', elemento:'Terra' },
+
+  { sim:'ᚦ', nome:'Thurisaz', trasl:'TH', invertibile:true,
+    diritta:'Thurisaz è la runa del gigante e del martello — forza distruttrice che apre il cammino. Rappresenta la protezione attiva contro le forze che ti vogliono fermare, ma anche i propri ostacoli interni che devono essere abbattuti. Un momento di catarsi difficile ma necessaria si avvicina.',
+    rovesciata:'Thurisaz rovesciata avverte di forze ostili nell\'ambiente — persone o circostanze che potrebbero sabotare i tuoi piani. Massima cautela nelle alleanze. Non agire d\'impulso.',
+    amore:'Protezione nelle relazioni. Definisci i confini chiari.',
+    parola:'Protezione', elemento:'Fuoco' },
+
+  { sim:'ᚨ', nome:'Ansuz', trasl:'A', invertibile:true,
+    diritta:'Ansuz è la runa di Odino, il dio della saggezza e del linguaggio. Porta messaggi divini, ispirazioni improvvise e il potere trasformativo della parola. Un insegnamento importante sta per arrivare — attraverso un sogno, un incontro, un libro, una conversazione apparentemente casuale. Ascolta con più attenzione del solito.',
+    rovesciata:'Ansuz rovesciata segnala comunicazioni bloccate, inganni o messaggi distorti. Qualcuno potrebbe non dirti tutta la verità. Fidati più della tua intuizione che delle parole degli altri.',
+    amore:'Un messaggio importante in amore. Dì ciò che senti veramente.',
+    parola:'Saggezza', elemento:'Aria' },
+
+  { sim:'ᚱ', nome:'Raidho', trasl:'R', invertibile:true,
+    diritta:'Raidho è la runa del viaggio — non solo fisico ma anche interiore. Indica movimento, progresso, la gioia del cammino in sé oltre che della meta. Un viaggio fisico potrebbe essere in arrivo, oppure sei invitato a metterti in movimento verso un obiettivo che hai rimandato. Il ritmo giusto è con te.',
+    rovesciata:'Raidho rovesciata segnala ritardi, viaggi problematici o un percorso deviato. Potresti sentirti bloccato in un ciclo che non ti porta da nessuna parte. Rivedi la direzione — non la velocità.',
+    amore:'Un viaggio o cambiamento di scenario ravviva la relazione.',
+    parola:'Viaggio', elemento:'Aria' },
+
+  { sim:'ᚲ', nome:'Kenaz', trasl:'K', invertibile:true,
+    diritta:'Kenaz è la torcia nella notte — la conoscenza tecnica, la creatività artigianale, la fiamma che illumina il buio dell\'ignoranza. Stai per capire qualcosa che ti sfuggiva. Un\'abilità si sviluppa, un progetto creativo prende forma. La chiarezza sta arrivando.',
+    rovesciata:'Kenaz rovesciata segnala la perdita di una fiamma — fine di una relazione, di un progetto o di un\'illusione confortante. Anche se è doloroso, questo chiarimento ti libera per qualcosa di più autentico.',
+    amore:'Luce portata nell\'oscurità emotiva. Comprensione reciproca approfondita.',
+    parola:'Illuminazione', elemento:'Fuoco' },
+
+  { sim:'ᚷ', nome:'Gebo', trasl:'G', invertibile:false,
+    diritta:'Gebo è la runa del dono — lo scambio sacro tra due parti. Indica partnership equilibrate, doni ricevuti o dati, e la legge cosmica del dare e ricevere. Ogni dono autentico crea un legame. Stai per ricevere un dono inaspettato, o sei chiamato a darne uno con il cuore aperto. Le collaborazioni ora fioriscono.',
+    rovesciata:null,
+    amore:'Una relazione in dono reciproco. Partnership equa e nutriente.',
+    parola:'Dono', elemento:'Aria' },
+
+  { sim:'ᚹ', nome:'Wunjo', trasl:'W', invertibile:true,
+    diritta:'Wunjo è la runa della gioia — non il piacere superficiale, ma la gioia profonda che nasce dall\'essere esattamente dove si deve essere. Armonia, felicità, successo nei gruppi e nelle comunità. Un periodo di vero benessere è o si avvicina. Permettiti di godertelo senza sabotarlo.',
+    rovesciata:'Wunjo rovesciata porta delusioni, disarmonia nel gruppo, o una gioia che si rivela fragile. Attenzione all\'autoinganno circa la propria felicità.',
+    amore:'Gioia e armonia in amore. Momenti di connessione autentica.',
+    parola:'Gioia', elemento:'Terra' },
+
+  { sim:'ᚺ', nome:'Hagalaz', trasl:'H', invertibile:false,
+    diritta:'Hagalaz è la grandine — distruzione improvvisa e fuori dal controllo. Rappresenta le forze del caos che spazzano via ciò che era malato o instabile. Anche se l\'esperienza può essere traumatica, ciò che Hagalaz distrugge aveva bisogno di andare. Il campo dopo la grandine è pulito e pronto per una semina nuova.',
+    rovesciata:null,
+    amore:'Un\'interruzione improvvisa in amore — può purificare ciò che era tossico.',
+    parola:'Rottura', elemento:'Acqua' },
+
+  { sim:'ᚾ', nome:'Nauthiz', trasl:'N', invertibile:true,
+    diritta:'Nauthiz è la runa del bisogno e della necessità — la frizione che produce il fuoco. Indica un periodo di difficoltà che forgia il carattere. Sei in una situazione di costrizione, ma questa limitazione stessa ti sta insegnando qualcosa di essenziale. Il desiderio insoddisfatto è il motore della crescita.',
+    rovesciata:'Nauthiz rovesciata amplifica la frustrazione e la mancanza. Potresti sentirti intrappolato in un ciclo di bisogno. Il primo passo è riconoscere ciò di cui hai veramente bisogno — non ciò che vuoi.',
+    amore:'Un bisogno non espresso crea tensione. Parla di ciò che ti manca.',
+    parola:'Necessità', elemento:'Fuoco' },
+
+  { sim:'ᛁ', nome:'Isa', trasl:'I', invertibile:false,
+    diritta:'Isa è il ghiaccio — stasi, blocco, il mondo congelato. Non è negativa: il ghiaccio preserva. Ma indica che ora non è il momento dell\'azione. Tutto è fermo, e forse è necessario. Usa questo periodo di congelamento per riflettere invece di combattere la stasi. Il disgelo arriverà.',
+    rovesciata:null,
+    amore:'Periodo di gelo emotivo. Non forzare — attendi il disgelo naturale.',
+    parola:'Stasi', elemento:'Acqua' },
+
+  { sim:'ᛃ', nome:'Jera', trasl:'J', invertibile:false,
+    diritta:'Jera è la runa del raccolto — il frutto paziente di un lungo ciclo. Annuncia che il tempo della raccolta è arrivato: i tuoi sforzi passati stanno per dare i loro frutti. Questa runa insegna che i cicli naturali non si possono forzare. Il raccolto arriva alla sua ora, non alla tua.',
+    rovesciata:null,
+    amore:'Il raccolto in amore: ciò che hai investito nella relazione torna moltiplicato.',
+    parola:'Raccolto', elemento:'Terra' },
+
+  { sim:'ᛇ', nome:'Eihwaz', trasl:'EI', invertibile:false,
+    diritta:'Eihwaz è il tasso — l\'albero dell\'immortalità che cresce tra i mondi. Rappresenta la connessione tra vita e morte, tra il visibile e l\'invisibile. Sei in un momento di transizione profonda. Hai la forza di resistere alle prove più difficili. Questa runa è una delle più potenti come amuleto di protezione.',
+    rovesciata:null,
+    amore:'Un amore che attraversa trasformazioni profonde e ne emerge più forte.',
+    parola:'Resilienza', elemento:'Terra' },
+
+  { sim:'ᛈ', nome:'Perthro', trasl:'P', invertibile:true,
+    diritta:'Perthro è il calice del destino — il mistero, il gioco del fato, ciò che è ancora nascosto nel ventre del futuro. Indica che stai per scoprire qualcosa di sorprendente, o che una situazione ha risvolti che non vedi ancora. Tratta la vita come un gioco divino e accetta l\'incertezza con curiosità.',
+    rovesciata:'Perthro rovesciata porta segreti svelati male, sorprese spiacevoli o comportamenti dipendenti da abitudini difficili da spezzare.',
+    amore:'Misteri e sorprese in amore. Non tutto è come sembra.',
+    parola:'Destino', elemento:'Acqua' },
+
+  { sim:'ᛉ', nome:'Algiz', trasl:'Z', invertibile:true,
+    diritta:'Algiz è la runa della protezione — le corna dell\'alce alzate in difesa, la connessione con le guide spirituali. Sei protetto in questo momento da forze che non vedi. Fidati dell\'istinto che ti dice di allontanarti da certi posti, persone o situazioni.',
+    rovesciata:'Algiz rovesciata segnala che la tua protezione è indebolita — potresti essere vulnerabile a manipolazioni o energie negative. Rafforza i tuoi confini.',
+    amore:'Protezione divina sulla relazione. Un\'ala ti copre.',
+    parola:'Protezione', elemento:'Aria' },
+
+  { sim:'ᛊ', nome:'Sowilo', trasl:'S', invertibile:false,
+    diritta:'Sowilo è il sole — vittoria, salute, energia vitale al massimo. È la runa della luce che non può essere oscurata, della volontà che si allinea con la forza cosmica. Stai per (o stai vivendo) un momento di grande chiarezza e potere personale. Non lasciare che la timidezza ti impedisca di brillare.',
+    rovesciata:null,
+    amore:'Energia solare in amore: calore, gioia, vitalità nella relazione.',
+    parola:'Vittoria', elemento:'Fuoco' },
+
+  { sim:'ᛏ', nome:'Tiwaz', trasl:'T', invertibile:true,
+    diritta:'Tiwaz è la runa di Tyr, il dio della giustizia che sacrificò la mano per incatenare il lupo Fenrir. Indica vittoria attraverso il sacrificio consapevole, giustizia, onore. Hai la forza di fare la cosa giusta anche quando è difficile. La tua integrità è la tua protezione.',
+    rovesciata:'Tiwaz rovesciata segnala ingiustizia, sconfitta, o una causa in cui non credi davvero. Rivedi per cosa stai combattendo.',
+    amore:'Giustizia e onore nelle relazioni. Dì la verità anche quando è scomoda.',
+    parola:'Giustizia', elemento:'Aria' },
+
+  { sim:'ᛒ', nome:'Berkano', trasl:'B', invertibile:true,
+    diritta:'Berkano è la betulla — nuovi inizi, fertilità, rinascita. Come l\'albero che è il primo a rifiorire in primavera, questa runa annuncia un nuovo inizio pieno di potenziale. Ottima per progetti nuovi, gravidanze, guarigione. La madre cosmica ti nutre.',
+    rovesciata:'Berkano rovesciata indica problemi familiari, blocchi nella crescita o un\'idea che non riesce a nascere nonostante gli sforzi.',
+    amore:'Nuovi inizi in amore. Fertilità e nutrimento reciproco.',
+    parola:'Rinascita', elemento:'Terra' },
+
+  { sim:'ᛖ', nome:'Ehwaz', trasl:'E', invertibile:true,
+    diritta:'Ehwaz è il cavallo — il viaggio veloce, la partnership leale, il movimento armonioso tra due forze che si fidano l\'una dell\'altra. Indica collaborazioni eccellenti, spostamenti produttivi e la fiducia come fondamento di ogni relazione autentica.',
+    rovesciata:'Ehwaz rovesciata porta disaccordo in una partnership, viaggi problematici o una collaborazione che si inceppa per mancanza di fiducia.',
+    amore:'Partnership leale e mossa dalla fiducia profonda.',
+    parola:'Partnership', elemento:'Terra' },
+
+  { sim:'ᛗ', nome:'Mannaz', trasl:'M', invertibile:true,
+    diritta:'Mannaz è la runa dell\'umanità — il sé in relazione agli altri, la coscienza collettiva, la cooperazione. Ti ricorda che siamo tutti connessi e che le tue azioni hanno ripercussioni nella rete umana intorno a te. Momento di grande potenziale per le relazioni sociali e intellettuali.',
+    rovesciata:'Mannaz rovesciata segnala isolamento, egoismo o manipolazione nell\'ambiente sociale. Riesamina i confini tra sé e gli altri.',
+    amore:'Connessione profonda basata sulla comprensione reciproca della natura umana.',
+    parola:'Umanità', elemento:'Aria' },
+
+  { sim:'ᛚ', nome:'Laguz', trasl:'L', invertibile:true,
+    diritta:'Laguz è l\'acqua — il flusso, l\'intuizione, l\'inconscio, il mondo emotivo. Sei chiamato a seguire il flusso invece di combatterlo. La tua intuizione ora è particolarmente affidabile — ascoltala anche quando non ha spiegazioni logiche.',
+    rovesciata:'Laguz rovesciata indica emozioni fuori controllo, eccesso di fantasie o una situazione in cui ti stai annegando invece di nuotare.',
+    amore:'Intuizione in amore. Lasciati guidare dal sentire profondo.',
+    parola:'Intuizione', elemento:'Acqua' },
+
+  { sim:'ᛜ', nome:'Ingwaz', trasl:'NG', invertibile:false,
+    diritta:'Ingwaz è la runa del dio della fertilità — il potenziale interno pronto a esplodere in manifestazione. Indica completamento di un ciclo, energia interna accumulata pronta per essere rilasciata, e una nuova fase della vita che sta per cominciare. È una runa di grande potere silenzioso.',
+    rovesciata:null,
+    amore:'Un ciclo si completa e un nuovo inizia — la relazione evolve in qualcosa di più.',
+    parola:'Potenziale', elemento:'Terra' },
+
+  { sim:'ᛞ', nome:'Dagaz', trasl:'D', invertibile:false,
+    diritta:'Dagaz è l\'alba — il punto di svolta tra il buio e la luce, la trasformazione catalizzante. Indica un momento di illuminazione, un cambiamento di prospettiva così radicale che tutto dopo sarà diverso. Non si può tornare indietro dopo Dagaz — e non vorresti farlo.',
+    rovesciata:null,
+    amore:'Un\'alba in amore: tutto cambia in meglio, una comprensione nuova trasforma la relazione.',
+    parola:'Svolta', elemento:'Fuoco' },
+
+  { sim:'ᛟ', nome:'Othala', trasl:'O', invertibile:true,
+    diritta:'Othala è la runa dell\'eredità e della casa — le radici ancestrali, la proprietà, il patrimonio (materiale e spirituale) tramandato. Indica connessione con gli antenati, questioni di famiglia o proprietà, e la necessità di onorare le proprie radici per crescere verso l\'alto.',
+    rovesciata:'Othala rovesciata porta conflitti familiari, problemi legati alle proprietà o un\'incapacità di liberarsi da pattern ancestrali che non servono più.',
+    amore:'Amore radicato nella famiglia e nelle tradizioni. L\'eredità emotiva del passato influenza il presente.',
+    parola:'Eredità', elemento:'Terra' },
+
+  { sim:'ᛣ', nome:'Wyrd', trasl:'∅', invertibile:false,
+    diritta:'Wyrd è la runa del vuoto, la runa bianca — il mistero supremo che non può essere nominato. Quando la runa del vuoto emerge, il destino non può essere letto: sei in un momento di pura potenzialità dove tutte le possibilità sono aperte simultaneamente. Non cercare la risposta — siediti nel mistero e lascia che il futuro si riveli da solo.',
+    rovesciata:null,
+    amore:'Ciò che deve manifestarsi in amore sta prendendo forma nel silenzio. Fidati.',
+    parola:'Mistero', elemento:'Spirito' }
+];
+
+let _mode = 0; // 0=singola, 1=tre
+
+function selectMode(m){
+  _mode = m;
+  document.getElementById('tab0').classList.toggle('active', m===0);
+  document.getElementById('tab1').classList.toggle('active', m===1);
+  document.getElementById('drawBtn').textContent = m===0 ? 'ᚠ Estrai la Runa' : 'ᚱᚢᚾ Estrai le Tre Rune';
+}
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+function runaRandom(){
+  const r=DB_RUNE[Math.floor(Math.random()*DB_RUNE.length)];
+  const rovesciata=r.invertibile && Math.random()<0.35;
+  return {...r, rovesciata};
+}
+
+function draw(){
+  if(_mode===0) drawSingola();
+  else drawTre();
+}
+
+function drawSingola(){
+  const r=runaRandom();
+  const domanda=(document.getElementById('runeDomanda').value||'').trim();
+  const msg=r.rovesciata && r.rovesciata ? r.rovesciata : r.diritta;
+
+  const versoBadge=r.invertibile
+    ? `<span class="verso-badge ${r.rovesciata?'rovesciata':'diritta'}">${r.rovesciata?'▽ Rovesciata':'△ Diritta'}</span>`
+    : '';
+
+  const qHtml=domanda ? `<div class="question-shown">❓ "${domanda}"</div>` : '';
+
+  document.getElementById('resultWrap').innerHTML=`
+    <div class="rune-single">
+      ${qHtml}
+      <div class="rune-symbol-big" style="transform:${r.rovesciata?'rotate(180deg)':'none'}">${r.sim}</div>
+      <div class="rune-name">${r.nome}</div>
+      <div class="rune-trasl">Traslitterazione: ${r.trasl} · ${r.elemento}</div>
+      ${versoBadge}
+      <div class="rune-parola">✦ ${r.parola}</div>
+      <div class="divider"></div>
+      <div class="rune-block">
+        <h4>📜 Il Messaggio della Runa</h4>
+        <p>${msg}</p>
+      </div>
+      <div class="rune-block">
+        <h4>💕 In Amore</h4>
+        <p>${r.amore}</p>
+      </div>
+      <button class="btn-reset" onclick="reset()">🔄 Nuova Estrazione</button>
+    </div>
+  `;
+
+  show();
+  saveHistory('Runologia', r.nome+(r.rovesciata?' (rovesciata)':'')+' — '+r.parola);
+}
+
+function drawTre(){
+  const pool=[...DB_RUNE];
+  const drawn=[];
+  for(let i=0;i<3;i++){
+    const idx=Math.floor(Math.random()*pool.length);
+    const r=pool.splice(idx,1)[0];
+    drawn.push({...r, rovesciata:r.invertibile&&Math.random()<0.35});
+  }
+  const pos=['PASSATO','PRESENTE','FUTURO'];
+  const pcol=['#a0a0ff','#ffd700','#ffb347'];
+  const domanda=(document.getElementById('runeDomanda').value||'').trim();
+  const qHtml=domanda?`<div class="question-shown">❓ "${domanda}"</div>`:'';
+
+  const cards=drawn.map((r,i)=>`
+    <div class="spread-card">
+      <div class="spread-pos" style="color:${pcol[i]}">${pos[i]}</div>
+      <div class="spread-sym" style="transform:${r.rovesciata?'rotate(180deg)':'none'}">${r.sim}</div>
+      <div class="spread-rname">${r.nome}</div>
+      <div class="spread-verso">${r.rovesciata?'<span style="color:#f87171">▽ Rovesciata</span>':'<span style="color:#4ade80">△ Diritta</span>'}</div>
+    </div>`).join('');
+
+  const details=drawn.map((r,i)=>{
+    const msg=r.rovesciata&&r.rovesciata?r.rovesciata:r.diritta;
+    return `
+    <div class="spread-detail">
+      <h4>
+        <span style="font-size:22px">${r.sim}</span>
+        ${r.nome}
+        <span style="color:${pcol[i]};font-size:10px;text-transform:uppercase;letter-spacing:1px">${pos[i]}</span>
+        <span style="color:#a89bc2;font-size:10px">${r.rovesciata?'· Rovesciata':''}</span>
+      </h4>
+      <p>${msg}</p>
+    </div>`;
+  }).join('');
+
+  document.getElementById('resultWrap').innerHTML=`
+    ${qHtml}
+    <div class="spread-cards">${cards}</div>
+    ${details}
+    <button class="btn-reset" onclick="reset()" style="margin-top:6px">🔄 Nuova Lettura</button>
+  `;
+
+  show();
+  saveHistory('Runologia 3 Rune', drawn.map(r=>r.nome+(r.rovesciata?'℞':'')).join(' · '));
+}
+
+function show(){
+  document.getElementById('runeForm').style.display='none';
+  const rw=document.getElementById('resultWrap');
+  rw.style.display='block';
+  rw.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function reset(){
+  document.getElementById('runeForm').style.display='block';
+  document.getElementById('resultWrap').style.display='none';
+  document.getElementById('resultWrap').innerHTML='';
+  document.getElementById('runeDomanda').value='';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleCatalog(){
+  const w=document.getElementById('catalogWrap');
+  w.classList.toggle('open');
+  if(w.classList.contains('open') && !document.getElementById('catalogGrid').children.length){
+    buildCatalog();
+  }
+}
+
+function buildCatalog(){
+  document.getElementById('catalogGrid').innerHTML=DB_RUNE.map((r,i)=>`
+    <div class="catalog-item" onclick="openModal(${i})">
+      <span class="sym">${r.sim}</span>
+      <div class="nom">${r.nome}</div>
+      <div class="par">${r.parola}</div>
+    </div>`).join('');
+}
+
+function openModal(idx){
+  const r=DB_RUNE[idx];
+  document.getElementById('modalContent').innerHTML=`
+    <span class="modal-rune-sym">${r.sim}</span>
+    <div class="modal-rune-title">${r.nome}</div>
+    <div class="modal-rune-sub">Traslitt: ${r.trasl} · Elemento: ${r.elemento} · ${r.invertibile?'Invertibile':'Non invertibile'}</div>
+    <div style="text-align:center;margin-bottom:14px"><span style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.25);padding:3px 14px;border-radius:20px;font-size:12px;color:#ffd700">✦ ${r.parola}</span></div>
+    <div class="modal-block">
+      <h4>📜 Significato (Diritta)</h4>
+      <p>${r.diritta}</p>
+    </div>
+    ${r.rovesciata?`<div class="modal-block"><h4>🔃 Significato (Rovesciata)</h4><p>${r.rovesciata}</p></div>`:'<div class="modal-block" style="opacity:0.5"><h4>— Non invertibile</h4></div>'}
+    <div class="modal-block">
+      <h4>💕 In Amore</h4>
+      <p>${r.amore}</p>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e){
+  if(e.target===document.getElementById('modalOverlay')) closeModalBtn();
+}
+function closeModalBtn(){
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function saveHistory(tipo, dettaglio){
+  try{
+    let h=JSON.parse(localStorage.getItem('myst_v3_history')||'[]');
+    h.unshift({tipo,dettaglio,data:new Date().toLocaleString('it-IT'),ts:Date.now()});
+    if(h.length>60) h.pop();
+    localStorage.setItem('myst_v3_history',JSON.stringify(h));
+  }catch(e){}
+}
+</script>
+
+</body>
+</html>
