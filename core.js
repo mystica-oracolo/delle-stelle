@@ -3215,3 +3215,67 @@ function dismissRating(...args){ return _loadChunk('extra').then(()=> window.dis
     if(typeof initApp==='function') initApp();
   }
 })();
+
+
+(function(){
+  function safeQuery(sel, root){ try { return (root||document).querySelector(sel); } catch(e){ return null; } }
+  function safeById(id){ try { return document.getElementById(id); } catch(e){ return null; } }
+  function safeScrollTop(){ try { window.scrollTo({top:0, behavior:"smooth"}); } catch(e){ try { window.scrollTo(0,0); } catch(_){} } }
+  function safeScrollInto(el){ if(!el) return; try { el.scrollIntoView({behavior:"smooth", block:"start"}); } catch(e){ try { el.scrollIntoView(); } catch(_){} } }
+  const oldNavMagia = window.navMagia;
+  window.navMagia = function(v, isBack=false){
+    try { if (typeof oldNavMagia === 'function') return oldNavMagia(v, isBack); }
+    catch(e){ console.warn('navMagia fallback', e); }
+    try { if(!isBack) safeScrollTop(); } catch(e){}
+    const fn = {bianca:'navMagiabianca', rossa:'navMagiarossa', nera:'navMagianera', malocchio:'navMagiamalocchio'}[v];
+    if(fn && typeof window[fn]==='function') return window[fn]();
+  };
+  const oldInitMagia = window.initMagia;
+  window.initMagia = function(){
+    try {
+      if (window.__mysticaMagiaInited) return;
+      window.__mysticaMagiaInited = true;
+      if (typeof oldInitMagia === 'function') oldInitMagia();
+      const view = safeById('view-magia');
+      if(!view) return;
+      const tabs = view.querySelectorAll('.magia-tab');
+      const panels = view.querySelectorAll('.magia-panel');
+      tabs.forEach(tab => tab.addEventListener('click', () => {
+        try{
+          tabs.forEach(t => t.classList.remove('active'));
+          panels.forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          const target = safeQuery('.magia-panel[data-tab="' + (tab.dataset.panel||'') + '"]', view);
+          if(target) target.classList.add('active');
+        }catch(e){ console.warn('magia tab error', e); }
+      }));
+    } catch(e){ console.warn('initMagia fallback', e); }
+  };
+  const oldToggleRituale = window.toggleRituale;
+  window.toggleRituale = function(el){
+    try {
+      if(!el) return;
+      const cards = document.querySelectorAll('.magia-ritual');
+      const isOpen = el.classList.contains('open');
+      cards.forEach(c => { if(c !== el) c.classList.remove('open'); });
+      el.classList.toggle('open');
+      if(!isOpen){
+        safeScrollInto(el);
+      }
+      return;
+    } catch(e){
+      console.warn('toggleRituale fallback', e);
+      try { if(typeof oldToggleRituale === 'function') return oldToggleRituale(el); } catch(_){}
+    }
+  };
+  ['bianca','rossa','nera','malocchio'].forEach(k=>{
+    const name = 'navMagia'+k;
+    if(typeof window[name] !== 'function') return;
+    const orig = window[name];
+    window[name] = function(){
+      try { const r = orig.apply(this, arguments); safeScrollTop(); return r; }
+      catch(e){ console.warn(name+' fallback', e); safeScrollTop(); }
+    };
+  });
+})();
+
