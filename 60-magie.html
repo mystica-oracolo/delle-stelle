@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>60 Magie della Tradizione Esoterica | MYSTICA</title>
+<meta name="description" content="60 rituali e magie della tradizione esoterica italiana ed europea. Protezione, purificazione, prosperità, amore, sogni. Saggezza popolare, alchimia domestica e rituali antichi.">
+<meta name="keywords" content="rituali magici, magie tradizionali, protezione malocchio, purificazione salvia, rituale prosperità, magia popolare italiana, folklore esoterico">
+<meta name="google-adsense-account" content="ca-pub-0522720046244970">
+<meta property="og:title" content="60 Magie della Tradizione | MYSTICA">
+<meta property="og:description" content="60 rituali esoterici della tradizione italiana ed europea. Protezione, prosperità, amore, sogni.">
+<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://mysticaoracoli.it/60-magie.html">
+<link rel="canonical" href="https://mysticaoracoli.it/60-magie.html">
+<link rel="icon" href="./apple-touch-icon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="mystica.css">
+<style>
+:root{--purple:#9d4edd;--gold:#ffd700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0b14;color:#e6e0f0;font-family:'Crimson Pro',Georgia,serif;min-height:100vh}
+.cosmos{position:fixed;inset:0;pointer-events:none;z-index:0;background:#0a0514 radial-gradient(ellipse 60% 40% at 50% 0%,rgba(42,23,72,.25) 0%,transparent 70%);animation:twinkle 14s infinite alternate}
+@keyframes twinkle{0%{opacity:.35}100%{opacity:.55}}
+.page-wrap{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
+
+/* TOP BAR */
+.top-bar{background:rgba(10,5,20,.92);backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,.2);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+.back-btn{width:34px;height:34px;border-radius:50%;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:#d4af37;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;transition:all .2s}
+.back-btn:hover{background:rgba(212,175,55,.2)}
+.top-bar-title{font-family:'Cinzel',serif;font-size:16px;color:#d4af37;letter-spacing:2px;flex:1;text-align:center}
+
+/* INTRO */
+.intro{text-align:center;padding:22px 16px 10px}
+.intro-icon{font-size:58px;margin-bottom:8px;filter:drop-shadow(0 0 18px rgba(157,78,221,.5));animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.intro h1{font-family:'Cinzel',serif;font-size:20px;color:#d4af37;letter-spacing:2px;margin-bottom:6px}
+.intro p{font-size:13.5px;color:#a89bc2;line-height:1.6}
+
+/* FILTRI */
+.filter-bar{display:flex;gap:6px;padding:10px 16px;flex-wrap:wrap}
+.filter-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.5px;padding:5px 11px;border-radius:16px;border:1px solid rgba(157,78,221,.35);background:transparent;color:#a89bc2;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.filter-btn:hover,.filter-btn.active{border-color:var(--purple);background:rgba(157,78,221,.15);color:#c79eff}
+
+/* COUNTER */
+.results-count{padding:0 16px 6px;font-family:'Cinzel',serif;font-size:10px;color:#a89bc2;letter-spacing:1px}
+
+/* CARDS */
+.cards-list{padding:0 16px;flex:1}
+.rituale-card{background:rgba(26,23,38,.9);border:1px solid rgba(157,78,221,.2);border-radius:14px;padding:16px;cursor:pointer;transition:box-shadow .3s,border-color .3s;position:relative;margin-bottom:12px}
+.rituale-card:hover{box-shadow:0 6px 18px rgba(157,78,221,.15);border-color:rgba(157,78,221,.45)}
+.rituale-card-header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.rituale-num{font-family:'Cinzel',serif;font-size:10px;color:#9d4edd;letter-spacing:1px;min-width:24px}
+.rituale-card-title{font-family:'Cinzel',serif;font-size:14px;font-weight:600;color:#f0e6ff;flex:1;line-height:1.35}
+.rituale-badge{font-size:9px;padding:3px 8px;border-radius:12px;background:rgba(157,78,221,.18);color:#c79eff;white-space:nowrap;flex-shrink:0;font-family:'Cinzel',serif;letter-spacing:.3px}
+.rituale-badge.locked{background:rgba(255,152,0,.12);color:#ffb74d}
+.rituale-badge.free{background:rgba(80,200,100,.15);color:#6fcf97}
+.rituale-toggle{font-size:12px;color:#9d4edd;flex-shrink:0;transition:transform .25s}
+.rituale-card.open .rituale-toggle{transform:rotate(180deg)}
+
+/* CONTENT */
+.rituale-content{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1);color:#d1c9e8;line-height:1.75;font-size:13.5px}
+.rituale-card.open .rituale-content{max-height:2000px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);margin-top:10px}
+.rituale-content h4{color:#9d4edd;margin:12px 0 5px;font-size:13px;font-family:'Cinzel',serif;letter-spacing:.5px;border-left:2px solid var(--gold);padding-left:8px}
+.rituale-content p{margin:4px 0}
+.rituale-content ul{padding-left:18px;margin:5px 0}
+.rituale-content li{margin-bottom:4px}
+
+/* LOCKED */
+.rituale-card.is-locked{opacity:.6;overflow:hidden}
+.rituale-card.is-locked::after{content:"🔒 Premium";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:12px;font-weight:700;color:#ff9800;background:rgba(0,0,0,.85);padding:6px 14px;border-radius:8px;pointer-events:none;white-space:nowrap}
+
+/* PREMIUM BANNER */
+.premium-banner{margin:10px 16px;padding:14px;background:linear-gradient(135deg,rgba(157,78,221,.12),rgba(255,215,0,.06));border:1px solid rgba(157,78,221,.3);border-radius:14px;text-align:center}
+.premium-banner p{font-size:12.5px;color:#a89bc2;margin-bottom:10px;line-height:1.5}
+.premium-banner strong{color:#d4af37}
+.btn-premium{display:inline-block;background:linear-gradient(135deg,#9d4edd,#d4af37);color:#0d0b14;border:none;padding:11px 24px;border-radius:24px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;cursor:pointer;font-weight:700;text-decoration:none;transition:opacity .2s}
+.btn-premium:hover{opacity:.9}
+
+/* SEO */
+.seo-section{margin:20px 16px 0;padding:16px;background:rgba(10,5,20,.5);border-radius:14px;border:1px solid rgba(42,23,72,.5)}
+.seo-section h2{font-family:'Cinzel',serif;font-size:12px;color:#d4af37;letter-spacing:1px;margin-bottom:8px}
+.seo-section p{font-size:12px;color:#a89bc2;line-height:1.7;margin-bottom:6px}
+.seo-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.seo-link{font-family:'Cinzel',serif;font-size:9px;color:#a89bc2;letter-spacing:.8px;text-decoration:none;border:1px solid rgba(42,23,72,.6);border-radius:20px;padding:4px 10px;transition:all .2s}
+.seo-link:hover{border-color:rgba(212,175,55,.4);color:#d4af37}
+.footer-mini{text-align:center;padding:16px 10px;font-size:10px;color:#a89bc2;border-top:1px solid rgba(42,23,72,.4);margin-top:16px}
+.footer-mini a{color:#a89bc2;text-decoration:none}
+.footer-mini a:hover{color:#d4af37}
+</style>
+</head>
+<body>
+<div class="cosmos"></div>
+
+<div class="page-wrap">
+
+  <div class="top-bar">
+    <a class="back-btn" href="./index.html">‹</a>
+    <div class="top-bar-title">MYSTICA</div>
+    <span style="font-size:20px;flex-shrink:0">📖</span>
+  </div>
+
+  <div class="intro">
+    <div class="intro-icon">📖</div>
+    <h1>60 Magie della Tradizione</h1>
+    <p>Saggezza popolare, alchimia domestica e rituali antichi.<br>Dalle tradizioni europee, mediterranee e oltre.</p>
+  </div>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-cat="tutti">Tutti</button>
+    <button class="filter-btn" data-cat="Protezione">Protezione</button>
+    <button class="filter-btn" data-cat="Prosperità">Prosperità</button>
+    <button class="filter-btn" data-cat="Amore">Amore</button>
+    <button class="filter-btn" data-cat="Purificazione">Purificazione</button>
+    <button class="filter-btn" data-cat="Sogni">Sogni</button>
+    <button class="filter-btn" data-cat="Mente">Mente</button>
+  </div>
+
+  <div class="results-count" id="resultsCount"></div>
+
+  <div class="premium-banner" id="premiumBanner">
+    <p>I rituali gratuiti sono <strong>3</strong> — sblocca tutti i <strong>60</strong> con MYSTICA Premium.</p>
+    <button class="btn-premium" onclick="unlockPremium()">✨ Sblocca per 3,99€</button>
+  </div>
+
+  <div class="cards-list" id="cardsList"></div>
+
+  <div class="seo-section">
+    <h2>📖 Sulla Tradizione Magica</h2>
+    <p>Le 60 magie raccolte in questa sezione provengono da tradizioni esoteriche europee, mediterranee e mondiali: folklore italiano del Sud, grimori medievali, pratiche egizie, hoodoo americano, tradizioni celtiche e nordiche. Ogni rituale viene presentato con origine storica, occorrente, procedura e significato antropologico.</p>
+    <div class="seo-links">
+      <a href="./magia-bianca.html" class="seo-link">Magia Bianca</a>
+      <a href="./magia-rossa.html" class="seo-link">Magia Rossa</a>
+      <a href="./magia-nera.html" class="seo-link">Magia Nera</a>
+      <a href="./sigilli-salomone.html" class="seo-link">Sigilli di Salomone</a>
+      <a href="./index.html" class="seo-link">Tutti gli Oracoli</a>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <a href="./index.html">MYSTICA</a> ·
+    <a href="./privacy.html">Privacy</a> ·
+    <a href="./termini.html">Termini</a>
+  </div>
+
+</div>
+
+<script>
+const DATA = [
+  {id:1,title:"Il Cerchio di Sale",badge:"Protezione",cat:"Protezione",free:true,html:`<h4>📜 Origine Storica</h4><ul><li>Magia popolare europea, alchimia medievale, grimori rinascimentali</li><li>Il sale era considerato "incorruttibile", capace di respingere impurità, malattie e influssi ostili</li></ul><h4>🕯️ Occorrente & Momento</h4><ul><li>Sale grosso naturale, candela bianca, ciotola, abiti chiari</li><li>Luna calante, tramonto, sabato. Evitare temporali o vento forte</li></ul><h4>📐 Procedura</h4><p>Disporre il sale in senso orario partendo da est, senza interruzioni. Accendere la candela e restare immobili 7 minuti. Formula tradizionale: <em>"Nessuna ombra attraversi questo confine."</em></p><h4>🧠 Significato</h4><p>Funziona come tecnica meditativa e delimitazione mentale. Crea un confine psicologico di sicurezza e concentrazione.</p>`},
+  {id:2,title:"Purificazione con la Salvia",badge:"Purificazione",cat:"Purificazione",free:true,html:`<h4>📜 Origine</h4><p>Tradizioni indigene nordamericane e diffusione esoterica occidentale. Il fumo aveva funzione purificatrice, antisettica e spirituale.</p><h4>🌿 Occorrente & Momento</h4><ul><li>Fascio di salvia bianca, ciotola (terracotta/abalone), piuma o mano</li><li>Alba, dopo litigi, malattie o cambio casa</li></ul><h4>🌬️ Procedura</h4><p>Aprire una finestra. Accendere la salvia, spegnere la fiamma lasciando brace e fumo. Camminare lentamente in senso orario, indirizzando il fumo negli angoli, dietro porte e sotto finestre.</p><h4>🗣️ Formula</h4><p><em>"Che il pesante si dissolva e rimanga solo la pace."</em></p>`},
+  {id:3,title:"Formula contro il Malocchio",badge:"Folklore Italiano",cat:"Protezione",free:true,html:`<h4>📜 Origine</h4><p>Folklore del Sud Italia (Campania, Sicilia, Calabria, Puglia). Tramandata oralmente, spesso solo la notte di Natale, da donne anziane.</p><h4>🥣 Occorrente & Giorni</h4><ul><li>Piatto bianco, acqua, olio d'oliva</li><li>Martedì o Venerdì. Mai domenica</li></ul><h4>💧 Procedura</h4><p>Riempire il piatto d'acqua, fare il segno della croce, lasciare cadere tre gocce d'olio. Osservare: se l'olio resta compatto non c'è malocchio, se si disperde indica presenza simbolica di invidia.</p><h4>👥 Aspetto Antropologico</h4><p>Serviva a rassicurare, calmare l'ansia e dare un senso logico a sfortune improvvise.</p>`},
+  {id:4,title:"Il Nodo di Iside (Tyet)",badge:"Antico Egitto",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Antico Egitto. Associato alla dea Iside. Il Tyet era chiamato "Nodo del Sangue" o "Nodo della Vita".</p><h4>🔮 Occorrente & Momento</h4><ul><li>Pietra rossa, diaspro, corniola, lino rosso</li><li>Viaggi, gravidanza, malattia, riti funerari</li></ul><h4>📐 Procedura</h4><p>L'amuleto veniva lavato con acqua profumata, esposto al sole nascente e legato vicino al petto.</p><h4>🗣️ Formula & Simbolismo</h4><p>Il rosso simboleggiava vita, sangue ed energia difensiva. Protezione divina invocata.</p>`},
+  {id:5,title:"Il Ferro di Cavallo",badge:"Europa Medievale",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Europa medievale. Il ferro era considerato repellente per streghe, spiriti e fate ostili.</p><h4>🛡️ Occorrente & Posizione</h4><ul><li>Ferro di cavallo usato, chiodi in ferro</li><li>Punte verso l'alto, sopra la porta principale</li><li>Sabato mattina</li></ul><h4>📐 Procedura</h4><p>Alcuni aggiungevano 7 chiodi o un ramo d'ulivo vicino. Tradizionalmente fissato con intenzione di protezione.</p><h4>👥 Significato</h4><p>Protezione domestica e prosperità. Il gesto materializzava il confine tra interno sicuro ed esterno incerto.</p>`},
+  {id:6,title:"Esorcismo dell'Acqua e del Sale",badge:"Tardo Medioevo",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Tardo medioevo cristiano, diffuso in monasteri e rituali popolari.</p><h4>💧 Occorrente & Momento</h4><ul><li>Sale, acqua sorgiva, ciotola d'argento/ceramica, candela</li><li>Dopo lutti, malattie, litigi, incubi frequenti</li></ul><h4>📐 Procedura</h4><p>Il sale veniva versato nell'acqua pronunciando formule latine. Si aspergevano muri, porte, finestre e letto.</p><h4>👥 Simbolismo</h4><p>L'acqua purifica, il sale conserva e protegge. Rito di pulizia simbolica post-trauma.</p>`},
+  {id:7,title:"Bagno di Purificazione all'Issoppo",badge:"Tradizione Biblica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Tradizioni bibliche e mediterranee. L'issoppo compare nei testi sacri come pianta purificatrice.</p><h4>🌿 Occorrente & Procedura</h4><ul><li>Issoppo essiccato, sale marino, acqua calda, candela bianca</li><li>Lasciare in infusione, versare nell'acqua del bagno, restare immersi 15 min</li></ul><h4>⚠️ Regola Antica</h4><p>Non parlare durante il bagno. "Lavare via" il peso emotivo.</p>`},
+  {id:8,title:"Il Quadrato del Sator",badge:"Antica Roma",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Antica Roma. Trovato su muri, amuleti, caserme e monasteri. Palindromo famoso.</p><h4>📝 Il Quadrato</h4><p style="text-align:center;font-family:monospace;background:rgba(0,0,0,.3);padding:10px;border-radius:8px;margin:8px 0">SATOR<br>AREPO<br>TENET<br>OPERA<br>ROTAS</p><h4>🛡️ Uso Tradizionale</h4><p>Scritto su carta, pergamena o legno. Portato durante viaggi, battaglie, traversate. Proteggeva da incendi, incidenti, malattie.</p>`},
+  {id:9,title:"Sigillo di Salomone",badge:"Magia Cerimoniale",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Magia cerimoniale medievale. Associato alla <em>Key of Solomon</em>.</p><h4>🖋️ Materiali & Preparazione</h4><ul><li>Pergamena vergine, inchiostro nero, candela blu, incenso</li><li>Praticante digiunava leggermente, evitava rumori, lavorava in silenzio</li></ul><h4>📐 Procedura</h4><p>Il simbolo tracciato lentamente. Ogni linea: equilibrio, dominio della mente, ordine sul caos. Rivolti verso est.</p><h4>🧠 Scopo</h4><p>Protezione mentale e disciplina spirituale.</p>`},
+  {id:10,title:"L'Amuleto dell'Aglio",badge:"Folklore Europeo",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Folklore europeo e mediterraneo. Considerato antisettico, protettivo, scaccia-spiriti.</p><h4>🧄 Occorrente & Posizione</h4><ul><li>Tre teste d'aglio, spago naturale rosso</li><li>Cucina, porta d'ingresso, finestra</li></ul><h4>📅 Momento & Curiosità</h4><p>Luna nuova o raccolto estivo. Nel folklore proteggeva da vampiri, peste e "malocchio".</p>`},
+  {id:11,title:"Il Barattolo del Denaro",badge:"Prosperità",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Magia popolare europea, hoodoo americano, tradizioni contadine. Simbolo di ricchezza e sicurezza invernale.</p><h4>🪙 Occorrente & Momento</h4><ul><li>Barattolo vetro, monete, cannella, alloro, zucchero, calamita, candela verde</li><li>Luna crescente, giovedì, prime ore della sera</li></ul><h4>📐 Procedura</h4><p>Inserire lentamente gli oggetti. Formula: <em>"Che ciò che mi serve trovi la strada verso di me."</em></p><h4>📍 Dove Tenerlo</h4><p>Vicino all'ingresso, lavoro o documenti. Mai a terra.</p>`},
+  {id:12,title:"Incantesimo del Nodo della Fortuna",badge:"Destino Favorevole",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Tradizioni celtiche, magia marinaresca, folklore nordico. Il nodo fissa un'intenzione e sigilla una promessa.</p><h4>🪢 Procedura</h4><p>3 nodi lenti su nastro verde/dorato: 1° opportunità, 2° stabilità, 3° successo. Visualizzare la scena positiva a ogni nodo.</p><h4>🗣️ Formula</h4><p><em>"Con il primo nodo apro la via. Con il secondo la fortuna resta. Con il terzo il cammino si compie."</em></p>`},
+  {id:13,title:"Formula dell'Alloro sotto il Cuscino",badge:"Sogni & Intuizione",cat:"Sogni",free:false,html:`<h4>📜 Origine</h4><p>Tradizione romana e greca. Alloro sacro ad Apollo: profezia, lucidità, vittoria.</p><h4>🌿 Occorrente & Momento</h4><ul><li>3 foglie secche, sacchetto bianco, candela blu/bianca</li><li>Prima della mezzanotte, luna piena, notte dom/lun</li></ul><h4>📐 Procedura</h4><p>Scrivere domanda, mettere foglio e foglie sotto cuscino. Spegnere candela senza soffiare. Interpretare i sogni al risveglio.</p>`},
+  {id:14,title:"Consacrazione della Moneta",badge:"Prosperità Personale",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Europa medievale, tradizioni romane, folklore mercantile. Usata da mercanti, soldati, viaggiatori.</p><h4>🪙 Occorrente & Procedura</h4><ul><li>Moneta lucida, acqua corrente, sale, panno bianco, candela verde</li><li>Lavare, passare nel sale, asciugare, tenere tra le mani</li></ul><h4>🗣️ Formula</h4><p><em>"Come questa moneta resta con me, così resti la buona sorte."</em></p>`},
+  {id:15,title:"Rituale del Grano e del Riso",badge:"Benedizione Raccolto",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Rituale agricolo europeo antichissimo. Grano = vita, riso = fertilità e abbondanza.</p><h4>🌾 Occorrente & Procedura</h4><ul><li>Chicchi di grano, riso bianco, candela dorata</li><li>Spargere su soglia, cucina, ingresso</li></ul><h4>🗣️ Formula</h4><p><em>"Che questa casa non conosca fame né mancanza."</em></p>`},
+  {id:16,title:"Incantesimo della Candela Verde",badge:"Crescita & Denaro",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Esoterismo medievale, magia popolare, tradizione ermetica. Verde = crescita, denaro, sviluppo.</p><h4>🕯️ Occorrente & Preparazione</h4><ul><li>Candela verde, cannella, foglio obiettivo, olio d'oliva/basilico</li><li>Strofinare dal basso verso l'alto con olio</li></ul><h4>📐 Procedura</h4><p>Accendere lentamente. Formula: <em>"Come cresce questa luce, così cresca il mio cammino."</em></p>`},
+  {id:17,title:"Invocazione di Abundantia",badge:"Dea della Ricchezza",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Figura romana associata a prosperità, raccolto, fortuna domestica. Cornucopia, monete, grano.</p><h4>🍷 Occorrente & Momento</h4><ul><li>Pane, vino, candela dorata, ciotola</li><li>Tramonto, fine settimana, inizio attività economica</li></ul><h4>🗣️ Formula</h4><p><em>"Che il necessario non manchi mai a questa casa."</em></p>`},
+  {id:18,title:"La Pietra Calamita (Lodestone)",badge:"Attrazione",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Hoodoo americano, alchimia, magia commerciale XIX sec. Magnetite naturale.</p><h4>🪨 Occorrente & Procedura</h4><ul><li>Pietra calamita, limatura ferro, panno verde, moneta</li><li>Pulire, avvolgere, "nutrire" con limatura</li></ul><h4>🗣️ Formula</h4><p><em>"Come il ferro segue la pietra, così venga verso di me ciò che cerco."</em></p>`},
+  {id:19,title:"Rituale del Sale della Terra",badge:"Patrimonio Familiare",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Tradizione rurale europea. Terra = stabilità, eredità, continuità.</p><h4>🌍 Occorrente & Procedura</h4><ul><li>4 monete, sale grosso, piccola pala, candela bianca</li><li>Seppellire monete ai 4 angoli proprietà con pizzico di sale</li></ul><h4>🗣️ Formula</h4><p><em>"Che questa terra resti salda, fertile e protetta."</em></p>`},
+  {id:20,title:"Fumigazione di Benzoino",badge:"Apertura Strade",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Templi orientali, monasteri, magia popolare. Resina purificante e calmante.</p><h4>💨 Occorrente & Procedura</h4><ul><li>Resina benzoino, carboncino, braciere, candela dorata</li><li>Accendere carbone, posare resina, camminare in senso orario</li></ul><h4>🗣️ Formula</h4><p><em>"Che le vie chiuse si aprano e ciò che è fermo torni a muoversi."</em></p>`},
+  {id:21,title:"Sacchetto di Venere",badge:"Amore & Attrazione",cat:"Amore",free:false,html:`<h4>📜 Origine</h4><p>Convergenza tra filtri medievali e mojo bag afroamericani. Archetipo di oggetto-caricatore.</p><h4>🌹 Materiali & Procedura</h4><ul><li>Lino/cotone, petali rosa, lavanda, quarzo rosa</li><li>Inserire elementi con attenzione tattile, soffiare dentro, chiudere</li></ul><h4>📅 Tempistica</h4><p>Venerdì, luna crescente. Focalizzazione cognitiva e affettiva per stabilizzare intenzione emotiva.</p>`},
+  {id:22,title:"Specchio dell'Autostima",badge:"Mirror Work",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Matrici ascetiche, tecniche di confessione, psicologia del sé (XX sec).</p><h4>🪞 Procedura</h4><ul><li>Posizionarsi frontalmente, contatto visivo prolungato</li><li>Pronunciare frasi in presente ("sono", "accetto"), mantenere sguardo</li></ul><h4>📅 Tempistica</h4><p>Mattino. Tecnica di riallineamento dell'identità narrativa tramite feedback visivo diretto.</p>`},
+  {id:23,title:"Legame del Nastro Rosso",badge:"Unione & Destino",cat:"Amore",free:false,html:`<h4>📜 Origine</h4><p>Tradizione cinese (filo del destino), folklore europeo, reinterpretazioni neopagane.</p><h4>🎗️ Procedura</h4><p>Avvolgere nastro attorno a 2 oggetti simbolici con movimenti circolari. Ogni giro = qualità (fedeltà, continuità). Chiudere con nodo.</p><h4>📅 Tempistica</h4><p>Luna crescente/plenilunio. Materializzazione del legame sociale.</p>`},
+  {id:24,title:"Bagno ai Petali di Calendula",badge:"Transizione Emotiva",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Erboristeria medievale europea (monasteri benedettini, scuola salernitana).</p><h4>🌼 Procedura</h4><p>Infusione petali in acqua calda. Immersione o lavaggio mani/viso. Accompagnare da introspezione.</p><h4>📅 Tempistica</h4><p>Sera o momenti di transizione. Rito liminale per segnare passaggio tra stati emotivi.</p>`},
+  {id:25,title:"Candela Rosa per l'Armonia",badge:"Relazioni Pacificate",cat:"Amore",free:false,html:`<h4>📜 Origine</h4><p>Magia cerimoniale moderna, sistema ermetico colore-pianeta-emozione.</p><h4>🕯️ Procedura</h4><p>Accendere in ambiente stabile. Osservare fiamma, visualizzare relazioni pacificate. Spegnere senza soffiare.</p><h4>🧠 Funzione</h4><p>Tecnica di regolazione emotiva tramite attenzione focalizzata e simbolismo cromatico.</p>`},
+  {id:26,title:"Melissa e Miele",badge:"Calma & Sollievo",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Dioscoride, medicina monastica medievale. Melissa officinalis = erba calmante.</p><h4>☕ Procedura</h4><p>Infuso caldo + miele. Consumo lento in quiete.</p><h4>📅 Tempistica</h4><p>Sera o stress. Sedazione lieve reale + effetto percepito potenziato dal gesto rituale.</p>`},
+  {id:27,title:"Nodo d'Amore",badge:"Unione Celtica/Marina",cat:"Amore",free:false,html:`<h4>📜 Origine</h4><p>Tradizioni celtiche, folklore marinaro, manoscritti medievali.</p><h4>🪢 Procedura</h4><p>Intrecciare filo lentamente. Ogni nodo = valore relazionale. Nodo finale sigilla l'intenzione.</p><h4>🧠 Funzione</h4><p>Metafora fisica della coesione sociale e affettiva.</p>`},
+  {id:28,title:"Rilascio del Passato",badge:"Combustione Simbolica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Tabellae greco-romane, rituali medievali, spiritismo moderno.</p><h4>🔥 Procedura</h4><p>Scrivere contenuto emotivo, leggere, bruciare in contenitore sicuro, disperdere ceneri.</p><h4>📅 Tempistica</h4><p>Notte o chiusura emotiva. Atto di esternalizzazione cognitiva del trauma.</p>`},
+  {id:29,title:"Amuleto di Giada",badge:"Armonia & Equilibrio",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Cina preimperiale, tradizione confuciana/taoista.</p><h4>🪨 Procedura</h4><p>Portare a contatto col corpo, "purificare" con acqua/fumo, stabilizzare come oggetto personale.</p><h4>🧠 Funzione</h4><p>Oggetto di stabilizzazione identitaria e sociale.</p>`},
+  {id:30,title:"Invocazione di Erzulie",badge:"Vodou & Archetipo",cat:"Amore",free:false,html:`<h4>📜 Origine</h4><p>Lwa del Vodou haitiano, sincretizzata con figure mariane.</p><h4>🌸 Procedura</h4><p>Preparare altare domestico, invocazione cantata/recitata, offerta simbolica, momento di contemplazione.</p><h4>📅 Tempistica</h4><p>Cerimonie o crisi emotiva. Mediazione tramite archetipi femminili.</p>`},
+  {id:31,title:"Artemisia per i Sogni",badge:"Sogno & Memoria",cat:"Sogni",free:false,html:`<h4>📜 Origine</h4><p>Fitoterapia europea antica. Artemisia vulgaris associata a luna e dimensione notturna.</p><h4>🌿 Procedura</h4><p>Tisana leggera o sacchetto cuscino. Momento di quiete pre-sonno. Ripetere intenzione di ricordare.</p><h4>🧠 Funzione</h4><p>Dispositivo di induzione attentiva al sogno tramite autosuggestione e ritualizzazione del sonno.</p>`},
+  {id:32,title:"Consacrazione dei Tarocchi",badge:"Attivazione Simbolica",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Reinterpretazione esoterica XVIII-XIX sec (Lévi, società ermetiche).</p><h4>🃏 Procedura</h4><p>Tenere mazzo, esporre a fumo incenso, passare carte singolarmente (opz.). Utilizzo esclusivo.</p><h4>📅 Tempistica</h4><p>Inizio utilizzo, luna crescente. Ritualizzazione della relazione soggetto-sistema simbolico.</p>`},
+  {id:33,title:"Meditazione della Candela Bianca",badge:"Attenzione & Purezza",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Contemplazione occidentale/orientale (dharana yogica, luce cristiana).</p><h4>🕯️ Procedura</h4><p>Accendere, fissare fiamma senza sforzo, ridurre dialogo interno, ritornare a ogni distrazione.</p><h4>📅 Tempistica</h4><p>10-20 min serali. Regolazione attentiva e riduzione rumore cognitivo.</p>`},
+  {id:34,title:"Rituale della Luna Piena",badge:"Sincronizzazione Ciclica",cat:"Sogni",free:false,html:`<h4>📜 Origine</h4><p>Culture agricole pre-moderne. Riferimento naturale per raccolta/fertilità.</p><h4>🌕 Procedura</h4><p>Disporre oggetti personali sotto luce lunare, osservare in silenzio, formulare intenzioni.</p><h4>📅 Tempistica</h4><p>Notte plenilunio. Sincronizzazione simbolica con cicli naturali ordinatori.</p>`},
+  {id:35,title:"Incenso d'Olibano",badge:"Sacralità Antica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Egitto, Grecia, Roma, liturgie cristiane. Associato a purificazione.</p><h4>🌬️ Procedura</h4><p>Resina su carbone, diffondere fumo, concentrare su respiro e odore.</p><h4>🧠 Funzione</h4><p>Modulatore sensoriale per stati di attenzione ridotta e introspezione.</p>`},
+  {id:36,title:"Bagno di Sale Marino",badge:"Decontaminazione Simbolica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Universale: conservazione, purificazione, protezione.</p><h4>🛁 Procedura</h4><p>Sciogliere sale, immersione, quiete senza stimoli, uscita lenta.</p><h4>📅 Tempistica</h4><p>Dopo giornate intense. Decontaminazione simbolica di stress e fatica.</p>`},
+  {id:37,title:"Incantesimo del Silenzio",badge:"Disciplina Attentiva",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Monachesimo, ascetismo, pratiche sciamaniche.</p><h4>🤫 Procedura</h4><p>Astensione verbale totale, riduzione stimoli, osservazione pensieri non verbalizzati.</p><h4>📅 Tempistica</h4><p>30 min - ore. Deprivazione sensoriale linguistica per consapevolezza introspettiva.</p>`},
+  {id:38,title:"Connessione con gli Antenati",badge:"Memoria Generazionale",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Culti romani (lares), tradizioni africane, memorie familiari.</p><h4>🕯️ Procedura</h4><p>Accendere luce, momento ricordo/narrazione, offerta simbolica, chiusura ringraziamento.</p><h4>📅 Tempistica</h4><p>Notte o ricorrenze. Sistema di continuità identitaria tra generazioni.</p>`},
+  {id:39,title:"Scrittura Automatica Focalizzata",badge:"Flusso Inconscio",cat:"Sogni",free:false,html:`<h4>📜 Origine</h4><p>Spiritismo ottocentesco (Kardec), scrittura surrealista.</p><h4>📝 Procedura</h4><p>Scrivere senza pianificazione, ridurre controllo cosciente, flusso continuo, lettura successiva.</p><h4>📅 Tempistica</h4><p>10-20 min. Accesso facilitato a contenuti cognitivi non filtrati.</p>`},
+  {id:40,title:"Consacrazione dello Spazio Sacro",badge:"Delimitazione Rituale",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Tempulum romano, mandala, cerchi magici medievali.</p><h4>🕯️ Procedura</h4><p>Pulizia area, definizione confini simbolici, oggetti significativi, uso esclusivo.</p><h4>📅 Tempistica</h4><p>Inizio nuove pratiche. Segmentazione spazio funzionale per concentrazione.</p>`},
+  {id:41,title:"Occhio di Tigre",badge:"Concentrazione",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Sincretismo mineralogico ottocentesco, occultismo, new age.</p><h4>🪨 Procedura</h4><p>Tenere in mano prima attività impegnativa, "riscaldare" nel palmo, usare ripetutamente.</p><h4>🧠 Funzione</h4><p>Ancoraggio attentivo: correlazione stabile tra stimolo tattile e sicurezza psicologica.</p>`},
+  {id:42,title:"Candela Gialla",badge:"Chiarezza Cognitiva",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Occultismo moderno, ermetismo XIX-XX sec. Colore → stato psicologico.</p><h4>🕯️ Procedura</h4><p>Accendere, focalizzare su fiamma, associare luce a chiarezza, spegnere controllato.</p><h4>🧠 Funzione</h4><p>Priming cognitivo visivo per attività analitiche.</p>`},
+  {id:43,title:"Rosmarino sulle Tempie",badge:"Memoria & Lucidità",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Medicina mediterranea, Grecia/Roma. Simbolo di memoria.</p><h4>🌿 Procedura</h4><p>Applicazione lieve tempie o inalazione aroma. Respirazione lenta.</p><h4>📅 Tempistica</h4><p>Prima studio/mnemotecniche. Stimolazione olfattiva per potenziamento attentivo.</p>`},
+  {id:44,title:"Ancoraggio del Coraggio",badge:"Risposta Somatica",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Memoria emotiva sciamanica, formalizzata in psicologia (NLP).</p><h4>💪 Procedura</h4><p>Richiamare ricordo sicurezza, associare a gesto fisico (pugno), ripetere per stabilizzare.</p><h4>🧠 Funzione</h4><p>Condizionamento somatico intenzionale per attivazione in situazioni difficili.</p>`},
+  {id:45,title:"Taglio dei Rami Secchi",badge:"Rimozione Ostacoli",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Simbolismo agricolo, meditazioni guidate moderne.</p><h4>🌳 Procedura</h4><p>Visualizzare problemi come "rami secchi", simulare potatura, percepire alleggerimento.</p><h4>🧠 Funzione</h4><p>Metafora operativa di ristrutturazione cognitiva.</p>`},
+  {id:46,title:"Fumigazione di Menta Piperita",badge:"Attivazione Mentale",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Erboristeria mediterranea/araba. Pianta rinfrescante/stimolante.</p><h4>🍃 Procedura</h4><p>Bruciatura leggera o diffusione aroma, inalazione consapevole.</p><h4>📅 Tempistica</h4><p>Mattino/stanchezza. Attivazione fisiologica lieve tramite olfatto.</p>`},
+  {id:47,title:"Radice di Zenzero",badge:"Azione & Decisione",cat:"Mente",free:false,html:`<h4>📜 Origine</h4><p>Ayurveda, medicina cinese. Tonico riscaldante.</p><h4>🌱 Procedura</h4><p>Portare con sé, masticare/annusare, associare a intenzioni di movimento.</p><h4>🧠 Funzione</h4><p>Simbolo somatico di attivazione metabolica e mentale.</p>`},
+  {id:48,title:"Terra sotto i Piedi",badge:"Earthing Rituale",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Culture agrarie, rituali sciamanici, reinterpretazione moderna.</p><h4>👣 Procedura</h4><p>Camminata scalza su suolo naturale, attenzione contatto, respirazione lenta.</p><h4>🧠 Funzione</h4><p>Riconnessione sensoriale con ambiente naturale.</p>`},
+  {id:49,title:"Scudo Mentale Visivo",badge:"Protezione Ansia",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Immaginazione sciamanica, meditazioni moderne.</p><h4>🛡️ Procedura</h4><p>Visualizzare barriera luminosa, definire confini, rafforzare con respiro, richiamare in stress.</p><h4>🧠 Funzione</h4><p>Regolazione ansia tramite imagery protettiva.</p>`},
+  {id:50,title:"Consacrazione della Penna",badge:"Successo Strumentale",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Benedizione strumenti in mestieri/religioni.</p><h4>🖋️ Procedura</h4><p>Passare vicino a fuoco/luce, associare a successo, uso esclusivo per attività importanti.</p><h4>🧠 Funzione</h4><p>Sacralizzazione funzionale che aumenta valore percepito dello strumento.</p>`},
+  {id:51,title:"Sale nei Quattro Angoli",badge:"Stabilità Spaziale",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Grecia/Roma, tradizione ebraica, folklore medievale.</p><h4>🧂 Procedura</h4><p>Deporre sale nei 4 punti estremi stanza/casa in silenzio con intenzione di stabilizzazione.</p><h4>📅 Tempistica</h4><p>Inizio ciclo/cambiamento. Marcatura simbolica per ristabilire ordine percepito.</p>`},
+  {id:52,title:"Campanello d'Ottone",badge:"Rottura Stagnazione",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Campane tibetane, Europa medievale, sciamanesimo. Dispositivo di interruzione percettiva.</p><h4>🔔 Procedura</h4><p>Suonare in ogni stanza lentamente, lasciare decadere suono, respirazione lenta.</p><h4>📅 Tempistica</h4><p>Dopo conflitti/stagnazione. Discontinuità acustica per riorganizzazione cognitiva.</p>`},
+  {id:53,title:"Lavanda sugli Stipiti",badge:"Soglia di Pace",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Erboristeria romana/mediterranea (lavare → purificare).</p><h4>🌸 Procedura</h4><p>Applicare olio/rametti su stipiti, movimento interno/esterno, associazione "entrata di pace".</p><h4>📅 Tempistica</h4><p>Primavera/cambiamenti. Pratica di soglia tra interno sicuro ed esterno incerto.</p>`},
+  {id:54,title:"Piantumazione Rituale",badge:"Crescita Intenzionale",cat:"Prosperità",free:false,html:`<h4>📜 Origine</h4><p>Mesopotamia, Mediterraneo, Americhe precolombiane. Trasposizione intenzionale agricola.</p><h4>🌱 Procedura</h4><p>Tenere seme con intenzione, piantare lento, irrigare, osservare crescita come metafora.</p><h4>📅 Tempistica</h4><p>Primavera/inizio progetti. Metafora operativa di cambiamento graduale.</p>`},
+  {id:55,title:"Benedizione del Focolare",badge:"Coesione Domestica",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Celtiche, romane, contadine europee. Centro simbolico sopravvivenza.</p><h4>🔥 Procedura</h4><p>Accendere/osservare fuoco, silenzio/ringraziamento, gesto protezione, chiusura.</p><h4>📅 Tempistica</h4><p>Inverno/riunioni. Rito di coesione sociale e stabilità domestica.</p>`},
+  {id:56,title:"Acqua di Sole",badge:"Carica Naturale",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Pratica rurale diffusa. Esposizione simbolica alla luce.</p><h4>💧 Procedura</h4><p>Esposizione contenitore trasparente per ore, uso per irrigazione/lavaggi, intenzione mentale.</p><h4>📅 Tempistica</h4><p>Giorni soleggiati. Trasformazione simbolica tramite ciclo luce/tempo.</p>`},
+  {id:57,title:"Pietra Forata",badge:"Visione & Soglia",cat:"Protezione",free:false,html:`<h4>📜 Origine</h4><p>Europa settentrionale/mediterranea. Hag Stone / Odin Stone.</p><h4>🕳️ Procedura</h4><p>Raccogliere in natura, pulire, appendere a porte/finestre, guardare attraverso foro.</p><h4>📅 Tempistica</h4><p>Installazione permanente. Oggetto liminale tra visibile e invisibile.</p>`},
+  {id:58,title:"Fumigazione di Pino e Abete",badge:"Sanificazione Simbolica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Nordiche, alpine. Purificazione ambientale e medica.</p><h4>🌲 Procedura</h4><p>Bruciare aghi lentamente, diffondere fumo in angoli stanza.</p><h4>📅 Tempistica</h4><p>Dopo malattie/isolamento. Sanificazione simbolica dell'ambiente.</p>`},
+  {id:59,title:"Benvenuto agli Uccelli",badge:"Reciprocità Ecologica",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Asia, Europa rurale, culture animiste. Gesto di reciprocità naturale.</p><h4>🕊️ Procedura</h4><p>Deposizione cibo su davanzale, osservazione senza interferenza, ripetizione.</p><h4>📅 Tempistica</h4><p>Mattino/stagioni fredde. Atto di reciprocità simbolica uomo-ambiente.</p>`},
+  {id:60,title:"Congedo delle Energie",badge:"Chiusura Rituale",cat:"Purificazione",free:false,html:`<h4>📜 Origine</h4><p>Formula chiusura sistemi medievali/neopagani. "De-attivazione" rito.</p><h4>🚪 Procedura</h4><p>Silenzio, dichiarazione verbale: <em>"Chiuso ciò che è stato aperto, senza danno e senza legame"</em>, riorientamento quotidiano.</p><h4>📅 Tempistica</h4><p>Fine pratica. Reintegrazione cognitiva nella normalità.</p>`}
+];
+
+// ═══ STATO ═══
+let _activeFilter = 'tutti';
+let _isPremium = false;
+
+// ═══ INIT ═══
+function init() {
+  try { _isPremium = localStorage.getItem('MYSTICA_PREMIUM_ACTIVE') === 'true'; } catch(e){}
+  if (_isPremium) document.getElementById('premiumBanner').style.display = 'none';
+
+  document.getElementById('filterBar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    _activeFilter = btn.dataset.cat;
+    render();
+  });
+
+  render();
+}
+
+function render() {
+  const filtered = _activeFilter === 'tutti'
+    ? DATA
+    : DATA.filter(r => r.cat === _activeFilter);
+
+  document.getElementById('resultsCount').textContent =
+    filtered.length + ' rituali' + (_activeFilter !== 'tutti' ? ' · ' + _activeFilter : '');
+
+  const list = document.getElementById('cardsList');
+  list.innerHTML = '';
+
+  filtered.forEach(r => {
+    const locked = !r.free && !_isPremium;
+    const card = document.createElement('div');
+    card.className = 'rituale-card' + (locked ? ' is-locked' : '');
+    card.innerHTML = `
+      <div class="rituale-card-header">
+        <span class="rituale-num">${r.id}.</span>
+        <span class="rituale-card-title">${r.title}</span>
+        <span class="rituale-badge ${r.free ? 'free' : 'locked'}">${r.free ? '✨ Gratis' : (_isPremium ? '⭐' : '🔒')}</span>
+        <span class="rituale-toggle">▾</span>
+      </div>
+      <div class="rituale-content">${r.html}</div>
+    `;
+    if (!locked) {
+      card.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+        document.querySelectorAll('.rituale-card.open').forEach(c => c.classList.remove('open'));
+        if (!isOpen) {
+          card.classList.add('open');
+          setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
+        }
+      });
+    }
+    list.appendChild(card);
+  });
+}
+
+function unlockPremium() {
+  // Collega al tuo sistema premium reale
+  if (typeof showPremiumModal === 'function') {
+    showPremiumModal(() => {
+      _isPremium = true;
+      document.getElementById('premiumBanner').style.display = 'none';
+      render();
+    });
+  } else {
+    alert('Sistema premium non disponibile in questa modalità.');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
