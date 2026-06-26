@@ -3,25 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MYSTICA — Oracoli, Tarocchi, Oroscopo e Magia Online</title>
-<meta name="description" content="MYSTICA: tarocchi online, oroscopo del giorno, rune, I Ching, numerologia, magia, cabala, pendolo e molto altro. L'app esoterica italiana più completa — gratis.">
+<title>MYSTICA — Oracoli, Tarocchi, Oroscopo e Magia Online | MysticaOracoli.it</title>
+<meta name="description" content="MYSTICA: tarocchi online gratis, oroscopo del giorno, rune, I Ching, numerologia, magia, cabala e molto altro. Il portale esoterico italiano più completo — 4,99€ Premium.">
+<meta name="keywords" content="tarocchi online, oroscopo, rune, I Ching, numerologia, magia bianca, cabala, esoterismo">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="MYSTICA — Oracoli, Tarocchi, Oroscopo e Magia Online">
 <meta property="og:description" content="Tarocchi, oroscopo, rune, I Ching, numerologia, magia bianca, cabala, pendolo. L'esperienza esoterica italiana completa.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="./images/icone/home/oroscopo.webp">
+<meta property="og:image" content="https://mysticaoracoli.it/images/mystica-orizzontale.webp">
+<meta property="og:url" content="https://mysticaoracoli.it/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MYSTICA — Oracoli, Tarocchi, Oroscopo e Magia Online">
+<meta name="twitter:description" content="Tarocchi, oroscopo, rune, I Ching, numerologia, magia bianca, cabala. Il portale esoterico italiano più completo.">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/mystica-orizzontale.webp">
 <link rel="canonical" href="https://mysticaoracoli.it/">
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/">
+<!-- hreflang EN e ES: aggiungere quando le versioni saranno disponibili -->
+<!-- <link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/en/"> -->
+<!-- <link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/es/"> -->
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+<!-- Schema.org: WebSite con SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MYSTICA Oracoli",
+  "url": "https://mysticaoracoli.it/",
+  "description": "Il portale esoterico italiano più completo: tarocchi, oroscopo, rune, I Ching, numerologia, magia e molto altro.",
+  "inLanguage": "it-IT",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://mysticaoracoli.it/enciclopedia.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PetroCorporation",
+  "alternateName": "MYSTICA Oracoli",
+  "url": "https://mysticaoracoli.it/",
+  "logo": "https://mysticaoracoli.it/images/mystica-orizzontale.webp",
+  "founder": {
+    "@type": "Person",
+    "name": "Dott. Petrolese Giovanni",
+    "alternateName": "Mago Petro"
+  },
+  "sameAs": [
+    "https://mysticaoracoli.it/"
+  ]
+}
+</script>
+
+<!-- Schema.org: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cosa sono i tarocchi online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I tarocchi online sono strumenti di divinazione digitale che utilizzano il mazzo tradizionale di 78 carte (22 Arcani Maggiori e 56 Minori) per offrire riflessioni e spunti di meditazione. Su MYSTICA puoi fare estrazioni con stese complete come la Croce Celtica, la stesa a tre carte e molte altre, in modo gratuito e immediato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come funziona l'oroscopo su MYSTICA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'oroscopo di MYSTICA offre previsioni giornaliere, settimanali e mensili per tutti e 12 i segni zodiacali. Basato su astrologia occidentale tradizionale, include sezioni dedicate ad amore, lavoro, salute e fortuna. Puoi salvare il tuo segno nel profilo personale per accedere subito alle tue previsioni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le rune sono affidabili per la divinazione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le Rune Elder Futhark sono un sistema di scrittura e divinazione nordico antico di oltre 2000 anni. Come tutti gli strumenti divinatori, vanno intesi come supporto alla riflessione interiore e non come previsioni assolute. Su MYSTICA trovi le 24 rune con significati approfonditi, metodo di estrazione e interpretazione delle stese."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la numerologia e come si calcola?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La numerologia è un'antica disciplina che studia il significato esoterico dei numeri applicato alla vita di una persona. Il calcolo parte dalla data di nascita e dal nome completo per ricavare il Numero del Destino, il Numero dell'Anima e altri valori significativi. MYSTICA offre un calcolatore completo con interpretazioni dettagliate per ogni numero da 1 a 9 (e i Numeri Maestri 11, 22, 33)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come si usa l'I Ching?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'I Ching (Libro dei Mutamenti) è l'oracolo cinese più antico del mondo, risalente a oltre 3000 anni fa. Su MYSTICA puoi consultarlo tramite il metodo delle tre monete: esprimi una domanda interiore, lancia le monete virtuali e ottieni uno degli 64 esagrammi con la sua interpretazione completa tratta dalla tradizione classica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa include il Premium MYSTICA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il Premium MYSTICA (4,99€ una tantum) sblocca l'accesso illimitato a tutte le sezioni dell'app: magia rituale avanzata, tradizioni esoteriche, strumenti di meditazione, divinazione alternativa completa, archivio letture personali illimitato e molto altro. Un solo pagamento, nessun abbonamento, accesso permanente."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
 <style>
 :root{
   --bg:#0a0514;--card:#140c24;--purple:#2a1748;
   --gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);
   --text:#f4f1fa;--muted:#b8b2d1;--radius:18px;
 }
+
+/* ── Tema giorno ── */
+body.day-mode{
+  --bg:#f5f0ff;--card:#ede6ff;--purple:#c4aff0;
+  --text:#1a0a30;--muted:#4a3a6a;
+}
+body.day-mode .cosmos{opacity:.08}
+body.day-mode .header{background:rgba(240,235,255,0.95)}
+body.day-mode .dash-card{background:linear-gradient(145deg,#ede6ff,#ddd5f5)}
+body.day-mode .enc-card{background:linear-gradient(145deg,#ede6ff,#ddd5f5)}
+
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{
@@ -29,9 +161,10 @@ body{
   font-family:'Crimson Pro',Georgia,serif;
   min-height:100vh;overflow-x:hidden;line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  transition:background .3s,color .3s;
 }
 
-/* ── Sfondo cosmico (solo CSS, zero canvas) ── */
+/* ── Sfondo cosmico ── */
 .cosmos{
   position:fixed;top:0;left:0;width:100%;height:100%;
   pointer-events:none;z-index:0;
@@ -57,11 +190,33 @@ body{
 .header{
   background:rgba(10,5,20,0.9);backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-  padding:22px 20px 16px;
-  padding-top:max(22px,calc(22px + env(safe-area-inset-top,0px)));
+  padding:16px 20px 14px;
+  padding-top:max(16px,calc(16px + env(safe-area-inset-top,0px)));
   text-align:center;border-bottom:1px solid rgba(212,175,55,0.25);
   position:sticky;top:0;z-index:20;
 }
+
+/* ── Barra controlli header ── */
+.header-controls{
+  display:flex;align-items:center;justify-content:flex-end;
+  gap:6px;margin-bottom:8px;
+}
+.ctrl-btn{
+  background:rgba(42,23,72,.6);border:1px solid rgba(212,175,55,.3);
+  color:var(--gold);border-radius:20px;padding:4px 10px;font-size:12px;
+  cursor:pointer;transition:all .25s;font-family:'Crimson Pro',serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.ctrl-btn:hover{background:rgba(42,23,72,.9);border-color:var(--gold)}
+.ctrl-btn.active{background:rgba(212,175,55,.2);border-color:var(--gold)}
+.lang-group{display:flex;gap:4px}
+.lang-btn{
+  background:transparent;border:1px solid rgba(212,175,55,.25);
+  color:var(--muted);border-radius:14px;padding:3px 8px;font-size:11px;
+  cursor:pointer;transition:all .2s;font-family:'Cinzel',serif;letter-spacing:.5px;
+}
+.lang-btn.active{background:rgba(212,175,55,.2);border-color:var(--gold);color:var(--gold)}
+
 .logo{
   font-family:'Cinzel',serif;font-size:32px;color:var(--gold);
   letter-spacing:8px;text-shadow:0 0 30px var(--gold-glow);
@@ -71,13 +226,13 @@ body{
   0%,100%{text-shadow:0 0 20px var(--gold-glow)}
   50%{text-shadow:0 0 45px #d4af3750,0 0 90px #d4af3720}
 }
-.header-sub{font-size:11px;color:var(--gold-dim);letter-spacing:5px;text-transform:uppercase;margin-top:5px}
-.header-tagline{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px;line-height:1.4}
+.header-sub{font-size:11px;color:var(--gold-dim);letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.header-tagline{font-size:13px;color:var(--muted);font-style:italic;margin-top:6px;line-height:1.4}
 
-/* ── Full app CTA ── */
+/* ── CTA header ── */
 .app-cta{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  margin:14px auto 0;
+  margin:12px auto 0;
   background:linear-gradient(135deg,#2a1748,#160d30);
   border:1.5px solid var(--gold);color:var(--gold);border-radius:24px;
   padding:10px 24px;font-family:'Cinzel',serif;font-size:11px;
@@ -87,11 +242,50 @@ body{
 }
 .app-cta:hover{box-shadow:0 0 24px var(--gold-glow);transform:translateY(-2px)}
 
+/* ── Banner Premium ── */
+.premium-banner{
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(180,140,20,.12));
+  border:1.5px solid rgba(212,175,55,.55);border-radius:12px;
+  margin:10px 14px 0;padding:11px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  text-decoration:none;transition:all .25s;
+}
+.premium-banner:hover{background:rgba(212,175,55,.25);border-color:var(--gold)}
+.premium-banner-text{font-size:12px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.4px;line-height:1.4}
+.premium-banner-arrow{color:var(--gold);font-size:18px;flex-shrink:0}
+.premium-badge{
+  background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(180,140,20,.1));
+  border:1px solid rgba(212,175,55,.4);border-radius:20px;
+  padding:6px 14px;margin:10px 14px 0;text-align:center;
+  font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px;
+}
+
 /* ── Content ── */
 .content{
   flex:1;padding:14px;
   padding-bottom:calc(30px + env(safe-area-inset-bottom,0px));
 }
+
+/* ── Sezione Intro Editoriale ── */
+.intro-editorial{
+  background:linear-gradient(145deg,rgba(26,14,50,.8),rgba(13,8,32,.9));
+  border:1.5px solid rgba(212,175,55,.2);border-radius:var(--radius);
+  padding:22px 18px;margin-bottom:20px;
+}
+.intro-editorial h1{
+  font-family:'Cinzel',serif;font-size:20px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:14px;line-height:1.3;text-align:center;
+}
+.intro-img{
+  width:100%;border-radius:12px;display:block;margin:0 auto 16px;
+  object-fit:cover;max-height:200px;
+}
+.intro-editorial p{
+  font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:12px;
+}
+.intro-editorial p strong{color:var(--text)}
+.intro-editorial a{color:var(--gold);text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.4)}
+.intro-editorial a:hover{color:var(--gold-dim)}
 
 /* ── Section titles ── */
 .dash-title{
@@ -124,7 +318,7 @@ body{
 .dash-card:hover::before{opacity:1}
 .dash-card:active{transform:scale(.97)}
 
-/* colori bordo superiore */
+/* Colori bordo superiore */
 .c-gold::before{background:linear-gradient(90deg,transparent,#d4af37,transparent)}
 .c-purple::before{background:linear-gradient(90deg,transparent,#9b59b6,transparent)}
 .c-blue::before{background:linear-gradient(90deg,transparent,#3498db,transparent)}
@@ -135,7 +329,7 @@ body{
 .c-pink::before{background:linear-gradient(90deg,transparent,#e91e8c,transparent)}
 .c-delfi::before{background:linear-gradient(90deg,transparent,#f1c40f,transparent)}
 
-/* immagine card */
+/* Immagine card */
 .dash-img-wrap{
   width:100%;aspect-ratio:1/1;overflow:hidden;
   border-radius:14px 14px 0 0;margin-bottom:8px;
@@ -146,14 +340,14 @@ body{
 .dash-card.span2{grid-column:span 2}
 .dash-card.span2 .dash-img-wrap{aspect-ratio:2/1}
 
-/* emoji fallback */
+/* Emoji fallback */
 .dash-emoji{font-size:42px;padding:18px 0 10px;line-height:1}
 
-/* label */
+/* Label */
 .dash-label{font-family:'Cinzel',serif;font-size:12px;font-weight:700;color:var(--text);padding:0 6px;letter-spacing:.3px}
 .dash-sub{font-size:11px;color:var(--muted);padding:2px 6px 0;font-style:italic}
 
-/* ── Card articolo (per enciclopedia) ── */
+/* ── Card articolo (enciclopedia) ── */
 .enc-card{
   background:linear-gradient(145deg,#1a0e32,#0d0820);
   border:1.5px solid rgba(42,23,72,.7);border-radius:16px;
@@ -175,6 +369,116 @@ body{
 }
 .ad-slot:empty,.ad-slot ins:empty{display:none!important;margin:0!important;padding:0!important;}
 
+/* ── Sezione Articolo SEO ── */
+.seo-article{
+  background:linear-gradient(145deg,rgba(26,14,50,.7),rgba(13,8,32,.8));
+  border:1.5px solid rgba(212,175,55,.15);border-radius:var(--radius);
+  padding:24px 18px;margin:24px 0;
+}
+.seo-article h2{
+  font-family:'Cinzel',serif;font-size:17px;color:var(--gold);
+  letter-spacing:.8px;margin-bottom:14px;line-height:1.35;
+}
+.seo-article h3{
+  font-family:'Cinzel',serif;font-size:13px;color:var(--gold-dim);
+  letter-spacing:.5px;margin:16px 0 8px;
+}
+.seo-article p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.seo-article a{color:var(--gold);text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.35)}
+.seo-article a:hover{color:var(--gold-dim)}
+.seo-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2),transparent);margin:18px 0}
+
+/* ── FAQ Section ── */
+.faq-section{
+  margin:24px 0;
+}
+.faq-section-title{
+  font-family:'Cinzel',serif;font-size:16px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:14px;text-align:center;
+}
+.faq-item{
+  background:linear-gradient(145deg,#1a0e32,#0d0820);
+  border:1.5px solid rgba(212,175,55,.2);border-radius:14px;
+  margin-bottom:8px;overflow:hidden;
+  transition:border-color .25s;
+}
+.faq-item.open{border-color:rgba(212,175,55,.45)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 16px;cursor:pointer;
+  font-family:'Cinzel',serif;font-size:12px;color:var(--text);
+  letter-spacing:.3px;line-height:1.4;gap:10px;
+  -webkit-tap-highlight-color:transparent;
+}
+.faq-q:hover{color:var(--gold)}
+.faq-arrow{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+  padding:0 16px;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 16px 14px}
+.faq-a p{font-size:13px;color:var(--muted);line-height:1.7}
+.faq-a a{color:var(--gold);text-decoration:none}
+
+/* ── Share Bar ── */
+.share-section{
+  background:linear-gradient(145deg,rgba(26,14,50,.7),rgba(13,8,32,.8));
+  border:1.5px solid rgba(212,175,55,.15);border-radius:var(--radius);
+  padding:18px;margin:20px 0;text-align:center;
+}
+.share-title{
+  font-family:'Cinzel',serif;font-size:12px;color:var(--gold);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;
+}
+.share-buttons{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.share-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:8px 14px;border-radius:20px;border:1.5px solid;
+  font-size:12px;cursor:pointer;text-decoration:none;
+  transition:all .25s;font-family:'Crimson Pro',serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.share-btn.wa{border-color:#25d366;color:#25d366;background:rgba(37,211,102,.08)}
+.share-btn.tg{border-color:#2ca5e0;color:#2ca5e0;background:rgba(44,165,224,.08)}
+.share-btn.fb{border-color:#1877f2;color:#1877f2;background:rgba(24,119,242,.08)}
+.share-btn.tw{border-color:#1da1f2;color:#1da1f2;background:rgba(29,161,242,.08)}
+.share-btn.cp{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
+.share-btn:hover{opacity:.8;transform:translateY(-2px)}
+
+/* ── Modal Premium ── */
+.premium-modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
+  z-index:100;align-items:center;justify-content:center;padding:20px;
+}
+.premium-modal-overlay.open{display:flex}
+.premium-modal{
+  background:linear-gradient(145deg,#1a0e32,#0d0820);
+  border:2px solid var(--gold);border-radius:22px;
+  padding:30px 24px;max-width:380px;width:100%;text-align:center;
+  box-shadow:0 0 60px rgba(212,175,55,.2);animation:modalIn .3s ease;
+}
+@keyframes modalIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-icon{font-size:42px;margin-bottom:12px}
+.modal-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.modal-text{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.modal-price{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);margin-bottom:6px}
+.modal-once{font-size:12px;color:var(--muted);margin-bottom:20px}
+.modal-cta{
+  display:block;background:linear-gradient(135deg,#d4af37,#b8860b);
+  color:#0a0514;border-radius:24px;padding:14px 24px;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;
+  text-decoration:none;font-weight:700;margin-bottom:12px;
+  transition:all .25s;box-shadow:0 4px 20px rgba(212,175,55,.3);
+}
+.modal-cta:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(212,175,55,.45)}
+.modal-close{
+  background:transparent;border:none;color:var(--muted);
+  font-size:13px;cursor:pointer;font-family:'Crimson Pro',serif;
+  padding:6px 12px;
+}
+.modal-close:hover{color:var(--text)}
+
 /* ── Footer ── */
 .footer{
   text-align:center;padding:24px 14px 16px;
@@ -183,10 +487,12 @@ body{
 .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}
 .footer-links a{color:var(--muted);text-decoration:none;font-size:12px;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
-.footer-copy{font-size:10px;color:#4a4262}
+.footer-social{display:flex;justify-content:center;gap:14px;margin-bottom:10px}
+.footer-social a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s}
+.footer-social a:hover{color:var(--gold)}
+.footer-copy{font-size:10px;color:#4a4262;margin-bottom:6px}
 .disclaimer{font-size:10px;color:#4a4262;margin-top:6px;line-height:1.5}
 </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="cosmos"></div>
@@ -196,11 +502,30 @@ body{
      HEADER
 ══════════════════════════ -->
 <div class="header">
+  <!-- Controlli: lingua, musica, tema -->
+  <div class="header-controls">
+    <div class="lang-group" role="group" aria-label="Selezione lingua">
+      <button class="lang-btn active" id="lang-it" onclick="setLang('it')" aria-pressed="true">IT</button>
+      <button class="lang-btn" id="lang-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+      <button class="lang-btn" id="lang-es" onclick="setLang('es')" aria-pressed="false">ES</button>
+    </div>
+    <button class="ctrl-btn" id="music-toggle" onclick="toggleMusic()" aria-label="Toggle musica">🔇</button>
+    <button class="ctrl-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle tema">☀️</button>
+  </div>
+
   <div class="logo">MYSTICA</div>
-  <div class="header-sub">Oracoli · Magia · Astrologia</div>
-  <div class="header-tagline">L'universo esoterico italiano più completo</div>
-  <a class="app-cta" href="./oroscopo.html">🔮 Scopri il Tuo Oroscopo</a>
+  <div class="header-sub">Mago Petro · Dott. Petrolese Giovanni</div>
+  <div class="header-tagline" id="tagline-text">L'oracolo esoterico italiano più completo</div>
+  <a class="app-cta" href="./oroscopo.html" id="cta-btn">🔮 Scopri il Tuo Oroscopo</a>
 </div>
+
+<!-- Audio ambient (non visibile, no autoplay) -->
+<audio id="bg-audio" loop preload="none">
+  <source src="./images/icone/audio/mystica_ambient_432_528.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ══ Banner Premium ══ -->
+<div id="premium-banner-wrap"></div>
 
 <!-- ══════════════════════════
      CONTENT
@@ -217,80 +542,114 @@ body{
        data-full-width-responsive="true"></ins>
 </div>
 
-<!-- ══ 1 — PROFILO PERSONALE ══ -->
-<div class="dash-title">✨ Il Tuo Spazio Personale</div>
+<!-- ══════════════════════════
+     SEZIONE INTRO EDITORIALE
+══════════════════════════ -->
+<section class="intro-editorial" aria-label="Presentazione MYSTICA">
+  <h1>MYSTICA — Il Portale Esoterico Italiano</h1>
+  <img
+    src="./images/mystica-orizzontale.webp"
+    srcset="./images/mystica-orizzontale.webp 1x, ./images/mystica-orizzontale@2x.webp 2x"
+    alt="MYSTICA Oracoli — portale esoterico italiano"
+    class="intro-img"
+    width="480" height="200"
+    loading="eager"
+    onerror="this.style.display='none'"
+  >
+  <p>
+    <strong>MYSTICA</strong> è nato dall'incontro tra la secolare tradizione esoterica italiana e le possibilità offerte dal digitale. Creato da <strong>Mago Petro — Dott. Petrolese Giovanni</strong>, il portale raccoglie in un'unica app le pratiche divinatorie, magiche e spirituali più significative della cultura occidentale e orientale, rendendole accessibili a chiunque, ovunque, in qualsiasi momento.
+  </p>
+  <p>
+    Il progetto muove dalla convinzione che gli strumenti esoterici — dai <a href="./tarocchi.html">tarocchi</a> alle <a href="./rune.html">rune nordiche</a>, dall'<a href="./iching.html">I Ching cinese</a> all'<a href="./oroscopo.html">astrologia occidentale</a> — siano prima di tutto linguaggi simbolici per esplorare la propria interiorità. Non previsioni deterministiche, ma specchi dell'anima: strumenti di meditazione, consapevolezza e riflessione profonda.
+  </p>
+  <p>
+    <strong>Le macro-aree di MYSTICA</strong> coprono cinque grandi domini del sapere esoterico. La <em>Divinazione</em> comprende tarocchi, rune, I Ching, geomanzia e numerologia. L'<em>Astrologia</em> spazia dall'oroscopo classico all'astrologia vedica, cinese e ai sistemi moderni come Human Design e Gene Keys. La sezione <em>Magia</em> include magia bianca, rossa e nera, rituali di protezione, sigilli e molto altro. Le <em>Tradizioni Spirituali</em> abbracciano stregoneria Wicca, <a href="./alchimia.html">alchimia</a>, <a href="./cabala.html">cabala</a>, <a href="./ermetismo.html">ermetismo</a>, sciamanesimo e buddismo esoterico. Infine, <em>Mente &amp; Energia</em> offre meditazioni guidate, pranayama, EFT e tecniche di espansione della coscienza.
+  </p>
+  <p>
+    L'esoterismo italiano vanta una tradizione ricchissima: da Marsilio Ficino e Pico della Mirandola, che nel Quattrocento fecero della magia naturale e della cabala cristiana il cuore del rinascimento fiorentino, fino alle scuole rosacrociane del Seicento e alle logge massoniche del Settecento. MYSTICA si inserisce in questa corrente, traducendola per il pubblico contemporaneo con rigore filologico e rispetto per le fonti.
+  </p>
+  <p>
+    Usare strumenti esoterici in formato digitale offre vantaggi concreti: <strong>accessibilità immediata</strong> (nessun mazzo fisico necessario), <strong>privacy totale</strong> (le tue consultazioni restano solo tue, salvate in locale sul dispositivo), e <strong>profondità dei contenuti</strong> — ogni carta, ogni runa, ogni esagramma è accompagnato da interpretazioni dettagliate, storia e consigli pratici.
+  </p>
+  <p>
+    Sei pronto a esplorare? Inizia dal tuo <a href="./profilo-mistico.html">Profilo Mistico</a> per scoprire la tua mappa astrale personale, oppure immergiti direttamente nelle sezioni che senti più vicine alla tua energia. L'universo esoterico di MYSTICA ti aspetta.
+  </p>
+</section>
+
+<!-- ══ 1 — PROFILO PERSONALE ══ (sempre libera) -->
+<div class="dash-title" id="sec-spazio">✨ <span data-key="spazio">Il Tuo Spazio Personale</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-gold" href="./profilo-mistico.html">
+  <a class="dash-card c-gold" href="./profilo-mistico.html" aria-label="Profilo Mistico — la tua mappa astrale">
     <div class="dash-img-wrap"><img src="./images/icone/home/zodiaco.webp" width="300" height="300" alt="Profilo mistico personale" loading="lazy"></div>
     <div class="dash-label">Profilo Mistico</div>
     <div class="dash-sub" style="color:#d4af37">La tua mappa astrale</div>
   </a>
-  <a class="dash-card c-purple" href="./archivio.html">
+  <a class="dash-card c-purple" href="./archivio.html" aria-label="Archivio letture personali">
     <div class="dash-img-wrap"><img src="./images/icone/home/archivio.webp" width="300" height="300" alt="Archivio letture personali" loading="lazy"></div>
     <div class="dash-label">Archivio</div>
     <div class="dash-sub" style="color:#b88fe0">Le tue letture</div>
   </a>
 </div>
 
-<!-- ══ 2 — ASTROLOGIA OCCIDENTALE ══ -->
-<div class="dash-title">🌌 Astrologia Occidentale</div>
+<!-- ══ 2 — ASTROLOGIA OCCIDENTALE ══ (sempre libera) -->
+<div class="dash-title">🌌 <span data-key="astrologia">Astrologia Occidentale</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-gold" href="./oroscopo-segni.html">
+  <a class="dash-card c-gold" href="./oroscopo-segni.html" aria-label="Oroscopo del giorno online">
     <div class="dash-img-wrap"><img src="./images/icone/home/oroscopo.webp" width="300" height="300" alt="Oroscopo del giorno online gratis" loading="lazy"></div>
     <div class="dash-label">Oroscopo</div>
     <div class="dash-sub" style="color:#d4af37">Il tuo destino astrale</div>
   </a>
-  <a class="dash-card c-blue" href="./compatibilita.html">
+  <a class="dash-card c-blue" href="./compatibilita.html" aria-label="Compatibilità zodiacale">
     <div class="dash-img-wrap"><img src="./images/icone/home/amore.webp" width="300" height="300" alt="Compatibilità zodiacale amore" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>💕</div>'"></div>
     <div class="dash-label">Compatibilità</div>
     <div class="dash-sub" style="color:#7eb8f7">Affinità di coppia</div>
   </a>
-  <a class="dash-card c-teal" href="./cicli-tempo.html#calendario-lunare">
+  <a class="dash-card c-teal" href="./cicli-tempo.html#calendario-lunare" aria-label="Fasi lunari e calendario luna">
     <div class="dash-img-wrap"><img src="./images/icone/home/fasi-lunari.webp" width="300" height="300" alt="Fasi lunari calendario luna" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌙</div>'"></div>
     <div class="dash-label">Luna</div>
     <div class="dash-sub" style="color:#5ecec4">Fasi & calendario</div>
   </a>
-  <a class="dash-card c-purple" href="./cicli-tempo.html#ore-planetarie">
+  <a class="dash-card c-purple" href="./cicli-tempo.html#ore-planetarie" aria-label="Pianeti transiti e ore planetarie">
     <div class="dash-img-wrap"><img src="./images/icone/home/transiti.webp" width="300" height="300" alt="Pianeti transiti astrologia" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🪐</div>'"></div>
     <div class="dash-label">Pianeti</div>
     <div class="dash-sub" style="color:#b88fe0">Transiti & ore</div>
   </a>
-  <a class="dash-card c-gold span2" href="./astrologia-avanzata.html">
+  <a class="dash-card c-gold span2" href="./astrologia-avanzata.html" aria-label="Astrologia avanzata tema natale">
     <div class="dash-img-wrap wide"><img src="./images/icone/home/astrologia-avanzata.webp" width="600" height="300" alt="Astrologia avanzata tema natale" loading="lazy"></div>
     <div class="dash-label">Astrologia Avanzata</div>
     <div class="dash-sub" style="color:#d4af37">Tema natale · Ascendente · Case</div>
   </a>
 </div>
 
-<!-- ══ 3 — ASTROLOGIA ORIENTALE ══ -->
-<div class="dash-title">🌏 Astrologia Orientale &amp; Moderna</div>
+<!-- ══ 3 — ASTROLOGIA ORIENTALE ══ (sempre libera) -->
+<div class="dash-title">🌏 <span data-key="orientale">Astrologia Orientale &amp; Moderna</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-orange" href="./astrologia-vedica.html">
+  <a class="dash-card c-orange" href="./astrologia-vedica.html" aria-label="Astrologia vedica Jyotish">
     <div class="dash-img-wrap"><img src="./images/icone/home/astrologia-vedica.webp" width="300" height="300" alt="Astrologia vedica jyotish" loading="lazy"></div>
     <div class="dash-label">Vedica</div>
     <div class="dash-sub" style="color:#f0a060">Jyotish · Nakshatra</div>
   </a>
-  <a class="dash-card c-orange" href="./oroscopo-cinese.html">
+  <a class="dash-card c-orange" href="./oroscopo-cinese.html" aria-label="Oroscopo cinese zodiaco animali">
     <div class="dash-img-wrap"><img src="./images/icone/cinese/topo.webp" width="300" height="300" alt="Oroscopo cinese zodiaco animali" loading="lazy"></div>
     <div class="dash-label">Oroscopo Cinese</div>
     <div class="dash-sub" style="color:#f0a060">Anno & segno lunare</div>
   </a>
-  <a class="dash-card c-red" href="./bazi-cinese.html">
+  <a class="dash-card c-red" href="./bazi-cinese.html" aria-label="BaZi cinese pilastri del destino">
     <div class="dash-img-wrap"><img src="./images/icone/home/bazi-cinese.webp" width="300" height="300" alt="BaZi cinese pilastri del destino" loading="lazy"></div>
     <div class="dash-label">BaZi</div>
     <div class="dash-sub" style="color:#e74c3c">Pilastri del destino</div>
   </a>
-  <a class="dash-card c-gold" href="./zi-wei-dou-shu.html">
+  <a class="dash-card c-gold" href="./zi-wei-dou-shu.html" aria-label="Zi Wei Dou Shu stella imperiale">
     <div class="dash-img-wrap"><img src="./images/icone/home/zi-wei-dou-shu.webp" width="300" height="300" alt="Zi Wei Dou Shu stella imperiale" loading="lazy"></div>
     <div class="dash-label">Zi Wei Dou Shu</div>
     <div class="dash-sub" style="color:#d4af37">Stella imperiale</div>
   </a>
-  <a class="dash-card c-teal" href="./human-design.html">
+  <a class="dash-card c-teal" href="./human-design.html" aria-label="Human Design tipo energetico">
     <div class="dash-img-wrap"><img src="./images/icone/home/human-design.webp" width="300" height="300" alt="Human Design tipo energetico" loading="lazy"></div>
     <div class="dash-label">Human Design</div>
     <div class="dash-sub" style="color:#5ecec4">Il tuo tipo energetico</div>
   </a>
-  <a class="dash-card c-green" href="./gene-keys.html">
+  <a class="dash-card c-green" href="./gene-keys.html" aria-label="Gene Keys Richard Rudd">
     <div class="dash-img-wrap"><img src="./images/icone/home/gene-keys.webp" width="300" height="300" alt="Gene Keys Richard Rudd" loading="lazy"></div>
     <div class="dash-label">Gene Keys</div>
     <div class="dash-sub" style="color:#6fcf97">Richard Rudd</div>
@@ -307,25 +666,27 @@ body{
        data-full-width-responsive="true"></ins>
 </div>
 
+<!-- DA QUI: sezioni premium-gated (dalla 4ª in poi) -->
+
 <!-- ══ 4 — CICLI & TEMPO ══ -->
-<div class="dash-title">🌙 Cicli &amp; Tempo</div>
-<div class="dash-grid">
-  <a class="dash-card c-teal" href="./cicli-tempo.html#calendario-lunare">
+<div class="dash-title">🌙 <span data-key="cicli">Cicli &amp; Tempo</span></div>
+<div class="dash-grid" data-premium="1">
+  <a class="dash-card c-teal" href="./cicli-tempo.html#calendario-lunare" data-gate="1" aria-label="Calendario lunare fasi luna">
     <div class="dash-img-wrap"><img src="./images/icone/home/calendario-lunare.webp" width="300" height="300" alt="Calendario lunare fasi luna" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌕</div>'"></div>
     <div class="dash-label">Calendario Lunare</div>
     <div class="dash-sub" style="color:#5ecec4">Fasi & rituali</div>
   </a>
-  <a class="dash-card c-orange" href="./cicli-tempo.html#tzolkin">
+  <a class="dash-card c-orange" href="./cicli-tempo.html#tzolkin" data-gate="1" aria-label="Calendario Maya Tzolkin">
     <div class="dash-img-wrap"><img src="./images/icone/home/calendario-maya.webp" width="300" height="300" alt="Calendario Maya Tzolkin" loading="lazy"></div>
     <div class="dash-label">Calendario Maya</div>
     <div class="dash-sub" style="color:#f0a060">Tzolkin</div>
   </a>
-  <a class="dash-card c-gold" href="./cicli-tempo.html#ore-planetarie">
+  <a class="dash-card c-gold" href="./cicli-tempo.html#ore-planetarie" data-gate="1" aria-label="Ore planetarie giorni magici">
     <div class="dash-img-wrap"><img src="./images/icone/home/giorni-e-ore.webp" width="300" height="300" alt="Ore planetarie giorni magici" loading="lazy"></div>
     <div class="dash-label">Ore Planetarie</div>
     <div class="dash-sub" style="color:#d4af37">Giorni & momenti</div>
   </a>
-  <a class="dash-card c-green" href="./cicli-tempo.html#stagioni-magiche">
+  <a class="dash-card c-green" href="./cicli-tempo.html#stagioni-magiche" data-gate="1" aria-label="Stagioni magiche sabbat esbat">
     <div class="dash-img-wrap"><img src="./images/icone/home/stagioni-magiche.webp" width="300" height="300" alt="Stagioni magiche sabbat" loading="lazy"></div>
     <div class="dash-label">Stagioni Magiche</div>
     <div class="dash-sub" style="color:#6fcf97">Sabbat & esbat</div>
@@ -333,44 +694,44 @@ body{
 </div>
 
 <!-- ══ 5 — DIVINAZIONE ══ -->
-<div class="dash-title">🃏 Divinazione</div>
+<div class="dash-title">🃏 <span data-key="divinazione">Divinazione</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-gold" href="./tarocchi.html">
+  <a class="dash-card c-gold" href="./tarocchi.html" aria-label="Tarocchi online 78 carte">
     <div class="dash-img-wrap"><img src="./images/icone/home/tarocchi.webp" width="300" height="300" alt="Tarocchi online gratis 78 carte" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🎴</div>'"></div>
     <div class="dash-label">Tarocchi</div>
     <div class="dash-sub" style="color:#d4af37">78 carte complete</div>
   </a>
-  <a class="dash-card c-orange" href="./rune.html">
+  <a class="dash-card c-orange" href="./rune.html" aria-label="Rune Elder Futhark oracolo nordico">
     <div class="dash-img-wrap"><img src="./images/icone/home/rune.webp" width="300" height="300" alt="Rune Elder Futhark oracolo nordico" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>ᚱ</div>'"></div>
     <div class="dash-label">Rune</div>
     <div class="dash-sub" style="color:#f0a060">Elder Futhark</div>
   </a>
-  <a class="dash-card c-teal" href="./iching.html">
+  <a class="dash-card c-teal" href="./iching.html" aria-label="I Ching 64 esagrammi oracolo cinese">
     <div class="dash-img-wrap"><img src="./images/icone/home/i-ching.webp" width="300" height="300" alt="I Ching 64 esagrammi oracolo cinese" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>☯️</div>'"></div>
     <div class="dash-label">I Ching</div>
     <div class="dash-sub" style="color:#5ecec4">64 esagrammi</div>
   </a>
-  <a class="dash-card c-blue" href="./libro-delle-risposte.html">
+  <a class="dash-card c-blue" href="./libro-delle-risposte.html" data-gate="1" aria-label="Libro delle risposte oracolo">
     <div class="dash-img-wrap"><img src="./images/icone/home/libro-delle-risposte.webp" width="300" height="300" alt="Libro delle risposte oracolo" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>📖</div>'"></div>
     <div class="dash-label">Libro Risposte</div>
     <div class="dash-sub" style="color:#7eb8f7">100 risposte</div>
   </a>
-  <a class="dash-card c-green" href="./geomanzia.html">
+  <a class="dash-card c-green" href="./geomanzia.html" data-gate="1" aria-label="Geomanzia 16 figure della terra">
     <div class="dash-img-wrap"><img src="./images/icone/home/geomanzia.webp" width="300" height="300" alt="Geomanzia figure della terra" loading="lazy"></div>
     <div class="dash-label">Geomanzia</div>
     <div class="dash-sub" style="color:#6fcf97">16 figure della terra</div>
   </a>
-  <a class="dash-card c-gold" href="./bibliomanzia-tasseomanzia.html">
+  <a class="dash-card c-gold" href="./bibliomanzia-tasseomanzia.html" data-gate="1" aria-label="Bibliomanzia e tasseomanzia">
     <div class="dash-img-wrap"><img src="./images/icone/home/bibliomanzia.webp" width="300" height="300" alt="Bibliomanzia tasseomanzia oracoli" loading="lazy"></div>
     <div class="dash-label">Bibliomanzia</div>
     <div class="dash-sub" style="color:#d4af37">Libri & fondi di tè</div>
   </a>
-  <a class="dash-card c-delfi" href="./oracoli.html">
+  <a class="dash-card c-delfi" href="./oracoli.html" data-gate="1" aria-label="Oracolo di Delfi Apollo e Pizia">
     <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-di-delfi.webp" width="300" height="300" alt="Oracolo di Delfi Apollo Pizia" loading="lazy"></div>
     <div class="dash-label">Oracolo di Delfi</div>
     <div class="dash-sub" style="color:#f1c40f">Apollo & Pizia</div>
   </a>
-  <a class="dash-card c-purple" href="./sogni.html">
+  <a class="dash-card c-purple" href="./sogni.html" data-gate="1" aria-label="Interpretazione sogni oniromanzia">
     <div class="dash-img-wrap"><img src="./images/icone/home/i-sogni.webp" width="300" height="300" alt="Interpretazione sogni oniromanzia" loading="lazy"></div>
     <div class="dash-label">Sogni</div>
     <div class="dash-sub" style="color:#b88fe0">Oniromanzia</div>
@@ -378,34 +739,34 @@ body{
 </div>
 
 <!-- ══ 6 — DIVINAZIONE ALTERNATIVA ══ -->
-<div class="dash-title">🎴 Divinazione Alternativa</div>
+<div class="dash-title">🎴 <span data-key="divAlt">Divinazione Alternativa</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-red" href="./divinazione-alternativa.html#cartomanzia">
+  <a class="dash-card c-red" href="./divinazione-alternativa.html#cartomanzia" data-gate="1" aria-label="Cartomanzia carte da gioco">
     <div class="dash-img-wrap"><img src="./images/icone/home/cartomanzia.webp" width="300" height="300" alt="Cartomanzia carte da gioco" loading="lazy"></div>
     <div class="dash-label">Cartomanzia</div>
     <div class="dash-sub" style="color:#e74c3c">Carte da gioco</div>
   </a>
-  <a class="dash-card c-green" href="./divinazione-alternativa.html#lenormand">
+  <a class="dash-card c-green" href="./divinazione-alternativa.html#lenormand" data-gate="1" aria-label="Carte Lenormand 36 carte">
     <div class="dash-img-wrap"><img src="./images/icone/home/lenormand.webp" width="300" height="300" alt="Carte Lenormand oracolo" loading="lazy"></div>
     <div class="dash-label">Lenormand</div>
     <div class="dash-sub" style="color:#6fcf97">36 carte</div>
   </a>
-  <a class="dash-card c-blue" href="./divinazione-alternativa.html#angeli-oracolo">
+  <a class="dash-card c-blue" href="./divinazione-alternativa.html#angeli-oracolo" data-gate="1" aria-label="Oracolo degli angeli messaggi celesti">
     <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-angeli.webp" width="300" height="300" alt="Oracolo degli angeli messaggi" loading="lazy"></div>
     <div class="dash-label">Oracolo Angeli</div>
     <div class="dash-sub" style="color:#7eb8f7">Messaggi celesti</div>
   </a>
-  <a class="dash-card c-orange" href="./divinazione-alternativa.html#celti">
+  <a class="dash-card c-orange" href="./divinazione-alternativa.html#celti" data-gate="1" aria-label="Oracolo dei Celti tradizione nordica">
     <div class="dash-img-wrap"><img src="./images/icone/home/oracolo-celti.webp" width="300" height="300" alt="Oracolo dei Celti tradizione" loading="lazy"></div>
     <div class="dash-label">Oracolo Celti</div>
     <div class="dash-sub" style="color:#f0a060">Tradizione nordica</div>
   </a>
-  <a class="dash-card c-purple" href="./divinazione-alternativa.html#specchio">
+  <a class="dash-card c-purple" href="./divinazione-alternativa.html#specchio" data-gate="1" aria-label="Specchio nero catottromanza">
     <div class="dash-img-wrap"><img src="./images/icone/home/specchio-nero.webp" width="300" height="300" alt="Specchio nero catottromanza" loading="lazy"></div>
     <div class="dash-label">Specchio Nero</div>
     <div class="dash-sub" style="color:#b88fe0">Catottromanza</div>
   </a>
-  <a class="dash-card c-pink" href="./divinazione-alternativa.html#cromomanzia">
+  <a class="dash-card c-pink" href="./divinazione-alternativa.html#cromomanzia" data-gate="1" aria-label="Cromomanzia divinazione dei colori">
     <div class="dash-img-wrap"><img src="./images/icone/home/cromomanzia.webp" width="300" height="300" alt="Cromomanzia colori divinazione" loading="lazy"></div>
     <div class="dash-label">Cromomanzia</div>
     <div class="dash-sub" style="color:#e91e8c">Divinazione dei colori</div>
@@ -423,24 +784,24 @@ body{
 </div>
 
 <!-- ══ 7 — ORACOLI NUMERICI ══ -->
-<div class="dash-title">🔢 Oracoli Numerici &amp; Simbolici</div>
+<div class="dash-title">🔢 <span data-key="numerici">Oracoli Numerici &amp; Simbolici</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-gold" href="./numerologia.html">
+  <a class="dash-card c-gold" href="./numerologia.html" data-gate="1" aria-label="Numerologia pitagorica calcolo">
     <div class="dash-img-wrap"><img src="./images/icone/home/numerologia.webp" width="300" height="300" alt="Numerologia pitagorica calcolo online" loading="lazy"></div>
     <div class="dash-label">Numerologia</div>
     <div class="dash-sub" style="color:#d4af37">Numero del destino</div>
   </a>
-  <a class="dash-card c-purple" href="./ore-specchio.html">
+  <a class="dash-card c-purple" href="./ore-specchio.html" data-gate="1" aria-label="Ore specchio numeri doppi">
     <div class="dash-img-wrap"><img src="./images/icone/home/ore-specchio.webp" width="300" height="300" alt="Ore specchio numeri doppi significato" loading="lazy"></div>
     <div class="dash-label">Ore Specchio</div>
     <div class="dash-sub" style="color:#b88fe0">Numeri doppi</div>
   </a>
-  <a class="dash-card c-orange" href="./totem.html">
+  <a class="dash-card c-orange" href="./totem.html" data-gate="1" aria-label="Animale totem spirito guida">
     <div class="dash-img-wrap"><img src="./images/icone/home/animali-guida.webp" width="300" height="300" alt="Animale totem spirito guida" loading="lazy"></div>
     <div class="dash-label">Animale Totem</div>
     <div class="dash-sub" style="color:#f0a060">Il tuo spirito guida</div>
   </a>
-  <a class="dash-card c-blue" href="./angeli.html">
+  <a class="dash-card c-blue" href="./angeli.html" data-gate="1" aria-label="Angeli numeri angelici custodi">
     <div class="dash-img-wrap"><img src="./images/icone/home/angelologia.webp" width="300" height="300" alt="Angeli custodi 72 angelologia" loading="lazy"></div>
     <div class="dash-label">Angeli</div>
     <div class="dash-sub" style="color:#7eb8f7">Numeri angelici</div>
@@ -448,39 +809,39 @@ body{
 </div>
 
 <!-- ══ 8 — MAGIA RITUALE ══ -->
-<div class="dash-title">💜 Amore &amp; Magia Rituale</div>
+<div class="dash-title">💜 <span data-key="magia">Amore &amp; Magia Rituale</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-pink" href="./compatibilita.html">
+  <a class="dash-card c-pink" href="./compatibilita.html" aria-label="Compatibilità zodiacale affinità astrale">
     <div class="dash-img-wrap"><img src="./images/icone/home/amore.webp" width="300" height="300" alt="Compatibilità zodiacale amore" loading="lazy"></div>
     <div class="dash-label">Compatibilità</div>
     <div class="dash-sub" style="color:#e91e8c">Affinità astrale</div>
   </a>
-  <a class="dash-card c-blue" href="./magia-bianca.html">
+  <a class="dash-card c-blue" href="./magia-bianca.html" data-gate="1" aria-label="Magia bianca rituali di protezione">
     <div class="dash-img-wrap"><img src="./images/icone/home/magia-bianca.webp" width="300" height="300" alt="Magia bianca rituali di protezione" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🤍</div>'"></div>
     <div class="dash-label">Magia Bianca</div>
     <div class="dash-sub" style="color:#7eb8f7">Protezione & luce</div>
   </a>
-  <a class="dash-card c-red" href="./magia-rossa.html">
+  <a class="dash-card c-red" href="./magia-rossa.html" data-gate="1" aria-label="Magia rossa rituali d amore">
     <div class="dash-img-wrap"><img src="./images/icone/home/magia-rossa.webp" width="300" height="300" alt="Magia rossa rituali d amore" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>❤️</div>'"></div>
     <div class="dash-label">Magia Rossa</div>
     <div class="dash-sub" style="color:#e74c3c">Passione & desiderio</div>
   </a>
-  <a class="dash-card c-purple" href="./magia-nera.html">
+  <a class="dash-card c-purple" href="./magia-nera.html" data-gate="1" aria-label="Magia nera rituali dell ombra">
     <div class="dash-img-wrap"><img src="./images/icone/home/magia-nera.webp" width="300" height="300" alt="Magia nera rituali oscuri" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🖤</div>'"></div>
     <div class="dash-label">Magia Nera</div>
     <div class="dash-sub" style="color:#b88fe0">Rituali dell'ombra</div>
   </a>
-  <a class="dash-card c-teal" href="./malocchio.html">
+  <a class="dash-card c-teal" href="./malocchio.html" data-gate="1" aria-label="Malocchio rimedi e protezioni">
     <div class="dash-img-wrap"><img src="./images/icone/home/malocchio.webp" width="300" height="300" alt="Malocchio rimedi protezione" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🧿</div>'"></div>
     <div class="dash-label">Malocchio</div>
     <div class="dash-sub" style="color:#5ecec4">Rimedi & protezioni</div>
   </a>
-  <a class="dash-card c-purple" href="./sigilli-salomone.html">
+  <a class="dash-card c-purple" href="./sigilli-salomone.html" data-gate="1" aria-label="Sigilli di Salomone magia cerimoniale">
     <div class="dash-img-wrap"><img src="./images/icone/home/sigilli.webp" width="300" height="300" alt="Sigilli di Salomone magia cerimoniale" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>⭐</div>'"></div>
     <div class="dash-label">Sigilli di Salomone</div>
     <div class="dash-sub" style="color:#b88fe0">Magia cerimoniale</div>
   </a>
-  <a class="dash-card c-orange" href="./60-magie.html">
+  <a class="dash-card c-orange" href="./60-magie.html" data-gate="1" aria-label="60 Magie della tradizione esoterica">
     <div class="dash-img-wrap"><img src="./images/icone/home/60magie.webp" width="300" height="300" alt="60 Magie della tradizione esoterica" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>📖</div>'"></div>
     <div class="dash-label">60 Magie</div>
     <div class="dash-sub" style="color:#f0a060">Tradizione esoterica</div>
@@ -488,34 +849,34 @@ body{
 </div>
 
 <!-- ══ 9 — TRADIZIONI ESOTERICHE ══ -->
-<div class="dash-title">🌿 Tradizioni Esoteriche</div>
+<div class="dash-title">🌿 <span data-key="tradizioni">Tradizioni Esoteriche</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-teal" href="./stregoneria-wicca.html">
+  <a class="dash-card c-teal" href="./stregoneria-wicca.html" data-gate="1" aria-label="Stregoneria e Wicca sabbat incantesimi">
     <div class="dash-img-wrap"><img src="./images/icone/home/stregoneria.webp" width="300" height="300" alt="Stregoneria Wicca sabbat" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌙</div>'"></div>
     <div class="dash-label">Stregoneria & Wicca</div>
     <div class="dash-sub" style="color:#5ecec4">Sabbat & incantesimi</div>
   </a>
-  <a class="dash-card c-orange" href="./alchimia.html">
+  <a class="dash-card c-orange" href="./alchimia.html" data-gate="1" aria-label="Alchimia trasmutazione esoterica">
     <div class="dash-img-wrap"><img src="./images/icone/home/alchimia.webp" width="300" height="300" alt="Alchimia trasmutazione esoterica" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>⚗️</div>'"></div>
     <div class="dash-label">Alchimia</div>
     <div class="dash-sub" style="color:#f0a060">Trasmutazione</div>
   </a>
-  <a class="dash-card c-blue" href="./cabala.html">
+  <a class="dash-card c-blue" href="./cabala.html" data-gate="1" aria-label="Cabala ebraica albero della vita">
     <div class="dash-img-wrap"><img src="./images/icone/home/cabala.webp" width="300" height="300" alt="Cabala ebraica albero della vita" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌳</div>'"></div>
     <div class="dash-label">Cabala</div>
     <div class="dash-sub" style="color:#7eb8f7">Albero della vita</div>
   </a>
-  <a class="dash-card c-gold" href="./ermetismo.html">
+  <a class="dash-card c-gold" href="./ermetismo.html" data-gate="1" aria-label="Ermetismo principi ermetici">
     <div class="dash-img-wrap"><img src="./images/icone/home/ermetismo.webp" width="300" height="300" alt="Ermetismo principi ermetici" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🔯</div>'"></div>
     <div class="dash-label">Ermetismo</div>
     <div class="dash-sub" style="color:#d4af37">Principi ermetici</div>
   </a>
-  <a class="dash-card c-purple" href="./negromanzia.html">
+  <a class="dash-card c-purple" href="./negromanzia.html" data-gate="1" aria-label="Negromanzia comunicazione con i defunti">
     <div class="dash-img-wrap"><img src="./images/icone/home/negromanzia.webp" width="300" height="300" alt="Negromanzia comunicazione defunti" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>💀</div>'"></div>
     <div class="dash-label">Negromanzia</div>
     <div class="dash-sub" style="color:#b88fe0">Spiriti & anime</div>
   </a>
-  <a class="dash-card c-purple" href="./bibliomanzia-tasseomanzia.html">
+  <a class="dash-card c-purple" href="./bibliomanzia-tasseomanzia.html" data-gate="1" aria-label="Bibliomanzia e tasseomanzia figure dell ombra">
     <div class="dash-img-wrap"><img src="./images/icone/home/bibliomanzia.webp" width="300" height="300" alt="Bibliomanzia tasseomanzia" loading="lazy"></div>
     <div class="dash-label">Bibliomanzia</div>
     <div class="dash-sub" style="color:#b88fe0">Figure dell'ombra</div>
@@ -523,34 +884,34 @@ body{
 </div>
 
 <!-- ══ 10 — TRADIZIONI DEL MONDO ══ -->
-<div class="dash-title">🌍 Tradizioni &amp; Spiritualità del Mondo</div>
+<div class="dash-title">🌍 <span data-key="mondo">Tradizioni &amp; Spiritualità del Mondo</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-orange" href="./tradizioni-spirituali.html#sciamanesimo">
+  <a class="dash-card c-orange" href="./tradizioni-spirituali.html#sciamanesimo" data-gate="1" aria-label="Sciamanesimo spiriti guida e trance">
     <div class="dash-img-wrap"><img src="./images/icone/home/sciamanesimo.webp" width="300" height="300" alt="Sciamanesimo pratiche sciamaniche" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🪶</div>'"></div>
     <div class="dash-label">Sciamanesimo</div>
     <div class="dash-sub" style="color:#f0a060">Spiriti guida & trance</div>
   </a>
-  <a class="dash-card c-pink" href="./tradizioni-spirituali.html#buddismo-esoterico">
+  <a class="dash-card c-pink" href="./tradizioni-spirituali.html#buddismo-esoterico" data-gate="1" aria-label="Buddismo esoterico Vajrayana tantra">
     <div class="dash-img-wrap"><img src="./images/icone/home/buddismo-esoterico.webp" width="300" height="300" alt="Buddismo esoterico Vajrayana" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>☸️</div>'"></div>
     <div class="dash-label">Buddismo Esoterico</div>
     <div class="dash-sub" style="color:#e893c4">Tantra & mandala</div>
   </a>
-  <a class="dash-card c-blue" href="./tradizioni-spirituali.html#sufismo">
+  <a class="dash-card c-blue" href="./tradizioni-spirituali.html#sufismo" data-gate="1" aria-label="Sufismo mistica islamica">
     <div class="dash-img-wrap"><img src="./images/icone/home/sufismo.webp" width="300" height="300" alt="Sufismo mistica islamica" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>☪️</div>'"></div>
     <div class="dash-label">Sufismo</div>
     <div class="dash-sub" style="color:#7eb8f7">Mistica islamica</div>
   </a>
-  <a class="dash-card c-green" href="./tradizioni-spirituali.html#druidismo">
+  <a class="dash-card c-green" href="./tradizioni-spirituali.html#druidismo" data-gate="1" aria-label="Druidismo tradizione celtica">
     <div class="dash-img-wrap"><img src="./images/icone/home/druidismo.webp" width="300" height="300" alt="Druidismo tradizione celtica" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌳</div>'"></div>
     <div class="dash-label">Druidismo</div>
     <div class="dash-sub" style="color:#6fcf97">Tradizione celtica</div>
   </a>
-  <a class="dash-card c-purple" href="./tradizioni-spirituali.html#voodoo">
+  <a class="dash-card c-purple" href="./tradizioni-spirituali.html#voodoo" data-gate="1" aria-label="Voodoo e Hoodoo tradizione afrocaraibica">
     <div class="dash-img-wrap"><img src="./images/icone/home/voodoo-hoodoo.webp" width="300" height="300" alt="Voodoo Hoodoo tradizione afrocaraibica" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🕯️</div>'"></div>
     <div class="dash-label">Voodoo &amp; Hoodoo</div>
     <div class="dash-sub" style="color:#b88fe0">Tradizione afrocaraibica</div>
   </a>
-  <a class="dash-card c-gold" href="./tradizioni-spirituali.html#rosacroce">
+  <a class="dash-card c-gold" href="./tradizioni-spirituali.html#rosacroce" data-gate="1" aria-label="Rosacroce ordine esoterico">
     <div class="dash-img-wrap"><img src="./images/icone/home/rosacroce.webp" width="300" height="300" alt="Rosacroce ordine esoterico" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌹</div>'"></div>
     <div class="dash-label">Rosacroce</div>
     <div class="dash-sub" style="color:#d4af37">Ordine esoterico</div>
@@ -568,34 +929,34 @@ body{
 </div>
 
 <!-- ══ 11 — ANIMA, ENERGIA & STRUMENTI ══ -->
-<div class="dash-title">🌌 Anima, Energia &amp; Strumenti</div>
+<div class="dash-title">🌌 <span data-key="anima">Anima, Energia &amp; Strumenti</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-purple" href="./viaggio-astrale.html">
+  <a class="dash-card c-purple" href="./viaggio-astrale.html" data-gate="1" aria-label="Proiezione astrale viaggio fuori corpo">
     <div class="dash-img-wrap"><img src="./images/icone/home/viaggio-astrale.webp" width="300" height="300" alt="Viaggio astrale proiezione fuori corpo" loading="lazy"></div>
     <div class="dash-label">Proiezione Astrale</div>
     <div class="dash-sub" style="color:#b88fe0">Viaggio fuori corpo</div>
   </a>
-  <a class="dash-card c-orange" href="./mente-energia.html">
+  <a class="dash-card c-orange" href="./mente-energia.html" data-gate="1" aria-label="Energia chakra reiki equilibrio">
     <div class="dash-img-wrap"><img src="./images/icone/home/energia.webp" width="300" height="300" alt="Energia chakra reiki equilibrio" loading="lazy"></div>
     <div class="dash-label">Energia</div>
     <div class="dash-sub" style="color:#f0a060">Chakra & cristalli</div>
   </a>
-  <a class="dash-card c-green" href="./mente-energia.html#spazio">
+  <a class="dash-card c-green" href="./mente-energia.html#spazio" data-gate="1" aria-label="Spazio sacro purificazione e altare">
     <div class="dash-img-wrap"><img src="./images/icone/home/spazio.webp" width="300" height="300" alt="Spazio sacro purificazione altare" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌿</div>'"></div>
     <div class="dash-label">Spazio Sacro</div>
     <div class="dash-sub" style="color:#6fcf97">Purificazione & altare</div>
   </a>
-  <a class="dash-card c-gold" href="./strumenti.html">
+  <a class="dash-card c-gold" href="./strumenti.html" data-gate="1" aria-label="Strumenti esoterici pendolo e grimorio">
     <div class="dash-img-wrap"><img src="./images/icone/home/strumenti.webp" width="300" height="300" alt="Strumenti esoterici pendolo grimorio" loading="lazy"></div>
     <div class="dash-label">Strumenti</div>
     <div class="dash-sub" style="color:#d4af37">Pendolo & grimorio</div>
   </a>
-  <a class="dash-card c-teal" href="./pietre-magiche.html">
+  <a class="dash-card c-teal" href="./pietre-magiche.html" data-gate="1" aria-label="Pietre magiche cristalli curativi">
     <div class="dash-img-wrap"><img src="./images/pietre/pietre-magiche-home.webp" width="300" height="300" alt="Pietre magiche cristalli curativi" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>💎</div>'"></div>
     <div class="dash-label">Pietre Magiche</div>
     <div class="dash-sub" style="color:#5ecec4">Cristalli & usi</div>
   </a>
-  <a class="dash-card c-gold" href="./archivio.html">
+  <a class="dash-card c-gold" href="./archivio.html" aria-label="Archivio letture personali">
     <div class="dash-img-wrap"><img src="./images/icone/home/archivio.webp" width="300" height="300" alt="Archivio letture personali" loading="lazy"></div>
     <div class="dash-label">Archivio</div>
     <div class="dash-sub" style="color:#d4af37">Le tue letture</div>
@@ -603,29 +964,29 @@ body{
 </div>
 
 <!-- ══ 12 — MENTE & ENERGIA ══ -->
-<div class="dash-title">🧠 Mente &amp; Energia</div>
+<div class="dash-title">🧠 <span data-key="mente">Mente &amp; Energia</span></div>
 <div class="dash-grid">
-  <a class="dash-card c-purple" href="./mente-energia.html#meditazione">
+  <a class="dash-card c-purple" href="./mente-energia.html#meditazione" data-gate="1" aria-label="Meditazione guidata online">
     <div class="dash-img-wrap"><img src="./images/icone/home/meditazione.webp" width="300" height="300" alt="Meditazione guidata online" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🧘</div>'"></div>
     <div class="dash-label">Meditazione</div>
     <div class="dash-sub" style="color:#b88fe0">Percorsi guidati</div>
   </a>
-  <a class="dash-card c-teal" href="./mente-energia.html#pranayama">
+  <a class="dash-card c-teal" href="./mente-energia.html#pranayama" data-gate="1" aria-label="Pranayama tecniche di respirazione">
     <div class="dash-img-wrap"><img src="./images/icone/home/pranayama.webp" width="300" height="300" alt="Pranayama tecniche di respirazione" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌬️</div>'"></div>
     <div class="dash-label">Pranayama</div>
     <div class="dash-sub" style="color:#5ecec4">Breathwork guidato</div>
   </a>
-  <a class="dash-card c-blue" href="./mente-energia.html#ipnosi">
+  <a class="dash-card c-blue" href="./mente-energia.html#ipnosi" data-gate="1" aria-label="Ipnosi guidata vite passate">
     <div class="dash-img-wrap"><img src="./images/icone/home/ipnosi.webp" width="300" height="300" alt="Ipnosi guidata rilassamento vite passate" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🌀</div>'"></div>
     <div class="dash-label">Ipnosi</div>
     <div class="dash-sub" style="color:#7eb8f7">Vite passate</div>
   </a>
-  <a class="dash-card c-gold" href="./mente-energia.html#eft">
+  <a class="dash-card c-gold" href="./mente-energia.html#eft" data-gate="1" aria-label="EFT Tapping tecnica libertà emotiva">
     <div class="dash-img-wrap"><img src="./images/icone/home/eft-tapping.webp" width="300" height="300" alt="EFT Tapping tecnica libertà emotiva" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🤲</div>'"></div>
     <div class="dash-label">EFT Tapping</div>
     <div class="dash-sub" style="color:#d4af37">Libera i blocchi</div>
   </a>
-  <a class="dash-card c-green span2" href="./mente-energia.html#sincronicita">
+  <a class="dash-card c-green span2" href="./mente-energia.html#sincronicita" data-gate="1" aria-label="Sincronicità segni e coincidenze significative">
     <div class="dash-img-wrap wide"><img src="./images/icone/home/sincronicita.webp" width="600" height="300" alt="Sincronicità coincidenze significative" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>✨</div>'"></div>
     <div class="dash-label">Sincronicità</div>
     <div class="dash-sub" style="color:#6fcf97">Segni & coincidenze significative</div>
@@ -633,8 +994,8 @@ body{
 </div>
 
 <!-- ══ 13 — ENCICLOPEDIA ══ -->
-<div class="dash-title">📚 Enciclopedia &amp; Conoscenza</div>
-<a class="enc-card" href="./enciclopedia.html">
+<div class="dash-title">📚 <span data-key="enc">Enciclopedia &amp; Conoscenza</span></div>
+<a class="enc-card" href="./enciclopedia.html" aria-label="Enciclopedia esoterica MYSTICA">
   <img src="./images/icone/home/icona_enciclopedia.webp" width="480" height="160" alt="Enciclopedia esoterica MYSTICA" loading="lazy" onerror="this.style.display='none'">
   <div class="enc-card-body">
     <div class="enc-card-label">📖 Enciclopedia Esoterica</div>
@@ -642,32 +1003,32 @@ body{
   </div>
 </a>
 <div class="dash-grid">
-  <a class="dash-card c-gold" href="./pentacoli-salomone.html">
+  <a class="dash-card c-gold" href="./pentacoli-salomone.html" data-gate="1" aria-label="Pentacoli di Re Salomone sigilli planetari">
     <div class="dash-img-wrap"><img src="./images/pentacoliresalomone/pentacoli/pentacoli-di-re-salomone.webp" width="300" height="300" alt="Pentacoli di Re Salomone sigilli planetari" loading="lazy"></div>
     <div class="dash-label">Pentacoli di Salomone</div>
     <div class="dash-sub" style="color:#d4af37">44 Sigilli Planetari</div>
   </a>
-  <a class="dash-card c-gold" href="./numerologia-simboli.html">
+  <a class="dash-card c-gold" href="./numerologia-simboli.html" data-gate="1" aria-label="Numerologia simboli gematria quadrato magico">
     <div class="dash-img-wrap"><img src="./images/icone/home/numerologia.webp" width="300" height="300" alt="Numerologia simboli gematria" loading="lazy"></div>
     <div class="dash-label">Numerologia &amp; Simboli</div>
     <div class="dash-sub" style="color:#d4af37">Quadrato Magico & Gematria</div>
   </a>
-  <a class="dash-card c-teal" href="./strega.html">
+  <a class="dash-card c-teal" href="./strega.html" data-gate="1" aria-label="Diventa una strega guida completa">
     <div class="dash-img-wrap"><img src="./images/icone/enciclopedia/IMG_COM_202606051305402050.webp" width="300" height="300" alt="Diventa una strega guida completa" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🧙</div>'"></div>
     <div class="dash-label">Diventa una Strega</div>
     <div class="dash-sub" style="color:#5ecec4">Guida completa</div>
   </a>
-  <a class="dash-card c-purple" href="./ouija.html">
+  <a class="dash-card c-purple" href="./ouija.html" data-gate="1" aria-label="Tavola Ouija istruzioni e regole">
     <div class="dash-img-wrap"><img src="./images/icone/enciclopedia/IMG_COM_202606051305409996.webp" width="300" height="300" alt="Tavola Ouija istruzioni" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🪬</div>'"></div>
     <div class="dash-label">Tavola Ouija</div>
     <div class="dash-sub" style="color:#b88fe0">Istruzioni e regole</div>
   </a>
-  <a class="dash-card c-gold span2" href="./pratiche.html">
+  <a class="dash-card c-gold span2" href="./pratiche.html" data-gate="1" aria-label="Figure del mistico streghe maghi medium veggenti">
     <div class="dash-img-wrap wide"><img src="./images/icone/enciclopedia/IMG_COM_2026060513054130810.webp" width="600" height="300" alt="Figure del mistico streghe maghi medium" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>🔮</div>'"></div>
     <div class="dash-label">Figure del Mistico</div>
     <div class="dash-sub" style="color:#d4af37">Streghe · Maghi · Medium · Veggenti</div>
   </a>
-  <a class="dash-card c-purple span2" href="./community.html">
+  <a class="dash-card c-purple span2" href="./community.html" aria-label="Community commenti esperienze mistiche">
     <div class="dash-img-wrap wide"><img src="./images/icone/home/community-commenti.webp" width="600" height="300" alt="Community commenti esperienze mistiche" loading="lazy" onerror="this.closest('.dash-img-wrap').innerHTML='<div class=dash-emoji>💬</div>'"></div>
     <div class="dash-label">Community &amp; Commenti</div>
     <div class="dash-sub" style="color:#b88fe0">Condividi le tue esperienze mistiche</div>
@@ -684,6 +1045,133 @@ body{
        data-full-width-responsive="true"></ins>
 </div>
 
+<!-- ══════════════════════════
+     SEZIONE ARTICOLO SEO
+══════════════════════════ -->
+<article class="seo-article" aria-label="La storia dell'esoterismo">
+  <h2>La Storia dell'Esoterismo: dalle Origini ai Giorni Nostri</h2>
+
+  <h3>Le origini nell'antico Egitto e in Mesopotamia</h3>
+  <p>
+    Le radici più profonde dell'esoterismo occidentale affondano nell'antico Egitto e in Mesopotamia, tremila anni prima dell'era cristiana. Gli scribi egizi custodivano testi sacri dedicati ai misteri della creazione e dell'aldilà — il cosiddetto <em>Libro dei Morti</em> è il documento più celebre di questa tradizione. In Mesopotamia, i sacerdoti-astronomi babilonesi tracciavano le rotte dei pianeti e sviluppavano i fondamenti dell'<a href="./oroscopo.html">astrologia</a> come arte divinatoria, convinti che i movimenti celesti rispecchiassero la volontà degli dèi sulla terra.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>La tradizione ermetica e neoplatonica greca</h3>
+  <p>
+    Il pensiero greco elaborò una sintesi filosofica destinata a influenzare tutta la tradizione esoterica successiva. Il corpus hermeticum, attribuito a Ermete Trismegisto (figura leggendaria sintesi tra Hermes greco e Thoth egizio), pose le basi dell'<a href="./ermetismo.html">ermetismo</a>: la convinzione che l'universo sia un tutto animato governato da leggi occulte che l'uomo può apprendere e applicare. I neoplatonici del III-IV secolo, come Plotino e Giamblico, elaborarono teorie sulla teurgia — la pratica di influenzare le forze divine attraverso rituali simbolici — aprendo la strada alla magia cerimoniale medievale.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>Il Medioevo: alchimia, astrologia e cabala</h3>
+  <p>
+    Nel Medioevo europeo, la conoscenza esoterica sopravvisse e si trasformò. L'<a href="./alchimia.html">alchimia</a> — trasmessa dagli Arabi all'Europa attraverso la Spagna — cercava la Pietra Filosofale e l'Elisir di lunga vita, ma era anche un percorso di trasformazione spirituale interiore. La <a href="./cabala.html">Cabala</a> ebraica, sistematizzata nel XIII secolo con lo Zohar, offriva un sistema elaborato per comprendere la struttura nascosta della realtà attraverso le dieci Sefirot dell'Albero della Vita. L'astrologia medievale era considerata una scienza rispettabile, insegnata nelle università accanto alla medicina e alla filosofia.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>Il Rinascimento esoterico: Ficino e Pico della Mirandola</h3>
+  <p>
+    Il Quattrocento fiorentino segnò una svolta epocale. Marsilio Ficino tradusse per la prima volta in latino il corpus hermeticum per conto dei Medici, inaugurando un rinascimento esoterico che mescolava platonismo, <a href="./ermetismo.html">ermetismo</a>, magia naturale e astrologia. Pico della Mirandola aggiunse la <a href="./cabala.html">cabala</a> cristiana, convinto che la conoscenza dei nomi divini permettesse di operare trasformazioni cosmiche. Da Firenze, questa sintesi si irradiò in tutta Europa, alimentando scuole rosacrociane, logge massoniche e ordini esoterici di ogni tipo.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>L'Ottocento: la nascita dell'occultismo moderno</h3>
+  <p>
+    Il XIX secolo vide la sistematizzazione dell'occultismo come disciplina autonoma. Éliphas Lévi codificò la magia ceremoniale in opere divenute fondamentali, reinterpretando i Tarocchi come chiave ermeneutica universale e popularizzando il simbolo del Baphomet. Papus (Gérard Encausse) fondò a Parigi l'Ordine Martinista e scrisse trattati sistematici su <a href="./cabala.html">cabala</a>, <a href="./tarocchi.html">tarocchi</a> e <a href="./numerologia.html">numerologia</a>. Helena Blavatsky fondò la Società Teosofica, introducendo in Occidente elementi esoterici dell'induismo e del buddismo tibetano che avrebbero alimentato il successivo movimento New Age.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>Il Novecento: Crowley, Golden Dawn e New Age</h3>
+  <p>
+    Nel primo Novecento, l'Ordine Ermetico della Golden Dawn — fondato a Londra nel 1888 — riunì alcune delle menti più eclettiche dell'epoca (tra cui William Butler Yeats) per studiare <a href="./cabala.html">cabala</a>, astrologia, <a href="./tarocchi.html">tarocchi</a> e magia cerimoniale. Aleister Crowley, controverso discepolo della Golden Dawn, fondò il Thelema e sistematizzò pratiche magiche elaborate in centinaia di testi. Nella seconda metà del secolo, il movimento New Age democratizzò l'accesso alle tradizioni esoteriche, rendendo cristalli, <a href="./tarocchi.html">tarocchi</a>, meditazione e <a href="./rune.html">rune</a> strumenti diffusi anche fuori dai circoli iniziatici.
+  </p>
+  <div class="seo-divider"></div>
+
+  <h3>L'esoterismo nel digitale: accessibilità e nuove pratiche</h3>
+  <p>
+    Il XXI secolo ha portato una trasformazione radicale: gli strumenti esoterici sono oggi accessibili a chiunque, in qualsiasi momento, attraverso app e portali come MYSTICA. Questa democratizzazione non impoverisce le tradizioni — al contrario, permette a milioni di persone di avvicinarsi all'<a href="./enciclopedia.html">enciclopedia</a> del sapere esoterico con rispetto e curiosità. La consultazione dei <a href="./tarocchi.html">tarocchi</a>, delle <a href="./rune.html">rune</a> o dell'<a href="./iching.html">I Ching</a> in formato digitale mantiene intatto il valore simbolico e meditativo di questi sistemi, aggiungendo la comodità della disponibilità immediata. Approfondisci la tradizione esoterica nell'<a href="./enciclopedia.html">Enciclopedia MYSTICA</a>, esplora la <a href="./cabala.html">Cabala</a>, l'<a href="./alchimia.html">Alchimia</a> e l'<a href="./ermetismo.html">Ermetismo</a>.
+  </p>
+</article>
+
+<!-- ══════════════════════════
+     SEZIONE FAQ
+══════════════════════════ -->
+<section class="faq-section" aria-label="Domande frequenti">
+  <div class="faq-section-title">✦ Domande Frequenti</div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Cosa sono i tarocchi online?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>I tarocchi online sono strumenti di divinazione digitale che utilizzano il mazzo tradizionale di 78 carte — 22 Arcani Maggiori e 56 Minori. Su MYSTICA puoi fare estrazioni con stese complete come la Croce Celtica, la stesa a tre carte e molte altre. Ogni carta è accompagnata da interpretazioni dettagliate per amore, lavoro e crescita personale. Visita la sezione <a href="./tarocchi.html">Tarocchi</a> per iniziare subito.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Come funziona l'oroscopo su MYSTICA?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>L'<a href="./oroscopo.html">oroscopo di MYSTICA</a> offre previsioni giornaliere, settimanali e mensili per tutti e 12 i segni zodiacali. Include sezioni dedicate ad amore, lavoro, salute e fortuna. Puoi salvare il tuo segno nel <a href="./profilo-mistico.html">Profilo Mistico</a> per accedere subito alle tue previsioni personalizzate senza doverle cercare ogni volta.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Le rune sono affidabili per la divinazione?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>Le <a href="./rune.html">Rune Elder Futhark</a> sono un sistema di scrittura e divinazione nordico antico di oltre 2000 anni. Come tutti gli strumenti divinatori, vanno intese come supporto alla riflessione interiore: non previsioni assolute, ma specchi simbolici. Su MYSTICA trovi le 24 rune con significati approfonditi, metodo di estrazione classico e interpretazione delle stese più comuni.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Cos'è la numerologia e come si calcola?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>La <a href="./numerologia.html">numerologia</a> è un'antica disciplina che studia il significato esoterico dei numeri nella vita di una persona. Il calcolo parte dalla data di nascita e dal nome completo per ricavare il Numero del Destino, il Numero dell'Anima e altri valori chiave. MYSTICA offre un calcolatore completo con interpretazioni per ogni numero da 1 a 9 e i Numeri Maestri 11, 22, 33.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Come si usa l'I Ching?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>L'<a href="./iching.html">I Ching</a> (Libro dei Mutamenti) è l'oracolo cinese più antico del mondo, risalente a oltre 3000 anni fa. Su MYSTICA puoi consultarlo tramite il metodo delle tre monete: esprimi una domanda interiore, lancia le monete virtuali e ottieni uno degli 64 esagrammi con interpretazione completa tratta dalla tradizione classica cinese.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Cosa include il Premium MYSTICA?</span>
+      <span class="faq-arrow">▾</span>
+    </div>
+    <div class="faq-a">
+      <p>Il Premium MYSTICA (<strong>4,99€ una tantum</strong>) sblocca l'accesso illimitato a tutte le sezioni dell'app: magia rituale avanzata, tradizioni esoteriche, strumenti di meditazione, divinazione alternativa completa, archivio letture personale illimitato e molto altro. Un solo pagamento, nessun abbonamento, accesso permanente e immediato su qualsiasi dispositivo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Share Section ══ -->
+<div class="share-section" aria-label="Condividi MYSTICA">
+  <div class="share-title">✦ Condividi MYSTICA</div>
+  <div class="share-buttons">
+    <a class="share-btn wa" href="#" onclick="shareWA(event)" aria-label="Condividi su WhatsApp">💬 WhatsApp</a>
+    <a class="share-btn tg" href="#" onclick="shareTG(event)" aria-label="Condividi su Telegram">✈️ Telegram</a>
+    <a class="share-btn fb" href="#" onclick="shareFB(event)" aria-label="Condividi su Facebook">f Facebook</a>
+    <a class="share-btn tw" href="#" onclick="shareX(event)" aria-label="Condividi su X Twitter">𝕏 Twitter</a>
+    <button class="share-btn cp" onclick="copyLink()" aria-label="Copia link">🔗 Copia</button>
+  </div>
+</div>
+
 <!-- CTA finale -->
 <div style="background:linear-gradient(145deg,#1a0e32,#0d0820);border:1.5px solid rgba(212,175,55,.5);border-radius:var(--radius);padding:22px;text-align:center;margin:10px 0 20px">
   <div style="font-size:32px;margin-bottom:10px">🔮</div>
@@ -695,7 +1183,7 @@ body{
 </div><!-- /content -->
 
 <!-- FOOTER -->
-<div class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer-links">
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
@@ -703,31 +1191,279 @@ body{
     <a href="./contatti.html">Contatti</a>
     <a href="./enciclopedia.html">Enciclopedia</a>
   </div>
-  <div class="footer-copy">© MYSTICA · mysticaoracoli.it · PetroCorporation</div>
-  <div class="disclaimer">Tarocchi, oroscopi, rune e tutti gli oracoli sono strumenti ludici e culturali.<br>Non sostituiscono consulenze professionali mediche, legali o psicologiche.</div>
-</div>
+  <div class="footer-social">
+    <a href="#" aria-label="MYSTICA su Facebook">Facebook</a>
+    <a href="#" aria-label="MYSTICA su Instagram">Instagram</a>
+    <a href="#" aria-label="MYSTICA su TikTok">TikTok</a>
+  </div>
+  <div class="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni · Mago Petro</div>
+  <div class="disclaimer">MYSTICA è un servizio di intrattenimento. Le letture e le previsioni hanno finalità ludiche e non sostituiscono consulenze professionali mediche, legali o psicologiche.</div>
+</footer>
 
 </div><!-- /app -->
 
+<!-- ══ Modal Premium ══ -->
+<div class="premium-modal-overlay" id="premium-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="premium-modal">
+    <div class="modal-icon">✦</div>
+    <div class="modal-title" id="modal-title">Funzione Premium</div>
+    <p class="modal-text">Sblocca l'accesso illimitato a tutto MYSTICA — tarocchi avanzati, magia, tradizioni esoteriche, meditazioni e molto altro.</p>
+    <div class="modal-price">4,99€</div>
+    <div class="modal-once">una tantum · nessun abbonamento</div>
+    <a class="modal-cta" href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" target="_blank" rel="noopener">✦ Sblocca Premium Ora</a>
+    <button class="modal-close" onclick="closeModal()">No grazie, continua gratis</button>
+  </div>
+</div>
+
 <script>
-// AdSense init (non-blocking)
+/* ── Dizionario lingue ── */
+const LANG = {
+  it: {
+    tagline: "L'oracolo esoterico italiano più completo",
+    cta: "🔮 Scopri il Tuo Oroscopo",
+    spazio: "✨ Il Tuo Spazio Personale",
+    astrologia: "🌌 Astrologia Occidentale",
+    orientale: "🌏 Astrologia Orientale & Moderna",
+    cicli: "🌙 Cicli & Tempo",
+    divinazione: "🃏 Divinazione",
+    divAlt: "🎴 Divinazione Alternativa",
+    numerici: "🔢 Oracoli Numerici & Simbolici",
+    magia: "💜 Amore & Magia Rituale",
+    tradizioni: "🌿 Tradizioni Esoteriche",
+    mondo: "🌍 Tradizioni & Spiritualità del Mondo",
+    anima: "🌌 Anima, Energia & Strumenti",
+    mente: "🧠 Mente & Energia",
+    enc: "📚 Enciclopedia & Conoscenza",
+    premiumBanner: "✦ Sblocca MYSTICA Premium — Accesso illimitato a tutto · 4,99€ una tantum",
+    premiumBadge: "✦ Premium Attivo"
+  },
+  en: {
+    tagline: "Italy's most complete esoteric oracle",
+    cta: "🔮 Discover Your Horoscope",
+    spazio: "✨ Your Personal Space",
+    astrologia: "🌌 Western Astrology",
+    orientale: "🌏 Eastern & Modern Astrology",
+    cicli: "🌙 Cycles & Time",
+    divinazione: "🃏 Divination",
+    divAlt: "🎴 Alternative Divination",
+    numerici: "🔢 Numeric & Symbolic Oracles",
+    magia: "💜 Love & Ritual Magic",
+    tradizioni: "🌿 Esoteric Traditions",
+    mondo: "🌍 World Traditions & Spirituality",
+    anima: "🌌 Soul, Energy & Tools",
+    mente: "🧠 Mind & Energy",
+    enc: "📚 Encyclopedia & Knowledge",
+    premiumBanner: "✦ Unlock MYSTICA Premium — Unlimited access to everything · €4.99 one-time",
+    premiumBadge: "✦ Premium Active"
+  },
+  es: {
+    tagline: "El oráculo esotérico italiano más completo",
+    cta: "🔮 Descubre Tu Horóscopo",
+    spazio: "✨ Tu Espacio Personal",
+    astrologia: "🌌 Astrología Occidental",
+    orientale: "🌏 Astrología Oriental & Moderna",
+    cicli: "🌙 Ciclos & Tiempo",
+    divinazione: "🃏 Adivinación",
+    divAlt: "🎴 Adivinación Alternativa",
+    numerici: "🔢 Oráculos Numéricos & Simbólicos",
+    magia: "💜 Amor & Magia Ritual",
+    tradizioni: "🌿 Tradiciones Esotéricas",
+    mondo: "🌍 Tradiciones & Espiritualidad del Mundo",
+    anima: "🌌 Alma, Energía & Herramientas",
+    mente: "🧠 Mente & Energía",
+    enc: "📚 Enciclopedia & Conocimiento",
+    premiumBanner: "✦ Desbloquea MYSTICA Premium — Acceso ilimitado · 4,99€ pago único",
+    premiumBadge: "✦ Premium Activo"
+  }
+};
+
+/* ── Lingua corrente ── */
+var currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ── Applica lingua ── */
+function applyLang(lang) {
+  if (!LANG[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('myst_lang', lang);
+
+  // Aggiorna tagline e CTA
+  var tagEl = document.getElementById('tagline-text');
+  var ctaEl = document.getElementById('cta-btn');
+  if (tagEl) tagEl.textContent = LANG[lang].tagline;
+  if (ctaEl) ctaEl.textContent = LANG[lang].cta;
+
+  // Aggiorna label sezioni
+  document.querySelectorAll('[data-key]').forEach(function(el) {
+    var key = el.getAttribute('data-key');
+    if (LANG[lang][key]) el.textContent = LANG[lang][key];
+  });
+
+  // Aggiorna pulsanti lingua
+  ['it','en','es'].forEach(function(l) {
+    var btn = document.getElementById('lang-' + l);
+    if (btn) {
+      btn.classList.toggle('active', l === lang);
+      btn.setAttribute('aria-pressed', l === lang ? 'true' : 'false');
+    }
+  });
+
+  // Rigenera banner premium con testo nella lingua giusta
+  renderPremiumBanner();
+}
+
+function setLang(lang) { applyLang(lang); }
+
+/* ── Banner Premium ── */
+function renderPremiumBanner() {
+  var wrap = document.getElementById('premium-banner-wrap');
+  if (!wrap) return;
+  var isPremium = localStorage.getItem('myst_premium') === '1';
+  var L = LANG[currentLang] || LANG.it;
+  if (isPremium) {
+    wrap.innerHTML = '<div class="premium-badge">' + L.premiumBadge + '</div>';
+  } else {
+    wrap.innerHTML =
+      '<a class="premium-banner" href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" target="_blank" rel="noopener">' +
+      '<span class="premium-banner-text">' + L.premiumBanner + '</span>' +
+      '<span class="premium-banner-arrow">›</span>' +
+      '</a>';
+  }
+}
+
+/* ── Premium Gate: intercetta click sulle card gated ── */
+var FREE_PAGES = [
+  'profilo-mistico.html','archivio.html','oroscopo.html',
+  'tarocchi.html','rune.html','iching.html'
+];
+
+document.addEventListener('click', function(e) {
+  var card = e.target.closest('[data-gate="1"]');
+  if (!card) return;
+  if (localStorage.getItem('myst_premium') === '1') return; // Premium: passa
+  var href = card.getAttribute('href') || '';
+  // Controlla se è una pagina libera
+  var isFree = FREE_PAGES.some(function(p){ return href.indexOf(p) !== -1; });
+  if (isFree) return;
+  e.preventDefault();
+  openModal();
+}, false);
+
+/* ── Modal ── */
+function openModal() {
+  document.getElementById('premium-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('premium-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Chiudi modal cliccando fuori
+document.getElementById('premium-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+/* ── Toggle musica ── */
+var audio = null;
+var musicPlaying = false;
+function toggleMusic() {
+  var btn = document.getElementById('music-toggle');
+  if (!audio) { audio = document.getElementById('bg-audio'); audio.volume = 0.3; }
+  if (musicPlaying) {
+    audio.pause();
+    musicPlaying = false;
+    btn.textContent = '🔇';
+    btn.classList.remove('active');
+  } else {
+    audio.play().then(function(){
+      musicPlaying = true;
+      btn.textContent = '🎵';
+      btn.classList.add('active');
+    }).catch(function(){});
+  }
+}
+
+/* ── Toggle tema ── */
+var darkMode = true;
+function toggleTheme() {
+  var btn = document.getElementById('theme-toggle');
+  darkMode = !darkMode;
+  if (darkMode) {
+    document.body.classList.remove('day-mode');
+    btn.textContent = '☀️';
+    localStorage.setItem('myst_theme', 'dark');
+  } else {
+    document.body.classList.add('day-mode');
+    btn.textContent = '🌙';
+    localStorage.setItem('myst_theme', 'day');
+  }
+}
+
+/* ── FAQ accordion ── */
+function toggleFaq(el) {
+  var item = el.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  // Chiudi tutti
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); i.setAttribute('aria-expanded','false'); });
+  if (!isOpen) { item.classList.add('open'); item.setAttribute('aria-expanded','true'); }
+}
+// Tastiera
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.addEventListener('keydown', function(e){
+    if (e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleFaq(item.querySelector('.faq-q')); }
+  });
+});
+
+/* ── Share ── */
+var SHARE_URL = 'https://mysticaoracoli.it/';
+var SHARE_TEXT = 'Scopri MYSTICA — tarocchi, oroscopo, rune e magia online 🔮✨';
+
+function doNativeShare() {
+  if (navigator.share) {
+    navigator.share({ title: 'MYSTICA Oracoli', text: SHARE_TEXT, url: SHARE_URL });
+    return true;
+  }
+  return false;
+}
+function shareWA(e) { e.preventDefault(); if (!doNativeShare()) window.open('https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT + ' ' + SHARE_URL), '_blank'); }
+function shareTG(e) { e.preventDefault(); if (!doNativeShare()) window.open('https://t.me/share/url?url=' + encodeURIComponent(SHARE_URL) + '&text=' + encodeURIComponent(SHARE_TEXT), '_blank'); }
+function shareFB(e) { e.preventDefault(); window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SHARE_URL), '_blank', 'width=600,height=400'); }
+function shareX(e) { e.preventDefault(); window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(SHARE_TEXT + ' ' + SHARE_URL), '_blank'); }
+function copyLink() {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(SHARE_URL).then(function(){
+      var btn = document.querySelector('.share-btn.cp');
+      if (btn) { btn.textContent = '✓ Copiato!'; setTimeout(function(){ btn.textContent = '🔗 Copia'; }, 2000); }
+    });
+  }
+}
+
+/* ── AdSense init ── */
 (function(){
   try{
     var ads = document.querySelectorAll('.adsbygoogle');
     ads.forEach(function(){ (adsbygoogle = window.adsbygoogle || []).push({}); });
   }catch(e){}
 })();
-</script>
-<script>
-// Collassa i blocchi AdSense vuoti dopo 3s
+
+/* ── Collassa slot AdSense vuoti ── */
 setTimeout(function(){
   document.querySelectorAll('.ad-slot').forEach(function(slot){
     var ins = slot.querySelector('ins');
-    if(!ins || ins.offsetHeight < 10){
+    if (!ins || ins.offsetHeight < 10) {
       slot.style.cssText='display:none!important;margin:0!important;padding:0!important;';
     }
   });
 }, 3000);
+
+/* ── Init al caricamento ── */
+(function init(){
+  // Ripristina tema
+  var savedTheme = localStorage.getItem('myst_theme');
+  if (savedTheme === 'day') { darkMode = true; toggleTheme(); }
+
+  // Applica lingua salvata
+  applyLang(currentLang);
+})();
 </script>
 </body>
 </html>
