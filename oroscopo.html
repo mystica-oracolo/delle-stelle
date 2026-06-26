@@ -25,12 +25,99 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="mystica.css">
 <style>
+/* ── CSS VARIABLES dark (default) ── */
+:root {
+  --bg:#0a0514;--card:#140c24;--gold:#d4af37;--gold-dim:#b8860b;
+  --gold-glow:rgba(212,175,55,0.4);--text:#f4f1fa;--muted:#b8b2d1;
+  --radius:18px;--surface:rgba(20,12,36,0.85);--border:rgba(42,23,72,0.7);
+  --input-bg:rgba(7,3,26,0.5);
+}
+/* dark mode body — hardcoded so it works without mystica.css */
+html, body {
+  background:#0a0514 !important;
+  color:#f4f1fa;
+  margin:0;padding:0;
+  font-family:'Crimson Pro','Georgia',serif;
+}
+
+/* ── CSS VARIABLES light mode ── */
+body.light-mode {
+  --bg:#f0eaf8;--card:#fff;--gold:#8b6914;--gold-dim:#a07820;
+  --gold-glow:rgba(139,105,20,0.3);--text:#1a1030;--muted:#4a3870;
+  --surface:rgba(255,255,255,0.92);--border:rgba(139,105,20,0.3);
+  --card-bg:linear-gradient(145deg,#ede5f8,#f8f4ff);
+  --input-bg:rgba(237,229,248,0.7);
+}
+body.light-mode { background:#f0eaf8 !important; }
+body.light-mode .cosmos { background-color:#e8dff5 !important; opacity:0.5; }
+body.light-mode .top-bar { background:rgba(240,234,248,0.96) !important; border-bottom:1px solid var(--border); }
+body.light-mode .back-btn { background:rgba(139,105,20,0.1); border-color:rgba(139,105,20,0.4); color:var(--gold); }
+body.light-mode .top-bar-title { color:var(--gold); }
+body.light-mode .reading-card { background:var(--card); border-color:var(--border); }
+body.light-mode .tab-bar { background:rgba(237,229,248,0.8); }
+body.light-mode .tab-btn { color:var(--muted); }
+body.light-mode .tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
+body.light-mode .tab-content { background:transparent; }
+body.light-mode .tab-text { color:var(--text); }
+body.light-mode .tab-title { color:var(--gold); }
+body.light-mode .sign-cell { background:linear-gradient(145deg,#ede5f8,#f8f4ff); border-color:rgba(139,105,20,0.3); }
+body.light-mode .sign-cell:hover { border-color:var(--gold-dim); }
+body.light-mode .sign-cell.active { border-color:var(--gold); box-shadow:0 0 16px var(--gold-glow); }
+body.light-mode .sign-cell .sc-name { color:var(--muted); }
+body.light-mode .sign-cell.active .sc-name { color:var(--gold); }
+body.light-mode .sign-cell .sc-dates { color:var(--muted); opacity:0.7; }
+body.light-mode .seo-section { background:rgba(237,229,248,0.6); border-color:var(--border); }
+body.light-mode .seo-section h2 { color:var(--gold); }
+body.light-mode .seo-section p { color:var(--text); }
+body.light-mode .seo-link { color:var(--muted); border-color:var(--border); }
+body.light-mode .seo-link:hover { color:var(--gold); border-color:var(--gold-dim); }
+body.light-mode .page-intro h1 { color:var(--gold); }
+body.light-mode .page-intro p { color:var(--muted); }
+body.light-mode .date-badge { color:var(--gold); border-color:var(--border); background:rgba(139,105,20,0.08); }
+body.light-mode .saved-sign-bar { background:linear-gradient(135deg,rgba(220,200,255,0.5),rgba(237,229,248,0.5)); border-color:var(--border); }
+body.light-mode .saved-sign-bar .ssb-label { color:var(--muted); }
+body.light-mode .saved-sign-bar .ssb-name { color:var(--gold); }
+body.light-mode .saved-sign-bar .ssb-arrow { color:var(--gold); }
+body.light-mode .rc-header { border-bottom-color:var(--border); }
+body.light-mode .rc-sign-name { color:var(--gold); }
+body.light-mode .rc-sign-dates { color:var(--muted); }
+body.light-mode .rc-sign-el { color:var(--muted); border-color:var(--border); background:rgba(220,200,255,0.3); }
+body.light-mode .rc-key-tag { color:var(--muted); border-color:var(--border); }
+body.light-mode .mood-item { background:rgba(237,229,248,0.8); border-color:var(--border); }
+body.light-mode .mood-label { color:var(--muted); }
+body.light-mode .mood-bar { background:rgba(200,180,240,0.4); }
+body.light-mode .lucky-item { background:rgba(237,229,248,0.7); border-color:var(--border); }
+body.light-mode .lucky-label { color:var(--muted); }
+body.light-mode .lucky-val { color:var(--gold); }
+body.light-mode .stone-item { background:rgba(237,229,248,0.6); border-left-color:var(--gold-dim); color:var(--text); }
+body.light-mode .obj-item { background:rgba(237,229,248,0.6); border-color:var(--border); color:var(--muted); }
+body.light-mode .advice-box { background:linear-gradient(135deg,rgba(220,200,255,0.3),rgba(237,229,248,0.5)); border-color:var(--border); }
+body.light-mode .advice-box p { color:var(--text); }
+body.light-mode .btn { border-color:var(--gold-dim); color:var(--gold); background:transparent; }
+body.light-mode .btn:hover { background:rgba(139,105,20,0.1); }
+body.light-mode #generalText { color:var(--text); }
+body.light-mode .footer-mini { color:var(--muted); border-top-color:var(--border); }
+body.light-mode .footer-mini a { color:var(--muted); }
+body.light-mode .footer-mini a:hover { color:var(--gold); }
+body.light-mode .toast { background:var(--card); border-color:var(--gold-dim); color:var(--text); }
+body.light-mode .premium-overlay { background:linear-gradient(to bottom, transparent 0%, rgba(240,234,248,0.85) 35%, rgba(240,234,248,0.98) 65%); }
+body.light-mode .premium-card { background:#fff; border-color:var(--border); }
+body.light-mode .premium-card h3 { color:var(--gold); }
+body.light-mode .premium-card p { color:var(--muted); }
+body.light-mode .premium-card ul li { color:var(--text); }
+body.light-mode .lang-btn { color:var(--muted); border-color:var(--border); background:transparent; }
+body.light-mode .lang-btn.active { color:var(--gold); border-color:var(--gold); background:rgba(139,105,20,0.08); }
+body.light-mode .theme-btn { background:rgba(139,105,20,0.1); border-color:rgba(139,105,20,0.3); color:var(--gold); }
+
+/* ── LAYOUT ── */
 .page-wrap{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
-.top-bar{background:rgba(10,5,20,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,0.2);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+.top-bar{background:rgba(10,5,20,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,0.2);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px}
 .back-btn{width:34px;height:34px;border-radius:50%;background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
 .back-btn:hover{background:rgba(212,175,55,0.2)}
-.top-bar-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:2px;flex:1;text-align:center}
-.top-bar-icon{font-size:20px;flex-shrink:0}
+.top-bar-title{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:2px;flex:1;text-align:center}
+.lang-btn{font-family:'Cinzel',serif;font-size:10px;padding:4px 8px;border-radius:20px;border:1px solid rgba(212,175,55,0.3);color:var(--muted);background:transparent;cursor:pointer;transition:all .2s;letter-spacing:.5px}
+.lang-btn.active{color:var(--gold);border-color:var(--gold);background:rgba(212,175,55,0.1)}
+.theme-btn{width:30px;height:30px;border-radius:50%;background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
 .main-content{flex:1;padding:16px;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
 
 /* Intro */
@@ -41,9 +128,9 @@
 .page-intro p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:0}
 .date-badge{display:inline-block;margin-top:8px;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:4px 12px;border-radius:20px}
 
-/* Segno salvato banner */
+/* Segno salvato */
 .saved-sign-bar{margin:12px 0 8px;padding:12px 14px;background:linear-gradient(135deg,rgba(42,23,72,0.5),rgba(20,10,40,0.5));border:1.5px solid rgba(212,175,55,0.35);border-radius:14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .25s}
-.saved-sign-bar:hover{border-color:var(--gold);background:rgba(42,23,72,0.6)}
+.saved-sign-bar:hover{border-color:var(--gold)}
 .saved-sign-bar .ssb-emoji{font-size:28px;flex-shrink:0}
 .saved-sign-bar .ssb-info{flex:1}
 .saved-sign-bar .ssb-label{font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
@@ -54,22 +141,22 @@
 .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
 .sign-cell{background:linear-gradient(145deg,#130828,#07031a);border:1.5px solid rgba(42,23,72,0.7);border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;transition:all .25s ease;touch-action:manipulation}
 .sign-cell:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
-.sign-cell.active{border-color:var(--gold);box-shadow:0 0 16px rgba(212,175,55,0.25)}
+.sign-cell.active{border-color:var(--gold);box-shadow:0 0 16px var(--gold-glow)}
 .sign-cell .sc-emoji{font-size:22px;margin-bottom:3px}
 .sign-cell .sc-name{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:.5px}
 .sign-cell.active .sc-name{color:var(--gold)}
-.sign-cell .sc-dates{font-size:8px;color:rgba(180,160,220,0.4);margin-top:1px}
+.sign-cell .sc-dates{font-size:8px;color:var(--muted);opacity:0.5;margin-top:1px}
 
 /* Reading card */
 .reading-card{background:linear-gradient(145deg,#130828,#09041e);border:1px solid rgba(212,175,55,0.25);border-radius:18px;overflow:hidden;margin:14px 0}
-.rc-header{padding:18px 18px 12px;border-bottom:1px solid rgba(42,23,72,0.5);display:flex;align-items:center;gap:14px}
+.rc-header{padding:18px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px}
 .rc-emoji{font-size:52px;filter:drop-shadow(0 0 12px rgba(212,175,55,0.4))}
 .rc-meta{flex:1}
 .rc-sign-name{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:1px;margin-bottom:2px}
 .rc-sign-dates{font-size:11px;color:var(--muted);margin-bottom:4px}
-.rc-sign-el{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);border:1px solid rgba(42,23,72,0.8);border-radius:8px;padding:2px 8px;background:rgba(42,23,72,0.3)}
+.rc-sign-el{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:2px 8px;background:rgba(42,23,72,0.3)}
 .rc-keys{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.rc-key-tag{font-size:9px;font-family:'Cinzel',serif;color:var(--muted);border:1px solid rgba(42,23,72,0.7);border-radius:12px;padding:2px 7px;letter-spacing:.5px}
+.rc-key-tag{font-size:9px;font-family:'Cinzel',serif;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:2px 7px;letter-spacing:.5px}
 
 /* Tab bar */
 .tab-bar{display:flex;border-bottom:1px solid rgba(42,23,72,0.5);background:rgba(7,3,26,0.5)}
@@ -84,8 +171,6 @@
 .tab-text{font-size:14px;line-height:1.8;color:var(--text)}
 .tab-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
 
-/* Lucky strip */
-.lucky-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
 .lucky-item{background:rgba(7,3,26,0.7);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px 12px}
 .lucky-label{font-size:9px;font-family:'Cinzel',serif;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
 .lucky-val{font-size:13px;color:var(--gold);font-weight:600}
@@ -112,8 +197,21 @@
 .action-row{display:flex;gap:8px;margin:12px 0}
 .action-row .btn{flex:1;padding:11px 10px;font-size:11px;margin:0}
 
+/* PREMIUM GATE — "anteprima + sblocco" */
+.premium-wrap{position:relative;margin:0}
+.premium-preview{pointer-events:none;user-select:none;overflow:hidden;max-height:180px}
+.premium-overlay{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent 0%,rgba(10,5,20,0.85) 40%,rgba(10,5,20,0.99) 70%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:16px;gap:8px}
+.premium-card{background:linear-gradient(135deg,rgba(42,23,72,0.95),rgba(10,5,30,0.98));border:1.5px solid rgba(212,175,55,0.4);border-radius:16px;padding:18px 16px;margin-top:8px;text-align:center}
+.premium-card h3{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:1px;margin-bottom:6px}
+.premium-card p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.premium-card ul{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:4px}
+.premium-card ul li{font-size:12px;color:var(--text);display:flex;align-items:center;gap:6px;justify-content:center}
+.btn-premium{display:inline-block;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#0a0514;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:1px;padding:13px 24px;border-radius:30px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(212,175,55,0.35);transition:all .25s}
+.btn-premium:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(212,175,55,0.5)}
+.premium-dismiss{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:4px 0;font-family:'Crimson Pro',serif}
+
 /* Cosmos bg */
-.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(42,23,72,0.25) 0%,transparent 70%),radial-gradient(1.5px 1.5px at 75% 15%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 45% 70%,rgba(212,175,55,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 45%,rgba(255,255,255,0.4) 0%,transparent 100%);animation:twinkle 14s infinite alternate;background-color:#0a0514}
+.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-color:#0a0514;background-image:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(42,23,72,0.6) 0%,transparent 70%),radial-gradient(1.5px 1.5px at 75% 15%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 45% 70%,rgba(212,175,55,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 45%,rgba(255,255,255,0.4) 0%,transparent 100%);animation:twinkle 14s infinite alternate}
 @keyframes twinkle{0%{opacity:.35}100%{opacity:.55}}
 
 /* Toast */
@@ -126,21 +224,31 @@
 .seo-section h2{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
 .seo-section p{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px}
 .seo-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.seo-link{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;text-decoration:none;border:1px solid rgba(42,23,72,0.6);border-radius:20px;padding:4px 10px;transition:all .2s}
+.seo-link{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;text-decoration:none;border:1px solid var(--border);border-radius:20px;padding:4px 10px;transition:all .2s}
 .seo-link:hover{border-color:var(--gold-dim);color:var(--gold)}
 .footer-mini{text-align:center;padding:16px 10px;font-size:10px;color:var(--muted);border-top:1px solid rgba(42,23,72,0.4);margin-top:8px}
 .footer-mini a{color:var(--muted);text-decoration:none}
 .footer-mini a:hover{color:var(--gold)}
+
+/* btn base (if mystica.css not loaded) */
+.btn{display:inline-block;padding:12px 18px;border-radius:30px;border:1.5px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;background:transparent;cursor:pointer;text-align:center;transition:all .2s}
+.btn:hover{background:rgba(212,175,55,0.1)}
+.btn-sec{border-color:rgba(212,175,55,0.3);color:var(--muted)}
+.btn-sec:hover{border-color:var(--gold-dim);color:var(--gold)}
 </style>
 </head>
 <body>
 <div class="cosmos"></div>
 
 <div class="page-wrap">
+  <!-- TOP BAR -->
   <div class="top-bar">
     <button class="back-btn" onclick="history.back()">‹</button>
     <div class="top-bar-title">MYSTICA</div>
-    <div class="top-bar-icon">⭐</div>
+    <button class="lang-btn" id="btnIT" onclick="setLang('it')">IT</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Tema">🌙</button>
   </div>
 
   <div class="main-content">
@@ -148,8 +256,8 @@
     <!-- INTRO -->
     <div class="page-intro" id="introSection">
       <div class="page-big-icon">⭐</div>
-      <h1>Oroscopo</h1>
-      <p>Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
+      <h1 id="i18nTitle">Oroscopo</h1>
+      <p id="i18nSubtitle">Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
       <div class="date-badge" id="dateBadge">—</div>
     </div>
 
@@ -157,7 +265,7 @@
     <div class="saved-sign-bar" id="savedSignBar" style="display:none" onclick="selectSign(_savedSign)">
       <div class="ssb-emoji" id="ssbEmoji">♈</div>
       <div class="ssb-info">
-        <div class="ssb-label">Il tuo segno</div>
+        <div class="ssb-label" id="i18nYourSign">Il tuo segno</div>
         <div class="ssb-name" id="ssbName">—</div>
       </div>
       <div class="ssb-arrow">›</div>
@@ -170,7 +278,6 @@
     <div id="readingSection" style="display:none">
 
       <div class="reading-card">
-        <!-- Header -->
         <div class="rc-header">
           <div class="rc-emoji" id="rcEmoji">♈</div>
           <div class="rc-meta">
@@ -181,62 +288,94 @@
           </div>
         </div>
 
-        <!-- Mood meters -->
         <div style="padding:14px 18px 0">
           <div class="mood-row" id="moodRow"></div>
         </div>
 
         <!-- Tabs -->
         <div class="tab-bar">
-          <div class="tab-btn active" onclick="openTab('amore')" id="tabAmore"><span class="tb-icon">💕</span>Amore</div>
-          <div class="tab-btn" onclick="openTab('lavoro')" id="tabLavoro"><span class="tb-icon">💼</span>Lavoro</div>
-          <div class="tab-btn" onclick="openTab('salute')" id="tabSalute"><span class="tb-icon">🌿</span>Salute</div>
-          <div class="tab-btn" onclick="openTab('fortuna')" id="tabFortuna"><span class="tb-icon">🍀</span>Fortuna</div>
-          <div class="tab-btn" onclick="openTab('mistico')" id="tabMistico"><span class="tb-icon">🔮</span>Mistico</div>
+          <div class="tab-btn active" onclick="openTab('amore')" id="tabAmore"><span class="tb-icon">💕</span><span id="i18nTabAmore">Amore</span></div>
+          <div class="tab-btn" onclick="openTab('lavoro')" id="tabLavoro"><span class="tb-icon">💼</span><span id="i18nTabLavoro">Lavoro</span></div>
+          <div class="tab-btn" onclick="openTab('salute')" id="tabSalute"><span class="tb-icon">🌿</span><span id="i18nTabSalute">Salute</span></div>
+          <div class="tab-btn" onclick="openTab('fortuna')" id="tabFortuna"><span class="tb-icon">🍀</span><span id="i18nTabFortuna">Fortuna</span></div>
+          <div class="tab-btn" onclick="openTab('mistico')" id="tabMistico"><span class="tb-icon">🔮</span><span id="i18nTabMistico">Mistico</span></div>
         </div>
 
+        <!-- FREE: Amore -->
         <div class="tab-content visible" id="tabContentAmore">
-          <div class="tab-title">💕 Amore & Relazioni</div>
+          <div class="tab-title">💕 <span id="i18nAmoreTitle">Amore &amp; Relazioni</span></div>
           <p class="tab-text" id="tcAmore"></p>
         </div>
+
+        <!-- FREE: Lavoro -->
         <div class="tab-content" id="tabContentLavoro">
-          <div class="tab-title">💼 Lavoro & Finanze</div>
+          <div class="tab-title">💼 <span id="i18nLavoroTitle">Lavoro &amp; Finanze</span></div>
           <p class="tab-text" id="tcLavoro"></p>
         </div>
+
+        <!-- FREE: Salute -->
         <div class="tab-content" id="tabContentSalute">
-          <div class="tab-title">🌿 Salute & Benessere</div>
+          <div class="tab-title">🌿 <span id="i18nSaluteTitle">Salute &amp; Benessere</span></div>
           <p class="tab-text" id="tcSalute"></p>
         </div>
+
+        <!-- PREMIUM: Fortuna — anteprima + gate -->
         <div class="tab-content" id="tabContentFortuna">
-          <div class="tab-title">🍀 Fortuna del Giorno</div>
-          <p class="tab-text" id="tcFortuna"></p>
-          <div class="lucky-strip" id="luckyStrip"></div>
+          <div class="tab-title">🍀 <span id="i18nFortunaTitle">Fortuna del Giorno</span></div>
+          <div class="premium-wrap" id="fortunaWrap">
+            <div class="premium-preview" id="fortunaPreview">
+              <p class="tab-text" id="tcFortuna"></p>
+              <div class="lucky-strip" id="luckyStrip"></div>
+            </div>
+            <div class="premium-overlay" id="fortunaOverlay">
+              <div style="text-align:center">
+                <div style="font-size:22px">🔒</div>
+                <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px" id="i18nUnlockFortuna">Sblocca Fortuna completa</div>
+              </div>
+              <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn-premium" id="i18nPremiumCta">✦ MYSTICA Premium · 4,99€</a>
+              <button class="premium-dismiss" onclick="dismissPremium('fortuna')" id="i18nDismiss">Continua senza Premium</button>
+            </div>
+          </div>
         </div>
+
+        <!-- PREMIUM: Mistico -->
         <div class="tab-content" id="tabContentMistico">
-          <div class="tab-title">🔮 Guida Mistica</div>
-          <div class="tab-title" style="margin-top:12px">💎 Pietre del Segno</div>
-          <div class="stones-list" id="stonesList"></div>
-          <div class="tab-title" style="margin-top:14px">🗝️ Oggetti Magici</div>
-          <div class="objects-list" id="objectsList"></div>
+          <div class="tab-title">🔮 <span id="i18nMisticoTitle">Guida Mistica</span></div>
+          <div class="premium-wrap" id="misticoWrap">
+            <div class="premium-preview" id="misticoPreview">
+              <div class="tab-title" style="margin-top:12px">💎 <span id="i18nPietreTitle">Pietre del Segno</span></div>
+              <div class="stones-list" id="stonesList"></div>
+              <div class="tab-title" style="margin-top:14px">🗝️ <span id="i18nOggettiTitle">Oggetti Magici</span></div>
+              <div class="objects-list" id="objectsList"></div>
+            </div>
+            <div class="premium-overlay" id="misticoOverlay">
+              <div style="text-align:center">
+                <div style="font-size:22px">🔒</div>
+                <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px" id="i18nUnlockMistico">Sblocca Guida Mistica</div>
+              </div>
+              <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn-premium">✦ MYSTICA Premium · 4,99€</a>
+              <button class="premium-dismiss" onclick="dismissPremium('mistico')" id="i18nDismiss2">Continua senza Premium</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Consiglio del giorno -->
       <div class="advice-box">
-        <div class="tab-title" style="margin-bottom:8px">✨ Messaggio delle Stelle</div>
+        <div class="tab-title" style="margin-bottom:8px">✨ <span id="i18nAdviceTitle">Messaggio delle Stelle</span></div>
         <p id="adviceText"></p>
       </div>
 
       <!-- Azioni -->
       <div class="action-row">
-        <button class="btn btn-sec" onclick="saveReading()" style="font-size:11px;padding:11px">💾 Salva</button>
-        <button class="btn" onclick="shareReading()" style="font-size:11px;padding:11px">🔮 Condividi</button>
-        <button class="btn btn-sec" onclick="backToGrid()" style="font-size:11px;padding:11px">↩ Segni</button>
+        <button class="btn btn-sec" onclick="saveReading()" style="font-size:11px;padding:11px" id="i18nBtnSave">💾 Salva</button>
+        <button class="btn" onclick="shareReading()" style="font-size:11px;padding:11px" id="i18nBtnShare">🔮 Condividi</button>
+        <button class="btn btn-sec" onclick="backToGrid()" style="font-size:11px;padding:11px" id="i18nBtnBack">↩ Segni</button>
       </div>
 
-      <!-- Oroscopo generale -->
+      <!-- Energia generale -->
       <div style="margin-top:4px;padding:14px;background:rgba(7,3,26,0.6);border-radius:12px;border:1px solid rgba(42,23,72,0.5)">
-        <div class="tab-title">🌌 Energia del Giorno</div>
+        <div class="tab-title">🌌 <span id="i18nGeneralTitle">Energia del Giorno</span></div>
         <p style="font-size:13.5px;line-height:1.75;color:var(--text)" id="generalText"></p>
       </div>
 
@@ -244,22 +383,23 @@
 
     <!-- SEO -->
     <div class="seo-section" id="seoSection">
-      <h2>⭐ Guida all'Oroscopo</h2>
-      <p>L'oroscopo occidentale si basa sulla posizione del Sole al momento della nascita. I 12 segni zodiacali — dall'Ariete ai Pesci — riflettono archetipi energetici che influenzano personalità, relazioni e tendenze karmiche. Ogni segno è associato a un elemento (Fuoco, Terra, Aria, Acqua), un pianeta reggente e una modalità (Cardinale, Fisso, Mutevole).</p>
-      <p>L'<strong>oroscopo giornaliero</strong> analizza le sfere di Amore, Lavoro, Salute e Fortuna, offrendo riflessioni per navigare la giornata con maggiore consapevolezza.</p>
+      <h2>⭐ <span id="i18nSeoTitle">Guida all'Oroscopo</span></h2>
+      <p id="i18nSeoText">L'oroscopo occidentale si basa sulla posizione del Sole al momento della nascita. I 12 segni zodiacali — dall'Ariete ai Pesci — riflettono archetipi energetici che influenzano personalità, relazioni e tendenze karmiche. Ogni segno è associato a un elemento (Fuoco, Terra, Aria, Acqua), un pianeta reggente e una modalità (Cardinale, Fisso, Mutevole).</p>
+      <p id="i18nSeoText2">L'<strong>oroscopo giornaliero</strong> analizza le sfere di Amore, Lavoro, Salute e Fortuna, offrendo riflessioni per navigare la giornata con maggiore consapevolezza.</p>
       <div class="seo-links">
-        <a href="./compatibilita.html" class="seo-link">Compatibilità Zodiacale</a>
-        <a href="./astrologia-avanzata.html" class="seo-link">Astrologia Avanzata</a>
-        <a href="./tarocchi.html" class="seo-link">Tarocchi</a>
-        <a href="./numerologia.html" class="seo-link">Numerologia</a>
-        <a href="./index.html" class="seo-link">Tutti gli Oracoli</a>
+        <a href="./compatibilita.html" class="seo-link" id="i18nLink1">Compatibilità Zodiacale</a>
+        <a href="./astrologia-avanzata.html" class="seo-link" id="i18nLink2">Astrologia Avanzata</a>
+        <a href="./tarocchi.html" class="seo-link" id="i18nLink3">Tarocchi</a>
+        <a href="./numerologia.html" class="seo-link" id="i18nLink4">Numerologia</a>
+        <a href="./index.html" class="seo-link" id="i18nLink5">Tutti gli Oracoli</a>
       </div>
     </div>
 
     <div class="footer-mini">
       <a href="./index.html">MYSTICA</a> ·
       <a href="./privacy.html">Privacy</a> ·
-      <a href="./termini.html">Termini</a>
+      <a href="./termini.html">Termini</a><br>
+      <span id="i18nFooter">© 2025 PetroCorporation · Dott. Petrolese Giovanni</span>
     </div>
 
   </div>
@@ -268,9 +408,90 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+// I18N — Traduzioni complete
+// ═══════════════════════════════════════════════
+const I18N = {
+  it: {
+    htmlLang:'it', pageTitle:'Oroscopo del Giorno — 12 Segni | MYSTICA',
+    i18nTitle:'Oroscopo', i18nSubtitle:'Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali',
+    i18nYourSign:'Il tuo segno',
+    i18nTabAmore:'Amore', i18nTabLavoro:'Lavoro', i18nTabSalute:'Salute', i18nTabFortuna:'Fortuna', i18nTabMistico:'Mistico',
+    i18nAmoreTitle:'Amore &amp; Relazioni', i18nLavoroTitle:'Lavoro &amp; Finanze',
+    i18nSaluteTitle:'Salute &amp; Benessere', i18nFortunaTitle:'Fortuna del Giorno',
+    i18nMisticoTitle:'Guida Mistica', i18nPietreTitle:'Pietre del Segno', i18nOggettiTitle:'Oggetti Magici',
+    i18nAdviceTitle:'Messaggio delle Stelle', i18nGeneralTitle:'Energia del Giorno',
+    i18nUnlockFortuna:'Sblocca Fortuna completa', i18nUnlockMistico:'Sblocca Guida Mistica',
+    i18nPremiumCta:'✦ MYSTICA Premium · 4,99€',
+    i18nDismiss:'Continua senza Premium', i18nDismiss2:'Continua senza Premium',
+    i18nBtnSave:'💾 Salva', i18nBtnShare:'🔮 Condividi', i18nBtnBack:'↩ Segni',
+    i18nSeoTitle:"Guida all'Oroscopo",
+    i18nSeoText:"L'oroscopo occidentale si basa sulla posizione del Sole al momento della nascita. I 12 segni zodiacali riflettono archetipi energetici che influenzano personalità, relazioni e tendenze karmiche.",
+    i18nSeoText2:"L'<strong>oroscopo giornaliero</strong> analizza Amore, Lavoro, Salute e Fortuna, offrendo riflessioni per navigare la giornata con consapevolezza.",
+    i18nLink1:'Compatibilità Zodiacale', i18nLink2:'Astrologia Avanzata', i18nLink3:'Tarocchi', i18nLink4:'Numerologia', i18nLink5:'Tutti gli Oracoli',
+    i18nFooter:'© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    i18nToastSaved:'📚 Oroscopo salvato ✨', i18nToastCopied:'📋 Oroscopo copiato!',
+    i18nMoodAmore:'Amore', i18nMoodLavoro:'Lavoro', i18nMoodSalute:'Salute',
+    i18nLuckyNum:'Numero Fortunato', i18nLuckyColor:'Colore', i18nLuckyDay:'Giorno Potere', i18nLuckyPlanet:'Pianeta',
+    days:['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'],
+    months:['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'],
+    elLabels:{Fuoco:'Fuoco',Terra:'Terra',Aria:'Aria',Acqua:'Acqua'}
+  },
+  en: {
+    htmlLang:'en', pageTitle:'Daily Horoscope — 12 Zodiac Signs | MYSTICA',
+    i18nTitle:'Horoscope', i18nSubtitle:'Love · Work · Health · Fortune<br>for all 12 zodiac signs',
+    i18nYourSign:'Your sign',
+    i18nTabAmore:'Love', i18nTabLavoro:'Work', i18nTabSalute:'Health', i18nTabFortuna:'Fortune', i18nTabMistico:'Mystic',
+    i18nAmoreTitle:'Love &amp; Relationships', i18nLavoroTitle:'Work &amp; Finance',
+    i18nSaluteTitle:'Health &amp; Wellness', i18nFortunaTitle:"Today's Fortune",
+    i18nMisticoTitle:'Mystic Guide', i18nPietreTitle:'Sign Stones', i18nOggettiTitle:'Magic Objects',
+    i18nAdviceTitle:'Message from the Stars', i18nGeneralTitle:"Today's Energy",
+    i18nUnlockFortuna:'Unlock Full Fortune', i18nUnlockMistico:'Unlock Mystic Guide',
+    i18nPremiumCta:'✦ MYSTICA Premium · €4.99',
+    i18nDismiss:'Continue without Premium', i18nDismiss2:'Continue without Premium',
+    i18nBtnSave:'💾 Save', i18nBtnShare:'🔮 Share', i18nBtnBack:'↩ Signs',
+    i18nSeoTitle:'Horoscope Guide',
+    i18nSeoText:'Western astrology is based on the position of the Sun at birth. The 12 zodiac signs reflect energetic archetypes that influence personality, relationships and karmic tendencies.',
+    i18nSeoText2:'The <strong>daily horoscope</strong> analyses Love, Work, Health and Fortune, offering reflections to navigate the day with awareness.',
+    i18nLink1:'Zodiac Compatibility', i18nLink2:'Advanced Astrology', i18nLink3:'Tarot', i18nLink4:'Numerology', i18nLink5:'All Oracles',
+    i18nFooter:'© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    i18nToastSaved:'📚 Horoscope saved ✨', i18nToastCopied:'📋 Horoscope copied!',
+    i18nMoodAmore:'Love', i18nMoodLavoro:'Work', i18nMoodSalute:'Health',
+    i18nLuckyNum:'Lucky Number', i18nLuckyColor:'Color', i18nLuckyDay:'Power Day', i18nLuckyPlanet:'Planet',
+    days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+    months:['January','February','March','April','May','June','July','August','September','October','November','December'],
+    elLabels:{Fuoco:'Fire',Terra:'Earth',Aria:'Air',Acqua:'Water'}
+  },
+  es: {
+    htmlLang:'es', pageTitle:'Horóscopo Diario — 12 Signos del Zodíaco | MYSTICA',
+    i18nTitle:'Horóscopo', i18nSubtitle:'Amor · Trabajo · Salud · Fortuna<br>para los 12 signos del zodíaco',
+    i18nYourSign:'Tu signo',
+    i18nTabAmore:'Amor', i18nTabLavoro:'Trabajo', i18nTabSalute:'Salud', i18nTabFortuna:'Fortuna', i18nTabMistico:'Místico',
+    i18nAmoreTitle:'Amor &amp; Relaciones', i18nLavoroTitle:'Trabajo &amp; Finanzas',
+    i18nSaluteTitle:'Salud &amp; Bienestar', i18nFortunaTitle:'Fortuna del Día',
+    i18nMisticoTitle:'Guía Mística', i18nPietreTitle:'Piedras del Signo', i18nOggettiTitle:'Objetos Mágicos',
+    i18nAdviceTitle:'Mensaje de las Estrellas', i18nGeneralTitle:'Energía del Día',
+    i18nUnlockFortuna:'Desbloquea Fortuna completa', i18nUnlockMistico:'Desbloquea Guía Mística',
+    i18nPremiumCta:'✦ MYSTICA Premium · 4,99€',
+    i18nDismiss:'Continuar sin Premium', i18nDismiss2:'Continuar sin Premium',
+    i18nBtnSave:'💾 Guardar', i18nBtnShare:'🔮 Compartir', i18nBtnBack:'↩ Signos',
+    i18nSeoTitle:'Guía del Horóscopo',
+    i18nSeoText:'La astrología occidental se basa en la posición del Sol en el momento del nacimiento. Los 12 signos zodiacales reflejan arquetipos energéticos que influyen en la personalidad, las relaciones y las tendencias kármicas.',
+    i18nSeoText2:'El <strong>horóscopo diario</strong> analiza Amor, Trabajo, Salud y Fortuna, ofreciendo reflexiones para navegar el día con mayor consciencia.',
+    i18nLink1:'Compatibilidad Zodiacal', i18nLink2:'Astrología Avanzada', i18nLink3:'Tarot', i18nLink4:'Numerología', i18nLink5:'Todos los Oráculos',
+    i18nFooter:'© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    i18nToastSaved:'📚 Horóscopo guardado ✨', i18nToastCopied:'📋 Horóscopo copiado!',
+    i18nMoodAmore:'Amor', i18nMoodLavoro:'Trabajo', i18nMoodSalute:'Salud',
+    i18nLuckyNum:'Número Suerte', i18nLuckyColor:'Color', i18nLuckyDay:'Día Poder', i18nLuckyPlanet:'Planeta',
+    days:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+    months:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    elLabels:{Fuoco:'Fuego',Terra:'Tierra',Aria:'Aire',Acqua:'Agua'}
+  }
+};
+
+// ═══════════════════════════════════════════════
 // DATI SEGNI
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 const SEGNI = {
   ariete:    {n:"Ariete",    e:"♈",s:"🐏",p:"Marte",    el:"Fuoco", d:"21 Mar – 20 Apr",k:["Coraggio","Leadership","Passione","Iniziativa"],
     pietre:["Rubino — amplifica il coraggio e la forza vitale","Diamante — chiarezza e invincibilità","Corniola rossa — energia e determinazione","Ematite — protezione e ancoraggio"],
@@ -300,85 +521,84 @@ const SEGNI = {
     pietre:["Turchese — protezione del viaggiatore e fortuna","Zaffiro — saggezza e connessione con il cielo","Sodalite — pensiero filosofico e intuizione","Topazio azzurro — chiarezza della visione"],
     oggetti:["🏹 Freccia in legno — direzione e intenzione precisa","🗺️ Mappa antica arrotolata — l'avventura è la meta","🧭 Bussola in ottone — trova sempre il nord interiore","📿 Mala di turchese — meditazione del viaggiatore"]},
   capricorno:{n:"Capricorno",e:"♑",s:"🐐",p:"Saturno",  el:"Terra",  d:"22 Dic – 20 Gen",k:["Ambizione","Disciplina","Resilienza","Struttura"],
-    pietre:["Onice nero — resilienza e potere della struttura","Quarzo fumé — ancoraggio e purificazione delle energie dense","Tormalina nera — protezione assoluta e scudo","Ossidiana fiocco di neve — equilibrio tra luce e ombra"],
-    oggetti:["⏱️ Orologio antico — il tempo è il tuo alleato","🪨 Pietra di montagna levigata — calma indistruttibile","🏺 Vaso in terracotta — contenitore del lavoro","📐 Squadra in legno — costruzione con precisione"]},
-  acquario:  {n:"Acquario",  e:"♒",s:"🏺",p:"Urano",    el:"Aria",   d:"21 Gen – 19 Feb",k:["Innovazione","Originalità","Umanità","Libertà"],
-    pietre:["Acquamarina — libertà e comunicazione autentica","Ametista — mente aperta e innovazione spirituale","Fluorite arcobaleno — espansione della coscienza","Angelite — connessione con dimensioni superiori"],
-    oggetti:["∞ Simbolo dell'infinito in argento — oltre i confini","🔭 Piccolo telescopio — vedi ciò che altri non vedono","💫 Cristallo di quarzo rutilato — elettricità dell'anima","🌐 Globo di vetro — il mondo è casa tua"]},
-  pesci:     {n:"Pesci",     e:"♓",s:"🐟",p:"Nettuno",  el:"Acqua",  d:"20 Feb – 20 Mar",k:["Intuizione","Compassione","Arte","Spiritualità"],
-    pietre:["Acquamarina — purezza delle acque e connessione psichica","Ametista — protezione spirituale e sogni lucidi","Pietra di luna — intuizione e magia femminile","Kunzite — amore universale e apertura del cuore"],
-    oggetti:["🐚 Conchiglia di nautilus — spirale della coscienza","🌊 Ampolla d'acqua di fonte sacra — purificazione","🪷 Fiore di loto in argento — illuminazione nel fango","🔮 Sfera di vetro azzurro — visione attraverso le acque"]}
+    pietre:["Onice nero — forza silenziosa e autodisciplina","Granato — perseveranza e resistenza","Tormalina nera — protezione da energie basse","Pietra del sangue — coraggio concreto e radicamento"],
+    oggetti:["🐐 Capra in pietra nera — ascesa inesorabile","⏳ Clessidra in miniatura — rispetta i tempi del karma","📐 Squadra da costruttore — precisione come virtù","🗿 Amuleto in pietra lavica — connessione con la terra primordiale"]},
+  acquario:  {n:"Acquario",  e:"♒",s:"🏺",p:"Urano",    el:"Aria",   d:"21 Gen – 19 Feb",k:["Innovazione","Libertà","Umanità","Originalità"],
+    pietre:["Acquamarina — comunicazione autentica e libertà","Turchese futuristico — connessione tra tradition e modernità","Cristallo di rocca — amplificatore di visioni originali","Labradorite — magia della trasformazione e intuizione"],
+    oggetti:["🏺 Anfora dell'acqua celeste — porta la visione del futuro","⚡ Fulmine in rame — canale dell'energia uraniana","🔭 Telescopio in miniatura — guarda oltre l'orizzonte visibile","🌊 Onda in vetro azzurro — fluidità dell'innovazione"]},
+  pesci:     {n:"Pesci",     e:"♓",s:"🐟",p:"Nettuno",  el:"Acqua",  d:"20 Feb – 20 Mar",k:["Intuizione","Compassione","Creatività","Spiritualità"],
+    pietre:["Ametista — connessione spirituale e sogni lucidi","Pietra di luna blu — intuizione empatica profonda","Acquamarina — fluire dell'emozione e chiarezza","Seleniite — purificazione e canale spirituale"],
+    oggetti:["🐟 Pesce in vetro di Murano — anima che nuota tra i mondi","🌊 Sabbia del fondo del mare in ampolla — profondità e mistero","🎵 Carillon antico — la musica come porta spirituale","🌸 Fiore di loto rosa — pura compassione nel fango del mondo"]}
 };
 
 const SIGN_ORDER = ['ariete','toro','gemelli','cancro','leone','vergine','bilancia','scorpione','sagittario','capricorno','acquario','pesci'];
 
-// Oroscopi per segno (campione rappresentativo - generato dal seed del giorno)
 const OROSCOPI = {
   ariete:{
-    amore:["La fiamma di Marte ti brucia il petto in modo insolito: invece di inseguire, aspetta. Chi ti interessa lo sentirà e farà il primo passo, attratto dalla tua sicurezza silenziosa.","Il coraggio è il tuo dono più seducente: di' ciò che senti senza filtri. Il partner ama quando cade la maschera e vede il guerriero con l'anima scoperta.","Se sei single, gli incontri spontanei sono i più autentici: rinuncia ai piani e lascia che la vita ti sorprenda in un posto inaspettato.","La gelosia è fuoco — governala con saggezza. Non bruciare ciò che hai costruito con una fiamma mal diretta verso chi ti ama.","Un vecchio amore potrebbe riaffiorare: le stelle ti chiedono di riflettere se vuoi riaprire quella porta o chiuderla definitivamente con rispetto."],
-    lavoro:["Marte ti dà una spinta poderosa sul lavoro: è il momento di presentare quel progetto che aspettava di essere lanciato.","La tua energia pionieristica è contagiosa: il team ti segue quando guidi con passione e visione chiara invece di imporre.","Un'opportunità finanziaria si presenta: valutala con la testa fredda che non ti è naturale, ma che in questo caso serve.","Il coraggio di dire no a ciò che non ti appartiene è una forma di rispetto per il tuo tempo e le tue energie.","Un conflitto sul lavoro richiede la tua diplomazia più che la tua combattività: il guerriero saggio sceglie le battaglie."],
-    salute:["L'energia dell'Ariete è alta, ma attenzione alla testa: mal di testa e tensioni muscolari sono i segnali di un corpo che chiede rallentamento.","Il movimento fisico intenso è la tua valvola di sfogo più efficace: corsa, arti marziali, ciclismo — suda e libera.","Attenzione alle ferite da impulsività: rallenta prima di agire fisicamente, il corpo non è invincibile come credi.","Il ferro e la vitamina C sono i tuoi alleati nutrizionali in questo periodo: carne rossa, agrumi, verdure a foglia scura.","Un check-up della pressione sanguigna è indicato: l'Ariete tende all'ipertensione quando lo stress si accumula in silenzio."],
-    fortuna:["Numero fortunato: 9. Il Rosso fuoco ti porta vittoria.","Marte accelera i tuoi risultati: agisci martedì — è il tuo giorno cosmico di potere.","Un colpo di fortuna arriva quando sei in movimento: non fermarti ad aspettare — vai verso di esso.","Il coraggio ricompensato: un rischio calcolato oggi porta ritorni inaspettati.","Un incontro fortuito con qualcuno di determinato apre una porta che cercavi da mesi."]
+    amore:["Marte accende la passione: oggi hai il coraggio di fare la prima mossa. Non esitare — chi aspetta troppo perde il momento.","L'energia ariete-Marte porta una carica erotica che non passa inosservata: il tuo magnetismo è al massimo.","Una conversazione diretta vale più di mille messaggi ambigui: di' ciò che vuoi veramente.","Il desiderio di conquista è forte, ma assicurati che anche l'altro voglia essere conquistato.","Un gesto impulsivo e romantico — una sorpresa, una chiamata inaspettata — può cambiare le sorti di una relazione."],
+    lavoro:["La tua energia pionieristica è preziosa: prendi l'iniziativa invece di aspettare che qualcuno lo faccia per te.","Un progetto nuovo richiede il tuo coraggio: buttati senza aspettare condizioni perfette.","Attenzione all'impazienza: la velocità ariete può far saltare dettagli importanti. Rallenta al 10%.","Un conflitto con un collega risolto oggi vale oro: non portarlo nel weekend.","La tua leadership naturale emerge: fatti avanti per quel ruolo o progetto a cui pensi."],
+    salute:["La testa e il cervello sono le zone-ariete: attenzione alle cefalee da stress e ai colpi improvvisi.","L'energia marziana di oggi chiede movimento fisico intenso: corri, sollevamento pesi, sport di combattimento.","Canalizza l'aggressività in esercizio fisico: meglio 40 minuti di boxe che una lite inutile.","Il ferro è il tuo minerale: carne rossa magra, spinaci, legumi. Tienilo monitorato.","Evita le decisioni importanti quando sei arrabbiato: aspetta che l'adrenalina scenda."],
+    fortuna:["Numero fortunato: 9. Il Rosso fuoco ti porta vittoria.","Marte favorisce le azioni decise: chi esita oggi perde l'opportunità che tu invece cogli.","Il martedì è il tuo giorno di potere: pianifica le iniziative importanti in quel giorno.","Un incontro inaspettato con una persona energica porta nuove possibilità.","La fortuna favorisce il coraggioso: agisci prima di pensarci troppo."]
   },
   toro:{
-    amore:["Venere illumina il tuo cuore con una luce calda e persistente: chi ti ama si sente al sicuro nella tua stabilità. Oggi rinforza quel legame con un gesto concreto.","La sensualità del Toro è nel tocco, nel gusto, nel profumo — crea un momento sensoriale con il partner che parli la lingua del tuo cuore.","Se sei single, non cercare in luoghi frettolosi: la tua anima gemella si trova in contesti belli e autentici.","La pazienza è la tua forza in amore: non affrettare ciò che ha bisogno di crescere con i suoi tempi naturali.","Un gesto di tenerezza fisica — un massaggio, una cena curata, una carezza lunga — vale più di mille parole per il Toro."],
-    lavoro:["La costanza paga: quel progetto su cui lavori con dedizione mostra finalmente i primi frutti concreti. Non mollare proprio adesso.","Le finanze chiedono attenzione: un piccolo audit delle spese rivela dove i soldi si disperdono silenziosamente.","La tua reputazione di affidabilità è la miglior carta da visita — oggi qualcuno te la riconosce apertamente.","Periodo favorevole per tutto ciò che riguarda beni materiali, investimenti a lungo termine, acquisti importanti.","Un collega di lunga data può diventare un alleato strategico: coltiva quella relazione con la cura che sai mettere nelle cose importanti."],
-    salute:["Gola, collo e tiroide sono le zone di attenzione del Toro: evita gli sbalzi termici e tieni il collo coperto nelle variazioni climatiche.","Il piacere del cibo è sacro per te, ma l'eccesso logora: assapora ogni boccone con consapevolezza invece di mangiare distratto.","Il contatto con la terra ti guarisce: giardinaggio, passeggiate scalzo sull'erba, lavoro con le mani nella natura.","L'osteopatia, i massaggi cervicali e le cure olistiche sono particolarmente efficaci per te in questo periodo.","Costruisci l'abitudine all'esercizio fisico regolare: il corpo Toro risponde meglio alla costanza moderata che all'intensità sporadica."],
-    fortuna:["Numero fortunato: 6. Il Verde smeraldo ti porta abbondanza concreta.","Venere protegge le tue iniziative pratiche: agisci su ciò che vuoi costruire materialmente.","Un oggetto di valore sentimentale porta fortuna speciale questa settimana: tienilo vicino.","Il venerdì è il tuo giorno di potere: pianifica gli appuntamenti più importanti in quel giorno.","La fortuna arriva attraverso la pazienza: non forzare i tempi, l'universo ha il suo orologio."]
+    amore:["Venere, tua reggente, è in posizione favorevole: la stabilità sentimentale che cerchi si consolida.","Il tuo senso del tatto — letterale e metaforico — è il tuo strumento di seduzione più potente: usalo.","Non aver paura di mostrare affetto fisico: un abbraccio lungo, una carezza, un pasto preparato con cura dicono tutto.","La gelosia del Toro può diventare soffocante: fida di più del tuo partner e lascia spazio alla fiducia.","Una serata tranquilla insieme — buon cibo, musica, candele — vale più di ogni grande gesto romantico."],
+    lavoro:["La tua tenacia porta risultati lenti ma inesorabili: il lavoro che fai oggi si vedrà tra sei mesi.","Attenzione alla resistenza al cambiamento: ciò che funzionava ieri potrebbe non funzionare domani.","Il Toro eccelle nella gestione delle risorse: proponi un piano finanziario concreto se hai qualcosa da dire.","La costanza silenziosa del Toro è apprezzata più di quanto pensi: qualcuno te lo farà notare a breve.","Un progetto legato alla terra, al cibo, alla bellezza o alle finanze è il tuo terreno naturale."],
+    salute:["Gola e tiroide sono le zone del Toro: voce, canto, idratazione e controllo ormoni.","Il cibo è medicina per te: mangia lentamente, masticamente bene, scegli qualità su quantità.","L'eccesso è il tuo rischio principale: monitora porzioni, alcol e sedentarietà con attenzione.","Il contatto con la natura — terra, bosco, orto — è il tuo antidepressivo più efficace.","Musica e arte visiva migliorano il tuo umore più di qualsiasi farmaco: creane spazio ogni giorno."],
+    fortuna:["Numero fortunato: 6. Il Verde smeraldo e il Rosa antico ti portano abbondanza.","Venere apre porte finanziarie: un'opportunità economica arriva da dove meno te lo aspetti.","Il venerdì è il tuo giorno di potere: usa quell'energia per decisioni importanti.","La pazienza del Toro viene ricompensata: ciò che aspetti da tempo sta per arrivare.","Un investimento fatto con criterio oggi darà frutti tra sei mesi: agisci con metodo."]
   },
   gemelli:{
-    amore:["La comunicazione è il tuo superpotere romantico: una conversazione sincera e giocosa apre più porte di qualsiasi cena a lume di candela.","La curiosità per il mondo del partner è il miglior afrodisiaco: chiedi, ascolta, stupisciti. L'interesse genuino conquista.","Se sei single, l'incontro arriva dove meno te lo aspetti: un commento online, un gruppo di lettura, una conferenza su un tema che ami.","Attenzione alla dispersione emotiva: il Gemelli a volte butta tante esche senza voler pescare davvero. Chiediti cosa vuoi veramente.","La varietà mantiene viva la passione: sorprendi il partner con qualcosa di completamente inaspettato."],
-    lavoro:["Le idee innovative ti arrivano a raffica: annota tutto, poi scegli la migliore e focalizzati su quella sola con disciplina.","Il networking è la tua abilità segreta: una conversazione casuale oggi può aprire una porta che inseguivi da mesi.","La comunicazione scritta è al top: invia quell'email importante, pubblica quel contenuto, presenta quel progetto con sicurezza.","Periodo favorevole per corsi, workshop, formazione professionale: la mente Gemelli assorbe come una spugna in questo momento.","Il multitasking è il tuo stile, ma oggi la profondità su una cosa sola porta risultati migliori della superficie su mille."],
-    salute:["Il sistema nervoso Gemelli è potente ma fragile: la sovrastimolazione cronica esaurisce senza che te ne accorga.","Mani, polmoni e spalle sono le tue zone sensibili: stretching delle braccia, respirazione profonda, aria fresca quotidiana.","La meditazione non è per te nella forma classica — prova il movimento meditativo: yoga, tai chi, camminata consapevole nel verde.","Il sonno è il reset del tuo processore mentale: senza 7-8 ore, il Gemelli funziona al 40%.","Limita i social media a slot precisi: l'infinito scroll satura la mente Gemelli più di qualsiasi sforzo fisico."],
-    fortuna:["Numero fortunato: 5. Il Giallo sole attira la tua energia.","Mercurio favorisce gli scambi e le comunicazioni: ciò che dici oggi ha peso speciale.","Un libro, un podcast, un articolo: dentro c'è un messaggio che stavi aspettando.","Il mercoledì è il tuo giorno di potere — pianifica gli appuntamenti importanti lì.","La fortuna arriva attraverso le connessioni: quella persona che non senti da mesi potrebbe sorprenderti."]
+    amore:["Mercurio in moto ti porta conversazioni intense: parla di più con chi ami, ascolta ancora di più.","La tua dualità in amore confonde chi ti ama: sii più coerente tra ciò che dici e ciò che fai.","Un flirt intellettuale è il preludio perfetto per te: stimola la mente e conquisti il cuore.","Se sei single, i luoghi di scambio culturale — corsi, conferenze, librerie — sono il tuo terreno di caccia.","La noia è la tua nemesi in amore: porta novità nella relazione prima che la routine la spenga."],
+    lavoro:["La tua abilità comunicativa è al massimo: oggi è il giorno giusto per presentazioni, pitch, negoziazioni.","Riesci a gestire più progetti contemporaneamente meglio di chiunque altro: usa questa abilità oggi.","Attenzione alla dispersione: tre cose fatte a metà valgono meno di una sola fatta bene.","Un'idea brillante va trasformata in piano concreto: trova qualcuno che gestisca i dettagli.","La rete di contatti del Gemelli è il suo asset principale: coltiva, scrivi, chiama."],
+    salute:["Polmoni e sistema nervoso sono le zone dei Gemelli: respira profondo, evita il sovraffaticamento mentale.","Il sovraccarico di informazioni ti esaurisce: fai una disintossicazione digitale anche solo per un'ora.","Lo yoga della risata o tecniche di respirazione cosciente ti riportano nell'equilibrio in pochi minuti.","Attenzione all'ansia da comunicazione: non rispondere a tutto immediatamente — il mondo non finirà.","Il movimento aerobico con musica è la tua palestra ideale: ballo, zumba, ciclismo con playlist."],
+    fortuna:["Numero fortunato: 5. Il Giallo limone e l'Argento mercuriale ti portano connessioni.","Mercurio attiva le sincronicità: una conversazione casuale oggi potrebbe aprire una porta inaspettata.","Il mercoledì è il tuo giorno di potere: sfruttalo per comunicazioni importanti.","Un messaggio o una notizia inaspettata porta un'opportunità concreta.","La tua capacità di adattamento è la tua fortuna: sfrutta il cambiamento invece di resistergli."]
   },
   cancro:{
-    amore:["La Luna illumina il tuo cuore: le emozioni sono intense e vere. Condividile con chi ami senza difese — la vulnerabilità è coraggio.","La protezione e la cura sono il tuo linguaggio d'amore naturale: oggi qualcuno nella tua vita ha bisogno esattamente di questo.","Se sei single, l'ambiente familiare o gli amici di vecchia data possono presentarti qualcuno di davvero speciale.","La nostalgia può essere dolce, ma il presente è dove vive il vero amore: sii qui, adesso, con chi hai scelto.","Un sogno ricorrente potrebbe contenere messaggi importanti sulla tua vita amorosa: annotalo al risveglio e meditaci."],
-    lavoro:["L'empatia è il tuo asset professionale invisibile: sai leggere le dinamiche del gruppo e navigarle con maestria.","Progetti legati alla casa, alla famiglia, al cibo, alla cura degli altri ti trovano al massimo delle tue capacità.","La memoria dettagliata e l'attenzione alle persone sono i tuoi punti di forza: usali per eccellere dove gli altri non arrivano.","Periodo favorevole per le collaborazioni fondate sulla fiducia reciproca: costruisci ponti invece di muri.","Non caricarti di responsabilità altrui per sentirti indispensabile: impara il confine sacro tra aiutare e fare per gli altri."],
-    salute:["Lo stomaco del Cancro parla il linguaggio delle emozioni: quando sei in ansia, mangia con calma e cibi leggeri.","L'acqua è il tuo elemento guaritore: bagni caldi, nuoto, soggiorni al mare, idratazione abbondante.","Il riposo emotivo è importante quanto quello fisico: concediti momenti di solitudine rigenerante senza sensi di colpa.","La Luna influenza i tuoi cicli d'energia: impara a conoscerli e rispettali invece di forzarli.","Il petto e le vie respiratorie sono zone sensibili: attenzione ai cambi di stagione e agli ambienti umidi."],
-    fortuna:["Numero fortunato: 2. L'Argento e il Bianco perla ti proteggono.","Il lunedì è il tuo giorno di potere: la Luna ti sostiene in questo giorno della settimana.","Un sogno vivido contiene un messaggio di fortuna: annotalo al risveglio e meditaci.","La fortuna arriva attraverso la cura genuina: quando aiuti qualcuno con cuore, l'universo ti rimanda il favore moltiplicato.","Un oggetto legato all'infanzia o alla famiglia porta fortuna speciale: tienilo vicino questa settimana."]
+    amore:["La Luna amplifica la tua sensibilità emotiva: ciò che senti intensamente oggi è reale e va rispettato.","L'intuizione del Cancro sa già chi lo ama veramente: smetti di ignorarla per paura di sbagliare.","Il bisogno di protezione è sano, ma attenzione a non costruire muri invece di porte.","Un gesto di cura — cucinare per l'altro, ricordare un dettaglio — è la tua firma d'amore.","Il passato ha ancora presa su di te: un'esperienza non elaborata influenza come ami oggi."],
+    lavoro:["La tua memoria eccellente e attenzione ai dettagli ti rendono insostituibile nei progetti che richiedono continuità.","Ambienti di lavoro freddi e competitivi ti logorare: cerca un team che valorizzi l'empatia.","La tua capacità di sentire il clima emotivo di un gruppo ti rende un leader naturale nell'ascolto.","Attenzione all'umore che influenza la produttività: crea rituali di inizio giornata che ti ancorino.","Un progetto legato alla famiglia, alla cura, al cibo, alla casa o alla storia è il tuo terreno d'elezione."],
+    salute:["Lo stomaco e il sistema digestivo sono le zone del Cancro: mangia con calma, evita di ingerire le emozioni.","Le emozioni non elaborate si manifestano fisicamente: terapia, journaling o pianto liberatorio fanno bene.","Il nuoto e i bagni caldi rigenerano il tuo corpo e la tua mente più di qualsiasi altra pratica.","La casa deve essere un santuario: ordine, profumi, colori caldi, piante vive ti nutrono l'anima.","Il ciclo lunare influenza il tuo umore: tieni un diario lunare per anticipare le tue maree interne."],
+    fortuna:["Numero fortunato: 2. Il Bianco perla e l'Argento lunare ti portano protezione.","La Luna nuova è il tuo momento di semina: ciò che intendi oggi sboccia in pienezza.","Il lunedì è il tuo giorno di potere: inizia la settimana con intenzione chiara.","Un sogno ricorrente contiene un messaggio sulla direzione da prendere.","La fortuna arriva attraverso le relazioni familiari: qualcuno vicino a te ha la chiave di un'opportunità."]
   },
   leone:{
-    amore:["Il Sole ti illumina dall'interno: il tuo carisma oggi è magnetico. Non cercare l'amore — lascia che venga a te con naturalezza.","La generosità è il tuo linguaggio d'amore: gesti grandiosi, attenzioni spettacolari, presenza totale. Chi ti ama si sente al centro del mondo.","Se sei single, gli eventi creativi, teatrali, artistici o mondani sono il tuo terreno naturale di incontri memorabili.","Sorprendi il partner con qualcosa che metta in mostra il suo valore: fallo sentire speciale di fronte agli altri.","Un momento di vulnerabilità genuina rafforza il legame più di cento performances: abbassa la guardia con chi ami."],
-    lavoro:["Il riconoscimento pubblico è il tuo carburante: oggi potresti ricevere la visibilità che meriti e aspetti da tempo.","La tua naturale leadership ispira gli altri: non nasconderla per falsa modestia — usala per elevare il gruppo.","Creatività e performance sono i tuoi punti di forza professionali: portali in ogni progetto senza trattenerti.","Periodo favorevole per presentazioni, discorsi pubblici, vendite, negoziazioni: sei al massimo della tua eloquenza.","Un progetto artistico o creativo richiede il tuo contributo speciale: non sottovalutare l'impatto che hai sugli altri."],
-    salute:["Il cuore è l'organo del Leone — metaforicamente e fisicamente: prenditi cura di lui con movimento aerobico regolare.","La schiena è spesso tesa nei momenti di stress: stretching quotidiano della colonna è fondamentale.","Il calore del sole è il tuo alimento naturale: cerca la luce quando le energie calano inspiegabilmente.","L'eccesso di orgoglio può farti ignorare i sintomi: quando il corpo parla, ascolta prima che urli.","La vitamina D e il magnesio sono i tuoi alleati in questo periodo: verifica i livelli con un esame."],
-    fortuna:["Numero fortunato: 1. Il Giallo oro ti porta potere e visibilità.","Il Sole protegge le tue iniziative: agisci la domenica, il tuo giorno di potere.","La generosità attira la fortuna: dona senza calcolare e l'universo restituisce amplificato.","Un incontro con qualcuno di influente può cambiare il corso della tua storia: sii aperto.","Colori fortunati: giallo, oro, arancione. Indossali nei momenti chiave della giornata."]
+    amore:["Il Sole ti illumina: oggi il tuo carisma è irresistibile e chi ti guarda non può fare a meno di notarti.","L'amore del Leone è generoso e totale — ma ricorda che anche tu hai bisogno di ricevere, non solo dare.","Una dichiarazione teatrale e coraggiosa — come solo il Leone sa fare — può cambiare le sorti di una relazione.","Attenzione all'ego in amore: chi ami non deve adorarti, deve stare con te da pari.","Porta creatività nella relazione: un'uscita insolita, un progetto condiviso, qualcosa che vi faccia brillare insieme."],
+    lavoro:["La tua creatività e carisma aprono porte che la competenza da sola non aprirebbe.","Un palco, letterale o metaforico, è il tuo habitat: presentati, parla, mostra il tuo lavoro.","Sei nato per guidare, ma la guida del Leone funziona quando include e non quando esclude.","Oggi è il giorno giusto per una proposta audace, un'idea ambiziosa, un passo avanti coraggioso.","Il riconoscimento che cerchi arriva — ma assicurati di non cercarlo a scapito della collaborazione."],
+    salute:["Il cuore e la schiena sono le zone del Leone: mantieni la colonna dritta e il cuore allenato.","Attività fisica che ti fa sentire potente: pesistica, danza, sport con un'audience.","La vitalità del Leone brucia molto: assicurati di ricaricare le batterie con sonno sufficiente e quiete.","La creatività come cura: dipingere, recitare, cantare, scrivere nutrono il Leone quanto il cibo.","Evita il dramma come fonte di stimolo: cerca l'adrenalina in attività costruttive."],
+    fortuna:["Numero fortunato: 1. L'Oro solare e il Rosso regale ti portano vittoria.","Il Sole ti sorride: ogni iniziativa intrapresa con coraggio creativo oggi trova terreno fertile.","La domenica è il tuo giorno di potere: usa quel giorno per dichiarare le tue intenzioni.","Un applauso o un riconoscimento inaspettato ti apre una porta professionale.","La generosità del Leone attira abbondanza: dona senza calcolo e ricevi senza sorpresa."]
   },
   vergine:{
-    amore:["La Vergine ama attraverso i gesti concreti: riparare ciò che è rotto, ricordare i dettagli, essere presente quando conta — questo è amore puro.","Oggi lascia da parte l'analisi e lascia che le emozioni fluiscano senza catalogarle — l'amore non si ottimizza, si abita.","Se sei single, gli incontri nascono dalla condivisione di interessi pratici: corsi, volontariato, ambienti di lavoro con valori comuni.","La perfezione è il nemico dell'amore: nessun partner sarà mai all'altezza degli standard ideali. Impara ad amare l'imperfetto.","L'autocritica si riversa sulla coppia: quando sei duro con te stesso, diventi critico con l'altro. Nota questo meccanismo."],
-    lavoro:["La precisione della Vergine produce lavori impeccabili: oggi potresti finire qualcosa che altri avrebbero tralasciato a metà.","L'analisi è il tuo superpotere: dove gli altri vedono confusione, tu vedi pattern e soluzioni eleganti.","Periodo favorevole per tutto ciò che riguarda la salute, l'alimentazione, i servizi e la cura degli altri.","Attenzione al perfezionismo paralizzante: fatto è meglio di perfetto. Pubblica, consegna, invia — poi migliora.","Un collega beneficia enormemente del tuo aiuto: offrirlo senza che venga chiesto rafforza il tuo valore percepito."],
-    salute:["Il sistema digestivo è lo specchio della Vergine: mangia con calma, mastica bene, scegli cibi naturali e non processati.","L'ansia da prestazione si accumula nell'intestino: probiotici e fermenti lattici sono i tuoi alleati silenziosi.","La meditazione analitica — mindfulness con attenzione ai dettagli del momento presente — funziona bene per te.","L'attività fisica preferita: yoga, pilates, escursionismo — tutto ciò che unisce mente e corpo con precisione.","Un check-up di routine rimandato: schedulalo. La Vergine che fa prevenzione è la Vergine che vive meglio."],
-    fortuna:["Numero fortunato: 6. Il Verde salvia e il Marrone terra ti portano stabilità.","Mercurio favorisce i dettagli: quell'errore piccolo che noti potrebbe salvarti da uno grande.","Il mercoledì è il tuo giorno di potere: pianifica le attività importanti allora.","La fortuna si nasconde nel lavoro ben fatto: ogni compito svolto con cura porta il suo frutto preciso.","Un'analisi attenta rivela un'opportunità che chi cerca a colpo d'occhio non vede."]
+    amore:["Il tuo amore si esprime nel servizio: cucinare, organizzare, pensare ai dettagli — fallo sapere all'altro, non darlo per scontato.","L'ipercriticità della Vergine può ferire senza volerlo: osserva prima di commentare.","L'intimità nasce dalla vulnerabilità: lasciati vedere imperfetto/a — il partner ti ama così.","Smetti di analizzare la relazione come un problema da risolvere: vivila, sentila, abita il presente.","Un gesto pratico e premuroso vale più di mille parole romantiche per te: ricorda che anche l'altro può pensarla così."],
+    lavoro:["La tua attenzione al dettaglio è insostituibile: oggi individua l'errore che nessun altro vede.","Un sistema di lavoro migliorato porta efficienza a tutto il team: proponi la tua soluzione con umiltà.","Attenzione al perfezionismo paralizzante: il fatto è meglio del perfetto — consegna e migliora dopo.","Il settore della salute, dell'analisi, dell'organizzazione o del servizio è il tuo terreno naturale.","Qualcuno si accorge della tua qualità silenziosa: presto arriverà un riconoscimento meritato."],
+    salute:["L'intestino è il secondo cervello della Vergine: flora batterica, alimentazione pulita, ritmo digestivo regolare.","Lo stress si somatizza nell'apparato digerente: tecniche di rilassamento prima dei pasti.","La purificazione ti nutre: detox leggero, erbe aromatiche, ambienti puliti e ordinati.","L'attenzione ai dettagli vale anche per il corpo: esami preventivi, check-up regolari, screening.","Il movimento metodico — yoga, pilates, camminata meditativa — è perfetto per la tua natura."],
+    fortuna:["Numero fortunato: 5. Il Verde salvia e il Beige naturale ti portano equilibrio.","Mercurio affina il tuo intuito analitico: fidati dell'analisi dettagliata, porta al risultato giusto.","Il mercoledì è il tuo giorno di potere: organizza le attività più importanti intorno a quel giorno.","Un'attenzione ai dettagli che nessun altro ha avuto si rivela la chiave del successo.","La fortuna della Vergine è costruita: ogni piccolo miglioramento quotidiano accumula risultati straordinari."]
   },
   bilancia:{
     amore:["Venere ti regala grazia e armonia: oggi sei al tuo meglio nella relazione. Usa questo momento per riavvicinarti a chi ami.","La diplomazia è il tuo dono, ma oggi l'onestà diretta serve di più: di' quello che pensi davvero invece di mediare.","Se sei single, i luoghi belli e curati — musei, gallerie, ristoranti raffinati — sono dove trovi la tua anima gemella.","L'indecisione in amore ti logora più di una scelta sbagliata: scegli e poi correggi il tiro se necessario.","Un momento di bellezza condivisa — un tramonto, un museo, una buona musica — rafforza il legame più di qualsiasi analisi."],
     lavoro:["La diplomazia della Bilancia è un asset raro: sei il mediatore naturale nei conflitti, quello che porta pace senza perdere la sostanza.","Periodo favorevole per trattative, contratti, collaborazioni: il tuo senso dell'equità chiude gli accordi.","Un progetto legato all'arte, al design, alla moda, alla giustizia o alle relazioni pubbliche è il tuo terreno naturale.","Il tuo senso del giusto è una guida affidabile: fidati di esso quando le decisioni sono eticamente complesse.","La concretezza batte la perfezione teorica: metti in pratica il piano che esiste nella tua testa."],
-    salute:["I reni e la zona lombare sono le aree di attenzione della Bilancia: idratati bene e stiracchia la schiena ogni ora di lavoro sedentario.","Lo yoga è la tua pratica ideale: unisce equilibrio, estetica, filosofia — tutti elementi che ami profondamente.","Attenzione ai dolci: la Bilancia tende a cercare dolcezza nel cibo quando manca nelle relazioni.","La pace interiore si costruisce con piccole scelte quotidiane: un pasto sano, un respiro consapevole, cinque minuti di silenzio.","L'ambiente estetico influenza il benessere: fiori freschi, musica armoniosa, luce naturale sono medicine reali."],
+    salute:["I reni e la zona lombare sono le aree di attenzione della Bilancia: idratati bene e stiracchia la schiena ogni ora.","Lo yoga è la tua pratica ideale: unisce equilibrio, estetica, filosofia.","Attenzione ai dolci: la Bilancia tende a cercare dolcezza nel cibo quando manca nelle relazioni.","La pace interiore si costruisce con piccole scelte quotidiane: un pasto sano, un respiro consapevole, cinque minuti di silenzio.","L'ambiente estetico influenza il benessere: fiori freschi, musica armoniosa, luce naturale sono medicine reali."],
     fortuna:["Numero fortunato: 7. Il Rosa cipria e l'Azzurro pallido ti portano armonia.","Venere protegge le tue iniziative relazionali: proponi, connetti, crea ponti.","Il venerdì è il tuo giorno di potere: pianifica incontri importanti in quel giorno.","Un accordo che sembrava impossibile si sblocca improvvisamente: sii pronto a firmare.","La fortuna sorride a chi crea armonia intorno a sé: sii il ponte tra le persone."]
   },
   scorpione:{
-    amore:["Plutone ti dà un'intensità magnetica irresistibile: chi ti interessa lo sente senza che tu dica nulla — semplicemente stando.","L'amore per lo Scorpione è trasformazione: scegli partner che ti cambino davvero, non che ti lascino come prima.","Attenzione al controllo: amare non significa possedere. Lascia che l'altro respiri e ti tornerà da solo.","Un segreto condiviso crea un legame invincibile: trova cosa non hai mai detto a nessuno e dillo al tuo partner.","La gelosia intensa è un segnale di quanto ci tieni: usala come bussola, non come arma."],
-    lavoro:["La visione strategica dello Scorpione è rara: vedi cinque mosse avanti mentre gli altri guardano quella corrente.","Ricerca, analisi in profondità, psicologia, finanza, investigazione: i tuoi campi d'eccellenza naturale.","Una verità scomoda che conosci potrebbe essere la chiave per risolvere un problema bloccato da settimane.","Periodo favorevole per trasformazioni radicali in carriera: il ciclo che finisce porta in sé il seme del prossimo.","Tieni i tuoi piani per te finché non sono pronti: lo Scorpione che parla troppo presto perde il vantaggio."],
-    salute:["Gli organi riproduttivi e la zona del bacino sono le aree di attenzione: esami regolari, cure preventive.","L'acqua è la tua medicina: bagni caldi prolungati, piscina, terme. Il corpo Scorpione si scioglie nell'acqua.","Le emozioni non elaborate si somatizzano rapidamente: terapia, journaling o arte come sfogo regolare.","La pratica spirituale è salute per lo Scorpione: meditazione profonda, breathwork, pratiche di trasformazione.","Il sonno dello Scorpione è spesso ricco di sogni significativi: tienine traccia per la tua crescita."],
-    fortuna:["Numero fortunato: 8. Il Bordeaux e il Nero profondo ti proteggono.","Plutone attiva le tue capacità trasformative: ciò che sembra una fine è un inizio travestito.","La fortuna si nasconde nelle profondità: non in superficie, non nell'ovvio, ma nel nascosto.","Il martedì è il tuo giorno di potere: usa quell'energia per le iniziative importanti.","Una persona che ritorna dalla tua vita porta un'opportunità inaspettata: valutala."]
+    amore:["Plutone ti dà un'intensità magnetica irresistibile: chi ti interessa lo sente senza che tu dica nulla.","L'amore per lo Scorpione è trasformazione: scegli partner che ti cambino davvero.","Attenzione al controllo: amare non significa possedere. Lascia che l'altro respiri.","Un segreto condiviso crea un legame invincibile: trova cosa non hai mai detto a nessuno e dillo al tuo partner.","La gelosia intensa è un segnale di quanto ci tieni: usala come bussola, non come arma."],
+    lavoro:["La visione strategica dello Scorpione è rara: vedi cinque mosse avanti mentre gli altri guardano quella corrente.","Ricerca, analisi in profondità, psicologia, finanza, investigazione: i tuoi campi d'eccellenza naturale.","Una verità scomoda che conosci potrebbe essere la chiave per risolvere un problema bloccato da settimane.","Periodo favorevole per trasformazioni radicali in carriera: il ciclo che finisce porta il seme del prossimo.","Tieni i tuoi piani per te finché non sono pronti: lo Scorpione che parla troppo presto perde il vantaggio."],
+    salute:["Gli organi riproduttivi e la zona del bacino sono le aree di attenzione: esami regolari, cure preventive.","L'acqua è la tua medicina: bagni caldi prolungati, piscina, terme.","Le emozioni non elaborate si somatizzano rapidamente: terapia, journaling o arte come sfogo regolare.","La pratica spirituale è salute per lo Scorpione: meditazione profonda, breathwork, pratiche di trasformazione.","Il sonno dello Scorpione è spesso ricco di sogni significativi: tienine traccia per la tua crescita."],
+    fortuna:["Numero fortunato: 8. Il Bordeaux e il Nero profondo ti proteggono.","Plutone attiva le tue capacità trasformative: ciò che sembra una fine è un inizio travestito.","La fortuna si nasconde nelle profondità: non in superficie, ma nel nascosto.","Il martedì è il tuo giorno di potere: usa quell'energia per le iniziative importanti.","Una persona che ritorna dalla tua vita porta un'opportunità inaspettata: valutala."]
   },
   sagittario:{
-    amore:["Giove ti espande il cuore: sei pronto ad amare con meno paure e più apertura rispetto ai mesi scorsi.","La libertà è la tua conditio sine qua non: il partner che te la dà ti conquista per sempre.","L'avventura condivisa — un viaggio, una sfida, un'esplorazione — è l'afrodisiaco perfetto per te.","La fedeltà emotiva è importante quanto quella fisica: sii presente con la mente, non solo con il corpo.","Una conversazione filosofica profonda con il partner rafforza il legame più di qualsiasi romanticismo convenzionale."],
+    amore:["Giove ti espande il cuore: sei pronto ad amare con meno paure e più apertura.","La libertà è la tua conditio sine qua non: il partner che te la dà ti conquista per sempre.","L'avventura condivisa — un viaggio, una sfida, un'esplorazione — è l'afrodisiaco perfetto per te.","La fedeltà emotiva è importante quanto quella fisica: sii presente con la mente, non solo con il corpo.","Una conversazione filosofica profonda con il partner rafforza il legame più di qualsiasi romanticismo convenzionale."],
     lavoro:["La visione a lungo raggio del Sagittario è un superpotere in un mondo che pensa a breve termine.","Lavoro internazionale, istruzione, editoria, filosofia, legge, turismo: i tuoi campi naturali.","Periodo favorevole per iniziative coraggiose che richiedono fiducia nel futuro: espanditi con coraggio.","Un'opportunità di lavoro internazionale si profila: tieniti pronto con documenti e portfolio aggiornati.","La formazione continua nutre la tua vocazione all'insegnamento: impara, poi insegna ciò che hai imparato."],
     salute:["Le cosce, i fianchi e il fegato sono le zone del Sagittario: movimento fisico abbondante e alcol con moderazione.","L'eccesso è il pericolo del Sagittario: troppo di tutto. Impara il confine salutare.","L'attività fisica all'aperto è la tua medicina principale: escursionismo, equitazione, sport di squadra.","Attenzione agli infortuni alle gambe: stretching pre-attività fisica e riscaldamento adeguato.","La risata è la tua medicina numero uno: circondarti di persone che ti fanno ridere è autocura reale."],
     fortuna:["Numero fortunato: 3. Il Viola e il Turchese ti portano espansione.","Giove potenzia tutto ciò che inizi: pensa in grande, agisci in grande.","Il giovedì è il tuo giorno di potere: pianifica le iniziative più importanti quel giorno.","Un viaggio o un incontro internazionale porta con sé una svolta inaspettata.","La generosità del Sagittario attira abbondanza: non trattenerti dal dare."]
   },
   capricorno:{
-    amore:["Saturno ti insegna che l'amore duraturo si costruisce mattone per mattone: apprezza chi rimane al tuo fianco.","La difficoltà a esprimere le emozioni è il tuo ostacolo più grande: oggi prova a dire una cosa vera, anche se ti costa.","La fedeltà assoluta è il tuo dono più prezioso: riconosci chi la ricambia e allontanati da chi no.","L'ambizione professionale non può divorare la vita di coppia: trova l'equilibrio prima che diventi un problema serio.","Costruite qualcosa insieme — un progetto, un viaggio, un sogno condiviso — e il legame si solidifica come pietra."],
-    lavoro:["Saturno premia la disciplina: i risultati di oggi sono frutto di semi piantati mesi fa. Continua.","L'autorità naturale del Capricorno emerge in modo convincente in questo periodo: usa questa finestra favorevole.","Un progetto che richiede pianificazione a lungo termine, precisione e resilienza è il tuo terreno d'elezione.","Attenzione al workaholic: lavorare di più non sempre significa produrre di più. L'efficienza batte le ore.","Un riconoscimento professionale è imminente: accettalo con la dignità che caratterizza il Capricorno."],
-    salute:["Le ginocchia, i denti e le ossa sono le zone del Capricorno: calcio, vitamina D, postura corretta quotidiana.","La tendenza alla rigidità fisica rispecchia quella mentale: stretching e flessibilità come pratica quotidiana.","Il Capricorno porta il peso della responsabilità nel corpo: massaggi alla schiena e alle spalle sono essenziali.","La lentezza del Capricorno porta spesso alla salute nel lungo termine: costruisci abitudini, non diete lampo.","Un check-up dentistico e osseo è particolarmente indicato per te in questo periodo."],
-    fortuna:["Numero fortunato: 8. Il Marrone terra e il Grigio antracite ti portano solidità.","Saturno premia la perseveranza: ogni passo disciplinato accumulato oggi diventa fortuna domani.","Il sabato è il tuo giorno di potere: dedica del tempo alla pianificazione strategica.","Un incontro con qualcuno di esperto e affidabile porta opportunità concrete.","La fortuna del Capricorno non è mai casuale — è costruita. Continua a costruire con metodo."]
+    amore:["Saturno ti insegna che l'amore duraturo si costruisce mattone per mattone: apprezza chi rimane al tuo fianco.","La difficoltà a esprimere le emozioni è il tuo ostacolo più grande: oggi prova a dire una cosa vera.","La fedeltà assoluta è il tuo dono più prezioso: riconosci chi la ricambia e allontanati da chi no.","L'ambizione professionale non può divorare la vita di coppia: trova l'equilibrio prima che diventi un problema serio.","Costruite qualcosa insieme — un progetto, un viaggio, un sogno condiviso — e il legame si solidifica come pietra."],
+    lavoro:["Saturno premia la disciplina: i risultati di oggi sono frutto di semi piantati mesi fa. Continua.","L'autorità naturale del Capricorno emerge in modo convincente in questo periodo.","Un progetto che richiede pianificazione a lungo termine, precisione e resilienza è il tuo terreno d'elezione.","Attenzione al workaholic: lavorare di più non sempre significa produrre di più. L'efficienza batte le ore.","Un riconoscimento professionale è imminente: accettalo con la dignità che caratterizza il Capricorno."],
+    salute:["Le ginocchia, i denti e le ossa sono le zone del Capricorno: calcio, vitamina D, postura corretta quotidiana.","La tendenza alla rigidità fisica rispecchia quella mentale: stretching e flessibilità come pratica quotidiana.","Il Capricorno porta il peso della responsabilità nel corpo: massaggi alla schiena e alle spalle sono essenziali.","La lentezza del Capricorno porta salute nel lungo termine: costruisci abitudini, non diete lampo.","Un check-up dentistico e osseo è particolarmente indicato per te in questo periodo."],
+    fortuna:["Numero fortunato: 8. Il Marrone terra e il Grigio antracite ti portano solidità.","Saturno premia la perseveranza: ogni passo disciplinato diventa fortuna domani.","Il sabato è il tuo giorno di potere: dedica del tempo alla pianificazione strategica.","Un incontro con qualcuno di esperto e affidabile porta opportunità concrete.","La fortuna del Capricorno non è mai casuale — è costruita. Continua a costruire con metodo."]
   },
   acquario:{
-    amore:["Urano porta imprevedibilità in amore: abbraccia la novità invece di resistere. Il cambiamento è la tua storia d'amore più bella.","L'intelletto è il tuo strumento di seduzione: una mente brillante ti attrae più di qualsiasi bellezza fisica.","La distanza emotiva è il tuo difetto principale in amore: impara a scendere dalla testa al cuore con coraggio.","L'amicizia è la base del tuo amore ideale: se non siete anche amici, non siete ancora ciò che potreste essere.","La libertà non è solitudine: puoi essere libero E connesso. Sono compatibili — a patto di dirlo chiaramente."],
+    amore:["Urano porta imprevedibilità in amore: abbraccia la novità invece di resistere.","L'intelletto è il tuo strumento di seduzione: una mente brillante ti attrae più di qualsiasi bellezza fisica.","La distanza emotiva è il tuo difetto principale in amore: impara a scendere dalla testa al cuore con coraggio.","L'amicizia è la base del tuo amore ideale: se non siete anche amici, non siete ancora ciò che potreste essere.","La libertà non è solitudine: puoi essere libero E connesso — a patto di dirlo chiaramente."],
     lavoro:["L'innovazione è il tuo respiro professionale: proponi quella soluzione rivoluzionaria che tieni nel cassetto.","Tecnologia, scienze sociali, design del futuro, attivismo: i tuoi campi d'eccellenza.","La visione sistemica dell'Acquario vede le connessioni che nessun altro vede: usala per soluzioni originali.","Un progetto per il bene comune ti dà la motivazione più potente di qualsiasi incentivo economico.","Il futuro è il tuo habitat naturale: pianifica a dieci anni mentre gli altri pianificano a uno."],
     salute:["Le caviglie, le gambe e il sistema circolatorio sono le zone dell'Acquario: movimento, idratazione abbondante.","La mente iperattiva dell'Acquario esaurisce il sistema nervoso: il digital detox periodico è medicina vera.","Il respiro è il tuo ancoraggio: pratiche di breathwork o pranayama portano il sistema nervoso all'equilibrio.","Il tuo sistema nervoso è la tua risorsa prioritaria: trattalo come qualcosa di prezioso e insostituibile.","Esercizi di grounding ti aiutano a restare nel corpo invece di perderti nelle idee astratte."],
-    fortuna:["Numero fortunato: 11. L'Azzurro elettrico e il Turchese futuristico ti portano innovazione.","Urano cambia le regole del gioco a tuo favore quando sei autentico: non conformarti per piacere.","La fortuna arriva attraverso la rete umana: quella persona con cui parli oggi potrebbe essere la svolta.","Un'idea che non hai ancora osato dire ad alta voce: dilla. Potrebbe cambiarti la vita.","Il numero 22 e i doppi numeri ricorrono nelle tue situazioni di svolta."]
+    fortuna:["Numero fortunato: 11. L'Azzurro elettrico e il Turchese futuristico ti portano innovazione.","Urano cambia le regole del gioco a tuo favore quando sei autentico.","La fortuna arriva attraverso la rete umana: quella persona con cui parli oggi potrebbe essere la svolta.","Un'idea che non hai ancora osato dire ad alta voce: dilla. Potrebbe cambiarti la vita.","Il numero 22 e i doppi numeri ricorrono nelle tue situazioni di svolta."]
   },
   pesci:{
     amore:["Nettuno ti immerge in un oceano di sentimenti: naviga con cura, non perdere il filo che ti riporta a riva.","L'empatia totale è il tuo dono e il tuo rischio: assicurati di sentire i tuoi sentimenti, non quelli dell'altro.","Attenzione all'idealizzazione: il partner reale è meraviglioso — smetti di confrontarlo con la versione perfetta nella tua testa.","Un gesto poetico e inaspettato dice più di mille parole: scrivi, disegna, suona, crea qualcosa per chi ami.","Il perdono è la tua superpotenza: usalo con saggezza, non come abitudine a tollerare ciò che non va."],
@@ -418,22 +638,132 @@ const GENERAL_POOL = [
   "Le stelle di oggi invitano all'introspezione: le risposte che cerchi fuori si trovano in realtà nella quiete interiore.",
   "Un'energia di abbondanza attraversa il cosmo: chi è aperto a ricevere — senza meritarsi il permesso — lo sentirà chiaramente.",
   "Il cielo di oggi parla di trasformazione: non resistere al cambiamento, cavalcalo. Ciò che si trasforma non muore — rinasce.",
-  "Le influenze planetarie di oggi premiano la costanza silenziosa: il lavoro fatto nell'ombra, senza applausos, porta i frutti più duraturi.",
+  "Le influenze planetarie di oggi premiano la costanza silenziosa: il lavoro fatto nell'ombra porta i frutti più duraturi.",
   "Oggi il cosmo ricorda che ogni fine è un portale: ciò che si chiude non è perduto, è trasformato in qualcosa che ancora non vedi."
 ];
 
-// ═══════════════════════════════════════════════════
+// Consigli tradotti per EN / ES (brevi, per mood)
+const CONSIGLI_EN = [
+  "The stars suggest patience: what you're waiting for is on its way, in its own cosmic time.",
+  "A seemingly random encounter hides an important message. Coincidences don't exist — only unheard messages.",
+  "The past returns to teach, not to punish. Learn the lesson without carrying it as a burden.",
+  "The answer you seek outside is already within. Meditate and listen to the silence between thoughts.",
+  "Not all is lost: one door closes and three open. Trust the intelligence of the universe.",
+  "Courage is not the absence of fear, but acting despite it. Take that step you keep postponing.",
+  "Forgive yourself first: resentment toward oneself is the most pointless weight there is.",
+  "Gratitude transforms what you have into abundance and who you are into enough.",
+  "The present moment is the only one you truly own. Inhabit each instant instead of rushing through it.",
+  "A thought carefully nurtured becomes an intention. A repeated intention becomes reality."
+];
+const CONSIGLI_ES = [
+  "Las estrellas sugieren paciencia: lo que esperas está en camino, a su propio tiempo cósmico.",
+  "Un encuentro aparentemente casual esconde un mensaje importante. Las coincidencias no existen — solo mensajes no escuchados.",
+  "El pasado regresa para enseñar, no para castigar. Aprende la lección sin cargarla como un peso.",
+  "La respuesta que buscas fuera ya está dentro de ti. Medita y escucha el silencio entre pensamientos.",
+  "No todo está perdido: una puerta se cierra y tres se abren. Confía en la inteligencia del universo.",
+  "El valor no es la ausencia de miedo, sino actuar a pesar de él. Da ese paso que sigues aplazando.",
+  "Perdónate primero: el rencor hacia uno mismo es el peso más inútil que existe.",
+  "La gratitud transforma lo que tienes en abundancia y lo que eres en suficiente.",
+  "El momento presente es el único que realmente posees. Habita cada instante en lugar de atravesarlo corriendo.",
+  "Un pensamiento cultivado con cuidado se convierte en una intención. Una intención repetida se convierte en realidad."
+];
+const GENERAL_EN = [
+  "Today's cosmos brings renewal energy: old structures dissolve to make room for the new. Those who let go will find freedom.",
+  "Mercury favours authentic communication: words spoken sincerely carry special power in the coming hours.",
+  "Today's Moon amplifies emotions: use them as a compass, not a storm. What you feel intensely contains a truth.",
+  "Today's stars invite introspection: the answers you seek outside are actually in your inner quiet.",
+  "An energy of abundance flows through the cosmos: those open to receive — without needing permission — will feel it clearly."
+];
+const GENERAL_ES = [
+  "El cosmos de hoy trae energía de renovación: las viejas estructuras se disuelven para dar paso a lo nuevo.",
+  "Mercurio favorece la comunicación auténtica: las palabras dichas con sinceridad tienen un poder especial.",
+  "La Luna de hoy amplifica las emociones: úsalas como brújula, no como tormenta.",
+  "Las estrellas de hoy invitan a la introspección: las respuestas que buscas fuera están en tu quietud interior.",
+  "Una energía de abundancia atraviesa el cosmos: quien está abierto a recibir lo sentirá claramente."
+];
+
+// ═══════════════════════════════════════════════
 // STATO
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 let _currentSign = null;
 let _savedSign = null;
 let _activeTab = 'amore';
 let _toastTimer = null;
+let _lang = 'it';
+let _premiumDismissed = { fortuna: false, mistico: false };
 
-// ═══════════════════════════════════════════════════
-// UTILS
-// ═══════════════════════════════════════════════════
 const $ = s => document.querySelector(s);
+
+// ═══════════════════════════════════════════════
+// TEMA
+// ═══════════════════════════════════════════════
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  $('#themeBtn').textContent = isLight ? '☀️' : '🌙';
+  try { localStorage.setItem('myst_theme', isLight ? 'light' : 'dark'); } catch(e){}
+}
+
+function applyTheme() {
+  try {
+    const t = localStorage.getItem('myst_theme');
+    if (t === 'light') { document.body.classList.add('light-mode'); $('#themeBtn').textContent = '☀️'; }
+  } catch(e){}
+}
+
+// ═══════════════════════════════════════════════
+// LINGUA
+// ═══════════════════════════════════════════════
+function setLang(lang) {
+  _lang = lang;
+  try { localStorage.setItem('myst_lang', lang); } catch(e){}
+  applyLang();
+  if (_currentSign) renderReading(_currentSign);
+}
+
+function applyLang() {
+  const t = I18N[_lang];
+  document.documentElement.lang = t.htmlLang;
+  document.title = t.pageTitle;
+  // Applica ogni id-chiave nel DOM
+  Object.keys(t).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) el.innerHTML = t[key];
+  });
+  // Date badge
+  updateDateBadge();
+  // Bottoni lingua
+  ['it','en','es'].forEach(l => {
+    const btn = document.getElementById('btn' + l.toUpperCase());
+    if (btn) btn.classList.toggle('active', l === _lang);
+  });
+  // Rebuild grid con nomi tradotti (se necessario in futuro)
+  if (_currentSign === null) buildGrid();
+}
+
+function updateDateBadge() {
+  const t = I18N[_lang];
+  const d = new Date();
+  $('#dateBadge').textContent = `${t.days[d.getDay()]} ${d.getDate()} ${t.months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+// ═══════════════════════════════════════════════
+// UTILS SEED
+// ═══════════════════════════════════════════════
+function daySeed() {
+  const d = new Date();
+  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+}
+function seededRand(seed, idx) {
+  let s = (seed * 1103515245 + idx * 12345 + 2531011) & 0x7fffffff;
+  return s / 0x7fffffff;
+}
+function seededPct(signKey, field) {
+  const seed = daySeed();
+  const si = SIGN_ORDER.indexOf(signKey);
+  const fi = ['amore','lavoro','salute','fortuna'].indexOf(field);
+  const r = seededRand(seed + si * 13, fi * 17 + 5);
+  return Math.round(40 + r * 55);
+}
 
 function toast(msg) {
   const t = $('#toast');
@@ -445,43 +775,36 @@ function toast(msg) {
   }, _toastTimer ? 80 : 0);
 }
 
-// Seed deterministico dal giorno — stesso risultato per tutta la giornata
-function daySeed() {
-  const d = new Date();
-  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+// ═══════════════════════════════════════════════
+// PREMIUM gate — dismiss mostra contenuto completo
+// ═══════════════════════════════════════════════
+function dismissPremium(section) {
+  _premiumDismissed[section] = true;
+  const overlay = document.getElementById(section + 'Overlay');
+  const preview = document.getElementById(section + 'Preview');
+  const wrap = document.getElementById(section + 'Wrap');
+  if (overlay) overlay.style.display = 'none';
+  if (preview) { preview.style.maxHeight = 'none'; preview.style.pointerEvents = ''; preview.style.userSelect = ''; }
+  if (wrap) wrap.style.position = 'static';
 }
 
-function seededRand(seed, idx) {
-  let s = (seed * 1103515245 + idx * 12345 + 2531011) & 0x7fffffff;
-  return s / 0x7fffffff;
+function showPremiumGate(section) {
+  if (_premiumDismissed[section]) return; // già dismissato — non mostrare
+  const overlay = document.getElementById(section + 'Overlay');
+  const wrap = document.getElementById(section + 'Wrap');
+  if (overlay) overlay.style.display = 'flex';
+  if (wrap) wrap.style.position = 'relative';
 }
 
-function pickByDay(arr, signIdx, field) {
-  const seed = daySeed();
-  const offset = SIGN_ORDER.indexOf(signIdx) * 7 + ['amore','lavoro','salute','fortuna'].indexOf(field) * 3;
-  const r = seededRand(seed, offset);
-  return arr[Math.floor(r * arr.length)];
-}
-
-function seededPct(signKey, field) {
-  const seed = daySeed();
-  const si = SIGN_ORDER.indexOf(signKey);
-  const fi = ['amore','lavoro','salute','fortuna'].indexOf(field);
-  const r = seededRand(seed + si * 13, fi * 17 + 5);
-  return Math.round(40 + r * 55); // 40-95%
-}
-
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 // INIT
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 function init() {
-  // Data badge
-  const d = new Date();
-  const days = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
-  const months = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
-  $('#dateBadge').textContent = `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  applyTheme();
+  // Lingua salvata
+  try { const l = localStorage.getItem('myst_lang'); if (l && I18N[l]) _lang = l; } catch(e){}
+  applyLang();
 
-  // Saved sign
   _savedSign = localStorage.getItem('myst_segno_principale');
   if (_savedSign && SEGNI[_savedSign]) {
     const s = SEGNI[_savedSign];
@@ -489,7 +812,6 @@ function init() {
     $('#ssbEmoji').textContent = s.e;
     $('#ssbName').textContent = s.n;
   }
-
   buildGrid();
 }
 
@@ -509,8 +831,6 @@ function buildGrid() {
 function selectSign(key) {
   _currentSign = key;
   _activeTab = 'amore';
-
-  // Save as main sign
   localStorage.setItem('myst_segno_principale', key);
 
   buildGrid();
@@ -538,7 +858,6 @@ function backToGrid() {
     $('#ssbEmoji').textContent = SEGNI[_savedSign].e;
     $('#ssbName').textContent = SEGNI[_savedSign].n;
   }
-
   buildGrid();
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
@@ -546,33 +865,30 @@ function backToGrid() {
 function renderReading(key) {
   const s = SEGNI[key];
   const o = OROSCOPI[key];
+  const t = I18N[_lang];
 
   // Header
   $('#rcEmoji').textContent = s.e;
   $('#rcName').textContent = s.n;
-  $('#rcDates').textContent = s.d + ' · ' + s.el + ' · ' + s.p;
-  $('#rcEl').innerHTML = `${s.el === 'Fuoco' ? '🔥' : s.el === 'Terra' ? '🌍' : s.el === 'Aria' ? '💨' : '💧'} ${s.el} · ${s.p}`;
+  $('#rcDates').textContent = s.d + ' · ' + (t.elLabels[s.el] || s.el) + ' · ' + s.p;
+  const elIcons = {Fuoco:'🔥',Terra:'🌍',Aria:'💨',Acqua:'💧'};
+  $('#rcEl').innerHTML = `${elIcons[s.el]||''} ${t.elLabels[s.el]||s.el} · ${s.p}`;
   $('#rcKeys').innerHTML = s.k.map(k => `<span class="rc-key-tag">${k}</span>`).join('');
 
   // Mood meters
   const moods = [
-    {icon:'💕', label:'Amore', field:'amore'},
-    {icon:'💼', label:'Lavoro', field:'lavoro'},
-    {icon:'🌿', label:'Salute', field:'salute'},
-    {icon:'🍀', label:'Fortuna', field:'fortuna'}
+    {icon:'💕', label:t.i18nMoodAmore, field:'amore'},
+    {icon:'💼', label:t.i18nMoodLavoro, field:'lavoro'},
+    {icon:'🌿', label:t.i18nMoodSalute, field:'salute'}
   ];
-  // We do 3 per row, picking 3
-  const top3 = moods.slice(0,3);
-  $('#moodRow').innerHTML = top3.map(m => {
+  $('#moodRow').innerHTML = moods.map(m => {
     const pct = seededPct(key, m.field);
     return `<div class="mood-item"><div class="mood-icon">${m.icon}</div><div class="mood-label">${m.label}</div><div class="mood-bar"><div class="mood-fill" style="width:${pct}%"></div></div></div>`;
   }).join('');
-  setTimeout(() => {}, 100);
 
   // Tab contents
   const seed = daySeed();
   const si = SIGN_ORDER.indexOf(key);
-
   function pick(arr, offset) {
     const r = seededRand(seed + si * 31 + offset, offset);
     return arr[Math.floor(r * arr.length)];
@@ -583,29 +899,47 @@ function renderReading(key) {
   $('#tcSalute').textContent = pick(o.salute, 14);
   $('#tcFortuna').textContent = pick(o.fortuna, 21);
 
-  // Lucky strip
+  // Lucky strip (tradotto)
   const numF = pick(o.fortuna, 21);
   const luckyNum = numF.match(/\d+/)?.[0] || '7';
   const colorMap = {ariete:'Rosso fuoco 🔴',toro:'Verde smeraldo 🟢',gemelli:'Giallo sole 🟡',cancro:'Argento 🌕',leone:'Oro dorato 🟡',vergine:'Verde salvia 🌿',bilancia:'Rosa 🌸',scorpione:'Bordeaux 🍷',sagittario:'Viola 💜',capricorno:'Marrone 🟤',acquario:'Azzurro elettrico 🔵',pesci:'Viola acqua 💜'};
-  const dayMap = {ariete:'Martedì',toro:'Venerdì',gemelli:'Mercoledì',cancro:'Lunedì',leone:'Domenica',vergine:'Mercoledì',bilancia:'Venerdì',scorpione:'Martedì',sagittario:'Giovedì',capricorno:'Sabato',acquario:'Mercoledì',pesci:'Giovedì'};
+  const dayMapIT = {ariete:'Martedì',toro:'Venerdì',gemelli:'Mercoledì',cancro:'Lunedì',leone:'Domenica',vergine:'Mercoledì',bilancia:'Venerdì',scorpione:'Martedì',sagittario:'Giovedì',capricorno:'Sabato',acquario:'Mercoledì',pesci:'Giovedì'};
+  const dayMapEN = {ariete:'Tuesday',toro:'Friday',gemelli:'Wednesday',cancro:'Monday',leone:'Sunday',vergine:'Wednesday',bilancia:'Friday',scorpione:'Tuesday',sagittario:'Thursday',capricorno:'Saturday',acquario:'Wednesday',pesci:'Thursday'};
+  const dayMapES = {ariete:'Martes',toro:'Viernes',gemelli:'Miércoles',cancro:'Lunes',leone:'Domingo',vergine:'Miércoles',bilancia:'Viernes',scorpione:'Martes',sagittario:'Jueves',capricorno:'Sábado',acquario:'Miércoles',pesci:'Jueves'};
+  const dayMap = _lang === 'en' ? dayMapEN : _lang === 'es' ? dayMapES : dayMapIT;
+
   $('#luckyStrip').innerHTML = `
-    <div class="lucky-item"><div class="lucky-label">Numero Fortunato</div><div class="lucky-val">${luckyNum}</div></div>
-    <div class="lucky-item"><div class="lucky-label">Colore</div><div class="lucky-val" style="font-size:11px">${colorMap[key]||'Oro'}</div></div>
-    <div class="lucky-item"><div class="lucky-label">Giorno di Potere</div><div class="lucky-val" style="font-size:11px">${dayMap[key]||'Giovedì'}</div></div>
-    <div class="lucky-item"><div class="lucky-label">Pianeta</div><div class="lucky-val">${s.p}</div></div>
+    <div class="lucky-item"><div class="lucky-label">${t.i18nLuckyNum}</div><div class="lucky-val">${luckyNum}</div></div>
+    <div class="lucky-item"><div class="lucky-label">${t.i18nLuckyColor}</div><div class="lucky-val" style="font-size:11px">${colorMap[key]||'Oro'}</div></div>
+    <div class="lucky-item"><div class="lucky-label">${t.i18nLuckyDay}</div><div class="lucky-val" style="font-size:11px">${dayMap[key]||'Giovedì'}</div></div>
+    <div class="lucky-item"><div class="lucky-label">${t.i18nLuckyPlanet}</div><div class="lucky-val">${s.p}</div></div>
   `;
 
   // Pietre & oggetti
   $('#stonesList').innerHTML = s.pietre.map(p => `<div class="stone-item">💎 ${p}</div>`).join('');
   $('#objectsList').innerHTML = s.oggetti.map(o => `<div class="obj-item">${o}</div>`).join('');
 
-  // Consiglio
+  // Consiglio (localizzato)
   const cr = seededRand(seed + si * 47 + 99, 33);
-  $('#adviceText').textContent = CONSIGLI[Math.floor(cr * CONSIGLI.length)];
+  const consPool = _lang === 'en' ? CONSIGLI_EN : _lang === 'es' ? CONSIGLI_ES : CONSIGLI;
+  $('#adviceText').textContent = consPool[Math.floor(cr * consPool.length)];
 
-  // Oroscopo generale
+  // Generale (localizzato)
   const gr = seededRand(seed + 1234, 5);
-  $('#generalText').textContent = GENERAL_POOL[Math.floor(gr * GENERAL_POOL.length)];
+  const genPool = _lang === 'en' ? GENERAL_EN : _lang === 'es' ? GENERAL_ES : GENERAL_POOL;
+  $('#generalText').textContent = genPool[Math.floor(gr * genPool.length)];
+
+  // Reset premium gates
+  ['fortuna','mistico'].forEach(sec => {
+    if (!_premiumDismissed[sec]) {
+      const overlay = document.getElementById(sec + 'Overlay');
+      const preview = document.getElementById(sec + 'Preview');
+      const wrap = document.getElementById(sec + 'Wrap');
+      if (overlay) { overlay.style.display = 'flex'; overlay.style.flexDirection = 'column'; overlay.style.alignItems = 'center'; overlay.style.justifyContent = 'flex-end'; }
+      if (preview) { preview.style.maxHeight = '180px'; preview.style.pointerEvents = 'none'; preview.style.userSelect = 'none'; }
+      if (wrap) wrap.style.position = 'relative';
+    }
+  });
 
   openTab('amore');
 }
@@ -625,25 +959,23 @@ function saveReading() {
     const history = JSON.parse(localStorage.getItem('myst_v3_history') || '[]');
     const s = SEGNI[_currentSign];
     history.unshift({
-      tipo: 'Oroscopo',
-      dettaglio: s.n + ' — ' + new Date().toLocaleDateString('it-IT'),
-      data: new Date().toLocaleString('it-IT'),
-      ts: Date.now()
+      tipo: 'Oroscopo', dettaglio: s.n + ' — ' + new Date().toLocaleDateString('it-IT'),
+      data: new Date().toLocaleString('it-IT'), ts: Date.now()
     });
     if (history.length > 60) history.pop();
     localStorage.setItem('myst_v3_history', JSON.stringify(history));
-    toast('📚 Oroscopo salvato ✨');
+    toast(I18N[_lang].i18nToastSaved);
   } catch(e) { toast('Errore nel salvataggio'); }
 }
 
 function shareReading() {
   if (!_currentSign) return;
   const s = SEGNI[_currentSign];
-  const text = `⭐ Oroscopo di oggi per ${s.n} (${s.e})\n\n${$('#tcAmore').textContent}\n\n✨ MYSTICA — https://mysticaoracoli.it/oroscopo.html`;
+  const text = `⭐ ${s.n} (${s.e})\n\n${$('#tcAmore').textContent}\n\n✨ MYSTICA — https://mysticaoracoli.it/oroscopo.html`;
   if (navigator.share) {
     navigator.share({ title: `Oroscopo ${s.n}`, text }).catch(() => {});
   } else {
-    navigator.clipboard?.writeText(text).then(() => toast('📋 Oroscopo copiato!')).catch(() => {});
+    navigator.clipboard?.writeText(text).then(() => toast(I18N[_lang].i18nToastCopied)).catch(() => {});
   }
 }
 
