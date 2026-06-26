@@ -3,183 +3,1283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO meta dinamici — aggiornati da updateSEO() al cambio lingua -->
+<title>Oracolo Runico — Elder Futhark Online | MYSTICA Oracoli</title>
 <meta name="description" content="Lancia le Rune Elder Futhark online: estrazione singola o diffusione Passato-Presente-Futuro con 25 rune, significati dettagliati, verso diritta e rovesciata. Oracolo runico gratuito.">
 <meta name="keywords" content="rune elder futhark, lancio rune online, oracolo runico, rune significato, runologia, rune divinazione, fehu uruz ansuz, rune italiane, mysticaoracoli">
-<title>Oracolo Runico — Elder Futhark Online | MYSTICA</title>
 <link rel="canonical" href="https://mysticaoracoli.it/rune.html">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<!-- hreflang: segnala a Google le versioni multilingua -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/rune.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/rune.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/rune.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/rune.html">
+<!-- Open Graph -->
 <meta property="og:title" content="Oracolo Runico Elder Futhark | MYSTICA">
 <meta property="og:description" content="Estrai le rune Elder Futhark online. Lettura singola o Passato-Presente-Futuro con 25 rune e significati completi.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mysticaoracoli.it/rune.html">
 <meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/rune.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oracolo Runico Elder Futhark | MYSTICA">
+<meta name="twitter:description" content="Estrai le rune Elder Futhark online. Lettura singola o Passato-Presente-Futuro con 25 rune e significati completi.">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/rune.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Oracolo Runico Elder Futhark — MYSTICA",
-  "url": "https://mysticaoracoli.it/rune.html",
-  "description": "Estrai le rune Elder Futhark online con lettura singola o diffusione Passato-Presente-Futuro.",
-  "applicationCategory": "EntertainmentApplication",
-  "inLanguage": "it",
-  "publisher": {"@type":"Organization","name":"Mystica Oracoli","url":"https://mysticaoracoli.it"}
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Cosa sono le rune Elder Futhark?","acceptedAnswer":{"@type":"Answer","text":"Le rune Elder Futhark sono un alfabeto runico di 24+1 simboli usati dai popoli germanici e nordici sia come scrittura sia come sistema divinatorio. Ogni runa ha un nome, un suono e un significato esoterico profondo."}},
+    {"@type":"Question","name":"Come si usa l'oracolo runico online?","acceptedAnswer":{"@type":"Answer","text":"Concentrati sulla tua domanda, tocca il sacchetto o clicca il pulsante. Puoi scegliere estrazione singola (una runa) o diffusione Passato-Presente-Futuro (tre rune)."}},
+    {"@type":"Question","name":"Cos'è una runa rovesciata?","acceptedAnswer":{"@type":"Answer","text":"Alcune rune cambiano significato se estratte capovolte. Si chiama 'runa rovesciata' o 'merkstave'. Non è sempre negativo — spesso indica energie bloccate o lezioni da imparare."}},
+    {"@type":"Question","name":"Quante rune esistono nel sistema Elder Futhark?","acceptedAnswer":{"@type":"Answer","text":"L'Elder Futhark conta 24 rune più la runa bianca Wyrd (vuoto), per un totale di 25 simboli. MYSTICA include tutte e 25."}},
+    {"@type":"Question","name":"L'oracolo runico è gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sì, l'estrazione singola e la diffusione Passato-Presente-Futuro sono gratuite. Le funzioni Premium includono l'archivio illimitato e le letture tematiche avanzate (Amore, Lavoro, Salute)."}}
+  ]
 }
 </script>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg: #0a0514;
+  --card: #140c24;
+  --purple: #2a1748;
+  --gold: #d4af37;
+  --gold-dim: #b8860b;
+  --gold-glow: rgba(212,175,55,0.4);
+  --text: #f4f1fa;
+  --muted: #b8b2d1;
+  --radius: 18px;
+  --border: rgba(212,175,55,0.2);
+}
 
-  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
-  .btn-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
-  .btn-back:hover{background:rgba(255,255,255,0.15)}
-  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#ffffff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .page-subtitle{color:#a89bc2;font-size:12px}
+/* ===== TEMA GIORNO ===== */
+html.theme-day {
+  --bg: #f5f2ed;
+  --card: #ede8df;
+  --purple: #6b5b7f;
+  --text: #2a1748;
+  --muted: #6b5b7f;
+  --gold: #c89742;
+  --gold-dim: #a67c52;
+  --gold-glow: rgba(200,151,66,0.2);
+  --border: rgba(200,151,66,0.4);
+}
 
-  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+*{box-sizing:border-box;margin:0;padding:0}
 
-  /* FORM CARD */
-  .form-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,215,0,0.2);border-radius:18px;padding:22px 18px;margin-bottom:16px}
-  .form-card h2{font-size:16px;color:#ffd700;margin-bottom:6px}
-  .form-card p{font-size:13px;color:#a89bc2;margin-bottom:16px;line-height:1.5}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
 
-  /* TABS MODALITÀ */
-  .mode-tabs{display:flex;gap:8px;margin-bottom:16px}
-  .mode-tab{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#a89bc2;padding:10px 8px;border-radius:12px;cursor:pointer;font-size:13px;text-align:center;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
-  .mode-tab.active{background:rgba(255,215,0,0.15);border-color:rgba(255,215,0,0.4);color:#ffd700;font-weight:600}
+/* ===== HEADER ===== */
+.page-header {
+  position: sticky;
+  top: 0;
+  background: rgba(10,5,20,0.97);
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 50;
+}
 
-  textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e6e0f0;padding:12px 14px;border-radius:12px;font-size:14px;resize:none;height:80px;margin-bottom:14px;font-family:inherit}
-  textarea::placeholder{color:#6b6080}
-  textarea:focus{outline:none;border-color:rgba(255,215,0,0.4)}
+html.theme-day .page-header {
+  background: rgba(245,242,237,0.97);
+}
 
-  .btn-draw{background:linear-gradient(135deg,#1a0a2e,#4a0e6e);border:1px solid rgba(255,215,0,0.4);color:#ffd700;padding:16px;border-radius:25px;font-size:18px;cursor:pointer;width:100%;font-weight:700;letter-spacing:2px;transition:all 0.2s}
-  .btn-draw:hover{background:linear-gradient(135deg,#2a1048,#6a2090)}
-  .btn-draw:active{transform:scale(0.97)}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
 
-  /* SACCHETTO ANIMATO */
-  .bag-anim{text-align:center;padding:16px 0 4px;font-size:56px;cursor:pointer;user-select:none;animation:sway 3s ease-in-out infinite}
-  @keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
-  .bag-hint{text-align:center;font-size:12px;color:#6b6080;margin-bottom:14px}
+.btn-back {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--muted);
+  padding: 7px 13px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Crimson Pro', serif;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+html.theme-day .btn-back {
+  background: rgba(0,0,0,0.06);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.btn-back:hover { background: rgba(255,255,255,0.15); }
 
-  /* RISULTATO */
-  .result-wrap{display:none;animation:fadeUp 0.5s ease}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
 
-  /* RUNA SINGOLA */
-  .rune-single{background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.25);border-radius:18px;padding:24px 18px;text-align:center}
-  .rune-symbol-big{font-size:96px;color:#ffd700;line-height:1;margin:10px 0;filter:drop-shadow(0 0 20px rgba(255,215,0,0.4));display:inline-block;transition:transform 0.3s}
-  .rune-name{font-size:22px;font-weight:700;color:#e6e0f0;margin-bottom:4px}
-  .rune-trasl{font-size:12px;color:#a89bc2;margin-bottom:10px}
-  .verso-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:12px}
-  .verso-badge.diritta{background:rgba(74,222,128,0.15);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
-  .verso-badge.rovesciata{background:rgba(248,113,113,0.15);color:#f87171;border:1px solid rgba(248,113,113,0.3)}
-  .rune-parola{display:inline-block;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);padding:4px 16px;border-radius:20px;font-size:13px;color:#ffd700;margin-bottom:16px}
-  .divider{height:1px;background:rgba(255,255,255,0.08);margin:14px 0}
-  .rune-block{text-align:left;margin-bottom:12px}
-  .rune-block h4{font-size:13px;color:#ffd700;margin-bottom:6px}
-  .rune-block p{font-size:14px;color:#c8c0e0;line-height:1.7}
+.btn-icon {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted);
+  padding: 6px 11px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Crimson Pro', serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+html.theme-day .btn-icon {
+  background: rgba(0,0,0,0.06);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.btn-icon:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* TRE RUNE SPREAD */
-  .spread-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
-  .spread-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px 8px;text-align:center}
-  .spread-pos{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-  .spread-sym{font-size:52px;color:#ffd700;line-height:1;margin-bottom:4px;display:inline-block}
-  .spread-rname{font-size:12px;color:#e6e0f0;font-weight:600;margin-bottom:4px}
-  .spread-verso{font-size:11px}
+.header-center {
+  text-align: center;
+  padding: 2px 0 0;
+}
 
-  .spread-detail{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px;margin-bottom:10px}
-  .spread-detail h4{font-size:14px;color:#ffd700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .spread-detail p{font-size:13px;color:#c8c0e0;line-height:1.7}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gold), #fff8dc, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1px;
+}
 
-  /* DOMANDA MOSTRATA */
-  .question-shown{background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,215,0,0.4);padding:10px 14px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:13px;color:#a89bc2;font-style:italic;text-align:left}
+html.theme-day .page-title {
+  background: linear-gradient(90deg, var(--gold-dim), var(--text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  /* BTN RESET */
-  .btn-reset{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:12px 24px;border-radius:20px;cursor:pointer;font-size:14px;margin-top:14px;width:100%}
-  .btn-reset:hover{background:rgba(255,255,255,0.12)}
+.page-subtitle {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 
-  /* CATALOGO RUNE */
-  .catalog-toggle{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#a89bc2;padding:12px;border-radius:12px;cursor:pointer;font-size:14px;width:100%;text-align:center;margin-top:16px;margin-bottom:0}
-  .catalog-wrap{display:none;margin-top:12px}
-  .catalog-wrap.open{display:block}
-  .catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
-  .catalog-item{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer;transition:border-color 0.2s}
-  .catalog-item:hover{border-color:rgba(255,215,0,0.3)}
-  .catalog-item .sym{font-size:30px;color:#ffd700;display:block;margin-bottom:4px}
-  .catalog-item .nom{font-size:12px;color:#e6e0f0;font-weight:600}
-  .catalog-item .par{font-size:10px;color:#a89bc2}
+/* Lang switch */
+.lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
+}
 
-  /* MODAL CATALOGO */
-  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;display:none;align-items:flex-end;justify-content:center}
-  .modal-overlay.open{display:flex}
-  .modal-sheet{background:#0d0b14;border:1px solid rgba(255,215,0,0.2);border-radius:20px 20px 0 0;width:100%;max-width:650px;padding:20px 18px 40px;max-height:85vh;overflow-y:auto}
-  .modal-close{float:right;background:rgba(255,255,255,0.08);border:none;color:#c8c0e0;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:14px;margin-bottom:12px}
-  .modal-rune-sym{font-size:80px;color:#ffd700;display:block;text-align:center;margin:10px 0;filter:drop-shadow(0 0 16px rgba(255,215,0,0.4))}
-  .modal-rune-title{font-size:20px;font-weight:700;text-align:center;margin-bottom:4px}
-  .modal-rune-sub{font-size:12px;color:#a89bc2;text-align:center;margin-bottom:14px}
-  .modal-block{margin-bottom:12px}
-  .modal-block h4{font-size:13px;color:#ffd700;margin-bottom:6px}
-  .modal-block p{font-size:13px;color:#c8c0e0;line-height:1.7}
+.btn-lang {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted);
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+html.theme-day .btn-lang { border-color: var(--border); }
+.btn-lang.active {
+  background: rgba(212,175,55,0.15);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.btn-lang:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* TOAST */
-  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.3);color:#ffd700;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* ===== MAIN CONTENT ===== */
+.content {
+  padding: 20px 16px 120px;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* ===== FORM CARD ===== */
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  margin-bottom: 16px;
+}
+
+.form-card h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.form-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* ===== TABS MODALITÀ ===== */
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mode-tab {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--muted);
+  padding: 10px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+html.theme-day .mode-tab { background: rgba(0,0,0,0.04); border-color: var(--border); }
+.mode-tab.active {
+  background: rgba(212,175,55,0.12);
+  border-color: rgba(212,175,55,0.4);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: 'Crimson Pro', serif;
+  resize: none;
+  height: 80px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+html.theme-day textarea {
+  background: rgba(255,255,255,0.7);
+  border-color: var(--border);
+  color: var(--text);
+}
+textarea::placeholder { color: rgba(184,178,209,0.5); }
+textarea:focus { outline: none; border-color: var(--gold); }
+
+.btn-draw {
+  background: linear-gradient(135deg, #1a0a2e, #4a0e6e);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 16px;
+  border-radius: 25px;
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+html.theme-day .btn-draw {
+  background: linear-gradient(135deg, var(--purple), var(--gold-dim));
+  color: #fff;
+  border-color: var(--gold-dim);
+}
+.btn-draw:hover { filter: brightness(1.15); }
+.btn-draw:active { transform: scale(0.97); }
+
+/* ===== SACCHETTO ===== */
+.bag-anim {
+  text-align: center;
+  padding: 16px 0 4px;
+  font-size: 56px;
+  cursor: pointer;
+  user-select: none;
+  animation: sway 3s ease-in-out infinite;
+}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.bag-hint { text-align:center; font-size:12px; color:var(--muted); margin-bottom:14px; }
+
+/* ===== RISULTATO ===== */
+.result-wrap { display:none; animation: fadeUp 0.5s ease; }
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* RUNA SINGOLA */
+.rune-single {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+  text-align: center;
+}
+.rune-symbol-big {
+  font-size: 96px;
+  color: var(--gold);
+  line-height: 1;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 20px var(--gold-glow));
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.rune-name {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.rune-trasl { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.verso-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.verso-badge.diritta { background:rgba(74,222,128,0.12); color:#4ade80; border:1px solid rgba(74,222,128,0.3); }
+.verso-badge.rovesciata { background:rgba(248,113,113,0.12); color:#f87171; border:1px solid rgba(248,113,113,0.3); }
+.rune-parola {
+  display: inline-block;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid var(--border);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.divider { height:1px; background:rgba(255,255,255,0.08); margin:14px 0; }
+html.theme-day .divider { background: rgba(0,0,0,0.1); }
+.rune-block { text-align: left; margin-bottom: 12px; }
+.rune-block h4 { font-family:'Cinzel',serif; font-size:13px; color:var(--gold); margin-bottom:6px; }
+.rune-block p { font-size:14px; color:var(--muted); line-height:1.7; }
+
+/* PREMIUM PREVIEW */
+.premium-preview {
+  position: relative;
+  overflow: hidden;
+}
+.premium-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, var(--card));
+  pointer-events: none;
+}
+
+/* TRE RUNE SPREAD */
+.spread-cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.spread-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 14px 8px;
+  text-align: center;
+}
+html.theme-day .spread-card { background: rgba(0,0,0,0.04); border-color: var(--border); }
+.spread-pos { font-family:'Cinzel',serif; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+.spread-sym { font-size:52px; color:var(--gold); line-height:1; margin-bottom:4px; display:inline-block; }
+.spread-rname { font-size:12px; color:var(--text); font-weight:600; margin-bottom:4px; }
+.spread-verso { font-size:11px; }
+.spread-detail {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+html.theme-day .spread-detail { border-color: var(--border); }
+.spread-detail h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.spread-detail p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+/* DOMANDA MOSTRATA */
+.question-shown {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: left;
+}
+html.theme-day .question-shown { background: rgba(0,0,0,0.05); }
+
+/* BTN RESET */
+.btn-reset {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--muted);
+  padding: 12px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Crimson Pro', serif;
+  margin-top: 14px;
+  width: 100%;
+  transition: all 0.2s;
+}
+html.theme-day .btn-reset { background: rgba(0,0,0,0.06); border-color: var(--border); }
+.btn-reset:hover { background: rgba(255,255,255,0.12); }
+
+/* SHARE BUTTONS */
+.share-section { margin: 20px 0 0; }
+.share-label { font-size: 12px; color: var(--muted); text-align: center; margin-bottom: 8px; }
+.share-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.btn-share {
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--muted);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Crimson Pro', serif;
+  transition: all 0.2s;
+}
+html.theme-day .btn-share { background: rgba(0,0,0,0.05); border-color: var(--border); }
+.btn-share:hover { border-color: var(--gold); color: var(--gold); }
+
+/* CATALOGO RUNE */
+.catalog-toggle {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--muted);
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Crimson Pro', serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  transition: all 0.2s;
+}
+html.theme-day .catalog-toggle { background: rgba(0,0,0,0.04); border-color: var(--border); }
+.catalog-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.catalog-wrap { display:none; margin-top:12px; }
+.catalog-wrap.open { display:block; }
+.catalog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:8px; }
+.catalog-item {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+html.theme-day .catalog-item { border-color: var(--border); }
+.catalog-item:hover { border-color: var(--gold); }
+.catalog-item .sym { font-size:30px; color:var(--gold); display:block; margin-bottom:4px; }
+.catalog-item .nom { font-size:12px; color:var(--text); font-weight:600; font-family:'Cinzel',serif; }
+.catalog-item .par { font-size:10px; color:var(--muted); }
+
+/* MODAL CATALOGO */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 100;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-sheet {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 660px;
+  padding: 20px 18px 50px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal-close {
+  float: right;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Crimson Pro', serif;
+  margin-bottom: 12px;
+}
+html.theme-day .modal-close { background: rgba(0,0,0,0.08); }
+.modal-rune-sym {
+  font-size: 80px;
+  color: var(--gold);
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 16px var(--gold-glow));
+}
+.modal-rune-title { font-family:'Cinzel',serif; font-size:20px; font-weight:700; text-align:center; margin-bottom:4px; color:var(--text); }
+.modal-rune-sub { font-size:12px; color:var(--muted); text-align:center; margin-bottom:14px; }
+.modal-block { margin-bottom:12px; }
+.modal-block h4 { font-family:'Cinzel',serif; font-size:13px; color:var(--gold); margin-bottom:6px; }
+.modal-block p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+/* PREMIUM MODAL */
+.premium-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.premium-modal.show { display: flex; }
+.premium-modal-content {
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+.premium-modal-content h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.premium-modal-content p { font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:10px; }
+.premium-modal-content .price { font-size:22px; font-weight:700; color:var(--text); margin: 14px 0; }
+.btn-premium {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  border: none;
+  color: #0a0514;
+  padding: 14px 24px;
+  border-radius: 25px;
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: filter 0.2s;
+}
+.btn-premium:hover { filter: brightness(1.1); }
+.btn-free {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--muted);
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+.btn-free:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ARTICOLO EDITORIALE */
+.article-section {
+  margin-top: 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+}
+.article-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.article-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--gold);
+  margin: 20px 0 8px;
+}
+.article-section p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.article-section a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.article-section a:hover { border-color: var(--gold); }
+
+/* FAQ */
+.faq-section {
+  margin-top: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+}
+.faq-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+html.theme-day .faq-item { border-bottom-color: rgba(0,0,0,0.08); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size:18px; color:var(--gold); transition:transform 0.3s; flex-shrink:0; margin-left:8px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display:none; padding:0 0 14px; font-size:13px; color:var(--muted); line-height:1.7; }
+.faq-item.open .faq-a { display:block; }
+
+/* ESPLORA CTA */
+.cta-explore {
+  display: block;
+  margin: 24px auto 0;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: #0a0514;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.2s;
+  max-width: 320px;
+  letter-spacing: 0.5px;
+}
+html.theme-day .cta-explore { color: #fff; }
+.cta-explore:hover { transform: scale(1.03); box-shadow: 0 0 20px var(--gold-glow); }
+
+/* FOOTER */
+.page-footer {
+  margin-top: 40px;
+  padding: 20px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+html.theme-day .page-footer { border-top-color: var(--border); }
+.page-footer a { color: var(--muted); text-decoration: none; }
+.page-footer a:hover { color: var(--gold); }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--card);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: 'Crimson Pro', serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 999;
+  white-space: nowrap;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+  .page-title { font-size: 17px; }
+  .btn-icon { padding: 5px 8px; font-size: 11px; }
+}
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <a class="btn-back" href="index.html">← Home</a>
-  <h1>ᚱ Oracolo Runico</h1>
-  <div class="page-subtitle">Elder Futhark · 25 Rune</div>
-</div>
+<!-- ===== HEADER STANDARD ===== -->
+<header class="page-header" role="banner">
+  <div class="header-top">
+    <a class="btn-back" href="index.html" aria-label="Torna alla Home" id="btnBack">← Home</a>
+    <div class="header-controls">
+      <button class="btn-icon" id="musicToggle" aria-label="Toggle musica" onclick="audioManager.toggle()">🔇 Musica</button>
+      <button class="btn-icon" id="themeToggle" aria-label="Toggle tema giorno/notte">☀️ Giorno</button>
+    </div>
+  </div>
+  <div class="header-center">
+    <div class="page-title" id="pageTitle">ᚱ Oracolo Runico</div>
+    <div class="page-subtitle" id="pageSubtitle">Elder Futhark · 25 Rune</div>
+  </div>
+  <div class="lang-switch" role="navigation" aria-label="Seleziona lingua">
+    <button class="btn-lang" data-lang="it" aria-label="Italiano">IT</button>
+    <button class="btn-lang" data-lang="en" aria-label="English">EN</button>
+    <button class="btn-lang" data-lang="es" aria-label="Español">ES</button>
+  </div>
+</header>
 
-<div class="content">
+<!-- ===== MAIN ===== -->
+<main class="content">
 
   <!-- FORM -->
   <div class="form-card" id="runeForm">
-    <h2>Consulta le Rune</h2>
-    <p>Le rune Elder Futhark sono un antico alfabeto nordico usato come oracolo. Concentrati sulla tua domanda e lascia che le rune parlino.</p>
+    <h2 id="formTitle">Consulta le Rune</h2>
+    <p id="formDesc">Le rune Elder Futhark sono un antico alfabeto nordico usato come oracolo. Concentrati sulla tua domanda e lascia che le rune parlino.</p>
 
     <div class="mode-tabs">
-      <div class="mode-tab active" id="tab0" onclick="selectMode(0)">ᚠ Runa Singola</div>
-      <div class="mode-tab" id="tab1" onclick="selectMode(1)">ᚱᚢᚾ Tre Rune</div>
+      <div class="mode-tab active" id="tab0" onclick="selectMode(0)" role="button" aria-pressed="true">ᚠ <span id="tab0Label">Runa Singola</span></div>
+      <div class="mode-tab" id="tab1" onclick="selectMode(1)" role="button" aria-pressed="false">ᚱᚢᚾ <span id="tab1Label">Tre Rune</span></div>
     </div>
 
-    <textarea id="runeDomanda" placeholder="Scrivi qui la tua domanda (opzionale)…"></textarea>
+    <textarea id="runeDomanda" aria-label="La tua domanda"></textarea>
 
-    <div class="bag-anim" onclick="draw()" title="Clicca per estrarre">🎒</div>
-    <div class="bag-hint">Tocca il sacchetto o il pulsante per estrarre</div>
+    <div class="bag-anim" onclick="draw()" role="button" aria-label="Estrai runa" title="Tocca per estrarre">🎒</div>
+    <div class="bag-hint" id="bagHint">Tocca il sacchetto o il pulsante per estrarre</div>
 
-    <button class="btn-draw" id="drawBtn" onclick="draw()">ᚠ Estrai la Runa</button>
+    <button class="btn-draw" id="drawBtn" onclick="draw()">ᚠ <span id="drawBtnLabel">Estrai la Runa</span></button>
   </div>
 
   <!-- RISULTATO -->
-  <div class="result-wrap" id="resultWrap"></div>
+  <div class="result-wrap" id="resultWrap" role="region" aria-live="polite"></div>
 
   <!-- CATALOGO -->
-  <button class="catalog-toggle" onclick="toggleCatalog()">📖 Catalogo delle 25 Rune ▾</button>
-  <div class="catalog-wrap" id="catalogWrap">
+  <button class="catalog-toggle" onclick="toggleCatalog()" id="catalogBtn" aria-expanded="false">📖 <span id="catalogBtnLabel">Catalogo delle 25 Rune</span> ▾</button>
+  <div class="catalog-wrap" id="catalogWrap" aria-hidden="true">
     <div class="catalog-grid" id="catalogGrid"></div>
   </div>
 
-</div>
+  <!-- ===== ARTICOLO EDITORIALE ===== -->
+  <article class="article-section" aria-label="Articolo sulle rune">
+    <h2 id="art-h1"></h2>
+    <p id="art-p1"></p>
+    <h3 id="art-h2"></h3>
+    <p id="art-p2"></p>
+    <p id="art-p3"></p>
+    <h3 id="art-h3"></h3>
+    <p id="art-p4"></p>
+    <p id="art-p5"></p>
+    <a href="./index.html" class="cta-explore" id="ctaExplore"></a>
+  </article>
 
-<!-- MODAL DETTAGLIO RUNA -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" aria-label="Domande frequenti">
+    <h2 id="faqTitle">Domande Frequenti</h2>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq1q">Cosa sono le rune Elder Futhark?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq1a">Le rune Elder Futhark sono un alfabeto runico di 24+1 simboli usati dai popoli germanici e nordici sia come scrittura sia come sistema divinatorio. Ogni runa ha un nome, un suono e un significato esoterico profondo che si sviluppa attraverso la mitologia nordica e la cosmologia vichinga.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq2q">Come funziona l'estrazione runica?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq2a">Concentrati sulla tua domanda, tocca il sacchetto o clicca il pulsante. Puoi scegliere estrazione singola (una runa per un messaggio diretto) o la diffusione Passato-Presente-Futuro con tre rune. Ogni runa è accompagnata dal significato diritta e — se invertibile — rovesciata.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq3q">Cos'è una runa rovesciata?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq3a">Alcune rune cambiano significato se estratte capovolte. Si chiama "runa rovesciata" o merkstave (segno scuro). Non è sempre negativo — spesso indica energie bloccate, resistenza interna o lezioni karmi­che da integrare. 9 rune del sistema Elder Futhark non sono invertibili (come Gebo, Hagalaz, Isa).</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq4q">Quante rune esistono in questo oracolo?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq4a">MYSTICA include tutte le 25 rune dell'Elder Futhark: le 24 rune standard più la runa bianca Wyrd (vuoto), la runa del mistero supremo che indica un momento di pura potenzialità dove tutte le possibilità sono aperte simultaneamente.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq5q">L'oracolo runico è gratuito?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq5a">Sì, l'estrazione singola e la diffusione Passato-Presente-Futuro sono completamente gratuite. Le funzioni Premium (4,99€ una tantum) includono l'archivio illimitato delle letture, le letture tematiche avanzate (Amore, Lavoro, Salute) e l'accesso completo a tutti i 25+ oracoli di MYSTICA.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q" aria-expanded="false"><span id="faq6q">Come si pronunciano i nomi delle rune?</span><span class="faq-icon" aria-hidden="true">+</span></div>
+      <div class="faq-a" id="faq6a">I nomi sono di origine proto-germanica e norrena. Fehu si pronuncia "fé-u", Uruz "u-ruz", Thurisaz "tu-ri-saz", Ansuz "an-suz". La pronuncia esatta varia tra le tradizioni, ma la cosa più importante è la connessione intuitiva con il simbolo — non la filologia perfetta.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div>© 2024–2025 MYSTICA Oracoli · <a href="./index.html">Home</a> · <a href="./index.html#privacy">Privacy</a> · <a href="./index.html#termini">Termini</a></div>
+    <div style="margin-top:6px;font-size:11px;opacity:0.7">A scopo di intrattenimento e auto-consapevolezza. Non sostituisce consigli professionali.</div>
+  </footer>
+
+</main>
+
+<!-- ===== MODAL CATALOGO ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)" role="dialog" aria-modal="true" aria-label="Dettaglio runa">
   <div class="modal-sheet" id="modalSheet">
-    <button class="modal-close" onclick="closeModalBtn()">✕ Chiudi</button>
+    <button class="modal-close" onclick="closeModalBtn()" aria-label="Chiudi">✕ Chiudi</button>
     <div id="modalContent"></div>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<!-- ===== PREMIUM MODAL ===== -->
+<div class="premium-modal" id="premiumModal" role="dialog" aria-modal="true" aria-label="Sblocca Premium">
+  <div class="premium-modal-content">
+    <h2>✦ Funzione Premium</h2>
+    <p>Sblocca letture illimitate, archivio completo e consulti avanzati (Amore, Lavoro, Salute).</p>
+    <p class="price">Solo <strong>4,99€</strong> una tantum</p>
+    <button class="btn-premium" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">✦ Sblocca MYSTICA Premium</button>
+    <button class="btn-free" onclick="closePremiumModal()">Continua Gratis</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+/* ===== MULTILINGUA ===== */
+const LANG = {
+  it: {
+    back: '← Home',
+    music: { on: '🎵 Musica', off: '🔇 Musica' },
+    theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+    pageTitle: 'ᚱ Oracolo Runico',
+    pageSubtitle: 'Elder Futhark · 25 Rune',
+    formTitle: 'Consulta le Rune',
+    formDesc: 'Le rune Elder Futhark sono un antico alfabeto nordico usato come oracolo. Concentrati sulla tua domanda e lascia che le rune parlino.',
+    placeholder: 'Scrivi qui la tua domanda (opzionale)…',
+    tab0: 'Runa Singola',
+    tab1: 'Tre Rune',
+    bagHint: 'Tocca il sacchetto o il pulsante per estrarre',
+    drawBtnSingola: 'Estrai la Runa',
+    drawBtnTre: 'Estrai le Tre Rune',
+    catalogBtn: 'Catalogo delle 25 Rune',
+    resetSingola: '🔄 Nuova Estrazione',
+    resetTre: '🔄 Nuova Lettura',
+    msgDiritta: '📜 Il Messaggio della Runa',
+    msgAmore: '💕 In Amore',
+    posDiritta: '△ Diritta',
+    posRovesciata: '▽ Rovesciata',
+    posLabels: ['PASSATO','PRESENTE','FUTURO'],
+    share: { label: 'Condividi la tua lettura:', wa: '📱 WhatsApp', tg: '✈️ Telegram', fb: '👤 Facebook', x: '✕ X', copy: '🔗 Copia link' },
+    faqTitle: 'Domande Frequenti',
+    faqs: [
+      { q:'Cosa sono le rune Elder Futhark?', a:'Le rune Elder Futhark sono un alfabeto runico di 24+1 simboli usati dai popoli germanici e nordici sia come scrittura sia come sistema divinatorio. Ogni runa ha un nome, un suono e un significato esoterico profondo che si sviluppa attraverso la mitologia nordica e la cosmologia vichinga.' },
+      { q:'Come funziona l\'estrazione runica?', a:'Concentrati sulla tua domanda, tocca il sacchetto o clicca il pulsante. Puoi scegliere estrazione singola (una runa per un messaggio diretto) o la diffusione Passato-Presente-Futuro con tre rune. Ogni runa è accompagnata dal significato diritta e — se invertibile — rovesciata.' },
+      { q:'Cos\'è una runa rovesciata?', a:'Alcune rune cambiano significato se estratte capovolte. Si chiama "runa rovesciata" o merkstave (segno scuro). Non è sempre negativo — spesso indica energie bloccate, resistenza interna o lezioni da integrare. 9 rune del sistema Elder Futhark non sono invertibili.' },
+      { q:'Quante rune esistono in questo oracolo?', a:'MYSTICA include tutte le 25 rune dell\'Elder Futhark: le 24 rune standard più la runa bianca Wyrd (vuoto), la runa del mistero supremo che indica un momento di pura potenzialità.' },
+      { q:'L\'oracolo runico è gratuito?', a:'Sì, l\'estrazione singola e la diffusione Passato-Presente-Futuro sono completamente gratuite. Le funzioni Premium (4,99€ una tantum) includono l\'archivio illimitato e le letture tematiche avanzate.' },
+      { q:'Come si pronunciano i nomi delle rune?', a:'I nomi sono di origine proto-germanica e norrena. Fehu si pronuncia "fé-u", Uruz "u-ruz", Thurisaz "tu-ri-saz". La pronuncia esatta varia tra le tradizioni, ma la connessione intuitiva col simbolo è più importante della filologia perfetta.' }
+    ],
+    artTitle: 'Le Rune Elder Futhark: L\'Alfabeto Sacro del Nord',
+    artH2: 'Storia e Origini dell\'Elder Futhark',
+    artH3: 'Come Usare le Rune come Oracolo',
+    artP1: 'Le rune non sono semplici lettere: sono simboli cosmici che i popoli germanici e nordici incidevano su pietra, legno e osso per più di duemila anni. Ogni segno racchiude una forza della natura, un archetipo, un insegnamento. Consultare le rune significa aprire un dialogo con le forze primordiali che i Vichinghi chiamavano con riverenza.',
+    artP2: 'Il nome "Futhark" nasce dalle prime sei lettere del sistema: F-U-TH-A-R-K. L\'Elder Futhark — il "Futhark Antico" — è il più vecchio sistema runico conosciuto, risalente al II–VIII secolo d.C. Le iscrizioni più antiche appaiono sulle armi dei guerrieri, sulle fibule e sulle pietre runiche della Scandinavia e del Nord Europa germanico. Mitologicamente, Odino ottenne la conoscenza delle rune attraverso un sacrificio supremo: rimase appeso all\'Yggdrasil, l\'Albero del Mondo, per nove giorni e nove notti. Al nono giorno, le rune si rivelarono a lui.',
+    artP3: 'Le 24 rune dell\'Elder Futhark sono divise in tre gruppi di otto, chiamati Ætir: l\'Ætt di Fehu (abbondanza, forza, comunicazione), l\'Ætt di Hagalaz (caos, necessità, destino) e l\'Ætt di Tiwaz (giustizia, rinascita, movimento). A queste 24 si aggiunge tradizionalmente la runa bianca Wyrd, il vuoto — il mistero senza nome.',
+    artP4: 'Nella tradizione divinatoria, le rune vengono estratte da un sacchetto di pelle dopo aver meditato sulla propria domanda. La lettura singola offre un messaggio diretto: una runa, una direzione. La diffusione Passato-Presente-Futuro con tre rune costruisce una narrativa temporale. Le rune invertibili cambiano significato se estratte capovolte — si chiama merkstave, "segno scuro": non necessariamente negativo, ma che indica forze bloccate o resistenza.',
+    artP5: 'Prima di estrarre, ferma il respiro, chiudi gli occhi e formula la domanda con precisione. Le rune rispondono alla chiarezza d\'intenzione. Puoi anche esplorare I Ching e Tarocchi per confrontare le risposte di sistemi oracolari diversi — ogni tradizione illumina un angolo diverso della stessa verità.',
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    premTitle: '✦ Funzione Premium',
+    premDesc: 'Sblocca letture illimitate, archivio completo e consulti avanzati.',
+    premPrice: 'Solo 4,99€ una tantum',
+    premBtn: '✦ Sblocca MYSTICA Premium',
+    premFree: 'Continua Gratis',
+    toastCopied: '✓ Link copiato!',
+    toastSaved: '✓ Lettura salvata',
+    seo: {
+      title: 'Oracolo Runico — Elder Futhark Online | MYSTICA Oracoli',
+      description: 'Lancia le Rune Elder Futhark online: estrazione singola o diffusione Passato-Presente-Futuro con 25 rune, significati dettagliati, verso diritta e rovesciata. Oracolo runico gratuito.',
+      keywords: 'rune elder futhark, lancio rune online, oracolo runico, rune significato, runologia, rune divinazione, fehu uruz ansuz, rune italiane, mysticaoracoli',
+      ogTitle: 'Oracolo Runico Elder Futhark | MYSTICA',
+      ogDesc: 'Estrai le rune Elder Futhark online. Lettura singola o Passato-Presente-Futuro con 25 rune e significati completi.',
+      ogLocale: 'it_IT',
+      htmlLang: 'it',
+      faqLD: [
+        { q:'Cosa sono le rune Elder Futhark?', a:'Le rune Elder Futhark sono un alfabeto runico di 24+1 simboli usati dai popoli germanici e nordici sia come scrittura sia come sistema divinatorio. Ogni runa ha un nome, un suono e un significato esoterico profondo.' },
+        { q:'Come si usa l\'oracolo runico online?', a:'Concentrati sulla tua domanda, tocca il sacchetto o clicca il pulsante. Puoi scegliere estrazione singola (una runa) o diffusione Passato-Presente-Futuro (tre rune).' },
+        { q:'Cos\'è una runa rovesciata?', a:'Alcune rune cambiano significato se estratte capovolte. Si chiama runa rovesciata o merkstave. Non è sempre negativo — spesso indica energie bloccate o lezioni da imparare.' },
+        { q:'Quante rune esistono nel sistema Elder Futhark?', a:'L\'Elder Futhark conta 24 rune più la runa bianca Wyrd (vuoto), per un totale di 25 simboli. MYSTICA include tutte e 25.' },
+        { q:'L\'oracolo runico è gratuito?', a:'Sì, l\'estrazione singola e la diffusione Passato-Presente-Futuro sono gratuite. Le funzioni Premium includono l\'archivio illimitato e le letture tematiche avanzate.' }
+      ]
+    }
+  },
+  en: {
+    back: '← Home',
+    music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+    theme: { day: '☀️ Day', night: '🌙 Night' },
+    pageTitle: 'ᚱ Runic Oracle',
+    pageSubtitle: 'Elder Futhark · 25 Runes',
+    formTitle: 'Consult the Runes',
+    formDesc: 'The Elder Futhark runes are an ancient Nordic alphabet used as an oracle. Focus on your question and let the runes speak.',
+    placeholder: 'Write your question here (optional)…',
+    tab0: 'Single Rune',
+    tab1: 'Three Runes',
+    bagHint: 'Tap the bag or the button to draw',
+    drawBtnSingola: 'Draw the Rune',
+    drawBtnTre: 'Draw Three Runes',
+    catalogBtn: 'Catalog of 25 Runes',
+    resetSingola: '🔄 New Draw',
+    resetTre: '🔄 New Reading',
+    msgDiritta: '📜 The Rune\'s Message',
+    msgAmore: '💕 In Love',
+    posDiritta: '△ Upright',
+    posRovesciata: '▽ Reversed',
+    posLabels: ['PAST','PRESENT','FUTURE'],
+    share: { label: 'Share your reading:', wa: '📱 WhatsApp', tg: '✈️ Telegram', fb: '👤 Facebook', x: '✕ X', copy: '🔗 Copy link' },
+    faqTitle: 'Frequently Asked Questions',
+    faqs: [
+      { q:'What are the Elder Futhark runes?', a:'The Elder Futhark runes are a runic alphabet of 24+1 symbols used by Germanic and Nordic peoples both as writing and as a divination system. Each rune has a name, a sound, and a deep esoteric meaning rooted in Norse mythology.' },
+      { q:'How does the runic draw work?', a:'Focus on your question, tap the bag or click the button. You can choose a single rune (one rune for a direct message) or the Past-Present-Future spread with three runes.' },
+      { q:'What is a reversed rune?', a:'Some runes change meaning when drawn upside down. This is called a "reversed rune" or merkstave (dark stave). It\'s not always negative — it often indicates blocked energies or internal resistance to integrate.' },
+      { q:'How many runes are in this oracle?', a:'MYSTICA includes all 25 Elder Futhark runes: the 24 standard runes plus the blank white rune Wyrd (void), the rune of supreme mystery.' },
+      { q:'Is the runic oracle free?', a:'Yes, single draw and Past-Present-Future spread are completely free. Premium features (€4.99 one-time) include unlimited archive and advanced themed readings.' },
+      { q:'How do rune names sound?', a:'Rune names are of Proto-Germanic and Old Norse origin. Fehu is pronounced "feh-oo", Uruz "oo-rooz". The intuitive connection with the symbol matters more than perfect philology.' }
+    ],
+    artTitle: 'Elder Futhark Runes: The Sacred Alphabet of the North',
+    artH2: 'History and Origins of the Elder Futhark',
+    artH3: 'How to Use Runes as an Oracle',
+    artP1: 'Runes are not simple letters: they are cosmic symbols that Germanic and Nordic peoples carved on stone, wood and bone for over two thousand years. Each sign contains a force of nature, an archetype, a teaching. Consulting the runes means opening a dialogue with the primordial forces the Vikings called upon with reverence.',
+    artP2: 'The name "Futhark" comes from the first six letters of the system: F-U-TH-A-R-K. The Elder Futhark — the "Ancient Futhark" — is the oldest known runic system, dating back to the 2nd–8th century AD. The oldest inscriptions appear on warriors\' weapons, fibulae and runic stones from Scandinavia and Germanic Northern Europe. Mythologically, Odin obtained knowledge of the runes through a supreme sacrifice: he hung from Yggdrasil, the World Tree, for nine days and nights. On the ninth day, the runes revealed themselves to him.',
+    artP3: 'The 24 Elder Futhark runes are divided into three groups of eight, called Ætir: the Ætt of Fehu (abundance, strength, communication), the Ætt of Hagalaz (chaos, necessity, fate) and the Ætt of Tiwaz (justice, rebirth, movement). To these 24 is traditionally added the blank white rune Wyrd, the void — the nameless mystery.',
+    artP4: 'In the divinatory tradition, runes are drawn from a leather pouch after meditating on one\'s question. A single draw offers a direct message: one rune, one direction. The Past-Present-Future spread with three runes builds a temporal narrative. Reversible runes change meaning when drawn upside down — this is called merkstave, "dark stave": not necessarily negative, but indicating blocked forces or resistance.',
+    artP5: 'Before drawing, pause your breath, close your eyes and formulate your question with precision. Runes respond to clarity of intention. You can also explore I Ching and Tarot to compare answers from different oracular systems — each tradition illuminates a different angle of the same truth.',
+    ctaExplore: '🔍 Explore Other Categories',
+    premTitle: '✦ Premium Feature',
+    premDesc: 'Unlock unlimited readings, complete archive and advanced consultations.',
+    premPrice: 'Only €4.99 one-time',
+    premBtn: '✦ Unlock MYSTICA Premium',
+    premFree: 'Continue Free',
+    toastCopied: '✓ Link copied!',
+    toastSaved: '✓ Reading saved',
+    seo: {
+      title: 'Runic Oracle — Elder Futhark Online | MYSTICA Oracles',
+      description: 'Cast Elder Futhark Runes online: single draw or Past-Present-Future spread with 25 runes, detailed meanings, upright and reversed. Free runic oracle.',
+      keywords: 'elder futhark runes, runic oracle online, rune reading, rune meanings, runology, rune divination, fehu uruz ansuz, mysticaoracoli',
+      ogTitle: 'Elder Futhark Runic Oracle | MYSTICA',
+      ogDesc: 'Draw Elder Futhark runes online. Single draw or Past-Present-Future spread with 25 runes and complete meanings.',
+      ogLocale: 'en_US',
+      htmlLang: 'en',
+      faqLD: [
+        { q:'What are the Elder Futhark runes?', a:'The Elder Futhark runes are a runic alphabet of 24+1 symbols used by Germanic and Nordic peoples both as writing and as a divination system. Each rune has a name, a sound, and a deep esoteric meaning.' },
+        { q:'How do I use the runic oracle online?', a:'Focus on your question, tap the bag or click the button. You can choose a single rune draw or the Past-Present-Future spread with three runes.' },
+        { q:'What is a reversed rune?', a:'Some runes change meaning when drawn upside down. This is called a reversed rune or merkstave. It\'s not always negative — it often indicates blocked energies or lessons to integrate.' },
+        { q:'How many runes are in the Elder Futhark system?', a:'The Elder Futhark has 24 runes plus the blank white rune Wyrd (void), for a total of 25 symbols. MYSTICA includes all 25.' },
+        { q:'Is the runic oracle free?', a:'Yes, the single draw and Past-Present-Future spread are free. Premium features include unlimited archive and advanced themed readings.' }
+      ]
+    }
+  },
+  es: {
+    back: '← Inicio',
+    music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+    theme: { day: '☀️ Día', night: '🌙 Noche' },
+    pageTitle: 'ᚱ Oráculo Rúnico',
+    pageSubtitle: 'Elder Futhark · 25 Runas',
+    formTitle: 'Consulta las Runas',
+    formDesc: 'Las runas Elder Futhark son un antiguo alfabeto nórdico usado como oráculo. Concéntrate en tu pregunta y deja que las runas hablen.',
+    placeholder: 'Escribe tu pregunta aquí (opcional)…',
+    tab0: 'Runa Individual',
+    tab1: 'Tres Runas',
+    bagHint: 'Toca la bolsa o el botón para extraer',
+    drawBtnSingola: 'Extraer la Runa',
+    drawBtnTre: 'Extraer las Tres Runas',
+    catalogBtn: 'Catálogo de 25 Runas',
+    resetSingola: '🔄 Nueva Extracción',
+    resetTre: '🔄 Nueva Lectura',
+    msgDiritta: '📜 El Mensaje de la Runa',
+    msgAmore: '💕 En el Amor',
+    posDiritta: '△ Derecha',
+    posRovesciata: '▽ Invertida',
+    posLabels: ['PASADO','PRESENTE','FUTURO'],
+    share: { label: 'Comparte tu lectura:', wa: '📱 WhatsApp', tg: '✈️ Telegram', fb: '👤 Facebook', x: '✕ X', copy: '🔗 Copiar enlace' },
+    faqTitle: 'Preguntas Frecuentes',
+    faqs: [
+      { q:'¿Qué son las runas Elder Futhark?', a:'Las runas Elder Futhark son un alfabeto rúnico de 24+1 símbolos utilizados por los pueblos germánicos y nórdicos tanto como escritura como sistema de adivinación. Cada runa tiene un nombre, un sonido y un significado esotérico profundo.' },
+      { q:'¿Cómo funciona la extracción rúnica?', a:'Concéntrate en tu pregunta, toca la bolsa o haz clic en el botón. Puedes elegir extracción individual (una runa) o la difusión Pasado-Presente-Futuro con tres runas.' },
+      { q:'¿Qué es una runa invertida?', a:'Algunas runas cambian de significado cuando se extraen al revés. Se llama "runa invertida" o merkstave (signo oscuro). No siempre es negativo — a menudo indica energías bloqueadas o resistencia interna.' },
+      { q:'¿Cuántas runas hay en este oráculo?', a:'MYSTICA incluye las 25 runas del Elder Futhark: las 24 runas estándar más la runa blanca Wyrd (vacío), la runa del misterio supremo.' },
+      { q:'¿Es gratuito el oráculo rúnico?', a:'Sí, la extracción individual y la difusión Pasado-Presente-Futuro son completamente gratuitas. Las funciones Premium (4,99€ único) incluyen el archivo ilimitado y lecturas temáticas avanzadas.' },
+      { q:'¿Cómo se pronuncian los nombres de las runas?', a:'Los nombres son de origen protogermánico y nórdico antiguo. Fehu se pronuncia "fé-u", Uruz "u-ruz". La conexión intuitiva con el símbolo es más importante que la filología perfecta.' }
+    ],
+    artTitle: 'Las Runas Elder Futhark: El Alfabeto Sagrado del Norte',
+    artH2: 'Historia y Orígenes del Elder Futhark',
+    artH3: 'Cómo Usar las Runas como Oráculo',
+    artP1: 'Las runas no son simples letras: son símbolos cósmicos que los pueblos germánicos y nórdicos grababan en piedra, madera y hueso durante más de dos mil años. Cada signo contiene una fuerza de la naturaleza, un arquetipo, una enseñanza. Consultar las runas significa abrir un diálogo con las fuerzas primordiales que los vikingos invocaban con reverencia.',
+    artP2: 'El nombre "Futhark" proviene de las primeras seis letras del sistema: F-U-TH-A-R-K. El Elder Futhark — el "Futhark Antiguo" — es el sistema rúnico más antiguo conocido, que data del siglo II al VIII d.C. Las inscripciones más antiguas aparecen en armas de guerreros, fíbulas y piedras rúnicas de Escandinavia y el norte de Europa germánico. Mitológicamente, Odín obtuvo el conocimiento de las runas a través de un sacrificio supremo: permaneció colgado del Yggdrasil, el Árbol del Mundo, durante nueve días y noches. Al noveno día, las runas se le revelaron.',
+    artP3: 'Las 24 runas del Elder Futhark se dividen en tres grupos de ocho, llamados Ætir: el Ætt de Fehu (abundancia, fuerza, comunicación), el Ætt de Hagalaz (caos, necesidad, destino) y el Ætt de Tiwaz (justicia, renacimiento, movimiento). A estas 24 se añade tradicionalmente la runa blanca Wyrd, el vacío — el misterio sin nombre.',
+    artP4: 'En la tradición adivinatoria, las runas se extraen de una bolsa de cuero tras meditar sobre la propia pregunta. La extracción individual ofrece un mensaje directo: una runa, una dirección. La difusión Pasado-Presente-Futuro con tres runas construye una narrativa temporal. Las runas invertibles cambian de significado si se extraen al revés — se llama merkstave, "signo oscuro": no necesariamente negativo, sino que indica fuerzas bloqueadas o resistencia.',
+    artP5: 'Antes de extraer, detén tu respiración, cierra los ojos y formula la pregunta con precisión. Las runas responden a la claridad de intención. También puedes explorar el I Ching y el Tarot para comparar las respuestas de diferentes sistemas oraculares — cada tradición ilumina un ángulo diferente de la misma verdad.',
+    ctaExplore: '🔍 Explorar Otras Categorías',
+    premTitle: '✦ Función Premium',
+    premDesc: 'Desbloquea lecturas ilimitadas, archivo completo y consultas avanzadas.',
+    premPrice: 'Solo 4,99€ pago único',
+    premBtn: '✦ Desbloquear MYSTICA Premium',
+    premFree: 'Continuar Gratis',
+    toastCopied: '✓ ¡Enlace copiado!',
+    toastSaved: '✓ Lectura guardada',
+    seo: {
+      title: 'Oráculo Rúnico — Elder Futhark Online | MYSTICA Oráculos',
+      description: 'Lanza las Runas Elder Futhark online: extracción individual o difusión Pasado-Presente-Futuro con 25 runas, significados detallados, derecha e invertida. Oráculo rúnico gratuito.',
+      keywords: 'runas elder futhark, oráculo rúnico online, lectura de runas, significado runas, runología, adivinación runas, fehu uruz ansuz, mysticaoracoli',
+      ogTitle: 'Oráculo Rúnico Elder Futhark | MYSTICA',
+      ogDesc: 'Extrae las runas Elder Futhark online. Extracción individual o Pasado-Presente-Futuro con 25 runas y significados completos.',
+      ogLocale: 'es_ES',
+      htmlLang: 'es',
+      faqLD: [
+        { q:'¿Qué son las runas Elder Futhark?', a:'Las runas Elder Futhark son un alfabeto rúnico de 24+1 símbolos utilizados por los pueblos germánicos y nórdicos tanto como escritura como sistema de adivinación. Cada runa tiene un nombre, un sonido y un significado esotérico profundo.' },
+        { q:'¿Cómo se usa el oráculo rúnico online?', a:'Concéntrate en tu pregunta, toca la bolsa o haz clic en el botón. Puedes elegir extracción individual (una runa) o la difusión Pasado-Presente-Futuro con tres runas.' },
+        { q:'¿Qué es una runa invertida?', a:'Algunas runas cambian de significado cuando se extraen al revés. Se llama runa invertida o merkstave. No siempre es negativo — a menudo indica energías bloqueadas o lecciones a integrar.' },
+        { q:'¿Cuántas runas hay en el sistema Elder Futhark?', a:'El Elder Futhark tiene 24 runas más la runa blanca Wyrd (vacío), para un total de 25 símbolos. MYSTICA incluye las 25.' },
+        { q:'¿Es gratuito el oráculo rúnico?', a:'Sí, la extracción individual y la difusión Pasado-Presente-Futuro son gratuitas. Las funciones Premium incluyen el archivo ilimitado y lecturas temáticas avanzadas.' }
+      ]
+    }
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+function t(key) {
+  return LANG[currentLang][key] !== undefined ? LANG[currentLang][key] : key;
+}
+
+/* ===== SEO DINAMICO ===== */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  // html lang
+  document.documentElement.lang = S.htmlLang;
+  // title
+  document.title = S.title;
+  // meta description
+  document.querySelector('meta[name="description"]').content = S.description;
+  // meta keywords
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  // OG
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  // Twitter
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+  // JSON-LD FAQPage — rigenerato nella lingua corrente
+  const existingLD = document.querySelector('script[type="application/ld+json"]');
+  if (existingLD) {
+    existingLD.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: S.faqLD.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a }
+      }))
+    });
+  }
+}
+
+function applyLang() {
+  const L = LANG[currentLang];
+  document.documentElement.lang = currentLang;
+  document.getElementById('pageTitle').textContent = L.pageTitle;
+  document.getElementById('pageSubtitle').textContent = L.pageSubtitle;
+  document.getElementById('btnBack').textContent = L.back;
+  document.getElementById('formTitle').textContent = L.formTitle;
+  document.getElementById('formDesc').textContent = L.formDesc;
+  document.getElementById('runeDomanda').placeholder = L.placeholder;
+  document.getElementById('tab0Label').textContent = L.tab0;
+  document.getElementById('tab1Label').textContent = L.tab1;
+  document.getElementById('bagHint').textContent = L.bagHint;
+  document.getElementById('drawBtnLabel').textContent = _mode===0 ? L.drawBtnSingola : L.drawBtnTre;
+  document.getElementById('catalogBtnLabel').textContent = L.catalogBtn;
+  document.getElementById('faqTitle').textContent = L.faqTitle;
+  document.getElementById('art-h1').textContent = L.artTitle;
+  document.getElementById('art-h2').textContent = L.artH2;
+  document.getElementById('art-h3').textContent = L.artH3;
+  document.getElementById('art-p1').textContent = L.artP1;
+  document.getElementById('art-p2').textContent = L.artP2;
+  document.getElementById('art-p3').textContent = L.artP3;
+  document.getElementById('art-p4').textContent = L.artP4;
+  document.getElementById('art-p5').textContent = L.artP5;
+  document.getElementById('ctaExplore').textContent = L.ctaExplore;
+  // Premium modal
+  document.querySelector('.premium-modal-content h2').textContent = L.premTitle;
+  // FAQ
+  L.faqs.forEach((faq, i) => {
+    const qEl = document.getElementById(`faq${i+1}q`);
+    const aEl = document.getElementById(`faq${i+1}a`);
+    if (qEl) qEl.textContent = faq.q;
+    if (aEl) aEl.textContent = faq.a;
+  });
+  // Update SEO (title, meta, OG, JSON-LD)
+  updateSEO();
+  // Update music btn
+  updateMusicBtn();
+  // Update theme btn
+  updateThemeBtn();
+  // Active lang btn
+  document.querySelectorAll('.btn-lang').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === currentLang);
+  });
+}
+
+// Lang switch
+document.querySelectorAll('.btn-lang').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = btn.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+  });
+});
+
+/* ===== TEMA ===== */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function updateThemeBtn() {
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  btn.textContent = isDayMode ? L.theme.night : L.theme.day;
+}
+
+function applyTheme(isDay) {
+  if (isDay) {
+    document.documentElement.classList.add('theme-day');
+  } else {
+    document.documentElement.classList.remove('theme-day');
+  }
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+  updateThemeBtn();
+}
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  isDayMode = !isDayMode;
+  applyTheme(isDayMode);
+});
+
+/* ===== AUDIO MANAGER ===== */
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+const AUDIO_KEY = 'myst_audio_state';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+  }
+  play() {
+    if (!this.audio) this.initAudio();
+    this.audio.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    if (this.audio) this.audio.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() {
+    if (this.isPlaying) this.pause();
+    else this.play();
+  }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    if (btn) {
+      const L = LANG[currentLang];
+      btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+    }
+  }
+}
+
+window.audioManager = new AudioManager();
+
+function updateMusicBtn() {
+  audioManager.updateUI();
+}
+
+/* ===== PREMIUM ===== */
+function requirePremium() {
+  if (localStorage.getItem('myst_premium') === '1') return true;
+  document.getElementById('premiumModal').classList.add('show');
+  return false;
+}
+
+function closePremiumModal() {
+  document.getElementById('premiumModal').classList.remove('show');
+}
+
+/* ===== DB RUNE ===== */
 const DB_RUNE = [
   { sim:'ᚠ', nome:'Fehu', trasl:'F', invertibile:true,
     diritta:'Fehu è la runa della ricchezza guadagnata — non ereditata, non rubata, ma creata con le mani e la mente. Annuncia abbondanza materiale, successo nei progetti finanziari e il frutto di un lavoro onesto. È anche la runa del fuoco primordiale che anima ogni creazione. In questo momento le forze del fuoco cosmico sono con te: ciò che hai seminato sta per dare frutti.',
-    rovesciata:'Fehu rovesciata segnala perdita finanziaria, frustrazione nei progetti o energie mal indirizzate. Il denaro che non circola marcisce — controlla se stai trattenendo risorse (materiali o emotivi) invece di metterle in circolazione. Rivedi i tuoi investimenti di tempo e energia.',
+    rovesciata:'Fehu rovesciata segnala perdita finanziaria, frustrazione nei progetti o energie mal indirizzate. Il denaro che non circola marcisce — controlla se stai trattenendo risorse invece di metterle in circolazione. Rivedi i tuoi investimenti di tempo e energia.',
     amore:'Prosperità emotiva in arrivo. Una relazione si arricchisce di nuova vitalità.',
     parola:'Abbondanza', elemento:'Fuoco' },
 
@@ -250,14 +1350,14 @@ const DB_RUNE = [
     parola:'Raccolto', elemento:'Terra' },
 
   { sim:'ᛇ', nome:'Eihwaz', trasl:'EI', invertibile:false,
-    diritta:'Eihwaz è il tasso — l\'albero dell\'immortalità che cresce tra i mondi. Rappresenta la connessione tra vita e morte, tra il visibile e l\'invisibile. Sei in un momento di transizione profonda. Hai la forza di resistere alle prove più difficili. Questa runa è una delle più potenti come amuleto di protezione.',
+    diritta:'Eihwaz è il tasso — l\'albero della vita e della morte, il custode dei confini tra i mondi. Questa runa indica protezione durante i periodi di trasformazione profonda. Sei in un passaggio: non è ancora la fine, non è ancora l\'inizio. Fidati del processo e rimani radicato.',
     rovesciata:null,
-    amore:'Un amore che attraversa trasformazioni profonde e ne emerge più forte.',
-    parola:'Resilienza', elemento:'Terra' },
+    amore:'Amore come protezione reciproca attraverso le trasformazioni.',
+    parola:'Trasformazione', elemento:'Fuoco' },
 
   { sim:'ᛈ', nome:'Perthro', trasl:'P', invertibile:true,
-    diritta:'Perthro è il calice del destino — il mistero, il gioco del fato, ciò che è ancora nascosto nel ventre del futuro. Indica che stai per scoprire qualcosa di sorprendente, o che una situazione ha risvolti che non vedi ancora. Tratta la vita come un gioco divino e accetta l\'incertezza con curiosità.',
-    rovesciata:'Perthro rovesciata porta segreti svelati male, sorprese spiacevoli o comportamenti dipendenti da abitudini difficili da spezzare.',
+    diritta:'Perthro è il calderone del destino — il mistero, il caso, la fortuna nascosta. Rappresenta il gioco del destino che non può essere controllato ma solo accolto. Qualcosa di nascosto sta per rivelarsi. Segreti vengono alla luce. La sorte ti sorprenderà.',
+    rovesciata:'Perthro rovesciata indica segreti dolorosi, situazioni fuori controllo o la necessità di lasciar andare l\'illusione di controllo sul destino.',
     amore:'Misteri e sorprese in amore. Non tutto è come sembra.',
     parola:'Destino', elemento:'Acqua' },
 
@@ -328,182 +1428,252 @@ const DB_RUNE = [
     parola:'Mistero', elemento:'Spirito' }
 ];
 
-let _mode = 0; // 0=singola, 1=tre
+/* ===== LOGICA ORACLE ===== */
+let _mode = 0;
 
-function selectMode(m){
+function selectMode(m) {
   _mode = m;
+  const L = LANG[currentLang];
   document.getElementById('tab0').classList.toggle('active', m===0);
   document.getElementById('tab1').classList.toggle('active', m===1);
-  document.getElementById('drawBtn').textContent = m===0 ? 'ᚠ Estrai la Runa' : 'ᚱᚢᚾ Estrai le Tre Rune';
+  document.getElementById('tab0').setAttribute('aria-pressed', m===0 ? 'true' : 'false');
+  document.getElementById('tab1').setAttribute('aria-pressed', m===1 ? 'true' : 'false');
+  document.getElementById('drawBtnLabel').textContent = m===0 ? L.drawBtnSingola : L.drawBtnTre;
 }
 
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2800);
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-function runaRandom(){
-  const r=DB_RUNE[Math.floor(Math.random()*DB_RUNE.length)];
-  const rovesciata=r.invertibile && Math.random()<0.35;
+function runaRandom() {
+  const r = DB_RUNE[Math.floor(Math.random() * DB_RUNE.length)];
+  const rovesciata = r.invertibile && Math.random() < 0.35;
   return {...r, rovesciata};
 }
 
-function draw(){
-  if(_mode===0) drawSingola();
+function draw() {
+  if (_mode === 0) drawSingola();
   else drawTre();
 }
 
-function drawSingola(){
-  const r=runaRandom();
-  const domanda=(document.getElementById('runeDomanda').value||'').trim();
-  const msg=r.rovesciata && r.rovesciata ? r.rovesciata : r.diritta;
+function drawSingola() {
+  const r = runaRandom();
+  const L = LANG[currentLang];
+  const domanda = (document.getElementById('runeDomanda').value || '').trim();
+  const msg = r.rovesciata && r.rovesciata ? r.rovesciata : r.diritta;
 
-  const versoBadge=r.invertibile
-    ? `<span class="verso-badge ${r.rovesciata?'rovesciata':'diritta'}">${r.rovesciata?'▽ Rovesciata':'△ Diritta'}</span>`
+  const versoBadge = r.invertibile
+    ? `<span class="verso-badge ${r.rovesciata ? 'rovesciata' : 'diritta'}">${r.rovesciata ? L.posRovesciata : L.posDiritta}</span>`
     : '';
 
-  const qHtml=domanda ? `<div class="question-shown">❓ "${domanda}"</div>` : '';
+  const qHtml = domanda ? `<div class="question-shown">❓ "${domanda}"</div>` : '';
 
-  document.getElementById('resultWrap').innerHTML=`
+  // Share snippet
+  const shareText = `✦ MYSTICA — Oracolo Runico\n${r.sim} ${r.nome} (${r.parola})\n${r.rovesciata ? '▽ Rovesciata' : '△ Diritta'}\n\nhttps://mysticaoracoli.it/rune.html`;
+
+  document.getElementById('resultWrap').innerHTML = `
     <div class="rune-single">
       ${qHtml}
-      <div class="rune-symbol-big" style="transform:${r.rovesciata?'rotate(180deg)':'none'}">${r.sim}</div>
+      <div class="rune-symbol-big" style="transform:${r.rovesciata ? 'rotate(180deg)' : 'none'}" aria-hidden="true">${r.sim}</div>
       <div class="rune-name">${r.nome}</div>
-      <div class="rune-trasl">Traslitterazione: ${r.trasl} · ${r.elemento}</div>
+      <div class="rune-trasl">Traslitt: ${r.trasl} · ${r.elemento}</div>
       ${versoBadge}
       <div class="rune-parola">✦ ${r.parola}</div>
       <div class="divider"></div>
       <div class="rune-block">
-        <h4>📜 Il Messaggio della Runa</h4>
+        <h4>${L.msgDiritta}</h4>
         <p>${msg}</p>
       </div>
       <div class="rune-block">
-        <h4>💕 In Amore</h4>
+        <h4>${L.msgAmore}</h4>
         <p>${r.amore}</p>
       </div>
-      <button class="btn-reset" onclick="reset()">🔄 Nuova Estrazione</button>
+      <div class="share-section">
+        <div class="share-label">${L.share.label}</div>
+        <div class="share-btns">
+          <button class="btn-share" onclick="shareWA(${JSON.stringify(shareText)})" aria-label="Condividi su WhatsApp">${L.share.wa}</button>
+          <button class="btn-share" onclick="shareTG(${JSON.stringify(shareText)})" aria-label="Condividi su Telegram">${L.share.tg}</button>
+          <button class="btn-share" onclick="shareFB()" aria-label="Condividi su Facebook">${L.share.fb}</button>
+          <button class="btn-share" onclick="copyLink()" aria-label="Copia link">${L.share.copy}</button>
+        </div>
+      </div>
+      <button class="btn-reset" onclick="reset()">${L.resetSingola}</button>
     </div>
   `;
 
-  show();
-  saveHistory('Runologia', r.nome+(r.rovesciata?' (rovesciata)':'')+' — '+r.parola);
+  showResult();
+  saveHistory('Runologia', r.nome + (r.rovesciata ? ' (rovesciata)' : '') + ' — ' + r.parola);
 }
 
-function drawTre(){
-  const pool=[...DB_RUNE];
-  const drawn=[];
-  for(let i=0;i<3;i++){
-    const idx=Math.floor(Math.random()*pool.length);
-    const r=pool.splice(idx,1)[0];
-    drawn.push({...r, rovesciata:r.invertibile&&Math.random()<0.35});
+function drawTre() {
+  const L = LANG[currentLang];
+  const pool = [...DB_RUNE];
+  const drawn = [];
+  for (let i = 0; i < 3; i++) {
+    const idx = Math.floor(Math.random() * pool.length);
+    const r = pool.splice(idx, 1)[0];
+    drawn.push({...r, rovesciata: r.invertibile && Math.random() < 0.35});
   }
-  const pos=['PASSATO','PRESENTE','FUTURO'];
-  const pcol=['#a0a0ff','#ffd700','#ffb347'];
-  const domanda=(document.getElementById('runeDomanda').value||'').trim();
-  const qHtml=domanda?`<div class="question-shown">❓ "${domanda}"</div>`:'';
+  const pos = L.posLabels;
+  const pcol = ['#a0a0ff','#ffd700','#ffb347'];
+  const domanda = (document.getElementById('runeDomanda').value || '').trim();
+  const qHtml = domanda ? `<div class="question-shown">❓ "${domanda}"</div>` : '';
 
-  const cards=drawn.map((r,i)=>`
+  const cards = drawn.map((r, i) => `
     <div class="spread-card">
       <div class="spread-pos" style="color:${pcol[i]}">${pos[i]}</div>
-      <div class="spread-sym" style="transform:${r.rovesciata?'rotate(180deg)':'none'}">${r.sim}</div>
+      <div class="spread-sym" style="transform:${r.rovesciata ? 'rotate(180deg)' : 'none'}" aria-hidden="true">${r.sim}</div>
       <div class="spread-rname">${r.nome}</div>
-      <div class="spread-verso">${r.rovesciata?'<span style="color:#f87171">▽ Rovesciata</span>':'<span style="color:#4ade80">△ Diritta</span>'}</div>
+      <div class="spread-verso">${r.rovesciata ? `<span style="color:#f87171">${L.posRovesciata}</span>` : `<span style="color:#4ade80">${L.posDiritta}</span>`}</div>
     </div>`).join('');
 
-  const details=drawn.map((r,i)=>{
-    const msg=r.rovesciata&&r.rovesciata?r.rovesciata:r.diritta;
+  const details = drawn.map((r, i) => {
+    const msg = r.rovesciata && r.rovesciata ? r.rovesciata : r.diritta;
     return `
     <div class="spread-detail">
       <h4>
-        <span style="font-size:22px">${r.sim}</span>
+        <span style="font-size:22px" aria-hidden="true">${r.sim}</span>
         ${r.nome}
         <span style="color:${pcol[i]};font-size:10px;text-transform:uppercase;letter-spacing:1px">${pos[i]}</span>
-        <span style="color:#a89bc2;font-size:10px">${r.rovesciata?'· Rovesciata':''}</span>
+        <span style="color:var(--muted);font-size:10px">${r.rovesciata ? `· ${L.posRovesciata}` : ''}</span>
       </h4>
       <p>${msg}</p>
     </div>`;
   }).join('');
 
-  document.getElementById('resultWrap').innerHTML=`
+  const shareText = `✦ MYSTICA — Oracolo Runico\n${drawn.map((r,i) => `${pos[i]}: ${r.sim} ${r.nome}`).join('\n')}\n\nhttps://mysticaoracoli.it/rune.html`;
+
+  document.getElementById('resultWrap').innerHTML = `
     ${qHtml}
     <div class="spread-cards">${cards}</div>
     ${details}
-    <button class="btn-reset" onclick="reset()" style="margin-top:6px">🔄 Nuova Lettura</button>
+    <div class="share-section">
+      <div class="share-label">${L.share.label}</div>
+      <div class="share-btns">
+        <button class="btn-share" onclick="shareWA(${JSON.stringify(shareText)})" aria-label="WhatsApp">${L.share.wa}</button>
+        <button class="btn-share" onclick="shareTG(${JSON.stringify(shareText)})" aria-label="Telegram">${L.share.tg}</button>
+        <button class="btn-share" onclick="copyLink()" aria-label="Copia">${L.share.copy}</button>
+      </div>
+    </div>
+    <button class="btn-reset" onclick="reset()" style="margin-top:6px">${L.resetTre}</button>
   `;
 
-  show();
-  saveHistory('Runologia 3 Rune', drawn.map(r=>r.nome+(r.rovesciata?'℞':'')).join(' · '));
+  showResult();
+  saveHistory('Runologia 3 Rune', drawn.map(r => r.nome + (r.rovesciata ? '℞' : '')).join(' · '));
 }
 
-function show(){
-  document.getElementById('runeForm').style.display='none';
-  const rw=document.getElementById('resultWrap');
-  rw.style.display='block';
-  rw.scrollIntoView({behavior:'smooth',block:'start'});
+function showResult() {
+  document.getElementById('runeForm').style.display = 'none';
+  const rw = document.getElementById('resultWrap');
+  rw.style.display = 'block';
+  rw.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-function reset(){
-  document.getElementById('runeForm').style.display='block';
-  document.getElementById('resultWrap').style.display='none';
-  document.getElementById('resultWrap').innerHTML='';
-  document.getElementById('runeDomanda').value='';
-  window.scrollTo({top:0,behavior:'smooth'});
+function reset() {
+  document.getElementById('runeForm').style.display = 'block';
+  const rw = document.getElementById('resultWrap');
+  rw.style.display = 'none';
+  rw.innerHTML = '';
+  document.getElementById('runeDomanda').value = '';
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-function toggleCatalog(){
-  const w=document.getElementById('catalogWrap');
-  w.classList.toggle('open');
-  if(w.classList.contains('open') && !document.getElementById('catalogGrid').children.length){
-    buildCatalog();
-  }
+/* ===== CATALOGO ===== */
+function toggleCatalog() {
+  const w = document.getElementById('catalogWrap');
+  const btn = document.getElementById('catalogBtn');
+  const isOpen = w.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  w.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  if (isOpen && !document.getElementById('catalogGrid').children.length) buildCatalog();
 }
 
-function buildCatalog(){
-  document.getElementById('catalogGrid').innerHTML=DB_RUNE.map((r,i)=>`
-    <div class="catalog-item" onclick="openModal(${i})">
-      <span class="sym">${r.sim}</span>
+function buildCatalog() {
+  document.getElementById('catalogGrid').innerHTML = DB_RUNE.map((r, i) => `
+    <div class="catalog-item" onclick="openModal(${i})" role="button" aria-label="Dettaglio runa ${r.nome}" tabindex="0">
+      <span class="sym" aria-hidden="true">${r.sim}</span>
       <div class="nom">${r.nome}</div>
       <div class="par">${r.parola}</div>
     </div>`).join('');
 }
 
-function openModal(idx){
-  const r=DB_RUNE[idx];
-  document.getElementById('modalContent').innerHTML=`
-    <span class="modal-rune-sym">${r.sim}</span>
+function openModal(idx) {
+  const r = DB_RUNE[idx];
+  document.getElementById('modalContent').innerHTML = `
+    <span class="modal-rune-sym" aria-hidden="true">${r.sim}</span>
     <div class="modal-rune-title">${r.nome}</div>
-    <div class="modal-rune-sub">Traslitt: ${r.trasl} · Elemento: ${r.elemento} · ${r.invertibile?'Invertibile':'Non invertibile'}</div>
-    <div style="text-align:center;margin-bottom:14px"><span style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.25);padding:3px 14px;border-radius:20px;font-size:12px;color:#ffd700">✦ ${r.parola}</span></div>
+    <div class="modal-rune-sub">Traslitt: ${r.trasl} · Elemento: ${r.elemento} · ${r.invertibile ? 'Invertibile' : 'Non invertibile'}</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <span style="background:rgba(212,175,55,0.1);border:1px solid var(--border);padding:3px 14px;border-radius:20px;font-size:12px;color:var(--gold)">✦ ${r.parola}</span>
+    </div>
     <div class="modal-block">
       <h4>📜 Significato (Diritta)</h4>
       <p>${r.diritta}</p>
     </div>
-    ${r.rovesciata?`<div class="modal-block"><h4>🔃 Significato (Rovesciata)</h4><p>${r.rovesciata}</p></div>`:'<div class="modal-block" style="opacity:0.5"><h4>— Non invertibile</h4></div>'}
+    ${r.rovesciata
+      ? `<div class="modal-block"><h4>🔃 Significato (Rovesciata)</h4><p>${r.rovesciata}</p></div>`
+      : `<div class="modal-block" style="opacity:0.5"><h4>— Non invertibile</h4></div>`}
     <div class="modal-block">
       <h4>💕 In Amore</h4>
       <p>${r.amore}</p>
     </div>
   `;
   document.getElementById('modalOverlay').classList.add('open');
+  document.querySelector('.modal-sheet').focus();
 }
 
-function closeModal(e){
-  if(e.target===document.getElementById('modalOverlay')) closeModalBtn();
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
 }
-function closeModalBtn(){
+function closeModalBtn() {
   document.getElementById('modalOverlay').classList.remove('open');
 }
 
-function saveHistory(tipo, dettaglio){
-  try{
-    let h=JSON.parse(localStorage.getItem('myst_v3_history')||'[]');
-    h.unshift({tipo,dettaglio,data:new Date().toLocaleString('it-IT'),ts:Date.now()});
-    if(h.length>60) h.pop();
-    localStorage.setItem('myst_v3_history',JSON.stringify(h));
-  }catch(e){}
+/* ===== SHARE ===== */
+function shareWA(text) {
+  const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
 }
-</script>
+function shareTG(text) {
+  const url = `https://t.me/share/url?url=https://mysticaoracoli.it/rune.html&text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+}
+function shareFB() {
+  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://mysticaoracoli.it/rune.html')}`;
+  window.open(url, '_blank');
+}
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText('https://mysticaoracoli.it/rune.html');
+    toast(LANG[currentLang].toastCopied);
+  } catch {
+    toast('https://mysticaoracoli.it/rune.html');
+  }
+}
 
+/* ===== HISTORY ===== */
+function saveHistory(tipo, dettaglio) {
+  try {
+    let h = JSON.parse(localStorage.getItem('myst_v3_history') || '[]');
+    h.unshift({tipo, dettaglio, data: new Date().toLocaleString('it-IT'), ts: Date.now()});
+    if (h.length > 60) h.pop();
+    localStorage.setItem('myst_v3_history', JSON.stringify(h));
+  } catch(e) {}
+}
+
+/* ===== FAQ ACCORDION ===== */
+function toggleFaq(item) {
+  item.classList.toggle('open');
+  const q = item.querySelector('.faq-q');
+  if (q) q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+}
+
+/* ===== INIT ===== */
+applyTheme(isDayMode);
+applyLang();
+</script>
 </body>
 </html>
