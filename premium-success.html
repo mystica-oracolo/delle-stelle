@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Premium Attivato — MYSTICA Oracoli</title>
+<meta name="description" content="Il tuo accesso Premium MYSTICA è stato attivato con successo. Benvenuto nel mondo esoterico senza limiti.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://mysticaoracoli.it/premium-success.html">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0514;--card:#140c24;--purple:#2a1748;
+  --gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);
+  --text:#f4f1fa;--muted:#b8b2d1;--radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;
+  min-height:100vh;overflow-x:hidden;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.cosmos{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%,#2a174830 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%,#1a073820 0%,transparent 60%),
+    radial-gradient(2px 2px at 15% 25%,#fff9 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%,#fff7 0%,transparent 100%),
+    radial-gradient(2px 2px at 45% 70%,#d4af3780 0%,transparent 100%),
+    radial-gradient(1px 1px at 88% 45%,#fff6 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%,#fff5 0%,transparent 100%),
+    radial-gradient(2px 2px at 60% 35%,#d4af3760 0%,transparent 100%);
+  animation:twinkle 14s infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+
+.page{
+  max-width:480px;width:100%;margin:0 auto;
+  position:relative;z-index:2;
+  padding:30px 20px;
+  padding-top:max(30px,calc(30px + env(safe-area-inset-top,0px)));
+  padding-bottom:max(30px,calc(30px + env(safe-area-inset-bottom,0px)));
+  text-align:center;
+}
+
+/* ── Stella animata ── */
+.star-burst{
+  font-size:72px;
+  display:block;
+  margin:0 auto 24px;
+  animation:starPulse 3s infinite;
+  filter:drop-shadow(0 0 20px var(--gold));
+}
+@keyframes starPulse{
+  0%,100%{transform:scale(1);filter:drop-shadow(0 0 16px var(--gold))}
+  50%{transform:scale(1.12);filter:drop-shadow(0 0 36px var(--gold-glow))}
+}
+
+/* ── Badge premium ── */
+.premium-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#2a1748,#160d30);
+  border:1.5px solid var(--gold);
+  border-radius:30px;padding:8px 20px;
+  font-family:'Cinzel',serif;font-size:11px;
+  color:var(--gold);letter-spacing:2px;
+  margin-bottom:28px;
+  box-shadow:0 0 20px rgba(212,175,55,0.2);
+}
+
+/* ── Titolo ── */
+.title{
+  font-family:'Cinzel',serif;
+  font-size:28px;font-weight:700;
+  color:var(--gold);
+  letter-spacing:3px;
+  text-shadow:0 0 30px var(--gold-glow);
+  margin-bottom:12px;
+  line-height:1.3;
+}
+.subtitle{
+  font-size:17px;color:var(--muted);
+  font-style:italic;
+  margin-bottom:32px;
+  line-height:1.5;
+}
+
+/* ── Card info ── */
+.info-card{
+  background:var(--card);
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:var(--radius);
+  padding:24px 20px;
+  margin-bottom:24px;
+  text-align:left;
+}
+.info-card h3{
+  font-family:'Cinzel',serif;
+  font-size:13px;color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:16px;text-align:center;
+}
+.feature-list{
+  list-style:none;
+  display:flex;flex-direction:column;gap:12px;
+}
+.feature-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:15px;color:var(--text);line-height:1.4;
+}
+.feature-list li::before{
+  content:"✦";color:var(--gold);
+  flex-shrink:0;margin-top:1px;
+  font-size:12px;
+}
+
+/* ── Istruzione attivazione ── */
+.activation-box{
+  background:linear-gradient(135deg,rgba(42,23,72,0.6),rgba(22,13,48,0.6));
+  border:1px solid rgba(212,175,55,0.35);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:28px;
+}
+.activation-box p{
+  font-size:14px;color:var(--muted);line-height:1.6;
+}
+.activation-box strong{color:var(--gold);}
+
+/* ── Pulsanti ── */
+.btn-primary{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dim));
+  color:#0a0514;
+  border:none;border-radius:14px;
+  padding:16px 24px;
+  font-family:'Cinzel',serif;font-size:14px;font-weight:700;
+  letter-spacing:1.5px;cursor:pointer;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(212,175,55,0.35);
+  transition:all .25s;
+  margin-bottom:14px;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 28px rgba(212,175,55,0.5);
+}
+.btn-secondary{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;
+  background:transparent;
+  color:var(--gold);
+  border:1.5px solid rgba(212,175,55,0.4);
+  border-radius:14px;
+  padding:14px 24px;
+  font-family:'Cinzel',serif;font-size:13px;
+  letter-spacing:1px;cursor:pointer;
+  text-decoration:none;
+  transition:all .25s;
+}
+.btn-secondary:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 16px rgba(212,175,55,0.2);
+}
+
+/* ── Footer note ── */
+.footer-note{
+  margin-top:32px;
+  font-size:12px;color:var(--muted);
+  opacity:0.7;line-height:1.5;
+}
+.footer-note a{color:var(--gold-dim);text-decoration:none;}
+
+/* ── Confetti stars animation ── */
+.floating-stars{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:1;overflow:hidden;
+}
+.fstar{
+  position:absolute;
+  font-size:16px;
+  animation:fall linear infinite;
+  opacity:0;
+}
+@keyframes fall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1}
+  100%{transform:translateY(100vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="cosmos"></div>
+
+<!-- stelle cadenti decorative -->
+<div class="floating-stars" id="fstars"></div>
+
+<div class="page">
+
+  <span class="star-burst">⭐</span>
+
+  <div class="premium-badge">✦ MYSTICA PREMIUM ✦</div>
+
+  <h1 class="title">Benvenuto nel<br>Cerchio d'Oro</h1>
+  <p class="subtitle">Il tuo accesso Premium è stato attivato.<br>Il viaggio esoterico senza confini inizia ora.</p>
+
+  <div class="info-card">
+    <h3>Cosa hai sbloccato</h3>
+    <ul class="feature-list">
+      <li>Accesso illimitato a tutti gli oracoli e letture tarocchi</li>
+      <li>Tutte le funzioni interattive senza restrizioni</li>
+      <li>Contenuti esclusivi su magia, cabala, alchimia e tradizioni esoteriche</li>
+      <li>Rituali completi con formule, ingredienti e tempistiche</li>
+      <li>Analisi approfondite: numerologia, astrologia vedica, Human Design, Gene Keys</li>
+      <li>Accesso a tutti i 49 Pentacoli di Re Salomone con istruzioni d'uso</li>
+      <li>Nessun limite di utilizzo — per sempre</li>
+    </ul>
+  </div>
+
+  <div class="activation-box">
+    <p>
+      <strong>Come attivare:</strong> salva questa pagina nei preferiti oppure 
+      torna su MYSTICA e inserisci il tuo indirizzo email di pagamento nella sezione 
+      <strong>Profilo → Attiva Premium</strong> per sbloccare tutte le funzioni.
+    </p>
+  </div>
+
+  <a href="./index.html" class="btn-primary">
+    ✦ Entra in MYSTICA Premium
+  </a>
+
+  <a href="./index.html" class="btn-secondary">
+    ← Torna alla Home
+  </a>
+
+  <div class="footer-note">
+    <p>Hai problemi con l'attivazione? Scrivici a 
+      <a href="mailto:info@mysticaoracoli.it">info@mysticaoracoli.it</a>
+    </p>
+    <p style="margin-top:8px">Pagamento elaborato in modo sicuro da Stripe · 4,99€ una tantum</p>
+  </div>
+
+</div>
+
+<script>
+// Stelle cadenti decorative post-acquisto
+(function(){
+  const container = document.getElementById('fstars');
+  const symbols = ['✦','★','✧','⭐','🌟','✨','💫'];
+  for(let i=0;i<18;i++){
+    const s = document.createElement('span');
+    s.className='fstar';
+    s.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    s.style.left = Math.random()*100+'%';
+    s.style.animationDuration = (4+Math.random()*6)+'s';
+    s.style.animationDelay = (Math.random()*8)+'s';
+    s.style.fontSize = (12+Math.random()*14)+'px';
+    s.style.color = Math.random()>.5 ? '#d4af37' : '#fff';
+    container.appendChild(s);
+  }
+
+  // Salva flag premium in localStorage (utile per le pagine del sito)
+  localStorage.setItem('myst_premium','1');
+  localStorage.setItem('myst_premium_date', new Date().toISOString());
+})();
+</script>
+
+</body>
+</html>
