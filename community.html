@@ -13,17 +13,36 @@
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Community & Recensioni — MYSTICA Oracoli</title>
-<meta name="description" content="Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.">
-<meta name="robots" content="index, follow">
+<title id="seo-title">Community & Recensioni — MYSTICA Oracoli</title>
+<meta name="description" id="seo-desc" content="Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.">
+<meta name="keywords" id="seo-keywords" content="community mystica, recensioni mystica oracoli, forum esoterico italiano, community spirituale, recensioni app esoterica">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/community.html">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/community.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/community.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/community.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/community.html">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Community & Recensioni — MYSTICA Oracoli">
-<meta property="og:description" content="Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.">
+<meta property="og:title" id="seo-og-title" content="Community & Recensioni — MYSTICA Oracoli">
+<meta property="og:description" id="seo-og-desc" content="Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.">
 <meta property="og:url" content="https://mysticaoracoli.it/community.html">
-<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
-<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/home/mystica-orizzontale.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" id="seo-og-locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="seo-tw-title" content="Community & Recensioni — MYSTICA Oracoli">
+<meta name="twitter:description" id="seo-tw-desc" content="Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/home/mystica-orizzontale.webp">
+
+<!-- JSON-LD — rigenerato in lingua da updateSEO() -->
+<script type="application/ld+json" id="ld-schema">{}</script>
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
 <link rel="icon" type="image/png" href="./icon-192-v2.png">
@@ -65,9 +84,32 @@
   --text: #f4f1fa;
   --muted: #b8b2d1;
   --radius: 18px;
+  --border: rgba(212,175,55,0.2);
 }
+html.theme-day {
+  --bg: #f5f2ed;
+  --card: #ede8df;
+  --text: #2a1748;
+  --muted: #6b5b7f;
+  --purple: #6b5b7f;
+  --gold: #c89742;
+  --gold-dim: #a67c52;
+  --gold-glow: rgba(200,151,66,0.2);
+  --border: #c89742;
+}
+html.theme-day .card { background-color: var(--card); border: 2px solid var(--border); color: var(--text); }
+html.theme-day h2, html.theme-day h3 { color: var(--text); text-shadow: none; }
+html.theme-day .btn { background: var(--gold); color: #fff; }
+html.theme-day input, html.theme-day select, html.theme-day textarea { background-color: #ffffff; color: var(--text); border: 2px solid var(--border); }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 100;
+  background: var(--gold); color: #1a0a00; padding: 8px 14px;
+  border-radius: 0 0 8px 0; font-family: 'Cinzel', serif; font-size: 12px;
+}
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -325,18 +367,28 @@ textarea::placeholder { color: var(--muted); }
 </head>
 <body>
 
-<div class="cosmos"></div>
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+<div class="cosmos" aria-hidden="true"></div>
 
 <div id="app">
 
   <!-- HEADER FISSO -->
   <header class="comm-header">
-    <button class="comm-back-btn" onclick="history.back()">← Torna</button>
-    <div class="comm-header-title">✨ Community</div>
-    <div class="comm-header-spacer"></div>
+    <button class="comm-back-btn" onclick="history.back()" id="comm-back-btn">← Torna</button>
+    <div class="comm-header-title" id="comm-header-title">✨ Community</div>
+    <div class="header-controls" style="display:flex;gap:6px;flex-shrink:0">
+      <button id="musicToggle" class="comm-back-btn" aria-label="Attiva/disattiva musica" style="padding:8px 10px">🎵</button>
+      <button id="themeToggle" class="comm-back-btn" aria-label="Cambia tema chiaro/scuro" style="padding:8px 10px">🌙</button>
+    </div>
   </header>
+  <div class="lang-switch" style="position:fixed;top:calc(54px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:19;display:flex;justify-content:center;gap:6px;background:rgba(10,5,20,0.92);backdrop-filter:blur(12px);padding:6px 0;border-bottom:1px solid rgba(212,175,55,0.15)">
+    <button data-lang="it" class="filtro-btn filtro-gold">IT</button>
+    <button data-lang="en" class="filtro-btn filtro-sec">EN</button>
+    <button data-lang="es" class="filtro-btn filtro-sec">ES</button>
+  </div>
 
-  <main class="comm-content">
+  <main class="comm-content" id="main-content" style="padding-top:calc(108px + env(safe-area-inset-top, 0px))">
 
     <!-- HERO CARD -->
     <div class="card gold-border">
@@ -492,10 +544,16 @@ textarea::placeholder { color: var(--muted); }
     </div>
 
     <!-- FOOTER -->
-    <div style="text-align:center;padding:16px 0 8px;border-top:1px solid rgba(212,175,55,0.15)">
+    <footer class="page-footer" style="text-align:center;padding:16px 0 8px;border-top:1px solid rgba(212,175,55,0.15)">
+      <div style="display:flex;justify-content:center;gap:14px;margin-bottom:8px;font-size:11px">
+        <a href="./index.html" style="color:var(--gold);text-decoration:none">Home</a>
+        <a href="./contatti.html" style="color:var(--gold);text-decoration:none">Contatti</a>
+        <a href="./about.html" style="color:var(--gold);text-decoration:none">Chi Siamo</a>
+        <a href="./privacy.html" style="color:var(--gold);text-decoration:none">Privacy</a>
+      </div>
       <a href="index.html" style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);text-decoration:none;letter-spacing:1px">✦ MYSTICA ✦</a>
       <p style="font-size:10px;color:var(--muted);margin-top:6px">© 2026 PetroCorporation — Dott. Petrolese Giovanni</p>
-    </div>
+    </footer>
 
   </main>
 </div><!-- fine #app -->
@@ -517,7 +575,92 @@ const TOPIC_EMOJI = {
 const STELLE_LABEL = ['','⭐ Pessima','⭐⭐ Scarsa','⭐⭐⭐ Nella media','⭐⭐⭐⭐ Buona','⭐⭐⭐⭐⭐ Eccellente!'];
 const ADMIN_PASS_HASH = '95e720954c3ddfc1fb735b35f849bb19494c2c46354af71897dcf8db5c6237d9';
 
-/* ===== STATO ===== */
+/* ===== TEMA GIORNO/NOTTE ===== */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = isDay ? '🌙' : '☀️';
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ===== AUDIO MANAGER (musica continua cross-page) ===== */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+class AudioManager {
+  constructor() { this.audio = null; this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true'; this.initAudio(); }
+  initAudio() { this.audio = new Audio(AUDIO_URL); this.audio.loop = true; this.audio.volume = 0.3; if (this.isPlaying) this.play(); this.updateUI(); }
+  play() { this.audio?.play().catch(()=>{}); this.isPlaying = true; sessionStorage.setItem(AUDIO_KEY,'true'); this.updateUI(); }
+  pause() { this.audio?.pause(); this.isPlaying = false; sessionStorage.setItem(AUDIO_KEY,'false'); this.updateUI(); }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() { const btn = document.getElementById('musicToggle'); if (btn) btn.textContent = this.isPlaying ? '🎵' : '🔇'; }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ===== MULTILINGUA (testi statici UI — i contenuti utente in Firebase restano in lingua originale) ===== */
+const LANG = {
+  it: {
+    headerTitle: '✨ Community', back: '← Torna',
+    seo: { title: 'Community & Recensioni — MYSTICA Oracoli', desc: "Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.", ogTitle: 'Community & Recensioni — MYSTICA Oracoli', ogDesc: "Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.", locale: 'it_IT', htmlLang: 'it' }
+  },
+  en: {
+    headerTitle: '✨ Community', back: '← Back',
+    seo: { title: 'Community & Reviews — MYSTICA Oracles', desc: 'MYSTICA community: share your spiritual experience, leave a review and join the Italian esoteric community.', ogTitle: 'Community & Reviews — MYSTICA Oracles', ogDesc: "Join the MYSTICA community: comments, mystical experiences and app reviews.", locale: 'en_US', htmlLang: 'en' }
+  },
+  es: {
+    headerTitle: '✨ Comunidad', back: '← Volver',
+    seo: { title: 'Comunidad y Reseñas — MYSTICA Oráculos', desc: 'Comunidad MYSTICA: comparte tu experiencia espiritual, deja una reseña y únete a la comunidad esotérica italiana.', ogTitle: 'Comunidad y Reseñas — MYSTICA Oráculos', ogDesc: 'Únete a la comunidad de MYSTICA: comentarios, experiencias místicas y reseñas de la app.', locale: 'es_ES', htmlLang: 'es' }
+  }
+};
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  const d = id => document.getElementById(id);
+  if (d('seo-desc')) d('seo-desc').content = S.desc;
+  if (d('seo-og-title')) d('seo-og-title').content = S.ogTitle;
+  if (d('seo-og-desc')) d('seo-og-desc').content = S.ogDesc;
+  if (d('seo-og-locale')) d('seo-og-locale').content = S.locale;
+  if (d('seo-tw-title')) d('seo-tw-title').content = S.ogTitle;
+  if (d('seo-tw-desc')) d('seo-tw-desc').content = S.ogDesc;
+  const ld = document.getElementById('ld-schema');
+  if (ld) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: S.title,
+      description: S.desc,
+      url: 'https://mysticaoracoli.it/community.html',
+      isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' },
+      publisher: { '@type': 'Organization', name: 'PetroCorporation', founder: { '@type': 'Person', name: 'Giovanni Petrolese' } }
+    });
+  }
+}
+
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+  const ht = document.getElementById('comm-header-title'); if (ht) ht.textContent = L.headerTitle;
+  const bb = document.getElementById('comm-back-btn'); if (bb) bb.textContent = L.back;
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b => {
+      const active = b.dataset.lang === currentLang;
+      b.className = 'filtro-btn ' + (active ? 'filtro-gold' : 'filtro-sec');
+    });
+  });
+});
+
+
 let _commentiTutti = [];
 let _filtroAttivo = 'tutti';
 let _commentiUnsubscribe = null;
@@ -742,7 +885,7 @@ function _costruisciHTMLCommento(c, isRisposta) {
     '</div>' +
     '<p style="font-size:13px;line-height:1.7;color:var(--text);margin:0 0 10px">'+_sanitize(c.testo)+'</p>' +
     '<div style="display:flex;gap:10px;align-items:center">' +
-      '<button onclick="likaCommento(event,\''+safeId+'\')" id="like-btn-'+c.id+'" ' +
+      '<button onclick="likaCommento(event,\''+safeId+'\')" id="like-btn-'+c.id+'" aria-label="Metti mi piace" ' +
         'style="background:'+(hasLiked?'rgba(212,175,55,0.3)':'none')+';border:1px solid var(--gold-dim);color:var(--gold);cursor:'+(hasLiked?'default':'pointer')+';font-size:12px;padding:3px 10px;border-radius:12px;display:flex;gap:5px;align-items:center">' +
         '❤️ <span id="likes-'+c.id+'">'+likes+'</span>' +
       '</button>' +
@@ -1091,6 +1234,8 @@ async function adminEliminaRec(id) {
 
 /* ===== AVVIO ===== */
 document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
   _initCommChars();
   _initRecChars();
   // Firebase si carica subito: siamo già in questa pagina
