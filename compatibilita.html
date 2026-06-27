@@ -1,157 +1,651 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Scopri la compatibilità zodiacale tra i 12 segni. Calcola l'affinità cosmica tra te e il tuo partner con la tavola di compatibilità astrologica di Mystica Oracoli.">
-<meta name="keywords" content="compatibilità zodiacale, compatibilità segni zodiacali, affinità amorosa, oroscopo coppia, compatibilità astrologica, segni compatibili, amore zodiaco, mysticaoracoli">
-<title>Compatibilità Zodiacale — Affinità Cosmica tra Segni | MYSTICA</title>
-<link rel="canonical" href="https://mysticaoracoli.it/compatibilita.html">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:title" content="Compatibilità Zodiacale — Affinità Cosmica | MYSTICA">
-<meta property="og:description" content="Calcola la compatibilità astrologica tra i segni zodiacali. Scopri l'affinità cosmica con il tuo partner.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mysticaoracoli.it/compatibilita.html">
-<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/compatibilita.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Compatibilità Zodiacale | MYSTICA">
-<meta name="twitter:description" content="Calcola l'affinità cosmica tra i segni zodiacali con Mystica Oracoli.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Compatibilità Zodiacale — MYSTICA",
-  "url": "https://mysticaoracoli.it/compatibilita.html",
-  "description": "Calcola la compatibilità astrologica tra due segni zodiacali e scopri l'affinità cosmica.",
-  "applicationCategory": "EntertainmentApplication",
-  "inLanguage": "it",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Mystica Oracoli",
-    "url": "https://mysticaoracoli.it"
-  }
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- SEO — popolati da updateSEO() -->
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://mysticaoracoli.it/compatibilita.html">
+
+  <!-- hreflang multilingua -->
+  <link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/compatibilita.html">
+  <link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/compatibilita.html">
+  <link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/compatibilita.html">
+  <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/compatibilita.html">
+
+  <!-- Open Graph — popolati da updateSEO() -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mysticaoracoli.it/compatibilita.html">
+  <meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/compatibilita.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="MYSTICA Oracoli">
+
+  <!-- Twitter Card — popolata da updateSEO() -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/compatibilita.webp">
+
+  <!-- JSON-LD — rigenerato da updateSEO() -->
+  <script type="application/ld+json">{}</script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TDGH40FYK4');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+  <meta name="theme-color" content="#0a0514">
+
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0d0b14;color:#e6e0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* HEADER */
-  .page-header{position:sticky;top:0;background:rgba(13,11,20,0.97);padding:12px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:10;text-align:center}
-  .btn-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#c8c0e0;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block;transition:all 0.2s;margin-bottom:8px}
-  .btn-back:hover{background:rgba(255,255,255,0.15)}
-  .page-header h1{font-size:22px;margin:4px 0 2px;background:linear-gradient(90deg,#ffffff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .page-subtitle{color:#a89bc2;font-size:12px}
+:root {
+  --bg: #0a0514;
+  --card: #140c24;
+  --purple: #2a1748;
+  --gold: #d4af37;
+  --gold-dim: #b8860b;
+  --gold-glow: rgba(212,175,55,0.4);
+  --text: #f4f1fa;
+  --muted: #b8b2d1;
+  --radius: 18px;
+  --border: rgba(212,175,55,0.2);
+}
 
-  /* CONTENT */
-  .content{padding:16px 16px 100px;max-width:650px;margin:0 auto}
+html.theme-day {
+  --bg: #f5f2ed;
+  --card: #ede8df;
+  --text: #2a1748;
+  --muted: #6b5b7f;
+  --purple: #6b5b7f;
+  --gold: #c89742;
+  --gold-dim: #a67c52;
+  --gold-glow: rgba(200,151,66,0.2);
+  --border: #c89742;
+}
+html.theme-day .card,
+html.theme-day .selector-card,
+html.theme-day .result-card,
+html.theme-day .sign-card,
+html.theme-day .article-section,
+html.theme-day .faq-item {
+  background-color: var(--card);
+  border-color: var(--border);
+  color: var(--text);
+}
+html.theme-day h1, html.theme-day h2, html.theme-day h3 {
+  color: var(--text); text-shadow: none;
+}
+html.theme-day button { background-color: var(--gold); color: var(--text); border: 2px solid var(--border); }
+html.theme-day select, html.theme-day input {
+  background-color: #ffffff; color: var(--text); border: 2px solid var(--border);
+}
 
-  /* SELECTOR CARD */
-  .selector-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,215,0,0.25);border-radius:18px;padding:22px 18px;margin-bottom:20px;text-align:center}
-  .selector-card h2{font-size:17px;color:#ffd700;margin-bottom:6px}
-  .selector-card p{font-size:13px;color:#a89bc2;margin-bottom:18px;line-height:1.5}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
 
-  .selectors-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:18px}
-  .heart-divider{font-size:24px;text-align:center;color:#ff6b9d}
+/* ── Sfondo Cosmico ── */
+.cosmos {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation: twinkle 14s infinite alternate;
+}
+@keyframes twinkle {
+  0%   { opacity: .35; }
+  50%  { opacity: .55; }
+  100% { opacity: .45; }
+}
 
-  select{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);color:#e6e0f0;padding:12px 10px;border-radius:12px;font-size:15px;appearance:none;-webkit-appearance:none;cursor:pointer;text-align:center}
-  select:focus{outline:none;border-color:rgba(255,215,0,0.5)}
+/* ── Header ── */
+.page-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,5,20,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: max(12px, calc(12px + env(safe-area-inset-top, 0px))) 16px 12px;
+}
+html.theme-day .page-header { background: rgba(245,242,237,0.97); }
 
-  .btn-calc{background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;border:none;padding:14px 32px;border-radius:25px;font-size:16px;cursor:pointer;width:100%;font-weight:600;letter-spacing:0.5px;transition:opacity 0.2s}
-  .btn-calc:hover{opacity:0.9}
-  .btn-calc:active{transform:scale(0.98)}
+.header-top {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  margin-bottom: 8px;
+}
+.btn-back {
+  background: rgba(212,175,55,0.12);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 7px 13px; border-radius: 20px;
+  cursor: pointer; font-size: 13px;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s ease; font-family: 'Cinzel', serif;
+}
+.btn-back:hover { background: rgba(212,175,55,0.22); color: var(--gold); }
 
-  /* RISULTATO */
-  .result-card{background:rgba(26,23,38,0.95);border:2px solid rgba(255,215,0,0.3);border-radius:18px;padding:24px 20px;margin-bottom:20px;display:none;animation:fadeInUp 0.4s ease}
+.header-controls { display: flex; gap: 8px; }
+.btn-icon {
+  background: rgba(212,175,55,0.1);
+  border: 1px solid var(--border);
+  color: var(--text); padding: 6px 11px;
+  border-radius: 20px; cursor: pointer;
+  font-size: 13px; transition: all 0.25s ease;
+}
+.btn-icon:hover { background: rgba(212,175,55,0.2); }
 
-  @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.header-center { text-align: center; margin-bottom: 8px; }
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: 20px; font-weight: 700;
+  background: linear-gradient(135deg, var(--gold), #fff8e7, var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .signs-display{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px}
-  .sign-box{text-align:center}
-  .sign-emoji{font-size:44px;display:block;line-height:1}
-  .sign-name{font-size:12px;color:#a89bc2;margin-top:4px}
+.lang-switch {
+  display: flex; justify-content: center; gap: 6px;
+}
+.btn-lang {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted); padding: 4px 11px;
+  border-radius: 14px; cursor: pointer;
+  font-size: 12px; font-family: 'Cinzel', serif;
+  transition: all 0.25s ease;
+}
+.btn-lang.active, .btn-lang:hover {
+  background: var(--gold-glow); color: var(--gold);
+  border-color: var(--gold);
+}
 
-  .hearts-anim{font-size:28px;animation:pulse 1.2s infinite}
-  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+/* ── Main Content ── */
+.content {
+  position: relative; z-index: 1;
+  padding: 20px 16px 120px;
+  max-width: 650px; margin: 0 auto;
+}
 
-  .score-ring{width:110px;height:110px;margin:0 auto 12px;position:relative}
-  .score-ring svg{transform:rotate(-90deg)}
-  .score-ring .score-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;font-weight:700;color:#ffd700}
-  .score-ring .score-pct{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:11px;color:#a89bc2}
+/* ── Selector Card ── */
+.selector-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px; margin-bottom: 20px;
+  text-align: center;
+}
+.selector-card h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 17px; color: var(--gold);
+  margin-bottom: 6px;
+}
+.selector-card p {
+  font-size: 14px; color: var(--muted);
+  margin-bottom: 18px; line-height: 1.6;
+}
 
-  .compat-level{font-size:16px;font-weight:700;text-align:center;margin-bottom:12px}
-  .divider{height:1px;background:rgba(255,255,255,0.1);margin:14px 0}
-  .compat-text{font-size:14px;color:#c8c0e0;line-height:1.7;text-align:center}
+.selectors-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px; align-items: center;
+  margin-bottom: 18px;
+}
+.heart-divider { font-size: 24px; text-align: center; color: #ff6b9d; }
 
-  /* DETTAGLI */
-  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-  .detail-box{background:rgba(255,255,255,0.05);border-radius:12px;padding:12px 10px;text-align:center}
-  .detail-box .label{font-size:10px;color:#a89bc2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
-  .detail-box .value{font-size:13px;color:#e6e0f0;font-weight:500}
+select {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 10px; border-radius: 12px;
+  font-size: 15px; font-family: 'Crimson Pro', serif;
+  appearance: none; -webkit-appearance: none;
+  cursor: pointer; text-align: center;
+  transition: border-color 0.25s ease;
+}
+select:focus { outline: none; border-color: var(--gold); }
 
-  /* TAVOLA */
-  .table-section{margin-bottom:20px}
-  .section-title{font-size:16px;color:#ffd700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.btn-calc {
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  color: #fff; border: none;
+  padding: 14px 32px; border-radius: 25px;
+  font-size: 16px; cursor: pointer; width: 100%;
+  font-weight: 600; font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-calc:hover { opacity: 0.9; }
+.btn-calc:active { transform: scale(0.98); }
 
-  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px}
-  .compat-table{border-collapse:collapse;font-size:10px;min-width:480px;width:100%}
-  .compat-table th,.compat-table td{padding:6px 5px;text-align:center;border:1px solid rgba(255,255,255,0.07)}
-  .compat-table th{background:rgba(26,23,38,0.95);color:#a89bc2;font-weight:600;font-size:11px;position:sticky;top:0;z-index:2}
-  .compat-table td:first-child{background:rgba(26,23,38,0.95);font-size:11px;color:#a89bc2;font-weight:600;position:sticky;left:0;z-index:1}
-  .compat-table .cell{border-radius:6px;display:inline-block;width:100%;padding:3px 0;font-weight:600;font-size:10px}
-  .cell-high{background:rgba(34,197,94,0.25);color:#4ade80}
-  .cell-good{background:rgba(255,215,0,0.2);color:#ffd700}
-  .cell-med{background:rgba(249,115,22,0.2);color:#fb923c}
-  .cell-low{background:rgba(239,68,68,0.2);color:#f87171}
+/* ── Risultato ── */
+.result-card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px; margin-bottom: 20px;
+  display: none;
+  animation: fadeInUp 0.4s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  /* INFO SEGNI */
-  .signs-info{margin-top:20px}
-  .sign-card{background:rgba(26,23,38,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px;margin-bottom:10px}
-  .sign-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-  .sign-card-emoji{font-size:32px}
-  .sign-card-title{flex:1}
-  .sign-card-title h3{font-size:16px;color:#ffd700;margin-bottom:2px}
-  .sign-card-title .sign-data{font-size:11px;color:#a89bc2}
-  .sign-card-body{font-size:13px;color:#c8c0e0;line-height:1.6}
-  .keywords{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .kw{background:rgba(255,255,255,0.08);padding:3px 10px;border-radius:20px;font-size:11px;color:#a89bc2}
+.signs-display {
+  display: flex; align-items: center;
+  justify-content: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.sign-box { text-align: center; }
+.sign-emoji { font-size: 44px; display: block; line-height: 1; }
+.sign-name { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-  /* TOP COMPATIBILI */
-  .top-compat{margin-top:14px}
-  .top-compat h4{font-size:13px;color:#ffd700;margin-bottom:8px}
-  .top-list{display:flex;flex-wrap:wrap;gap:6px}
-  .top-tag{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);padding:4px 10px;border-radius:20px;font-size:11px;color:#4ade80;cursor:pointer;transition:all 0.2s}
-  .top-tag:hover{background:rgba(34,197,94,0.25)}
+.hearts-anim { font-size: 28px; animation: pulse 1.2s infinite; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
 
-  /* TOAST */
-  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,23,38,0.95);border:1px solid rgba(255,215,0,0.3);color:#ffd700;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:all 0.3s;z-index:999;white-space:nowrap}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.score-ring {
+  width: 110px; height: 110px;
+  margin: 0 auto 12px; position: relative;
+}
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring .score-text {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 28px; font-weight: 700; color: var(--gold);
+  font-family: 'Cinzel', serif;
+}
+
+.compat-level {
+  font-size: 16px; font-weight: 700;
+  font-family: 'Cinzel', serif;
+  text-align: center; margin-bottom: 12px;
+}
+.divider { height: 1px; background: var(--border); margin: 14px 0; }
+.compat-text {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.75; text-align: center;
+}
+
+/* ── Dettagli ── */
+.detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-top: 14px;
+}
+.detail-box {
+  background: rgba(212,175,55,0.06);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 12px 10px;
+  text-align: center;
+}
+.detail-box .label {
+  font-size: 10px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.detail-box .value { font-size: 13px; color: var(--text); font-weight: 500; }
+
+/* ── Tavola Sinoptica ── */
+.table-section { margin-bottom: 20px; }
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px; color: var(--gold);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.table-scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border-radius: 12px; border: 1px solid var(--border);
+}
+.compat-table {
+  border-collapse: collapse; font-size: 10px;
+  min-width: 480px; width: 100%;
+}
+.compat-table th, .compat-table td {
+  padding: 6px 5px; text-align: center;
+  border: 1px solid rgba(212,175,55,0.08);
+}
+.compat-table th {
+  background: var(--card); color: var(--muted);
+  font-weight: 600; font-size: 11px;
+  font-family: 'Cinzel', serif;
+  position: sticky; top: 0; z-index: 2;
+}
+.compat-table td:first-child {
+  background: var(--card); font-size: 11px;
+  color: var(--muted); font-weight: 600;
+  position: sticky; left: 0; z-index: 1;
+}
+.compat-table .cell {
+  border-radius: 6px; display: inline-block;
+  width: 100%; padding: 3px 0;
+  font-weight: 600; font-size: 10px;
+}
+.cell-high { background: rgba(34,197,94,0.2);  color: #4ade80; }
+.cell-good { background: rgba(212,175,55,0.2); color: var(--gold); }
+.cell-med  { background: rgba(249,115,22,0.2); color: #fb923c; }
+.cell-low  { background: rgba(239,68,68,0.2);  color: #f87171; }
+
+/* ── Info Segni ── */
+.signs-info { margin-top: 20px; }
+.sign-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 16px;
+  margin-bottom: 12px;
+}
+.sign-card-header {
+  display: flex; align-items: center;
+  gap: 10px; margin-bottom: 10px;
+}
+.sign-card-emoji { font-size: 32px; }
+.sign-card-title { flex: 1; }
+.sign-card-title h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 16px; color: var(--gold); margin-bottom: 2px;
+}
+.sign-card-title .sign-data { font-size: 11px; color: var(--muted); }
+.sign-card-body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.keywords { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.kw {
+  background: rgba(212,175,55,0.1);
+  border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; color: var(--muted);
+}
+.top-compat { margin-top: 14px; }
+.top-compat h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 13px; color: var(--gold); margin-bottom: 8px;
+}
+.top-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.top-tag {
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.3);
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 11px; color: #4ade80;
+  cursor: pointer; transition: all 0.2s;
+}
+.top-tag:hover { background: rgba(34,197,94,0.25); }
+
+/* ── Articolo ── */
+.article-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px; margin-bottom: 20px;
+}
+.article-section h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 20px; color: var(--gold);
+  margin-bottom: 16px; line-height: 1.4;
+}
+.article-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 17px; color: var(--gold);
+  margin: 20px 0 10px;
+}
+.article-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px; color: var(--muted);
+  margin: 16px 0 8px;
+}
+.article-section p {
+  font-size: 15px; line-height: 1.8;
+  color: var(--muted); margin-bottom: 14px;
+}
+.article-hero {
+  width: 100%; border-radius: 14px;
+  margin: 12px 0 20px; display: block;
+}
+
+/* ── CTA Esplora ── */
+.cta-explore {
+  display: block; text-align: center;
+  background: linear-gradient(135deg, var(--purple), var(--card));
+  border: 1px solid var(--border);
+  color: var(--gold); padding: 14px 24px;
+  border-radius: 14px; text-decoration: none;
+  font-family: 'Cinzel', serif; font-size: 14px;
+  margin-top: 20px;
+  transition: all 0.25s ease;
+}
+.cta-explore:hover { border-color: var(--gold); background: rgba(212,175,55,0.08); }
+
+/* ── FAQ ── */
+.faq-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px; margin-bottom: 20px;
+}
+.faq-title {
+  font-family: 'Cinzel', serif;
+  font-size: 18px; color: var(--gold);
+  margin-bottom: 16px; text-align: center;
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%; background: none; border: none;
+  color: var(--text); padding: 14px 0;
+  font-size: 14px; font-family: 'Cinzel', serif;
+  cursor: pointer; display: flex;
+  justify-content: space-between; align-items: center;
+  gap: 10px; text-align: left;
+  transition: color 0.25s ease;
+}
+.faq-question:hover { color: var(--gold); }
+.faq-icon { font-size: 20px; color: var(--gold); flex-shrink: 0; }
+.faq-answer { padding: 0 0 14px; }
+.faq-answer p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── Share ── */
+.share-section { text-align: center; margin-bottom: 20px; }
+.btn-share {
+  background: rgba(212,175,55,0.12);
+  border: 1px solid var(--border);
+  color: var(--gold); padding: 12px 28px;
+  border-radius: 25px; cursor: pointer;
+  font-size: 15px; font-family: 'Cinzel', serif;
+  transition: all 0.25s ease;
+}
+.btn-share:hover { background: rgba(212,175,55,0.22); }
+.share-popup {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 16px;
+  margin-top: 12px; display: flex;
+  flex-wrap: wrap; gap: 8px; justify-content: center;
+}
+.share-btn {
+  padding: 9px 16px; border-radius: 20px;
+  font-size: 13px; cursor: pointer; border: none;
+  text-decoration: none; display: inline-block;
+  transition: opacity 0.2s;
+}
+.share-btn:hover { opacity: 0.85; }
+.whatsapp  { background: #25d366; color: #fff; }
+.telegram  { background: #0088cc; color: #fff; }
+.facebook  { background: #1877f2; color: #fff; }
+.twitter   { background: #1da1f2; color: #fff; }
+.copy      { background: var(--purple); color: var(--gold); border: 1px solid var(--border) !important; }
+
+/* ── Premium Modal ── */
+.premium-modal {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  align-items: center; justify-content: center;
+}
+.premium-modal.show { display: flex; }
+.modal-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  position: relative; z-index: 1;
+  background: var(--card); border: 1px solid var(--gold);
+  border-radius: var(--radius); padding: 28px 24px;
+  max-width: 340px; width: 90%; text-align: center;
+  animation: fadeInUp 0.3s ease;
+}
+.modal-content h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px; color: var(--gold); margin-bottom: 10px;
+}
+.modal-content p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+.premium-price {
+  font-size: 18px; color: var(--gold) !important;
+  font-family: 'Cinzel', serif; margin-bottom: 18px !important;
+}
+.btn-premium-buy {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: #0a0514; border: none; padding: 13px 28px;
+  border-radius: 25px; font-size: 15px;
+  font-family: 'Cinzel', serif; cursor: pointer;
+  width: 100%; margin-bottom: 10px;
+  transition: opacity 0.2s;
+}
+.btn-premium-buy:hover { opacity: 0.9; }
+.btn-premium-skip {
+  background: none; border: 1px solid var(--border);
+  color: var(--muted); padding: 10px 20px;
+  border-radius: 20px; cursor: pointer;
+  font-size: 13px; width: 100%;
+  transition: border-color 0.25s;
+}
+.btn-premium-skip:hover { border-color: var(--gold); }
+
+/* ── Banner Premium ── */
+.banner-premium {
+  background: linear-gradient(135deg, #1a073820, var(--card));
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius); padding: 16px 20px;
+  text-align: center; margin-bottom: 20px;
+}
+.banner-premium p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.btn-banner-premium {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: #0a0514; border: none; padding: 10px 24px;
+  border-radius: 20px; font-family: 'Cinzel', serif;
+  font-size: 13px; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-banner-premium:hover { opacity: 0.9; }
+
+/* ── Footer ── */
+.page-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 16px;
+  text-align: center; margin-top: 20px;
+}
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 12px; }
+.footer-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 13px; transition: color 0.25s ease;
+}
+.footer-links a:hover { color: var(--gold); }
+#footer-copy { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.footer-disclaimer { font-size: 11px; color: rgba(184,178,209,0.5); line-height: 1.5; }
+
+/* ── Toast ── */
+.toast {
+  position: fixed; bottom: 80px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--card); border: 1px solid var(--gold);
+  color: var(--gold); padding: 10px 20px;
+  border-radius: 20px; font-size: 14px;
+  opacity: 0; pointer-events: none;
+  transition: all 0.3s; z-index: 999;
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <a class="btn-back" href="index.html">← Home</a>
-  <h1>💕 Compatibilità Zodiacale</h1>
-  <div class="page-subtitle">Affinità cosmica tra i segni</div>
-</div>
+<!-- ── Sfondo Cosmico ── -->
+<div class="cosmos" aria-hidden="true"></div>
 
+<!-- ── Header ── -->
+<header class="page-header">
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Musica">🔇</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Tema">☀️</button>
+    </div>
+  </div>
+  <div class="header-center">
+    <div class="page-title">💕 Compatibilità Zodiacale</div>
+  </div>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active" aria-label="Italiano">IT</button>
+    <button data-lang="en" class="btn-lang" aria-label="English">EN</button>
+    <button data-lang="es" class="btn-lang" aria-label="Español">ES</button>
+  </div>
+</header>
+
+<!-- ── Contenuto ── -->
 <div class="content">
 
   <!-- SELETTORI -->
   <div class="selector-card">
-    <h2>Calcola l'Affinità Cosmica</h2>
-    <p>Seleziona due segni zodiacali per scoprire il loro grado di compatibilità secondo le stelle</p>
+    <h2 id="sel-title">Calcola l'Affinità Cosmica</h2>
+    <p id="sel-desc">Seleziona due segni zodiacali per scoprire il loro grado di compatibilità secondo le stelle</p>
     <div class="selectors-row">
-      <select id="selUser" onchange="updateSigns()">
-        <option value="">Tu — Segno</option>
+      <select id="selUser" onchange="updateSigns()" aria-label="Il tuo segno">
+        <option value="">— Seleziona —</option>
       </select>
       <div class="heart-divider">💕</div>
-      <select id="selPartner" onchange="updateSigns()">
-        <option value="">Partner — Segno</option>
+      <select id="selPartner" onchange="updateSigns()" aria-label="Segno del partner">
+        <option value="">— Seleziona —</option>
       </select>
     </div>
-    <button class="btn-calc" onclick="calcCompat()">✨ Calcola Compatibilità</button>
+    <button class="btn-calc" id="btn-calc" onclick="calcCompat()">✨ Calcola Compatibilità</button>
   </div>
 
   <!-- RISULTATO -->
@@ -170,9 +664,10 @@
 
     <div class="score-ring">
       <svg viewBox="0 0 110 110" width="110" height="110">
-        <circle cx="55" cy="55" r="45" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-        <circle id="scoreArc" cx="55" cy="55" r="45" fill="none" stroke="#ffd700" stroke-width="10"
-          stroke-dasharray="282.7" stroke-dashoffset="282.7" stroke-linecap="round" style="transition:stroke-dashoffset 1s ease,stroke 0.5s"/>
+        <circle cx="55" cy="55" r="45" fill="none" stroke="rgba(212,175,55,0.15)" stroke-width="10"/>
+        <circle id="scoreArc" cx="55" cy="55" r="45" fill="none" stroke="#d4af37" stroke-width="10"
+          stroke-dasharray="282.7" stroke-dashoffset="282.7" stroke-linecap="round"
+          style="transition:stroke-dashoffset 1s ease,stroke 0.5s"/>
       </svg>
       <div class="score-text" id="scoreNum">0%</div>
     </div>
@@ -184,9 +679,21 @@
     <div class="detail-grid" id="detailGrid"></div>
   </div>
 
+  <!-- SHARE -->
+  <div class="share-section">
+    <button class="btn-share" onclick="shareContent()" aria-label="Condividi">📤 <span id="share-label">Condividi</span></button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+    </div>
+  </div>
+
   <!-- TAVOLA SINOPTICA -->
   <div class="table-section">
-    <div class="section-title">📊 Tavola Sinoptica Completa</div>
+    <div class="section-title" id="table-title">📊 Tavola Sinoptica Completa</div>
     <div class="table-scroll">
       <table class="compat-table" id="compatTable"></table>
     </div>
@@ -195,11 +702,500 @@
   <!-- INFO SEGNI -->
   <div class="signs-info" id="signsInfo"></div>
 
-</div>
+  <!-- BANNER PREMIUM (visibile solo se non premium) -->
+  <div class="banner-premium" id="bannerPremium" style="display:none">
+    <p id="banner-text">Sblocca letture di compatibilità complete con ascendente, sinastria e previsioni mensili.</p>
+    <button class="btn-banner-premium" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'" aria-label="Sblocca Premium">✦ <span id="banner-btn-text">Sblocca MYSTICA Premium</span> · 4,99€</button>
+  </div>
 
+  <!-- ARTICOLO EDITORIALE -->
+  <article class="article-section">
+    <h1 id="art-title"></h1>
+    <img src="./images/icone/home/compatibilita.webp"
+         srcset="./images/icone/home/compatibilita.webp 1x, ./images/icone/home/compatibilita@2x.webp 2x"
+         id="art-hero"
+         alt=""
+         loading="eager"
+         class="article-hero">
+    <h2 id="art-h2"></h2>
+    <p id="art-p1"></p>
+    <p id="art-p2"></p>
+    <h3 id="art-h3"></h3>
+    <p id="art-p3"></p>
+    <p id="art-p4"></p>
+    <p id="art-p5"></p>
+    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  </article>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2 class="faq-title" id="faq-heading">FAQ</h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-links">
+      <a href="./index.html">Home</a>
+      <a href="./contatti.html">Contatti</a>
+      <a href="./about.html">Chi Siamo</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+    <p id="footer-copy"></p>
+    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  </footer>
+
+</div><!-- /content -->
+
+<!-- Toast -->
 <div class="toast" id="toast"></div>
 
+<!-- Premium Modal -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip"
+      onclick="closePremiumModal()"></button>
+  </div>
+</div>
+
 <script>
+/* ════════════════════════════════════════
+   LANG OBJECT — IT / EN / ES
+   ════════════════════════════════════════ */
+const LANG = {
+  it: {
+    back: "← Torna alla Home",
+    music: { on: "🎵 Musica ON", off: "🔇 Musica OFF" },
+    theme: { day: "☀️ Giorno", night: "🌙 Notte" },
+    premiumTitle: "✦ Funzione Premium",
+    premiumText: "Sblocca interpretazioni complete con sinastria, ascendente e compatibilità mensile.",
+    premiumPrice: "Solo 4,99€ una tantum",
+    premiumBtn: "Sblocca MYSTICA Premium",
+    premiumSkip: "Continua Gratis",
+    shareTitle: "MYSTICA Oracoli — Compatibilità Zodiacale",
+    shareText: "Ho calcolato la mia compatibilità zodiacale su MYSTICA Oracoli! Scopri anche tu l'affinità cosmica con il tuo partner.",
+    shareCopy: "🔗 Copia Link",
+    shareCopied: "✓ Copiato!",
+    shareLabel: "Condividi",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Le analisi astrologiche sono a scopo divinatorio e di intrattenimento. Non sostituiscono consulenze professionali.",
+    ctaExplore: "🔍 Scopri le Altre Categorie",
+    selTitle: "Calcola l'Affinità Cosmica",
+    selDesc: "Seleziona due segni zodiacali per scoprire il loro grado di compatibilità secondo le stelle",
+    btnCalc: "✨ Calcola Compatibilità",
+    tableTitle: "📊 Tavola Sinoptica Completa",
+    bannerText: "Sblocca letture di compatibilità complete con ascendente, sinastria e previsioni mensili.",
+    bannerBtn: "Sblocca MYSTICA Premium",
+    faqHeading: "FAQ — Compatibilità Zodiacale",
+    artImgAlt: "Compatibilità zodiacale — MYSTICA Oracoli",
+    artTitle: "Compatibilità Zodiacale: Come le Stelle Rivelano l'Affinità tra i Segni",
+    artH2: "L'Astrologia come Mappa dell'Affinità",
+    artH3: "Elementi, Qualità e Pianeti: Le Tre Chiavi della Compatibilità",
+    artP1: "Da millenni l'astrologia interpreta le relazioni umane attraverso la lente del cielo: ogni persona nasce sotto una costellazione precisa, con un insieme di energie e tendenze che si intrecciano in modo unico con quelle degli altri. La compatibilità zodiacale non è un verdetto definitivo, ma uno strumento di consapevolezza: conoscere le energie del proprio segno e di quello del partner aiuta a capire dove scorrono naturalmente le cose e dove invece è necessario portare attenzione, comprensione e dialogo.",
+    artP2: "Il calcolo dell'affinità cosmica si basa su secoli di osservazione astrologica. I dodici segni dello zodiaco formano una ruota simbolica in cui ogni segno si confronta con gli altri secondo angoli specifici — congiunzioni, sestili, quadrature, trigoni e opposizioni — che rivelano il tipo di dinamica energetica che si instaura tra due persone. Non esiste una coppia destinata al fallimento: esistono coppie che trovano immediatamente terreno comune e coppie che costruiscono qualcosa di più lento ma altrettanto solido attraverso la comprensione reciproca.",
+    artH3b: "La Tavola Sinoptica e Come Usarla",
+    artP3: "I quattro elementi — Fuoco, Terra, Aria e Acqua — costituiscono il primo filtro di compatibilità. I segni dello stesso elemento tendono a comprendersi naturalmente perché condividono un ritmo interiore simile. Fuoco e Aria si nutrono a vicenda: l'entusiasmo dei segni di Fuoco (Ariete, Leone, Sagittario) trova stimolo nell'intelletto dei segni d'Aria (Gemelli, Bilancia, Acquario). Terra e Acqua si completano: la solidità terrena di Toro, Vergine e Capricorno si armonizza con la sensibilità fluida di Cancro, Scorpione e Pesci. Le combinazioni tra elementi opposti — Fuoco con Acqua, Terra con Aria — possono essere più complesse ma anche più trasformative.",
+    artP4: "Le qualità astrologiche — Cardinale, Fissa e Mutevole — aggiungono un ulteriore livello di lettura. I segni Cardinali (Ariete, Cancro, Bilancia, Capricorno) sono iniziatori, amano avviare nuove fasi; quelli Fissi (Toro, Leone, Scorpione, Acquario) sono costanti e determinati, a volte testardi; quelli Mutevoli (Gemelli, Vergine, Sagittario, Pesci) sono adattabili e flessibili. Due segni Fissi insieme possono creare una coppia solida o una dinamica di stallo; due segni Mutevoli possono essere complici meravigliosi o mancare di stabilità.",
+    artP5: "La tavola sinoptica che trovi su questa pagina mostra in un colpo d'occhio le affinità tra tutti i dodici segni. Ogni cella è cliccabile: ti porta direttamente al calcolo tra quei due segni, con la descrizione dell'affinità, il punteggio e i profili astrologici di entrambi. Usala come mappa esplorativa: cerca il tuo segno, osserva con chi hai affinità alte e con chi le dinamiche richiedono maggiore lavoro. E ricorda: le stelle orientano, ma sono le scelte quotidiane a costruire le relazioni.",
+    faq: [
+      { q: "Come si calcola la compatibilità zodiacale?", a: "La compatibilità zodiacale si calcola analizzando la posizione dei segni nella ruota zodiacale, considerando l'elemento (Fuoco, Terra, Aria, Acqua), la qualità (Cardinale, Fissa, Mutevole) e i pianeti dominanti. Segni dello stesso elemento tendono ad avere alta affinità naturale, mentre segni in opposizione o quadratura possono avere dinamiche più complesse ma altrettanto significative." },
+      { q: "Quale coppia è più compatibile nello zodiaco?", a: "Non esiste una coppia universalmente 'più compatibile', ma alcune combinazioni tradizionalmente mostrano alta affinità: Ariete e Sagittario (entrambi Fuoco, energia e avventura), Toro e Vergine (entrambi Terra, stabilità e concretezza), Gemelli e Acquario (entrambi Aria, intelletto e libertà), Cancro e Scorpione (entrambi Acqua, emozione e profondità). Tuttavia la compatibilità vera va oltre il solo segno solare." },
+      { q: "Un punteggio basso significa che la coppia non funzionerà?", a: "Assolutamente no. Il punteggio indica la naturale fluidità energetica tra due segni, non il destino della coppia. Molte coppie con affinità astrologica 'bassa' costruiscono relazioni solide e durature grazie alla comunicazione, alla maturità emotiva e alla volontà reciproca di crescere insieme. L'astrologia è uno strumento di consapevolezza, non un verdetto." },
+      { q: "La compatibilità zodiacale vale solo per l'amore?", a: "No, l'analisi dell'affinità tra segni si applica a qualsiasi tipo di relazione: amicizie, partnership lavorative, rapporti familiari. Conoscere le dinamiche energetiche tra due segni aiuta a navigare meglio ogni tipo di interazione, capire le differenze di approccio e trovare terreno comune anche nelle relazioni non romantiche." },
+      { q: "Come posso approfondire la mia compatibilità oltre il segno solare?", a: "Per un'analisi completa, MYSTICA Premium offre la compatibilità con ascendente, la sinastria (confronto dei temi natali completi) e l'analisi dei pianeti personali — Luna, Venere, Marte — che influenzano profondamente dinamiche emotive e di attrazione. Il segno solare è solo l'inizio: la vera compatibilità emerge dalla sovrapposizione di tutti i livelli del tema natale." }
+    ],
+    seo: {
+      title: "Compatibilità Zodiacale — Affinità Cosmica tra Segni | MYSTICA Oracoli",
+      description: "Calcola la compatibilità zodiacale tra i 12 segni. Scopri l'affinità cosmica con il tuo partner con la tavola sinoptica astrologica di MYSTICA Oracoli.",
+      keywords: "compatibilità zodiacale, compatibilità segni zodiacali, affinità amorosa, oroscopo coppia, compatibilità astrologica, segni compatibili, amore zodiaco, mysticaoracoli",
+      ogTitle: "Compatibilità Zodiacale | MYSTICA Oracoli",
+      ogDesc: "Calcola la tua affinità cosmica con il partner. Tavola sinoptica completa dei 12 segni.",
+      ogLocale: "it_IT",
+      htmlLang: "it",
+      faqLD: [
+        { q: "Come si calcola la compatibilità zodiacale?", a: "Si analizzano elemento, qualità e pianeti dominanti dei due segni, valutandone la posizione relativa nella ruota zodiacale." },
+        { q: "Un punteggio basso di compatibilità significa che la coppia non funzionerà?", a: "No. Il punteggio indica la fluidità energetica naturale, non il destino della coppia. La comunicazione e la maturità emotiva contano più delle stelle." },
+        { q: "La compatibilità zodiacale vale solo per le coppie?", a: "No, si applica a qualsiasi relazione: amicizie, rapporti lavorativi e familiari." },
+        { q: "Quale coppia è più compatibile nello zodiaco?", a: "Tradizionalmente: Ariete-Sagittario, Toro-Vergine, Gemelli-Acquario, Cancro-Scorpione. Ma la vera compatibilità va oltre il segno solare." },
+        { q: "Come approfondire la compatibilità oltre il segno solare?", a: "Con MYSTICA Premium puoi analizzare ascendente, sinastria e pianeti personali come Luna, Venere e Marte." }
+      ]
+    }
+  },
+
+  en: {
+    back: "← Back to Home",
+    music: { on: "🎵 Music ON", off: "🔇 Music OFF" },
+    theme: { day: "☀️ Day", night: "🌙 Night" },
+    premiumTitle: "✦ Premium Feature",
+    premiumText: "Unlock full compatibility readings with rising sign, synastry and monthly forecasts.",
+    premiumPrice: "Only €4.99 one-time",
+    premiumBtn: "Unlock MYSTICA Premium",
+    premiumSkip: "Continue Free",
+    shareTitle: "MYSTICA Oracles — Zodiac Compatibility",
+    shareText: "I just calculated my zodiac compatibility on MYSTICA Oracles! Discover your cosmic affinity with your partner.",
+    shareCopy: "🔗 Copy Link",
+    shareCopied: "✓ Copied!",
+    shareLabel: "Share",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Astrological analyses are for divination and entertainment purposes only. They do not replace professional advice.",
+    ctaExplore: "🔍 Explore Other Categories",
+    selTitle: "Calculate Your Cosmic Affinity",
+    selDesc: "Select two zodiac signs to discover their compatibility level according to the stars",
+    btnCalc: "✨ Calculate Compatibility",
+    tableTitle: "📊 Complete Synoptic Table",
+    bannerText: "Unlock full compatibility readings with rising sign, synastry and monthly forecasts.",
+    bannerBtn: "Unlock MYSTICA Premium",
+    faqHeading: "FAQ — Zodiac Compatibility",
+    artImgAlt: "Zodiac compatibility — MYSTICA Oracles",
+    artTitle: "Zodiac Compatibility: How the Stars Reveal Affinity Between Signs",
+    artH2: "Astrology as a Map of Affinity",
+    artH3: "Elements, Qualities and Planets: The Three Keys to Compatibility",
+    artP1: "For millennia astrology has interpreted human relationships through the lens of the sky. Every person is born under a precise constellation, carrying a unique set of energies and tendencies that interweave with those of others in singular ways. Zodiac compatibility is not a definitive verdict, but a tool for awareness: knowing the energies of your own sign and your partner's helps you understand where things flow naturally and where attention, understanding and dialogue are needed.",
+    artP2: "The calculation of cosmic affinity is based on centuries of astrological observation. The twelve signs form a symbolic wheel where each sign relates to others through specific angles — conjunctions, sextiles, squares, trines and oppositions — that reveal the energetic dynamic between two people. No couple is destined to fail: some find common ground immediately, while others build something slower but equally solid through mutual understanding.",
+    artH3b: "The Synoptic Table and How to Use It",
+    artP3: "The four elements — Fire, Earth, Air and Water — form the first compatibility filter. Signs of the same element naturally understand each other because they share a similar inner rhythm. Fire and Air nourish each other: the enthusiasm of Fire signs (Aries, Leo, Sagittarius) finds stimulation in the intellect of Air signs (Gemini, Libra, Aquarius). Earth and Water complete each other: the earthly solidity of Taurus, Virgo and Capricorn harmonises with the fluid sensitivity of Cancer, Scorpio and Pisces.",
+    artP4: "The astrological qualities — Cardinal, Fixed and Mutable — add another layer of reading. Cardinal signs (Aries, Cancer, Libra, Capricorn) are initiators; Fixed signs (Taurus, Leo, Scorpio, Aquarius) are constant and determined; Mutable signs (Gemini, Virgo, Sagittarius, Pisces) are adaptable and flexible. Two Fixed signs can create a solid couple or a power struggle; two Mutable signs can be wonderful companions or lack stability.",
+    artP5: "The synoptic table on this page shows at a glance the affinities between all twelve signs. Every cell is clickable: it takes you directly to the calculation between those two signs, with the affinity description, score and astrological profiles of both. Use it as an exploratory map: find your sign, observe where you have high affinity and where dynamics require more work. Remember: the stars guide, but daily choices build relationships.",
+    faq: [
+      { q: "How is zodiac compatibility calculated?", a: "Zodiac compatibility is calculated by analysing the position of signs in the zodiac wheel, considering the element (Fire, Earth, Air, Water), quality (Cardinal, Fixed, Mutable) and ruling planets. Signs of the same element tend to have natural high affinity, while signs in opposition or square can have more complex but equally meaningful dynamics." },
+      { q: "Which couple is most compatible in the zodiac?", a: "There is no universally 'most compatible' couple, but some combinations traditionally show high affinity: Aries and Sagittarius, Taurus and Virgo, Gemini and Aquarius, Cancer and Scorpio. However, true compatibility goes beyond the sun sign alone." },
+      { q: "Does a low score mean the couple won't work?", a: "Absolutely not. The score indicates natural energetic fluidity between two signs, not the couple's destiny. Many couples with 'low' astrological affinity build solid, lasting relationships through communication and emotional maturity." },
+      { q: "Does zodiac compatibility apply only to romantic relationships?", a: "No, affinity analysis between signs applies to any relationship: friendships, work partnerships, family bonds. Knowing the energetic dynamics between two signs helps navigate any interaction more effectively." },
+      { q: "How can I explore compatibility beyond the sun sign?", a: "For a complete analysis, MYSTICA Premium offers compatibility with rising sign, synastry (full natal chart comparison) and analysis of personal planets — Moon, Venus, Mars — which profoundly influence emotional and attraction dynamics." }
+    ],
+    seo: {
+      title: "Zodiac Compatibility — Cosmic Affinity Between Signs | MYSTICA Oracles",
+      description: "Calculate zodiac compatibility between all 12 signs. Discover your cosmic affinity with your partner using MYSTICA Oracles' complete synoptic table.",
+      keywords: "zodiac compatibility, astrological compatibility, love horoscope, compatible signs, cosmic affinity, zodiac love, mysticaoracoli",
+      ogTitle: "Zodiac Compatibility | MYSTICA Oracles",
+      ogDesc: "Calculate your cosmic affinity with your partner. Complete synoptic table of all 12 signs.",
+      ogLocale: "en_US",
+      htmlLang: "en",
+      faqLD: [
+        { q: "How is zodiac compatibility calculated?", a: "By analysing element, quality and ruling planets of the two signs and their relative position in the zodiac wheel." },
+        { q: "Does a low compatibility score mean the couple won't work?", a: "No. The score indicates natural energetic fluidity, not the couple's destiny. Communication and emotional maturity matter more than the stars." },
+        { q: "Does zodiac compatibility apply only to couples?", a: "No, it applies to any relationship: friendships, work partnerships and family bonds." },
+        { q: "Which couple is most compatible in the zodiac?", a: "Traditionally: Aries-Sagittarius, Taurus-Virgo, Gemini-Aquarius, Cancer-Scorpio. But true compatibility goes beyond the sun sign." },
+        { q: "How can I explore compatibility beyond the sun sign?", a: "With MYSTICA Premium you can analyse rising sign, synastry and personal planets such as Moon, Venus and Mars." }
+      ]
+    }
+  },
+
+  es: {
+    back: "← Volver al Inicio",
+    music: { on: "🎵 Música ON", off: "🔇 Música OFF" },
+    theme: { day: "☀️ Día", night: "🌙 Noche" },
+    premiumTitle: "✦ Función Premium",
+    premiumText: "Desbloquea lecturas de compatibilidad completas con ascendente, sinastría y pronósticos mensuales.",
+    premiumPrice: "Solo 4,99€ pago único",
+    premiumBtn: "Desbloquear MYSTICA Premium",
+    premiumSkip: "Continuar Gratis",
+    shareTitle: "MYSTICA Oráculos — Compatibilidad Zodiacal",
+    shareText: "¡Calculé mi compatibilidad zodiacal en MYSTICA Oráculos! Descubre también tú la afinidad cósmica con tu pareja.",
+    shareCopy: "🔗 Copiar Enlace",
+    shareCopied: "✓ ¡Copiado!",
+    shareLabel: "Compartir",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Los análisis astrológicos son solo para entretenimiento y adivinación. No sustituyen el asesoramiento profesional.",
+    ctaExplore: "🔍 Explorar Otras Categorías",
+    selTitle: "Calcula tu Afinidad Cósmica",
+    selDesc: "Selecciona dos signos zodiacales para descubrir su grado de compatibilidad según las estrellas",
+    btnCalc: "✨ Calcular Compatibilidad",
+    tableTitle: "📊 Tabla Sinóptica Completa",
+    bannerText: "Desbloquea lecturas de compatibilidad completas con ascendente, sinastría y pronósticos mensuales.",
+    bannerBtn: "Desbloquear MYSTICA Premium",
+    faqHeading: "FAQ — Compatibilidad Zodiacal",
+    artImgAlt: "Compatibilidad zodiacal — MYSTICA Oráculos",
+    artTitle: "Compatibilidad Zodiacal: Cómo las Estrellas Revelan la Afinidad entre los Signos",
+    artH2: "La Astrología como Mapa de la Afinidad",
+    artH3: "Elementos, Cualidades y Planetas: Las Tres Claves de la Compatibilidad",
+    artP1: "Durante milenios la astrología ha interpretado las relaciones humanas a través del cielo: cada persona nace bajo una constelación precisa, con un conjunto único de energías y tendencias que se entrelazan con las de los demás de forma singular. La compatibilidad zodiacal no es un veredicto definitivo, sino una herramienta de conciencia: conocer las energías de tu propio signo y del signo de tu pareja ayuda a comprender dónde fluyen naturalmente las cosas y dónde es necesario prestar atención y diálogo.",
+    artP2: "El cálculo de la afinidad cósmica se basa en siglos de observación astrológica. Los doce signos forman una rueda simbólica donde cada signo se relaciona con los demás según ángulos específicos — conjunciones, sextiles, cuadraturas, trígonos y oposiciones — que revelan el tipo de dinámica energética entre dos personas. No existe pareja destinada al fracaso: algunas encuentran terreno común de inmediato, mientras que otras construyen algo más lento pero igualmente sólido.",
+    artH3b: "La Tabla Sinóptica y Cómo Usarla",
+    artP3: "Los cuatro elementos — Fuego, Tierra, Aire y Agua — forman el primer filtro de compatibilidad. Los signos del mismo elemento tienden a comprenderse naturalmente porque comparten un ritmo interior similar. Fuego y Aire se nutren mutuamente: el entusiasmo de los signos de Fuego (Aries, Leo, Sagitario) encuentra estimulación en el intelecto de los signos de Aire (Géminis, Libra, Acuario). Tierra y Agua se complementan: la solidez terrena de Tauro, Virgo y Capricornio se armoniza con la sensibilidad fluida de Cáncer, Escorpio y Piscis.",
+    artP4: "Las cualidades astrológicas — Cardinal, Fija y Mutable — añaden otro nivel de lectura. Los signos Cardinales (Aries, Cáncer, Libra, Capricornio) son iniciadores; los Fijos (Tauro, Leo, Escorpio, Acuario) son constantes y determinados; los Mutables (Géminis, Virgo, Sagitario, Piscis) son adaptables y flexibles. Dos signos Fijos pueden crear una pareja sólida o una dinámica de bloqueo; dos Mutables pueden ser compañeros maravillosos o carecer de estabilidad.",
+    artP5: "La tabla sinóptica de esta página muestra de un vistazo las afinidades entre los doce signos. Cada celda es clicable: te lleva directamente al cálculo entre esos dos signos, con la descripción de la afinidad, la puntuación y los perfiles astrológicos de ambos. Úsala como mapa exploratorio: encuentra tu signo, observa con quién tienes alta afinidad y dónde las dinámicas requieren más trabajo. Recuerda: las estrellas orientan, pero son las elecciones diarias las que construyen las relaciones.",
+    faq: [
+      { q: "¿Cómo se calcula la compatibilidad zodiacal?", a: "Se analiza la posición de los signos en la rueda zodiacal, considerando el elemento (Fuego, Tierra, Aire, Agua), la cualidad (Cardinal, Fija, Mutable) y los planetas dominantes. Los signos del mismo elemento tienden a tener alta afinidad natural." },
+      { q: "¿Qué pareja es más compatible en el zodiaco?", a: "Algunas combinaciones con alta afinidad tradicional: Aries y Sagitario, Tauro y Virgo, Géminis y Acuario, Cáncer y Escorpio. Pero la verdadera compatibilidad va más allá del signo solar." },
+      { q: "¿Una puntuación baja significa que la pareja no funcionará?", a: "En absoluto. La puntuación indica la fluidez energética natural, no el destino de la pareja. Muchas parejas con baja afinidad astrológica construyen relaciones sólidas gracias a la comunicación y la madurez emocional." },
+      { q: "¿La compatibilidad zodiacal solo aplica al amor?", a: "No, se aplica a cualquier tipo de relación: amistades, asociaciones laborales, vínculos familiares. Conocer las dinámicas entre dos signos ayuda a navegar mejor cualquier tipo de interacción." },
+      { q: "¿Cómo puedo explorar la compatibilidad más allá del signo solar?", a: "Con MYSTICA Premium puedes analizar ascendente, sinastría y planetas personales como Luna, Venus y Marte, que influyen profundamente en las dinámicas emocionales y de atracción." }
+    ],
+    seo: {
+      title: "Compatibilidad Zodiacal — Afinidad Cósmica entre Signos | MYSTICA Oráculos",
+      description: "Calcula la compatibilidad zodiacal entre los 12 signos. Descubre tu afinidad cósmica con tu pareja con la tabla sinóptica de MYSTICA Oráculos.",
+      keywords: "compatibilidad zodiacal, compatibilidad astrológica, horóscopo pareja, signos compatibles, afinidad cósmica, amor zodiaco, mysticaoracoli",
+      ogTitle: "Compatibilidad Zodiacal | MYSTICA Oráculos",
+      ogDesc: "Calcula tu afinidad cósmica con tu pareja. Tabla sinóptica completa de los 12 signos.",
+      ogLocale: "es_ES",
+      htmlLang: "es",
+      faqLD: [
+        { q: "¿Cómo se calcula la compatibilidad zodiacal?", a: "Analizando el elemento, la cualidad y los planetas dominantes de los dos signos y su posición relativa en la rueda zodiacal." },
+        { q: "¿Una puntuación baja significa que la pareja no funcionará?", a: "No. La puntuación indica la fluidez energética natural, no el destino de la pareja." },
+        { q: "¿La compatibilidad zodiacal solo aplica a las parejas?", a: "No, se aplica a cualquier relación: amistades, relaciones laborales y familiares." },
+        { q: "¿Qué pareja es más compatible en el zodiaco?", a: "Tradicionalmente: Aries-Sagitario, Tauro-Virgo, Géminis-Acuario, Cáncer-Escorpio." },
+        { q: "¿Cómo explorar la compatibilidad más allá del signo solar?", a: "Con MYSTICA Premium puedes analizar el ascendente, la sinastría y los planetas personales como Luna, Venus y Marte." }
+      ]
+    }
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ════════════════════════════════════════
+   SEO — updateSEO()
+   ════════════════════════════════════════ */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld && S.faqLD) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: S.faqLD.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a }
+      }))
+    });
+  }
+}
+
+/* ════════════════════════════════════════
+   LINGUA — applyLang()
+   ════════════════════════════════════════ */
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+
+  // Header
+  document.getElementById('btn-back').textContent = L.back;
+  document.getElementById('musicToggle').textContent =
+    window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  document.getElementById('themeToggle').textContent =
+    isDayMode ? L.theme.night : L.theme.day;
+
+  // Selettore
+  document.getElementById('sel-title').textContent = L.selTitle;
+  document.getElementById('sel-desc').textContent = L.selDesc;
+  document.getElementById('btn-calc').textContent = L.btnCalc;
+  document.getElementById('table-title').textContent = L.tableTitle;
+  document.getElementById('share-label').textContent = L.shareLabel;
+
+  // Banner premium
+  document.getElementById('banner-text').textContent = L.bannerText;
+  document.getElementById('banner-btn-text').textContent = L.bannerBtn;
+
+  // Articolo
+  document.getElementById('art-title').textContent = L.artTitle;
+  document.getElementById('art-hero').alt = L.artImgAlt;
+  document.getElementById('art-h2').textContent = L.artH2;
+  document.getElementById('art-h3').textContent = L.artH3;
+  document.getElementById('art-p1').textContent = L.artP1;
+  document.getElementById('art-p2').textContent = L.artP2;
+  document.getElementById('art-p3').textContent = L.artP3;
+  document.getElementById('art-p4').textContent = L.artP4;
+  document.getElementById('art-p5').textContent = L.artP5;
+  document.getElementById('cta-explore').textContent = L.ctaExplore;
+
+  // FAQ heading e accordion
+  document.getElementById('faq-heading').textContent = L.faqHeading;
+  renderFAQ(L.faq);
+
+  // Share
+  document.getElementById('share-copy').textContent = L.shareCopy;
+
+  // Footer
+  document.getElementById('footer-copy').textContent = L.footerCopy;
+  document.getElementById('footer-disclaimer').textContent = L.footerDisclaimer;
+
+  // Premium modal
+  document.getElementById('premium-title').textContent = L.premiumTitle;
+  document.getElementById('premium-text').textContent = L.premiumText;
+  document.getElementById('premium-price').textContent = L.premiumPrice;
+  document.getElementById('premium-btn').textContent = L.premiumBtn;
+  document.getElementById('premium-skip').textContent = L.premiumSkip;
+
+  // Aggiorna bottoni lang attivi
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+
+  // Ricostruisci i select con i segni nella lingua corrente
+  initSelects();
+  buildTable();
+}
+
+// Switch lingua
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+  });
+});
+
+/* ════════════════════════════════════════
+   AUDIO MANAGER
+   ════════════════════════════════════════ */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')
+  .addEventListener('click', () => window.audioManager.toggle());
+
+/* ════════════════════════════════════════
+   TEMA GIORNO / NOTTE
+   ════════════════════════════════════════ */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+
+document.getElementById('themeToggle')
+  .addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ════════════════════════════════════════
+   PREMIUM GATE
+   ════════════════════════════════════════ */
+function isPremium() {
+  return localStorage.getItem('myst_premium') === '1';
+}
+
+function requirePremium() {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal').classList.add('show');
+  document.getElementById('premiumModal').setAttribute('aria-hidden', 'false');
+  return false;
+}
+
+function closePremiumModal() {
+  document.getElementById('premiumModal').classList.remove('show');
+  document.getElementById('premiumModal').setAttribute('aria-hidden', 'true');
+}
+
+function checkBannerPremium() {
+  if (!isPremium()) {
+    document.getElementById('bannerPremium').style.display = 'block';
+  }
+}
+
+/* ════════════════════════════════════════
+   SHARE
+   ════════════════════════════════════════ */
+const PAGE_URL = 'https://mysticaoracoli.it/compatibilita.html';
+
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const encoded = encodeURIComponent(text + ' ' + PAGE_URL);
+  const urlEnc = encodeURIComponent(PAGE_URL);
+  document.getElementById('share-wa').href = `https://wa.me/?text=${encoded}`;
+  document.getElementById('share-tg').href = `https://t.me/share/url?url=${urlEnc}&text=${encodeURIComponent(text)}`;
+  document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${urlEnc}`;
+  document.getElementById('share-x').href  = `https://twitter.com/intent/tweet?text=${encoded}`;
+  document.getElementById('share-copy').textContent = L.shareCopy;
+  document.getElementById('sharePopup').hidden = false;
+}
+
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    document.getElementById('share-copy').textContent = L.shareCopied;
+    setTimeout(() => {
+      document.getElementById('share-copy').textContent = L.shareCopy;
+    }, 2000);
+  });
+}
+
+/* ════════════════════════════════════════
+   FAQ ACCORDION
+   ════════════════════════════════════════ */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  icon.textContent = isOpen ? '+' : '−';
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ════════════════════════════════════════
+   DATI ZODIACO
+   ════════════════════════════════════════ */
 const SEGNI = {
   ariete:    {n:"Ariete",    e:"♈",s:"🐏",p:"Marte",    el:"Fuoco", d:"21 Mar – 20 Apr",k:["Coraggio","Leadership","Passione","Iniziativa"]},
   toro:      {n:"Toro",      e:"♉",s:"🐂",p:"Venere",   el:"Terra",  d:"21 Apr – 20 Mag",k:["Stabilità","Sensualità","Tenacia","Costanza"]},
@@ -232,108 +1228,122 @@ const COMPAT = {
 
 const KEYS = Object.keys(SEGNI);
 
-function getScore(a,b){
-  if(a===b) return 68+Math.floor(Math.random()*15);
+/* ════════════════════════════════════════
+   LOGICA COMPATIBILITÀ
+   ════════════════════════════════════════ */
+function getScore(a, b) {
+  if (a === b) return 68 + Math.floor(Math.random() * 15);
   return COMPAT[a]?.[b] ?? COMPAT[b]?.[a] ?? 50;
 }
 
-function rnd(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2800);
+function getScoreStatic(a, b) {
+  return COMPAT[a]?.[b] ?? COMPAT[b]?.[a] ?? 50;
 }
 
-// Popola select
-function initSelects(){
-  const u=document.getElementById('selUser'), pa=document.getElementById('selPartner');
-  const opts=KEYS.map(k=>`<option value="${k}">${SEGNI[k].e} ${SEGNI[k].n}</option>`).join('');
-  const def='<option value="">— Seleziona —</option>';
-  u.innerHTML=def+opts; pa.innerHTML=def+opts;
+function rnd(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
-  // Prova a leggere profilo salvato
-  try{
-    const p=JSON.parse(localStorage.getItem('myst_v3_profile')||'{}')||{};
-    if(p.segno && SEGNI[p.segno]) u.value=p.segno;
-  }catch(e){}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-function updateSigns(){
-  const u=document.getElementById('selUser').value;
-  const pa=document.getElementById('selPartner').value;
-  if(u && pa) buildSignsInfo(u,pa);
+function initSelects() {
+  const u = document.getElementById('selUser');
+  const pa = document.getElementById('selPartner');
+  const savedU = u.value;
+  const savedPa = pa.value;
+  const opts = KEYS.map(k => `<option value="${k}">${SEGNI[k].e} ${SEGNI[k].n}</option>`).join('');
+  const def = '<option value="">— Seleziona —</option>';
+  u.innerHTML = def + opts;
+  pa.innerHTML = def + opts;
+  // Ripristina selezione
+  if (savedU) u.value = savedU;
+  if (savedPa) pa.value = savedPa;
+  // Prova profilo salvato
+  if (!u.value) {
+    try {
+      const p = JSON.parse(localStorage.getItem('myst_v3_profile') || '{}') || {};
+      if (p.segno && SEGNI[p.segno]) u.value = p.segno;
+    } catch(e) {}
+  }
 }
 
-function calcCompat(){
-  const u=document.getElementById('selUser').value;
-  const pa=document.getElementById('selPartner').value;
-  if(!u||!pa){ toast('⚠️ Seleziona entrambi i segni'); return; }
+function updateSigns() {
+  const u = document.getElementById('selUser').value;
+  const pa = document.getElementById('selPartner').value;
+  if (u && pa) buildSignsInfo(u, pa);
+}
 
-  const su=SEGNI[u], sp=SEGNI[pa];
-  const sc=getScore(u,pa);
+function calcCompat() {
+  const u = document.getElementById('selUser').value;
+  const pa = document.getElementById('selPartner').value;
+  if (!u || !pa) { showToast('⚠️ Seleziona entrambi i segni'); return; }
+
+  const su = SEGNI[u], sp = SEGNI[pa];
+  const sc = getScore(u, pa);
 
   // Animazione score ring
-  const arc=document.getElementById('scoreArc');
-  const circ=282.7;
-  const offset=circ-(circ*(sc/100));
-  let col='#f87171';
-  if(sc>=85) col='#4ade80';
-  else if(sc>=70) col='#ffd700';
-  else if(sc>=55) col='#fb923c';
-  arc.style.stroke=col;
-  setTimeout(()=>{ arc.style.strokeDashoffset=offset; },50);
+  const arc = document.getElementById('scoreArc');
+  const circ = 282.7;
+  const offset = circ - (circ * (sc / 100));
+  let col = '#f87171';
+  if (sc >= 85) col = '#4ade80';
+  else if (sc >= 70) col = '#d4af37';
+  else if (sc >= 55) col = '#fb923c';
+  arc.style.stroke = col;
+  setTimeout(() => { arc.style.strokeDashoffset = offset; }, 50);
 
-  let livello,nota,heartEmoji;
-  if(sc>=85){
-    livello='✨ Affinità Cosmica Profonda';
-    heartEmoji='💗';
-    nota=rnd([
+  let livello, nota, heartEmoji;
+  if (sc >= 85) {
+    livello = '✨ Affinità Cosmica Profonda';
+    heartEmoji = '💗';
+    nota = rnd([
       `${su.n} e ${sp.n} risuonano sulle stesse frequenze cosmiche. Questa connessione va oltre il razionale: è riconoscimento d'anima. Costruite qualcosa di grande insieme — le stelle sono dalla vostra parte.`,
       `Un'alchimia rara. ${su.n} porta ${su.el} e ${sp.n} porta ${sp.el}: insieme creano qualcosa di completo che nessuno dei due potrebbe creare da solo.`,
       `Le carte del cosmo li hanno segnati come compatibili in profondità. Non è fortuna — è affinità di valori, di ritmi, di visione del mondo. Curatela.`
     ]);
-  } else if(sc>=70){
-    livello='🌟 Buona Affinità';
-    heartEmoji='💕';
-    nota=rnd([
+  } else if (sc >= 70) {
+    livello = '🌟 Buona Affinità';
+    heartEmoji = '💕';
+    nota = rnd([
       `${su.n} e ${sp.n} hanno terreno fertile su cui costruire. Le differenze esistono ma si complementano — l'uno porta ciò che l'altro non ha.`,
       `Connessione solida con potenziale di crescita. Le sfide che incontrate non sono ostacoli — sono opportunità di maturazione reciproca.`,
       `Buona base con potenziale reale. ${su.el} e ${sp.el} dialogano bene tra loro quando entrambi portano consapevolezza.`
     ]);
-  } else if(sc>=55){
-    livello='⚡ Affinità con Sfide';
-    heartEmoji='💛';
-    nota=rnd([
+  } else if (sc >= 55) {
+    livello = '⚡ Affinità con Sfide';
+    heartEmoji = '💛';
+    nota = rnd([
       `Connessione che richiede lavoro consapevole. Le differenze tra ${su.n} e ${sp.n} sono reali — ma le differenze gestite con maturità arricchiscono più delle somiglianze.`,
       `Sfida stimolante. Non è la compatibilità più naturale, ma le coppie che superano le differenze costruiscono legami più profondi.`,
       `Terreno impervio ma fertile. Serve comunicazione continua e volontà autentica di incontrarsi a metà strada.`
     ]);
   } else {
-    livello='🌊 Connessione Complessa';
-    heartEmoji='💜';
-    nota=rnd([
+    livello = '🌊 Connessione Complessa';
+    heartEmoji = '💜';
+    nota = rnd([
       `Correnti contrarie: si attrae e si contraddice. Non è impossibile — ma richiede una maturità eccezionale da entrambi.`,
       `Le energie di ${su.n} e ${sp.n} guardano in direzioni diverse. L'amore diventa una scelta quotidiana invece di un dono naturale.`,
       `Sfida autentica. Il cosmo li mette alla prova: chi sceglie di restare cresce come non avrebbe potuto da solo.`
     ]);
   }
 
-  // Aggiorna UI
-  document.getElementById('resEmoji1').textContent=su.e;
-  document.getElementById('resName1').textContent=su.n;
-  document.getElementById('resEmoji2').textContent=sp.e;
-  document.getElementById('resName2').textContent=sp.n;
-  document.getElementById('resHeart').textContent=heartEmoji;
-  document.getElementById('scoreNum').textContent=sc+'%';
-  document.getElementById('compatLevel').textContent=livello;
-  document.getElementById('compatLevel').style.color=col;
-  document.getElementById('compatText').textContent=nota;
+  // Aggiorna UI risultato
+  document.getElementById('resEmoji1').textContent = su.e;
+  document.getElementById('resName1').textContent = su.n;
+  document.getElementById('resEmoji2').textContent = sp.e;
+  document.getElementById('resName2').textContent = sp.n;
+  document.getElementById('resHeart').textContent = heartEmoji;
+  document.getElementById('scoreNum').textContent = sc + '%';
+  document.getElementById('compatLevel').textContent = livello;
+  document.getElementById('compatLevel').style.color = col;
+  document.getElementById('compatText').textContent = nota;
 
-  // Dettagli
-  const el1=su.el, el2=sp.el;
-  const elCompat=checkElements(el1,el2);
-  document.getElementById('detailGrid').innerHTML=`
+  // Dettagli elementi
+  const el1 = su.el, el2 = sp.el;
+  const elCompat = checkElements(el1, el2);
+  document.getElementById('detailGrid').innerHTML = `
     <div class="detail-box">
       <div class="label">Elemento ${su.n}</div>
       <div class="value">${elIcon(el1)} ${el1}</div>
@@ -356,56 +1366,69 @@ function calcCompat(){
     </div>
   `;
 
-  const card=document.getElementById('resultCard');
-  card.style.display='block';
-  card.scrollIntoView({behavior:'smooth',block:'start'});
+  const card = document.getElementById('resultCard');
+  card.style.display = 'block';
+  card.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  buildSignsInfo(u,pa);
+  buildSignsInfo(u, pa);
 
   // Salva storico
-  try{
-    let h=JSON.parse(localStorage.getItem('myst_v3_history')||'[]');
-    h.unshift({tipo:'Compatibilità',dettaglio:`${su.n} + ${sp.n}: ${sc}%`,data:new Date().toLocaleString('it-IT'),ts:Date.now()});
-    if(h.length>60) h.pop();
-    localStorage.setItem('myst_v3_history',JSON.stringify(h));
-  }catch(e){}
+  try {
+    let h = JSON.parse(localStorage.getItem('myst_v3_history') || '[]');
+    h.unshift({ tipo: 'Compatibilità', dettaglio: `${su.n} + ${sp.n}: ${sc}%`, data: new Date().toLocaleString('it-IT'), ts: Date.now() });
+    if (h.length > 60) h.pop();
+    localStorage.setItem('myst_v3_history', JSON.stringify(h));
+  } catch(e) {}
+
+  // Share con la coppia trovata
+  const shareText = LANG[currentLang].shareText + ` ${su.n} + ${sp.n}: ${sc}%`;
+  shareContent(shareText);
+  document.getElementById('sharePopup').hidden = true; // mostra solo su click, non auto
 }
 
-function elIcon(el){
-  return {'Fuoco':'🔥','Terra':'🌍','Aria':'💨','Acqua':'💧'}[el]||'✨';
+function elIcon(el) {
+  return { 'Fuoco': '🔥', 'Terra': '🌍', 'Aria': '💨', 'Acqua': '💧' }[el] || '✨';
 }
 
-function checkElements(a,b){
-  if(a===b) return 'Stesso elemento — grande sintonia naturale';
-  const pairs={'Fuoco+Aria':'Si nutrono a vicenda — sinergia forte','Aria+Fuoco':'Si nutrono a vicenda — sinergia forte',
-    'Terra+Acqua':'Si completano — stabilità e fluidità','Acqua+Terra':'Si completano — stabilità e fluidità',
-    'Fuoco+Terra':'Sfida costruttiva — fuoco e solidità a confronto','Terra+Fuoco':'Sfida costruttiva — fuoco e solidità a confronto',
-    'Fuoco+Acqua':'Polarità intensa — attenzione al bilanciamento','Acqua+Fuoco':'Polarità intensa — attenzione al bilanciamento',
-    'Aria+Acqua':'Connessione fluida — intelletto ed emozioni','Acqua+Aria':'Connessione fluida — intelletto ed emozioni',
-    'Aria+Terra':'Diversità stimolante — mente pratica','Terra+Aria':'Diversità stimolante — mente pratica'
+function checkElements(a, b) {
+  if (a === b) return 'Stesso elemento — grande sintonia naturale';
+  const pairs = {
+    'Fuoco+Aria': 'Si nutrono a vicenda — sinergia forte',
+    'Aria+Fuoco': 'Si nutrono a vicenda — sinergia forte',
+    'Terra+Acqua': 'Si completano — stabilità e fluidità',
+    'Acqua+Terra': 'Si completano — stabilità e fluidità',
+    'Fuoco+Terra': 'Sfida costruttiva — fuoco e solidità a confronto',
+    'Terra+Fuoco': 'Sfida costruttiva — fuoco e solidità a confronto',
+    'Fuoco+Acqua': 'Polarità intensa — attenzione al bilanciamento',
+    'Acqua+Fuoco': 'Polarità intensa — attenzione al bilanciamento',
+    'Aria+Acqua':  'Connessione fluida — intelletto ed emozioni',
+    'Acqua+Aria':  'Connessione fluida — intelletto ed emozioni',
+    'Aria+Terra':  'Diversità stimolante — mente pratica',
+    'Terra+Aria':  'Diversità stimolante — mente pratica'
   };
-  return pairs[a+'+'+b]||'Energia complementare';
+  return pairs[a + '+' + b] || 'Energia complementare';
 }
 
-function buildSignsInfo(u,pa){
-  const su=SEGNI[u], sp=SEGNI[pa];
-  const div=document.getElementById('signsInfo');
+function buildSignsInfo(u, pa) {
+  const su = SEGNI[u], sp = SEGNI[pa];
+  const div = document.getElementById('signsInfo');
 
-  function topCompat(key){
-    const row=COMPAT[key]||{};
-    return Object.entries(row).sort(([,a],[,b])=>b-a).slice(0,3).map(([k,sc])=>
-      `<span class="top-tag" onclick="quickSet('${key}','${k}')">${SEGNI[k].e} ${SEGNI[k].n} ${sc}%</span>`
-    ).join('');
+  function topCompat(key) {
+    const row = COMPAT[key] || {};
+    return Object.entries(row).sort(([, a], [, b]) => b - a).slice(0, 3)
+      .map(([k, sc]) =>
+        `<span class="top-tag" onclick="quickSet('${key}','${k}')">${SEGNI[k].e} ${SEGNI[k].n} ${sc}%</span>`
+      ).join('');
   }
 
-  div.innerHTML=`
+  div.innerHTML = `
     <div class="section-title">🔮 Profili Astrologici</div>
-    ${signCard(su,u,topCompat(u))}
-    ${signCard(sp,pa,topCompat(pa))}
+    ${signCard(su, u, topCompat(u))}
+    ${signCard(sp, pa, topCompat(pa))}
   `;
 }
 
-function signCard(s,key,top){
+function signCard(s, key, top) {
   return `<div class="sign-card">
     <div class="sign-card-header">
       <div class="sign-card-emoji">${s.e}</div>
@@ -415,7 +1438,7 @@ function signCard(s,key,top){
       </div>
     </div>
     <div class="sign-card-body">
-      <div class="keywords">${s.k.map(k=>`<span class="kw">${k}</span>`).join('')}</div>
+      <div class="keywords">${s.k.map(k => `<span class="kw">${k}</span>`).join('')}</div>
       <div class="top-compat">
         <h4>💚 Più compatibili:</h4>
         <div class="top-list">${top}</div>
@@ -424,36 +1447,39 @@ function signCard(s,key,top){
   </div>`;
 }
 
-function quickSet(user, partner){
-  document.getElementById('selUser').value=user;
-  document.getElementById('selPartner').value=partner;
+function quickSet(user, partner) {
+  document.getElementById('selUser').value = user;
+  document.getElementById('selPartner').value = partner;
   calcCompat();
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Costruisce tavola sinoptica
-function buildTable(){
-  const short={ariete:'♈',toro:'♉',gemelli:'♊',cancro:'♋',leone:'♌',vergine:'♍',bilancia:'♎',scorpione:'♏',sagittario:'♐',capricorno:'♑',acquario:'♒',pesci:'♓'};
-  let th='<tr><th></th>'+KEYS.map(k=>`<th title="${SEGNI[k].n}">${short[k]}</th>`).join('')+'</tr>';
-  let rows=KEYS.map(u=>{
-    let cells=KEYS.map(pa=>{
-      const sc=u===pa?'♥':getScoreStatic(u,pa);
-      if(u===pa) return `<td><span class="cell" style="background:rgba(255,215,0,0.15);color:#ffd700">♥</span></td>`;
-      let cls='cell-low'; if(sc>=85)cls='cell-high'; else if(sc>=70)cls='cell-good'; else if(sc>=55)cls='cell-med';
+function buildTable() {
+  const short = { ariete:'♈',toro:'♉',gemelli:'♊',cancro:'♋',leone:'♌',vergine:'♍',bilancia:'♎',scorpione:'♏',sagittario:'♐',capricorno:'♑',acquario:'♒',pesci:'♓' };
+  let th = '<tr><th></th>' + KEYS.map(k => `<th title="${SEGNI[k].n}">${short[k]}</th>`).join('') + '</tr>';
+  let rows = KEYS.map(u => {
+    let cells = KEYS.map(pa => {
+      if (u === pa) return `<td><span class="cell" style="background:rgba(212,175,55,0.15);color:#d4af37">♥</span></td>`;
+      const sc = getScoreStatic(u, pa);
+      let cls = 'cell-low';
+      if (sc >= 85) cls = 'cell-high';
+      else if (sc >= 70) cls = 'cell-good';
+      else if (sc >= 55) cls = 'cell-med';
       return `<td><span class="cell ${cls}" style="cursor:pointer" onclick="quickSet('${u}','${pa}')" title="${SEGNI[u].n} + ${SEGNI[pa].n}">${sc}</span></td>`;
     }).join('');
     return `<tr><td>${short[u]}</td>${cells}</tr>`;
   }).join('');
-  document.getElementById('compatTable').innerHTML=th+rows;
+  document.getElementById('compatTable').innerHTML = th + rows;
 }
 
-function getScoreStatic(a,b){
-  return COMPAT[a]?.[b] ?? COMPAT[b]?.[a] ?? 50;
-}
-
-// INIT
-initSelects();
-buildTable();
+/* ════════════════════════════════════════
+   INIT
+   ════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+  checkBannerPremium();
+});
 </script>
 
 </body>
