@@ -1183,7 +1183,7 @@
       const grid = document.getElementById('signGrid');
       grid.innerHTML = L.segni.signs.map(s => `
         <div class="sign-card">
-          <img src="./images/zodiaco-verticale/${s.img}" alt="${s.name}" width="180" height="180" loading="lazy" class="sign-image" srcset="./images/zodiaco-verticale/${s.img.replace('.webp', '')}@2x.webp 2x">
+          <img src="./images/zodiaco-verticale/${s.img}" alt="${s.name}" width="180" height="180" loading="lazy" class="sign-image">
           <div class="sign-header">
             <div class="sign-emoji">${s.emoji}</div>
             <div>
