@@ -1,38 +1,104 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="I 7 Principi Ermetici del Kybalion spiegati: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto, Genere. Filosofia ermetica di Ermete Trismegisto per la crescita spirituale.">
-<meta name="keywords" content="ermetismo, principi ermetici, kybalion, ermete trismegisto, 7 principi ermetici, mentalismo, corrispondenza, vibrazione, polarità, ritmo, causa effetto, genere, filosofia ermetica, tavola di smeraldo, ermetismo italiano, esoterismo, mysticaoracoli">
-<title>Ermetismo: I 7 Principi Ermetici del Kybalion | MYSTICA</title>
-<link rel="canonical" href="https://mysticaoracoli.it/ermetismo.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — popolati da updateSEO() -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:title" content="Ermetismo: I 7 Principi Ermetici — MYSTICA">
-<meta property="og:description" content="Scopri i 7 Principi Ermetici del Kybalion: Mentalismo, Corrispondenza, Vibrazione e gli altri fondamenti della filosofia di Ermete Trismegisto.">
-<meta property="og:type" content="website">
+<link rel="canonical" href="https://mysticaoracoli.it/ermetismo.html">
+
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/ermetismo.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/ermetismo.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/ermetismo.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/ermetismo.html">
+
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://mysticaoracoli.it/ermetismo.html">
 <meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/ermetismo.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ermetismo: I 7 Principi Ermetici — MYSTICA">
-<meta name="twitter:description" content="I 7 Principi Ermetici del Kybalion spiegati. Filosofia di Ermete Trismegisto per la crescita spirituale.">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/ermetismo.webp">
+
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
+  /* ── Variabili / Reset ── */
   :root {
-    --bg: #09040f;
-    --surface: #12091e;
-    --card: #1a0f2e;
-    --gold: #d4af37;
-    --gold-dim: rgba(212,175,55,0.3);
-    --purple: #9d4edd;
+    --bg: #0a0514;
+    --card: #140c24;
+    --purple: #2a1748;
     --purple-dim: rgba(157,78,221,0.2);
-    --text: #e6e0f0;
-    --muted: #a89bc2;
-    --green: #4ade80;
-    --red: #f87171;
+    --gold: #d4af37;
+    --gold-dim: #b8860b;
+    --gold-glow: rgba(212,175,55,0.4);
+    --text: #f4f1fa;
+    --muted: #b8b2d1;
+    --radius: 18px;
+    --border: rgba(212,175,55,0.2);
     --blue: #c8b4ff;
   }
+  html.theme-day {
+    --bg: #f5f2ed;
+    --card: #ede8df;
+    --text: #2a1748;
+    --muted: #6b5b7f;
+    --purple: #6b5b7f;
+    --purple-dim: rgba(107,91,127,0.18);
+    --gold: #c89742;
+    --gold-dim: #a67c52;
+    --gold-glow: rgba(200,151,66,0.2);
+    --border: #c89742;
+  }
+  html.theme-day .card, html.theme-day .dash-card,
+  html.theme-day .storia-card, html.theme-day .person-card,
+  html.theme-day .usanza-card, html.theme-day .corpus-card,
+  html.theme-day .principio-result, html.theme-day .princip-tab,
+  html.theme-day .principi-intro {
+    background-color: var(--card);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  html.theme-day h1, html.theme-day h2, html.theme-day h3, html.theme-day h4 {
+    color: var(--text);
+    text-shadow: none;
+  }
+  html.theme-day button { color: var(--text); }
+  html.theme-day .btn-primary { color: #fff; }
+
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
     background: var(--bg);
@@ -40,7 +106,34 @@
     font-family: 'Crimson Pro', Georgia, serif;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
   }
+  a { color: var(--gold); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .skip-link {
+    position: absolute; left: -999px; top: auto;
+    background: var(--gold); color: #1a0a3e; padding: 8px 16px; border-radius: 8px; z-index: 9999;
+  }
+  .skip-link:focus { left: 12px; top: 12px; }
+
+  /* ── Sfondo Cosmico ── */
+  .cosmos {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+      radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+      radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+      radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+    animation: twinkle 14s infinite alternate;
+  }
+  @keyframes twinkle { 0%{opacity:.35;} 50%{opacity:.55;} 100%{opacity:.45;} }
+  html.theme-day .cosmos { opacity: .25; }
 
   /* ── HEADER ── */
   .page-header {
@@ -48,10 +141,11 @@
     background: rgba(9,4,15,0.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--gold-dim);
-    padding: 14px 20px;
-    display: flex; align-items: center; gap: 14px;
+    padding: max(14px, calc(14px + env(safe-area-inset-top, 0px))) 20px 14px;
   }
-  .back-btn {
+  html.theme-day .page-header { background: rgba(245,242,237,0.96); }
+  .header-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .btn-back {
     background: rgba(212,175,55,0.12);
     border: 1px solid var(--gold-dim);
     color: var(--gold);
@@ -62,31 +156,61 @@
     font-size: 12px;
     letter-spacing: 0.5px;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: all 0.25s ease;
     white-space: nowrap;
+    display: inline-block;
   }
-  .back-btn:hover { background: rgba(212,175,55,0.22); }
-  .header-center { flex: 1; text-align: center; }
-  .header-center h1 {
+  .btn-back:hover { background: rgba(212,175,55,0.22); }
+  .header-controls { display: flex; gap: 8px; }
+  .btn-icon {
+    background: rgba(212,175,55,0.1);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    border-radius: 16px;
+    padding: 7px 11px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    transition: all 0.25s ease;
+  }
+  .btn-icon:hover { background: rgba(212,175,55,0.22); }
+  .page-title {
+    text-align: center;
     font-family: 'Cinzel', serif;
     font-size: 18px;
     background: linear-gradient(90deg, #d4af37, #c8b4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1.5px;
+    margin: 10px 0;
   }
-  .header-center p { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  html.theme-day .page-title { -webkit-text-fill-color: var(--text); background: none; }
+  .lang-switch { display: flex; justify-content: center; gap: 6px; }
+  .btn-lang {
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn-lang.active { background: rgba(212,175,55,0.18); color: var(--gold); border-color: var(--gold); }
+
+  main { position: relative; z-index: 1; }
 
   /* ── HERO ── */
   .hero {
     text-align: center;
-    padding: 48px 20px 32px;
+    padding: 36px 20px 24px;
     background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(157,78,221,0.12) 0%, transparent 70%);
   }
-  .hero-icon { font-size: 72px; margin-bottom: 16px; filter: drop-shadow(0 0 30px rgba(212,175,55,0.4)); }
+  .hero-icon { font-size: 64px; margin-bottom: 14px; filter: drop-shadow(0 0 30px var(--gold-glow)); }
   .hero h2 {
     font-family: 'Cinzel', serif;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--gold);
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -96,7 +220,7 @@
     color: var(--muted);
     font-style: italic;
     max-width: 480px;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
     line-height: 1.7;
   }
   .hero-badge {
@@ -111,134 +235,40 @@
     letter-spacing: 1.5px;
   }
 
-  /* ── WRAPPER ── */
-  .content-wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 16px 100px;
+  .content-wrap { max-width: 680px; margin: 0 auto; padding: 0 16px 24px; }
+
+  .hero-img {
+    width: 100%; max-width: 500px; display: block; margin: 24px auto;
+    border-radius: 16px; border: 1px solid var(--gold-dim);
   }
 
-  /* ── IMAGE PLACEHOLDER ── */
-  .img-placeholder {
-    width: 100%;
-    max-width: 500px;
-    margin: 28px auto;
-    display: block;
-    border-radius: 16px;
-    border: 1px solid var(--gold-dim);
-    background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(157,78,221,0.06));
-    aspect-ratio: 16/9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--muted);
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-  }
-  .img-placeholder .img-icon { font-size: 32px; opacity: 0.5; }
-
-  /* ── SECTION DIVIDER ── */
   .section-title {
     font-family: 'Cinzel', serif;
     font-size: 13px;
     color: var(--gold);
     letter-spacing: 3px;
     text-align: center;
-    margin: 36px 0 20px;
+    margin: 32px 0 18px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
-  .section-title::before, .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold-dim);
-  }
+  .section-title::before, .section-title::after { content:''; flex:1; height:1px; background: var(--gold-dim); }
 
-  /* ── STORIA CARD ── */
-  .storia-card {
-    background: var(--card);
-    border: 1px solid var(--purple-dim);
-    border-radius: 16px;
-    padding: 22px;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    font-size: 15px;
-    color: var(--text);
-  }
-  .storia-card h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    font-size: 15px;
-    margin-bottom: 12px;
-    border-left: 3px solid var(--gold);
-    padding-left: 10px;
-  }
-  .storia-card p { margin-bottom: 10px; }
-  .storia-card p:last-child { margin-bottom: 0; }
-
-  /* ── QUOTE ── */
-  .quote-block {
-    background: rgba(212,175,55,0.06);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 12px 12px 0;
-    padding: 16px 20px;
-    margin: 20px 0;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--gold);
-    text-align: center;
-    line-height: 1.7;
-  }
-  .quote-block span { display: block; font-size: 11px; color: var(--muted); margin-top: 8px; font-style: normal; letter-spacing: 1px; }
-
-  /* ── PERSONAGGI ── */
-  .person-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .person-card {
-    background: var(--card);
-    border: 1px solid var(--gold-dim);
-    border-radius: 12px;
-    padding: 14px;
-    text-align: center;
-  }
-  .person-card .p-icon { font-size: 28px; margin-bottom: 8px; }
-  .person-card .p-name {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-  .person-card .p-dates { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
-  .person-card .p-desc { font-size: 12.5px; line-height: 1.6; color: var(--text); }
-
-  /* ── PRINCIPI TABS ── */
+  /* ── TOOL: PRINCIPI (sezione interattiva — sempre in cima) ── */
+  .tool-section { padding-top: 18px; content-visibility: auto; }
   .principi-intro {
     background: var(--card);
     border: 1px solid var(--gold-dim);
     border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 18px;
+    margin-bottom: 18px;
     text-align: center;
     font-size: 14px;
     color: var(--muted);
     line-height: 1.7;
   }
-  .tab-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
+  .tab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
   @media(min-width:480px){ .tab-grid { grid-template-columns: repeat(4, 1fr); } }
   .princip-tab {
     background: var(--card);
@@ -251,164 +281,147 @@
     font-size: 10.5px;
     color: var(--muted);
     letter-spacing: 0.5px;
-    transition: all 0.2s;
+    transition: all 0.25s ease;
     line-height: 1.4;
   }
   .princip-tab .t-icon { font-size: 20px; display: block; margin-bottom: 5px; }
-  .princip-tab.active {
-    background: rgba(212,175,55,0.14);
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+  .princip-tab.active { background: rgba(212,175,55,0.14); border-color: var(--gold); color: var(--gold); }
   .princip-tab:hover:not(.active) { border-color: rgba(212,175,55,0.4); color: var(--text); }
 
-  /* ── PRINCIPIO RESULT ── */
-  .principio-result {
-    background: var(--card);
-    border: 1px solid var(--gold-dim);
-    border-radius: 16px;
-    padding: 22px;
-    margin-bottom: 16px;
-  }
+  .principio-result { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 22px; margin-bottom: 16px; }
   .principio-top { text-align: center; margin-bottom: 18px; }
-  .principio-top .pr-nome {
-    font-family: 'Cinzel', serif;
-    font-size: 21px;
-    color: var(--gold);
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
-  }
-  .principio-top .pr-sub {
-    font-style: italic;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .pr-meta {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 12px 0;
-  }
+  .principio-top .pr-nome { font-family: 'Cinzel', serif; font-size: 21px; color: var(--gold); letter-spacing: 1.5px; margin-bottom: 4px; }
+  .principio-top .pr-sub { font-style: italic; font-size: 13px; color: var(--muted); }
+  .pr-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 12px 0; }
   .pr-badge {
-    background: rgba(212,175,55,0.1);
-    border: 1px solid var(--gold-dim);
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    padding: 4px 12px;
-    border-radius: 10px;
-    letter-spacing: 1px;
+    background: rgba(212,175,55,0.1); border: 1px solid var(--gold-dim); color: var(--gold);
+    font-family: 'Cinzel', serif; font-size: 10px; padding: 4px 12px; border-radius: 10px; letter-spacing: 1px;
   }
-  .geo-block {
-    background: rgba(255,255,255,0.03);
-    border-left: 3px solid var(--gold-dim);
-    border-radius: 0 10px 10px 0;
-    padding: 14px 16px;
-    margin-bottom: 12px;
-  }
-  .geo-block h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
+  .geo-block { background: rgba(255,255,255,0.03); border-left: 3px solid var(--gold-dim); border-radius: 0 10px 10px 0; padding: 14px 16px; margin-bottom: 12px; }
+  html.theme-day .geo-block { background: rgba(0,0,0,0.03); }
+  .geo-block h4 { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); letter-spacing: 1px; margin-bottom: 8px; }
   .geo-block p { font-size: 14px; line-height: 1.75; color: var(--text); }
   .frasi-container { margin-bottom: 14px; }
   .frase-item {
-    padding: 9px 14px;
-    background: #09040f;
-    border-left: 3px solid var(--gold-dim);
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 7px;
-    font-style: italic;
-    color: var(--muted);
-    font-size: 13px;
+    padding: 9px 14px; background: rgba(0,0,0,0.25); border-left: 3px solid var(--gold-dim);
+    border-radius: 0 8px 8px 0; margin-bottom: 7px; font-style: italic; color: var(--muted); font-size: 13px;
   }
+  html.theme-day .frase-item { background: rgba(0,0,0,0.04); }
 
-  /* ── BUTTONS ── */
   .btn-grp { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
   .btn {
-    flex: 1;
-    padding: 13px;
-    border: none;
-    border-radius: 12px;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-    min-width: 130px;
+    flex: 1; padding: 13px; border: none; border-radius: 12px; font-family: 'Cinzel', serif;
+    font-size: 12px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; transition: all 0.25s ease; min-width: 130px;
   }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), #b8960c);
-    color: #1a0a3e;
-  }
+  .btn-primary { background: linear-gradient(135deg, var(--gold), #b8960c); color: #1a0a3e; }
   .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-sec {
-    background: rgba(212,175,55,0.1);
-    border: 1px solid var(--gold-dim);
-    color: var(--gold);
-  }
+  .btn-sec { background: rgba(212,175,55,0.1); border: 1px solid var(--gold-dim); color: var(--gold); }
   .btn-sec:hover { background: rgba(212,175,55,0.2); }
-  .btn-random {
-    background: rgba(157,78,221,0.15);
-    border: 1px solid rgba(157,78,221,0.4);
-    color: #c8b4ff;
-  }
+  .btn-random { background: rgba(157,78,221,0.15); border: 1px solid rgba(157,78,221,0.4); color: var(--blue); }
   .btn-random:hover { background: rgba(157,78,221,0.25); }
 
-  /* ── USANZE GRID ── */
-  .usanze-grid {
-    display: grid;
-    gap: 12px;
-    margin-bottom: 24px;
+  /* ── SHARE ── */
+  .share-section { display: flex; justify-content: center; margin: 20px 0; position: relative; }
+  .btn-share {
+    background: rgba(212,175,55,0.1); border: 1px solid var(--gold-dim); color: var(--gold);
+    padding: 10px 22px; border-radius: 20px; font-family: 'Cinzel', serif; font-size: 12px; cursor: pointer; transition: all 0.25s ease;
   }
-  .usanza-card {
-    background: var(--card);
-    border: 1px solid var(--purple-dim);
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
+  .btn-share:hover { background: rgba(212,175,55,0.2); }
+  .share-popup {
+    position: absolute; top: 110%; background: var(--card); border: 1px solid var(--gold-dim);
+    border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 50; min-width: 180px;
   }
+  .share-btn {
+    display: block; text-align: center; padding: 8px 10px; border-radius: 8px; font-size: 12.5px;
+    text-decoration: none; color: var(--text); background: rgba(255,255,255,0.05); border: none; cursor: pointer; font-family: 'Crimson Pro', serif;
+  }
+  .share-btn:hover { background: rgba(212,175,55,0.15); }
+
+  /* ── ARTICOLO ── */
+  .article-section { padding-top: 6px; }
+  .article-section h2#art-title { font-family:'Cinzel', serif; font-size: 22px; color: var(--gold); text-align:center; letter-spacing:1px; margin-bottom: 6px; }
+  .article-section h3 { font-family:'Cinzel', serif; font-size: 15px; color: var(--gold); margin: 24px 0 10px; border-left:3px solid var(--gold); padding-left:10px; }
+  .article-section p { font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 12px; }
+
+  .storia-card { background: var(--card); border: 1px solid var(--purple-dim); border-radius: 16px; padding: 22px; margin-bottom: 18px; line-height: 1.8; font-size: 15px; color: var(--text); }
+  .storia-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 15px; margin-bottom: 12px; border-left: 3px solid var(--gold); padding-left: 10px; }
+  .storia-card p { margin-bottom: 10px; }
+  .storia-card p:last-child { margin-bottom: 0; }
+
+  .quote-block {
+    background: rgba(212,175,55,0.06); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin: 20px 0; font-style: italic; font-size: 16px; color: var(--gold); text-align: center; line-height: 1.7;
+  }
+  .quote-block span { display: block; font-size: 11px; color: var(--muted); margin-top: 8px; font-style: normal; letter-spacing: 1px; }
+
+  .person-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+  .person-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 12px; padding: 14px; text-align: center; }
+  .person-card .p-icon { font-size: 28px; margin-bottom: 8px; }
+  .person-card .p-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--gold); margin-bottom: 4px; }
+  .person-card .p-dates { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .person-card .p-desc { font-size: 12.5px; line-height: 1.6; color: var(--text); }
+
+  .usanze-grid { display: grid; gap: 12px; margin-bottom: 8px; }
+  .usanza-card { background: var(--card); border: 1px solid var(--purple-dim); border-radius: 12px; padding: 16px; display: flex; gap: 14px; align-items: flex-start; }
   .usanza-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
   .usanza-card h4 { font-family: 'Cinzel', serif; font-size: 13px; color: var(--blue); margin-bottom: 5px; }
-  .usanza-card p { font-size: 13.5px; line-height: 1.65; color: var(--text); }
+  .usanza-card p { font-size: 13.5px; line-height: 1.65; color: var(--text); margin: 0; }
 
-  /* ── CORPUS ── */
-  .corpus-card {
-    background: var(--card);
-    border: 1px solid var(--gold-dim);
-    border-radius: 14px;
-    padding: 18px;
-    margin-bottom: 14px;
-    cursor: pointer;
-  }
-  .corpus-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  .corpus-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 14px; padding: 18px; margin-bottom: 14px; cursor: pointer; }
+  .corpus-header { display: flex; justify-content: space-between; align-items: center; }
   .corpus-header h4 { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold); }
   .corpus-toggle { color: var(--gold); font-size: 18px; transition: transform 0.3s; }
-  .corpus-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: var(--text);
-  }
+  .corpus-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; font-size: 13.5px; line-height: 1.75; color: var(--text); }
   .corpus-body.open { max-height: 600px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 10px; }
+  .corpus-body p { margin: 0; }
+
+  .article-links { display: flex; flex-direction: column; gap: 8px; margin: 24px 0; }
+  .article-links a { font-size: 14px; text-decoration: underline; }
+  .cta-explore {
+    display: block; text-align: center; background: rgba(212,175,55,0.12); border: 1px solid var(--gold-dim);
+    color: var(--gold); padding: 13px; border-radius: 12px; font-family: 'Cinzel', serif; font-size: 13px;
+    text-decoration: none; letter-spacing: 0.5px; transition: all 0.25s ease;
+  }
+  .cta-explore:hover { background: rgba(212,175,55,0.22); }
+
+  /* ── FAQ ── */
+  .faq-section { margin-top: 32px; }
+  .faq-title { font-family:'Cinzel', serif; font-size: 16px; color: var(--gold); text-align:center; letter-spacing:1px; margin-bottom: 16px; }
+  .faq-item { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .faq-question {
+    width: 100%; background: none; border: none; color: var(--text); padding: 14px 16px; text-align: left;
+    font-family: 'Cinzel', serif; font-size: 13px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  }
+  .faq-icon { color: var(--gold); flex-shrink: 0; }
+  .faq-answer { padding: 0 16px 14px; font-size: 14px; line-height: 1.7; color: var(--muted); }
+
+  /* ── PREMIUM MODAL ── */
+  .premium-modal { position: fixed; inset: 0; z-index: 999; display: none; align-items: center; justify-content: center; }
+  .premium-modal.show { display: flex; }
+  .modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); }
+  .modal-content {
+    position: relative; background: var(--card); border: 1px solid var(--gold); border-radius: 18px;
+    padding: 28px 24px; max-width: 360px; width: 90%; text-align: center; z-index: 1;
+  }
+  .modal-content h2 { font-family:'Cinzel', serif; color: var(--gold); font-size: 18px; margin-bottom: 12px; }
+  .modal-content p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+  .premium-price { color: var(--gold) !important; font-family:'Cinzel', serif; font-size: 14px !important; }
+  .btn-premium-buy {
+    width: 100%; background: linear-gradient(135deg, var(--gold), #b8960c); color: #1a0a3e;
+    border: none; padding: 13px; border-radius: 12px; font-family:'Cinzel', serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 8px;
+  }
+  .btn-premium-skip { width: 100%; background: none; border: none; color: var(--muted); padding: 8px; font-size: 13px; cursor: pointer; text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  .page-footer { text-align: center; padding: 28px 20px 90px; font-size: 12px; color: var(--muted); }
+  .footer-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+  .footer-links a { font-size: 12px; text-decoration: none; }
+  .footer-disclaimer { margin-top: 8px; font-size: 11px; opacity: 0.8; max-width: 480px; margin-left:auto; margin-right:auto; }
 
   /* ── TOAST ── */
   .toast {
     position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-    background: #1a0f2e; border: 1px solid var(--gold);
+    background: var(--card); border: 1px solid var(--gold);
     color: var(--gold); padding: 10px 22px; border-radius: 20px;
     font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 1px;
     z-index: 9999; opacity: 0; transition: opacity 0.3s; pointer-events: none;
@@ -416,7 +429,6 @@
   }
   .toast.show { opacity: 1; }
 
-  /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
@@ -424,433 +436,873 @@
 </head>
 <body>
 
+<div class="cosmos" aria-hidden="true"></div>
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
 <!-- HEADER -->
 <header class="page-header">
-  <a class="back-btn" onclick="history.back()">← Indietro</a>
-  <div class="header-center">
-    <h1>📜 ERMETISMO</h1>
-    <p>I Sette Principi della Saggezza Universale</p>
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+    </div>
+  </div>
+  <h1 class="page-title" id="page-title">📜 ERMETISMO</h1>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
   </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-icon">⚗️</div>
-  <h2>La Via di Ermete Trismegisto</h2>
-  <p class="hero-sub">
-    Sette leggi cosmiche che governano la realtà, la mente e la trasformazione dell'anima.
-    Dalla Biblioteca di Alessandria alle logge segrete del Rinascimento — la saggezza che non muore.
-  </p>
-  <span class="hero-badge">✦ PHILOSOPHIA HERMETICA ✦</span>
+<main id="main-content">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-icon">⚗️</div>
+    <h2 id="hero-title"></h2>
+    <p class="hero-sub" id="hero-sub"></p>
+    <span class="hero-badge" id="hero-badge"></span>
+  </div>
+
+  <!-- 3a. SEZIONE INTERATTIVA — SEMPRE IN CIMA -->
+  <div class="content-wrap tool-section">
+    <div class="section-title" id="title-principi"></div>
+
+    <div class="principi-intro" id="principi-intro"></div>
+
+    <div class="tab-grid" id="tabGrid"></div>
+
+    <div class="btn-grp" style="margin-bottom:16px;">
+      <button class="btn btn-random" onclick="herRandom()" id="btn-random"></button>
+      <button class="btn btn-primary" onclick="calcErmetismo()" id="btn-reveal"></button>
+    </div>
+
+    <div id="hermetResult" style="display:none;"></div>
+  </div>
+
+  <!-- 3b. SHARE -->
+  <div class="content-wrap">
+    <div class="share-section">
+      <button class="btn-share" onclick="shareContent()">📤 <span id="share-label"></span></button>
+      <div class="share-popup" id="sharePopup" hidden>
+        <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+        <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+        <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3c. ARTICOLO EDITORIALE -->
+  <div class="content-wrap">
+    <article class="article-section">
+      <h2 id="art-title"></h2>
+      <img src="./images/ermetismo.webp"
+           srcset="./images/ermetismo.webp 1x, ./images/ermetismo@2x.webp 2x"
+           id="art-hero" class="hero-img" alt=""
+           width="500" height="281"
+           loading="eager" decoding="async"
+           onerror="this.style.display='none'">
+
+      <h3 id="art-h2"></h3>
+      <p id="art-p1"></p>
+      <p id="art-p2"></p>
+      <p id="art-p3"></p>
+
+      <h3 id="art-h3"></h3>
+      <p id="art-p4"></p>
+      <p id="art-p5"></p>
+
+      <!-- FIGURE INFLUENTI -->
+      <div class="section-title" id="title-figure"></div>
+      <div class="person-grid" id="personGrid"></div>
+
+      <!-- USANZE -->
+      <div class="section-title" id="title-usanze"></div>
+      <div class="usanze-grid" id="usanzeGrid"></div>
+
+      <!-- CORPUS HERMETICUM -->
+      <div class="section-title" id="title-corpus"></div>
+      <div id="corpusList"></div>
+
+      <!-- LEGGENDE -->
+      <div class="section-title" id="title-leggende"></div>
+      <div id="leggendeList"></div>
+
+      <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"></nav>
+
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </article>
+  </div>
+
+  <!-- 3d. FAQ -->
+  <div class="content-wrap">
+    <section class="faq-section">
+      <h2 class="faq-title">FAQ</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./contatti.html">Contatti</a>
+    <a href="./about.html">About</a>
+    <a href="./privacy.html">Privacy</a>
+  </div>
+  <p id="footer-copy"></p>
+  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+</footer>
+
+<!-- PREMIUM MODAL -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
 </div>
-
-<!-- CONTENT -->
-<div class="content-wrap">
-
-  <!-- IMAGE PLACEHOLDER 1 -->
-  <div class="img-placeholder">
-    <span class="img-icon">🖼️</span>
-    INSERISCI IMMAGINE — Ermete Trismegisto / Tavola Smeraldina
-  </div>
-
-  <!-- STORIA -->
-  <div class="section-title">ORIGINI & STORIA</div>
-
-  <div class="storia-card">
-    <h3>🏺 Ermete Trismegisto — Il "Tre Volte Grande"</h3>
-    <p>
-      Ermete Trismegisto — letteralmente <em>"Thoth il Tre Volte Grande"</em> — è la figura leggendaria al centro della tradizione ermetica. Per i Greci dell'Egitto ellenistico era la fusione di due dei della sapienza: <strong>Thoth egiziano</strong> (dio della scrittura, della magia e della luna) e <strong>Hermes greco</strong> (messaggero degli dei, guida delle anime). Il risultato fu qualcosa di più grande di entrambi.
-    </p>
-    <p>
-      Gli scritti a lui attribuiti — il <em>Corpus Hermeticum</em> — furono probabilmente composti tra il I e il III secolo d.C. ad Alessandria d'Egitto, il crocevia intellettuale dell'antico mondo. Ma la tradizione vuole che Ermete fosse contemporaneo di Mosè, o addirittura suo maestro. Per secoli l'Occidente credette che il Corpus Hermeticum fosse vecchio quanto la civiltà stessa.
-    </p>
-    <p>
-      Nel <strong>1463</strong>, Cosimo de' Medici incaricò Marsilio Ficino di tradurre in latino i manoscritti greci appena arrivati da Costantinopoli. L'ordine era perentorio: interrompi Platone, questo viene prima. Il Rinascimento europeo ne fu scosso alle fondamenta.
-    </p>
-  </div>
-
-  <!-- IMAGE PLACEHOLDER 2 -->
-  <div class="img-placeholder">
-    <span class="img-icon">🖼️</span>
-    INSERISCI IMMAGINE — Biblioteca di Alessandria / Cosimo de' Medici
-  </div>
-
-  <div class="storia-card">
-    <h3>📜 La Tavola Smeraldina</h3>
-    <p>
-      Il testo ermetico più famoso è la <em>Tabula Smaragdina</em> — la Tavola Smeraldina — un breve testo di tredici versetti che si dice fosse incisa su una lastra di smeraldo trovata nella tomba di Ermete. La sua frase più celebre è diventata il codice segreto di ogni praticante esoterico attraverso i secoli:
-    </p>
-    <div class="quote-block">
-      "Come in alto, così in basso. Come nell'interno, così nell'esterno. Come nel grande, così nel piccolo."
-      <span>Tabula Smaragdina — Ermete Trismegisto</span>
-    </div>
-    <p>
-      Il testo fu probabilmente scritto in aramaico o greco tra il VI e l'VIII secolo d.C., ma circolò attraverso le traduzioni arabe medievali prima di arrivare all'Europa latina nel XII secolo. Isaac Newton ne possedeva una copia e la studiò ossessivamente.
-    </p>
-  </div>
-
-  <div class="storia-card">
-    <h3>🌍 La Diffusione attraverso i Secoli</h3>
-    <p>
-      <strong>Egitto ellenistico (I–IV sec. d.C.):</strong> I circoli neoplatonici e gnostici di Alessandria sviluppano i testi ermetici come sintesi tra filosofia greca, religione egiziana e misticismo ebraico.
-    </p>
-    <p>
-      <strong>Islam medievale (VIII–XII sec.):</strong> Traduttori arabi come Jabir ibn Hayyan preservano e ampliano la tradizione. L'alchimia islamica è profondamente ermetica.
-    </p>
-    <p>
-      <strong>Rinascimento italiano (XV–XVI sec.):</strong> Marsilio Ficino, Giovanni Pico della Mirandola e Giordano Bruno fanno dell'ermetismo la filosofia segreta delle corti rinascimentali.
-    </p>
-    <p>
-      <strong>Età moderna (XIX–XX sec.):</strong> La tradizione rinasce attraverso la Massoneria, la Teosofia di Helena Blavatsky, l'Ordine Ermetico della Golden Dawn (Aleister Crowley, W.B. Yeats, Dion Fortune) e infine il movimento New Age.
-    </p>
-  </div>
-
-  <!-- PERSONAGGI -->
-  <div class="section-title">FIGURE INFLUENTI</div>
-
-  <!-- IMAGE PLACEHOLDER 3 -->
-  <div class="img-placeholder">
-    <span class="img-icon">🖼️</span>
-    INSERISCI IMMAGINE — Ritratti: Marsilio Ficino / Isaac Newton
-  </div>
-
-  <div class="person-grid">
-    <div class="person-card">
-      <div class="p-icon">🧙</div>
-      <div class="p-name">Marsilio Ficino</div>
-      <div class="p-dates">1433–1499</div>
-      <div class="p-desc">Traduttore del Corpus Hermeticum per i Medici. Fondò l'Accademia Platonica di Firenze. Unì magia, astrologia e neoplatonismo.</div>
-    </div>
-    <div class="person-card">
-      <div class="p-icon">🔬</div>
-      <div class="p-name">Isaac Newton</div>
-      <div class="p-dates">1643–1727</div>
-      <div class="p-desc">Fisico rivoluzionario ma anche alchimista ermetico. Scrisse più pagine di alchimia che di fisica. Cercava la pietra filosofale.</div>
-    </div>
-    <div class="person-card">
-      <div class="p-icon">🦁</div>
-      <div class="p-name">Giordano Bruno</div>
-      <div class="p-dates">1548–1600</div>
-      <div class="p-desc">Filosofo ermetico bruciato dall'Inquisizione. Insegnò che l'universo è infinito e che Dio è in tutto. Martire della saggezza.</div>
-    </div>
-    <div class="person-card">
-      <div class="p-icon">🌹</div>
-      <div class="p-name">Helena Blavatsky</div>
-      <div class="p-dates">1831–1891</div>
-      <div class="p-desc">Fondatrice della Teosofia. Sintetizzò ermetismo, cabala e filosofie orientali. La sua "Dottrina Segreta" influenzò tutto l'esoterismo moderno.</div>
-    </div>
-    <div class="person-card">
-      <div class="p-icon">⚔️</div>
-      <div class="p-name">Hermes Trismegistus</div>
-      <div class="p-dates">Mitico</div>
-      <div class="p-desc">Il maestro dei maestri. Figura leggendaria, fusione di Thoth ed Ermes. Autore immaginario di migliaia di testi sacri perduti.</div>
-    </div>
-    <div class="person-card">
-      <div class="p-icon">🌙</div>
-      <div class="p-name">Franz Bardon</div>
-      <div class="p-dates">1909–1958</div>
-      <div class="p-desc">Mago pratico ceco. Il suo "Iniziazione all'Ermetismo" è considerato il manuale tecnico più completo della tradizione.</div>
-    </div>
-  </div>
-
-  <!-- USANZE -->
-  <div class="section-title">USANZE & PRATICHE TRADIZIONALI</div>
-
-  <div class="usanze-grid">
-    <div class="usanza-card">
-      <span class="usanza-icon">🔥</span>
-      <div>
-        <h4>Il Laboratorio Alchemico</h4>
-        <p>Gli ermetisti medievali lavoravano in laboratori segreti, distillando, calcinando e dissolvendo sostanze fisiche come metafora della trasformazione interiore. Il lavoro sulla materia era simultaneamente lavoro sull'anima.</p>
-      </div>
-    </div>
-    <div class="usanza-card">
-      <span class="usanza-icon">⭐</span>
-      <div>
-        <h4>La Corrispondenza Astrologica</h4>
-        <p>Ogni pianeta, metallo, erba e parte del corpo erano in corrispondenza ermetica. Operare sull'uno significa operare sull'altro. L'astrologo, il medico e il mago erano la stessa persona.</p>
-      </div>
-    </div>
-    <div class="usanza-card">
-      <span class="usanza-icon">📖</span>
-      <div>
-        <h4>Il Grimorio Personale</h4>
-        <p>L'adepto ermetico teneva un diario segreto — il grimorio — dove annotava le proprie osservazioni, meditazioni e corrispondenze. Era il libro della vita interiore, mai mostrato a nessuno.</p>
-      </div>
-    </div>
-    <div class="usanza-card">
-      <span class="usanza-icon">🌒</span>
-      <div>
-        <h4>Il Lavoro Notturno</h4>
-        <p>Molte pratiche ermetiche si svolgevano di notte, ore in cui il silenzio della mente razionale permette ai livelli più profondi di emergere. La notte era considerata "il laboratorio del Cielo".</p>
-      </div>
-    </div>
-    <div class="usanza-card">
-      <span class="usanza-icon">🗝️</span>
-      <div>
-        <h4>La Catena di Trasmissione</h4>
-        <p>La conoscenza ermetica non si leggeva — si riceveva. Ogni adepto aveva un maestro e diventava maestro a sua volta. La trasmissione orale diretta era ritenuta indispensabile alla vera comprensione.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CORPUS HERMETICUM -->
-  <div class="section-title">IL CORPUS HERMETICUM</div>
-
-  <!-- IMAGE PLACEHOLDER 4 -->
-  <div class="img-placeholder">
-    <span class="img-icon">🖼️</span>
-    INSERISCI IMMAGINE — Manoscritto antico / Papiro ermetico
-  </div>
-
-  <div class="corpus-card" onclick="toggleCorpus(0)">
-    <div class="corpus-header">
-      <h4>📖 Il Poimandres — La Mente del Sovrano</h4>
-      <span class="corpus-toggle" id="ct0">▼</span>
-    </div>
-    <div class="corpus-body" id="cb0">
-      Il primo e più importante testo del Corpus. Ermete riceve una visione cosmica della creazione: la Mente universale (Nous) gli rivela l'origine del cosmo, la caduta dell'anima umana nella materia e la via del ritorno. È la cosmogonia ermetica per eccellenza — un racconto di discesa e ascesa che riecheggia nei miti di tutte le culture.
-    </div>
-  </div>
-
-  <div class="corpus-card" onclick="toggleCorpus(1)">
-    <div class="corpus-header">
-      <h4>📖 L'Asclepius — Dio e il Mondo</h4>
-      <span class="corpus-toggle" id="ct1">▼</span>
-    </div>
-    <div class="corpus-body" id="cb1">
-      Il dialogo tra Ermete e Asclepio (il dio della medicina) esplora la relazione tra il divino e il materiale. Contiene una delle profezie più famose dell'antichità: la "Lamentazione ermetica" che predice la caduta della saggezza egiziana — stranamente accurata nella sua descrizione della distruzione della cultura antica.
-    </div>
-  </div>
-
-  <div class="corpus-card" onclick="toggleCorpus(2)">
-    <div class="corpus-header">
-      <h4>📖 Il Kybalion — Sintesi Moderna</h4>
-      <span class="corpus-toggle" id="ct2">▼</span>
-    </div>
-    <div class="corpus-body" id="cb2">
-      Pubblicato nel 1908 da "Tre Iniziati" (probabilmente William Walker Atkinson), il Kybalion è la più accessibile sintesi moderna dei principi ermetici. Non è un testo antico, ma una formulazione dei 7 principi ermetici in linguaggio moderno. Tradotto in decine di lingue, è il testo introduttivo all'ermetismo più letto del XX secolo.
-    </div>
-  </div>
-
-  <!-- LEGGENDE -->
-  <div class="section-title">LEGGENDE & STORIE</div>
-
-  <div class="storia-card">
-    <h3>💎 La Leggenda della Tomba di Ermete</h3>
-    <p>
-      Secondo una tradizione medievale, Alessandro Magno — durante la conquista dell'Egitto nel 332 a.C. — trovò la tomba di Ermete Trismegisto sotto la Grande Piramide. Dentro, su un trono di oro sorgeva la mummia del maestro, la Tavola Smeraldina in mano. Alessandro avrebbe custodito il segreto per tutta la vita.
-    </p>
-    <p>
-      La leggenda è quasi certamente apocrifa, ma riflette qualcosa di vero: l'idea che la saggezza più profonda sia custodita in luoghi inaccessibili, rivelata solo a chi ha la chiave. E la chiave, nella tradizione ermetica, non è una chiave fisica — è la trasformazione interiore.
-    </p>
-  </div>
-
-  <div class="storia-card">
-    <h3>🌙 L'Ordine della Golden Dawn</h3>
-    <p>
-      Fondata a Londra nel 1888 da tre massoni e un manoscritto cifrato di dubbia provenienza, l'Ordine Ermetico della Golden Dawn divenne la più influente scuola di magia pratica dell'era moderna. Tra i suoi membri: il poeta W.B. Yeats, il mago Aleister Crowley, la scrittrice e occultista Dion Fortune.
-    </p>
-    <p>
-      Il sistema della Golden Dawn integrò ermetismo, cabala, astrologia, tarot e rituale egiziano in un corpus coerente di pratiche. Nonostante si dissolse nel 1903 tra litigi e scandali, il suo sistema è ancora vivo in decine di scuole moderne.
-    </p>
-  </div>
-
-  <!-- TOOL — I 7 PRINCIPI -->
-  <div class="section-title">I 7 PRINCIPI ERMETICI</div>
-
-  <div class="principi-intro">
-    <p>Seleziona un principio per esplorarlo o lascia che il destino scelga per te.<br>
-    Ogni principio è una chiave che apre una diversa porta della realtà.</p>
-  </div>
-
-  <div class="tab-grid" id="tabGrid"></div>
-
-  <div class="btn-grp" style="margin-bottom:16px;">
-    <button class="btn btn-random" onclick="herRandom()">🎲 Principio Casuale</button>
-    <button class="btn btn-primary" onclick="calcErmetismo()">⚗️ Rivela Principio</button>
-  </div>
-
-  <!-- RESULT -->
-  <div id="hermetResult" style="display:none;"></div>
-
-</div><!-- /content-wrap -->
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-  /* ── DATA ── */
-  const DB_ERMETISMO = [
-    {
-      key:'mentalismo', nome:'🧠 Il Mentalismo', sub:'L\'Intero è Mente. L\'universo è mentale.',
-      chiave:'Osservazione', pianeta:'Saturno', elemento:'Spirito',
-      desc:'Il Principio del Mentalismo afferma che la realtà è fondamentalmente mentale — non nel senso che "tutto è solo nella tua testa", ma nel senso cosmico che la Mente è il substrato di tutto ciò che esiste. I tuoi pensieri non sono reazioni alla realtà: sono co-creatori della realtà. Ogni pensiero ripetuto diventa una credenza. Ogni credenza diventa un filtro. Ogni filtro crea la tua versione del mondo. Cambia il pensiero dominante, cambi il tuo universo.',
-      pratica:'Prima di ogni decisione importante oggi, fermati e chiedi: "Quale pensiero sta creando questa situazione? È questo il pensiero che voglio seminare?" Rivedi un problema con un pensiero opposto e osserva cosa cambia nella tua percezione.',
-      frasi:[
-        '"Il Tutto è Mente — l\'Universo è mentale."',
-        'Il pensiero precede la realtà come il seme precede l\'albero.',
-        'Cambia il pensiero dominante: cambia il tuo mondo.'
+/* ── ════════════════════ LANG OBJECT ════════════════════ ── */
+const LANG = {
+  it: {
+    back: '← Torna alla Home',
+    music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
+    theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutta la piattaforma MYSTICA.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+    shareLabel: 'Condividi',
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho scoperto i 7 Principi Ermetici del Kybalion su MYSTICA Oracoli — la saggezza di Ermete Trismegisto a portata di mano.',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'I contenuti di questa pagina hanno finalità storiche, filosofiche e divulgative. Non sostituiscono consulenze professionali mediche, legali o psicologiche.',
+    seo: {
+      title: 'Ermetismo: i 7 Principi Ermetici del Kybalion | MYSTICA Oracoli',
+      description: 'I 7 Principi Ermetici del Kybalion spiegati: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto, Genere. Storia, figure e pratiche di Ermete Trismegisto.',
+      keywords: 'ermetismo, principi ermetici, kybalion, ermete trismegisto, tavola di smeraldo, corpus hermeticum, golden dawn, mysticaoracoli',
+      ogTitle: 'Ermetismo: i 7 Principi Ermetici — MYSTICA',
+      ogDesc: 'Scopri i 7 Principi Ermetici del Kybalion e la filosofia di Ermete Trismegisto.',
+      ogLocale: 'it_IT',
+      htmlLang: 'it',
+      faqLD: [
+        { q: 'Cosa sono i 7 Principi Ermetici?', a: 'Sono le sette leggi cosmiche descritte nel Kybalion (1908): Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto e Genere. Secondo la tradizione ermetica governano il funzionamento dell\'universo, della mente e della trasformazione interiore.' },
+        { q: 'Chi era Ermete Trismegisto?', a: 'È la figura leggendaria, fusione del dio egizio Thoth e del dio greco Hermes, a cui la tradizione attribuisce il Corpus Hermeticum, raccolta di testi filosofico-religiosi composti ad Alessandria d\'Egitto tra il I e il III secolo d.C.' },
+        { q: 'Cos\'è la Tavola Smeraldina?', a: 'È il testo ermetico più celebre, tredici versetti attribuiti a Ermete e riassunti nella formula "Come in alto, così in basso". Circolò in traduzioni arabe medievali prima di arrivare in Europa nel XII secolo.' },
+        { q: 'Che differenza c\'è tra ermetismo e alchimia?', a: 'L\'alchimia è una delle applicazioni pratiche dell\'ermetismo: usa il linguaggio della trasformazione della materia come metafora del lavoro interiore. L\'ermetismo è la cornice filosofica più ampia che comprende anche astrologia, cabala e magia naturale.' },
+        { q: 'Il Kybalion è un testo antico?', a: 'No. Fu pubblicato nel 1908 da autori che si firmarono "Tre Iniziati", probabilmente guidati da William Walker Atkinson. È una sintesi moderna dei principi ermetici tradizionali, non un manoscritto antico.' }
       ]
     },
-    {
-      key:'corrispondenza', nome:'🔁 La Corrispondenza', sub:'Come in alto, così in basso. Come dentro, così fuori.',
-      chiave:'Speculazione', pianeta:'Mercurio', elemento:'Aria',
-      desc:'Il Principio della Corrispondenza è la chiave maestra dell\'ermetismo — la comprensione che i piani dell\'esistenza si rispecchiano l\'uno nell\'altro. Il macrocosmo è riflesso nel microcosmo. Ciò che avviene nell\'universo avviene in te. Ciò che avviene in te si manifesta nel mondo. Quando vedi un pattern nella natura, stai guardando il tuo pattern interiore. Quando osservi i tuoi pattern interiori, stai leggendo il libro dell\'universo.',
-      pratica:'Scegli un fenomeno naturale che osservi oggi (pioggia, vento, crescita di una pianta). Trova il parallelo esatto nella tua vita interiore. Scrivi 3 corrispondenze precise. Questo è il linguaggio dell\'universo.',
-      frasi:[
-        '"Come sopra, così sotto. Come dentro, così fuori."',
-        'Il tuo stato interiore è lo specchio del tuo universo esterno.',
-        'Leggi la natura e leggi te stesso — sono lo stesso testo.'
-      ]
-    },
-    {
-      key:'vibrazione', nome:'🌊 La Vibrazione', sub:'Nulla riposa — tutto si muove. Tutto vibra.',
-      chiave:'Risonanza', pianeta:'Venere', elemento:'Acqua',
-      desc:'Il Principio della Vibrazione afferma che tutto nell\'universo è in costante movimento — dalla roccia apparentemente immobile (che vibra a frequenza molecolare) alla coscienza più elevata. Non esiste stato fisso. La differenza tra densità e leggerezza, tra gioia e depressione è una questione di frequenza vibratoria. La tua voce, il tuo corpo, i tuoi pensieri sono tutti strumenti di accordatura.',
-      pratica:'Scegli una parola con forte carica emotiva e ripetila lentamente 10 volte, poi rapidamente 10 volte. Nota come la stessa parola cambia la tua energia interna. Poi scegli una parola di alta frequenza ("gratitudine", "abbondanza", "luce") e fai lo stesso.',
-      frasi:[
-        '"Nulla è in stato di quiete — tutto si muove, tutto vibra."',
-        'Sintonizza la tua frequenza sulla realtà che vuoi attirare.',
-        'La voce, il respiro, il pensiero: tutti strumenti per alzare la vibrazione.'
-      ]
-    },
-    {
-      key:'polarita', nome:'⚖️ La Polarità', sub:'Tutto è duale. Gli opposti sono identici in natura.',
-      chiave:'Trasmutazione', pianeta:'Marte', elemento:'Fuoco',
-      desc:'Il Principio della Polarità rivela che gli opposti sono gli estremi dello stesso continuum. Caldo e freddo sono "temperatura" — diversa in grado, identica in natura. Amore e odio sono entrambi "attaccamento". Questa comprensione libera: non devi distruggere l\'ombra, devi trasmutarla. Il maestro ermetico non combatte gli opposti: li trasforma alzando la frequenza.',
-      pratica:'Prendi il tuo problema più pressante. Identifica il suo opposto esatto. Trova il punto di mezzo — la tensione creativa tra i due poli. Cosa diventa il problema quando lo vedi come dualità da integrare invece che ostacolo da eliminare?',
-      frasi:[
-        '"Tutto è duale. Tutto ha i suoi poli. Gli opposti sono identici in natura."',
-        'Non combattere la tua ombra — trasmutala alzando la sua frequenza.',
-        'Ogni negazione contiene la sua affermazione nascosta.'
-      ]
-    },
-    {
-      key:'ritmo', nome:'🔄 Il Ritmo', sub:'Tutto scorre dentro e fuori. Tutto ha le sue maree.',
-      chiave:'Neutralizzazione', pianeta:'Luna', elemento:'Terra',
-      desc:'Il Principio del Ritmo rivela che tutto segue cicli — dentro e fuori, su e giù, avanzamento e ritiro. Non esistono periodi eternamente buoni o eternamente cattivi: esistono fasi di un ciclo che si ripete in spirale. Il maestro ermetico non si oppone al ritmo — lo naviga. La resistenza ai cicli naturali è la fonte di gran parte della sofferenza umana.',
-      pratica:'Osserva il tuo ciclo energetico delle prossime 24 ore. Pianifica le azioni importanti nei momenti di alta marea. Usa i momenti di bassa marea per nutrirti e riflettere. Non forzare il ritmo — cavalcalo.',
-      frasi:[
-        '"Tutto scorre dentro e fuori. Tutto ha le sue maree."',
-        'Non nuotare contro la corrente — impara a navigarla con intelligenza.',
-        'Ogni ritiro è preparazione per il prossimo avanzamento.'
-      ]
-    },
-    {
-      key:'causa', nome:'⚙️ Causa ed Effetto', sub:'Ogni causa ha il suo effetto. Ogni effetto la sua causa.',
-      chiave:'Responsabilità', pianeta:'Sole', elemento:'Fuoco',
-      desc:'Il Principio di Causa ed Effetto afferma che nulla accade per caso. Ogni risultato ha una causa. Ogni situazione in cui ti trovi è il frutto di cause precedenti. Questo non è un giudizio: è una liberazione. Se hai contribuito a creare la situazione, puoi contribuire a trasformarla. Il maestro ermetico impara a diventare causa consapevole della propria vita.',
-      pratica:'Scegli un risultato concreto che vuoi nella tua vita entro 30 giorni. Risali a ritroso: quale azione quotidiana, praticata ogni giorno, genererebbe quel risultato? Inizia quella azione oggi.',
-      frasi:[
-        '"Ogni causa ha il suo effetto. Ogni effetto la sua causa."',
-        'Non sei vittima delle circostanze: sei causa dei tuoi risultati.',
-        'Il presente è il futuro che hai creato ieri. Il domani è quello che crei adesso.'
-      ]
-    },
-    {
-      key:'genere', nome:'⚛️ Il Genere', sub:'Il genere è in tutto. Il maschile e il femminile operano in tutto.',
-      chiave:'Integrazione', pianeta:'Giove', elemento:'Spirito',
-      desc:'Il Principio del Genere riguarda le due polarità fondamentali della coscienza — il maschile (attivo, proiettivo, logico) e il femminile (ricettivo, contenitivo, intuitivo) — presenti in tutti gli esseri. La creatività autentica nasce dall\'unione sacra di queste due polarità in te. Il maestro integra entrambe.',
-      pratica:'Fai oggi un\'azione maschile-attiva (progetta qualcosa, prendi una decisione) e un\'azione femminile-ricettiva (ascolta senza rispondere, medita senza obiettivo). Poi uniscile in un gesto consapevole.',
-      frasi:[
-        '"Il genere si manifesta in tutto — il maschile e il femminile sono principi, non limitazioni."',
-        'Crei davvero solo quando maschile e femminile danzano insieme in te.',
-        'Ricevi come il femminile. Agisci come il maschile. Sii come l\'Uno.'
-      ]
-    }
-  ];
+    artTitle: 'Ermetismo: la filosofia dei Sette Principi Universali',
+    artH2: 'Ermete Trismegisto e le origini del pensiero ermetico',
+    artH3: 'Il Kybalion e l\'eredità moderna dei Sette Principi',
+    artP1: 'Ermete Trismegisto — letteralmente "Thoth il Tre Volte Grande" — è la figura leggendaria al centro della tradizione ermetica: per i Greci dell\'Egitto ellenistico nasce dalla fusione di Thoth, dio egizio della scrittura e della magia, e Hermes, messaggero greco degli dei. Gli scritti a lui attribuiti, raccolti nel Corpus Hermeticum, furono probabilmente composti tra il I e il III secolo d.C. ad Alessandria d\'Egitto, crocevia intellettuale del mondo antico, anche se la leggenda lo vuole contemporaneo — o maestro — di Mosè. Nel 1463 Cosimo de\' Medici incaricò Marsilio Ficino di tradurre in latino i manoscritti appena giunti da Costantinopoli, con un ordine perentorio: prima di Platone. Il Rinascimento europeo ne fu scosso alle fondamenta.',
+    artP2: 'Il testo ermetico più noto è la Tabula Smaragdina, la Tavola Smeraldina: tredici versetti che la leggenda vuole incisi su una lastra di smeraldo trovata nella tomba di Ermete. La sua frase più celebre — "come in alto, così in basso, come nell\'interno, così nell\'esterno" — è diventata il codice segreto di ogni praticante esoterico attraverso i secoli. Il testo fu probabilmente scritto in aramaico o greco tra il VI e l\'VIII secolo, circolò nelle traduzioni arabe medievali e raggiunse l\'Europa latina nel XII secolo. Persino Isaac Newton ne possedeva una copia personale, studiata in modo quasi ossessivo durante le sue ricerche alchemiche.',
+    artP3: 'La tradizione ermetica si è diffusa per quasi duemila anni attraverso contesti molto diversi: nell\'Egitto ellenistico i circoli neoplatonici e gnostici di Alessandria la fondono con filosofia greca e misticismo ebraico; nell\'Islam medievale traduttori come Jabir ibn Hayyan la preservano e la integrano nell\'alchimia araba; nel Rinascimento italiano Ficino, Pico della Mirandola e Giordano Bruno la trasformano nella filosofia segreta delle corti; nell\'età moderna rinasce attraverso la Massoneria, la Teosofia di Helena Blavatsky e l\'Ordine Ermetico della Golden Dawn, fondato a Londra nel 1888.',
+    artP4: 'Il nome con cui oggi conosciamo i "Sette Principi Ermetici" deriva dal Kybalion, pubblicato nel 1908 da autori firmatisi "Tre Iniziati", probabilmente guidati da William Walker Atkinson. Non è un manoscritto antico, ma una riformulazione in linguaggio accessibile dei concetti ermetici tradizionali: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto e Genere. Tradotto in decine di lingue, resta il testo introduttivo all\'ermetismo più letto del XX e XXI secolo, e la porta d\'accesso più diffusa a questa tradizione.',
+    artP5: 'Un errore comune è considerare i Sette Principi come semplici massime motivazionali: nella tradizione ermetica sono invece leggi operative, da applicare con disciplina quotidiana e da verificare nell\'esperienza diretta, non da accettare per fede. Un altro malinteso frequente è confondere l\'ermetismo con la magia cerimoniale o con l\'alchimia: in realtà queste sono applicazioni pratiche di una filosofia più ampia, che riguarda il rapporto tra mente, cosmo e trasformazione personale. A differenza dei Tarocchi o delle Rune, che sono strumenti divinatori, l\'ermetismo è un sistema di pensiero — una mappa per interpretare la realtà, non per predirla.',
+    artImgAlt: 'Ermete Trismegisto e la Tavola Smeraldina, simboli della filosofia ermetica',
+    faq: [
+      { q: 'Cosa sono i 7 Principi Ermetici?', a: 'Sono le sette leggi cosmiche descritte nel Kybalion del 1908: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto e Genere. Secondo la tradizione ermetica governano l\'universo, la mente e la trasformazione interiore di chi le studia e le applica nella vita quotidiana.' },
+      { q: 'Chi era davvero Ermete Trismegisto?', a: 'È una figura leggendaria, fusione del dio egizio Thoth e del dio greco Hermes. La tradizione gli attribuisce il Corpus Hermeticum, ma gli storici ritengono che i testi siano stati composti da più autori ad Alessandria d\'Egitto tra il I e il III secolo d.C. Puoi approfondire le origini storiche anche nella nostra <a href="./cabala.html">guida alla Cabala</a>, tradizione che si è intrecciata spesso con l\'ermetismo rinascimentale.' },
+      { q: 'Come si applicano i principi ermetici nella vita quotidiana?', a: 'Si parte dall\'osservazione: ogni principio offre una lente diversa per leggere una situazione. Il Principio del Ritmo, ad esempio, invita a riconoscere i cicli personali invece di forzarli; quello di Causa-Effetto a individuare le azioni quotidiane che generano i risultati desiderati. Nella sezione interattiva qui sopra puoi esplorare ogni principio con una pratica dedicata.' },
+      { q: 'Qual è la differenza tra ermetismo e alchimia?', a: 'L\'alchimia è un\'applicazione pratica dell\'ermetismo, che usa il linguaggio della trasformazione della materia — calcinazione, dissoluzione, distillazione — come metafora del lavoro interiore. Se l\'argomento ti interessa, la nostra pagina dedicata all\'<a href="./alchimia.html">Alchimia</a> approfondisce simboli e fasi del processo alchemico.' },
+      { q: 'Il Kybalion è un testo antico o moderno?', a: 'È un testo moderno, pubblicato nel 1908 da autori anonimi firmatisi "Tre Iniziati". Non riproduce un manoscritto antico, ma sintetizza in linguaggio accessibile principi ermetici di origine molto più antica, risalenti almeno al Corpus Hermeticum alessandrino.' },
+      { q: 'Cos\'è l\'Ordine Ermetico della Golden Dawn?', a: 'Fu fondato a Londra nel 1888 e divenne la più influente scuola di magia pratica dell\'epoca moderna, integrando ermetismo, cabala, astrologia e rituale egiziano. Tra i suoi membri figurarono il poeta W.B. Yeats e il mago Aleister Crowley.' }
+    ],
+    titlePrincipi: 'I 7 PRINCIPI ERMETICI',
+    principiIntro: 'Seleziona un principio per esplorarlo o lascia che il destino scelga per te. Ogni principio è una chiave che apre una diversa porta della realtà.',
+    btnRandom: '🎲 Principio Casuale',
+    btnReveal: '⚗️ Rivela Principio',
+    btnAltro: '🔄 Altro Principio',
+    btnSalva: '💾 Salva',
+    toastSalvato: '💾 Salvato nel grimorio',
+    titleFigure: 'FIGURE INFLUENTI',
+    titleUsanze: 'USANZE & PRATICHE TRADIZIONALI',
+    titleCorpus: 'IL CORPUS HERMETICUM',
+    titleLeggende: 'LEGGENDE & STORIE',
+    personaggi: [
+      { icon:'🧙', name:'Marsilio Ficino', dates:'1433–1499', desc:'Traduttore del Corpus Hermeticum per i Medici. Fondò l\'Accademia Platonica di Firenze. Unì magia, astrologia e neoplatonismo.' },
+      { icon:'🔬', name:'Isaac Newton', dates:'1643–1727', desc:'Fisico rivoluzionario ma anche alchimista ermetico. Scrisse più pagine di alchimia che di fisica. Cercava la pietra filosofale.' },
+      { icon:'🦁', name:'Giordano Bruno', dates:'1548–1600', desc:'Filosofo ermetico bruciato dall\'Inquisizione. Insegnò che l\'universo è infinito e che il divino è in tutto. Martire della saggezza.' },
+      { icon:'🌹', name:'Helena Blavatsky', dates:'1831–1891', desc:'Fondatrice della Teosofia. Sintetizzò ermetismo, cabala e filosofie orientali. La sua "Dottrina Segreta" influenzò l\'esoterismo moderno.' },
+      { icon:'⚔️', name:'Hermes Trismegistus', dates:'Mitico', desc:'Il maestro dei maestri. Figura leggendaria, fusione di Thoth ed Ermes. Autore immaginario di migliaia di testi sacri perduti.' },
+      { icon:'🌙', name:'Franz Bardon', dates:'1909–1958', desc:'Mago pratico ceco. Il suo "Iniziazione all\'Ermetismo" è considerato il manuale tecnico più completo della tradizione.' }
+    ],
+    usanze: [
+      { icon:'🔥', title:'Il Laboratorio Alchemico', desc:'Gli ermetisti medievali lavoravano in laboratori segreti, distillando e calcinando sostanze fisiche come metafora della trasformazione interiore. Il lavoro sulla materia era simultaneamente lavoro sull\'anima.' },
+      { icon:'⭐', title:'La Corrispondenza Astrologica', desc:'Ogni pianeta, metallo, erba e parte del corpo erano in corrispondenza ermetica. Operare sull\'uno significava operare sull\'altro: astrologo, medico e mago erano spesso la stessa persona.' },
+      { icon:'📖', title:'Il Grimorio Personale', desc:'L\'adepto ermetico teneva un diario segreto — il grimorio — dove annotava osservazioni, meditazioni e corrispondenze. Era il libro della vita interiore, mai mostrato a nessuno.' },
+      { icon:'🌒', title:'Il Lavoro Notturno', desc:'Molte pratiche ermetiche si svolgevano di notte, quando il silenzio della mente razionale permette ai livelli più profondi della coscienza di emergere. La notte era "il laboratorio del Cielo".' },
+      { icon:'🗝️', title:'La Catena di Trasmissione', desc:'La conoscenza ermetica non si leggeva soltanto: si riceveva. Ogni adepto aveva un maestro e diventava maestro a sua volta, perché la trasmissione orale diretta era ritenuta indispensabile.' }
+    ],
+    corpus: [
+      { title:'📖 Il Poimandres — La Mente del Sovrano', desc:'Il primo e più importante testo del Corpus. Ermete riceve una visione cosmica della creazione: la Mente universale gli rivela l\'origine del cosmo, la caduta dell\'anima nella materia e la via del ritorno — una cosmogonia che riecheggia i miti di discesa e ascesa di molte culture.' },
+      { title:'📖 L\'Asclepius — Dio e il Mondo', desc:'Il dialogo tra Ermete e Asclepio esplora la relazione tra divino e materiale. Contiene la celebre "Lamentazione ermetica", una profezia sulla caduta della saggezza egiziana sorprendentemente vicina agli eventi storici successivi.' },
+      { title:'📖 Il Kybalion — Sintesi Moderna', desc:'Pubblicato nel 1908 da "Tre Iniziati", è la sintesi moderna più accessibile dei principi ermetici. Non è un testo antico, ma una formulazione in linguaggio contemporaneo, tradotta in decine di lingue.' }
+    ],
+    leggende: [
+      { title:'💎 La Leggenda della Tomba di Ermete', desc:'Secondo una tradizione medievale, Alessandro Magno — durante la conquista dell\'Egitto nel 332 a.C. — trovò la tomba di Ermete Trismegisto sotto la Grande Piramide, con la Tavola Smeraldina in mano alla mummia. La leggenda è quasi certamente apocrifa, ma riflette l\'idea che la saggezza più profonda sia rivelata solo a chi possiede la chiave interiore.' },
+      { title:'🌙 L\'Ordine della Golden Dawn', desc:'Fondata a Londra nel 1888 da tre massoni e un manoscritto cifrato di dubbia provenienza, l\'Ordine Ermetico della Golden Dawn divenne la più influente scuola di magia pratica dell\'era moderna. Tra i suoi membri: il poeta W.B. Yeats, il mago Aleister Crowley, l\'occultista Dion Fortune. Si dissolse nel 1903, ma il suo sistema è ancora vivo in decine di scuole contemporanee.' }
+    ],
+    articleLinks: [
+      { href:'./alchimia.html', text:'⚗️ Alchimia: simboli e fasi del Magnum Opus' },
+      { href:'./cabala.html', text:'✡️ Cabala: l\'Albero della Vita e i Sefirot' },
+      { href:'./numerologia.html', text:'🔢 Numerologia: il significato dei numeri' },
+      { href:'./tarocchi.html', text:'🃏 Tarocchi: gli Arcani Maggiori e Minori' }
+    ]
+  },
 
-  let _herPrincipio = 0;
+  en: {
+    back: '← Back to Home',
+    music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+    theme: { day: '☀️ Day', night: '🌙 Night' },
+    ctaExplore: '🔍 Explore Other Categories',
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited readings, complete interpretations and advanced consultations across the whole MYSTICA platform.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+    shareLabel: 'Share',
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just discovered the 7 Hermetic Principles of the Kybalion on MYSTICA Oracles — the wisdom of Hermes Trismegistus at your fingertips.',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'This page is for historical, philosophical and informational purposes only. It does not replace professional medical, legal or psychological advice.',
+    seo: {
+      title: 'Hermeticism: the 7 Hermetic Principles of the Kybalion | MYSTICA Oracles',
+      description: 'The 7 Hermetic Principles of the Kybalion explained: Mentalism, Correspondence, Vibration, Polarity, Rhythm, Cause and Effect, Gender — the philosophy of Hermes Trismegistus.',
+      keywords: 'hermeticism, hermetic principles, kybalion, hermes trismegistus, emerald tablet, corpus hermeticum, golden dawn, mysticaoracoli',
+      ogTitle: 'Hermeticism: the 7 Hermetic Principles — MYSTICA',
+      ogDesc: 'Discover the 7 Hermetic Principles of the Kybalion and the philosophy of Hermes Trismegistus.',
+      ogLocale: 'en_US',
+      htmlLang: 'en',
+      faqLD: [
+        { q: 'What are the 7 Hermetic Principles?', a: 'They are the seven cosmic laws described in the Kybalion (1908): Mentalism, Correspondence, Vibration, Polarity, Rhythm, Cause and Effect, and Gender. Hermetic tradition holds that they govern the universe, the mind and inner transformation.' },
+        { q: 'Who was Hermes Trismegistus?', a: 'A legendary figure merging the Egyptian god Thoth and the Greek god Hermes. Tradition credits him with the Corpus Hermeticum, a collection of texts likely written in Alexandria between the 1st and 3rd century CE.' },
+        { q: 'What is the Emerald Tablet?', a: 'It is the most famous hermetic text, thirteen verses summarized in the formula "as above, so below". It circulated in medieval Arabic translations before reaching Europe in the 12th century.' },
+        { q: 'What is the difference between Hermeticism and alchemy?', a: 'Alchemy is one practical application of Hermeticism, using the language of material transformation as a metaphor for inner work. Hermeticism is the broader philosophical framework that also includes astrology and natural magic.' },
+        { q: 'Is the Kybalion an ancient text?', a: 'No. It was published in 1908 by authors signing as "Three Initiates", likely led by William Walker Atkinson. It is a modern synthesis of older hermetic principles, not an ancient manuscript.' }
+      ]
+    },
+    artTitle: 'Hermeticism: the philosophy of the Seven Universal Principles',
+    artH2: 'Hermes Trismegistus and the origins of hermetic thought',
+    artH3: 'The Kybalion and the modern legacy of the Seven Principles',
+    artP1: 'Hermes Trismegistus — literally "Thoth the Thrice-Great" — is the legendary figure at the heart of hermetic tradition, born from the fusion of Thoth, the Egyptian god of writing and magic, and Hermes, the Greek messenger of the gods. The texts attributed to him, gathered in the Corpus Hermeticum, were most likely written in Alexandria between the 1st and 3rd century CE, though legend places him as a contemporary — or teacher — of Moses. In 1463 Cosimo de\' Medici commissioned Marsilio Ficino to translate freshly arrived Greek manuscripts into Latin, with explicit priority over Plato. The European Renaissance was shaken to its core.',
+    artP2: 'The best-known hermetic text is the Emerald Tablet, the Tabula Smaragdina: thirteen verses legend says were engraved on an emerald slab found in Hermes\' tomb. Its most famous line — "as above, so below, as within, so without" — became the secret code of esoteric practitioners across the centuries. The text likely originated in Aramaic or Greek between the 6th and 8th century, circulated through medieval Arabic translations, and reached Latin Europe in the 12th century. Isaac Newton owned and obsessively studied a personal copy during his alchemical research.',
+    artP3: 'Hermetic tradition spread across nearly two thousand years through very different contexts: in Hellenistic Egypt, the Neoplatonic and Gnostic circles of Alexandria merged it with Greek philosophy and Jewish mysticism; in medieval Islam, translators such as Jabir ibn Hayyan preserved and folded it into Arabic alchemy; in the Italian Renaissance, Ficino, Pico della Mirandola and Giordano Bruno turned it into the secret philosophy of the courts; in the modern era it resurfaced through Freemasonry, Helena Blavatsky\'s Theosophy, and the Hermetic Order of the Golden Dawn, founded in London in 1888.',
+    artP4: 'The name we now use for the "Seven Hermetic Principles" comes from the Kybalion, published in 1908 by authors who signed as "Three Initiates", likely led by William Walker Atkinson. It is not an ancient manuscript but an accessible restatement of traditional hermetic concepts: Mentalism, Correspondence, Vibration, Polarity, Rhythm, Cause and Effect, and Gender. Translated into dozens of languages, it remains the most widely read introduction to Hermeticism of the 20th and 21st centuries.',
+    artP5: 'A common mistake is treating the Seven Principles as motivational slogans: in hermetic tradition they are operative laws meant to be applied with daily discipline and tested through direct experience, not accepted on faith. Another frequent confusion is mixing up Hermeticism with ceremonial magic or alchemy: these are practical applications of a broader philosophy concerning mind, cosmos and personal transformation. Unlike Tarot or Runes, which are divinatory tools, Hermeticism is a system of thought — a map for interpreting reality, not predicting it.',
+    artImgAlt: 'Hermes Trismegistus and the Emerald Tablet, symbols of hermetic philosophy',
+    faq: [
+      { q: 'What are the 7 Hermetic Principles?', a: 'They are the seven cosmic laws described in the 1908 Kybalion: Mentalism, Correspondence, Vibration, Polarity, Rhythm, Cause and Effect, and Gender. Hermetic tradition holds they govern the universe, the mind, and the inner transformation of those who study and apply them daily.' },
+      { q: 'Who was Hermes Trismegistus, really?', a: 'A legendary figure merging the Egyptian god Thoth and the Greek god Hermes. Tradition credits him with the Corpus Hermeticum, though historians believe the texts were written by several authors in Alexandria between the 1st and 3rd century CE.' },
+      { q: 'How are hermetic principles applied in daily life?', a: 'It starts with observation: each principle offers a different lens for reading a situation. The Principle of Rhythm, for instance, invites recognizing personal cycles instead of forcing them; Cause and Effect invites identifying the daily actions that generate desired outcomes. The interactive tool above lets you explore each principle with a dedicated practice.' },
+      { q: 'What is the difference between Hermeticism and alchemy?', a: 'Alchemy is a practical application of Hermeticism, using the language of material transformation — calcination, dissolution, distillation — as a metaphor for inner work.' },
+      { q: 'Is the Kybalion ancient or modern?', a: 'It is a modern text, published in 1908 by anonymous authors signing as "Three Initiates". It does not reproduce an ancient manuscript but synthesizes, in accessible language, much older hermetic principles tracing back to the Alexandrian Corpus Hermeticum.' },
+      { q: 'What was the Hermetic Order of the Golden Dawn?', a: 'Founded in London in 1888, it became the most influential school of practical magic of the modern era, integrating Hermeticism, Kabbalah, astrology and Egyptian ritual. Its members included poet W.B. Yeats and magician Aleister Crowley.' }
+    ],
+    titlePrincipi: 'THE 7 HERMETIC PRINCIPLES',
+    principiIntro: 'Pick a principle to explore, or let fate choose for you. Each principle is a key opening a different door of reality.',
+    btnRandom: '🎲 Random Principle',
+    btnReveal: '⚗️ Reveal Principle',
+    btnAltro: '🔄 Another Principle',
+    btnSalva: '💾 Save',
+    toastSalvato: '💾 Saved to your grimoire',
+    titleFigure: 'INFLUENTIAL FIGURES',
+    titleUsanze: 'TRADITIONAL PRACTICES',
+    titleCorpus: 'THE CORPUS HERMETICUM',
+    titleLeggende: 'LEGENDS & STORIES',
+    personaggi: [
+      { icon:'🧙', name:'Marsilio Ficino', dates:'1433–1499', desc:'Translated the Corpus Hermeticum for the Medici. Founded the Florentine Platonic Academy, blending magic, astrology and Neoplatonism.' },
+      { icon:'🔬', name:'Isaac Newton', dates:'1643–1727', desc:'Revolutionary physicist and hermetic alchemist. He wrote more pages on alchemy than on physics, searching for the philosopher\'s stone.' },
+      { icon:'🦁', name:'Giordano Bruno', dates:'1548–1600', desc:'Hermetic philosopher burned by the Inquisition. He taught that the universe is infinite and the divine is in everything — a martyr of wisdom.' },
+      { icon:'🌹', name:'Helena Blavatsky', dates:'1831–1891', desc:'Founder of Theosophy. She synthesized Hermeticism, Kabbalah and Eastern philosophies; her "Secret Doctrine" shaped modern esotericism.' },
+      { icon:'⚔️', name:'Hermes Trismegistus', dates:'Mythical', desc:'The master of masters — a legendary fusion of Thoth and Hermes, imagined author of thousands of lost sacred texts.' },
+      { icon:'🌙', name:'Franz Bardon', dates:'1909–1958', desc:'Czech practical magician. His "Initiation into Hermetics" is considered the most complete technical manual of the tradition.' }
+    ],
+    usanze: [
+      { icon:'🔥', title:'The Alchemical Laboratory', desc:'Medieval hermeticists worked in secret labs, distilling and calcining physical substances as a metaphor for inner transformation.' },
+      { icon:'⭐', title:'Astrological Correspondence', desc:'Every planet, metal, herb and body part had a hermetic correspondence. Astrologer, physician and magician were often the same person.' },
+      { icon:'📖', title:'The Personal Grimoire', desc:'Hermetic adepts kept a secret diary — the grimoire — recording observations, meditations and correspondences, never shown to anyone.' },
+      { icon:'🌒', title:'Night Work', desc:'Many hermetic practices took place at night, when the silence of the rational mind lets deeper levels of consciousness emerge.' },
+      { icon:'🗝️', title:'The Chain of Transmission', desc:'Hermetic knowledge was not just read but received. Every adept had a teacher and in turn became one, since direct oral transmission was considered essential.' }
+    ],
+    corpus: [
+      { title:'📖 Poimandres — The Mind of the Sovereign', desc:'The first and most important text of the Corpus, in which Hermes receives a cosmic vision of creation, the soul\'s fall into matter, and the way back.' },
+      { title:'📖 Asclepius — God and the World', desc:'A dialogue between Hermes and Asclepius exploring the relationship between the divine and the material, including the famous "Hermetic Lament" prophecy.' },
+      { title:'📖 The Kybalion — Modern Synthesis', desc:'Published in 1908 by "Three Initiates", it is the most accessible modern synthesis of hermetic principles, translated into dozens of languages.' }
+    ],
+    leggende: [
+      { title:'💎 The Legend of Hermes\' Tomb', desc:'Medieval tradition holds that Alexander the Great, during his conquest of Egypt in 332 BCE, found Hermes Trismegistus\' tomb beneath the Great Pyramid, the Emerald Tablet in the mummy\'s hand. The legend is almost certainly apocryphal, but reflects the idea that the deepest wisdom is revealed only to those holding the inner key.' },
+      { title:'🌙 The Order of the Golden Dawn', desc:'Founded in London in 1888 by three Freemasons and a cipher manuscript of dubious origin, the Hermetic Order of the Golden Dawn became the most influential school of practical magic of the modern era, counting poet W.B. Yeats and magician Aleister Crowley among its members.' }
+    ],
+    articleLinks: [
+      { href:'./alchimia.html', text:'⚗️ Alchemy: symbols and stages of the Magnum Opus' },
+      { href:'./cabala.html', text:'✡️ Kabbalah: the Tree of Life and the Sefirot' },
+      { href:'./numerologia.html', text:'🔢 Numerology: the meaning of numbers' },
+      { href:'./tarocchi.html', text:'🃏 Tarot: the Major and Minor Arcana' }
+    ]
+  },
 
-  /* ── INIT TABS ── */
-  function initTabs() {
-    const grid = document.getElementById('tabGrid');
-    DB_ERMETISMO.forEach((p, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'princip-tab' + (i === 0 ? ' active' : '');
-      btn.id = 'herTab' + i;
-      btn.innerHTML = `<span class="t-icon">${p.nome.split(' ')[0]}</span>${p.nome.split(' ').slice(1).join(' ')}`;
-      btn.onclick = () => { _herPrincipio = i; herSelPrincipio(i); };
-      grid.appendChild(btn);
+  es: {
+    back: '← Volver al Inicio',
+    music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+    theme: { day: '☀️ Día', night: '🌙 Noche' },
+    ctaExplore: '🔍 Explorar Otras Categorías',
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea lecturas ilimitadas, interpretaciones completas y consultas avanzadas en toda la plataforma MYSTICA.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+    shareLabel: 'Compartir',
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: 'Descubrí los 7 Principios Herméticos del Kybalion en MYSTICA Oráculos — la sabiduría de Hermes Trismegisto al alcance de la mano.',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'Esta página tiene fines históricos, filosóficos e informativos. No sustituye el asesoramiento médico, legal o psicológico profesional.',
+    seo: {
+      title: 'Hermetismo: los 7 Principios Herméticos del Kybalion | MYSTICA Oráculos',
+      description: 'Los 7 Principios Herméticos del Kybalion explicados: Mentalismo, Correspondencia, Vibración, Polaridad, Ritmo, Causa-Efecto, Género — la filosofía de Hermes Trismegisto.',
+      keywords: 'hermetismo, principios herméticos, kybalion, hermes trismegisto, tabla esmeralda, corpus hermeticum, golden dawn, mysticaoracoli',
+      ogTitle: 'Hermetismo: los 7 Principios Herméticos — MYSTICA',
+      ogDesc: 'Descubre los 7 Principios Herméticos del Kybalion y la filosofía de Hermes Trismegisto.',
+      ogLocale: 'es_ES',
+      htmlLang: 'es',
+      faqLD: [
+        { q: '¿Qué son los 7 Principios Herméticos?', a: 'Son las siete leyes cósmicas descritas en el Kybalion (1908): Mentalismo, Correspondencia, Vibración, Polaridad, Ritmo, Causa-Efecto y Género. La tradición hermética sostiene que gobiernan el universo, la mente y la transformación interior.' },
+        { q: '¿Quién fue Hermes Trismegisto?', a: 'Una figura legendaria que funde al dios egipcio Thot y al dios griego Hermes. La tradición le atribuye el Corpus Hermeticum, probablemente escrito en Alejandría entre los siglos I y III d.C.' },
+        { q: '¿Qué es la Tabla Esmeralda?', a: 'Es el texto hermético más famoso, trece versículos resumidos en la fórmula "como arriba, es abajo". Circuló en traducciones árabes medievales antes de llegar a Europa en el siglo XII.' },
+        { q: '¿Cuál es la diferencia entre hermetismo y alquimia?', a: 'La alquimia es una aplicación práctica del hermetismo que usa el lenguaje de la transformación material como metáfora del trabajo interior. El hermetismo es el marco filosófico más amplio.' },
+        { q: '¿Es el Kybalion un texto antiguo?', a: 'No. Se publicó en 1908 por autores firmados como "Tres Iniciados", probablemente liderados por William Walker Atkinson. Es una síntesis moderna de principios herméticos más antiguos.' }
+      ]
+    },
+    artTitle: 'Hermetismo: la filosofía de los Siete Principios Universales',
+    artH2: 'Hermes Trismegisto y los orígenes del pensamiento hermético',
+    artH3: 'El Kybalion y el legado moderno de los Siete Principios',
+    artP1: 'Hermes Trismegisto — literalmente "Thot el Tres Veces Grande" — es la figura legendaria en el centro de la tradición hermética, nacida de la fusión entre Thot, dios egipcio de la escritura y la magia, y Hermes, mensajero griego de los dioses. Los textos que se le atribuyen, reunidos en el Corpus Hermeticum, probablemente fueron escritos en Alejandría entre los siglos I y III d.C., aunque la leyenda lo sitúa como contemporáneo —o maestro— de Moisés. En 1463, Cosimo de\' Medici encargó a Marsilio Ficino traducir al latín manuscritos griegos recién llegados, con prioridad explícita sobre Platón. El Renacimiento europeo se vio sacudido en sus cimientos.',
+    artP2: 'El texto hermético más conocido es la Tabla Esmeralda, la Tabula Smaragdina: trece versículos que la leyenda dice grabados en una lámina de esmeralda hallada en la tumba de Hermes. Su frase más célebre —"como arriba es abajo, como dentro es fuera"— se convirtió en el código secreto de los practicantes esotéricos a través de los siglos. El texto probablemente se originó en arameo o griego entre los siglos VI y VIII, circuló por traducciones árabes medievales y llegó a la Europa latina en el siglo XII. Isaac Newton poseía una copia personal que estudió de forma casi obsesiva.',
+    artP3: 'La tradición hermética se difundió durante casi dos mil años en contextos muy distintos: en el Egipto helenístico, los círculos neoplatónicos y gnósticos de Alejandría la fusionaron con la filosofía griega y el misticismo judío; en el islam medieval, traductores como Jabir ibn Hayyan la preservaron e integraron en la alquimia árabe; en el Renacimiento italiano, Ficino, Pico della Mirandola y Giordano Bruno la convirtieron en la filosofía secreta de las cortes; en la era moderna resurgió a través de la masonería, la Teosofía de Helena Blavatsky y la Orden Hermética de la Golden Dawn, fundada en Londres en 1888.',
+    artP4: 'El nombre con el que hoy conocemos los "Siete Principios Herméticos" proviene del Kybalion, publicado en 1908 por autores firmados como "Tres Iniciados", probablemente liderados por William Walker Atkinson. No es un manuscrito antiguo, sino una reformulación accesible de conceptos herméticos tradicionales: Mentalismo, Correspondencia, Vibración, Polaridad, Ritmo, Causa-Efecto y Género. Traducido a decenas de idiomas, sigue siendo la introducción al hermetismo más leída de los siglos XX y XXI.',
+    artP5: 'Un error común es tratar los Siete Principios como simples frases motivacionales: en la tradición hermética son leyes operativas, que deben aplicarse con disciplina diaria y verificarse en la experiencia directa, no aceptarse por fe. Otra confusión frecuente es mezclar el hermetismo con la magia ceremonial o la alquimia: estas son aplicaciones prácticas de una filosofía más amplia sobre la mente, el cosmos y la transformación personal. A diferencia del Tarot o las Runas, que son herramientas adivinatorias, el hermetismo es un sistema de pensamiento — un mapa para interpretar la realidad, no para predecirla.',
+    artImgAlt: 'Hermes Trismegisto y la Tabla Esmeralda, símbolos de la filosofía hermética',
+    faq: [
+      { q: '¿Qué son los 7 Principios Herméticos?', a: 'Son las siete leyes cósmicas descritas en el Kybalion de 1908: Mentalismo, Correspondencia, Vibración, Polaridad, Ritmo, Causa-Efecto y Género. Según la tradición hermética gobiernan el universo, la mente y la transformación interior de quien las estudia y aplica.' },
+      { q: '¿Quién fue realmente Hermes Trismegisto?', a: 'Una figura legendaria, fusión del dios egipcio Thot y el dios griego Hermes. La tradición le atribuye el Corpus Hermeticum, aunque los historiadores creen que los textos fueron escritos por varios autores en Alejandría entre los siglos I y III d.C.' },
+      { q: '¿Cómo se aplican los principios herméticos en la vida diaria?', a: 'Se empieza por la observación: cada principio ofrece una lente distinta para leer una situación. El Principio del Ritmo, por ejemplo, invita a reconocer los ciclos personales en vez de forzarlos. En la herramienta interactiva de arriba puedes explorar cada principio con una práctica dedicada.' },
+      { q: '¿Cuál es la diferencia entre hermetismo y alquimia?', a: 'La alquimia es una aplicación práctica del hermetismo, que usa el lenguaje de la transformación material —calcinación, disolución, destilación— como metáfora del trabajo interior.' },
+      { q: '¿El Kybalion es antiguo o moderno?', a: 'Es un texto moderno, publicado en 1908 por autores anónimos firmados como "Tres Iniciados". No reproduce un manuscrito antiguo, sino que sintetiza en lenguaje accesible principios herméticos mucho más antiguos.' },
+      { q: '¿Qué fue la Orden Hermética de la Golden Dawn?', a: 'Fundada en Londres en 1888, se convirtió en la escuela de magia práctica más influyente de la era moderna, integrando hermetismo, cábala, astrología y ritual egipcio. Entre sus miembros estuvieron el poeta W.B. Yeats y el mago Aleister Crowley.' }
+    ],
+    titlePrincipi: 'LOS 7 PRINCIPIOS HERMÉTICOS',
+    principiIntro: 'Elige un principio para explorarlo o deja que el destino elija por ti. Cada principio es una llave que abre una puerta distinta de la realidad.',
+    btnRandom: '🎲 Principio Aleatorio',
+    btnReveal: '⚗️ Revelar Principio',
+    btnAltro: '🔄 Otro Principio',
+    btnSalva: '💾 Guardar',
+    toastSalvato: '💾 Guardado en el grimorio',
+    titleFigure: 'FIGURAS INFLUYENTES',
+    titleUsanze: 'COSTUMBRES Y PRÁCTICAS TRADICIONALES',
+    titleCorpus: 'EL CORPUS HERMETICUM',
+    titleLeggende: 'LEYENDAS E HISTORIAS',
+    personaggi: [
+      { icon:'🧙', name:'Marsilio Ficino', dates:'1433–1499', desc:'Tradujo el Corpus Hermeticum para los Medici. Fundó la Academia Platónica de Florencia, uniendo magia, astrología y neoplatonismo.' },
+      { icon:'🔬', name:'Isaac Newton', dates:'1643–1727', desc:'Físico revolucionario y alquimista hermético. Escribió más páginas de alquimia que de física, buscando la piedra filosofal.' },
+      { icon:'🦁', name:'Giordano Bruno', dates:'1548–1600', desc:'Filósofo hermético quemado por la Inquisición. Enseñó que el universo es infinito y que lo divino está en todo — mártir de la sabiduría.' },
+      { icon:'🌹', name:'Helena Blavatsky', dates:'1831–1891', desc:'Fundadora de la Teosofía. Sintetizó hermetismo, cábala y filosofías orientales; su "Doctrina Secreta" influyó en el esoterismo moderno.' },
+      { icon:'⚔️', name:'Hermes Trismegisto', dates:'Mítico', desc:'El maestro de maestros — fusión legendaria de Thot y Hermes, autor imaginario de miles de textos sagrados perdidos.' },
+      { icon:'🌙', name:'Franz Bardon', dates:'1909–1958', desc:'Mago práctico checo. Su "Iniciación al Hermetismo" se considera el manual técnico más completo de la tradición.' }
+    ],
+    usanze: [
+      { icon:'🔥', title:'El Laboratorio Alquímico', desc:'Los herméticos medievales trabajaban en laboratorios secretos, destilando y calcinando sustancias físicas como metáfora de la transformación interior.' },
+      { icon:'⭐', title:'La Correspondencia Astrológica', desc:'Cada planeta, metal, hierba y parte del cuerpo tenía una correspondencia hermética. Astrólogo, médico y mago eran a menudo la misma persona.' },
+      { icon:'📖', title:'El Grimorio Personal', desc:'El adepto hermético llevaba un diario secreto —el grimorio— donde anotaba observaciones, meditaciones y correspondencias, nunca mostrado a nadie.' },
+      { icon:'🌒', title:'El Trabajo Nocturno', desc:'Muchas prácticas herméticas se realizaban de noche, cuando el silencio de la mente racional permite emerger niveles más profundos de conciencia.' },
+      { icon:'🗝️', title:'La Cadena de Transmisión', desc:'El conocimiento hermético no solo se leía: se recibía. Cada adepto tenía un maestro y a su vez se convertía en maestro, pues la transmisión oral directa era indispensable.' }
+    ],
+    corpus: [
+      { title:'📖 El Poimandres — La Mente del Soberano', desc:'El primer y más importante texto del Corpus, en el que Hermes recibe una visión cósmica de la creación, la caída del alma en la materia y el camino de regreso.' },
+      { title:'📖 El Asclepio — Dios y el Mundo', desc:'Diálogo entre Hermes y Asclepio sobre la relación entre lo divino y lo material, con la célebre profecía conocida como "Lamentación hermética".' },
+      { title:'📖 El Kybalion — Síntesis Moderna', desc:'Publicado en 1908 por "Tres Iniciados", es la síntesis moderna más accesible de los principios herméticos, traducida a decenas de idiomas.' }
+    ],
+    leggende: [
+      { title:'💎 La Leyenda de la Tumba de Hermes', desc:'Según una tradición medieval, Alejandro Magno —durante la conquista de Egipto en 332 a.C.— halló la tumba de Hermes Trismegisto bajo la Gran Pirámide, con la Tabla Esmeralda en la mano de la momia. La leyenda es casi con certeza apócrifa, pero refleja la idea de que la sabiduría más profunda solo se revela a quien posee la llave interior.' },
+      { title:'🌙 La Orden de la Golden Dawn', desc:'Fundada en Londres en 1888 por tres masones y un manuscrito cifrado de dudoso origen, la Orden Hermética de la Golden Dawn se convirtió en la escuela de magia práctica más influyente de la era moderna, con miembros como el poeta W.B. Yeats y el mago Aleister Crowley.' }
+    ],
+    articleLinks: [
+      { href:'./alchimia.html', text:'⚗️ Alquimia: símbolos y fases del Magnum Opus' },
+      { href:'./cabala.html', text:'✡️ Cábala: el Árbol de la Vida y los Sefirot' },
+      { href:'./numerologia.html', text:'🔢 Numerología: el significado de los números' },
+      { href:'./tarocchi.html', text:'🃏 Tarot: los Arcanos Mayores y Menores' }
+    ]
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+const PAGE_URL = 'https://mysticaoracoli.it/ermetismo.html';
+
+/* ── SEO Multilingua ── */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld && S.faqLD) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
+        },
+        {
+          '@type': 'Article',
+          headline: S.title,
+          description: S.description,
+          inLanguage: S.htmlLang,
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni' },
+          publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli' },
+          image: 'https://mysticaoracoli.it/images/icone/home/ermetismo.webp'
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mysticaoracoli.it/index.html' },
+            { '@type': 'ListItem', position: 2, name: 'Ermetismo', item: PAGE_URL }
+          ]
+        }
+      ]
     });
   }
+}
 
-  function herSelPrincipio(i) {
-    _herPrincipio = i;
-    for (let k = 0; k < 7; k++) {
-      const t = document.getElementById('herTab' + k);
-      if (t) t.classList.toggle('active', k === i);
-    }
+/* ── Lingua ── */
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+
+  const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.artTitle.split(':')[0] === 'Ermetismo' ? (currentLang==='it' ? 'La Via di Ermete Trismegisto' : currentLang==='en' ? 'The Way of Hermes Trismegistus' : 'El Camino de Hermes Trismegisto') : '';
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = currentLang==='it'
+      ? 'Sette leggi cosmiche che governano la realtà, la mente e la trasformazione dell\'anima. Dalla Biblioteca di Alessandria alle logge segrete del Rinascimento — la saggezza che non muore.'
+      : currentLang==='en'
+      ? 'Seven cosmic laws governing reality, the mind and the transformation of the soul. From the Library of Alexandria to the secret lodges of the Renaissance — wisdom that never dies.'
+      : 'Siete leyes cósmicas que gobiernan la realidad, la mente y la transformación del alma. De la Biblioteca de Alejandría a las logias secretas del Renacimiento — la sabiduría que nunca muere.';
+  const hbadge = document.getElementById('hero-badge'); if (hbadge) hbadge.textContent = '✦ PHILOSOPHIA HERMETICA ✦';
+
+  const tp = document.getElementById('title-principi'); if (tp) tp.textContent = L.titlePrincipi;
+  const pi = document.getElementById('principi-intro'); if (pi) pi.textContent = L.principiIntro;
+  const br = document.getElementById('btn-random'); if (br) br.textContent = L.btnRandom;
+  const brv = document.getElementById('btn-reveal'); if (brv) brv.textContent = L.btnReveal;
+
+  const sl = document.getElementById('share-label'); if (sl) sl.textContent = L.shareLabel;
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+
+  const at = document.getElementById('art-title'); if (at) at.textContent = L.artTitle;
+  const ah2 = document.getElementById('art-h2');   if (ah2) ah2.textContent = L.artH2;
+  const ah3 = document.getElementById('art-h3');   if (ah3) ah3.textContent = L.artH3;
+  const ap1 = document.getElementById('art-p1');   if (ap1) ap1.textContent = L.artP1;
+  const ap2 = document.getElementById('art-p2');   if (ap2) ap2.textContent = L.artP2;
+  const ap3 = document.getElementById('art-p3');   if (ap3) ap3.textContent = L.artP3;
+  const ap4 = document.getElementById('art-p4');   if (ap4) ap4.textContent = L.artP4;
+  const ap5 = document.getElementById('art-p5');   if (ap5) ap5.textContent = L.artP5;
+  const hi  = document.getElementById('art-hero'); if (hi)  hi.alt = L.artImgAlt || '';
+  const ce  = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+
+  const tf = document.getElementById('title-figure'); if (tf) tf.textContent = L.titleFigure;
+  const tu = document.getElementById('title-usanze'); if (tu) tu.textContent = L.titleUsanze;
+  const tc = document.getElementById('title-corpus'); if (tc) tc.textContent = L.titleCorpus;
+  const tl = document.getElementById('title-leggende'); if (tl) tl.textContent = L.titleLeggende;
+
+  renderPageContent(L);
+
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text');  if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn');   if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip');  if (ps) ps.textContent = L.premiumSkip;
+
+  const fc = document.getElementById('footer-copy');       if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+
+  renderFAQ(L.faq);
+
+  // Tab grid labels (struttura/JS preservata, etichette rigenerate)
+  initTabs();
+  herSelPrincipio(_herPrincipio);
+}
+
+/* ── Sezioni specifiche pagina (personaggi, usanze, corpus, leggende, link) ── */
+function renderPageContent(L) {
+  const pg = document.getElementById('personGrid');
+  if (pg) pg.innerHTML = L.personaggi.map(p => `
+    <div class="person-card">
+      <div class="p-icon">${p.icon}</div>
+      <div class="p-name">${p.name}</div>
+      <div class="p-dates">${p.dates}</div>
+      <div class="p-desc">${p.desc}</div>
+    </div>`).join('');
+
+  const ug = document.getElementById('usanzeGrid');
+  if (ug) ug.innerHTML = L.usanze.map(u => `
+    <div class="usanza-card">
+      <span class="usanza-icon">${u.icon}</span>
+      <div><h4>${u.title}</h4><p>${u.desc}</p></div>
+    </div>`).join('');
+
+  const cl = document.getElementById('corpusList');
+  if (cl) cl.innerHTML = L.corpus.map((c, i) => `
+    <div class="corpus-card" onclick="toggleCorpus(${i})">
+      <div class="corpus-header"><h4>${c.title}</h4><span class="corpus-toggle" id="ct${i}">▼</span></div>
+      <div class="corpus-body" id="cb${i}"><p>${c.desc}</p></div>
+    </div>`).join('');
+
+  const ll = document.getElementById('leggendeList');
+  if (ll) ll.innerHTML = L.leggende.map(g => `
+    <div class="storia-card"><h4>${g.title}</h4><p>${g.desc}</p></div>`).join('');
+
+  const al = document.getElementById('articleLinks');
+  if (al) al.innerHTML = L.articleLinks.map(l => `<a href="${l.href}">${l.text}</a>`).join('');
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ── Audio Manager ── */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
   }
-
-  function herRandom() {
-    _herPrincipio = Math.floor(Math.random() * 7);
-    herSelPrincipio(_herPrincipio);
-    calcErmetismo();
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
   }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
 
-  function calcErmetismo() {
-    const d = DB_ERMETISMO[_herPrincipio];
-    const frasiHtml = d.frasi.map(f =>
-      `<div class="frase-item">${f}</div>`
-    ).join('');
+/* ── Tema Giorno/Notte ── */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
 
-    const el = document.getElementById('hermetResult');
-    el.innerHTML = `
-      <div class="principio-result">
-        <div class="principio-top">
-          <div class="pr-nome">${d.nome}</div>
-          <div class="pr-sub">"${d.sub}"</div>
-          <div class="pr-meta">
-            <span class="pr-badge">🔑 ${d.chiave}</span>
-            <span class="pr-badge">🪐 ${d.pianeta}</span>
-            <span class="pr-badge">🌊 ${d.elemento}</span>
-          </div>
-        </div>
-        <div class="geo-block">
-          <h4>📜 Il Principio</h4>
-          <p>${d.desc}</p>
-        </div>
-        <div class="geo-block" style="border-left-color:#c8b4ff">
-          <h4 style="color:#c8b4ff">⚙️ Pratica Quotidiana</h4>
-          <p>${d.pratica}</p>
-        </div>
-        <div class="frasi-container">${frasiHtml}</div>
-        <div class="btn-grp">
-          <button class="btn btn-sec" onclick="resetErmetismo()">🔄 Altro Principio</button>
-          <button class="btn btn-primary" onclick="showToast('💾 Salvato nel grimorio')">💾 Salva</button>
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ── Premium Gate ── */
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ── Share ── */
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue  = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x');  if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = !sp.hidden;
+}
+
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ── FAQ Accordion ── */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden><p>${f.a}</p></div>
+    </div>`).join('');
+}
+
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ── ════════════ LOGICA INTERATTIVA ORIGINALE (preservata) ════════════ ── */
+const DB_ERMETISMO = [
+  {
+    key:'mentalismo', nome:'🧠 Il Mentalismo', sub:'L\'Intero è Mente. L\'universo è mentale.',
+    chiave:'Osservazione', pianeta:'Saturno', elemento:'Spirito',
+    desc:'Il Principio del Mentalismo afferma che la realtà è fondamentalmente mentale — non nel senso che "tutto è solo nella tua testa", ma nel senso cosmico che la Mente è il substrato di tutto ciò che esiste. I tuoi pensieri non sono reazioni alla realtà: sono co-creatori della realtà. Ogni pensiero ripetuto diventa una credenza. Ogni credenza diventa un filtro. Ogni filtro crea la tua versione del mondo. Cambia il pensiero dominante, cambi il tuo universo.',
+    pratica:'Prima di ogni decisione importante oggi, fermati e chiedi: "Quale pensiero sta creando questa situazione? È questo il pensiero che voglio seminare?" Rivedi un problema con un pensiero opposto e osserva cosa cambia nella tua percezione.',
+    frasi:[
+      '"Il Tutto è Mente — l\'Universo è mentale."',
+      'Il pensiero precede la realtà come il seme precede l\'albero.',
+      'Cambia il pensiero dominante: cambi il tuo mondo.'
+    ]
+  },
+  {
+    key:'corrispondenza', nome:'🔁 La Corrispondenza', sub:'Come in alto, così in basso. Come dentro, così fuori.',
+    chiave:'Speculazione', pianeta:'Mercurio', elemento:'Aria',
+    desc:'Il Principio della Corrispondenza è la chiave maestra dell\'ermetismo — la comprensione che i piani dell\'esistenza si rispecchiano l\'uno nell\'altro. Il macrocosmo è riflesso nel microcosmo. Ciò che avviene nell\'universo avviene in te. Ciò che avviene in te si manifesta nel mondo. Quando vedi un pattern nella natura, stai guardando il tuo pattern interiore. Quando osservi i tuoi pattern interiori, stai leggendo il libro dell\'universo.',
+    pratica:'Scegli un fenomeno naturale che osservi oggi (pioggia, vento, crescita di una pianta). Trova il parallelo esatto nella tua vita interiore. Scrivi 3 corrispondenze precise. Questo è il linguaggio dell\'universo.',
+    frasi:[
+      '"Come sopra, così sotto. Come dentro, così fuori."',
+      'Il tuo stato interiore è lo specchio del tuo universo esterno.',
+      'Leggi la natura e leggi te stesso — sono lo stesso testo.'
+    ]
+  },
+  {
+    key:'vibrazione', nome:'🌊 La Vibrazione', sub:'Nulla riposa — tutto si muove. Tutto vibra.',
+    chiave:'Risonanza', pianeta:'Venere', elemento:'Acqua',
+    desc:'Il Principio della Vibrazione afferma che tutto nell\'universo è in costante movimento — dalla roccia apparentemente immobile (che vibra a frequenza molecolare) alla coscienza più elevata. Non esiste stato fisso. La differenza tra densità e leggerezza, tra gioia e depressione è una questione di frequenza vibratoria. La tua voce, il tuo corpo, i tuoi pensieri sono tutti strumenti di accordatura.',
+    pratica:'Scegli una parola con forte carica emotiva e ripetila lentamente 10 volte, poi rapidamente 10 volte. Nota come la stessa parola cambia la tua energia interna. Poi scegli una parola di alta frequenza ("gratitudine", "abbondanza", "luce") e fai lo stesso.',
+    frasi:[
+      '"Nulla è in stato di quiete — tutto si muove, tutto vibra."',
+      'Sintonizza la tua frequenza sulla realtà che vuoi attirare.',
+      'La voce, il respiro, il pensiero: tutti strumenti per alzare la vibrazione.'
+    ]
+  },
+  {
+    key:'polarita', nome:'⚖️ La Polarità', sub:'Tutto è duale. Gli opposti sono identici in natura.',
+    chiave:'Trasmutazione', pianeta:'Marte', elemento:'Fuoco',
+    desc:'Il Principio della Polarità rivela che gli opposti sono gli estremi dello stesso continuum. Caldo e freddo sono "temperatura" — diversa in grado, identica in natura. Amore e odio sono entrambi "attaccamento". Questa comprensione libera: non devi distruggere l\'ombra, devi trasmutarla. Il maestro ermetico non combatte gli opposti: li trasforma alzando la frequenza.',
+    pratica:'Prendi il tuo problema più pressante. Identifica il suo opposto esatto. Trova il punto di mezzo — la tensione creativa tra i due poli. Cosa diventa il problema quando lo vedi come dualità da integrare invece che ostacolo da eliminare?',
+    frasi:[
+      '"Tutto è duale. Tutto ha i suoi poli. Gli opposti sono identici in natura."',
+      'Non combattere la tua ombra — trasmutala alzando la sua frequenza.',
+      'Ogni negazione contiene la sua affermazione nascosta.'
+    ]
+  },
+  {
+    key:'ritmo', nome:'🔄 Il Ritmo', sub:'Tutto scorre dentro e fuori. Tutto ha le sue maree.',
+    chiave:'Neutralizzazione', pianeta:'Luna', elemento:'Terra',
+    desc:'Il Principio del Ritmo rivela che tutto segue cicli — dentro e fuori, su e giù, avanzamento e ritiro. Non esistono periodi eternamente buoni o eternamente cattivi: esistono fasi di un ciclo che si ripete in spirale. Il maestro ermetico non si oppone al ritmo — lo naviga. La resistenza ai cicli naturali è la fonte di gran parte della sofferenza umana.',
+    pratica:'Osserva il tuo ciclo energetico delle prossime 24 ore. Pianifica le azioni importanti nei momenti di alta marea. Usa i momenti di bassa marea per nutrirti e riflettere. Non forzare il ritmo — cavalcalo.',
+    frasi:[
+      '"Tutto scorre dentro e fuori. Tutto ha le sue maree."',
+      'Non nuotare contro la corrente — impara a navigarla con intelligenza.',
+      'Ogni ritiro è preparazione per il prossimo avanzamento.'
+    ]
+  },
+  {
+    key:'causa', nome:'⚙️ Causa ed Effetto', sub:'Ogni causa ha il suo effetto. Ogni effetto la sua causa.',
+    chiave:'Responsabilità', pianeta:'Sole', elemento:'Fuoco',
+    desc:'Il Principio di Causa ed Effetto afferma che nulla accade per caso. Ogni risultato ha una causa. Ogni situazione in cui ti trovi è il frutto di cause precedenti. Questo non è un giudizio: è una liberazione. Se hai contribuito a creare la situazione, puoi contribuire a trasformarla. Il maestro ermetico impara a diventare causa consapevole della propria vita.',
+    pratica:'Scegli un risultato concreto che vuoi nella tua vita entro 30 giorni. Risali a ritroso: quale azione quotidiana, praticata ogni giorno, genererebbe quel risultato? Inizia quella azione oggi.',
+    frasi:[
+      '"Ogni causa ha il suo effetto. Ogni effetto la sua causa."',
+      'Non sei vittima delle circostanze: sei causa dei tuoi risultati.',
+      'Il presente è il futuro che hai creato ieri. Il domani è quello che crei adesso.'
+    ]
+  },
+  {
+    key:'genere', nome:'⚛️ Il Genere', sub:'Il genere è in tutto. Il maschile e il femminile operano in tutto.',
+    chiave:'Integrazione', pianeta:'Giove', elemento:'Spirito',
+    desc:'Il Principio del Genere riguarda le due polarità fondamentali della coscienza — il maschile (attivo, proiettivo, logico) e il femminile (ricettivo, contenitivo, intuitivo) — presenti in tutti gli esseri. La creatività autentica nasce dall\'unione sacra di queste due polarità in te. Il maestro integra entrambe.',
+    pratica:'Fai oggi un\'azione maschile-attiva (progetta qualcosa, prendi una decisione) e un\'azione femminile-ricettiva (ascolta senza rispondere, medita senza obiettivo). Poi uniscile in un gesto consapevole.',
+    frasi:[
+      '"Il genere si manifesta in tutto — il maschile e il femminile sono principi, non limitazioni."',
+      'Crei davvero solo quando maschile e femminile danzano insieme in te.',
+      'Ricevi come il femminile. Agisci come il maschile. Sii come l\'Uno.'
+    ]
+  }
+];
+
+let _herPrincipio = 0;
+
+function initTabs() {
+  const grid = document.getElementById('tabGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  DB_ERMETISMO.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'princip-tab' + (i === _herPrincipio ? ' active' : '');
+    btn.id = 'herTab' + i;
+    btn.innerHTML = `<span class="t-icon">${p.nome.split(' ')[0]}</span>${p.nome.split(' ').slice(1).join(' ')}`;
+    btn.onclick = () => { _herPrincipio = i; herSelPrincipio(i); };
+    grid.appendChild(btn);
+  });
+}
+
+function herSelPrincipio(i) {
+  _herPrincipio = i;
+  for (let k = 0; k < 7; k++) {
+    const t = document.getElementById('herTab' + k);
+    if (t) t.classList.toggle('active', k === i);
+  }
+}
+
+function herRandom() {
+  _herPrincipio = Math.floor(Math.random() * 7);
+  herSelPrincipio(_herPrincipio);
+  calcErmetismo();
+}
+
+function calcErmetismo() {
+  const d = DB_ERMETISMO[_herPrincipio];
+  const L = LANG[currentLang];
+  const frasiHtml = d.frasi.map(f => `<div class="frase-item">${f}</div>`).join('');
+
+  const el = document.getElementById('hermetResult');
+  el.innerHTML = `
+    <div class="principio-result">
+      <div class="principio-top">
+        <div class="pr-nome">${d.nome}</div>
+        <div class="pr-sub">"${d.sub}"</div>
+        <div class="pr-meta">
+          <span class="pr-badge">🔑 ${d.chiave}</span>
+          <span class="pr-badge">🪐 ${d.pianeta}</span>
+          <span class="pr-badge">🌊 ${d.elemento}</span>
         </div>
       </div>
-    `;
-    el.style.display = 'block';
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+      <div class="geo-block">
+        <h4>📜 ${currentLang==='it'?'Il Principio':currentLang==='en'?'The Principle':'El Principio'}</h4>
+        <p>${d.desc}</p>
+      </div>
+      <div class="geo-block" style="border-left-color:#c8b4ff">
+        <h4 style="color:#c8b4ff">⚙️ ${currentLang==='it'?'Pratica Quotidiana':currentLang==='en'?'Daily Practice':'Práctica Diaria'}</h4>
+        <p>${d.pratica}</p>
+      </div>
+      <div class="frasi-container">${frasiHtml}</div>
+      <div class="btn-grp">
+        <button class="btn btn-sec" onclick="resetErmetismo()">${L.btnAltro}</button>
+        <button class="btn btn-primary" onclick="showToast(LANG[currentLang].toastSalvato)">${L.btnSalva}</button>
+      </div>
+    </div>
+  `;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-  function resetErmetismo() {
-    document.getElementById('hermetResult').style.display = 'none';
-    document.getElementById('hermetResult').innerHTML = '';
-    window.scrollTo({ top: document.querySelector('.tab-grid').offsetTop - 100, behavior: 'smooth' });
-  }
+function resetErmetismo() {
+  document.getElementById('hermetResult').style.display = 'none';
+  document.getElementById('hermetResult').innerHTML = '';
+  window.scrollTo({ top: document.querySelector('.tab-grid').offsetTop - 100, behavior: 'smooth' });
+}
 
-  /* ── CORPUS ACCORDION ── */
-  function toggleCorpus(i) {
-    const body = document.getElementById('cb' + i);
-    const tog = document.getElementById('ct' + i);
-    const open = body.classList.toggle('open');
-    tog.textContent = open ? '▲' : '▼';
-  }
+/* ── Corpus Accordion (toggle generico, contenuto generato da renderPageContent) ── */
+function toggleCorpus(i) {
+  const body = document.getElementById('cb' + i);
+  const tog = document.getElementById('ct' + i);
+  if (!body) return;
+  const open = body.classList.toggle('open');
+  if (tog) tog.textContent = open ? '▲' : '▼';
+}
 
-  /* ── TOAST ── */
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2500);
-  }
+/* ── Toast ── */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
 
-  /* ── BOOT ── */
-  initTabs();
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+});
 </script>
 </body>
 </html>
