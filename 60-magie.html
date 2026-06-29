@@ -220,7 +220,7 @@ let _isPremium = false;
 
 // ═══ INIT ═══
 function init() {
-  try { _isPremium = localStorage.getItem('MYSTICA_PREMIUM_ACTIVE') === 'true'; } catch(e){}
+  try { _isPremium = localStorage.getItem('myst_premium') === '1'; } catch(e){}
   if (_isPremium) document.getElementById('premiumBanner').style.display = 'none';
 
   document.getElementById('filterBar').addEventListener('click', e => {
@@ -274,16 +274,54 @@ function render() {
 }
 
 function unlockPremium() {
-  // Collega al tuo sistema premium reale
-  if (typeof showPremiumModal === 'function') {
-    showPremiumModal(() => {
-      _isPremium = true;
-      document.getElementById('premiumBanner').style.display = 'none';
-      render();
-    });
-  } else {
-    alert('Sistema premium non disponibile in questa modalità.');
+  // Mostra modal inline con campo codice
+  if (document.getElementById('_pm60_overlay')) return;
+  const ov = document.createElement('div');
+  ov.id = '_pm60_overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(10,5,20,.92);display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px);';
+  ov.innerHTML = `
+    <div style="background:linear-gradient(135deg,#1a0e35,#0d1a2e);border:1px solid #d4af37;border-radius:16px;padding:28px 22px;max-width:340px;width:100%;text-align:center;color:#e8e0f0;font-family:'Cinzel',serif;box-shadow:0 0 40px rgba(212,175,55,.25);">
+      <div style="font-size:2rem;margin-bottom:6px;">✦</div>
+      <h2 style="color:#d4af37;font-size:1.15rem;margin:4px 0 8px;">60 Magie Premium</h2>
+      <p style="font-family:'Crimson Pro',serif;font-size:.9rem;opacity:.85;line-height:1.5;margin-bottom:16px;">Sblocca tutti i 60 rituali.<br><strong>Solo 4,99€ una tantum.</strong></p>
+      <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" target="_blank"
+        style="display:block;background:#d4af37;color:#0a0514;padding:13px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.85rem;margin-bottom:14px;letter-spacing:.04em;">✦ Acquista Premium · 4,99€</a>
+      <div style="border-top:1px solid rgba(212,175,55,.2);padding-top:14px;margin-top:2px;">
+        <p style="font-size:.75rem;color:rgba(212,175,55,.7);margin-bottom:8px;">Hai già pagato? Inserisci il codice:</p>
+        <input id="_pm60_inp" type="text" maxlength="19" placeholder="MYST-XXXX-XXXX-XXXX"
+          oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9-]/g,'')"
+          style="width:100%;background:rgba(42,23,72,.6);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:10px 11px;color:#e8e0f0;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.12em;outline:none;box-sizing:border-box;margin-bottom:8px;">
+        <button onclick="_pm60Unlock()"
+          style="width:100%;padding:11px;border-radius:8px;border:none;background:linear-gradient(135deg,#d4af37,#9a7820);color:#0a0514;font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;cursor:pointer;">🔑 Sblocca con il Codice</button>
+        <div id="_pm60_err" style="display:none;margin-top:7px;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);border-radius:7px;padding:8px;color:#ff9090;font-size:.78rem;"></div>
+        <div id="_pm60_ok" style="display:none;margin-top:7px;background:rgba(55,212,100,.1);border:1px solid rgba(55,212,100,.3);border-radius:7px;padding:8px;color:#90ffb0;font-size:.82rem;">✦ Premium attivato! Ricarico…</div>
+        <p style="margin-top:10px;font-size:.72rem;color:rgba(184,178,209,.5);line-height:1.4;">Non hai il codice? <a href="./premium-restore.html" style="color:rgba(212,175,55,.7);">Recupera con email e data di nascita →</a></p>
+      </div>
+      <button onclick="document.getElementById('_pm60_overlay').remove()"
+        style="background:none;border:none;color:rgba(232,224,240,.35);cursor:pointer;font-size:.82rem;margin-top:12px;font-family:inherit;">Continua Gratis</button>
+    </div>`;
+  ov.addEventListener('click', e => { if(e.target===ov) ov.remove(); });
+  document.body.appendChild(ov);
+}
+
+function _pm60Unlock() {
+  const inp = document.getElementById('_pm60_inp');
+  const err = document.getElementById('_pm60_err');
+  const ok  = document.getElementById('_pm60_ok');
+  const val = inp ? inp.value.trim().toUpperCase() : '';
+  err.style.display='none'; ok.style.display='none';
+  if(!/^MYST-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(val)){
+    err.textContent='Formato non valido. Esempio: MYST-A3F9-C12B-7D4E';
+    err.style.display='block';
+    return;
   }
+  try{
+    localStorage.setItem('myst_premium','1');
+    localStorage.setItem('myst_premium_code',val);
+    localStorage.setItem('myst_premium_date',new Date().toISOString());
+  }catch(e){}
+  ok.style.display='block';
+  setTimeout(()=>{ window.location.reload(); }, 1600);
 }
 
 document.addEventListener('DOMContentLoaded', init);
