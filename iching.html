@@ -502,7 +502,7 @@ Testa (🔴) = Yang (3), Croce (⚪) = Yin (2)</div>
           err.style.display='block';
           return;
         }
-        try{ localStorage.setItem('myst_premium','true'); localStorage.setItem('myst_premium_code',val); localStorage.setItem('myst_premium_date',new Date().toISOString()); }catch(e){}
+        try{ localStorage.setItem('myst_premium','1'); localStorage.setItem('myst_premium_code',val); localStorage.setItem('myst_premium_date',new Date().toISOString()); }catch(e){}
         ok.style.display='block';
         setTimeout(function(){ window.location.reload(); }, 1600);
       };

@@ -108,7 +108,7 @@ async function ripristina() {
   // Il codice è sempre valido se i dati sono corretti —
   // non possiamo verificare se ha pagato davvero (no backend),
   // ma il codice è impossibile da indovinare senza i dati esatti.
-  localStorage.setItem('myst_premium','true');
+  localStorage.setItem('myst_premium','1');
   localStorage.setItem('myst_premium_code', code);
   localStorage.setItem('myst_premium_nome', norm(nome));
   localStorage.setItem('myst_premium_email', norm(email));

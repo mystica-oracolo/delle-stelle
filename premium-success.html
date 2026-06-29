@@ -232,7 +232,7 @@ async function generaCodice() {
   const code = formatCodice(hex);
 
   // Salva in localStorage
-  localStorage.setItem('myst_premium', 'true');
+  localStorage.setItem('myst_premium', '1');
   localStorage.setItem('myst_premium_code', code);
   localStorage.setItem('myst_premium_nome', norm(nome));
   localStorage.setItem('myst_premium_email', norm(email));

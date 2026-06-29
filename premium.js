@@ -26,7 +26,7 @@
   function setLS(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 
   function isLocalPremium(){
-    return getLS(LS_KEY) === 'true';
+    return getLS(LS_KEY) === '1';
   }
 
   /* ── SHA-256 + formattazione codice ── */
@@ -57,7 +57,7 @@
 
   /* ── Attiva premium ── */
   function activatePremium(code){
-    setLS(LS_KEY, 'true');
+    setLS(LS_KEY, '1');
     if(code) setLS('myst_premium_code', code);
     setLS('myst_premium_date', new Date().toISOString());
   }
