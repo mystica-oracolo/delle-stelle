@@ -1379,6 +1379,15 @@
     document.addEventListener('DOMContentLoaded', () => {
       applyTheme(isDayMode);
       applyLang();
+      // Controlla premium all'avvio
+      try {
+        if (localStorage.getItem('myst_premium') === '1') {
+          const modal = document.getElementById('premiumModal');
+          if (modal) modal.setAttribute('hidden','true');
+          const banner = document.getElementById('premiumBanner');
+          if (banner) banner.style.display = 'none';
+        }
+      } catch(e) {}
     });
   </script>
 </body>

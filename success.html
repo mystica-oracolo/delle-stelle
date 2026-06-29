@@ -205,8 +205,6 @@ body{
     // Pagamento reale verificato — attiva premium
     try{ localStorage.setItem('myst_premium','1'); }catch(e){}
     try{ localStorage.setItem('myst_premium_date', new Date().toISOString()); }catch(e){}
-    try{ localStorage.setItem('mystica_premium_v1','true'); }catch(e){}
-    try{ sessionStorage.setItem('mystica_stripe_just_paid','true'); }catch(e){}
 
     // Stelle cadenti celebrative
     const container = document.getElementById('fstars');
