@@ -268,6 +268,14 @@ body {
 .dash-card:hover::before { opacity: 1; }
 .dash-card:active { transform: scale(.97); }
 .dash-card.span2 { grid-column: span 2; }
+.dash-premium-badge {
+  position: absolute; top: 8px; right: 8px;
+  background: linear-gradient(135deg,#d4af37,#9a7820);
+  color: #0a0514; font-size: 11px; font-weight: 700;
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 8px rgba(212,175,55,.5); pointer-events: none;
+}
 .dash-card.span2 .dash-img-wrap { aspect-ratio: 2/1; }
 
 /* Colori bordo superiore */
@@ -1270,22 +1278,37 @@ function closePremiumModal() {
 }
 document.getElementById('premiumModal').addEventListener('click', e => { if (e.target.classList.contains('modal-overlay')) closePremiumModal(); });
 
-const FREE_PAGES = [
-  'profilo-mistico.html','archivio.html','oroscopo.html',
-  'tarocchi.html','rune.html','iching.html','compatibilita.html',
-  'oroscopo-segni.html','enciclopedia.html','community.html',
-  'contatti.html','about.html','blog.html'
+/*
+ * NOTA SUL GATING (Sezione 10 del prompt definitivo):
+ * La navigazione verso QUALSIASI pagina del sito resta sempre libera.
+ * Contenuto editoriale, FAQ, tavole di riferimento e funzioni base
+ * dell'oracolo non vengono mai bloccati: serve sia alla conversione
+ * (l'utente deve vedere il valore prima di pagare) sia all'idoneità
+ * AdSense (il crawler deve poter accedere ai contenuti). Il gate
+ * premium si attiva SOLO dentro le singole pagine, sulle azioni
+ * avanzate (vedi requirePremium() in ciascuna pagina). Qui mostriamo
+ * solo un piccolo badge "✦" sulle card che contengono funzioni
+ * avanzate, senza mai impedire il click/la navigazione.
+ */
+const PREMIUM_FEATURE_PAGES = [
+  'cicli-tempo.html','magia-rossa.html','magia-nera.html','magia-bianca.html',
+  'malocchio.html','pentacoli-salomone.html','sigilli-salomone.html',
+  'numerologia.html','astrologia-avanzata.html','astrologia-vedica.html',
+  'energia-chakra.html','viaggio-astrale.html','ore-specchio.html',
+  'bazi-cinese.html','zi-wei-dou-shu.html','human-design.html','gene-keys.html'
 ];
 function initPremiumGate() {
   if (isPremium()) return;
   document.querySelectorAll('.gated-section .dash-card').forEach(card => {
-    card.addEventListener('click', e => {
-      const href = card.getAttribute('href') || '';
-      const pageName = href.replace('./','').split('#')[0];
-      if (FREE_PAGES.includes(pageName)) return;
-      e.preventDefault();
-      requirePremium('home_navigation');
-    });
+    const href = card.getAttribute('href') || '';
+    const pageName = href.replace('./', '').split('#')[0];
+    if (PREMIUM_FEATURE_PAGES.includes(pageName) && !card.querySelector('.dash-premium-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'dash-premium-badge';
+      badge.textContent = '✦';
+      badge.title = 'Contiene funzioni premium avanzate';
+      card.appendChild(badge);
+    }
   });
 }
 
