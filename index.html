@@ -137,9 +137,11 @@ body {
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   padding: max(20px, calc(20px + env(safe-area-inset-top,0px))) 20px 20px;
   border-bottom: 1px solid rgba(212,175,55,0.25);
-  position: relative; z-index: 20;
+  position: sticky; top: 0; z-index: 20;
   text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
+.home-header.header-hidden { transform: translateY(-100%); }
 .header-top-row {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 12px;
@@ -1303,18 +1305,8 @@ const PREMIUM_FEATURE_PAGES = [
   'bazi-cinese.html','zi-wei-dou-shu.html','human-design.html','gene-keys.html'
 ];
 function initPremiumGate() {
-  if (isPremium()) return;
-  document.querySelectorAll('.gated-section .dash-card').forEach(card => {
-    const href = card.getAttribute('href') || '';
-    const pageName = href.replace('./', '').split('#')[0];
-    if (PREMIUM_FEATURE_PAGES.includes(pageName) && !card.querySelector('.dash-premium-badge')) {
-      const badge = document.createElement('span');
-      badge.className = 'dash-premium-badge';
-      badge.textContent = '✦';
-      badge.title = 'Contiene funzioni premium avanzate';
-      card.appendChild(badge);
-    }
-  });
+  // Badge "✦" sulle card disattivato su richiesta: niente pallini sulle icone della home.
+  return;
 }
 
 /* ── Banner Premium ── */
@@ -1464,6 +1456,28 @@ setTimeout(() => {
   });
 }, 3000);
 
+/* ── Header: nascondi allo scroll verso il basso, mostra verso l'alto ── */
+function initHeaderAutoHide() {
+  const header = document.querySelector('.home-header');
+  if (!header) return;
+  let lastY = window.scrollY;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (y > lastY && y > header.offsetHeight) {
+        header.classList.add('header-hidden');
+      } else if (y < lastY) {
+        header.classList.remove('header-hidden');
+      }
+      lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
+}
+
 /* ── Init sequence ── */
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(isDayMode);   // 1. Tema
@@ -1471,6 +1485,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLang();             // 2. Lingua + SEO
   checkBannerPremium();    // 3. Banner
   initPremiumGate();       // 4. Gate card
+  initHeaderAutoHide();    // 5. Header che scompare allo scroll
 });
 </script>
 </body>
