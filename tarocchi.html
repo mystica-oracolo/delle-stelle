@@ -1,37 +1,89 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tarocchi Online Gratis — Lettura 78 Carte | MYSTICA</title>
-<meta name="description" content="Lettura dei Tarocchi online gratis in italiano. 78 carte, Arcani Maggiori e Minori. Lettura Semplice 3 carte o Croce della Vita 5 carte. Senza registrazione.">
-<meta name="keywords" content="tarocchi online gratis, lettura tarocchi, arcani maggiori, arcani minori, carte tarocchi significato, tarocchi 78 carte, oracolo tarocchi italiano">
-<meta name="google-adsense-account" content="ca-pub-0522720046244970">
-<meta property="og:title" content="Tarocchi Online Gratis – 78 Carte | MYSTICA">
-<meta property="og:description" content="Lettura dei Tarocchi online gratis. Arcani Maggiori e Minori, lettura semplice e approfondita.">
-<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:url" content="https://mysticaoracoli.it/tarocchi.html">
-<meta property="og:site_name" content="MYSTICA – Oracolo delle Stelle">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mysticaoracoli.it/og-image.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — vuoti, popolati da updateSEO() -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/tarocchi.html">
-<link rel="icon" href="./apple-touch-icon.png">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/tarocchi.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/tarocchi.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/tarocchi.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/tarocchi.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mysticaoracoli.it/tarocchi.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/tarocchi.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/tarocchi.webp">
+
+<!-- JSON-LD — rigenerato da updateSEO() -->
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-0522720046244970">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mystica.css">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./apple-touch-icon-v2.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
-/* Page-specific overrides */
+/* ════════ RESET / LAYOUT ════════ */
+.skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#0a0514;padding:10px 16px;z-index:999;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
 .page-wrap{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
-.top-bar{background:rgba(10,5,20,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px+env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,0.2);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
-.back-btn{width:34px;height:34px;border-radius:50%;background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
-.back-btn:hover{background:rgba(212,175,55,0.2)}
-.top-bar-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:2px;flex:1;text-align:center}
-.top-bar-icon{font-size:20px;flex-shrink:0}
+
+/* ════════ HEADER STANDARD ════════ */
+.page-header{background:rgba(10,5,20,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,0.2);position:sticky;top:0;z-index:20}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.btn-back{width:34px;height:34px;border-radius:50%;background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s ease;text-decoration:none}
+.btn-back:hover{background:rgba(212,175,55,0.2)}
+.header-controls{display:flex;gap:8px}
+.btn-icon{min-width:34px;height:34px;padding:0 9px;border-radius:17px;background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
+.btn-icon:hover{background:rgba(212,175,55,0.2)}
+.page-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:2px;text-align:center;margin-bottom:8px}
+.lang-switch{display:flex;justify-content:center;gap:6px}
+.btn-lang{font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:4px 11px;border-radius:12px;border:1px solid rgba(212,175,55,0.3);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.btn-lang.active,.btn-lang:hover{background:rgba(212,175,55,0.18);color:var(--gold);border-color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
 .main-content{flex:1;padding:16px;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
 
 /* Intro section */
@@ -41,7 +93,9 @@
 .tarot-intro h1{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:2px;margin-bottom:6px}
 .tarot-intro p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:0}
 
-/* Mode selection */
+.section-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;margin:22px 0 10px;text-align:center}
+
+/* Mode selection (stese principali) */
 .mode-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 12px}
 .mode-card{background:linear-gradient(145deg,#160930,#080418);border:2px solid #2a174870;border-radius:14px;padding:16px 10px;text-align:center;cursor:pointer;transition:all .3s ease;touch-action:manipulation}
 .mode-card:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
@@ -50,6 +104,16 @@
 .mode-name{font-family:'Cinzel',serif;color:var(--gold);font-size:13px;margin-bottom:5px}
 .mode-desc{color:var(--muted);font-size:11px;line-height:1.4}
 .mode-badge{display:inline-block;margin-top:6px;background:rgba(212,175,55,0.12);border:1px solid var(--gold-dim);color:var(--gold);font-size:9px;padding:2px 7px;border-radius:8px}
+.mode-badge.lock{background:rgba(212,175,55,0.18)}
+
+/* Stese aggiuntive (griglia stile screenshot) */
+.spread-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
+.spread-card{background:linear-gradient(145deg,#150828,#070310);border:2px solid #2a174860;border-radius:14px;padding:14px 8px;text-align:center;cursor:pointer;transition:all .25s ease;touch-action:manipulation}
+.spread-card:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
+.spread-card.active{border-color:var(--gold);box-shadow:0 0 18px rgba(212,175,55,0.28)}
+.spread-icon{font-size:24px;margin-bottom:6px}
+.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:11.5px;letter-spacing:.3px;margin-bottom:3px}
+.spread-desc{color:var(--muted);font-size:10px;line-height:1.35}
 
 /* "Lettura per" banner */
 .for-other-row{margin:4px 0 12px;display:flex;align-items:center;gap:8px}
@@ -109,142 +173,820 @@
 .toast.show{display:block}
 @keyframes tslide{from{transform:translate(-50%,15px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
 
-/* Cosmos bg */
-.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-color:#0a0514;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(42,23,72,0.25) 0%,transparent 70%),radial-gradient(1.5px 1.5px at 75% 15%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 45% 70%,rgba(212,175,55,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 45%,rgba(255,255,255,0.4) 0%,transparent 100%);animation:twinkle 14s infinite alternate}
-@keyframes twinkle{0%{opacity:.35}100%{opacity:.55}}
+/* ── Sfondo Cosmico ── */
+.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation:twinkle 14s infinite alternate}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
 .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
 .particle{position:absolute;border-radius:50%;opacity:0;animation:float linear infinite}
 @keyframes float{0%{transform:translate(0,0) scale(0) rotate(0deg);opacity:0}6%{opacity:1}50%{transform:translate(calc(var(--dx,70vw)*.5),calc(var(--dy,90vh)*.5)) scale(1) rotate(180deg);opacity:.95}92%{opacity:.6}100%{transform:translate(var(--dx,70vw),var(--dy,90vh)) scale(.6) rotate(400deg);opacity:0}}
 
-/* SEO section */
-.seo-section{margin:24px 0 0;padding:16px;background:rgba(10,5,20,0.5);border-radius:14px;border:1px solid rgba(42,23,72,0.5)}
-.seo-section h2{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
-.seo-section p{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px}
-.seo-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.seo-link{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:1px;text-decoration:none;border:1px solid rgba(42,23,72,0.6);border-radius:20px;padding:4px 10px;transition:all .2s}
-.seo-link:hover{border-color:var(--gold-dim);color:var(--gold)}
-.footer-mini{text-align:center;padding:16px 10px;font-size:10px;color:var(--muted);border-top:1px solid rgba(42,23,72,0.4);margin-top:8px}
-.footer-mini a{color:var(--muted);text-decoration:none}
-.footer-mini a:hover{color:var(--gold)}
+/* ════════ ARTICLE / FAQ / SHARE / FOOTER / PREMIUM ════════ */
+.share-section{margin:18px 0}
+.btn-share{width:100%;padding:12px;border-radius:14px;background:rgba(212,175,55,0.1);border:1.5px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .25s ease}
+.btn-share:hover{background:rgba(212,175,55,0.2)}
+.share-popup{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.share-popup[hidden]{display:none}
+.share-btn{flex:1;min-width:90px;text-align:center;padding:9px 6px;border-radius:10px;font-size:11px;text-decoration:none;border:1px solid rgba(212,175,55,0.3);color:var(--text);background:rgba(20,12,36,0.7);cursor:pointer;transition:.2s}
+.share-btn:hover{border-color:var(--gold)}
+
+.article-section{margin-top:26px;padding:18px 16px;background:rgba(10,5,20,0.55);border-radius:16px;border:1px solid rgba(42,23,72,0.5);content-visibility:auto}
+.article-section h2{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1px;margin-bottom:12px;line-height:1.4}
+.article-section h3{font-family:'Cinzel',serif;font-size:14.5px;color:var(--gold);letter-spacing:.5px;margin:18px 0 10px}
+.article-section p{font-size:13.5px;line-height:1.8;color:var(--text);margin-bottom:12px}
+.article-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.article-links a{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.5px;color:var(--muted);text-decoration:none;border:1px solid rgba(42,23,72,0.7);border-radius:18px;padding:6px 12px;transition:all .2s}
+.article-links a:hover{border-color:var(--gold-dim);color:var(--gold)}
+.cta-explore{display:block;text-align:center;margin-top:16px;padding:13px;border-radius:14px;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#0a0514;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;text-decoration:none;font-weight:700;transition:all .25s ease}
+.cta-explore:hover{filter:brightness(1.08)}
+
+.faq-section{margin-top:22px;content-visibility:auto}
+.faq-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:12px;text-align:center}
+.faq-item{border:1px solid rgba(42,23,72,0.6);border-radius:12px;margin-bottom:8px;overflow:hidden;background:rgba(10,5,20,0.5)}
+.faq-question{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:'Crimson Pro',serif;font-size:13.5px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:10px}
+.faq-icon{color:var(--gold);font-size:16px;flex-shrink:0}
+.faq-answer{padding:0 14px 14px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+.faq-answer[hidden]{display:none}
+
+.page-footer{margin-top:24px;padding:18px 10px;text-align:center;border-top:1px solid rgba(42,23,72,0.4)}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:11px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.footer-links a:hover{color:var(--gold)}
+.page-footer p{font-size:10.5px;color:var(--muted);line-height:1.6}
+.footer-disclaimer{margin-top:6px;font-style:italic;opacity:.8}
+
+.premium-modal{position:fixed;inset:0;z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
+.premium-modal.show{display:flex}
+.premium-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(6px)}
+.premium-modal .modal-content{position:relative;background:var(--card);border:2px solid var(--gold-dim);border-radius:20px;padding:26px 22px;width:92%;max-width:360px;text-align:center}
+.premium-modal h2{font-family:'Cinzel',serif;color:var(--gold);font-size:18px;margin-bottom:12px}
+.premium-modal p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.premium-price{color:var(--gold)!important;font-family:'Cinzel',serif;font-size:14px!important}
+.btn-premium-buy{width:100%;padding:13px;margin-top:10px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#0a0514;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;font-weight:700;cursor:pointer}
+.btn-premium-skip{width:100%;padding:11px;margin-top:8px;border-radius:14px;border:1px solid rgba(212,175,55,0.3);background:none;color:var(--muted);font-size:12px;cursor:pointer}
+
+.seo-section{display:none} /* sostituita dalla article-section */
 
 @media(min-width:480px){.tgrid{height:360px}.tslot{width:110px;height:165px}.tgrid.wide .tslot{width:90px;height:135px}}
 </style>
 </head>
 <body>
-<div class="cosmos"></div>
-<div class="particles" id="particles"></div>
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+<div class="cosmos" aria-hidden="true"></div>
+<div class="particles" id="particles" aria-hidden="true"></div>
 
 <div class="page-wrap">
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <button class="back-btn" onclick="history.back()" title="Torna indietro">‹</button>
-    <div class="top-bar-title">MYSTICA</div>
-    <div class="top-bar-icon">🃏</div>
-  </div>
+  <!-- ═══ HEADER STANDARD ═══ -->
+  <header class="page-header">
+    <div class="header-top">
+      <a href="./index.html" class="btn-back" id="btn-back" aria-label="Torna alla Home">‹</a>
+      <div class="header-controls">
+        <button id="musicToggle" class="btn-icon" aria-label="Attiva o disattiva la musica"></button>
+        <button id="themeToggle" class="btn-icon" aria-label="Cambia tema giorno o notte"></button>
+      </div>
+    </div>
+    <h1 class="page-title" id="page-title">🃏 Tarocchi</h1>
+    <div class="lang-switch" role="group" aria-label="Selettore lingua">
+      <button data-lang="it" class="btn-lang active">IT</button>
+      <button data-lang="en" class="btn-lang">EN</button>
+      <button data-lang="es" class="btn-lang">ES</button>
+    </div>
+  </header>
 
-  <div class="main-content">
+  <main id="main-content" class="main-content">
 
-    <!-- ═══ HOME TAROT ═══ -->
+    <!-- ═══ HOME TAROT (sezione interattiva — sempre in cima) ═══ -->
     <div id="tarotHome">
       <div class="tarot-intro">
-        <div class="tarot-big-icon">🃏</div>
-        <h1>I Tarocchi</h1>
-        <p>78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore.</p>
+        <div class="tarot-big-icon" aria-hidden="true">🃏</div>
+        <h1 id="introTitle"></h1>
+        <p id="introText"></p>
       </div>
 
-      <!-- Modalità -->
+      <!-- Modalità principali -->
       <div class="mode-wrap">
-        <div class="mode-card active" id="mSemplice" onclick="selectMode('semplice')">
-          <div class="mode-icon">🌙</div>
-          <div class="mode-name">Lettura Semplice</div>
-          <div class="mode-desc">3 carte<br>Passato · Presente · Futuro</div>
+        <div class="mode-card active" data-mode="semplice" onclick="selectMode('semplice')">
+          <div class="mode-icon" aria-hidden="true">🌙</div>
+          <div class="mode-name" id="mn-semplice"></div>
+          <div class="mode-desc" id="md-semplice"></div>
         </div>
-        <div class="mode-card" id="mApprofondita" onclick="selectMode('approfondita')">
-          <div class="mode-icon">🔮</div>
-          <div class="mode-name">Croce della Vita</div>
-          <div class="mode-desc">5 carte<br>Lettura approfondita</div>
-          <div class="mode-badge">✨ Completa</div>
+        <div class="mode-card" data-mode="approfondita" onclick="selectMode('approfondita')">
+          <div class="mode-icon" aria-hidden="true">🔮</div>
+          <div class="mode-name" id="mn-approfondita"></div>
+          <div class="mode-desc" id="md-approfondita"></div>
+          <div class="mode-badge" id="mb-approfondita"></div>
         </div>
       </div>
 
-      <button class="btn" onclick="startTarot()" style="margin-top:4px">
-        ✨ Inizia la Lettura
-      </button>
+      <button class="btn" onclick="startTarot()" style="margin-top:4px" id="btnStart"></button>
 
       <!-- Lettura per un'altra persona -->
       <div class="for-other-row">
         <button class="btn-for-other" id="btnForOther" onclick="openForOther()">
-          <span>👤</span>
-          <span id="forOtherLabel">Lettura per un'altra persona</span>
+          <span aria-hidden="true">👤</span>
+          <span id="forOtherLabel"></span>
         </button>
+      </div>
+
+      <!-- ═══ STESE DI TAROCCHI (tipologie aggiuntive) ═══ -->
+      <h2 class="section-label" id="spreadSectionTitle"></h2>
+      <div class="spread-grid" id="spreadGrid">
+        <!-- generato da renderSpreadGrid() -->
       </div>
     </div>
 
     <!-- ═══ READING ═══ -->
     <div id="tarotReading" style="display:none">
-      <div class="tarot-instr" id="tarotInstr">Il mazzo si sta preparando...</div>
+      <div class="tarot-instr" id="tarotInstr"></div>
       <h2 id="tarotTitle" style="font-size:15px;margin-bottom:8px"></h2>
-
-      <!-- Position bar -->
       <div class="posbar" id="posBar"></div>
-
-      <!-- Card grid -->
       <div class="tgrid" id="tGrid"></div>
     </div>
 
     <!-- ═══ RESULT ═══ -->
     <div id="tarotResult" style="display:none">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
-        <button class="btn btn-sec" onclick="resetTarot()" style="width:auto;padding:10px 16px;margin:0;font-size:12px">↩ Nuova Lettura</button>
-        <button class="btn" onclick="saveReading()" style="width:auto;padding:10px 16px;margin:0;font-size:12px;margin-left:8px">💾 Salva</button>
+        <button class="btn btn-sec" onclick="resetTarot()" style="width:auto;padding:10px 16px;margin:0;font-size:12px" id="btnNewReading"></button>
+        <button class="btn" onclick="saveReading()" style="width:auto;padding:10px 16px;margin:0;font-size:12px;margin-left:8px" id="btnSaveReading"></button>
       </div>
       <div id="tarotContent"></div>
-    </div>
 
-    <!-- ═══ SEO FOOTER ═══ -->
-    <div class="seo-section" id="seoSection" style="margin-top:28px">
-      <h2>🃏 Guida ai Tarocchi</h2>
-      <p>I Tarocchi sono un sistema simbolico composto da 78 carte divise in 22 Arcani Maggiori (Il Matto, Il Mago, La Papessa...) e 56 Arcani Minori (Bastoni, Coppe, Spade, Pentacoli). La <strong>Lettura Semplice a 3 carte</strong> rivela le energie di Passato, Presente e Futuro. La <strong>Croce della Vita a 5 carte</strong> approfondisce la situazione centrale, le sfide, le radici, l'inconscio e l'esito possibile.</p>
-      <p>Ogni carta può apparire diritta o invertita, con significati complementari che rivelano energie manifeste o latenti. Non si tratta di predire il futuro, ma di illuminare le forze che agiscono nella tua vita.</p>
-      <div class="seo-links">
-        <a href="./guida-tarocchi.html" class="seo-link">Guida Completa ai Tarocchi</a>
-        <a href="./index.html" class="seo-link">Tutti gli Oracoli</a>
-        <a href="./iching.html" class="seo-link">I Ching</a>
-        <a href="./rune.html" class="seo-link">Rune</a>
-        <a href="./oroscopo.html" class="seo-link">Oroscopo</a>
+      <!-- ═══ SHARE ═══ -->
+      <div class="share-section">
+        <button class="btn-share" onclick="shareContent()" id="btnShareMain"></button>
+        <div class="share-popup" id="sharePopup" hidden>
+          <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+          <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+          <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+          <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+        </div>
       </div>
     </div>
 
-    <div class="footer-mini">
-      <a href="./index.html">MYSTICA</a> ·
-      <a href="./privacy.html">Privacy</a> ·
-      <a href="./termini.html">Termini</a>
-    </div>
+    <!-- ═══ ARTICOLO EDITORIALE ═══ -->
+    <article class="article-section">
+      <h2 id="art-title"></h2>
+      <img src="./images/tarocchi/tarocchi-hero.webp"
+           srcset="./images/tarocchi/tarocchi-hero.webp 1x, ./images/tarocchi/tarocchi-hero@2x.webp 2x"
+           id="art-hero" alt="" width="600" height="338"
+           loading="eager" decoding="async"
+           style="width:100%;height:auto;border-radius:14px;margin:16px 0">
+      <h3 id="art-h2"></h3>
+      <p id="art-p1"></p>
+      <p id="art-p2"></p>
+      <p id="art-p3"></p>
+      <h3 id="art-h3"></h3>
+      <p id="art-p4"></p>
+      <p id="art-p5"></p>
+      <nav class="article-links" aria-label="Link interni correlati">
+        <a href="./guida-tarocchi.html">Guida Completa agli Arcani</a>
+        <a href="./guida-i-ching.html">I Ching: l'Oracolo dei Cambiamenti</a>
+        <a href="./significato-rune.html">Significato delle Rune</a>
+        <a href="./oroscopo-segni.html">Oroscopo e Segni Zodiacali</a>
+      </nav>
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </article>
 
-  </div><!-- /main-content -->
+    <!-- ═══ FAQ ═══ -->
+    <section class="faq-section" aria-labelledby="faqHeading">
+      <h2 class="faq-title" id="faqHeading">FAQ</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="page-footer">
+    <div class="footer-links">
+      <a href="./index.html">Home</a>
+      <a href="./contatti.html">Contatti</a>
+      <a href="./about.html">Chi Siamo</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+    <p id="footer-copy"></p>
+    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  </footer>
+
 </div><!-- /page-wrap -->
 
 <!-- Toast -->
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- Modal lettura per altro -->
-<div id="forOtherModal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px">
+<div id="forOtherModal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px" role="dialog" aria-modal="true">
   <div style="background:var(--card);border:2px solid var(--gold-dim);border-radius:20px;padding:24px;width:92%;max-width:360px">
-    <h2 style="font-size:17px;margin-bottom:14px">👤 Lettura per...</h2>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Inserisci il nome della persona per cui fai la lettura</p>
-    <input type="text" id="forOtherName" placeholder="Nome (es. Maria)" maxlength="30" style="margin-bottom:10px">
+    <h2 style="font-size:17px;margin-bottom:14px" id="foTitle"></h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px" id="foText"></p>
+    <input type="text" id="forOtherName" maxlength="30" style="margin-bottom:10px">
     <div class="btn-grp">
-      <button class="btn btn-sec" onclick="closeForOther()" style="margin-top:0">Annulla</button>
-      <button class="btn" onclick="confirmForOther()" style="margin-top:0">Conferma</button>
+      <button class="btn btn-sec" onclick="closeForOther()" style="margin-top:0" id="foCancel"></button>
+      <button class="btn" onclick="confirmForOther()" style="margin-top:0" id="foConfirm"></button>
     </div>
   </div>
 </div>
 
+<!-- ═══ PREMIUM MODAL ═══ -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
+
 <script>
-// ═══════════════════════════════════════════════════
-// DATI
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   LANG — Oggetto Multilingua Completo (IT / EN / ES)
+   ═══════════════════════════════════════════════════ */
+const LANG = {
+it: {
+  back: '← Torna alla Home',
+  music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
+  theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+  ctaExplore: '🔍 Scopri le Altre Categorie',
+  pageTitle: '🃏 Tarocchi',
+  introTitle: 'I Tarocchi',
+  introText: '78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore e scegli la stesa più adatta a te.',
+  modeSemplice: { n: 'Lettura Semplice', d: '3 carte · Passato · Presente · Futuro' },
+  modeApprofondita: { n: 'Croce della Vita', d: '5 carte · Lettura approfondita', badge: '✨ Premium' },
+  btnStart: '✨ Inizia la Lettura',
+  forOtherLabel: "Lettura per un'altra persona",
+  spreadSectionTitle: '✦ Stese di Tarocchi',
+  btnNewReading: '↩ Nuova Lettura',
+  btnSaveReading: '💾 Salva',
+  btnShareMain: '📤 Condividi Lettura',
+  foTitle: '👤 Lettura per...',
+  foText: 'Inserisci il nome della persona per cui fai la lettura',
+  foPlaceholder: 'Nome (es. Maria)',
+  foCancel: 'Annulla',
+  foConfirm: 'Conferma',
+  premiumTitle: '✦ Stesa Premium',
+  premiumText: 'Questa stesa è una lettura estesa (5 carte). Sblocca tutte le stese avanzate, lo storico illimitato e le interpretazioni complete.',
+  premiumPrice: 'Solo 4,99€ una tantum',
+  premiumBtn: 'Sblocca MYSTICA Premium',
+  premiumSkip: 'Continua Gratis',
+  shareTitle: 'MYSTICA Oracoli',
+  shareText: '🃏 Ho appena fatto una lettura dei Tarocchi su MYSTICA! Scoprila anche tu.',
+  shareCopy: '🔗 Copia Link',
+  shareCopied: '✓ Copiato!',
+  toastSaved: '📚 Lettura salvata ✨',
+  toastSaveError: 'Errore nel salvataggio',
+  toastCopied: '📋 Lettura copiata!',
+  footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+  footerDisclaimer: 'I contenuti di questa pagina hanno finalità di intrattenimento, riflessione personale e crescita interiore: non sostituiscono consulenze mediche, legali, finanziarie o psicologiche professionali.',
+  seo: {
+    title: 'Tarocchi Online Gratis — Lettura 78 Carte | MYSTICA Oracoli',
+    description: 'Lettura dei Tarocchi online gratis in italiano: 78 carte, Arcani Maggiori e Minori, oltre 10 stese diverse (amore, lavoro, salute, sì/no, celtica, egizia). Senza registrazione.',
+    keywords: 'tarocchi online gratis, lettura tarocchi, arcani maggiori, arcani minori, tarocchi amore, tarocchi sì o no, tarocchi celtici, tarocchi egiziani, cartomanzia, mysticaoracoli',
+    ogTitle: 'Tarocchi Online Gratis — 78 Carte | MYSTICA',
+    ogDesc: 'Lettura dei Tarocchi gratis: Arcani Maggiori e Minori, oltre 10 stese diverse, senza registrazione.',
+    ogLocale: 'it_IT',
+    htmlLang: 'it',
+    faqLD: [
+      { q: 'I Tarocchi online sono davvero gratuiti?', a: 'Sì. La Lettura Semplice a 3 carte e la maggior parte delle stese tematiche (amore, lavoro, salute, sì/no, zingara, egiziana, angeli, coppia) sono completamente gratuite e senza registrazione. Solo le stese estese a 5 carte come la Croce della Vita, i Tarocchi Celtici e i Tarocchi di Marsiglia richiedono lo sblocco Premium una tantum.' },
+      { q: 'Qual è la differenza tra Arcani Maggiori e Minori?', a: 'I 22 Arcani Maggiori rappresentano grandi archetipi esistenziali e tappe karmiche del cammino di vita, come Il Matto o La Morte. I 56 Arcani Minori, divisi in Bastoni, Coppe, Spade e Pentacoli, descrivono situazioni quotidiane più concrete legate ad azione, emozioni, pensiero e materia.' },
+      { q: 'Cosa significa una carta invertita?', a: 'Una carta che esce invertita (capovolta) non indica automaticamente un evento negativo, ma suggerisce un blocco, un ritardo, un\'energia ancora interiore o un aspetto d\'ombra da integrare prima che la qualità della carta si manifesti pienamente nella realtà.' },
+      { q: 'Quale stesa scegliere tra le tante disponibili?', a: 'Per una domanda generale scegli la Lettura Semplice a 3 carte; per un sì o no rapido la Stesa Sì o No; per questioni di cuore i Tarocchi dell\'Amore o per la Coppia; per il lavoro o la salute le stese dedicate; per un\'analisi profonda la Croce della Vita o i Tarocchi Celtici.' },
+      { q: 'I Tarocchi possono prevedere il futuro con certezza?', a: 'No: i Tarocchi sono uno strumento simbolico di introspezione, non un sistema predittivo deterministico. Mostrano tendenze energetiche e possibilità in base alla situazione attuale, ma il libero arbitrio resta sempre la forza decisiva nel plasmare gli eventi.' }
+    ]
+  },
+  artTitle: 'Tarocchi: Storia, Simbologia e Guida alla Lettura',
+  artH2: 'Origini e Storia dei Tarocchi',
+  artH3: 'Come Si Leggono le Carte: Struttura, Simbologia e Pratica',
+  artP1: 'I Tarocchi nascono nell\'Italia rinascimentale della prima metà del Quattrocento, quando le corti di Milano e Ferrara commissionano mazzi miniati come quello Visconti-Sforza, oggi conservato in parte alla Pierpont Morgan Library di New York. Inizialmente i "trionfi" erano un gioco di carte aristocratico, simile per struttura ai moderni tarocchi da gioco francesi ancora diffusi in alcune regioni. Solo nel Settecento, con figure come Antoine Court de Gébelin, iniziò a diffondersi l\'interpretazione esoterica del mazzo, alimentata dal mito (storicamente infondato ma culturalmente potente) di un\'origine egizia legata al Libro di Thot. Nell\'Ottocento Éliphas Lévi collegò sistematicamente gli Arcani alla Cabala ebraica, mentre nel 1909 Arthur Edward Waite e l\'illustratrice Pamela Colman Smith pubblicarono il celebre mazzo Rider-Waite-Smith, che introdusse per la prima volta immagini narrative complete anche sugli Arcani Minori, diventando lo standard più diffuso al mondo.',
+  artP2: 'Il mazzo classico è composto da 78 carte: 22 Arcani Maggiori, numerati da 0 (Il Matto) a 21 (Il Mondo), e 56 Arcani Minori suddivisi in quattro semi — Bastoni (fuoco, azione, creatività), Coppe (acqua, emozioni, relazioni), Spade (aria, pensiero, conflitto) e Pentacoli o Denari (terra, materia, lavoro) — ciascuno con dieci carte numerali e quattro figure (Fante, Cavaliere, Regina, Re). Questa struttura a quattro elementi richiama sistemi simbolici paralleli come i quattro semi delle carte da gioco europee o le quattro suit dei mazzi Marsigliesi, da cui derivano direttamente molte iconografie ancora oggi in uso. Ogni numero, dall\'Asso al Dieci, segue inoltre una progressione simbolica numerologica condivisa trasversalmente tra i quattro semi.',
+  artP3: 'Per fare una lettura si mescola il mazzo concentrandosi su una domanda aperta, si estraggono le carte nell\'ordine richiesto dalla stesa scelta e si osserva sia il significato della singola carta sia il dialogo che si crea tra le carte vicine. L\'orientamento dritto o invertito modula l\'intensità e la direzione dell\'energia descritta: una carta dritta tende a manifestarsi più direttamente nella realtà esterna, mentre invertita suggerisce un processo ancora interiore, rallentato o da rielaborare. Le stese più diffuse vanno dalla singola carta del giorno fino a configurazioni complesse come la Croce Celtica a dieci posizioni, qui semplificata in cinque punti chiave per restare accessibile anche a chi muove i primi passi.',
+  artP4: 'Tra gli errori più comuni di chi si avvicina ai Tarocchi per la prima volta c\'è la tendenza a leggere ogni carta in isolamento, ignorando il contesto della domanda e delle carte circostanti, oltre alla convinzione — un mito da sfatare — che alcune carte come la Morte o il Diavolo annuncino sempre eventi catastrofici: nella stragrande maggioranza delle tradizioni esoteriche queste carte indicano trasformazione necessaria e confronto con le proprie ombre, non disgrazia letterale. Un altro mito diffuso è l\'idea che i Tarocchi abbiano un\'origine egizia certa: gli storici concordano che si tratti di un\'invenzione settecentesca priva di riscontri archeologici, sebbene il fascino di quella narrazione abbia comunque ispirato varianti tematiche come i Tarocchi Egiziani ancora oggi diffusi.',
+  artP5: 'A differenza delle Rune, sistema runico-divinatorio germanico legato a un alfabeto sacro e a un lancio casuale di pochi simboli, o dell\'I Ching cinese, basato su 64 esagrammi costruiti da linee yin e yang, i Tarocchi offrono un linguaggio visivo narrativo molto più ricco, capace di restituire scenari complessi attraverso l\'interazione di più carte in una stesa. Una curiosità poco nota è che il termine "Tarocchi" potrebbe derivare dal fiume Taro in Emilia, secondo alcune ipotesi etimologiche, mentre la scuola di Marsiglia e quella di Rider-Waite restano oggi le due principali correnti iconografiche da cui derivano quasi tutti i mazzi moderni, comprese le numerose varianti tematiche (zingara, angeliche, celtiche) diffuse nella cartomanzia contemporanea.',
+  faq: [
+    { q: 'I Tarocchi online sono davvero gratuiti?', a: 'Sì, la Lettura Semplice a 3 carte e la maggior parte delle stese tematiche sono gratuite e senza registrazione. Solo le stese estese a 5 carte (Croce della Vita, Tarocchi Celtici, Tarocchi di Marsiglia) richiedono lo sblocco Premium a 4,99€ una tantum. Puoi approfondire la struttura del mazzo nella nostra <a href="./guida-tarocchi.html">guida completa ai Tarocchi</a>.' },
+    { q: 'Qual è la differenza tra Arcani Maggiori e Minori?', a: 'I 22 Arcani Maggiori rappresentano grandi archetipi e tappe karmiche del cammino di vita. I 56 Arcani Minori, divisi in Bastoni, Coppe, Spade e Pentacoli, descrivono situazioni quotidiane legate ad azione, emozioni, pensiero e materia. Ogni seme ha una propria energia elementale distinta.' },
+    { q: 'Cosa significa una carta che esce invertita?', a: 'Una carta invertita non indica automaticamente un evento negativo: suggerisce un blocco, un ritardo o un\'energia ancora interiore da integrare prima di manifestarsi pienamente. Va sempre letta in relazione alla domanda posta e alle carte vicine nella stesa.' },
+    { q: 'Quale stesa dovrei scegliere tra le tante disponibili?', a: 'Per una domanda generale scegli la Lettura Semplice a 3 carte; per un sì o no rapido la Stesa Sì o No; per questioni di cuore i Tarocchi dell\'Amore o per la Coppia; per lavoro e salute le stese dedicate; per un\'analisi profonda la Croce della Vita o i Tarocchi Celtici.' },
+    { q: 'I Tarocchi possono prevedere il futuro con certezza?', a: 'No, sono uno strumento simbolico di introspezione e riflessione, non un sistema predittivo deterministico. Mostrano tendenze energetiche legate alla situazione attuale: il libero arbitrio resta sempre decisivo. Per approfondire altri sistemi divinatori puoi consultare anche la nostra pagina sull\'<a href="./guida-i-ching.html">I Ching</a>.' },
+    { q: 'Posso fare una lettura dei Tarocchi per un\'altra persona?', a: 'Sì, usando il pulsante "Lettura per un\'altra persona" puoi personalizzare la lettura inserendo il nome di chi riceverà i risultati, mantenendo comunque la stessa profondità interpretativa della lettura standard.' }
+  ]
+},
+
+en: {
+  back: '← Back to Home',
+  music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+  theme: { day: '☀️ Day', night: '🌙 Night' },
+  ctaExplore: '🔍 Explore Other Categories',
+  pageTitle: '🃏 Tarot',
+  introTitle: 'Tarot Cards',
+  introText: '78 cards, Major and Minor Arcana.<br>Focus, ask your inner question and pick the spread that suits you best.',
+  modeSemplice: { n: 'Simple Reading', d: '3 cards · Past · Present · Future' },
+  modeApprofondita: { n: 'Cross of Life', d: '5 cards · In-depth reading', badge: '✨ Premium' },
+  btnStart: '✨ Start the Reading',
+  forOtherLabel: 'Reading for someone else',
+  spreadSectionTitle: '✦ Tarot Spreads',
+  btnNewReading: '↩ New Reading',
+  btnSaveReading: '💾 Save',
+  btnShareMain: '📤 Share Reading',
+  foTitle: '👤 Reading for...',
+  foText: 'Enter the name of the person you are reading for',
+  foPlaceholder: 'Name (e.g. Mary)',
+  foCancel: 'Cancel',
+  foConfirm: 'Confirm',
+  premiumTitle: '✦ Premium Spread',
+  premiumText: 'This is an extended 5-card reading. Unlock all advanced spreads, unlimited history and complete interpretations.',
+  premiumPrice: 'Only €4.99 one-time',
+  premiumBtn: 'Unlock MYSTICA Premium',
+  premiumSkip: 'Continue Free',
+  shareTitle: 'MYSTICA Oracles',
+  shareText: '🃏 I just did a Tarot reading on MYSTICA! Try it yourself.',
+  shareCopy: '🔗 Copy Link',
+  shareCopied: '✓ Copied!',
+  toastSaved: '📚 Reading saved ✨',
+  toastSaveError: 'Error while saving',
+  toastCopied: '📋 Reading copied!',
+  footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+  footerDisclaimer: 'The content on this page is for entertainment and personal reflection purposes and does not replace professional medical, legal, financial or psychological advice.',
+  seo: {
+    title: 'Free Online Tarot Reading — 78 Cards | MYSTICA Oracles',
+    description: 'Free online Tarot reading: 78 cards, Major and Minor Arcana, over 10 different spreads (love, work, health, yes/no, Celtic, Egyptian). No registration required.',
+    keywords: 'free tarot reading online, tarot cards, major arcana, minor arcana, love tarot, yes no tarot, celtic cross tarot, egyptian tarot, cartomancy, mysticaoracoli',
+    ogTitle: 'Free Online Tarot Reading — 78 Cards | MYSTICA',
+    ogDesc: 'Free Tarot reading: Major and Minor Arcana, over 10 different spreads, no registration.',
+    ogLocale: 'en_US',
+    htmlLang: 'en',
+    faqLD: [
+      { q: 'Is the online Tarot reading really free?', a: 'Yes. The 3-card Simple Reading and most themed spreads (love, work, health, yes/no, gypsy, Egyptian, angels, couple) are completely free with no registration. Only the extended 5-card spreads like the Cross of Life, Celtic Tarot and Marseille Tarot require a one-time Premium unlock.' },
+      { q: 'What is the difference between Major and Minor Arcana?', a: 'The 22 Major Arcana represent major existential archetypes and karmic milestones of life, such as The Fool or Death. The 56 Minor Arcana, split into Wands, Cups, Swords and Pentacles, describe more concrete everyday situations tied to action, emotion, thought and material life.' },
+      { q: 'What does a reversed card mean?', a: 'A reversed card does not automatically indicate a negative event. It suggests a block, a delay, an inward energy or a shadow aspect that needs integration before the card\'s quality manifests fully in reality.' },
+      { q: 'Which spread should I choose among the many available?', a: 'For a general question, choose the Simple 3-card Reading; for a quick yes or no, the Yes/No Spread; for matters of the heart, Love Tarot or Couple Tarot; for work or health, the dedicated spreads; for a deeper analysis, the Cross of Life or Celtic Tarot.' },
+      { q: 'Can Tarot cards predict the future with certainty?', a: 'No, Tarot is a symbolic tool for introspection, not a deterministic predictive system. It shows energetic tendencies linked to the current situation, but free will always remains the decisive force in shaping events.' }
+    ]
+  },
+  artTitle: 'Tarot Cards: History, Symbolism and Reading Guide',
+  artH2: 'Origins and History of the Tarot',
+  artH3: 'How to Read the Cards: Structure, Symbolism and Practice',
+  artP1: 'Tarot cards emerged in Renaissance Italy in the early fifteenth century, when the courts of Milan and Ferrara commissioned hand-painted decks such as the Visconti-Sforza, partly preserved today at the Pierpont Morgan Library in New York. The original "trionfi" were an aristocratic card game, similar in structure to the French-suited tarot decks still used for games in some regions today. Only in the eighteenth century, with figures like Antoine Court de Gébelin, did the esoteric interpretation spread, fueled by the historically unfounded but culturally powerful myth of an Egyptian origin tied to the Book of Thoth. In the nineteenth century Éliphas Lévi systematically linked the Arcana to the Hebrew Kabbalah, and in 1909 Arthur Edward Waite and illustrator Pamela Colman Smith published the famous Rider-Waite-Smith deck, the first to feature fully illustrated scenes even on the Minor Arcana, which became the most widespread standard worldwide.',
+  artP2: 'The classic deck has 78 cards: 22 Major Arcana, numbered from 0 (The Fool) to 21 (The World), and 56 Minor Arcana split into four suits — Wands (fire, action, creativity), Cups (water, emotion, relationships), Swords (air, thought, conflict) and Pentacles (earth, matter, work) — each with ten numbered cards and four court cards (Page, Knight, Queen, King). This four-element structure echoes parallel symbolic systems such as the four suits of European playing cards or the Marseille deck, from which much of the iconography still in use today directly derives.',
+  artP3: 'To do a reading, shuffle the deck while focusing on an open question, draw the cards in the order required by the chosen spread, and observe both the meaning of each individual card and the dialogue created between neighbouring cards. The upright or reversed orientation modulates the intensity and direction of the energy described: an upright card tends to manifest more directly in external reality, while a reversed one suggests a process still internal, delayed or needing further work. Spreads range from a single daily card up to complex configurations like the ten-position Celtic Cross, simplified here into five key points to remain accessible to beginners.',
+  artP4: 'One of the most common mistakes among newcomers is reading each card in isolation, ignoring the context of the question and the surrounding cards, along with the myth that cards like Death or The Devil always announce catastrophic events: in most esoteric traditions these cards indicate necessary transformation and confrontation with one\'s own shadow, not literal misfortune. Another widespread myth is the idea of a certain Egyptian origin: historians agree it is an eighteenth-century invention with no archaeological evidence, although the fascination of that narrative still inspires themed variants such as the Egyptian Tarot.',
+  artP5: 'Unlike Runes, a Germanic divinatory system tied to a sacred alphabet and the random casting of a few symbols, or the Chinese I Ching, based on 64 hexagrams built from yin and yang lines, Tarot offers a much richer narrative visual language, able to convey complex scenarios through the interaction of several cards in a spread. A little-known curiosity is that the word "Tarot" may derive from the Taro river in Emilia according to some etymological hypotheses, while the Marseille and Rider-Waite schools remain today the two main iconographic traditions from which nearly all modern decks descend.',
+  faq: [
+    { q: 'Is the online Tarot reading really free?', a: 'Yes, the Simple 3-card Reading and most themed spreads are free with no registration. Only the extended 5-card spreads (Cross of Life, Celtic Tarot, Marseille Tarot) require a one-time €4.99 Premium unlock. You can learn more in our <a href="./guida-tarocchi.html">complete Tarot guide</a>.' },
+    { q: 'What is the difference between Major and Minor Arcana?', a: 'The 22 Major Arcana represent major archetypes and karmic milestones of life. The 56 Minor Arcana, split into Wands, Cups, Swords and Pentacles, describe everyday situations tied to action, emotion, thought and material life, each suit with its own elemental energy.' },
+    { q: 'What does a reversed card mean?', a: 'A reversed card does not automatically mean something negative: it suggests a block, a delay, or an inward energy that needs integration before fully manifesting. It should always be read in relation to the question and the neighbouring cards.' },
+    { q: 'Which spread should I choose?', a: 'For a general question, choose the Simple 3-card Reading; for a quick yes or no, the Yes/No Spread; for matters of the heart, Love Tarot or Couple Tarot; for work and health, the dedicated spreads; for a deeper analysis, the Cross of Life or Celtic Tarot.' },
+    { q: 'Can Tarot predict the future with certainty?', a: 'No, it is a symbolic tool for introspection, not a deterministic predictive system. It shows energetic tendencies tied to the current situation; free will always remains decisive. You can also explore another divinatory system on our <a href="./guida-i-ching.html">I Ching page</a>.' },
+    { q: 'Can I do a Tarot reading for someone else?', a: 'Yes, using the "Reading for someone else" button you can personalise the reading by entering the recipient\'s name, while keeping the same interpretative depth as a standard reading.' }
+  ]
+},
+
+es: {
+  back: '← Volver al Inicio',
+  music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+  theme: { day: '☀️ Día', night: '🌙 Noche' },
+  ctaExplore: '🔍 Explorar Otras Categorías',
+  pageTitle: '🃏 Tarot',
+  introTitle: 'El Tarot',
+  introText: '78 cartas, Arcanos Mayores y Menores.<br>Concéntrate, formula tu pregunta interior y elige la tirada que mejor se adapte a ti.',
+  modeSemplice: { n: 'Tirada Simple', d: '3 cartas · Pasado · Presente · Futuro' },
+  modeApprofondita: { n: 'Cruz de la Vida', d: '5 cartas · Lectura profunda', badge: '✨ Premium' },
+  btnStart: '✨ Comenzar la Lectura',
+  forOtherLabel: 'Lectura para otra persona',
+  spreadSectionTitle: '✦ Tiradas de Tarot',
+  btnNewReading: '↩ Nueva Lectura',
+  btnSaveReading: '💾 Guardar',
+  btnShareMain: '📤 Compartir Lectura',
+  foTitle: '👤 Lectura para...',
+  foText: 'Introduce el nombre de la persona para quien haces la lectura',
+  foPlaceholder: 'Nombre (ej. María)',
+  foCancel: 'Cancelar',
+  foConfirm: 'Confirmar',
+  premiumTitle: '✦ Tirada Premium',
+  premiumText: 'Esta es una lectura extendida de 5 cartas. Desbloquea todas las tiradas avanzadas, el historial ilimitado y las interpretaciones completas.',
+  premiumPrice: 'Solo 4,99€ pago único',
+  premiumBtn: 'Desbloquear MYSTICA Premium',
+  premiumSkip: 'Continuar Gratis',
+  shareTitle: 'MYSTICA Oráculos',
+  shareText: '🃏 ¡Acabo de hacer una lectura de Tarot en MYSTICA! Pruébala tú también.',
+  shareCopy: '🔗 Copiar Enlace',
+  shareCopied: '✓ ¡Copiado!',
+  toastSaved: '📚 Lectura guardada ✨',
+  toastSaveError: 'Error al guardar',
+  toastCopied: '📋 ¡Lectura copiada!',
+  footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+  footerDisclaimer: 'El contenido de esta página tiene fines de entretenimiento y reflexión personal, y no sustituye el asesoramiento médico, legal, financiero o psicológico profesional.',
+  seo: {
+    title: 'Tarot Online Gratis — Lectura de 78 Cartas | MYSTICA Oráculos',
+    description: 'Lectura de Tarot online gratis: 78 cartas, Arcanos Mayores y Menores, más de 10 tiradas diferentes (amor, trabajo, salud, sí/no, celta, egipcia). Sin registro.',
+    keywords: 'tarot online gratis, lectura de tarot, arcanos mayores, arcanos menores, tarot del amor, tarot sí o no, tarot celta, tarot egipcio, cartomancia, mysticaoracoli',
+    ogTitle: 'Tarot Online Gratis — 78 Cartas | MYSTICA',
+    ogDesc: 'Lectura de Tarot gratis: Arcanos Mayores y Menores, más de 10 tiradas diferentes, sin registro.',
+    ogLocale: 'es_ES',
+    htmlLang: 'es',
+    faqLD: [
+      { q: '¿El Tarot online es realmente gratuito?', a: 'Sí. La Tirada Simple de 3 cartas y la mayoría de las tiradas temáticas (amor, trabajo, salud, sí/no, gitana, egipcia, ángeles, pareja) son completamente gratuitas y sin registro. Solo las tiradas extendidas de 5 cartas, como la Cruz de la Vida, el Tarot Celta y el Tarot de Marsella, requieren el desbloqueo Premium de pago único.' },
+      { q: '¿Cuál es la diferencia entre Arcanos Mayores y Menores?', a: 'Los 22 Arcanos Mayores representan grandes arquetipos existenciales y etapas kármicas del camino de vida, como El Loco o La Muerte. Los 56 Arcanos Menores, divididos en Bastos, Copas, Espadas y Oros, describen situaciones cotidianas más concretas ligadas a la acción, las emociones, el pensamiento y la materia.' },
+      { q: '¿Qué significa una carta invertida?', a: 'Una carta invertida no indica automáticamente un evento negativo: sugiere un bloqueo, un retraso o una energía aún interior que debe integrarse antes de manifestarse plenamente en la realidad.' },
+      { q: '¿Qué tirada debería elegir entre las disponibles?', a: 'Para una pregunta general elige la Tirada Simple de 3 cartas; para un sí o no rápido, la Tirada Sí o No; para temas del corazón, el Tarot del Amor o de la Pareja; para trabajo y salud, las tiradas dedicadas; para un análisis profundo, la Cruz de la Vida o el Tarot Celta.' },
+      { q: '¿El Tarot puede predecir el futuro con certeza?', a: 'No, el Tarot es una herramienta simbólica de introspección, no un sistema predictivo determinista. Muestra tendencias energéticas ligadas a la situación actual, pero el libre albedrío siempre es la fuerza decisiva.' }
+    ]
+  },
+  artTitle: 'Tarot: Historia, Simbología y Guía de Lectura',
+  artH2: 'Orígenes e Historia del Tarot',
+  artH3: 'Cómo Leer las Cartas: Estructura, Simbología y Práctica',
+  artP1: 'El Tarot surge en la Italia renacentista de principios del siglo XV, cuando las cortes de Milán y Ferrara encargaron mazos pintados a mano como el Visconti-Sforza, conservado hoy en parte en la Pierpont Morgan Library de Nueva York. Los "trionfi" originales eran un juego de cartas aristocrático, similar en estructura a las barajas de tarot francesas que aún se usan para jugar en algunas regiones. Solo en el siglo XVIII, con figuras como Antoine Court de Gébelin, se difundió la interpretación esotérica, alimentada por el mito —históricamente infundado pero culturalmente potente— de un origen egipcio ligado al Libro de Thot. En el siglo XIX, Éliphas Lévi vinculó sistemáticamente los Arcanos a la Cábala hebrea, y en 1909 Arthur Edward Waite y la ilustradora Pamela Colman Smith publicaron el célebre mazo Rider-Waite-Smith, el primero con escenas completamente ilustradas incluso en los Arcanos Menores.',
+  artP2: 'El mazo clásico tiene 78 cartas: 22 Arcanos Mayores, numerados del 0 (El Loco) al 21 (El Mundo), y 56 Arcanos Menores divididos en cuatro palos —Bastos (fuego, acción, creatividad), Copas (agua, emociones, relaciones), Espadas (aire, pensamiento, conflicto) y Oros (tierra, materia, trabajo)— cada uno con diez cartas numerales y cuatro figuras (Sota, Caballo, Reina, Rey). Esta estructura de cuatro elementos recuerda sistemas simbólicos paralelos como los cuatro palos de las barajas europeas o el mazo de Marsella, del que deriva gran parte de la iconografía aún en uso hoy.',
+  artP3: 'Para hacer una lectura se baraja concentrándose en una pregunta abierta, se extraen las cartas en el orden que pide la tirada elegida y se observa tanto el significado de cada carta como el diálogo que se crea entre las cartas vecinas. La orientación derecha o invertida modula la intensidad y dirección de la energía: una carta derecha tiende a manifestarse más directamente en la realidad externa, mientras que invertida sugiere un proceso aún interior, retrasado o por reelaborar. Las tiradas van desde una sola carta diaria hasta configuraciones complejas como la Cruz Celta de diez posiciones, aquí simplificada en cinco puntos clave.',
+  artP4: 'Uno de los errores más comunes de quienes se acercan al Tarot por primera vez es leer cada carta de forma aislada, ignorando el contexto de la pregunta y las cartas vecinas, junto con el mito de que cartas como la Muerte o el Diablo siempre anuncian catástrofes: en la mayoría de las tradiciones esotéricas estas cartas indican una transformación necesaria, no una desgracia literal. Otro mito difundido es la idea de un origen egipcio certero: los historiadores coinciden en que es una invención del siglo XVIII sin respaldo arqueológico, aunque esa narrativa inspiró variantes temáticas como el Tarot Egipcio.',
+  artP5: 'A diferencia de las Runas, sistema adivinatorio germánico ligado a un alfabeto sagrado y a una tirada aleatoria de pocos símbolos, o del I Ching chino, basado en 64 hexagramas construidos con líneas yin y yang, el Tarot ofrece un lenguaje visual narrativo mucho más rico, capaz de describir escenarios complejos a través de la interacción de varias cartas en una tirada. Una curiosidad poco conocida es que la palabra "Tarot" podría derivar del río Taro, en Emilia, según algunas hipótesis etimológicas, mientras que las escuelas de Marsella y de Rider-Waite siguen siendo hoy las dos principales corrientes iconográficas de las que derivan casi todos los mazos modernos.',
+  faq: [
+    { q: '¿El Tarot online es realmente gratuito?', a: 'Sí, la Tirada Simple de 3 cartas y la mayoría de las tiradas temáticas son gratuitas y sin registro. Solo las tiradas extendidas de 5 cartas (Cruz de la Vida, Tarot Celta, Tarot de Marsella) requieren el desbloqueo Premium de 4,99€ pago único. Puedes saber más en nuestra <a href="./guida-tarocchi.html">guía completa del Tarot</a>.' },
+    { q: '¿Cuál es la diferencia entre Arcanos Mayores y Menores?', a: 'Los 22 Arcanos Mayores representan grandes arquetipos y etapas kármicas de la vida. Los 56 Arcanos Menores, divididos en Bastos, Copas, Espadas y Oros, describen situaciones cotidianas ligadas a la acción, las emociones, el pensamiento y la materia, cada palo con su propia energía elemental.' },
+    { q: '¿Qué significa una carta invertida?', a: 'Una carta invertida no significa automáticamente algo negativo: sugiere un bloqueo, un retraso o una energía interior que necesita integrarse antes de manifestarse plenamente. Siempre debe leerse en relación con la pregunta y las cartas vecinas.' },
+    { q: '¿Qué tirada debería elegir?', a: 'Para una pregunta general elige la Tirada Simple de 3 cartas; para un sí o no rápido, la Tirada Sí o No; para temas del corazón, el Tarot del Amor o de la Pareja; para trabajo y salud, las tiradas dedicadas; para un análisis profundo, la Cruz de la Vida o el Tarot Celta.' },
+    { q: '¿El Tarot puede predecir el futuro con certeza?', a: 'No, es una herramienta simbólica de introspección, no un sistema predictivo determinista. Muestra tendencias energéticas ligadas a la situación actual; el libre albedrío siempre es decisivo. También puedes explorar otro sistema adivinatorio en nuestra página de <a href="./guida-i-ching.html">I Ching</a>.' },
+    { q: '¿Puedo hacer una lectura de Tarot para otra persona?', a: 'Sí, con el botón "Lectura para otra persona" puedes personalizar la lectura introduciendo el nombre del destinatario, manteniendo la misma profundidad interpretativa que una lectura estándar.' }
+  ]
+}
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ═══════════════════════════════════════════════════
+   CONFIGURAZIONE STESE (tipologie di Tarocchi)
+   ═══════════════════════════════════════════════════ */
+const SPREADS = [
+  { key:'sionno',    icon:'☯️', cards:1, premium:false, name:{it:'Tarocchi Sì o No',en:'Yes or No Tarot',es:'Tarot Sí o No'}, desc:{it:'1 carta · risposta rapida',en:'1 card · quick answer',es:'1 carta · respuesta rápida'} },
+  { key:'marsiglia', icon:'🎴', cards:5, premium:true,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
+  { key:'amore',     icon:'💞', cards:3, premium:false, name:{it:"Tarocchi dell'Amore",en:'Love Tarot',es:'Tarot del Amor'}, desc:{it:'3 carte · sentimenti e cuore',en:'3 cards · feelings and heart',es:'3 cartas · sentimientos y corazón'} },
+  { key:'coppia',    icon:'💑', cards:2, premium:false, name:{it:'Tarocchi per la Coppia',en:'Couple Tarot',es:'Tarot para la Pareja'}, desc:{it:'2 carte · tu e il partner',en:'2 cards · you and your partner',es:'2 cartas · tú y tu pareja'} },
+  { key:'salute',    icon:'🩺', cards:3, premium:false, name:{it:'Tarocchi della Salute',en:'Health Tarot',es:'Tarot de la Salud'}, desc:{it:'3 carte · corpo e mente',en:'3 cards · body and mind',es:'3 cartas · cuerpo y mente'} },
+  { key:'lavoro',    icon:'💼', cards:3, premium:false, name:{it:'Tarocchi del Lavoro',en:'Career Tarot',es:'Tarot del Trabajo'}, desc:{it:'3 carte · carriera e progetti',en:'3 cards · career and projects',es:'3 cartas · carrera y proyectos'} },
+  { key:'celtici',   icon:'☘️', cards:5, premium:true,  name:{it:'Tarocchi Celtici',en:'Celtic Tarot',es:'Tarot Celta'}, desc:{it:'5 carte · Croce Celtica',en:'5 cards · Celtic Cross',es:'5 cartas · Cruz Celta'} },
+  { key:'egiziani',  icon:'𓂀', cards:3, premium:false, name:{it:'Tarocchi Egiziani',en:'Egyptian Tarot',es:'Tarot Egipcio'}, desc:{it:'3 carte · simbologia antica',en:'3 cards · ancient symbolism',es:'3 cartas · simbología antigua'} },
+  { key:'zingara',   icon:'🔮', cards:3, premium:false, name:{it:'Tarocchi della Zingara',en:'Gypsy Tarot',es:'Tarot de la Gitana'}, desc:{it:'3 carte · tradizione popolare',en:'3 cards · folk tradition',es:'3 cartas · tradición popular'} },
+  { key:'angeli',    icon:'👼', cards:3, premium:false, name:{it:'Tarocchi degli Angeli',en:'Angel Tarot',es:'Tarot de los Ángeles'}, desc:{it:'3 carte · messaggio e guida',en:'3 cards · message and guidance',es:'3 cartas · mensaje y guía'} }
+];
+
+const MODES = { semplice:{cards:3,premium:false}, approfondita:{cards:5,premium:true} };
+SPREADS.forEach(s => { MODES[s.key] = { cards:s.cards, premium:s.premium }; });
+
+const MODE_TITLES = {
+  semplice: '🃏 Lettura Semplice — Passato · Presente · Futuro',
+  approfondita: '🔮 La Croce della Vita — Lettura Approfondita',
+  sionno: '☯️ Tarocchi Sì o No',
+  marsiglia: '🎴 Tarocchi di Marsiglia — Lettura a 5 Carte',
+  amore: "💞 Tarocchi dell'Amore",
+  coppia: '💑 Tarocchi per la Coppia',
+  salute: '🩺 Tarocchi della Salute',
+  lavoro: '💼 Tarocchi del Lavoro',
+  celtici: '☘️ Tarocchi Celtici — Croce Celtica',
+  egiziani: '𓂀 Tarocchi Egiziani',
+  zingara: '🔮 Tarocchi della Zingara',
+  angeli: '👼 Tarocchi degli Angeli'
+};
+
+const POS_BY_MODE = {
+  semplice: [
+    {n:"🕰️ Passato",d:"Le radici: energia che ha plasmato questa situazione"},
+    {n:"🔮 Presente",d:"Il cuore: forza dominante in questo momento"},
+    {n:"⏳ Futuro",d:"Il seme: dove porta questa energia se coltivata"}
+  ],
+  approfondita: [
+    {n:"❤️ Cuore",d:"La situazione centrale — il nucleo della questione"},
+    {n:"⚔️ Sfida",d:"La forza che si oppone o chiede integrazione"},
+    {n:"🌱 Radici",d:"Il fondamento — le origini profonde di tutto questo"},
+    {n:"🌊 Corrente",d:"Ciò che sta emergendo dall'inconscio"},
+    {n:"🌟 Esito",d:"La possibilità — dove porta il flusso se lo segui"}
+  ],
+  sionno: [
+    {n:"☯️ Risposta",d:"La tendenza energetica della tua domanda sì/no"}
+  ],
+  marsiglia: [
+    {n:"🌍 Ambiente",d:"Il contesto generale della situazione"},
+    {n:"🎯 Questione",d:"Il nodo centrale da osservare"},
+    {n:"🚧 Ostacolo",d:"Ciò che frena o complica il percorso"},
+    {n:"🧭 Consiglio",d:"La direzione suggerita dalle carte"},
+    {n:"🌅 Esito",d:"Dove conduce questa energia"}
+  ],
+  amore: [
+    {n:"💗 Tu",d:"Ciò che porti tu in questa storia"},
+    {n:"💫 L'altra persona",d:"Ciò che porta lui/lei"},
+    {n:"🔗 La relazione",d:"L'energia che lega o separa i due poli"}
+  ],
+  coppia: [
+    {n:"🧍 Tu",d:"La tua energia nella relazione"},
+    {n:"🧍‍♂️ Il partner",d:"L'energia del partner nella relazione"}
+  ],
+  salute: [
+    {n:"🫀 Corpo",d:"Lo stato energetico fisico attuale"},
+    {n:"🧠 Mente",d:"Lo stato mentale ed emotivo"},
+    {n:"⚖️ Equilibrio",d:"Cosa serve per ritrovare armonia"}
+  ],
+  lavoro: [
+    {n:"📌 Situazione",d:"Il punto in cui ti trovi ora"},
+    {n:"🚧 Ostacolo",d:"Cosa frena il progresso professionale"},
+    {n:"🧭 Consiglio",d:"La via consigliata dalle carte"}
+  ],
+  celtici: [
+    {n:"☘️ Situazione",d:"Il cuore della questione, come nella Croce Celtica"},
+    {n:"⚔️ Influenza",d:"La forza che attraversa o complica la situazione"},
+    {n:"🌑 Passato remoto",d:"Le fondamenta lontane dell'energia attuale"},
+    {n:"🌤️ Futuro vicino",d:"Ciò che si avvicina a breve termine"},
+    {n:"🏆 Esito finale",d:"La sintesi e la direzione conclusiva"}
+  ],
+  egiziani: [
+    {n:"𓂀 Passato",d:"L'eco delle vite e delle scelte precedenti"},
+    {n:"𓆣 Presente",d:"L'equilibrio attuale tra ombra e luce"},
+    {n:"𓊪 Futuro",d:"Il disegno che si sta scrivendo"}
+  ],
+  zingara: [
+    {n:"❤️ Cuore",d:"Il sentire profondo, istintivo"},
+    {n:"🧠 Mente",d:"Il pensiero razionale sulla questione"},
+    {n:"🌙 Destino",d:"Verso dove ti sta portando il cammino"}
+  ],
+  angeli: [
+    {n:"👼 Messaggio",d:"Ciò che la guida vuole farti comprendere ora"},
+    {n:"🕊️ Sostegno",d:"L'aiuto disponibile lungo il cammino"},
+    {n:"🛡️ Protezione",d:"Da cosa o come sei protetto in questo momento"}
+  ]
+};
+
+/* ═══════════════════════════════════════════════════
+   updateSEO — SEO Multilingua
+   ═══════════════════════════════════════════════════ */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld && S.faqLD) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({
+            '@type': 'Question', name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
+        },
+        {
+          '@type': 'Article',
+          headline: LANG[currentLang].artTitle,
+          inLanguage: S.htmlLang,
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni' },
+          publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli' },
+          image: 'https://mysticaoracoli.it/images/icone/home/tarocchi.webp'
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type':'ListItem', position:1, name:'MYSTICA', item:'https://mysticaoracoli.it/index.html' },
+            { '@type':'ListItem', position:2, name:'Tarocchi', item:'https://mysticaoracoli.it/tarocchi.html' }
+          ]
+        },
+        {
+          '@type': 'WebPage',
+          name: S.title,
+          url: 'https://mysticaoracoli.it/tarocchi.html',
+          inLanguage: S.htmlLang
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'MYSTICA Tarocchi',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web'
+        }
+      ]
+    });
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   applyLang — Applica la lingua corrente a tutto il DOM
+   ═══════════════════════════════════════════════════ */
+function applyLang() {
+  updateSEO(); // SEMPRE PRIMA
+
+  const L = LANG[currentLang];
+
+  document.getElementById('page-title').textContent = L.pageTitle;
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+
+  document.getElementById('introTitle').textContent = L.introTitle;
+  document.getElementById('introText').innerHTML = L.introText;
+  document.getElementById('mn-semplice').textContent = L.modeSemplice.n;
+  document.getElementById('md-semplice').textContent = L.modeSemplice.d;
+  document.getElementById('mn-approfondita').textContent = L.modeApprofondita.n;
+  document.getElementById('md-approfondita').textContent = L.modeApprofondita.d;
+  document.getElementById('mb-approfondita').textContent = L.modeApprofondita.badge;
+  document.getElementById('btnStart').textContent = L.btnStart;
+  document.getElementById('forOtherLabel').textContent = _forOther ? '👤 ' + L.forOtherLabel + ': ' + _forOther.name : L.forOtherLabel;
+  document.getElementById('spreadSectionTitle').textContent = L.spreadSectionTitle;
+  document.getElementById('btnNewReading').textContent = L.btnNewReading;
+  document.getElementById('btnSaveReading').textContent = L.btnSaveReading;
+  document.getElementById('btnShareMain').textContent = L.btnShareMain;
+  document.getElementById('foTitle').textContent = L.foTitle;
+  document.getElementById('foText').textContent = L.foText;
+  document.getElementById('forOtherName').placeholder = L.foPlaceholder;
+  document.getElementById('foCancel').textContent = L.foCancel;
+  document.getElementById('foConfirm').textContent = L.foConfirm;
+
+  renderSpreadGrid();
+
+  // ── Articolo editoriale ──
+  document.getElementById('art-title').textContent = L.artTitle;
+  document.getElementById('art-h2').textContent = L.artH2;
+  document.getElementById('art-h3').textContent = L.artH3;
+  document.getElementById('art-p1').textContent = L.artP1;
+  document.getElementById('art-p2').textContent = L.artP2;
+  document.getElementById('art-p3').textContent = L.artP3;
+  document.getElementById('art-p4').textContent = L.artP4;
+  document.getElementById('art-p5').textContent = L.artP5;
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = currentLang==='it' ? 'Mazzo di Tarocchi disteso con Arcani Maggiori e Minori illuminati da candele' : currentLang==='en' ? 'Tarot deck spread out with Major and Minor Arcana lit by candlelight' : 'Mazo de Tarot extendido con Arcanos Mayores y Menores iluminados por velas';
+  document.getElementById('cta-explore').textContent = L.ctaExplore;
+
+  // ── Premium modal ──
+  document.getElementById('premium-title').textContent = L.premiumTitle;
+  document.getElementById('premium-text').textContent = L.premiumText;
+  document.getElementById('premium-price').textContent = L.premiumPrice;
+  document.getElementById('premium-btn').textContent = L.premiumBtn;
+  document.getElementById('premium-skip').textContent = L.premiumSkip;
+
+  // ── Share ──
+  document.getElementById('share-copy').textContent = L.shareCopy;
+
+  // ── Footer ──
+  document.getElementById('footer-copy').textContent = L.footerCopy;
+  document.getElementById('footer-disclaimer').textContent = L.footerDisclaimer;
+
+  // ── FAQ ──
+  renderFAQ(L.faq);
+}
+
+function renderSpreadGrid() {
+  const L = LANG[currentLang];
+  const grid = document.getElementById('spreadGrid');
+  grid.innerHTML = SPREADS.map(s => `
+    <div class="spread-card${_mode===s.key?' active':''}" data-mode="${s.key}" onclick="selectMode('${s.key}')">
+      <div class="spread-icon" aria-hidden="true">${s.icon}</div>
+      <div class="spread-name">${s.name[currentLang]}${s.premium?' 🔒':''}</div>
+      <div class="spread-desc">${s.desc[currentLang]}</div>
+    </div>
+  `).join('');
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ═══════════════════════════════════════════════════
+   AudioManager
+   ═══════════════════════════════════════════════════ */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() { this.audio?.play().catch(()=>{}); this.isPlaying = true; sessionStorage.setItem(AUDIO_KEY,'true'); this.updateUI(); }
+  pause() { this.audio?.pause(); this.isPlaying = false; sessionStorage.setItem(AUDIO_KEY,'false'); this.updateUI(); }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ═══════════════════════════════════════════════════
+   Tema Giorno/Notte
+   ═══════════════════════════════════════════════════ */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ═══════════════════════════════════════════════════
+   Premium Gate
+   ═══════════════════════════════════════════════════ */
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden','false');
+  return false;
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden','true');
+}
+
+/* ═══════════════════════════════════════════════════
+   Share
+   ═══════════════════════════════════════════════════ */
+const PAGE_URL = 'https://mysticaoracoli.it/tarocchi.html';
+
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const names = _picked.map(p => p.carta.n + (p.inv?' ↓':'')).join(' · ');
+  const text = customText || (L.shareText + (names ? ' — ' + names : ''));
+  if (navigator.share) { navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(()=>{}); return; }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ═══════════════════════════════════════════════════
+   FAQ Accordion
+   ═══════════════════════════════════════════════════ */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ═══════════════════════════════════════════════════
+   DATI MAZZO TAROCCHI (motore interattivo — logica protetta, non riscritta)
+   ═══════════════════════════════════════════════════ */
 
 const TAROT_CARDS = [
   {id:0,n:"Il Matto",s:"maggiori",e:"🌟",u:"Nuovo inizio assoluto, salto nel vuoto con fede, libertà totale dall'abitudine",r:"Imprudenza senza calcolo, rischio insensato, fuga dalle responsabilità"},
@@ -327,20 +1069,6 @@ const TAROT_CARDS = [
   {id:77,n:"Re dei Pentacoli",s:"pentacoli",e:"🪙",u:"Maestria nel costruire il patrimonio, leadership materiale responsabile, ricchezza saggia",r:"Avidità che corrode il successo, corruzione del potere materiale"}
 ];
 
-const POS_SEMPLICE = [
-  {n:"🕰️ Passato",d:"Le radici: energia che ha plasmato questa situazione"},
-  {n:"🔮 Presente",d:"Il cuore: forza dominante in questo momento"},
-  {n:"⏳ Futuro",d:"Il seme: dove porta questa energia se coltivata"}
-];
-
-const POS_APPROFONDITA = [
-  {n:"❤️ Cuore",d:"La situazione centrale — il nucleo della questione"},
-  {n:"⚔️ Sfida",d:"La forza che si oppone o chiede integrazione"},
-  {n:"🌱 Radici",d:"Il fondamento — le origini profonde di tutto questo"},
-  {n:"🌊 Corrente",d:"Ciò che sta emergendo dall'inconscio"},
-  {n:"🌟 Esito",d:"La possibilità — dove porta il flusso se lo segui"}
-];
-
 const SUIT_LABEL = {maggiori:'Arcani Maggiori',bastoni:'Bastoni',coppe:'Coppe',spade:'Spade',pentacoli:'Pentacoli'};
 const SUIT_COLORS = {
   maggiori:{bg:['#2d0050','#130025'],border:'#d4af37',accent:'#ffd700',text:'#ffe080'},
@@ -353,9 +1081,9 @@ const SUIT_COLORS = {
 const TAROT_IMGS = {"0":"./images/tarocchi/il-matto.webp","1":"./images/tarocchi/il-mago.webp","2":"./images/tarocchi/la-papessa.webp","3":"./images/tarocchi/imperatrice.webp","4":"./images/tarocchi/imperatore.webp","5":"./images/tarocchi/il-papa.webp","6":"./images/tarocchi/gli-amanti.webp","7":"./images/tarocchi/il-carro.webp","8":"./images/tarocchi/la-forza.webp","9":"./images/tarocchi/eremita.webp","10":"./images/tarocchi/la-ruota-della-fortuna.webp","11":"./images/tarocchi/la-giustizia.webp","12":"./images/tarocchi/appeso.webp","13":"./images/tarocchi/la-morte.webp","14":"./images/tarocchi/la-temperanza.webp","15":"./images/tarocchi/il-diavolo.webp","16":"./images/tarocchi/la-torre.webp","17":"./images/tarocchi/la-stella.webp","18":"./images/tarocchi/la-luna.webp","19":"./images/tarocchi/il-sole.webp","20":"./images/tarocchi/il-giudizio.webp","21":"./images/tarocchi/il-mondo.webp","22":"./images/tarocchi/asso-di-bastoni.webp","23":"./images/tarocchi/due-di-bastoni.webp","24":"./images/tarocchi/tre-di-bastoni.webp","25":"./images/tarocchi/quatro-di-bastoni.webp","26":"./images/tarocchi/cinque-di-bastoni.webp","27":"./images/tarocchi/sei-di-bastoni.webp","28":"./images/tarocchi/sette-di-bastoni.webp","29":"./images/tarocchi/otto-di-bastoni.webp","30":"./images/tarocchi/nove-di-bastoni.webp","31":"./images/tarocchi/dieci-di-bastoni.webp","32":"./images/tarocchi/fante-di-bastoni.webp","33":"./images/tarocchi/cavaliere-di-bastoni.webp","34":"./images/tarocchi/regina-di-bastoni.webp","35":"./images/tarocchi/re-di-bastoni.webp","36":"./images/tarocchi/asso-di-coppe.webp","37":"./images/tarocchi/due-di-coppe.webp","38":"./images/tarocchi/tre-di-coppe.webp","39":"./images/tarocchi/quattro-di-coppe.webp","40":"./images/tarocchi/cinque-di-coppe.webp","41":"./images/tarocchi/sei-di-coppe.webp","42":"./images/tarocchi/sette-di-coppe.webp","43":"./images/tarocchi/otto-di-coppe.webp","44":"./images/tarocchi/nove-di-coppe.webp","45":"./images/tarocchi/dieci-di-coppe.webp","46":"./images/tarocchi/fante-di-coppe.webp","47":"./images/tarocchi/cavaliere-di-coppe.webp","48":"./images/tarocchi/regina-di-coppe.webp","49":"./images/tarocchi/re-di-coppe.webp","50":"./images/tarocchi/asso-di-spade.webp","51":"./images/tarocchi/due-di-spade.webp","52":"./images/tarocchi/tre-di-spade.webp","53":"./images/tarocchi/quattro-di-spade.webp","54":"./images/tarocchi/cinque-di-spade.webp","55":"./images/tarocchi/sei-di-spade.webp","56":"./images/tarocchi/sette-di-spade.webp","57":"./images/tarocchi/otto-di-spade.webp","58":"./images/tarocchi/nove-di-spade.webp","59":"./images/tarocchi/dieci-di-spade.webp","60":"./images/tarocchi/fante-di-spade.webp","61":"./images/tarocchi/cavaliere-di-spade.webp","62":"./images/tarocchi/regina-di-spade.webp","63":"./images/tarocchi/re-di-spade.webp","64":"./images/tarocchi/asso-di-denari.webp","65":"./images/tarocchi/due-di-denari.webp","66":"./images/tarocchi/tre-di-denari.webp","67":"./images/tarocchi/quattro-di-denari.webp","68":"./images/tarocchi/cinque-di-denari.webp","69":"./images/tarocchi/sei-di-denari.webp","70":"./images/tarocchi/sette-di-denari.webp","71":"./images/tarocchi/otto-di-denari.webp","72":"./images/tarocchi/nove-di-denari.webp","73":"./images/tarocchi/dieci-di-denari.webp","74":"./images/tarocchi/fante-di-denari.webp","75":"./images/tarocchi/cavaliere-di-denari.webp","76":"./images/tarocchi/regina-di-denari.webp","77":"./images/tarocchi/re-di-denari.webp"};
 const TAROT_BACK = "./images/card-back.webp";
 
-// ═══════════════════════════════════════════════════
-// STATO
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   STATO
+   ═══════════════════════════════════════════════════ */
 let _mode = 'semplice';
 let _deck = [];
 let _picked = [];
@@ -365,9 +1093,9 @@ let _forOther = null;
 let _audioCtx = null;
 let _toastTimer = null;
 
-// ═══════════════════════════════════════════════════
-// UTILS
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   UTILS
+   ═══════════════════════════════════════════════════ */
 const $ = s => document.querySelector(s);
 const rnd = a => a[Math.floor(Math.random() * a.length)];
 const rndBool = (p=.5) => Math.random() < p;
@@ -439,9 +1167,9 @@ function burst() {
   for (let i = 0; i < 18; i++) setTimeout(() => particle(3, '#d4af37', 5 + Math.random()*5), i*80);
 }
 
-// ═══════════════════════════════════════════════════
-// CANVAS DRAW
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   CANVAS DRAW
+   ═══════════════════════════════════════════════════ */
 function _rr(ctx, x, y, w, h, r) {
   ctx.beginPath();
   ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
@@ -524,13 +1252,14 @@ function drawCardFallback(canvas, carta, inv) {
   ctx.textAlign='center'; ctx.textBaseline='bottom'; ctx.fillText(nome,cx,H-10);
 }
 
-// ═══════════════════════════════════════════════════
-// UI
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   UI
+   ═══════════════════════════════════════════════════ */
 function selectMode(mode) {
   _mode = mode;
-  $('#mSemplice').classList.toggle('active', mode==='semplice');
-  $('#mApprofondita').classList.toggle('active', mode==='approfondita');
+  document.querySelectorAll('.mode-card, .spread-card').forEach(el => {
+    el.classList.toggle('active', el.dataset.mode === mode);
+  });
 }
 
 function openForOther() {
@@ -538,35 +1267,36 @@ function openForOther() {
   m.style.display = 'flex';
   if (_forOther) $('#forOtherName').value = _forOther.name;
 }
-function closeForOther() {
-  $('#forOtherModal').style.display = 'none';
-}
+function closeForOther() { $('#forOtherModal').style.display = 'none'; }
 function confirmForOther() {
+  const L = LANG[currentLang];
   const name = $('#forOtherName').value.trim();
-  if (!name) { closeForOther(); _forOther = null; $('#forOtherLabel').textContent = "Lettura per un'altra persona"; return; }
+  if (!name) { closeForOther(); _forOther = null; $('#forOtherLabel').textContent = L.forOtherLabel; return; }
   _forOther = { name };
-  $('#forOtherLabel').textContent = '👤 Lettura per: ' + name;
+  $('#forOtherLabel').textContent = '👤 ' + L.forOtherLabel + ': ' + name;
   closeForOther();
 }
 
-// ═══════════════════════════════════════════════════
-// GAME LOGIC
-// ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
+   GAME LOGIC (motore interattivo generalizzato per tutte le stese)
+   ═══════════════════════════════════════════════════ */
 function startTarot() {
+  const cfg = MODES[_mode] || MODES.semplice;
+  if (cfg.premium && !requirePremium(_mode)) return;
+
   _deck = [...TAROT_CARDS].sort(() => Math.random() - .5);
   _picked = []; _step = 0; _pickLock = true;
 
-  const pos = _mode === 'semplice' ? POS_SEMPLICE : POS_APPROFONDITA;
+  const pos = POS_BY_MODE[_mode] || POS_BY_MODE.semplice;
   const slots = pos.length;
-  const foSuffix = _forOther ? ' · per ' + _forOther.name : '';
+  const L = LANG[currentLang];
+  const foSuffix = _forOther ? ' · ' + L.forOtherLabel + ' ' + _forOther.name : '';
 
-  $('#tarotTitle').textContent = _mode === 'semplice'
-    ? '🃏 Lettura Semplice — Passato · Presente · Futuro' + foSuffix
-    : '🔮 La Croce della Vita — Lettura Approfondita' + foSuffix;
-  $('#tarotInstr').textContent = 'Il mazzo si sta preparando...';
+  $('#tarotTitle').textContent = (MODE_TITLES[_mode] || MODE_TITLES.semplice) + foSuffix;
+  $('#tarotInstr').textContent = currentLang==='it' ? 'Il mazzo si sta preparando...' : currentLang==='en' ? 'The deck is being prepared...' : 'La baraja se está preparando...';
 
   const g = $('#tGrid');
-  g.className = 'tgrid' + (_mode === 'approfondita' ? ' wide' : '');
+  g.className = 'tgrid' + (slots >= 5 ? ' wide' : '');
   g.innerHTML = '';
 
   const bar = $('#posBar');
@@ -582,23 +1312,19 @@ function startTarot() {
     g.appendChild(slot);
   }
 
-  // Draw backs
   document.querySelectorAll('.tcard-canvas-back').forEach(c => {
-    c.width = _mode==='approfondita'?160:200; c.height = _mode==='approfondita'?240:300;
+    c.width = slots>=5?160:200; c.height = slots>=5?240:300;
     drawCardBack(c);
   });
 
-  // Hide home, show reading
   $('#tarotHome').style.display = 'none';
   $('#tarotReading').style.display = 'block';
   $('#tarotResult').style.display = 'none';
-  $('#seoSection').style.display = 'none';
 
-  // Fan out cards
   setTimeout(() => {
     const slotsArr = Array.from(document.querySelectorAll('.tslot'));
     const totalWidth = g.offsetWidth;
-    const cardWidth = _mode === 'approfondita' ? 80 : 96;
+    const cardWidth = slots>=5 ? 80 : 96;
     const spacing = (totalWidth - cardWidth * slots) / (slots + 1);
 
     slotsArr.forEach((slot, i) => {
@@ -614,7 +1340,7 @@ function startTarot() {
         playSound('card');
         if (i === slots - 1) {
           _pickLock = false;
-          $('#tarotInstr').textContent = 'Tocca le carte una per una per rivelarle.';
+          $('#tarotInstr').textContent = currentLang==='it' ? 'Tocca le carte una per una per rivelarle.' : currentLang==='en' ? 'Tap the cards one by one to reveal them.' : 'Toca las cartas una por una para revelarlas.';
         }
       }, i * 200);
     });
@@ -623,7 +1349,7 @@ function startTarot() {
 
 function pickCard(idx) {
   if (_pickLock) return;
-  const pos = _mode === 'semplice' ? POS_SEMPLICE : POS_APPROFONDITA;
+  const pos = POS_BY_MODE[_mode] || POS_BY_MODE.semplice;
   if (_step >= pos.length) return;
   const sl = document.getElementById('ts' + idx);
   if (!sl || sl.classList.contains('flipped')) return;
@@ -681,7 +1407,8 @@ function pickCard(idx) {
 
 function showResult() {
   playSound('reveal'); burst();
-  const isDeep = _mode === 'approfondita';
+  const slots = (POS_BY_MODE[_mode]||POS_BY_MODE.semplice).length;
+  const isDeep = slots >= 5;
   let html = '';
 
   _picked.forEach((pick, i) => {
@@ -689,11 +1416,15 @@ function showResult() {
     const sig = inv ? carta.r : carta.u;
     const invTag = inv ? '<span class="rb-inv">Invertita</span>' : '';
     const cid = 'rbcv'+i;
-    html += `<div class="reading-block"><div class="rb-head"><div class="rb-card-img"><canvas id="${cid}" width="112" height="168"></canvas></div><div><div class="rb-pos">${pos.n}</div><div class="rb-name">${carta.n}${invTag}</div><div class="rb-suit">${SUIT_LABEL[carta.s]}</div></div></div><span class="rb-posname">${pos.d}</span><p class="rb-text">${buildInterpret(carta,sig,inv,i,isDeep)}</p></div>`;
+    let extra = '';
+    if (_mode === 'sionno') {
+      const verdict = inv ? 'Tendenzialmente <strong>No</strong>' : 'Tendenzialmente <strong>Sì</strong>';
+      extra = `<p class="rb-text" style="margin-top:6px">${verdict} — le energie suggeriscono questa direzione, ma resta sempre la tua scelta a determinare l'esito reale.</p>`;
+    }
+    html += `<div class="reading-block"><div class="rb-head"><div class="rb-card-img"><canvas id="${cid}" width="112" height="168"></canvas></div><div><div class="rb-pos">${pos.n}</div><div class="rb-name">${carta.n}${invTag}</div><div class="rb-suit">${SUIT_LABEL[carta.s]}</div></div></div><span class="rb-posname">${pos.d}</span><p class="rb-text">${buildInterpret(carta,sig,inv,i,isDeep)}</p>${extra}</div>`;
   });
 
-  html += `<div class="synthesis"><h3>🌟 Il Filo Rosso della Lettura${_forOther?` <span style="color:var(--muted);font-size:13px;font-family:'Crimson Pro',serif">— per ${_forOther.name}</span>`:''}${''}</h3><p>${buildSynthesis(_picked)}</p></div>`;
-  html += `<div style="text-align:center;margin-top:16px"><button class="btn btn-sec" onclick="shareReading()" style="display:inline-flex;width:auto;padding:11px 20px;font-size:13px">🔮 Condividi Lettura</button></div>`;
+  html += `<div class="synthesis"><h3>🌟 Il Filo Rosso della Lettura${_forOther?` <span style="color:var(--muted);font-size:13px;font-family:'Crimson Pro',serif">— per ${_forOther.name}</span>`:''}</h3><p>${buildSynthesis(_picked)}</p></div>`;
 
   $('#tarotContent').innerHTML = html;
 
@@ -704,6 +1435,7 @@ function showResult() {
 
   $('#tarotReading').style.display = 'none';
   $('#tarotResult').style.display = 'block';
+  document.getElementById('sharePopup').hidden = true;
 }
 
 function buildInterpret(carta, sig, inv, pos, isDeep) {
@@ -758,34 +1490,32 @@ function resetTarot() {
   $('#tarotContent').innerHTML = '';
   $('#tGrid').innerHTML = '';
   $('#posBar').innerHTML = '';
-  $('#seoSection').style.display = 'block';
 }
 
 function saveReading() {
+  const L = LANG[currentLang];
   try {
     const history = JSON.parse(localStorage.getItem('myst_v3_history') || '[]');
     const names = _picked.map(p => p.carta.n + (p.inv?' ↓':'')).join(' · ');
     history.unshift({
-      tipo: _mode==='approfondita'?'Lettura Approfondita':'Lettura Semplice',
+      tipo: MODE_TITLES[_mode] || 'Lettura',
       dettaglio: names,
-      data: new Date().toLocaleString('it-IT'),
+      data: new Date().toLocaleString(currentLang==='it'?'it-IT':currentLang==='en'?'en-US':'es-ES'),
       ts: Date.now()
     });
     if (history.length > 60) history.pop();
     localStorage.setItem('myst_v3_history', JSON.stringify(history));
-    toast('📚 Lettura salvata ✨');
-  } catch(e) { toast('Errore nel salvataggio'); }
+    toast(L.toastSaved);
+  } catch(e) { toast(L.toastSaveError); }
 }
 
-function shareReading() {
-  const names = _picked.map(p => p.carta.n + (p.inv?' (inv.)':'')).join(', ');
-  const text = `🃏 Ho appena fatto una lettura dei Tarocchi su MYSTICA!\n\nCarte: ${names}\n\nhttps://mysticaoracoli.it/tarocchi.html`;
-  if (navigator.share) {
-    navigator.share({ title: 'La mia lettura dei Tarocchi', text }).catch(() => {});
-  } else {
-    navigator.clipboard?.writeText(text).then(() => toast('📋 Lettura copiata!')).catch(() => {});
-  }
-}
+/* ═══════════════════════════════════════════════════
+   INIT — ordine: tema → audio → lingua → logica pagina
+   ═══════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+});
 </script>
 </body>
 </html>
