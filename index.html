@@ -159,7 +159,6 @@ body {
 }
 .btn-lang.active { background: rgba(212,175,55,.2); border-color: var(--gold); color: var(--gold); }
 .logo-section { padding: 8px 0 4px; }
-.logo-glow { font-size: 14px; color: var(--gold); margin-bottom: 4px; opacity: .6; }
 .logo-title {
   font-family: 'Cinzel', serif; font-size: 34px; color: var(--gold);
   letter-spacing: 10px; line-height: 1;
@@ -183,14 +182,21 @@ body {
 }
 .hero-cta:hover { box-shadow: 0 0 26px var(--gold-glow); transform: translateY(-2px); }
 
-/* ── Banner Premium ── */
+/* ── Banner Premium (barra sottile a scorrimento) ── */
 .premium-banner {
   background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(180,140,20,.08));
-  border: 1.5px solid rgba(212,175,55,.4); border-radius: 12px;
-  margin: 10px 14px 0; padding: 12px 16px;
+  border: 1.5px solid rgba(212,175,55,.4); border-radius: 999px;
+  margin: 10px 14px 0; padding: 7px 6px 7px 14px;
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  height: 34px; overflow: hidden;
 }
-#banner-text { font-size: 12px; color: var(--gold); font-family: 'Cinzel', serif; letter-spacing: .3px; line-height: 1.4; }
+.banner-marquee { flex: 1; overflow: hidden; white-space: nowrap; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+#banner-text {
+  display: inline-block; font-size: 12px; color: var(--gold); font-family: 'Cinzel', serif;
+  letter-spacing: .3px; line-height: 1.4; white-space: nowrap;
+  padding-left: 100%; animation: bannerScroll 16s linear infinite;
+}
+@keyframes bannerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 .banner-btn {
   background: linear-gradient(135deg, #d4af37, #b8860b); color: #0a0514;
   border-radius: 18px; padding: 7px 14px; font-family: 'Cinzel', serif;
@@ -401,7 +407,6 @@ body {
   </div>
 
   <div class="logo-section">
-    <div class="logo-glow" aria-hidden="true">✦</div>
     <h1 class="logo-title" id="logo-title"></h1>
     <p class="logo-sub" id="logo-sub"></p>
     <p class="logo-tagline" id="logo-tagline"></p>
@@ -410,9 +415,9 @@ body {
   <a href="./oroscopo.html" class="hero-cta" id="hero-cta"></a>
 </header>
 
-<!-- ══ Banner Premium ══ -->
-<div class="premium-banner" id="premiumBanner">
-  <span id="banner-text"></span>
+<!-- ══ Banner Premium (nascosto in home: verrà mostrato sulle pagine di interazione) ══ -->
+<div class="premium-banner" id="premiumBanner" style="display:none">
+  <div class="banner-marquee"><span id="banner-text"></span></div>
   <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01"
      class="banner-btn" id="banner-btn" target="_blank" rel="noopener"></a>
 </div>
@@ -987,7 +992,7 @@ body {
 const LANG = {
   it: {
     logoTitle: 'MYSTICA',
-    logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
+    logoSub: 'ORACOLI · OROSCOPI · TAROCCHI · NUMEROLOGIA',
     tagline: "L'oracolo esoterico italiano più completo",
     heroCta: '🔮 Scopri il Tuo Oroscopo',
     bannerText: '✦ Sblocca MYSTICA Premium — Accesso illimitato a tutto · 4,99€ una tantum',
@@ -1057,7 +1062,7 @@ const LANG = {
   },
   en: {
     logoTitle: 'MYSTICA',
-    logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
+    logoSub: 'ORACLES · HOROSCOPES · TAROT · NUMEROLOGY',
     tagline: "Italy's most complete esoteric oracle",
     heroCta: '🔮 Discover Your Horoscope',
     bannerText: '✦ Unlock MYSTICA Premium — Unlimited access to everything · €4.99 one-time',
@@ -1127,7 +1132,7 @@ const LANG = {
   },
   es: {
     logoTitle: 'MYSTICA',
-    logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
+    logoSub: 'ORÁCULOS · HORÓSCOPOS · TAROT · NUMEROLOGÍA',
     tagline: 'El portal esotérico italiano más completo',
     heroCta: '🔮 Descubre Tu Horóscopo',
     bannerText: '✦ Desbloquea MYSTICA Premium — Acceso ilimitado a todo · 4,99€ pago único',
