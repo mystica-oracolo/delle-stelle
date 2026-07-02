@@ -1,439 +1,1144 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang=""> <!-- popolato da updateSEO() -->
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sigilli di Salomone — MYSTICA</title>
-<meta name="description" content="Trova il tuo Sigillo Planetario di Salomone. 7 sigilli sacri dai Pentacoli della Clavicula Salomonis — Saturno, Giove, Marte, Sole, Venere, Mercurio, Luna.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — TUTTI VUOTI nell'HTML, popolati da updateSEO() in JS -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/sigilli-salomone.html">
-<meta property="og:title" content="Sigilli di Salomone — MYSTICA">
-<meta property="og:description" content="Scopri il tuo sigillo planetario. 7 pentacoli della tradizione salomonica.">
-<meta property="og:type" content="website">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/sigilli-salomone.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/sigilli-salomone.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/sigilli-salomone.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/sigilli-salomone.html">
+
+<!-- Open Graph — VUOTI, popolati da updateSEO() -->
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mysticaoracoli.it/sigilli-salomone.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/sigilli-salomone.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card — VUOTA, popolata da updateSEO() -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/sigilli-salomone.webp">
+
+<!-- JSON-LD — inizialmente vuoto {}, rigenerato da updateSEO() nella lingua corrente -->
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
+/* ── Reset / Variabili ── */
 :root{
   --bg:#0d0520;--bg2:#150830;--bg3:#1a0a3e;
+  --card:#150830;--purple:#2a1748;
   --gold:#d4af37;--gold-dim:#9a7f28;--gold-glow:rgba(212,175,55,.18);
   --text:#e8dcc8;--muted:#9080a0;--border:rgba(212,175,55,.18);
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Crimson Text',Georgia,serif;font-size:16px;line-height:1.6}
-body{min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2a1050 0%,#0d0520 65%)}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.6}
+body{min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2a1050 0%,#0d0520 65%);position:relative}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
-/* HEADER */
+/* ── Skip Link (a11y) ── */
+.skip-link{
+  position:absolute;top:-40px;left:8px;z-index:9999;
+  background:var(--gold);color:#1a0a3e;padding:8px 14px;border-radius:8px;
+  font-family:'Cinzel',serif;font-size:12px;text-decoration:none;transition:top .2s;
+}
+.skip-link:focus{top:8px}
+
+/* ── Sfondo Cosmico ── */
+.cosmos{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation:twinkle 14s infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+
+/* ── Layout base ── */
+.page-header,main,.page-footer{position:relative;z-index:1}
+main{max-width:520px;margin:0 auto;padding:0 0 8px}
+
+/* ── HEADER STANDARD ── */
 .page-header{
   background:linear-gradient(180deg,rgba(30,10,60,.95) 0%,rgba(13,5,32,.0) 100%);
-  padding:18px 20px 14px;
-  display:flex;align-items:center;gap:12px;
+  padding:calc(14px + env(safe-area-inset-top,0px)) 20px 14px;
   border-bottom:1px solid var(--border);
-  position:sticky;top:0;z-index:50;
-  backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
 }
-.back-btn{
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.btn-back{
   display:flex;align-items:center;gap:6px;
   background:rgba(212,175,55,.08);border:1px solid var(--border);
   color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;
   padding:7px 14px;border-radius:20px;cursor:pointer;text-decoration:none;
-  transition:all .2s;white-space:nowrap;
+  transition:all .25s;white-space:nowrap;
 }
-.back-btn:hover{background:rgba(212,175,55,.16)}
-.header-title{font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:2px;flex:1;text-align:center}
-.header-spacer{width:80px}
+.btn-back:hover{background:rgba(212,175,55,.16)}
+.header-controls{display:flex;gap:8px}
+.btn-icon{
+  background:rgba(212,175,55,.08);border:1px solid var(--border);
+  color:var(--gold);border-radius:50%;width:36px;height:36px;
+  font-size:15px;cursor:pointer;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;
+}
+.btn-icon:hover{background:rgba(212,175,55,.16)}
+.page-title{
+  font-family:'Cinzel',serif;font-size:17px;color:var(--gold);
+  letter-spacing:2px;text-align:center;margin-bottom:10px;
+}
+.lang-switch{display:flex;justify-content:center;gap:6px}
+.btn-lang{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;
+  padding:4px 12px;border-radius:14px;cursor:pointer;transition:all .25s;
+}
+.btn-lang.active,.btn-lang:hover{border-color:var(--gold-dim);color:var(--gold);background:var(--gold-glow)}
 
-/* HERO */
-.hero{
-  text-align:center;padding:40px 20px 28px;
-  position:relative;overflow:hidden;
-}
+/* ── HERO ── */
+.hero{text-align:center;padding:32px 20px 24px;position:relative;overflow:hidden}
 .hero-icon{font-size:64px;filter:drop-shadow(0 0 30px rgba(212,175,55,.5));animation:float 4s ease-in-out infinite;display:block;margin-bottom:12px}
 .hero-title{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:3px;margin-bottom:6px}
 .hero-sub{color:var(--muted);font-size:14px;font-style:italic;letter-spacing:1px;max-width:380px;margin:0 auto}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* CONTAINER */
+/* ── CONTAINER ── */
 .container{max-width:520px;margin:0 auto;padding:0 16px 40px}
 
-/* FORM */
-.form-card{
-  background:rgba(21,8,48,.7);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:22px 20px;
-  margin-bottom:18px;
-}
-.form-label{
-  font-family:'Cinzel',serif;font-size:11px;color:var(--gold);
-  letter-spacing:2px;margin-bottom:8px;display:block;
-}
-.form-input{
-  width:100%;background:rgba(10,4,24,.7);
-  border:1px solid var(--border);border-radius:10px;
-  color:var(--text);font-family:'Crimson Text',serif;font-size:15px;
-  padding:12px 14px;outline:none;transition:border-color .2s;
-  margin-bottom:14px;
-}
+/* ── FORM ── */
+.form-card{background:rgba(21,8,48,.7);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;margin-bottom:18px}
+.form-label{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;display:block}
+.form-input{width:100%;background:rgba(10,4,24,.7);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Crimson Pro',serif;font-size:15px;padding:12px 14px;outline:none;transition:border-color .2s;margin-bottom:14px}
 .form-input:focus{border-color:var(--gold-dim)}
 .form-input::placeholder{color:var(--muted)}
 textarea.form-input{resize:vertical;min-height:70px}
+label[for], .form-label{cursor:default}
 
-/* PLANET GRID */
-.planet-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;
-}
-.planet-btn{
-  background:rgba(10,4,24,.6);border:1px solid var(--border);
-  border-radius:10px;padding:10px 6px;cursor:pointer;
-  text-align:center;transition:all .2s;
-}
-.planet-btn:hover,.planet-btn.active{
-  border-color:var(--gold-dim);background:var(--gold-glow);
-}
+/* ── PLANET GRID ── */
+.planet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.planet-btn{background:rgba(10,4,24,.6);border:1px solid var(--border);border-radius:10px;padding:10px 6px;cursor:pointer;text-align:center;transition:all .2s}
+.planet-btn:hover,.planet-btn.active{border-color:var(--gold-dim);background:var(--gold-glow)}
 .planet-btn .pb-sym{font-size:20px;display:block;margin-bottom:3px}
 .planet-btn .pb-name{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:.5px}
 .planet-btn.active .pb-name{color:var(--gold)}
 
-/* CTA BUTTON */
-.btn{
-  display:block;width:100%;
-  background:linear-gradient(135deg,#2a1a4e,#1a0a3e);
-  border:1px solid var(--gold-dim);border-radius:25px;
-  color:var(--gold);font-family:'Cinzel',serif;font-size:13px;
-  letter-spacing:2px;padding:14px;cursor:pointer;
-  transition:all .25s;text-align:center;
-}
+/* ── CTA BUTTON ── */
+.btn{display:block;width:100%;background:linear-gradient(135deg,#2a1a4e,#1a0a3e);border:1px solid var(--gold-dim);border-radius:25px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;padding:14px;cursor:pointer;transition:all .25s;text-align:center}
 .btn:hover{background:linear-gradient(135deg,#3a2a60,#2a1a50);border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.2)}
-.btn-sec{
-  background:transparent;border:1px solid var(--border);color:var(--muted);
-  font-size:12px;padding:11px;
-}
+.btn-sec{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:12px;padding:11px}
 .btn-sec:hover{border-color:var(--gold-dim);color:var(--gold);background:rgba(212,175,55,.05)}
 .btn-grp{display:flex;gap:10px;margin-top:16px}
 .btn-grp .btn{flex:1}
 
-/* RESULT */
+/* ── RESULT ── */
 #sigilloResult{display:none}
 .result-header{text-align:center;padding:16px 0 12px}
-.result-planet-badge{
-  display:inline-block;
-  background:rgba(212,175,55,.12);border:1px solid var(--gold-dim);
-  color:var(--gold);font-family:'Cinzel',serif;font-size:10px;
-  letter-spacing:2px;padding:4px 16px;border-radius:10px;margin-bottom:12px;
-}
+.result-planet-badge{display:inline-block;background:rgba(212,175,55,.12);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;padding:4px 16px;border-radius:10px;margin-bottom:12px}
 .result-title{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:2px;margin-bottom:6px}
-.sigillo-svg-wrap{
-  width:180px;height:180px;margin:16px auto;
-  background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 70%);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  animation:svgPulse 3s ease-in-out infinite;
-}
+.sigillo-svg-wrap{width:180px;height:180px;margin:16px auto;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 70%);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:svgPulse 3s ease-in-out infinite}
 @keyframes svgPulse{0%,100%{filter:drop-shadow(0 0 8px rgba(212,175,55,.3))}50%{filter:drop-shadow(0 0 20px rgba(212,175,55,.6))}}
 .sigillo-svg-wrap svg{width:160px;height:160px}
 
-.info-block{
-  background:rgba(10,4,24,.5);border:1px solid var(--border);
-  border-radius:10px;padding:14px 16px;margin-bottom:10px;
-  border-left:3px solid var(--gold-dim);
-}
+.info-block{background:rgba(10,4,24,.5);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;border-left:3px solid var(--gold-dim)}
 .info-block h4{font-family:'Cinzel',serif;font-size:11px;color:var(--gold-dim);letter-spacing:1.5px;margin-bottom:7px}
 .info-block p{color:var(--text);font-size:14.5px;line-height:1.65}
 
-.mantra-box{
-  text-align:center;padding:14px;
-  background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.1);
-  border-radius:10px;margin-bottom:10px;
-  font-style:italic;color:var(--gold-dim);font-size:14px;letter-spacing:1px;
-}
+.mantra-box{text-align:center;padding:14px;background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.1);border-radius:10px;margin-bottom:10px;font-style:italic;color:var(--gold-dim);font-size:14px;letter-spacing:1px}
 
-/* DIVIDER */
-.divider{
-  display:flex;align-items:center;gap:10px;margin:24px 0;
-  color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;
-}
+/* ── DIVIDER ── */
+.divider{display:flex;align-items:center;gap:10px;margin:24px 0;color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;justify-content:center;text-align:center}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* PLANETS INFO SECTION */
+/* ── PLANETS INFO SECTION ── */
 .planets-section{margin-top:8px}
-.planet-card{
-  background:rgba(21,8,48,.5);border:1px solid var(--border);
-  border-radius:var(--radius);padding:16px;margin-bottom:10px;
-  cursor:pointer;transition:all .2s;
-}
+.planet-card{background:rgba(21,8,48,.5);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px;cursor:pointer;transition:all .2s}
 .planet-card:hover{border-color:var(--gold-dim);background:rgba(21,8,48,.8)}
-.planet-card-head{
-  display:flex;align-items:center;gap:12px;
-}
+.planet-card-head{display:flex;align-items:center;gap:12px}
 .planet-card-sym{font-size:26px;filter:drop-shadow(0 0 8px rgba(212,175,55,.4))}
 .planet-card-info{flex:1}
 .planet-card-name{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:1px}
 .planet-card-sub{font-size:12px;color:var(--muted);margin-top:2px}
 .planet-card-toggle{color:var(--gold-dim);font-size:12px;transition:transform .2s}
 .planet-card.open .planet-card-toggle{transform:rotate(180deg)}
-.planet-card-body{
-  display:none;margin-top:12px;padding-top:12px;
-  border-top:1px solid var(--border);
-}
+.planet-card-body{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);content-visibility:auto}
 .planet-card.open .planet-card-body{display:block}
 .pc-kw{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
-.pc-kw-tag{
-  background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);
-  color:var(--gold-dim);font-size:11px;padding:3px 9px;border-radius:10px;
-  font-family:'Cinzel',serif;letter-spacing:.5px;
-}
-.pc-svg{width:100px;height:100px;display:block;margin:10px auto}
-.pc-mantra{
-  text-align:center;font-style:italic;color:var(--gold-dim);
-  font-size:13px;margin-top:8px;letter-spacing:.5px;
-}
+.pc-kw-tag{background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);color:var(--gold-dim);font-size:11px;padding:3px 9px;border-radius:10px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.pc-mantra{text-align:center;font-style:italic;color:var(--gold-dim);font-size:13px;margin-top:8px;letter-spacing:.5px}
 
-/* PENTACOLI GALLERY */
-.pentacoli-label{
-  font-family:'Cinzel',serif;font-size:10px;color:var(--gold-dim);
-  letter-spacing:2px;margin:16px 0 10px;text-align:center;
-}
-.pentacoli-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px;
-}
-.pentacolo-item{
-  background:rgba(10,4,24,.6);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;cursor:pointer;
-  transition:all .2s;text-align:center;
-}
+/* ── PENTACOLI GALLERY ── */
+.pentacoli-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold-dim);letter-spacing:2px;margin:16px 0 10px;text-align:center}
+.pentacoli-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px}
+.pentacolo-item{background:rgba(10,4,24,.6);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;text-align:center}
 .pentacolo-item:hover{border-color:var(--gold-dim);transform:scale(1.04)}
-.pentacolo-item img{
-  width:100%;aspect-ratio:1;object-fit:cover;
-  display:block;opacity:.88;transition:opacity .2s;
-}
+.pentacolo-item img{width:100%;aspect-ratio:1;object-fit:cover;display:block;opacity:.88;transition:opacity .2s}
 .pentacolo-item:hover img{opacity:1}
-.pentacolo-item .pnum{
-  font-family:'Cinzel',serif;font-size:9px;color:var(--muted);
-  padding:4px 2px;letter-spacing:.5px;
-}
+.pentacolo-item .pnum{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);padding:4px 2px;letter-spacing:.5px}
 
-/* LIGHTBOX */
-.lightbox{
-  position:fixed;inset:0;z-index:9000;
-  background:rgba(5,2,15,.93);
-  display:none;align-items:center;justify-content:center;
-  padding:20px;
-}
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;z-index:9000;background:rgba(5,2,15,.93);display:none;align-items:center;justify-content:center;padding:20px}
 .lightbox.open{display:flex}
-.lightbox-inner{
-  max-width:340px;width:100%;text-align:center;
-}
-.lightbox-img{
-  width:100%;max-width:280px;border-radius:12px;
-  border:1px solid var(--border);
-  box-shadow:0 0 40px rgba(212,175,55,.2);
-  margin-bottom:14px;
-}
-.lightbox-title{
-  font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
-  letter-spacing:1.5px;margin-bottom:6px;
-}
-.lightbox-desc{
-  font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px;
-}
-.lightbox-close{
-  background:rgba(212,175,55,.08);border:1px solid var(--border);
-  color:var(--gold);font-family:'Cinzel',serif;font-size:11px;
-  padding:9px 24px;border-radius:20px;cursor:pointer;letter-spacing:1px;
-}
+.lightbox-inner{max-width:340px;width:100%;text-align:center}
+.lightbox-img{width:100%;max-width:280px;border-radius:12px;border:1px solid var(--border);box-shadow:0 0 40px rgba(212,175,55,.2);margin-bottom:14px}
+.lightbox-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:1.5px;margin-bottom:6px}
+.lightbox-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.lightbox-close{background:rgba(212,175,55,.08);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;padding:9px 24px;border-radius:20px;cursor:pointer;letter-spacing:1px}
 
-/* TOAST */
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
-  background:linear-gradient(135deg,#2a1a4e,#1a0a3e);
-  border:1px solid var(--gold-dim);color:var(--gold);
-  font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;
-  padding:10px 20px;border-radius:20px;
-  opacity:0;transition:all .3s;z-index:999;pointer-events:none;white-space:nowrap;
-}
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:linear-gradient(135deg,#2a1a4e,#1a0a3e);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:10px 20px;border-radius:20px;opacity:0;transition:all .3s;z-index:999;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── SHARE ── */
+.share-section{padding:0 16px;margin:6px 0 22px;position:relative}
+.btn-share{width:100%;background:rgba(21,8,48,.7);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;padding:12px;border-radius:20px;cursor:pointer;transition:all .25s}
+.btn-share:hover{border-color:var(--gold-dim);background:rgba(212,175,55,.08)}
+.share-popup{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.share-btn{flex:1;min-width:90px;text-align:center;padding:9px;border-radius:14px;font-size:12px;font-family:'Cinzel',serif;letter-spacing:.5px;border:1px solid var(--border);color:var(--text);text-decoration:none;background:rgba(10,4,24,.5);cursor:pointer;transition:all .2s}
+.share-btn:hover{border-color:var(--gold-dim);color:var(--gold)}
+
+/* ── ARTICLE SECTION ── */
+.article-section{padding:8px 16px 20px;content-visibility:auto}
+.article-section h2{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:1px;margin-bottom:14px;line-height:1.35}
+.article-section h3{font-family:'Cinzel',serif;font-size:15px;color:var(--gold-dim);letter-spacing:1px;margin:20px 0 10px}
+.article-section p{font-size:15px;line-height:1.75;color:var(--text);margin-bottom:12px}
+.article-section img{width:100%;border-radius:14px;margin:16px 0;border:1px solid var(--border)}
+.article-links{display:flex;flex-direction:column;gap:8px;margin:18px 0}
+.article-links a{color:var(--gold-dim);font-size:13.5px;text-decoration:none;border-bottom:1px dashed var(--border);padding-bottom:2px;width:fit-content;transition:color .2s}
+.article-links a:hover{color:var(--gold)}
+.cta-explore{display:block;text-align:center;margin-top:18px;background:linear-gradient(135deg,#2a1a4e,#1a0a3e);border:1px solid var(--gold-dim);border-radius:25px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;padding:14px;text-decoration:none;transition:all .25s}
+.cta-explore:hover{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.2)}
+
+/* ── FAQ SECTION ── */
+.faq-section{padding:8px 16px 30px;content-visibility:auto}
+.faq-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;text-align:center}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden;background:rgba(21,8,48,.4)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;background:transparent;border:none;color:var(--text);font-family:'Cinzel',serif;font-size:13px;letter-spacing:.5px;padding:14px 16px;text-align:left;cursor:pointer}
+.faq-icon{color:var(--gold-dim);font-size:16px;flex-shrink:0}
+.faq-answer{padding:0 16px 14px}
+.faq-answer p{font-size:14px;line-height:1.65;color:var(--muted)}
+
+/* ── FOOTER ── */
+.page-footer{padding:24px 16px 40px;text-align:center;border-top:1px solid var(--border);margin-top:10px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:14px}
+.footer-links a{color:var(--gold-dim);font-size:12.5px;text-decoration:none;letter-spacing:.5px}
+.footer-links a:hover{color:var(--gold)}
+.page-footer p{font-size:11.5px;color:var(--muted);line-height:1.6}
+.footer-disclaimer{margin-top:8px;font-style:italic;max-width:420px;margin-left:auto;margin-right:auto}
+
+/* ── PREMIUM MODAL ── */
+.premium-modal{position:fixed;inset:0;z-index:9500;display:none;align-items:center;justify-content:center;padding:20px}
+.premium-modal.show{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(5,2,15,.88)}
+.modal-content{position:relative;max-width:340px;width:100%;background:linear-gradient(160deg,#1a0a3e,#0d0520);border:1px solid var(--gold-dim);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 0 50px rgba(212,175,55,.15)}
+.modal-content h2{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px}
+.modal-content p{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:14px}
+.premium-price{font-family:'Cinzel',serif;color:var(--gold-dim)!important;font-size:13px!important;letter-spacing:1px}
+.btn-premium-buy{width:100%;background:linear-gradient(135deg,var(--gold-dim),var(--gold));border:none;border-radius:22px;color:#1a0a3e;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1.5px;padding:13px;cursor:pointer;margin-bottom:10px;transition:all .25s}
+.btn-premium-buy:hover{box-shadow:0 0 22px rgba(212,175,55,.4)}
+.btn-premium-skip{width:100%;background:transparent;border:1px solid var(--border);border-radius:22px;color:var(--muted);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:11px;cursor:pointer}
+.btn-premium-skip:hover{color:var(--gold)}
+
+/* ── TEMA GIORNO ── */
+html.theme-day{--bg:#f5f2ed;--card:#ede8df;--text:#2a1748;--muted:#6b5b7f;--purple:#6b5b7f;--gold:#c89742;--gold-dim:#a67c52;--gold-glow:rgba(200,151,66,0.2);--border:#c89742}
+html.theme-day body{background:radial-gradient(ellipse at 50% 0%,#efe6d8 0%,#f5f2ed 65%)}
+html.theme-day .form-card,html.theme-day .planet-card,html.theme-day .info-block,html.theme-day .mantra-box,
+html.theme-day .faq-item,html.theme-day .modal-content,html.theme-day .pentacolo-item,html.theme-day .planet-btn{
+  background-color:var(--card);border-color:var(--border);color:var(--text)
+}
+html.theme-day h1,html.theme-day h2,html.theme-day h3,html.theme-day .hero-title,html.theme-day .result-title,
+html.theme-day .article-section h2,html.theme-day .article-section h3{color:var(--text);text-shadow:none}
+html.theme-day button,html.theme-day .btn{background-color:var(--gold);color:#fff;border:1px solid var(--border)}
+html.theme-day .btn-sec,html.theme-day .btn-back,html.theme-day .btn-icon,html.theme-day .btn-lang,html.theme-day .btn-share,html.theme-day .btn-premium-skip{background-color:transparent;color:var(--text)}
+html.theme-day input,html.theme-day select,html.theme-day textarea,html.theme-day .form-input{background-color:#ffffff;color:var(--text);border:1px solid var(--border)}
+html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .info-block p{color:var(--text)}
 
 @media(max-width:360px){.planet-grid{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link" id="skipLink">Vai al contenuto principale</a>
+
+<div class="cosmos" aria-hidden="true"></div>
+
 <!-- HEADER -->
 <header class="page-header">
-  <a href="index.html" class="back-btn">← MYSTICA</a>
-  <div class="header-title">🔯 SIGILLI</div>
-  <div class="header-spacer"></div>
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
+    </div>
+  </div>
+  <h1 class="page-title" id="page-title"></h1>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
+  </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-  <span class="hero-icon">🔯</span>
-  <h1 class="hero-title">SIGILLI DI SALOMONE</h1>
-  <p class="hero-sub">I 7 Pentacoli Planetari della Clavicula Salomonis — talismanica cerimoniale dal 1750</p>
-</div>
+<main id="main-content">
 
-<div class="container">
-
-  <!-- FORM -->
-  <div id="sigilloForm" class="form-card">
-    <label class="form-label">✦ LA TUA INTENZIONE</label>
-    <textarea class="form-input" id="sigilloIntento" placeholder="Es: cerco protezione, voglio successo nel lavoro, attiro amore..."></textarea>
-
-    <label class="form-label">✦ IL TUO NOME</label>
-    <input class="form-input" type="text" id="sigilloNome" placeholder="Il tuo nome o nome magico...">
-
-    <label class="form-label" style="margin-bottom:10px">✦ SCEGLI PIANETA (opzionale)</label>
-    <div class="planet-grid" id="planetGrid">
-      <div class="planet-btn" data-idx="0" onclick="selPianeta(0)">
-        <span class="pb-sym">♄</span>
-        <span class="pb-name">SATURNO</span>
-      </div>
-      <div class="planet-btn" data-idx="1" onclick="selPianeta(1)">
-        <span class="pb-sym">♃</span>
-        <span class="pb-name">GIOVE</span>
-      </div>
-      <div class="planet-btn" data-idx="2" onclick="selPianeta(2)">
-        <span class="pb-sym">♂</span>
-        <span class="pb-name">MARTE</span>
-      </div>
-      <div class="planet-btn" data-idx="3" onclick="selPianeta(3)">
-        <span class="pb-sym">☉</span>
-        <span class="pb-name">SOLE</span>
-      </div>
-      <div class="planet-btn" data-idx="4" onclick="selPianeta(4)">
-        <span class="pb-sym">♀</span>
-        <span class="pb-name">VENERE</span>
-      </div>
-      <div class="planet-btn" data-idx="5" onclick="selPianeta(5)">
-        <span class="pb-sym">☿</span>
-        <span class="pb-name">MERCURIO</span>
-      </div>
-      <div class="planet-btn" data-idx="6" onclick="selPianeta(6)">
-        <span class="pb-sym">☾</span>
-        <span class="pb-name">LUNA</span>
-      </div>
-      <div class="planet-btn active" data-idx="-1" onclick="selPianeta(-1)">
-        <span class="pb-sym">✦</span>
-        <span class="pb-name">AUTO</span>
-      </div>
-    </div>
-
-    <button class="btn" onclick="trovaSigillo()">🔯 GENERA IL TUO SIGILLO</button>
+  <!-- SEZIONE INTERATTIVA (sempre in cima) -->
+  <div class="hero">
+    <span class="hero-icon" aria-hidden="true">🔯</span>
+    <h2 class="hero-title" id="hero-title"></h2>
+    <p class="hero-sub" id="hero-sub"></p>
   </div>
 
-  <!-- RESULT -->
-  <div id="sigilloResult">
-    <div class="result-header">
-      <div class="result-planet-badge" id="res-planet-badge">PIANETA</div>
-      <div id="res-title" class="result-title">Sigillo</div>
-      <div id="sigillo-svg-wrap" class="sigillo-svg-wrap"></div>
+  <div class="container">
+
+    <!-- FORM -->
+    <div id="sigilloForm" class="form-card">
+      <label class="form-label" id="lbl-intento" for="sigilloIntento"></label>
+      <textarea class="form-input" id="sigilloIntento" placeholder=""></textarea>
+
+      <label class="form-label" id="lbl-nome" for="sigilloNome"></label>
+      <input class="form-input" type="text" id="sigilloNome" placeholder="">
+
+      <label class="form-label" id="lbl-pianeta" style="margin-bottom:10px"></label>
+      <div class="planet-grid" id="planetGrid">
+        <div class="planet-btn" data-idx="0" onclick="selPianeta(0)">
+          <span class="pb-sym" aria-hidden="true">♄</span>
+          <span class="pb-name" data-key="saturno"></span>
+        </div>
+        <div class="planet-btn" data-idx="1" onclick="selPianeta(1)">
+          <span class="pb-sym" aria-hidden="true">♃</span>
+          <span class="pb-name" data-key="giove"></span>
+        </div>
+        <div class="planet-btn" data-idx="2" onclick="selPianeta(2)">
+          <span class="pb-sym" aria-hidden="true">♂</span>
+          <span class="pb-name" data-key="marte"></span>
+        </div>
+        <div class="planet-btn" data-idx="3" onclick="selPianeta(3)">
+          <span class="pb-sym" aria-hidden="true">☉</span>
+          <span class="pb-name" data-key="sole"></span>
+        </div>
+        <div class="planet-btn" data-idx="4" onclick="selPianeta(4)">
+          <span class="pb-sym" aria-hidden="true">♀</span>
+          <span class="pb-name" data-key="venere"></span>
+        </div>
+        <div class="planet-btn" data-idx="5" onclick="selPianeta(5)">
+          <span class="pb-sym" aria-hidden="true">☿</span>
+          <span class="pb-name" data-key="mercurio"></span>
+        </div>
+        <div class="planet-btn" data-idx="6" onclick="selPianeta(6)">
+          <span class="pb-sym" aria-hidden="true">☾</span>
+          <span class="pb-name" data-key="luna"></span>
+        </div>
+        <div class="planet-btn active" data-idx="-1" onclick="selPianeta(-1)">
+          <span class="pb-sym" aria-hidden="true">✦</span>
+          <span class="pb-name" id="pb-auto"></span>
+        </div>
+      </div>
+
+      <button class="btn" id="btnGenera" onclick="trovaSigillo()"></button>
     </div>
 
-    <div class="info-block">
-      <h4>📜 SIGNIFICATO</h4>
-      <p id="res-descrizione"></p>
+    <!-- RESULT -->
+    <div id="sigilloResult">
+      <div class="result-header">
+        <div class="result-planet-badge" id="res-planet-badge"></div>
+        <div id="res-title" class="result-title"></div>
+        <div id="sigillo-svg-wrap" class="sigillo-svg-wrap"></div>
+      </div>
+
+      <div class="info-block">
+        <h4 id="lbl-significato"></h4>
+        <p id="res-descrizione"></p>
+      </div>
+
+      <div class="mantra-box" id="res-mantra"></div>
+
+      <div class="info-block">
+        <h4 id="lbl-comeusarlo"></h4>
+        <p id="txt-comeusarlo"></p>
+      </div>
+
+      <div class="btn-grp">
+        <button class="btn btn-sec" id="btnReset" onclick="resetSigillo()"></button>
+        <button class="btn" id="btnSalva" onclick="salvaGrimorio()"></button>
+      </div>
     </div>
 
-    <div class="mantra-box" id="res-mantra"></div>
+    <!-- DIVIDER -->
+    <div class="divider" id="txt-divider"></div>
 
-    <div class="info-block">
-      <h4>🕯️ COME USARLO</h4>
-      <p>Copia o disegna questo sigillo su carta naturale o sulla superficie indicata dalla tradizione. Consacralo nell'ora planetaria corrispondente, tenendolo tra le mani e visualizzando la tua intenzione. Recita il mantra 7 volte. Conservalo su di te o in un luogo sacro.</p>
-    </div>
+    <!-- ALL PLANETS -->
+    <div class="planets-section" id="planetsSection"></div>
 
-    <div class="btn-grp">
-      <button class="btn btn-sec" onclick="resetSigillo()">🔄 Nuovo Sigillo</button>
-      <button class="btn" onclick="salvaGrimorio()">💾 Salva</button>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <img class="lightbox-img" id="lb-img" src="" alt="">
+      <div class="lightbox-title" id="lb-title"></div>
+      <div class="lightbox-desc" id="lb-desc"></div>
+      <button class="lightbox-close" id="lb-close" onclick="closeLightbox()"></button>
     </div>
   </div>
 
-  <!-- DIVIDER -->
-  <div class="divider">I 7 SIGILLI PLANETARI</div>
+  <!-- SHARE -->
+  <div class="share-section">
+    <button class="btn-share" id="btnShare" onclick="shareContent()"></button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+    </div>
+  </div>
 
-  <!-- ALL PLANETS -->
-  <div class="planets-section" id="planetsSection"></div>
+  <!-- ARTICOLO EDITORIALE -->
+  <article class="article-section">
+    <h2 id="art-title"></h2>
+    <img src="./images/sigilli-salomone.webp"
+         srcset="./images/sigilli-salomone.webp 1x, ./images/sigilli-salomone@2x.webp 2x"
+         id="art-hero"
+         alt=""
+         width="900" height="600"
+         loading="lazy" decoding="async">
+    <h3 id="art-h2"></h3>
+    <p id="art-p1"></p>
+    <p id="art-p2"></p>
+    <p id="art-p3"></p>
+    <h3 id="art-h3"></h3>
+    <p id="art-p4"></p>
+    <p id="art-p5"></p>
+    <nav class="article-links" id="articleLinks" aria-label="Link correlati"></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  </article>
 
-</div>
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2 class="faq-title" id="faqTitle"></h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
 
-<div class="toast" id="toast"></div>
+</main>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-inner" onclick="event.stopPropagation()">
-    <img class="lightbox-img" id="lb-img" src="" alt="">
-    <div class="lightbox-title" id="lb-title"></div>
-    <div class="lightbox-desc" id="lb-desc"></div>
-    <button class="lightbox-close" onclick="closeLightbox()">✕ Chiudi</button>
+<!-- FOOTER -->
+<footer class="page-footer">
+  <nav class="footer-links">
+    <a href="./index.html" id="fl-home"></a>
+    <a href="./contatti.html" id="fl-contatti"></a>
+    <a href="./about.html" id="fl-about"></a>
+    <a href="./privacy.html" id="fl-privacy"></a>
+  </nav>
+  <p id="footer-copy"></p>
+  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+</footer>
+
+<!-- PREMIUM MODAL -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
   </div>
 </div>
 
 <script>
-const DB_SIGILLI = [
-  {
-    pianeta:'SATURNO', simbolo:'♄', nome:'Sigillo di Saturno',
-    keywords:['protezione','disciplina','saggezza','tempo','karma','limite','struttura','perseveranza','vecchio','meditazione','silenzio','solitudine'],
-    descrizione:'Il Sigillo di Saturno governa la disciplina, la saggezza antica e la protezione dalle influenze negative. Inciso nel piombo o tracciato in inchiostro nero, dona costanza e capacità di superare le prove del tempo.',
-    mantra:'Per Saturnum, fundamentum aeternum',
-    colore:'#6b6b8a', geomFn:'saturno'
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 7 — LANG OBJECT (IT · EN · ES) — MULTILINGUA TOTALE
+   ══════════════════════════════════════════════════════════ */
+const LANG = {
+  it: {
+    back: '← MYSTICA',
+    pageTitle: '🔯 Sigilli di Salomone',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '🌙', night: '☀️' },
+    heroTitle: 'SIGILLI DI SALOMONE',
+    heroSub: 'I 7 Pentacoli Planetari della Clavicula Salomonis — talismanica cerimoniale dal 1750',
+    lblIntento: '✦ LA TUA INTENZIONE',
+    phIntento: 'Es: cerco protezione, voglio successo nel lavoro, attiro amore...',
+    lblNome: '✦ IL TUO NOME',
+    phNome: 'Il tuo nome o nome magico...',
+    lblPianeta: '✦ SCEGLI PIANETA (opzionale)',
+    pbAuto: 'AUTO',
+    btnGenera: '🔯 GENERA IL TUO SIGILLO',
+    lblSignificato: '📜 SIGNIFICATO',
+    lblComeUsarlo: '🕯️ COME USARLO',
+    txtComeUsarlo: 'Copia o disegna questo sigillo su carta naturale o sulla superficie indicata dalla tradizione. Consacralo nell\'ora planetaria corrispondente, tenendolo tra le mani e visualizzando la tua intenzione. Recita il mantra 7 volte. Conservalo su di te o in un luogo sacro.',
+    btnReset: '🔄 Nuovo Sigillo',
+    btnSalva: '💾 Salva',
+    txtDivider: 'I 7 SIGILLI PLANETARI',
+    lbClose: '✕ Chiudi',
+    btnShare: '📤 Condividi',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    faqTitle: 'FAQ',
+    flHome: 'Home', flContatti: 'Contatti', flAbout: 'Chi Siamo', flPrivacy: 'Privacy',
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca lo storico illimitato dei sigilli, i consulti avanzati e le letture complete.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho scoperto il mio Sigillo Planetario di Salomone su MYSTICA — provalo anche tu!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'I contenuti di questa pagina hanno finalità storiche, culturali e di intrattenimento. Non sostituiscono consulenze mediche, legali o finanziarie professionali.',
+    toastMissing: '🔯 Inserisci nome e intenzione',
+    toastSaved: '💾 Salvato nel grimorio',
+    toastPlanet: '✦ Pianeta selezionato',
+    toastLimit: '🔒 Hai raggiunto il limite gratuito dello storico',
+    seo: {
+      title: 'Sigilli di Salomone: Scopri il Tuo Pentacolo Planetario | MYSTICA Oracoli',
+      description: 'Genera il tuo Sigillo di Salomone personale: 7 pentacoli planetari sacri della Clavicula Salomonis. Saturno, Giove, Marte, Sole, Venere, Mercurio, Luna. Storia, uso e significato.',
+      keywords: 'sigilli di salomone, pentacoli planetari, clavicula salomonis, talismano magico, magia cerimoniale, mysticaoracoli',
+      ogTitle: 'Sigilli di Salomone — Il Tuo Pentacolo Planetario',
+      ogDesc: 'Scopri quale dei 7 sigilli planetari della tradizione salomonica risuona con la tua intenzione.',
+      ogLocale: 'it_IT',
+      htmlLang: 'it',
+      faqLD: [
+        { q: 'Cosa sono i Sigilli di Salomone?', a: 'Sono simboli magici geometrici, ciascuno associato a uno dei sette pianeti classici, tratti dalla tradizione dei Pentacoli della Clavicula Salomonis, un grimorio rinascimentale attribuito al leggendario re Salomone.' },
+        { q: 'Come si sceglie il sigillo giusto?', a: 'Il sigillo può essere scelto in base al pianeta che governa l\'area della vita su cui si vuole agire, oppure lasciato determinare automaticamente analizzando l\'intenzione scritta dall\'utente.' },
+        { q: 'Come si consacra un sigillo?', a: 'Tradizionalmente va tracciato su materiale corrispondente al pianeta, nell\'ora planetaria adeguata, recitando il mantra e visualizzando l\'intento con concentrazione.' },
+        { q: 'Che differenza c\'è tra sigillo e pentacolo?', a: 'Il sigillo è la figura geometrica astratta associata al pianeta; il pentacolo è l\'oggetto fisico o l\'incisione completa, spesso circolare, che racchiude il sigillo insieme a nomi sacri e versetti.' },
+        { q: 'I sigilli hanno un potere reale?', a: 'Storicamente sono strumenti simbolici della magia cerimoniale rinascimentale: il loro valore risiede nella tradizione, nella psicologia dell\'intenzione e nella pratica rituale, più che in un potere fisico dimostrabile.' }
+      ]
+    },
+    artTitle: 'Sigilli di Salomone: Storia, Simbologia e Uso dei Pentacoli Planetari',
+    artH2: 'Origini nella Clavicula Salomonis',
+    artH3: 'Simbologia e Differenze con Altri Sistemi',
+    artP1: 'I Sigilli di Salomone affondano le radici in un corpus di testi magici noti come Clavicula Salomonis, o Chiave di Salomone, un grimorio che circolò in numerose versioni manoscritte tra il XIV e il XVII secolo in Europa, per poi essere pubblicato in forma più organica intorno al 1750. La leggenda attribuisce l\'origine di questi sigilli al re Salomone d\'Israele, celebre nella tradizione ebraica e islamica per la sua saggezza e per il presunto dominio sui demoni tramite un anello magico. Sebbene l\'attribuzione storica al sovrano biblico sia leggendaria, i testi che raccolgono i Pentacoli Planetari rappresentano una sintesi affascinante tra astrologia ellenistica, cabala ebraica e magia cerimoniale rinascimentale.',
+    artP2: 'Ogni sigillo planetario è collegato a uno dei sette astri classici — Saturno, Giove, Marte, Sole, Venere, Mercurio e Luna — secondo il modello geocentrico dell\'astrologia antica, che riconosceva a ciascun corpo celeste un\'influenza specifica su aspetti della vita umana. Il grimorio descrive per ciascun pianeta sette pentacoli distinti, per un totale di quarantanove figure, ognuna con uno scopo dichiarato: protezione, ricchezza, vittoria, amore, comunicazione, intuizione o autorità. Le figure geometriche che compongono i sigilli combinano cerchi, poligoni stellati e caratteri ebraici o pseudo-ebraici, secondo un linguaggio simbolico tipico della magia talismanica del tardo Medioevo.',
+    artP3: 'Il pentacolo, nella terminologia della Clavicula, non coincide esattamente con il sigillo: quest\'ultimo è la figura geometrica astratta, mentre il pentacolo è l\'oggetto completo, spesso di forma circolare, che racchiude il sigillo insieme a nomi divini, versetti biblici e iscrizioni protettive. Nella pratica storica venivano incisi su metalli associati al pianeta corrispondente — piombo per Saturno, stagno per Giove, ferro per Marte, oro per il Sole, rame per Venere, una lega di metalli per Mercurio e argento per la Luna — oppure tracciati su pergamena vergine con inchiostri specifici, sempre nell\'ora planetaria ritenuta più favorevole.',
+    artH3b: '',
+    artP4: 'Un errore comune tra chi si avvicina per la prima volta a questo sistema è confondere i Sigilli di Salomone con le rune nordiche o con gli arcani dei tarocchi: si tratta di tradizioni distinte, nate in epoche e culture diverse, che condividono solo la funzione generale di strumenti simbolici per la divinazione o la richiesta di protezione. A differenza delle rune, che sono un alfabeto con valore sia fonetico sia divinatorio, e dei tarocchi, che sono un mazzo narrativo di ottantadue carte, i sigilli planetari non si "leggono" in una stesa, ma si scelgono e si consacrano per uno scopo specifico, in modo più vicino alla pratica talismanica che a quella oracolare.',
+    artP5: 'Un mito diffuso vuole che i sigilli garantiscano poteri sovrannaturali immediati o controllo su entità spirituali: la ricerca storica e antropologica mostra invece che questi strumenti nacquero come risposta al bisogno umano di dare forma tangibile a intenzioni astratte, in un\'epoca in cui la linea tra scienza astrologica, religione e magia cerimoniale era molto più sfumata di oggi. Studiare i sigilli planetari, oggi, significa avvicinarsi a un patrimonio simbolico che ha influenzato l\'arte, l\'astrologia occidentale e l\'immaginario esoterico moderno, mantenendo comunque un valore autentico come pratica di concentrazione e visualizzazione dell\'intenzione personale.',
+    artImgAlt: 'I sette sigilli planetari di Salomone disposti in cerchio dorato su sfondo notturno stellato',
+    faq: [
+      { q: 'Cosa sono esattamente i Sigilli di Salomone?', a: 'Sono simboli magici geometrici tratti dai Pentacoli della Clavicula Salomonis, un grimorio rinascimentale attribuito alla tradizione del re Salomone. Ogni sigillo è collegato a uno dei sette pianeti classici e racchiude uno scopo simbolico preciso, dalla protezione alla prosperità. Puoi approfondire tradizioni correlate nella nostra pagina di <a href="./cabala.html">Cabala</a>.' },
+      { q: 'Come funziona il generatore di questa pagina?', a: 'Scrivi la tua intenzione e il tuo nome: l\'algoritmo analizza le parole chiave e propone il sigillo planetario più affine, oppure puoi scegliere manualmente uno dei sette pianeti dalla griglia in alto. Ogni sigillo viene disegnato dal vivo tramite grafica vettoriale.' },
+      { q: 'Come si usa e si consacra un sigillo nella pratica?', a: 'La tradizione suggerisce di tracciarlo su un supporto adatto — carta, pergamena o il metallo del pianeta — durante l\'ora planetaria corrispondente, recitando il mantra latino ad alta voce e visualizzando con chiarezza l\'intento personale. Puoi conservarlo su di te o in un luogo che consideri sacro.' },
+      { q: 'Qual è la differenza tra sigillo e pentacolo?', a: 'Il sigillo è la figura geometrica astratta associata a un pianeta; il pentacolo è l\'oggetto completo, spesso circolare, che racchiude il sigillo insieme a nomi sacri, versetti e iscrizioni protettive descritti nella Clavicula Salomonis.' },
+      { q: 'In cosa si differenziano i sigilli planetari da rune e tarocchi?', a: 'Rune e tarocchi sono sistemi divinatori pensati per essere "letti" in una stesa o estrazione; i sigilli planetari appartengono invece alla magia talismanica e si scelgono e consacrano per uno scopo specifico. Puoi confrontare i tre sistemi visitando anche le pagine dedicate a <a href="./ermetismo.html">Ermetismo</a> e Tarocchi.' }
+    ]
   },
-  {
-    pianeta:'GIOVE', simbolo:'♃', nome:'Sigillo di Giove',
-    keywords:['ricchezza','abbondanza','prosperità','fortuna','successo','denaro','crescita','espansione','onore','gloria','vittoria','autorità'],
-    descrizione:'Il Sigillo di Giove attira ricchezza, prosperità e onori. È il talismano dell\'abbondanza e della giustizia divina, da incidere su lamine di stagno o disegnare in inchiostro blu durante l\'ora di Giove.',
-    mantra:'Iuppiter omnipotens, dator bonorum',
-    colore:'#4a7fbf', geomFn:'giove'
+
+  en: {
+    back: '← MYSTICA',
+    pageTitle: '🔯 Seals of Solomon',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '🌙', night: '☀️' },
+    heroTitle: 'SEALS OF SOLOMON',
+    heroSub: 'The 7 Planetary Pentacles of the Clavicula Salomonis — ceremonial talismanic magic since 1750',
+    lblIntento: '✦ YOUR INTENTION',
+    phIntento: 'E.g.: I seek protection, I want career success, I attract love...',
+    lblNome: '✦ YOUR NAME',
+    phNome: 'Your name or magical name...',
+    lblPianeta: '✦ CHOOSE A PLANET (optional)',
+    pbAuto: 'AUTO',
+    btnGenera: '🔯 GENERATE YOUR SEAL',
+    lblSignificato: '📜 MEANING',
+    lblComeUsarlo: '🕯️ HOW TO USE IT',
+    txtComeUsarlo: 'Copy or draw this seal on natural paper or the material indicated by tradition. Consecrate it during the corresponding planetary hour, holding it in your hands and visualizing your intention. Recite the mantra 7 times. Keep it with you or in a sacred place.',
+    btnReset: '🔄 New Seal',
+    btnSalva: '💾 Save',
+    txtDivider: 'THE 7 PLANETARY SEALS',
+    lbClose: '✕ Close',
+    btnShare: '📤 Share',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+    ctaExplore: '🔍 Explore Other Categories',
+    faqTitle: 'FAQ',
+    flHome: 'Home', flContatti: 'Contact', flAbout: 'About Us', flPrivacy: 'Privacy',
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited seal history, advanced consultations and complete readings.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just discovered my Planetary Seal of Solomon on MYSTICA — try it yourself!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'The content on this page is for historical, cultural and entertainment purposes. It does not replace professional medical, legal or financial advice.',
+    toastMissing: '🔯 Enter your name and intention',
+    toastSaved: '💾 Saved to grimoire',
+    toastPlanet: '✦ Planet selected',
+    toastLimit: '🔒 You reached the free history limit',
+    seo: {
+      title: 'Seals of Solomon: Discover Your Planetary Pentacle | MYSTICA Oracles',
+      description: 'Generate your personal Seal of Solomon: 7 sacred planetary pentacles from the Clavicula Salomonis. Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon. History, use and meaning.',
+      keywords: 'seals of solomon, planetary pentacles, clavicula salomonis, magic talisman, ceremonial magic, mysticaoracoli',
+      ogTitle: 'Seals of Solomon — Your Planetary Pentacle',
+      ogDesc: 'Discover which of the 7 planetary seals of the Solomonic tradition resonates with your intention.',
+      ogLocale: 'en_US',
+      htmlLang: 'en',
+      faqLD: [
+        { q: 'What are the Seals of Solomon?', a: 'They are geometric magical symbols, each linked to one of the seven classical planets, drawn from the Pentacles of the Clavicula Salomonis, a Renaissance grimoire attributed to the legendary King Solomon.' },
+        { q: 'How do I choose the right seal?', a: 'You can choose the seal based on the planet ruling the area of life you want to work on, or let the tool determine it automatically by analyzing your written intention.' },
+        { q: 'How is a seal consecrated?', a: 'Traditionally it is drawn on the material corresponding to the planet, during the proper planetary hour, while reciting the mantra and visualizing the intention with focus.' },
+        { q: 'What is the difference between a seal and a pentacle?', a: 'The seal is the abstract geometric figure linked to the planet; the pentacle is the complete object, often circular, that encloses the seal together with divine names and protective inscriptions.' },
+        { q: 'Do the seals have real power?', a: 'Historically they are symbolic tools of Renaissance ceremonial magic: their value lies in tradition, the psychology of intention and ritual practice rather than any provable physical power.' }
+      ]
+    },
+    artTitle: 'Seals of Solomon: History, Symbolism and Use of the Planetary Pentacles',
+    artH2: 'Origins in the Clavicula Salomonis',
+    artH3: 'Symbolism and Differences from Other Systems',
+    artP1: 'The Seals of Solomon trace back to a body of magical texts known as the Clavicula Salomonis, or Key of Solomon, a grimoire that circulated in numerous manuscript versions across Europe between the 14th and 17th centuries, later published in a more organized form around 1750. Legend attributes the origin of these seals to King Solomon of Israel, celebrated in Jewish and Islamic tradition for his wisdom and his supposed command over demons through a magical ring. While the historical attribution to the biblical king is legendary, the texts collecting the Planetary Pentacles represent a fascinating synthesis of Hellenistic astrology, Jewish Kabbalah and Renaissance ceremonial magic.',
+    artP2: 'Each planetary seal is linked to one of the seven classical bodies — Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon — following the geocentric model of ancient astrology, which assigned each celestial body a specific influence over aspects of human life. The grimoire describes seven distinct pentacles for each planet, forty-nine figures in total, each with a stated purpose: protection, wealth, victory, love, communication, intuition or authority. The geometric figures making up the seals combine circles, star polygons and Hebrew or pseudo-Hebrew characters, following a symbolic language typical of late medieval talismanic magic.',
+    artP3: 'In the terminology of the Clavicula, the pentacle does not exactly coincide with the seal: the latter is the abstract geometric figure, while the pentacle is the complete object, often circular, enclosing the seal together with divine names, biblical verses and protective inscriptions. In historical practice they were engraved on metals associated with the corresponding planet — lead for Saturn, tin for Jupiter, iron for Mars, gold for the Sun, copper for Venus, an alloy for Mercury and silver for the Moon — or drawn on virgin parchment with specific inks, always during the planetary hour considered most favorable.',
+    artP4: 'A common mistake among newcomers is confusing the Seals of Solomon with Norse runes or Tarot arcana: these are distinct traditions, born in different eras and cultures, sharing only the general function of symbolic tools for divination or protection. Unlike runes, which form an alphabet with both phonetic and divinatory value, and Tarot, an eighty-two card narrative deck, planetary seals are not "read" in a spread; instead they are chosen and consecrated for a specific purpose, closer to talismanic practice than to oracular reading.',
+    artP5: 'A widespread myth claims the seals grant immediate supernatural powers or control over spiritual entities: historical and anthropological research instead shows these tools arose from the human need to give tangible form to abstract intentions, in an era when the line between astrological science, religion and ceremonial magic was far blurrier than today. Studying the planetary seals today means approaching a symbolic heritage that has influenced art, Western astrology and the modern esoteric imagination, while still holding authentic value as a practice of focus and visualization of personal intention.',
+    artImgAlt: 'The seven planetary seals of Solomon arranged in a golden circle over a starry night background',
+    faq: [
+      { q: 'What exactly are the Seals of Solomon?', a: 'They are geometric magical symbols drawn from the Pentacles of the Clavicula Salomonis, a Renaissance grimoire attributed to the tradition of King Solomon. Each seal is linked to one of the seven classical planets and holds a precise symbolic purpose, from protection to prosperity. You can explore related traditions on our <a href="./cabala.html">Kabbalah</a> page.' },
+      { q: 'How does this page\'s generator work?', a: 'Write your intention and your name: the algorithm analyzes the keywords and suggests the most fitting planetary seal, or you can manually pick one of the seven planets from the grid above. Each seal is drawn live as vector graphics.' },
+      { q: 'How is a seal used and consecrated in practice?', a: 'Tradition suggests drawing it on a suitable material — paper, parchment or the planet\'s metal — during the corresponding planetary hour, reciting the Latin mantra aloud and clearly visualizing your personal intent. You can keep it with you or in a place you consider sacred.' },
+      { q: 'What is the difference between a seal and a pentacle?', a: 'The seal is the abstract geometric figure linked to a planet; the pentacle is the complete object, often circular, enclosing the seal together with sacred names, verses and protective inscriptions described in the Clavicula Salomonis.' },
+      { q: 'How do planetary seals differ from runes and Tarot?', a: 'Runes and Tarot are divinatory systems meant to be "read" in a spread or draw; planetary seals belong instead to talismanic magic and are chosen and consecrated for a specific purpose. You can also compare the three systems by visiting our <a href="./ermetismo.html">Hermeticism</a> page and Tarot pages.' }
+    ]
   },
-  {
-    pianeta:'MARTE', simbolo:'♂', nome:'Sigillo di Marte',
-    keywords:['coraggio','forza','vittoria','battaglia','passione','azione','difesa','potere','volontà','guerra','energia','determinazione'],
-    descrizione:'Il Sigillo di Marte conferisce coraggio, forza fisica e vittoria nelle battaglie della vita. Tradizionalmente inciso su ferro durante l\'ora di Marte, protegge dai nemici e accende la volontà.',
-    mantra:'Mars potens, vincere et superare',
-    colore:'#c84a3a', geomFn:'marte'
-  },
-  {
-    pianeta:'SOLE', simbolo:'☉', nome:'Sigillo del Sole',
-    keywords:['successo','gloria','illuminazione','salute','vitalità','carisma','leadership','luce','splendore','fama','autorità','re','centro','cuore'],
-    descrizione:'Il Sigillo del Sole irradia successo, gloria e vitalità. Inciso sull\'oro o tracciato in inchiostro giallo, dona carisma, salute radiosa e favori dai potenti. Sigillo della suprema luce.',
-    mantra:'Sol invictus, lux mundi',
-    colore:'#e6b800', geomFn:'sole'
-  },
-  {
-    pianeta:'VENERE', simbolo:'♀', nome:'Sigillo di Venere',
-    keywords:['amore','bellezza','seduzione','armonia','arte','piacere','romanticismo','desiderio','attrazione','passione','tenerezza','grazia','femminile'],
-    descrizione:'Il Sigillo di Venere apre i cuori e attira amore, bellezza e armonia. Inciso sul rame con inchiostro verde, è il talismano per relazioni felici, riconciliazioni e seduzione benevola.',
-    mantra:'Venus dea, amoris flamma',
-    colore:'#3da88e', geomFn:'venere'
-  },
-  {
-    pianeta:'MERCURIO', simbolo:'☿', nome:'Sigillo di Mercurio',
-    keywords:['comunicazione','intelligenza','viaggio','commercio','studio','scrittura','parola','intelletto','astuzia','apprendimento','contratto','messaggio','idea'],
-    descrizione:'Il Sigillo di Mercurio aguzza l\'intelletto, favorisce la comunicazione e protegge i viaggi. Inciso sull\'argento-mercurio o tracciato in inchiostro arancione, è essenziale per studiosi e mercanti.',
-    mantra:'Mercurius velox, sermo et sapientia',
-    colore:'#d97a3a', geomFn:'mercurio'
-  },
-  {
-    pianeta:'LUNA', simbolo:'☾', nome:'Sigillo della Luna',
-    keywords:['intuizione','sogno','psichismo','divinazione','emozione','famiglia','casa','madre','ciclo','mistero','notte','acqua','femminile','medianità'],
-    descrizione:'Il Sigillo della Luna risveglia l\'intuizione, i sogni profetici e i poteri psichici. Inciso sull\'argento durante la luna crescente, protegge il viaggiatore notturno e amplifica la medianità.',
-    mantra:'Luna mater, regina noctis',
-    colore:'#b8a8d4', geomFn:'luna'
+
+  es: {
+    back: '← MYSTICA',
+    pageTitle: '🔯 Sellos de Salomón',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '🌙', night: '☀️' },
+    heroTitle: 'SELLOS DE SALOMÓN',
+    heroSub: 'Los 7 Pentáculos Planetarios de la Clavicula Salomonis — magia ceremonial talismánica desde 1750',
+    lblIntento: '✦ TU INTENCIÓN',
+    phIntento: 'Ej: busco protección, quiero éxito laboral, atraigo el amor...',
+    lblNome: '✦ TU NOMBRE',
+    phNome: 'Tu nombre o nombre mágico...',
+    lblPianeta: '✦ ELIGE PLANETA (opcional)',
+    pbAuto: 'AUTO',
+    btnGenera: '🔯 GENERA TU SELLO',
+    lblSignificato: '📜 SIGNIFICADO',
+    lblComeUsarlo: '🕯️ CÓMO USARLO',
+    txtComeUsarlo: 'Copia o dibuja este sello sobre papel natural o el material indicado por la tradición. Conságralo en la hora planetaria correspondiente, sosteniéndolo entre las manos y visualizando tu intención. Recita el mantra 7 veces. Consérvalo contigo o en un lugar sagrado.',
+    btnReset: '🔄 Nuevo Sello',
+    btnSalva: '💾 Guardar',
+    txtDivider: 'LOS 7 SELLOS PLANETARIOS',
+    lbClose: '✕ Cerrar',
+    btnShare: '📤 Compartir',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+    ctaExplore: '🔍 Explorar Otras Categorías',
+    faqTitle: 'FAQ',
+    flHome: 'Inicio', flContatti: 'Contacto', flAbout: 'Nosotros', flPrivacy: 'Privacidad',
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea el historial ilimitado de sellos, consultas avanzadas y lecturas completas.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: 'Descubrí mi Sello Planetario de Salomón en MYSTICA — ¡pruébalo tú también!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'El contenido de esta página tiene fines históricos, culturales y de entretenimiento. No sustituye asesoramiento médico, legal o financiero profesional.',
+    toastMissing: '🔯 Ingresa nombre e intención',
+    toastSaved: '💾 Guardado en el grimorio',
+    toastPlanet: '✦ Planeta seleccionado',
+    toastLimit: '🔒 Alcanzaste el límite gratuito del historial',
+    seo: {
+      title: 'Sellos de Salomón: Descubre Tu Pentáculo Planetario | MYSTICA Oráculos',
+      description: 'Genera tu Sello de Salomón personal: 7 pentáculos planetarios sagrados de la Clavicula Salomonis. Saturno, Júpiter, Marte, Sol, Venus, Mercurio, Luna. Historia, uso y significado.',
+      keywords: 'sellos de salomón, pentáculos planetarios, clavicula salomonis, talismán mágico, magia ceremonial, mysticaoracoli',
+      ogTitle: 'Sellos de Salomón — Tu Pentáculo Planetario',
+      ogDesc: 'Descubre cuál de los 7 sellos planetarios de la tradición salomónica resuena con tu intención.',
+      ogLocale: 'es_ES',
+      htmlLang: 'es',
+      faqLD: [
+        { q: '¿Qué son los Sellos de Salomón?', a: 'Son símbolos mágicos geométricos, cada uno vinculado a uno de los siete planetas clásicos, extraídos de los Pentáculos de la Clavicula Salomonis, un grimorio renacentista atribuido al legendario rey Salomón.' },
+        { q: '¿Cómo se elige el sello correcto?', a: 'El sello puede elegirse según el planeta que rige el área de la vida sobre la que se quiere actuar, o dejar que la herramienta lo determine automáticamente analizando la intención escrita.' },
+        { q: '¿Cómo se consagra un sello?', a: 'Tradicionalmente se traza sobre el material correspondiente al planeta, durante la hora planetaria adecuada, recitando el mantra y visualizando la intención con concentración.' },
+        { q: '¿Cuál es la diferencia entre sello y pentáculo?', a: 'El sello es la figura geométrica abstracta vinculada al planeta; el pentáculo es el objeto completo, a menudo circular, que encierra el sello junto con nombres sagrados e inscripciones protectoras.' },
+        { q: '¿Los sellos tienen poder real?', a: 'Históricamente son herramientas simbólicas de la magia ceremonial renacentista: su valor reside en la tradición, la psicología de la intención y la práctica ritual, más que en un poder físico demostrable.' }
+      ]
+    },
+    artTitle: 'Sellos de Salomón: Historia, Simbología y Uso de los Pentáculos Planetarios',
+    artH2: 'Orígenes en la Clavicula Salomonis',
+    artH3: 'Simbología y Diferencias con Otros Sistemas',
+    artP1: 'Los Sellos de Salomón hunden sus raíces en un conjunto de textos mágicos conocido como Clavicula Salomonis, o Clave de Salomón, un grimorio que circuló en numerosas versiones manuscritas por Europa entre los siglos XIV y XVII, publicado después de forma más organizada hacia 1750. La leyenda atribuye el origen de estos sellos al rey Salomón de Israel, célebre en la tradición judía e islámica por su sabiduría y su supuesto dominio sobre los demonios mediante un anillo mágico. Aunque la atribución histórica al rey bíblico es legendaria, los textos que reúnen los Pentáculos Planetarios representan una síntesis fascinante entre astrología helenística, cábala judía y magia ceremonial renacentista.',
+    artP2: 'Cada sello planetario está vinculado a uno de los siete astros clásicos — Saturno, Júpiter, Marte, el Sol, Venus, Mercurio y la Luna — según el modelo geocéntrico de la astrología antigua, que reconocía a cada cuerpo celeste una influencia específica sobre aspectos de la vida humana. El grimorio describe siete pentáculos distintos para cada planeta, cuarenta y nueve figuras en total, cada una con un propósito declarado: protección, riqueza, victoria, amor, comunicación, intuición o autoridad. Las figuras geométricas que componen los sellos combinan círculos, polígonos estrellados y caracteres hebreos o pseudo-hebreos, según un lenguaje simbólico típico de la magia talismánica bajomedieval.',
+    artP3: 'En la terminología de la Clavicula, el pentáculo no coincide exactamente con el sello: este último es la figura geométrica abstracta, mientras que el pentáculo es el objeto completo, a menudo circular, que encierra el sello junto con nombres divinos, versículos bíblicos e inscripciones protectoras. En la práctica histórica se grababan sobre metales asociados al planeta correspondiente — plomo para Saturno, estaño para Júpiter, hierro para Marte, oro para el Sol, cobre para Venus, una aleación para Mercurio y plata para la Luna — o se trazaban sobre pergamino virgen con tintas específicas, siempre durante la hora planetaria considerada más favorable.',
+    artP4: 'Un error común entre quienes se acercan por primera vez a este sistema es confundir los Sellos de Salomón con las runas nórdicas o los arcanos del tarot: son tradiciones distintas, nacidas en épocas y culturas diferentes, que comparten solo la función general de herramientas simbólicas para la adivinación o la protección. A diferencia de las runas, que forman un alfabeto con valor tanto fonético como adivinatorio, y del tarot, una baraja narrativa de ochenta y dos cartas, los sellos planetarios no se "leen" en una tirada, sino que se eligen y se consagran para un propósito específico, más cerca de la práctica talismánica que de la lectura oracular.',
+    artP5: 'Un mito extendido sostiene que los sellos otorgan poderes sobrenaturales inmediatos o control sobre entidades espirituales: la investigación histórica y antropológica muestra en cambio que estas herramientas nacieron como respuesta a la necesidad humana de dar forma tangible a intenciones abstractas, en una época en que la línea entre ciencia astrológica, religión y magia ceremonial era mucho más difusa que hoy. Estudiar los sellos planetarios hoy significa acercarse a un patrimonio simbólico que ha influido en el arte, la astrología occidental y el imaginario esotérico moderno, conservando además un valor auténtico como práctica de concentración y visualización de la intención personal.',
+    artImgAlt: 'Los siete sellos planetarios de Salomón dispuestos en círculo dorado sobre un fondo nocturno estrellado',
+    faq: [
+      { q: '¿Qué son exactamente los Sellos de Salomón?', a: 'Son símbolos mágicos geométricos extraídos de los Pentáculos de la Clavicula Salomonis, un grimorio renacentista atribuido a la tradición del rey Salomón. Cada sello está vinculado a uno de los siete planetas clásicos y encierra un propósito simbólico preciso, desde la protección hasta la prosperidad. Puedes profundizar en tradiciones relacionadas en nuestra página de <a href="./cabala.html">Cábala</a>.' },
+      { q: '¿Cómo funciona el generador de esta página?', a: 'Escribe tu intención y tu nombre: el algoritmo analiza las palabras clave y propone el sello planetario más afín, o puedes elegir manualmente uno de los siete planetas en la cuadrícula superior. Cada sello se dibuja en vivo mediante gráficos vectoriales.' },
+      { q: '¿Cómo se usa y consagra un sello en la práctica?', a: 'La tradición sugiere trazarlo sobre un soporte adecuado — papel, pergamino o el metal del planeta — durante la hora planetaria correspondiente, recitando el mantra latino en voz alta y visualizando con claridad la intención personal. Puedes conservarlo contigo o en un lugar que consideres sagrado.' },
+      { q: '¿Cuál es la diferencia entre sello y pentáculo?', a: 'El sello es la figura geométrica abstracta vinculada a un planeta; el pentáculo es el objeto completo, a menudo circular, que encierra el sello junto con nombres sagrados, versículos e inscripciones protectoras descritas en la Clavicula Salomonis.' },
+      { q: '¿En qué se diferencian los sellos planetarios de las runas y el tarot?', a: 'Las runas y el tarot son sistemas adivinatorios pensados para "leerse" en una tirada; los sellos planetarios pertenecen en cambio a la magia talismánica y se eligen y consagran para un propósito específico. También puedes comparar los tres sistemas visitando nuestra página de <a href="./ermetismo.html">Hermetismo</a> y las páginas de Tarot.' }
+    ]
   }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ══════════════════════════════════════════════════════════
+   Link interni articolo (multilingua)
+   ══════════════════════════════════════════════════════════ */
+const ARTICLE_LINKS = {
+  it: [
+    { href: './cabala.html', label: 'Cabala e Albero della Vita' },
+    { href: './ermetismo.html', label: 'Ermetismo e Corpus Hermeticum' },
+    { href: './alchimia.html', label: 'Alchimia e Grande Opera' },
+    { href: './magia-bianca.html', label: 'Magia Bianca e Rituali di Protezione' }
+  ],
+  en: [
+    { href: './cabala.html', label: 'Kabbalah and the Tree of Life' },
+    { href: './ermetismo.html', label: 'Hermeticism and the Corpus Hermeticum' },
+    { href: './alchimia.html', label: 'Alchemy and the Great Work' },
+    { href: './magia-bianca.html', label: 'White Magic and Protection Rituals' }
+  ],
+  es: [
+    { href: './cabala.html', label: 'Cábala y el Árbol de la Vida' },
+    { href: './ermetismo.html', label: 'Hermetismo y el Corpus Hermeticum' },
+    { href: './alchimia.html', label: 'Alquimia y la Gran Obra' },
+    { href: './magia-bianca.html', label: 'Magia Blanca y Rituales de Protección' }
+  ]
+};
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.1 — updateSEO()
+   ══════════════════════════════════════════════════════════ */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld) {
+    const L = LANG[currentLang];
+    const base = 'https://mysticaoracoli.it/';
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+        },
+        {
+          '@type': 'Article',
+          headline: L.artTitle,
+          image: base + 'images/sigilli-salomone.webp',
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni', alternateName: 'Mago Petro' },
+          publisher: { '@type': 'Organization', name: 'PetroCorporation', logo: { '@type': 'ImageObject', url: base + 'apple-touch-icon-v2.png' } },
+          inLanguage: S.htmlLang,
+          mainEntityOfPage: base + 'sigilli-salomone.html'
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: base + 'index.html' },
+            { '@type': 'ListItem', position: 2, name: 'Enciclopedia', item: base + 'enciclopedia.html' },
+            { '@type': 'ListItem', position: 3, name: L.pageTitle, item: base + 'sigilli-salomone.html' }
+          ]
+        },
+        {
+          '@type': 'WebPage',
+          name: S.title,
+          description: S.description,
+          url: base + 'sigilli-salomone.html',
+          inLanguage: S.htmlLang,
+          isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: base }
+        },
+        {
+          '@type': 'ImageObject',
+          contentUrl: base + 'images/sigilli-salomone.webp',
+          description: L.artImgAlt
+        },
+        {
+          '@type': 'Organization',
+          name: 'PetroCorporation',
+          url: base,
+          email: 'info@mysticaoracoli.it'
+        },
+        {
+          '@type': 'Person',
+          name: 'Dott. Petrolese Giovanni',
+          alternateName: 'Mago Petro'
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'MYSTICA Oracoli',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Any',
+          offers: { '@type': 'Offer', price: '4.99', priceCurrency: 'EUR' }
+        }
+      ]
+    });
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.2 — applyLang()
+   ══════════════════════════════════════════════════════════ */
+function applyLang() {
+  updateSEO(); // ← SEMPRE PRIMA
+
+  const L = LANG[currentLang];
+
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const pgt = document.getElementById('page-title'); if (pgt) pgt.textContent = L.pageTitle;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+
+  const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.heroTitle;
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+
+  const li = document.getElementById('lbl-intento'); if (li) li.textContent = L.lblIntento;
+  const pi = document.getElementById('sigilloIntento'); if (pi) pi.placeholder = L.phIntento;
+  const ln = document.getElementById('lbl-nome'); if (ln) ln.textContent = L.lblNome;
+  const pn = document.getElementById('sigilloNome'); if (pn) pn.placeholder = L.phNome;
+  const lp = document.getElementById('lbl-pianeta'); if (lp) lp.textContent = L.lblPianeta;
+  const pa = document.getElementById('pb-auto'); if (pa) pa.textContent = L.pbAuto;
+  document.querySelectorAll('.pb-name[data-key]').forEach(el => {
+    const key = el.dataset.key;
+    el.textContent = (PLANET_I18N[currentLang][key] || {}).pianeta || '';
+  });
+  const bg = document.getElementById('btnGenera'); if (bg) bg.textContent = L.btnGenera;
+
+  const lsig = document.getElementById('lbl-significato'); if (lsig) lsig.textContent = L.lblSignificato;
+  const lcu = document.getElementById('lbl-comeusarlo'); if (lcu) lcu.textContent = L.lblComeUsarlo;
+  const tcu = document.getElementById('txt-comeusarlo'); if (tcu) tcu.textContent = L.txtComeUsarlo;
+  const br = document.getElementById('btnReset'); if (br) br.textContent = L.btnReset;
+  const bs = document.getElementById('btnSalva'); if (bs) bs.textContent = L.btnSalva;
+  const td = document.getElementById('txt-divider'); if (td) td.textContent = L.txtDivider;
+  const lbc = document.getElementById('lb-close'); if (lbc) lbc.textContent = L.lbClose;
+
+  const bshare = document.getElementById('btnShare'); if (bshare) bshare.textContent = L.btnShare;
+
+  // ── Articolo editoriale ──
+  const at = document.getElementById('art-title'); if (at) at.textContent = L.artTitle;
+  const ah2 = document.getElementById('art-h2'); if (ah2) ah2.textContent = L.artH2;
+  const ah3 = document.getElementById('art-h3'); if (ah3) ah3.textContent = L.artH3;
+  const ap1 = document.getElementById('art-p1'); if (ap1) ap1.textContent = L.artP1;
+  const ap2 = document.getElementById('art-p2'); if (ap2) ap2.textContent = L.artP2;
+  const ap3 = document.getElementById('art-p3'); if (ap3) ap3.textContent = L.artP3;
+  const ap4 = document.getElementById('art-p4'); if (ap4) ap4.textContent = L.artP4;
+  const ap5 = document.getElementById('art-p5'); if (ap5) ap5.textContent = L.artP5;
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = L.artImgAlt || '';
+  const ce = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+  renderArticleLinks();
+
+  // ── Premium modal ──
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  // ── Share ──
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+
+  // ── Footer ──
+  const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+  const flh = document.getElementById('fl-home'); if (flh) flh.textContent = L.flHome;
+  const flc = document.getElementById('fl-contatti'); if (flc) flc.textContent = L.flContatti;
+  const fla = document.getElementById('fl-about'); if (fla) fla.textContent = L.flAbout;
+  const flp = document.getElementById('fl-privacy'); if (flp) flp.textContent = L.flPrivacy;
+
+  // ── Skip link ──
+  const sl = document.getElementById('skipLink');
+  if (sl) sl.textContent = currentLang === 'it' ? 'Vai al contenuto principale' : (currentLang === 'en' ? 'Skip to main content' : 'Ir al contenido principal');
+
+  // ── FAQ accordion ──
+  renderFAQ(L.faq);
+  const ft = document.getElementById('faqTitle'); if (ft) ft.textContent = L.faqTitle;
+
+  // ── Sezioni specifiche della pagina: pianeti + eventuale risultato attivo ──
+  renderPlanets();
+  if (_ultimoSigilloKey) renderSigillo(_ultimoSigilloKey);
+}
+
+// Switch lingua
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+document.querySelectorAll('[data-lang]').forEach(b =>
+  b.classList.toggle('active', b.dataset.lang === currentLang));
+
+function renderArticleLinks() {
+  const nav = document.getElementById('articleLinks');
+  if (!nav) return;
+  const links = ARTICLE_LINKS[currentLang] || ARTICLE_LINKS.it;
+  nav.innerHTML = links.map(l => `<a href="${l.href}">${l.label}</a>`).join('');
+}
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.3 — AudioManager
+   ══════════════════════════════════════════════════════════ */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() { this.audio?.play().catch(() => {}); this.isPlaying = true; sessionStorage.setItem(AUDIO_KEY, 'true'); this.updateUI(); }
+  pause() { this.audio?.pause(); this.isPlaying = false; sessionStorage.setItem(AUDIO_KEY, 'false'); this.updateUI(); }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.4 — Tema Giorno/Notte
+   ══════════════════════════════════════════════════════════ */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.5 — Premium Gate
+   ══════════════════════════════════════════════════════════ */
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.6 — Share
+   ══════════════════════════════════════════════════════════ */
+const PAGE_URL = 'https://mysticaoracoli.it/sigilli-salomone.html';
+
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) { navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {}); return; }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.7 — FAQ Accordion
+   ══════════════════════════════════════════════════════════ */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTENUTO SPECIFICO DELLA PAGINA — SIGILLI PLANETARI (IT/EN/ES)
+   Logica JS interattiva ORIGINALE preservata: selPianeta, generaSVG,
+   scoreSigillo, trovaSigillo, renderSigillo, resetSigillo, salvaGrimorio,
+   burst, toast, buildPentacoliGrid, renderPlanets, toggleCard, usaPianeta,
+   openLightbox, closeLightbox — solo adattati per leggere i testi dal LANG
+   e dalle mappe multilingua sottostanti, senza alterarne l'algoritmo.
+   ══════════════════════════════════════════════════════════ */
+
+// Dati "fisici" del sigillo (non testuali, MAI tradotti): simbolo, colore, geometria SVG, mantra latino
+const DB_PLANETS = [
+  { key:'saturno', simbolo:'♄', colore:'#6b6b8a', geomFn:'saturno', mantra:'Per Saturnum, fundamentum aeternum' },
+  { key:'giove',    simbolo:'♃', colore:'#4a7fbf', geomFn:'giove',    mantra:'Iuppiter omnipotens, dator bonorum' },
+  { key:'marte',    simbolo:'♂', colore:'#c84a3a', geomFn:'marte',    mantra:'Mars potens, vincere et superare' },
+  { key:'sole',     simbolo:'☉', colore:'#e6b800', geomFn:'sole',     mantra:'Sol invictus, lux mundi' },
+  { key:'venere',   simbolo:'♀', colore:'#3da88e', geomFn:'venere',   mantra:'Venus dea, amoris flamma' },
+  { key:'mercurio', simbolo:'☿', colore:'#d97a3a', geomFn:'mercurio', mantra:'Mercurius velox, sermo et sapientia' },
+  { key:'luna',     simbolo:'☾', colore:'#b8a8d4', geomFn:'luna',     mantra:'Luna mater, regina noctis' }
 ];
 
-let _selPianeta = -1; // -1 = auto
+// Testi tradotti per pianeta (nome, keywords, descrizione) — IT/EN/ES
+const PLANET_I18N = {
+  it: {
+    saturno:{pianeta:'SATURNO', nome:'Sigillo di Saturno', keywords:['protezione','disciplina','saggezza','tempo','karma','limite','struttura','perseveranza','vecchio','meditazione','silenzio','solitudine'], descrizione:'Il Sigillo di Saturno governa la disciplina, la saggezza antica e la protezione dalle influenze negative. Inciso nel piombo o tracciato in inchiostro nero, dona costanza e capacità di superare le prove del tempo.'},
+    giove:{pianeta:'GIOVE', nome:'Sigillo di Giove', keywords:['ricchezza','abbondanza','prosperità','fortuna','successo','denaro','crescita','espansione','onore','gloria','vittoria','autorità'], descrizione:'Il Sigillo di Giove attira ricchezza, prosperità e onori. È il talismano dell\'abbondanza e della giustizia divina, da incidere su lamine di stagno o disegnare in inchiostro blu durante l\'ora di Giove.'},
+    marte:{pianeta:'MARTE', nome:'Sigillo di Marte', keywords:['coraggio','forza','vittoria','battaglia','passione','azione','difesa','potere','volontà','guerra','energia','determinazione'], descrizione:'Il Sigillo di Marte conferisce coraggio, forza fisica e vittoria nelle battaglie della vita. Tradizionalmente inciso su ferro durante l\'ora di Marte, protegge dai nemici e accende la volontà.'},
+    sole:{pianeta:'SOLE', nome:'Sigillo del Sole', keywords:['successo','gloria','illuminazione','salute','vitalità','carisma','leadership','luce','splendore','fama','autorità','re'], descrizione:'Il Sigillo del Sole irradia successo, gloria e vitalità. Inciso sull\'oro o tracciato in inchiostro giallo, dona carisma, salute radiosa e favori dai potenti. Sigillo della suprema luce.'},
+    venere:{pianeta:'VENERE', nome:'Sigillo di Venere', keywords:['amore','bellezza','seduzione','armonia','arte','piacere','romanticismo','desiderio','attrazione','passione','tenerezza','grazia'], descrizione:'Il Sigillo di Venere apre i cuori e attira amore, bellezza e armonia. Inciso sul rame con inchiostro verde, è il talismano per relazioni felici, riconciliazioni e seduzione benevola.'},
+    mercurio:{pianeta:'MERCURIO', nome:'Sigillo di Mercurio', keywords:['comunicazione','intelligenza','viaggio','commercio','studio','scrittura','parola','intelletto','astuzia','apprendimento','contratto','messaggio'], descrizione:'Il Sigillo di Mercurio aguzza l\'intelletto, favorisce la comunicazione e protegge i viaggi. Inciso sull\'argento-mercurio o tracciato in inchiostro arancione, è essenziale per studiosi e mercanti.'},
+    luna:{pianeta:'LUNA', nome:'Sigillo della Luna', keywords:['intuizione','sogno','psichismo','divinazione','emozione','famiglia','casa','madre','ciclo','mistero','notte','acqua'], descrizione:'Il Sigillo della Luna risveglia l\'intuizione, i sogni profetici e i poteri psichici. Inciso sull\'argento durante la luna crescente, protegge il viaggiatore notturno e amplifica la medianità.'}
+  },
+  en: {
+    saturno:{pianeta:'SATURN', nome:'Seal of Saturn', keywords:['protection','discipline','wisdom','time','karma','limit','structure','perseverance','elder','meditation','silence','solitude'], descrizione:'The Seal of Saturn governs discipline, ancient wisdom and protection from negative influences. Engraved on lead or drawn in black ink, it grants steadiness and the ability to endure the trials of time.'},
+    giove:{pianeta:'JUPITER', nome:'Seal of Jupiter', keywords:['wealth','abundance','prosperity','fortune','success','money','growth','expansion','honor','glory','victory','authority'], descrizione:'The Seal of Jupiter attracts wealth, prosperity and honors. It is the talisman of abundance and divine justice, to be engraved on tin plates or drawn in blue ink during Jupiter\'s hour.'},
+    marte:{pianeta:'MARS', nome:'Seal of Mars', keywords:['courage','strength','victory','battle','passion','action','defense','power','will','war','energy','determination'], descrizione:'The Seal of Mars grants courage, physical strength and victory in life\'s battles. Traditionally engraved on iron during Mars\' hour, it protects against enemies and ignites willpower.'},
+    sole:{pianeta:'SUN', nome:'Seal of the Sun', keywords:['success','glory','illumination','health','vitality','charisma','leadership','light','splendor','fame','authority','king'], descrizione:'The Seal of the Sun radiates success, glory and vitality. Engraved on gold or drawn in yellow ink, it grants charisma, radiant health and favor from the powerful. Seal of supreme light.'},
+    venere:{pianeta:'VENUS', nome:'Seal of Venus', keywords:['love','beauty','seduction','harmony','art','pleasure','romance','desire','attraction','passion','tenderness','grace'], descrizione:'The Seal of Venus opens hearts and attracts love, beauty and harmony. Engraved on copper with green ink, it is the talisman for happy relationships, reconciliations and benevolent seduction.'},
+    mercurio:{pianeta:'MERCURY', nome:'Seal of Mercury', keywords:['communication','intelligence','travel','commerce','study','writing','speech','intellect','wit','learning','contract','message'], descrizione:'The Seal of Mercury sharpens the intellect, favors communication and protects travel. Engraved on mercury-silver alloy or drawn in orange ink, it is essential for scholars and merchants.'},
+    luna:{pianeta:'MOON', nome:'Seal of the Moon', keywords:['intuition','dream','psychism','divination','emotion','family','home','mother','cycle','mystery','night','water'], descrizione:'The Seal of the Moon awakens intuition, prophetic dreams and psychic powers. Engraved on silver during the waxing moon, it protects the night traveler and amplifies mediumship.'}
+  },
+  es: {
+    saturno:{pianeta:'SATURNO', nome:'Sello de Saturno', keywords:['protección','disciplina','sabiduría','tiempo','karma','límite','estructura','perseverancia','anciano','meditación','silencio','soledad'], descrizione:'El Sello de Saturno rige la disciplina, la sabiduría antigua y la protección contra influencias negativas. Grabado en plomo o trazado con tinta negra, otorga constancia y capacidad para superar las pruebas del tiempo.'},
+    giove:{pianeta:'JÚPITER', nome:'Sello de Júpiter', keywords:['riqueza','abundancia','prosperidad','fortuna','éxito','dinero','crecimiento','expansión','honor','gloria','victoria','autoridad'], descrizione:'El Sello de Júpiter atrae riqueza, prosperidad y honores. Es el talismán de la abundancia y la justicia divina, para grabar en láminas de estaño o dibujar con tinta azul durante la hora de Júpiter.'},
+    marte:{pianeta:'MARTE', nome:'Sello de Marte', keywords:['coraje','fuerza','victoria','batalla','pasión','acción','defensa','poder','voluntad','guerra','energía','determinación'], descrizione:'El Sello de Marte otorga coraje, fuerza física y victoria en las batallas de la vida. Tradicionalmente grabado en hierro durante la hora de Marte, protege de los enemigos y enciende la voluntad.'},
+    sole:{pianeta:'SOL', nome:'Sello del Sol', keywords:['éxito','gloria','iluminación','salud','vitalidad','carisma','liderazgo','luz','esplendor','fama','autoridad','rey'], descrizione:'El Sello del Sol irradia éxito, gloria y vitalidad. Grabado en oro o trazado con tinta amarilla, otorga carisma, salud radiante y favores de los poderosos. Sello de la luz suprema.'},
+    venere:{pianeta:'VENUS', nome:'Sello de Venus', keywords:['amor','belleza','seducción','armonía','arte','placer','romance','deseo','atracción','pasión','ternura','gracia'], descrizione:'El Sello de Venus abre los corazones y atrae amor, belleza y armonía. Grabado en cobre con tinta verde, es el talismán para relaciones felices, reconciliaciones y seducción benévola.'},
+    mercurio:{pianeta:'MERCURIO', nome:'Sello de Mercurio', keywords:['comunicación','inteligencia','viaje','comercio','estudio','escritura','palabra','intelecto','astucia','aprendizaje','contrato','mensaje'], descrizione:'El Sello de Mercurio agudiza el intelecto, favorece la comunicación y protege los viajes. Grabado en aleación de plata-mercurio o trazado con tinta naranja, es esencial para estudiosos y comerciantes.'},
+    luna:{pianeta:'LUNA', nome:'Sello de la Luna', keywords:['intuición','sueño','psiquismo','adivinación','emoción','familia','hogar','madre','ciclo','misterio','noche','agua'], descrizione:'El Sello de la Luna despierta la intuición, los sueños proféticos y los poderes psíquicos. Grabado en plata durante la luna creciente, protege al viajero nocturno y amplifica la mediumnidad.'}
+  }
+};
 
-function selPianeta(idx){
+// Descrizioni dei 7 pentacoli per pianeta — IT/EN/ES (Clavicula Salomonis)
+const PENT_DESC_I18N = {
+  it: {
+    saturno:['Protezione potente contro ogni pericolo e nemico','Evoca gli spiriti di Saturno e concede lunga vita','Difesa contro le forze ostili e gli spiriti maligni','Ottenere rispetto e autorità dagli altri','Aprire serrature e barriere spirituali','Conoscere i misteri nascosti del tempo','Conferisce resistenza alle malattie e agli incantesimi'],
+    giove:['Richiamare abbondanza e prosperità materiale','Acquisire gloria, onore e rispetto','Protezione e fortuna nei viaggi e affari','Favorire la giustizia e i giudizi a proprio favore','Attrarre ricchezza e opportunità finanziarie','Conquista di terre, proprietà e beni materiali','Onori dai potenti e successo sociale'],
+    marte:['Vittoria nelle battaglie e nei conflitti','Protezione dai nemici visibili e invisibili','Seminare discordia tra i nemici','Difendersi dagli attacchi magici e fisici','Conferire coraggio e determinazione imbattibili','Rendere invincibili in guerra e competizioni','Dominare e piegare le volontà avversarie'],
+    sole:['Acquisire fama, gloria e luce divina','Ottenere favori dai potenti e dai re','Aprire ogni porta e sconfiggere ogni ostacolo','Illuminazione spirituale e visione interiore','Guarigione del corpo e vitalità radiosa','Diventare invisibili agli occhi dei nemici','Potere supremo su tutti gli spiriti solari'],
+    venere:['Attrarre amore e desiderio reciproco','Creare armonia nelle relazioni di coppia','Favorire incontri romantici e nuove amicizie','Riconciliazione dopo conflitti amorosi','Bellezza, grazia e magnetismo personale','Legare due cuori in un vincolo duraturo','Seduzione benevola e connessione spirituale'],
+    mercurio:['Acquisire eloquenza e potere persuasivo','Protezione durante i viaggi e gli spostamenti','Favorire commerci, contratti e affari','Memoria prodigiosa e capacità di apprendimento','Invisibilità e protezione contro i ladri','Comunicare con gli spiriti e ricevere risposte','Astuzia e intelligenza soprannaturale'],
+    luna:['Risvegliare poteri psichici e medianità','Protezione durante le ore notturne','Favorire i sogni profetici e lucidi','Controllo sulle acque e i fluidi vitali','Protezione della casa e della famiglia','Divinazione e visione del futuro','Connessione con gli spiriti lunari e gli antenati']
+  },
+  en: {
+    saturno:['Powerful protection against every danger and enemy','Invokes the spirits of Saturn and grants long life','Defense against hostile forces and malevolent spirits','Gain respect and authority from others','Opens locks and spiritual barriers','Knowledge of the hidden mysteries of time','Grants resistance to illness and curses'],
+    giove:['Draws abundance and material prosperity','Acquire glory, honor and respect','Protection and fortune in travel and business','Favors justice and rulings in one\'s favor','Attracts wealth and financial opportunity','Gain of lands, property and material goods','Honors from the powerful and social success'],
+    marte:['Victory in battles and conflicts','Protection from visible and invisible enemies','Sows discord among enemies','Defense against magical and physical attacks','Grants unbeatable courage and determination','Renders invincible in war and competition','Dominates and bends opposing wills'],
+    sole:['Acquire fame, glory and divine light','Gain favor from the powerful and from kings','Opens every door and defeats every obstacle','Spiritual illumination and inner vision','Healing of the body and radiant vitality','Become invisible to enemy eyes','Supreme power over all solar spirits'],
+    venere:['Attracts mutual love and desire','Creates harmony in romantic relationships','Favors romantic encounters and new friendships','Reconciliation after romantic conflict','Beauty, grace and personal magnetism','Binds two hearts in a lasting bond','Benevolent seduction and spiritual connection'],
+    mercurio:['Acquire eloquence and persuasive power','Protection during travel and journeys','Favors trade, contracts and business','Prodigious memory and learning ability','Invisibility and protection against thieves','Communicate with spirits and receive answers','Cunning and supernatural intelligence'],
+    luna:['Awakens psychic powers and mediumship','Protection during the night hours','Favors prophetic and lucid dreams','Control over waters and vital fluids','Protection of home and family','Divination and vision of the future','Connection with lunar spirits and ancestors']
+  },
+  es: {
+    saturno:['Protección poderosa contra todo peligro y enemigo','Invoca a los espíritus de Saturno y otorga larga vida','Defensa contra fuerzas hostiles y espíritus malignos','Obtener respeto y autoridad de los demás','Abrir cerraduras y barreras espirituales','Conocer los misterios ocultos del tiempo','Otorga resistencia a enfermedades y hechizos'],
+    giove:['Atrae abundancia y prosperidad material','Adquirir gloria, honor y respeto','Protección y fortuna en viajes y negocios','Favorece la justicia y los fallos a favor propio','Atrae riqueza y oportunidades financieras','Conquista de tierras, propiedades y bienes materiales','Honores de los poderosos y éxito social'],
+    marte:['Victoria en batallas y conflictos','Protección contra enemigos visibles e invisibles','Sembrar discordia entre los enemigos','Defenderse de ataques mágicos y físicos','Otorga coraje y determinación invencibles','Vuelve invencible en guerra y competiciones','Domina y doblega las voluntades adversarias'],
+    sole:['Adquirir fama, gloria y luz divina','Obtener favores de los poderosos y de los reyes','Abrir toda puerta y vencer todo obstáculo','Iluminación espiritual y visión interior','Curación del cuerpo y vitalidad radiante','Volverse invisible a los ojos de los enemigos','Poder supremo sobre todos los espíritus solares'],
+    venere:['Atrae amor y deseo recíproco','Crea armonía en las relaciones de pareja','Favorece encuentros románticos y nuevas amistades','Reconciliación tras conflictos amorosos','Belleza, gracia y magnetismo personal','Une dos corazones en un vínculo duradero','Seducción benévola y conexión espiritual'],
+    mercurio:['Adquirir elocuencia y poder persuasivo','Protección durante viajes y desplazamientos','Favorece comercios, contratos y negocios','Memoria prodigiosa y capacidad de aprendizaje','Invisibilidad y protección contra ladrones','Comunicarse con espíritus y recibir respuestas','Astucia e inteligencia sobrenatural'],
+    luna:['Despierta poderes psíquicos y mediumnidad','Protección durante las horas nocturnas','Favorece los sueños proféticos y lúcidos','Control sobre las aguas y los fluidos vitales','Protección del hogar y la familia','Adivinación y visión del futuro','Conexión con los espíritus lunares y los antepasados']
+  }
+};
+
+let _selPianeta = -1; // -1 = auto
+let _ultimoSigilloKey = null; // per re-render al cambio lingua
+
+function selPianeta(idx) {
   _selPianeta = idx;
   document.querySelectorAll('.planet-btn').forEach(b => b.classList.remove('active'));
   const target = document.querySelector(`.planet-btn[data-idx="${idx}"]`);
-  if(target) target.classList.add('active');
+  if (target) target.classList.add('active');
 }
 
-function generaSVG(s){
-  const c = s.colore;
-  const sym = s.simbolo;
+function generaSVG(p) {
+  const c = p.colore;
+  const sym = p.simbolo;
   let inner = '';
-  switch(s.geomFn){
+  switch (p.geomFn) {
     case 'saturno':
       inner = `
         <polygon points="100,15 170,55 170,135 100,175 30,135 30,55" fill="none" stroke="${c}" stroke-width="2"/>
@@ -452,16 +1157,17 @@ function generaSVG(s){
         <polygon points="100,30 145,160 30,80 170,80 55,160" fill="none" stroke="${c}" stroke-width="1.6"/>
         <circle cx="100" cy="95" r="40" fill="none" stroke="${c}" stroke-width="1" opacity=".6"/>`;
       break;
-    case 'sole':
+    case 'sole': {
       let rays = '';
-      for(let i=0;i<12;i++){
-        const a=(i*30)*Math.PI/180;
-        const x1=100+Math.cos(a)*45, y1=95+Math.sin(a)*45;
-        const x2=100+Math.cos(a)*82, y2=95+Math.sin(a)*82;
-        rays+=`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${c}" stroke-width="2"/>`;
+      for (let i = 0; i < 12; i++) {
+        const a = (i * 30) * Math.PI / 180;
+        const x1 = 100 + Math.cos(a) * 45, y1 = 95 + Math.sin(a) * 45;
+        const x2 = 100 + Math.cos(a) * 82, y2 = 95 + Math.sin(a) * 82;
+        rays += `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${c}" stroke-width="2"/>`;
       }
       inner = `${rays}<circle cx="100" cy="95" r="42" fill="none" stroke="${c}" stroke-width="2.5"/><circle cx="100" cy="95" r="6" fill="${c}"/>`;
       break;
+    }
     case 'venere':
       inner = `
         <circle cx="100" cy="95" r="78" fill="none" stroke="${c}" stroke-width="2"/>
@@ -485,251 +1191,196 @@ function generaSVG(s){
         <circle cx="160" cy="160" r="1.5" fill="${c}"/>`;
       break;
   }
-  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${sym}">
     <circle cx="100" cy="95" r="88" fill="none" stroke="${c}" stroke-width="1" opacity=".4"/>
     ${inner}
     <text x="100" y="108" text-anchor="middle" font-family="serif" font-size="36" fill="${c}" opacity=".95">${sym}</text>
   </svg>`;
 }
 
-function scoreSigillo(testo, sigillo){
-  if(!testo) return 0;
+function scoreSigillo(testo, key) {
+  if (!testo) return 0;
   const t = testo.toLowerCase();
+  const kws = PLANET_I18N[currentLang][key].keywords;
   let score = 0;
-  sigillo.keywords.forEach(k => {
-    if(t.includes(k)) score += 10;
-    else if(k.length>4 && t.includes(k.slice(0,4))) score += 3;
+  kws.forEach(k => {
+    if (t.includes(k.toLowerCase())) score += 10;
+    else if (k.length > 4 && t.includes(k.slice(0, 4).toLowerCase())) score += 3;
   });
   return score;
 }
 
-function trovaSigillo(){
-  const intento = (document.getElementById('sigilloIntento').value||'').trim();
-  const nome = (document.getElementById('sigilloNome').value||'').trim();
-  if(!intento || !nome){ toast('🔯 Inserisci nome e intenzione'); return; }
+function trovaSigillo() {
+  const L = LANG[currentLang];
+  const intento = (document.getElementById('sigilloIntento').value || '').trim();
+  const nome = (document.getElementById('sigilloNome').value || '').trim();
+  if (!intento || !nome) { toast(L.toastMissing); return; }
 
-  let sigillo;
-  if(_selPianeta >= 0){
-    sigillo = DB_SIGILLI[_selPianeta];
+  let key;
+  if (_selPianeta >= 0) {
+    key = DB_PLANETS[_selPianeta].key;
   } else {
-    const ranking = DB_SIGILLI.map(s=>({s, score: scoreSigillo(intento,s)}));
-    const best = ranking.sort((a,b)=>b.score-a.score)[0];
-    if(best && best.score > 0){
-      sigillo = best.s;
+    const ranking = DB_PLANETS.map(p => ({ key: p.key, score: scoreSigillo(intento, p.key) }));
+    const best = ranking.sort((a, b) => b.score - a.score)[0];
+    if (best && best.score > 0) {
+      key = best.key;
     } else {
-      const idx = nome.split('').reduce((a,c)=>a+c.charCodeAt(0),0) % DB_SIGILLI.length;
-      sigillo = DB_SIGILLI[idx];
+      const idx = nome.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % DB_PLANETS.length;
+      key = DB_PLANETS[idx].key;
     }
   }
-
-  renderSigillo(sigillo);
+  renderSigillo(key);
 }
 
-function renderSigillo(sigillo){
-  document.getElementById('res-planet-badge').textContent = sigillo.pianeta;
-  document.getElementById('res-planet-badge').style.color = sigillo.colore;
-  document.getElementById('res-planet-badge').style.borderColor = sigillo.colore+'50';
-  document.getElementById('res-title').textContent = sigillo.nome;
-  document.getElementById('res-title').style.color = sigillo.colore;
-  document.getElementById('sigillo-svg-wrap').innerHTML = generaSVG(sigillo);
-  document.getElementById('sigillo-svg-wrap').style.boxShadow = `0 0 40px ${sigillo.colore}25`;
-  document.getElementById('res-descrizione').textContent = sigillo.descrizione;
-  document.getElementById('res-mantra').textContent = '« ' + sigillo.mantra + ' »';
+function renderSigillo(key) {
+  _ultimoSigilloKey = key;
+  const p = DB_PLANETS.find(x => x.key === key);
+  const t = PLANET_I18N[currentLang][key];
+
+  document.getElementById('res-planet-badge').textContent = t.pianeta;
+  document.getElementById('res-planet-badge').style.color = p.colore;
+  document.getElementById('res-planet-badge').style.borderColor = p.colore + '50';
+  document.getElementById('res-title').textContent = t.nome;
+  document.getElementById('res-title').style.color = p.colore;
+  document.getElementById('sigillo-svg-wrap').innerHTML = generaSVG(p);
+  document.getElementById('sigillo-svg-wrap').style.boxShadow = `0 0 40px ${p.colore}25`;
+  document.getElementById('res-descrizione').textContent = t.descrizione;
+  document.getElementById('res-mantra').textContent = '« ' + p.mantra + ' »';
 
   document.getElementById('sigilloForm').style.display = 'none';
   document.getElementById('sigilloResult').style.display = 'block';
 
   burst();
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function resetSigillo(){
+function resetSigillo() {
   document.getElementById('sigilloForm').style.display = 'block';
   document.getElementById('sigilloResult').style.display = 'none';
   document.getElementById('sigilloIntento').value = '';
   document.getElementById('sigilloNome').value = '';
   _selPianeta = -1;
+  _ultimoSigilloKey = null;
   selPianeta(-1);
 }
 
-function salvaGrimorio(){
+function salvaGrimorio() {
+  const L = LANG[currentLang];
   const t = document.getElementById('res-title').textContent;
-  const key = 'mystica_sigilli_' + Date.now();
-  const entry = { titolo: t, data: new Date().toLocaleDateString('it') };
   try {
-    const storia = JSON.parse(localStorage.getItem('MYSTICA_STORIA')||'[]');
-    storia.unshift({ sezione:'Sigillo di Salomone', testo: t, data: entry.data });
-    localStorage.setItem('MYSTICA_STORIA', JSON.stringify(storia.slice(0,50)));
-  } catch(e){}
-  toast('💾 Salvato nel grimorio');
+    const storia = JSON.parse(localStorage.getItem('MYSTICA_STORIA') || '[]');
+    const giaSalvati = storia.filter(s => s.sezione === 'Sigillo di Salomone').length;
+    if (!isPremium() && giaSalvati >= 5) {
+      toast(L.toastLimit);
+      requirePremium('storico_sigilli');
+      return;
+    }
+    storia.unshift({ sezione: 'Sigillo di Salomone', testo: t, data: new Date().toLocaleDateString(currentLang) });
+    localStorage.setItem('MYSTICA_STORIA', JSON.stringify(storia.slice(0, 50)));
+  } catch (e) {}
+  toast(L.toastSaved);
 }
 
 // Burst effect
-function burst(){
+function burst() {
   const n = 10;
-  for(let i=0;i<n;i++){
+  for (let i = 0; i < n; i++) {
     const p = document.createElement('div');
     p.style.cssText = `position:fixed;pointer-events:none;z-index:9999;
       width:5px;height:5px;border-radius:50%;
-      background:${['#d4af37','#fff8e7','#c8a030','#e8d080'][i%4]};
-      left:${40+Math.random()*20}%;top:${30+Math.random()*20}%;
+      background:${['#d4af37', '#fff8e7', '#c8a030', '#e8d080'][i % 4]};
+      left:${40 + Math.random() * 20}%;top:${30 + Math.random() * 20}%;
       animation:burstP .8s ease-out forwards;
-      --tx:${(Math.random()-0.5)*120}px;--ty:${(Math.random()-0.5)*120}px;`;
+      --tx:${(Math.random() - 0.5) * 120}px;--ty:${(Math.random() - 0.5) * 120}px;`;
     document.body.appendChild(p);
-    setTimeout(()=>p.remove(),800);
+    setTimeout(() => p.remove(), 800);
   }
-  if(!document.getElementById('burstStyle')){
-    const s=document.createElement('style');
-    s.id='burstStyle';
-    s.textContent='@keyframes burstP{to{transform:translate(var(--tx),var(--ty));opacity:0}}';
+  if (!document.getElementById('burstStyle')) {
+    const s = document.createElement('style');
+    s.id = 'burstStyle';
+    s.textContent = '@keyframes burstP{to{transform:translate(var(--tx),var(--ty));opacity:0}}';
     document.head.appendChild(s);
   }
 }
 
-function toast(msg){
+function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2200);
+  setTimeout(() => t.classList.remove('show'), 2200);
 }
 
 const IMG_BASE = 'https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/';
+const ORDINI = ['primo', 'secondo', 'terzo', 'quarto', 'quinto', 'sesto', 'settimo']; // solo per path immagine — NON tradotti (percorso file invariato)
 
-// Numero ordinale in italiano
-const ORDINI = ['primo','secondo','terzo','quarto','quinto','sesto','settimo'];
-
-// Descrizioni dei 7 pentacoli per pianeta (Clavicula Salomonis)
-const PENT_DESC = {
-  saturno:[
-    'Protezione potente contro ogni pericolo e nemico',
-    'Evoca gli spiriti di Saturno e concede lunga vita',
-    'Difesa contro le forze ostili e gli spiriti maligni',
-    'Ottenere rispetto e autorità dagli altri',
-    'Aprire serrature e barriere spirituali',
-    'Conoscere i misteri nascosti del tempo',
-    'Conferisce resistenza alle malattie e agli incantesimi'
-  ],
-  giove:[
-    'Richiamare abbondanza e prosperità materiale',
-    'Acquisire gloria, onore e rispetto',
-    'Protezione e fortuna nei viaggi e affari',
-    'Favorire la giustizia e i giudizi a proprio favore',
-    'Attrarre ricchezza e opportunità finanziarie',
-    'Conquista di terre, proprietà e beni materiali',
-    'Onori dai potenti e successo sociale'
-  ],
-  marte:[
-    'Vittoria nelle battaglie e nei conflitti',
-    'Protezione dai nemici visibili e invisibili',
-    'Seminare discordia tra i nemici',
-    'Difendersi dagli attacchi magici e fisici',
-    'Conferire coraggio e determinazione imbattibili',
-    'Rendere invincibili in guerra e competizioni',
-    'Dominare e piegare le volontà avversarie'
-  ],
-  sole:[
-    'Acquisire fama, gloria e luce divina',
-    'Ottenere favori dai potenti e dai re',
-    'Aprire ogni porta e sconfiggere ogni ostacolo',
-    'Illuminazione spirituale e visione interiore',
-    'Guarigione del corpo e vitalità radiosa',
-    'Diventare invisibili agli occhi dei nemici',
-    'Potere supremo su tutti gli spiriti solari'
-  ],
-  venere:[
-    'Attrarre amore e desiderio reciproco',
-    'Creare armonia nelle relazioni di coppia',
-    'Favorire incontri romantici e nuove amicizie',
-    'Riconciliazione dopo conflitti amorosi',
-    'Bellezza, grazia e magnetismo personale',
-    'Legare due cuori in un vincolo duraturo',
-    'Seduzione benevola e connessione spirituale'
-  ],
-  mercurio:[
-    'Acquisire eloquenza e potere persuasivo',
-    'Protezione durante i viaggi e gli spostamenti',
-    'Favorire commerci, contratti e affari',
-    'Memoria prodigiosa e capacità di apprendimento',
-    'Invisibilità e protezione contro i ladri',
-    'Comunicare con gli spiriti e ricevere risposte',
-    'Astuzia e intelligenza soprannaturale'
-  ],
-  luna:[
-    'Risvegliare poteri psichici e medianità',
-    'Protezione durante le ore notturne',
-    'Favorire i sogni profetici e lucidi',
-    'Controllo sulle acque e i fluidi vitali',
-    'Protezione della casa e della famiglia',
-    'Divinazione e visione del futuro',
-    'Connessione con gli spiriti lunari e gli antenati'
-  ]
-};
-
-function getPlanetKey(s){
-  return s.geomFn; // coincide con la chiave del pianeta
-}
-
-function buildPentacoliGrid(s, planetIdx){
-  const key = getPlanetKey(s);
-  const descs = PENT_DESC[key] || [];
-  const grids = ORDINI.map((ord, j) => {
-    const imgUrl = `${IMG_BASE}${ord}-${key}.webp`;
-    const desc = descs[j] || '';
-    return `<div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('${imgUrl}','${s.nome} — ${j+1}° Pentacolo','${desc.replace(/'/g,"\\'")}')">
-      <img src="${imgUrl}" alt="${s.pianeta} Pentacolo ${j+1}" loading="lazy" onerror="this.parentElement.style.display='none'">
-      <div class="pnum">${j+1}°</div>
+function buildPentacoliGrid(p, planetIdx) {
+  const descs = PENT_DESC_I18N[currentLang][p.key] || [];
+  const t = PLANET_I18N[currentLang][p.key];
+  return ORDINI.map((ord, j) => {
+    const imgUrl = `${IMG_BASE}${ord}-${p.key}.webp`;
+    const desc = (descs[j] || '').replace(/'/g, "\\'");
+    return `<div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('${imgUrl}','${t.nome} — ${j + 1}°','${desc}')">
+      <img src="${imgUrl}" alt="${t.pianeta} — Pentacolo ${j + 1}" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">${j + 1}°</div>
     </div>`;
   }).join('');
-  return grids;
 }
 
-// Render planets section
-function renderPlanets(){
+function renderPlanets() {
   const sec = document.getElementById('planetsSection');
-  sec.innerHTML = DB_SIGILLI.map((s,i) => `
+  if (!sec) return;
+  sec.innerHTML = DB_PLANETS.map((p, i) => {
+    const t = PLANET_I18N[currentLang][p.key];
+    return `
     <div class="planet-card" onclick="toggleCard(this)">
       <div class="planet-card-head">
-        <span class="planet-card-sym" style="color:${s.colore};text-shadow:0 0 12px ${s.colore}70">${s.simbolo}</span>
+        <span class="planet-card-sym" style="color:${p.colore};text-shadow:0 0 12px ${p.colore}70" aria-hidden="true">${p.simbolo}</span>
         <div class="planet-card-info">
-          <div class="planet-card-name" style="color:${s.colore}">${s.nome}</div>
-          <div class="planet-card-sub">${s.keywords.slice(0,3).join(' · ')}</div>
+          <div class="planet-card-name" style="color:${p.colore}">${t.nome}</div>
+          <div class="planet-card-sub">${t.keywords.slice(0, 3).join(' · ')}</div>
         </div>
-        <span class="planet-card-toggle">▾</span>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
       </div>
       <div class="planet-card-body">
-        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">${s.descrizione}</p>
-        <div class="pc-mantra">« ${s.mantra} »</div>
-        <div class="pc-kw">${s.keywords.map(k=>`<span class="pc-kw-tag">${k}</span>`).join('')}</div>
-        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
-        <div class="pentacoli-grid">${buildPentacoliGrid(s,i)}</div>
-        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(${i})">✦ Usa questo Sigillo</button>
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">${t.descrizione}</p>
+        <div class="pc-mantra">« ${p.mantra} »</div>
+        <div class="pc-kw">${t.keywords.map(k => `<span class="pc-kw-tag">${k}</span>`).join('')}</div>
+        <div class="pentacoli-label">✦ ${currentLang === 'it' ? 'I 7 PENTACOLI' : (currentLang === 'en' ? 'THE 7 PENTACLES' : 'LOS 7 PENTÁCULOS')} ✦</div>
+        <div class="pentacoli-grid">${buildPentacoliGrid(p, i)}</div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(${i})">✦ ${currentLang === 'it' ? 'Usa questo Sigillo' : (currentLang === 'en' ? 'Use this Seal' : 'Usar este Sello')}</button>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
-function toggleCard(el){
-  el.classList.toggle('open');
-}
+function toggleCard(el) { el.classList.toggle('open'); }
 
-function usaPianeta(idx){
+function usaPianeta(idx) {
   selPianeta(idx);
-  document.getElementById('sigilloForm').scrollIntoView({behavior:'smooth'});
-  toast(`✦ Pianeta ${DB_SIGILLI[idx].pianeta} selezionato`);
+  document.getElementById('sigilloForm').scrollIntoView({ behavior: 'smooth' });
+  const t = PLANET_I18N[currentLang][DB_PLANETS[idx].key];
+  const L = LANG[currentLang];
+  toast(`${L.toastPlanet}: ${t.pianeta}`);
 }
 
 // LIGHTBOX
-function openLightbox(imgUrl, titolo, desc){
+function openLightbox(imgUrl, titolo, desc) {
   document.getElementById('lb-img').src = imgUrl;
   document.getElementById('lb-title').textContent = titolo;
   document.getElementById('lb-desc').textContent = desc;
   document.getElementById('lightbox').classList.add('open');
 }
-function closeLightbox(){
+function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
 }
 
-renderPlanets();
+/* ══════════════════════════════════════════════════════════
+   SEZIONE 8.8 — Init Sequence
+   ══════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);   // 1. Tema
+  applyLang();             // 2. Lingua (chiama updateSEO() come prima cosa, poi renderPlanets/FAQ)
+});
 </script>
 </body>
 </html>

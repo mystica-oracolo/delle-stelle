@@ -1,64 +1,149 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Alchimia — Delle Stelle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mysticaoracoli.it/alchimia.html">
+
+<link rel="alternate" hreflang="it"        href="https://mysticaoracoli.it/alchimia.html">
+<link rel="alternate" hreflang="en"        href="https://mysticaoracoli.it/alchimia.html">
+<link rel="alternate" hreflang="es"        href="https://mysticaoracoli.it/alchimia.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/alchimia.html">
+
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mysticaoracoli.it/alchimia.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/alchimia.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/alchimia.webp">
+
+<script type="application/ld+json">{}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
 :root{
-  --gold:#d4af37;--gold-dim:#d4af3750;--gold-glow:#d4af3720;
-  --purple:#6a0dad;--purple-light:#9b30d0;
-  --bg:#07031a;--bg2:#0b0520;--card:#110830;--card2:#160a38;
-  --muted:#8a78a0;--text:#e0d8f0;--accent:#c8b4ff;
-  --border:#2a1a5a;--border-light:#3a2a7a;
+  --bg:#0a0514;--card:#140c24;--card2:#160a38;
+  --purple:#2a1748;--purple-light:#9b30d0;
+  --gold:#d4af37;--gold-dim:#b8860b;--gold-glow:rgba(212,175,55,0.4);
+  --text:#f4f1fa;--muted:#b8b2d1;--accent:#c8b4ff;
+  --radius:18px;--border:rgba(212,175,55,0.2);--border-light:#3a2a7a;
 }
+html.theme-day{
+  --bg:#f5f2ed;--card:#ede8df;--card2:#e6ded4;
+  --purple:#6b5b7f;--purple-light:#8a6fa8;
+  --gold:#c89742;--gold-dim:#a67c52;--gold-glow:rgba(200,151,66,0.2);
+  --text:#2a1748;--muted:#6b5b7f;--accent:#6b5b7f;
+  --border:#c89742;--border-light:#c89742;
+}
+html.theme-day .alc-card,html.theme-day .myth-card,html.theme-day .highlight,
+html.theme-day .gold-attempt,html.theme-day .oracle-section,html.theme-day .geo-block,
+html.theme-day .luna-card,html.theme-day .faq-item,html.theme-day .arcano-box,
+html.theme-day .premium-modal .modal-content{
+  background-color:var(--card);border-color:var(--border);color:var(--text);
+}
+html.theme-day h1,html.theme-day h2,html.theme-day h3,html.theme-day .page-title{
+  color:var(--text);text-shadow:none;
+}
+html.theme-day .btn{color:#fff}
+html.theme-day .tab-btn{background:#fff;color:var(--muted)}
+html.theme-day .tab-btn.active{background:var(--gold-glow);color:var(--text)}
+html.theme-day textarea,html.theme-day input{background:#fff;color:var(--text);border-color:var(--border)}
+html.theme-day .cosmos{opacity:.25}
+html.theme-day .star{background:#7a6a50}
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Raleway',sans-serif;min-height:100vh;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',serif;min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
 
-/* ── STARFIELD ── */
+/* ── Skip link ── */
+.skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#0a0514;
+  padding:10px 16px;z-index:999;border-radius:0 0 8px 0;font-family:'Cinzel',serif;font-size:13px;text-decoration:none}
+.skip-link:focus{left:0}
+
+/* ── Sfondo Cosmico ── */
+.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%);
+  animation:cosmosTwinkle 14s infinite alternate}
+@keyframes cosmosTwinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+
 .stars{position:fixed;inset:0;z-index:0;pointer-events:none}
 .star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) infinite var(--delay,0s)}
 @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
 
-/* ── LAYOUT ── */
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
 .z1{position:relative;z-index:1}
 .container{max-width:740px;margin:0 auto;padding:0 18px}
 
 /* ── HEADER ── */
-header{position:relative;z-index:1;text-align:center;padding:44px 20px 10px}
-.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;
-  letter-spacing:1.5px;text-decoration:none;font-family:'Cinzel',serif;margin-bottom:20px;transition:.2s}
-.back-link:hover{color:var(--gold)}
+.page-header{position:relative;z-index:1;text-align:center;
+  padding:max(20px,calc(20px + env(safe-area-inset-top,0px))) 20px 10px}
+.header-top{display:flex;align-items:center;justify-content:space-between;max-width:740px;margin:0 auto 18px;padding:0 18px}
+.btn-back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;
+  letter-spacing:1.5px;text-decoration:none;font-family:'Cinzel',serif;transition:.2s}
+.btn-back:hover{color:var(--gold)}
+.header-controls{display:flex;gap:8px}
+.btn-icon{background:var(--card);border:1px solid var(--border);border-radius:20px;color:var(--muted);
+  cursor:pointer;font-family:'Cinzel',serif;font-size:11px;padding:8px 12px;transition:.2s;letter-spacing:.5px}
+.btn-icon:hover{border-color:var(--gold-dim);color:var(--gold)}
 .hero-symbol{font-size:64px;line-height:1;margin-bottom:14px;filter:drop-shadow(0 0 24px var(--gold-dim));animation:float 5s ease-in-out infinite}
 h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:var(--gold);
   letter-spacing:3px;margin-bottom:8px;text-shadow:0 0 40px var(--gold-dim)}
 .page-sub{color:var(--muted);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
 .divider-gold{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto}
+.lang-switch{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.btn-lang{background:var(--card);border:1px solid var(--border);border-radius:14px;color:var(--muted);
+  cursor:pointer;font-family:'Cinzel',serif;font-size:11px;padding:6px 14px;letter-spacing:1px;transition:.2s}
+.btn-lang:hover{border-color:var(--gold-dim);color:var(--gold)}
+.btn-lang.active{background:linear-gradient(135deg,#1a0e3a,#2d1660);border-color:var(--gold);color:var(--gold)}
 
 /* ── IMAGE PLACEHOLDER ── */
-.img-placeholder{
-  width:200px;height:200px;border-radius:16px;
+.img-placeholder{width:200px;height:200px;border-radius:16px;
   background:linear-gradient(135deg,#1a0e3a 0%,#0b0520 100%);
-  border:1px solid var(--border-light);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  margin:0 auto 20px;
-  position:relative;overflow:hidden;
-}
-.img-placeholder::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,var(--gold-glow) 0%,transparent 70%);
-}
+  border:1px solid var(--border-light);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 20px;position:relative;overflow:hidden}
+.img-placeholder::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,var(--gold-glow) 0%,transparent 70%)}
 .img-placeholder .ph-icon{font-size:36px;margin-bottom:8px;opacity:.5}
 .img-placeholder .ph-label{font-size:10px;color:var(--muted);letter-spacing:1.5px;font-family:'Cinzel',serif;text-align:center;padding:0 10px}
-
-/* Se l'immagine reale viene caricata */
 .img-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
 
 /* ── SECTIONS ── */
-.section{position:relative;z-index:1;padding:48px 0 20px}
+.section{position:relative;z-index:1;padding:48px 0 20px;content-visibility:auto;contain-intrinsic-size:1px 900px}
 .section-header{text-align:center;margin-bottom:28px}
 .section-eyebrow{font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;
   font-family:'Cinzel',serif;margin-bottom:10px;opacity:.8}
@@ -67,27 +152,50 @@ h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:va
 .section-intro{color:var(--muted);font-size:14px;line-height:1.7;max-width:560px;margin:0 auto}
 
 /* ── PROSE ── */
-.prose{color:var(--text);font-size:15px;line-height:1.8;margin-bottom:14px}
+.prose{color:var(--text);font-size:16px;line-height:1.8;margin-bottom:14px}
 .prose em{color:var(--gold);font-style:normal;font-weight:600}
 
 /* ── HIGHLIGHT BOX ── */
 .highlight{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);
   border-radius:12px;padding:18px 20px;margin-bottom:14px}
 .highlight h4{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
-.highlight p{color:var(--text);font-size:14px;line-height:1.7}
+.highlight p{color:var(--text);font-size:15px;line-height:1.7}
+
+/* ── ARTICLE SECTION ── */
+.article-section{position:relative;z-index:1;padding:20px 0}
+.article-section h2#art-title{font-family:'Cinzel',serif;font-size:clamp(20px,4.5vw,28px);color:var(--gold);
+  letter-spacing:1.5px;margin-bottom:16px;text-align:center}
+.article-section h3{font-family:'Cinzel',serif;font-size:16px;color:var(--accent);letter-spacing:1px;
+  margin:22px 0 10px}
+.article-section p{font-size:16px;line-height:1.8;color:var(--text);margin-bottom:14px}
+.article-links{display:flex;flex-direction:column;gap:8px;margin:20px 0}
+.article-links a{color:var(--gold);font-size:13px;text-decoration:none;border-bottom:1px dotted var(--gold-dim);
+  padding-bottom:2px;width:fit-content}
+.article-links a:hover{color:var(--accent)}
+.cta-explore{display:block;text-align:center;background:linear-gradient(135deg,var(--purple-light),#6a0dad);
+  color:#fff;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;border-radius:12px;
+  padding:14px;text-decoration:none;margin-top:18px;transition:.2s}
+.cta-explore:hover{filter:brightness(1.15);transform:translateY(-1px)}
+
+/* ── SHARE ── */
+.share-section{text-align:center;margin:24px 0}
+.btn-share{background:transparent;border:1px solid var(--gold-dim);color:var(--gold);border-radius:12px;
+  padding:10px 22px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;cursor:pointer;transition:.2s}
+.btn-share:hover{background:var(--card)}
+.share-popup{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.share-btn{display:inline-block;border-radius:10px;padding:8px 14px;font-size:12px;text-decoration:none;
+  border:1px solid var(--border);color:var(--text);background:var(--card);cursor:pointer;font-family:'Crimson Pro',serif}
+.share-btn:hover{border-color:var(--gold-dim)}
 
 /* ── ALCHEMIST CARDS ── */
 .alchemist-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:12px}
 .alc-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;
   transition:.25s;position:relative}
 .alc-card:hover{border-color:var(--border-light);transform:translateY(-2px)}
-.alc-card-img{
-  width:160px;height:160px;border-radius:12px;
-  background:linear-gradient(135deg,#1a0e3a,#0b0520);
-  border:1px solid var(--border-light);
+.alc-card-img{width:160px;height:160px;border-radius:12px;
+  background:linear-gradient(135deg,#1a0e3a,#0b0520);border:1px solid var(--border-light);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  margin:20px auto 0;flex-shrink:0;position:relative;overflow:hidden;
-}
+  margin:20px auto 0;flex-shrink:0;position:relative;overflow:hidden}
 .alc-card-img::before{content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse at center,var(--gold-glow) 0%,transparent 70%)}
 .alc-card-img .ph-icon{font-size:30px;opacity:.45}
@@ -97,7 +205,7 @@ h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:va
 .alc-card-body{padding:16px 20px 20px}
 .alc-name{font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:1px;margin-bottom:3px;text-align:center}
 .alc-dates{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-align:center;margin-bottom:12px}
-.alc-desc{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:10px}
+.alc-desc{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:10px}
 .alc-claim{background:#0b0520;border:1px solid var(--gold-dim);border-radius:10px;
   padding:10px 14px;font-size:13px;color:var(--accent);font-style:italic}
 .alc-claim strong{color:var(--gold);font-style:normal}
@@ -105,13 +213,10 @@ h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:va
 /* ── MYTH CARDS ── */
 .myth-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:12px}
 .myth-card{background:var(--card2);border:1px solid var(--border);border-radius:18px;overflow:hidden}
-.myth-card-img{
-  width:180px;height:180px;border-radius:14px;
-  background:linear-gradient(135deg,#200a48,#0b0520);
-  border:1px solid var(--border-light);
+.myth-card-img{width:180px;height:180px;border-radius:14px;
+  background:linear-gradient(135deg,#200a48,#0b0520);border:1px solid var(--border-light);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  margin:20px auto 0;position:relative;overflow:hidden;
-}
+  margin:20px auto 0;position:relative;overflow:hidden}
 .myth-card-img::before{content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse at center,#9b30d020 0%,transparent 70%)}
 .myth-card-img .ph-icon{font-size:32px;opacity:.45}
@@ -121,23 +226,22 @@ h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:va
 .myth-card-body{padding:16px 20px 20px}
 .myth-title{font-family:'Cinzel',serif;font-size:16px;color:var(--accent);letter-spacing:1px;margin-bottom:3px;text-align:center}
 .myth-origin{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-align:center;margin-bottom:12px}
-.myth-desc{font-size:14px;color:var(--text);line-height:1.7}
+.myth-desc{font-size:15px;color:var(--text);line-height:1.7}
 
 /* ── GOLD ATTEMPTS ── */
 .gold-attempt{background:var(--card);border:1px solid var(--border);border-radius:14px;
   padding:18px 20px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
 .gold-attempt-num{font-family:'Cinzel',serif;font-size:24px;color:var(--gold-dim);min-width:36px;font-weight:700}
 .gold-attempt-text h4{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:.8px;margin-bottom:6px}
-.gold-attempt-text p{font-size:13px;color:var(--text);line-height:1.65}
+.gold-attempt-text p{font-size:14px;color:var(--text);line-height:1.65}
 
 /* ── ORACLE SECTION ── */
 .oracle-section{background:var(--card);border:1px solid var(--border);border-radius:18px;
-  padding:26px 22px;margin:48px 0 20px}
+  padding:26px 22px;margin:20px 0}
 .oracle-section h2{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;
   margin-bottom:6px;text-align:center}
 .oracle-section p{color:var(--muted);font-size:13px;text-align:center;margin-bottom:18px}
 
-/* Tabs */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
 .tab-btn{background:#1a0e3a;border:1px solid var(--border);border-radius:12px;color:var(--muted);
   cursor:pointer;font-family:'Cinzel',serif;font-size:11px;padding:10px 6px;text-align:center;
@@ -147,7 +251,7 @@ h1.page-title{font-family:'Cinzel',serif;font-size:clamp(28px,6vw,46px);color:va
 .tab-btn .tab-emoji{display:block;font-size:22px;margin-bottom:4px}
 
 textarea{width:100%;background:#0b0520;border:1px solid var(--border);border-radius:10px;
-  color:var(--text);font-family:'Raleway',sans-serif;font-size:14px;padding:12px;resize:none}
+  color:var(--text);font-family:'Crimson Pro',serif;font-size:15px;padding:12px;resize:none}
 textarea:focus{outline:none;border-color:var(--gold-dim)}
 textarea::placeholder{color:var(--muted)}
 
@@ -159,7 +263,6 @@ textarea::placeholder{color:var(--muted)}
 .btn-sec{background:transparent;border:1px solid var(--gold-dim);color:var(--gold)}
 .btn-sec:hover{background:#1a0e3a;border-color:var(--gold)}
 
-/* Result */
 .result-card{display:none;padding:6px 0}
 .luna-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
 .luna-card{background:#0b0520;border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
@@ -168,16 +271,50 @@ textarea::placeholder{color:var(--muted)}
 .luna-card-val{font-family:'Cinzel',serif;font-size:13px;color:var(--gold)}
 .geo-block{background:#0b0520;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px;margin-bottom:12px}
 .geo-block h4{color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;margin-bottom:8px}
-.geo-block p{color:var(--text);font-size:14px;line-height:1.65}
+.geo-block p{color:var(--text);font-size:15px;line-height:1.65}
 .geo-question-shown{background:#110830;border:1px solid var(--gold-dim);border-radius:10px;
   color:var(--muted);font-style:italic;font-size:13px;padding:10px 14px;margin-bottom:14px;text-align:center}
 .arcano-box{text-align:center;padding:12px;background:#0b0520;border:1px solid var(--gold-dim);border-radius:12px;margin-bottom:14px}
 .arcano-label{font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1.5px;margin-bottom:5px}
 .arcano-val{color:var(--gold);font-family:'Cinzel',serif;font-size:14px}
 
-/* Footer */
-footer{position:relative;z-index:1;text-align:center;padding:40px 20px;border-top:1px solid var(--border)}
-footer p{color:var(--muted);font-size:12px;letter-spacing:1px}
+/* ── FAQ ── */
+.faq-section{position:relative;z-index:1;padding:20px 0 40px}
+.faq-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,24px);color:var(--gold);text-align:center;
+  letter-spacing:2px;margin-bottom:22px}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-question{width:100%;background:none;border:none;color:var(--text);font-family:'Cinzel',serif;
+  font-size:14px;padding:16px 18px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;gap:10px}
+.faq-icon{color:var(--gold);font-size:16px;flex-shrink:0}
+.faq-answer{padding:0 18px 16px}
+.faq-answer p{font-size:15px;line-height:1.7;color:var(--muted)}
+.faq-answer a{color:var(--gold)}
+
+/* ── PREMIUM MODAL ── */
+.premium-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center}
+.premium-modal.show{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(5,2,15,.85)}
+.modal-content{position:relative;background:var(--card);border:1px solid var(--gold-dim);border-radius:20px;
+  padding:30px 24px;max-width:340px;width:90%;text-align:center;z-index:1}
+.modal-content h2{font-family:'Cinzel',serif;color:var(--gold);font-size:19px;margin-bottom:12px;letter-spacing:1px}
+.modal-content p{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:10px}
+.premium-price{color:var(--gold);font-family:'Cinzel',serif;font-size:16px}
+.btn-premium-buy{width:100%;background:linear-gradient(135deg,var(--gold-dim),var(--gold));border:none;
+  color:#1a0e3a;font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;border-radius:12px;
+  padding:14px;margin-top:14px;cursor:pointer;transition:.2s}
+.btn-premium-buy:hover{filter:brightness(1.08)}
+.btn-premium-skip{width:100%;background:none;border:none;color:var(--muted);font-size:12px;
+  padding:12px;margin-top:6px;cursor:pointer;text-decoration:underline}
+
+/* ── FOOTER ── */
+.page-footer{position:relative;z-index:1;text-align:center;padding:40px 20px;border-top:1px solid var(--border)}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:16px}
+.footer-links a{color:var(--muted);font-size:12px;text-decoration:none;letter-spacing:.5px}
+.footer-links a:hover{color:var(--gold)}
+.page-footer p{color:var(--muted);font-size:12px;letter-spacing:1px;margin-bottom:6px}
+.footer-disclaimer{font-size:11px;opacity:.7;max-width:520px;margin:0 auto}
 
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes lunaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -186,311 +323,194 @@ footer p{color:var(--muted);font-size:12px;letter-spacing:1px}
 </head>
 <body>
 
-<div class="stars" id="starsContainer"></div>
+<a href="#main-content" class="skip-link" id="skipLink">Vai al contenuto principale</a>
+
+<div class="cosmos" aria-hidden="true"></div>
+<div class="stars" id="starsContainer" aria-hidden="true"></div>
 
 <!-- HEADER -->
-<header>
-  <a href="index.html" class="back-link">← Delle Stelle</a>
-  <div class="hero-symbol">⚗️</div>
-  <h1 class="page-title">Alchimia</h1>
-  <div class="page-sub">L'Arte della Trasmutazione</div>
+<header class="page-header">
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+    </div>
+  </div>
+  <div class="hero-symbol" aria-hidden="true">⚗️</div>
+  <h1 class="page-title" id="page-title"></h1>
+  <div class="page-sub" id="page-sub"></div>
   <div class="divider-gold"></div>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
+  </div>
 </header>
 
+<main id="main-content">
 <div class="container">
 
   <!-- ══════════════════════════════════
-       SEZIONE 1 — CENNI STORICI
-  ══════════════════════════════════ -->
-  <section class="section z1">
-    <div class="section-header">
-      <!-- SEGNAPOSTO IMMAGINE — sostituisci src con il percorso reale -->
-      <div class="img-placeholder">
-        <!-- <img src="images/alchimia/storia-alchimia.webp" alt="Storia dell'Alchimia"> -->
-        <span class="ph-icon">🏛️</span>
-        <span class="ph-label">images/alchimia/<br>storia-alchimia.webp</span>
-      </div>
-      <div class="section-eyebrow">Origini & Storia</div>
-      <h2 class="section-title">L'Arte Sacra delle Origini</h2>
-      <p class="section-intro">Dalla Mesopotamia agli alambicchi medievali, un viaggio di tremila anni alla ricerca dell'eterno.</p>
-    </div>
-
-    <p class="prose">L'alchimia è una delle tradizioni esoterico-scientifiche più antiche dell'umanità. Le sue radici affondano nell'<em>Egitto ellenistico</em> del III secolo a.C., dove la parola stessa — dal greco <em>khemeia</em>, e poi dall'arabo <em>al-kīmiyāʾ</em> — rimandava all'arte segreta della terra nera: la fertile terra del Nilo, simbolo di morte e rinascita.</p>
-
-    <p class="prose">I primi testi alchemici conosciuti provengono dalla Biblioteca di Alessandria. Erano attribuiti a <em>Zosimo di Panopoli</em> (III-IV sec. d.C.), il primo autore alchemico di cui si abbiano opere certe. Scriveva di visioni, di angeli che trasmutavano il metallo in oro, di fornaci come altari e di laboratori come templi. Per lui l'alchimia non era chimica: era teologia incarnata nella materia.</p>
-
-    <div class="highlight">
-      <h4>📜 La Tavola di Smeraldo</h4>
-      <p>Il testo fondante dell'alchimia occidentale è attribuito a <em>Ermete Trismegisto</em> — figura leggendaria fusione del dio egizio Thoth e del greco Hermes. La Tavola di Smeraldo, redatta tra il VI e l'VIII secolo d.C., enuncia il principio universale: <em>"Ciò che è in alto è come ciò che è in basso."</em> Quindici righe che hanno guidato secoli di speculazione filosofica e pratica di laboratorio.</p>
-    </div>
-
-    <p class="prose">Con la traduzione araba dei testi greci tra l'VIII e il X secolo, l'alchimia divenne la scienza madre del mondo islamico. <em>Jabir ibn Hayyan</em> (noto in occidente come Geber) sistematizzò teorie sui quattro elementi, sui sette metalli planetari e sulla pietra filosofale. I suoi laboratori a Kufa e Baghdad produssero scoperte reali: l'acido solforico, l'acido nitrico, il cloruro di ammonio.</p>
-
-    <p class="prose">Nel Medioevo europeo, l'alchimia si diffuse attraverso le scuole di traduzione di Toledo e Salerno. Divenne disciplina ambigua: praticata nei conventi, vietata dai papi, finanziata dai re. Era simultaneamente <em>proto-chimica</em>, filosofia naturale, spiritualità ermetica e frode. Questo doppio volto — scienza e mistica, onestà e impostura — non è un difetto: è la sua natura più profonda.</p>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SEZIONE 2 — CHI HA TENTATO DI CREARE L'ORO
-  ══════════════════════════════════ -->
-  <section class="section z1">
-    <div class="section-header">
-      <div class="img-placeholder">
-        <!-- <img src="images/alchimia/pietra-filosofale.webp" alt="La Pietra Filosofale"> -->
-        <span class="ph-icon">🔮</span>
-        <span class="ph-label">images/alchimia/<br>pietra-filosofale.webp</span>
-      </div>
-      <div class="section-eyebrow">La Grande Impresa</div>
-      <h2 class="section-title">La Caccia all'Oro: Chi Ci Provò Davvero</h2>
-      <p class="section-intro">Imperatori, monaci, filosofi e ciarlatani. La storia dei tentativi di trasmutare i metalli vili in oro puro.</p>
-    </div>
-
-    <div class="gold-attempt">
-      <span class="gold-attempt-num">I</span>
-      <div class="gold-attempt-text">
-        <h4>Rodolfo II d'Asburgo — L'Imperatore Ossessionato (1576–1612)</h4>
-        <p>L'imperatore del Sacro Romano Impero trasformò il castello di Praga in un laboratorio alchemico a cielo aperto. Convocò a corte decine di alchimisti da tutta Europa, finanziandoli a vita in cambio della promessa dell'oro. Edward Kelley, John Dee, Michael Sendivogius — tutti passarono per Praga. Rodolfo non vide mai l'oro, ma le sue spese finanziarono indirettamente importanti scoperte chimiche e astronomiche: Tycho Brahe e Keplero lavorarono alla sua corte.</p>
-      </div>
-    </div>
-
-    <div class="gold-attempt">
-      <span class="gold-attempt-num">II</span>
-      <div class="gold-attempt-text">
-        <h4>Enrico VI d'Inghilterra — La Corona in Cerca d'Oro (1440)</h4>
-        <p>Tormentato da debiti di guerra, Enrico VI emanò nel 1440 una serie di regie patenti che autorizzavano specificamente la pratica alchemica — cosa rara, poiché la trasmutazione era solitamente illegale (chi avesse prodotto oro avrebbe minato la moneta reale). Il re sperò che i suoi alchimisti potessero finanziare la guerra dei Cent'Anni. Nessun oro fu mai prodotto; il regno cadde in bancarotta.</p>
-      </div>
-    </div>
-
-    <div class="gold-attempt">
-      <span class="gold-attempt-num">III</span>
-      <div class="gold-attempt-text">
-        <h4>La Truffa di James Price (1782)</h4>
-        <p>James Price era un chimico rispettabile, membro della Royal Society britannica. Nel 1782 annunciò di aver prodotto oro da mercurio usando una polvere rossa e una bianca misteriose, davanti a testimoni aristocratici. La Royal Society, incerta tra il credere e lo smascherarlo, lo convocò per una dimostrazione pubblica. Price, che sapeva che la frode sarebbe stata scoperta, bevve acido prussico di fronte ai commissari e morì davanti a loro. L'oro era falso. La storia vera era la disperazione di un uomo preso nella propria menzogna.</p>
-      </div>
-    </div>
-
-    <div class="gold-attempt">
-      <span class="gold-attempt-num">IV</span>
-      <div class="gold-attempt-text">
-        <h4>Isaac Newton — Il Genio Segreto (1666–1696)</h4>
-        <p>Uno dei più grandi scienziati della storia dedicò più tempo all'alchimia che alla fisica. I suoi manoscritti alchemici — oltre un milione di parole rimaste inedite per secoli — mostrano un Newton ossessionato dalla pietra filosofale e dalla materia prima. Credeva che l'oro potesse essere estratto dal piombo attraverso una serie di operazioni che oggi chiameremmo trasmutazione nucleare. Aveva ragione sul principio: fisicamente impossibile con le sue tecniche, ma corretto teoricamente. Nel 1980, scienziati russi sintetizzarono oro stabile da bismuto bombardandolo con protoni. Newton aspettava qualcosa di simile.</p>
-      </div>
-    </div>
-
-    <div class="highlight">
-      <h4>⚛️ L'Ironia della Storia Moderna</h4>
-      <p>Nel 1924 il fisico Fritz Haber, premio Nobel per la chimica, cercò di estrarre oro dall'acqua di mare per pagare le riparazioni di guerra della Germania. Scoprì che l'oro era presente nell'oceano, ma in concentrazioni così basse da rendere l'estrazione uneconomica. Più tardi, nel laboratorio Glenn T. Seaborg nel 1980, scienziati del Lawrence Berkeley Laboratory trasmutarono fisicamente bismuto in oro — producendo quantità infinitesimali, a un costo milioni di volte superiore al valore del metallo ottenuto. L'oro era possibile. Era solo inutile.</p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SEZIONE 3 — GLI ALCHIMISTI PIÙ FAMOSI
-  ══════════════════════════════════ -->
-  <section class="section z1">
-    <div class="section-header">
-      <div class="img-placeholder">
-        <!-- <img src="images/alchimia/alchimisti-famosi.webp" alt="Alchimisti Famosi"> -->
-        <span class="ph-icon">🧙</span>
-        <span class="ph-label">images/alchimia/<br>alchimisti-famosi.webp</span>
-      </div>
-      <div class="section-eyebrow">I Maestri</div>
-      <h2 class="section-title">Gli Alchimisti più Celebri della Storia</h2>
-      <p class="section-intro">Visionari, filosofi, scienziati e mistici. Le figure che hanno definito l'arte della trasmutazione.</p>
-    </div>
-
-    <div class="alchemist-grid">
-
-      <div class="alc-card">
-        <!-- SEGNAPOSTO: sostituisci con <img src="images/alchimia/jabir-ibn-hayyan.webp" alt="Jabir ibn Hayyan"> -->
-        <div class="alc-card-img">
-          <span class="ph-icon">⚗️</span>
-          <span class="ph-label">jabir-ibn-hayyan.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Jabir ibn Hayyan</div>
-          <div class="alc-dates">721 – 815 d.C. · Kufa, Iraq</div>
-          <p class="alc-desc">Conosciuto in Occidente come <strong>Geber</strong>, è il padre dell'alchimia araba e, per molti versi, della chimica sperimentale. Scrisse oltre tremila testi. Distinse per primo tra sostanze che bruciano (solfuri) e sostanze che non bruciano (metalli). Sviluppò tecniche di distillazione, cristallizzazione e calcinazione ancora usate. Il suo sistema dei sette metalli planetari — ognuno governato da un pianeta e dotato di proprietà spirituali — è il cuore della cosmologia alchemica medievale.</p>
-          <div class="alc-claim"><strong>La sua impresa:</strong> Prima sintesi documentata di acido solforico e acido nitrico. Scoprì l'acqua regia, l'unico acido capace di sciogliere l'oro.</div>
-        </div>
-      </div>
-
-      <div class="alc-card">
-        <div class="alc-card-img">
-          <span class="ph-icon">🌹</span>
-          <span class="ph-label">nicolas-flamel.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Nicolas Flamel</div>
-          <div class="alc-dates">1330 – 1418 · Pontoise, Francia</div>
-          <p class="alc-desc">Notaio e libraio parigino, Flamel divenne la leggenda alchemica più duratura della storia. Secondo la tradizione, acquistò un misterioso libro ebraico — il <em>Libro di Abramo l'Ebreo</em> — e dopo vent'anni di studio riuscì a decifrarne i segreti, ottenendo la Pietra Filosofale nel 1382. Da notaio di modesta fortuna divenne improvvisamente ricchissimo, finanziò chiese, ospedali e fondazioni caritatevoli. Alla sua morte, la sua tomba fu aperta dai cercatori di tesori: era vuota. Si disse che lui e sua moglie Pernelle fossero immortali.</p>
-          <div class="alc-claim"><strong>Il mistero:</strong> I documenti storici confermano la sua ricchezza improvvisa e le sue donazioni. L'origine della fortuna rimane inspiegata. La leggenda è sopravvissuta sette secoli.</div>
-        </div>
-      </div>
-
-      <div class="alc-card">
-        <div class="alc-card-img">
-          <span class="ph-icon">🔬</span>
-          <span class="ph-label">paracelso.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Paracelso</div>
-          <div class="alc-dates">1493 – 1541 · Einsiedeln, Svizzera</div>
-          <p class="alc-desc">Philippus Aureolus Theophrastus Bombastus von Hohenheim — che si ribattezzò <em>Paracelso</em> (oltre Celso, il grande medico romano) — fu il più rivoluzionario degli alchimisti. Bruciò pubblicamente i testi di Galeno e Avicenna. Affermò che lo scopo dell'alchimia non era fare oro ma produrre medicine. Inventò l'uso di composti di zinco, rame, arsenico e laudano in terapia. La farmacologia moderna gli deve più di quanto voglia ammettere. Era insieme genio e pazzo: alcolista, vagabondo, provocatore, ma le sue intuizioni sulla chimica del corpo umano anticiparono la biochimica di secoli.</p>
-          <div class="alc-claim"><strong>La sua rivoluzione:</strong> Spostò l'obiettivo dell'alchimia dalla produzione di oro alla creazione di medicinali. Fondò la iatrochimica — la medicina chimica — antenata della farmacologia.</div>
-        </div>
-      </div>
-
-      <div class="alc-card">
-        <div class="alc-card-img">
-          <span class="ph-icon">🔭</span>
-          <span class="ph-label">isaac-newton.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Isaac Newton</div>
-          <div class="alc-dates">1643 – 1727 · Woolsthorpe, Inghilterra</div>
-          <p class="alc-desc">L'inventore del calcolo infinitesimale, scopritore della gravitazione universale, padre dell'ottica moderna. Ma anche: alchimista clandestino per trent'anni. Newton custodì i suoi esperimenti alchemici con ossessiva segretezza, terrorizzato dalle conseguenze legali (la produzione di oro era tecnicamente reato in Inghilterra). Credeva che l'universo fosse animato da forze attive e spirituali — non solo meccaniche — e che l'alchimia rivelasse la grammatica nascosta di quelle forze. Il suo "aether" gravitazionale ha radici ermetiche.</p>
-          <div class="alc-claim"><strong>Il paradosso:</strong> John Maynard Keynes, che comprò all'asta i manoscritti alchemici di Newton nel 1936, scrisse: "Newton non fu il primo dell'Età della Ragione. Fu l'ultimo dei maghi."</div>
-        </div>
-      </div>
-
-      <div class="alc-card">
-        <div class="alc-card-img">
-          <span class="ph-icon">👁️</span>
-          <span class="ph-label">edward-kelley.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Edward Kelley</div>
-          <div class="alc-dates">1555 – 1597 · Worcester, Inghilterra</div>
-          <p class="alc-desc">Mago, veggente, ciarlatano o genio? Edward Kelley collaborò per anni con il matematico ed astrologo reale John Dee, comunicando con gli angeli attraverso una sfera di cristallo. Affermò di possedere la vera polvere filosofale — e dimostrò la trasmutazione di metallo in oro davanti a testimoni aristocratici a Praga. Rodolfo II lo imprigionò due volte per ottenere il segreto. Kelley morì cercando di fuggire dalla finestra della torre. Nessuno sa ancora con certezza se le sue trasmutazioni fossero frodi o qualcosa di diverso.</p>
-          <div class="alc-claim"><strong>L'enigma:</strong> Il resoconto delle sue trasmutazioni fu testimoniato da persone attendibili, tra cui il medico di corte imperiale. Le analisi moderne sui documenti storici non sono conclusive.</div>
-        </div>
-      </div>
-
-      <div class="alc-card">
-        <div class="alc-card-img">
-          <span class="ph-icon">🌊</span>
-          <span class="ph-label">zosimo-panopoli.webp</span>
-        </div>
-        <div class="alc-card-body">
-          <div class="alc-name">Zosimo di Panopoli</div>
-          <div class="alc-dates">III–IV sec. d.C. · Panopoli, Egitto</div>
-          <p class="alc-desc">Il più antico autore alchemico identificabile. Nei suoi testi — scritti in greco e sopravvissuti parzialmente — l'alchimia è già pienamente formata come fusione di tecnica e mistica. Zosimo descrive visioni: un sacerdote che viene divorato, bollito, calcinato e poi risorge trasformato — allegoria del processo alchemico come morte e rinascita. Le sue istruzioni pratiche per la distillazione, la sublimazione e la fermentazione sono sorprendentemente accurate. Fu il primo a distinguere tra alchimia come pratica materiale e alchimia come trasformazione interiore.</p>
-          <div class="alc-claim"><strong>L'eredità:</strong> Jung studiò i testi di Zosimo intensamente, vedendovi la prima elaborazione sistematica dell'inconscio collettivo in linguaggio simbolico-materiale.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SEZIONE 4 — MITOLOGIA
-  ══════════════════════════════════ -->
-  <section class="section z1">
-    <div class="section-header">
-      <div class="img-placeholder">
-        <!-- <img src="images/alchimia/mitologia-alchimia.webp" alt="Mitologia Alchemica"> -->
-        <span class="ph-icon">🐉</span>
-        <span class="ph-label">images/alchimia/<br>mitologia-alchimia.webp</span>
-      </div>
-      <div class="section-eyebrow">Miti & Simboli</div>
-      <h2 class="section-title">Le Mitologie dell'Alchimia</h2>
-      <p class="section-intro">Le grandi narrazioni sacre che hanno dato forma al linguaggio simbolico della Grande Opera.</p>
-    </div>
-
-    <div class="myth-grid">
-
-      <div class="myth-card">
-        <div class="myth-card-img">
-          <span class="ph-icon">🔥</span>
-          <span class="ph-label">ermete-trismegisto.webp</span>
-        </div>
-        <div class="myth-card-body">
-          <div class="myth-title">Ermete Trismegisto e il Corpus Hermeticum</div>
-          <div class="myth-origin">Egitto ellenistico · II–III sec. d.C.</div>
-          <p class="myth-desc">Ermete Trismegisto — "Thrice-Great Hermes", il tre volte grande — è la figura fondatrice dell'ermetismo e dell'alchimia occidentale. Metà umano e metà divino, avrebbe rivelato all'umanità i segreti della creazione attraverso il Corpus Hermeticum: una serie di dialoghi tra maestro e discepolo sulla natura dell'anima, della materia, del tempo e di Dio. Il Rinascimento lo credette contemporaneo di Mosè — un errore cronologico che però ne amplificò enormemente l'autorità. La sua formula più celebre, <em>"Come in alto, così in basso"</em>, rimane il principio operativo dell'astrologia, dell'alchimia e della magia cerimoniale ancora oggi.</p>
-        </div>
-      </div>
-
-      <div class="myth-card">
-        <div class="myth-card-img">
-          <span class="ph-icon">🐍</span>
-          <span class="ph-label">ouroboros.webp</span>
-        </div>
-        <div class="myth-card-body">
-          <div class="myth-title">L'Ouroboros — Il Serpente che Si Morde la Coda</div>
-          <div class="myth-origin">Egitto antico · XIV sec. a.C.</div>
-          <p class="myth-desc">Il serpente o drago che si divora la propria coda è uno dei simboli più antichi e universali dell'umanità. Compare nella tomba di Tutankhamon, nei testi gnostici, nell'alchimia medievale, nella filosofia greca (come simbolo dell'eterno ritorno di Eraclito), nel buddhismo e nei miti nordici (il serpente Jörmungandr). Per gli alchimisti rappresentava il ciclo infinito della materia: dissoluzione e coagulazione, morte e rinascita, nigredo e rubedo. È anche il simbolo della Pietra Filosofale — che contiene in sé tutti i contrari riconciliati. Jung lo identificò come immagine dell'inconscio che si auto-consuma e si auto-rigenera.</p>
-        </div>
-      </div>
-
-      <div class="myth-card">
-        <div class="myth-card-img">
-          <span class="ph-icon">⚗️</span>
-          <span class="ph-label">rebis.webp</span>
-        </div>
-        <div class="myth-card-body">
-          <div class="myth-title">Il Rebis — L'Androgino Alchemico</div>
-          <div class="myth-origin">Alchimia medievale europea · XII–XVII sec.</div>
-          <p class="myth-desc">Il Rebis (dal latino <em>res bina</em>, la cosa doppia) è la figura che coronava il processo alchemico: un essere androgino, metà uomo e metà donna, che reggeva in una mano il sole e nell'altra la luna, in piedi su un drago. Rappresentava la coniunctio oppositorum — l'unione dei contrari — che produceva la Pietra Filosofale. Non era solo simbolo chimico: era l'immagine dell'essere umano completato, che aveva integrato le polarità maschile e femminile, conscio e inconscio, spirituale e materiale. Nel Rebis l'alchimia si rivela esplicitamente come psicologia del profondo travestita da metallurgia.</p>
-        </div>
-      </div>
-
-      <div class="myth-card">
-        <div class="myth-card-img">
-          <span class="ph-icon">🦅</span>
-          <span class="ph-label">fenice-alchimia.webp</span>
-        </div>
-        <div class="myth-card-body">
-          <div class="myth-title">La Fenice — Il Fuoco che Rigenera</div>
-          <div class="myth-origin">Egitto, Grecia, Arabia, Cina · mitologia universale</div>
-          <p class="myth-desc">L'uccello che muore nel fuoco e rinasce dalle proprie ceneri è il mito alchemico per eccellenza. In Egitto era il Bennu — l'uccello sacro di Ra che si posava sulla pietra primordiale Benben. In Grecia divenne la Fenice, che viveva cinquecento anni prima di costruirsi un nido di cannella, incendiarsi, e rinascere giovane. Per gli alchimisti la Fenice era la rubedo — la fase rossa finale del processo, dove la materia "morta" nella nigredo tornava come sostanza incorruttibile e luminosa. Ma era anche un modello per l'iniziato: occorre lasciarsi bruciare per rinascere trasformati. Il fuoco non distrugge ciò che è essenziale.</p>
-        </div>
-      </div>
-
-      <div class="myth-card">
-        <div class="myth-card-img">
-          <span class="ph-icon">🌑</span>
-          <span class="ph-label">saturno-kronos.webp</span>
-        </div>
-        <div class="myth-card-body">
-          <div class="myth-title">Saturno e il Piombo Primordiale</div>
-          <div class="myth-origin">Mitologia greco-romana · alchimia planetaria</div>
-          <p class="myth-desc">Saturno/Kronos, il dio del tempo e della dissoluzione, era associato al piombo — il metallo più pesante e più vile del sistema planetario alchemico. Regnava sulla nigredo, la fase oscura e crudele del processo. Ma proprio perché Saturno divora i suoi figli (come nel celebre dipinto di Goya), il piombo porta in sé la materia prima di tutti gli altri metalli: contiene l'oro nella sua oscurità, come il dolore contiene la saggezza. Nell'alchimia, lavorare con il piombo significa confrontarsi con la propria ombra più profonda. È il lavoro che nessuno vuole fare — e per questo è il più necessario.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SEZIONE ORACOLO — LA GRANDE OPERA
+       SEZIONE INTERATTIVA — ORACOLO (SEMPRE IN CIMA)
   ══════════════════════════════════ -->
   <div class="oracle-section z1" id="oracolo">
-    <h2>⚗️ Consulta la Grande Opera</h2>
-    <p>Scegli la fase alchemica che rispecchia il tuo momento interiore</p>
+    <h2 id="oracTitle"></h2>
+    <p id="oracSubtitle"></p>
 
-    <!-- Tabs fasi -->
-    <div class="tabs">
-      <button class="tab-btn active" id="alchTab0" onclick="alchSelStage(0)"><span class="tab-emoji">🌑</span>Nigredo</button>
-      <button class="tab-btn" id="alchTab1" onclick="alchSelStage(1)"><span class="tab-emoji">🌕</span>Albedo</button>
-      <button class="tab-btn" id="alchTab2" onclick="alchSelStage(2)"><span class="tab-emoji">🌞</span>Citrinitas</button>
-      <button class="tab-btn" id="alchTab3" onclick="alchSelStage(3)"><span class="tab-emoji">🔴</span>Rubedo</button>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" id="alchTab0" onclick="alchSelStage(0)" role="tab" aria-selected="true"><span class="tab-emoji" aria-hidden="true">🌑</span><span id="alchTabLabel0"></span></button>
+      <button class="tab-btn" id="alchTab1" onclick="alchSelStage(1)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌕</span><span id="alchTabLabel1"></span></button>
+      <button class="tab-btn" id="alchTab2" onclick="alchSelStage(2)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌞</span><span id="alchTabLabel2"></span></button>
+      <button class="tab-btn" id="alchTab3" onclick="alchSelStage(3)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🔴</span><span id="alchTabLabel3"></span></button>
     </div>
 
-    <textarea id="alchDomanda" placeholder="✍️ Domanda o situazione da esplorare (opzionale)…" rows="3"></textarea>
+    <label for="alchDomanda" class="sr-only" style="position:absolute;left:-9999px">Domanda</label>
+    <textarea id="alchDomanda" rows="3"></textarea>
 
     <div class="btn-grp" id="alchFormBtns">
-      <button class="btn btn-sec" onclick="alchRandom()">🎲 Fase Casuale</button>
-      <button class="btn" onclick="calcAlchimia()">⚗️ Rivela la Fase</button>
+      <button class="btn btn-sec" onclick="alchRandom()" id="alchBtnRandom"></button>
+      <button class="btn" onclick="calcAlchimia()" id="alchBtnReveal"></button>
     </div>
 
-    <div class="result-card" id="alchResult"></div>
+    <div class="result-card" id="alchResult" aria-live="polite"></div>
   </div>
 
-</div>
+  <!-- ══════════════════════════════════
+       SHARE
+  ══════════════════════════════════ -->
+  <div class="share-section z1">
+    <button class="btn-share" onclick="shareContent()" id="shareBtn">📤 Condividi</button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+    </div>
+  </div>
 
-<footer>
-  <p>⚗️ Delle Stelle · L'Arte della Trasmutazione</p>
+  <!-- ══════════════════════════════════
+       ARTICOLO EDITORIALE — ORIGINI & STORIA
+  ══════════════════════════════════ -->
+  <article class="article-section z1">
+    <div class="section-header">
+      <div class="img-placeholder" id="phStoria" role="img">
+        <img src="./images/alchimia/storia-alchimia.webp"
+             srcset="./images/alchimia/storia-alchimia.webp 1x, ./images/alchimia/storia-alchimia@2x.webp 2x"
+             id="art-hero" width="200" height="200" loading="eager" decoding="async" alt=""
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px"
+             onerror="this.style.display='none'">
+        <span class="ph-icon" aria-hidden="true">🏛️</span>
+        <span class="ph-label">images/alchimia/<br>storia-alchimia.webp</span>
+      </div>
+      <div class="section-eyebrow" id="storiaEyebrow"></div>
+    </div>
+
+    <h2 id="art-title"></h2>
+    <h3 id="art-h2"></h3>
+    <p id="art-p1"></p>
+    <p id="art-p2"></p>
+
+    <div class="highlight">
+      <h4 id="art-highlight-title"></h4>
+      <p id="art-highlight-text"></p>
+    </div>
+
+    <h3 id="art-h3"></h3>
+    <p id="art-p3"></p>
+    <p id="art-p4"></p>
+    <p id="art-p5"></p>
+
+    <nav class="article-links" id="articleLinks" aria-label="Link correlati"></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  </article>
+
+  <!-- ══════════════════════════════════
+       LA CACCIA ALL'ORO
+  ══════════════════════════════════ -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="img-placeholder" role="img" id="phOro">
+        <span class="ph-icon" aria-hidden="true">🔮</span>
+        <span class="ph-label">images/alchimia/<br>pietra-filosofale.webp</span>
+      </div>
+      <div class="section-eyebrow" id="oroEyebrow"></div>
+      <h2 class="section-title" id="oroTitle"></h2>
+      <p class="section-intro" id="oroIntro"></p>
+    </div>
+    <div id="oroList"></div>
+    <div class="highlight">
+      <h4 id="oroHighlightTitle"></h4>
+      <p id="oroHighlightText"></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ALCHIMISTI PIÙ FAMOSI
+  ══════════════════════════════════ -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="img-placeholder" role="img" id="phAlchimisti">
+        <span class="ph-icon" aria-hidden="true">🧙</span>
+        <span class="ph-label">images/alchimia/<br>alchimisti-famosi.webp</span>
+      </div>
+      <div class="section-eyebrow" id="alcEyebrow"></div>
+      <h2 class="section-title" id="alcTitle"></h2>
+      <p class="section-intro" id="alcIntro"></p>
+    </div>
+    <div class="alchemist-grid" id="alcGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MITOLOGIA
+  ══════════════════════════════════ -->
+  <section class="section z1">
+    <div class="section-header">
+      <div class="img-placeholder" role="img" id="phMiti">
+        <span class="ph-icon" aria-hidden="true">🐉</span>
+        <span class="ph-label">images/alchimia/<br>mitologia-alchimia.webp</span>
+      </div>
+      <div class="section-eyebrow" id="mitiEyebrow"></div>
+      <h2 class="section-title" id="mitiTitle"></h2>
+      <p class="section-intro" id="mitiIntro"></p>
+    </div>
+    <div class="myth-grid" id="mitiGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FAQ
+  ══════════════════════════════════ -->
+  <section class="faq-section z1">
+    <h2 class="faq-title" id="faqSectionTitle"></h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+</div>
+</main>
+
+<footer class="page-footer">
+  <nav class="footer-links">
+    <a href="./index.html" id="footNavHome"></a>
+    <a href="./contatti.html" id="footNavContact"></a>
+    <a href="./about.html" id="footNavAbout"></a>
+    <a href="./privacy.html" id="footNavPrivacy"></a>
+  </nav>
+  <p id="footer-copy"></p>
+  <p id="footer-disclaimer" class="footer-disclaimer"></p>
 </footer>
+
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
 
 <script>
 /* ── STARFIELD ── */
@@ -505,111 +525,913 @@ footer p{color:var(--muted);font-size:12px;letter-spacing:1px}
 })();
 
 const $=id=>document.getElementById(id);
+const PAGE_URL='https://mysticaoracoli.it/alchimia.html';
 
-/* ── DB ALCHIMIA ── */
-const DB_ALCHIMIA=[
-  {
-    key:'nigredo',stage:'🌑 Nigredo',sottotitolo:'Crisi, Dissoluzione & Oscurità Creativa',
-    pianeta:'Saturno',metallo:'Piombo',colore:'Nero',erba:'Assenzio',simbolo:'🜔',
-    desc:'La Nigredo è la prima e più difficile fase della Grande Opera. Il piombo dell\'ego viene disciolto nel crogiolo dell\'esperienza. Non è una crisi — è una gestazione. Come il compost trasforma i rifiuti in nutrimento, la nigredo trasforma il dolore in saggezza. Le tue ombre emergono non per tormentarti, ma per essere riconosciute, integrate e trasmutate. Il Mago non fugge dalla nigredo: ci nuota dentro, sicuro che ogni dissoluzione precede una rinascita più autentica.',
-    luci:'Profondità interiore rara, capacità di stare nel disagio senza fuggire, onestà brutale con se stessi, terreno fertile per la trasformazione.',
-    ombre:'Rischio di identificarsi con la crisi, auto-sabotaggio, depressione se non si vede la luce alla fine del processo.',
-    prescrizione:'Scrivi su carta le 3 cose che stai dissolvendoti da te. Bruciala in sicurezza mentre dici: "Consegno questo al fuoco che trasforma." Seppellisci le ceneri. La dissoluzione è già quasi completata.',
-    meditazione:'Siediti nel buio per 10 minuti. Respira la notte. Senti il vuoto non come assenza ma come potenziale assoluto. Sei nel grembo del cambiamento.',
-    arcano:'Il Giudizio — La chiamata alla resurrezione'
+/* ══════════════════════════════════════════════
+   LANG — IT / EN / ES — CONTENUTO COMPLETO
+══════════════════════════════════════════════ */
+const LANG = {
+  it: {
+    skipLink: 'Vai al contenuto principale',
+    back: '← Torna alla Home',
+    music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
+    theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+    pageTitle: 'Alchimia',
+    pageSub: "L'Arte della Trasmutazione",
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutte le sezioni di MYSTICA Oracoli.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho scoperto la mia fase alchemica su MYSTICA Oracoli: nigredo, albedo, citrinitas o rubedo? Scopri anche tu la tua Grande Opera interiore ⚗️',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracoli è una piattaforma dedicata a intrattenimento, crescita personale e approfondimento delle tradizioni esoteriche. I contenuti non sostituiscono consulenza medica, psicologica, legale o finanziaria professionale.',
+    footerNav: { home: 'Home', contact: 'Contatti', about: 'Chi Siamo', privacy: 'Privacy' },
+
+    seo: {
+      title: 'Alchimia: Storia, Fasi (Nigredo, Albedo, Rubedo) e Oracolo | MYSTICA Oracoli',
+      description: 'Scopri la storia dell\u2019alchimia, i grandi alchimisti da Jabir ibn Hayyan a Newton, i miti della Grande Opera e consulta l\u2019oracolo delle quattro fasi alchemiche.',
+      keywords: 'alchimia, nigredo, albedo, citrinitas, rubedo, pietra filosofale, alchimisti famosi, grande opera, ermetismo, mysticaoracoli',
+      ogTitle: 'Alchimia — La Grande Opera e le Sue Quattro Fasi',
+      ogDesc: 'Storia, alchimisti, miti e l\u2019oracolo interattivo della Grande Opera alchemica.',
+      ogLocale: 'it_IT',
+      htmlLang: 'it',
+      faqLD: [
+        { q: 'Cos\u2019è l\u2019alchimia e qual è il suo scopo reale?', a: 'L\u2019alchimia è una tradizione esoterico-scientifica nata nell\u2019Egitto ellenistico che combina pratica di laboratorio e trasformazione spirituale. Il suo scopo dichiarato era trasmutare i metalli vili in oro, ma il suo scopo più profondo era la trasformazione interiore dell\u2019alchimista stesso, attraverso un processo simbolico in quattro fasi.' },
+        { q: 'Cosa rappresentano nigredo, albedo, citrinitas e rubedo?', a: 'Sono le quattro fasi della Grande Opera alchemica: la nigredo è dissoluzione e crisi, l\u2019albedo è purificazione e chiarezza, la citrinitas è risveglio dell\u2019intuizione, la rubedo è l\u2019unione finale dei contrari, simboleggiata dalla Pietra Filosofale.' },
+        { q: 'Qualcuno è mai realmente riuscito a trasformare il piombo in oro?', a: 'Nessun alchimista storico vi riuscì con i metodi dell\u2019epoca. Solo nel 1980, al Lawrence Berkeley Laboratory, fu trasmutato del bismuto in oro tramite reazioni nucleari, in quantità infinitesimali e a un costo enormemente superiore al valore del metallo ottenuto.' },
+        { q: 'Qual è la differenza tra alchimia e chimica moderna?', a: 'La chimica moderna, nata nel Settecento con Lavoisier, si occupa esclusivamente della trasformazione fisica della materia misurabile. L\u2019alchimia, invece, univa la ricerca materiale a una cosmologia simbolica e spirituale: ogni operazione di laboratorio rifletteva un processo interiore parallelo.' },
+        { q: 'Perché Carl Jung si interessò così tanto all\u2019alchimia?', a: 'Jung vide nei testi alchemici, in particolare in quelli di Zosimo di Panopoli, la prima elaborazione sistematica del processo di individuazione: la trasmutazione della materia grezza in oro rispecchiava simbolicamente l\u2019integrazione psichica dell\u2019inconscio.' },
+        { q: 'Come si usa l\u2019oracolo delle fasi alchemiche di MYSTICA?', a: 'Scegli la fase che rispecchia il tuo momento attuale tra le quattro schede in alto, scrivi facoltativamente la tua domanda e premi "Rivela la Fase" per ricevere descrizione, doni, ombre, prescrizione ermetica e meditazione associati.' }
+      ]
+    },
+
+    artTitle: "L'Arte Sacra delle Origini",
+    artH2: "Le Origini nell'Antico Egitto e nel Mondo Ellenistico",
+    artH3: 'Dal Mondo Islamico alla Scienza Moderna',
+    artImgAlt: "Antico laboratorio alchemico con alambicchi, simboli ermetici e la Tavola di Smeraldo",
+    storiaEyebrow: 'Origini & Storia',
+
+    artP1: "L'alchimia è una delle tradizioni esoterico-scientifiche più antiche dell'umanità. Le sue radici affondano nell'Egitto ellenistico del III secolo a.C., dove la parola stessa — dal greco khemeia, e poi dall'arabo al-kīmiyāʾ — rimandava all'arte segreta della terra nera: la fertile terra del Nilo, simbolo di morte e rinascita. Per tremila anni questa disciplina ha attraversato culture e continenti, mutando forma senza mai perdere il suo nucleo simbolico più profondo: la trasformazione della materia come specchio della trasformazione dell'anima. Nessun'altra tradizione ha saputo tenere insieme, per così tanto tempo, il rigore del laboratorio e la profondità della ricerca spirituale.",
+    artP2: "I primi testi alchemici conosciuti provengono dalla Biblioteca di Alessandria. Erano attribuiti a Zosimo di Panopoli (III-IV sec. d.C.), il primo autore alchemico di cui si abbiano opere certe. Scriveva di visioni, di angeli che trasmutavano il metallo in oro, di fornaci come altari e di laboratori come templi. Per lui l'alchimia non era chimica: era teologia incarnata nella materia, un dialogo continuo tra il mondo visibile e quello invisibile. Le sue Visioni raccontano di un sacerdote divorato, bollito e calcinato per poi risorgere trasformato — un'allegoria della morte simbolica dell'ego che anticipa di secoli le letture psicologiche moderne dell'alchimia.",
+    artP3: "Con la traduzione araba dei testi greci tra l'VIII e il X secolo, l'alchimia divenne la scienza madre del mondo islamico. Jabir ibn Hayyan (noto in occidente come Geber) sistematizzò teorie sui quattro elementi, sui sette metalli planetari e sulla pietra filosofale. I suoi laboratori a Kufa e Baghdad produssero scoperte reali: l'acido solforico, l'acido nitrico, il cloruro di ammonio, oltre a tecniche di distillazione ancora oggi fondamentali in chimica. La Casa della Sapienza di Baghdad divenne il principale centro mondiale di ricerca alchemica, dove testi greci, persiani e indiani venivano tradotti, confrontati e ampliati da generazioni di studiosi.",
+    artP4: "Nel Medioevo europeo, l'alchimia si diffuse attraverso le scuole di traduzione di Toledo e Salerno. Divenne disciplina ambigua: praticata nei conventi, vietata dai papi, finanziata dai re. Era simultaneamente proto-chimica, filosofia naturale, spiritualità ermetica e frode. Questo doppio volto — scienza e mistica, onestà e impostura — non è un difetto: è la sua natura più profonda, ed è ciò che la distingue nettamente dalla chimica sperimentale che ne ereditò solo la parte materiale. Alberto Magno e Ruggero Bacone la studiarono seriamente, convinti che comprendere la materia significasse avvicinarsi alla comprensione del Creatore.",
+    artP5: "Con Antoine Lavoisier e la rivoluzione chimica del Settecento, la scienza si separò definitivamente dalla mistica: nacque la chimica moderna, quantitativa e priva di simbolismo spirituale. Ma l'eredità psicologica dell'alchimia non si è mai spenta. Nel Novecento Carl Gustav Jung la rilesse come mappa simbolica dell'inconscio, mentre oggi la sua struttura in quattro fasi continua a offrire un linguaggio potente per leggere le crisi e le trasformazioni della vita interiore, distinguendola nettamente da discipline affini come l'astrologia o la cabala, con cui pure condivide radici ermetiche comuni.",
+
+    artHighlightTitle: '📜 La Tavola di Smeraldo',
+    artHighlightText: "Il testo fondante dell'alchimia occidentale è attribuito a Ermete Trismegisto — figura leggendaria fusione del dio egizio Thoth e del greco Hermes. La Tavola di Smeraldo, redatta tra il VI e l'VIII secolo d.C., enuncia il principio universale: \"Ciò che è in alto è come ciò che è in basso.\" Quindici righe che hanno guidato secoli di speculazione filosofica e pratica di laboratorio.",
+
+    internalLinks: [
+      { href: './ermetismo.html', text: 'Approfondisci l\u2019Ermetismo e la Tavola di Smeraldo' },
+      { href: './cabala.html', text: 'Esplora la Cabala e l\u2019Albero della Vita' },
+      { href: './tarocchi.html', text: 'Scopri il significato degli Arcani Maggiori' },
+      { href: './numerologia.html', text: 'Calcola il tuo Numero del Destino' }
+    ],
+
+    oroEyebrow: 'La Grande Impresa',
+    oroTitle: "La Caccia all'Oro: Chi Ci Provò Davvero",
+    oroIntro: 'Imperatori, monaci, filosofi e ciarlatani. La storia dei tentativi di trasmutare i metalli vili in oro puro.',
+    oroHighlightTitle: "⚛️ L'Ironia della Storia Moderna",
+    oroHighlightText: "Nel 1924 il fisico Fritz Haber, premio Nobel per la chimica, cercò di estrarre oro dall'acqua di mare per pagare le riparazioni di guerra della Germania. Scoprì che l'oro era presente nell'oceano, ma in concentrazioni così basse da rendere l'estrazione uneconomica. Più tardi, nel laboratorio Glenn T. Seaborg nel 1980, scienziati del Lawrence Berkeley Laboratory trasmutarono fisicamente bismuto in oro — producendo quantità infinitesimali, a un costo milioni di volte superiore al valore del metallo ottenuto. L'oro era possibile. Era solo inutile.",
+    oroAttempts: [
+      { num: 'I', title: "Rodolfo II d'Asburgo — L'Imperatore Ossessionato (1576–1612)", text: "L'imperatore del Sacro Romano Impero trasformò il castello di Praga in un laboratorio alchemico a cielo aperto. Convocò a corte decine di alchimisti da tutta Europa, finanziandoli a vita in cambio della promessa dell'oro. Edward Kelley, John Dee, Michael Sendivogius — tutti passarono per Praga. Rodolfo non vide mai l'oro, ma le sue spese finanziarono indirettamente importanti scoperte chimiche e astronomiche: Tycho Brahe e Keplero lavorarono alla sua corte." },
+      { num: 'II', title: 'Enrico VI d\u2019Inghilterra — La Corona in Cerca d\u2019Oro (1440)', text: "Tormentato da debiti di guerra, Enrico VI emanò nel 1440 una serie di regie patenti che autorizzavano specificamente la pratica alchemica — cosa rara, poiché la trasmutazione era solitamente illegale (chi avesse prodotto oro avrebbe minato la moneta reale). Il re sperò che i suoi alchimisti potessero finanziare la guerra dei Cent'Anni. Nessun oro fu mai prodotto; il regno cadde in bancarotta." },
+      { num: 'III', title: 'La Truffa di James Price (1782)', text: "James Price era un chimico rispettabile, membro della Royal Society britannica. Nel 1782 annunciò di aver prodotto oro da mercurio usando una polvere rossa e una bianca misteriose, davanti a testimoni aristocratici. La Royal Society, incerta tra il credere e lo smascherarlo, lo convocò per una dimostrazione pubblica. Price, che sapeva che la frode sarebbe stata scoperta, bevve acido prussico di fronte ai commissari e morì davanti a loro. L'oro era falso. La storia vera era la disperazione di un uomo preso nella propria menzogna." },
+      { num: 'IV', title: 'Isaac Newton — Il Genio Segreto (1666–1696)', text: "Uno dei più grandi scienziati della storia dedicò più tempo all'alchimia che alla fisica. I suoi manoscritti alchemici — oltre un milione di parole rimaste inedite per secoli — mostrano un Newton ossessionato dalla pietra filosofale e dalla materia prima. Credeva che l'oro potesse essere estratto dal piombo attraverso una serie di operazioni che oggi chiameremmo trasmutazione nucleare. Aveva ragione sul principio: fisicamente impossibile con le sue tecniche, ma corretto teoricamente. Nel 1980, scienziati russi sintetizzarono oro stabile da bismuto bombardandolo con protoni. Newton aspettava qualcosa di simile." }
+    ],
+
+    alcEyebrow: 'I Maestri',
+    alcTitle: 'Gli Alchimisti più Celebri della Storia',
+    alcIntro: "Visionari, filosofi, scienziati e mistici. Le figure che hanno definito l'arte della trasmutazione.",
+    alcCards: [
+      { icon: '⚗️', label: 'jabir-ibn-hayyan.webp', name: 'Jabir ibn Hayyan', dates: '721 – 815 d.C. · Kufa, Iraq', desc: 'Conosciuto in Occidente come Geber, è il padre dell\u2019alchimia araba e, per molti versi, della chimica sperimentale. Scrisse oltre tremila testi. Distinse per primo tra sostanze che bruciano (solfuri) e sostanze che non bruciano (metalli). Sviluppò tecniche di distillazione, cristallizzazione e calcinazione ancora usate. Il suo sistema dei sette metalli planetari — ognuno governato da un pianeta e dotato di proprietà spirituali — è il cuore della cosmologia alchemica medievale.', claimLabel: 'La sua impresa:', claimText: 'Prima sintesi documentata di acido solforico e acido nitrico. Scoprì l\u2019acqua regia, l\u2019unico acido capace di sciogliere l\u2019oro.' },
+      { icon: '🌹', label: 'nicolas-flamel.webp', name: 'Nicolas Flamel', dates: '1330 – 1418 · Pontoise, Francia', desc: 'Notaio e libraio parigino, Flamel divenne la leggenda alchemica più duratura della storia. Secondo la tradizione, acquistò un misterioso libro ebraico — il Libro di Abramo l\u2019Ebreo — e dopo vent\u2019anni di studio riuscì a decifrarne i segreti, ottenendo la Pietra Filosofale nel 1382. Da notaio di modesta fortuna divenne improvvisamente ricchissimo, finanziò chiese, ospedali e fondazioni caritatevoli. Alla sua morte, la sua tomba fu aperta dai cercatori di tesori: era vuota. Si disse che lui e sua moglie Pernelle fossero immortali.', claimLabel: 'Il mistero:', claimText: 'I documenti storici confermano la sua ricchezza improvvisa e le sue donazioni. L\u2019origine della fortuna rimane inspiegata. La leggenda è sopravvissuta sette secoli.' },
+      { icon: '🔬', label: 'paracelso.webp', name: 'Paracelso', dates: '1493 – 1541 · Einsiedeln, Svizzera', desc: 'Philippus Aureolus Theophrastus Bombastus von Hohenheim — che si ribattezzò Paracelso (oltre Celso, il grande medico romano) — fu il più rivoluzionario degli alchimisti. Bruciò pubblicamente i testi di Galeno e Avicenna. Affermò che lo scopo dell\u2019alchimia non era fare oro ma produrre medicine. Inventò l\u2019uso di composti di zinco, rame, arsenico e laudano in terapia. La farmacologia moderna gli deve più di quanto voglia ammettere.', claimLabel: 'La sua rivoluzione:', claimText: 'Spostò l\u2019obiettivo dell\u2019alchimia dalla produzione di oro alla creazione di medicinali. Fondò la iatrochimica, antenata della farmacologia.' },
+      { icon: '🔭', label: 'isaac-newton.webp', name: 'Isaac Newton', dates: '1643 – 1727 · Woolsthorpe, Inghilterra', desc: 'L\u2019inventore del calcolo infinitesimale, scopritore della gravitazione universale, padre dell\u2019ottica moderna. Ma anche: alchimista clandestino per trent\u2019anni. Newton custodì i suoi esperimenti alchemici con ossessiva segretezza, terrorizzato dalle conseguenze legali. Credeva che l\u2019universo fosse animato da forze attive e spirituali — non solo meccaniche — e che l\u2019alchimia rivelasse la grammatica nascosta di quelle forze.', claimLabel: 'Il paradosso:', claimText: 'John Maynard Keynes, che comprò all\u2019asta i manoscritti alchemici di Newton nel 1936, scrisse: "Newton non fu il primo dell\u2019Età della Ragione. Fu l\u2019ultimo dei maghi."' },
+      { icon: '👁️', label: 'edward-kelley.webp', name: 'Edward Kelley', dates: '1555 – 1597 · Worcester, Inghilterra', desc: 'Mago, veggente, ciarlatano o genio? Edward Kelley collaborò per anni con il matematico ed astrologo reale John Dee, comunicando con gli angeli attraverso una sfera di cristallo. Affermò di possedere la vera polvere filosofale — e dimostrò la trasmutazione di metallo in oro davanti a testimoni aristocratici a Praga. Rodolfo II lo imprigionò due volte per ottenere il segreto. Kelley morì cercando di fuggire dalla finestra della torre.', claimLabel: 'L\u2019enigma:', claimText: 'Il resoconto delle sue trasmutazioni fu testimoniato da persone attendibili, tra cui il medico di corte imperiale. Le analisi moderne sui documenti storici non sono conclusive.' },
+      { icon: '🌊', label: 'zosimo-panopoli.webp', name: 'Zosimo di Panopoli', dates: 'III–IV sec. d.C. · Panopoli, Egitto', desc: 'Il più antico autore alchemico identificabile. Nei suoi testi — scritti in greco e sopravvissuti parzialmente — l\u2019alchimia è già pienamente formata come fusione di tecnica e mistica. Zosimo descrive visioni: un sacerdote che viene divorato, bollito, calcinato e poi risorge trasformato — allegoria del processo alchemico come morte e rinascita. Le sue istruzioni pratiche per la distillazione, la sublimazione e la fermentazione sono sorprendentemente accurate.', claimLabel: 'L\u2019eredità:', claimText: 'Jung studiò i testi di Zosimo intensamente, vedendovi la prima elaborazione sistematica dell\u2019inconscio collettivo in linguaggio simbolico-materiale.' }
+    ],
+
+    mitiEyebrow: 'Miti & Simboli',
+    mitiTitle: "Le Mitologie dell'Alchimia",
+    mitiIntro: 'Le grandi narrazioni sacre che hanno dato forma al linguaggio simbolico della Grande Opera.',
+    mitiCards: [
+      { icon: '🔥', label: 'ermete-trismegisto.webp', title: 'Ermete Trismegisto e il Corpus Hermeticum', origin: 'Egitto ellenistico · II–III sec. d.C.', desc: 'Ermete Trismegisto — "Thrice-Great Hermes", il tre volte grande — è la figura fondatrice dell\u2019ermetismo e dell\u2019alchimia occidentale. Metà umano e metà divino, avrebbe rivelato all\u2019umanità i segreti della creazione attraverso il Corpus Hermeticum. Il Rinascimento lo credette contemporaneo di Mosè — un errore cronologico che però ne amplificò enormemente l\u2019autorità. La sua formula più celebre, "Come in alto, così in basso", rimane il principio operativo dell\u2019astrologia, dell\u2019alchimia e della magia cerimoniale ancora oggi.' },
+      { icon: '🐍', label: 'ouroboros.webp', title: 'L\u2019Ouroboros — Il Serpente che Si Morde la Coda', origin: 'Egitto antico · XIV sec. a.C.', desc: 'Il serpente o drago che si divora la propria coda è uno dei simboli più antichi e universali dell\u2019umanità. Compare nella tomba di Tutankhamon, nei testi gnostici, nell\u2019alchimia medievale, nella filosofia greca, nel buddhismo e nei miti nordici. Per gli alchimisti rappresentava il ciclo infinito della materia: dissoluzione e coagulazione, morte e rinascita, nigredo e rubedo. Jung lo identificò come immagine dell\u2019inconscio che si auto-consuma e si auto-rigenera.' },
+      { icon: '⚗️', label: 'rebis.webp', title: "Il Rebis — L'Androgino Alchemico", origin: 'Alchimia medievale europea · XII–XVII sec.', desc: 'Il Rebis (dal latino res bina, la cosa doppia) è la figura che coronava il processo alchemico: un essere androgino, metà uomo e metà donna, che reggeva in una mano il sole e nell\u2019altra la luna, in piedi su un drago. Rappresentava la coniunctio oppositorum — l\u2019unione dei contrari — che produceva la Pietra Filosofale, immagine dell\u2019essere umano completato.' },
+      { icon: '🦅', label: 'fenice-alchimia.webp', title: 'La Fenice — Il Fuoco che Rigenera', origin: 'Egitto, Grecia, Arabia, Cina · mitologia universale', desc: 'L\u2019uccello che muore nel fuoco e rinasce dalle proprie ceneri è il mito alchemico per eccellenza. In Egitto era il Bennu, l\u2019uccello sacro di Ra. In Grecia divenne la Fenice, che viveva cinquecento anni prima di incendiarsi e rinascere giovane. Per gli alchimisti la Fenice era la rubedo — la fase rossa finale del processo, dove la materia "morta" nella nigredo tornava sostanza incorruttibile e luminosa.' },
+      { icon: '🌑', label: 'saturno-kronos.webp', title: 'Saturno e il Piombo Primordiale', origin: 'Mitologia greco-romana · alchimia planetaria', desc: 'Saturno/Kronos, il dio del tempo e della dissoluzione, era associato al piombo — il metallo più pesante e più vile del sistema planetario alchemico. Regnava sulla nigredo, la fase oscura del processo. Ma proprio perché Saturno divora i suoi figli, il piombo porta in sé la materia prima di tutti gli altri metalli: contiene l\u2019oro nella sua oscurità, come il dolore contiene la saggezza.' }
+    ],
+
+    faqSectionTitle: 'Domande Frequenti',
+    faq: [
+      { q: 'Cos\u2019è l\u2019alchimia e qual è il suo scopo reale?', a: 'L\u2019alchimia è una tradizione esoterico-scientifica nata nell\u2019Egitto ellenistico che intreccia pratica di laboratorio e trasformazione spirituale. Il suo scopo dichiarato era trasmutare i metalli vili in oro puro, ma il suo scopo più profondo — quello che sopravvive ancora oggi — era la trasformazione interiore dell\u2019alchimista stesso attraverso un processo simbolico in quattro fasi. Non a caso molti storici la considerano l\u2019antenata sia della chimica moderna sia della psicologia del profondo.' },
+      { q: 'Cosa rappresentano nigredo, albedo, citrinitas e rubedo?', a: 'Sono le quattro fasi della Grande Opera alchemica. La nigredo è la fase nera di dissoluzione e crisi, l\u2019albedo la fase bianca di purificazione e chiarezza, la citrinitas il risveglio solare dell\u2019intuizione, la rubedo l\u2019unione finale dei contrari, simboleggiata dalla Pietra Filosofale. Puoi esplorarle tutte con l\u2019oracolo in cima a questa pagina, oppure approfondire i loro corrispettivi negli <a href="./tarocchi.html">Arcani Maggiori dei Tarocchi</a>.' },
+      { q: 'Qualcuno è mai realmente riuscito a trasformare il piombo in oro?', a: 'Nessun alchimista storico vi riuscì con i metodi disponibili all\u2019epoca. Solo nel 1980, al Lawrence Berkeley Laboratory, fu trasmutato del bismuto in oro tramite reazioni nucleari controllate, ma in quantità infinitesimali e a un costo enormemente superiore al valore del metallo ottenuto. La trasmutazione fisica è possibile, ma economicamente priva di senso.' },
+      { q: 'Qual è la differenza tra alchimia e chimica moderna?', a: 'La chimica moderna, nata nel Settecento con Antoine Lavoisier, si occupa esclusivamente della trasformazione fisica e misurabile della materia. L\u2019alchimia, invece, univa la ricerca materiale a una cosmologia simbolica e spirituale completa: ogni operazione di laboratorio — calcinazione, distillazione, sublimazione — rifletteva un processo interiore parallelo nell\u2019alchimista stesso.' },
+      { q: 'Perché Carl Jung si interessò così tanto all\u2019alchimia?', a: 'Jung vide nei testi alchemici, in particolare in quelli di Zosimo di Panopoli, la prima elaborazione sistematica del processo di individuazione psichica. La trasmutazione della materia grezza in oro rispecchiava simbolicamente l\u2019integrazione dell\u2019inconscio nella coscienza. Un tema che ritrovi anche esplorando l\u2019<a href="./ermetismo.html">Ermetismo</a> e la sua cosmologia simbolica.' },
+      { q: 'Come si usa l\u2019oracolo delle fasi alchemiche di MYSTICA?', a: 'Scegli la fase che rispecchia il tuo momento attuale tra le quattro schede in cima alla pagina — oppure lascia scegliere il caso con "Fase Casuale". Scrivi facoltativamente la tua domanda e premi "Rivela la Fase" per ricevere descrizione completa, doni, ombre da integrare, prescrizione ermetica, meditazione guidata e l\u2019Arcano dei Tarocchi associato.' }
+    ],
+
+    oracolo: {
+      title: '⚗️ Consulta la Grande Opera',
+      subtitle: 'Scegli la fase alchemica che rispecchia il tuo momento interiore',
+      tabs: ['Nigredo', 'Albedo', 'Citrinitas', 'Rubedo'],
+      placeholder: '✍️ Domanda o situazione da esplorare (opzionale)…',
+      btnRandom: '🎲 Fase Casuale',
+      btnReveal: '⚗️ Rivela la Fase',
+      btnNewStage: '🔄 Nuova Fase',
+      labels: { pianeta: 'Pianeta', metallo: 'Metallo', colore: 'Colore', erba: 'Erba' },
+      blocks: { tuaFase: '🔥 La Tua Fase', doni: '✨ Doni di questa Fase', ombre: '⚠️ Ombre da Integrare', prescrizione: '📜 Prescrizione Ermetica', meditazione: '🧘 Meditazione', arcanoAssociato: 'ARCANO ASSOCIATO' }
+    },
+
+    db: [
+      { key:'nigredo', stageName:'Nigredo', emoji:'🌑', sottotitolo:'Crisi, Dissoluzione & Oscurità Creativa', pianeta:'Saturno', metallo:'Piombo', colore:'Nero', erba:'Assenzio', simbolo:'🜔',
+        desc:'La Nigredo è la prima e più difficile fase della Grande Opera. Il piombo dell\u2019ego viene disciolto nel crogiolo dell\u2019esperienza. Non è una crisi — è una gestazione. Come il compost trasforma i rifiuti in nutrimento, la nigredo trasforma il dolore in saggezza. Le tue ombre emergono non per tormentarti, ma per essere riconosciute, integrate e trasmutate. Il Mago non fugge dalla nigredo: ci nuota dentro, sicuro che ogni dissoluzione precede una rinascita più autentica.',
+        luci:'Profondità interiore rara, capacità di stare nel disagio senza fuggire, onestà brutale con se stessi, terreno fertile per la trasformazione.',
+        ombre:'Rischio di identificarsi con la crisi, auto-sabotaggio, depressione se non si vede la luce alla fine del processo.',
+        prescrizione:'Scrivi su carta le 3 cose che stai dissolvendo da te. Bruciala in sicurezza mentre dici: "Consegno questo al fuoco che trasforma." Seppellisci le ceneri. La dissoluzione è già quasi completata.',
+        meditazione:'Siediti nel buio per 10 minuti. Respira la notte. Senti il vuoto non come assenza ma come potenziale assoluto. Sei nel grembo del cambiamento.',
+        arcano:'Il Giudizio — La chiamata alla resurrezione' },
+      { key:'albedo', stageName:'Albedo', emoji:'🌕', sottotitolo:'Purificazione, Chiarezza & Luce Lunare', pianeta:'Luna', metallo:'Argento', colore:'Bianco', erba:'Iperico', simbolo:'🜁',
+        desc:'L\u2019Albedo è la fase dell\u2019alba — dopo la notte della nigredo, la luce comincia a filtrare. La purificazione non è cancellazione del passato: è la chiarezza che emerge quando il fango si è depositato e l\u2019acqua torna trasparente. Stai sviluppando una mente e un cuore più puri, capaci di vedere la realtà senza i filtri delle proiezioni e delle paure. La luna illumina nell\u2019albedo — la saggezza intuitiva, il riflesso, il femminino sacro in ciascuno.',
+        luci:'Chiarezza mentale e emotiva crescente, purificazione degli intenti, affinamento dell\u2019intuizione, capacità di vedere i pattern nelle situazioni.',
+        ombre:'Tendenza al perfezionismo spirituale, illusione di aver "completato" il lavoro interiore troppo presto, rigidità nel voler mantenere la purezza raggiunta.',
+        prescrizione:'Medita con una candela bianca. Visualizza una pioggia argentata che lava via le ultime scorie. Di\u2019: "Ciò che è puro risplende. Ciò che è impuro si scioglie nella luce." Bevi un bicchiere d\u2019acqua lentamente, come atto sacro di purificazione.',
+        meditazione:'Guarda la luna la sera. Lascia che la sua luce entri dagli occhi. Senti il femminino cosmico — in te, oltre te. Nota cosa emerge nel silenzio lunare.',
+        arcano:'La Luna — Il riflesso che svela l\u2019inconscio' },
+      { key:'citrinitas', stageName:'Citrinitas', emoji:'🌞', sottotitolo:'Risveglio Solare, Intuizione & Direzione', pianeta:'Sole', metallo:'Oro', colore:'Giallo', erba:'Calendula', simbolo:'🜂',
+        desc:'La Citrinitas è il risveglio del sole interiore — la fase in cui l\u2019oro comincia a brillare attraverso il materiale grezzo. L\u2019intuizione diventa profetica. Le connessioni si illuminano di significato. Le decisioni diventano più chiare perché sei sempre più allineato con il tuo scopo autentico. Questa è la fase dei veggenti e dei creatori — chi ha attraversato il buio della nigredo e la purezza dell\u2019albedo porta ora una luce che non abbaglia ma illumina. Il tuo sentiero personale emerge nitido.',
+        luci:'Intuizione solare eccezionale, direzione chiara, energia creativa al massimo, capacità di vedere connessioni invisibili agli altri, carisma naturale.',
+        ombre:'Gonfiore dell\u2019ego spirituale, isolamento da chi non comprende la tua visione, impazienza con chi si trova in fasi più oscure.',
+        prescrizione:'10 minuti di luce mattutina diretta sul viso. Visualizza una sfera solare liquida che scende dal capo al cuore. Scrivi 1 intenzione solare della tua giornata. Agiscila entro mezzogiorno.',
+        meditazione:'Contempla una fiamma a distanza. Senti il suo calore. Nota il momento in cui la fiamma e la tua consapevolezza diventano la stessa cosa. Questo è l\u2019oro interiore.',
+        arcano:'Il Sole — La pienezza della coscienza illuminata' },
+      { key:'rubedo', stageName:'Rubedo', emoji:'🔴', sottotitolo:'Unione dei Contrari, Realizzazione & La Pietra Filosofale', pianeta:'Marte + Venere', metallo:'Rame + Oro', colore:'Rosso', erba:'Rosa rossa', simbolo:'🜍',
+        desc:'La Rubedo è il coronamento della Grande Opera — l\u2019unione sacra di tutti i contrari: luce e ombra, maschile e femminile, conscio e inconscio, spirituale e materiale. La Pietra Filosofale non è un oggetto ma uno stato di essere: la realizzazione che la totalità che cerchi fuori è già dentro di te. Chi raggiunge la rubedo non diventa perfetto — diventa intero. E l\u2019interezza è il compimento del viaggio alchemico. Il rosso è il colore del sangue vivente, dell\u2019amore incarnato, della vita vissuta pienamente.',
+        luci:'Integrazione profonda degli opposti interiori, compassione totale, capacità di trasformare chiunque incontri, realizzazione autentica del proprio scopo.',
+        ombre:'Nessuna vera ombra in questa fase — solo il rischio di credere che sia definitiva. La Grande Opera si ripete in spirale, a livelli sempre più profondi.',
+        prescrizione:'Accendi una candela rossa. Siediti con le mani giunte — una mano per il maschile, una per il femminile in te. Respira profondamente. Dichiarazione: "Sono intero. La luce e l\u2019ombra in me si abbracciano." Condividi un gesto concreto di amore incarnato con qualcuno oggi.',
+        meditazione:'Visualizza te stesso abbracciato da te stesso — passato, presente e futuro fusi in un unico momento di compassione totale. Questo è il Rebis — il doppio che è uno.',
+        arcano:'Il Mondo — La realizzazione del ciclo completo' }
+    ]
   },
-  {
-    key:'albedo',stage:'🌕 Albedo',sottotitolo:'Purificazione, Chiarezza & Luce Lunare',
-    pianeta:'Luna',metallo:'Argento',colore:'Bianco',erba:'Iperico',simbolo:'🜁',
-    desc:'L\'Albedo è la fase dell\'alba — dopo la notte della nigredo, la luce comincia a filtrare. La purificazione non è cancellazione del passato: è la chiarezza che emerge quando il fango si è depositato e l\'acqua torna trasparente. Stai sviluppando una mente e un cuore più puri, capaci di vedere la realtà senza i filtri delle proiezioni e delle paure. La luna illumina nell\'albedo — la saggezza intuitiva, il riflesso, il femminino sacro in ciascuno.',
-    luci:'Chiarezza mentale e emotiva crescente, purificazione degli intenti, affinamento dell\'intuizione, capacità di vedere i pattern nelle situazioni.',
-    ombre:'Tendenza al perfezionismo spirituale, illusione di aver "completato" il lavoro interiore troppo presto, rigidità nel voler mantenere la purezza raggiunta.',
-    prescrizione:'Medita con una candela bianca. Visualizza una pioggia argentata che lava via le ultime scorie. Di\': "Ciò che è puro risplende. Ciò che è impuro si scioglie nella luce." Bevi un bicchiere d\'acqua lentamente, come atto sacro di purificazione.',
-    meditazione:'Guarda la luna la sera. Lascia che la sua luce entri dagli occhi. Senti il femminino cosmico — in te, oltre te. Nota cosa emerge nel silenzio lunare.',
-    arcano:'La Luna — Il riflesso che svela l\'inconscio'
+  en: {
+    skipLink: 'Skip to main content',
+    back: '← Back to Home',
+    music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+    theme: { day: '☀️ Day', night: '🌙 Night' },
+    pageTitle: 'Alchemy',
+    pageSub: 'The Art of Transmutation',
+    ctaExplore: '🔍 Explore Other Categories',
+
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited readings, complete interpretations and advanced consultations across all MYSTICA Oracles sections.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just discovered my alchemical stage on MYSTICA Oracles: nigredo, albedo, citrinitas or rubedo? Find your own inner Great Work ⚗️',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracles is a platform dedicated to entertainment, personal growth and the exploration of esoteric traditions. Content does not replace professional medical, psychological, legal or financial advice.',
+    footerNav: { home: 'Home', contact: 'Contact', about: 'About Us', privacy: 'Privacy' },
+
+    seo: {
+      title: 'Alchemy: History, Stages (Nigredo, Albedo, Rubedo) & Oracle | MYSTICA Oracles',
+      description: 'Discover the history of alchemy, the great alchemists from Jabir ibn Hayyan to Newton, the myths of the Great Work, and consult the four-stage alchemy oracle.',
+      keywords: 'alchemy, nigredo, albedo, citrinitas, rubedo, philosopher\u2019s stone, famous alchemists, great work, hermeticism, mysticaoracoli',
+      ogTitle: 'Alchemy — The Great Work and Its Four Stages',
+      ogDesc: 'History, alchemists, myths and the interactive oracle of the alchemical Great Work.',
+      ogLocale: 'en_US',
+      htmlLang: 'en',
+      faqLD: [
+        { q: 'What is alchemy and what was its real purpose?', a: 'Alchemy is an esoteric-scientific tradition born in Hellenistic Egypt that combines laboratory practice with spiritual transformation. Its stated goal was to transmute base metals into gold, but its deeper purpose was the inner transformation of the alchemist through a symbolic four-stage process.' },
+        { q: 'What do nigredo, albedo, citrinitas and rubedo represent?', a: 'These are the four stages of the alchemical Great Work: nigredo is dissolution and crisis, albedo is purification and clarity, citrinitas is the awakening of intuition, and rubedo is the final union of opposites, symbolized by the Philosopher\u2019s Stone.' },
+        { q: 'Did anyone ever really turn lead into gold?', a: 'No historical alchemist succeeded with the methods of their time. Only in 1980, at the Lawrence Berkeley Laboratory, was bismuth transmuted into gold through nuclear reactions, in infinitesimal quantities and at a cost far exceeding the value of the gold obtained.' },
+        { q: 'What is the difference between alchemy and modern chemistry?', a: 'Modern chemistry, born in the eighteenth century with Lavoisier, deals exclusively with the measurable physical transformation of matter. Alchemy, instead, united material research with a full symbolic and spiritual cosmology: every laboratory operation mirrored a parallel inner process.' },
+        { q: 'Why was Carl Jung so interested in alchemy?', a: 'Jung saw in alchemical texts, especially those of Zosimos of Panopolis, the first systematic elaboration of the individuation process: the transmutation of raw matter into gold symbolically mirrored the psychic integration of the unconscious.' },
+        { q: 'How do I use the MYSTICA alchemical stages oracle?', a: 'Choose the stage that mirrors your current moment among the four tabs above, optionally write your question, and press "Reveal the Stage" to receive the description, gifts, shadows, hermetic prescription and meditation associated with it.' }
+      ]
+    },
+
+    artTitle: 'The Sacred Art of the Origins',
+    artH2: 'The Origins in Ancient Egypt and the Hellenistic World',
+    artH3: 'From the Islamic World to Modern Science',
+    artImgAlt: 'Ancient alchemical laboratory with alembics, hermetic symbols and the Emerald Tablet',
+    storiaEyebrow: 'Origins & History',
+
+    artP1: "Alchemy is one of humanity's oldest esoteric-scientific traditions. Its roots reach back to Hellenistic Egypt in the 3rd century BC, where the word itself — from the Greek khemeia, later the Arabic al-kīmiyāʾ — referred to the secret art of the black earth: the fertile soil of the Nile, a symbol of death and rebirth. For three thousand years this discipline crossed cultures and continents, changing form yet never losing its deepest symbolic core: matter's transformation as a mirror of the soul's transformation.",
+    artP2: 'The earliest known alchemical texts come from the Library of Alexandria, attributed to Zosimos of Panopolis (3rd-4th century AD), the first alchemical author whose works survive with certainty. He wrote of visions, of angels transmuting metal into gold, of furnaces as altars and laboratories as temples. For him alchemy was not chemistry: it was theology embodied in matter, a continuous dialogue between the visible and invisible worlds. His Visions describe a priest devoured, boiled and calcined before rising again transformed — an allegory of the ego\u2019s symbolic death that anticipated modern psychological readings of alchemy by centuries.',
+    artP3: 'With the Arabic translation of Greek texts between the 8th and 10th centuries, alchemy became the mother science of the Islamic world. Jabir ibn Hayyan (known in the West as Geber) systematized theories on the four elements, the seven planetary metals and the philosopher\u2019s stone. His laboratories in Kufa and Baghdad produced real discoveries: sulfuric acid, nitric acid, ammonium chloride, plus distillation techniques still fundamental in chemistry today. Baghdad\u2019s House of Wisdom became the world\u2019s leading center of alchemical research, where Greek, Persian and Indian texts were translated, compared and expanded by generations of scholars.',
+    artP4: "In medieval Europe, alchemy spread through the translation schools of Toledo and Salerno. It became an ambiguous discipline: practiced in monasteries, banned by popes, funded by kings. It was simultaneously proto-chemistry, natural philosophy, hermetic spirituality and fraud. This double face — science and mysticism, honesty and deception — is not a flaw: it is its deepest nature, and it is what clearly sets it apart from experimental chemistry, which inherited only its material half. Albertus Magnus and Roger Bacon studied it seriously, convinced that understanding matter meant drawing closer to understanding the Creator.",
+    artP5: "With Antoine Lavoisier and the eighteenth-century chemical revolution, science definitively separated from mysticism: modern, quantitative chemistry was born, stripped of spiritual symbolism. But alchemy's psychological legacy never faded. In the twentieth century Carl Gustav Jung reread it as a symbolic map of the unconscious, while today its four-stage structure still offers a powerful language for reading the crises and transformations of inner life, clearly distinguishing it from related disciplines such as astrology or Kabbalah, with which it nonetheless shares common hermetic roots.",
+
+    artHighlightTitle: '📜 The Emerald Tablet',
+    artHighlightText: 'The founding text of Western alchemy is attributed to Hermes Trismegistus — a legendary fusion of the Egyptian god Thoth and the Greek Hermes. The Emerald Tablet, composed between the 6th and 8th centuries AD, states the universal principle: "That which is above is like that which is below." Fifteen lines that have guided centuries of philosophical speculation and laboratory practice.',
+
+    internalLinks: [
+      { href: './ermetismo.html', text: 'Explore Hermeticism and the Emerald Tablet' },
+      { href: './cabala.html', text: 'Discover Kabbalah and the Tree of Life' },
+      { href: './tarocchi.html', text: 'Learn the meaning of the Major Arcana' },
+      { href: './numerologia.html', text: 'Calculate your Destiny Number' }
+    ],
+
+    oroEyebrow: 'The Great Quest',
+    oroTitle: 'The Hunt for Gold: Who Really Tried',
+    oroIntro: 'Emperors, monks, philosophers and charlatans. The story of attempts to turn base metals into pure gold.',
+    oroHighlightTitle: '⚛️ The Irony of Modern History',
+    oroHighlightText: "In 1924, chemist and Nobel laureate Fritz Haber tried to extract gold from seawater to pay Germany's war reparations. He found gold in the ocean, but in concentrations too low to make extraction profitable. Later, at Glenn T. Seaborg's Lawrence Berkeley Laboratory in 1980, scientists physically transmuted bismuth into gold — producing infinitesimal quantities at a cost millions of times higher than the value of the metal obtained. Gold was possible. It was just useless.",
+    oroAttempts: [
+      { num: 'I', title: 'Rudolf II of Habsburg — The Obsessed Emperor (1576–1612)', text: "The Holy Roman Emperor turned Prague Castle into an open-air alchemical laboratory. He summoned dozens of alchemists from across Europe to his court, funding them for life in exchange for the promise of gold. Edward Kelley, John Dee, Michael Sendivogius — all passed through Prague. Rudolf never saw the gold, but his spending indirectly funded major chemical and astronomical discoveries: Tycho Brahe and Kepler worked at his court." },
+      { num: 'II', title: 'Henry VI of England — The Crown\u2019s Search for Gold (1440)', text: "Plagued by war debts, Henry VI issued royal patents in 1440 specifically authorizing alchemical practice — a rare move, since transmutation was normally illegal, as producing gold could undermine the royal currency. The king hoped his alchemists could fund the Hundred Years' War. No gold was ever produced; the kingdom went bankrupt." },
+      { num: 'III', title: 'The James Price Scam (1782)', text: 'James Price was a respectable chemist and member of the British Royal Society. In 1782 he announced he had produced gold from mercury using mysterious red and white powders, before aristocratic witnesses. The uncertain Royal Society summoned him for a public demonstration. Knowing the fraud would be exposed, Price drank prussic acid in front of the commissioners and died before them. The gold was fake. The real story was the desperation of a man trapped in his own lie.' },
+      { num: 'IV', title: 'Isaac Newton — The Secret Genius (1666–1696)', text: 'One of history\u2019s greatest scientists spent more time on alchemy than on physics. His alchemical manuscripts — over a million words that remained unpublished for centuries — reveal a Newton obsessed with the philosopher\u2019s stone and prime matter. He believed gold could be extracted from lead through operations we would now call nuclear transmutation. He was right about the principle: physically impossible with his techniques, but theoretically correct. In 1980, Russian scientists synthesized stable gold from bismuth by bombarding it with protons. Newton was waiting for exactly that.' }
+    ],
+
+    alcEyebrow: 'The Masters',
+    alcTitle: "History's Most Celebrated Alchemists",
+    alcIntro: 'Visionaries, philosophers, scientists and mystics. The figures who defined the art of transmutation.',
+    alcCards: [
+      { icon: '⚗️', label: 'jabir-ibn-hayyan.webp', name: 'Jabir ibn Hayyan', dates: '721 – 815 AD · Kufa, Iraq', desc: 'Known in the West as Geber, he is the father of Arabic alchemy and, in many ways, of experimental chemistry. He wrote over three thousand texts and was the first to distinguish between substances that burn (sulfides) and those that do not (metals). He developed distillation, crystallization and calcination techniques still used today. His system of seven planetary metals, each governed by a planet with spiritual properties, is the heart of medieval alchemical cosmology.', claimLabel: 'His achievement:', claimText: 'First documented synthesis of sulfuric and nitric acid. He discovered aqua regia, the only acid capable of dissolving gold.' },
+      { icon: '🌹', label: 'nicolas-flamel.webp', name: 'Nicolas Flamel', dates: '1330 – 1418 · Pontoise, France', desc: "A Parisian notary and bookseller, Flamel became history's most enduring alchemical legend. According to tradition, he bought a mysterious Hebrew book — the Book of Abraham the Jew — and after twenty years of study deciphered its secrets, obtaining the Philosopher's Stone in 1382. From a modestly wealthy notary he suddenly became extremely rich, funding churches, hospitals and charities. When he died, treasure hunters opened his tomb: it was empty. It was said that he and his wife Pernelle were immortal.", claimLabel: 'The mystery:', claimText: 'Historical records confirm his sudden wealth and donations. The source of his fortune remains unexplained. The legend has survived seven centuries.' },
+      { icon: '🔬', label: 'paracelso.webp', name: 'Paracelsus', dates: '1493 – 1541 · Einsiedeln, Switzerland', desc: 'Philippus Aureolus Theophrastus Bombastus von Hohenheim — who renamed himself Paracelsus ("beyond Celsus", the great Roman physician) — was the most revolutionary of alchemists. He publicly burned the texts of Galen and Avicenna. He claimed alchemy\u2019s purpose was not to make gold but to produce medicines. He pioneered the therapeutic use of zinc, copper, arsenic and laudanum compounds. Modern pharmacology owes him more than it likes to admit.', claimLabel: 'His revolution:', claimText: "He shifted alchemy's goal from gold-making to medicine-making, founding iatrochemistry, the ancestor of pharmacology." },
+      { icon: '🔭', label: 'isaac-newton.webp', name: 'Isaac Newton', dates: '1643 – 1727 · Woolsthorpe, England', desc: 'The inventor of infinitesimal calculus, discoverer of universal gravitation, father of modern optics. But also: a secret alchemist for thirty years. Newton guarded his alchemical experiments with obsessive secrecy, terrified of legal consequences. He believed the universe was animated by active, spiritual forces — not merely mechanical ones — and that alchemy revealed the hidden grammar of those forces.', claimLabel: 'The paradox:', claimText: 'John Maynard Keynes, who bought Newton\u2019s alchemical manuscripts at auction in 1936, wrote: "Newton was not the first of the Age of Reason. He was the last of the magicians."' },
+      { icon: '👁️', label: 'edward-kelley.webp', name: 'Edward Kelley', dates: '1555 – 1597 · Worcester, England', desc: 'Magician, seer, charlatan or genius? Edward Kelley worked for years with the royal mathematician and astrologer John Dee, communicating with angels through a crystal ball. He claimed to possess the true philosopher\u2019s powder — and demonstrated the transmutation of metal into gold before aristocratic witnesses in Prague. Rudolf II imprisoned him twice to obtain the secret. Kelley died trying to escape from a tower window.', claimLabel: 'The enigma:', claimText: 'His transmutations were witnessed by credible people, including the imperial court physician. Modern analysis of the historical records remains inconclusive.' },
+      { icon: '🌊', label: 'zosimo-panopoli.webp', name: 'Zosimos of Panopolis', dates: '3rd–4th century AD · Panopolis, Egypt', desc: 'The oldest identifiable alchemical author. In his texts — written in Greek and only partially surviving — alchemy is already fully formed as a fusion of technique and mysticism. Zosimos describes visions: a priest devoured, boiled, calcined and then resurrected transformed — an allegory of the alchemical process as death and rebirth. His practical instructions for distillation, sublimation and fermentation are surprisingly accurate.', claimLabel: 'His legacy:', claimText: "Jung studied Zosimos's texts intensively, seeing in them the first systematic elaboration of the collective unconscious in symbolic-material language." }
+    ],
+
+    mitiEyebrow: 'Myths & Symbols',
+    mitiTitle: "The Mythologies of Alchemy",
+    mitiIntro: 'The great sacred narratives that shaped the symbolic language of the Great Work.',
+    mitiCards: [
+      { icon: '🔥', label: 'ermete-trismegisto.webp', title: 'Hermes Trismegistus and the Corpus Hermeticum', origin: 'Hellenistic Egypt · 2nd–3rd century AD', desc: 'Hermes Trismegistus — "Thrice-Great Hermes" — is the founding figure of Western hermeticism and alchemy. Half human, half divine, he was said to have revealed the secrets of creation to humanity through the Corpus Hermeticum. The Renaissance believed him a contemporary of Moses — a chronological error that greatly amplified his authority. His most famous formula, "As above, so below," remains the operating principle of astrology, alchemy and ceremonial magic to this day.' },
+      { icon: '🐍', label: 'ouroboros.webp', title: 'The Ouroboros — The Serpent Devouring Its Own Tail', origin: 'Ancient Egypt · 14th century BC', desc: 'The serpent or dragon devouring its own tail is one of humanity\u2019s oldest and most universal symbols. It appears in Tutankhamun\u2019s tomb, in Gnostic texts, in medieval alchemy, in Greek philosophy, in Buddhism and in Norse myth. For alchemists it represented the infinite cycle of matter: dissolution and coagulation, death and rebirth, nigredo and rubedo. Jung identified it as an image of the unconscious that consumes and regenerates itself.' },
+      { icon: '⚗️', label: 'rebis.webp', title: 'The Rebis — The Alchemical Androgyne', origin: 'Medieval European alchemy · 12th–17th century', desc: 'The Rebis (from Latin res bina, "the double thing") is the figure that crowned the alchemical process: an androgynous being, half man and half woman, holding the sun in one hand and the moon in the other, standing on a dragon. It represented the coniunctio oppositorum — the union of opposites — that produced the Philosopher\u2019s Stone, an image of the completed human being.' },
+      { icon: '🦅', label: 'fenice-alchimia.webp', title: 'The Phoenix — The Fire that Regenerates', origin: 'Egypt, Greece, Arabia, China · universal mythology', desc: 'The bird that dies in fire and is reborn from its own ashes is the alchemical myth par excellence. In Egypt it was the Bennu, Ra\u2019s sacred bird. In Greece it became the Phoenix, living five hundred years before building a cinnamon nest, setting itself alight, and being reborn young. For alchemists the Phoenix was rubedo — the final red stage, when matter "dead" in nigredo returned as an incorruptible, luminous substance.' },
+      { icon: '🌑', label: 'saturno-kronos.webp', title: 'Saturn and Primordial Lead', origin: 'Greco-Roman mythology · planetary alchemy', desc: 'Saturn/Kronos, the god of time and dissolution, was linked to lead — the heaviest and most base metal in the alchemical planetary system. He ruled nigredo, the dark and cruel stage of the process. But precisely because Saturn devours his children, lead carries within it the prime matter of all other metals: it contains gold within its darkness, as pain contains wisdom.' }
+    ],
+
+    faqSectionTitle: 'Frequently Asked Questions',
+    faq: [
+      { q: 'What is alchemy and what was its real purpose?', a: 'Alchemy is an esoteric-scientific tradition born in Hellenistic Egypt that weaves together laboratory practice and spiritual transformation. Its stated goal was to turn base metals into pure gold, but its deeper purpose — the one that still survives today — was the inner transformation of the alchemist through a symbolic four-stage process. Many historians consider it an ancestor of both modern chemistry and depth psychology.' },
+      { q: 'What do nigredo, albedo, citrinitas and rubedo represent?', a: 'These are the four stages of the alchemical Great Work. Nigredo is the black stage of dissolution and crisis, albedo the white stage of purification and clarity, citrinitas the solar awakening of intuition, and rubedo the final union of opposites, symbolized by the Philosopher\u2019s Stone. You can explore all of them with the oracle at the top of this page, or discover their counterparts in the <a href="./tarocchi.html">Major Arcana of the Tarot</a>.' },
+      { q: 'Did anyone ever really turn lead into gold?', a: 'No historical alchemist succeeded with the methods available at the time. Only in 1980, at the Lawrence Berkeley Laboratory, was bismuth transmuted into gold through controlled nuclear reactions, but in infinitesimal quantities and at a cost enormously higher than the value of the gold obtained. Physical transmutation is possible, just economically pointless.' },
+      { q: 'What is the difference between alchemy and modern chemistry?', a: 'Modern chemistry, born in the eighteenth century with Antoine Lavoisier, deals exclusively with the measurable physical transformation of matter. Alchemy, instead, united material research with a complete symbolic and spiritual cosmology: every laboratory operation — calcination, distillation, sublimation — mirrored a parallel inner process within the alchemist.' },
+      { q: 'Why was Carl Jung so interested in alchemy?', a: 'Jung saw in alchemical texts, especially those of Zosimos of Panopolis, the first systematic elaboration of the psychic individuation process. The transmutation of raw matter into gold symbolically mirrored the integration of the unconscious into consciousness — a theme you can also explore in <a href="./ermetismo.html">Hermeticism</a> and its symbolic cosmology.' },
+      { q: 'How do I use the MYSTICA alchemical stages oracle?', a: 'Choose the stage that mirrors your current moment among the four tabs at the top of the page — or let chance decide with "Random Stage". Optionally write your question and press "Reveal the Stage" to receive a full description, gifts, shadows to integrate, hermetic prescription, guided meditation and the associated Tarot Arcanum.' }
+    ],
+
+    oracolo: {
+      title: '⚗️ Consult the Great Work',
+      subtitle: 'Choose the alchemical stage that mirrors your inner moment',
+      tabs: ['Nigredo', 'Albedo', 'Citrinitas', 'Rubedo'],
+      placeholder: '✍️ Question or situation to explore (optional)…',
+      btnRandom: '🎲 Random Stage',
+      btnReveal: '⚗️ Reveal the Stage',
+      btnNewStage: '🔄 New Stage',
+      labels: { pianeta: 'Planet', metallo: 'Metal', colore: 'Color', erba: 'Herb' },
+      blocks: { tuaFase: '🔥 Your Stage', doni: '✨ Gifts of this Stage', ombre: '⚠️ Shadows to Integrate', prescrizione: '📜 Hermetic Prescription', meditazione: '🧘 Meditation', arcanoAssociato: 'ASSOCIATED ARCANUM' }
+    },
+
+    db: [
+      { key:'nigredo', stageName:'Nigredo', emoji:'🌑', sottotitolo:'Crisis, Dissolution & Creative Darkness', pianeta:'Saturn', metallo:'Lead', colore:'Black', erba:'Wormwood', simbolo:'🜔',
+        desc:'Nigredo is the first and hardest stage of the Great Work. The lead of the ego is dissolved in the crucible of experience. It is not a crisis — it is a gestation. Like compost turning waste into nourishment, nigredo turns pain into wisdom. Your shadows surface not to torment you, but to be recognized, integrated and transmuted. The Magician does not flee nigredo: he swims into it, trusting that every dissolution precedes a more authentic rebirth.',
+        luci:'Rare inner depth, the ability to sit with discomfort without fleeing, brutal self-honesty, fertile ground for transformation.',
+        ombre:'Risk of identifying with the crisis, self-sabotage, depression if no light is seen at the end of the process.',
+        prescrizione:'Write on paper the 3 things you are dissolving away from within yourself. Burn it safely while saying: "I hand this to the fire that transforms." Bury the ashes. The dissolution is already nearly complete.',
+        meditazione:'Sit in darkness for 10 minutes. Breathe the night. Feel the void not as absence but as absolute potential. You are in the womb of change.',
+        arcano:'Judgement — The call to resurrection' },
+      { key:'albedo', stageName:'Albedo', emoji:'🌕', sottotitolo:'Purification, Clarity & Lunar Light', pianeta:'Moon', metallo:'Silver', colore:'White', erba:'St. John\u2019s Wort', simbolo:'🜁',
+        desc:'Albedo is the dawn stage — after the night of nigredo, light begins to filter through. Purification is not erasing the past: it is the clarity that emerges once the mud has settled and the water turns clear again. You are developing a purer mind and heart, able to see reality without the filters of projection and fear. The moon illuminates albedo — intuitive wisdom, reflection, the sacred feminine within everyone.',
+        luci:'Growing mental and emotional clarity, purified intentions, sharpened intuition, ability to see patterns in situations.',
+        ombre:'Tendency toward spiritual perfectionism, the illusion of having "finished" inner work too soon, rigidity about preserving the purity achieved.',
+        prescrizione:'Meditate with a white candle. Visualize a silvery rain washing away the last impurities. Say: "What is pure shines. What is impure dissolves into the light." Drink a glass of water slowly, as a sacred act of purification.',
+        meditazione:'Look at the moon in the evening. Let its light enter through your eyes. Feel the cosmic feminine — in you, beyond you. Notice what surfaces in the lunar silence.',
+        arcano:'The Moon — The reflection that reveals the unconscious' },
+      { key:'citrinitas', stageName:'Citrinitas', emoji:'🌞', sottotitolo:'Solar Awakening, Intuition & Direction', pianeta:'Sun', metallo:'Gold', colore:'Yellow', erba:'Calendula', simbolo:'🜂',
+        desc:'Citrinitas is the awakening of the inner sun — the stage where gold begins to shine through raw material. Intuition becomes prophetic. Connections light up with meaning. Decisions become clearer because you are increasingly aligned with your authentic purpose. This is the stage of seers and creators — those who have crossed the darkness of nigredo and the purity of albedo now carry a light that does not blind but illuminates. Your personal path emerges sharp and clear.',
+        luci:'Exceptional solar intuition, clear direction, creative energy at its peak, the ability to see connections others cannot, natural charisma.',
+        ombre:'Inflation of the spiritual ego, isolation from those who do not understand your vision, impatience with those in darker stages.',
+        prescrizione:'10 minutes of direct morning light on your face. Visualize a liquid solar sphere descending from your head to your heart. Write down 1 solar intention for your day. Act on it before noon.',
+        meditazione:'Contemplate a flame from a distance. Feel its warmth. Notice the moment when the flame and your awareness become the same thing. This is the inner gold.',
+        arcano:'The Sun — The fullness of illuminated consciousness' },
+      { key:'rubedo', stageName:'Rubedo', emoji:'🔴', sottotitolo:'Union of Opposites, Realization & the Philosopher\u2019s Stone', pianeta:'Mars + Venus', metallo:'Copper + Gold', colore:'Red', erba:'Red rose', simbolo:'🜍',
+        desc:'Rubedo is the crowning of the Great Work — the sacred union of all opposites: light and shadow, masculine and feminine, conscious and unconscious, spiritual and material. The Philosopher\u2019s Stone is not an object but a state of being: the realization that the wholeness you seek outside is already within you. Whoever reaches rubedo does not become perfect — they become whole. And wholeness is the completion of the alchemical journey. Red is the color of living blood, of embodied love, of life lived fully.',
+        luci:'Deep integration of inner opposites, total compassion, the ability to transform everyone you meet, authentic realization of your purpose.',
+        ombre:'No real shadow at this stage — only the risk of believing it final. The Great Work repeats in spirals, at ever deeper levels.',
+        prescrizione:'Light a red candle. Sit with your hands joined — one for the masculine, one for the feminine within you. Breathe deeply. Declaration: "I am whole. Light and shadow embrace within me." Share a concrete act of embodied love with someone today.',
+        meditazione:'Visualize yourself embraced by yourself — past, present and future fused into a single moment of total compassion. This is the Rebis — the double that is one.',
+        arcano:'The World — The realization of the complete cycle' }
+    ]
   },
-  {
-    key:'citrinitas',stage:'🌞 Citrinitas',sottotitolo:'Risveglio Solare, Intuizione & Direzione',
-    pianeta:'Sole',metallo:'Oro',colore:'Giallo',erba:'Calendula',simbolo:'🜂',
-    desc:'La Citrinitas è il risveglio del sole interiore — la fase in cui l\'oro comincia a brillare attraverso il materiale grezzo. L\'intuizione diventa profetica. Le connessioni si illuminano di significato. Le decisioni diventano più chiare perché sei sempre più allineato con il tuo scopo autentico. Questa è la fase dei veggenti e dei creatori — chi ha attraversato il buio della nigredo e la purezza dell\'albedo porta ora una luce che non abbaglia ma illumina. Il tuo sentiero personale emerge nitido.',
-    luci:'Intuizione solare eccezionale, direzione chiara, energia creativa al massimo, capacità di vedere connessioni invisibili agli altri, carisma naturale.',
-    ombre:'Gonfiore dell\'ego spirituale, isolamento chi non comprende la tua visione, impazienza con chi si trova in fasi più oscure.',
-    prescrizione:'10 minuti di luce mattutina diretta sul viso. Visualizza una sfera solare liquida che scende dal capo al cuore. Scrivi 1 intenzione solare della tua giornata. Agiscila entro mezzogiorno.',
-    meditazione:'Contempla una fiamma a distanza. Senti il suo calore. Nota il momento in cui la fiamma e la tua consapevolezza diventano la stessa cosa. Questo è l\'oro interiore.',
-    arcano:'Il Sole — La pienezza della coscienza illuminata'
-  },
-  {
-    key:'rubedo',stage:'🔴 Rubedo',sottotitolo:'Unione dei Contrari, Realizzazione & La Pietra Filosofale',
-    pianeta:'Marte + Venere',metallo:'Rame + Oro',colore:'Rosso',erba:'Rosa rossa',simbolo:'🜍',
-    desc:'La Rubedo è il coronamento della Grande Opera — l\'unione sacra di tutti i contrari: luce e ombra, maschile e femminile, conscio e inconscio, spirituale e materiale. La Pietra Filosofale non è un oggetto ma uno stato di essere: la realizzazione che la totalità che cerchi fuori è già dentro di te. Chi raggiunge la rubedo non diventa perfetto — diventa intero. E l\'interezza è il compimento del viaggio alchemico. Il rosso è il colore del sangue vivente, dell\'amore incarnato, della vita vissuta pienamente.',
-    luci:'Integrazione profonda degli opposti interiori, compassione totale, capacità di trasformare chiunque incontri, realizzazione autentica del proprio scopo.',
-    ombre:'Nessuna vera ombra in questa fase — solo il rischio di credere che sia definitiva. La Grande Opera si ripete in spirale, a livelli sempre più profondi.',
-    prescrizione:'Accendi una candela rossa. Siediti con le mani giunte — una mano per il maschile, una per il femminile in te. Respira profondamente. Dichiarazione: "Sono intero. La luce e l\'ombra in me si abbracciano." Condividi un gesto concreto di amore incarnato con qualcuno oggi.',
-    meditazione:'Visualizza te stesso abbracciato da te stesso — passato, presente e futuro fusi in un unico momento di compassione totale. Questo è il Rebis — il doppio che è uno.',
-    arcano:'Il Mondo — La realizzazione del ciclo completo'
+  es: {
+    skipLink: 'Ir al contenido principal',
+    back: '← Volver al Inicio',
+    music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+    theme: { day: '☀️ Día', night: '🌙 Noche' },
+    pageTitle: 'Alquimia',
+    pageSub: 'El Arte de la Transmutación',
+    ctaExplore: '🔍 Explorar Otras Categorías',
+
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea lecturas ilimitadas, interpretaciones completas y consultas avanzadas en todas las secciones de MYSTICA Oráculos.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: 'Descubrí mi fase alquímica en MYSTICA Oráculos: ¿nigredo, albedo, citrinitas o rubedo? Descubre tú también tu Gran Obra interior ⚗️',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+
+    footerCopy: '© 2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oráculos es una plataforma dedicada al entretenimiento, al crecimiento personal y a la exploración de las tradiciones esotéricas. Los contenidos no sustituyen el asesoramiento médico, psicológico, legal o financiero profesional.',
+    footerNav: { home: 'Inicio', contact: 'Contacto', about: 'Sobre Nosotros', privacy: 'Privacidad' },
+
+    seo: {
+      title: 'Alquimia: Historia, Fases (Nigredo, Albedo, Rubedo) y Oráculo | MYSTICA Oráculos',
+      description: 'Descubre la historia de la alquimia, los grandes alquimistas de Jabir ibn Hayyan a Newton, los mitos de la Gran Obra y consulta el oráculo de las cuatro fases alquímicas.',
+      keywords: 'alquimia, nigredo, albedo, citrinitas, rubedo, piedra filosofal, alquimistas famosos, gran obra, hermetismo, mysticaoracoli',
+      ogTitle: 'Alquimia — La Gran Obra y sus Cuatro Fases',
+      ogDesc: 'Historia, alquimistas, mitos y el oráculo interactivo de la Gran Obra alquímica.',
+      ogLocale: 'es_ES',
+      htmlLang: 'es',
+      faqLD: [
+        { q: '¿Qué es la alquimia y cuál era su propósito real?', a: 'La alquimia es una tradición esotérico-científica nacida en el Egipto helenístico que combina la práctica de laboratorio con la transformación espiritual. Su objetivo declarado era transmutar metales viles en oro, pero su propósito más profundo era la transformación interior del propio alquimista a través de un proceso simbólico en cuatro fases.' },
+        { q: '¿Qué representan nigredo, albedo, citrinitas y rubedo?', a: 'Son las cuatro fases de la Gran Obra alquímica: la nigredo es disolución y crisis, la albedo es purificación y claridad, la citrinitas es el despertar de la intuición, la rubedo es la unión final de los opuestos, simbolizada por la Piedra Filosofal.' },
+        { q: '¿Alguien logró realmente transformar el plomo en oro?', a: 'Ningún alquimista histórico lo logró con los métodos de su época. Solo en 1980, en el Laboratorio Lawrence Berkeley, se transmutó bismuto en oro mediante reacciones nucleares, en cantidades infinitesimales y a un coste enormemente superior al valor del oro obtenido.' },
+        { q: '¿Cuál es la diferencia entre alquimia y química moderna?', a: 'La química moderna, nacida en el siglo XVIII con Lavoisier, se ocupa exclusivamente de la transformación física medible de la materia. La alquimia, en cambio, unía la investigación material con una cosmología simbólica y espiritual completa: cada operación de laboratorio reflejaba un proceso interior paralelo.' },
+        { q: '¿Por qué Carl Jung se interesó tanto por la alquimia?', a: 'Jung vio en los textos alquímicos, especialmente en los de Zósimo de Panópolis, la primera elaboración sistemática del proceso de individuación: la transmutación de la materia bruta en oro reflejaba simbólicamente la integración psíquica del inconsciente.' },
+        { q: '¿Cómo se usa el oráculo de las fases alquímicas de MYSTICA?', a: 'Elige la fase que refleja tu momento actual entre las cuatro pestañas superiores, escribe opcionalmente tu pregunta y pulsa "Revela la Fase" para recibir descripción, dones, sombras, prescripción hermética y meditación asociados.' }
+      ]
+    },
+
+    artTitle: 'El Arte Sagrado de los Orígenes',
+    artH2: 'Los Orígenes en el Antiguo Egipto y el Mundo Helenístico',
+    artH3: 'Del Mundo Islámico a la Ciencia Moderna',
+    artImgAlt: 'Antiguo laboratorio alquímico con alambiques, símbolos herméticos y la Tabla Esmeralda',
+    storiaEyebrow: 'Orígenes e Historia',
+
+    artP1: 'La alquimia es una de las tradiciones esotérico-científicas más antiguas de la humanidad. Sus raíces se hunden en el Egipto helenístico del siglo III a.C., donde la propia palabra —del griego khemeia, y luego del árabe al-kīmiyāʾ— remitía al arte secreto de la tierra negra: la fértil tierra del Nilo, símbolo de muerte y renacimiento. Durante tres mil años esta disciplina atravesó culturas y continentes, cambiando de forma sin perder jamás su núcleo simbólico más profundo: la transformación de la materia como espejo de la transformación del alma.',
+    artP2: 'Los primeros textos alquímicos conocidos proceden de la Biblioteca de Alejandría y se atribuyen a Zósimo de Panópolis (siglos III-IV d.C.), el primer autor alquímico del que se conservan obras ciertas. Escribía sobre visiones, ángeles que transmutaban el metal en oro, hornos como altares y laboratorios como templos. Para él la alquimia no era química: era teología encarnada en la materia, un diálogo continuo entre el mundo visible y el invisible. Sus Visiones describen a un sacerdote devorado, hervido y calcinado que luego resucita transformado, una alegoría de la muerte simbólica del ego que se adelanta siglos a las lecturas psicológicas modernas de la alquimia.',
+    artP3: 'Con la traducción árabe de los textos griegos entre los siglos VIII y X, la alquimia se convirtió en la ciencia madre del mundo islámico. Jabir ibn Hayyan (conocido en Occidente como Geber) sistematizó las teorías sobre los cuatro elementos, los siete metales planetarios y la piedra filosofal. Sus laboratorios en Kufa y Bagdad produjeron descubrimientos reales: ácido sulfúrico, ácido nítrico, cloruro de amonio, además de técnicas de destilación aún fundamentales en química. La Casa de la Sabiduría de Bagdad se convirtió en el principal centro mundial de investigación alquímica, donde textos griegos, persas e indios eran traducidos, comparados y ampliados por generaciones de estudiosos.',
+    artP4: 'En la Europa medieval, la alquimia se difundió a través de las escuelas de traducción de Toledo y Salerno. Se convirtió en una disciplina ambigua: practicada en conventos, prohibida por los papas, financiada por reyes. Era simultáneamente protoquímica, filosofía natural, espiritualidad hermética y fraude. Este doble rostro —ciencia y misticismo, honestidad e impostura— no es un defecto: es su naturaleza más profunda, y es lo que la distingue claramente de la química experimental, que heredó solo su mitad material. Alberto Magno y Roger Bacon la estudiaron seriamente, convencidos de que comprender la materia significaba acercarse a la comprensión del Creador.',
+    artP5: 'Con Antoine Lavoisier y la revolución química del siglo XVIII, la ciencia se separó definitivamente del misticismo: nació la química moderna, cuantitativa y sin simbolismo espiritual. Pero el legado psicológico de la alquimia nunca se apagó. En el siglo XX Carl Gustav Jung la releyó como mapa simbólico del inconsciente, mientras que hoy su estructura de cuatro fases sigue ofreciendo un lenguaje poderoso para leer las crisis y transformaciones de la vida interior, distinguiéndola claramente de disciplinas afines como la astrología o la cábala, con las que sin embargo comparte raíces herméticas comunes.',
+
+    artHighlightTitle: '📜 La Tabla Esmeralda',
+    artHighlightText: 'El texto fundacional de la alquimia occidental se atribuye a Hermes Trismegisto —figura legendaria, fusión del dios egipcio Thot y el griego Hermes. La Tabla Esmeralda, redactada entre los siglos VI y VIII d.C., enuncia el principio universal: "Lo que está arriba es como lo que está abajo." Quince líneas que han guiado siglos de especulación filosófica y práctica de laboratorio.',
+
+    internalLinks: [
+      { href: './ermetismo.html', text: 'Profundiza en el Hermetismo y la Tabla Esmeralda' },
+      { href: './cabala.html', text: 'Explora la Cábala y el Árbol de la Vida' },
+      { href: './tarocchi.html', text: 'Descubre el significado de los Arcanos Mayores' },
+      { href: './numerologia.html', text: 'Calcula tu Número del Destino' }
+    ],
+
+    oroEyebrow: 'La Gran Empresa',
+    oroTitle: 'La Caza del Oro: Quién lo Intentó de Verdad',
+    oroIntro: 'Emperadores, monjes, filósofos y charlatanes. La historia de los intentos de transmutar metales viles en oro puro.',
+    oroHighlightTitle: '⚛️ La Ironía de la Historia Moderna',
+    oroHighlightText: 'En 1924, el físico y premio Nobel Fritz Haber intentó extraer oro del agua de mar para pagar las reparaciones de guerra de Alemania. Descubrió que había oro en el océano, pero en concentraciones tan bajas que la extracción no era rentable. Más tarde, en 1980, en el laboratorio de Glenn T. Seaborg en Lawrence Berkeley, los científicos transmutaron físicamente bismuto en oro, produciendo cantidades infinitesimales a un coste millones de veces superior al valor del metal obtenido. El oro era posible. Simplemente era inútil.',
+    oroAttempts: [
+      { num: 'I', title: 'Rodolfo II de Habsburgo — El Emperador Obsesionado (1576–1612)', text: 'El emperador del Sacro Imperio Romano convirtió el castillo de Praga en un laboratorio alquímico al aire libre. Convocó en su corte a decenas de alquimistas de toda Europa, financiándolos de por vida a cambio de la promesa del oro. Edward Kelley, John Dee, Michael Sendivogius: todos pasaron por Praga. Rodolfo nunca vio el oro, pero sus gastos financiaron indirectamente importantes descubrimientos químicos y astronómicos: Tycho Brahe y Kepler trabajaron en su corte.' },
+      { num: 'II', title: 'Enrique VI de Inglaterra — La Corona en Busca de Oro (1440)', text: 'Atormentado por deudas de guerra, Enrique VI emitió en 1440 patentes reales que autorizaban específicamente la práctica alquímica, algo poco frecuente, ya que la transmutación solía ser ilegal. El rey esperaba que sus alquimistas pudieran financiar la Guerra de los Cien Años. Nunca se produjo oro alguno; el reino cayó en bancarrota.' },
+      { num: 'III', title: 'El Fraude de James Price (1782)', text: 'James Price era un químico respetable, miembro de la Royal Society británica. En 1782 anunció haber producido oro a partir de mercurio usando unos misteriosos polvos rojo y blanco, ante testigos aristocráticos. La Royal Society, dividida entre creerle y desenmascararlo, lo convocó para una demostración pública. Price, sabiendo que el fraude sería descubierto, bebió ácido prúsico ante los comisarios y murió frente a ellos. El oro era falso. La verdadera historia fue la desesperación de un hombre atrapado en su propia mentira.' },
+      { num: 'IV', title: 'Isaac Newton — El Genio Secreto (1666–1696)', text: 'Uno de los más grandes científicos de la historia dedicó más tiempo a la alquimia que a la física. Sus manuscritos alquímicos, más de un millón de palabras inéditas durante siglos, muestran a un Newton obsesionado con la piedra filosofal y la materia prima. Creía que el oro podía extraerse del plomo mediante operaciones que hoy llamaríamos transmutación nuclear. Tenía razón en el principio: físicamente imposible con sus técnicas, pero teóricamente correcto. En 1980, científicos rusos sintetizaron oro estable a partir de bismuto bombardeándolo con protones. Newton esperaba algo así.' }
+    ],
+
+    alcEyebrow: 'Los Maestros',
+    alcTitle: 'Los Alquimistas más Célebres de la Historia',
+    alcIntro: 'Visionarios, filósofos, científicos y místicos. Las figuras que definieron el arte de la transmutación.',
+    alcCards: [
+      { icon: '⚗️', label: 'jabir-ibn-hayyan.webp', name: 'Jabir ibn Hayyan', dates: '721 – 815 d.C. · Kufa, Irak', desc: 'Conocido en Occidente como Geber, es el padre de la alquimia árabe y, en muchos sentidos, de la química experimental. Escribió más de tres mil textos. Fue el primero en distinguir entre sustancias que arden (sulfuros) y las que no (metales). Desarrolló técnicas de destilación, cristalización y calcinación aún en uso. Su sistema de siete metales planetarios, cada uno gobernado por un planeta con propiedades espirituales, es el corazón de la cosmología alquímica medieval.', claimLabel: 'Su logro:', claimText: 'Primera síntesis documentada de ácido sulfúrico y ácido nítrico. Descubrió el agua regia, el único ácido capaz de disolver el oro.' },
+      { icon: '🌹', label: 'nicolas-flamel.webp', name: 'Nicolas Flamel', dates: '1330 – 1418 · Pontoise, Francia', desc: 'Notario y librero parisino, Flamel se convirtió en la leyenda alquímica más duradera de la historia. Según la tradición, compró un misterioso libro hebreo —el Libro de Abraham el Judío— y tras veinte años de estudio logró descifrar sus secretos, obteniendo la Piedra Filosofal en 1382. De notario de modesta fortuna pasó a ser inmensamente rico, financiando iglesias, hospitales y fundaciones benéficas. A su muerte, buscadores de tesoros abrieron su tumba: estaba vacía. Se dijo que él y su esposa Pernelle eran inmortales.', claimLabel: 'El misterio:', claimText: 'Los documentos históricos confirman su repentina riqueza y sus donaciones. El origen de su fortuna sigue sin explicación. La leyenda ha sobrevivido siete siglos.' },
+      { icon: '🔬', label: 'paracelso.webp', name: 'Paracelso', dates: '1493 – 1541 · Einsiedeln, Suiza', desc: 'Philippus Aureolus Theophrastus Bombastus von Hohenheim, que se rebautizó Paracelso ("más allá de Celso", el gran médico romano), fue el más revolucionario de los alquimistas. Quemó públicamente los textos de Galeno y Avicena. Afirmó que el objetivo de la alquimia no era hacer oro sino producir medicinas. Introdujo el uso terapéutico de compuestos de zinc, cobre, arsénico y láudano. La farmacología moderna le debe más de lo que quiere admitir.', claimLabel: 'Su revolución:', claimText: 'Trasladó el objetivo de la alquimia de la producción de oro a la creación de medicamentos. Fundó la iatroquímica, antecesora de la farmacología.' },
+      { icon: '🔭', label: 'isaac-newton.webp', name: 'Isaac Newton', dates: '1643 – 1727 · Woolsthorpe, Inglaterra', desc: 'El inventor del cálculo infinitesimal, descubridor de la gravitación universal, padre de la óptica moderna. Pero también: alquimista clandestino durante treinta años. Newton guardó sus experimentos alquímicos con obsesivo secreto, aterrado por las consecuencias legales. Creía que el universo estaba animado por fuerzas activas y espirituales, no solo mecánicas, y que la alquimia revelaba la gramática oculta de esas fuerzas.', claimLabel: 'La paradoja:', claimText: 'John Maynard Keynes, que compró en subasta los manuscritos alquímicos de Newton en 1936, escribió: "Newton no fue el primero de la Edad de la Razón. Fue el último de los magos."' },
+      { icon: '👁️', label: 'edward-kelley.webp', name: 'Edward Kelley', dates: '1555 – 1597 · Worcester, Inglaterra', desc: '¿Mago, vidente, charlatán o genio? Edward Kelley colaboró durante años con el matemático y astrólogo real John Dee, comunicándose con ángeles a través de una esfera de cristal. Afirmó poseer el verdadero polvo filosofal y demostró la transmutación de metal en oro ante testigos aristocráticos en Praga. Rodolfo II lo encarceló dos veces para obtener el secreto. Kelley murió intentando huir por la ventana de una torre.', claimLabel: 'El enigma:', claimText: 'El relato de sus transmutaciones fue atestiguado por personas fiables, incluido el médico de la corte imperial. Los análisis modernos de los documentos históricos no son concluyentes.' },
+      { icon: '🌊', label: 'zosimo-panopoli.webp', name: 'Zósimo de Panópolis', dates: 'Siglos III–IV d.C. · Panópolis, Egipto', desc: 'El autor alquímico identificable más antiguo. En sus textos —escritos en griego y conservados solo parcialmente— la alquimia ya está plenamente formada como fusión de técnica y misticismo. Zósimo describe visiones: un sacerdote devorado, hervido, calcinado y luego resucitado transformado, alegoría del proceso alquímico como muerte y renacimiento. Sus instrucciones prácticas sobre destilación, sublimación y fermentación son sorprendentemente precisas.', claimLabel: 'Su legado:', claimText: 'Jung estudió intensamente los textos de Zósimo, viendo en ellos la primera elaboración sistemática del inconsciente colectivo en lenguaje simbólico-material.' }
+    ],
+
+    mitiEyebrow: 'Mitos y Símbolos',
+    mitiTitle: 'Las Mitologías de la Alquimia',
+    mitiIntro: 'Las grandes narraciones sagradas que dieron forma al lenguaje simbólico de la Gran Obra.',
+    mitiCards: [
+      { icon: '🔥', label: 'ermete-trismegisto.webp', title: 'Hermes Trismegisto y el Corpus Hermeticum', origin: 'Egipto helenístico · siglos II–III d.C.', desc: 'Hermes Trismegisto —"el tres veces grande"— es la figura fundadora del hermetismo y la alquimia occidental. Mitad humano, mitad divino, habría revelado a la humanidad los secretos de la creación a través del Corpus Hermeticum. El Renacimiento lo creyó contemporáneo de Moisés, un error cronológico que amplificó enormemente su autoridad. Su fórmula más célebre, "Como es arriba, es abajo", sigue siendo el principio operativo de la astrología, la alquimia y la magia ceremonial.' },
+      { icon: '🐍', label: 'ouroboros.webp', title: 'El Uróboros — La Serpiente que se Muerde la Cola', origin: 'Antiguo Egipto · siglo XIV a.C.', desc: 'La serpiente o dragón que devora su propia cola es uno de los símbolos más antiguos y universales de la humanidad. Aparece en la tumba de Tutankamón, en textos gnósticos, en la alquimia medieval, en la filosofía griega, en el budismo y en los mitos nórdicos. Para los alquimistas representaba el ciclo infinito de la materia: disolución y coagulación, muerte y renacimiento, nigredo y rubedo. Jung lo identificó como imagen del inconsciente que se autoconsume y se autorregenera.' },
+      { icon: '⚗️', label: 'rebis.webp', title: 'El Rebis — El Andrógino Alquímico', origin: 'Alquimia medieval europea · siglos XII–XVII', desc: 'El Rebis (del latín res bina, "la cosa doble") es la figura que coronaba el proceso alquímico: un ser andrógino, mitad hombre y mitad mujer, sosteniendo el sol en una mano y la luna en la otra, de pie sobre un dragón. Representaba la coniunctio oppositorum, la unión de los opuestos, que producía la Piedra Filosofal, imagen del ser humano completado.' },
+      { icon: '🦅', label: 'fenice-alchimia.webp', title: 'El Ave Fénix — El Fuego que Regenera', origin: 'Egipto, Grecia, Arabia, China · mitología universal', desc: 'El ave que muere en el fuego y renace de sus propias cenizas es el mito alquímico por excelencia. En Egipto era el Bennu, el ave sagrada de Ra. En Grecia se convirtió en el Fénix, que vivía quinientos años antes de incendiarse y renacer joven. Para los alquimistas el Fénix era la rubedo, la fase roja final del proceso, donde la materia "muerta" en la nigredo regresaba como sustancia incorruptible y luminosa.' },
+      { icon: '🌑', label: 'saturno-kronos.webp', title: 'Saturno y el Plomo Primordial', origin: 'Mitología grecorromana · alquimia planetaria', desc: 'Saturno/Crono, el dios del tiempo y la disolución, estaba asociado al plomo, el metal más pesado y vil del sistema planetario alquímico. Reinaba sobre la nigredo, la fase oscura del proceso. Pero precisamente porque Saturno devora a sus hijos, el plomo lleva en sí la materia prima de todos los demás metales: contiene el oro en su oscuridad, como el dolor contiene la sabiduría.' }
+    ],
+
+    faqSectionTitle: 'Preguntas Frecuentes',
+    faq: [
+      { q: '¿Qué es la alquimia y cuál era su propósito real?', a: 'La alquimia es una tradición esotérico-científica nacida en el Egipto helenístico que entrelaza la práctica de laboratorio con la transformación espiritual. Su objetivo declarado era transmutar metales viles en oro puro, pero su propósito más profundo —el que aún perdura hoy— era la transformación interior del propio alquimista a través de un proceso simbólico en cuatro fases. Muchos historiadores la consideran antecesora tanto de la química moderna como de la psicología profunda.' },
+      { q: '¿Qué representan nigredo, albedo, citrinitas y rubedo?', a: 'Son las cuatro fases de la Gran Obra alquímica. La nigredo es la fase negra de disolución y crisis, la albedo la fase blanca de purificación y claridad, la citrinitas el despertar solar de la intuición, la rubedo la unión final de los opuestos, simbolizada por la Piedra Filosofal. Puedes explorarlas todas con el oráculo en la parte superior de esta página, o profundizar en sus equivalentes en los <a href="./tarocchi.html">Arcanos Mayores del Tarot</a>.' },
+      { q: '¿Alguien logró realmente transformar el plomo en oro?', a: 'Ningún alquimista histórico lo logró con los métodos disponibles en su época. Solo en 1980, en el Laboratorio Lawrence Berkeley, se transmutó bismuto en oro mediante reacciones nucleares controladas, pero en cantidades infinitesimales y a un coste enormemente superior al valor del oro obtenido. La transmutación física es posible, aunque económicamente carece de sentido.' },
+      { q: '¿Cuál es la diferencia entre alquimia y química moderna?', a: 'La química moderna, nacida en el siglo XVIII con Antoine Lavoisier, se ocupa exclusivamente de la transformación física y medible de la materia. La alquimia, en cambio, unía la investigación material con una cosmología simbólica y espiritual completa: cada operación de laboratorio —calcinación, destilación, sublimación— reflejaba un proceso interior paralelo en el propio alquimista.' },
+      { q: '¿Por qué Carl Jung se interesó tanto por la alquimia?', a: 'Jung vio en los textos alquímicos, especialmente en los de Zósimo de Panópolis, la primera elaboración sistemática del proceso de individuación psíquica. La transmutación de la materia bruta en oro reflejaba simbólicamente la integración del inconsciente en la conciencia, un tema que también encontrarás explorando el <a href="./ermetismo.html">Hermetismo</a> y su cosmología simbólica.' },
+      { q: '¿Cómo se usa el oráculo de las fases alquímicas de MYSTICA?', a: 'Elige la fase que refleja tu momento actual entre las cuatro pestañas de la parte superior de la página, o deja que decida el azar con "Fase Aleatoria". Escribe opcionalmente tu pregunta y pulsa "Revela la Fase" para recibir descripción completa, dones, sombras a integrar, prescripción hermética, meditación guiada y el Arcano del Tarot asociado.' }
+    ],
+
+    oracolo: {
+      title: '⚗️ Consulta la Gran Obra',
+      subtitle: 'Elige la fase alquímica que refleja tu momento interior',
+      tabs: ['Nigredo', 'Albedo', 'Citrinitas', 'Rubedo'],
+      placeholder: '✍️ Pregunta o situación a explorar (opcional)…',
+      btnRandom: '🎲 Fase Aleatoria',
+      btnReveal: '⚗️ Revela la Fase',
+      btnNewStage: '🔄 Nueva Fase',
+      labels: { pianeta: 'Planeta', metallo: 'Metal', colore: 'Color', erba: 'Hierba' },
+      blocks: { tuaFase: '🔥 Tu Fase', doni: '✨ Dones de esta Fase', ombre: '⚠️ Sombras a Integrar', prescrizione: '📜 Prescripción Hermética', meditazione: '🧘 Meditación', arcanoAssociato: 'ARCANO ASOCIADO' }
+    },
+
+    db: [
+      { key:'nigredo', stageName:'Nigredo', emoji:'🌑', sottotitolo:'Crisis, Disolución y Oscuridad Creativa', pianeta:'Saturno', metallo:'Plomo', colore:'Negro', erba:'Ajenjo', simbolo:'🜔',
+        desc:'La Nigredo es la primera y más difícil fase de la Gran Obra. El plomo del ego se disuelve en el crisol de la experiencia. No es una crisis: es una gestación. Como el compost transforma los residuos en nutrientes, la nigredo transforma el dolor en sabiduría. Tus sombras emergen no para atormentarte, sino para ser reconocidas, integradas y transmutadas. El Mago no huye de la nigredo: nada dentro de ella, seguro de que toda disolución precede a un renacimiento más auténtico.',
+        luci:'Profundidad interior poco común, capacidad de estar en el malestar sin huir, honestidad brutal con uno mismo, terreno fértil para la transformación.',
+        ombre:'Riesgo de identificarse con la crisis, autosabotaje, depresión si no se ve la luz al final del proceso.',
+        prescrizione:'Escribe en un papel las 3 cosas que estás disolviendo de ti. Quémalo con seguridad mientras dices: "Entrego esto al fuego que transforma." Entierra las cenizas. La disolución ya está casi completa.',
+        meditazione:'Siéntate en la oscuridad durante 10 minutos. Respira la noche. Siente el vacío no como ausencia sino como potencial absoluto. Estás en el vientre del cambio.',
+        arcano:'El Juicio — La llamada a la resurrección' },
+      { key:'albedo', stageName:'Albedo', emoji:'🌕', sottotitolo:'Purificación, Claridad y Luz Lunar', pianeta:'Luna', metallo:'Plata', colore:'Blanco', erba:'Hipérico', simbolo:'🜁',
+        desc:'La Albedo es la fase del amanecer: tras la noche de la nigredo, la luz comienza a filtrarse. La purificación no es borrar el pasado: es la claridad que surge cuando el barro se ha depositado y el agua vuelve a ser transparente. Estás desarrollando una mente y un corazón más puros, capaces de ver la realidad sin los filtros de las proyecciones y los miedos. La luna ilumina la albedo: la sabiduría intuitiva, el reflejo, lo femenino sagrado en cada uno.',
+        luci:'Claridad mental y emocional creciente, purificación de las intenciones, intuición más afinada, capacidad de ver patrones en las situaciones.',
+        ombre:'Tendencia al perfeccionismo espiritual, ilusión de haber "completado" el trabajo interior demasiado pronto, rigidez al querer mantener la pureza alcanzada.',
+        prescrizione:'Medita con una vela blanca. Visualiza una lluvia plateada que lava las últimas escorias. Di: "Lo que es puro resplandece. Lo que es impuro se disuelve en la luz." Bebe un vaso de agua lentamente, como un acto sagrado de purificación.',
+        meditazione:'Observa la luna por la noche. Deja que su luz entre por tus ojos. Siente lo femenino cósmico, en ti y más allá de ti. Nota lo que surge en el silencio lunar.',
+        arcano:'La Luna — El reflejo que revela el inconsciente' },
+      { key:'citrinitas', stageName:'Citrinitas', emoji:'🌞', sottotitolo:'Despertar Solar, Intuición y Dirección', pianeta:'Sol', metallo:'Oro', colore:'Amarillo', erba:'Caléndula', simbolo:'🜂',
+        desc:'La Citrinitas es el despertar del sol interior: la fase en la que el oro comienza a brillar a través del material bruto. La intuición se vuelve profética. Las conexiones se iluminan de significado. Las decisiones se vuelven más claras porque estás cada vez más alineado con tu propósito auténtico. Esta es la fase de los videntes y creadores: quien ha atravesado la oscuridad de la nigredo y la pureza de la albedo porta ahora una luz que no deslumbra sino que ilumina.',
+        luci:'Intuición solar excepcional, dirección clara, energía creativa al máximo, capacidad de ver conexiones invisibles para otros, carisma natural.',
+        ombre:'Inflación del ego espiritual, aislamiento de quienes no comprenden tu visión, impaciencia con quienes están en fases más oscuras.',
+        prescrizione:'10 minutos de luz matutina directa sobre el rostro. Visualiza una esfera solar líquida que desciende desde la cabeza hasta el corazón. Escribe 1 intención solar para tu día. Actúa sobre ella antes del mediodía.',
+        meditazione:'Contempla una llama a distancia. Siente su calor. Nota el momento en que la llama y tu conciencia se vuelven una sola cosa. Este es el oro interior.',
+        arcano:'El Sol — La plenitud de la conciencia iluminada' },
+      { key:'rubedo', stageName:'Rubedo', emoji:'🔴', sottotitolo:'Unión de los Opuestos, Realización y la Piedra Filosofal', pianeta:'Marte + Venus', metallo:'Cobre + Oro', colore:'Rojo', erba:'Rosa roja', simbolo:'🜍',
+        desc:'La Rubedo es la coronación de la Gran Obra: la unión sagrada de todos los opuestos, luz y sombra, masculino y femenino, consciente e inconsciente, espiritual y material. La Piedra Filosofal no es un objeto sino un estado del ser: la constatación de que la totalidad que buscas fuera ya está dentro de ti. Quien alcanza la rubedo no se vuelve perfecto: se vuelve íntegro. Y la integridad es la culminación del viaje alquímico. El rojo es el color de la sangre viva, del amor encarnado, de la vida plenamente vivida.',
+        luci:'Integración profunda de los opuestos interiores, compasión total, capacidad de transformar a quien conoces, realización auténtica de tu propósito.',
+        ombre:'Ninguna sombra real en esta fase, solo el riesgo de creerla definitiva. La Gran Obra se repite en espiral, en niveles cada vez más profundos.',
+        prescrizione:'Enciende una vela roja. Siéntate con las manos juntas: una mano por lo masculino, una por lo femenino en ti. Respira profundamente. Declaración: "Soy íntegro. La luz y la sombra en mí se abrazan." Comparte hoy un gesto concreto de amor encarnado con alguien.',
+        meditazione:'Visualízate abrazado por ti mismo: pasado, presente y futuro fundidos en un único momento de compasión total. Este es el Rebis, el doble que es uno.',
+        arcano:'El Mundo — La realización del ciclo completo' }
+    ]
   }
-];
+};
 
-let _alchStage=0;
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+let _alchStage = 0;
+let _alchLastQuestion = '';
+let _alchResultOpen = false;
 
-function alchSelStage(i){
-  _alchStage=i;
-  for(let k=0;k<4;k++) $('alchTab'+k)?.classList.toggle('active',k===i);
+/* ══════════════════════════════════════════════
+   SEO MULTILINGUA — JSON-LD @graph completo
+══════════════════════════════════════════════ */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const L = LANG[currentLang];
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({
+            '@type': 'Question', name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
+        },
+        {
+          '@type': 'Article',
+          headline: L.artTitle,
+          description: S.description,
+          image: 'https://mysticaoracoli.it/images/icone/home/alchimia.webp',
+          inLanguage: S.htmlLang,
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni' },
+          publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli', logo: { '@type':'ImageObject', url:'https://mysticaoracoli.it/apple-touch-icon-v2.png' } }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'MYSTICA Oracoli', item: 'https://mysticaoracoli.it/index.html' },
+            { '@type': 'ListItem', position: 2, name: L.pageTitle, item: PAGE_URL }
+          ]
+        },
+        {
+          '@type': 'WebPage',
+          '@id': PAGE_URL,
+          url: PAGE_URL,
+          name: S.title,
+          description: S.description,
+          inLanguage: S.htmlLang,
+          isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' },
+          speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#art-title', '#art-p1', '#art-p2'] }
+        },
+        {
+          '@type': 'Organization',
+          name: 'MYSTICA Oracoli',
+          url: 'https://mysticaoracoli.it/',
+          logo: 'https://mysticaoracoli.it/apple-touch-icon-v2.png'
+        },
+        {
+          '@type': 'Person',
+          name: 'Dott. Petrolese Giovanni',
+          alternateName: 'Mago Petro',
+          worksFor: { '@type': 'Organization', name: 'PetroCorporation' }
+        },
+        {
+          '@type': 'ImageObject',
+          contentUrl: 'https://mysticaoracoli.it/images/icone/home/alchimia.webp',
+          url: 'https://mysticaoracoli.it/images/icone/home/alchimia.webp',
+          width: 1200, height: 630,
+          caption: L.artImgAlt
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'MYSTICA Oracoli — Oracolo Alchemico',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web, PWA',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+        }
+      ]
+    });
+  }
 }
 
-function alchRandom(){
-  _alchStage=Math.floor(Math.random()*4);
+/* ══════════════════════════════════════════════
+   RENDER — sezioni statiche dal LANG
+══════════════════════════════════════════════ */
+function renderArticolo(L) {
+  $('storiaEyebrow').textContent = L.storiaEyebrow;
+  $('art-title').textContent = L.artTitle;
+  $('art-h2').textContent = L.artH2;
+  $('art-h3').textContent = L.artH3;
+  $('art-p1').textContent = L.artP1;
+  $('art-p2').textContent = L.artP2;
+  $('art-p3').textContent = L.artP3;
+  $('art-p4').textContent = L.artP4;
+  $('art-p5').textContent = L.artP5;
+  $('art-highlight-title').textContent = L.artHighlightTitle;
+  $('art-highlight-text').textContent = L.artHighlightText;
+  const hero = $('art-hero'); if (hero) hero.alt = L.artImgAlt || '';
+  $('cta-explore').textContent = L.ctaExplore;
+  $('articleLinks').innerHTML = L.internalLinks.map(l =>
+    `<a href="${l.href}">${l.text}</a>`).join('');
+}
+
+function renderOro(L) {
+  $('oroEyebrow').textContent = L.oroEyebrow;
+  $('oroTitle').textContent = L.oroTitle;
+  $('oroIntro').textContent = L.oroIntro;
+  $('oroHighlightTitle').textContent = L.oroHighlightTitle;
+  $('oroHighlightText').textContent = L.oroHighlightText;
+  $('oroList').innerHTML = L.oroAttempts.map(a => `
+    <div class="gold-attempt">
+      <span class="gold-attempt-num">${a.num}</span>
+      <div class="gold-attempt-text"><h4>${a.title}</h4><p>${a.text}</p></div>
+    </div>`).join('');
+}
+
+function renderAlchimisti(L) {
+  $('alcEyebrow').textContent = L.alcEyebrow;
+  $('alcTitle').textContent = L.alcTitle;
+  $('alcIntro').textContent = L.alcIntro;
+  $('alcGrid').innerHTML = L.alcCards.map(c => `
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">${c.icon}</span><span class="ph-label">${c.label}</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">${c.name}</div>
+        <div class="alc-dates">${c.dates}</div>
+        <p class="alc-desc">${c.desc}</p>
+        <div class="alc-claim"><strong>${c.claimLabel}</strong> ${c.claimText}</div>
+      </div>
+    </div>`).join('');
+}
+
+function renderMiti(L) {
+  $('mitiEyebrow').textContent = L.mitiEyebrow;
+  $('mitiTitle').textContent = L.mitiTitle;
+  $('mitiIntro').textContent = L.mitiIntro;
+  $('mitiGrid').innerHTML = L.mitiCards.map(c => `
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">${c.icon}</span><span class="ph-label">${c.label}</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">${c.title}</div>
+        <div class="myth-origin">${c.origin}</div>
+        <p class="myth-desc">${c.desc}</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderOracoloLabels(L) {
+  $('oracTitle').textContent = L.oracolo.title;
+  $('oracSubtitle').textContent = L.oracolo.subtitle;
+  for (let i = 0; i < 4; i++) $('alchTabLabel' + i).textContent = L.oracolo.tabs[i];
+  const ta = $('alchDomanda'); if (ta) { ta.placeholder = L.oracolo.placeholder; ta.value = _alchLastQuestion; }
+  $('alchBtnRandom').textContent = L.oracolo.btnRandom;
+  $('alchBtnReveal').textContent = L.oracolo.btnReveal;
+}
+
+/* ══════════════════════════════════════════════
+   FAQ Accordion
+══════════════════════════════════════════════ */
+function renderFAQ(faqs) {
+  const container = $('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFAQ(i) {
+  const ans = $(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ══════════════════════════════════════════════
+   AUDIO MANAGER
+══════════════════════════════════════════════ */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = $('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+$('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ══════════════════════════════════════════════
+   TEMA GIORNO/NOTTE
+══════════════════════════════════════════════ */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = $('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+
+$('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ══════════════════════════════════════════════
+   PREMIUM GATE
+══════════════════════════════════════════════ */
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  $('premiumModal')?.classList.add('show');
+  $('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+
+function closePremiumModal() {
+  $('premiumModal')?.classList.remove('show');
+  $('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+/* Nota: l'oracolo delle 4 fasi è una lettura singola di base — sempre libera, nessun gate applicato. */
+
+/* ══════════════════════════════════════════════
+   SHARE
+══════════════════════════════════════════════ */
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = $('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = $('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = $('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = $('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = $('sharePopup'); if (sp) sp.hidden = false;
+}
+
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = $('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ══════════════════════════════════════════════
+   STORICO LETTURE — myst_v3_history
+══════════════════════════════════════════════ */
+function logHistory(type, data) {
+  try {
+    const raw = localStorage.getItem('myst_v3_history');
+    const hist = raw ? JSON.parse(raw) : [];
+    hist.push({ type, data, date: new Date().toISOString() });
+    while (hist.length > 200) hist.shift();
+    localStorage.setItem('myst_v3_history', JSON.stringify(hist));
+  } catch (e) { /* storage non disponibile — non bloccante */ }
+}
+
+/* ══════════════════════════════════════════════
+   LINGUA — applyLang()
+══════════════════════════════════════════════ */
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+
+  const bb = $('btn-back'); if (bb) bb.textContent = L.back;
+  const mt = $('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = $('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+  $('page-title').textContent = L.pageTitle;
+  $('page-sub').textContent = L.pageSub;
+  $('skipLink').textContent = L.skipLink;
+
+  renderArticolo(L);
+  renderOro(L);
+  renderAlchimisti(L);
+  renderMiti(L);
+  renderOracoloLabels(L);
+
+  const pt = $('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = $('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = $('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = $('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = $('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  const sc = $('share-copy'); if (sc) sc.textContent = L.shareCopy;
+  $('shareBtn').textContent = '📤 ' + (currentLang === 'it' ? 'Condividi' : currentLang === 'en' ? 'Share' : 'Compartir');
+
+  const fc = $('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = $('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+  $('footNavHome').textContent = L.footerNav.home;
+  $('footNavContact').textContent = L.footerNav.contact;
+  $('footNavAbout').textContent = L.footerNav.about;
+  $('footNavPrivacy').textContent = L.footerNav.privacy;
+
+  $('faqSectionTitle').textContent = L.faqSectionTitle;
+  renderFAQ(L.faq);
+
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.setAttribute('aria-selected', String(i === _alchStage)));
+
+  if (_alchResultOpen) calcAlchimia(_alchLastQuestion, true);
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ══════════════════════════════════════════════
+   LOGICA ORACOLO — Le 4 Fasi Alchemiche
+══════════════════════════════════════════════ */
+function alchSelStage(i) {
+  _alchStage = i;
+  for (let k = 0; k < 4; k++) {
+    $('alchTab' + k)?.classList.toggle('active', k === i);
+    $('alchTab' + k)?.setAttribute('aria-selected', String(k === i));
+  }
+}
+
+function alchRandom() {
+  _alchStage = Math.floor(Math.random() * 4);
   alchSelStage(_alchStage);
   calcAlchimia();
 }
 
-function calcAlchimia(){
-  const domanda=($('alchDomanda')?.value||'').trim();
-  const d=DB_ALCHIMIA[_alchStage];
-  const domHtml=domanda?`<div class="geo-question-shown">❓ "${domanda}"</div>`:'';
-  const emoji=d.stage.split(' ')[0];
-  const stageName=d.stage.split(' ').slice(1).join(' ');
+function calcAlchimia(presetDomanda, silent) {
+  const L = LANG[currentLang];
+  const domanda = (presetDomanda !== undefined ? presetDomanda : ($('alchDomanda')?.value || '')).trim();
+  _alchLastQuestion = domanda;
+  const d = L.db[_alchStage];
+  const O = L.oracolo;
+  const domHtml = domanda ? `<div class="geo-question-shown">❓ "${domanda}"</div>` : '';
 
-  $('alchResult').innerHTML=`
+  $('alchResult').innerHTML = `
     <div style="text-align:center;padding:16px 0 10px">
-      <div style="font-size:64px;margin-bottom:10px;animation:lunaFloat 4s ease-in-out infinite">${emoji}</div>
-      <div style="font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:2px">${stageName}</div>
+      <div style="font-size:64px;margin-bottom:10px;animation:lunaFloat 4s ease-in-out infinite" aria-hidden="true">${d.emoji}</div>
+      <div style="font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:2px">${d.stageName}</div>
       <div style="font-size:11px;color:var(--muted);letter-spacing:2px;margin:6px 0">${d.sottotitolo}</div>
-      <div style="font-family:'Cinzel',serif;font-size:32px;color:var(--gold);margin:10px 0;text-shadow:0 0 20px #d4af3760">${d.simbolo}</div>
+      <div style="font-family:'Cinzel',serif;font-size:32px;color:var(--gold);margin:10px 0;text-shadow:0 0 20px #d4af3760" aria-hidden="true">${d.simbolo}</div>
     </div>
     <div class="luna-grid">
-      <div class="luna-card"><div class="luna-card-ico">🪐</div><div class="luna-card-title">Pianeta</div><div class="luna-card-val">${d.pianeta}</div></div>
-      <div class="luna-card"><div class="luna-card-ico">⚙️</div><div class="luna-card-title">Metallo</div><div class="luna-card-val">${d.metallo}</div></div>
-      <div class="luna-card"><div class="luna-card-ico">🎨</div><div class="luna-card-title">Colore</div><div class="luna-card-val">${d.colore}</div></div>
-      <div class="luna-card"><div class="luna-card-ico">🌿</div><div class="luna-card-title">Erba</div><div class="luna-card-val">${d.erba}</div></div>
+      <div class="luna-card"><div class="luna-card-ico" aria-hidden="true">🪐</div><div class="luna-card-title">${O.labels.pianeta}</div><div class="luna-card-val">${d.pianeta}</div></div>
+      <div class="luna-card"><div class="luna-card-ico" aria-hidden="true">⚙️</div><div class="luna-card-title">${O.labels.metallo}</div><div class="luna-card-val">${d.metallo}</div></div>
+      <div class="luna-card"><div class="luna-card-ico" aria-hidden="true">🎨</div><div class="luna-card-title">${O.labels.colore}</div><div class="luna-card-val">${d.colore}</div></div>
+      <div class="luna-card"><div class="luna-card-ico" aria-hidden="true">🌿</div><div class="luna-card-title">${O.labels.erba}</div><div class="luna-card-val">${d.erba}</div></div>
     </div>
     ${domHtml}
-    <div class="geo-block"><h4>🔥 La Tua Fase</h4><p>${d.desc}</p></div>
-    <div class="geo-block"><h4>✨ Doni di questa Fase</h4><p>${d.luci}</p></div>
-    <div class="geo-block"><h4>⚠️ Ombre da Integrare</h4><p>${d.ombre}</p></div>
-    <div class="geo-block" style="border-left-color:#c8b4ff"><h4 style="color:#c8b4ff">📜 Prescrizione Ermetica</h4><p>${d.prescrizione}</p></div>
-    <div class="geo-block" style="border-left-color:#c8b4ff"><h4 style="color:#c8b4ff">🧘 Meditazione</h4><p>${d.meditazione}</p></div>
+    <div class="geo-block"><h4>${O.blocks.tuaFase}</h4><p>${d.desc}</p></div>
+    <div class="geo-block"><h4>${O.blocks.doni}</h4><p>${d.luci}</p></div>
+    <div class="geo-block"><h4>${O.blocks.ombre}</h4><p>${d.ombre}</p></div>
+    <div class="geo-block" style="border-left-color:#c8b4ff"><h4 style="color:#c8b4ff">${O.blocks.prescrizione}</h4><p>${d.prescrizione}</p></div>
+    <div class="geo-block" style="border-left-color:#c8b4ff"><h4 style="color:#c8b4ff">${O.blocks.meditazione}</h4><p>${d.meditazione}</p></div>
     <div class="arcano-box">
-      <div class="arcano-label">ARCANO ASSOCIATO</div>
+      <div class="arcano-label">${O.blocks.arcanoAssociato}</div>
       <div class="arcano-val">${d.arcano}</div>
     </div>
     <div class="btn-grp">
-      <button class="btn btn-sec" onclick="resetAlchimia()">🔄 Nuova Fase</button>
+      <button class="btn btn-sec" onclick="resetAlchimia()">${O.btnNewStage}</button>
     </div>
   `;
-  $('alchResult').style.display='block';
-  $('alchFormBtns').style.display='none';
-  $('alchDomanda').style.display='none';
-  $('alchResult').scrollIntoView({behavior:'smooth',block:'start'});
+  $('alchResult').style.display = 'block';
+  $('alchFormBtns').style.display = 'none';
+  $('alchDomanda').style.display = 'none';
+  _alchResultOpen = true;
+
+  if (!silent) {
+    logHistory('alchimia', { stage: d.key, domanda });
+    $('alchResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
-function resetAlchimia(){
-  $('alchResult').style.display='none';
-  $('alchFormBtns').style.display='flex';
-  $('alchDomanda').style.display='block';
-  if($('alchDomanda')) $('alchDomanda').value='';
-  $('oracolo').scrollIntoView({behavior:'smooth',block:'start'});
+function resetAlchimia() {
+  $('alchResult').style.display = 'none';
+  $('alchFormBtns').style.display = 'flex';
+  $('alchDomanda').style.display = 'block';
+  if ($('alchDomanda')) $('alchDomanda').value = '';
+  _alchLastQuestion = '';
+  _alchResultOpen = false;
+  $('oracolo').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+/* ══════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+});
 </script>
 </body>
 </html>

@@ -1,71 +1,163 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viaggio Astrale — Mystica Oracoli</title>
-<meta name="description" content="Guida completa al Viaggio Astrale con onde theta binaurali, tecniche di proiezione, chakra e protezione energetica. Mystica Oracoli.">
-<meta name="keywords" content="viaggio astrale, proiezione astrale, onde theta, binaural beats, chakra, corpo astrale, meditazione profonda, OBE">
-<meta property="og:title" content="Viaggio Astrale — Mystica Oracoli">
-<meta property="og:description" content="Guida completa al Viaggio Astrale con onde theta binaurali e tecniche di proiezione.">
-<meta property="og:url" content="https://mysticaoracoli.it/viaggio-astrale.html">
-<meta property="og:type" content="article">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — TUTTI VUOTI, popolati da updateSEO() -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/viaggio-astrale.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/viaggio-astrale.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/viaggio-astrale.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/viaggio-astrale.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/viaggio-astrale.html">
+
+<!-- Open Graph — VUOTI, popolati da updateSEO() -->
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mysticaoracoli.it/viaggio-astrale.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/viaggio-astrale.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card — VUOTA -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/viaggio-astrale.webp">
+
+<!-- JSON-LD — rigenerato da updateSEO() -->
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
+/* ── Variabili / Reset ── */
 :root{
-  --bg:#0a0a12;
-  --surface:#13131f;
-  --card:#1c1c2e;
+  --bg:#0a0514;
+  --card:#140c24;
+  --purple:#2a1748;
   --gold:#d4af37;
-  --gold-dim:#a07c20;
+  --gold-dim:#b8860b;
   --gold-light:#f0d060;
-  --text:#e8e0f0;
-  --text-dim:#9090b0;
-  --purple:#7b5ea7;
+  --gold-glow:rgba(212,175,55,.4);
+  --text:#f4f1fa;
+  --muted:#b8b2d1;
+  --radius:14px;
+  --border:rgba(212,175,55,.2);
   --indigo:#4a3a8a;
   --cyan:#40c0d0;
-  --radius:14px;
+  --purple-accent:#7b5ea7;
+}
+html.theme-day{
+  --bg:#f5f2ed;
+  --card:#ede8df;
+  --text:#2a1748;
+  --muted:#6b5b7f;
+  --purple:#6b5b7f;
+  --gold:#c89742;
+  --gold-dim:#a67c52;
+  --gold-light:#8a5a10;
+  --gold-glow:rgba(200,151,66,.2);
+  --border:#c89742;
+  --indigo:#8a76b0;
+  --cyan:#3a8f9c;
+  --purple-accent:#8a76b0;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.7;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.7;min-height:100vh;transition:background .3s,color .3s}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(74,58,138,.18) 0%,transparent 70%),radial-gradient(ellipse at 100% 100%,rgba(64,192,208,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+html.theme-day body::before{opacity:.4}
 
-/* HEADER */
-.site-header{background:rgba(10,10,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,.18);padding:12px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.site-header a{color:var(--gold-dim);text-decoration:none;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.5px;transition:color .2s}
-.site-header a:hover{color:var(--gold)}
-.site-header span{color:var(--text-dim);font-size:12px}
-.header-title{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);margin-left:auto}
+/* ── Skip link ── */
+.skip-link{position:absolute;top:-40px;left:8px;background:var(--gold);color:#0a0514;padding:8px 14px;border-radius:8px;z-index:999;text-decoration:none;font-family:'Cinzel',serif;font-size:13px;transition:top .2s}
+.skip-link:focus{top:8px}
 
-/* PROGRESS BAR */
+/* ── Sfondo Cosmico ── */
+.cosmos{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%,#2a174830 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%,#1a073820 0%,transparent 60%),
+    radial-gradient(2px 2px at 15% 25%,#fff9 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%,#fff7 0%,transparent 100%),
+    radial-gradient(2px 2px at 45% 70%,#d4af3780 0%,transparent 100%),
+    radial-gradient(1px 1px at 88% 45%,#fff6 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%,#fff5 0%,transparent 100%),
+    radial-gradient(2px 2px at 60% 35%,#d4af3760 0%,transparent 100%);
+  animation:twinkle 14s infinite alternate}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+html.theme-day .cosmos{opacity:.25}
+
+/* ── Progress bar (logica specifica pagina — invariata) ── */
 .astral-progress{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(212,175,55,.1);z-index:200}
-.astral-progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--gold),var(--cyan));width:0%;transition:width .3s}
+.astral-progress-fill{height:100%;background:linear-gradient(90deg,var(--purple-accent),var(--gold),var(--cyan));width:0%;transition:width .3s}
 
-/* HERO */
-.hero{text-align:center;padding:60px 20px 40px;position:relative;z-index:1}
-.hero-icon{font-size:72px;display:block;margin-bottom:16px;filter:drop-shadow(0 0 24px rgba(212,175,55,.5));animation:floatIcon 4s ease-in-out infinite}
+/* ── Header standard ── */
+.page-header{background:rgba(10,5,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:14px 16px 10px;position:sticky;top:3px;z-index:100}
+html.theme-day .page-header{background:rgba(245,242,237,.94)}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.btn-back{display:inline-flex;align-items:center;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.5px}
+.btn-back::before{content:'← '}
+.header-controls{display:flex;gap:8px}
+.btn-icon{background:rgba(212,175,55,.08);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--gold);font-size:12px;cursor:pointer;font-family:'Cinzel',serif;transition:all .2s}
+.btn-icon:hover{background:rgba(212,175,55,.16)}
+.page-title{font-family:'Cinzel',serif;font-size:19px;color:var(--gold);text-align:center;margin:10px 0 6px;letter-spacing:1px}
+.lang-switch{display:flex;justify-content:center;gap:6px}
+.btn-lang{background:transparent;border:1px solid var(--border);border-radius:6px;padding:3px 10px;color:var(--muted);font-size:12px;cursor:pointer;font-family:'Cinzel',serif;transition:all .2s}
+.btn-lang.active,.btn-lang:hover{background:var(--gold);color:#140c24;border-color:var(--gold)}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:36px 20px 24px;position:relative;z-index:1}
+.hero-icon{font-size:64px;display:block;margin-bottom:14px;filter:drop-shadow(0 0 24px rgba(212,175,55,.5));animation:floatIcon 4s ease-in-out infinite}
 @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero h1{font-family:'Cinzel',serif;font-size:clamp(26px,6vw,42px);color:var(--gold);letter-spacing:2px;margin-bottom:10px}
-.hero-sub{color:var(--text-dim);font-size:16px;max-width:520px;margin:0 auto;font-style:italic}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(24px,6vw,38px);color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.hero-sub{color:var(--muted);font-size:16px;max-width:520px;margin:0 auto;font-style:italic}
 
-/* THETA PLAYER */
-.theta-player{background:linear-gradient(135deg,rgba(74,58,138,.35),rgba(64,192,208,.1));border:1px solid rgba(212,175,55,.2);border-radius:var(--radius);padding:24px;max-width:560px;margin:32px auto;position:relative;z-index:1}
-.theta-player h3{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);margin-bottom:16px;text-align:center;letter-spacing:1px}
-.theta-info{font-size:14px;color:var(--text-dim);text-align:center;margin-bottom:16px;line-height:1.5}
+/* ── THETA PLAYER (funzione interattiva — logica invariata) ── */
+.theta-player{background:linear-gradient(135deg,rgba(74,58,138,.35),rgba(64,192,208,.1));border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:560px;margin:24px auto;position:relative;z-index:1}
+.theta-player h3{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);margin-bottom:14px;text-align:center;letter-spacing:1px}
+.theta-info{font-size:14px;color:var(--muted);text-align:center;margin-bottom:16px;line-height:1.5}
 .theta-controls{display:flex;flex-direction:column;gap:12px}
 .theta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.theta-label{font-size:13px;color:var(--text-dim);min-width:90px}
-select.theta-sel,input[type=range]{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px;color:var(--text);padding:6px 10px;font-size:13px}
+.theta-label{font-size:13px;color:var(--muted);min-width:90px}
+select.theta-sel,input[type=range]{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:6px 10px;font-size:13px}
 input[type=range]{cursor:pointer;accent-color:var(--gold)}
-.btn-theta{width:100%;padding:12px;background:linear-gradient(135deg,var(--purple),var(--indigo));border:1px solid rgba(212,175,55,.3);border-radius:10px;color:var(--gold-light);font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;cursor:pointer;transition:all .3s;margin-top:8px}
-.btn-theta:hover{background:linear-gradient(135deg,#9b6ebf,#5a4aaa);transform:translateY(-1px)}
+.btn-theta{width:100%;padding:12px;background:linear-gradient(135deg,var(--purple-accent),var(--indigo));border:1px solid var(--border);border-radius:10px;color:var(--gold-light);font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;cursor:pointer;transition:all .3s;margin-top:8px}
+.btn-theta:hover{transform:translateY(-1px)}
 .btn-theta.playing{background:linear-gradient(135deg,#2a4a2a,#1a3a1a);color:#80d080;border-color:#80d08050}
 .theta-viz{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:32px;margin-top:12px;opacity:.3;transition:opacity .5s}
 .theta-viz.active{opacity:1}
-.theta-bar{width:4px;background:linear-gradient(to top,var(--purple),var(--cyan));border-radius:2px;animation:none}
+.theta-bar{width:4px;background:linear-gradient(to top,var(--purple-accent),var(--cyan));border-radius:2px;animation:none}
 .theta-viz.active .theta-bar{animation:thetaWave 1.4s ease-in-out infinite}
 .theta-bar:nth-child(1){animation-delay:0s;height:8px}
 .theta-bar:nth-child(2){animation-delay:.1s;height:14px}
@@ -77,69 +169,119 @@ input[type=range]{cursor:pointer;accent-color:var(--gold)}
 .theta-bar:nth-child(8){animation-delay:.1s;height:14px}
 .theta-bar:nth-child(9){animation-delay:0s;height:8px}
 @keyframes thetaWave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.2)}}
-.theta-warning{font-size:12px;color:var(--text-dim);text-align:center;margin-top:10px;font-style:italic;opacity:.7}
+.theta-warning{font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic;opacity:.7}
 
-/* TOC */
-.toc-wrap{max-width:680px;margin:0 auto 32px;padding:0 20px;position:relative;z-index:1}
-.toc-label{font-family:'Cinzel',serif;font-size:12px;color:var(--text-dim);letter-spacing:2px;text-align:center;margin-bottom:12px;text-transform:uppercase}
+/* ── TOC ── */
+.toc-wrap{max-width:680px;margin:0 auto 28px;padding:0 20px;position:relative;z-index:1}
+.toc-label{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-align:center;margin-bottom:12px;text-transform:uppercase}
 .toc-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.toc-pill{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.15);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer;transition:all .2s;color:var(--text-dim)}
+.toc-pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer;transition:all .2s;color:var(--muted)}
 .toc-pill:hover,.toc-pill.active{background:rgba(212,175,55,.15);border-color:var(--gold);color:var(--gold)}
 
-/* CONTENT */
-.content{max-width:720px;margin:0 auto;padding:0 20px 60px;position:relative;z-index:1}
+/* ── CONTENUTO / ARTICOLO ── */
+main{position:relative;z-index:1}
+.content{max-width:720px;margin:0 auto;padding:0 20px 20px}
+.article-section{max-width:720px;margin:0 auto;padding:0 20px}
 
-/* CHAPTERS */
-.astral-chapter{background:var(--card);border:1px solid rgba(212,175,55,.12);border-radius:var(--radius);padding:28px 24px;margin-bottom:28px;scroll-margin-top:140px}
+.astral-chapter{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;margin-bottom:28px;scroll-margin-top:150px;content-visibility:auto;contain-intrinsic-size:800px}
 .chapter-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
 .chapter-icon{font-size:36px;flex-shrink:0;filter:drop-shadow(0 0 12px rgba(212,175,55,.3))}
-.chapter-meta{}
-.chapter-num{font-size:11px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.chapter-num{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
 .chapter-title{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);line-height:1.3}
-.chapter-sub{font-size:14px;color:var(--text-dim);margin-top:4px;font-style:italic}
+.chapter-sub{font-size:14px;color:var(--muted);margin-top:4px;font-style:italic}
 .chapter-body p{margin-bottom:14px;color:var(--text)}
 .chapter-body p:last-child{margin-bottom:0}
+.chapter-body strong{color:var(--gold-light)}
 
-/* CALLOUT BOXES */
+/* ── CALLOUT ── */
 .callout{border-radius:10px;padding:16px 18px;margin:18px 0;border-left:3px solid}
 .callout-warning{background:rgba(200,80,40,.08);border-color:#c05028}
 .callout-tip{background:rgba(212,175,55,.06);border-color:var(--gold-dim)}
 .callout-tech{background:rgba(64,192,208,.06);border-color:var(--cyan)}
-.callout-spirit{background:rgba(123,94,167,.1);border-color:var(--purple)}
+.callout-spirit{background:rgba(123,94,167,.1);border-color:var(--purple-accent)}
 .callout-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;margin-bottom:8px}
 .callout-warning .callout-title{color:#d06040}
 .callout-tip .callout-title{color:var(--gold)}
 .callout-tech .callout-title{color:var(--cyan)}
 .callout-spirit .callout-title{color:#b090d0}
-.callout-body{font-size:15px;color:var(--text-dim);line-height:1.6}
+.callout-body{font-size:15px;color:var(--muted);line-height:1.6}
 
-/* STEP LIST */
+/* ── STEP LIST ── */
 .step-list{list-style:none;margin:16px 0}
 .step-list li{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
-.step-num{background:linear-gradient(135deg,var(--purple),var(--indigo));color:var(--gold-light);font-family:'Cinzel',serif;font-size:12px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-num{background:linear-gradient(135deg,var(--purple-accent),var(--indigo));color:var(--gold-light);font-family:'Cinzel',serif;font-size:12px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .step-text{font-size:16px;color:var(--text);line-height:1.6}
 .step-text strong{color:var(--gold-light)}
 
-/* KEYWORD TAGS */
+/* ── KEYWORD TAGS ── */
 .kw-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .kw{background:rgba(123,94,167,.15);border:1px solid rgba(123,94,167,.3);border-radius:20px;padding:4px 12px;font-size:13px;color:#b090d0}
 
-/* DIVIDER */
+/* ── DIVIDER ── */
 .divider{text-align:center;color:var(--gold-dim);letter-spacing:8px;margin:10px 0;font-size:14px;opacity:.5}
 
-/* ADSENSE */
+/* ── ADSENSE ── */
 .ad-wrap{text-align:center;margin:28px auto;max-width:720px;padding:0 20px}
 
-/* BACK BUTTON */
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:10px 18px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;text-decoration:none;transition:all .2s;margin:20px}
-.back-btn:hover{background:rgba(212,175,55,.15);transform:translateX(-2px)}
+/* ── CTA esplora ── */
+.cta-explore{display:inline-block;background:linear-gradient(135deg,var(--purple-accent),var(--indigo));border:1px solid var(--border);border-radius:12px;padding:14px 28px;color:var(--gold-light);font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;text-decoration:none;transition:all .3s;margin:20px auto 0;text-align:center}
+.cta-explore:hover{transform:translateY(-2px)}
+.cta-wrap{text-align:center}
 
-/* FOOTER */
-footer{text-align:center;padding:30px 20px;color:var(--text-dim);font-size:13px;border-top:1px solid rgba(212,175,55,.1)}
-footer a{color:var(--gold-dim);text-decoration:none}
+/* ── Link interni articolo ── */
+.article-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;justify-content:center}
+.article-links a{background:rgba(212,175,55,.07);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:13px;color:var(--gold);text-decoration:none;transition:all .2s}
+.article-links a:hover{background:rgba(212,175,55,.16)}
+
+/* ── Banner Premium soft ── */
+.premium-banner{max-width:680px;margin:8px auto 24px;padding:16px 20px;background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(123,94,167,.08));border:1px solid var(--border);border-radius:var(--radius);text-align:center}
+.premium-banner p{color:var(--muted);font-size:14px;margin-bottom:10px}
+.premium-banner button{background:var(--gold);color:#140c24;border:none;border-radius:8px;padding:9px 18px;font-family:'Cinzel',serif;font-size:13px;cursor:pointer;letter-spacing:.5px}
+
+/* ── SHARE ── */
+.share-section{max-width:680px;margin:0 auto 24px;padding:0 20px;text-align:center;position:relative}
+.btn-share{background:rgba(212,175,55,.08);border:1px solid var(--border);border-radius:10px;padding:10px 20px;color:var(--gold);font-family:'Cinzel',serif;font-size:13px;cursor:pointer}
+.share-popup{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.share-btn{border-radius:8px;padding:8px 14px;font-size:13px;text-decoration:none;color:#fff;border:none;cursor:pointer;font-family:'Crimson Pro',serif}
+.share-btn.whatsapp{background:#25D366}
+.share-btn.telegram{background:#0088cc}
+.share-btn.facebook{background:#1877F2}
+.share-btn.twitter{background:#000}
+.share-btn.copy{background:rgba(212,175,55,.15);color:var(--gold);border:1px solid var(--border)}
+
+/* ── FAQ ── */
+.faq-section{max-width:720px;margin:0 auto;padding:0 20px 20px}
+.faq-title{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:18px;letter-spacing:1px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-question{width:100%;background:none;border:none;color:var(--text);font-family:'Cinzel',serif;font-size:14px;padding:14px 16px;text-align:left;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.faq-icon{color:var(--gold);font-size:18px}
+.faq-answer{padding:0 16px 16px;color:var(--muted);font-size:15px;line-height:1.6}
+
+/* ── PREMIUM MODAL ── */
+.premium-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center}
+.premium-modal.show{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.7)}
+.modal-content{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;max-width:360px;width:90%;text-align:center;z-index:1}
+.modal-content h2{font-family:'Cinzel',serif;color:var(--gold);font-size:19px;margin-bottom:12px}
+.modal-content p{color:var(--muted);font-size:15px;margin-bottom:10px}
+.premium-price{color:var(--gold-light)!important;font-family:'Cinzel',serif;font-size:16px}
+.btn-premium-buy{width:100%;background:var(--gold);color:#140c24;border:none;border-radius:10px;padding:13px;font-family:'Cinzel',serif;font-size:14px;margin-top:14px;cursor:pointer}
+.btn-premium-skip{width:100%;background:none;border:1px solid var(--border);color:var(--muted);border-radius:10px;padding:11px;font-family:'Crimson Pro',serif;font-size:14px;margin-top:10px;cursor:pointer}
+
+/* ── BACK BUTTON legacy (mantenuto per continuità visiva) ── */
+.back-btn{display:none}
+
+/* ── FOOTER ── */
+.page-footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:14px}
+.footer-links a{color:var(--gold-dim);text-decoration:none;font-size:13px}
+.footer-links a:hover{color:var(--gold)}
+.footer-disclaimer{margin-top:8px;opacity:.7;font-size:12px}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
 @media(max-width:600px){
-  .hero h1{font-size:24px}
+  .hero h1{font-size:22px}
   .astral-chapter{padding:20px 16px}
   .chapter-title{font-size:17px}
   .theta-row{flex-direction:column;align-items:stretch}
@@ -149,360 +291,938 @@ footer a{color:var(--gold-dim);text-decoration:none}
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
 <div class="astral-progress"><div class="astral-progress-fill" id="progressFill"></div></div>
 
-<header class="site-header">
-  <a href="/">✦ Mystica Oracoli</a>
-  <span>›</span>
-  <span style="color:var(--text-dim);font-size:13px">Viaggio Astrale</span>
-  <div class="header-title">🌌</div>
+<div class="cosmos" aria-hidden="true"></div>
+
+<header class="page-header">
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+    </div>
+  </div>
+  <h1 class="page-title" id="page-title">🌌 Viaggio Astrale</h1>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
+  </div>
 </header>
 
-<a href="/" class="back-btn">← Torna all'App</a>
+<main id="main-content">
 
-<!-- HERO -->
-<section class="hero">
-  <span class="hero-icon">🌌</span>
-  <h1>Viaggio Astrale</h1>
-  <p class="hero-sub">Guida completa alla proiezione astrale con onde theta binaurali, tecniche di separazione e protezione energetica</p>
-</section>
+  <!-- ═══ SEZIONE INTERATTIVA (sempre in cima) ═══ -->
+  <section class="hero">
+    <span class="hero-icon" aria-hidden="true">🌌</span>
+    <h1 id="hero-title"></h1>
+    <p class="hero-sub" id="hero-sub"></p>
+  </section>
 
-<!-- THETA PLAYER -->
-<div class="theta-player">
-  <h3>🎵 Onde Theta Binaurali</h3>
-  <p class="theta-info">Le onde theta (4–8 Hz) inducono stati di coscienza espansi ideali per la proiezione astrale. Usa cuffie stereo per il massimo effetto binaurale.</p>
-  <div class="theta-controls">
-    <div class="theta-row">
-      <span class="theta-label">Frequenza</span>
-      <select class="theta-sel" id="thetaFreq" onchange="changeThetaFreq()">
-        <option value="4">4 Hz — Theta Profondo (sonno lucido)</option>
-        <option value="6" selected>6 Hz — Theta Mediano (proiezione)</option>
-        <option value="7.5">7.5 Hz — Theta Alto (meditazione)</option>
-        <option value="8">8 Hz — Alpha/Theta (rilassamento)</option>
-      </select>
-    </div>
-    <div class="theta-row">
-      <span class="theta-label">Volume</span>
-      <input type="range" id="thetaVol" min="0" max="0.5" step="0.01" value="0.25" oninput="updateThetaVol()">
-    </div>
-    <button class="btn-theta" id="thetaPlayBtn" onclick="toggleTheta()">▶ Avvia Onde Theta</button>
-  </div>
-  <div class="theta-viz" id="thetaViz">
-    <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
-    <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
-    <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
-  </div>
-  <p class="theta-warning">⚠️ Non usare alla guida o in attività che richiedono attenzione. Non adatto a chi soffre di epilessia.</p>
-</div>
-
-<!-- TOC -->
-<div class="toc-wrap">
-  <div class="toc-label">Capitoli della Guida</div>
-  <div class="toc-pills">
-    <div class="toc-pill active" onclick="scrollChapter(1)">① Cos'è</div>
-    <div class="toc-pill" onclick="scrollChapter(2)">② Scienza</div>
-    <div class="toc-pill" onclick="scrollChapter(3)">③ Preparazione</div>
-    <div class="toc-pill" onclick="scrollChapter(4)">④ Tecniche</div>
-    <div class="toc-pill" onclick="scrollChapter(5)">⑤ Chakra</div>
-    <div class="toc-pill" onclick="scrollChapter(6)">⑥ Protezione</div>
-    <div class="toc-pill" onclick="scrollChapter(7)">⑦ Esperienze</div>
-    <div class="toc-pill" onclick="scrollChapter(8)">⑧ Diario</div>
-  </div>
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-
-<!-- AD TOP -->
-<div class="ad-wrap">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-
-<!-- CAPITOLO 1 -->
-<div class="astral-chapter" id="a1">
-  <div class="chapter-header">
-    <div class="chapter-icon">🌟</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo I</div>
-      <div class="chapter-title">Cos'è il Viaggio Astrale</div>
-      <div class="chapter-sub">L'esperienza di uscita dal corpo fisico</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Il <strong style="color:var(--gold-light)">Viaggio Astrale</strong> — noto anche come OBE (Out-of-Body Experience) o proiezione astrale — è lo stato in cui la coscienza percepisce se stessa separata dal corpo fisico. Molte tradizioni spirituali lo descrivono come la prova dell'esistenza di un <em>corpo sottile</em> capace di muoversi autonomamente nello spazio e nel tempo.</p>
-    <p>Nelle tradizioni esoteriche, l'essere umano è composto da più corpi sovrapposti: il corpo fisico, il corpo eterico (strettamente legato al fisico), il <strong style="color:#b090d0">corpo astrale</strong> (sede delle emozioni e dei desideri), il corpo mentale e quelli spirituali superiori. Durante il viaggio astrale, la coscienza si sposta nel corpo astrale, mantenendo un legame con il fisico attraverso il <em>Cordone d'Argento</em> — un filo energetico indistruttibile.</p>
-    <div class="callout callout-spirit">
-      <div class="callout-title">✦ Il Piano Astrale</div>
-      <div class="callout-body">Il piano astrale è un livello di realtà parallelo a quello fisico, composto di materia sottile. Comprende zone che corrispondono ai luoghi fisici (piano astrale basso), zone di transizione, e piani più elevati di luce e saggezza. La qualità della tua esperienza astrale dipende dal tuo stato emotivo e spirituale al momento della proiezione.</div>
-    </div>
-    <p>Le testimonianze storiche attraversano millenni e culture: gli antichi Egizi descrivevano il <em>Ka</em> come il doppio astrale; le tradizioni tibetane parlano del <em>corpo di sogno</em>; gli sciamani di tutto il mondo praticano il viaggio in mondi non ordinari. Nella moderna ricerca parapsicologica, le OBE sono state studiate da ricercatori come Robert Monroe, che fondò il Monroe Institute per la ricerca sistematica di questi stati.</p>
-  </div>
-</div>
-
-<div class="divider">✦ ✦ ✦</div>
-
-<!-- CAPITOLO 2 -->
-<div class="astral-chapter" id="a2">
-  <div class="chapter-header">
-    <div class="chapter-icon">🧠</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo II</div>
-      <div class="chapter-title">La Scienza delle Onde Theta</div>
-      <div class="chapter-sub">Neuroscienze e stati alterati di coscienza</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Il cervello produce onde elettriche a diverse frequenze a seconda dello stato di coscienza. Le <strong style="color:var(--cyan)">onde theta (4–8 Hz)</strong> compaiono naturalmente durante la transizione sonno-veglia (ipnagogia), nelle meditazioni profonde e nella fase REM del sonno. Sono lo stato in cui la mente è più ricettiva, creativa e aperta a esperienze non ordinarie.</p>
-    <div class="callout callout-tech">
-      <div class="callout-title">🎧 Come Funzionano i Binaural Beats</div>
-      <div class="callout-body">Quando l'orecchio sinistro riceve un tono a 150 Hz e il destro a 156 Hz, il cervello "percepisce" una terza frequenza — la differenza: 6 Hz (theta). Questo fenomeno, chiamato <em>battimento binaurale</em>, sincronizza lentamente le onde cerebrali alla frequenza target. Per funzionare è essenziale usare cuffie stereo: gli altoparlanti mescolano i suoni prima che raggiungano il cervello.</div>
-    </div>
-    <p>La finestra theta ideale per la proiezione astrale è tra <strong style="color:var(--gold-light)">6 e 7 Hz</strong>. In questo range la coscienza è sveglia ma il corpo è profondamente rilassato — la condizione perfetta per favorire la separazione. Tradizioni tibetane e tecniche come la WILD (Wake-Induced Lucid Dream) sfruttano precisamente questa finestra.</p>
-    <div class="kw-row">
-      <span class="kw">4 Hz — Theta Profondo</span>
-      <span class="kw">6 Hz — Proiezione Astrale</span>
-      <span class="kw">7.5 Hz — Meditazione Profonda</span>
-      <span class="kw">8 Hz — Creatività</span>
-      <span class="kw">10 Hz — Alpha — Rilassamento</span>
-    </div>
-    <p>Le ricerche di Monroe e del suo successore William Buhlman mostrano che la coerenza theta nell'emisfero destro precede spesso le esperienze di uscita dal corpo. La tecnologia audio non è magica — è uno strumento per agevolare un processo che la mente conosce già istintivamente.</p>
-  </div>
-</div>
-
-<!-- AD MID -->
-<div class="ad-wrap">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-
-<!-- CAPITOLO 3 -->
-<div class="astral-chapter" id="a3">
-  <div class="chapter-header">
-    <div class="chapter-icon">🛏️</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo III</div>
-      <div class="chapter-title">Preparazione al Viaggio</div>
-      <div class="chapter-sub">Corpo, ambiente e stato mentale</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Il successo nel viaggio astrale dipende per l'80% dalla preparazione. Un tentativo improvvisato raramente produce risultati — ma un praticante che prepara sistematicamente corpo, mente e ambiente ottiene esperienze significative anche nelle prime settimane di pratica.</p>
-    <div class="callout callout-tip">
-      <div class="callout-title">⏰ Il Momento Ideale</div>
-      <div class="callout-body">Il momento migliore è tra le 3 e le 6 del mattino, dopo aver dormito 4–5 ore. La mente è in stato theta naturale, il corpo è rilassato ma non ha bisogno di sonno profondo. Molti praticanti puntano la sveglia, dormono brevemente e poi tentano la proiezione.</div>
-    </div>
-    <p><strong style="color:var(--gold-light)">Preparazione Fisica</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text"><strong>Digiuno leggero:</strong> Evita pasti pesanti nelle 2 ore precedenti. La digestione distrae l'energia vitale.</div></li>
-      <li><div class="step-num">2</div><div class="step-text"><strong>Temperatura:</strong> L'ambiente deve essere leggermente fresco (18–20°C). Il caldo eccessivo disturba la transizione.</div></li>
-      <li><div class="step-num">3</div><div class="step-text"><strong>Posizione:</strong> Sdraiato sulla schiena, braccia lungo i fianchi. Cuscino basso o nessun cuscino. Non incrociare gambe o braccia.</div></li>
-      <li><div class="step-num">4</div><div class="step-text"><strong>Silenzio:</strong> Telefoni in modalità silenziosa. Tappi per le orecchie o cuffie con i binaural. Oscurità totale o mascherina per gli occhi.</div></li>
-    </ul>
-    <p><strong style="color:var(--gold-light)">Preparazione Mentale</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text"><strong>Intenzione chiara:</strong> Prima di iniziare, afferma mentalmente il tuo obiettivo: "Questa notte mi proietto con sicurezza e torno in pace."</div></li>
-      <li><div class="step-num">2</div><div class="step-text"><strong>Eliminazione del timore:</strong> La paura è il principale ostacolo. Ricorda che il cordone d'argento non può spezzarsi — sei sempre in sicurezza.</div></li>
-      <li><div class="step-num">3</div><div class="step-text"><strong>Aspettativa calma:</strong> Non cercare di "forzare" l'uscita. La proiezione avviene quando la mente smette di aspettarsi qualcosa.</div></li>
-    </ul>
-  </div>
-</div>
-
-<div class="divider">✦ ✦ ✦</div>
-
-<!-- CAPITOLO 4 -->
-<div class="astral-chapter" id="a4">
-  <div class="chapter-header">
-    <div class="chapter-icon">🚀</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo IV</div>
-      <div class="chapter-title">Tecniche di Proiezione</div>
-      <div class="chapter-sub">Metodi testati per la separazione consapevole</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-
-    <p><strong style="color:#b090d0">① Tecnica del Rilassamento Progressivo (WILD)</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text">Sdraiati comodamente. Attiva i binaural theta a 6 Hz. Chiudi gli occhi.</div></li>
-      <li><div class="step-num">2</div><div class="step-text">Rilassa progressivamente ogni parte del corpo: piedi → polpacci → cosce → addome → petto → braccia → collo → viso.</div></li>
-      <li><div class="step-num">3</div><div class="step-text">Quando senti formicolio, pesantezza o vibrazione — sono segnali positivi. Non muoverti. Respira lentamente.</div></li>
-      <li><div class="step-num">4</div><div class="step-text">Visualizza te stesso che ti alzi dal letto e cammini nella stanza. Non con gli occhi fisici — con la mente.</div></li>
-      <li><div class="step-num">5</div><div class="step-text">Se senti le vibrazioni aumentare, mentalmente "rotola" fuori dal corpo lateralmente. Lentamente, con calma.</div></li>
-    </ul>
-
-    <div class="callout callout-tech">
-      <div class="callout-title">⚡ Tecnica delle Vibrazioni di Monroe</div>
-      <div class="callout-body">Robert Monroe insegnava a portare deliberatamente le vibrazioni nel corpo durante lo stato ipnagogico. Immagina un flusso energetico che parte dalla testa e scende ai piedi, poi risale — oscillando sempre più velocemente. Quando le vibrazioni raggiungono il culmine, "rotolatevi dentro" e uscite.</div>
-    </div>
-
-    <p><strong style="color:#b090d0">② Tecnica della Corda (Robert Bruce)</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text">In stato di rilassamento profondo, visualizza una corda robusta che pende dal soffitto sopra di te.</div></li>
-      <li><div class="step-num">2</div><div class="step-text">Con le mani astrali (non fisiche), afferra la corda e inizia ad arrampicarti. Senti la texture — ruvida, spessa.</div></li>
-      <li><div class="step-num">3</div><div class="step-text">Continua ad arrampicarti fino a sentirti separare. La sensazione tipica è di "sfilarsi" dal corpo fisico come da un guanto.</div></li>
-    </ul>
-
-    <p><strong style="color:#b090d0">③ Tecnica del Punto di Mira</strong></p>
-    <p>Prima di addormentarti, scegli un luogo fisico che conosci bene (casa di un amico, un parco, una città). Visualizzalo nei minimi dettagli. Mantieni questa immagine mentre ti addormenti. La coscienza tende a proiettarsi verso l'oggetto del focus.</p>
-
-    <div class="callout callout-warning">
-      <div class="callout-title">⚠️ Paralisi del Sonno</div>
-      <div class="callout-body">Durante la transizione potresti sperimentare paralisi del sonno — sensazione di non poter muovere il corpo fisico. Questo è normale e un buon segnale: significa che sei nello stato giusto. Non spaventarti. Respira profondamente e usa lo stato per proiettarti.</div>
-    </div>
-  </div>
-</div>
-
-<!-- AD MIDDLE -->
-<div class="ad-wrap">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-
-<!-- CAPITOLO 5 -->
-<div class="astral-chapter" id="a5">
-  <div class="chapter-header">
-    <div class="chapter-icon">⚡</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo V</div>
-      <div class="chapter-title">I Chakra nel Viaggio Astrale</div>
-      <div class="chapter-sub">Centri energetici e attivazione per la proiezione</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>I <strong style="color:var(--gold-light)">sette chakra</strong> principali sono i centri energetici che regolano il flusso del prana (energia vitale) attraverso il corpo sottile. La loro attivazione e allineamento prima di un viaggio astrale aumenta significativamente la probabilità di proiezione riuscita.</p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text"><strong>Muladhara (Radice) — 🔴 Rosso:</strong> Radicamento e sicurezza. Attiva visualizzando una sfera rossa pulsante alla base della colonna. "Sono al sicuro nel corpo e fuori da esso."</div></li>
-      <li><div class="step-num">2</div><div class="step-text"><strong>Svadhisthana (Sacrale) — 🟠 Arancione:</strong> Flusso e creatività. Sfera arancione sotto l'ombelico. "Mi muovo liberamente tra i mondi."</div></li>
-      <li><div class="step-num">3</div><div class="step-text"><strong>Manipura (Plesso Solare) — 🟡 Giallo:</strong> Volontà e potere personale. Sfera gialla solare al plesso. "Ho la forza di esplorare oltre il fisico."</div></li>
-      <li><div class="step-num">4</div><div class="step-text"><strong>Anahata (Cuore) — 💚 Verde:</strong> Amore e connessione. Sfera verde luminosa al centro del petto. "Il mio cuore è la mia bussola astrale."</div></li>
-      <li><div class="step-num">5</div><div class="step-text"><strong>Vishuddha (Gola) — 🔵 Azzurro:</strong> Comunicazione e verità. "Posso comunicare attraverso i piani."</div></li>
-      <li><div class="step-num">6</div><div class="step-text"><strong>Ajna (Terzo Occhio) — 🟣 Indaco:</strong> Visione e intuizione. Il chakra più importante per la proiezione. Sfera indaco tra le sopracciglia. "Vedo oltre il visibile."</div></li>
-      <li><div class="step-num">7</div><div class="step-text"><strong>Sahasrara (Corona) — ⚪ Viola/Bianco:</strong> Connessione cosmica. Sfera viola alla sommità del capo. "Sono connesso all'infinito."</div></li>
-    </ul>
-    <div class="callout callout-spirit">
-      <div class="callout-title">✦ Il Chakra del Terzo Occhio nel Viaggio Astrale</div>
-      <div class="callout-body">L'Ajna è il portale principale per la proiezione. Durante gli stati ipnagogici, concentrare la consapevolezza sull'area del terzo occhio (tra le sopracciglia) spesso precipita la visione astrale. Molti praticanti descrivono un "click" o una sensazione di apertura in questa zona prima della separazione.</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider">✦ ✦ ✦</div>
-
-<!-- CAPITOLO 6 -->
-<div class="astral-chapter" id="a6">
-  <div class="chapter-header">
-    <div class="chapter-icon">🛡️</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo VI</div>
-      <div class="chapter-title">Protezione Energetica</div>
-      <div class="chapter-sub">Sicurezza nel piano astrale</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Il piano astrale è ricco di entità e energie di diversa natura. Una protezione energetica adeguata non è superstizione — è igiene spirituale, esattamente come lavarsi le mani è igiene fisica. Un praticante protetto viaggia con serenità e ritorna integro.</p>
-    <div class="callout callout-tip">
-      <div class="callout-title">⭐ Il Guscio di Luce Dorata</div>
-      <div class="callout-body">Prima di ogni viaggio, visualizza una sfera di luce dorata che si espande dal tuo cuore fino ad avvolgerti completamente. Immagina questa luce densa, impenetrabile a qualsiasi energia che non sia in armonia con il tuo bene superiore. Dichiara: "Solo ciò che è in sintonia con la mia luce può avvicinarsi."</div>
-    </div>
-    <p><strong style="color:var(--gold-light)">Rituali di Protezione Pre-Viaggio:</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">A</div><div class="step-text"><strong>Cerchio di Sale:</strong> Posa una piccola quantità di sale marino sotto il letto o in cerchio attorno alla tua postazione. Il sale assorbe le energie dense.</div></li>
-      <li><div class="step-num">B</div><div class="step-text"><strong>Cristalli Protettivi:</strong> Tormalina nera (protezione), labradorite (scudo tra i mondi), ossidiana (riflessione energetica). Posizionali ai quattro angoli del letto.</div></li>
-      <li><div class="step-num">C</div><div class="step-text"><strong>Invocazione Protettiva:</strong> "Sono circondato/a da luce bianca. Nessuna entità oscura può avvicinarsi. Il mio cordone d'argento è indistruttibile. Viaggi in pace, torno in pace."</div></li>
-      <li><div class="step-num">D</div><div class="step-text"><strong>Fiamma Astrale:</strong> Visualizza una piccola fiamma viola nel centro del petto che brucia per tutta la durata del viaggio — un faro che guida il ritorno.</div></li>
-    </ul>
-    <p><strong style="color:var(--gold-light)">Il Cordone d'Argento:</strong> In tutte le tradizioni di proiezione astrale esiste il concetto del Cordone d'Argento — un filo energetico che collega il corpo astrale a quello fisico. Non può spezzarsi. Anche se non lo vedi sempre, è sempre lì. Quando vuoi tornare, pensa al tuo corpo fisico e il richiamo è immediato.</p>
-  </div>
-</div>
-
-<!-- CAPITOLO 7 -->
-<div class="astral-chapter" id="a7">
-  <div class="chapter-header">
-    <div class="chapter-icon">💫</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo VII</div>
-      <div class="chapter-title">Cosa Aspettarsi nel Piano Astrale</div>
-      <div class="chapter-sub">Esperienze tipiche e loro interpretazione</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Il piano astrale è profondamente influenzato dalla mente — i tuoi pensieri possono manifestarsi rapidamente. La lucidità e la calma sono le qualità più importanti durante il viaggio.</p>
-    <p><strong style="color:var(--gold-light)">Segnali della Separazione:</strong></p>
-    <div class="kw-row">
-      <span class="kw">Vibrazioni nel corpo</span>
-      <span class="kw">Ronzio o suoni</span>
-      <span class="kw">Sensazione di galleggiare</span>
-      <span class="kw">Visione ipnagogica</span>
-      <span class="kw">Paralisi del sonno</span>
-      <span class="kw">Pressione alla testa</span>
-      <span class="kw">Sensazione di sfilarsi</span>
-    </div>
-    <p><strong style="color:var(--gold-light)">Cosa Fare Appena Usciti:</strong></p>
-    <ul class="step-list">
-      <li><div class="step-num">1</div><div class="step-text"><strong>Allontanati subito:</strong> Muoviti fisicamente lontano dal corpo per ridurre l'attrazione di ritorno involontario.</div></li>
-      <li><div class="step-num">2</div><div class="step-text"><strong>Stabilizza la visione:</strong> Se l'immagine è sfocata, tocca gli oggetti vicini o pronuncia "chiarezza!" per stabilizzare la percezione.</div></li>
-      <li><div class="step-num">3</div><div class="step-text"><strong>Mantieni la calma:</strong> L'eccitazione può causare ritorno involontario. Respira lentamente (anche astralmente) e mantieni la compostezza.</div></li>
-      <li><div class="step-num">4</div><div class="step-text"><strong>Esplora con intenzione:</strong> Ricorda il tuo obiettivo. Puoi visitare luoghi, incontrare guide spirituali, o esplorare liberamente.</div></li>
-    </ul>
-    <div class="callout callout-warning">
-      <div class="callout-title">⚠️ Entità e Incontri</div>
-      <div class="callout-body">Nel piano astrale potresti incontrare esseri di vario tipo. La regola d'oro: le entità di luce non si impongono mai — si avvicinano solo quando invitate. Se incontri qualcosa che ti spaventa, invoca la tua protezione di luce e dichiarasciolta "Solo la luce!" Il tuo stato emotivo è il tuo scudo più potente.</div>
-    </div>
-  </div>
-</div>
-
-<!-- AD BOTTOM -->
-<div class="ad-wrap">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-
-<!-- CAPITOLO 8 -->
-<div class="astral-chapter" id="a8">
-  <div class="chapter-header">
-    <div class="chapter-icon">📔</div>
-    <div class="chapter-meta">
-      <div class="chapter-num">Capitolo VIII</div>
-      <div class="chapter-title">Il Diario Astrale</div>
-      <div class="chapter-sub">Documentare i viaggi per approfondire la pratica</div>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <p>Tenere un <strong style="color:var(--gold-light)">diario astrale</strong> è una delle pratiche più utili per chi vuole sviluppare sistematicamente la proiezione. La mente dimentica rapidamente i dettagli dei viaggi — esattamente come dimentica i sogni — ma la documentazione immediata al risveglio preserva le informazioni preziose.</p>
-    <div class="callout callout-tip">
-      <div class="callout-title">📝 Come Compilare il Diario Astrale</div>
-      <div class="callout-body">
-        <strong>Immediatamente al risveglio</strong> (entro 2 minuti):<br>
-        — Luogo/i visitati<br>
-        — Entità o presenze incontrate<br>
-        — Sensazioni fisiche durante la separazione<br>
-        — Messaggi o intuizioni ricevuti<br>
-        — Chiarezza della visione (1–10)<br>
-        — Durata percepita del viaggio<br>
-        — Tecnica usata e suo esito<br><br>
-        Tieni il diario e una penna sul comodino. Nell'app Mystica puoi usare il Diario Astrale integrato.
+  <div class="theta-player">
+    <h3 id="theta-title"></h3>
+    <p class="theta-info" id="theta-info"></p>
+    <div class="theta-controls">
+      <div class="theta-row">
+        <span class="theta-label" id="theta-freq-label"></span>
+        <select class="theta-sel" id="thetaFreq" onchange="changeThetaFreq()">
+          <option value="4" id="theta-opt-4"></option>
+          <option value="6" selected id="theta-opt-6"></option>
+          <option value="7.5" id="theta-opt-75"></option>
+          <option value="8" id="theta-opt-8"></option>
+        </select>
       </div>
+      <div class="theta-row">
+        <span class="theta-label" id="theta-vol-label"></span>
+        <input type="range" id="thetaVol" min="0" max="0.5" step="0.01" value="0.25" oninput="updateThetaVol()" aria-label="Volume onde theta">
+      </div>
+      <button class="btn-theta" id="thetaPlayBtn" onclick="toggleTheta()"></button>
     </div>
-    <p>Con il tempo, il diario rivela pattern — le condizioni che favoriscono la proiezione, le aree del piano astrale che visiti più spesso, l'evoluzione della tua lucidità. Diventa una mappa personale di territori interiori.</p>
-    <p>I praticanti esperti testimoniano che la pratica regolare per 30–90 giorni, documentata sistematicamente, trasforma la proiezione astrale da evento casuale a capacità consapevole. La chiave è la costanza, non il talento.</p>
+    <div class="theta-viz" id="thetaViz" aria-hidden="true">
+      <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
+      <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
+      <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
+    </div>
+    <p class="theta-warning" id="theta-warning"></p>
+  </div>
 
-    <div style="text-align:center;margin-top:28px">
-      <a href="/" style="display:inline-block;background:linear-gradient(135deg,var(--purple),var(--indigo));border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:14px 28px;color:var(--gold-light);font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;text-decoration:none;transition:all .3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        🌌 Apri Mystica Oracoli
-      </a>
+  <div class="toc-wrap">
+    <div class="toc-label" id="toc-label"></div>
+    <div class="toc-pills" id="tocPills"></div>
+  </div>
+
+  <div class="premium-banner">
+    <p id="premium-banner-text"></p>
+    <button id="premium-banner-btn" onclick="requirePremium('viaggio_astrale_extra')"></button>
+  </div>
+
+  <!-- ═══ SHARE ═══ -->
+  <div class="share-section">
+    <button class="btn-share" onclick="shareContent()" id="share-btn-label"></button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
     </div>
   </div>
-</div>
 
-</div><!-- end content -->
+  <!-- ═══ ARTICOLO EDITORIALE (8 capitoli data-driven, multilingua) ═══ -->
+  <article class="article-section">
+    <div class="ad-wrap">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
 
-<footer>
-  <p>✦ <a href="/">Mystica Oracoli</a> · Dott. Petrolese Giovanni · PetroCorporation ✦</p>
-  <p style="margin-top:8px"><a href="/privacy.html">Privacy</a> · <a href="/about.html">Chi siamo</a> · <a href="/community.html">Community</a></p>
+    <img src="./images/viaggio-astrale.webp"
+         srcset="./images/viaggio-astrale.webp 1x, ./images/viaggio-astrale@2x.webp 2x"
+         id="art-hero" alt="" loading="eager" decoding="async" width="720" height="380"
+         style="width:100%;height:auto;border-radius:14px;margin:0 0 24px;display:block">
+
+    <div id="chaptersContainer"></div>
+
+    <div class="ad-wrap">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"></nav>
+
+    <div class="cta-wrap">
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </div>
+  </article>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq-section">
+    <h2 class="faq-title" id="faq-title"></h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-links">
+    <a href="./index.html" id="footer-link-home"></a>
+    <a href="./contatti.html" id="footer-link-contact"></a>
+    <a href="./about.html" id="footer-link-about"></a>
+    <a href="./privacy.html" id="footer-link-privacy"></a>
+  </div>
+  <p id="footer-copy"></p>
+  <p id="footer-disclaimer" class="footer-disclaimer"></p>
 </footer>
 
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
+
 <script>
+/* ══════════════════════════════════════════════════════════
+   MYSTICA ORACOLI — viaggio-astrale.html
+   Standardizzato secondo MYSTICA-PROMPT-DEFINITIVO-2026 v3.0
+   ══════════════════════════════════════════════════════════ */
+
+/* ── LANG Object ── */
+const LANG = {
+  it: {
+    back: "← Torna alla Home",
+    music: { on: "🎵 Musica ON", off: "🔇 Musica OFF" },
+    theme: { day: "☀️ Giorno", night: "🌙 Notte" },
+    ctaExplore: "🔍 Scopri le Altre Categorie",
+    premiumTitle: "✦ Funzione Premium",
+    premiumText: "Sblocca il Diario Astrale illimitato, meditazioni guidate audio complete e la libreria estesa di rituali di protezione.",
+    premiumPrice: "Solo 4,99€ una tantum",
+    premiumBtn: "Sblocca MYSTICA Premium",
+    premiumSkip: "Continua Gratis",
+    premiumBannerText: "Sblocca il Diario Astrale digitale illimitato e le meditazioni guidate audio per la proiezione.",
+    premiumBannerBtn: "✦ Scopri Premium",
+    shareBtnLabel: "📤 Condividi",
+    shareTitle: "MYSTICA Oracoli",
+    shareText: "Ho scoperto questa guida completa al Viaggio Astrale con onde theta binaurali su MYSTICA Oracoli 🌌",
+    shareCopy: "🔗 Copia Link",
+    shareCopied: "✓ Copiato!",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Contenuti a scopo informativo, esperienziale e di intrattenimento spirituale. Non sostituiscono consulenza medica o psicologica.",
+    footerHome: "Home", footerContact: "Contatti", footerAbout: "Chi Siamo", footerPrivacy: "Privacy",
+    heroTitle: "Viaggio Astrale",
+    heroSub: "Guida completa alla proiezione astrale con onde theta binaurali, tecniche di separazione e protezione energetica",
+    thetaTitle: "🎵 Onde Theta Binaurali",
+    thetaInfo: "Le onde theta (4–8 Hz) inducono stati di coscienza espansi ideali per la proiezione astrale. Usa cuffie stereo per il massimo effetto binaurale.",
+    thetaFreqLabel: "Frequenza",
+    thetaVolLabel: "Volume",
+    thetaOpt4: "4 Hz — Theta Profondo (sonno lucido)",
+    thetaOpt6: "6 Hz — Theta Mediano (proiezione)",
+    thetaOpt75: "7.5 Hz — Theta Alto (meditazione)",
+    thetaOpt8: "8 Hz — Alpha/Theta (rilassamento)",
+    thetaPlay: "▶ Avvia Onde Theta",
+    thetaPause: "⏸ Pausa",
+    thetaWarning: "⚠️ Non usare alla guida o in attività che richiedono attenzione. Non adatto a chi soffre di epilessia.",
+    thetaUnsupported: "Il tuo browser non supporta Web Audio. Prova con Chrome o Firefox.",
+    tocLabel: "Capitoli della Guida",
+    toc: ["① Cos'è","② Scienza","③ Preparazione","④ Tecniche","⑤ Chakra","⑥ Protezione","⑦ Esperienze","⑧ Diario"],
+    artImgAlt: "Silhouette in meditazione con corpo astrale luminoso che si separa dal corpo fisico su sfondo cosmico stellato",
+    faqTitle: "Domande Frequenti",
+    faq: [
+      { q: "Cos'è esattamente il Viaggio Astrale e come funziona?", a: "Il viaggio astrale, o proiezione astrale (OBE), è l'esperienza in cui la coscienza percepisce se stessa separata dal corpo fisico e capace di muoversi autonomamente. Secondo le tradizioni esoteriche avviene attraverso lo spostamento della consapevolezza nel corpo astrale, mantenuto collegato al fisico dal Cordone d'Argento. Le tecniche più efficaci sfruttano lo stato ipnagogico, la soglia tra veglia e sonno, spesso agevolata da onde theta binaurali." },
+      { q: "Il viaggio astrale è pericoloso?", a: "Nella grande maggioranza delle testimonianze, no. Il Cordone d'Argento, secondo tutte le tradizioni, non può spezzarsi, e il corpo fisico continua le sue funzioni vitali normalmente. I rischi reali riguardano più che altro lo spavento di chi non è preparato: pratiche di protezione energetica, calma mentale e conoscenza previa dei fenomeni tipici (vibrazioni, paralisi del sonno) riducono drasticamente il disagio." },
+      { q: "Quanto tempo serve per imparare a proiettarsi?", a: "Varia moltissimo da persona a persona. Alcuni praticanti riportano le prime sensazioni di separazione entro le prime settimane di pratica costante, altri impiegano mesi. La costanza conta più del talento: una pratica quotidiana di 20–30 minuti nella finestra ideale (3–6 del mattino) per 30–90 giorni, documentata nel diario astrale, è lo standard suggerito dai praticanti esperti come Robert Bruce e William Buhlman." },
+      { q: "Le onde theta funzionano davvero per la proiezione astrale?", a: "Le onde theta (4–8 Hz) sono documentate dalle neuroscienze come lo stato cerebrale naturale della fase ipnagogica e della meditazione profonda — la finestra in cui la proiezione astrale è più probabile. I binaural beats non 'creano' magicamente l'esperienza, ma aiutano a sincronizzare il cervello verso quello stato più rapidamente, agendo come facilitatore piuttosto che come causa diretta." },
+      { q: "Qual è la differenza tra sogno lucido e viaggio astrale?", a: "Nel sogno lucido la coscienza prende consapevolezza di essere dentro un sogno e può modificarne il contenuto, restando comunque all'interno di uno scenario onirico generato dalla mente. Nel viaggio astrale, secondo le tradizioni esoteriche, la coscienza esce realmente dal corpo fisico e si sposta su un piano di realtà parallelo — il piano astrale — percepito come oggettivo e indipendente dall'immaginazione. Molte tecniche, come la WILD, usano il sogno lucido come porta d'accesso alla proiezione." }
+    ],
+    chapters: [
+      { id:"a1", icon:"🌟", num:"Capitolo I", title:"Cos'è il Viaggio Astrale", sub:"L'esperienza di uscita dal corpo fisico", blocks:[
+        {t:"p", v:"Il <strong>Viaggio Astrale</strong> — noto anche come OBE (Out-of-Body Experience) o proiezione astrale — è lo stato in cui la coscienza percepisce se stessa separata dal corpo fisico. Molte tradizioni spirituali lo descrivono come la prova dell'esistenza di un <em>corpo sottile</em> capace di muoversi autonomamente nello spazio e nel tempo."},
+        {t:"p", v:"Nelle tradizioni esoteriche, l'essere umano è composto da più corpi sovrapposti: il corpo fisico, il corpo eterico (strettamente legato al fisico), il corpo astrale (sede delle emozioni e dei desideri), il corpo mentale e quelli spirituali superiori. Durante il viaggio astrale, la coscienza si sposta nel corpo astrale, mantenendo un legame con il fisico attraverso il <em>Cordone d'Argento</em> — un filo energetico indistruttibile."},
+        {t:"callout", variant:"spirit", title:"✦ Il Piano Astrale", v:"Il piano astrale è un livello di realtà parallelo a quello fisico, composto di materia sottile. Comprende zone che corrispondono ai luoghi fisici (piano astrale basso), zone di transizione, e piani più elevati di luce e saggezza. La qualità della tua esperienza astrale dipende dal tuo stato emotivo e spirituale al momento della proiezione."},
+        {t:"p", v:"Le testimonianze storiche attraversano millenni e culture: gli antichi Egizi descrivevano il <em>Ka</em> come il doppio astrale; le tradizioni tibetane parlano del <em>corpo di sogno</em>; gli sciamani di tutto il mondo praticano il viaggio in mondi non ordinari. Nella moderna ricerca parapsicologica, le OBE sono state studiate da ricercatori come Robert Monroe, che fondò il Monroe Institute per la ricerca sistematica di questi stati."}
+      ]},
+      { id:"a2", icon:"🧠", num:"Capitolo II", title:"La Scienza delle Onde Theta", sub:"Neuroscienze e stati alterati di coscienza", blocks:[
+        {t:"p", v:"Il cervello produce onde elettriche a diverse frequenze a seconda dello stato di coscienza. Le <strong>onde theta (4–8 Hz)</strong> compaiono naturalmente durante la transizione sonno-veglia (ipnagogia), nelle meditazioni profonde e nella fase REM del sonno. Sono lo stato in cui la mente è più ricettiva, creativa e aperta a esperienze non ordinarie."},
+        {t:"callout", variant:"tech", title:"🎧 Come Funzionano i Binaural Beats", v:"Quando l'orecchio sinistro riceve un tono a 150 Hz e il destro a 156 Hz, il cervello \"percepisce\" una terza frequenza — la differenza: 6 Hz (theta). Questo fenomeno, chiamato battimento binaurale, sincronizza lentamente le onde cerebrali alla frequenza target. Per funzionare è essenziale usare cuffie stereo: gli altoparlanti mescolano i suoni prima che raggiungano il cervello."},
+        {t:"p", v:"La finestra theta ideale per la proiezione astrale è tra <strong>6 e 7 Hz</strong>. In questo range la coscienza è sveglia ma il corpo è profondamente rilassato — la condizione perfetta per favorire la separazione. Tradizioni tibetane e tecniche come la WILD (Wake-Induced Lucid Dream) sfruttano precisamente questa finestra."},
+        {t:"kw", items:["4 Hz — Theta Profondo","6 Hz — Proiezione Astrale","7.5 Hz — Meditazione Profonda","8 Hz — Creatività","10 Hz — Alpha — Rilassamento"]},
+        {t:"p", v:"Le ricerche di Monroe e del suo successore William Buhlman mostrano che la coerenza theta nell'emisfero destro precede spesso le esperienze di uscita dal corpo. La tecnologia audio non è magica — è uno strumento per agevolare un processo che la mente conosce già istintivamente."}
+      ]},
+      { id:"a3", icon:"🛏️", num:"Capitolo III", title:"Preparazione al Viaggio", sub:"Corpo, ambiente e stato mentale", blocks:[
+        {t:"p", v:"Il successo nel viaggio astrale dipende per l'80% dalla preparazione. Un tentativo improvvisato raramente produce risultati — ma un praticante che prepara sistematicamente corpo, mente e ambiente ottiene esperienze significative anche nelle prime settimane di pratica."},
+        {t:"callout", variant:"tip", title:"⏰ Il Momento Ideale", v:"Il momento migliore è tra le 3 e le 6 del mattino, dopo aver dormito 4–5 ore. La mente è in stato theta naturale, il corpo è rilassato ma non ha bisogno di sonno profondo. Molti praticanti puntano la sveglia, dormono brevemente e poi tentano la proiezione."},
+        {t:"p", v:"<strong>Preparazione Fisica</strong>"},
+        {t:"steps", items:[
+          {s:"Digiuno leggero:", v:"Evita pasti pesanti nelle 2 ore precedenti. La digestione distrae l'energia vitale."},
+          {s:"Temperatura:", v:"L'ambiente deve essere leggermente fresco (18–20°C). Il caldo eccessivo disturba la transizione."},
+          {s:"Posizione:", v:"Sdraiato sulla schiena, braccia lungo i fianchi. Cuscino basso o nessun cuscino. Non incrociare gambe o braccia."},
+          {s:"Silenzio:", v:"Telefoni in modalità silenziosa. Tappi per le orecchie o cuffie con i binaural. Oscurità totale o mascherina per gli occhi."}
+        ]},
+        {t:"p", v:"<strong>Preparazione Mentale</strong>"},
+        {t:"steps", items:[
+          {s:"Intenzione chiara:", v:"Prima di iniziare, afferma mentalmente il tuo obiettivo: \"Questa notte mi proietto con sicurezza e torno in pace.\""},
+          {s:"Eliminazione del timore:", v:"La paura è il principale ostacolo. Ricorda che il cordone d'argento non può spezzarsi — sei sempre in sicurezza."},
+          {s:"Aspettativa calma:", v:"Non cercare di \"forzare\" l'uscita. La proiezione avviene quando la mente smette di aspettarsi qualcosa."}
+        ]}
+      ]},
+      { id:"a4", icon:"🚀", num:"Capitolo IV", title:"Tecniche di Proiezione", sub:"Metodi testati per la separazione consapevole", blocks:[
+        {t:"p", v:"<strong style=\"color:#b090d0\">① Tecnica del Rilassamento Progressivo (WILD)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"Sdraiati comodamente. Attiva i binaural theta a 6 Hz. Chiudi gli occhi."},
+          {s:"2.", v:"Rilassa progressivamente ogni parte del corpo: piedi → polpacci → cosce → addome → petto → braccia → collo → viso."},
+          {s:"3.", v:"Quando senti formicolio, pesantezza o vibrazione — sono segnali positivi. Non muoverti. Respira lentamente."},
+          {s:"4.", v:"Visualizza te stesso che ti alzi dal letto e cammini nella stanza. Non con gli occhi fisici — con la mente."},
+          {s:"5.", v:"Se senti le vibrazioni aumentare, mentalmente \"rotola\" fuori dal corpo lateralmente. Lentamente, con calma."}
+        ]},
+        {t:"callout", variant:"tech", title:"⚡ Tecnica delle Vibrazioni di Monroe", v:"Robert Monroe insegnava a portare deliberatamente le vibrazioni nel corpo durante lo stato ipnagogico. Immagina un flusso energetico che parte dalla testa e scende ai piedi, poi risale — oscillando sempre più velocemente. Quando le vibrazioni raggiungono il culmine, \"rotolatevi dentro\" e uscite."},
+        {t:"p", v:"<strong style=\"color:#b090d0\">② Tecnica della Corda (Robert Bruce)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"In stato di rilassamento profondo, visualizza una corda robusta che pende dal soffitto sopra di te."},
+          {s:"2.", v:"Con le mani astrali (non fisiche), afferra la corda e inizia ad arrampicarti. Senti la texture — ruvida, spessa."},
+          {s:"3.", v:"Continua ad arrampicarti fino a sentirti separare. La sensazione tipica è di \"sfilarsi\" dal corpo fisico come da un guanto."}
+        ]},
+        {t:"p", v:"<strong style=\"color:#b090d0\">③ Tecnica del Punto di Mira</strong>"},
+        {t:"p", v:"Prima di addormentarti, scegli un luogo fisico che conosci bene (casa di un amico, un parco, una città). Visualizzalo nei minimi dettagli. Mantieni questa immagine mentre ti addormenti. La coscienza tende a proiettarsi verso l'oggetto del focus."},
+        {t:"callout", variant:"warning", title:"⚠️ Paralisi del Sonno", v:"Durante la transizione potresti sperimentare paralisi del sonno — sensazione di non poter muovere il corpo fisico. Questo è normale e un buon segnale: significa che sei nello stato giusto. Non spaventarti. Respira profondamente e usa lo stato per proiettarti."}
+      ]},
+      { id:"a5", icon:"⚡", num:"Capitolo V", title:"I Chakra nel Viaggio Astrale", sub:"Centri energetici e attivazione per la proiezione", blocks:[
+        {t:"p", v:"I <strong>sette chakra</strong> principali sono i centri energetici che regolano il flusso del prana (energia vitale) attraverso il corpo sottile. La loro attivazione e allineamento prima di un viaggio astrale aumenta significativamente la probabilità di proiezione riuscita."},
+        {t:"steps", items:[
+          {s:"Muladhara (Radice) — 🔴 Rosso:", v:"Radicamento e sicurezza. Attiva visualizzando una sfera rossa pulsante alla base della colonna. \"Sono al sicuro nel corpo e fuori da esso.\""},
+          {s:"Svadhisthana (Sacrale) — 🟠 Arancione:", v:"Flusso e creatività. Sfera arancione sotto l'ombelico. \"Mi muovo liberamente tra i mondi.\""},
+          {s:"Manipura (Plesso Solare) — 🟡 Giallo:", v:"Volontà e potere personale. Sfera gialla solare al plesso. \"Ho la forza di esplorare oltre il fisico.\""},
+          {s:"Anahata (Cuore) — 💚 Verde:", v:"Amore e connessione. Sfera verde luminosa al centro del petto. \"Il mio cuore è la mia bussola astrale.\""},
+          {s:"Vishuddha (Gola) — 🔵 Azzurro:", v:"Comunicazione e verità. \"Posso comunicare attraverso i piani.\""},
+          {s:"Ajna (Terzo Occhio) — 🟣 Indaco:", v:"Visione e intuizione. Il chakra più importante per la proiezione. Sfera indaco tra le sopracciglia. \"Vedo oltre il visibile.\""},
+          {s:"Sahasrara (Corona) — ⚪ Viola/Bianco:", v:"Connessione cosmica. Sfera viola alla sommità del capo. \"Sono connesso all'infinito.\""}
+        ]},
+        {t:"callout", variant:"spirit", title:"✦ Il Chakra del Terzo Occhio nel Viaggio Astrale", v:"L'Ajna è il portale principale per la proiezione. Durante gli stati ipnagogici, concentrare la consapevolezza sull'area del terzo occhio (tra le sopracciglia) spesso precipita la visione astrale. Molti praticanti descrivono un \"click\" o una sensazione di apertura in questa zona prima della separazione."}
+      ]},
+      { id:"a6", icon:"🛡️", num:"Capitolo VI", title:"Protezione Energetica", sub:"Sicurezza nel piano astrale", blocks:[
+        {t:"p", v:"Il piano astrale è ricco di entità e energie di diversa natura. Una protezione energetica adeguata non è superstizione — è igiene spirituale, esattamente come lavarsi le mani è igiene fisica. Un praticante protetto viaggia con serenità e ritorna integro."},
+        {t:"callout", variant:"tip", title:"⭐ Il Guscio di Luce Dorata", v:"Prima di ogni viaggio, visualizza una sfera di luce dorata che si espande dal tuo cuore fino ad avvolgerti completamente. Immagina questa luce densa, impenetrabile a qualsiasi energia che non sia in armonia con il tuo bene superiore. Dichiara: \"Solo ciò che è in sintonia con la mia luce può avvicinarsi.\""},
+        {t:"p", v:"<strong>Rituali di Protezione Pre-Viaggio:</strong>"},
+        {t:"steps", items:[
+          {s:"Cerchio di Sale:", v:"Posa una piccola quantità di sale marino sotto il letto o in cerchio attorno alla tua postazione. Il sale assorbe le energie dense."},
+          {s:"Cristalli Protettivi:", v:"Tormalina nera (protezione), labradorite (scudo tra i mondi), ossidiana (riflessione energetica). Posizionali ai quattro angoli del letto."},
+          {s:"Invocazione Protettiva:", v:"\"Sono circondato/a da luce bianca. Nessuna entità oscura può avvicinarsi. Il mio cordone d'argento è indistruttibile. Viaggio in pace, torno in pace.\""},
+          {s:"Fiamma Astrale:", v:"Visualizza una piccola fiamma viola nel centro del petto che brucia per tutta la durata del viaggio — un faro che guida il ritorno."}
+        ]},
+        {t:"p", v:"<strong>Il Cordone d'Argento:</strong> In tutte le tradizioni di proiezione astrale esiste il concetto del Cordone d'Argento — un filo energetico che collega il corpo astrale a quello fisico. Non può spezzarsi. Anche se non lo vedi sempre, è sempre lì. Quando vuoi tornare, pensa al tuo corpo fisico e il richiamo è immediato."}
+      ]},
+      { id:"a7", icon:"💫", num:"Capitolo VII", title:"Cosa Aspettarsi nel Piano Astrale", sub:"Esperienze tipiche e loro interpretazione", blocks:[
+        {t:"p", v:"Il piano astrale è profondamente influenzato dalla mente — i tuoi pensieri possono manifestarsi rapidamente. La lucidità e la calma sono le qualità più importanti durante il viaggio."},
+        {t:"p", v:"<strong>Segnali della Separazione:</strong>"},
+        {t:"kw", items:["Vibrazioni nel corpo","Ronzio o suoni","Sensazione di galleggiare","Visione ipnagogica","Paralisi del sonno","Pressione alla testa","Sensazione di sfilarsi"]},
+        {t:"p", v:"<strong>Cosa Fare Appena Usciti:</strong>"},
+        {t:"steps", items:[
+          {s:"Allontanati subito:", v:"Muoviti fisicamente lontano dal corpo per ridurre l'attrazione di ritorno involontario."},
+          {s:"Stabilizza la visione:", v:"Se l'immagine è sfocata, tocca gli oggetti vicini o pronuncia \"chiarezza!\" per stabilizzare la percezione."},
+          {s:"Mantieni la calma:", v:"L'eccitazione può causare ritorno involontario. Respira lentamente (anche astralmente) e mantieni la compostezza."},
+          {s:"Esplora con intenzione:", v:"Ricorda il tuo obiettivo. Puoi visitare luoghi, incontrare guide spirituali, o esplorare liberamente."}
+        ]},
+        {t:"callout", variant:"warning", title:"⚠️ Entità e Incontri", v:"Nel piano astrale potresti incontrare esseri di vario tipo. La regola d'oro: le entità di luce non si impongono mai — si avvicinano solo quando invitate. Se incontri qualcosa che ti spaventa, invoca la tua protezione di luce e dichiara \"Solo la luce!\". Il tuo stato emotivo è il tuo scudo più potente."}
+      ]},
+      { id:"a8", icon:"📔", num:"Capitolo VIII", title:"Il Diario Astrale", sub:"Documentare i viaggi per approfondire la pratica", blocks:[
+        {t:"p", v:"Tenere un <strong>diario astrale</strong> è una delle pratiche più utili per chi vuole sviluppare sistematicamente la proiezione. La mente dimentica rapidamente i dettagli dei viaggi — esattamente come dimentica i sogni — ma la documentazione immediata al risveglio preserva le informazioni preziose."},
+        {t:"callout", variant:"tip", title:"📝 Come Compilare il Diario Astrale", v:"Immediatamente al risveglio (entro 2 minuti) annota: luogo/i visitati, entità o presenze incontrate, sensazioni fisiche durante la separazione, messaggi o intuizioni ricevuti, chiarezza della visione (1–10), durata percepita del viaggio, tecnica usata e suo esito. Tieni il diario e una penna sul comodino."},
+        {t:"p", v:"Con il tempo, il diario rivela pattern — le condizioni che favoriscono la proiezione, le aree del piano astrale che visiti più spesso, l'evoluzione della tua lucidità. Diventa una mappa personale di territori interiori."},
+        {t:"p", v:"I praticanti esperti testimoniano che la pratica regolare per 30–90 giorni, documentata sistematicamente, trasforma la proiezione astrale da evento casuale a capacità consapevole. La chiave è la costanza, non il talento."}
+      ]}
+    ],
+    seo: {
+      title: "Viaggio Astrale: Guida Completa con Onde Theta | MYSTICA Oracoli",
+      description: "Guida completa al Viaggio Astrale: onde theta binaurali, tecniche di proiezione (WILD, Corda, Monroe), chakra, protezione energetica e diario astrale.",
+      keywords: "viaggio astrale, proiezione astrale, onde theta, binaural beats, chakra, corpo astrale, meditazione profonda, OBE, cordone d'argento",
+      ogTitle: "Viaggio Astrale — Guida con Onde Theta Binaurali",
+      ogDesc: "Tecniche di proiezione astrale, onde theta, chakra e protezione energetica in una guida completa.",
+      ogLocale: "it_IT",
+      htmlLang: "it",
+      faqLD: null
+    }
+  },
+
+  en: {
+    back: "← Back to Home",
+    music: { on: "🎵 Music ON", off: "🔇 Music OFF" },
+    theme: { day: "☀️ Day", night: "🌙 Night" },
+    ctaExplore: "🔍 Explore Other Categories",
+    premiumTitle: "✦ Premium Feature",
+    premiumText: "Unlock the unlimited Astral Journal, full guided audio meditations and the extended library of protection rituals.",
+    premiumPrice: "Only €4.99 one-time",
+    premiumBtn: "Unlock MYSTICA Premium",
+    premiumSkip: "Continue Free",
+    premiumBannerText: "Unlock the unlimited digital Astral Journal and guided audio meditations for projection.",
+    premiumBannerBtn: "✦ Discover Premium",
+    shareBtnLabel: "📤 Share",
+    shareTitle: "MYSTICA Oracles",
+    shareText: "I found this complete guide to Astral Travel with binaural theta waves on MYSTICA Oracoli 🌌",
+    shareCopy: "🔗 Copy Link",
+    shareCopied: "✓ Copied!",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Content for informational, experiential and spiritual entertainment purposes. It does not replace medical or psychological advice.",
+    footerHome: "Home", footerContact: "Contact", footerAbout: "About Us", footerPrivacy: "Privacy",
+    heroTitle: "Astral Travel",
+    heroSub: "A complete guide to astral projection with binaural theta waves, separation techniques and energetic protection",
+    thetaTitle: "🎵 Binaural Theta Waves",
+    thetaInfo: "Theta waves (4–8 Hz) induce expanded states of consciousness ideal for astral projection. Use stereo headphones for the full binaural effect.",
+    thetaFreqLabel: "Frequency",
+    thetaVolLabel: "Volume",
+    thetaOpt4: "4 Hz — Deep Theta (lucid sleep)",
+    thetaOpt6: "6 Hz — Mid Theta (projection)",
+    thetaOpt75: "7.5 Hz — High Theta (meditation)",
+    thetaOpt8: "8 Hz — Alpha/Theta (relaxation)",
+    thetaPlay: "▶ Start Theta Waves",
+    thetaPause: "⏸ Pause",
+    thetaWarning: "⚠️ Do not use while driving or during activities requiring attention. Not suitable for people with epilepsy.",
+    thetaUnsupported: "Your browser does not support Web Audio. Try Chrome or Firefox.",
+    tocLabel: "Guide Chapters",
+    toc: ["① What It Is","② Science","③ Preparation","④ Techniques","⑤ Chakras","⑥ Protection","⑦ Experiences","⑧ Journal"],
+    artImgAlt: "Meditating silhouette with a glowing astral body separating from the physical body against a starry cosmic background",
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      { q: "What exactly is Astral Travel and how does it work?", a: "Astral travel, or astral projection (OBE), is the experience in which consciousness perceives itself as separate from the physical body and capable of moving independently. Esoteric traditions describe it as the shift of awareness into the astral body, kept connected to the physical one by the Silver Cord. The most effective techniques use the hypnagogic state — the threshold between waking and sleep — often assisted by binaural theta waves." },
+      { q: "Is astral travel dangerous?", a: "In the vast majority of accounts, no. According to every tradition the Silver Cord cannot break, and the physical body keeps functioning normally throughout. The real risk is mostly the fear of the unprepared: protection practices, mental calm and prior knowledge of typical phenomena (vibrations, sleep paralysis) drastically reduce discomfort." },
+      { q: "How long does it take to learn to project?", a: "It varies enormously from person to person. Some practitioners report first separation sensations within a few weeks of consistent practice, others take months. Consistency matters more than talent: a daily 20–30 minute session in the ideal window (3–6 AM) for 30–90 days, logged in an astral journal, is the standard suggested by experienced practitioners like Robert Bruce and William Buhlman." },
+      { q: "Do theta waves really work for astral projection?", a: "Theta waves (4–8 Hz) are documented in neuroscience as the natural brain state of the hypnagogic phase and deep meditation — the window in which astral projection is most likely. Binaural beats don't magically 'create' the experience, but they help synchronize the brain toward that state faster, acting as a facilitator rather than a direct cause." },
+      { q: "What is the difference between lucid dreaming and astral travel?", a: "In a lucid dream, consciousness becomes aware it is inside a dream and can alter its content, while still remaining within a mind-generated dreamscape. In astral travel, according to esoteric traditions, consciousness truly leaves the physical body and moves onto a parallel plane of reality — the astral plane — perceived as objective and independent of imagination. Many techniques, such as WILD, use lucid dreaming as a gateway into projection." }
+    ],
+    chapters: [
+      { id:"a1", icon:"🌟", num:"Chapter I", title:"What Is Astral Travel", sub:"The experience of leaving the physical body", blocks:[
+        {t:"p", v:"<strong>Astral Travel</strong> — also known as an OBE (Out-of-Body Experience) or astral projection — is the state in which consciousness perceives itself as separate from the physical body. Many spiritual traditions describe it as proof of a <em>subtle body</em> capable of moving independently through space and time."},
+        {t:"p", v:"In esoteric traditions, the human being is made of several overlapping bodies: the physical body, the etheric body (closely tied to the physical), the astral body (seat of emotions and desires), the mental body, and the higher spiritual bodies. During astral travel, consciousness shifts into the astral body, kept linked to the physical one through the <em>Silver Cord</em> — an indestructible energetic thread."},
+        {t:"callout", variant:"spirit", title:"✦ The Astral Plane", v:"The astral plane is a level of reality parallel to the physical one, made of subtle matter. It includes zones that mirror physical locations (lower astral plane), transitional zones, and higher planes of light and wisdom. The quality of your astral experience depends on your emotional and spiritual state at the moment of projection."},
+        {t:"p", v:"Historical accounts span millennia and cultures: the ancient Egyptians described the <em>Ka</em> as the astral double; Tibetan traditions speak of the <em>dream body</em>; shamans worldwide practice traveling into non-ordinary realities. In modern parapsychology, OBEs were studied by researchers such as Robert Monroe, who founded the Monroe Institute for the systematic research of these states."}
+      ]},
+      { id:"a2", icon:"🧠", num:"Chapter II", title:"The Science of Theta Waves", sub:"Neuroscience and altered states of consciousness", blocks:[
+        {t:"p", v:"The brain produces electrical waves at different frequencies depending on the state of consciousness. <strong>Theta waves (4–8 Hz)</strong> occur naturally during the sleep-wake transition (hypnagogia), in deep meditation, and during REM sleep. This is the state in which the mind is most receptive, creative and open to non-ordinary experiences."},
+        {t:"callout", variant:"tech", title:"🎧 How Binaural Beats Work", v:"When the left ear receives a 150 Hz tone and the right ear a 156 Hz tone, the brain 'perceives' a third frequency — the difference: 6 Hz (theta). This phenomenon, called a binaural beat, gradually entrains the brainwaves toward the target frequency. Stereo headphones are essential: speakers mix the sounds before they reach the brain."},
+        {t:"p", v:"The ideal theta window for astral projection is between <strong>6 and 7 Hz</strong>. In this range consciousness stays awake while the body is deeply relaxed — the perfect condition for separation. Tibetan traditions and techniques such as WILD (Wake-Induced Lucid Dream) exploit precisely this window."},
+        {t:"kw", items:["4 Hz — Deep Theta","6 Hz — Astral Projection","7.5 Hz — Deep Meditation","8 Hz — Creativity","10 Hz — Alpha — Relaxation"]},
+        {t:"p", v:"Research by Monroe and his successor William Buhlman shows that right-hemisphere theta coherence often precedes out-of-body experiences. Audio technology isn't magic — it's a tool to ease a process the mind already knows instinctively."}
+      ]},
+      { id:"a3", icon:"🛏️", num:"Chapter III", title:"Preparing for the Journey", sub:"Body, environment and mental state", blocks:[
+        {t:"p", v:"Success in astral travel depends 80% on preparation. An improvised attempt rarely produces results — but a practitioner who systematically prepares body, mind and environment achieves meaningful experiences even in the first weeks of practice."},
+        {t:"callout", variant:"tip", title:"⏰ The Ideal Moment", v:"The best time is between 3 and 6 AM, after 4–5 hours of sleep. The mind is naturally in theta state, the body is relaxed but doesn't need deep sleep. Many practitioners set an alarm, sleep briefly, then attempt projection."},
+        {t:"p", v:"<strong>Physical Preparation</strong>"},
+        {t:"steps", items:[
+          {s:"Light fasting:", v:"Avoid heavy meals in the 2 hours before. Digestion drains vital energy."},
+          {s:"Temperature:", v:"The room should be slightly cool (18–20°C). Excessive heat disturbs the transition."},
+          {s:"Position:", v:"Lying on your back, arms at your sides. Low or no pillow. Don't cross legs or arms."},
+          {s:"Silence:", v:"Phone on silent. Earplugs or headphones with binaurals. Total darkness or an eye mask."}
+        ]},
+        {t:"p", v:"<strong>Mental Preparation</strong>"},
+        {t:"steps", items:[
+          {s:"Clear intention:", v:"Before starting, mentally state your goal: 'Tonight I project safely and return in peace.'"},
+          {s:"Releasing fear:", v:"Fear is the main obstacle. Remember the silver cord cannot break — you are always safe."},
+          {s:"Calm expectation:", v:"Don't try to 'force' the exit. Projection happens when the mind stops expecting anything."}
+        ]}
+      ]},
+      { id:"a4", icon:"🚀", num:"Chapter IV", title:"Projection Techniques", sub:"Tested methods for conscious separation", blocks:[
+        {t:"p", v:"<strong style=\"color:#b090d0\">① Progressive Relaxation Technique (WILD)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"Lie down comfortably. Start the theta binaurals at 6 Hz. Close your eyes."},
+          {s:"2.", v:"Progressively relax each part of the body: feet → calves → thighs → abdomen → chest → arms → neck → face."},
+          {s:"3.", v:"When you feel tingling, heaviness or vibration — these are positive signs. Don't move. Breathe slowly."},
+          {s:"4.", v:"Visualize yourself getting up from the bed and walking around the room. Not with physical eyes — with the mind."},
+          {s:"5.", v:"If the vibrations increase, mentally 'roll' out of the body sideways. Slowly, calmly."}
+        ]},
+        {t:"callout", variant:"tech", title:"⚡ Monroe's Vibration Technique", v:"Robert Monroe taught how to deliberately bring vibrations into the body during the hypnagogic state. Imagine an energy flow starting at the head and moving down to the feet, then back up — oscillating faster and faster. When the vibrations peak, 'roll into' them and exit."},
+        {t:"p", v:"<strong style=\"color:#b090d0\">② The Rope Technique (Robert Bruce)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"In a state of deep relaxation, visualize a sturdy rope hanging from the ceiling above you."},
+          {s:"2.", v:"With your astral hands (not physical), grab the rope and start climbing. Feel the texture — rough, thick."},
+          {s:"3.", v:"Keep climbing until you feel yourself separate. The typical sensation is 'slipping out' of the physical body like a glove."}
+        ]},
+        {t:"p", v:"<strong style=\"color:#b090d0\">③ The Target Point Technique</strong>"},
+        {t:"p", v:"Before falling asleep, choose a physical place you know well (a friend's house, a park, a city). Visualize it in fine detail. Hold this image as you fall asleep. Consciousness tends to project toward the object of focus."},
+        {t:"callout", variant:"warning", title:"⚠️ Sleep Paralysis", v:"During the transition you might experience sleep paralysis — the sensation of being unable to move the physical body. This is normal and a good sign: it means you're in the right state. Don't be frightened. Breathe deeply and use the state to project."}
+      ]},
+      { id:"a5", icon:"⚡", num:"Chapter V", title:"Chakras in Astral Travel", sub:"Energy centers and activation for projection", blocks:[
+        {t:"p", v:"The <strong>seven main chakras</strong> are the energy centers that regulate the flow of prana (vital energy) through the subtle body. Activating and aligning them before an astral journey significantly increases the likelihood of successful projection."},
+        {t:"steps", items:[
+          {s:"Muladhara (Root) — 🔴 Red:", v:"Grounding and safety. Activate by visualizing a pulsing red sphere at the base of the spine. 'I am safe in the body and out of it.'"},
+          {s:"Svadhisthana (Sacral) — 🟠 Orange:", v:"Flow and creativity. Orange sphere below the navel. 'I move freely between worlds.'"},
+          {s:"Manipura (Solar Plexus) — 🟡 Yellow:", v:"Willpower and personal power. Solar yellow sphere at the plexus. 'I have the strength to explore beyond the physical.'"},
+          {s:"Anahata (Heart) — 💚 Green:", v:"Love and connection. Bright green sphere at the center of the chest. 'My heart is my astral compass.'"},
+          {s:"Vishuddha (Throat) — 🔵 Blue:", v:"Communication and truth. 'I can communicate across the planes.'"},
+          {s:"Ajna (Third Eye) — 🟣 Indigo:", v:"Vision and intuition. The most important chakra for projection. Indigo sphere between the eyebrows. 'I see beyond the visible.'"},
+          {s:"Sahasrara (Crown) — ⚪ Violet/White:", v:"Cosmic connection. Violet sphere at the top of the head. 'I am connected to the infinite.'"}
+        ]},
+        {t:"callout", variant:"spirit", title:"✦ The Third Eye Chakra in Astral Travel", v:"The Ajna is the main gateway for projection. During hypnagogic states, focusing awareness on the third-eye area (between the eyebrows) often precipitates the astral vision. Many practitioners describe a 'click' or a sensation of opening in this area right before separation."}
+      ]},
+      { id:"a6", icon:"🛡️", num:"Chapter VI", title:"Energetic Protection", sub:"Safety on the astral plane", blocks:[
+        {t:"p", v:"The astral plane is rich with entities and energies of various natures. Adequate energetic protection isn't superstition — it's spiritual hygiene, just as washing your hands is physical hygiene. A protected practitioner travels serenely and returns intact."},
+        {t:"callout", variant:"tip", title:"⭐ The Golden Light Shell", v:"Before every journey, visualize a sphere of golden light expanding from your heart until it wraps around you completely. Imagine this light as dense, impenetrable to any energy not in harmony with your higher good. Declare: 'Only what is in tune with my light may approach.'"},
+        {t:"p", v:"<strong>Pre-Journey Protection Rituals:</strong>"},
+        {t:"steps", items:[
+          {s:"Salt Circle:", v:"Place a small amount of sea salt under the bed or in a circle around your setup. Salt absorbs dense energies."},
+          {s:"Protective Crystals:", v:"Black tourmaline (protection), labradorite (shield between worlds), obsidian (energetic reflection). Place them at the four corners of the bed."},
+          {s:"Protective Invocation:", v:"'I am surrounded by white light. No dark entity may approach. My silver cord is indestructible. I travel in peace, I return in peace.'"},
+          {s:"Astral Flame:", v:"Visualize a small violet flame at the center of the chest that burns throughout the journey — a beacon guiding your return."}
+        ]},
+        {t:"p", v:"<strong>The Silver Cord:</strong> Every astral projection tradition speaks of the Silver Cord — an energetic thread connecting the astral body to the physical one. It cannot break. Even when you don't see it, it's always there. When you want to return, think of your physical body and the recall is immediate."}
+      ]},
+      { id:"a7", icon:"💫", num:"Chapter VII", title:"What to Expect on the Astral Plane", sub:"Typical experiences and how to interpret them", blocks:[
+        {t:"p", v:"The astral plane is deeply influenced by the mind — your thoughts can manifest quickly. Lucidity and calm are the most important qualities during the journey."},
+        {t:"p", v:"<strong>Signs of Separation:</strong>"},
+        {t:"kw", items:["Body vibrations","Buzzing or sounds","Floating sensation","Hypnagogic vision","Sleep paralysis","Head pressure","Slipping-out sensation"]},
+        {t:"p", v:"<strong>What to Do Right After Exiting:</strong>"},
+        {t:"steps", items:[
+          {s:"Move away immediately:", v:"Physically move away from the body to reduce the pull of an involuntary return."},
+          {s:"Stabilize the vision:", v:"If the image is blurry, touch nearby objects or say 'clarity!' to stabilize perception."},
+          {s:"Stay calm:", v:"Excitement can cause an involuntary return. Breathe slowly (even astrally) and remain composed."},
+          {s:"Explore with intention:", v:"Remember your goal. You can visit places, meet spirit guides, or simply explore freely."}
+        ]},
+        {t:"callout", variant:"warning", title:"⚠️ Entities and Encounters", v:"On the astral plane you might encounter various kinds of beings. The golden rule: beings of light never impose themselves — they approach only when invited. If you meet something frightening, invoke your protective light and declare 'Only the light!'. Your emotional state is your most powerful shield."}
+      ]},
+      { id:"a8", icon:"📔", num:"Chapter VIII", title:"The Astral Journal", sub:"Documenting your journeys to deepen the practice", blocks:[
+        {t:"p", v:"Keeping an <strong>astral journal</strong> is one of the most useful practices for anyone wanting to systematically develop projection. The mind quickly forgets journey details — much like it forgets dreams — but writing immediately upon waking preserves the valuable information."},
+        {t:"callout", variant:"tip", title:"📝 How to Fill In the Astral Journal", v:"Immediately upon waking (within 2 minutes) note: place(s) visited, entities or presences encountered, physical sensations during separation, messages or intuitions received, clarity of vision (1–10), perceived duration of the journey, technique used and its outcome. Keep the journal and a pen on your nightstand."},
+        {t:"p", v:"Over time, the journal reveals patterns — the conditions that favor projection, the areas of the astral plane you visit most often, the evolution of your lucidity. It becomes a personal map of inner territories."},
+        {t:"p", v:"Experienced practitioners report that regular practice for 30–90 days, systematically documented, transforms astral projection from a random event into a conscious skill. Consistency, not talent, is the key."}
+      ]}
+    ],
+    seo: {
+      title: "Astral Travel: Complete Guide with Theta Waves | MYSTICA Oracoli",
+      description: "Complete guide to Astral Travel: binaural theta waves, projection techniques (WILD, Rope, Monroe), chakras, energetic protection and astral journal.",
+      keywords: "astral travel, astral projection, theta waves, binaural beats, chakras, astral body, deep meditation, OBE, silver cord",
+      ogTitle: "Astral Travel — Guide with Binaural Theta Waves",
+      ogDesc: "Astral projection techniques, theta waves, chakras and energetic protection in one complete guide.",
+      ogLocale: "en_US",
+      htmlLang: "en",
+      faqLD: null
+    }
+  },
+
+  es: {
+    back: "← Volver al Inicio",
+    music: { on: "🎵 Música ON", off: "🔇 Música OFF" },
+    theme: { day: "☀️ Día", night: "🌙 Noche" },
+    ctaExplore: "🔍 Explorar Otras Categorías",
+    premiumTitle: "✦ Función Premium",
+    premiumText: "Desbloquea el Diario Astral ilimitado, meditaciones guiadas en audio completas y la biblioteca ampliada de rituales de protección.",
+    premiumPrice: "Solo 4,99€ pago único",
+    premiumBtn: "Desbloquear MYSTICA Premium",
+    premiumSkip: "Continuar Gratis",
+    premiumBannerText: "Desbloquea el Diario Astral digital ilimitado y las meditaciones guiadas en audio para la proyección.",
+    premiumBannerBtn: "✦ Descubrir Premium",
+    shareBtnLabel: "📤 Compartir",
+    shareTitle: "MYSTICA Oráculos",
+    shareText: "Descubrí esta guía completa del Viaje Astral con ondas theta binaurales en MYSTICA Oracoli 🌌",
+    shareCopy: "🔗 Copiar Enlace",
+    shareCopied: "✓ ¡Copiado!",
+    footerCopy: "© 2025 PetroCorporation · Dott. Petrolese Giovanni",
+    footerDisclaimer: "Contenidos con fines informativos, experienciales y de entretenimiento espiritual. No sustituyen el asesoramiento médico o psicológico.",
+    footerHome: "Inicio", footerContact: "Contacto", footerAbout: "Sobre Nosotros", footerPrivacy: "Privacidad",
+    heroTitle: "Viaje Astral",
+    heroSub: "Guía completa de la proyección astral con ondas theta binaurales, técnicas de separación y protección energética",
+    thetaTitle: "🎵 Ondas Theta Binaurales",
+    thetaInfo: "Las ondas theta (4–8 Hz) inducen estados de conciencia expandidos ideales para la proyección astral. Usa auriculares estéreo para el máximo efecto binaural.",
+    thetaFreqLabel: "Frecuencia",
+    thetaVolLabel: "Volumen",
+    thetaOpt4: "4 Hz — Theta Profundo (sueño lúcido)",
+    thetaOpt6: "6 Hz — Theta Medio (proyección)",
+    thetaOpt75: "7.5 Hz — Theta Alto (meditación)",
+    thetaOpt8: "8 Hz — Alpha/Theta (relajación)",
+    thetaPlay: "▶ Iniciar Ondas Theta",
+    thetaPause: "⏸ Pausa",
+    thetaWarning: "⚠️ No usar al conducir ni en actividades que requieran atención. No apto para personas con epilepsia.",
+    thetaUnsupported: "Tu navegador no soporta Web Audio. Prueba con Chrome o Firefox.",
+    tocLabel: "Capítulos de la Guía",
+    toc: ["① Qué es","② Ciencia","③ Preparación","④ Técnicas","⑤ Chakras","⑥ Protección","⑦ Experiencias","⑧ Diario"],
+    artImgAlt: "Silueta en meditación con cuerpo astral luminoso separándose del cuerpo físico sobre un fondo cósmico estrellado",
+    faqTitle: "Preguntas Frecuentes",
+    faq: [
+      { q: "¿Qué es exactamente el Viaje Astral y cómo funciona?", a: "El viaje astral, o proyección astral (OBE), es la experiencia en la que la conciencia se percibe separada del cuerpo físico y capaz de moverse de forma autónoma. Las tradiciones esotéricas lo describen como el desplazamiento de la conciencia hacia el cuerpo astral, mantenido conectado al físico por el Cordón de Plata. Las técnicas más eficaces aprovechan el estado hipnagógico, el umbral entre la vigilia y el sueño, a menudo facilitado por ondas theta binaurales." },
+      { q: "¿El viaje astral es peligroso?", a: "En la gran mayoría de los testimonios, no. Según todas las tradiciones, el Cordón de Plata no puede romperse, y el cuerpo físico continúa sus funciones vitales con normalidad. El riesgo real tiene más que ver con el susto de quien no está preparado: las prácticas de protección energética, la calma mental y el conocimiento previo de los fenómenos típicos (vibraciones, parálisis del sueño) reducen drásticamente la incomodidad." },
+      { q: "¿Cuánto tiempo se necesita para aprender a proyectarse?", a: "Varía mucho de una persona a otra. Algunos practicantes reportan las primeras sensaciones de separación en las primeras semanas de práctica constante, otros tardan meses. La constancia importa más que el talento: una práctica diaria de 20–30 minutos en la ventana ideal (3–6 de la mañana) durante 30–90 días, documentada en el diario astral, es el estándar sugerido por practicantes experimentados como Robert Bruce y William Buhlman." },
+      { q: "¿Las ondas theta realmente funcionan para la proyección astral?", a: "Las ondas theta (4–8 Hz) están documentadas por la neurociencia como el estado cerebral natural de la fase hipnagógica y la meditación profunda — la ventana en la que la proyección astral es más probable. Los binaural beats no 'crean' mágicamente la experiencia, pero ayudan a sincronizar el cerebro hacia ese estado más rápidamente, actuando como facilitador y no como causa directa." },
+      { q: "¿Cuál es la diferencia entre sueño lúcido y viaje astral?", a: "En el sueño lúcido, la conciencia toma conciencia de estar dentro de un sueño y puede modificar su contenido, permaneciendo dentro de un escenario onírico generado por la mente. En el viaje astral, según las tradiciones esotéricas, la conciencia realmente sale del cuerpo físico y se desplaza a un plano de realidad paralelo — el plano astral — percibido como objetivo e independiente de la imaginación. Muchas técnicas, como la WILD, usan el sueño lúcido como puerta de acceso a la proyección." }
+    ],
+    chapters: [
+      { id:"a1", icon:"🌟", num:"Capítulo I", title:"Qué es el Viaje Astral", sub:"La experiencia de salir del cuerpo físico", blocks:[
+        {t:"p", v:"El <strong>Viaje Astral</strong> — también conocido como OBE (Out-of-Body Experience) o proyección astral — es el estado en el que la conciencia se percibe separada del cuerpo físico. Muchas tradiciones espirituales lo describen como la prueba de la existencia de un <em>cuerpo sutil</em> capaz de moverse de forma autónoma en el espacio y el tiempo."},
+        {t:"p", v:"En las tradiciones esotéricas, el ser humano está compuesto por varios cuerpos superpuestos: el cuerpo físico, el cuerpo etérico (estrechamente ligado al físico), el cuerpo astral (sede de las emociones y los deseos), el cuerpo mental y los cuerpos espirituales superiores. Durante el viaje astral, la conciencia se traslada al cuerpo astral, manteniendo un vínculo con el físico a través del <em>Cordón de Plata</em> — un hilo energético indestructible."},
+        {t:"callout", variant:"spirit", title:"✦ El Plano Astral", v:"El plano astral es un nivel de realidad paralelo al físico, compuesto de materia sutil. Comprende zonas que corresponden a lugares físicos (plano astral bajo), zonas de transición y planos más elevados de luz y sabiduría. La calidad de tu experiencia astral depende de tu estado emocional y espiritual en el momento de la proyección."},
+        {t:"p", v:"Los testimonios históricos atraviesan milenios y culturas: los antiguos egipcios describían el <em>Ka</em> como el doble astral; las tradiciones tibetanas hablan del <em>cuerpo de sueño</em>; los chamanes de todo el mundo practican el viaje a mundos no ordinarios. En la investigación parapsicológica moderna, las OBE fueron estudiadas por investigadores como Robert Monroe, quien fundó el Monroe Institute para la investigación sistemática de estos estados."}
+      ]},
+      { id:"a2", icon:"🧠", num:"Capítulo II", title:"La Ciencia de las Ondas Theta", sub:"Neurociencia y estados alterados de conciencia", blocks:[
+        {t:"p", v:"El cerebro produce ondas eléctricas a diferentes frecuencias según el estado de conciencia. Las <strong>ondas theta (4–8 Hz)</strong> aparecen naturalmente durante la transición sueño-vigilia (hipnagogia), en meditaciones profundas y en la fase REM del sueño. Es el estado en que la mente es más receptiva, creativa y abierta a experiencias no ordinarias."},
+        {t:"callout", variant:"tech", title:"🎧 Cómo Funcionan los Binaural Beats", v:"Cuando el oído izquierdo recibe un tono de 150 Hz y el derecho de 156 Hz, el cerebro 'percibe' una tercera frecuencia — la diferencia: 6 Hz (theta). Este fenómeno, llamado latido binaural, sincroniza lentamente las ondas cerebrales hacia la frecuencia objetivo. Para que funcione es esencial usar auriculares estéreo: los altavoces mezclan los sonidos antes de que lleguen al cerebro."},
+        {t:"p", v:"La ventana theta ideal para la proyección astral está entre <strong>6 y 7 Hz</strong>. En este rango la conciencia está despierta pero el cuerpo profundamente relajado — la condición perfecta para favorecer la separación. Tradiciones tibetanas y técnicas como la WILD (Wake-Induced Lucid Dream) aprovechan precisamente esta ventana."},
+        {t:"kw", items:["4 Hz — Theta Profundo","6 Hz — Proyección Astral","7.5 Hz — Meditación Profunda","8 Hz — Creatividad","10 Hz — Alpha — Relajación"]},
+        {t:"p", v:"Las investigaciones de Monroe y de su sucesor William Buhlman muestran que la coherencia theta en el hemisferio derecho suele preceder a las experiencias de salida del cuerpo. La tecnología de audio no es magia — es una herramienta para facilitar un proceso que la mente ya conoce instintivamente."}
+      ]},
+      { id:"a3", icon:"🛏️", num:"Capítulo III", title:"Preparación para el Viaje", sub:"Cuerpo, entorno y estado mental", blocks:[
+        {t:"p", v:"El éxito en el viaje astral depende en un 80% de la preparación. Un intento improvisado rara vez produce resultados — pero un practicante que prepara sistemáticamente cuerpo, mente y entorno obtiene experiencias significativas incluso en las primeras semanas de práctica."},
+        {t:"callout", variant:"tip", title:"⏰ El Momento Ideal", v:"El mejor momento es entre las 3 y las 6 de la madrugada, tras haber dormido 4–5 horas. La mente está en estado theta natural, el cuerpo está relajado pero no necesita sueño profundo. Muchos practicantes ponen la alarma, duermen brevemente y luego intentan la proyección."},
+        {t:"p", v:"<strong>Preparación Física</strong>"},
+        {t:"steps", items:[
+          {s:"Ayuno ligero:", v:"Evita comidas pesadas en las 2 horas previas. La digestión distrae la energía vital."},
+          {s:"Temperatura:", v:"El ambiente debe estar ligeramente fresco (18–20°C). El calor excesivo perturba la transición."},
+          {s:"Posición:", v:"Acostado boca arriba, brazos a los costados. Almohada baja o ninguna. No cruzar piernas ni brazos."},
+          {s:"Silencio:", v:"Teléfono en silencio. Tapones para los oídos o auriculares con los binaurales. Oscuridad total o antifaz."}
+        ]},
+        {t:"p", v:"<strong>Preparación Mental</strong>"},
+        {t:"steps", items:[
+          {s:"Intención clara:", v:"Antes de empezar, afirma mentalmente tu objetivo: 'Esta noche me proyecto con seguridad y regreso en paz.'"},
+          {s:"Eliminación del miedo:", v:"El miedo es el principal obstáculo. Recuerda que el cordón de plata no puede romperse — siempre estás a salvo."},
+          {s:"Expectativa calmada:", v:"No intentes 'forzar' la salida. La proyección ocurre cuando la mente deja de esperar algo."}
+        ]}
+      ]},
+      { id:"a4", icon:"🚀", num:"Capítulo IV", title:"Técnicas de Proyección", sub:"Métodos probados para la separación consciente", blocks:[
+        {t:"p", v:"<strong style=\"color:#b090d0\">① Técnica de Relajación Progresiva (WILD)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"Acuéstate cómodamente. Activa los binaurales theta a 6 Hz. Cierra los ojos."},
+          {s:"2.", v:"Relaja progresivamente cada parte del cuerpo: pies → pantorrillas → muslos → abdomen → pecho → brazos → cuello → rostro."},
+          {s:"3.", v:"Cuando sientas hormigueo, pesadez o vibración — son señales positivas. No te muevas. Respira lentamente."},
+          {s:"4.", v:"Visualízate levantándote de la cama y caminando por la habitación. No con los ojos físicos — con la mente."},
+          {s:"5.", v:"Si sientes que las vibraciones aumentan, 'rueda' mentalmente fuera del cuerpo hacia un lado. Lentamente, con calma."}
+        ]},
+        {t:"callout", variant:"tech", title:"⚡ Técnica de las Vibraciones de Monroe", v:"Robert Monroe enseñaba a llevar deliberadamente las vibraciones al cuerpo durante el estado hipnagógico. Imagina un flujo energético que parte de la cabeza y baja hasta los pies, y luego vuelve a subir — oscilando cada vez más rápido. Cuando las vibraciones alcanzan su punto máximo, 'rueda hacia dentro' y sal."},
+        {t:"p", v:"<strong style=\"color:#b090d0\">② Técnica de la Cuerda (Robert Bruce)</strong>"},
+        {t:"steps", items:[
+          {s:"1.", v:"En un estado de relajación profunda, visualiza una cuerda resistente que cuelga del techo sobre ti."},
+          {s:"2.", v:"Con las manos astrales (no físicas), agarra la cuerda y comienza a trepar. Siente la textura — áspera, gruesa."},
+          {s:"3.", v:"Sigue trepando hasta sentir que te separas. La sensación típica es 'desprenderse' del cuerpo físico como de un guante."}
+        ]},
+        {t:"p", v:"<strong style=\"color:#b090d0\">③ Técnica del Punto de Mira</strong>"},
+        {t:"p", v:"Antes de dormirte, elige un lugar físico que conozcas bien (la casa de un amigo, un parque, una ciudad). Visualízalo con todo detalle. Mantén esta imagen mientras te duermes. La conciencia tiende a proyectarse hacia el objeto del enfoque."},
+        {t:"callout", variant:"warning", title:"⚠️ Parálisis del Sueño", v:"Durante la transición podrías experimentar parálisis del sueño — la sensación de no poder mover el cuerpo físico. Esto es normal y una buena señal: significa que estás en el estado correcto. No te asustes. Respira profundamente y usa el estado para proyectarte."}
+      ]},
+      { id:"a5", icon:"⚡", num:"Capítulo V", title:"Los Chakras en el Viaje Astral", sub:"Centros energéticos y activación para la proyección", blocks:[
+        {t:"p", v:"Los <strong>siete chakras</strong> principales son los centros energéticos que regulan el flujo del prana (energía vital) a través del cuerpo sutil. Su activación y alineación antes de un viaje astral aumenta significativamente la probabilidad de una proyección exitosa."},
+        {t:"steps", items:[
+          {s:"Muladhara (Raíz) — 🔴 Rojo:", v:"Arraigo y seguridad. Actívalo visualizando una esfera roja pulsante en la base de la columna. 'Estoy a salvo dentro y fuera del cuerpo.'"},
+          {s:"Svadhisthana (Sacro) — 🟠 Naranja:", v:"Flujo y creatividad. Esfera naranja bajo el ombligo. 'Me muevo libremente entre los mundos.'"},
+          {s:"Manipura (Plexo Solar) — 🟡 Amarillo:", v:"Voluntad y poder personal. Esfera amarilla solar en el plexo. 'Tengo la fuerza para explorar más allá de lo físico.'"},
+          {s:"Anahata (Corazón) — 💚 Verde:", v:"Amor y conexión. Esfera verde luminosa en el centro del pecho. 'Mi corazón es mi brújula astral.'"},
+          {s:"Vishuddha (Garganta) — 🔵 Azul:", v:"Comunicación y verdad. 'Puedo comunicarme a través de los planos.'"},
+          {s:"Ajna (Tercer Ojo) — 🟣 Índigo:", v:"Visión e intuición. El chakra más importante para la proyección. Esfera índigo entre las cejas. 'Veo más allá de lo visible.'"},
+          {s:"Sahasrara (Corona) — ⚪ Violeta/Blanco:", v:"Conexión cósmica. Esfera violeta en la coronilla. 'Estoy conectado con el infinito.'"}
+        ]},
+        {t:"callout", variant:"spirit", title:"✦ El Chakra del Tercer Ojo en el Viaje Astral", v:"El Ajna es el portal principal para la proyección. Durante los estados hipnagógicos, concentrar la conciencia en el área del tercer ojo (entre las cejas) suele precipitar la visión astral. Muchos practicantes describen un 'clic' o una sensación de apertura en esta zona justo antes de la separación."}
+      ]},
+      { id:"a6", icon:"🛡️", num:"Capítulo VI", title:"Protección Energética", sub:"Seguridad en el plano astral", blocks:[
+        {t:"p", v:"El plano astral está lleno de entidades y energías de diversa naturaleza. Una protección energética adecuada no es superstición — es higiene espiritual, tal como lavarse las manos es higiene física. Un practicante protegido viaja con serenidad y regresa íntegro."},
+        {t:"callout", variant:"tip", title:"⭐ El Manto de Luz Dorada", v:"Antes de cada viaje, visualiza una esfera de luz dorada que se expande desde tu corazón hasta envolverte por completo. Imagina esta luz densa, impenetrable para cualquier energía que no esté en armonía con tu bien superior. Declara: 'Solo lo que está en sintonía con mi luz puede acercarse.'"},
+        {t:"p", v:"<strong>Rituales de Protección Previos al Viaje:</strong>"},
+        {t:"steps", items:[
+          {s:"Círculo de Sal:", v:"Coloca una pequeña cantidad de sal marina debajo de la cama o en círculo alrededor de tu espacio. La sal absorbe las energías densas."},
+          {s:"Cristales Protectores:", v:"Turmalina negra (protección), labradorita (escudo entre mundos), obsidiana (reflexión energética). Colócalos en las cuatro esquinas de la cama."},
+          {s:"Invocación Protectora:", v:"'Estoy rodeado/a de luz blanca. Ninguna entidad oscura puede acercarse. Mi cordón de plata es indestructible. Viajo en paz, regreso en paz.'"},
+          {s:"Llama Astral:", v:"Visualiza una pequeña llama violeta en el centro del pecho que arde durante todo el viaje — un faro que guía el regreso."}
+        ]},
+        {t:"p", v:"<strong>El Cordón de Plata:</strong> En todas las tradiciones de proyección astral existe el concepto del Cordón de Plata — un hilo energético que conecta el cuerpo astral con el físico. No puede romperse. Aunque no siempre lo veas, siempre está ahí. Cuando quieras regresar, piensa en tu cuerpo físico y el llamado es inmediato."}
+      ]},
+      { id:"a7", icon:"💫", num:"Capítulo VII", title:"Qué Esperar en el Plano Astral", sub:"Experiencias típicas y su interpretación", blocks:[
+        {t:"p", v:"El plano astral está profundamente influenciado por la mente — tus pensamientos pueden manifestarse rápidamente. La lucidez y la calma son las cualidades más importantes durante el viaje."},
+        {t:"p", v:"<strong>Señales de la Separación:</strong>"},
+        {t:"kw", items:["Vibraciones en el cuerpo","Zumbido o sonidos","Sensación de flotar","Visión hipnagógica","Parálisis del sueño","Presión en la cabeza","Sensación de desprenderse"]},
+        {t:"p", v:"<strong>Qué Hacer Nada Más Salir:</strong>"},
+        {t:"steps", items:[
+          {s:"Aléjate de inmediato:", v:"Muévete físicamente lejos del cuerpo para reducir la atracción de un regreso involuntario."},
+          {s:"Estabiliza la visión:", v:"Si la imagen está borrosa, toca los objetos cercanos o pronuncia '¡claridad!' para estabilizar la percepción."},
+          {s:"Mantén la calma:", v:"La excitación puede causar un regreso involuntario. Respira lentamente (incluso astralmente) y mantén la compostura."},
+          {s:"Explora con intención:", v:"Recuerda tu objetivo. Puedes visitar lugares, encontrarte con guías espirituales o explorar libremente."}
+        ]},
+        {t:"callout", variant:"warning", title:"⚠️ Entidades y Encuentros", v:"En el plano astral podrías encontrarte con seres de diversa índole. La regla de oro: las entidades de luz nunca se imponen — se acercan solo cuando son invitadas. Si te encuentras con algo que te asusta, invoca tu protección de luz y declara '¡Solo la luz!'. Tu estado emocional es tu escudo más poderoso."}
+      ]},
+      { id:"a8", icon:"📔", num:"Capítulo VIII", title:"El Diario Astral", sub:"Documentar los viajes para profundizar la práctica", blocks:[
+        {t:"p", v:"Llevar un <strong>diario astral</strong> es una de las prácticas más útiles para quien quiere desarrollar sistemáticamente la proyección. La mente olvida rápidamente los detalles de los viajes — igual que olvida los sueños — pero la documentación inmediata al despertar preserva la información valiosa."},
+        {t:"callout", variant:"tip", title:"📝 Cómo Completar el Diario Astral", v:"Inmediatamente al despertar (dentro de los 2 minutos) anota: lugar(es) visitados, entidades o presencias encontradas, sensaciones físicas durante la separación, mensajes o intuiciones recibidos, claridad de la visión (1–10), duración percibida del viaje, técnica usada y su resultado. Ten el diario y un bolígrafo en la mesita de noche."},
+        {t:"p", v:"Con el tiempo, el diario revela patrones — las condiciones que favorecen la proyección, las áreas del plano astral que visitas con más frecuencia, la evolución de tu lucidez. Se convierte en un mapa personal de territorios interiores."},
+        {t:"p", v:"Los practicantes experimentados atestiguan que la práctica regular durante 30–90 días, documentada sistemáticamente, transforma la proyección astral de un evento casual en una capacidad consciente. La clave es la constancia, no el talento."}
+      ]}
+    ],
+    seo: {
+      title: "Viaje Astral: Guía Completa con Ondas Theta | MYSTICA Oracoli",
+      description: "Guía completa del Viaje Astral: ondas theta binaurales, técnicas de proyección (WILD, Cuerda, Monroe), chakras, protección energética y diario astral.",
+      keywords: "viaje astral, proyección astral, ondas theta, binaural beats, chakras, cuerpo astral, meditación profunda, OBE, cordón de plata",
+      ogTitle: "Viaje Astral — Guía con Ondas Theta Binaurales",
+      ogDesc: "Técnicas de proyección astral, ondas theta, chakras y protección energética en una guía completa.",
+      ogLocale: "es_ES",
+      htmlLang: "es",
+      faqLD: null
+    }
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+const PAGE_URL = 'https://mysticaoracoli.it/viaggio-astrale.html';
+
+/* ── Internal linking (multilingua) ── */
+const INTERNAL_LINKS = {
+  it: [
+    { href: "./sogni.html", label: "Interpretazione dei Sogni" },
+    { href: "./mente-energia.html", label: "Mente ed Energia" },
+    { href: "./tradizioni-spirituali.html", label: "Tradizioni Spirituali" },
+    { href: "./pietre-magiche.html", label: "Pietre e Cristalli Magici" }
+  ],
+  en: [
+    { href: "./sogni.html", label: "Dream Interpretation" },
+    { href: "./mente-energia.html", label: "Mind & Energy" },
+    { href: "./tradizioni-spirituali.html", label: "Spiritual Traditions" },
+    { href: "./pietre-magiche.html", label: "Magic Stones & Crystals" }
+  ],
+  es: [
+    { href: "./sogni.html", label: "Interpretación de los Sueños" },
+    { href: "./mente-energia.html", label: "Mente y Energía" },
+    { href: "./tradizioni-spirituali.html", label: "Tradiciones Espirituales" },
+    { href: "./pietre-magiche.html", label: "Piedras y Cristales Mágicos" }
+  ]
+};
+
+/* ── SEO Multilingua ── */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  const L = LANG[currentLang];
+  if (ld) {
+    ld.textContent = JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": L.faq.map(f => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        }))
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": L.heroTitle,
+        "description": S.description,
+        "image": "https://mysticaoracoli.it/images/icone/home/viaggio-astrale.webp",
+        "author": { "@type": "Person", "name": "Mago Petro" },
+        "publisher": { "@type": "Organization", "name": "MYSTICA Oracoli" },
+        "url": PAGE_URL,
+        "inLanguage": S.htmlLang
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "MYSTICA Oracoli", "item": "https://mysticaoracoli.it/index.html" },
+          { "@type": "ListItem", "position": 2, "name": L.heroTitle, "item": PAGE_URL }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": S.title,
+        "url": PAGE_URL,
+        "inLanguage": S.htmlLang
+      }
+    ]);
+  }
+}
+
+/* ── Render capitoli (data-driven, multilingua) ── */
+function renderChapters(chapters) {
+  const container = document.getElementById('chaptersContainer');
+  if (!container) return;
+  container.innerHTML = chapters.map((ch, idx) => {
+    const blocksHtml = ch.blocks.map(b => {
+      if (b.t === 'p') return `<p>${b.v}</p>`;
+      if (b.t === 'callout') return `<div class="callout callout-${b.variant}"><div class="callout-title">${b.title}</div><div class="callout-body">${b.v}</div></div>`;
+      if (b.t === 'kw') return `<div class="kw-row">${b.items.map(k => `<span class="kw">${k}</span>`).join('')}</div>`;
+      if (b.t === 'steps') return `<ul class="step-list">${b.items.map((it, i) => `<li><div class="step-num">${it.marker || (i+1)}</div><div class="step-text"><strong>${it.s}</strong> ${it.v}</div></li>`).join('')}</ul>`;
+      return '';
+    }).join('');
+    const divider = idx > 0 ? `<div class="divider">✦ ✦ ✦</div>` : '';
+    return `${divider}<div class="astral-chapter" id="${ch.id}">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">${ch.icon}</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">${ch.num}</div>
+          <div class="chapter-title">${ch.title}</div>
+          <div class="chapter-sub">${ch.sub}</div>
+        </div>
+      </div>
+      <div class="chapter-body">${blocksHtml}</div>
+    </div>`;
+  }).join('');
+
+  // Re-attach IntersectionObserver on the freshly rendered chapters
+  initChapterObserver();
+}
+
+/* ── Render TOC pills ── */
+function renderTOC(labels) {
+  const wrap = document.getElementById('tocPills');
+  if (!wrap) return;
+  wrap.innerHTML = labels.map((label, i) => `<div class="toc-pill${i === 0 ? ' active' : ''}" onclick="scrollChapter(${i+1})">${label}</div>`).join('');
+}
+
+/* ── Render link interni ── */
+function renderInternalLinks(links) {
+  const nav = document.getElementById('articleLinks');
+  if (!nav) return;
+  nav.innerHTML = links.map(l => `<a href="${l.href}">${l.label}</a>`).join('');
+}
+
+/* ── Render select onde theta (mantiene value fissi 4/6/7.5/8) ── */
+function renderThetaOptions(L) {
+  const o4 = document.getElementById('theta-opt-4'); if (o4) o4.textContent = L.thetaOpt4;
+  const o6 = document.getElementById('theta-opt-6'); if (o6) o6.textContent = L.thetaOpt6;
+  const o75 = document.getElementById('theta-opt-75'); if (o75) o75.textContent = L.thetaOpt75;
+  const o8 = document.getElementById('theta-opt-8'); if (o8) o8.textContent = L.thetaOpt8;
+}
+
+/* ── Lingua ── */
+function applyLang() {
+  updateSEO(); // ← SEMPRE PRIMA
+
+  const L = LANG[currentLang];
+
+  // Header
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+  const pgT = document.getElementById('page-title'); if (pgT) pgT.textContent = '🌌 ' + L.heroTitle;
+
+  // Hero
+  const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.heroTitle;
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+
+  // Theta player
+  const thT = document.getElementById('theta-title'); if (thT) thT.textContent = L.thetaTitle;
+  const thI = document.getElementById('theta-info'); if (thI) thI.textContent = L.thetaInfo;
+  const thFL = document.getElementById('theta-freq-label'); if (thFL) thFL.textContent = L.thetaFreqLabel;
+  const thVL = document.getElementById('theta-vol-label'); if (thVL) thVL.textContent = L.thetaVolLabel;
+  renderThetaOptions(L);
+  const thBtn = document.getElementById('thetaPlayBtn'); if (thBtn) thBtn.textContent = _thetaPlaying ? L.thetaPause : L.thetaPlay;
+  const thW = document.getElementById('theta-warning'); if (thW) thW.textContent = L.thetaWarning;
+
+  // TOC
+  const tocL = document.getElementById('toc-label'); if (tocL) tocL.textContent = L.tocLabel;
+  renderTOC(L.toc);
+
+  // Premium banner
+  const pbT = document.getElementById('premium-banner-text'); if (pbT) pbT.textContent = L.premiumBannerText;
+  const pbB = document.getElementById('premium-banner-btn'); if (pbB) pbB.textContent = L.premiumBannerBtn;
+
+  // Share
+  const sbl = document.getElementById('share-btn-label'); if (sbl) sbl.textContent = L.shareBtnLabel;
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+
+  // Articolo / capitoli
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = L.artImgAlt || '';
+  renderChapters(L.chapters);
+  renderInternalLinks(INTERNAL_LINKS[currentLang]);
+  const ce = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+
+  // Premium modal
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  // Footer
+  const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+  const flh = document.getElementById('footer-link-home'); if (flh) flh.textContent = L.footerHome;
+  const flc = document.getElementById('footer-link-contact'); if (flc) flc.textContent = L.footerContact;
+  const fla = document.getElementById('footer-link-about'); if (fla) fla.textContent = L.footerAbout;
+  const flp = document.getElementById('footer-link-privacy'); if (flp) flp.textContent = L.footerPrivacy;
+
+  // FAQ
+  const faqT = document.getElementById('faq-title'); if (faqT) faqT.textContent = L.faqTitle;
+  renderFAQ(L.faq);
+}
+
+// Switch lingua
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ── Audio Manager (musica ambientale continua cross-page) ── */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ── Tema Giorno/Notte ── */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ── Premium Gate ── */
+function isPremium() {
+  return localStorage.getItem('myst_premium') === '1';
+}
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ── Share ── */
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ── FAQ Accordion ── */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ══════════════════════════════════════════════════════════
+   LOGICA SPECIFICA DI PAGINA — INVARIATA (non riscritta)
+   Progress bar, TOC scroll-spy, Player Onde Theta binaurali
+   ══════════════════════════════════════════════════════════ */
+
 // PROGRESS BAR
 window.addEventListener('scroll', () => {
   const fill = document.getElementById('progressFill');
@@ -512,28 +1232,32 @@ window.addEventListener('scroll', () => {
   fill.style.width = pct + '%';
 }, { passive: true });
 
-// TOC ACTIVE PILL
-const pills = document.querySelectorAll('.toc-pill');
-const chapters = document.querySelectorAll('.astral-chapter');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const id = e.target.id; // a1, a2...
-      const idx = parseInt(id.replace('a','')) - 1;
-      pills.forEach((p, i) => p.classList.toggle('active', i === idx));
-    }
-  });
-}, { rootMargin: '0px 0px -55% 0px', threshold: 0.1 });
-chapters.forEach(ch => obs.observe(ch));
+// TOC ACTIVE PILL (osservatore ricreato ad ogni renderChapters, perché il DOM viene rigenerato dal cambio lingua)
+let _chapterObserver = null;
+function initChapterObserver() {
+  if (_chapterObserver) _chapterObserver.disconnect();
+  const pills = document.querySelectorAll('.toc-pill');
+  const chapters = document.querySelectorAll('.astral-chapter');
+  _chapterObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id; // a1, a2...
+        const idx = parseInt(id.replace('a', '')) - 1;
+        pills.forEach((p, i) => p.classList.toggle('active', i === idx));
+      }
+    });
+  }, { rootMargin: '0px 0px -55% 0px', threshold: 0.1 });
+  chapters.forEach(ch => _chapterObserver.observe(ch));
+}
 
 function scrollChapter(n) {
   const el = document.getElementById('a' + n);
   if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - 130;
+  const top = el.getBoundingClientRect().top + window.scrollY - 150;
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
-// THETA AUDIO
+// THETA AUDIO (Web Audio API — battimenti binaurali)
 let _thetaCtx = null, _thetaOscL = null, _thetaOscR = null, _thetaGain = null, _thetaPlaying = false;
 
 function toggleTheta() {
@@ -543,6 +1267,7 @@ function toggleTheta() {
   const volEl = document.getElementById('thetaVol');
   const freq = parseFloat(freqEl.options[freqEl.selectedIndex].value);
   const vol = parseFloat(volEl.value);
+  const L = LANG[currentLang];
 
   if (_thetaPlaying) {
     try {
@@ -554,7 +1279,7 @@ function toggleTheta() {
     } catch(e) {}
     _thetaCtx = null; _thetaOscL = null; _thetaOscR = null; _thetaGain = null;
     _thetaPlaying = false;
-    if (btn) { btn.textContent = '▶ Avvia Onde Theta'; btn.classList.remove('playing'); }
+    if (btn) { btn.textContent = L.thetaPlay; btn.classList.remove('playing'); }
     if (viz) viz.classList.remove('active');
   } else {
     try {
@@ -564,8 +1289,6 @@ function toggleTheta() {
       _thetaGain.connect(_thetaCtx.destination);
       const merger = _thetaCtx.createChannelMerger(2);
       merger.connect(_thetaGain);
-      const splitterL = _thetaCtx.createChannelSplitter(2);
-      const splitterR = _thetaCtx.createChannelSplitter(2);
       _thetaOscL = _thetaCtx.createOscillator();
       _thetaOscR = _thetaCtx.createOscillator();
       _thetaOscL.type = 'sine'; _thetaOscR.type = 'sine';
@@ -576,10 +1299,11 @@ function toggleTheta() {
       _thetaOscL.start(); _thetaOscR.start();
       _thetaGain.gain.setTargetAtTime(vol, _thetaCtx.currentTime, 0.2);
       _thetaPlaying = true;
-      if (btn) { btn.textContent = '⏸ Pausa'; btn.classList.add('playing'); }
+      if (btn) { btn.textContent = L.thetaPause; btn.classList.add('playing'); }
       if (viz) viz.classList.add('active');
     } catch(err) {
-      alert('Il tuo browser non supporta Web Audio. Prova con Chrome o Firefox.');
+      const warn = document.getElementById('theta-warning');
+      if (warn) warn.textContent = L.thetaUnsupported;
     }
   }
 }
@@ -598,19 +1322,16 @@ function changeThetaFreq() {
 window.addEventListener('beforeunload', () => {
   if (_thetaCtx && _thetaCtx.state !== 'closed') try { _thetaCtx.close(); } catch(e) {}
 });
+
+/* ── Init Sequence ── */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);     // 1. Tema
+  // window.audioManager già init dal costruttore sopra
+  applyLang();               // 2. Lingua (chiama updateSEO() come prima cosa, renderizza capitoli/TOC/FAQ)
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+});
 </script>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Viaggio Astrale — Guida Completa con Onde Theta",
-  "description":"Guida completa al viaggio astrale con onde theta binaurali, tecniche di proiezione, chakra e protezione energetica.",
-  "author":{"@type":"Person","name":"Dott. Petrolese Giovanni"},
-  "publisher":{"@type":"Organization","name":"Mystica Oracoli"},
-  "url":"https://mysticaoracoli.it/viaggio-astrale.html",
-  "inLanguage":"it"
-}
-</script>
 </body>
 </html>

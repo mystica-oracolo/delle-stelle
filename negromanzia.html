@@ -1,36 +1,124 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="La Negromanzia nella storia: dall'Antichità al Medioevo, rituali per comunicare con i defunti, interpretazione dei sogni, comunicazione spirituale e protezione. Tradizione esoterica spiegata.">
-<meta name="keywords" content="negromanzia, comunicazione con i morti, spiriti defunti, necromanzia, evocazione spiriti, medium, contatto spiriti, oracolo dei morti, negromanzia italiana, riti funebri esoterici, tavoletta ouija, sogni premonitori, antenati rituali, spiriti guida, mysticaoracoli">
-<title>Negromanzia: Comunicare con i Defunti nella Tradizione Esoterica | MYSTICA</title>
-<link rel="canonical" href="https://mysticaoracoli.it/negromanzia.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — vuoti, popolati da updateSEO() -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:title" content="Negromanzia: Comunicazione con i Defunti — MYSTICA">
-<meta property="og:description" content="La Negromanzia nella storia: rituali, sogni, comunicazione spirituale e protezione. Tradizione esoterica dall'Antichità al Medioevo.">
-<meta property="og:type" content="website">
+<link rel="canonical" href="https://mysticaoracoli.it/negromanzia.html">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/negromanzia.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/negromanzia.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/negromanzia.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/negromanzia.html">
+
+<!-- Open Graph — vuoti, popolati da updateSEO() -->
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://mysticaoracoli.it/negromanzia.html">
 <meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/negromanzia.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card — vuota -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Negromanzia: Tradizione Esoterica — MYSTICA">
-<meta name="twitter:description" content="La Negromanzia nella storia: rituali, comunicazione spirituale e protezione. Tradizione esoterica su MYSTICA.">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/negromanzia.webp">
+
+<!-- JSON-LD — rigenerato da updateSEO() -->
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<meta name="theme-color" content="#080510">
+
 <style>
+/* ── Variabili — Tema Notte (default) ── */
 :root {
   --bg: #080510;
   --bg2: #0f0b1a;
   --bg3: #160d28;
+  --card: #140c24;
   --gold: #d4af37;
   --gold-dim: rgba(212,175,55,0.3);
+  --gold-glow: rgba(212,175,55,0.4);
   --purple: #7a3ea0;
   --purple-dim: rgba(122,62,160,0.25);
   --text: #e6e0f0;
   --muted: #8a7aaa;
   --bone: #b8a89a;
   --shadow-glow: rgba(122,62,160,0.4);
+  --radius: 18px;
+  --border: rgba(212,175,55,0.2);
 }
+
+/* ── Tema Giorno ── */
+html.theme-day {
+  --bg: #f5f2ed;
+  --bg2: #ede8df;
+  --bg3: #e5dfd2;
+  --card: #ede8df;
+  --text: #2a1748;
+  --muted: #6b5b7f;
+  --purple: #6b5b7f;
+  --purple-dim: rgba(107,91,127,0.15);
+  --gold: #a6772f;
+  --gold-dim: rgba(166,119,47,0.25);
+  --gold-glow: rgba(166,119,47,0.2);
+  --border: #c89742;
+  --bone: #6b5b7f;
+}
+html.theme-day .prose-block,
+html.theme-day .storia-block,
+html.theme-day .personaggio-card,
+html.theme-day .leggenda-card,
+html.theme-day .tool-container,
+html.theme-day .r-block,
+html.theme-day .info-card {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
+html.theme-day .prose-block p,
+html.theme-day .storia-block p,
+html.theme-day .personaggio-card .p-desc,
+html.theme-day .leggenda-card p,
+html.theme-day .r-block { color: var(--text); }
+html.theme-day .hero h1 { -webkit-text-fill-color: initial; background: none; color: var(--text); }
+html.theme-day .warning-box { background: rgba(180,60,60,0.08); color: #8a2a2a; }
+html.theme-day .warning-box strong { color: #b03030; }
+html.theme-day .btn { color: #fff; }
+html.theme-day .tab-btn { color: var(--muted); }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   background: var(--bg);
@@ -39,8 +127,34 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--gold); color: #140c24; padding: 8px 14px;
+  z-index: 10000; border-radius: 0 0 8px 0; font-family: 'Cinzel', serif; font-size: 12px;
+}
+.skip-link:focus { left: 0; }
 
-/* ─── PARTICLES ─── */
+/* ── Sfondo Cosmico (standard) ── */
+.cosmos {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation: twinkle 14s infinite alternate;
+}
+@keyframes twinkle { 0%{opacity:.35} 50%{opacity:.55} 100%{opacity:.45} }
+
+/* ── Particelle tematiche (decorative, sopra il cosmos) ── */
 #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
 .particle { position: absolute; border-radius: 50%; animation: floatUp linear infinite; opacity: 0; }
 @keyframes floatUp {
@@ -50,604 +164,458 @@ body {
   100% { transform: translateY(-10vh) scale(1); opacity: 0; }
 }
 
-/* ─── LAYOUT ─── */
-.page { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 16px 80px; }
+/* ── Layout ── */
+.page { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 16px 80px; content-visibility: auto; }
+main { display: block; }
 
-/* ─── HEADER ─── */
-.hero {
-  text-align: center;
-  padding: 40px 20px 30px;
-  position: relative;
+/* ── Header standard ── */
+.page-header { padding-top: max(20px, calc(20px + env(safe-area-inset-top, 0px))); }
+.header-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.btn-back {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(122,62,160,0.12); border: 1px solid rgba(122,62,160,0.3);
+  color: #c8a0e8; border-radius: 20px; padding: 8px 16px;
+  font-family: 'Cinzel', serif; font-size: 12px; cursor: pointer;
+  text-decoration: none; transition: all 0.25s ease;
 }
-.hero-icon {
-  font-size: 72px;
-  display: block;
-  margin-bottom: 12px;
-  filter: drop-shadow(0 0 30px rgba(122,62,160,0.8));
-  animation: pulseGlow 3s ease-in-out infinite;
+.btn-back:hover { background: rgba(122,62,160,0.25); }
+.header-controls { display: flex; gap: 8px; }
+.btn-icon {
+  background: rgba(122,62,160,0.12); border: 1px solid rgba(122,62,160,0.3);
+  color: var(--gold); border-radius: 50%; width: 38px; height: 38px;
+  font-size: 15px; cursor: pointer; transition: all 0.25s ease;
 }
-@keyframes pulseGlow {
-  0%, 100% { filter: drop-shadow(0 0 20px rgba(122,62,160,0.6)); }
-  50% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.5)); }
-}
+.btn-icon:hover { background: rgba(122,62,160,0.25); }
+
+/* ── Hero ── */
+.hero { text-align: center; padding: 30px 20px 24px; position: relative; }
+.hero-icon { font-size: 72px; display: block; margin-bottom: 12px; filter: drop-shadow(0 0 30px rgba(122,62,160,0.8)); animation: pulseGlow 3s ease-in-out infinite; }
+@keyframes pulseGlow { 0%,100%{filter:drop-shadow(0 0 20px rgba(122,62,160,0.6))} 50%{filter:drop-shadow(0 0 40px rgba(212,175,55,0.5))} }
 .hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 28px;
-  font-weight: 700;
+  font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700;
   background: linear-gradient(135deg, #9a6fc8, var(--gold), #c8a0e8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 3px;
-  margin-bottom: 8px;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  letter-spacing: 3px; margin-bottom: 8px;
 }
-.hero-sub {
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-style: italic;
+.hero-sub { color: var(--muted); font-size: 13px; letter-spacing: 2px; font-style: italic; }
+.hero-divider { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 18px auto; }
+.lang-switch { display: flex; justify-content: center; gap: 8px; margin-top: 6px; }
+.btn-lang {
+  background: rgba(122,62,160,0.1); border: 1px solid rgba(122,62,160,0.25); color: var(--muted);
+  border-radius: 8px; padding: 4px 12px; font-family: 'Cinzel', serif; font-size: 11px;
+  cursor: pointer; letter-spacing: 1px; transition: all 0.25s ease;
 }
-.hero-divider {
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 18px auto;
-}
+.btn-lang.active { background: rgba(212,175,55,0.2); border-color: var(--gold); color: var(--gold); }
 
-/* ─── IMAGE PLACEHOLDER ─── */
+/* ── Immagine hero articolo ── */
+.img-hero {
+  width: 100%; max-width: 480px; margin: 0 auto 28px; display: block;
+  border-radius: 16px; border: 1px solid var(--gold-dim);
+  aspect-ratio: 16/9; object-fit: cover;
+}
 .img-placeholder {
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto 30px;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid var(--gold-dim);
+  width: 100%; max-width: 480px; margin: 0 auto 24px; display: flex;
+  border-radius: 16px; border: 1px solid var(--gold-dim);
   background: linear-gradient(135deg, #1a0d2e, #0d0520);
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
+  aspect-ratio: 16/9; align-items: center; justify-content: center; flex-direction: column;
+  gap: 8px; color: var(--muted); font-size: 13px; letter-spacing: 1px; position: relative; overflow: hidden;
 }
-.img-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(122,62,160,0.1) 0%, transparent 70%);
-}
+.img-placeholder::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(122,62,160,0.1) 0%, transparent 70%); }
 .img-placeholder .img-icon { font-size: 36px; filter: grayscale(0.3); }
 .img-placeholder .img-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; color: rgba(212,175,55,0.5); }
 
-/* ─── SECTION BLOCKS ─── */
-.section {
-  margin-bottom: 28px;
-}
+/* ── Sezioni ── */
+.section { margin-bottom: 28px; content-visibility: auto; }
 .section-title {
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  color: var(--gold);
-  letter-spacing: 2px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
 }
-.section-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--gold-dim), transparent);
-}
+.section-title::after { content:''; flex:1; height:1px; background: linear-gradient(90deg, var(--gold-dim), transparent); }
 
-/* ─── PROSE BLOCKS ─── */
 .prose-block {
   background: linear-gradient(135deg, rgba(30,15,50,0.8), rgba(20,10,35,0.9));
-  border: 1px solid rgba(122,62,160,0.25);
-  border-radius: 14px;
-  padding: 20px;
-  line-height: 1.8;
-  font-size: 15px;
-  color: #d1c9e8;
-  margin-bottom: 14px;
+  border: 1px solid rgba(122,62,160,0.25); border-radius: 14px; padding: 20px;
+  line-height: 1.8; font-size: 15px; color: #d1c9e8; margin-bottom: 14px;
 }
 .prose-block p { margin-bottom: 12px; }
 .prose-block p:last-child { margin-bottom: 0; }
 
-/* ─── STORIA BLOCK ─── */
 .storia-block {
   background: linear-gradient(135deg, rgba(15,10,30,0.95), rgba(25,12,40,0.95));
-  border: 1px solid var(--gold-dim);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 14px 14px 0;
-  padding: 18px 20px;
-  margin-bottom: 14px;
-  font-size: 14.5px;
-  line-height: 1.8;
-  color: #ccc0e8;
+  border: 1px solid var(--gold-dim); border-left: 3px solid var(--gold);
+  border-radius: 0 14px 14px 0; padding: 18px 20px; margin-bottom: 14px;
+  font-size: 14.5px; line-height: 1.8; color: #ccc0e8;
 }
-.storia-block h4 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  margin-bottom: 8px;
-}
+.storia-block h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 13px; letter-spacing: 1.5px; margin-bottom: 8px; }
 
-/* ─── PERSONAGGIO CARD ─── */
-.personaggi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
-}
+.personaggi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
 @media (max-width: 480px) { .personaggi-grid { grid-template-columns: 1fr; } }
-.personaggio-card {
-  background: rgba(20,10,35,0.9);
-  border: 1px solid rgba(122,62,160,0.3);
-  border-radius: 12px;
-  padding: 14px;
-}
+.personaggio-card { background: rgba(20,10,35,0.9); border: 1px solid rgba(122,62,160,0.3); border-radius: 12px; padding: 14px; }
 .personaggio-card .p-icon { font-size: 28px; margin-bottom: 6px; }
-.personaggio-card .p-nome {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  color: var(--gold);
-  margin-bottom: 4px;
-}
-.personaggio-card .p-era {
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-.personaggio-card .p-desc {
-  font-size: 12.5px;
-  line-height: 1.6;
-  color: #b0a0c8;
-}
+.personaggio-card .p-nome { font-family: 'Cinzel', serif; font-size: 13px; color: var(--gold); margin-bottom: 4px; }
+.personaggio-card .p-era { font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+.personaggio-card .p-desc { font-size: 12.5px; line-height: 1.6; color: #b0a0c8; }
 
-/* ─── LEGGENDA CARD ─── */
 .leggenda-card {
-  background: rgba(10,5,22,0.9);
-  border: 1px solid rgba(122,62,160,0.2);
-  border-top: 2px solid rgba(212,175,55,0.4);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 12px;
+  background: rgba(10,5,22,0.9); border: 1px solid rgba(122,62,160,0.2);
+  border-top: 2px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 16px; margin-bottom: 12px;
 }
-.leggenda-card .l-titolo {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  color: #c8a0e8;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
+.leggenda-card .l-titolo { font-family: 'Cinzel', serif; font-size: 13px; color: #c8a0e8; margin-bottom: 8px; letter-spacing: 1px; }
 .leggenda-card p { font-size: 13.5px; line-height: 1.7; color: #b0a0c8; }
 
-/* ─── TOOL ─── */
+.warning-box {
+  background: rgba(248,65,65,0.07); border: 1px solid rgba(248,65,65,0.25); border-radius: 12px;
+  padding: 14px 16px; font-size: 13px; color: #f0a0a0; line-height: 1.6; margin-bottom: 14px;
+}
+.warning-box strong { color: #f87171; }
+
+/* ── Tool ── */
 .tool-container {
   background: linear-gradient(135deg, rgba(15,8,28,0.98), rgba(20,10,38,0.98));
-  border: 1px solid rgba(122,62,160,0.4);
-  border-radius: 18px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 40px rgba(122,62,160,0.2);
+  border: 1px solid rgba(122,62,160,0.4); border-radius: 18px; padding: 24px;
+  margin-bottom: 20px; box-shadow: 0 8px 40px rgba(122,62,160,0.2);
 }
-.tool-title {
-  font-family: 'Cinzel', serif;
-  font-size: 17px;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 6px;
-  letter-spacing: 2px;
-}
-.tool-sub {
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
+.tool-title { font-family: 'Cinzel', serif; font-size: 17px; color: var(--gold); text-align: center; margin-bottom: 6px; letter-spacing: 2px; }
+.tool-sub { text-align: center; font-size: 12px; color: var(--muted); margin-bottom: 20px; letter-spacing: 1px; }
 
-/* TABS */
-.tab-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  margin-bottom: 16px;
-}
+.tab-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px; }
 .tab-btn {
-  background: rgba(122,62,160,0.1);
-  border: 1px solid rgba(122,62,160,0.25);
-  color: var(--muted);
-  border-radius: 10px;
-  padding: 8px 4px;
-  font-size: 11px;
-  cursor: pointer;
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.5px;
-  transition: all 0.2s;
-  line-height: 1.4;
+  background: rgba(122,62,160,0.1); border: 1px solid rgba(122,62,160,0.25); color: var(--muted);
+  border-radius: 10px; padding: 8px 4px; font-size: 11px; cursor: pointer; text-align: center;
+  font-family: 'Cinzel', serif; letter-spacing: 0.5px; transition: all 0.25s ease; line-height: 1.4;
 }
 .tab-btn:hover { border-color: rgba(122,62,160,0.5); color: var(--text); }
-.tab-btn.active {
-  background: rgba(122,62,160,0.3);
-  border-color: var(--purple);
-  color: var(--gold);
-}
+.tab-btn.active { background: rgba(122,62,160,0.3); border-color: var(--purple); color: var(--gold); }
 .tab-btn .tab-ico { font-size: 18px; display: block; margin-bottom: 4px; }
 
-/* TEXTAREA */
 .tool-input {
-  width: 100%;
-  background: rgba(10,5,20,0.8);
-  border: 1px solid rgba(122,62,160,0.3);
-  border-radius: 10px;
-  color: var(--text);
-  font-family: 'Crimson Pro', serif;
-  font-size: 14px;
-  padding: 12px 14px;
-  resize: none;
-  outline: none;
-  margin-bottom: 14px;
-  transition: border-color 0.2s;
+  width: 100%; background: rgba(10,5,20,0.8); border: 1px solid rgba(122,62,160,0.3);
+  border-radius: 10px; color: var(--text); font-family: 'Crimson Pro', serif; font-size: 14px;
+  padding: 12px 14px; resize: none; outline: none; margin-bottom: 14px; transition: border-color 0.25s ease;
 }
 .tool-input:focus { border-color: var(--purple); }
 .tool-input::placeholder { color: var(--muted); }
 
-/* BUTTONS */
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
-  flex: 1;
-  min-width: 120px;
-  background: linear-gradient(135deg, #7a3ea0, #9a5ec0);
-  border: none;
-  color: #fff;
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.5px;
+  flex: 1; min-width: 120px; background: linear-gradient(135deg, #7a3ea0, #9a5ec0); border: none;
+  color: #fff; border-radius: 12px; padding: 12px 16px; font-family: 'Cinzel', serif; font-size: 13px;
+  cursor: pointer; transition: all 0.25s ease; letter-spacing: 0.5px;
 }
 .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(122,62,160,0.4); }
-.btn-sec {
-  background: rgba(122,62,160,0.15);
-  border: 1px solid rgba(122,62,160,0.35);
-  color: var(--muted);
-}
+.btn-sec { background: rgba(122,62,160,0.15); border: 1px solid rgba(122,62,160,0.35); color: var(--muted); }
 .btn-sec:hover { color: var(--text); border-color: var(--purple); }
 
-/* RESULT */
 .result-box { display: none; animation: fadeIn 0.5s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.result-header {
-  text-align: center;
-  padding: 16px 0 10px;
-}
+@keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.result-header { text-align: center; padding: 16px 0 10px; }
 .result-reame-icon { font-size: 56px; display: block; margin-bottom: 8px; filter: drop-shadow(0 0 20px rgba(122,62,160,0.6)); }
-.result-reame-nome {
-  font-family: 'Cinzel', serif;
-  font-size: 19px;
-  color: var(--gold);
-  letter-spacing: 1.5px;
-  margin-bottom: 4px;
-}
+.result-reame-nome { font-family: 'Cinzel', serif; font-size: 19px; color: var(--gold); letter-spacing: 1.5px; margin-bottom: 4px; }
 .result-sottotitolo { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; font-style: italic; }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin: 14px 0;
-}
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0; }
 @media (max-width: 400px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
-.info-card {
-  background: rgba(10,5,20,0.8);
-  border: 1px solid rgba(122,62,160,0.2);
-  border-radius: 10px;
-  padding: 10px 6px;
-  text-align: center;
-}
+.info-card { background: rgba(10,5,20,0.8); border: 1px solid rgba(122,62,160,0.2); border-radius: 10px; padding: 10px 6px; text-align: center; }
 .info-card .ico { font-size: 18px; margin-bottom: 3px; }
 .info-card .lbl { font-size: 9px; color: var(--muted); letter-spacing: 1px; margin-bottom: 3px; }
 .info-card .val { font-size: 11px; color: var(--text); font-weight: 600; }
 
 .r-block {
-  background: rgba(15,8,28,0.8);
-  border: 1px solid rgba(122,62,160,0.2);
-  border-left: 3px solid rgba(122,62,160,0.6);
-  border-radius: 0 12px 12px 0;
-  padding: 14px 16px;
-  margin-bottom: 10px;
-  font-size: 13.5px;
-  line-height: 1.75;
-  color: #c8b8e8;
+  background: rgba(15,8,28,0.8); border: 1px solid rgba(122,62,160,0.2); border-left: 3px solid rgba(122,62,160,0.6);
+  border-radius: 0 12px 12px 0; padding: 14px 16px; margin-bottom: 10px; font-size: 13.5px; line-height: 1.75; color: #c8b8e8;
 }
 .r-block h4 { font-family: 'Cinzel', serif; font-size: 12px; color: var(--muted); letter-spacing: 1px; margin-bottom: 8px; }
-.r-block.ritual { border-left-color: #c8b4ff; }
-.r-block.ritual h4 { color: #c8b4ff; }
-.r-block.protezione { border-left-color: #4ade80; }
-.r-block.protezione h4 { color: #4ade80; }
-.r-block.avviso { border-left-color: #f87171; }
-.r-block.avviso h4 { color: #f87171; }
+.r-block.ritual { border-left-color: #c8b4ff; } .r-block.ritual h4 { color: #c8b4ff; }
+.r-block.protezione { border-left-color: #4ade80; } .r-block.protezione h4 { color: #4ade80; }
+.r-block.avviso { border-left-color: #f87171; } .r-block.avviso h4 { color: #f87171; }
 
 .domanda-shown {
-  background: rgba(212,175,55,0.07);
-  border: 1px solid rgba(212,175,55,0.2);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-style: italic;
-  color: rgba(212,175,55,0.8);
-  font-size: 13px;
-  margin-bottom: 10px;
-  text-align: center;
+  background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.2); border-radius: 10px;
+  padding: 10px 14px; font-style: italic; color: rgba(212,175,55,0.8); font-size: 13px; margin-bottom: 10px; text-align: center;
 }
 
-/* TOAST */
+/* ── Share ── */
+.share-section { margin-bottom: 20px; }
+.btn-share {
+  width: 100%; background: rgba(122,62,160,0.15); border: 1px solid rgba(122,62,160,0.35); color: var(--gold);
+  border-radius: 12px; padding: 12px 16px; font-family: 'Cinzel', serif; font-size: 13px; cursor: pointer;
+  transition: all 0.25s ease; letter-spacing: 0.5px;
+}
+.btn-share:hover { background: rgba(122,62,160,0.28); }
+.share-popup { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.share-btn {
+  flex: 1; min-width: 100px; text-align: center; padding: 10px; border-radius: 10px; font-size: 12px;
+  text-decoration: none; border: 1px solid rgba(122,62,160,0.3); color: var(--text); background: rgba(122,62,160,0.1);
+  cursor: pointer; font-family: 'Crimson Pro', serif;
+}
+
+/* ── Articolo editoriale ── */
+.article-section { margin-bottom: 8px; }
+.article-links { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.article-links a { color: #c8a0e8; font-size: 13.5px; text-decoration: underline; text-decoration-color: rgba(122,62,160,0.4); }
+.cta-explore {
+  display: block; text-align: center; background: linear-gradient(135deg, #7a3ea0, #9a5ec0); color: #fff;
+  border-radius: 12px; padding: 14px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 1px;
+  text-decoration: none; margin-top: 16px; transition: all 0.25s ease;
+}
+.cta-explore:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(122,62,160,0.4); }
+
+/* ── FAQ ── */
+.faq-section { margin-bottom: 20px; }
+.faq-title { font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; }
+.faq-item { border: 1px solid rgba(122,62,160,0.25); border-radius: 12px; margin-bottom: 8px; overflow: hidden; background: rgba(20,10,35,0.6); }
+.faq-question {
+  width: 100%; background: none; border: none; color: var(--text); padding: 14px 16px; text-align: left;
+  font-family: 'Crimson Pro', serif; font-size: 14.5px; cursor: pointer; display: flex; justify-content: space-between; gap: 10px;
+}
+.faq-icon { color: var(--gold); font-weight: 700; }
+.faq-answer { padding: 0 16px 14px; font-size: 13.5px; line-height: 1.7; color: #c0b4d8; }
+.faq-answer a { color: #c8a0e8; text-decoration: underline; }
+
+/* ── Footer ── */
+.page-footer { text-align: center; padding: 20px 0; border-top: 1px solid rgba(122,62,160,0.2); }
+.footer-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; font-size: 12px; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--gold); }
+.page-footer p#footer-copy { font-family: 'Cinzel', serif; font-size: 11px; color: var(--muted); letter-spacing: 3px; }
+.footer-disclaimer { font-size: 11px; color: rgba(138,122,170,0.6); margin-top: 6px; }
+
+/* ── Premium Modal ── */
+.premium-modal { position: fixed; inset: 0; z-index: 9997; display: none; align-items: center; justify-content: center; }
+.premium-modal.show { display: flex; }
+.modal-overlay { position: absolute; inset: 0; background: rgba(5,2,10,0.85); }
+.modal-content {
+  position: relative; z-index: 1; background: linear-gradient(135deg, #1a0d2e, #140c24); border: 1px solid var(--gold-dim);
+  border-radius: 18px; padding: 28px 24px; max-width: 340px; width: 90%; text-align: center;
+}
+.modal-content h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 18px; margin-bottom: 12px; letter-spacing: 1px; }
+.modal-content p { font-size: 13.5px; line-height: 1.7; color: var(--text); margin-bottom: 14px; }
+.premium-price { color: var(--gold) !important; font-weight: 600; }
+.btn-premium-buy {
+  width: 100%; background: linear-gradient(135deg, #d4af37, #b8860b); border: none; color: #140c24;
+  border-radius: 12px; padding: 13px; font-family: 'Cinzel', serif; font-size: 13px; cursor: pointer; margin-bottom: 10px;
+}
+.btn-premium-skip { width: 100%; background: none; border: 1px solid rgba(122,62,160,0.3); color: var(--muted); border-radius: 12px; padding: 11px; font-size: 12px; cursor: pointer; }
+
+/* ── Toast ── */
 .toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(60px);
-  background: #1a0d30;
-  border: 1px solid var(--gold-dim);
-  color: var(--gold);
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  z-index: 9999;
-  transition: transform 0.3s ease;
-  white-space: nowrap;
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px);
+  background: #1a0d30; border: 1px solid var(--gold-dim); color: var(--gold); padding: 10px 20px;
+  border-radius: 20px; font-family: 'Cinzel', serif; font-size: 12px; z-index: 9999; transition: transform 0.3s ease; white-space: nowrap;
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* BACK BTN */
-.back-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(122,62,160,0.12);
-  border: 1px solid rgba(122,62,160,0.3);
-  color: #c8a0e8;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  width: fit-content;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.back-btn:hover { background: rgba(122,62,160,0.25); }
-
-/* BURST */
-.burst-particle {
-  position: fixed;
-  pointer-events: none;
-  font-size: 14px;
-  z-index: 9998;
-  animation: burstAnim 1s ease-out forwards;
-}
-@keyframes burstAnim {
-  0% { transform: translate(0,0) scale(1); opacity: 1; }
-  100% { transform: translate(var(--bx), var(--by)) scale(0); opacity: 0; }
-}
-
-.warning-box {
-  background: rgba(248,65,65,0.07);
-  border: 1px solid rgba(248,65,65,0.25);
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-size: 13px;
-  color: #f0a0a0;
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-.warning-box strong { color: #f87171; }
+/* ── Burst ── */
+.burst-particle { position: fixed; pointer-events: none; font-size: 14px; z-index: 9998; animation: burstAnim 1s ease-out forwards; }
+@keyframes burstAnim { 0%{transform:translate(0,0) scale(1);opacity:1} 100%{transform:translate(var(--bx),var(--by)) scale(0);opacity:0} }
 </style>
 </head>
 <body>
 
-<!-- PARTICLES -->
-<div id="particles"></div>
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+<!-- Sfondo cosmico standard -->
+<div class="cosmos" aria-hidden="true"></div>
+<!-- Particelle tematiche -->
+<div id="particles" aria-hidden="true"></div>
 
 <div class="page">
-  <!-- BACK -->
-  <div style="padding-top:20px">
-    <a href="javascript:history.back()" class="back-btn">← Indietro</a>
-  </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <span class="hero-icon">💀</span>
-    <h1>NEGROMANZIA</h1>
-    <p class="hero-sub">Arte dei Confini — Dialogo Etico con l'Invisibile</p>
-    <div class="hero-divider"></div>
-  </div>
-
-  <!-- IMG PLACEHOLDER 1 — Storia -->
-  <div class="img-placeholder" style="margin-bottom:28px">
-    <span class="img-icon">🏛️</span>
-    <span class="img-label">IMMAGINE — NECROMANTE NELL'ANTICHITÀ</span>
-  </div>
-
-  <!-- STORIA -->
-  <div class="section">
-    <div class="section-title">📜 Origini & Storia</div>
-
-    <div class="prose-block">
-      <p>La <strong style="color:var(--gold)">Negromanzia</strong> — dal greco <em>nekros</em> (morto) e <em>manteia</em> (divinazione) — è l'arte di cercare conoscenza attraverso il contatto con i piani sottili dell'esistenza, tradizionalmente associati al ciclo della morte e della rinascita. Nata nelle civiltà più antiche del mondo, essa non è — come i secoli di fraintendimento vogliono far credere — una pratica oscura e malvagia, ma una delle forme più antiche di saggezza rituale: il dialogo rispettoso con ciò che trascende il visibile.</p>
-      <p>Le sue radici affondano nell'<strong style="color:#c8a0e8">antico Egitto</strong>, dove il culto dei morti costituiva il fondamento stesso della civilizzazione religiosa. I sacerdoti di Anubi e Osiride custodivano i riti di passaggio con un rigore milllenario, convinti che la comunicazione tra vivi e defunti fosse non solo possibile, ma necessaria all'ordine cosmico. Il Libro dei Morti non era una raccolta di sortilegi: era una mappa per navigare il confine.</p>
-      <p>In <strong style="color:#c8a0e8">Mesopotamia</strong>, gli <em>ashipu</em> (esorcisti-divinatori) e i <em>baru</em> (indovini) praticavano rituali di contatto con le anime dei defunti per ottenere profezie e guarigioni. La cultura babilonese credeva che le anime dei morti (<em>etemmu</em>) continuassero a esistere in un regno sotterraneo e potessero influenzare i viventi — sia in modo benefico che malefico — a seconda di come venivano trattate in vita e onorate dopo la morte.</p>
-    </div>
-
-    <div class="storia-block">
-      <h4>⚡ LA NEKYA OMERICA</h4>
-      <p>Nel canto XI dell'Odissea, Omero ci consegna la scena più antica e potente della letteratura occidentale dedicata alla negromanzia: <em>la Nekya</em>. Odisseo, su consiglio di Circe, scende alle soglie del regno dei morti, scava una fossa, vi versa miele, vino e sangue di animali sacrificali — e attende. Le ombre dei defunti accorrono, attirate dal sangue caldo che per un istante le ridona voce. Tra queste, l'anima del cieco Tiresia gli rivela il suo destino. Non è una scena di terrore: è un atto di ascolto sacro.</p>
-    </div>
-
-    <div class="storia-block">
-      <h4>🔥 ROMA E LA MAGIA DELLA SOGLIA</h4>
-      <p>A Roma, i <em>Lemuri</em> erano le anime inquiete dei defunti senza sepoltura. Il 9, 11 e 13 maggio si celebravano i <em>Lemuria</em>: il pater familias camminava a piedi nudi per la casa all'alba, lanciando dietro di sé fave nere — offerta simbolica per placare gli spiriti. La magia greca importata a Roma produsse i cosiddetti <em>defixiones</em>: tavolette di piombo incise con invocazioni ai morti e ai dèi inferi, ritrovate a centinaia nei pozzi sacri e nelle tombe. Roma aveva paura dei morti, ma li rispettava profondamente — e quella paura era essa stessa una forma di onore.</p>
-    </div>
-  </div>
-
-  <!-- IMG PLACEHOLDER 2 — Personaggi -->
-  <div class="img-placeholder" style="margin-bottom:24px">
-    <span class="img-icon">🧙</span>
-    <span class="img-label">IMMAGINE — FIGURE STORICHE DELLA NEGROMANZIA</span>
-  </div>
-
-  <!-- PERSONAGGI -->
-  <div class="section">
-    <div class="section-title">🌑 Personaggi Influenti</div>
-
-    <div class="personaggi-grid">
-      <div class="personaggio-card">
-        <div class="p-icon">🦅</div>
-        <div class="p-nome">Circe</div>
-        <div class="p-era">Mitologia Greca</div>
-        <div class="p-desc">Dea maga che insegnò a Odisseo il rito della Nekya. Custode del confine tra vita e morte, simbolo della maga che conosce entrambe le rive.</div>
-      </div>
-      <div class="personaggio-card">
-        <div class="p-icon">👁️</div>
-        <div class="p-nome">Tiresia</div>
-        <div class="p-era">Tebe, VIII sec. a.C. (mito)</div>
-        <div class="p-desc">Indovino cieco che visse sette generazioni. Dopo la morte, la sua anima rimase l'unica con piena coscienza nell'Ade, capace di profezie autentiche.</div>
-      </div>
-      <div class="personaggio-card">
-        <div class="p-icon">⚗️</div>
-        <div class="p-nome">Agrippa von Nettesheim</div>
-        <div class="p-era">Germania, 1486–1535</div>
-        <div class="p-desc">Filosofo ermetico che nel <em>De Occulta Philosophia</em> sistematizzò la magia dei morti come scienza naturale, distinguendo le anime liberate da quelle vincolate.</div>
-      </div>
-      <div class="personaggio-card">
-        <div class="p-icon">📖</div>
-        <div class="p-nome">John Dee</div>
-        <div class="p-era">Inghilterra, 1527–1608</div>
-        <div class="p-desc">Matematico e mago di corte della regina Elisabetta I. Con Edward Kelley tentò comunicazioni con angeli e spiriti usando la "pietra di cristallo" e il linguaggio enochiano.</div>
-      </div>
-      <div class="personaggio-card">
-        <div class="p-icon">🌹</div>
-        <div class="p-nome">Allan Kardec</div>
-        <div class="p-era">Francia, 1804–1869</div>
-        <div class="p-desc">Fondatore dello Spiritismo moderno. Il suo <em>Libro degli Spiriti</em> (1857) codificò un sistema di comunicazione con i defunti basato su etica, evoluzione dell'anima e servizio agli altri.</div>
-      </div>
-      <div class="personaggio-card">
-        <div class="p-icon">🕯️</div>
-        <div class="p-nome">Éliphas Lévi</div>
-        <div class="p-era">Francia, 1810–1875</div>
-        <div class="p-desc">Occultista che tentò l'evocazione dello spirito di Apollonio di Tiana. Scrisse che il contatto riuscì — ma che la vera negromanzia era una "follia pericolosa per chi non è purificato".</div>
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="header-top">
+      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <div class="header-controls">
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
       </div>
     </div>
-  </div>
+    <div class="hero">
+      <span class="hero-icon" aria-hidden="true">💀</span>
+      <h1 class="page-title" id="page-title">NEGROMANZIA</h1>
+      <p class="hero-sub" id="hero-sub"></p>
+      <div class="hero-divider" aria-hidden="true"></div>
+    </div>
+    <div class="lang-switch">
+      <button data-lang="it" class="btn-lang active">IT</button>
+      <button data-lang="en" class="btn-lang">EN</button>
+      <button data-lang="es" class="btn-lang">ES</button>
+    </div>
+  </header>
 
-  <!-- LEGGENDE -->
-  <div class="section">
-    <div class="section-title">🌒 Leggende & Tradizioni</div>
+  <main id="main-content">
 
-    <!-- IMG PLACEHOLDER 3 — Leggende -->
-    <div class="img-placeholder" style="margin-bottom:20px; aspect-ratio: 16/7">
-      <span class="img-icon">🌑</span>
-      <span class="img-label">IMMAGINE — LEGGENDE E RITUALI DEI MORTI</span>
+    <!-- ═══ SEZIONE INTERATTIVA (sempre in cima) ═══ -->
+    <div class="section">
+      <div class="section-title" id="tool-section-title">🔮 Oracolo dei Reami</div>
+      <div class="tool-container">
+        <div class="tool-title" id="tool-title"></div>
+        <div class="tool-sub" id="tool-sub"></div>
+
+        <div class="tab-row">
+          <button class="tab-btn active" id="necroTab0" onclick="necroSelReame(0)">
+            <span class="tab-ico" aria-hidden="true">👵</span><span id="tabLabel0"></span>
+          </button>
+          <button class="tab-btn" id="necroTab1" onclick="necroSelReame(1)">
+            <span class="tab-ico" aria-hidden="true">🏚️</span><span id="tabLabel1"></span>
+          </button>
+          <button class="tab-btn" id="necroTab2" onclick="necroSelReame(2)">
+            <span class="tab-ico" aria-hidden="true">📜</span><span id="tabLabel2"></span>
+          </button>
+          <button class="tab-btn" id="necroTab3" onclick="necroSelReame(3)">
+            <span class="tab-ico" aria-hidden="true">🕊️</span><span id="tabLabel3"></span>
+          </button>
+        </div>
+
+        <div id="necroForm">
+          <textarea id="necroDomanda" class="tool-input" rows="3"></textarea>
+          <div class="btn-row">
+            <button class="btn btn-sec" id="btnRandomReame" onclick="necroRandom()"></button>
+            <button class="btn" id="btnAttraversa" onclick="calcNegromanzia()"></button>
+          </div>
+        </div>
+
+        <div id="necroResult" class="result-box"></div>
+      </div>
     </div>
 
-    <div class="leggenda-card">
-      <div class="l-titolo">⚰️ LA STREGA DI ENDOR (BIBBIA, I SAM. 28)</div>
-      <p>Il re Saul, disperato prima della battaglia contro i Filistei, si recò di notte dalla Strega di Endor — l'unica negromanzia espressamente narrata nella Bibbia. La donna evocò lo spirito di Samuele, il quale profetizzò la sconfitta e la morte del re. Qualunque sia l'interpretazione teologica, il racconto testimonia quanto radicate fossero queste pratiche nella Palestina antica: Saul le aveva vietate nel suo regno, eppure vi ricorse nell'ora del terrore.</p>
+    <!-- ═══ SHARE ═══ -->
+    <div class="share-section">
+      <button class="btn-share" onclick="shareContent()">📤 <span id="shareBtnLabel"></span></button>
+      <div class="share-popup" id="sharePopup" hidden>
+        <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+        <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+        <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      </div>
     </div>
 
-    <div class="leggenda-card">
-      <div class="l-titolo">🇲🇽 DÍA DE LOS MUERTOS — MESSICO</div>
-      <p>La tradizione messicana del Día de los Muertos (1–2 novembre) non è una variante di Halloween: è uno dei riti di onore agli antenati più complessi e belli del mondo. Le famiglie costruiscono <em>ofrendas</em> elaborate con cibo, fotografie, fiori di cempasúchil (calendula), candele e acqua. Si crede che le anime tornino per quella notte a visitare i propri cari. Non è dolore — è festa. Non è contatto con la morte: è dialogo amorevole con chi ha attraversato la soglia prima di noi.</p>
-    </div>
+    <!-- ═══ ARTICOLO EDITORIALE ═══ -->
+    <article class="article-section">
 
-    <div class="leggenda-card">
-      <div class="l-titolo">🇯🇵 OBON — GIAPPONE</div>
-      <p>Il festival Obon, celebrato in agosto, è il momento in cui gli spiriti degli antenati tornano nel mondo dei vivi. Le famiglie giapponesi puliscono le tombe, preparano offerte, accendono lanterne galleggianti (<em>toro nagashi</em>) per guidare i morti nell'aldilà. La danza <em>Bon Odori</em> — circolare, ipnotica, collettiva — è originariamente una cerimonia per placare e onorare le anime. Il Giappone ha trasformato la negromanzia in arte comunitaria.</p>
-    </div>
-
-    <div class="leggenda-card">
-      <div class="l-titolo">🇭🇹 VODOU HAITIANO — BARON SAMEDI</div>
-      <p>Nel Vodou haitiano, Baron Samedi è il <em>loa</em> (spirito) che governa la morte, le tombe e la resurrezione. Si manifesta vestito di nero, con cappello a cilindro e occhiali da sole — figura di confine tra il sacro e il grottesco. Non è un demone: è il guardiano che decide chi può morire e chi deve vivere. Il Vodou non è magia nera — è un sistema religioso complesso nel quale il rapporto con i morti è al centro della vita spirituale comunitaria.</p>
-    </div>
-  </div>
-
-  <!-- ETICA -->
-  <div class="section">
-    <div class="section-title">⚖️ Negromanzia Etica</div>
-    <div class="warning-box">
-      <strong>⚠️ NOTA IMPORTANTE:</strong> La pratica presentata in questa sezione è Negromanzia Etica — ovvero un sistema di ascolto interiore, onore agli antenati e comprensione dei cicli di vita e morte. Non promuove evocazioni pericolose, spiritismo irresponsabile o pratiche che interferiscono con il libero arbitrio. L'approccio è psicologico, energetico e rispettoso.
-    </div>
-    <div class="prose-block">
-      <p>La Negromanzia Etica moderna si fonda su un principio fondamentale: <strong style="color:var(--gold)">non si comanda, si chiede</strong>. Non si evoca — si ascolta. Non si tenta di trattenere le anime nel mondo dei vivi, ma di onorare i cicli naturali, ricevere saggezza e portare chiusura a ciò che è rimasto sospeso.</p>
-      <p>Ogni reame di lavoro ha la sua protezione, il suo momento e il suo confine. La consapevolezza di questi confini non è timidezza: è la vera competenza di chi lavora con le soglie. Come un medico che sa quando non operare, il praticante etico sa quando fermarsi.</p>
-    </div>
-  </div>
-
-  <!-- TOOL -->
-  <div class="section">
-    <div class="section-title">🔮 Oracolo dei Reami</div>
-
-    <div class="tool-container">
-      <div class="tool-title">💀 CONSULTA I REAMI</div>
-      <div class="tool-sub">Scegli il reame — ricevi il messaggio della soglia</div>
-
-      <!-- TABS -->
-      <div class="tab-row">
-        <button class="tab-btn active" id="necroTab0" onclick="necroSelReame(0)">
-          <span class="tab-ico">👵</span>Antenati
-        </button>
-        <button class="tab-btn" id="necroTab1" onclick="necroSelReame(1)">
-          <span class="tab-ico">🏚️</span>Genius Loci
-        </button>
-        <button class="tab-btn" id="necroTab2" onclick="necroSelReame(2)">
-          <span class="tab-ico">📜</span>Echi
-        </button>
-        <button class="tab-btn" id="necroTab3" onclick="necroSelReame(3)">
-          <span class="tab-ico">🕊️</span>Guardiani
-        </button>
+      <!-- IMG HERO -->
+      <img src="./images/negromanzia.webp"
+           srcset="./images/negromanzia.webp 1x, ./images/negromanzia@2x.webp 2x"
+           id="art-hero" alt="" width="480" height="270"
+           loading="eager" decoding="async" class="img-hero"
+           onerror="this.style.display='none'; document.getElementById('imgFallback1').style.display='flex';">
+      <div class="img-placeholder" id="imgFallback1" style="display:none">
+        <span class="img-icon" aria-hidden="true">🏛️</span>
+        <span class="img-label" id="imgFallback1Label"></span>
       </div>
 
-      <!-- FORM -->
-      <div id="necroForm">
-        <textarea id="necroDomanda" class="tool-input" rows="3"
-          placeholder="Scrivi una domanda o lascia vuoto per una lettura libera…"></textarea>
-        <div class="btn-row">
-          <button class="btn btn-sec" onclick="necroRandom()">🎲 Reame Casuale</button>
-          <button class="btn" onclick="calcNegromanzia()">💀 Attraversa la Soglia</button>
+      <h2 id="art-title"></h2>
+
+      <div class="prose-block">
+        <p id="art-p1"></p>
+        <p id="art-p2"></p>
+        <p id="art-p3"></p>
+      </div>
+
+      <div class="storia-block">
+        <h4 id="nekyaTitle"></h4>
+        <p id="nekyaText"></p>
+      </div>
+      <div class="storia-block">
+        <h4 id="romaTitle"></h4>
+        <p id="romaText"></p>
+      </div>
+
+      <h3 id="art-h2"></h3>
+      <div class="prose-block">
+        <p id="art-p4"></p>
+      </div>
+
+      <!-- PERSONAGGI -->
+      <div class="section" style="margin-top:20px">
+        <div class="section-title" id="personaggiTitle"></div>
+        <div class="img-placeholder" style="margin-bottom:16px" aria-hidden="true">
+          <span class="img-icon">🧙</span>
+          <span class="img-label" id="imgFallback2Label"></span>
+        </div>
+        <div class="personaggi-grid" id="personaggiGrid"></div>
+      </div>
+
+      <!-- LEGGENDE -->
+      <div class="section">
+        <div class="section-title" id="leggendeTitle"></div>
+        <div class="img-placeholder" style="margin-bottom:16px; aspect-ratio:16/7" aria-hidden="true">
+          <span class="img-icon">🌑</span>
+          <span class="img-label" id="imgFallback3Label"></span>
+        </div>
+        <div id="leggendeList"></div>
+      </div>
+
+      <!-- ETICA -->
+      <div class="section">
+        <div class="section-title" id="eticaTitle"></div>
+        <div class="warning-box">
+          <strong id="eticaWarningLabel"></strong> <span id="eticaWarningText"></span>
+        </div>
+        <div class="prose-block">
+          <p id="art-p5"></p>
+          <p id="eticaP2"></p>
         </div>
       </div>
 
-      <!-- RESULT -->
-      <div id="necroResult" class="result-box"></div>
-    </div>
-  </div>
+      <h3 id="art-h3"></h3>
+      <div class="prose-block">
+        <p id="eticaClosing"></p>
+      </div>
+
+      <nav class="article-links" aria-label="Approfondimenti collegati">
+        <a href="./sigilli-salomone.html" id="linkSigilli"></a>
+        <a href="./ermetismo.html" id="linkErmetismo"></a>
+        <a href="./cabala.html" id="linkCabala"></a>
+        <a href="./bibliomanzia-tasseomanzia.html" id="linkBiblio"></a>
+      </nav>
+
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </article>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="faq-section">
+      <h2 class="faq-title">FAQ</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <div style="text-align:center; padding: 20px 0; border-top: 1px solid rgba(122,62,160,0.2);">
-    <div style="font-family:'Cinzel',serif; font-size:11px; color:var(--muted); letter-spacing:3px;">✦ MYSTICA ✦</div>
-    <div style="font-size:11px; color:rgba(138,122,170,0.5); margin-top:6px;">Arte dei Confini — Dialogo Etico con l'Invisibile</div>
-  </div>
+  <footer class="page-footer">
+    <div class="footer-links">
+      <a href="./index.html" id="footerHome"></a>
+      <a href="./contatti.html" id="footerContatti"></a>
+      <a href="./about.html" id="footerAbout"></a>
+      <a href="./privacy.html" id="footerPrivacy"></a>
+    </div>
+    <p id="footer-copy"></p>
+    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  </footer>
 
 </div>
 
+<!-- PREMIUM MODAL -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
+
 <!-- TOAST -->
-<div id="toastEl" class="toast"></div>
+<div id="toastEl" class="toast" role="status" aria-live="polite"></div>
 
 <script>
-// ── PARTICLES ──
+/* ══════════════════════════════════════════════════
+   PARTICLES (decorativo)
+   ══════════════════════════════════════════════════ */
 (function(){
   const c = document.getElementById('particles');
   const icons = ['💀','🕯️','🌑','⚰️','🦋','🌒','✦','◆','·'];
@@ -668,49 +636,673 @@ body {
   }
 })();
 
-// ── DATA ──
-const DB_NEGROMANZIA = [
-  {
-    key:'antenate',
-    reame:'👵 Antenate & Guide Familiari',
-    sottotitolo:'Memorie di Sangue e Saggezza Trasmessa',
-    elemento:'Terra', pianeta:'Luna Nera', colore:'Grigio cenere', erba:'Salvia', ora:'03:00–05:00',
-    desc:'Il regno degli Antenati è il più accessibile e il più sicuro dei piani eterei. Le guide familiari non sono entità pericolose — sono i sapienti del tuo albero genealogico, coloro che ti hanno preceduto e che portano una saggezza acquisita attraverso le stesse sfide che stai affrontando. Chiamarli non è evocazione — è memoria. Le loro risposte arrivano come ricordi spontanei, sogni chiari, sensazioni di familiarità. Il confine tra i mondi è più sottile di quanto pensi, e il sangue è il filo che lo attraversa.',
-    ritualeEtico:'Accendi una candela bianca (non nera — è un dialogo d\'amore, non di potere). Metti sul tavolo un oggetto appartenuto a un antenato, o una sua fotografia. Nomina ad alta voce 3 antenati — il nome, se lo conosci. Offri un bicchiere d\'acqua fresca. Siediti in silenzio per 10 minuti. Ascolta. Le risposte potrebbero non venire subito: arriveranno nei sogni o come pensieri spontanei.',
-    protezione:'Inizia sempre con: "Chiedo di essere visitato solo da antenati che mi vogliono bene e che operano per il mio più alto bene." Non invocare i morti recenti (aspetta almeno 1 anno). Chiudi sempre il rituale ringraziando e spegnendo la candela.',
-    avvertenze:'Questa pratica è memoria e onore — non è magia nera. Se senti resistenza emotiva intensa, interrompi e riprendi in un altro momento. Non praticare in stati di lutto acuto non elaborato.'
+/* ══════════════════════════════════════════════════
+   LANG — Oggetto multilingua completo IT / EN / ES
+   ══════════════════════════════════════════════════ */
+const LANG = {
+  it: {
+    back: '← Torna alla Home',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '☀️', night: '🌙' },
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca letture illimitate dei Reami, storico delle consultazioni e approfondimenti rituali avanzati sulla Negromanzia Etica.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho consultato l\'Oracolo dei Reami sulla Negromanzia Etica di MYSTICA — un dialogo rispettoso con l\'invisibile. Provalo anche tu!',
+    shareBtnLabel: 'Condividi',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'Contenuto a scopo informativo, culturale e di intrattenimento. La Negromanzia Etica qui presentata non sostituisce consulenza medica, psicologica o legale.',
+    footerHome: 'Home', footerContatti: 'Contatti', footerAbout: 'Chi Siamo', footerPrivacy: 'Privacy',
+    heroSub: 'Arte dei Confini — Dialogo Etico con l\'Invisibile',
+    seo: {
+      title: 'Negromanzia: Comunicare con i Defunti nella Tradizione Esoterica | MYSTICA',
+      description: 'La Negromanzia nella storia: dall\'Antico Egitto al Medioevo, riti per onorare i defunti, Negromanzia Etica e Oracolo dei Reami gratuito su MYSTICA Oracoli.',
+      keywords: 'negromanzia, comunicazione con i morti, spiriti defunti, evocazione spiriti, oracolo dei morti, negromanzia italiana, antenati rituali, spiriti guida, mysticaoracoli',
+      ogTitle: 'Negromanzia: Dialogo Etico con l\'Invisibile — MYSTICA',
+      ogDesc: 'Storia, personaggi e rituale etico della Negromanzia. Consulta l\'Oracolo dei Reami gratuito.',
+      ogLocale: 'it_IT', htmlLang: 'it',
+      faqLD: [
+        { q: 'Cos\'è davvero la Negromanzia?', a: 'È l\'arte antica di cercare conoscenza attraverso il dialogo rispettoso con i piani sottili legati al ciclo di vita e morte, non una pratica di magia nera.' },
+        { q: 'La Negromanzia Etica è pericolosa?', a: 'No: si fonda sull\'ascolto e sul rispetto dei confini, mai sull\'evocazione forzata o sul comando di entità.' },
+        { q: 'Serve esperienza per usare l\'Oracolo dei Reami?', a: 'No, l\'oracolo è pensato per chiunque desideri riflettere su antenati, luoghi, memorie sospese o passaggi di vita.' },
+        { q: 'Che differenza c\'è tra Negromanzia e Spiritismo?', a: 'La Negromanzia è la tradizione più antica e ampia; lo Spiritismo moderno, codificato da Allan Kardec nel 1857, ne è una branca specifica con proprie regole etiche.' },
+        { q: 'Posso contattare un parente scomparso di recente?', a: 'La tradizione consiglia di attendere almeno un anno di lutto elaborato prima di qualsiasi pratica di ascolto verso i defunti recenti.' },
+        { q: 'Cosa sono i Guardiani della Soglia?', a: 'Sono le presenze simboliche che accompagnano i grandi passaggi della vita, onorate — non evocate — nei momenti di transizione.' }
+      ]
+    },
+    artTitle: 'Negromanzia: l\'Arte del Dialogo con l\'Invisibile',
+    artH2: 'Negromanzia Etica: Ascoltare Senza Evocare',
+    artH3: 'Perché i Confini Sono la Vera Competenza',
+    artImgAlt: 'Necromante nell\'antichità durante un rito di comunicazione con i defunti',
+    artP1: 'La Negromanzia — dal greco nekros (morto) e manteia (divinazione) — è l\'arte di cercare conoscenza attraverso il contatto con i piani sottili dell\'esistenza, tradizionalmente associati al ciclo della morte e della rinascita. Nata nelle civiltà più antiche del mondo, non è, come secoli di fraintendimento vogliono far credere, una pratica oscura e malvagia, ma una delle forme più antiche di saggezza rituale: il dialogo rispettoso con ciò che trascende il visibile e con le voci che il tempo non ha mai davvero fatto tacere.',
+    artP2: 'Le sue radici affondano nell\'antico Egitto, dove il culto dei morti costituiva il fondamento stesso della civilizzazione religiosa. I sacerdoti di Anubi e Osiride custodivano i riti di passaggio con un rigore millenario, convinti che la comunicazione tra vivi e defunti fosse non solo possibile, ma necessaria all\'ordine cosmico. Il Libro dei Morti non era una raccolta di sortilegi: era una mappa dettagliata per navigare il confine tra i due mondi con dignità, redatta da scribi sacerdotali che tramandavano formule vecchie di secoli.',
+    artP3: 'In Mesopotamia, gli ashipu (esorcisti-divinatori) e i baru (indovini) praticavano rituali di contatto con le anime dei defunti per ottenere profezie e guarigioni. La cultura babilonese credeva che le anime dei morti, gli etemmu, continuassero a esistere in un regno sotterraneo e potessero influenzare i viventi — in modo benefico o malefico — a seconda di come venivano trattate in vita e onorate dopo la morte, un principio che attraversa quasi tutte le tradizioni successive, dall\'Egitto fino alla Roma imperiale.',
+    artP4: 'Nel Medioevo e nel Rinascimento la negromanzia si sdoppiò in due correnti: da un lato la demonologia popolare, alimentata da paura e superstizione; dall\'altro una scienza ermetica raffinata, coltivata da studiosi come Cornelio Agrippa e John Dee, che la sistematizzarono come disciplina filosofica accanto ad astrologia e alchimia. Fu solo nel Diciannovesimo secolo, con Allan Kardec e lo Spiritismo, che il dialogo con i morti trovò una cornice etica moderna, fondata su evoluzione dell\'anima e responsabilità reciproca tra i due piani dell\'esistenza.',
+    artP5: 'La Negromanzia Etica moderna si fonda su un principio fondamentale: non si comanda, si chiede. Non si evoca — si ascolta. Non si tenta di trattenere le anime nel mondo dei vivi, ma di onorare i cicli naturali, ricevere saggezza e portare chiusura a ciò che è rimasto sospeso. È una pratica di memoria, non di potere: distingue con chiarezza tra il rispetto per chi ci ha preceduto e la ricerca di controllo su forze che non ci appartengono, e per questo richiede umiltà più che tecnica.',
+    nekyaTitle: '⚡ La Nekya Omerica',
+    nekyaText: 'Nel canto XI dell\'Odissea, Omero ci consegna la scena più antica e potente della letteratura occidentale dedicata alla negromanzia: la Nekya. Odisseo, su consiglio di Circe, scende alle soglie del regno dei morti, scava una fossa, vi versa miele, vino e sangue di animali sacrificali — e attende. Le ombre dei defunti accorrono, attirate dal sangue caldo che per un istante le ridona voce. Tra queste, l\'anima del cieco Tiresia gli rivela il suo destino. Non è una scena di terrore: è un atto di ascolto sacro.',
+    romaTitle: '🔥 Roma e la Magia della Soglia',
+    romaText: 'A Roma, i Lemuri erano le anime inquiete dei defunti senza sepoltura. Il 9, 11 e 13 maggio si celebravano i Lemuria: il pater familias camminava a piedi nudi per la casa all\'alba, lanciando dietro di sé fave nere — offerta simbolica per placare gli spiriti. La magia greca importata a Roma produsse i cosiddetti defixiones: tavolette di piombo incise con invocazioni ai morti e agli dèi inferi, ritrovate a centinaia nei pozzi sacri e nelle tombe. Roma aveva paura dei morti, ma li rispettava profondamente.',
+    eticaP2: 'Ogni reame di lavoro ha la sua protezione, il suo momento e il suo confine. La consapevolezza di questi confini non è timidezza: è la vera competenza di chi lavora con le soglie. Come un medico che sa quando non operare, il praticante etico sa quando fermarsi, e questa capacità di trattenersi è ciò che distingue la saggezza dall\'imprudenza.',
+    eticaClosing: 'Chi si avvicina per la prima volta alla Negromanzia Etica dovrebbe ricordare che ogni reame descritto in questa pagina — antenati, luoghi, memorie ed echi, soglie di passaggio — richiede un approccio diverso, ma condivide lo stesso spirito: la volontà di ascoltare senza pretendere, di onorare senza temere, di chiudere ciò che chiede chiusura senza forzarne i tempi.',
+    eticaWarningLabel: '⚠️ NOTA IMPORTANTE:',
+    eticaWarningText: 'La pratica presentata in questa sezione è Negromanzia Etica — un sistema di ascolto interiore, onore agli antenati e comprensione dei cicli di vita e morte. Non promuove evocazioni pericolose, spiritismo irresponsabile o pratiche che interferiscono con il libero arbitrio.',
+    imgFallback1Label: 'IMMAGINE — NECROMANTE NELL\'ANTICHITÀ',
+    imgFallback2Label: 'IMMAGINE — FIGURE STORICHE DELLA NEGROMANZIA',
+    imgFallback3Label: 'IMMAGINE — LEGGENDE E RITUALI DEI MORTI',
+    personaggiTitle: '🌑 Personaggi Influenti',
+    leggendeTitle: '🌒 Leggende & Tradizioni',
+    eticaTitle: '⚖️ Negromanzia Etica',
+    linkSigilli: '📿 Scopri i Sigilli di Salomone e la loro simbologia protettiva',
+    linkErmetismo: '☥ Approfondisci l\'Ermetismo e la filosofia occulta rinascimentale',
+    linkCabala: '🔯 Esplora la Cabala e l\'albero della vita',
+    linkBiblio: '☕ Prova Bibliomanzia e Tasseomanzia, altre arti divinatorie',
+    tabLabels: ['Antenati','Genius Loci','Echi','Guardiani'],
+    toolTitle: '💀 CONSULTA I REAMI',
+    toolSub: 'Scegli il reame — ricevi il messaggio della soglia',
+    domandaPlaceholder: 'Scrivi una domanda o lascia vuoto per una lettura libera…',
+    btnRandom: '🎲 Reame Casuale',
+    btnAttraversa: '💀 Attraversa la Soglia',
+    btnAltroReame: '🔄 Altro Reame',
+    labelElemento: 'ELEMENTO', labelPianeta: 'PIANETA', labelColore: 'COLORE', labelOra: 'ORA',
+    labelReame: '🕯️ IL REAME', labelRituale: '📜 RITUALE DI ASCOLTO ETICO', labelProtezione: '🛡️ PROTEZIONE', labelAvvertenze: '⚠️ AVVERTENZE',
+    toastMsg: '💀 La soglia si è aperta…',
+    personaggi: [
+      { icon:'🦅', nome:'Circe', era:'Mitologia Greca', desc:'Dea maga che insegnò a Odisseo il rito della Nekya. Custode del confine tra vita e morte, simbolo della maga che conosce entrambe le rive.' },
+      { icon:'👁️', nome:'Tiresia', era:'Tebe, VIII sec. a.C. (mito)', desc:'Indovino cieco che visse sette generazioni. Dopo la morte, la sua anima rimase l\'unica con piena coscienza nell\'Ade, capace di profezie autentiche.' },
+      { icon:'⚗️', nome:'Agrippa von Nettesheim', era:'Germania, 1486–1535', desc:'Filosofo ermetico che nel De Occulta Philosophia sistematizzò la magia dei morti come scienza naturale, distinguendo le anime liberate da quelle vincolate.' },
+      { icon:'📖', nome:'John Dee', era:'Inghilterra, 1527–1608', desc:'Matematico e mago di corte della regina Elisabetta I. Con Edward Kelley tentò comunicazioni con angeli e spiriti usando la pietra di cristallo e il linguaggio enochiano.' },
+      { icon:'🌹', nome:'Allan Kardec', era:'Francia, 1804–1869', desc:'Fondatore dello Spiritismo moderno. Il suo Libro degli Spiriti (1857) codificò un sistema di comunicazione con i defunti basato su etica ed evoluzione dell\'anima.' },
+      { icon:'🕯️', nome:'Éliphas Lévi', era:'Francia, 1810–1875', desc:'Occultista che tentò l\'evocazione dello spirito di Apollonio di Tiana. Scrisse che la vera negromanzia era una "follia pericolosa per chi non è purificato".' }
+    ],
+    leggende: [
+      { titolo:'⚰️ LA STREGA DI ENDOR (BIBBIA, I SAM. 28)', testo:'Il re Saul, disperato prima della battaglia contro i Filistei, si recò di notte dalla Strega di Endor — l\'unica negromanzia espressamente narrata nella Bibbia. La donna evocò lo spirito di Samuele, che profetizzò la sconfitta e la morte del re. Il racconto testimonia quanto radicate fossero queste pratiche nella Palestina antica.' },
+      { titolo:'🇲🇽 DÍA DE LOS MUERTOS — MESSICO', testo:'La tradizione messicana del Día de los Muertos (1–2 novembre) non è una variante di Halloween: è uno dei riti di onore agli antenati più complessi e belli del mondo. Le famiglie costruiscono ofrendas elaborate con cibo, fotografie, fiori di cempasúchil e candele. Non è dolore — è festa e dialogo amorevole con chi ha attraversato la soglia.' },
+      { titolo:'🇯🇵 OBON — GIAPPONE', testo:'Il festival Obon, celebrato in agosto, è il momento in cui gli spiriti degli antenati tornano nel mondo dei vivi. Le famiglie puliscono le tombe, accendono lanterne galleggianti (toro nagashi) per guidare i morti. La danza Bon Odori è in origine una cerimonia per placare e onorare le anime.' },
+      { titolo:'🇭🇹 VODOU HAITIANO — BARON SAMEDI', testo:'Nel Vodou haitiano, Baron Samedi è il loa che governa morte, tombe e resurrezione. Si manifesta vestito di nero, con cappello a cilindro e occhiali da sole. Non è un demone: è il guardiano che decide chi può morire e chi deve vivere, al centro di un sistema religioso complesso.' }
+    ],
+    faq: [
+      { q: 'Cos\'è davvero la Negromanzia?', a: 'La Negromanzia è l\'arte antica di cercare conoscenza attraverso il dialogo con i piani sottili legati al ciclo di vita e morte. Contrariamente allo stereotipo cinematografico, non è una pratica di magia nera fine a sé stessa: nelle sue forme più autentiche — dall\'Egitto alla Mesopotamia, dalla Grecia a Roma — è sempre stata un atto di ascolto rituale, di ricerca di saggezza attraverso il confine tra i mondi.' },
+      { q: 'La Negromanzia Etica è pericolosa?', a: 'Nella forma qui presentata, no: si tratta di un sistema di ascolto interiore, onore agli antenati e comprensione dei cicli. Non prevede evocazioni forzate né comando di entità. Come per ogni pratica interiore intensa, richiede consapevolezza dei propri limiti emotivi e, in caso di lutti recenti o dolore acuto, il supporto di un professionista.' },
+      { q: 'Serve esperienza per usare l\'Oracolo dei Reami?', a: 'No. L\'Oracolo dei Reami è pensato per chiunque desideri riflettere su antenati, luoghi significativi, memorie sospese o passaggi importanti della vita. Basta scegliere un reame, porre — se lo si desidera — una domanda, e lasciare che il messaggio della soglia offra una chiave di lettura simbolica su cui meditare.' },
+      { q: 'Che differenza c\'è tra Negromanzia e Spiritismo?', a: 'La Negromanzia è la tradizione più antica e ampia, che attraversa Egitto, Mesopotamia, Grecia, Roma e il mondo medievale. Lo Spiritismo moderno, codificato da Allan Kardec nel 1857, ne è una branca specifica con proprie regole etiche, una cosmologia dell\'evoluzione dell\'anima e pratiche mediatiche codificate.' },
+      { q: 'Posso contattare un parente scomparso di recente?', a: 'La tradizione, in particolare quella legata agli Antenati & Guide Familiari, consiglia di attendere almeno un anno di lutto elaborato prima di qualsiasi pratica di ascolto verso i defunti recenti. Il dolore fresco può distorcere la percezione e rendere il rituale più doloroso che risolutivo.' },
+      { q: 'Cosa sono i Guardiani della Soglia?', a: 'Sono le presenze simboliche che presidiano i grandi passaggi della vita — un cambio di lavoro, una relazione che finisce, una guarigione. Non vanno evocati, ma onorati e riconosciuti: quando lo si fa consapevolmente, le transizioni si vivono con maggiore chiarezza e minore sofferenza.' },
+      { q: 'Che cos\'è la Nekya raccontata da Omero?', a: 'È la scena del canto XI dell\'Odissea in cui Odisseo, su consiglio di Circe, scende alle soglie del regno dei morti e, con un\'offerta di sangue, richiama le ombre dei defunti per ottenere profezie. È considerata la più antica e influente rappresentazione letteraria della negromanzia occidentale.' }
+    ]
   },
-  {
-    key:'luoghi',
-    reame:'🏚️ Genius Loci & Spiriti della Terra',
-    sottotitolo:'Custodi dei Luoghi e Memoria dei Posti',
-    elemento:'Terra', pianeta:'Saturno', colore:'Verde muschio', erba:'Rosmarino', ora:'Tramonto',
-    desc:'Ogni luogo ha una memoria. Le case vecchie, i boschi, le chiese, i crocevia — tutti portano l\'impronta energetica degli eventi e delle coscienze che li hanno abitati. Il Genius Loci è lo spirito custode di un luogo — non necessariamente personale o benevolo, ma fondamentalmente territoriale. Dialogare con esso significa chiedere rispetto e permesso prima di agire in uno spazio. Chi entra in luoghi antichi senza questo riconoscimento porta via con sé ciò che il luogo decide di affidare — non sempre ciò che voleva.',
-    ritualeEtico:'Entra nel luogo lentamente. Fermati sulla soglia. Senti il silenzio. Poi di\' ad alta voce (o mentalmente): "Chiedo il permesso di entrare in questo spazio con rispetto." Porta un\'offerta piccola: una moneta, un seme, una pietra raccolta altrove. Tocca un elemento naturale (pietra, albero, terra) e lascia che il luogo ti parli attraverso le sensazioni fisiche. Quando esci, ringrazia.',
-    protezione:'Non prendere nulla da luoghi antichi senza chiedere mentalmente il permesso. Se senti oppressione o disagio, allontanati senza creare resistenza. Non provocare, non ridicolizzare, non sfidare le energie di un luogo.',
-    avvertenze:'Pratica di rispetto, non di potere. Non cercare spiriti di luoghi oscuri per curiosità o brivido — le energie dei luoghi difficili vanno onorate da distanza sicura, non contattate direttamente.'
+
+  en: {
+    back: '← Back to Home',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '☀️', night: '🌙' },
+    ctaExplore: '🔍 Explore Other Categories',
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited Realm readings, a full consultation history, and advanced ritual insights on Ethical Necromancy.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just consulted the Realm Oracle on MYSTICA\'s Ethical Necromancy — a respectful dialogue with the unseen. Try it yourself!',
+    shareBtnLabel: 'Share',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'Content for informational, cultural and entertainment purposes. The Ethical Necromancy presented here does not replace medical, psychological or legal advice.',
+    footerHome: 'Home', footerContatti: 'Contact', footerAbout: 'About Us', footerPrivacy: 'Privacy',
+    heroSub: 'The Art of Thresholds — An Ethical Dialogue with the Unseen',
+    seo: {
+      title: 'Necromancy: Communicating with the Dead in Esoteric Tradition | MYSTICA',
+      description: 'Necromancy through history: from Ancient Egypt to the Middle Ages, rites honoring the dead, Ethical Necromancy and a free Realm Oracle on MYSTICA Oracoli.',
+      keywords: 'necromancy, communicating with the dead, ancestor spirits, ethical necromancy, oracle of the dead, spirit guides, ancestor rituals, mysticaoracoli',
+      ogTitle: 'Necromancy: An Ethical Dialogue with the Unseen — MYSTICA',
+      ogDesc: 'History, figures and the ethical ritual of Necromancy. Try the free Realm Oracle.',
+      ogLocale: 'en_US', htmlLang: 'en',
+      faqLD: [
+        { q: 'What is Necromancy, really?', a: 'It is the ancient art of seeking knowledge through respectful dialogue with the subtler planes tied to life and death — not a form of black magic.' },
+        { q: 'Is Ethical Necromancy dangerous?', a: 'No: it is grounded in listening and respecting boundaries, never in forced evocation or commanding entities.' },
+        { q: 'Do I need experience to use the Realm Oracle?', a: 'No, the oracle is designed for anyone wishing to reflect on ancestors, places, unresolved memories, or life transitions.' },
+        { q: 'What is the difference between Necromancy and Spiritism?', a: 'Necromancy is the older, broader tradition; modern Spiritism, codified by Allan Kardec in 1857, is a specific branch with its own ethical rules.' },
+        { q: 'Can I contact a recently deceased relative?', a: 'Tradition advises waiting at least a year of processed grief before any listening practice toward the recently deceased.' },
+        { q: 'What are the Guardians of the Threshold?', a: 'They are the symbolic presences accompanying life\'s great transitions, honored — never summoned — at moments of change.' }
+      ]
+    },
+    artTitle: 'Necromancy: The Art of Dialogue with the Unseen',
+    artH2: 'Ethical Necromancy: Listening Instead of Summoning',
+    artH3: 'Why Boundaries Are the True Skill',
+    artImgAlt: 'Ancient necromancer performing a rite of communication with the dead',
+    artP1: 'Necromancy — from the Greek nekros (dead) and manteia (divination) — is the art of seeking knowledge through contact with the subtler planes of existence, traditionally tied to the cycle of death and rebirth. Born in the world\'s oldest civilizations, it is not, as centuries of misunderstanding suggest, a dark and malevolent practice, but one of the oldest forms of ritual wisdom: a respectful dialogue with what lies beyond sight.',
+    artP2: 'Its roots reach back to Ancient Egypt, where the cult of the dead was the very foundation of religious civilization. Priests of Anubis and Osiris guarded rites of passage with millennia-old rigor, convinced that communication between the living and the dead was not only possible but necessary to cosmic order. The Book of the Dead was not a book of spells: it was a detailed map for crossing the boundary with dignity.',
+    artP3: 'In Mesopotamia, the ashipu (exorcist-diviners) and baru (seers) practiced rituals contacting the souls of the dead to obtain prophecies and healing. Babylonian culture believed the souls of the dead, the etemmu, continued to exist in an underground realm and could influence the living — for good or ill — depending on how they were treated in life and honored after death, a principle running through nearly every later tradition.',
+    artP4: 'During the Middle Ages and Renaissance, necromancy split into two currents: popular demonology, fed by fear and superstition, and a refined hermetic science cultivated by scholars like Cornelius Agrippa and John Dee, who systematized it as a philosophical discipline alongside astrology and alchemy. Only in the nineteenth century, with Allan Kardec and Spiritism, did dialogue with the dead find a modern ethical framework, grounded in the soul\'s evolution and mutual responsibility between the two planes.',
+    artP5: 'Modern Ethical Necromancy rests on one core principle: you do not command, you ask. You do not summon — you listen. The goal is never to hold souls in the world of the living, but to honor natural cycles, receive wisdom, and bring closure to what remains suspended. It is a practice of memory, not power, drawing a clear line between respect for those who came before us and the pursuit of control over forces that are not ours to command.',
+    nekyaTitle: '⚡ Homer\'s Nekya',
+    nekyaText: 'In Book XI of the Odyssey, Homer gives Western literature its oldest and most powerful necromantic scene: the Nekya. On Circe\'s advice, Odysseus descends to the threshold of the underworld, digs a pit, and pours in honey, wine and sacrificial blood — then waits. The shades of the dead gather, drawn by the warm blood that briefly restores their voice. Among them, blind Tiresias reveals his fate. It is not a scene of terror: it is an act of sacred listening.',
+    romaTitle: '🔥 Rome and the Magic of the Threshold',
+    romaText: 'In Rome, the Lemures were the restless souls of the unburied dead. On May 9th, 11th and 13th, the Lemuria were celebrated: the pater familias walked barefoot through the house at dawn, throwing black beans behind him — a symbolic offering to appease the spirits. Greek magic imported to Rome produced the so-called defixiones: lead tablets inscribed with invocations to the dead and the gods below, found by the hundreds in sacred wells and tombs. Rome feared the dead, yet honored them deeply.',
+    eticaP2: 'Every realm of practice has its own protection, timing and boundary. Awareness of these boundaries is not timidity — it is the true skill of one who works with thresholds. Like a physician who knows when not to operate, the ethical practitioner knows when to stop, and that restraint is what separates wisdom from recklessness.',
+    eticaClosing: 'Anyone approaching Ethical Necromancy for the first time should remember that every realm described on this page — ancestors, places, memories and echoes, thresholds of transition — calls for a different approach, yet shares the same spirit: the willingness to listen without demanding, to honor without fearing, and to close what asks for closure without forcing its pace.',
+    eticaWarningLabel: '⚠️ IMPORTANT NOTE:',
+    eticaWarningText: 'The practice presented here is Ethical Necromancy — a system of inner listening, ancestor honoring, and understanding the cycles of life and death. It does not promote dangerous evocations, reckless spiritism, or practices that interfere with free will.',
+    imgFallback1Label: 'IMAGE — NECROMANCER IN ANTIQUITY',
+    imgFallback2Label: 'IMAGE — HISTORICAL FIGURES OF NECROMANCY',
+    imgFallback3Label: 'IMAGE — LEGENDS AND RITES OF THE DEAD',
+    personaggiTitle: '🌑 Influential Figures',
+    leggendeTitle: '🌒 Legends & Traditions',
+    eticaTitle: '⚖️ Ethical Necromancy',
+    linkSigilli: '📿 Discover the Seals of Solomon and their protective symbolism',
+    linkErmetismo: '☥ Explore Hermeticism and Renaissance occult philosophy',
+    linkCabala: '🔯 Explore the Kabbalah and the Tree of Life',
+    linkBiblio: '☕ Try Bibliomancy and Tasseography, other divinatory arts',
+    tabLabels: ['Ancestors','Genius Loci','Echoes','Guardians'],
+    toolTitle: '💀 CONSULT THE REALMS',
+    toolSub: 'Choose a realm — receive the message of the threshold',
+    domandaPlaceholder: 'Write a question or leave blank for a free reading…',
+    btnRandom: '🎲 Random Realm',
+    btnAttraversa: '💀 Cross the Threshold',
+    btnAltroReame: '🔄 Another Realm',
+    labelElemento: 'ELEMENT', labelPianeta: 'PLANET', labelColore: 'COLOR', labelOra: 'TIME',
+    labelReame: '🕯️ THE REALM', labelRituale: '📜 RITE OF ETHICAL LISTENING', labelProtezione: '🛡️ PROTECTION', labelAvvertenze: '⚠️ WARNINGS',
+    toastMsg: '💀 The threshold has opened…',
+    personaggi: [
+      { icon:'🦅', nome:'Circe', era:'Greek Mythology', desc:'The sorceress-goddess who taught Odysseus the rite of the Nekya. Guardian of the boundary between life and death, symbol of the enchantress who knows both shores.' },
+      { icon:'👁️', nome:'Tiresias', era:'Thebes, 8th c. BC (myth)', desc:'Blind seer who lived seven generations. After death, his soul remained the only one in Hades with full consciousness, capable of true prophecy.' },
+      { icon:'⚗️', nome:'Agrippa von Nettesheim', era:'Germany, 1486–1535', desc:'Hermetic philosopher who, in De Occulta Philosophia, systematized the magic of the dead as a natural science, distinguishing liberated souls from bound ones.' },
+      { icon:'📖', nome:'John Dee', era:'England, 1527–1608', desc:'Mathematician and court magician to Queen Elizabeth I. With Edward Kelley, he attempted communication with angels and spirits using the "scrying stone" and the Enochian language.' },
+      { icon:'🌹', nome:'Allan Kardec', era:'France, 1804–1869', desc:'Founder of modern Spiritism. His Book of Spirits (1857) codified a system for communicating with the dead based on ethics and the soul\'s evolution.' },
+      { icon:'🕯️', nome:'Éliphas Lévi', era:'France, 1810–1875', desc:'Occultist who attempted to evoke the spirit of Apollonius of Tyana. He wrote that true necromancy was a "dangerous madness for those who are not purified".' }
+    ],
+    leggende: [
+      { titolo:'⚰️ THE WITCH OF ENDOR (BIBLE, 1 SAM. 28)', testo:'King Saul, desperate before battle against the Philistines, went by night to the Witch of Endor — the only necromancy explicitly narrated in the Bible. The woman summoned the spirit of Samuel, who prophesied the king\'s defeat and death. The tale attests how deeply rooted these practices were in ancient Palestine.' },
+      { titolo:'🇲🇽 DÍA DE LOS MUERTOS — MEXICO', testo:'Mexico\'s Day of the Dead (Nov 1–2) is not a variant of Halloween: it is one of the world\'s most elaborate and beautiful rites of ancestor honoring. Families build ofrendas with food, photographs, cempasúchil flowers and candles. It is not sorrow — it is celebration and loving dialogue with those who crossed the threshold.' },
+      { titolo:'🇯🇵 OBON — JAPAN', testo:'The Obon festival, celebrated in August, is the moment when ancestral spirits return to the world of the living. Families clean graves and light floating lanterns (toro nagashi) to guide the dead. The Bon Odori dance was originally a ceremony to appease and honor the souls.' },
+      { titolo:'🇭🇹 HAITIAN VODOU — BARON SAMEDI', testo:'In Haitian Vodou, Baron Samedi is the loa who governs death, graves and resurrection. He appears dressed in black, top hat and sunglasses. He is not a demon: he is the guardian who decides who may die and who must live, central to a complex religious system.' }
+    ],
+    faq: [
+      { q: 'What is Necromancy, really?', a: 'Necromancy is the ancient art of seeking knowledge through dialogue with the subtler planes tied to life and death. Contrary to the cinematic stereotype, it is not black magic for its own sake: in its most authentic forms — from Egypt to Mesopotamia, from Greece to Rome — it has always been an act of ritual listening, a search for wisdom across the boundary between worlds.' },
+      { q: 'Is Ethical Necromancy dangerous?', a: 'In the form presented here, no: it is a system of inner listening, ancestor honoring, and understanding life\'s cycles. It involves no forced evocation or commanding of entities. Like any intense inner practice, it requires awareness of your emotional limits, and professional support if you are dealing with recent grief or acute pain.' },
+      { q: 'Do I need experience to use the Realm Oracle?', a: 'No. The Realm Oracle is designed for anyone who wants to reflect on ancestors, meaningful places, unresolved memories, or important life transitions. Simply choose a realm, ask a question if you wish, and let the message of the threshold offer a symbolic key to meditate on.' },
+      { q: 'What is the difference between Necromancy and Spiritism?', a: 'Necromancy is the older, broader tradition, spanning Egypt, Mesopotamia, Greece, Rome and the medieval world. Modern Spiritism, codified by Allan Kardec in 1857, is a specific branch with its own ethical rules, a cosmology of soul evolution, and codified mediumship practices.' },
+      { q: 'Can I contact a recently deceased relative?', a: 'Tradition, especially concerning Ancestors & Family Guides, advises waiting at least a year of processed grief before any listening practice toward the recently deceased. Fresh pain can distort perception and make the ritual more painful than resolving.' },
+      { q: 'What are the Guardians of the Threshold?', a: 'They are the symbolic presences overseeing life\'s major transitions — a job change, the end of a relationship, a healing process. They should not be summoned but honored and recognized: when done consciously, transitions unfold with greater clarity and less suffering.' },
+      { q: 'What is the Nekya told by Homer?', a: 'It is the scene in Book XI of the Odyssey where Odysseus, advised by Circe, descends to the threshold of the underworld and, through a blood offering, calls forth the shades of the dead to obtain prophecies. It is considered the oldest and most influential literary depiction of Western necromancy.' }
+    ]
   },
-  {
-    key:'memorie',
-    reame:'📜 Echi & Memorie Non Risolte',
-    sottotitolo:'Questioni Sospese che Chiedono Chiusura',
-    elemento:'Acqua', pianeta:'Nettuno', colore:'Blu notte', erba:'Lavanda', ora:'Mezzanotte',
-    desc:'Non tutti i "contatti" con il piano sottile sono entità — molti sono echi. Memorie cristallizzate in emotività non risolta che continuano a vibrare in un luogo o in una persona come un disco rotto. I famigerati "fantasmi" di molte tradizioni sono spesso questo: pattern emozionali senza un\'anima cosciente, che ripetono meccanicamente la loro ultima registrazione forte. La negromanzia etica in questo contesto non evoca — libera. Porta presenza e compassione verso ciò che non riesce a finire.',
-    ritualeEtico:'Scrivi su carta la domanda non detta — la cosa che senti sospesa, irrisolta, che "aleggia" in una situazione o luogo. Bruciala in un contenitore sicuro. Mentre brucia, di\': "Ciò che era sospeso ora trova la sua forma definitiva. Ciò che non era detto ora è ascoltato. Il ciclo si chiude." Non cercare risposte immediate — lascia che il fumo porti via il peso. Seppelli le ceneri.',
-    protezione:'Lavora con una sola situazione alla volta. Non aprire più di un echo contemporaneamente. Se senti emergere emozioni intense, fermati — hai già contattato ciò che cerchi, anche se non lo vedi.',
-    avvertenze:'Questa è terapia energetica, non spiritismo. Se hai lutti irrisolti, questo rituale può amplificarli — considera di lavorare con un terapeuta in parallelo se il dolore è recente o intenso.'
-  },
-  {
-    key:'transizione',
-    reame:'🕊️ Guardiani della Soglia',
-    sottotitolo:'Chi Accompagna nei Passaggi e nei Cambiamenti',
-    elemento:'Aria', pianeta:'Urano', colore:'Argento', erba:'Iperico', ora:'Alba',
-    desc:'Ogni passaggio importante della vita — un cambiamento di lavoro, una relazione che finisce, un trasloco, una malattia, una guarigione — ha i suoi Guardiani della Soglia. Sono le forze che presidiano i confini tra una fase e l\'altra della vita, che assicurano che la transizione avvenga correttamente. Non sono entità da invocare: sono presenze da onorare e riconoscere. Quando li onori consapevolmente, i passaggi si fanno più fluidi, le morti simboliche meno dolorose, le rinascite più potenti.',
-    ritualeEtico:'Traccia un cerchio intorno a te con gesso bianco o sale grosso. Al centro metti un oggetto che rappresenta la transizione che stai vivendo — qualcosa che appartiene alla fase che si chiude. Siediti nel cerchio. Respira 4-7-8 per 5 cicli. Non cercare di evocare: senti semplicemente la soglia. Cosa finisce? Cosa inizia? Lascia che il Guardiano ti dia il suo sigillo — un\'immagine, una sensazione, una parola. Poi togli l\'oggetto dal cerchio e ponilo all\'esterno. Esci dal cerchio.',
-    protezione:'Chiudi sempre il cerchio quando finisci (muoviti in senso antiorario). Non lasciare il cerchio aperto anche se sembrava non succedere nulla. Il Guardiano ha già lavorato nella tua assenza.',
-    avvertenze:'Lavora con un solo passaggio alla volta. Se hai paura intensa, non procedere — la paura crea blocchi che il rituale non può superare. Elabora la paura prima, poi ritorna al rito.'
+
+  es: {
+    back: '← Volver al Inicio',
+    music: { on: '🎵', off: '🔇' },
+    theme: { day: '☀️', night: '🌙' },
+    ctaExplore: '🔍 Explorar Otras Categorías',
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea lecturas ilimitadas de los Reinos, historial completo de consultas y contenidos rituales avanzados sobre la Necromancia Ética.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: 'Acabo de consultar el Oráculo de los Reinos sobre la Necromancia Ética de MYSTICA — un diálogo respetuoso con lo invisible. ¡Pruébalo tú también!',
+    shareBtnLabel: 'Compartir',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+    footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'Contenido con fines informativos, culturales y de entretenimiento. La Necromancia Ética aquí presentada no sustituye el asesoramiento médico, psicológico o legal.',
+    footerHome: 'Inicio', footerContatti: 'Contacto', footerAbout: 'Quiénes Somos', footerPrivacy: 'Privacidad',
+    heroSub: 'El Arte de los Umbrales — Diálogo Ético con lo Invisible',
+    seo: {
+      title: 'Necromancia: Comunicarse con los Difuntos en la Tradición Esotérica | MYSTICA',
+      description: 'La Necromancia en la historia: del Antiguo Egipto a la Edad Media, ritos de honra a los difuntos, Necromancia Ética y Oráculo de los Reinos gratis en MYSTICA.',
+      keywords: 'necromancia, comunicación con los muertos, espíritus ancestrales, necromancia ética, oráculo de los muertos, espíritus guía, rituales ancestrales, mysticaoracoli',
+      ogTitle: 'Necromancia: Diálogo Ético con lo Invisible — MYSTICA',
+      ogDesc: 'Historia, figuras y el ritual ético de la Necromancia. Prueba el Oráculo de los Reinos gratuito.',
+      ogLocale: 'es_ES', htmlLang: 'es',
+      faqLD: [
+        { q: '¿Qué es realmente la Necromancia?', a: 'Es el arte antiguo de buscar conocimiento a través del diálogo respetuoso con los planos sutiles ligados a la vida y la muerte, no una práctica de magia negra.' },
+        { q: '¿Es peligrosa la Necromancia Ética?', a: 'No: se basa en la escucha y el respeto de los límites, nunca en la evocación forzada ni en el mando de entidades.' },
+        { q: '¿Necesito experiencia para usar el Oráculo de los Reinos?', a: 'No, el oráculo está pensado para cualquiera que desee reflexionar sobre ancestros, lugares, memorias no resueltas o transiciones vitales.' },
+        { q: '¿Qué diferencia hay entre Necromancia y Espiritismo?', a: 'La Necromancia es la tradición más antigua y amplia; el Espiritismo moderno, codificado por Allan Kardec en 1857, es una rama específica con sus propias reglas éticas.' },
+        { q: '¿Puedo contactar a un familiar fallecido recientemente?', a: 'La tradición aconseja esperar al menos un año de duelo elaborado antes de cualquier práctica de escucha hacia los difuntos recientes.' },
+        { q: '¿Qué son los Guardianes del Umbral?', a: 'Son las presencias simbólicas que acompañan las grandes transiciones de la vida, honradas —nunca invocadas— en los momentos de cambio.' }
+      ]
+    },
+    artTitle: 'Necromancia: el Arte del Diálogo con lo Invisible',
+    artH2: 'Necromancia Ética: Escuchar sin Invocar',
+    artH3: 'Por Qué los Límites Son la Verdadera Competencia',
+    artImgAlt: 'Nigromante en la Antigüedad durante un rito de comunicación con los difuntos',
+    artP1: 'La Necromancia —del griego nekros (muerto) y manteia (divinación)— es el arte de buscar conocimiento a través del contacto con los planos sutiles de la existencia, tradicionalmente vinculados al ciclo de muerte y renacimiento. Nacida en las civilizaciones más antiguas del mundo, no es, como siglos de malentendidos sugieren, una práctica oscura y maligna, sino una de las formas más antiguas de sabiduría ritual: un diálogo respetuoso con lo que trasciende lo visible.',
+    artP2: 'Sus raíces se hunden en el Antiguo Egipto, donde el culto a los muertos constituía el fundamento mismo de la civilización religiosa. Los sacerdotes de Anubis y Osiris custodiaban los ritos de paso con un rigor milenario, convencidos de que la comunicación entre vivos y difuntos no solo era posible, sino necesaria para el orden cósmico. El Libro de los Muertos no era un recetario de sortilegios: era un mapa detallado para cruzar la frontera con dignidad.',
+    artP3: 'En Mesopotamia, los ashipu (exorcistas-adivinos) y los baru (videntes) practicaban rituales de contacto con las almas de los difuntos para obtener profecías y curaciones. La cultura babilónica creía que las almas de los muertos, los etemmu, seguían existiendo en un reino subterráneo y podían influir en los vivos —para bien o para mal— según cómo hubieran sido tratadas en vida y honradas tras la muerte.',
+    artP4: 'En la Edad Media y el Renacimiento, la necromancia se dividió en dos corrientes: por un lado la demonología popular, alimentada por el miedo y la superstición; por otro, una ciencia hermética refinada, cultivada por eruditos como Cornelio Agrippa y John Dee, que la sistematizaron como disciplina filosófica junto a la astrología y la alquimia. Solo en el siglo XIX, con Allan Kardec y el Espiritismo, el diálogo con los muertos encontró un marco ético moderno.',
+    artP5: 'La Necromancia Ética moderna se basa en un principio fundamental: no se ordena, se pide. No se invoca —se escucha—. Nunca se busca retener a las almas en el mundo de los vivos, sino honrar los ciclos naturales, recibir sabiduría y dar cierre a lo que quedó suspendido. Es una práctica de memoria, no de poder, que traza una línea clara entre el respeto hacia quienes nos precedieron y la búsqueda de control sobre fuerzas que no nos pertenecen.',
+    nekyaTitle: '⚡ La Nekya Homérica',
+    nekyaText: 'En el canto XI de la Odisea, Homero ofrece a la literatura occidental su escena necromántica más antigua y poderosa: la Nekya. Por consejo de Circe, Odiseo desciende al umbral del reino de los muertos, excava una fosa y vierte miel, vino y sangre de animales sacrificados —y espera. Las sombras de los difuntos acuden, atraídas por la sangre caliente que por un instante les devuelve la voz. Entre ellas, el ciego Tiresias le revela su destino. No es una escena de terror: es un acto de escucha sagrada.',
+    romaTitle: '🔥 Roma y la Magia del Umbral',
+    romaText: 'En Roma, los Lémures eran las almas inquietas de los difuntos sin sepultura. Los días 9, 11 y 13 de mayo se celebraban las Lemuria: el pater familias caminaba descalzo por la casa al amanecer, lanzando a su espalda habas negras —ofrenda simbólica para aplacar a los espíritus. La magia griega importada a Roma produjo las llamadas defixiones: tablillas de plomo con invocaciones a los muertos, halladas por centenas en pozos sagrados y tumbas. Roma temía a los muertos, pero los respetaba profundamente.',
+    eticaP2: 'Cada reino de trabajo tiene su propia protección, su momento y su límite. La conciencia de estos límites no es timidez: es la verdadera competencia de quien trabaja con umbrales. Como un médico que sabe cuándo no operar, el practicante ético sabe cuándo detenerse, y esa contención es lo que distingue la sabiduría de la imprudencia.',
+    eticaClosing: 'Quien se acerca por primera vez a la Necromancia Ética debería recordar que cada reino descrito en esta página —ancestros, lugares, memorias y ecos, umbrales de transición— exige un enfoque diferente, pero comparte el mismo espíritu: la voluntad de escuchar sin exigir, de honrar sin temer, de cerrar lo que pide cierre sin forzar sus tiempos.',
+    eticaWarningLabel: '⚠️ NOTA IMPORTANTE:',
+    eticaWarningText: 'La práctica presentada en esta sección es Necromancia Ética —un sistema de escucha interior, honra a los ancestros y comprensión de los ciclos de vida y muerte. No promueve invocaciones peligrosas, espiritismo irresponsable ni prácticas que interfieran con el libre albedrío.',
+    imgFallback1Label: 'IMAGEN — NIGROMANTE EN LA ANTIGÜEDAD',
+    imgFallback2Label: 'IMAGEN — FIGURAS HISTÓRICAS DE LA NECROMANCIA',
+    imgFallback3Label: 'IMAGEN — LEYENDAS Y RITUALES DE LOS MUERTOS',
+    personaggiTitle: '🌑 Figuras Influyentes',
+    leggendeTitle: '🌒 Leyendas y Tradiciones',
+    eticaTitle: '⚖️ Necromancia Ética',
+    linkSigilli: '📿 Descubre los Sellos de Salomón y su simbología protectora',
+    linkErmetismo: '☥ Profundiza en el Hermetismo y la filosofía oculta renacentista',
+    linkCabala: '🔯 Explora la Cábala y el árbol de la vida',
+    linkBiblio: '☕ Prueba la Bibliomancia y la Tasomancia, otras artes divinatorias',
+    tabLabels: ['Ancestros','Genius Loci','Ecos','Guardianes'],
+    toolTitle: '💀 CONSULTA LOS REINOS',
+    toolSub: 'Elige el reino — recibe el mensaje del umbral',
+    domandaPlaceholder: 'Escribe una pregunta o deja en blanco para una lectura libre…',
+    btnRandom: '🎲 Reino Aleatorio',
+    btnAttraversa: '💀 Cruza el Umbral',
+    btnAltroReame: '🔄 Otro Reino',
+    labelElemento: 'ELEMENTO', labelPianeta: 'PLANETA', labelColore: 'COLOR', labelOra: 'HORA',
+    labelReame: '🕯️ EL REINO', labelRituale: '📜 RITUAL DE ESCUCHA ÉTICA', labelProtezione: '🛡️ PROTECCIÓN', labelAvvertenze: '⚠️ ADVERTENCIAS',
+    toastMsg: '💀 El umbral se ha abierto…',
+    personaggi: [
+      { icon:'🦅', nome:'Circe', era:'Mitología Griega', desc:'Diosa hechicera que enseñó a Odiseo el rito de la Nekya. Guardiana del límite entre vida y muerte, símbolo de la hechicera que conoce ambas orillas.' },
+      { icon:'👁️', nome:'Tiresias', era:'Tebas, s. VIII a.C. (mito)', desc:'Adivino ciego que vivió siete generaciones. Tras la muerte, su alma fue la única con plena conciencia en el Hades, capaz de profecías auténticas.' },
+      { icon:'⚗️', nome:'Agrippa von Nettesheim', era:'Alemania, 1486–1535', desc:'Filósofo hermético que en De Occulta Philosophia sistematizó la magia de los muertos como ciencia natural, distinguiendo almas liberadas de las vinculadas.' },
+      { icon:'📖', nome:'John Dee', era:'Inglaterra, 1527–1608', desc:'Matemático y mago de corte de la reina Isabel I. Con Edward Kelley intentó comunicarse con ángeles y espíritus usando la piedra de cristal y el idioma enoquiano.' },
+      { icon:'🌹', nome:'Allan Kardec', era:'Francia, 1804–1869', desc:'Fundador del Espiritismo moderno. Su Libro de los Espíritus (1857) codificó un sistema de comunicación con los difuntos basado en la ética y la evolución del alma.' },
+      { icon:'🕯️', nome:'Éliphas Lévi', era:'Francia, 1810–1875', desc:'Ocultista que intentó evocar el espíritu de Apolonio de Tiana. Escribió que la verdadera necromancia era una "locura peligrosa para quien no está purificado".' }
+    ],
+    leggende: [
+      { titolo:'⚰️ LA BRUJA DE ENDOR (BIBLIA, 1 SAM. 28)', testo:'El rey Saúl, desesperado antes de la batalla contra los filisteos, acudió de noche a la Bruja de Endor —la única necromancia narrada explícitamente en la Biblia. La mujer evocó el espíritu de Samuel, que profetizó la derrota y muerte del rey. El relato atestigua cuán arraigadas estaban estas prácticas en la Palestina antigua.' },
+      { titolo:'🇲🇽 DÍA DE LOS MUERTOS — MÉXICO', testo:'La tradición mexicana del Día de los Muertos (1–2 de noviembre) no es una variante de Halloween: es uno de los ritos de honra a los ancestros más complejos y hermosos del mundo. Las familias construyen ofrendas con comida, fotografías, flores de cempasúchil y velas. No es dolor —es fiesta y diálogo amoroso con quienes cruzaron el umbral.' },
+      { titolo:'🇯🇵 OBON — JAPÓN', testo:'El festival Obon, celebrado en agosto, es el momento en que los espíritus ancestrales regresan al mundo de los vivos. Las familias limpian las tumbas y encienden farolillos flotantes (toro nagashi) para guiar a los muertos. La danza Bon Odori es originalmente una ceremonia para aplacar y honrar a las almas.' },
+      { titolo:'🇭🇹 VODÚ HAITIANO — BARÓN SAMEDI', testo:'En el Vodú haitiano, el Barón Samedi es el loa que gobierna la muerte, las tumbas y la resurrección. Se manifiesta vestido de negro, con sombrero de copa y gafas de sol. No es un demonio: es el guardián que decide quién puede morir y quién debe vivir.' }
+    ],
+    faq: [
+      { q: '¿Qué es realmente la Necromancia?', a: 'La Necromancia es el arte antiguo de buscar conocimiento mediante el diálogo con los planos sutiles ligados a la vida y la muerte. Contrariamente al estereotipo cinematográfico, no es magia negra por sí misma: en sus formas más auténticas —de Egipto a Mesopotamia, de Grecia a Roma— siempre ha sido un acto de escucha ritual, una búsqueda de sabiduría a través de la frontera entre mundos.' },
+      { q: '¿Es peligrosa la Necromancia Ética?', a: 'En la forma aquí presentada, no: es un sistema de escucha interior, honra a los ancestros y comprensión de los ciclos vitales. No implica evocación forzada ni mando sobre entidades. Como toda práctica interior intensa, requiere conciencia de los propios límites emocionales y, ante un duelo reciente, apoyo profesional.' },
+      { q: '¿Necesito experiencia para usar el Oráculo de los Reinos?', a: 'No. El Oráculo de los Reinos está pensado para cualquiera que desee reflexionar sobre ancestros, lugares significativos, memorias no resueltas o transiciones vitales importantes. Basta elegir un reino, formular una pregunta si se desea, y dejar que el mensaje del umbral ofrezca una clave simbólica para meditar.' },
+      { q: '¿Qué diferencia hay entre Necromancia y Espiritismo?', a: 'La Necromancia es la tradición más antigua y amplia, que abarca Egipto, Mesopotamia, Grecia, Roma y el mundo medieval. El Espiritismo moderno, codificado por Allan Kardec en 1857, es una rama específica con sus propias reglas éticas, una cosmología de la evolución del alma y prácticas mediúmnicas codificadas.' },
+      { q: '¿Puedo contactar a un familiar fallecido recientemente?', a: 'La tradición, especialmente en lo relativo a Ancestros y Guías Familiares, aconseja esperar al menos un año de duelo elaborado antes de cualquier práctica de escucha hacia los difuntos recientes. El dolor reciente puede distorsionar la percepción y hacer el ritual más doloroso que resolutivo.' },
+      { q: '¿Qué son los Guardianes del Umbral?', a: 'Son las presencias simbólicas que supervisan las grandes transiciones de la vida —un cambio de trabajo, el fin de una relación, un proceso de curación. No deben invocarse, sino honrarse y reconocerse: cuando se hace de forma consciente, las transiciones se viven con mayor claridad y menos sufrimiento.' },
+      { q: '¿Qué es la Nekya narrada por Homero?', a: 'Es la escena del canto XI de la Odisea en la que Odiseo, aconsejado por Circe, desciende al umbral del reino de los muertos y, mediante una ofrenda de sangre, convoca a las sombras de los difuntos para obtener profecías. Se considera la representación literaria más antigua e influyente de la necromancia occidental.' }
+    ]
   }
-];
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+const PAGE_URL = 'https://mysticaoracoli.it/negromanzia.html';
+
+/* ══════════════════════════════════════════════════
+   SEO Multilingua
+   ══════════════════════════════════════════════════ */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld && S.faqLD) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': PAGE_URL + '#webpage',
+          url: PAGE_URL,
+          name: S.title,
+          description: S.description,
+          inLanguage: S.htmlLang,
+          isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' }
+        },
+        {
+          '@type': 'Article',
+          headline: LANG[currentLang].artTitle,
+          image: 'https://mysticaoracoli.it/images/icone/home/negromanzia.webp',
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni', alternateName: 'Mago Petro' },
+          publisher: { '@type': 'Organization', name: 'PetroCorporation', logo: { '@type':'ImageObject', url: 'https://mysticaoracoli.it/apple-touch-icon-v2.png' } },
+          mainEntityOfPage: PAGE_URL,
+          inLanguage: S.htmlLang
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type':'ListItem', position:1, name:'MYSTICA Oracoli', item:'https://mysticaoracoli.it/' },
+            { '@type':'ListItem', position:2, name: LANG[currentLang].artTitle, item: PAGE_URL }
+          ]
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({ '@type':'Question', name:f.q, acceptedAnswer:{ '@type':'Answer', text:f.a } }))
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'Oracolo dei Reami — MYSTICA',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web, iOS, Android',
+          offers: { '@type':'Offer', price:'0', priceCurrency:'EUR' }
+        }
+      ]
+    });
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   applyLang — applica la lingua corrente a tutta la pagina
+   ══════════════════════════════════════════════════ */
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+
+  const at = document.getElementById('art-title'); if (at) at.textContent = L.artTitle;
+  const ah2 = document.getElementById('art-h2'); if (ah2) ah2.textContent = L.artH2;
+  const ah3 = document.getElementById('art-h3'); if (ah3) ah3.textContent = L.artH3;
+  ['1','2','3','4','5'].forEach(n => { const p = document.getElementById('art-p'+n); if (p) p.textContent = L['artP'+n]; });
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = L.artImgAlt || '';
+  const ce = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+
+  const nkT = document.getElementById('nekyaTitle'); if (nkT) nkT.textContent = L.nekyaTitle;
+  const nkX = document.getElementById('nekyaText'); if (nkX) nkX.textContent = L.nekyaText;
+  const roT = document.getElementById('romaTitle'); if (roT) roT.textContent = L.romaTitle;
+  const roX = document.getElementById('romaText'); if (roX) roX.textContent = L.romaText;
+  const e2 = document.getElementById('eticaP2'); if (e2) e2.textContent = L.eticaP2;
+  const ec = document.getElementById('eticaClosing'); if (ec) ec.textContent = L.eticaClosing;
+  const ewl = document.getElementById('eticaWarningLabel'); if (ewl) ewl.textContent = L.eticaWarningLabel;
+  const ewt = document.getElementById('eticaWarningText'); if (ewt) ewt.textContent = L.eticaWarningText;
+
+  const if1 = document.getElementById('imgFallback1Label'); if (if1) if1.textContent = L.imgFallback1Label;
+  const if2 = document.getElementById('imgFallback2Label'); if (if2) if2.textContent = L.imgFallback2Label;
+  const if3 = document.getElementById('imgFallback3Label'); if (if3) if3.textContent = L.imgFallback3Label;
+
+  const pgT = document.getElementById('personaggiTitle'); if (pgT) pgT.textContent = L.personaggiTitle;
+  const lgT = document.getElementById('leggendeTitle'); if (lgT) lgT.textContent = L.leggendeTitle;
+  const etT = document.getElementById('eticaTitle'); if (etT) etT.textContent = L.eticaTitle;
+
+  const lS = document.getElementById('linkSigilli'); if (lS) lS.textContent = L.linkSigilli;
+  const lE = document.getElementById('linkErmetismo'); if (lE) lE.textContent = L.linkErmetismo;
+  const lC = document.getElementById('linkCabala'); if (lC) lC.textContent = L.linkCabala;
+  const lB = document.getElementById('linkBiblio'); if (lB) lB.textContent = L.linkBiblio;
+
+  renderPersonaggi(L.personaggi);
+  renderLeggende(L.leggende);
+
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+  const sbl = document.getElementById('shareBtnLabel'); if (sbl) sbl.textContent = L.shareBtnLabel;
+
+  const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+  const fh = document.getElementById('footerHome'); if (fh) fh.textContent = L.footerHome;
+  const fco = document.getElementById('footerContatti'); if (fco) fco.textContent = L.footerContatti;
+  const fa = document.getElementById('footerAbout'); if (fa) fa.textContent = L.footerAbout;
+  const fp = document.getElementById('footerPrivacy'); if (fp) fp.textContent = L.footerPrivacy;
+
+  renderFAQ(L.faq);
+
+  refreshNegromanziaUI();
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ══════════════════════════════════════════════════
+   AudioManager
+   ══════════════════════════════════════════════════ */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ══════════════════════════════════════════════════
+   Tema Giorno / Notte
+   ══════════════════════════════════════════════════ */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ══════════════════════════════════════════════════
+   Premium Gate
+   ══════════════════════════════════════════════════ */
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ══════════════════════════════════════════════════
+   Share
+   ══════════════════════════════════════════════════ */
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ══════════════════════════════════════════════════
+   FAQ Accordion
+   ══════════════════════════════════════════════════ */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ══════════════════════════════════════════════════
+   Rendering sezioni specifiche (personaggi / leggende)
+   ══════════════════════════════════════════════════ */
+function renderPersonaggi(list) {
+  const g = document.getElementById('personaggiGrid');
+  if (!g) return;
+  g.innerHTML = list.map(p => `
+    <div class="personaggio-card">
+      <div class="p-icon" aria-hidden="true">${p.icon}</div>
+      <div class="p-nome">${p.nome}</div>
+      <div class="p-era">${p.era}</div>
+      <div class="p-desc">${p.desc}</div>
+    </div>
+  `).join('');
+}
+function renderLeggende(list) {
+  const g = document.getElementById('leggendeList');
+  if (!g) return;
+  g.innerHTML = list.map(l => `
+    <div class="leggenda-card">
+      <div class="l-titolo">${l.titolo}</div>
+      <p>${l.testo}</p>
+    </div>
+  `).join('');
+}
+
+/* ══════════════════════════════════════════════════
+   DATI SPECIFICI PAGINA — Oracolo dei Reami (multilingua)
+   ══════════════════════════════════════════════════ */
+const DB_NEGROMANZIA = {
+  it: [
+    { key:'antenate', reame:'👵 Antenate & Guide Familiari', sottotitolo:'Memorie di Sangue e Saggezza Trasmessa',
+      elemento:'Terra', pianeta:'Luna Nera', colore:'Grigio cenere', erba:'Salvia', ora:'03:00–05:00',
+      desc:'Il regno degli Antenati è il più accessibile e il più sicuro dei piani eterei. Le guide familiari non sono entità pericolose — sono i sapienti del tuo albero genealogico, coloro che ti hanno preceduto e che portano una saggezza acquisita attraverso le stesse sfide che stai affrontando. Chiamarli non è evocazione — è memoria. Le loro risposte arrivano come ricordi spontanei, sogni chiari, sensazioni di familiarità.',
+      ritualeEtico:'Accendi una candela bianca (non nera — è un dialogo d\'amore, non di potere). Metti sul tavolo un oggetto appartenuto a un antenato, o una sua fotografia. Nomina ad alta voce 3 antenati. Offri un bicchiere d\'acqua fresca. Siediti in silenzio per 10 minuti. Ascolta.',
+      protezione:'Inizia sempre con: "Chiedo di essere visitato solo da antenati che mi vogliono bene e che operano per il mio più alto bene." Non invocare i morti recenti (aspetta almeno 1 anno).',
+      avvertenze:'Questa pratica è memoria e onore — non è magia nera. Se senti resistenza emotiva intensa, interrompi. Non praticare in stati di lutto acuto non elaborato.' },
+    { key:'luoghi', reame:'🏚️ Genius Loci & Spiriti della Terra', sottotitolo:'Custodi dei Luoghi e Memoria dei Posti',
+      elemento:'Terra', pianeta:'Saturno', colore:'Verde muschio', erba:'Rosmarino', ora:'Tramonto',
+      desc:'Ogni luogo ha una memoria. Le case vecchie, i boschi, le chiese, i crocevia — tutti portano l\'impronta energetica delle coscienze che li hanno abitati. Il Genius Loci è lo spirito custode di un luogo — non necessariamente personale o benevolo, ma fondamentalmente territoriale. Dialogare con esso significa chiedere rispetto e permesso prima di agire in uno spazio.',
+      ritualeEtico:'Entra nel luogo lentamente. Fermati sulla soglia. Poi di\' ad alta voce: "Chiedo il permesso di entrare in questo spazio con rispetto." Porta un\'offerta piccola: una moneta, un seme, una pietra. Tocca un elemento naturale e lascia che il luogo ti parli. Quando esci, ringrazia.',
+      protezione:'Non prendere nulla da luoghi antichi senza chiedere mentalmente il permesso. Se senti oppressione, allontanati senza creare resistenza.',
+      avvertenze:'Pratica di rispetto, non di potere. Non cercare spiriti di luoghi oscuri per curiosità — vanno onorati da distanza sicura, non contattati direttamente.' },
+    { key:'memorie', reame:'📜 Echi & Memorie Non Risolte', sottotitolo:'Questioni Sospese che Chiedono Chiusura',
+      elemento:'Acqua', pianeta:'Nettuno', colore:'Blu notte', erba:'Lavanda', ora:'Mezzanotte',
+      desc:'Non tutti i "contatti" con il piano sottile sono entità — molti sono echi. Memorie cristallizzate in emotività non risolta che continuano a vibrare come un disco rotto. La negromanzia etica in questo contesto non evoca — libera. Porta presenza e compassione verso ciò che non riesce a finire.',
+      ritualeEtico:'Scrivi su carta la domanda non detta — la cosa sospesa che "aleggia" in una situazione. Bruciala in un contenitore sicuro. Mentre brucia, di\': "Ciò che era sospeso ora trova la sua forma definitiva." Seppelli le ceneri.',
+      protezione:'Lavora con una sola situazione alla volta. Se senti emozioni intense, fermati — hai già contattato ciò che cerchi.',
+      avvertenze:'Questa è terapia energetica, non spiritismo. Se hai lutti irrisolti, considera un terapeuta in parallelo.' },
+    { key:'transizione', reame:'🕊️ Guardiani della Soglia', sottotitolo:'Chi Accompagna nei Passaggi e nei Cambiamenti',
+      elemento:'Aria', pianeta:'Urano', colore:'Argento', erba:'Iperico', ora:'Alba',
+      desc:'Ogni passaggio importante della vita ha i suoi Guardiani della Soglia. Sono le forze che presidiano i confini tra una fase e l\'altra della vita. Non sono entità da invocare: sono presenze da onorare e riconoscere. Quando li onori consapevolmente, i passaggi si fanno più fluidi.',
+      ritualeEtico:'Traccia un cerchio intorno a te con gesso o sale grosso. Al centro metti un oggetto che rappresenta la transizione. Respira 4-7-8 per 5 cicli. Senti semplicemente la soglia. Lascia che il Guardiano ti dia il suo sigillo.',
+      protezione:'Chiudi sempre il cerchio quando finisci (senso antiorario). Il Guardiano ha già lavorato nella tua assenza.',
+      avvertenze:'Lavora con un solo passaggio alla volta. Se hai paura intensa, elabora la paura prima, poi ritorna al rito.' }
+  ],
+  en: [
+    { key:'antenate', reame:'👵 Ancestors & Family Guides', sottotitolo:'Blood Memories and Inherited Wisdom',
+      elemento:'Earth', pianeta:'Black Moon', colore:'Ash gray', erba:'Sage', ora:'3:00–5:00 AM',
+      desc:'The Ancestral realm is the most accessible and safest of the subtle planes. Family guides are not dangerous entities — they are the elders of your family tree, who carry wisdom gained through challenges much like your own. Calling them is not evocation — it is memory. Their answers arrive as spontaneous memories, vivid dreams, or a sense of familiarity.',
+      ritualeEtico:'Light a white candle (not black — this is a dialogue of love, not power). Place an object or photo of an ancestor on the table. Name 3 ancestors aloud. Offer a glass of fresh water. Sit in silence for 10 minutes. Listen.',
+      protezione:'Always begin with: "I ask to be visited only by ancestors who love me and work for my highest good." Do not invoke the recently deceased (wait at least a year).',
+      avvertenze:'This is a practice of memory and honor, not black magic. If you feel intense emotional resistance, stop. Do not practice during acute unprocessed grief.' },
+    { key:'luoghi', reame:'🏚️ Genius Loci & Earth Spirits', sottotitolo:'Guardians of Places and Their Memory',
+      elemento:'Earth', pianeta:'Saturn', colore:'Moss green', erba:'Rosemary', ora:'Sunset',
+      desc:'Every place carries a memory. Old houses, woods, churches, crossroads — all bear the energetic imprint of the consciousnesses that dwelt there. The Genius Loci is the guardian spirit of a place — not necessarily personal or benevolent, but fundamentally territorial. Speaking with it means asking respect and permission before acting in a space.',
+      ritualeEtico:'Enter the place slowly. Pause at the threshold. Say aloud: "I ask permission to enter this space with respect." Bring a small offering: a coin, a seed, a stone. Touch a natural element and let the place speak to you. Thank it when you leave.',
+      protezione:'Never take anything from ancient places without mentally asking permission. If you feel oppression, leave without creating resistance.',
+      avvertenze:'A practice of respect, not power. Do not seek spirits of dark places out of curiosity — honor them from a safe distance, never contact directly.' },
+    { key:'memorie', reame:'📜 Echoes & Unresolved Memories', sottotitolo:'Suspended Matters Asking for Closure',
+      elemento:'Water', pianeta:'Neptune', colore:'Night blue', erba:'Lavender', ora:'Midnight',
+      desc:'Not all "contacts" with the subtle plane are entities — many are echoes. Emotional patterns crystallized in unresolved feeling that keep vibrating like a broken record. Ethical necromancy here does not evoke — it releases. It brings presence and compassion to what cannot end.',
+      ritualeEtico:'Write the unspoken question on paper — the suspended thing hovering over a situation. Burn it in a safe container. As it burns, say: "What was suspended now finds its final form." Bury the ashes.',
+      protezione:'Work with one situation at a time. If intense emotions arise, stop — you have already contacted what you sought.',
+      avvertenze:'This is energetic therapy, not spiritism. If you carry unresolved grief, consider parallel support from a therapist.' },
+    { key:'transizione', reame:'🕊️ Guardians of the Threshold', sottotitolo:'Those Who Accompany Passages and Change',
+      elemento:'Air', pianeta:'Uranus', colore:'Silver', erba:'St. John\'s Wort', ora:'Dawn',
+      desc:'Every major life passage has its Guardians of the Threshold. They are the forces overseeing the boundaries between one phase of life and the next. They are not entities to summon: they are presences to honor and recognize. When honored consciously, passages flow more smoothly.',
+      ritualeEtico:'Trace a circle around yourself with chalk or coarse salt. Place an object representing your transition at the center. Breathe 4-7-8 for 5 cycles. Simply feel the threshold. Let the Guardian give you its sign.',
+      protezione:'Always close the circle when finished (counter-clockwise). The Guardian has already worked in your absence.',
+      avvertenze:'Work with one passage at a time. If fear is intense, process it first, then return to the rite.' }
+  ],
+  es: [
+    { key:'antenate', reame:'👵 Ancestros y Guías Familiares', sottotitolo:'Memorias de Sangre y Sabiduría Heredada',
+      elemento:'Tierra', pianeta:'Luna Negra', colore:'Gris ceniza', erba:'Salvia', ora:'3:00–5:00 AM',
+      desc:'El reino de los Ancestros es el más accesible y seguro de los planos sutiles. Las guías familiares no son entidades peligrosas — son los sabios de tu árbol genealógico, quienes te precedieron y portan una sabiduría adquirida a través de retos similares a los tuyos. Llamarlos no es evocación — es memoria. Sus respuestas llegan como recuerdos espontáneos, sueños vívidos, sensaciones de familiaridad.',
+      ritualeEtico:'Encienda una vela blanca (no negra — es un diálogo de amor, no de poder). Coloque un objeto o foto de un ancestro. Nombre en voz alta a 3 ancestros. Ofrezca un vaso de agua fresca. Siéntese en silencio 10 minutos. Escuche.',
+      protezione:'Comience siempre con: "Pido ser visitado solo por ancestros que me quieren bien y actúan por mi mayor bien." No invoque a los difuntos recientes (espere al menos 1 año).',
+      avvertenze:'Esta práctica es memoria y honor, no magia negra. Si siente resistencia emocional intensa, interrúmpala. No practique en duelo agudo no procesado.' },
+    { key:'luoghi', reame:'🏚️ Genius Loci y Espíritus de la Tierra', sottotitolo:'Custodios de los Lugares y su Memoria',
+      elemento:'Tierra', pianeta:'Saturno', colore:'Verde musgo', erba:'Romero', ora:'Atardecer',
+      desc:'Cada lugar tiene una memoria. Casas viejas, bosques, iglesias, cruces de caminos — todos llevan la huella energética de las conciencias que los habitaron. El Genius Loci es el espíritu custodio de un lugar — no necesariamente personal o benévolo, pero fundamentalmente territorial. Dialogar con él significa pedir respeto y permiso antes de actuar en un espacio.',
+      ritualeEtico:'Entre lentamente en el lugar. Deténgase en el umbral. Diga en voz alta: "Pido permiso para entrar en este espacio con respeto." Traiga una pequeña ofrenda: una moneda, una semilla, una piedra. Toque un elemento natural y deje que el lugar le hable. Agradezca al salir.',
+      protezione:'No tome nada de lugares antiguos sin pedir mentalmente permiso. Si siente opresión, aléjese sin crear resistencia.',
+      avvertenze:'Práctica de respeto, no de poder. No busque espíritus de lugares oscuros por curiosidad — hónrelos desde una distancia segura, sin contacto directo.' },
+    { key:'memorie', reame:'📜 Ecos y Memorias No Resueltas', sottotitolo:'Asuntos Suspendidos que Piden Cierre',
+      elemento:'Agua', pianeta:'Neptuno', colore:'Azul noche', erba:'Lavanda', ora:'Medianoche',
+      desc:'No todos los "contactos" con el plano sutil son entidades — muchos son ecos. Patrones emocionales cristalizados en emotividad no resuelta que siguen vibrando como un disco rayado. La necromancia ética aquí no evoca — libera. Aporta presencia y compasión hacia lo que no logra terminar.',
+      ritualeEtico:'Escriba en papel la pregunta no dicha — lo suspendido que flota sobre una situación. Quémelo en un recipiente seguro. Mientras arde, diga: "Lo que estaba suspendido ahora encuentra su forma definitiva." Entierre las cenizas.',
+      protezione:'Trabaje con una sola situación a la vez. Si surgen emociones intensas, detente — ya ha contactado lo que buscaba.',
+      avvertenze:'Esto es terapia energética, no espiritismo. Si tiene duelos no resueltos, considere apoyo terapéutico en paralelo.' },
+    { key:'transizione', reame:'🕊️ Guardianes del Umbral', sottotitolo:'Quienes Acompañan los Pasajes y Cambios',
+      elemento:'Aire', pianeta:'Urano', colore:'Plata', erba:'Hipérico', ora:'Amanecer',
+      desc:'Cada pasaje importante de la vida tiene sus Guardianes del Umbral. Son las fuerzas que custodian los límites entre una fase y otra de la vida. No son entidades para invocar: son presencias para honrar y reconocer. Cuando se les honra conscientemente, los pasajes fluyen mejor.',
+      ritualeEtico:'Trace un círculo a su alrededor con tiza o sal gruesa. Coloque en el centro un objeto que represente su transición. Respire 4-7-8 durante 5 ciclos. Simplemente sienta el umbral. Deje que el Guardián le dé su señal.',
+      protezione:'Cierre siempre el círculo al terminar (sentido antihorario). El Guardián ya ha trabajado en su ausencia.',
+      avvertenze:'Trabaje con un solo pasaje a la vez. Si el miedo es intenso, procéselo antes de volver al rito.' }
+  ]
+};
 
 let _necroReame = 0;
 
@@ -729,8 +1321,9 @@ function necroRandom(){
 }
 
 function calcNegromanzia(){
+  const L = LANG[currentLang];
   const domanda = (document.getElementById('necroDomanda')?.value||'').trim();
-  const d = DB_NEGROMANZIA[_necroReame];
+  const d = DB_NEGROMANZIA[currentLang][_necroReame];
   const domHtml = domanda ? `<div class="domanda-shown">❓ "${domanda}"</div>` : '';
   const parts = d.reame.split(' ');
   const ico = parts[0];
@@ -738,30 +1331,30 @@ function calcNegromanzia(){
 
   document.getElementById('necroResult').innerHTML = `
     <div class="result-header">
-      <span class="result-reame-icon">${ico}</span>
+      <span class="result-reame-icon" aria-hidden="true">${ico}</span>
       <div class="result-reame-nome">${nome}</div>
       <div class="result-sottotitolo">${d.sottotitolo}</div>
     </div>
     <div class="info-grid">
-      <div class="info-card"><div class="ico">🌿</div><div class="lbl">ELEMENTO</div><div class="val">${d.elemento}</div></div>
-      <div class="info-card"><div class="ico">🌑</div><div class="lbl">PIANETA</div><div class="val">${d.pianeta}</div></div>
-      <div class="info-card"><div class="ico">🎨</div><div class="lbl">COLORE</div><div class="val">${d.colore}</div></div>
-      <div class="info-card"><div class="ico">⏰</div><div class="lbl">ORA</div><div class="val">${d.ora}</div></div>
+      <div class="info-card"><div class="ico" aria-hidden="true">🌿</div><div class="lbl">${L.labelElemento}</div><div class="val">${d.elemento}</div></div>
+      <div class="info-card"><div class="ico" aria-hidden="true">🌑</div><div class="lbl">${L.labelPianeta}</div><div class="val">${d.pianeta}</div></div>
+      <div class="info-card"><div class="ico" aria-hidden="true">🎨</div><div class="lbl">${L.labelColore}</div><div class="val">${d.colore}</div></div>
+      <div class="info-card"><div class="ico" aria-hidden="true">⏰</div><div class="lbl">${L.labelOra}</div><div class="val">${d.ora}</div></div>
     </div>
     ${domHtml}
-    <div class="r-block"><h4>🕯️ IL REAME</h4><p>${d.desc}</p></div>
-    <div class="r-block ritual"><h4>📜 RITUALE DI ASCOLTO ETICO</h4><p>${d.ritualeEtico}</p></div>
-    <div class="r-block protezione"><h4>🛡️ PROTEZIONE</h4><p>${d.protezione}</p></div>
-    <div class="r-block avviso"><h4>⚠️ AVVERTENZE</h4><p>${d.avvertenze}</p></div>
+    <div class="r-block"><h4>${L.labelReame}</h4><p>${d.desc}</p></div>
+    <div class="r-block ritual"><h4>${L.labelRituale}</h4><p>${d.ritualeEtico}</p></div>
+    <div class="r-block protezione"><h4>${L.labelProtezione}</h4><p>${d.protezione}</p></div>
+    <div class="r-block avviso"><h4>${L.labelAvvertenze}</h4><p>${d.avvertenze}</p></div>
     <div class="btn-row" style="margin-top:14px">
-      <button class="btn btn-sec" onclick="resetNegromanzia()">🔄 Altro Reame</button>
+      <button class="btn btn-sec" onclick="resetNegromanzia()">${L.btnAltroReame}</button>
     </div>
   `;
 
   document.getElementById('necroResult').style.display = 'block';
   document.getElementById('necroForm').style.display = 'none';
   burst();
-  showToast('💀 La soglia si è aperta…');
+  showToast(L.toastMsg);
 }
 
 function resetNegromanzia(){
@@ -792,6 +1385,31 @@ function burst(){
     setTimeout(()=>el.remove(), 1000);
   }
 }
+
+/* ── Aggiorna testi statici del tool e ricalcola se un risultato è già visibile ── */
+function refreshNegromanziaUI(){
+  const L = LANG[currentLang];
+  const tt = document.getElementById('tool-title'); if (tt) tt.textContent = L.toolTitle;
+  const ts = document.getElementById('tool-sub'); if (ts) ts.textContent = L.toolSub;
+  const dq = document.getElementById('necroDomanda'); if (dq) dq.placeholder = L.domandaPlaceholder;
+  const br = document.getElementById('btnRandomReame'); if (br) br.textContent = L.btnRandom;
+  const ba = document.getElementById('btnAttraversa'); if (ba) ba.textContent = L.btnAttraversa;
+  L.tabLabels.forEach((label, i) => { const el = document.getElementById('tabLabel'+i); if (el) el.textContent = label; });
+
+  const resultBox = document.getElementById('necroResult');
+  if (resultBox && resultBox.style.display === 'block') {
+    calcNegromanzia();
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   INIT
+   ══════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+  document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+});
 </script>
 </body>
 </html>

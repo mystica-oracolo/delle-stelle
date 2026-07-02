@@ -447,6 +447,21 @@ a:hover{text-decoration:underline}
 .seo-crosslinks ul{padding-left:18px}
 .seo-crosslinks li{margin:6px 0}
 
+/* ── Accessibilità: skip link + focus ── */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:2000;
+  background:var(--gold);color:#0a0514;padding:10px 18px;
+  border-radius:0 0 10px 0;font-family:'Cinzel',serif;font-size:12px;
+  letter-spacing:1px;text-decoration:none;
+}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;
+}
+/* ── Performance: rendering sotto la piega ── */
+#numeri,#maestro,#tabella,#come-calcolare,
+#cicli,.article-section,.faq-section{content-visibility:auto;contain-intrinsic-size:1px 900px}
+
 /* ── Footer ── */
 .page-footer{
   text-align:center;padding:22px 16px;
@@ -462,6 +477,8 @@ a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link" id="skip-link">Vai al contenuto principale</a>
 
 <!-- Cosmos background -->
 <div class="cosmos" aria-hidden="true"></div>
@@ -485,85 +502,36 @@ a:hover{text-decoration:underline}
   </div>
 </header>
 
-<!-- ── PREMIUM MODAL ── -->
-<div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog">
-  <div class="modal-overlay" onclick="closePremiumModal()"></div>
-  <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
-    <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
-    <div id="_pm_toggle_wrap" style="margin:8px 0 4px;">
-      <button onclick="(function(){var w=document.getElementById('_pm_code_wrap');w.style.display=w.style.display==='none'?'block':'none';})()" style="background:none;border:none;color:rgba(212,175,55,.7);font-size:.78rem;cursor:pointer;font-family:Cinzel,serif;padding:0;letter-spacing:.03em;">🔑 Ho già pagato — Inserisci codice</button>
-    </div>
-    <div id="_pm_code_wrap" style="display:none;margin:6px 0 8px;">
-      <input id="_pm_code_inp" type="text" maxlength="19"
-        placeholder="MYST-XXXX-XXXX-XXXX"
-        oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9-]/g,'')"
-        style="width:100%;background:rgba(42,23,72,.6);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:9px 11px;color:#e8e0f0;font-family:Cinzel,serif;font-size:.8rem;letter-spacing:.12em;outline:none;box-sizing:border-box;margin-bottom:7px;">
-      <button onclick="_mystUnlockCode()" style="width:100%;padding:11px;border-radius:8px;border:none;background:linear-gradient(135deg,#d4af37,#9a7820);color:#0a0514;font-family:Cinzel,serif;font-size:.82rem;font-weight:700;cursor:pointer;letter-spacing:.04em;">✦ Sblocca con il Codice</button>
-      <div id="_pm_code_err" style="display:none;margin-top:7px;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);border-radius:7px;padding:8px 10px;color:#ff9090;font-size:.78rem;font-family:Crimson Pro,serif;"></div>
-      <div id="_pm_code_ok" style="display:none;margin-top:7px;background:rgba(55,212,100,.1);border:1px solid rgba(55,212,100,.3);border-radius:7px;padding:8px 10px;color:#90ffb0;font-size:.82rem;font-family:Crimson Pro,serif;">✦ Premium attivato! Ricarico…</div>
-      <p style="margin-top:8px;font-family:Crimson Pro,serif;font-size:.73rem;color:rgba(184,178,209,.6);line-height:1.4;">Non hai il codice? <a href="./premium-restore.html" style="color:rgba(212,175,55,.75);">Recupera accesso con email e data di nascita →</a></p>
-    </div>
-    <script>
-    if(!window._mystUnlockCode){
-      window._mystUnlockCode = async function(){
-        var inp = document.getElementById('_pm_code_inp');
-        var err = document.getElementById('_pm_code_err');
-        var ok  = document.getElementById('_pm_code_ok');
-        var val = inp ? inp.value.trim().toUpperCase() : '';
-        err.style.display='none'; ok.style.display='none';
-        var re = /^MYST-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
-        if(!re.test(val)){
-          err.textContent='Formato non valido. Esempio: MYST-A3F9-C12B-7D4E';
-          err.style.display='block';
-          return;
-        }
-        try{ localStorage.setItem('myst_premium','1'); localStorage.setItem('myst_premium_code',val); localStorage.setItem('myst_premium_date',new Date().toISOString()); }catch(e){}
-        ok.style.display='block';
-        setTimeout(function(){ window.location.reload(); }, 1600);
-      };
-    }
-    </script>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
-  </div>
-</div>
-
-<main>
-
-  <!-- HERO -->
+<main id="main-content">
   <div class="hero">
-    <span class="hero-symbol">🔢</span>
-    <h1>Numerologia</h1>
-    <p class="hero-sub">Ogni numero porta una vibrazione cosmica. Calcola il tuo Numero del Sentiero di Vita e il Numero del Destino — e scopri il messaggio che l'universo ha scritto nel giorno in cui sei nato.</p>
-    <span class="hero-badge">Numerologia Pitagorica · Sistema Occidentale</span>
+    <span class="hero-symbol" aria-hidden="true">🔢</span>
+    <h1 id="hero-title">Numerologia</h1>
+    <p class="hero-sub" id="hero-sub">Ogni numero porta una vibrazione cosmica. Calcola il tuo Numero del Sentiero di Vita e il Numero del Destino — e scopri il messaggio che l'universo ha scritto nel giorno in cui sei nato.</p>
+    <span class="hero-badge" id="hero-badge">Numerologia Pitagorica · Sistema Occidentale</span>
   </div>
 
   <!-- BREADCRUMB -->
   <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="https://mysticaoracoli.it/">Home</a>
-    <span>›</span>
-    <a href="https://mysticaoracoli.it/enciclopedia.html">Enciclopedia</a>
-    <span>›</span>
-    Numerologia
+    <a href="https://mysticaoracoli.it/" id="bc-home">Home</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://mysticaoracoli.it/enciclopedia.html" id="bc-enc">Enciclopedia</a>
+    <span aria-hidden="true">›</span>
+    <span id="bc-current">Numerologia</span>
   </nav>
 
   <!-- TOC -->
   <div class="toc">
-    <div class="toc-title">📜 Indice</div>
+    <div class="toc-title" id="toc-title">📜 Indice</div>
     <ol>
-      <li><a href="#calcolatore">Calcolatore Numerologico</a></li>
-      <li><a href="#cosa-e">Cos'è la Numerologia</a></li>
-      <li><a href="#numeri">I Numeri dall'1 al 9</a></li>
-      <li><a href="#maestro">I Numeri Maestro 11, 22, 33</a></li>
-      <li><a href="#tabella">Tabella Pitagorica Lettere</a></li>
-      <li><a href="#come-calcolare">Come Calcolare i Tuoi Numeri</a></li>
-      <li><a href="#cicli">Cicli Numerologici</a></li>
-      <li><a href="#articolo">Storia e Significato</a></li>
-      <li><a href="#faq">Domande Frequenti</a></li>
+      <li><a href="#calcolatore" id="toc-1">Calcolatore Numerologico</a></li>
+      <li><a href="#cosa-e" id="toc-2">Cos'è la Numerologia</a></li>
+      <li><a href="#numeri" id="toc-3">I Numeri dall'1 al 9</a></li>
+      <li><a href="#maestro" id="toc-4">I Numeri Maestro 11, 22, 33</a></li>
+      <li><a href="#tabella" id="toc-5">Tabella Pitagorica Lettere</a></li>
+      <li><a href="#come-calcolare" id="toc-6">Come Calcolare i Tuoi Numeri</a></li>
+      <li><a href="#cicli" id="toc-7">Cicli Numerologici</a></li>
+      <li><a href="#articolo" id="toc-8">Storia e Significato</a></li>
+      <li><a href="#faq" id="toc-9">Domande Frequenti</a></li>
     </ol>
   </div>
 
@@ -573,7 +541,7 @@ a:hover{text-decoration:underline}
     <p id="calc-intro">Scegli se calcolare il tuo <strong>Numero del Sentiero di Vita</strong> (dalla data di nascita) o il <strong>Numero del Destino</strong> (dal nome completo).</p>
 
     <div class="calc-box">
-      <div class="calc-title">✦ IL TUO NUMERO ✦</div>
+      <div class="calc-title" id="calc-title">✦ IL TUO NUMERO ✦</div>
       <div class="num-tabs">
         <button class="num-tab active" onclick="numSelectTab(0)" id="tab0">📅 <span id="tab-vita-lbl">Sentiero di Vita</span></button>
         <button class="num-tab" onclick="numSelectTab(1)" id="tab1">🔤 <span id="tab-destino-lbl">Numero Destino</span></button>
@@ -599,125 +567,102 @@ a:hover{text-decoration:underline}
 
   <!-- ── 2. COS'È ── -->
   <section id="cosa-e">
-    <h2>Cos'è la Numerologia</h2>
-    <p>La numerologia è la scienza sacra dei numeri — l'arte di decifrare il linguaggio matematico con cui l'universo ha strutturato la realtà. La sua forma più diffusa in Occidente è la <strong>numerologia pitagorica</strong>, attribuita al filosofo greco Pitagora (570–495 a.C.), che affermava: <em>"Il numero è la regola di tutte le cose."</em></p>
-    <p>Secondo questa visione, ogni numero dall'1 al 9 (più i Numeri Maestro 11, 22 e 33) porta con sé una specifica vibrazione energetica. Quando convertiamo una data di nascita o un nome in un numero, stiamo essenzialmente decodificando quale di queste vibrazioni ha segnato il nostro ingresso in questo mondo — e quindi quale energia fondamentale ci accompagna per tutta la vita.</p>
+    <h2 id="ce-title">Cos'è la Numerologia</h2>
+    <p id="ce-p1">La numerologia è la scienza sacra dei numeri — l'arte di decifrare il linguaggio matematico con cui l'universo ha strutturato la realtà. La sua forma più diffusa in Occidente è la <strong>numerologia pitagorica</strong>, attribuita al filosofo greco Pitagora (570–495 a.C.), che affermava: <em>"Il numero è la regola di tutte le cose."</em></p>
+    <p id="ce-p2">Secondo questa visione, ogni numero dall'1 al 9 (più i Numeri Maestro 11, 22 e 33) porta con sé una specifica vibrazione energetica. Quando convertiamo una data di nascita o un nome in un numero, stiamo essenzialmente decodificando quale di queste vibrazioni ha segnato il nostro ingresso in questo mondo — e quindi quale energia fondamentale ci accompagna per tutta la vita.</p>
     <div class="highlight">
-      <p>🔑 La numerologia non predice il futuro in modo deterministico: rivela <strong>potenziali, tendenze e disposizioni karmiche</strong>. È uno strumento di autoconoscenza, non di fatalismo.</p>
+      <p id="ce-highlight">🔑 La numerologia non predice il futuro in modo deterministico: rivela <strong>potenziali, tendenze e disposizioni karmiche</strong>. È uno strumento di autoconoscenza, non di fatalismo.</p>
     </div>
-    <p>Oltre alla tradizione pitagorica, esistono la numerologia caldea (più antica, usata in Mesopotamia), la numerologia cabalistica (legata all'albero della Vita) e quella vedica (integrata nell'astrologia indiana). In MYSTICA utilizziamo il sistema pitagorico occidentale, il più adatto alla lingua italiana e alle lingue europee.</p>
+    <p id="ce-p3">Oltre alla tradizione pitagorica, esistono la numerologia caldea (più antica, usata in Mesopotamia), la numerologia cabalistica (legata all'albero della Vita) e quella vedica (integrata nell'astrologia indiana). In MYSTICA utilizziamo il sistema pitagorico occidentale, il più adatto alla lingua italiana e alle lingue europee.</p>
   </section>
 
   <!-- ── 3. I NUMERI ── -->
   <section id="numeri">
-    <h2>I Numeri dall'1 al 9</h2>
-    <p>Ogni numero porta un'archetipo, una vibrazione, una missione. Ecco una panoramica dei nove numeri fondamentali:</p>
+    <h2 id="num1-9-title">I Numeri dall'1 al 9</h2>
+    <p id="num1-9-intro">Ogni numero porta un'archetipo, una vibrazione, una missione. Ecco una panoramica dei nove numeri fondamentali:</p>
 
-    <div class="num-grid">
-      <div class="num-card"><div class="num-card-n">1</div><span class="num-card-emoji">☀️</span><div class="num-card-name">Il Pioniere</div><div class="num-card-kw">Leadership · Indipendenza · Coraggio</div></div>
-      <div class="num-card"><div class="num-card-n">2</div><span class="num-card-emoji">🌙</span><div class="num-card-name">Il Diplomatico</div><div class="num-card-kw">Sensibilità · Partnership · Intuizione</div></div>
-      <div class="num-card"><div class="num-card-n">3</div><span class="num-card-emoji">🎨</span><div class="num-card-name">Il Creativo</div><div class="num-card-kw">Creatività · Espressione · Gioia</div></div>
-      <div class="num-card"><div class="num-card-n">4</div><span class="num-card-emoji">🏛️</span><div class="num-card-name">Il Costruttore</div><div class="num-card-kw">Stabilità · Disciplina · Struttura</div></div>
-      <div class="num-card"><div class="num-card-n">5</div><span class="num-card-emoji">🦋</span><div class="num-card-name">Il Libero</div><div class="num-card-kw">Libertà · Avventura · Cambiamento</div></div>
-      <div class="num-card"><div class="num-card-n">6</div><span class="num-card-emoji">💚</span><div class="num-card-name">Il Nutrimento</div><div class="num-card-kw">Amore · Responsabilità · Cura</div></div>
-      <div class="num-card"><div class="num-card-n">7</div><span class="num-card-emoji">🔭</span><div class="num-card-name">Il Cercatore</div><div class="num-card-kw">Saggezza · Analisi · Misticismo</div></div>
-      <div class="num-card"><div class="num-card-n">8</div><span class="num-card-emoji">⚡</span><div class="num-card-name">Il Potere</div><div class="num-card-kw">Potere · Abbondanza · Autorità</div></div>
-      <div class="num-card"><div class="num-card-n">9</div><span class="num-card-emoji">🌌</span><div class="num-card-name">Il Saggio Universale</div><div class="num-card-kw">Saggezza · Compassione · Servizio</div></div>
-    </div>
+    <div class="num-grid" id="numGrid" aria-label="Griglia numeri 1-9"></div>
 
-    <div class="card"><h3>☀️ 1 — Il Pioniere</h3><p>Il numero 1 è l'energia del sole — singolare, luminoso, irripetibile. Chi porta questa vibrazione è nato per tracciare strade dove non ce n'erano: non segue, guida; non imita, crea. La vita del numero 1 è un esperimento originale, e questo può essere solitario, ma è anche magnifico. Il compito karmico è imparare a guidare senza schiacciare, e a essere indipendente senza diventare incapace di connettersi.<br><strong>Luci:</strong> iniziativa straordinaria, coraggio pionieristico, forza di volontà, capacità di creare dal nulla.<br><strong>Ombre:</strong> tendenza all'arroganza, difficoltà a ricevere aiuto, egocentrismo sotto stress.</p></div>
-    <div class="card"><h3>🌙 2 — Il Diplomatico</h3><p>Il numero 2 è l'energia della luna — riflessiva, ciclica, empatica. Il suo punto di forza non sta nel fare da solo ma nel fare con. Ha un'intuizione psichica rara e una capacità di comprendere gli altri che spesso lascia senza parole. Il compito karmico è imparare a ricevere quanto si dà.<br><strong>Luci:</strong> empatia profondissima, diplomazia raffinata, intuizione quasi psichica, dono per le relazioni.<br><strong>Ombre:</strong> indecisione cronica, eccessiva dipendenza dall'approvazione altrui, paura del conflitto.</p></div>
-    <div class="card"><h3>🎨 3 — Il Creativo</h3><p>Il numero 3 è la vibrazione della creazione pura — la trinità che genera tutto ciò che esiste. Nato con un dono espressivo che si manifesta come arte, parole, musica o presenza magnetica. Quando è al suo meglio, porta gioia autentica nel mondo semplicemente essendo sé stesso.<br><strong>Luci:</strong> creatività abbondante, comunicazione brillante, ottimismo contagioso, senso dell'umorismo che guarisce.<br><strong>Ombre:</strong> dispersione delle energie, superficialità emotiva, tendenza a evitare i problemi attraverso l'ironia, incompletezza dei progetti.</p></div>
-    <div class="card"><h3>🏛️ 4 — Il Costruttore</h3><p>Il numero 4 è l'energia della terra — solida, affidabile, capace di costruire ciò che dura secoli. È venuto a creare fondamenta su cui altri possono edificare la loro vita. Il lavoro è metodico, preciso, paziente. Il compito karmico è trovare la bellezza nella routine e capire che la rigidità è il confine tra struttura e prigione.<br><strong>Luci:</strong> affidabilità assoluta, disciplina fuori dal comune, capacità costruttiva concreta.<br><strong>Ombre:</strong> rigidità di pensiero, tendenza al workaholic, resistenza all'innovazione.</p></div>
-    <div class="card"><h3>🦋 5 — Il Libero</h3><p>Il numero 5 è la vibrazione della libertà assoluta — il vento che non può essere imprigionato. Ha bisogno di varietà, movimento, esperienze nuove come altri hanno bisogno d'aria. Il dono al mondo è l'adattabilità e il coraggio di abbracciare l'ignoto.<br><strong>Luci:</strong> adattabilità straordinaria, coraggio verso l'ignoto, curiosità insaziabile, capacità di prosperare nel cambiamento.<br><strong>Ombre:</strong> incostanza, difficoltà a completare i progetti, paura dell'impegno a lungo termine.</p></div>
-    <div class="card"><h3>💚 6 — Il Nutrimento</h3><p>Il numero 6 è la vibrazione dell'amore in azione — non l'amore romantico ma quello cosmico, il tipo di amore che si manifesta come cura, presenza, nutrimento. È nato per costruire ambienti dove gli altri fioriscono. Il compito karmico è capire che prendersi cura non significa sacrificare sé stessi.<br><strong>Luci:</strong> amore incondizionato, dono per la cura e la guarigione, senso della responsabilità, capacità di creare armonia.<br><strong>Ombre:</strong> tendenza al martirio emotivo, perfezionismo, ingerenza nelle scelte altrui per amore.</p></div>
-    <div class="card"><h3>🔭 7 — Il Cercatore</h3><p>Il numero 7 è la vibrazione del mistero — il numero del sacro, del cercare, del penetrare le superfici. Ha un'intelligenza penetrante che non accetta le risposte facili. È un cercatore di verità in tutte le sue forme: scientifiche, spirituali, filosofiche. Il compito karmico è ricordare che la solitudine del ricercatore non deve diventare isolamento.<br><strong>Luci:</strong> intelligenza analitica profonda, intuizione mistica, onestà intellettuale assoluta.<br><strong>Ombre:</strong> tendenza all'isolamento, difficoltà a fidarsi degli altri, cinismo difensivo.</p></div>
-    <div class="card"><h3>⚡ 8 — Il Potere</h3><p>Il numero 8 è la vibrazione del potere cosmico — il simbolo dell'infinito in piedi. È qui per padroneggiare il mondo materiale, non per servirlo. Denaro, potere, autorità — non sono obiettivi, ma strumenti. Il compito karmico è usare il potere al servizio degli altri, non come fine.<br><strong>Luci:</strong> forza esecutiva straordinaria, visione strategica, determinazione invincibile, autorità naturale rispettata.<br><strong>Ombre:</strong> tendenza al controllo, ossessione per il successo a scapito delle relazioni.</p></div>
-    <div class="card"><h3>🌌 9 — Il Saggio Universale</h3><p>Il numero 9 è la vibrazione della fine e della completezza — il numero che contiene tutti gli altri. Ha vissuto molte esperienze che gli hanno donato una comprensione dell'anima umana che altri non riescono a toccare. È nato per servire qualcosa di più grande di sé. Il compito karmico è lasciar andare senza rimpianto.<br><strong>Luci:</strong> saggezza profonda, compassione universale, generosità senza confini, visione che abbraccia tutta l'umanità.<br><strong>Ombre:</strong> difficoltà a lasciare andare, tendenza al martirio, eccessiva sensibilità alle sofferenze altrui.</p></div>
+    <div id="numDetailCards"></div>
   </section>
 
   <!-- ── 4. NUMERI MAESTRO ── -->
   <section id="maestro">
-    <h2>I Numeri Maestro: 11, 22, 33</h2>
-    <p>I Numeri Maestro sono vibrazioni elevate che non vengono ridotte ulteriormente durante il calcolo. Portare un Numero Maestro significa avere una missione karmica più intensa — e sfide proporzionalmente più grandi.</p>
+    <h2 id="master-title">I Numeri Maestro: 11, 22, 33</h2>
+    <p id="master-intro">I Numeri Maestro sono vibrazioni elevate che non vengono ridotte ulteriormente durante il calcolo. Portare un Numero Maestro significa avere una missione karmica più intensa — e sfide proporzionalmente più grandi.</p>
 
-    <div class="card">
-      <div class="num-card master" style="display:inline-block;margin-bottom:12px"><div class="num-card-n">11</div><span class="num-card-emoji">✨</span><div class="num-card-name">Il Visionario Illuminato</div></div>
-      <p>L'11 è il primo Numero Maestro — una vibrazione elevata che non tutti sono pronti a portare. Chi lo porta è un canale tra il visibile e l'invisibile, tra il quotidiano e il trascendente. La sua intuizione non viene dalla logica ma da qualcosa di più antico. Ha l'incarico di ispirare, illuminare, essere un faro per chi è al buio. Il costo di questa vibrazione è un'alta sensibilità e a volte il peso di sapere troppo.<br><strong>Luci:</strong> intuizione quasi psichica, capacità di ispirare e illuminare, visione del futuro, dono per la guarigione spirituale.<br><strong>Ombre:</strong> estrema sensibilità alle energie negative, tendenza all'esaurimento nervoso, cicli di luce e buio molto pronunciati.</p>
-    </div>
-    <div class="card">
-      <div class="num-card master" style="display:inline-block;margin-bottom:12px"><div class="num-card-n">22</div><span class="num-card-emoji">🏗️</span><div class="num-card-name">Il Maestro Costruttore</div></div>
-      <p>Il 22 è il Numero Maestro della costruzione — la capacità di prendere sogni impossibili e renderli realtà concrete. Ha la visione dell'11 e la capacità pratica dell'8 moltiplicata. Non è qui per fare cose piccole: le strutture che costruisce — fisiche, intellettuali, spirituali — sono destinate a durare generazioni.<br><strong>Luci:</strong> capacità di manifestare visioni straordinarie, leadership monumentale, disciplina fuori dal comune.<br><strong>Ombre:</strong> tendenza all'eccesso di ambizione, difficoltà nelle relazioni intime per l'intensità del focus.</p>
-    </div>
-    <div class="card">
-      <div class="num-card master" style="display:inline-block;margin-bottom:12px"><div class="num-card-n">33</div><span class="num-card-emoji">💫</span><div class="num-card-name">Il Maestro dell'Amore</div></div>
-      <p>Il 33 è il Numero Maestro dell'amore compassionevole — la vibrazione del guaritore cosmico, del maestro spirituale, del portatore di luce che ama incondizionatamente. Pochissime anime sono pronte per questa vibrazione. Chi porta il 33 è qui con una missione di amore su scala globale: non sta solo vivendo per sé stesso, ogni sua azione ha risonanza cosmica.<br><strong>Luci:</strong> amore incondizionato su scala cosmica, dono guaritore straordinario, saggezza che trascende la comprensione ordinaria.<br><strong>Ombre:</strong> estrema vulnerabilità all'energia negativa, tendenza all'esaurimento totale.</p>
-    </div>
-    <div class="highlight"><p>⚠️ <strong>Attenzione:</strong> il 33 come Numero del Sentiero di Vita è estremamente raro. Molti sistemi richiedono che il 33 emerga senza forzature dalla somma naturale delle cifre. Se ottieni 33 come intermedio ma poi si riduce ulteriormente, il tuo numero è 6 con influenze del 33.</p></div>
+    <div id="masterCards"></div>
+
+    <div class="highlight"><p id="master-highlight">⚠️ <strong>Attenzione:</strong> il 33 come Numero del Sentiero di Vita è estremamente raro. Molti sistemi richiedono che il 33 emerga senza forzature dalla somma naturale delle cifre. Se ottieni 33 come intermedio ma poi si riduce ulteriormente, il tuo numero è 6 con influenze del 33.</p></div>
   </section>
 
   <!-- ── 5. TABELLA PITAGORICA ── -->
   <section id="tabella">
-    <h2>Tabella Pitagorica: Lettere e Numeri</h2>
-    <p>Per calcolare il Numero del Destino si converte ogni lettera del nome completo alla nascita nel suo valore numerico pitagorico. Questa è la tabella di corrispondenza:</p>
-    <table class="pyth-table">
+    <h2 id="tab5-title">Tabella Pitagorica: Lettere e Numeri</h2>
+    <p id="tab5-intro">Per calcolare il Numero del Destino si converte ogni lettera del nome completo alla nascita nel suo valore numerico pitagorico. Questa è la tabella di corrispondenza:</p>
+    <table class="pyth-table" aria-label="Tabella pitagorica lettere-numeri">
       <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
       <tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td></tr>
       <tr><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td></tr>
       <tr><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>—</td></tr>
     </table>
-    <div class="highlight"><p>💡 Esempio: <strong>MARIO</strong> → M(4) + A(1) + R(9) + I(9) + O(6) = 29 → 2+9 = 11. Mario ha un Numero del Destino 11.</p></div>
+    <div class="highlight"><p id="tab5-example">💡 Esempio: <strong>MARIO</strong> → M(4) + A(1) + R(9) + I(9) + O(6) = 29 → 2+9 = 11. Mario ha un Numero del Destino 11.</p></div>
   </section>
 
   <!-- ── 6. COME CALCOLARE ── -->
   <section id="come-calcolare">
-    <h2>Come Calcolare i Tuoi Numeri</h2>
-    <h3>Numero del Sentiero di Vita (dalla data di nascita)</h3>
-    <ol>
+    <h2 id="cc-title">Come Calcolare i Tuoi Numeri</h2>
+    <h3 id="cc-h3-1">Numero del Sentiero di Vita (dalla data di nascita)</h3>
+    <ol id="cc-list-1">
       <li>Scrivi la tua data di nascita nel formato GG/MM/AAAA.</li>
       <li>Somma tutte le cifre della data (giorno + mese + anno).</li>
       <li>Se la somma supera 9, riduci ulteriormente sommando le cifre del risultato.</li>
       <li>Fermati quando ottieni un numero da 1 a 9, oppure 11, 22 o 33.</li>
     </ol>
-    <div class="card">
+    <div class="card" id="cc-examples">
       <p>📅 <strong>Esempio — 15 aprile 1990:</strong><br>1+5+0+4+1+9+9+0 = 29<br>2+9 = 11 ✦ Numero Maestro — non si riduce ulteriormente.</p>
       <p>📅 <strong>Esempio — 3 luglio 1985:</strong><br>0+3+0+7+1+9+8+5 = 33<br>33 è Numero Maestro — ci fermiamo qui.</p>
       <p>📅 <strong>Esempio — 22 novembre 1993:</strong><br>2+2+1+1+1+9+9+3 = 28<br>2+8 = 10 → 1+0 = <strong>1</strong> (Sentiero di Vita 1).</p>
     </div>
-    <h3>Numero del Destino (dal nome)</h3>
-    <ol>
+    <h3 id="cc-h3-2">Numero del Destino (dal nome)</h3>
+    <ol id="cc-list-2">
       <li>Scrivi il tuo nome completo così come appare sul documento di nascita (incluso cognome).</li>
       <li>Converti ogni lettera in numero usando la tabella pitagorica qui sopra.</li>
       <li>Somma tutti i numeri ottenuti.</li>
       <li>Riduci il totale fino a 1–9 o a un Numero Maestro (11, 22, 33).</li>
     </ol>
-    <div class="highlight"><p>⚠️ <strong>Importante:</strong> usa sempre il nome alla nascita, quello sul certificato. Diminutivi, nomi d'arte o nomi assunti dopo il matrimonio si calcolano separatamente e rivelano energie diverse.</p></div>
+    <div class="highlight"><p id="cc-highlight">⚠️ <strong>Importante:</strong> usa sempre il nome alla nascita, quello sul certificato. Diminutivi, nomi d'arte o nomi assunti dopo il matrimonio si calcolano separatamente e rivelano energie diverse.</p></div>
   </section>
 
   <!-- ── 7. CICLI ── -->
   <section id="cicli">
-    <h2>Cicli Numerologici: Anno, Mese e Giorno Personale</h2>
-    <p>Oltre ai numeri permanenti (Sentiero di Vita e Destino), la numerologia prevede <strong>cicli temporali</strong> che cambiano nel tempo e rivelano le energie di periodi specifici.</p>
+    <h2 id="cy-title">Cicli Numerologici: Anno, Mese e Giorno Personale</h2>
+    <p id="cy-intro">Oltre ai numeri permanenti (Sentiero di Vita e Destino), la numerologia prevede <strong>cicli temporali</strong> che cambiano nel tempo e rivelano le energie di periodi specifici.</p>
     <div class="card">
-      <h3>🗓️ Anno Personale</h3>
-      <p>Si calcola sommando il tuo giorno e mese di nascita con l'anno corrente. L'Anno Personale segna il tema energetico dominante per l'intero anno solare. È un ciclo di 9 anni che si ripete:<br><strong>Anni 1-3:</strong> costruzione e semina nuova · <strong>Anni 4-6:</strong> consolidamento e maturazione · <strong>Anni 7-9:</strong> completamento, raccolta e lasciar andare.</p>
+      <h3 id="cy-h3-1">🗓️ Anno Personale</h3>
+      <p id="cy-p1">Si calcola sommando il tuo giorno e mese di nascita con l'anno corrente. L'Anno Personale segna il tema energetico dominante per l'intero anno solare. È un ciclo di 9 anni che si ripete:<br><strong>Anni 1-3:</strong> costruzione e semina nuova · <strong>Anni 4-6:</strong> consolidamento e maturazione · <strong>Anni 7-9:</strong> completamento, raccolta e lasciar andare.</p>
     </div>
     <div class="card">
-      <h3>📆 Mese Personale</h3>
-      <p>Si ottiene sommando il tuo Anno Personale al numero del mese corrente. Offre una guida più precisa sulle energie di ogni singolo mese — utile per pianificare momenti propizi per nuovi inizi, riflessione, o chiusura di cicli.</p>
+      <h3 id="cy-h3-2">📆 Mese Personale</h3>
+      <p id="cy-p2">Si ottiene sommando il tuo Anno Personale al numero del mese corrente. Offre una guida più precisa sulle energie di ogni singolo mese — utile per pianificare momenti propizi per nuovi inizi, riflessione, o chiusura di cicli.</p>
     </div>
-    <div class="highlight"><p>🌀 I cicli numerologici si intrecciano con i transiti planetari dell'astrologia per formare una mappa temporale ancora più dettagliata. Esplora anche i <a href="./cicli-tempo.html">Cicli del Tempo</a> per approfondire.</p></div>
+    <div class="highlight"><p id="cy-highlight">🌀 I cicli numerologici si intrecciano con i transiti planetari dell'astrologia per formare una mappa temporale ancora più dettagliata. Esplora anche i <a href="./cicli-tempo.html">Cicli del Tempo</a> per approfondire.</p></div>
   </section>
 
   <!-- ── 8. ARTICOLO EDITORIALE ── -->
   <section id="articolo" class="article-section">
     <h2 id="art-title"></h2>
-    <img src="./images/numerologia.webp"
-         srcset="./images/numerologia.webp 1x, ./images/numerologia@2x.webp 2x"
-         id="art-hero"
-         alt="Numerologia pitagorica — calcola il tuo numero su MYSTICA"
-         loading="lazy"
-         style="width:100%;border-radius:14px;margin:16px 0">
+    <figure>
+      <img src="./images/numerologia.webp"
+           srcset="./images/numerologia.webp 1x, ./images/numerologia@2x.webp 2x"
+           id="art-hero"
+           alt=""
+           width="720" height="400"
+           loading="eager"
+           fetchpriority="high"
+           style="width:100%;height:auto;border-radius:14px;margin:16px 0">
+      <figcaption id="art-hero-caption" style="font-size:12px;color:var(--muted);text-align:center;margin-top:-10px"></figcaption>
+    </figure>
     <h3 id="art-h2"></h3>
     <p id="art-p1"></p>
     <p id="art-p2"></p>
@@ -725,22 +670,22 @@ a:hover{text-decoration:underline}
     <h3 id="art-h3"></h3>
     <p id="art-p4"></p>
     <p id="art-p5"></p>
-    <nav class="article-links" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
-      <a href="./human-design.html" style="font-family:'Cinzel',serif;font-size:12px">→ Human Design</a>
-      <a href="./gene-keys.html" style="font-family:'Cinzel',serif;font-size:12px">→ Gene Keys</a>
-      <a href="./cabala.html" style="font-family:'Cinzel',serif;font-size:12px">→ Cabala e Gematria</a>
+    <nav class="article-links" aria-label="Link interni correlati" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
+      <a href="./human-design.html" id="link-hd" style="font-family:'Cinzel',serif;font-size:12px">→ Human Design</a>
+      <a href="./gene-keys.html" id="link-gk" style="font-family:'Cinzel',serif;font-size:12px">→ Gene Keys</a>
+      <a href="./cabala.html" id="link-cb" style="font-family:'Cinzel',serif;font-size:12px">→ Cabala e Gematria</a>
     </nav>
   </section>
 
   <!-- ── FAQ ── -->
   <section id="faq" class="faq-section">
-    <h2>FAQ</h2>
+    <h2 id="faq-title">FAQ</h2>
     <div class="faq-list" id="faqList"></div>
   </section>
 
   <!-- ── SHARE ── -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()" aria-label="Condividi">📤 <span id="share-btn-lbl">Condividi</span></button>
+    <button class="btn-share" onclick="shareContent()" id="share-btn" aria-label="Condividi">📤 <span id="share-btn-lbl">Condividi</span></button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
@@ -752,8 +697,8 @@ a:hover{text-decoration:underline}
 
   <!-- ── CTA ── -->
   <div class="cta">
-    <h3>✦ Approfondisci con MYSTICA ✦</h3>
-    <p>Usa il calcolatore qui sopra e poi esplora l'app completa per tarocchi, I Ching, astrologia, rune e molto altro — tutto gratis e in italiano.</p>
+    <h3 id="cta-h3">✦ Approfondisci con MYSTICA ✦</h3>
+    <p id="cta-p">Usa il calcolatore qui sopra e poi esplora l'app completa per tarocchi, I Ching, astrologia, rune e molto altro — tutto gratis e in italiano.</p>
     <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </div>
 
@@ -761,11 +706,11 @@ a:hover{text-decoration:underline}
   <section class="seo-crosslinks" aria-labelledby="seo-cross-title">
     <h2 id="seo-cross-title">Approfondimenti correlati</h2>
     <ul>
-      <li><a href="https://mysticaoracoli.it/">Home MYSTICA</a></li>
-      <li><a href="https://mysticaoracoli.it/ore-specchio.html">Ore Specchio e Numeri Angelici</a></li>
-      <li><a href="https://mysticaoracoli.it/cabala.html">Cabala e Gematria</a></li>
-      <li><a href="https://mysticaoracoli.it/enciclopedia.html">Enciclopedia Esoterica</a></li>
-      <li><a href="https://mysticaoracoli.it/about.html">Chi Siamo</a></li>
+      <li><a href="https://mysticaoracoli.it/" id="sc-1">Home MYSTICA</a></li>
+      <li><a href="https://mysticaoracoli.it/ore-specchio.html" id="sc-2">Ore Specchio e Numeri Angelici</a></li>
+      <li><a href="https://mysticaoracoli.it/cabala.html" id="sc-3">Cabala e Gematria</a></li>
+      <li><a href="https://mysticaoracoli.it/enciclopedia.html" id="sc-4">Enciclopedia Esoterica</a></li>
+      <li><a href="https://mysticaoracoli.it/about.html" id="sc-5">Chi Siamo</a></li>
     </ul>
   </section>
 
@@ -773,14 +718,14 @@ a:hover{text-decoration:underline}
 
 <!-- ── ESPLORA SECTION ── -->
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2>✨ Esplora Anche</h2>
+  <h2 id="esplora-title">✨ Esplora Anche</h2>
   <div class="esplora-grid">
-    <a href="./ore-specchio.html" class="esplora-card">🪞 Ore Specchio</a>
-    <a href="./cabala.html" class="esplora-card">✡️ Cabala</a>
-    <a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a>
-    <a href="./cicli-tempo.html" class="esplora-card">🌙 Cicli del Tempo</a>
-    <a href="./human-design.html" class="esplora-card">🧬 Human Design</a>
-    <a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a>
+    <a href="./ore-specchio.html" class="esplora-card" id="esplora-1">🪞 Ore Specchio</a>
+    <a href="./cabala.html" class="esplora-card" id="esplora-2">✡️ Cabala</a>
+    <a href="./astrologia-avanzata.html" class="esplora-card" id="esplora-3">🌠 Astrologia Avanzata</a>
+    <a href="./cicli-tempo.html" class="esplora-card" id="esplora-4">🌙 Cicli del Tempo</a>
+    <a href="./human-design.html" class="esplora-card" id="esplora-5">🧬 Human Design</a>
+    <a href="./enciclopedia.html" class="esplora-card" id="esplora-6">📖 Enciclopedia Esoterica</a>
   </div>
 </section>
 
@@ -796,12 +741,64 @@ a:hover{text-decoration:underline}
   <p id="footer-disclaimer" class="footer-disclaimer"></p>
 </footer>
 
+<!-- ── PREMIUM MODAL ── -->
+<div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
+    </button>
+    <div id="_pm_toggle_wrap" style="margin:8px 0 4px;">
+      <button id="pm-code-toggle" onclick="(function(){var w=document.getElementById('_pm_code_wrap');w.style.display=w.style.display==='none'?'block':'none';})()" style="background:none;border:none;color:rgba(212,175,55,.7);font-size:.78rem;cursor:pointer;font-family:Cinzel,serif;padding:0;letter-spacing:.03em;">🔑 Ho già pagato — Inserisci codice</button>
+    </div>
+    <div id="_pm_code_wrap" style="display:none;margin:6px 0 8px;">
+      <input id="_pm_code_inp" type="text" maxlength="19"
+        placeholder="MYST-XXXX-XXXX-XXXX"
+        oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9-]/g,'')"
+        aria-label="Codice di accesso premium"
+        style="width:100%;background:rgba(42,23,72,.6);border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:9px 11px;color:#e8e0f0;font-family:Cinzel,serif;font-size:.8rem;letter-spacing:.12em;outline:none;box-sizing:border-box;margin-bottom:7px;">
+      <button id="pm-code-submit" onclick="_mystUnlockCode()" style="width:100%;padding:11px;border-radius:8px;border:none;background:linear-gradient(135deg,#d4af37,#9a7820);color:#0a0514;font-family:Cinzel,serif;font-size:.82rem;font-weight:700;cursor:pointer;letter-spacing:.04em;">✦ Sblocca con il Codice</button>
+      <div id="_pm_code_err" style="display:none;margin-top:7px;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);border-radius:7px;padding:8px 10px;color:#ff9090;font-size:.78rem;font-family:Crimson Pro,serif;"></div>
+      <div id="_pm_code_ok" style="display:none;margin-top:7px;background:rgba(55,212,100,.1);border:1px solid rgba(55,212,100,.3);border-radius:7px;padding:8px 10px;color:#90ffb0;font-size:.82rem;font-family:Crimson Pro,serif;"><span id="pm-code-ok-text">✦ Premium attivato! Ricarico…</span></div>
+      <p style="margin-top:8px;font-family:Crimson Pro,serif;font-size:.73rem;color:rgba(184,178,209,.6);line-height:1.4;"><span id="pm-code-norecord">Non hai il codice?</span> <a href="./premium-restore.html" id="pm-code-restore-link" style="color:rgba(212,175,55,.75);">Recupera accesso con email e data di nascita →</a></p>
+    </div>
+    <script>
+    if(!window._mystUnlockCode){
+      window._mystUnlockCode = async function(){
+        var inp = document.getElementById('_pm_code_inp');
+        var err = document.getElementById('_pm_code_err');
+        var ok  = document.getElementById('_pm_code_ok');
+        var val = inp ? inp.value.trim().toUpperCase() : '';
+        err.style.display='none'; ok.style.display='none';
+        var re = /^MYST-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+        if(!re.test(val)){
+          var _errMsg = 'Formato non valido. Esempio: MYST-A3F9-C12B-7D4E';
+          try{ if(typeof LANG!=='undefined' && typeof currentLang!=='undefined' && LANG[currentLang]) _errMsg = LANG[currentLang].pmCodeErrInvalid; }catch(e){}
+          err.textContent=_errMsg;
+          err.style.display='block';
+          return;
+        }
+        try{ localStorage.setItem('myst_premium','1'); localStorage.setItem('myst_premium_code',val); localStorage.setItem('myst_premium_date',new Date().toISOString()); }catch(e){}
+        ok.style.display='block';
+        setTimeout(function(){ window.location.reload(); }, 1600);
+      };
+    }
+    </script>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
+
+
 <script>
 /* ══════════════════════════════════════════
    LANG OBJECT — IT · EN · ES
 ══════════════════════════════════════════ */
 const LANG = {
   it: {
+    skipLink: 'Vai al contenuto principale',
     back: '← Torna alla Home',
     music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
     theme: { day: '☀️ Giorno', night: '🌙 Notte' },
@@ -815,28 +812,141 @@ const LANG = {
     shareCopy: '🔗 Copia Link',
     shareCopied: '✓ Copiato!',
     shareBtn: 'Condividi',
+    shareAria: 'Condividi questa pagina',
     footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
     footerDisclaimer: 'La numerologia ha finalità di autoconoscenza e intrattenimento. Non sostituisce consulenze professionali mediche, legali o finanziarie.',
     ctaExplore: '🔍 Scopri le Altre Categorie',
     pageTitle: '🔢 NUMEROLOGIA',
+    // ── Hero / Breadcrumb / TOC ──
+    heroTitle: 'Numerologia',
+    heroSub: "Ogni numero porta una vibrazione cosmica. Calcola il tuo Numero del Sentiero di Vita e il Numero del Destino — e scopri il messaggio che l'universo ha scritto nel giorno in cui sei nato.",
+    heroBadge: 'Numerologia Pitagorica · Sistema Occidentale',
+    bcHome: 'Home',
+    bcEnc: 'Enciclopedia',
+    bcCurrent: 'Numerologia',
+    tocTitle: '📜 Indice',
+    toc1: 'Calcolatore Numerologico',
+    toc2: "Cos'è la Numerologia",
+    toc3: "I Numeri dall'1 al 9",
+    toc4: 'I Numeri Maestro 11, 22, 33',
+    toc5: 'Tabella Pitagorica Lettere',
+    toc6: 'Come Calcolare i Tuoi Numeri',
+    toc7: 'Cicli Numerologici',
+    toc8: 'Storia e Significato',
+    toc9: 'Domande Frequenti',
+    // ── Calcolatore ──
+    calcSectionTitle: 'Calcolatore Numerologico',
+    calcIntro: "Scegli se calcolare il tuo <strong>Numero del Sentiero di Vita</strong> (dalla data di nascita) o il <strong>Numero del Destino</strong> (dal nome completo).",
+    calcTitle: '✦ IL TUO NUMERO ✦',
     tabVita: 'Sentiero di Vita',
-    tabDestino: 'Numero del Destino',
+    tabDestino: 'Numero Destino',
     labelData: 'DATA DI NASCITA',
     labelNome: 'NOME COMPLETO ALLA NASCITA',
+    ariaData: 'Data di nascita',
+    ariaNome: 'Nome completo',
+    namePlaceholder: 'es. MARIO ROSSI',
+    btnCalcolaVita: '✦ CALCOLA IL SENTIERO ✦',
+    btnCalcolaDestino: '✦ CALCOLA IL DESTINO ✦',
     masterBadge: '✦ Numero Maestro',
+    vibrazioneElevata: 'Vibrazione Elevata ✦',
+    numeroMaestroInline: '✦ Numero Maestro',
+    // ── Cos'è la Numerologia ──
+    ceTitle: "Cos'è la Numerologia",
+    ceP1: 'La numerologia è la scienza sacra dei numeri — l\'arte di decifrare il linguaggio matematico con cui l\'universo ha strutturato la realtà. La sua forma più diffusa in Occidente è la <strong>numerologia pitagorica</strong>, attribuita al filosofo greco Pitagora (570–495 a.C.), che affermava: <em>"Il numero è la regola di tutte le cose."</em>',
+    ceP2: "Secondo questa visione, ogni numero dall'1 al 9 (più i Numeri Maestro 11, 22 e 33) porta con sé una specifica vibrazione energetica. Quando convertiamo una data di nascita o un nome in un numero, stiamo essenzialmente decodificando quale di queste vibrazioni ha segnato il nostro ingresso in questo mondo — e quindi quale energia fondamentale ci accompagna per tutta la vita.",
+    ceHighlight: '🔑 La numerologia non predice il futuro in modo deterministico: rivela <strong>potenziali, tendenze e disposizioni karmiche</strong>. È uno strumento di autoconoscenza, non di fatalismo.',
+    ceP3: "Oltre alla tradizione pitagorica, esistono la numerologia caldea (più antica, usata in Mesopotamia), la numerologia cabalistica (legata all'albero della Vita) e quella vedica (integrata nell'astrologia indiana). In MYSTICA utilizziamo il sistema pitagorico occidentale, il più adatto alla lingua italiana e alle lingue europee.",
+    // ── Numeri 1-9 / Maestro ──
+    num19Title: "I Numeri dall'1 al 9",
+    num19Intro: "Ogni numero porta un archetipo, una vibrazione, una missione. Ecco una panoramica dei nove numeri fondamentali — tocca un numero per scoprirne luci, ombre e missione karmica:",
+    masterTitle: 'I Numeri Maestro: 11, 22, 33',
+    masterIntro: 'I Numeri Maestro sono vibrazioni elevate che non vengono ridotte ulteriormente durante il calcolo. Portare un Numero Maestro significa avere una missione karmica più intensa — e sfide proporzionalmente più grandi.',
+    masterHighlight: '⚠️ <strong>Attenzione:</strong> il 33 come Numero del Sentiero di Vita è estremamente raro. Molti sistemi richiedono che il 33 emerga senza forzature dalla somma naturale delle cifre. Se ottieni 33 come intermedio ma poi si riduce ulteriormente, il tuo numero è 6 con influenze del 33.',
+    labelEssenza: '✨ La Tua Essenza Numerologica',
+    labelLuci: '🌟 Le Tue Luci',
+    labelOmbre: '🌑 Le Tue Ombre',
+    labelMissione: '🎯 La Tua Missione',
+    labelCompatibile: '💞 Numeri Compatibili',
+    labelLuciShort: 'Luci',
+    labelOmbreShort: 'Ombre',
+    // ── Tabella Pitagorica ──
+    tab5Title: 'Tabella Pitagorica: Lettere e Numeri',
+    tab5Intro: 'Per calcolare il Numero del Destino si converte ogni lettera del nome completo alla nascita nel suo valore numerico pitagorico. Questa è la tabella di corrispondenza:',
+    tab5Example: '💡 Esempio: <strong>MARIO</strong> → M(4) + A(1) + R(9) + I(9) + O(6) = 29 → 2+9 = 11. Mario ha un Numero del Destino 11.',
+    // ── Come Calcolare ──
+    ccTitle: 'Come Calcolare i Tuoi Numeri',
+    ccH31: 'Numero del Sentiero di Vita (dalla data di nascita)',
+    ccList1: [
+      'Scrivi la tua data di nascita nel formato GG/MM/AAAA.',
+      'Somma tutte le cifre della data (giorno + mese + anno).',
+      'Se la somma supera 9, riduci ulteriormente sommando le cifre del risultato.',
+      'Fermati quando ottieni un numero da 1 a 9, oppure 11, 22 o 33.'
+    ],
+    ccExamples: [
+      '📅 <strong>Esempio — 15 aprile 1990:</strong><br>1+5+0+4+1+9+9+0 = 29<br>2+9 = 11 ✦ Numero Maestro — non si riduce ulteriormente.',
+      '📅 <strong>Esempio — 3 luglio 1985:</strong><br>0+3+0+7+1+9+8+5 = 33<br>33 è Numero Maestro — ci fermiamo qui.',
+      '📅 <strong>Esempio — 22 novembre 1993:</strong><br>2+2+1+1+1+9+9+3 = 28<br>2+8 = 10 → 1+0 = <strong>1</strong> (Sentiero di Vita 1).'
+    ],
+    ccH32: 'Numero del Destino (dal nome)',
+    ccList2: [
+      'Scrivi il tuo nome completo così come appare sul documento di nascita (incluso cognome).',
+      'Converti ogni lettera in numero usando la tabella pitagorica qui sopra.',
+      'Somma tutti i numeri ottenuti.',
+      'Riduci il totale fino a 1–9 o a un Numero Maestro (11, 22, 33).'
+    ],
+    ccHighlight: "⚠️ <strong>Importante:</strong> usa sempre il nome alla nascita, quello sul certificato. Diminutivi, nomi d'arte o nomi assunti dopo il matrimonio si calcolano separatamente e rivelano energie diverse.",
+    // ── Cicli ──
+    cyTitle: 'Cicli Numerologici: Anno, Mese e Giorno Personale',
+    cyIntro: 'Oltre ai numeri permanenti (Sentiero di Vita e Destino), la numerologia prevede <strong>cicli temporali</strong> che cambiano nel tempo e rivelano le energie di periodi specifici.',
+    cyH31: '🗓️ Anno Personale',
+    cyP1: "Si calcola sommando il tuo giorno e mese di nascita con l'anno corrente. L'Anno Personale segna il tema energetico dominante per l'intero anno solare. È un ciclo di 9 anni che si ripete:<br><strong>Anni 1-3:</strong> costruzione e semina nuova · <strong>Anni 4-6:</strong> consolidamento e maturazione · <strong>Anni 7-9:</strong> completamento, raccolta e lasciar andare.",
+    cyH32: '📆 Mese Personale',
+    cyP2: "Si ottiene sommando il tuo Anno Personale al numero del mese corrente. Offre una guida più precisa sulle energie di ogni singolo mese — utile per pianificare momenti propizi per nuovi inizi, riflessione, o chiusura di cicli.",
+    cyHighlight: 'I cicli numerologici si intrecciano con i transiti planetari dell\'astrologia per formare una mappa temporale ancora più dettagliata. Esplora anche i <a href="./cicli-tempo.html">Cicli del Tempo</a> per approfondire.',
+    // ── Articolo editoriale ──
     artTitle: 'Numerologia: La Scienza Sacra dei Numeri tra Storia e Significato',
     artH2: 'Da Pitagora alla Numerologia Moderna',
     artH3: 'I 9 Numeri Fondamentali e la Loro Vibrazione',
-    artP1: 'La numerologia è l\'arte di decifrare il linguaggio matematico con cui l\'universo ha strutturato la realtà. La forma più diffusa in Occidente è la numerologia pitagorica, attribuita a Pitagora di Samo (570–495 a.C.), che insegnava che ogni numero porta una specifica vibrazione energetica. Convertendo la data di nascita o il nome in un numero, si decodifica quale di queste vibrazioni ha segnato il nostro ingresso nel mondo — e quale energia fondamentale ci accompagna per tutta la vita.',
-    artP2: 'Le radici della numerologia affondano in civiltà antichissime. I Babilonesi usavano il sistema numerico a base 60 per calcolare cicli celesti e destini regali. Gli Ebrei svilupparono la Gematria, dove ogni lettera dell\'alfabeto ebraico corrisponde a un numero sacro (es. YHWH = 26). La Kabbalah si fonda su questo sistema per decodificare i testi sacri. In Cina, la numerologia è ancora oggi praticata nella scelta del nome dei neonati e delle date dei matrimoni.',
-    artP3: 'Nel Rinascimento, Enrico Cornelio Agrippa von Nettesheim codificò nel "De Occulta Philosophia" (1531) il sistema dei numeri magici in relazione ai pianeti e agli angeli. Nel XIX secolo la numerologia giunse negli Stati Uniti attraverso il movimento New Thought, e Mrs. L. Dow Balliett (1900) sistematizzò definitivamente il metodo pitagorico moderno.',
-    artP4: 'Il sistema pitagorico usa una tavola semplice: A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9, poi ricomincia da 1. Per calcolare il Numero del Sentiero di Vita si sommano tutte le cifre della data di nascita riducendo progressivamente. I Numeri Maestro (11, 22, 33) non vengono ridotti: rappresentano vibrazioni di potenza elevata con missioni karmiche più intense degli altri numeri.',
-    artP5: 'Oltre alla tradizione pitagorica, esistono la numerologia caldea (più antica, usata in Mesopotamia), la numerologia cabalistica (legata all\'Albero della Vita con i 10 Sephirot) e quella vedica (integrata nell\'astrologia indiana con i 9 Graha). Ogni sistema ha le sue specificità, ma tutti concordano su un punto fondamentale: i numeri non sono solo quantità — sono qualità, energie, archetipi. La numerologia non predice il futuro in modo deterministico: rivela potenziali, tendenze e disposizioni karmiche.',
+    artP1: 'La numerologia è l\'arte di decifrare il linguaggio matematico con cui l\'universo ha strutturato la realtà. La forma più diffusa in Occidente è la numerologia pitagorica, attribuita a Pitagora di Samo (570–495 a.C.), che insegnava che ogni numero porta una specifica vibrazione energetica e che "tutto è disposto secondo numero". Convertendo la data di nascita o il nome completo in un numero, si decodifica quale di queste vibrazioni ha segnato il nostro ingresso nel mondo — e quale energia fondamentale, tra le nove disponibili, ci accompagna silenziosamente per tutta la vita, influenzando scelte, talenti e sfide karmiche.',
+    artP2: 'Le radici della numerologia affondano in civiltà antichissime, ben prima che Pitagora sistematizzasse il suo metodo. I Babilonesi usavano il sistema numerico a base 60 per calcolare cicli celesti e destini regali, mentre gli Ebrei svilupparono la Gematria, dove ogni lettera dell\'alfabeto ebraico corrisponde a un numero sacro (ad esempio YHWH = 26). La Kabbalah ebraica si fonda proprio su questo sistema per decodificare i significati nascosti nei testi sacri. In Cina, la numerologia è ancora oggi praticata attivamente nella scelta del nome dei neonati e nella selezione delle date propizie per i matrimoni e le aperture di attività commerciali.',
+    artP3: 'Nel Rinascimento, il filosofo e occultista tedesco Enrico Cornelio Agrippa von Nettesheim codificò nel trattato "De Occulta Philosophia" (1531) un intero sistema di numeri magici messi in relazione con i pianeti e le gerarchie angeliche, gettando le basi per gran parte dell\'esoterismo numerologico successivo. Nel XIX secolo la numerologia giunse negli Stati Uniti attraverso il movimento New Thought, che ne fece uno strumento di crescita personale, e fu Mrs. L. Dow Balliett, nel 1900, a sistematizzare definitivamente il metodo pitagorico moderno così come oggi lo conosciamo e utilizziamo su MYSTICA.',
+    artP4: 'Il sistema pitagorico usa una tavola semplice ma potente: A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9, per poi ricominciare da 1 con la lettera J. Per calcolare il Numero del Sentiero di Vita si sommano tutte le cifre della data di nascita, riducendo progressivamente il risultato fino a ottenere un numero singolo. I Numeri Maestro (11, 22 e 33) rappresentano un\'eccezione fondamentale: non vengono mai ridotti ulteriormente, perché incarnano vibrazioni di potenza particolarmente elevata, con missioni karmiche più intense e complesse rispetto agli altri numeri della sequenza da 1 a 9.',
+    artP5: 'Oltre alla tradizione pitagorica, esistono altri sistemi altrettanto affascinanti: la numerologia caldea (più antica, nata in Mesopotamia e basata su un\'assegnazione diversa dei valori alle lettere), la numerologia cabalistica (legata all\'Albero della Vita e ai suoi 10 Sephirot) e quella vedica (integrata profondamente nell\'astrologia indiana attraverso i 9 Graha, i pianeti sacri). Ogni sistema ha le proprie specificità metodologiche, ma tutti concordano su un punto fondamentale condiviso: i numeri non sono semplici quantità astratte — sono qualità, energie viventi, archetipi. La numerologia, in ogni sua forma, non predice il futuro in modo deterministico: rivela potenziali, tendenze e disposizioni karmiche da vivere consapevolmente.',
+    artHeroCaption: 'Il calcolatore pitagorico applicato a data di nascita e nome rivela la tua mappa numerologica personale.',
+    linkHD: '→ Human Design',
+    linkGK: '→ Gene Keys',
+    linkCB: '→ Cabala e Gematria',
+    // ── Premium upsell ──
     premiumUpsellTitle: '✦ Vuoi Sapere di Più?',
     premiumUpsellDesc: 'Sblocca il tuo profilo numerologico completo con MYSTICA Premium.',
     btnAnnoPersonale: '📅 Calcola il tuo Anno Personale',
     btnProfiloCompleto: '🔮 Profilo Numerologico Completo',
     btnCompatibilita: '💑 Compatibilità Numerologica',
+    btnNuovoCalcolo: '🔄 Nuovo Calcolo',
+    // ── Premium code unlock ──
+    pmCodeToggle: '🔑 Ho già pagato — Inserisci codice',
+    pmCodeSubmit: '✦ Sblocca con il Codice',
+    pmCodeOk: '✦ Premium attivato! Ricarico…',
+    pmCodeErrInvalid: 'Formato non valido. Esempio: MYST-A3F9-C12B-7D4E',
+    pmCodeNoRecord: 'Non hai il codice?',
+    pmCodeRestoreLink: 'Recupera accesso con email e data di nascita →',
+    // ── CTA / Crosslinks / Esplora ──
+    ctaH3: '✦ Approfondisci con MYSTICA ✦',
+    ctaP: "Usa il calcolatore qui sopra e poi esplora l'app completa per tarocchi, I Ching, astrologia, rune e molto altro — tutto gratis e in italiano.",
+    scTitle: 'Approfondimenti correlati',
+    sc1: 'Home MYSTICA',
+    sc2: 'Ore Specchio e Numeri Angelici',
+    sc3: 'Cabala e Gematria',
+    sc4: 'Enciclopedia Esoterica',
+    sc5: 'Chi Siamo',
+    esploraTitle: '✨ Esplora Anche',
+    esplora1: '🪞 Ore Specchio',
+    esplora2: '✡️ Cabala',
+    esplora3: '🌠 Astrologia Avanzata',
+    esplora4: '🌙 Cicli del Tempo',
+    esplora5: '🧬 Human Design',
+    esplora6: '📖 Enciclopedia Esoterica',
+    faqTitle: 'FAQ',
     faq: [
       { q: 'Come si calcola il Numero del Sentiero di Vita?', a: 'Somma tutte le cifre della tua data di nascita fino a ottenere un numero singolo (o 11, 22, 33). Esempio: 15/04/1990 → 1+5+0+4+1+9+9+0 = 29 → 2+9 = 11. Poiché 11 è un Numero Maestro, ci si ferma qui.' },
       { q: 'Cosa sono i Numeri Maestro?', a: 'I Numeri Maestro (11, 22, 33) sono vibrazioni elevate che non vengono ridotte. L\'11 porta intuizione estrema e sensibilità psichica. Il 22 ha la capacità di costruire opere che durano nel tempo. Il 33 è il Maestro Guaritore, con una vocazione al servizio compassionevole. Portano grandi doni e grandi sfide.' },
@@ -863,7 +973,9 @@ const LANG = {
       ]
     }
   },
+
   en: {
+    skipLink: 'Skip to main content',
     back: '← Back to Home',
     music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
     theme: { day: '☀️ Day', night: '🌙 Night' },
@@ -877,28 +989,130 @@ const LANG = {
     shareCopy: '🔗 Copy Link',
     shareCopied: '✓ Copied!',
     shareBtn: 'Share',
+    shareAria: 'Share this page',
     footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
     footerDisclaimer: 'Numerology is for self-knowledge and entertainment purposes only. It does not replace professional medical, legal or financial advice.',
     ctaExplore: '🔍 Explore Other Categories',
     pageTitle: '🔢 NUMEROLOGY',
+    heroTitle: 'Numerology',
+    heroSub: 'Every number carries a cosmic vibration. Calculate your Life Path Number and your Destiny Number — and discover the message the universe wrote on the day you were born.',
+    heroBadge: 'Pythagorean Numerology · Western System',
+    bcHome: 'Home',
+    bcEnc: 'Encyclopedia',
+    bcCurrent: 'Numerology',
+    tocTitle: '📜 Contents',
+    toc1: 'Numerology Calculator',
+    toc2: 'What is Numerology',
+    toc3: 'Numbers 1 to 9',
+    toc4: 'Master Numbers 11, 22, 33',
+    toc5: 'Pythagorean Letter Table',
+    toc6: 'How to Calculate Your Numbers',
+    toc7: 'Numerological Cycles',
+    toc8: 'History and Meaning',
+    toc9: 'Frequently Asked Questions',
+    calcSectionTitle: 'Numerology Calculator',
+    calcIntro: 'Choose whether to calculate your <strong>Life Path Number</strong> (from your birth date) or your <strong>Destiny Number</strong> (from your full name).',
+    calcTitle: '✦ YOUR NUMBER ✦',
     tabVita: 'Life Path',
     tabDestino: 'Destiny Number',
     labelData: 'DATE OF BIRTH',
     labelNome: 'FULL NAME AT BIRTH',
+    ariaData: 'Date of birth',
+    ariaNome: 'Full name',
+    namePlaceholder: 'e.g. JOHN SMITH',
+    btnCalcolaVita: '✦ CALCULATE YOUR PATH ✦',
+    btnCalcolaDestino: '✦ CALCULATE YOUR DESTINY ✦',
     masterBadge: '✦ Master Number',
+    vibrazioneElevata: 'High Vibration ✦',
+    numeroMaestroInline: '✦ Master Number',
+    ceTitle: 'What is Numerology',
+    ceP1: 'Numerology is the sacred science of numbers — the art of deciphering the mathematical language with which the universe has structured reality. Its most widespread form in the West is <strong>Pythagorean numerology</strong>, attributed to the Greek philosopher Pythagoras (570–495 BC), who taught: <em>"Number is the ruler of all things."</em>',
+    ceP2: 'According to this view, every number from 1 to 9 (plus Master Numbers 11, 22 and 33) carries a specific energetic vibration. By converting a birth date or name into a number, we essentially decode which of these vibrations marked our entry into this world — and therefore which fundamental energy accompanies us throughout our entire life.',
+    ceHighlight: '🔑 Numerology does not predict the future in a deterministic way: it reveals <strong>potentials, tendencies and karmic dispositions</strong>. It is a tool for self-knowledge, not fatalism.',
+    ceP3: 'Beyond the Pythagorean tradition, there is also Chaldean numerology (older, used in Mesopotamia), Kabbalistic numerology (linked to the Tree of Life) and Vedic numerology (integrated into Indian astrology). At MYSTICA we use the Western Pythagorean system, the best suited to Italian and other European languages.',
+    num19Title: 'Numbers 1 to 9',
+    num19Intro: 'Every number carries an archetype, a vibration, a mission. Here is an overview of the nine fundamental numbers — tap a number to discover its lights, shadows and karmic mission:',
+    masterTitle: 'Master Numbers: 11, 22, 33',
+    masterIntro: 'Master Numbers are elevated vibrations that are not reduced further during calculation. Carrying a Master Number means having a more intense karmic mission — and proportionally greater challenges.',
+    masterHighlight: '⚠️ <strong>Note:</strong> 33 as a Life Path Number is extremely rare. Most systems require 33 to emerge naturally from the digit sum without forcing it. If you get 33 as an intermediate step that then reduces further, your number is 6 with 33 influences.',
+    labelEssenza: '✨ Your Numerological Essence',
+    labelLuci: '🌟 Your Lights',
+    labelOmbre: '🌑 Your Shadows',
+    labelMissione: '🎯 Your Mission',
+    labelCompatibile: '💞 Compatible Numbers',
+    labelLuciShort: 'Lights',
+    labelOmbreShort: 'Shadows',
+    tab5Title: 'Pythagorean Table: Letters and Numbers',
+    tab5Intro: 'To calculate the Destiny Number, every letter of the full name at birth is converted into its Pythagorean numerical value. Here is the correspondence table:',
+    tab5Example: '💡 Example: <strong>MARIO</strong> → M(4) + A(1) + R(9) + I(9) + O(6) = 29 → 2+9 = 11. Mario has a Destiny Number of 11.',
+    ccTitle: 'How to Calculate Your Numbers',
+    ccH31: 'Life Path Number (from your birth date)',
+    ccList1: [
+      'Write your date of birth in DD/MM/YYYY format.',
+      'Add up all the digits of the date (day + month + year).',
+      'If the sum exceeds 9, reduce it further by adding the digits of the result.',
+      'Stop when you get a number from 1 to 9, or 11, 22 or 33.'
+    ],
+    ccExamples: [
+      '📅 <strong>Example — April 15, 1990:</strong><br>1+5+0+4+1+9+9+0 = 29<br>2+9 = 11 ✦ Master Number — not reduced further.',
+      '📅 <strong>Example — July 3, 1985:</strong><br>0+3+0+7+1+9+8+5 = 33<br>33 is a Master Number — we stop here.',
+      '📅 <strong>Example — November 22, 1993:</strong><br>2+2+1+1+1+9+9+3 = 28<br>2+8 = 10 → 1+0 = <strong>1</strong> (Life Path 1).'
+    ],
+    ccH32: 'Destiny Number (from your name)',
+    ccList2: [
+      'Write your full name exactly as it appears on your birth certificate (including surname).',
+      'Convert each letter into a number using the Pythagorean table above.',
+      'Add up all the resulting numbers.',
+      'Reduce the total to 1–9 or to a Master Number (11, 22, 33).'
+    ],
+    ccHighlight: '⚠️ <strong>Important:</strong> always use your birth name, the one on your certificate. Nicknames, stage names or names adopted after marriage are calculated separately and reveal different energies.',
+    cyTitle: 'Numerological Cycles: Personal Year, Month and Day',
+    cyIntro: 'Beyond the permanent numbers (Life Path and Destiny), numerology includes <strong>temporal cycles</strong> that change over time and reveal the energies of specific periods.',
+    cyH31: '🗓️ Personal Year',
+    cyP1: 'It is calculated by adding your day and month of birth to the current year. The Personal Year marks the dominant energetic theme for the entire solar year. It is a 9-year cycle that repeats:<br><strong>Years 1-3:</strong> building and new seeding · <strong>Years 4-6:</strong> consolidation and maturation · <strong>Years 7-9:</strong> completion, harvest and letting go.',
+    cyH32: '📆 Personal Month',
+    cyP2: 'It is obtained by adding your Personal Year to the number of the current month. It offers more precise guidance on the energies of each individual month — useful for planning favorable moments for new beginnings, reflection, or closing cycles.',
+    cyHighlight: 'Numerological cycles intertwine with astrology\'s planetary transits to form an even more detailed temporal map. Also explore <a href="./cicli-tempo.html">Time Cycles</a> to learn more.',
     artTitle: 'Numerology: The Sacred Science of Numbers and Their Meaning',
     artH2: 'From Pythagoras to Modern Numerology',
     artH3: 'The 9 Core Numbers and Their Vibration',
     artP1: 'Numerology is the art of deciphering the mathematical language with which the universe has structured reality. The most widespread form in the West is Pythagorean numerology, attributed to Pythagoras of Samos (570–495 BC), who taught that every number carries a specific energetic vibration. By converting a birth date or name into a number, we decode which of these vibrations marked our entry into the world — and which fundamental energy accompanies us throughout life.',
     artP2: 'The roots of numerology run deep in ancient civilizations. The Babylonians used their base-60 numerical system to calculate celestial cycles and royal destinies. The Hebrews developed Gematria, where each letter of the Hebrew alphabet corresponds to a sacred number (e.g. YHWH = 26). The Kabbalah is founded on this system to decode sacred texts. In China, numerology is still practiced today in choosing babies\' names and wedding dates.',
-    artP3: 'In the Renaissance, Heinrich Cornelius Agrippa codified the system of magical numbers in relation to planets and angels in "De Occulta Philosophia" (1531). In the 19th century, numerology reached the United States through the New Thought movement, and Mrs. L. Dow Balliett (1900) definitively systematized the modern Pythagorean method.',
-    artP4: 'The Pythagorean system uses a simple table: A=1, B=2, C=3... repeating from 1. To calculate the Life Path Number, sum all digits of the birth date progressively reducing. Master Numbers (11, 22, 33) are not reduced: they represent high-power vibrations with more intense karmic missions.',
-    artP5: 'Beyond the Pythagorean tradition, there is Chaldean numerology (older, used in Mesopotamia), Kabbalistic numerology (linked to the Tree of Life with 10 Sephirot) and Vedic numerology (integrated into Indian astrology with 9 Graha). Numerology does not deterministically predict the future: it reveals potentials, tendencies and karmic dispositions.',
+    artP3: 'In the Renaissance, the German philosopher and occultist Heinrich Cornelius Agrippa codified an entire system of magical numbers in relation to planets and angelic hierarchies in his treatise "De Occulta Philosophia" (1531), laying much of the groundwork for later esoteric numerology. In the 19th century, numerology reached the United States through the New Thought movement, which turned it into a tool for personal growth, and it was Mrs. L. Dow Balliett who, in 1900, definitively systematized the modern Pythagorean method as we know and use it on MYSTICA today.',
+    artP4: 'The Pythagorean system uses a simple but powerful table: A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9, then starting again from 1 with the letter J. To calculate the Life Path Number, all digits of the birth date are added together, progressively reducing the result until a single number is obtained. Master Numbers (11, 22 and 33) are a key exception: they are never reduced further, because they embody particularly high-power vibrations carrying more intense and complex karmic missions than the other numbers in the 1-9 sequence.',
+    artP5: 'Beyond the Pythagorean tradition, other equally fascinating systems exist: Chaldean numerology (older, born in Mesopotamia and based on a different letter-value assignment), Kabbalistic numerology (linked to the Tree of Life and its 10 Sephirot), and Vedic numerology (deeply integrated into Indian astrology through the 9 Graha, the sacred planets). Each system has its own methodological specifics, but they all agree on one fundamental shared point: numbers are not simple abstract quantities — they are qualities, living energies, archetypes. Numerology, in every form, does not deterministically predict the future: it reveals potentials, tendencies and karmic dispositions to be lived consciously.',
+    artHeroCaption: 'The Pythagorean calculator applied to your birth date and name reveals your personal numerological map.',
+    linkHD: '→ Human Design',
+    linkGK: '→ Gene Keys',
+    linkCB: '→ Kabbalah and Gematria',
     premiumUpsellTitle: '✦ Want to Know More?',
     premiumUpsellDesc: 'Unlock your complete numerological profile with MYSTICA Premium.',
     btnAnnoPersonale: '📅 Calculate your Personal Year',
     btnProfiloCompleto: '🔮 Complete Numerological Profile',
     btnCompatibilita: '💑 Numerological Compatibility',
+    btnNuovoCalcolo: '🔄 New Calculation',
+    pmCodeToggle: '🔑 Already paid — Enter your code',
+    pmCodeSubmit: '✦ Unlock with Code',
+    pmCodeOk: '✦ Premium activated! Reloading…',
+    pmCodeErrInvalid: 'Invalid format. Example: MYST-A3F9-C12B-7D4E',
+    pmCodeNoRecord: "Don't have a code?",
+    pmCodeRestoreLink: 'Recover access with email and date of birth →',
+    ctaH3: '✦ Discover More with MYSTICA ✦',
+    ctaP: 'Use the calculator above and then explore the full app for tarot, I Ching, astrology, runes and much more — all free.',
+    scTitle: 'Related insights',
+    sc1: 'MYSTICA Home',
+    sc2: 'Mirror Hours and Angel Numbers',
+    sc3: 'Kabbalah and Gematria',
+    sc4: 'Esoteric Encyclopedia',
+    sc5: 'About Us',
+    esploraTitle: '✨ Explore More',
+    esplora1: '🪞 Mirror Hours',
+    esplora2: '✡️ Kabbalah',
+    esplora3: '🌠 Advanced Astrology',
+    esplora4: '🌙 Time Cycles',
+    esplora5: '🧬 Human Design',
+    esplora6: '📖 Esoteric Encyclopedia',
+    faqTitle: 'FAQ',
     faq: [
       { q: 'How do you calculate the Life Path Number?', a: 'Add all the digits of your birth date until you get a single number (or 11, 22, 33). Example: 15/04/1990 → 1+5+0+4+1+9+9+0 = 29 → 2+9 = 11. Since 11 is a Master Number, stop here.' },
       { q: 'What are Master Numbers?', a: 'Master Numbers (11, 22, 33) are elevated vibrations that are not reduced. 11 brings extreme intuition. 22 has the ability to build lasting works. 33 is the Master Healer with a vocation for compassionate service.' },
@@ -925,7 +1139,9 @@ const LANG = {
       ]
     }
   },
+
   es: {
+    skipLink: 'Saltar al contenido principal',
     back: '← Volver al Inicio',
     music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
     theme: { day: '☀️ Día', night: '🌙 Noche' },
@@ -939,28 +1155,130 @@ const LANG = {
     shareCopy: '🔗 Copiar Enlace',
     shareCopied: '✓ ¡Copiado!',
     shareBtn: 'Compartir',
+    shareAria: 'Comparte esta página',
     footerCopy: '© 2025 PetroCorporation · Dott. Petrolese Giovanni',
     footerDisclaimer: 'La numerología es solo para autoconocimiento y entretenimiento. No reemplaza el asesoramiento profesional médico, legal o financiero.',
     ctaExplore: '🔍 Explorar Otras Categorías',
     pageTitle: '🔢 NUMEROLOGÍA',
+    heroTitle: 'Numerología',
+    heroSub: 'Cada número lleva una vibración cósmica. Calcula tu Número del Camino de Vida y tu Número del Destino — y descubre el mensaje que el universo escribió el día en que naciste.',
+    heroBadge: 'Numerología Pitagórica · Sistema Occidental',
+    bcHome: 'Inicio',
+    bcEnc: 'Enciclopedia',
+    bcCurrent: 'Numerología',
+    tocTitle: '📜 Índice',
+    toc1: 'Calculadora Numerológica',
+    toc2: 'Qué es la Numerología',
+    toc3: 'Los Números del 1 al 9',
+    toc4: 'Números Maestros 11, 22, 33',
+    toc5: 'Tabla Pitagórica de Letras',
+    toc6: 'Cómo Calcular tus Números',
+    toc7: 'Ciclos Numerológicos',
+    toc8: 'Historia y Significado',
+    toc9: 'Preguntas Frecuentes',
+    calcSectionTitle: 'Calculadora Numerológica',
+    calcIntro: 'Elige si calcular tu <strong>Número del Camino de Vida</strong> (desde tu fecha de nacimiento) o tu <strong>Número del Destino</strong> (desde tu nombre completo).',
+    calcTitle: '✦ TU NÚMERO ✦',
     tabVita: 'Camino de Vida',
     tabDestino: 'Número del Destino',
     labelData: 'FECHA DE NACIMIENTO',
     labelNome: 'NOMBRE COMPLETO AL NACER',
+    ariaData: 'Fecha de nacimiento',
+    ariaNome: 'Nombre completo',
+    namePlaceholder: 'ej. MARIO ROSSI',
+    btnCalcolaVita: '✦ CALCULA TU CAMINO ✦',
+    btnCalcolaDestino: '✦ CALCULA TU DESTINO ✦',
     masterBadge: '✦ Número Maestro',
+    vibrazioneElevata: 'Vibración Elevada ✦',
+    numeroMaestroInline: '✦ Número Maestro',
+    ceTitle: 'Qué es la Numerología',
+    ceP1: 'La numerología es la ciencia sagrada de los números — el arte de descifrar el lenguaje matemático con el que el universo ha estructurado la realidad. Su forma más difundida en Occidente es la <strong>numerología pitagórica</strong>, atribuida al filósofo griego Pitágoras (570–495 a.C.), quien afirmaba: <em>"El número rige todas las cosas."</em>',
+    ceP2: 'Según esta visión, cada número del 1 al 9 (más los Números Maestros 11, 22 y 33) lleva consigo una vibración energética específica. Al convertir una fecha de nacimiento o un nombre en un número, decodificamos esencialmente cuál de estas vibraciones marcó nuestra entrada en este mundo — y por tanto qué energía fundamental nos acompaña durante toda la vida.',
+    ceHighlight: '🔑 La numerología no predice el futuro de forma determinista: revela <strong>potenciales, tendencias y disposiciones kármicas</strong>. Es una herramienta de autoconocimiento, no de fatalismo.',
+    ceP3: 'Además de la tradición pitagórica, existen la numerología caldea (más antigua, usada en Mesopotamia), la numerología cabalística (vinculada al Árbol de la Vida) y la védica (integrada en la astrología india). En MYSTICA utilizamos el sistema pitagórico occidental, el más adecuado para el italiano y las lenguas europeas.',
+    num19Title: 'Los Números del 1 al 9',
+    num19Intro: 'Cada número lleva un arquetipo, una vibración, una misión. Aquí tienes un resumen de los nueve números fundamentales — toca un número para descubrir sus luces, sombras y misión kármica:',
+    masterTitle: 'Números Maestros: 11, 22, 33',
+    masterIntro: 'Los Números Maestros son vibraciones elevadas que no se reducen más durante el cálculo. Llevar un Número Maestro significa tener una misión kármica más intensa — y desafíos proporcionalmente mayores.',
+    masterHighlight: '⚠️ <strong>Atención:</strong> el 33 como Número del Camino de Vida es extremadamente raro. La mayoría de los sistemas requieren que el 33 surja de forma natural de la suma de cifras sin forzarlo. Si obtienes 33 como paso intermedio que luego se reduce más, tu número es 6 con influencias del 33.',
+    labelEssenza: '✨ Tu Esencia Numerológica',
+    labelLuci: '🌟 Tus Luces',
+    labelOmbre: '🌑 Tus Sombras',
+    labelMissione: '🎯 Tu Misión',
+    labelCompatibile: '💞 Números Compatibles',
+    labelLuciShort: 'Luces',
+    labelOmbreShort: 'Sombras',
+    tab5Title: 'Tabla Pitagórica: Letras y Números',
+    tab5Intro: 'Para calcular el Número del Destino se convierte cada letra del nombre completo al nacer en su valor numérico pitagórico. Esta es la tabla de correspondencia:',
+    tab5Example: '💡 Ejemplo: <strong>MARIO</strong> → M(4) + A(1) + R(9) + I(9) + O(6) = 29 → 2+9 = 11. Mario tiene un Número del Destino 11.',
+    ccTitle: 'Cómo Calcular tus Números',
+    ccH31: 'Número del Camino de Vida (desde tu fecha de nacimiento)',
+    ccList1: [
+      'Escribe tu fecha de nacimiento en formato DD/MM/AAAA.',
+      'Suma todas las cifras de la fecha (día + mes + año).',
+      'Si la suma supera 9, redúcela sumando las cifras del resultado.',
+      'Detente cuando obtengas un número del 1 al 9, o 11, 22 o 33.'
+    ],
+    ccExamples: [
+      '📅 <strong>Ejemplo — 15 de abril de 1990:</strong><br>1+5+0+4+1+9+9+0 = 29<br>2+9 = 11 ✦ Número Maestro — no se reduce más.',
+      '📅 <strong>Ejemplo — 3 de julio de 1985:</strong><br>0+3+0+7+1+9+8+5 = 33<br>33 es Número Maestro — nos detenemos aquí.',
+      '📅 <strong>Ejemplo — 22 de noviembre de 1993:</strong><br>2+2+1+1+1+9+9+3 = 28<br>2+8 = 10 → 1+0 = <strong>1</strong> (Camino de Vida 1).'
+    ],
+    ccH32: 'Número del Destino (desde tu nombre)',
+    ccList2: [
+      'Escribe tu nombre completo tal como aparece en tu certificado de nacimiento (incluido el apellido).',
+      'Convierte cada letra en número usando la tabla pitagórica de arriba.',
+      'Suma todos los números obtenidos.',
+      'Reduce el total a 1–9 o a un Número Maestro (11, 22, 33).'
+    ],
+    ccHighlight: '⚠️ <strong>Importante:</strong> usa siempre el nombre de nacimiento, el del certificado. Los apodos, nombres artísticos o nombres adoptados tras el matrimonio se calculan por separado y revelan energías diferentes.',
+    cyTitle: 'Ciclos Numerológicos: Año, Mes y Día Personal',
+    cyIntro: 'Además de los números permanentes (Camino de Vida y Destino), la numerología incluye <strong>ciclos temporales</strong> que cambian con el tiempo y revelan las energías de períodos específicos.',
+    cyH31: '🗓️ Año Personal',
+    cyP1: 'Se calcula sumando tu día y mes de nacimiento con el año actual. El Año Personal marca el tema energético dominante para todo el año solar. Es un ciclo de 9 años que se repite:<br><strong>Años 1-3:</strong> construcción y nueva siembra · <strong>Años 4-6:</strong> consolidación y maduración · <strong>Años 7-9:</strong> finalización, cosecha y dejar ir.',
+    cyH32: '📆 Mes Personal',
+    cyP2: 'Se obtiene sumando tu Año Personal al número del mes actual. Ofrece una guía más precisa sobre las energías de cada mes — útil para planificar momentos propicios para nuevos comienzos, reflexión o cierre de ciclos.',
+    cyHighlight: 'Los ciclos numerológicos se entrelazan con los tránsitos planetarios de la astrología para formar un mapa temporal aún más detallado. Explora también los <a href="./cicli-tempo.html">Ciclos del Tiempo</a> para profundizar.',
     artTitle: 'Numerología: La Ciencia Sagrada de los Números y su Significado',
     artH2: 'De Pitágoras a la Numerología Moderna',
     artH3: 'Los 9 Números Fundamentales y su Vibración',
-    artP1: 'La numerología es el arte de descifrar el lenguaje matemático con el que el universo ha estructurado la realidad. La forma más difundida en Occidente es la numerología pitagórica, atribuida a Pitágoras de Samos (570-495 a.C.), quien enseñaba que cada número lleva una vibración energética específica. Al convertir la fecha de nacimiento o el nombre en un número, se decodifica qué vibración marcó nuestra entrada al mundo.',
-    artP2: 'Los hebreos desarrollaron la Gematria, donde cada letra del alfabeto hebreo corresponde a un número sagrado. La Cábala se basa en este sistema para descifrar textos sagrados. En China, la numerología se practica aún hoy en la elección del nombre de los recién nacidos y las fechas de los matrimonios.',
-    artP3: 'En el Renacimiento, Enrique Cornelio Agripa codificó el sistema de números mágicos en "De Occulta Philosophia" (1531). En el siglo XIX la numerología llegó a Estados Unidos a través del movimiento New Thought, y la señora L. Dow Balliett (1900) sistematizó definitivamente el método pitagórico moderno.',
-    artP4: 'El sistema pitagórico usa una tabla simple: A=1, B=2, C=3... Los Números Maestros (11, 22, 33) no se reducen: representan vibraciones de alto poder con misiones kármicas más intensas.',
-    artP5: 'La numerología no predice el futuro de forma determinista: revela potenciales, tendencias y disposiciones kármicas. Es una herramienta de autoconocimiento, no de fatalismo.',
+    artP1: 'La numerología es el arte de descifrar el lenguaje matemático con el que el universo ha estructurado la realidad. La forma más difundida en Occidente es la numerología pitagórica, atribuida a Pitágoras de Samos (570-495 a.C.), quien enseñaba que cada número lleva una vibración energética específica. Al convertir la fecha de nacimiento o el nombre en un número, se decodifica qué vibración marcó nuestra entrada al mundo — y qué energía fundamental nos acompaña durante toda la vida.',
+    artP2: 'Las raíces de la numerología se hunden en civilizaciones muy antiguas. Los babilonios usaban su sistema numérico de base 60 para calcular ciclos celestes y destinos reales. Los hebreos desarrollaron la Gematria, donde cada letra del alfabeto hebreo corresponde a un número sagrado (p. ej. YHWH = 26). La Cábala se basa en este sistema para descifrar textos sagrados. En China, la numerología se practica aún hoy en la elección del nombre de los recién nacidos y las fechas de los matrimonios.',
+    artP3: 'En el Renacimiento, el filósofo y ocultista alemán Enrique Cornelio Agripa codificó todo un sistema de números mágicos en relación con los planetas y las jerarquías angélicas en su tratado "De Occulta Philosophia" (1531), sentando gran parte de las bases del esoterismo numerológico posterior. En el siglo XIX la numerología llegó a Estados Unidos a través del movimiento New Thought, que la convirtió en una herramienta de crecimiento personal, y fue la señora L. Dow Balliett quien, en 1900, sistematizó definitivamente el método pitagórico moderno tal como lo conocemos y usamos hoy en MYSTICA.',
+    artP4: 'El sistema pitagórico usa una tabla simple pero poderosa: A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9, y vuelve a empezar desde 1 con la letra J. Para calcular el Número del Camino de Vida se suman todas las cifras de la fecha de nacimiento, reduciendo progresivamente el resultado hasta obtener un número único. Los Números Maestros (11, 22 y 33) son una excepción fundamental: nunca se reducen más, porque encarnan vibraciones de poder especialmente elevado con misiones kármicas más intensas y complejas que los demás números de la secuencia del 1 al 9.',
+    artP5: 'Además de la tradición pitagórica, existen la numerología caldea (más antigua, usada en Mesopotamia), la numerología cabalística (vinculada al Árbol de la Vida con los 10 Sephirot) y la védica (integrada en la astrología india con los 9 Graha). Cada sistema tiene sus particularidades, pero todos coinciden en un punto fundamental: los números no son solo cantidades — son cualidades, energías, arquetipos. La numerología no predice el futuro de forma determinista: revela potenciales, tendencias y disposiciones kármicas.',
+    artHeroCaption: 'La calculadora pitagórica aplicada a tu fecha de nacimiento y nombre revela tu mapa numerológico personal.',
+    linkHD: '→ Human Design',
+    linkGK: '→ Gene Keys',
+    linkCB: '→ Cábala y Guematría',
     premiumUpsellTitle: '✦ ¿Quieres Saber Más?',
     premiumUpsellDesc: 'Desbloquea tu perfil numerológico completo con MYSTICA Premium.',
     btnAnnoPersonale: '📅 Calcular tu Año Personal',
     btnProfiloCompleto: '🔮 Perfil Numerológico Completo',
     btnCompatibilita: '💑 Compatibilidad Numerológica',
+    btnNuovoCalcolo: '🔄 Nuevo Cálculo',
+    pmCodeToggle: '🔑 Ya pagué — Introducir código',
+    pmCodeSubmit: '✦ Desbloquear con el Código',
+    pmCodeOk: '✦ ¡Premium activado! Recargando…',
+    pmCodeErrInvalid: 'Formato no válido. Ejemplo: MYST-A3F9-C12B-7D4E',
+    pmCodeNoRecord: '¿No tienes el código?',
+    pmCodeRestoreLink: 'Recupera el acceso con email y fecha de nacimiento →',
+    ctaH3: '✦ Profundiza con MYSTICA ✦',
+    ctaP: 'Usa la calculadora de arriba y luego explora la app completa de tarot, I Ching, astrología, runas y mucho más — todo gratis.',
+    scTitle: 'Contenidos relacionados',
+    sc1: 'Inicio MYSTICA',
+    sc2: 'Horas Espejo y Números Angelicales',
+    sc3: 'Cábala y Guematría',
+    sc4: 'Enciclopedia Esotérica',
+    sc5: 'Sobre Nosotros',
+    esploraTitle: '✨ Explora También',
+    esplora1: '🪞 Horas Espejo',
+    esplora2: '✡️ Cábala',
+    esplora3: '🌠 Astrología Avanzada',
+    esplora4: '🌙 Ciclos del Tiempo',
+    esplora5: '🧬 Human Design',
+    esplora6: '📖 Enciclopedia Esotérica',
+    faqTitle: 'FAQ',
     faq: [
       { q: '¿Cómo se calcula el Número del Camino de Vida?', a: 'Suma todos los dígitos de tu fecha de nacimiento hasta obtener un número único (o 11, 22, 33). Ejemplo: 15/04/1990 → 1+5+0+4+1+9+9+0 = 29 → 2+9 = 11 (Número Maestro, no se reduce más).' },
       { q: '¿Qué son los Números Maestros?', a: 'Los Números Maestros (11, 22, 33) son vibraciones elevadas que no se reducen. El 11 trae intuición extrema. El 22 tiene capacidad de construir obras duraderas. El 33 es el Maestro Sanador con vocación de servicio compasivo.' },
@@ -990,12 +1308,62 @@ const LANG = {
 };
 
 let currentLang = localStorage.getItem('myst_lang') || 'it';
+/* ══════════════════════════════════════════
+   DB_NUM_LANG — Database Numeri Multilingua (IT · EN · ES)
+══════════════════════════════════════════ */
+const DB_NUM_LANG = {
+  it: {
+    1:{nome:'Il Pioniere',emoji:'☀️',master:false,keywords:['Leadership','Indipendenza','Originalità','Coraggio','Volontà'],essenza:'Il numero 1 è l\'energia del sole — singolare, luminoso, irripetibile. Sei venuto in questo mondo per tracciare strade dove non ce n\'erano. Non segui: guidi. Non imiti: crei. La tua vita è un esperimento originale e questo può essere solitario, ma è anche magnifico. Il tuo compito karmico è imparare a guidare senza schiacciare, e a essere indipendente senza diventare incapace di connettersi.',luci:'Iniziativa straordinaria, coraggio pionieristico, forza di volontà che non si arrende, capacità di creare dal nulla, leadership naturale che ispira.',ombre:'Tendenza all\'arroganza, difficoltà a ricevere aiuto, egocentrismo nei momenti di stress, impertinenza quando non si è al comando.',missione:'La tua missione è usare la tua individualità unica per aprire strade che beneficino non solo te, ma tutti coloro che verranno dopo di te.',compatibile:'3 e 5 amplificano la tua libertà; 2 e 6 ti insegnano a ricevere; 8 divide il potere con te.',kw:'Leadership · Indipendenza · Coraggio'},
+    2:{nome:'Il Diplomatico',emoji:'🌙',master:false,keywords:['Sensibilità','Partnership','Intuizione','Armonia','Mediazione'],essenza:'Il numero 2 è l\'energia della luna — riflessiva, ciclica, empatica. Sei un essere di relazioni profonde, nato per connettere ciò che è diviso. La tua forza non sta nel fare da solo ma nel fare con. Hai un\'intuizione psichica rara e una capacità di comprendere gli altri che spesso ti lascia senza parole.',luci:'Empatia profondissima, diplomazia raffinata, intuizione quasi psichica, dono per le relazioni, pazienza straordinaria, ascolto trasformativo.',ombre:'Indecisione cronica, eccessiva dipendenza dall\'approvazione altrui, tendenza a dissolversi nelle relazioni, paura del conflitto anche quando è necessario.',missione:'La tua missione è costruire ponti tra anime diverse, portare pace dove c\'è divisione e ricordare al mondo che la forza vera nasce dalla cooperazione.',compatibile:'6 e 8 offrono sicurezza; 1 e 9 ti ispirano; 4 ti ancora; 11 risuona con la tua profondità.',kw:'Sensibilità · Partnership · Intuizione'},
+    3:{nome:'Il Creativo',emoji:'🎨',master:false,keywords:['Creatività','Espressione','Gioia','Comunicazione','Arte'],essenza:'Il numero 3 è la vibrazione della creazione pura — la trinità che genera tutto ciò che esiste. Sei nato con un dono espressivo che può manifestarsi come arte, parole, musica, umorismo o presenza magnetica. Quando sei al tuo meglio, porti gioia autentica nel mondo semplicemente essendo te stesso.',luci:'Creatività abbondante, comunicazione brillante, ottimismo contagioso, magnetismo naturale, senso dell\'umorismo che guarisce, gioia come dono spirituale.',ombre:'Dispersione delle energie su troppi fronti, superficialità nella profondità emotiva, tendenza a evitare i problemi attraverso l\'umorismo, incompletezza dei progetti.',missione:'La tua missione è portare bellezza, leggerezza e gioia nel mondo attraverso la tua espressione unica — e non smettere mai di creare.',compatibile:'1 e 5 condividono la tua energia; 2 e 6 ti danno profondità; 9 eleva la tua creatività.',kw:'Creatività · Espressione · Gioia'},
+    4:{nome:'Il Costruttore',emoji:'🏛️',master:false,keywords:['Stabilità','Disciplina','Costruzione','Affidabilità','Struttura'],essenza:'Il numero 4 è l\'energia della terra — solida, affidabile, capace di costruire ciò che dura secoli. Sei venuto a creare fondamenta su cui altri possono edificare la loro vita. Il tuo lavoro è metodico, preciso, paziente. Dove altri vedono sacrificio, tu vedi investimento.',luci:'Affidabilità assoluta, disciplina fuori dal comune, capacità costruttiva concreta, pazienza infinita per i dettagli, dedizione che non si arrende.',ombre:'Rigidità di pensiero, difficoltà ad adattarsi ai cambiamenti, tendenza al workaholic, resistenza all\'innovazione, incapacità di godere del processo.',missione:'La tua missione è costruire ciò che dura — non solo case e carriere, ma valori, sistemi, strutture che servono le generazioni future.',compatibile:'2 e 6 dividono la cura; 8 costruisce con te; 1 ti ispira; 7 ti apre alla spiritualità.',kw:'Stabilità · Disciplina · Struttura'},
+    5:{nome:'Il Libero',emoji:'🦋',master:false,keywords:['Libertà','Avventura','Cambiamento','Versatilità','Esperienza'],essenza:'Il numero 5 è la vibrazione della libertà assoluta — il vento che non può essere imprigionato. Hai bisogno di varietà, movimento, esperienze nuove come altri hanno bisogno d\'aria. La tua vita ideale è una serie di capitoli completamente diversi l\'uno dall\'altro.',luci:'Adattabilità straordinaria, coraggio verso l\'ignoto, curiosità insaziabile, versatilità nel talento, capacità di prosperare nel cambiamento.',ombre:'Incostanza, difficoltà a completare i progetti, tendenza all\'eccesso nelle piacevoli distrazioni, paura dell\'impegno a lungo termine, dispersione.',missione:'La tua missione è mostrare al mondo che il cambiamento non è nemico ma maestro — e che la vita più autentica è quella vissuta con coraggio nell\'incertezza.',compatibile:'1 e 3 condividono la tua energia espansiva; 7 ti offre profondità; 6 ti ancora all\'amore.',kw:'Libertà · Avventura · Cambiamento'},
+    6:{nome:'Il Nutrimento',emoji:'💚',master:false,keywords:['Amore','Responsabilità','Cura','Armonia domestica','Guarigione'],essenza:'Il numero 6 è la vibrazione dell\'amore in azione — non l\'amore romantico ma quello cosmico, il tipo di amore che si manifesta come cura, presenza, nutrimento. Sei qui per costruire ambienti dove gli altri fioriscono. La tua casa, il tuo spazio, le tue relazioni portano il tuo tocco curativo.',luci:'Amore incondizionato, dono per la cura e la guarigione, senso della responsabilità, capacità di creare armonia, bellezza che manifesta nell\'ambiente.',ombre:'Tendenza al martirio emotivo, perfezionismo nell\'ambiente, ingerenza nelle scelte altrui per amore, difficoltà a lasciare andare.',missione:'La tua missione è costruire nidi di amore — spazi fisici ed emotivi dove la vita può essere vissuta in pienezza e sicurezza.',compatibile:'2 e 4 rispecchiano la tua cura; 9 eleva il tuo amore; 3 porta gioia nel tuo nido.',kw:'Amore · Responsabilità · Cura'},
+    7:{nome:'Il Cercatore',emoji:'🔭',master:false,keywords:['Saggezza','Analisi','Misticismo','Solitudine feconda','Verità'],essenza:'Il numero 7 è la vibrazione del mistero — il numero del sacro, del cercare, del penetrare le superfici. Hai un\'intelligenza penetrante che non accetta le risposte facili. Sei un cercatore di verità in tutte le sue forme — scientifiche, spirituali, filosofiche.',luci:'Intelligenza analitica profonda, intuizione mistica, dono per la ricerca e la comprensione, onestà intellettuale assoluta, profondità spirituale autentica.',ombre:'Tendenza all\'isolamento, difficoltà a fidarsi degli altri, cinismo difensivo, perfezionismo paralizzante, freddezza emotiva come scudo.',missione:'La tua missione è portare luce nella complessità — tradurre i misteri in comprensione accessibile agli altri attraverso la tua ricerca instancabile.',compatibile:'4 ti ancora; 9 ti eleva; 2 ti scalda; 11 risuona con la tua profondità mistica.',kw:'Saggezza · Analisi · Misticismo'},
+    8:{nome:'Il Potere',emoji:'⚡',master:false,keywords:['Potere','Abbondanza','Autorità','Karma materiale','Successo'],essenza:'Il numero 8 è la vibrazione del potere cosmico — il simbolo dell\'infinito in piedi. Sei qui per padroneggiare il mondo materiale, non per servirlo. Denaro, potere, autorità — questi non sono i tuoi obiettivi, sono i tuoi strumenti. Quando li gestisci con saggezza e giustizia, crei prosperità che beneficia molti.',luci:'Forza esecutiva straordinaria, visione strategica a lungo termine, determinazione invincibile, capacità di creare abbondanza, autorità naturale rispettata.',ombre:'Tendenza al controllo, difficoltà a delegare, ossessione per il successo a scapito delle relazioni, attrazione per il potere senza etica.',missione:'La tua missione è dimostrare che abbondanza ed etica non sono opposti — e che il potere più grande è quello usato per sollevare gli altri.',compatibile:'4 costruisce con te; 2 ti addolcisce; 6 ti radica nell\'amore; 3 porta leggerezza.',kw:'Potere · Abbondanza · Autorità'},
+    9:{nome:'Il Saggio Universale',emoji:'🌌',master:false,keywords:['Saggezza universale','Compassione','Completamento','Umanità','Servizio'],essenza:'Il numero 9 è la vibrazione della fine e della completezza — il numero che contiene tutti gli altri. Hai vissuto molte esperienze, e questo ti ha dato una comprensione dell\'anima umana che altri non riescono a toccare. Sei nato per servire qualcosa di più grande di te.',luci:'Saggezza profonda che trascende l\'esperienza diretta, compassione universale, generosità senza confini, visione che abbraccia tutta l\'umanità, capacità di guarire le ferite più antiche.',ombre:'Difficoltà a lasciare andare, tendenza al martirio, eccessiva sensibilità alle sofferenze altrui, impraticità nei dettagli quotidiani.',missione:'La tua missione è servire l\'umanità attraverso qualunque forma sia tua — arte, guarigione, insegnamento, attivismo. Sei qui per fare la differenza su grande scala.',compatibile:'3 e 6 amplificano il tuo dono; 7 condivide la tua profondità; 2 ti sostiene nell\'amore.',kw:'Saggezza universale · Compassione · Servizio'},
+    11:{nome:'Il Visionario Illuminato',emoji:'✨',master:true,keywords:['Intuizione superiore','Illuminazione','Ispirazione','Messaggero','Elevazione'],essenza:'L\'11 è il primo Numero Maestro — una vibrazione elevata che non tutti sono pronti a portare. Sei un canale tra il visibile e l\'invisibile, tra il quotidiano e il trascendente. La tua intuizione non viene dalla logica ma da qualcosa di più antico. Hai l\'incarico di ispirare, di illuminare, di essere un faro per chi è al buio.',luci:'Intuizione quasi psichica, capacità di ispirare e illuminare, visione del futuro, dono per la guarigione spirituale, presenza carismatica che eleva.',ombre:'Estremamente sensibile alle energie negative, tendenza all\'esaurimento nervoso, difficoltà a "stare nel mondo pratico", cicli di luce e buio molto pronunciati.',missione:'La tua missione è essere una lampada nella notte — ispirare gli altri a vedere possibilità che da soli non avrebbero mai immaginato.',compatibile:'2 condivide la tua sensibilità; 7 la tua profondità; 22 costruisce ciò che tu sogni.',kw:'Intuizione superiore · Illuminazione · Ispirazione'},
+    22:{nome:'Il Maestro Costruttore',emoji:'🏗️',master:true,keywords:['Visione colossale','Costruzione pratica','Potere universale','Maestria','Eredità'],essenza:'Il 22 è il Numero Maestro della costruzione — la capacità di prendere sogni impossibili e renderli realtà concrete. Hai la visione dell\'11 e la capacità pratica dell\'8 moltiplicata. Non sei qui per fare cose piccole. Le strutture che costruisci — fisiche, intellettuali, spirituali — sono destinate a durare generazioni.',luci:'Capacità di manifestare visioni straordinarie, leadership monumentale, dono per costruire sistemi che durano, disciplina fuori dal comune, eredità che trascende il singolo.',ombre:'Tendenza all\'eccesso di ambizione, difficoltà nelle relazioni intime per l\'intensità del focus, possibile rigidità nel voler controllare la propria creazione.',missione:'La tua missione è costruire qualcosa di così grande e buono che nemmeno la tua morte potrà fermarlo.',compatibile:'4 e 8 condividono la tua forza costruttiva; 11 ti ispira; 33 eleva la tua opera.',kw:'Visione colossale · Costruzione pratica · Maestria'},
+    33:{nome:'Il Maestro dell\'Amore',emoji:'💫',master:true,keywords:['Amore universale','Compassione cosmica','Servizio supremo','Guarigione','Benedizione'],essenza:'Il 33 è il Numero Maestro dell\'amore compassionevole — la vibrazione del guaritore cosmico, del maestro spirituale, del portatore di luce che ama incondizionatamente. Pochissime anime sono pronte per questa vibrazione. Se il tuo numero è 33, sei qui con una missione di amore su scala globale.',luci:'Amore incondizionato su scala cosmica, dono guaritore straordinario, capacità di trasformare chi ti avvicina, saggezza che trascende la comprensione ordinaria.',ombre:'Estremamente vulnerabile all\'energia negativa, tendenza all\'esaurimento totale, difficoltà a incarnare la propria vibrazione elevatissima nel quotidiano.',missione:'La tua missione è amare il mondo — e farlo attraverso ogni singola scelta, parola, azione della tua vita.',compatibile:'6 e 9 rispecchiano il tuo amore; 11 e 22 condividono la tua missione maestra.',kw:'Amore universale · Compassione cosmica · Guarigione'}
+  },
+  en: {
+    1:{nome:'The Pioneer',emoji:'☀️',master:false,keywords:['Leadership','Independence','Originality','Courage','Willpower'],essenza:'Number 1 is the energy of the sun — singular, bright, unrepeatable. You came into this world to blaze trails where none existed. You don\'t follow: you lead. You don\'t imitate: you create. Your life is an original experiment, and this can be lonely, but it is also magnificent. Your karmic task is to learn to lead without crushing, and to be independent without becoming unable to connect.',luci:'Extraordinary initiative, pioneering courage, unyielding willpower, ability to create from nothing, natural leadership that inspires.',ombre:'Tendency to arrogance, difficulty receiving help, self-centeredness under stress, impatience when not in charge.',missione:'Your mission is to use your unique individuality to open paths that benefit not only you, but everyone who comes after you.',compatibile:'3 and 5 amplify your freedom; 2 and 6 teach you to receive; 8 shares power with you.',kw:'Leadership · Independence · Courage'},
+    2:{nome:'The Diplomat',emoji:'🌙',master:false,keywords:['Sensitivity','Partnership','Intuition','Harmony','Mediation'],essenza:'Number 2 is the energy of the moon — reflective, cyclical, empathetic. You are a being of deep relationships, born to connect what is divided. Your strength lies not in doing alone but in doing together. You have a rare psychic intuition and an ability to understand others that often leaves you speechless.',luci:'Profound empathy, refined diplomacy, almost psychic intuition, gift for relationships, extraordinary patience, transformative listening.',ombre:'Chronic indecision, excessive dependence on others\' approval, tendency to dissolve into relationships, fear of conflict even when necessary.',missione:'Your mission is to build bridges between different souls, bring peace where there is division, and remind the world that true strength comes from cooperation.',compatibile:'6 and 8 offer security; 1 and 9 inspire you; 4 grounds you; 11 resonates with your depth.',kw:'Sensitivity · Partnership · Intuition'},
+    3:{nome:'The Creative',emoji:'🎨',master:false,keywords:['Creativity','Expression','Joy','Communication','Art'],essenza:'Number 3 is the vibration of pure creation — the trinity that generates everything that exists. You were born with an expressive gift that can manifest as art, words, music, humor, or magnetic presence. When you are at your best, you bring authentic joy into the world simply by being yourself.',luci:'Abundant creativity, brilliant communication, contagious optimism, natural magnetism, healing sense of humor, joy as a spiritual gift.',ombre:'Dispersion of energy across too many fronts, superficiality in emotional depth, tendency to avoid problems through humor, incomplete projects.',missione:'Your mission is to bring beauty, lightness and joy into the world through your unique expression — and never stop creating.',compatibile:'1 and 5 share your energy; 2 and 6 give you depth; 9 elevates your creativity.',kw:'Creativity · Expression · Joy'},
+    4:{nome:'The Builder',emoji:'🏛️',master:false,keywords:['Stability','Discipline','Construction','Reliability','Structure'],essenza:'Number 4 is the energy of the earth — solid, reliable, capable of building what lasts for centuries. You came to create foundations on which others can build their lives. Your work is methodical, precise, patient. Where others see sacrifice, you see investment.',luci:'Absolute reliability, uncommon discipline, concrete constructive ability, infinite patience for details, unyielding dedication.',ombre:'Rigidity of thought, difficulty adapting to change, tendency toward workaholism, resistance to innovation, inability to enjoy the process.',missione:'Your mission is to build what lasts — not just houses and careers, but values, systems, structures that serve future generations.',compatibile:'2 and 6 share your care; 8 builds with you; 1 inspires you; 7 opens you to spirituality.',kw:'Stability · Discipline · Structure'},
+    5:{nome:'The Free Spirit',emoji:'🦋',master:false,keywords:['Freedom','Adventure','Change','Versatility','Experience'],essenza:'Number 5 is the vibration of absolute freedom — the wind that cannot be imprisoned. You need variety, movement, new experiences the way others need air. Your ideal life is a series of chapters completely different from one another.',luci:'Extraordinary adaptability, courage toward the unknown, insatiable curiosity, versatile talent, ability to thrive in change.',ombre:'Inconsistency, difficulty finishing projects, tendency to excess in pleasant distractions, fear of long-term commitment, dispersion.',missione:'Your mission is to show the world that change is not an enemy but a teacher — and that the most authentic life is one lived with courage in uncertainty.',compatibile:'1 and 3 share your expansive energy; 7 offers you depth; 6 anchors you in love.',kw:'Freedom · Adventure · Change'},
+    6:{nome:'The Nurturer',emoji:'💚',master:false,keywords:['Love','Responsibility','Care','Domestic harmony','Healing'],essenza:'Number 6 is the vibration of love in action — not romantic love but cosmic love, the kind that manifests as care, presence, nourishment. You are here to build environments where others flourish. Your home, your space, your relationships carry your healing touch.',luci:'Unconditional love, gift for care and healing, sense of responsibility, ability to create harmony, beauty that manifests in the environment.',ombre:'Tendency toward emotional martyrdom, perfectionism about environment, interference in others\' choices out of love, difficulty letting go.',missione:'Your mission is to build nests of love — physical and emotional spaces where life can be lived fully and safely.',compatibile:'2 and 4 mirror your care; 9 elevates your love; 3 brings joy to your nest.',kw:'Love · Responsibility · Care'},
+    7:{nome:'The Seeker',emoji:'🔭',master:false,keywords:['Wisdom','Analysis','Mysticism','Fertile solitude','Truth'],essenza:'Number 7 is the vibration of mystery — the number of the sacred, of seeking, of penetrating surfaces. You have a penetrating intelligence that doesn\'t accept easy answers. You are a seeker of truth in all its forms — scientific, spiritual, philosophical.',luci:'Deep analytical intelligence, mystical intuition, gift for research and understanding, absolute intellectual honesty, authentic spiritual depth.',ombre:'Tendency toward isolation, difficulty trusting others, defensive cynicism, paralyzing perfectionism, emotional coldness as a shield.',missione:'Your mission is to bring light to complexity — translating mysteries into understanding accessible to others through your tireless research.',compatibile:'4 grounds you; 9 elevates you; 2 warms you; 11 resonates with your mystical depth.',kw:'Wisdom · Analysis · Mysticism'},
+    8:{nome:'The Powerhouse',emoji:'⚡',master:false,keywords:['Power','Abundance','Authority','Material karma','Success'],essenza:'Number 8 is the vibration of cosmic power — the symbol of infinity standing up. You are here to master the material world, not to serve it. Money, power, authority — these are not your goals, they are your tools. When you manage them with wisdom and justice, you create prosperity that benefits many.',luci:'Extraordinary executive strength, long-term strategic vision, invincible determination, ability to create abundance, respected natural authority.',ombre:'Tendency to control, difficulty delegating, obsession with success at the expense of relationships, attraction to power without ethics.',missione:'Your mission is to prove that abundance and ethics are not opposites — and that the greatest power is that used to lift others up.',compatibile:'4 builds with you; 2 softens you; 6 grounds you in love; 3 brings lightness.',kw:'Power · Abundance · Authority'},
+    9:{nome:'The Universal Sage',emoji:'🌌',master:false,keywords:['Universal wisdom','Compassion','Completion','Humanity','Service'],essenza:'Number 9 is the vibration of ending and completeness — the number that contains all the others. You have lived many experiences, and this has given you an understanding of the human soul that others cannot touch. You were born to serve something bigger than yourself.',luci:'Deep wisdom that transcends direct experience, universal compassion, boundless generosity, a vision that embraces all humanity, ability to heal the oldest wounds.',ombre:'Difficulty letting go, tendency toward martyrdom, excessive sensitivity to others\' suffering, impracticality in everyday details.',missione:'Your mission is to serve humanity through whatever form is yours — art, healing, teaching, activism. You are here to make a difference on a large scale.',compatibile:'3 and 6 amplify your gift; 7 shares your depth; 2 supports you in love.',kw:'Universal wisdom · Compassion · Service'},
+    11:{nome:'The Illuminated Visionary',emoji:'✨',master:true,keywords:['Higher intuition','Illumination','Inspiration','Messenger','Elevation'],essenza:'11 is the first Master Number — an elevated vibration not everyone is ready to carry. You are a channel between the visible and the invisible, between the everyday and the transcendent. Your intuition doesn\'t come from logic but from something more ancient. Your task is to inspire, to illuminate, to be a beacon for those in the dark.',luci:'Almost psychic intuition, ability to inspire and illuminate, vision of the future, gift for spiritual healing, charismatic presence that uplifts.',ombre:'Extremely sensitive to negative energies, tendency toward nervous exhaustion, difficulty "staying in the practical world," pronounced cycles of light and darkness.',missione:'Your mission is to be a lamp in the night — inspiring others to see possibilities they could never have imagined alone.',compatibile:'2 shares your sensitivity; 7 your depth; 22 builds what you dream.',kw:'Higher intuition · Illumination · Inspiration'},
+    22:{nome:'The Master Builder',emoji:'🏗️',master:true,keywords:['Colossal vision','Practical construction','Universal power','Mastery','Legacy'],essenza:'22 is the Master Number of construction — the ability to take impossible dreams and make them concrete reality. You have the vision of 11 and the practical ability of 8 multiplied. You are not here to do small things. The structures you build — physical, intellectual, spiritual — are meant to last generations.',luci:'Ability to manifest extraordinary visions, monumental leadership, gift for building systems that last, uncommon discipline, legacy that transcends the individual.',ombre:'Tendency toward excessive ambition, difficulty in intimate relationships due to intensity of focus, possible rigidity in wanting to control one\'s own creation.',missione:'Your mission is to build something so great and good that not even your death can stop it.',compatibile:'4 and 8 share your constructive strength; 11 inspires you; 33 elevates your work.',kw:'Colossal vision · Practical construction · Mastery'},
+    33:{nome:'The Master of Love',emoji:'💫',master:true,keywords:['Universal love','Cosmic compassion','Supreme service','Healing','Blessing'],essenza:'33 is the Master Number of compassionate love — the vibration of the cosmic healer, the spiritual master, the bearer of light who loves unconditionally. Very few souls are ready for this vibration. If your number is 33, you are here with a mission of love on a global scale.',luci:'Unconditional love on a cosmic scale, extraordinary healing gift, ability to transform those who approach you, wisdom that transcends ordinary understanding.',ombre:'Extremely vulnerable to negative energy, tendency toward total exhaustion, difficulty embodying your own extremely high vibration in daily life.',missione:'Your mission is to love the world — and to do it through every single choice, word, and action of your life.',compatibile:'6 and 9 mirror your love; 11 and 22 share your master mission.',kw:'Universal love · Cosmic compassion · Healing'}
+  },
+  es: {
+    1:{nome:'El Pionero',emoji:'☀️',master:false,keywords:['Liderazgo','Independencia','Originalidad','Coraje','Voluntad'],essenza:'El número 1 es la energía del sol — singular, luminoso, irrepetible. Viniste a este mundo para trazar caminos donde no existían. No sigues: guías. No imitas: creas. Tu vida es un experimento original, y esto puede ser solitario, pero también es magnífico. Tu tarea kármica es aprender a liderar sin aplastar, y a ser independiente sin volverte incapaz de conectar.',luci:'Iniciativa extraordinaria, coraje pionero, fuerza de voluntad inquebrantable, capacidad de crear de la nada, liderazgo natural que inspira.',ombre:'Tendencia a la arrogancia, dificultad para recibir ayuda, egocentrismo bajo estrés, impaciencia cuando no está al mando.',missione:'Tu misión es usar tu individualidad única para abrir caminos que beneficien no solo a ti, sino a todos los que vengan después de ti.',compatibile:'3 y 5 amplifican tu libertad; 2 y 6 te enseñan a recibir; 8 comparte el poder contigo.',kw:'Liderazgo · Independencia · Coraje'},
+    2:{nome:'El Diplomático',emoji:'🌙',master:false,keywords:['Sensibilidad','Asociación','Intuición','Armonía','Mediación'],essenza:'El número 2 es la energía de la luna — reflexiva, cíclica, empática. Eres un ser de relaciones profundas, nacido para conectar lo que está dividido. Tu fuerza no está en hacer solo sino en hacer con otros. Tienes una intuición psíquica poco común y una capacidad de comprender a los demás que a menudo te deja sin palabras.',luci:'Empatía profundísima, diplomacia refinada, intuición casi psíquica, don para las relaciones, paciencia extraordinaria, escucha transformadora.',ombre:'Indecisión crónica, dependencia excesiva de la aprobación ajena, tendencia a disolverse en las relaciones, miedo al conflicto incluso cuando es necesario.',missione:'Tu misión es construir puentes entre almas diferentes, traer paz donde hay división y recordarle al mundo que la fuerza verdadera nace de la cooperación.',compatibile:'6 y 8 ofrecen seguridad; 1 y 9 te inspiran; 4 te ancla; 11 resuena con tu profundidad.',kw:'Sensibilidad · Asociación · Intuición'},
+    3:{nome:'El Creativo',emoji:'🎨',master:false,keywords:['Creatividad','Expresión','Alegría','Comunicación','Arte'],essenza:'El número 3 es la vibración de la creación pura — la trinidad que genera todo lo que existe. Naciste con un don expresivo que puede manifestarse como arte, palabras, música, humor o presencia magnética. Cuando estás en tu mejor momento, traes alegría auténtica al mundo simplemente siendo tú mismo.',luci:'Creatividad abundante, comunicación brillante, optimismo contagioso, magnetismo natural, sentido del humor que sana, alegría como don espiritual.',ombre:'Dispersión de energías en demasiados frentes, superficialidad en la profundidad emocional, tendencia a evitar problemas mediante el humor, proyectos inconclusos.',missione:'Tu misión es traer belleza, ligereza y alegría al mundo a través de tu expresión única — y nunca dejar de crear.',compatibile:'1 y 5 comparten tu energía; 2 y 6 te dan profundidad; 9 eleva tu creatividad.',kw:'Creatividad · Expresión · Alegría'},
+    4:{nome:'El Constructor',emoji:'🏛️',master:false,keywords:['Estabilidad','Disciplina','Construcción','Fiabilidad','Estructura'],essenza:'El número 4 es la energía de la tierra — sólida, fiable, capaz de construir lo que dura siglos. Viniste a crear cimientos sobre los que otros puedan edificar su vida. Tu trabajo es metódico, preciso, paciente. Donde otros ven sacrificio, tú ves inversión.',luci:'Fiabilidad absoluta, disciplina fuera de lo común, capacidad constructiva concreta, paciencia infinita para los detalles, dedicación inquebrantable.',ombre:'Rigidez de pensamiento, dificultad para adaptarse a los cambios, tendencia al trabajo excesivo, resistencia a la innovación, incapacidad de disfrutar el proceso.',missione:'Tu misión es construir lo que perdura — no solo casas y carreras, sino valores, sistemas, estructuras que sirvan a las generaciones futuras.',compatibile:'2 y 6 comparten tu cuidado; 8 construye contigo; 1 te inspira; 7 te abre a la espiritualidad.',kw:'Estabilidad · Disciplina · Estructura'},
+    5:{nome:'El Libre',emoji:'🦋',master:false,keywords:['Libertad','Aventura','Cambio','Versatilidad','Experiencia'],essenza:'El número 5 es la vibración de la libertad absoluta — el viento que no puede ser aprisionado. Necesitas variedad, movimiento, experiencias nuevas como otros necesitan aire. Tu vida ideal es una serie de capítulos completamente distintos entre sí.',luci:'Adaptabilidad extraordinaria, coraje hacia lo desconocido, curiosidad insaciable, versatilidad de talento, capacidad de prosperar en el cambio.',ombre:'Inconstancia, dificultad para completar proyectos, tendencia al exceso en distracciones placenteras, miedo al compromiso a largo plazo, dispersión.',missione:'Tu misión es mostrarle al mundo que el cambio no es un enemigo sino un maestro — y que la vida más auténtica es la que se vive con coraje en la incertidumbre.',compatibile:'1 y 3 comparten tu energía expansiva; 7 te ofrece profundidad; 6 te ancla al amor.',kw:'Libertad · Aventura · Cambio'},
+    6:{nome:'El Nutricio',emoji:'💚',master:false,keywords:['Amor','Responsabilidad','Cuidado','Armonía doméstica','Sanación'],essenza:'El número 6 es la vibración del amor en acción — no el amor romántico sino el cósmico, el tipo de amor que se manifiesta como cuidado, presencia, nutrición. Estás aquí para construir ambientes donde otros florezcan. Tu casa, tu espacio, tus relaciones llevan tu toque sanador.',luci:'Amor incondicional, don para el cuidado y la sanación, sentido de la responsabilidad, capacidad de crear armonía, belleza que se manifiesta en el entorno.',ombre:'Tendencia al martirio emocional, perfeccionismo con el entorno, injerencia en las decisiones ajenas por amor, dificultad para dejar ir.',missione:'Tu misión es construir nidos de amor — espacios físicos y emocionales donde la vida pueda vivirse con plenitud y seguridad.',compatibile:'2 y 4 reflejan tu cuidado; 9 eleva tu amor; 3 trae alegría a tu nido.',kw:'Amor · Responsabilidad · Cuidado'},
+    7:{nome:'El Buscador',emoji:'🔭',master:false,keywords:['Sabiduría','Análisis','Misticismo','Soledad fecunda','Verdad'],essenza:'El número 7 es la vibración del misterio — el número de lo sagrado, de la búsqueda, de penetrar las superficies. Tienes una inteligencia penetrante que no acepta respuestas fáciles. Eres un buscador de la verdad en todas sus formas — científicas, espirituales, filosóficas.',luci:'Inteligencia analítica profunda, intuición mística, don para la investigación y la comprensión, honestidad intelectual absoluta, profundidad espiritual auténtica.',ombre:'Tendencia al aislamiento, dificultad para confiar en los demás, cinismo defensivo, perfeccionismo paralizante, frialdad emocional como escudo.',missione:'Tu misión es traer luz a la complejidad — traducir los misterios en comprensión accesible para otros a través de tu incansable investigación.',compatibile:'4 te ancla; 9 te eleva; 2 te da calidez; 11 resuena con tu profundidad mística.',kw:'Sabiduría · Análisis · Misticismo'},
+    8:{nome:'El Poder',emoji:'⚡',master:false,keywords:['Poder','Abundancia','Autoridad','Karma material','Éxito'],essenza:'El número 8 es la vibración del poder cósmico — el símbolo del infinito de pie. Estás aquí para dominar el mundo material, no para servirlo. Dinero, poder, autoridad — no son tus objetivos, son tus herramientas. Cuando los gestionas con sabiduría y justicia, creas prosperidad que beneficia a muchos.',luci:'Fuerza ejecutiva extraordinaria, visión estratégica a largo plazo, determinación invencible, capacidad de crear abundancia, autoridad natural respetada.',ombre:'Tendencia al control, dificultad para delegar, obsesión con el éxito a costa de las relaciones, atracción por el poder sin ética.',missione:'Tu misión es demostrar que abundancia y ética no son opuestos — y que el mayor poder es el que se usa para elevar a los demás.',compatibile:'4 construye contigo; 2 te suaviza; 6 te arraiga en el amor; 3 trae ligereza.',kw:'Poder · Abundancia · Autoridad'},
+    9:{nome:'El Sabio Universal',emoji:'🌌',master:false,keywords:['Sabiduría universal','Compasión','Plenitud','Humanidad','Servicio'],essenza:'El número 9 es la vibración del fin y la plenitud — el número que contiene a todos los demás. Has vivido muchas experiencias, y esto te ha dado una comprensión del alma humana que otros no logran tocar. Naciste para servir a algo más grande que tú.',luci:'Sabiduría profunda que trasciende la experiencia directa, compasión universal, generosidad sin límites, visión que abarca toda la humanidad, capacidad de sanar las heridas más antiguas.',ombre:'Dificultad para dejar ir, tendencia al martirio, sensibilidad excesiva al sufrimiento ajeno, impracticidad en los detalles cotidianos.',missione:'Tu misión es servir a la humanidad a través de cualquier forma que sea tuya — arte, sanación, enseñanza, activismo. Estás aquí para marcar la diferencia a gran escala.',compatibile:'3 y 6 amplifican tu don; 7 comparte tu profundidad; 2 te sostiene en el amor.',kw:'Sabiduría universal · Compasión · Servicio'},
+    11:{nome:'El Visionario Iluminado',emoji:'✨',master:true,keywords:['Intuición superior','Iluminación','Inspiración','Mensajero','Elevación'],essenza:'El 11 es el primer Número Maestro — una vibración elevada que no todos están listos para llevar. Eres un canal entre lo visible y lo invisible, entre lo cotidiano y lo trascendente. Tu intuición no viene de la lógica sino de algo más antiguo. Tienes la tarea de inspirar, de iluminar, de ser un faro para quien está en la oscuridad.',luci:'Intuición casi psíquica, capacidad de inspirar e iluminar, visión del futuro, don para la sanación espiritual, presencia carismática que eleva.',ombre:'Extremadamente sensible a las energías negativas, tendencia al agotamiento nervioso, dificultad para "estar en el mundo práctico", ciclos de luz y oscuridad muy pronunciados.',missione:'Tu misión es ser una lámpara en la noche — inspirar a otros a ver posibilidades que solos nunca habrían imaginado.',compatibile:'2 comparte tu sensibilidad; 7 tu profundidad; 22 construye lo que tú sueñas.',kw:'Intuición superior · Iluminación · Inspiración'},
+    22:{nome:'El Maestro Constructor',emoji:'🏗️',master:true,keywords:['Visión colosal','Construcción práctica','Poder universal','Maestría','Legado'],essenza:'El 22 es el Número Maestro de la construcción — la capacidad de tomar sueños imposibles y convertirlos en realidad concreta. Tienes la visión del 11 y la capacidad práctica del 8 multiplicada. No estás aquí para hacer cosas pequeñas. Las estructuras que construyes — físicas, intelectuales, espirituales — están destinadas a durar generaciones.',luci:'Capacidad de manifestar visiones extraordinarias, liderazgo monumental, don para construir sistemas duraderos, disciplina fuera de lo común, legado que trasciende al individuo.',ombre:'Tendencia al exceso de ambición, dificultad en las relaciones íntimas por la intensidad del enfoque, posible rigidez al querer controlar la propia creación.',missione:'Tu misión es construir algo tan grande y bueno que ni siquiera tu muerte pueda detenerlo.',compatibile:'4 y 8 comparten tu fuerza constructiva; 11 te inspira; 33 eleva tu obra.',kw:'Visión colosal · Construcción práctica · Maestría'},
+    33:{nome:'El Maestro del Amor',emoji:'💫',master:true,keywords:['Amor universal','Compasión cósmica','Servicio supremo','Sanación','Bendición'],essenza:'El 33 es el Número Maestro del amor compasivo — la vibración del sanador cósmico, del maestro espiritual, del portador de luz que ama incondicionalmente. Muy pocas almas están listas para esta vibración. Si tu número es 33, estás aquí con una misión de amor a escala global.',luci:'Amor incondicional a escala cósmica, don sanador extraordinario, capacidad de transformar a quienes se te acercan, sabiduría que trasciende la comprensión ordinaria.',ombre:'Extremadamente vulnerable a la energía negativa, tendencia al agotamiento total, dificultad para encarnar tu vibración altísima en lo cotidiano.',missione:'Tu misión es amar al mundo — y hacerlo a través de cada elección, palabra y acción de tu vida.',compatibile:'6 y 9 reflejan tu amor; 11 y 22 comparten tu misión maestra.',kw:'Amor universal · Compasión cósmica · Sanación'}
+  }
+};
+
+const NUM_TABLE = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8};
 
 /* ══════════════════════════════════════════
    updateSEO()
 ══════════════════════════════════════════ */
 function updateSEO() {
   const S = LANG[currentLang].seo;
+  const L = LANG[currentLang];
   document.documentElement.lang = S.htmlLang;
   document.title = S.title;
   document.querySelector('meta[name="description"]').content = S.description;
@@ -1009,14 +1377,76 @@ function updateSEO() {
   if (ld && S.faqLD) {
     ld.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: S.faqLD.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a }
-      }))
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
+        },
+        {
+          '@type': 'Article',
+          headline: L.artTitle,
+          description: S.description,
+          image: 'https://mysticaoracoli.it/images/icone/home/numerologia.webp',
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni' },
+          publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli · PetroCorporation' },
+          mainEntityOfPage: PAGE_URL
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: L.bcHome, item: 'https://mysticaoracoli.it/' },
+            { '@type': 'ListItem', position: 2, name: L.bcEnc, item: 'https://mysticaoracoli.it/enciclopedia.html' },
+            { '@type': 'ListItem', position: 3, name: L.bcCurrent, item: PAGE_URL }
+          ]
+        },
+        {
+          '@type': 'WebPage',
+          '@id': PAGE_URL,
+          name: S.title,
+          url: PAGE_URL,
+          inLanguage: S.htmlLang
+        }
+      ]
     });
   }
+}
+
+/* ══════════════════════════════════════════
+   RENDER: Griglia numeri 1-9 e Card Maestro
+══════════════════════════════════════════ */
+function renderNumGrid() {
+  const DB = DB_NUM_LANG[currentLang];
+  const grid = document.getElementById('numGrid');
+  if (!grid) return;
+  grid.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => {
+    const d = DB[n];
+    return `<div class="num-card"><div class="num-card-n">${n}</div><span class="num-card-emoji" aria-hidden="true">${d.emoji}</span><div class="num-card-name">${d.nome}</div><div class="num-card-kw">${d.kw}</div></div>`;
+  }).join('');
+
+  const cards = document.getElementById('numDetailCards');
+  if (cards) {
+    cards.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => {
+      const d = DB[n];
+      return `<div class="card"><h3>${d.emoji} ${n} — ${d.nome}</h3><p>${d.essenza}<br><strong>${LANG[currentLang].labelLuciShort}:</strong> ${d.luci}<br><strong>${LANG[currentLang].labelOmbreShort}:</strong> ${d.ombre}</p></div>`;
+    }).join('');
+  }
+}
+
+function renderMasterCards() {
+  const DB = DB_NUM_LANG[currentLang];
+  const el = document.getElementById('masterCards');
+  if (!el) return;
+  el.innerHTML = [11,22,33].map(n => {
+    const d = DB[n];
+    return `<div class="card">
+      <div class="num-card master" style="display:inline-block;margin-bottom:12px"><div class="num-card-n">${n}</div><span class="num-card-emoji" aria-hidden="true">${d.emoji}</span><div class="num-card-name">${d.nome}</div></div>
+      <p>${d.essenza}<br><strong>${LANG[currentLang].labelLuciShort}:</strong> ${d.luci}<br><strong>${LANG[currentLang].labelOmbreShort}:</strong> ${d.ombre}</p>
+    </div>`;
+  }).join('');
 }
 
 /* ══════════════════════════════════════════
@@ -1025,50 +1455,144 @@ function updateSEO() {
 function applyLang() {
   updateSEO();
   const L = LANG[currentLang];
+  const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  const setHTML = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
+
+  // Skip link
+  setText('skip-link', L.skipLink);
 
   // Header
-  document.getElementById('btn-back').textContent = L.back;
-  document.getElementById('musicToggle').textContent =
-    window.audioManager?.isPlaying ? L.music.on : L.music.off;
-  document.getElementById('themeToggle').textContent =
-    isDayMode ? L.theme.night : L.theme.day;
-  document.getElementById('page-title').textContent = L.pageTitle;
+  setText('btn-back', L.back);
+  document.getElementById('btn-back')?.setAttribute('aria-label', L.back);
+  setText('musicToggle', window.audioManager?.isPlaying ? L.music.on : L.music.off);
+  setText('themeToggle', isDayMode ? L.theme.night : L.theme.day);
+  setText('page-title', L.pageTitle);
 
-  // Calculator
-  document.getElementById('tab-vita-lbl').textContent = L.tabVita;
-  document.getElementById('tab-destino-lbl').textContent = L.tabDestino;
-  document.getElementById('label-data').textContent = L.labelData;
-  document.getElementById('label-nome').textContent = L.labelNome;
+  // Hero / Breadcrumb / TOC
+  setText('hero-title', L.heroTitle);
+  setText('hero-sub', L.heroSub);
+  setText('hero-badge', L.heroBadge);
+  setText('bc-home', L.bcHome);
+  setText('bc-enc', L.bcEnc);
+  setText('bc-current', L.bcCurrent);
+  setText('toc-title', L.tocTitle);
+  setText('toc-1', L.toc1); setText('toc-2', L.toc2); setText('toc-3', L.toc3);
+  setText('toc-4', L.toc4); setText('toc-5', L.toc5); setText('toc-6', L.toc6);
+  setText('toc-7', L.toc7); setText('toc-8', L.toc8); setText('toc-9', L.toc9);
 
-  // Article
-  document.getElementById('art-title').textContent = L.artTitle;
-  document.getElementById('art-h2').textContent = L.artH2;
-  document.getElementById('art-h3').textContent = L.artH3;
-  document.getElementById('art-p1').textContent = L.artP1;
-  document.getElementById('art-p2').textContent = L.artP2;
-  document.getElementById('art-p3').textContent = L.artP3;
-  document.getElementById('art-p4').textContent = L.artP4;
-  document.getElementById('art-p5').textContent = L.artP5;
-  document.getElementById('cta-explore').textContent = L.ctaExplore;
-  document.getElementById('share-btn-lbl').textContent = L.shareBtn;
+  // Calcolatore
+  setText('calc-section-title', L.calcSectionTitle);
+  setHTML('calc-intro', L.calcIntro);
+  setText('calc-title', L.calcTitle);
+  setText('tab-vita-lbl', L.tabVita);
+  setText('tab-destino-lbl', L.tabDestino);
+  setText('label-data', L.labelData);
+  setText('label-nome', L.labelNome);
+  document.getElementById('numDate')?.setAttribute('aria-label', L.ariaData);
+  const nameInp = document.getElementById('numName');
+  if (nameInp) { nameInp.setAttribute('aria-label', L.ariaNome); nameInp.setAttribute('placeholder', L.namePlaceholder); }
+  setText('btn-calcola-vita', L.btnCalcolaVita);
+  setText('btn-calcola-destino', L.btnCalcolaDestino);
+
+  // Cos'è
+  setText('ce-title', L.ceTitle);
+  setHTML('ce-p1', L.ceP1);
+  setHTML('ce-p2', L.ceP2);
+  setHTML('ce-highlight', L.ceHighlight);
+  setHTML('ce-p3', L.ceP3);
+
+  // Numeri 1-9 / Maestro
+  setText('num1-9-title', L.num19Title);
+  setText('num1-9-intro', L.num19Intro);
+  setText('master-title', L.masterTitle);
+  setHTML('master-intro', L.masterIntro);
+  setHTML('master-highlight', L.masterHighlight);
+  renderNumGrid();
+  renderMasterCards();
+
+  // Tabella pitagorica
+  setText('tab5-title', L.tab5Title);
+  setText('tab5-intro', L.tab5Intro);
+  setHTML('tab5-example', L.tab5Example);
+
+  // Come calcolare
+  setText('cc-title', L.ccTitle);
+  setText('cc-h3-1', L.ccH31);
+  setHTML('cc-list-1', L.ccList1.map(i => `<li>${i}</li>`).join(''));
+  const ex = document.getElementById('cc-examples');
+  if (ex) ex.innerHTML = L.ccExamples.map(p => `<p>${p}</p>`).join('');
+  setText('cc-h3-2', L.ccH32);
+  setHTML('cc-list-2', L.ccList2.map(i => `<li>${i}</li>`).join(''));
+  setHTML('cc-highlight', L.ccHighlight);
+
+  // Cicli
+  setText('cy-title', L.cyTitle);
+  setHTML('cy-intro', L.cyIntro);
+  setText('cy-h3-1', L.cyH31);
+  setHTML('cy-p1', L.cyP1);
+  setText('cy-h3-2', L.cyH32);
+  setHTML('cy-p2', L.cyP2);
+  setHTML('cy-highlight', L.cyHighlight);
+
+  // Articolo editoriale
+  setText('art-title', L.artTitle);
+  setText('art-h2', L.artH2);
+  setText('art-h3', L.artH3);
+  setText('art-p1', L.artP1);
+  setText('art-p2', L.artP2);
+  setText('art-p3', L.artP3);
+  setText('art-p4', L.artP4);
+  setText('art-p5', L.artP5);
+  const hero = document.getElementById('art-hero'); if (hero) hero.alt = L.artHeroCaption;
+  setText('art-hero-caption', L.artHeroCaption);
+  setText('link-hd', L.linkHD);
+  setText('link-gk', L.linkGK);
+  setText('link-cb', L.linkCB);
+  setText('cta-explore', L.ctaExplore);
+  setText('share-btn-lbl', L.shareBtn);
+  document.getElementById('share-btn')?.setAttribute('aria-label', L.shareAria);
 
   // Premium modal
-  document.getElementById('premium-title').textContent = L.premiumTitle;
-  document.getElementById('premium-text').textContent = L.premiumText;
-  document.getElementById('premium-price').textContent = L.premiumPrice;
-  document.getElementById('premium-btn').textContent = L.premiumBtn;
-  document.getElementById('premium-skip').textContent = L.premiumSkip;
+  setText('premium-title', L.premiumTitle);
+  setText('premium-text', L.premiumText);
+  setText('premium-price', L.premiumPrice);
+  setText('premium-btn', L.premiumBtn);
+  setText('premium-skip', L.premiumSkip);
+  setText('pm-code-toggle', L.pmCodeToggle);
+  setText('pm-code-submit', L.pmCodeSubmit);
+  setText('pm-code-ok-text', L.pmCodeOk);
+  setText('pm-code-norecord', L.pmCodeNoRecord);
+  setText('pm-code-restore-link', L.pmCodeRestoreLink);
+  const codeInp = document.getElementById('_pm_code_inp');
+  if (codeInp) codeInp.setAttribute('aria-label', L.pmCodeToggle);
+
+  // CTA / Crosslinks / Esplora
+  setText('cta-h3', L.ctaH3);
+  setText('cta-p', L.ctaP);
+  setText('seo-cross-title', L.scTitle);
+  setText('sc-1', L.sc1); setText('sc-2', L.sc2); setText('sc-3', L.sc3);
+  setText('sc-4', L.sc4); setText('sc-5', L.sc5);
+  setText('esplora-title', L.esploraTitle);
+  setText('esplora-1', L.esplora1); setText('esplora-2', L.esplora2);
+  setText('esplora-3', L.esplora3); setText('esplora-4', L.esplora4);
+  setText('esplora-5', L.esplora5); setText('esplora-6', L.esplora6);
 
   // Footer
-  document.getElementById('footer-copy').textContent = L.footerCopy;
-  document.getElementById('footer-disclaimer').textContent = L.footerDisclaimer;
+  setText('footer-copy', L.footerCopy);
+  setText('footer-disclaimer', L.footerDisclaimer);
 
   // FAQ
+  setText('faq-title', L.faqTitle);
   renderFAQ(L.faq);
 
   // Active lang button
   document.querySelectorAll('[data-lang]').forEach(b =>
     b.classList.toggle('active', b.dataset.lang === currentLang));
+
+  // Se un risultato calcolatore è già visibile, ri-renderizzalo nella nuova lingua
+  if (_numLastResult) {
+    _showNumResult(_numLastResult.numero, _numLastResult.tipoKey, _numLastResult.stepsHtmlFn());
+  }
 }
 
 /* ══════════════════════════════════════════
@@ -1160,11 +1684,12 @@ function calcolaCompatibilitaNumerologica() {
 ══════════════════════════════════════════ */
 function renderFAQ(faqs) {
   const container = document.getElementById('faqList');
+  if (!container) return;
   container.innerHTML = faqs.map((f, i) => `
     <div class="faq-item" id="faq-${i}">
       <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
         <span>${f.q}</span>
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
       <div class="faq-answer" id="faq-ans-${i}" hidden>
         <p>${f.a}</p>
@@ -1226,27 +1751,8 @@ document.querySelectorAll('[data-lang]').forEach(btn => {
   });
 });
 
-/* ══════════════════════════════════════════
-   DATABASE NUMERI (invariato dall'originale)
-══════════════════════════════════════════ */
-const DB_NUM = {
-  1:{nome:'Il Pioniere',emoji:'☀️',master:false,keywords:['Leadership','Indipendenza','Originalità','Coraggio','Volontà'],essenza:'Il numero 1 è l\'energia del sole — singolare, luminoso, irripetibile. Sei venuto in questo mondo per tracciare strade dove non ce n\'erano. Non segui: guidi. Non imiti: crei. La tua vita è un esperimento originale e questo può essere solitario, ma è anche magnifico. Il tuo compito karmico è imparare a guidare senza schiacciare, e a essere indipendente senza diventare incapace di connettersi.',luci:'Iniziativa straordinaria, coraggio pionieristico, forza di volontà che non si arrende, capacità di creare dal nulla, leadership naturale che ispira.',ombre:'Tendenza all\'arroganza, difficoltà a ricevere aiuto, egocentrismo nei momenti di stress, impertinenza quando non si è al comando.',missione:'La tua missione è usare la tua individualità unica per aprire strade che beneficino non solo te, ma tutti coloro che verranno dopo di te.',compatibile:'3 e 5 amplificano la tua libertà; 2 e 6 ti insegnano a ricevere; 8 divide il potere con te.'},
-  2:{nome:'Il Diplomatico',emoji:'🌙',master:false,keywords:['Sensibilità','Partnership','Intuizione','Armonia','Mediazione'],essenza:'Il numero 2 è l\'energia della luna — riflessiva, ciclica, empatica. Sei un essere di relazioni profonde, nato per connettere ciò che è diviso. La tua forza non sta nel fare da solo ma nel fare con. Hai un\'intuizione psichica rara e una capacità di comprendere gli altri che spesso ti lascia senza parole.',luci:'Empatia profondissima, diplomazia raffinata, intuizione quasi psichica, dono per le relazioni, pazienza straordinaria, ascolto trasformativo.',ombre:'Indecisione cronica, eccessiva dipendenza dall\'approvazione altrui, tendenza a dissolversi nelle relazioni, paura del conflitto anche quando è necessario.',missione:'La tua missione è costruire ponti tra anime diverse, portare pace dove c\'è divisione e ricordare al mondo che la forza vera nasce dalla cooperazione.',compatibile:'6 e 8 offrono sicurezza; 1 e 9 ti ispirano; 4 ti ancora; 11 risuona con la tua profondità.'},
-  3:{nome:'Il Creativo',emoji:'🎨',master:false,keywords:['Creatività','Espressione','Gioia','Comunicazione','Arte'],essenza:'Il numero 3 è la vibrazione della creazione pura — la trinità che genera tutto ciò che esiste. Sei nato con un dono espressivo che può manifestarsi come arte, parole, musica, umorismo o presenza magnetica. Quando sei al tuo meglio, porti gioia autentica nel mondo semplicemente essendo te stesso.',luci:'Creatività abbondante, comunicazione brillante, ottimismo contagioso, magnetismo naturale, senso dell\'umorismo che guarisce, gioia come dono spirituale.',ombre:'Dispersione delle energie su troppi fronti, superficialità nella profondità emotiva, tendenza a evitare i problemi attraverso l\'umorismo, incompletezza dei progetti.',missione:'La tua missione è portare bellezza, leggerezza e gioia nel mondo attraverso la tua espressione unica — e non smettere mai di creare.',compatibile:'1 e 5 condividono la tua energia; 2 e 6 ti danno profondità; 9 eleva la tua creatività.'},
-  4:{nome:'Il Costruttore',emoji:'🏛️',master:false,keywords:['Stabilità','Disciplina','Costruzione','Affidabilità','Struttura'],essenza:'Il numero 4 è l\'energia della terra — solida, affidabile, capace di costruire ciò che dura secoli. Sei venuto a creare fondamenta su cui altri possono edificare la loro vita. Il tuo lavoro è metodico, preciso, paziente. Dove altri vedono sacrificio, tu vedi investimento.',luci:'Affidabilità assoluta, disciplina fuori dal comune, capacità costruttiva concreta, pazienza infinita per i dettagli, dedizione che non si arrende.',ombre:'Rigidità di pensiero, difficoltà ad adattarsi ai cambiamenti, tendenza al workaholic, resistenza all\'innovazione, incapacità di godere del processo.',missione:'La tua missione è costruire ciò che dura — non solo case e carriere, ma valori, sistemi, strutture che servono le generazioni future.',compatibile:'2 e 6 dividono la cura; 8 costruisce con te; 1 ti ispira; 7 ti apre alla spiritualità.'},
-  5:{nome:'Il Libero',emoji:'🦋',master:false,keywords:['Libertà','Avventura','Cambiamento','Versatilità','Esperienza'],essenza:'Il numero 5 è la vibrazione della libertà assoluta — il vento che non può essere imprigionato. Hai bisogno di varietà, movimento, esperienze nuove come altri hanno bisogno d\'aria. La tua vita ideale è una serie di capitoli completamente diversi l\'uno dall\'altro.',luci:'Adattabilità straordinaria, coraggio verso l\'ignoto, curiosità insaziabile, versatilità nel talento, capacità di prosperare nel cambiamento.',ombre:'Incostanza, difficoltà a completare i progetti, tendenza all\'eccesso nelle piacevoli distrazioni, paura dell\'impegno a lungo termine, dispersione.',missione:'La tua missione è mostrare al mondo che il cambiamento non è nemico ma maestro — e che la vita più autentica è quella vissuta con coraggio nell\'incertezza.',compatibile:'1 e 3 condividono la tua energia espansiva; 7 ti offre profondità; 6 ti ancora all\'amore.'},
-  6:{nome:'Il Nutrimento',emoji:'💚',master:false,keywords:['Amore','Responsabilità','Cura','Armonia domestica','Guarigione'],essenza:'Il numero 6 è la vibrazione dell\'amore in azione — non l\'amore romantico ma quello cosmico, il tipo di amore che si manifesta come cura, presenza, nutrimento. Sei qui per costruire ambienti dove gli altri fioriscono. La tua casa, il tuo spazio, le tue relazioni portano il tuo tocco curativo.',luci:'Amore incondizionato, dono per la cura e la guarigione, senso della responsabilità, capacità di creare armonia, bellezza che manifesta nell\'ambiente.',ombre:'Tendenza al martirio emotivo, perfezionismo nell\'ambiente, ingerenza nelle scelte altrui per amore, difficoltà a lasciare andare.',missione:'La tua missione è costruire nidi di amore — spazi fisici ed emotivi dove la vita può essere vissuta in pienezza e sicurezza.',compatibile:'2 e 4 rispecchiano la tua cura; 9 eleva il tuo amore; 3 porta gioia nel tuo nido.'},
-  7:{nome:'Il Cercatore',emoji:'🔭',master:false,keywords:['Saggezza','Analisi','Misticismo','Solitudine feconda','Verità'],essenza:'Il numero 7 è la vibrazione del mistero — il numero del sacro, del cercare, del penetrare le superfici. Hai un\'intelligenza penetrante che non accetta le risposte facili. Sei un cercatore di verità in tutte le sue forme — scientifiche, spirituali, filosofiche.',luci:'Intelligenza analitica profonda, intuizione mistica, dono per la ricerca e la comprensione, onestà intellettuale assoluta, profondità spirituale autentica.',ombre:'Tendenza all\'isolamento, difficoltà a fidarsi degli altri, cinismo difensivo, perfezionismo paralizzante, freddezza emotiva come scudo.',missione:'La tua missione è portare luce nella complessità — tradurre i misteri in comprensione accessibile agli altri attraverso la tua ricerca instancabile.',compatibile:'4 ti ancora; 9 ti eleva; 2 ti scalda; 11 risuona con la tua profondità mistica.'},
-  8:{nome:'Il Potere',emoji:'⚡',master:false,keywords:['Potere','Abbondanza','Autorità','Karma materiale','Successo'],essenza:'Il numero 8 è la vibrazione del potere cosmico — il simbolo dell\'infinito in piedi. Sei qui per padroneggiare il mondo materiale, non per servirlo. Denaro, potere, autorità — questi non sono i tuoi obiettivi, sono i tuoi strumenti. Quando li gestisci con saggezza e giustizia, crei prosperità che beneficia molti.',luci:'Forza esecutiva straordinaria, visione strategica a lungo termine, determinazione invincibile, capacità di creare abbondanza, autorità naturale rispettata.',ombre:'Tendenza al controllo, difficoltà a delegare, ossessione per il successo a scapito delle relazioni, attrazione per il potere senza etica.',missione:'La tua missione è dimostrare che abbondanza ed etica non sono opposti — e che il potere più grande è quello usato per sollevare gli altri.',compatibile:'4 costruisce con te; 2 ti addolcisce; 6 ti radica nell\'amore; 3 porta leggerezza.'},
-  9:{nome:'Il Saggio Universale',emoji:'🌌',master:false,keywords:['Saggezza universale','Compassione','Completamento','Umanità','Servizio'],essenza:'Il numero 9 è la vibrazione della fine e della completezza — il numero che contiene tutti gli altri. Hai vissuto molte esperienze, e questo ti ha dato una comprensione dell\'anima umana che altri non riescono a toccare. Sei nato per servire qualcosa di più grande di te.',luci:'Saggezza profonda che trascende l\'esperienza diretta, compassione universale, generosità senza confini, visione che abbraccia tutta l\'umanità, capacità di guarire le ferite più antiche.',ombre:'Difficoltà a lasciare andare, tendenza al martirio, eccessiva sensibilità alle sofferenze altrui, impraticità nei dettagli quotidiani.',missione:'La tua missione è servire l\'umanità attraverso qualunque forma sia tua — arte, guarigione, insegnamento, attivismo. Sei qui per fare la differenza su grande scala.',compatibile:'3 e 6 amplificano il tuo dono; 7 condivide la tua profondità; 2 ti sostiene nell\'amore.'},
-  11:{nome:'Il Visionario Illuminato',emoji:'✨',master:true,keywords:['Intuizione superiore','Illuminazione','Ispirazione','Messaggero','Elevazione'],essenza:'L\'11 è il primo Numero Maestro — una vibrazione elevata che non tutti sono pronti a portare. Sei un canale tra il visibile e l\'invisibile, tra il quotidiano e il trascendente. La tua intuizione non viene dalla logica ma da qualcosa di più antico. Hai l\'incarico di ispirare, di illuminare, di essere un faro per chi è al buio.',luci:'Intuizione quasi psichica, capacità di ispirare e illuminare, visione del futuro, dono per la guarigione spirituale, presenza carismatica che eleva.',ombre:'Estremamente sensibile alle energie negative, tendenza all\'esaurimento nervoso, difficoltà a "stare nel mondo pratico", cicli di luce e buio molto pronunciati.',missione:'La tua missione è essere una lampada nella notte — ispirare gli altri a vedere possibilità che da soli non avrebbero mai immaginato.',compatibile:'2 condivide la tua sensibilità; 7 la tua profondità; 22 costruisce ciò che tu sogni.'},
-  22:{nome:'Il Maestro Costruttore',emoji:'🏗️',master:true,keywords:['Visione colossale','Costruzione pratica','Potere universale','Maestria','Eredità'],essenza:'Il 22 è il Numero Maestro della costruzione — la capacità di prendere sogni impossibili e renderli realtà concrete. Hai la visione dell\'11 e la capacità pratica dell\'8 moltiplicata. Non sei qui per fare cose piccole. Le strutture che costruisci — fisiche, intellettuali, spirituali — sono destinate a durare generazioni.',luci:'Capacità di manifestare visioni straordinarie, leadership monumentale, dono per costruire sistemi che durano, disciplina fuori dal comune, eredità che trascende il singolo.',ombre:'Tendenza all\'eccesso di ambizione, difficoltà nelle relazioni intime per l\'intensità del focus, possibile rigidità nel voler controllare la propria creazione.',missione:'La tua missione è costruire qualcosa di così grande e buono che nemmeno la tua morte potrà fermarlo.',compatibile:'4 e 8 condividono la tua forza costruttiva; 11 ti ispira; 33 eleva la tua opera.'},
-  33:{nome:'Il Maestro dell\'Amore',emoji:'💫',master:true,keywords:['Amore universale','Compassione cosmica','Servizio supremo','Guarigione','Benedizione'],essenza:'Il 33 è il Numero Maestro dell\'amore compassionevole — la vibrazione del guaritore cosmico, del maestro spirituale, del portatore di luce che ama incondizionatamente. Pochissime anime sono pronte per questa vibrazione. Se il tuo numero è 33, sei qui con una missione di amore su scala globale.',luci:'Amore incondizionato su scala cosmica, dono guaritore straordinario, capacità di trasformare chi ti avvicina, saggezza che trascende la comprensione ordinaria.',ombre:'Estremamente vulnerabile all\'energia negativa, tendenza all\'esaurimento totale, difficoltà a incarnare la propria vibrazione elevatissima nel quotidiano.',missione:'La tua missione è amare il mondo — e farlo attraverso ogni singola scelta, parola, azione della tua vita.',compatibile:'6 e 9 rispecchiano il tuo amore; 11 e 22 condividono la tua missione maestra.'}
-};
-
-const NUM_TABLE = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8};
-
 let _numCurrentTab = 0;
+let _numLastResult = null;
 
 /* ══════════════════════════════════════════
    CALCULATOR LOGIC (originale, invariata)
@@ -1276,14 +1782,18 @@ function calcSentiero() {
   const allDigits = String(day) + String(month) + String(year);
   const rawSum = allDigits.split('').reduce((a,c) => a + parseInt(c), 0);
   const numero = numReduce(rawSum);
-  const stepsHtml = `
+  const buildSteps = () => {
+    const masterLbl = DB_NUM_LANG[currentLang][numero]?.master ? `<br>${LANG[currentLang].numeroMaestroInline}` : '';
+    return `
     ${String(day).padStart(2,'0')} / ${String(month).padStart(2,'0')} / ${year}<br>
     = ${allDigits.split('').join(' + ')} = ${rawSum}<br>
     ${rawSum !== numero ? '= ' + String(rawSum).split('').join(' + ') + ' = <strong style="color:#d4af37">' + numero + '</strong>' : '= <strong style="color:#d4af37">' + numero + '</strong>'}
-    ${DB_NUM[numero]?.master ? '<br>✦ Numero Maestro' : ''}
+    ${masterLbl}
   `;
+  };
   const L = LANG[currentLang];
-  _showNumResult(numero, L.tabVita, stepsHtml);
+  _numLastResult = { numero, tipoKey: 'tabVita', stepsHtmlFn: buildSteps };
+  _showNumResult(numero, L.tabVita, buildSteps());
 }
 
 function calcDestino() {
@@ -1296,37 +1806,41 @@ function calcDestino() {
   const numero = numReduce(rawSum);
   const letterRow = lettersOnly.split('').join(' + ');
   const numRow = values.join(' + ');
-  const stepsHtml = `
+  const buildSteps = () => {
+    const masterLbl = DB_NUM_LANG[currentLang][numero]?.master ? `<br>${LANG[currentLang].numeroMaestroInline}` : '';
+    return `
     ${rawName}<br>
     ${letterRow}<br>
     = ${numRow} = ${rawSum}<br>
     ${rawSum !== numero ? '= ' + String(rawSum).split('').join(' + ') + ' = <strong style="color:#d4af37">' + numero + '</strong>' : '= <strong style="color:#d4af37">' + numero + '</strong>'}
-    ${DB_NUM[numero]?.master ? '<br>✦ Numero Maestro' : ''}
+    ${masterLbl}
   `;
+  };
   const L = LANG[currentLang];
-  _showNumResult(numero, L.tabDestino, stepsHtml);
+  _numLastResult = { numero, tipoKey: 'tabDestino', stepsHtmlFn: buildSteps };
+  _showNumResult(numero, L.tabDestino, buildSteps());
 }
 
 function _showNumResult(numero, tipo, stepsHtml) {
-  const data = DB_NUM[numero];
+  const data = DB_NUM_LANG[currentLang][numero];
   if(!data) return;
   const L = LANG[currentLang];
   const kwHtml = data.keywords.map(k => `<span class="num-kw">${k}</span>`).join('');
-  const masterBadge = data.master ? `<div class="num-master-badge">${L.masterBadge} — Vibrazione Elevata ✦</div>` : '';
+  const masterBadge = data.master ? `<div class="num-master-badge">${L.masterBadge} — ${L.vibrazioneElevata}</div>` : '';
   const el = document.getElementById('numResult');
   el.innerHTML = `
     <div class="num-res">
       <div class="num-big">${numero}</div>
       <div class="num-name-label">${data.nome}</div>
-      <div style="font-size:34px;margin:7px 0;filter:drop-shadow(0 0 12px #d4af3760)">${data.emoji}</div>
+      <div style="font-size:34px;margin:7px 0;filter:drop-shadow(0 0 12px #d4af3760)" aria-hidden="true">${data.emoji}</div>
       ${masterBadge}
       <div class="num-calc-steps">✦ ${tipo}:<br>${stepsHtml}</div>
       <div class="num-keywords">${kwHtml}</div>
-      <div class="num-block"><h4>✨ La Tua Essenza Numerologica</h4><p>${data.essenza}</p></div>
-      <div class="num-block"><h4>🌟 Le Tue Luci</h4><p>${data.luci}</p></div>
-      <div class="num-block"><h4>🌑 Le Tue Ombre</h4><p>${data.ombre}</p></div>
-      <div class="num-block"><h4>🎯 La Tua Missione</h4><p>${data.missione}</p></div>
-      <div class="num-block"><h4>💞 Numeri Compatibili</h4><p>${data.compatibile}</p></div>
+      <div class="num-block"><h4>${L.labelEssenza}</h4><p>${data.essenza}</p></div>
+      <div class="num-block"><h4>${L.labelLuci}</h4><p>${data.luci}</p></div>
+      <div class="num-block"><h4>${L.labelOmbre}</h4><p>${data.ombre}</p></div>
+      <div class="num-block"><h4>${L.labelMissione}</h4><p>${data.missione}</p></div>
+      <div class="num-block"><h4>${L.labelCompatibile}</h4><p>${data.compatibile}</p></div>
 
       <div class="premium-upsell">
         <h4>${L.premiumUpsellTitle}</h4>
@@ -1338,7 +1852,7 @@ function _showNumResult(numero, tipo, stepsHtml) {
         </div>
       </div>
 
-      <button class="btn-sec" onclick="resetNumerologia()">🔄 Nuovo Calcolo</button>
+      <button class="btn-sec" onclick="resetNumerologia()">${L.btnNuovoCalcolo}</button>
     </div>
   `;
   el.style.display = 'block';
@@ -1349,6 +1863,7 @@ function _showNumResult(numero, tipo, stepsHtml) {
 
 function resetNumerologia() {
   document.getElementById('numResult').style.display = 'none';
+  _numLastResult = null;
   numSelectTab(_numCurrentTab);
   if(_numCurrentTab === 0) document.getElementById('numPanelDate').style.display = 'block';
   else document.getElementById('numPanelName').style.display = 'block';
