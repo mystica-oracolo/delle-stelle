@@ -1,41 +1,167 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Archivio Mistico – Le Tue Letture Salvate | MYSTICA</title>
-<meta name="description" content="Il tuo archivio mistico personale: ritrova tutte le letture dei tarocchi, oroscopi, rune, I Ching, numerologia e molto altro salvate nel tempo.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — TUTTI VUOTI nell'HTML, popolati da updateSEO() -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/archivio.html">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/archivio.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/archivio.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/archivio.html">
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/archivio.html">
+
+<!-- Open Graph — VUOTI, popolati da updateSEO() -->
+<meta property="og:title" content="">
+<meta property="og:description" content="">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mysticaoracoli.it/archivio.html">
-<meta property="og:title" content="Archivio Mistico – Le Tue Letture | MYSTICA">
-<meta property="og:description" content="Ritrova tutte le tue letture mistiche salvate: tarocchi, oroscopi, rune, I Ching, numerologia e altro.">
-<meta property="og:image" content="https://mysticaoracoli.it/og-image.jpg">
-<meta property="og:locale" content="it_IT">
-<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/archivio.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card — VUOTA, popolata da updateSEO() -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/archivio.webp">
+
+<!-- JSON-LD — inizialmente vuoto, rigenerato da updateSEO() -->
+<script type="application/ld+json">{}</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<meta name="theme-color" content="#0a0514">
+
 <style>
+/* ── Reset & Variabili ── */
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--gold:#d4af37;--bg:#0a0514;--text:#e8e0f0;--muted:#9a8ab0;--border:rgba(212,175,55,0.25)}
-body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh}
-header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:18px 20px;text-align:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
-.logo{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:3px;text-shadow:0 0 20px rgba(212,175,55,0.4)}
-.logo a{color:inherit;text-decoration:none}
-.header-sub{font-size:11px;color:var(--muted);letter-spacing:2px;margin-top:3px}
-main{max-width:760px;margin:0 auto;padding:40px 20px 60px}
+:root{
+  --bg:#0a0514;
+  --card:#140c24;
+  --purple:#2a1748;
+  --gold:#d4af37;
+  --gold-dim:#b8860b;
+  --gold-glow:rgba(212,175,55,0.4);
+  --text:#f4f1fa;
+  --muted:#b8b2d1;
+  --radius:18px;
+  --border:rgba(212,175,55,0.2);
+}
+html.theme-day{
+  --bg:#f5f2ed;
+  --card:#ede8df;
+  --text:#2a1748;
+  --muted:#6b5b7f;
+  --purple:#6b5b7f;
+  --gold:#c89742;
+  --gold-dim:#a67c52;
+  --gold-glow:rgba(200,151,66,0.2);
+  --border:#c89742;
+}
+html.theme-day .arch-item,
+html.theme-day .stat-card,
+html.theme-day .hero,
+html.theme-day .export-box,
+html.theme-day .related,
+html.theme-day .article-section,
+html.theme-day .faq-item,
+html.theme-day .modal-content,
+html.theme-day .myst-confirm-box{
+  background:var(--card);
+  border-color:var(--border);
+  color:var(--text);
+}
+html.theme-day h1,html.theme-day h2,html.theme-day h3{
+  color:var(--text);
+  text-shadow:none;
+}
+html.theme-day .quick-card,
+html.theme-day .related-link,
+html.theme-day .esplora-card{
+  background:rgba(200,151,66,0.08);
+  border-color:var(--border);
+}
+
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh;transition:background 0.3s,color 0.3s}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ── Skip Link ── */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:#0a0514;padding:10px 18px;z-index:10000;border-radius:0 0 8px 0;font-family:'Cinzel',serif;font-size:12px}
+.skip-link:focus{left:0}
+
+/* ── Sfondo Cosmico ── */
+.cosmos{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation:twinkle 14s infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+html.theme-day .cosmos{opacity:0.25}
+
+/* ── Header standard ── */
+.page-header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:max(16px,calc(16px + env(safe-area-inset-top,0px))) 20px 16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+html.theme-day .page-header{background:linear-gradient(135deg,#ede8df,#f5f2ed)}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.btn-back{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1px;text-decoration:none}
+.header-controls{display:flex;gap:8px}
+.btn-icon{background:rgba(212,175,55,0.08);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;padding:6px 12px;border-radius:20px;cursor:pointer;transition:all 0.2s}
+.btn-icon:hover{background:rgba(212,175,55,0.18);border-color:var(--gold)}
+.page-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:2px;text-align:center;text-shadow:0 0 20px rgba(212,175,55,0.35);margin-bottom:10px}
+.lang-switch{display:flex;gap:6px;justify-content:center}
+.btn-lang{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:4px 12px;border-radius:14px;cursor:pointer;transition:all 0.2s}
+.btn-lang.active,.btn-lang:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,0.1)}
+
+main{max-width:760px;margin:0 auto;padding:32px 20px 60px;position:relative;z-index:1}
 .hero{text-align:center;margin-bottom:40px;padding:36px 24px;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+html.theme-day .hero{background:linear-gradient(145deg,#ede8df,#f5f2ed)}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
 .hero-icon{font-size:52px;margin-bottom:14px;display:block}
-h1{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
+.hero-title{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
 .hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto}
 nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:32px}
 nav.breadcrumb a{color:var(--gold);text-decoration:none}
 nav.breadcrumb span{margin:0 6px;opacity:0.5}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
 
 /* Toolbar */
 .arch-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
@@ -53,6 +179,7 @@ a:hover{text-decoration:underline}
 /* Archive list */
 #archList{display:flex;flex-direction:column;gap:12px}
 .arch-item{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.18);border-radius:14px;padding:18px 20px;transition:border-color 0.2s;animation:fadeIn 0.3s ease}
+html.theme-day .arch-item{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
 .arch-item:hover{border-color:rgba(212,175,55,0.4)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .arch-type{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:6px}
@@ -60,6 +187,7 @@ a:hover{text-decoration:underline}
 .arch-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .arch-meta-dot{opacity:0.4}
 .arch-badge{display:inline-block;font-size:9px;font-family:'Cinzel',serif;letter-spacing:.8px;color:var(--muted);background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:1px 8px}
+.arch-empty-msg{text-align:center;padding:30px;color:var(--muted);font-size:14px}
 
 /* Empty state */
 .arch-empty{text-align:center;padding:50px 20px}
@@ -67,14 +195,13 @@ a:hover{text-decoration:underline}
 .arch-empty-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
 .arch-empty-sub{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
 .btn-start{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;border-radius:50px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-decoration:none;margin:4px;transition:all 0.2s;border:none;cursor:pointer}
-.btn-start:hover{box-shadow:0 4px 20px rgba(212,175,55,0.4);transform:translateY(-1px)}
-.btn-sec{display:inline-block;padding:11px 26px;background:transparent;border:1px solid rgba(212,175,55,0.4);color:var(--gold);border-radius:50px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;text-decoration:none;margin:4px;transition:all 0.2s;cursor:pointer}
-.btn-sec:hover{background:rgba(212,175,55,0.08);border-color:rgba(212,175,55,0.7)}
+.btn-start:hover{box-shadow:0 4px 20px rgba(212,175,55,0.4);transform:translateY(-1px);text-decoration:none}
 
 /* Stats */
 .arch-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
 @media(max-width:480px){.arch-stats{grid-template-columns:1fr 1fr}}
 .stat-card{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.15);border-radius:12px;padding:16px;text-align:center}
+html.theme-day .stat-card{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
 .stat-num{font-family:'Cinzel',serif;font-size:24px;color:var(--gold);display:block;margin-bottom:4px}
 .stat-label{font-size:11px;color:var(--muted);letter-spacing:.5px}
 
@@ -106,6 +233,7 @@ a:hover{text-decoration:underline}
 
 /* Export section */
 .export-box{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.15);border-radius:14px;padding:22px;margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+html.theme-day .export-box{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
 .export-icon{font-size:30px;flex-shrink:0}
 .export-text{flex:1;min-width:180px}
 .export-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.5px;margin-bottom:4px}
@@ -115,45 +243,101 @@ a:hover{text-decoration:underline}
 
 /* Related */
 .related{background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:40px}
+html.theme-day .related{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
 .related-title{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
 .related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 @media(max-width:500px){.related-grid{grid-template-columns:1fr 1fr}}
 .related-link{display:block;background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.15);border-radius:10px;padding:12px;text-align:center;text-decoration:none;transition:border-color 0.2s}
-.related-link:hover{border-color:rgba(212,175,55,0.4)}
+.related-link:hover{border-color:rgba(212,175,55,0.4);text-decoration:none}
 .related-link-icon{font-size:22px;margin-bottom:4px;display:block}
 .related-link-text{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:.5px}
 
+/* Article */
+.article-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;margin-top:40px}
+.article-section h2{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:.5px;margin-bottom:16px;line-height:1.4}
+.article-section h3{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:.5px;margin:20px 0 12px;line-height:1.4}
+.article-section p{color:var(--text);opacity:0.92;margin-bottom:14px;font-size:15px;line-height:1.8}
+.article-section img{width:100%;border-radius:14px;margin:16px 0;display:block}
+.article-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.article-links a{font-size:13px;background:rgba(212,175,55,0.08);border:1px solid var(--border);border-radius:20px;padding:6px 14px}
+.cta-explore{display:inline-block;margin-top:10px;padding:12px 26px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;border-radius:50px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-decoration:none}
+.cta-explore:hover{box-shadow:0 4px 20px rgba(212,175,55,0.4);text-decoration:none}
+
+/* Share */
+.share-section{margin-top:32px;position:relative}
+.btn-share{width:100%;background:rgba(212,175,55,0.08);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;padding:14px;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.btn-share:hover{background:rgba(212,175,55,0.16);border-color:var(--gold)}
+.share-popup{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.share-btn{flex:1;min-width:100px;text-align:center;padding:10px;border-radius:12px;font-size:12px;font-family:'Cinzel',serif;letter-spacing:.5px;border:1px solid var(--border);cursor:pointer;text-decoration:none;color:var(--text);background:rgba(212,175,55,0.05)}
+.share-btn:hover{background:rgba(212,175,55,0.12);text-decoration:none}
+
+/* FAQ */
+.faq-section{margin-top:40px}
+.faq-title{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1px;margin-bottom:16px;text-align:center}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-question{width:100%;background:none;border:none;color:var(--text);font-family:'Cinzel',serif;font-size:13.5px;text-align:left;padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;letter-spacing:.3px}
+.faq-icon{color:var(--gold);font-size:16px;flex-shrink:0}
+.faq-answer{padding:0 18px 16px;color:var(--muted);font-size:14px;line-height:1.7}
+
 /* Esplora */
-.esplora-section{background:linear-gradient(135deg,#130b26,#1a0c32);border-top:1px solid rgba(212,175,55,0.25);padding:40px 20px;text-align:center}
+.esplora-section{background:linear-gradient(135deg,#130b26,#1a0c32);border-top:1px solid rgba(212,175,55,0.25);padding:40px 20px;text-align:center;position:relative;z-index:1}
+html.theme-day .esplora-section{background:linear-gradient(135deg,#ede8df,#f5f2ed)}
 .esplora-section h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.2rem;letter-spacing:2px;margin-bottom:24px}
 .esplora-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:800px;margin:0 auto}
 .esplora-card{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);border-radius:8px;padding:10px 18px;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:1px;transition:background 0.3s,border-color 0.3s}
-.esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6)}
+.esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6);text-decoration:none}
 
-footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:20px}
-footer a{color:var(--gold);text-decoration:none;margin:0 8px}
-footer a:hover{text-decoration:underline}
+/* Footer */
+.page-footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:20px;position:relative;z-index:1}
+.page-footer a{color:var(--gold);text-decoration:none;margin:0 8px}
+.page-footer a:hover{text-decoration:underline}
 .footer-links{margin-bottom:10px;line-height:2}
+
+/* Premium Modal */
+.premium-modal{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center}
+.premium-modal.show{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(10,5,20,0.85);backdrop-filter:blur(6px)}
+.modal-content{position:relative;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid rgba(212,175,55,0.35);border-radius:20px;padding:32px 26px;max-width:340px;width:90%;text-align:center}
+html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
+.modal-content h2{font-family:'Cinzel',serif;color:var(--gold);font-size:18px;margin-bottom:14px;letter-spacing:.5px}
+.modal-content p{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:14px}
+.premium-price{font-family:'Cinzel',serif;color:var(--gold);font-size:15px;font-weight:700}
+.btn-premium-buy{width:100%;padding:14px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#0a0514;border:none;border-radius:50px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;margin-top:10px}
+.btn-premium-skip{width:100%;padding:12px;background:transparent;border:1px solid rgba(212,175,55,0.3);color:var(--muted);border-radius:50px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;cursor:pointer;margin-top:10px}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo"><a href="https://mysticaoracoli.it/">✦ MYSTICA ✦</a></div>
-  <div class="header-sub">ORACOLO DELLE STELLE</div>
+<a href="#main-content" class="skip-link" id="skip-link">Vai al contenuto principale</a>
+<div class="cosmos" aria-hidden="true"></div>
+
+<header class="page-header">
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+    </div>
+  </div>
+  <h1 class="page-title" id="page-title"></h1>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
+  </div>
 </header>
 
-<main>
-  <nav class="breadcrumb">
-    <a href="https://mysticaoracoli.it/">Home</a>
+<main id="main-content">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="./index.html" id="breadcrumb-home"></a>
     <span>›</span>
-    <span>Archivio Mistico</span>
+    <span id="breadcrumb-current"></span>
   </nav>
 
   <div class="hero">
-    <span class="hero-icon">📿</span>
-    <h1>Archivio Mistico</h1>
-    <p class="hero-sub">Qui riposano tutte le tue letture mistiche. Ogni consultazione è un filo nel tessuto del tuo cammino spirituale — custodito per te.</p>
+    <span class="hero-icon" aria-hidden="true">📿</span>
+    <h2 class="hero-title" id="hero-title"></h2>
+    <p class="hero-sub" id="hero-sub"></p>
   </div>
 
   <!-- Stats (visibili solo se ci sono letture) -->
@@ -161,146 +345,750 @@ footer a:hover{text-decoration:underline}
     <div class="arch-stats">
       <div class="stat-card">
         <span class="stat-num" id="statTotale">0</span>
-        <div class="stat-label">Letture totali</div>
+        <div class="stat-label" id="statLabelTotale"></div>
       </div>
       <div class="stat-card">
         <span class="stat-num" id="statTipi">0</span>
-        <div class="stat-label">Discipline diverse</div>
+        <div class="stat-label" id="statLabelTipi"></div>
       </div>
       <div class="stat-card">
         <span class="stat-num" id="statGiorni">0</span>
-        <div class="stat-label">Giorni di pratica</div>
+        <div class="stat-label" id="statLabelGiorni"></div>
       </div>
     </div>
   </div>
 
-  <!-- Toolbar + filtri (visibili solo se ci sono letture) -->
+  <!-- Toolbar + filtri -->
   <div id="toolbarSection" style="display:none">
     <div class="arch-toolbar">
-      <div class="arch-count">Storico: <span id="archCountLabel">0</span> letture</div>
-      <button class="btn-clear" id="archClearBtn" onclick="clearArch()">🗑️ Svuota archivio</button>
+      <div class="arch-count"><span id="toolbarCountPrefix"></span> <span id="archCountLabel">0</span> <span id="toolbarCountSuffix"></span></div>
+      <button class="btn-clear" id="archClearBtn" onclick="clearArch()"></button>
     </div>
     <div class="filter-tabs" id="filterTabs">
-      <div class="filter-tab active" data-filter="all" onclick="setFilter('all',this)">✨ Tutte</div>
+      <div class="filter-tab active" data-filter="all" id="filterAllTab" onclick="setFilter('all',this)"></div>
     </div>
   </div>
 
-  <!-- Lista letture -->
+  <!-- Lista letture (SEZIONE INTERATTIVA PRINCIPALE) -->
   <div id="archList"></div>
 
-  <!-- Export (visibile solo se ci sono letture) -->
+  <!-- Export -->
   <div class="export-box" id="exportBox" style="display:none">
-    <div class="export-icon">📋</div>
+    <div class="export-icon" aria-hidden="true">📋</div>
     <div class="export-text">
-      <div class="export-title">Esporta il tuo archivio</div>
-      <div class="export-sub">Salva una copia delle tue letture in formato testo — utile per tenere un diario mistico.</div>
+      <div class="export-title" id="exportTitle"></div>
+      <div class="export-sub" id="exportSub"></div>
     </div>
-    <button class="btn-export" onclick="exportArchivio()">⬇ Esporta .txt</button>
+    <button class="btn-export" id="exportBtn" onclick="exportArchivio()"></button>
   </div>
 
-  <!-- Link rapidi alle pratiche -->
+  <!-- Link rapidi -->
   <div id="quickSection" style="margin-top:40px">
-    <div class="section-title">✦ Inizia una Nuova Lettura</div>
-    <div class="quick-grid">
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🃏</span>
-        <span class="quick-card-label">Tarocchi</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🌙</span>
-        <span class="quick-card-label">Oroscopo</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">ᚱ</span>
-        <span class="quick-card-label">Rune</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">☯️</span>
-        <span class="quick-card-label">I Ching</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🔢</span>
-        <span class="quick-card-label">Numerologia</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">💕</span>
-        <span class="quick-card-label">Compatibilità</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🦅</span>
-        <span class="quick-card-label">Totem</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🕐</span>
-        <span class="quick-card-label">Ore Specchio</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">👼</span>
-        <span class="quick-card-label">Angeli</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🌍</span>
-        <span class="quick-card-label">Geomanzia</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🌕</span>
-        <span class="quick-card-label">Luna</span>
-      </a>
-      <a href="https://mysticaoracoli.it/" class="quick-card">
-        <span class="quick-card-icon">🪐</span>
-        <span class="quick-card-label">Pianeti</span>
-      </a>
+    <div class="section-title" id="quickSectionTitle"></div>
+    <div class="quick-grid" id="quickGrid">
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🃏</span><span class="quick-card-label" data-qk="tarocchi"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🌙</span><span class="quick-card-label" data-qk="oroscopo"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">ᚱ</span><span class="quick-card-label" data-qk="rune"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">☯️</span><span class="quick-card-label" data-qk="iching"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🔢</span><span class="quick-card-label" data-qk="numerologia"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">💕</span><span class="quick-card-label" data-qk="compatibilita"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🦅</span><span class="quick-card-label" data-qk="totem"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🕐</span><span class="quick-card-label" data-qk="orespecchio"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">👼</span><span class="quick-card-label" data-qk="angeli"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🌍</span><span class="quick-card-label" data-qk="geomanzia"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🌕</span><span class="quick-card-label" data-qk="luna"></span></a>
+      <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🪐</span><span class="quick-card-label" data-qk="pianeti"></span></a>
     </div>
   </div>
 
   <div class="related" style="margin-top:40px">
-    <div class="related-title">✦ Approfondisci su MYSTICA</div>
+    <div class="related-title" id="relatedTitle"></div>
     <div class="related-grid">
-      <a href="https://mysticaoracoli.it/guida-tarocchi.html" class="related-link">
-        <span class="related-link-icon">🎴</span>
-        <div class="related-link-text">Guida Tarocchi</div>
-      </a>
-      <a href="https://mysticaoracoli.it/significato-rune.html" class="related-link">
-        <span class="related-link-icon">ᚱ</span>
-        <div class="related-link-text">Guida Rune</div>
-      </a>
-      <a href="https://mysticaoracoli.it/guida-i-ching.html" class="related-link">
-        <span class="related-link-icon">☯️</span>
-        <div class="related-link-text">Guida I Ching</div>
-      </a>
+      <a href="./guida-tarocchi.html" class="related-link"><span class="related-link-icon" aria-hidden="true">🎴</span><div class="related-link-text" data-rk="tarocchi"></div></a>
+      <a href="./significato-rune.html" class="related-link"><span class="related-link-icon" aria-hidden="true">ᚱ</span><div class="related-link-text" data-rk="rune"></div></a>
+      <a href="./guida-i-ching.html" class="related-link"><span class="related-link-icon" aria-hidden="true">☯️</span><div class="related-link-text" data-rk="iching"></div></a>
     </div>
   </div>
+
+  <!-- Share -->
+  <div class="share-section">
+    <button class="btn-share" onclick="shareContent()" id="btn-share-label"></button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+    </div>
+  </div>
+
+  <!-- Articolo editoriale -->
+  <article class="article-section">
+    <h2 id="art-title"></h2>
+    <img src="./images/archivio.webp"
+         srcset="./images/archivio.webp 1x, ./images/archivio@2x.webp 2x"
+         id="art-hero"
+         alt=""
+         width="640" height="360"
+         loading="eager"
+         decoding="async">
+    <h3 id="art-h2"></h3>
+    <p id="art-p1"></p>
+    <p id="art-p2"></p>
+    <p id="art-p3"></p>
+    <h3 id="art-h3"></h3>
+    <p id="art-p4"></p>
+    <p id="art-p5"></p>
+    <nav class="article-links" aria-label="Approfondimenti correlati">
+      <a href="./profilo-mistico.html" data-al="profilo"></a>
+      <a href="./guida-tarocchi.html" data-al="tarocchi"></a>
+      <a href="./significato-rune.html" data-al="rune"></a>
+      <a href="./enciclopedia.html" data-al="enciclopedia"></a>
+    </nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  </article>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2 class="faq-title" id="faq-title-text">FAQ</h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
 </main>
 
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2>✨ Esplora Anche</h2>
+  <h2 id="esploraTitle"></h2>
   <div class="esplora-grid">
-    <a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a>
-    <a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a>
-    <a href="./oroscopo-cinese.html" class="esplora-card">🐉 Oroscopo Cinese</a>
-    <a href="./cicli-tempo.html" class="esplora-card">🌙 Cicli e Tempo</a>
-    <a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a>
-    <a href="./guida-tarocchi.html" class="esplora-card">🃏 Guida Tarocchi</a>
+    <a href="./astrologia-avanzata.html" class="esplora-card" data-ek="astro-avanzata"></a>
+    <a href="./astrologia-vedica.html" class="esplora-card" data-ek="astro-vedica"></a>
+    <a href="./oroscopo-cinese.html" class="esplora-card" data-ek="oroscopo-cinese"></a>
+    <a href="./cicli-tempo.html" class="esplora-card" data-ek="cicli-tempo"></a>
+    <a href="./enciclopedia.html" class="esplora-card" data-ek="enciclopedia"></a>
+    <a href="./guida-tarocchi.html" class="esplora-card" data-ek="guida-tarocchi"></a>
   </div>
 </section>
 
-<footer>
+<footer class="page-footer">
   <div class="footer-links">
-    <a href="https://mysticaoracoli.it/">Home</a>
-    <a href="https://mysticaoracoli.it/about.html">Chi Siamo</a>
-    <a href="https://mysticaoracoli.it/guida-tarocchi.html">Guida Tarocchi</a>
-    <a href="https://mysticaoracoli.it/significato-rune.html">Guida Rune</a>
-    <a href="https://mysticaoracoli.it/oroscopo-segni.html">Segni Zodiacali</a>
-    <a href="https://mysticaoracoli.it/guida-i-ching.html">Guida I Ching</a>
-    <a href="https://mysticaoracoli.it/privacy.html">Privacy Policy</a>
+    <a href="./index.html" data-fk="home"></a>
+    <a href="./contatti.html" data-fk="contatti"></a>
+    <a href="./about.html" data-fk="about"></a>
+    <a href="./guida-tarocchi.html" data-fk="guida-tarocchi"></a>
+    <a href="./significato-rune.html" data-fk="guida-rune"></a>
+    <a href="./oroscopo-segni.html" data-fk="segni"></a>
+    <a href="./guida-i-ching.html" data-fk="guida-iching"></a>
+    <a href="./privacy.html" data-fk="privacy"></a>
   </div>
-  <div>PetroCorporation © 2025–2026 · MYSTICA – Oracolo delle Stelle</div>
+  <p id="footer-copy"></p>
+  <p id="footer-disclaimer" class="footer-disclaimer"></p>
 </footer>
+
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
 
 <div id="toast"></div>
 
 <script>
-// ─── Storage helpers ───────────────────────────────────────────────
+/* ══════════════════════════════════════════════════════════════
+   MYSTICA ORACOLI — archivio.html — v3.0
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── LANG Object ── */
+const LANG = {
+  it: {
+    back: '← Torna alla Home',
+    skipLink: 'Vai al contenuto principale',
+    breadcrumbHome: 'Home',
+    breadcrumbCurrent: 'Archivio Mistico',
+    pageTitle: '📿 Archivio Mistico',
+    heroTitle: 'Archivio Mistico',
+    heroSub: 'Qui riposano tutte le tue letture mistiche. Ogni consultazione è un filo nel tessuto del tuo cammino spirituale — custodito per te.',
+    statLabelTotale: 'Letture totali',
+    statLabelTipi: 'Discipline diverse',
+    statLabelGiorni: 'Giorni di pratica',
+    toolbarCountPrefix: 'Storico:',
+    toolbarCountSuffix: 'letture',
+    btnClear: '🗑️ Svuota archivio',
+    filterAllLabel: '✨ Tutte',
+    noFilterResults: 'Nessuna lettura trovata per questo filtro.',
+    emptyTitle: 'Archivio ancora vuoto',
+    emptySub: 'Ogni lettura che esegui viene custodita qui automaticamente.<br>Inizia la tua prima consultazione per popolare il tuo archivio mistico.',
+    emptyBtnStart: "✦ Vai all'Oracolo",
+    exportTitle: 'Esporta il tuo archivio',
+    exportSub: 'Salva una copia delle tue letture in formato testo — utile per tenere un diario mistico.',
+    exportBtn: '⬇ Esporta .txt',
+    exportFileHeader: 'MYSTICA – Archivio Mistico',
+    exportFileFooterLabel: 'Esportato il',
+    quickSectionTitle: '✦ Inizia una Nuova Lettura',
+    quickLabels: { tarocchi:'Tarocchi', oroscopo:'Oroscopo', rune:'Rune', iching:'I Ching', numerologia:'Numerologia', compatibilita:'Compatibilità', totem:'Totem', orespecchio:'Ore Specchio', angeli:'Angeli', geomanzia:'Geomanzia', luna:'Luna', pianeti:'Pianeti' },
+    relatedTitle: '✦ Approfondisci su MYSTICA',
+    relatedLabels: { tarocchi:'Guida Tarocchi', rune:'Guida Rune', iching:'Guida I Ching' },
+    esploraTitle: '✨ Esplora Anche',
+    esploraLabels: {
+      'astro-avanzata':'🌠 Astrologia Avanzata', 'astro-vedica':'🪐 Astrologia Vedica',
+      'oroscopo-cinese':'🐉 Oroscopo Cinese', 'cicli-tempo':'🌙 Cicli e Tempo',
+      'enciclopedia':'📖 Enciclopedia Esoterica', 'guida-tarocchi':'🃏 Guida Tarocchi'
+    },
+    footerLinks: { home:'Home', contatti:'Contatti', about:'Chi Siamo', 'guida-tarocchi':'Guida Tarocchi', 'guida-rune':'Guida Rune', segni:'Segni Zodiacali', 'guida-iching':'Guida I Ching', privacy:'Privacy Policy' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.',
+    toastCleared: '🗑️ Archivio svuotato',
+    toastExportEmpty: '⚠️ Archivio vuoto',
+    toastExported: '✅ Archivio esportato',
+    confirmClearMsg: "Svuotare l'archivio mistico? Questa azione è irreversibile.",
+    confirmCancel: 'Annulla',
+    confirmOk: 'Conferma',
+    music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
+    theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    btnShareLabel: '📤 Condividi',
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca letture illimitate, interpretazioni complete e consulti avanzati.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho appena scoperto il mio Archivio Mistico su MYSTICA — tutte le mie letture di tarocchi, oroscopi e rune in un unico posto!',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+    seo: {
+      title: 'Archivio Mistico – Le Tue Letture Salvate | MYSTICA Oracoli',
+      description: 'Ritrova tutte le tue letture di tarocchi, oroscopi, rune, I Ching e numerologia salvate in locale. Esporta o cancella il tuo diario mistico quando vuoi.',
+      keywords: 'archivio mistico, storico letture tarocchi, diario esoterico, mysticaoracoli',
+      ogTitle: 'Archivio Mistico – Le Tue Letture | MYSTICA',
+      ogDesc: 'Il tuo diario mistico personale: tarocchi, oroscopi, rune, I Ching e numerologia sempre a portata di mano.',
+      ogLocale: 'it_IT',
+      htmlLang: 'it',
+      faqLD: [
+        { q: "Cos'è l'Archivio Mistico e come funziona?", a: 'L\'Archivio Mistico è la sezione di MYSTICA che raccoglie automaticamente tutte le letture di tarocchi, oroscopi, rune, I Ching, numerologia e altre discipline che consulti sull\'app. I dati essenziali di ogni lettura vengono salvati sul tuo dispositivo, così puoi ritrovarli in qualsiasi momento.' },
+        { q: 'Dove vengono conservati i dati delle mie letture?', a: 'Tutti i dati restano esclusivamente nel localStorage del tuo browser, sul tuo dispositivo. MYSTICA non trasmette né conserva questi contenuti sui propri server e nessuna informazione viene condivisa con terze parti.' },
+        { q: 'Posso esportare o cancellare il mio archivio?', a: 'Sì. Il pulsante "Esporta .txt" genera un file di testo scaricabile con tutte le tue letture. Il pulsante "Svuota archivio" cancella definitivamente lo storico, con una richiesta di conferma per evitare cancellazioni accidentali.' },
+        { q: 'Cosa succede se cambio dispositivo o cancello la cache?', a: "Poiché i dati vivono solo nel browser locale, cambiare dispositivo o svuotare la cache comporta la perdita dello storico non esportato. Consigliamo di esportare periodicamente l'archivio." },
+        { q: 'Perché conviene tenere un archivio delle proprie consultazioni?', a: 'Rivedere le letture passate aiuta a riconoscere pattern e ricorrenze, offrendo una prospettiva più ampia sul proprio percorso interiore rispetto a una singola consultazione isolata.' },
+        { q: "L'archivio funziona anche per le funzioni premium?", a: "Sì, l'archivio registra sia le letture gratuite sia quelle sbloccate con MYSTICA Premium. L'accesso all'archivio stesso resta sempre completamente gratuito." }
+      ]
+    },
+    artTitle: "L'Archivio Mistico: Il Tuo Diario di Bordo Spirituale",
+    artH2: 'Perché Custodire le Proprie Letture Ha un Valore Reale',
+    artH3: 'Come Trarre il Massimo dal Tuo Archivio Personale',
+    artP1: "La pratica di annotare le proprie consultazioni esoteriche affonda le radici in secoli di tradizione. Astrologi di corte come Nostradamus tenevano registri dettagliati delle effemeridi e delle previsioni fatte per i propri committenti, mentre gli alchimisti custodivano diari cifrati per tracciare esperimenti e intuizioni. Nei villaggi contadini italiani, le cartomanti trascrivevano a mano le stese più significative su quaderni tramandati di generazione in generazione. Questo bisogno di lasciare traccia del proprio cammino divinatorio non è mai svanito: è semplicemente cambiato forma, passando dalla carta agli schermi, mantenendo intatto il valore simbolico di un diario che accompagna la crescita interiore di chi lo scrive.",
+    artP2: "MYSTICA ha introdotto l'Archivio Mistico proprio per restituire questa funzione al mondo digitale, senza però snaturarla. Ogni lettura di tarocchi, ogni oroscopo consultato, ogni lancio di rune o esagramma dell'I Ching viene registrato automaticamente sul tuo dispositivo, organizzato per data e disciplina. Non serve alcuna registrazione, non viene creato alcun account: l'archivio vive esclusivamente nel browser che stai usando, proprio come un taccuino che tieni in un cassetto. Questo approccio rispecchia la filosofia dell'intero progetto: strumenti esoterici accessibili, immediati, senza frizioni tecniche che allontanino dall'esperienza contemplativa della consultazione.",
+    artP3: "Rileggere le proprie letture nel tempo permette di riconoscere ricorrenze che sfuggirebbero a una consultazione isolata. Chi torna spesso sull'Arcano della Torre, ad esempio, potrebbe interrogarsi su quali situazioni di rottura si ripresentano nella propria vita; chi vede tornare più volte il segno dei Pesci nelle compatibilità richieste potrebbe scoprire un pattern relazionale interessante da esplorare. Gli antichi indovini chiamavano questa capacità di lettura incrociata 'sincronicità', un concetto poi ripreso da Carl Gustav Jung in ambito psicologico: non è la singola carta a parlare, ma la sequenza che si compone lettura dopo lettura.",
+    artP4: "L'errore più comune è considerare l'archivio come un mero registro tecnico da ignorare, invece che come uno strumento di auto-osservazione. Molti utenti abbandonano la pratica di rileggere le consultazioni passate, perdendo così la possibilità di cogliere l'evoluzione del proprio percorso. Un altro errore diffuso è affidarsi esclusivamente alla memoria del dispositivo senza mai esportare una copia: cancellare la cache del browser o cambiare smartphone può cancellare mesi di letture salvate localmente. Per questo motivo MYSTICA consente di esportare l'intero archivio in un file di testo scaricabile, da conservare come un vero diario mistico personale.",
+    artP5: "Dal punto di vista tecnico, l'Archivio Mistico si appoggia al localStorage del browser: nessun dato lascia il tuo dispositivo, nessuna lettura viene trasmessa ai server di MYSTICA o condivisa con terze parti. È una scelta di trasparenza deliberata, coerente con l'approccio rispettoso della privacy che contraddistingue l'intero progetto PetroCorporation. Una curiosità: nell'antico Egitto i sacerdoti del tempio di Karnak conservavano rotoli di papiro con le interpretazioni degli oracoli offerti ai faraoni, alcuni dei quali sono giunti fino a noi grazie al clima secco del deserto — il desiderio umano di custodire la propria memoria spirituale attraversa letteralmente i millenni.",
+    artImgAlt: 'Taccuino mistico con simboli esoterici che rappresenta il diario di lettura personale di MYSTICA',
+    articleLinks: {
+      profilo: 'Il Tuo Profilo Mistico', tarocchi: 'Guida Completa ai Tarocchi',
+      rune: 'Significato delle Rune', enciclopedia: 'Enciclopedia Esoterica'
+    },
+    faq: [
+      { q: "Cos'è l'Archivio Mistico e come funziona?", a: "L'Archivio Mistico raccoglie automaticamente tutte le letture di tarocchi, oroscopi, rune, I Ching, numerologia e altre discipline che consulti su MYSTICA. Ogni volta che completi una lettura, i dati essenziali — tipo, dettaglio, data — vengono salvati sul tuo dispositivo, così puoi ritrovarli in qualsiasi momento senza doverli ricordare a memoria." },
+      { q: 'Dove vengono conservati i dati delle mie letture?', a: 'Tutti i dati restano esclusivamente nel localStorage del tuo browser, sul tuo dispositivo. MYSTICA non trasmette né conserva questi contenuti sui propri server: nessun account è richiesto e nessuna informazione personale viene condivisa con terze parti.' },
+      { q: 'Posso esportare o cancellare il mio archivio?', a: 'Sì. Il pulsante "Esporta .txt" genera un file di testo scaricabile con tutte le tue letture, utile come diario mistico permanente. Il pulsante "Svuota archivio" cancella definitivamente lo storico dal tuo dispositivo, con una richiesta di conferma per evitare cancellazioni accidentali.' },
+      { q: 'Cosa succede se cambio dispositivo o cancello la cache del browser?', a: 'Poiché i dati vivono solo nel browser locale, cambiare dispositivo, disinstallare l\'app o svuotare la cache comporta la perdita dello storico non esportato. Per questo consigliamo di esportare periodicamente l\'archivio se desideri conservarlo a lungo termine.' },
+      { q: 'Perché conviene tenere un archivio delle proprie consultazioni esoteriche?', a: 'Rivedere le letture passate aiuta a riconoscere pattern e ricorrenze — carte, segni o simboli che tornano più volte — offrendo una prospettiva più ampia sul proprio percorso interiore rispetto a una singola consultazione isolata nel tempo.' },
+      { q: "L'archivio funziona anche per le funzioni premium?", a: "Sì, l'archivio registra sia le letture gratuite sia quelle sbloccate con MYSTICA Premium. L'accesso e la consultazione dell'archivio stesso restano sempre completamente gratuiti, senza alcuna limitazione." }
+    ]
+  },
+
+  en: {
+    back: '← Back to Home',
+    skipLink: 'Skip to main content',
+    breadcrumbHome: 'Home',
+    breadcrumbCurrent: 'Mystic Archive',
+    pageTitle: '📿 Mystic Archive',
+    heroTitle: 'Mystic Archive',
+    heroSub: 'This is where all your mystic readings rest. Every consultation is a thread in the fabric of your spiritual journey — kept safe for you.',
+    statLabelTotale: 'Total readings',
+    statLabelTipi: 'Different disciplines',
+    statLabelGiorni: 'Days of practice',
+    toolbarCountPrefix: 'History:',
+    toolbarCountSuffix: 'readings',
+    btnClear: '🗑️ Clear archive',
+    filterAllLabel: '✨ All',
+    noFilterResults: 'No readings found for this filter.',
+    emptyTitle: 'Archive still empty',
+    emptySub: 'Every reading you take is automatically kept here.<br>Start your first consultation to fill your mystic archive.',
+    emptyBtnStart: '✦ Go to the Oracle',
+    exportTitle: 'Export your archive',
+    exportSub: 'Save a copy of your readings as a text file — useful for keeping a mystic journal.',
+    exportBtn: '⬇ Export .txt',
+    exportFileHeader: 'MYSTICA – Mystic Archive',
+    exportFileFooterLabel: 'Exported on',
+    quickSectionTitle: '✦ Start a New Reading',
+    quickLabels: { tarocchi:'Tarot', oroscopo:'Horoscope', rune:'Runes', iching:'I Ching', numerologia:'Numerology', compatibilita:'Compatibility', totem:'Totem', orespecchio:'Mirror Hours', angeli:'Angels', geomanzia:'Geomancy', luna:'Moon', pianeti:'Planets' },
+    relatedTitle: '✦ Learn More on MYSTICA',
+    relatedLabels: { tarocchi:'Tarot Guide', rune:'Rune Guide', iching:'I Ching Guide' },
+    esploraTitle: '✨ Explore More',
+    esploraLabels: {
+      'astro-avanzata':'🌠 Advanced Astrology', 'astro-vedica':'🪐 Vedic Astrology',
+      'oroscopo-cinese':'🐉 Chinese Horoscope', 'cicli-tempo':'🌙 Cycles & Time',
+      'enciclopedia':'📖 Esoteric Encyclopedia', 'guida-tarocchi':'🃏 Tarot Guide'
+    },
+    footerLinks: { home:'Home', contatti:'Contact', about:'About Us', 'guida-tarocchi':'Tarot Guide', 'guida-rune':'Rune Guide', segni:'Zodiac Signs', 'guida-iching':'I Ching Guide', privacy:'Privacy Policy' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracles is an entertainment and personal-growth tool and does not replace professional medical, legal or psychological advice.',
+    toastCleared: '🗑️ Archive cleared',
+    toastExportEmpty: '⚠️ Archive is empty',
+    toastExported: '✅ Archive exported',
+    confirmClearMsg: 'Clear the mystic archive? This action cannot be undone.',
+    confirmCancel: 'Cancel',
+    confirmOk: 'Confirm',
+    music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+    theme: { day: '☀️ Day', night: '🌙 Night' },
+    ctaExplore: '🔍 Explore Other Categories',
+    btnShareLabel: '📤 Share',
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited readings, complete interpretations and advanced consultations.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just found my Mystic Archive on MYSTICA — all my tarot, horoscope and rune readings kept in one place!',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+    seo: {
+      title: 'Mystic Archive – Your Saved Readings | MYSTICA Oracles',
+      description: 'Find all your saved tarot, horoscope, rune, I Ching and numerology readings in one place, stored locally. Export or clear your mystic journal anytime.',
+      keywords: 'mystic archive, tarot reading history, esoteric journal, mysticaoracoli',
+      ogTitle: 'Mystic Archive – Your Saved Readings | MYSTICA',
+      ogDesc: 'Your personal mystic journal: tarot, horoscopes, runes, I Ching and numerology always at hand.',
+      ogLocale: 'en_US',
+      htmlLang: 'en',
+      faqLD: [
+        { q: 'What is the Mystic Archive and how does it work?', a: 'The Mystic Archive is the MYSTICA section that automatically collects every tarot reading, horoscope, rune cast, I Ching consultation and numerology report you run in the app. Key details of each reading are saved on your device so you can find them again anytime.' },
+        { q: 'Where is my reading data stored?', a: "All data stays exclusively in your browser's localStorage, on your own device. MYSTICA never transmits or stores this content on its servers and no information is shared with third parties." },
+        { q: 'Can I export or delete my archive?', a: 'Yes. The "Export .txt" button generates a downloadable text file with all your readings. The "Clear archive" button permanently deletes your history, with a confirmation prompt to prevent accidental deletion.' },
+        { q: 'What happens if I switch devices or clear my cache?', a: 'Since the data lives only in the local browser, switching devices or clearing the cache means losing any unexported history. We recommend exporting the archive periodically.' },
+        { q: 'Why is it worth keeping a record of your consultations?', a: 'Reviewing past readings helps you spot patterns and recurrences, giving you a broader perspective on your inner journey than any single isolated consultation.' },
+        { q: 'Does the archive also track premium features?', a: 'Yes, the archive logs both free readings and those unlocked with MYSTICA Premium. Access to the archive itself always remains completely free.' }
+      ]
+    },
+    artTitle: 'The Mystic Archive: Your Spiritual Logbook',
+    artH2: "Why Keeping Your Own Readings Actually Matters",
+    artH3: 'Getting the Most Out of Your Personal Archive',
+    artP1: "The habit of recording one's esoteric consultations stretches back centuries. Court astrologers like Nostradamus kept detailed ephemeris logs and predictions for their patrons, while alchemists filled coded journals with experiments and insights. In Italian farming villages, fortune tellers copied their most meaningful tarot spreads by hand into notebooks passed down through generations. That need to leave a trace of one's divinatory path never disappeared — it simply moved from paper to screens, keeping the same symbolic weight.",
+    artP2: "MYSTICA built the Mystic Archive to bring that same function into the digital age without losing its spirit. Every tarot reading, horoscope, rune cast or I Ching hexagram is logged automatically on your device, organized by date and discipline. No sign-up, no account required: the archive lives entirely in the browser you're using, like a notebook kept in a drawer. This mirrors the whole project's philosophy — accessible, friction-free esoteric tools that never get in the way of a contemplative reading.",
+    artP3: "Rereading past readings over time reveals recurrences a single consultation would miss. Someone who keeps drawing the Tower card might start asking what kind of upheaval keeps resurfacing in their life; someone who sees Pisces returning in compatibility checks might notice a relational pattern worth exploring. Ancient diviners called this kind of cross-reading 'synchronicity,' a concept later picked up by Carl Jung — it's not one card speaking, but the sequence built reading after reading.",
+    artP4: "The most common mistake is treating the archive as a dry technical log rather than a tool for self-observation. Many people never go back to reread past consultations, missing the chance to trace how their path has evolved. Another frequent mistake is relying solely on device memory without ever exporting a copy: clearing browser cache or switching phones can wipe out months of saved readings. That's why MYSTICA lets you export the full archive as a downloadable text file, kept like a real personal journal.",
+    artP5: "Technically, the Mystic Archive relies on the browser's localStorage: no data ever leaves your device, no reading is sent to MYSTICA's servers or shared with third parties. It's a deliberate privacy-first choice consistent with the whole PetroCorporation project. A curious footnote: priests at the Karnak temple in ancient Egypt kept papyrus scrolls recording oracle interpretations given to pharaohs, some surviving to this day thanks to the desert's dry climate — the urge to preserve spiritual memory truly spans millennia.",
+    artImgAlt: 'Mystic notebook with esoteric symbols representing the personal MYSTICA reading journal',
+    articleLinks: {
+      profilo: 'Your Mystic Profile', tarocchi: 'Complete Tarot Guide',
+      rune: 'Meaning of the Runes', enciclopedia: 'Esoteric Encyclopedia'
+    },
+    faq: [
+      { q: 'What is the Mystic Archive and how does it work?', a: 'The Mystic Archive automatically collects every tarot reading, horoscope, rune cast, I Ching consultation, numerology report and more that you run in the app. Each time you complete a reading, its key details — type, summary, date — are saved on your device so you can find them again anytime without relying on memory.' },
+      { q: 'Where is my reading data stored?', a: "All data stays exclusively in your browser's localStorage, on your own device. MYSTICA never transmits or stores this content on its servers: no account is required and no personal information is shared with third parties." },
+      { q: 'Can I export or delete my archive?', a: 'Yes. The "Export .txt" button generates a downloadable text file with all your readings, useful as a permanent mystic journal. The "Clear archive" button permanently deletes your history from the device, with a confirmation prompt to prevent accidental deletion.' },
+      { q: 'What happens if I switch devices or clear my browser cache?', a: "Since the data lives only in the local browser, switching devices, uninstalling the app or clearing the cache means losing any history you haven't exported. We recommend exporting the archive periodically if you want to keep it long-term." },
+      { q: 'Why is it worth keeping a record of your esoteric consultations?', a: 'Reviewing past readings helps you spot patterns and recurrences — cards, signs or symbols that keep coming back — giving you a broader perspective on your inner journey than any single isolated consultation ever could.' },
+      { q: 'Does the archive also track premium features?', a: 'Yes, the archive logs both free readings and those unlocked with MYSTICA Premium. Access to the archive itself always remains completely free, with no restrictions.' }
+    ]
+  },
+
+  es: {
+    back: '← Volver al Inicio',
+    skipLink: 'Ir al contenido principal',
+    breadcrumbHome: 'Inicio',
+    breadcrumbCurrent: 'Archivo Místico',
+    pageTitle: '📿 Archivo Místico',
+    heroTitle: 'Archivo Místico',
+    heroSub: 'Aquí reposan todas tus lecturas místicas. Cada consulta es un hilo en el tejido de tu camino espiritual — guardado para ti.',
+    statLabelTotale: 'Lecturas totales',
+    statLabelTipi: 'Disciplinas distintas',
+    statLabelGiorni: 'Días de práctica',
+    toolbarCountPrefix: 'Historial:',
+    toolbarCountSuffix: 'lecturas',
+    btnClear: '🗑️ Vaciar archivo',
+    filterAllLabel: '✨ Todas',
+    noFilterResults: 'No se encontraron lecturas para este filtro.',
+    emptyTitle: 'Archivo aún vacío',
+    emptySub: 'Cada lectura que realizas se guarda aquí automáticamente.<br>Comienza tu primera consulta para llenar tu archivo místico.',
+    emptyBtnStart: '✦ Ir al Oráculo',
+    exportTitle: 'Exporta tu archivo',
+    exportSub: 'Guarda una copia de tus lecturas en formato texto — útil para llevar un diario místico.',
+    exportBtn: '⬇ Exportar .txt',
+    exportFileHeader: 'MYSTICA – Archivo Místico',
+    exportFileFooterLabel: 'Exportado el',
+    quickSectionTitle: '✦ Comienza una Nueva Lectura',
+    quickLabels: { tarocchi:'Tarot', oroscopo:'Horóscopo', rune:'Runas', iching:'I Ching', numerologia:'Numerología', compatibilita:'Compatibilidad', totem:'Tótem', orespecchio:'Horas Espejo', angeli:'Ángeles', geomanzia:'Geomancia', luna:'Luna', pianeti:'Planetas' },
+    relatedTitle: '✦ Profundiza en MYSTICA',
+    relatedLabels: { tarocchi:'Guía de Tarot', rune:'Guía de Runas', iching:'Guía de I Ching' },
+    esploraTitle: '✨ Explora También',
+    esploraLabels: {
+      'astro-avanzata':'🌠 Astrología Avanzada', 'astro-vedica':'🪐 Astrología Védica',
+      'oroscopo-cinese':'🐉 Horóscopo Chino', 'cicli-tempo':'🌙 Ciclos y Tiempo',
+      'enciclopedia':'📖 Enciclopedia Esotérica', 'guida-tarocchi':'🃏 Guía de Tarot'
+    },
+    footerLinks: { home:'Inicio', contatti:'Contacto', about:'Quiénes Somos', 'guida-tarocchi':'Guía de Tarot', 'guida-rune':'Guía de Runas', segni:'Signos Zodiacales', 'guida-iching':'Guía de I Ching', privacy:'Política de Privacidad' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oráculos es una herramienta de entretenimiento y crecimiento personal y no sustituye el asesoramiento médico, legal o psicológico profesional.',
+    toastCleared: '🗑️ Archivo vaciado',
+    toastExportEmpty: '⚠️ Archivo vacío',
+    toastExported: '✅ Archivo exportado',
+    confirmClearMsg: '¿Vaciar el archivo místico? Esta acción es irreversible.',
+    confirmCancel: 'Cancelar',
+    confirmOk: 'Confirmar',
+    music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+    theme: { day: '☀️ Día', night: '🌙 Noche' },
+    ctaExplore: '🔍 Explora Otras Categorías',
+    btnShareLabel: '📤 Compartir',
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea lecturas ilimitadas, interpretaciones completas y consultas avanzadas.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: '¡Acabo de descubrir mi Archivo Místico en MYSTICA — todas mis lecturas de tarot, horóscopo y runas en un solo lugar!',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+    seo: {
+      title: 'Archivo Místico – Tus Lecturas Guardadas | MYSTICA Oráculos',
+      description: 'Encuentra todas tus lecturas guardadas de tarot, horóscopo, runas, I Ching y numerología en un solo lugar. Exporta o borra tu diario místico cuando quieras.',
+      keywords: 'archivo místico, historial lecturas tarot, diario esotérico, mysticaoracoli',
+      ogTitle: 'Archivo Místico – Tus Lecturas | MYSTICA',
+      ogDesc: 'Tu diario místico personal: tarot, horóscopos, runas, I Ching y numerología siempre a mano.',
+      ogLocale: 'es_ES',
+      htmlLang: 'es',
+      faqLD: [
+        { q: '¿Qué es el Archivo Místico y cómo funciona?', a: 'El Archivo Místico es la sección de MYSTICA que recopila automáticamente todas las lecturas de tarot, horóscopos, runas, I Ching y numerología que consultas en la app. Los datos esenciales de cada lectura se guardan en tu dispositivo para que puedas encontrarlos en cualquier momento.' },
+        { q: '¿Dónde se guardan los datos de mis lecturas?', a: 'Todos los datos permanecen exclusivamente en el localStorage de tu navegador, en tu propio dispositivo. MYSTICA no transmite ni conserva este contenido en sus servidores y no se comparte información con terceros.' },
+        { q: '¿Puedo exportar o borrar mi archivo?', a: 'Sí. El botón "Exportar .txt" genera un archivo de texto descargable con todas tus lecturas. El botón "Vaciar archivo" elimina definitivamente el historial, con una confirmación previa para evitar borrados accidentales.' },
+        { q: '¿Qué ocurre si cambio de dispositivo o borro la caché?', a: 'Como los datos viven solo en el navegador local, cambiar de dispositivo o vaciar la caché supone perder el historial no exportado. Recomendamos exportar el archivo periódicamente.' },
+        { q: '¿Por qué conviene guardar un registro de las propias consultas?', a: 'Releer las lecturas pasadas ayuda a reconocer patrones y recurrencias, ofreciendo una perspectiva más amplia sobre tu camino interior que una sola consulta aislada.' },
+        { q: '¿El archivo también registra las funciones premium?', a: 'Sí, el archivo registra tanto las lecturas gratuitas como las desbloqueadas con MYSTICA Premium. El acceso al propio archivo siempre es completamente gratuito.' }
+      ]
+    },
+    artTitle: 'El Archivo Místico: Tu Diario de a Bordo Espiritual',
+    artH2: 'Por Qué Conservar Tus Propias Lecturas Tiene Valor Real',
+    artH3: 'Cómo Sacar el Máximo Partido a Tu Archivo Personal',
+    artP1: "La costumbre de anotar las propias consultas esotéricas se remonta a siglos de tradición. Astrólogos de corte como Nostradamus llevaban registros detallados de efemérides y predicciones para sus patrones, mientras los alquimistas guardaban diarios cifrados con experimentos e intuiciones. En los pueblos italianos, las cartomantes copiaban a mano sus tiradas más significativas en cuadernos transmitidos de generación en generación. Esa necesidad de dejar huella del propio camino adivinatorio nunca desapareció: solo cambió de soporte, del papel a la pantalla.",
+    artP2: 'MYSTICA creó el Archivo Místico para devolver esa función al mundo digital sin desnaturalizarla. Cada lectura de tarot, horóscopo, tirada de runas o hexagrama del I Ching se registra automáticamente en tu dispositivo, organizado por fecha y disciplina. No hace falta registro ni cuenta: el archivo vive exclusivamente en el navegador que usas, como una libreta guardada en un cajón. Este enfoque refleja la filosofía de todo el proyecto: herramientas esotéricas accesibles e inmediatas, sin fricciones técnicas.',
+    artP3: "Releer las propias lecturas con el tiempo permite reconocer recurrencias que una consulta aislada no revelaría. Quien saca a menudo la carta de la Torre podría preguntarse qué rupturas se repiten en su vida; quien ve volver Piscis en sus compatibilidades podría descubrir un patrón relacional interesante. Los antiguos adivinos llamaban a esta lectura cruzada 'sincronicidad', concepto retomado después por Carl Jung: no habla una sola carta, sino la secuencia que se construye lectura tras lectura.",
+    artP4: 'El error más común es tratar el archivo como un simple registro técnico en vez de una herramienta de autoobservación. Muchos usuarios nunca vuelven a releer sus consultas pasadas, perdiendo así la oportunidad de ver cómo ha evolucionado su camino. Otro error frecuente es confiar solo en la memoria del dispositivo sin exportar nunca una copia: borrar la caché o cambiar de móvil puede eliminar meses de lecturas guardadas localmente. Por eso MYSTICA permite exportar todo el archivo como un archivo de texto descargable.',
+    artP5: 'Técnicamente, el Archivo Místico se apoya en el localStorage del navegador: ningún dato sale de tu dispositivo, ninguna lectura se envía a los servidores de MYSTICA ni se comparte con terceros. Es una elección deliberada de privacidad, coherente con el enfoque de todo el proyecto PetroCorporation. Un dato curioso: los sacerdotes del templo de Karnak en el antiguo Egipto conservaban rollos de papiro con interpretaciones de oráculos ofrecidos a los faraones, algunos conservados gracias al clima seco del desierto.',
+    artImgAlt: 'Cuaderno místico con símbolos esotéricos que representa el diario de lecturas personal de MYSTICA',
+    articleLinks: {
+      profilo: 'Tu Perfil Místico', tarocchi: 'Guía Completa de Tarot',
+      rune: 'Significado de las Runas', enciclopedia: 'Enciclopedia Esotérica'
+    },
+    faq: [
+      { q: '¿Qué es el Archivo Místico y cómo funciona?', a: 'El Archivo Místico recopila automáticamente todas las lecturas de tarot, horóscopos, runas, I Ching, numerología y otras disciplinas que consultas en MYSTICA. Cada vez que completas una lectura, sus datos esenciales — tipo, detalle, fecha — se guardan en tu dispositivo para que puedas encontrarlos en cualquier momento.' },
+      { q: '¿Dónde se guardan los datos de mis lecturas?', a: 'Todos los datos permanecen exclusivamente en el localStorage de tu navegador, en tu propio dispositivo. MYSTICA no transmite ni conserva este contenido en sus servidores: no se requiere cuenta y no se comparte ninguna información personal con terceros.' },
+      { q: '¿Puedo exportar o borrar mi archivo?', a: 'Sí. El botón "Exportar .txt" genera un archivo de texto descargable con todas tus lecturas, útil como diario místico permanente. El botón "Vaciar archivo" elimina definitivamente el historial de tu dispositivo, con una confirmación previa para evitar borrados accidentales.' },
+      { q: '¿Qué ocurre si cambio de dispositivo o borro la caché del navegador?', a: 'Como los datos viven solo en el navegador local, cambiar de dispositivo, desinstalar la app o vaciar la caché supone perder el historial no exportado. Por eso recomendamos exportar el archivo periódicamente si quieres conservarlo a largo plazo.' },
+      { q: '¿Por qué conviene guardar un registro de las propias consultas esotéricas?', a: 'Releer las lecturas pasadas ayuda a reconocer patrones y recurrencias — cartas, signos o símbolos que se repiten — ofreciendo una perspectiva más amplia sobre tu camino interior que una sola consulta aislada.' },
+      { q: '¿El archivo también registra las funciones premium?', a: 'Sí, el archivo registra tanto las lecturas gratuitas como las desbloqueadas con MYSTICA Premium. El acceso y la consulta del propio archivo siempre son completamente gratuitos, sin ninguna limitación.' }
+    ]
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ── Traduzione tipi lettura (sottocategorie storiche) ── */
+const TYPE_LABELS = {
+  'Oroscopo': { it:'Oroscopo', en:'Horoscope', es:'Horóscopo' },
+  'Lettura Semplice': { it:'Lettura Semplice', en:'Simple Reading', es:'Lectura Simple' },
+  'Lettura Approfondita': { it:'Lettura Approfondita', en:'In-Depth Reading', es:'Lectura Profunda' },
+  'Compatibilità': { it:'Compatibilità', en:'Compatibility', es:'Compatibilidad' },
+  'Runologia': { it:'Runologia', en:'Runology', es:'Runología' },
+  'Runologia 3 Rune': { it:'Runologia 3 Rune', en:'3-Rune Runology', es:'Runología 3 Runas' },
+  'I Ching': { it:'I Ching', en:'I Ching', es:'I Ching' },
+  'Numerologia': { it:'Numerologia', en:'Numerology', es:'Numerología' },
+  'Geomanzia': { it:'Geomanzia', en:'Geomancy', es:'Geomancia' },
+  'Angelologia': { it:'Angelologia', en:'Angelology', es:'Angelología' },
+  'Fasi Lunari': { it:'Fasi Lunari', en:'Moon Phases', es:'Fases Lunares' },
+  'Transiti Planetari': { it:'Transiti Planetari', en:'Planetary Transits', es:'Tránsitos Planetarios' },
+  'Ore Specchio': { it:'Ore Specchio', en:'Mirror Hours', es:'Horas Espejo' },
+  'Totem': { it:'Totem', en:'Totem', es:'Tótem' },
+  'Japamala': { it:'Japamala', en:'Japamala', es:'Japamala' },
+  'Pendolo': { it:'Pendolo', en:'Pendulum', es:'Péndulo' }
+};
+function typeLabel(tipo){
+  const e = TYPE_LABELS[tipo];
+  return e ? (e[currentLang] || tipo) : tipo;
+}
+
+/* ── SEO Multilingua ── */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld && S.faqLD) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: LANG[currentLang].breadcrumbHome, item: 'https://mysticaoracoli.it/index.html' },
+            { '@type': 'ListItem', position: 2, name: LANG[currentLang].breadcrumbCurrent, item: 'https://mysticaoracoli.it/archivio.html' }
+          ]
+        },
+        {
+          '@type': 'WebPage',
+          name: S.title,
+          description: S.description,
+          url: 'https://mysticaoracoli.it/archivio.html',
+          inLanguage: S.htmlLang,
+          isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' }
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'MYSTICA Oracoli',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web',
+          offers: { '@type': 'Offer', price: '4.99', priceCurrency: 'EUR' }
+        },
+        {
+          '@type': 'Person',
+          name: 'Dott. Petrolese Giovanni',
+          alternateName: 'Mago Petro',
+          worksFor: { '@type': 'Organization', name: 'PetroCorporation' }
+        }
+      ]
+    });
+  }
+}
+
+/* ── Lingua ── */
+function applyLang() {
+  updateSEO(); // ← SEMPRE PRIMA
+
+  const L = LANG[currentLang];
+
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const sk = document.getElementById('skip-link'); if (sk) sk.textContent = L.skipLink;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+  const pgt = document.getElementById('page-title'); if (pgt) pgt.textContent = L.pageTitle;
+
+  const bh = document.getElementById('breadcrumb-home'); if (bh) bh.textContent = L.breadcrumbHome;
+  const bc = document.getElementById('breadcrumb-current'); if (bc) bc.textContent = L.breadcrumbCurrent;
+  const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.heroTitle;
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+
+  const slt = document.getElementById('statLabelTotale'); if (slt) slt.textContent = L.statLabelTotale;
+  const slti = document.getElementById('statLabelTipi'); if (slti) slti.textContent = L.statLabelTipi;
+  const slg = document.getElementById('statLabelGiorni'); if (slg) slg.textContent = L.statLabelGiorni;
+
+  const tcp = document.getElementById('toolbarCountPrefix'); if (tcp) tcp.textContent = L.toolbarCountPrefix;
+  const tcs = document.getElementById('toolbarCountSuffix'); if (tcs) tcs.textContent = L.toolbarCountSuffix;
+  const acb = document.getElementById('archClearBtn'); if (acb) acb.textContent = L.btnClear;
+  const fat = document.getElementById('filterAllTab'); if (fat) fat.textContent = L.filterAllLabel;
+
+  const et = document.getElementById('exportTitle'); if (et) et.textContent = L.exportTitle;
+  const es = document.getElementById('exportSub'); if (es) es.textContent = L.exportSub;
+  const eb = document.getElementById('exportBtn'); if (eb) eb.textContent = L.exportBtn;
+
+  const qst = document.getElementById('quickSectionTitle'); if (qst) qst.textContent = L.quickSectionTitle;
+  document.querySelectorAll('[data-qk]').forEach(el => { el.textContent = L.quickLabels[el.dataset.qk] || ''; });
+
+  const rt = document.getElementById('relatedTitle'); if (rt) rt.textContent = L.relatedTitle;
+  document.querySelectorAll('[data-rk]').forEach(el => { el.textContent = L.relatedLabels[el.dataset.rk] || ''; });
+
+  const est = document.getElementById('esploraTitle'); if (est) est.textContent = L.esploraTitle;
+  document.querySelectorAll('[data-ek]').forEach(el => { el.textContent = L.esploraLabels[el.dataset.ek] || ''; });
+
+  document.querySelectorAll('[data-fk]').forEach(el => { el.textContent = L.footerLinks[el.dataset.fk] || ''; });
+
+  const bsl = document.getElementById('btn-share-label'); if (bsl) bsl.textContent = L.btnShareLabel;
+
+  // ── Articolo editoriale ──
+  const at = document.getElementById('art-title'); if (at) at.textContent = L.artTitle;
+  const ah2 = document.getElementById('art-h2'); if (ah2) ah2.textContent = L.artH2;
+  const ah3 = document.getElementById('art-h3'); if (ah3) ah3.textContent = L.artH3;
+  const ap1 = document.getElementById('art-p1'); if (ap1) ap1.textContent = L.artP1;
+  const ap2 = document.getElementById('art-p2'); if (ap2) ap2.textContent = L.artP2;
+  const ap3 = document.getElementById('art-p3'); if (ap3) ap3.textContent = L.artP3;
+  const ap4 = document.getElementById('art-p4'); if (ap4) ap4.textContent = L.artP4;
+  const ap5 = document.getElementById('art-p5'); if (ap5) ap5.textContent = L.artP5;
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = L.artImgAlt || '';
+  document.querySelectorAll('[data-al]').forEach(el => { el.textContent = L.articleLinks[el.dataset.al] || ''; });
+  const ce = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+
+  // ── Premium modal ──
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  // ── Share ──
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+
+  // ── Footer ──
+  const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+
+  // ── FAQ ──
+  renderFAQ(L.faq);
+
+  // ── Sezione specifica pagina: ri-renderizza l'archivio nella nuova lingua ──
+  renderAll();
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ── Audio Manager ── */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() {
+    this.audio?.play().catch(() => {});
+    this.isPlaying = true;
+    sessionStorage.setItem(AUDIO_KEY, 'true');
+    this.updateUI();
+  }
+  pause() {
+    this.audio?.pause();
+    this.isPlaying = false;
+    sessionStorage.setItem(AUDIO_KEY, 'false');
+    this.updateUI();
+  }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ── Tema Giorno/Notte ── */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ── Premium Gate (struttura presente, archivio è sempre gratuito) ── */
+function isPremium() {
+  return localStorage.getItem('myst_premium') === '1';
+}
+function requirePremium(actionType) {
+  if (isPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+  return false;
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ── Share ── */
+const PAGE_URL = 'https://mysticaoracoli.it/archivio.html';
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) {
+      b.textContent = L.shareCopied;
+      setTimeout(() => { b.textContent = L.shareCopy; }, 2000);
+    }
+  });
+}
+
+/* ── FAQ Accordion ── */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${f.a}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SEZIONE INTERATTIVA PRINCIPALE — Archivio Mistico
+   (logica JS esistente preservata integralmente — sezione 14)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─── Storage helpers ─────────────────────────────────────────── */
 const K_STORICO = 'myst_v3_history';
 let _useLS = true;
 const _mem = {};
@@ -319,7 +1107,7 @@ function _lsRemove(k){
   delete _mem[k];
 }
 
-// ─── Toast ─────────────────────────────────────────────────────────
+/* ─── Toast ────────────────────────────────────────────────────── */
 let _toastTimer=null;
 function toast(msg){
   const t=document.getElementById('toast');
@@ -331,11 +1119,12 @@ function toast(msg){
   },_toastTimer?80:0);
 }
 
-// ─── Confirm dialog ────────────────────────────────────────────────
+/* ─── Confirm dialog ──────────────────────────────────────────── */
 function mysticaConfirm(msg,onOk){
+  const L = LANG[currentLang];
   const overlay=document.createElement('div');
   overlay.className='myst-confirm-overlay';
-  overlay.innerHTML=`<div class="myst-confirm-box"><p>${msg}</p><div class="myst-confirm-actions"><button class="myst-confirm-cancel" id="_mcCancel">Annulla</button><button class="myst-confirm-ok" id="_mcOk">Conferma</button></div></div>`;
+  overlay.innerHTML=`<div class="myst-confirm-box"><p>${msg}</p><div class="myst-confirm-actions"><button class="myst-confirm-cancel" id="_mcCancel">${L.confirmCancel}</button><button class="myst-confirm-ok" id="_mcOk">${L.confirmOk}</button></div></div>`;
   document.body.appendChild(overlay);
   const close=()=>overlay.remove();
   overlay.querySelector('#_mcOk').onclick=()=>{close();onOk();};
@@ -343,7 +1132,7 @@ function mysticaConfirm(msg,onOk){
   overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
 }
 
-// ─── Icons map ─────────────────────────────────────────────────────
+/* ─── Icons map ───────────────────────────────────────────────── */
 const ICONS = {
   'Oroscopo':'🌙',
   'Lettura Semplice':'🃏',
@@ -363,11 +1152,11 @@ const ICONS = {
   'Pendolo':'⚖️'
 };
 
-// ─── State ─────────────────────────────────────────────────────────
+/* ─── State ───────────────────────────────────────────────────── */
 let _history = [];
 let _activeFilter = 'all';
 
-// ─── Load & render ─────────────────────────────────────────────────
+/* ─── Load & render ───────────────────────────────────────────── */
 function loadHistory(){
   try{ _history = JSON.parse(_lsGet(K_STORICO)||'[]'); }catch(e){ _history=[]; }
   renderAll();
@@ -378,6 +1167,8 @@ function renderAll(){
   const toolbarEl = document.getElementById('toolbarSection');
   const exportEl  = document.getElementById('exportBox');
   const listEl    = document.getElementById('archList');
+  const L = LANG[currentLang];
+  if (!statsEl || !toolbarEl || !exportEl || !listEl) return;
 
   if(_history.length === 0){
     statsEl.style.display   = 'none';
@@ -385,23 +1176,18 @@ function renderAll(){
     exportEl.style.display  = 'none';
     listEl.innerHTML = `
       <div class="arch-empty">
-        <span class="arch-empty-icon">📿</span>
-        <div class="arch-empty-title">Archivio ancora vuoto</div>
-        <p class="arch-empty-sub">
-          Ogni lettura che esegui viene custodita qui automaticamente.<br>
-          Inizia la tua prima consultazione per popolare il tuo archivio mistico.
-        </p>
-        <a href="https://mysticaoracoli.it/" class="btn-start">✦ Vai all'Oracolo</a>
+        <span class="arch-empty-icon" aria-hidden="true">📿</span>
+        <div class="arch-empty-title">${L.emptyTitle}</div>
+        <p class="arch-empty-sub">${L.emptySub}</p>
+        <a href="./index.html" class="btn-start">${L.emptyBtnStart}</a>
       </div>`;
     return;
   }
 
-  // Show sections
   statsEl.style.display   = '';
   toolbarEl.style.display = '';
   exportEl.style.display  = '';
 
-  // Compute stats
   const tipi = [...new Set(_history.map(x=>x.tipo))];
   const giorni = [...new Set(_history.map(x=>{
     try{ return new Date(x.ts).toDateString(); }catch(e){ return x.data; }
@@ -411,28 +1197,26 @@ function renderAll(){
   document.getElementById('statGiorni').textContent = giorni.length;
   document.getElementById('archCountLabel').textContent = _history.length;
 
-  // Build filter tabs
   buildFilterTabs(tipi);
 
-  // Filter list
   const filtered = _activeFilter === 'all'
     ? _history
     : _history.filter(x => x.tipo === _activeFilter);
 
   if(filtered.length === 0){
-    listEl.innerHTML = `<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">Nessuna lettura trovata per questo filtro.</div>`;
+    listEl.innerHTML = `<div class="arch-empty-msg">${L.noFilterResults}</div>`;
     return;
   }
 
   listEl.innerHTML = filtered.map((x,i) => {
     const icon = ICONS[x.tipo] || '✨';
-    const segnoTxt = x.segno ? `<span class="arch-meta-dot">·</span><span class="arch-badge">${x.segno}</span>` : '';
+    const segnoTxt = x.segno ? `<span class="arch-meta-dot">·</span><span class="arch-badge">${escHtml(x.segno)}</span>` : '';
     return `
       <div class="arch-item" style="animation-delay:${Math.min(i,15)*30}ms">
-        <div class="arch-type">${icon} ${x.tipo}</div>
+        <div class="arch-type">${icon} ${escHtml(typeLabel(x.tipo))}</div>
         <div class="arch-detail">${escHtml(x.dettaglio||'')}</div>
         <div class="arch-meta">
-          <span>${x.data||''}</span>
+          <span>${escHtml(x.data||'')}</span>
           ${segnoTxt}
         </div>
       </div>`;
@@ -441,13 +1225,13 @@ function renderAll(){
 
 function buildFilterTabs(tipi){
   const container = document.getElementById('filterTabs');
-  const existing  = [...container.querySelectorAll('.filter-tab')].map(t=>t.dataset.filter);
+  const L = LANG[currentLang];
+  container.innerHTML = `<div class="filter-tab${_activeFilter==='all'?' active':''}" data-filter="all" id="filterAllTab" onclick="setFilter('all',this)">${L.filterAllLabel}</div>`;
   tipi.forEach(t=>{
-    if(existing.includes(t)) return;
     const tab = document.createElement('div');
-    tab.className = 'filter-tab';
+    tab.className = 'filter-tab' + (_activeFilter===t?' active':'');
     tab.dataset.filter = t;
-    tab.textContent = (ICONS[t]||'✨') + ' ' + t;
+    tab.textContent = (ICONS[t]||'✨') + ' ' + typeLabel(t);
     tab.onclick = function(){ setFilter(t, this); };
     container.appendChild(tab);
   });
@@ -455,39 +1239,35 @@ function buildFilterTabs(tipi){
 
 function setFilter(f, el){
   _activeFilter = f;
-  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  const listEl = document.getElementById('archList');
-  listEl.innerHTML = '';
   renderAll();
 }
 
-// ─── Clear ─────────────────────────────────────────────────────────
+/* ─── Clear ───────────────────────────────────────────────────── */
 function clearArch(){
-  mysticaConfirm("Svuotare l'archivio mistico? Questa azione è irreversibile.", ()=>{
+  const L = LANG[currentLang];
+  mysticaConfirm(L.confirmClearMsg, ()=>{
     _lsRemove(K_STORICO);
     _history = [];
     _activeFilter = 'all';
-    // Reset filter tabs
-    const tabs = document.getElementById('filterTabs');
-    tabs.innerHTML = '<div class="filter-tab active" data-filter="all" onclick="setFilter(\'all\',this)">✨ Tutte</div>';
     renderAll();
-    toast('🗑️ Archivio svuotato');
+    toast(L.toastCleared);
   });
 }
 
-// ─── Export ────────────────────────────────────────────────────────
+/* ─── Export ──────────────────────────────────────────────────── */
 function exportArchivio(){
-  if(_history.length === 0){ toast('⚠️ Archivio vuoto'); return; }
-  const lines = ['MYSTICA – Archivio Mistico', '═'.repeat(40), ''];
+  const L = LANG[currentLang];
+  if(_history.length === 0){ toast(L.toastExportEmpty); return; }
+  const localeMap = { it:'it-IT', en:'en-US', es:'es-ES' };
+  const lines = [L.exportFileHeader, '═'.repeat(40), ''];
   _history.forEach((x,i)=>{
-    lines.push(`[${i+1}] ${x.tipo}`);
+    lines.push(`[${i+1}] ${typeLabel(x.tipo)}`);
     lines.push(`    ${x.dettaglio||''}`);
     lines.push(`    ${x.data||''}${x.segno?' · '+x.segno:''}`);
     lines.push('');
   });
   lines.push('─'.repeat(40));
-  lines.push(`Esportato il ${new Date().toLocaleString('it-IT')}`);
+  lines.push(`${L.exportFileFooterLabel} ${new Date().toLocaleString(localeMap[currentLang]||'it-IT')}`);
   lines.push('mysticaoracoli.it');
 
   const blob = new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'});
@@ -497,16 +1277,23 @@ function exportArchivio(){
   a.download = `mystica-archivio-${new Date().toISOString().slice(0,10)}.txt`;
   a.click();
   URL.revokeObjectURL(url);
-  toast('✅ Archivio esportato');
+  toast(L.toastExported);
 }
 
-// ─── Utility ───────────────────────────────────────────────────────
+/* ─── Utility ─────────────────────────────────────────────────── */
 function escHtml(s){
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ─── Init ──────────────────────────────────────────────────────────
-loadHistory();
+/* ── Init Sequence ── */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);      // 1. Tema
+  // window.audioManager già init dal costruttore
+  applyLang();                // 2. Lingua (chiama updateSEO() e renderAll())
+  loadHistory();               // 3. Logica specifica della pagina
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+});
 </script>
 </body>
 </html>
