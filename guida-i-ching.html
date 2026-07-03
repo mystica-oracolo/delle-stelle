@@ -12,9 +12,6 @@
   <link rel="canonical" href="https://mysticaoracoli.it/guida-i-ching.html">
 
   <!-- hreflang -->
-  <link rel="alternate" hreflang="it"        href="https://mysticaoracoli.it/guida-i-ching.html">
-  <link rel="alternate" hreflang="en"        href="https://mysticaoracoli.it/guida-i-ching.html">
-  <link rel="alternate" hreflang="es"        href="https://mysticaoracoli.it/guida-i-ching.html">
   <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/guida-i-ching.html">
 
   <!-- Open Graph — popolato da updateSEO() -->
@@ -570,7 +567,7 @@
 
     <div class="hero">
       <span class="hero-icon" aria-hidden="true">☯️</span>
-      <h1>I Ching: Il Libro dei Mutamenti</h1>
+      <h2>I Ching: Il Libro dei Mutamenti</h2>
       <p class="hero-sub" id="hero-sub">Storia, struttura e interpretazione del più antico oracolo del mondo. Come funzionano gli 8 trigrammi, i 64 esagrammi e come consultare il Libro dei Mutamenti.</p>
     </div>
 
@@ -1397,6 +1394,7 @@
     }
     initAudio() {
       this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
       this.audio.loop = true;
       this.audio.volume = 0.3;
       if (this.isPlaying) this.play();

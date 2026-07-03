@@ -10,9 +10,6 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/ore-specchio.html">
 
-<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/ore-specchio.html">
-<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/ore-specchio.html">
-<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/ore-specchio.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/ore-specchio.html">
 
 <meta property="og:title" content="">
@@ -290,7 +287,7 @@ html.theme-day .cta{background:linear-gradient(145deg,var(--bg4),var(--bg2))}
   <!-- 3a. SEZIONE INTERATTIVA — sempre in cima -->
   <div class="hero">
     <span class="hero-symbol" aria-hidden="true">🪞</span>
-    <h1 id="hero-title"></h1>
+    <h2 id="hero-title"></h2>
     <p class="hero-sub" id="hero-sub"></p>
     <span class="hero-badge" id="hero-badge"></span>
   </div>
@@ -1259,6 +1256,7 @@ class AudioManager {
   }
   initAudio() {
     this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
     this.audio.loop = true;
     this.audio.volume = 0.3;
     if (this.isPlaying) this.play();

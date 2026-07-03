@@ -20,9 +20,6 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/tradizioni-spirituali.html">
 
-<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/tradizioni-spirituali.html">
-<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/tradizioni-spirituali.html">
-<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/tradizioni-spirituali.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/tradizioni-spirituali.html">
 
 <meta property="og:title" content="">
@@ -901,7 +898,8 @@ const AUDIO_KEY = 'myst_audio_state';
 const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
 class AudioManager {
   constructor() { this.audio = null; this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true'; this.initAudio(); }
-  initAudio() { this.audio = new Audio(AUDIO_URL); this.audio.loop = true; this.audio.volume = 0.3; if (this.isPlaying) this.play(); this.updateUI(); }
+  initAudio() { this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none'; this.audio.loop = true; this.audio.volume = 0.3; if (this.isPlaying) this.play(); this.updateUI(); }
   play() { this.audio?.play().catch(() => {}); this.isPlaying = true; sessionStorage.setItem(AUDIO_KEY, 'true'); this.updateUI(); }
   pause() { this.audio?.pause(); this.isPlaying = false; sessionStorage.setItem(AUDIO_KEY, 'false'); this.updateUI(); }
   toggle() { this.isPlaying ? this.pause() : this.play(); }

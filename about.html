@@ -13,9 +13,6 @@
 <link rel="canonical" href="https://mysticaoracoli.it/about.html">
 
 <!-- hreflang -->
-<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/about.html">
-<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/about.html">
-<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/about.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/about.html">
 
 <!-- Open Graph — VUOTI, popolati da updateSEO() -->
@@ -318,7 +315,7 @@ p{margin-bottom:14px;color:var(--text);opacity:.9}
 
   <div class="hero">
     <span class="hero-icon" aria-hidden="true">🔮</span>
-    <h1 id="hero-title"></h1>
+    <h2 id="hero-title"></h2>
     <p id="hero-text"></p>
   </div>
 
@@ -1108,6 +1105,7 @@ class AudioManager {
   }
   initAudio() {
     this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
     this.audio.loop = true;
     this.audio.volume = 0.3;
     if (this.isPlaying) this.play();

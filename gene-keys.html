@@ -20,9 +20,6 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/gene-keys.html">
 
-<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/gene-keys.html">
-<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/gene-keys.html">
-<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/gene-keys.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/gene-keys.html">
 
 <meta property="og:title" content="">
@@ -356,7 +353,7 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
   <!-- HERO -->
   <section class="hero">
     <span class="hero-icon" aria-hidden="true">🧬</span>
-    <h1 id="hero-title">Gene Keys</h1>
+    <h2 id="hero-title">Gene Keys</h2>
     <p id="hero-desc"></p>
   </section>
 
@@ -1397,6 +1394,7 @@ class AudioManager {
   }
   initAudio() {
     this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
     this.audio.loop = true;
     this.audio.volume = 0.3;
     if (this.isPlaying) this.play();

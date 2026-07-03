@@ -12,9 +12,6 @@
   <link rel="canonical" href="https://mysticaoracoli.it/luna-pianeti.html">
 
   <!-- hreflang multilingua -->
-  <link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/luna-pianeti.html">
-  <link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/luna-pianeti.html">
-  <link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/luna-pianeti.html">
   <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/luna-pianeti.html">
 
   <!-- Open Graph — popolati da updateSEO() -->
@@ -1202,6 +1199,7 @@ class AudioManager {
   }
   initAudio() {
     this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
     this.audio.loop = true; this.audio.volume = 0.3;
     if (this.isPlaying) this.play();
     this.updateUI();
