@@ -233,10 +233,21 @@ body {
   background: linear-gradient(145deg, rgba(26,14,50,.8), rgba(13,8,32,.9));
   border: 1.5px solid var(--border); border-radius: var(--radius);
   padding: 22px 18px; margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.editorial-section::before {
+  content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 220px; height: 120px; background: radial-gradient(ellipse, rgba(212,175,55,.18), transparent 70%);
+  pointer-events: none;
 }
 .editorial-section h2 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); letter-spacing: .8px; margin-bottom: 14px; line-height: 1.3; text-align: center; }
-.editorial-section h3 { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold-dim); letter-spacing: .5px; margin: 16px 0 8px; }
+.editorial-section h3 { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold-dim); letter-spacing: .5px; margin: 18px 0 8px; display: flex; align-items: center; gap: 7px; }
+.editorial-section h3::before { content: '✦'; color: var(--gold); font-size: 11px; }
 .editorial-section p  { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 10px; }
+.editorial-section p:first-of-type::first-letter {
+  font-family: 'Cinzel', serif; font-size: 2.6em; color: var(--gold); float: left;
+  line-height: .8; padding: 4px 6px 0 0;
+}
 .editorial-section a  { color: var(--gold); text-decoration: none; border-bottom: 1px dotted rgba(212,175,55,.35); }
 .editorial-section a:hover { color: var(--gold-dim); }
 .art-hero { width: 100%; border-radius: 14px; margin: 16px 0; display: block; object-fit: cover; max-height: 200px; }
@@ -442,7 +453,6 @@ body {
 <article class="article-section editorial-section">
   <h2 id="art-title"></h2>
   <img src="./images/mystica-orizzontale.webp"
-       srcset="./images/mystica-orizzontale.webp 1x, ./images/mystica-orizzontale@2x.webp 2x"
        id="art-hero" alt="" loading="eager" class="art-hero"
        width="480" height="200" onerror="this.style.display='none'">
   <h3 id="art-h2"></h3>
