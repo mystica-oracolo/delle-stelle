@@ -151,7 +151,7 @@ footer a{color:var(--gold);text-decoration:none}
   <!-- HERO -->
   <div class="hero">
     <span class="hero-hanzi">生肖</span>
-    <h2>Zodiaco Cinese</h2>
+    <h1>Zodiaco Cinese</h1>
     <p class="hero-sub">Inserisci l'anno di nascita e scopri il tuo animale totemico orientale — carattere, colori fortunati, oggetto magico e compatibilità tra i 12 animali dello Shengxiao.</p>
     <span class="hero-badge">✦ CICLO DEI 12 ANIMALI ✦</span>
   </div>
@@ -170,7 +170,7 @@ footer a{color:var(--gold);text-decoration:none}
   <div id="result">
     <div class="result-card">
       <div class="result-img-wrap">
-        <img loading="lazy" id="resImg" src="" alt="">
+        <img id="resImg" src="" alt="">
         <div class="result-title" id="resNome"></div>
         <div class="result-hanzi" id="resHanzi"></div>
         <div class="result-year-tag" id="resYearTag"></div>
@@ -361,7 +361,7 @@ function buildGrid(){
     // Mostra anni in modo compatto (es. ultime 3 ricorrenze)
     const last3 = d.anni.split(' · ').slice(-3).join(' · ');
     return `<div class="animal-btn" onclick="clickAnimal('${key}')">
-      <img loading="lazy" srcset="./images/icone/cinese/${d.n.toLowerCase()}.webp 1x, ./images/icone/cinese/${d.n.toLowerCase()}@2x.webp 2x" src="./images/icone/cinese/${d.n.toLowerCase()}.webp" alt="${d.n}">
+      <img loading="lazy" src="./images/icone/cinese/${d.n.toLowerCase()}.webp" alt="${d.n}">
       <div class="animal-btn-name">${d.e} ${d.n}</div>
       <div class="animal-btn-anni">${last3}</div>
     </div>`;
