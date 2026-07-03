@@ -1245,7 +1245,9 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 });
 
 // ── Audio Manager ──
+/* ── AudioManager (Persistenza Cross-Page) ── */
 const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_TIME_KEY = 'myst_audio_time';
 const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
 
 class AudioManager {
@@ -1258,8 +1260,26 @@ class AudioManager {
     this.audio = new Audio(AUDIO_URL);
     this.audio.loop = true;
     this.audio.volume = 0.3;
-    if (this.isPlaying) this.play();
+    
+    const savedTime = sessionStorage.getItem(AUDIO_TIME_KEY);
+    if (savedTime) {
+      this.audio.currentTime = parseFloat(savedTime);
+    }
+
+    if (this.isPlaying) {
+      this.audio.play().catch(() => {
+        this.isPlaying = false;
+        sessionStorage.setItem(AUDIO_KEY, 'false');
+        this.updateUI();
+      });
+    }
     this.updateUI();
+
+    window.addEventListener('beforeunload', () => {
+      if (this.audio) {
+        sessionStorage.setItem(AUDIO_TIME_KEY, this.audio.currentTime.toString());
+      }
+    });
   }
   play() {
     this.audio?.play().catch(() => {});
@@ -1276,12 +1296,12 @@ class AudioManager {
   toggle() { this.isPlaying ? this.pause() : this.play(); }
   updateUI() {
     const btn = document.getElementById('musicToggle');
-    const L = LANG[currentLang];
-    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+    const L = LANG?.[currentLang];
+    if (btn && L) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
   }
 }
 window.audioManager = new AudioManager();
-document.getElementById('musicToggle').addEventListener('click', () => window.audioManager.toggle());
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
 
 // ── Premium Gate ──
 function isPremium() {

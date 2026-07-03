@@ -1127,7 +1127,7 @@ html.theme-day button { border-color: var(--border); }
     <div class="section-label" id="cose-label"></div>
     <h2 id="cose-title"></h2>
     <div class="hd-hero-img">
-      <img src="./images/human-design/human_design_hero.webp" id="img-cose" alt="" loading="eager" width="600" height="240">
+      <img srcset="./images/human-design/human_design_hero.webp 1x, ./images/human-design/human_design_hero@2x.webp 2x" src="./images/human-design/human_design_hero.webp" id="img-cose" alt="" loading="eager" width="600" height="240">
     </div>
     <div id="cose-body"></div>
   </section>
@@ -1190,7 +1190,7 @@ html.theme-day button { border-color: var(--border); }
     <div class="section-label" id="centri-label"></div>
     <h2 id="centri-title"></h2>
     <div class="hd-hero-img" style="margin:12px 0 14px">
-      <img src="./images/human-design/human_design_centri.webp" id="img-centri" alt="" loading="lazy" width="600" height="240" decoding="async">
+      <img srcset="./images/human-design/human_design_centri.webp 1x, ./images/human-design/human_design_centri@2x.webp 2x" src="./images/human-design/human_design_centri.webp" id="img-centri" alt="" loading="lazy" width="600" height="240" decoding="async">
     </div>
     <p id="centri-intro"></p>
     <div class="centri-grid" id="centriGrid"></div>
@@ -1202,7 +1202,7 @@ html.theme-day button { border-color: var(--border); }
     <p id="aut-intro"></p>
     <div class="info-badge"><span aria-hidden="true">💡</span><span id="aut-badge"></span></div>
     <div class="hd-hero-img" style="margin:0 0 14px">
-      <img src="./images/human-design/human_design_autorita.webp" id="img-aut" alt="" loading="lazy" width="600" height="240" decoding="async">
+      <img srcset="./images/human-design/human_design_autorita.webp 1x, ./images/human-design/human_design_autorita@2x.webp 2x" src="./images/human-design/human_design_autorita.webp" id="img-aut" alt="" loading="lazy" width="600" height="240" decoding="async">
     </div>
     <div class="autorita-list" id="autoritaList"></div>
   </section>
@@ -1213,7 +1213,7 @@ html.theme-day button { border-color: var(--border); }
     <div class="section-label" id="gate-label"></div>
     <h2 id="gate-title"></h2>
     <div class="hd-hero-img" style="margin:0 0 14px">
-      <img src="./images/human-design/human_design_gate.webp" id="img-gate" alt="" loading="lazy" width="600" height="240" decoding="async">
+      <img srcset="./images/human-design/human_design_gate.webp 1x, ./images/human-design/human_design_gate@2x.webp 2x" src="./images/human-design/human_design_gate.webp" id="img-gate" alt="" loading="lazy" width="600" height="240" decoding="async">
     </div>
     <p id="gate-intro"></p>
     <div class="gate-tabs" role="tablist" id="gateTabs"></div>
@@ -1239,7 +1239,7 @@ html.theme-day button { border-color: var(--border); }
     <h2 id="profili-title"></h2>
     <p id="profili-intro"></p>
     <div class="hd-hero-img" style="margin:12px 0 14px">
-      <img src="./images/human-design/human_design_profili_quiz.webp" id="img-profili" alt="" loading="lazy" width="600" height="240" decoding="async">
+      <img srcset="./images/human-design/human_design_profili_quiz.webp 1x, ./images/human-design/human_design_profili_quiz@2x.webp 2x" src="./images/human-design/human_design_profili_quiz.webp" id="img-profili" alt="" loading="lazy" width="600" height="240" decoding="async">
     </div>
     <div class="profili-grid" id="profiliGrid"></div>
   </section>
@@ -1271,7 +1271,7 @@ html.theme-day button { border-color: var(--border); }
 
   <article class="article-section" aria-labelledby="art-title">
     <h2 id="art-title"></h2>
-    <img src="./images/human-design/human_design_hero.webp" id="art-hero" alt="" loading="lazy" width="640" height="280" decoding="async" style="width:100%;border-radius:14px;margin:16px 0">
+    <img srcset="./images/human-design/human_design_hero.webp 1x, ./images/human-design/human_design_hero@2x.webp 2x" src="./images/human-design/human_design_hero.webp" id="art-hero" alt="" loading="lazy" width="640" height="280" decoding="async" style="width:100%;border-radius:14px;margin:16px 0">
     <h3 id="art-h2"></h3>
     <p id="art-p1"></p><p id="art-p2"></p><p id="art-p3"></p>
     <h3 id="art-h3"></h3>
@@ -2025,7 +2025,7 @@ function renderBreadcrumb(L) {
 function renderHero(L) {
   var el = document.getElementById('heroSection');
   if (!el) return;
-  el.innerHTML = '<span class="hero-icon" aria-hidden="true">'+L.heroIcon+'</span><h1>'+L.heroTitle+'</h1><p>'+L.heroDesc+'</p>';
+  el.innerHTML = '<span class="hero-icon" aria-hidden="true">'+L.heroIcon+'</span><h2>'+L.heroTitle+'</h2><p>'+L.heroDesc+'</p>';
 }
 
 function renderTopicNav(L) {
@@ -2066,7 +2066,7 @@ function renderTipi(L) {
     return '<div class="tipo-card'+(i===0?' active':'')+'" onclick="toggleTipo(this)" role="button" tabindex="0" aria-expanded="'+(i===0?'true':'false')+'">' +
       '<div class="tipo-header"><span class="tipo-icon" aria-hidden="true">'+t.icon+'</span><span class="tipo-name">'+t.name+'</span><span class="tipo-pop">'+t.pop+'</span></div>' +
       '<div class="tipo-body">' +
-      '<div class="tipo-img"><img src="./images/human-design/human_design_tipi.webp" alt="'+t.name+' Human Design" loading="lazy" width="600" height="160" decoding="async"></div>' +
+      '<div class="tipo-img"><img srcset="./images/human-design/human_design_tipi.webp 1x, ./images/human-design/human_design_tipi@2x.webp 2x" src="./images/human-design/human_design_tipi.webp" alt="'+t.name+' Human Design" loading="lazy" width="600" height="160" decoding="async"></div>' +
       '<div class="tipo-badges">'+t.badges.map(function(b){return '<span class="tipo-badge">'+b+'</span>';}).join('')+'</div>' +
       '<p>'+t.p1+'</p><p>'+t.p2+'</p>' +
       '</div></div>';

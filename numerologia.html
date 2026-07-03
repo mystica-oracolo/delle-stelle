@@ -505,7 +505,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
 <main id="main-content">
   <div class="hero">
     <span class="hero-symbol" aria-hidden="true">🔢</span>
-    <h1 id="hero-title">Numerologia</h1>
+    <h2 id="hero-title">Numerologia</h2>
     <p class="hero-sub" id="hero-sub">Ogni numero porta una vibrazione cosmica. Calcola il tuo Numero del Sentiero di Vita e il Numero del Destino — e scopri il messaggio che l'universo ha scritto nel giorno in cui sei nato.</p>
     <span class="hero-badge" id="hero-badge">Numerologia Pitagorica · Sistema Occidentale</span>
   </div>
@@ -1598,7 +1598,9 @@ function applyLang() {
 /* ══════════════════════════════════════════
    AUDIO MANAGER
 ══════════════════════════════════════════ */
+/* ── AudioManager (Persistenza Cross-Page) ── */
 const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_TIME_KEY = 'myst_audio_time';
 const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
 
 class AudioManager {
@@ -1611,8 +1613,26 @@ class AudioManager {
     this.audio = new Audio(AUDIO_URL);
     this.audio.loop = true;
     this.audio.volume = 0.3;
-    if (this.isPlaying) this.play();
+    
+    const savedTime = sessionStorage.getItem(AUDIO_TIME_KEY);
+    if (savedTime) {
+      this.audio.currentTime = parseFloat(savedTime);
+    }
+
+    if (this.isPlaying) {
+      this.audio.play().catch(() => {
+        this.isPlaying = false;
+        sessionStorage.setItem(AUDIO_KEY, 'false');
+        this.updateUI();
+      });
+    }
     this.updateUI();
+
+    window.addEventListener('beforeunload', () => {
+      if (this.audio) {
+        sessionStorage.setItem(AUDIO_TIME_KEY, this.audio.currentTime.toString());
+      }
+    });
   }
   play() {
     this.audio?.play().catch(() => {});
@@ -1629,256 +1649,12 @@ class AudioManager {
   toggle() { this.isPlaying ? this.pause() : this.play(); }
   updateUI() {
     const btn = document.getElementById('musicToggle');
-    const L = LANG[currentLang];
-    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+    const L = LANG?.[currentLang];
+    if (btn && L) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
   }
 }
-
-/* ══════════════════════════════════════════
-   TEMA GIORNO/NOTTE
-══════════════════════════════════════════ */
-let isDayMode = localStorage.getItem('myst_theme') === 'day';
-
-function applyTheme(isDay) {
-  document.documentElement.classList.toggle('theme-day', isDay);
-  const btn = document.getElementById('themeToggle');
-  const L = LANG[currentLang];
-  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
-  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
-}
-
-/* ══════════════════════════════════════════
-   PREMIUM GATE
-══════════════════════════════════════════ */
-function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
-}
-
-function requirePremium() {
-  if (isPremium()) return true;
-  document.getElementById('premiumModal').classList.add('show');
-  document.getElementById('premiumModal').setAttribute('aria-hidden', 'false');
-  return false;
-}
-
-function closePremiumModal() {
-  document.getElementById('premiumModal').classList.remove('show');
-  document.getElementById('premiumModal').setAttribute('aria-hidden', 'true');
-}
-
-// Premium features
-function calcolaAnnoPersonale() {
-  if (!requirePremium()) return;
-}
-
-function calcolaProfiloCompleto() {
-  if (!requirePremium()) return;
-}
-
-function calcolaCompatibilitaNumerologica() {
-  if (!requirePremium()) return;
-}
-
-/* ══════════════════════════════════════════
-   FAQ ACCORDION
-══════════════════════════════════════════ */
-function renderFAQ(faqs) {
-  const container = document.getElementById('faqList');
-  if (!container) return;
-  container.innerHTML = faqs.map((f, i) => `
-    <div class="faq-item" id="faq-${i}">
-      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
-        <span>${f.q}</span>
-        <span class="faq-icon" aria-hidden="true">+</span>
-      </button>
-      <div class="faq-answer" id="faq-ans-${i}" hidden>
-        <p>${f.a}</p>
-      </div>
-    </div>
-  `).join('');
-}
-
-function toggleFAQ(i) {
-  const ans = document.getElementById(`faq-ans-${i}`);
-  const btn = document.querySelector(`#faq-${i} .faq-question`);
-  const icon = btn.querySelector('.faq-icon');
-  const isOpen = !ans.hidden;
-  ans.hidden = isOpen;
-  icon.textContent = isOpen ? '+' : '−';
-  btn.setAttribute('aria-expanded', String(!isOpen));
-}
-
-/* ══════════════════════════════════════════
-   SHARE
-══════════════════════════════════════════ */
-const PAGE_URL = 'https://mysticaoracoli.it/numerologia.html';
-
-function shareContent(customText) {
-  const L = LANG[currentLang];
-  const text = customText || L.shareText;
-  if (navigator.share) {
-    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
-    return;
-  }
-  const encoded = encodeURIComponent(text + ' ' + PAGE_URL);
-  const urlEnc = encodeURIComponent(PAGE_URL);
-  document.getElementById('share-wa').href = `https://wa.me/?text=${encoded}`;
-  document.getElementById('share-tg').href = `https://t.me/share/url?url=${urlEnc}&text=${encodeURIComponent(text)}`;
-  document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${urlEnc}`;
-  document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encoded}`;
-  document.getElementById('share-copy').textContent = L.shareCopy;
-  document.getElementById('sharePopup').hidden = false;
-}
-
-function copyLink() {
-  const L = LANG[currentLang];
-  navigator.clipboard.writeText(PAGE_URL).then(() => {
-    document.getElementById('share-copy').textContent = L.shareCopied;
-    setTimeout(() => {
-      document.getElementById('share-copy').textContent = L.shareCopy;
-    }, 2000);
-  }).catch(() => {});
-}
-
-/* ══════════════════════════════════════════
-   LANG SWITCH
-══════════════════════════════════════════ */
-document.querySelectorAll('[data-lang]').forEach(btn => {
-  btn.addEventListener('click', e => {
-    currentLang = e.currentTarget.dataset.lang;
-    localStorage.setItem('myst_lang', currentLang);
-    applyLang();
-  });
-});
-
-let _numCurrentTab = 0;
-let _numLastResult = null;
-
-/* ══════════════════════════════════════════
-   CALCULATOR LOGIC (originale, invariata)
-══════════════════════════════════════════ */
-function numSelectTab(idx) {
-  _numCurrentTab = idx;
-  document.querySelectorAll('.num-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
-  document.getElementById('numPanelDate').style.display = idx===0 ? 'block' : 'none';
-  document.getElementById('numPanelName').style.display = idx===1 ? 'block' : 'none';
-  document.getElementById('numResult').style.display = 'none';
-}
-
-function numReduce(n) {
-  while(n > 9 && n !== 11 && n !== 22 && n !== 33) {
-    n = String(n).split('').reduce((a,c) => a + parseInt(c), 0);
-  }
-  return n;
-}
-
-function calcSentiero() {
-  const dateVal = document.getElementById('numDate').value;
-  if(!dateVal) return;
-  const [yyyy,mm,dd] = dateVal.split('-').map(Number);
-  const d = new Date(yyyy, mm-1, dd, 12, 0, 0);
-  if(isNaN(d.getTime())) return;
-  const day = d.getDate(), month = d.getMonth()+1, year = d.getFullYear();
-  const allDigits = String(day) + String(month) + String(year);
-  const rawSum = allDigits.split('').reduce((a,c) => a + parseInt(c), 0);
-  const numero = numReduce(rawSum);
-  const buildSteps = () => {
-    const masterLbl = DB_NUM_LANG[currentLang][numero]?.master ? `<br>${LANG[currentLang].numeroMaestroInline}` : '';
-    return `
-    ${String(day).padStart(2,'0')} / ${String(month).padStart(2,'0')} / ${year}<br>
-    = ${allDigits.split('').join(' + ')} = ${rawSum}<br>
-    ${rawSum !== numero ? '= ' + String(rawSum).split('').join(' + ') + ' = <strong style="color:#d4af37">' + numero + '</strong>' : '= <strong style="color:#d4af37">' + numero + '</strong>'}
-    ${masterLbl}
-  `;
-  };
-  const L = LANG[currentLang];
-  _numLastResult = { numero, tipoKey: 'tabVita', stepsHtmlFn: buildSteps };
-  _showNumResult(numero, L.tabVita, buildSteps());
-}
-
-function calcDestino() {
-  const rawName = (document.getElementById('numName').value || '').trim().toUpperCase();
-  if(!rawName) return;
-  const lettersOnly = rawName.replace(/[^A-Z]/g,'');
-  if(lettersOnly.length === 0) return;
-  const values = lettersOnly.split('').map(c => NUM_TABLE[c] || 0);
-  const rawSum = values.reduce((a,c) => a + c, 0);
-  const numero = numReduce(rawSum);
-  const letterRow = lettersOnly.split('').join(' + ');
-  const numRow = values.join(' + ');
-  const buildSteps = () => {
-    const masterLbl = DB_NUM_LANG[currentLang][numero]?.master ? `<br>${LANG[currentLang].numeroMaestroInline}` : '';
-    return `
-    ${rawName}<br>
-    ${letterRow}<br>
-    = ${numRow} = ${rawSum}<br>
-    ${rawSum !== numero ? '= ' + String(rawSum).split('').join(' + ') + ' = <strong style="color:#d4af37">' + numero + '</strong>' : '= <strong style="color:#d4af37">' + numero + '</strong>'}
-    ${masterLbl}
-  `;
-  };
-  const L = LANG[currentLang];
-  _numLastResult = { numero, tipoKey: 'tabDestino', stepsHtmlFn: buildSteps };
-  _showNumResult(numero, L.tabDestino, buildSteps());
-}
-
-function _showNumResult(numero, tipo, stepsHtml) {
-  const data = DB_NUM_LANG[currentLang][numero];
-  if(!data) return;
-  const L = LANG[currentLang];
-  const kwHtml = data.keywords.map(k => `<span class="num-kw">${k}</span>`).join('');
-  const masterBadge = data.master ? `<div class="num-master-badge">${L.masterBadge} — ${L.vibrazioneElevata}</div>` : '';
-  const el = document.getElementById('numResult');
-  el.innerHTML = `
-    <div class="num-res">
-      <div class="num-big">${numero}</div>
-      <div class="num-name-label">${data.nome}</div>
-      <div style="font-size:34px;margin:7px 0;filter:drop-shadow(0 0 12px #d4af3760)" aria-hidden="true">${data.emoji}</div>
-      ${masterBadge}
-      <div class="num-calc-steps">✦ ${tipo}:<br>${stepsHtml}</div>
-      <div class="num-keywords">${kwHtml}</div>
-      <div class="num-block"><h4>${L.labelEssenza}</h4><p>${data.essenza}</p></div>
-      <div class="num-block"><h4>${L.labelLuci}</h4><p>${data.luci}</p></div>
-      <div class="num-block"><h4>${L.labelOmbre}</h4><p>${data.ombre}</p></div>
-      <div class="num-block"><h4>${L.labelMissione}</h4><p>${data.missione}</p></div>
-      <div class="num-block"><h4>${L.labelCompatibile}</h4><p>${data.compatibile}</p></div>
-
-      <div class="premium-upsell">
-        <h4>${L.premiumUpsellTitle}</h4>
-        <p>${L.premiumUpsellDesc}</p>
-        <div class="premium-btns">
-          <button class="btn-premium-feature" onclick="calcolaAnnoPersonale()">${L.btnAnnoPersonale}</button>
-          <button class="btn-premium-feature" onclick="calcolaProfiloCompleto()">${L.btnProfiloCompleto}</button>
-          <button class="btn-premium-feature" onclick="calcolaCompatibilitaNumerologica()">${L.btnCompatibilita}</button>
-        </div>
-      </div>
-
-      <button class="btn-sec" onclick="resetNumerologia()">${L.btnNuovoCalcolo}</button>
-    </div>
-  `;
-  el.style.display = 'block';
-  document.getElementById('numPanelDate').style.display = 'none';
-  document.getElementById('numPanelName').style.display = 'none';
-  el.scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-function resetNumerologia() {
-  document.getElementById('numResult').style.display = 'none';
-  _numLastResult = null;
-  numSelectTab(_numCurrentTab);
-  if(_numCurrentTab === 0) document.getElementById('numPanelDate').style.display = 'block';
-  else document.getElementById('numPanelName').style.display = 'block';
-}
-
-/* ══════════════════════════════════════════
-   INIT SEQUENCE
-══════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Tema
-  applyTheme(isDayMode);
-
-  // 2. Audio Manager
-  window.audioManager = new AudioManager();
-  document.getElementById('musicToggle').addEventListener('click', () => window.audioManager.toggle());
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
 
   // 3. Theme toggle
   document.getElementById('themeToggle').addEventListener('click', () => {
