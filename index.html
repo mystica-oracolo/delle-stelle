@@ -48,10 +48,12 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (non bloccante) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=optional" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=optional"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=optional" rel="stylesheet"></noscript>
 
   <!-- PWA -->
   <link rel="manifest" href="./manifest.json">
@@ -450,7 +452,7 @@ body {
 <article class="article-section editorial-section">
   <h2 id="art-title">MYSTICA — Il Portale Esoterico Italiano</h2>
   <img src="./images/mystica-orizzontale.webp"
-       id="art-hero" alt="MYSTICA Oracoli — portale esoterico italiano" loading="eager" class="art-hero"
+       id="art-hero" alt="MYSTICA Oracoli — portale esoterico italiano" loading="eager" fetchpriority="high" class="art-hero"
        width="480" height="200" onerror="this.style.display='none'">
   <h3 id="art-h2">Le Origini dell'Esoterismo: dalla Mesopotamia all'Era Digitale</h3>
   <p id="art-p1">MYSTICA nasce dalla volontà di rendere accessibile l'esoterismo autentico a chiunque, ovunque, senza filtri elitari e senza il bisogno di un consulente fisico. Non è un semplice oroscopo del giorno, ma un ecosistema completo che riunisce oltre sessanta strumenti divinatori, tradizioni magiche, astrologia avanzata orientale e occidentale, numerologia e conoscenza esoterica enciclopedica. Dai tarocchi alle rune norrene, dall'I Ching alla numerologia pitagorica, dalla Cabala all'alchimia rinascimentale, fino allo sciamanesimo e al Human Design: tutto in un'unica applicazione pensata per chi cerca risposte concrete, ispirazione quotidiana e una connessione autentica con il sacro.</p>

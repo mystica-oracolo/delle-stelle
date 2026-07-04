@@ -49,10 +49,12 @@
 <meta name="google-adsense-account" content="ca-pub-0522720046244970">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 
-<!-- Google Fonts -->
+<!-- Google Fonts (non bloccante) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=optional" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=optional"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=optional" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="mystica.css">
 
 <!-- PWA -->
@@ -336,8 +338,8 @@
       <h2 id="art-title">Tarocchi: Storia, Simbologia e Guida alla Lettura</h2>
       <img src="./images/tarocchi/tarocchi-hero.webp"
            srcset="./images/tarocchi/tarocchi-hero.webp 1x, ./images/tarocchi/tarocchi-hero@2x.webp 2x"
-           id="art-hero" alt="" width="600" height="338"
-           loading="eager" decoding="async"
+           id="art-hero" alt="Mazzo di Tarocchi disteso con Arcani Maggiori e Minori illuminati da candele" width="600" height="338"
+           loading="eager" fetchpriority="high" decoding="async"
            style="width:100%;height:auto;border-radius:14px;margin:16px 0">
       <h3 id="art-h2">Origini e Storia dei Tarocchi</h3>
       <p id="art-p1">I Tarocchi nascono nell'Italia rinascimentale della prima metà del Quattrocento, quando le corti di Milano e Ferrara commissionano mazzi miniati come quello Visconti-Sforza, oggi conservato in parte alla Pierpont Morgan Library di New York. Inizialmente i "trionfi" erano un gioco di carte aristocratico, simile per struttura ai moderni tarocchi da gioco francesi ancora diffusi in alcune regioni. Solo nel Settecento, con figure come Antoine Court de Gébelin, iniziò a diffondersi l'interpretazione esoterica del mazzo, alimentata dal mito (storicamente infondato ma culturalmente potente) di un'origine egizia legata al Libro di Thot. Nell'Ottocento Éliphas Lévi collegò sistematicamente gli Arcani alla Cabala ebraica, mentre nel 1909 Arthur Edward Waite e l'illustratrice Pamela Colman Smith pubblicarono il celebre mazzo Rider-Waite-Smith, che introdusse per la prima volta immagini narrative complete anche sugli Arcani Minori, diventando lo standard più diffuso al mondo.</p>
