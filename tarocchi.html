@@ -266,22 +266,22 @@
     <div id="tarotHome">
       <div class="tarot-intro">
         <div class="tarot-big-icon" aria-hidden="true">🃏</div>
-        <h2 id="introTitle"></h2>
-        <p id="introText"></p>
+        <h2 id="introTitle">I Tarocchi</h2>
+        <p id="introText">78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore e scegli la stesa più adatta a te.</p>
       </div>
 
       <!-- Modalità principali -->
       <div class="mode-wrap">
         <div class="mode-card active" data-mode="semplice" onclick="selectMode('semplice')">
           <div class="mode-icon" aria-hidden="true">🌙</div>
-          <div class="mode-name" id="mn-semplice"></div>
-          <div class="mode-desc" id="md-semplice"></div>
+          <div class="mode-name" id="mn-semplice">Lettura Semplice</div>
+          <div class="mode-desc" id="md-semplice">3 carte · Passato · Presente · Futuro</div>
         </div>
         <div class="mode-card" data-mode="approfondita" onclick="selectMode('approfondita')">
           <div class="mode-icon" aria-hidden="true">🔮</div>
-          <div class="mode-name" id="mn-approfondita"></div>
-          <div class="mode-desc" id="md-approfondita"></div>
-          <div class="mode-badge" id="mb-approfondita"></div>
+          <div class="mode-name" id="mn-approfondita">Croce della Vita</div>
+          <div class="mode-desc" id="md-approfondita">5 carte · Lettura approfondita</div>
+          <div class="mode-badge" id="mb-approfondita">✨ Premium</div>
         </div>
       </div>
 
@@ -291,12 +291,12 @@
       <div class="for-other-row">
         <button class="btn-for-other" id="btnForOther" onclick="openForOther()">
           <span aria-hidden="true">👤</span>
-          <span id="forOtherLabel"></span>
+          <span id="forOtherLabel">👤 Per chi altro?</span>
         </button>
       </div>
 
       <!-- ═══ STESE DI TAROCCHI (tipologie aggiuntive) ═══ -->
-      <h2 class="section-label" id="spreadSectionTitle"></h2>
+      <h2 class="section-label" id="spreadSectionTitle">✦ Stese di Tarocchi</h2>
       <div class="spread-grid" id="spreadGrid">
         <!-- generato da renderSpreadGrid() -->
       </div>
@@ -333,26 +333,26 @@
 
     <!-- ═══ ARTICOLO EDITORIALE ═══ -->
     <article class="article-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Tarocchi: Storia, Simbologia e Guida alla Lettura</h2>
       <img src="./images/tarocchi/tarocchi-hero.webp"
            srcset="./images/tarocchi/tarocchi-hero.webp 1x, ./images/tarocchi/tarocchi-hero@2x.webp 2x"
            id="art-hero" alt="" width="600" height="338"
            loading="eager" decoding="async"
            style="width:100%;height:auto;border-radius:14px;margin:16px 0">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h2">Origini e Storia dei Tarocchi</h3>
+      <p id="art-p1">I Tarocchi nascono nell'Italia rinascimentale della prima metà del Quattrocento, quando le corti di Milano e Ferrara commissionano mazzi miniati come quello Visconti-Sforza, oggi conservato in parte alla Pierpont Morgan Library di New York. Inizialmente i "trionfi" erano un gioco di carte aristocratico, simile per struttura ai moderni tarocchi da gioco francesi ancora diffusi in alcune regioni. Solo nel Settecento, con figure come Antoine Court de Gébelin, iniziò a diffondersi l'interpretazione esoterica del mazzo, alimentata dal mito (storicamente infondato ma culturalmente potente) di un'origine egizia legata al Libro di Thot. Nell'Ottocento Éliphas Lévi collegò sistematicamente gli Arcani alla Cabala ebraica, mentre nel 1909 Arthur Edward Waite e l'illustratrice Pamela Colman Smith pubblicarono il celebre mazzo Rider-Waite-Smith, che introdusse per la prima volta immagini narrative complete anche sugli Arcani Minori, diventando lo standard più diffuso al mondo.</p>
+      <p id="art-p2">Il mazzo classico è composto da 78 carte: 22 Arcani Maggiori, numerati da 0 (Il Matto) a 21 (Il Mondo), e 56 Arcani Minori suddivisi in quattro semi — Bastoni (fuoco, azione, creatività), Coppe (acqua, emozioni, relazioni), Spade (aria, pensiero, conflitto) e Pentacoli o Denari (terra, materia, lavoro) — ciascuno con dieci carte numerali e quattro figure (Fante, Cavaliere, Regina, Re). Questa struttura a quattro elementi richiama sistemi simbolici paralleli come i quattro semi delle carte da gioco europee o le quattro suit dei mazzi Marsigliesi, da cui derivano direttamente molte iconografie ancora oggi in uso. Ogni numero, dall'Asso al Dieci, segue inoltre una progressione simbolica numerologica condivisa trasversalmente tra i quattro semi.</p>
+      <p id="art-p3">Per fare una lettura si mescola il mazzo concentrandosi su una domanda aperta, si estraggono le carte nell'ordine richiesto dalla stesa scelta e si osserva sia il significato della singola carta sia il dialogo che si crea tra le carte vicine. L'orientamento dritto o invertito modula l'intensità e la direzione dell'energia descritta: una carta dritta tende a manifestarsi più direttamente nella realtà esterna, mentre invertita suggerisce un processo ancora interiore, rallentato o da rielaborare. Le stese più diffuse vanno dalla singola carta del giorno fino a configurazioni complesse come la Croce Celtica a dieci posizioni, qui semplificata in cinque punti chiave per restare accessibile anche a chi muove i primi passi.</p>
+      <h3 id="art-h3">Come Si Leggono le Carte: Struttura, Simbologia e Pratica</h3>
+      <p id="art-p4">Tra gli errori più comuni di chi si avvicina ai Tarocchi per la prima volta c'è la tendenza a leggere ogni carta in isolamento, ignorando il contesto della domanda e delle carte circostanti, oltre alla convinzione — un mito da sfatare — che alcune carte come la Morte o il Diavolo annuncino sempre eventi catastrofici: nella stragrande maggioranza delle tradizioni esoteriche queste carte indicano trasformazione necessaria e confronto con le proprie ombre, non disgrazia letterale. Un altro mito diffuso è l'idea che i Tarocchi abbiano un'origine egizia certa: gli storici concordano che si tratti di un'invenzione settecentesca priva di riscontri archeologici, sebbene il fascino di quella narrazione abbia comunque ispirato varianti tematiche come i Tarocchi Egiziani ancora oggi diffusi.</p>
+      <p id="art-p5">A differenza delle Rune, sistema runico-divinatorio germanico legato a un alfabeto sacro e a un lancio casuale di pochi simboli, o dell'I Ching cinese, basato su 64 esagrammi costruiti da linee yin e yang, i Tarocchi offrono un linguaggio visivo narrativo molto più ricco, capace di restituire scenari complessi attraverso l'interazione di più carte in una stesa. Una curiosità poco nota è che il termine "Tarocchi" potrebbe derivare dal fiume Taro in Emilia, secondo alcune ipotesi etimologiche, mentre la scuola di Marsiglia e quella di Rider-Waite restano oggi le due principali correnti iconografiche da cui derivano quasi tutti i mazzi moderni, comprese le numerose varianti tematiche (zingara, angeliche, celtiche) diffuse nella cartomanzia contemporanea.</p>
       <nav class="article-links" aria-label="Link interni correlati">
         <a href="./guida-tarocchi.html">Guida Completa agli Arcani</a>
         <a href="./guida-i-ching.html">I Ching: l'Oracolo dei Cambiamenti</a>
         <a href="./significato-rune.html">Significato delle Rune</a>
         <a href="./oroscopo-segni.html">Oroscopo e Segni Zodiacali</a>
       </nav>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
 
     <!-- ═══ FAQ ═══ -->
@@ -371,8 +371,8 @@
       <a href="./about.html">Chi Siamo</a>
       <a href="./privacy.html">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità di intrattenimento, riflessione personale e crescita interiore: non sostituiscono consulenze mediche, legali, finanziarie o psicologiche professionali.</p>
   </footer>
 
 </div><!-- /page-wrap -->
@@ -383,8 +383,8 @@
 <!-- Modal lettura per altro -->
 <div id="forOtherModal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px" role="dialog" aria-modal="true">
   <div style="background:var(--card);border:2px solid var(--gold-dim);border-radius:20px;padding:24px;width:92%;max-width:360px">
-    <h2 style="font-size:17px;margin-bottom:14px" id="foTitle"></h2>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:14px" id="foText"></p>
+    <h2 style="font-size:17px;margin-bottom:14px" id="foTitle">👤 Lettura per...</h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px" id="foText">Inserisci il nome della persona per cui fai la lettura</p>
     <input type="text" id="forOtherName" maxlength="30" style="margin-bottom:10px">
     <div class="btn-grp">
       <button class="btn btn-sec" onclick="closeForOther()" style="margin-top:0" id="foCancel"></button>
@@ -397,9 +397,9 @@
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Stesa Premium</h2>
+    <p id="premium-text">Questa stesa è una lettura estesa (5 carte). Sblocca tutte le stese avanzate, lo storico illimitato e le interpretazioni complete.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
       onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
     <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
