@@ -402,7 +402,7 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
   <article class="article-section">
     <h2 id="art-title"></h2>
     <img src="./images/icone/cinese/cavallo.webp"
-         srcset="./images/icone/cinese/cavallo.webp 1x, ./images/icone/cinese/cavallo@2x.webp 2x"
+         srcset="./images/icone/cinese/cavallo.webp 1x"
          id="art-hero"
          alt=""
          width="480" height="480"
@@ -436,7 +436,7 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
     <!-- Sotto-sezione: Anno del Cavallo 2026 -->
     <h2 id="anno2026-title"></h2>
     <div class="card">
-      <img src="./images/icone/cinese/cavallo.webp" srcset="./images/icone/cinese/cavallo.webp 1x, ./images/icone/cinese/cavallo@2x.webp 2x" alt="" id="anno2026-img" loading="lazy" decoding="async" width="160" height="160" style="width:160px;border-radius:14px;display:block;margin:0 auto 16px">
+      <img src="./images/icone/cinese/cavallo.webp" srcset="./images/icone/cinese/cavallo.webp 1x" alt="" id="anno2026-img" loading="lazy" decoding="async" width="160" height="160" style="width:160px;border-radius:14px;display:block;margin:0 auto 16px">
       <p id="anno2026-p1"></p>
       <p id="anno2026-p2"></p>
     </div>
@@ -908,7 +908,7 @@ function renderAnimalGrid(L) {
     const a = L.animals[k];
     const imgName = fileNames[k];
     return `<div class="animal-card">
-      <img src="./images/icone/cinese/${imgName}.webp" srcset="./images/icone/cinese/${imgName}.webp 1x, ./images/icone/cinese/${imgName}@2x.webp 2x" alt="${a.name} - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <img src="./images/icone/cinese/${imgName}.webp" srcset="./images/icone/cinese/${imgName}.webp 1x" alt="${a.name} - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
       <div class="animal-card-name">${a.name} (${a.hanzi})</div>
       <div class="animal-card-elem">${a.elem}</div>
     </div>`;

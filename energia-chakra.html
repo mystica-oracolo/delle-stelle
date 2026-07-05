@@ -438,7 +438,8 @@ textarea:focus,input[type="text"]:focus{border-color:var(--gold)}
     <h2 id="art-title"></h2>
     <figure>
       <img src="./images/energia-chakra.webp"
-           srcset="./images/energia-chakra.webp 1x, ./images/energia-chakra@2x.webp 2x"
+           srcset="./images/energia-chakra.webp 1x"
+           onerror="this.closest('figure').style.display='none'"
            id="art-hero" alt="" loading="eager" decoding="auto" width="600" height="315"
            style="width:100%;border-radius:14px;margin:16px 0">
       <figcaption id="art-img-caption" style="font-size:11px;color:var(--muted);text-align:center;margin-top:-8px;margin-bottom:12px"></figcaption>

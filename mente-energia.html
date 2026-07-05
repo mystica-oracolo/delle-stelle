@@ -406,7 +406,7 @@ textarea::placeholder{color:var(--muted)}
 <div class="tool-card" id="card-medita">
   <figure style="text-align:center;margin:0 0 12px">
     <img src="./images/icone/home/meditazione.webp"
-         srcset="./images/icone/home/meditazione.webp 1x, ./images/icone/home/meditazione@2x.webp 2x"
+         srcset="./images/icone/home/meditazione.webp 1x"
          alt="Meditazione guidata" loading="eager" width="480" height="120"
          style="max-height:120px;object-fit:cover;width:100%;border-radius:10px;opacity:.85">
   </figure>
@@ -528,7 +528,7 @@ textarea::placeholder{color:var(--muted)}
 <div class="tool-card" id="card-breath">
   <figure style="text-align:center;margin:0 0 12px">
     <img src="./images/icone/home/pranayama.webp"
-         srcset="./images/icone/home/pranayama.webp 1x, ./images/icone/home/pranayama@2x.webp 2x"
+         srcset="./images/icone/home/pranayama.webp 1x"
          alt="Pranayama e Respirazione" loading="lazy" width="480" height="120"
          style="max-height:120px;object-fit:cover;width:100%;border-radius:10px;opacity:.85">
   </figure>
@@ -632,7 +632,7 @@ textarea::placeholder{color:var(--muted)}
 <div class="tool-card" id="card-ipnosi">
   <figure style="text-align:center;margin:0 0 12px">
     <img src="./images/icone/home/ipnosi.webp"
-         srcset="./images/icone/home/ipnosi.webp 1x, ./images/icone/home/ipnosi@2x.webp 2x"
+         srcset="./images/icone/home/ipnosi.webp 1x"
          alt="Ipnosi e Rilassamento" loading="lazy" width="480" height="120"
          style="max-height:120px;object-fit:cover;width:100%;border-radius:10px;opacity:.85">
   </figure>
@@ -788,7 +788,7 @@ textarea::placeholder{color:var(--muted)}
 <div class="tool-card" id="card-eft">
   <figure style="text-align:center;margin:0 0 12px">
     <img src="./images/icone/home/eft-tapping.webp"
-         srcset="./images/icone/home/eft-tapping.webp 1x, ./images/icone/home/eft-tapping@2x.webp 2x"
+         srcset="./images/icone/home/eft-tapping.webp 1x"
          alt="EFT Tapping meridiani" loading="lazy" width="480" height="120"
          style="max-height:120px;object-fit:cover;width:100%;border-radius:10px;opacity:.85">
   </figure>
@@ -1005,7 +1005,8 @@ textarea::placeholder{color:var(--muted)}
   <h2 id="art-title"></h2>
   <figure>
     <img src="./images/mente-energia.webp"
-         srcset="./images/mente-energia.webp 1x, ./images/mente-energia@2x.webp 2x"
+         srcset="./images/mente-energia.webp 1x"
+         onerror="this.closest('figure').style.display='none'"
          id="art-hero" alt="" loading="lazy" decoding="async"
          width="480" height="270"
          style="width:100%;border-radius:14px;margin:16px 0">

@@ -792,7 +792,7 @@ function renderTraditions() {
       <div class="trad-body">
         ${t.blocks.map(b => `
           <div class="trad-block">
-            <div class="block-img"><img src="${b.img}" alt="${b.alt}" width="380" height="214" loading="lazy" decoding="async"></div>
+            <div class="block-img"><img src="${b.img}" alt="${b.alt}" width="380" height="214" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></div>
             <h3>${b.h3}</h3>
             ${b.p.map(par => `<p>${par}</p>`).join('')}
           </div>

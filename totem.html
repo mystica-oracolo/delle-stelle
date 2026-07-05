@@ -496,7 +496,8 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
   <article class="article-section">
     <h2 id="art-title"></h2>
     <img src="./images/totem/totem-copertina.webp"
-         srcset="./images/totem/totem-copertina.webp 1x, ./images/totem/totem-copertina@2x.webp 2x"
+         srcset="./images/totem/totem-copertina.webp 1x"
+         onerror="this.style.display='none'"
          id="art-hero" alt="" loading="lazy" decoding="async" width="740" height="420"
          style="width:100%;height:auto;border-radius:14px;margin:16px 0">
     <h3 id="art-h2"></h3>
@@ -1134,20 +1135,20 @@ let currentLang = localStorage.getItem('myst_lang') || 'it';
 
 /* ── Metadati statici animali (id, emoji, immagine) — indipendenti dalla lingua ── */
 const TOTEM_META = [
-  { id:'aquila',   emoji:'🦅', img:'./images/totem/totem-aquila.webp' },
-  { id:'lupo',     emoji:'🐺', img:'./images/totem/totem-lupo.webp' },
-  { id:'orso',     emoji:'🐻', img:'./images/totem/totem-orso.webp' },
-  { id:'delfino',  emoji:'🐬', img:'./images/totem/totem-delfino.webp' },
+  { id:'aquila',   emoji:'🦅', img:'./images/totem-aquila.webp' },
+  { id:'lupo',     emoji:'🐺', img:'./images/totem-lupo.webp' },
+  { id:'orso',     emoji:'🐻', img:'./images/totem-orso.webp' },
+  { id:'delfino',  emoji:'🐬', img:'./images/totem-delfino.webp' },
   { id:'serpente', emoji:'🐍', img:'./images/totem/totem-serpente.webp' },
   { id:'cervo',    emoji:'🦌', img:'./images/totem/totem-cervo.webp' },
   { id:'gufo',     emoji:'🦉', img:'./images/totem/totem-gufo.webp' },
   { id:'leone',    emoji:'🦁', img:'./images/totem/totem-leone.webp' }
 ];
 const MYTH_META = [
-  { img:'./images/totem/totem-aquila.webp',   fallbackEmoji:'🦅' },
-  { img:'./images/totem/totem-lupo.webp',     fallbackEmoji:'🐺' },
-  { img:'./images/totem/totem-orso.webp',     fallbackEmoji:'🐻' },
-  { img:'./images/totem/totem-delfino.webp',  fallbackEmoji:'🐬' }
+  { img:'./images/totem-aquila.webp',   fallbackEmoji:'🦅' },
+  { img:'./images/totem-lupo.webp',     fallbackEmoji:'🐺' },
+  { img:'./images/totem-orso.webp',     fallbackEmoji:'🐻' },
+  { img:'./images/totem-delfino.webp',  fallbackEmoji:'🐬' }
 ];
 
 /* ── LOGICA QUIZ ESISTENTE — matrice di punteggio invariata ── */
