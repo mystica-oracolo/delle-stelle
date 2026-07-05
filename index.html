@@ -136,25 +136,32 @@ body {
 @keyframes twinkle { 0% { opacity: .35; } 50% { opacity: .55; } 100% { opacity: .45; } }
 
 /* ── Layout ── */
-#app { max-width: 480px; margin: 0 auto; position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; }
+#app { max-width: 480px; margin: 0 auto; position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; padding-left: 56px; }
+@media (min-width: 560px) { #app { margin: 0 auto 0 56px; } }
 
-/* ── Header Home ── */
+/* ── Header Home (barra sottile stile Netfloz) ── */
 .home-header {
-  background: rgba(10,5,20,0.92);
+  background: rgba(10,5,20,0.95);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  padding: max(20px, calc(20px + env(safe-area-inset-top,0px))) 20px 20px;
+  padding: max(10px, calc(10px + env(safe-area-inset-top,0px))) 16px 10px;
   border-bottom: 1px solid rgba(212,175,55,0.25);
   position: sticky; top: 0; z-index: 20;
-  text-align: center;
   transition: transform .35s ease;
   will-change: transform;
 }
 .home-header.header-hidden { transform: translateY(-100%); }
-.header-top-row {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 12px;
+.hh-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.hh-logo { display: flex; align-items: center; gap: 6px; }
+.hh-logo .logo-glow { font-size: 13px; color: var(--gold); opacity: .7; }
+.hh-logo .logo-title {
+  font-family: 'Cinzel', serif; font-size: 19px; color: var(--gold);
+  letter-spacing: 3px; line-height: 1; text-shadow: 0 0 16px var(--gold-glow);
 }
-.header-controls { display: flex; gap: 6px; }
+.hh-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
 .btn-icon {
   background: rgba(42,23,72,.6); border: 1px solid rgba(212,175,55,.3);
   color: var(--gold); border-radius: 20px; padding: 5px 10px; font-size: 12px;
@@ -268,8 +275,14 @@ body {
 }
 .dash-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent); }
 
-/* ── Grid card ── */
-.dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+/* ── Riga scorrevole stile Netflix (ex grid) ── */
+.dash-grid {
+  display: flex; flex-wrap: nowrap; gap: 12px; margin: 0 0 4px;
+  overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity;
+  padding: 4px 20px 10px; margin-left: -20px; margin-right: -20px;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.dash-grid::-webkit-scrollbar { display: none; }
 
 /* ── Dash card ── */
 .dash-card {
@@ -281,15 +294,16 @@ body {
   position: relative; overflow: hidden;
   text-decoration: none;
   border: 1.5px solid rgba(42,23,72,.7);
+  flex: 0 0 132px; width: 132px; scroll-snap-align: start;
 }
 .dash-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   opacity: .7; transition: opacity .2s;
 }
-.dash-card:hover { transform: translateY(-4px) scale(1.03); border-color: rgba(212,175,55,.45); }
+.dash-card:hover { transform: translateY(-4px) scale(1.05); border-color: rgba(212,175,55,.45); z-index: 2; }
 .dash-card:hover::before { opacity: 1; }
 .dash-card:active { transform: scale(.97); }
-.dash-card.span2 { grid-column: span 2; }
+.dash-card.span2 { flex-basis: 210px; width: 210px; }
 .dash-card.span2 .dash-img-wrap { aspect-ratio: 2/1; }
 
 /* Colori bordo superiore */
@@ -392,37 +406,275 @@ body {
 .footer-links a:hover { color: var(--gold); }
 #footer-copy { font-size: 10px; color: #4a4262; margin-bottom: 5px; }
 .footer-disclaimer { font-size: 10px; color: #4a4262; line-height: 1.5; }
+
+/* ══════════════════════════════════════
+   SIDEBAR NERA STILE NETFLIX
+══════════════════════════════════════ */
+.nf-sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0; z-index: 50;
+  width: 56px; background: #000; border-right: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 14px 0 10px; gap: 4px;
+  transition: width .28s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+}
+.nf-sidebar:hover, .nf-sidebar.nf-open { width: 210px; align-items: stretch; }
+.nf-logo {
+  color: var(--gold); font-family: 'Cinzel', serif; font-weight: 700; font-size: 20px;
+  text-align: center; padding: 4px 0 14px; letter-spacing: 2px; white-space: nowrap; overflow: hidden;
+}
+.nf-nav { display: flex; flex-direction: column; gap: 2px; width: 100%; flex: 1; }
+.nf-item {
+  display: flex; align-items: center; gap: 14px;
+  color: #fff; text-decoration: none; background: none; border: none; cursor: pointer;
+  font-family: 'Crimson Pro', serif; font-size: 14px; white-space: nowrap;
+  padding: 11px 16px; width: 100%; opacity: .75; transition: opacity .2s, background .2s;
+}
+.nf-item .nf-ic { font-size: 19px; flex-shrink: 0; width: 22px; text-align: center; }
+.nf-item .nf-lbl { opacity: 0; transition: opacity .18s; }
+.nf-sidebar:hover .nf-item .nf-lbl, .nf-sidebar.nf-open .nf-item .nf-lbl { opacity: 1; }
+.nf-item:hover, .nf-item.active { opacity: 1; background: rgba(255,255,255,.08); }
+.nf-item.active { color: var(--gold); border-left: 3px solid var(--gold); padding-left: 13px; }
+.nf-langs { display: flex; flex-direction: column; gap: 2px; width: 100%; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.1); }
+
+/* ══════════════════════════════════════
+   HERO BANNER STILE NETFLIX
+══════════════════════════════════════ */
+.nf-hero {
+  position: relative; margin: 0 -20px 18px; min-height: 62vw; max-height: 420px;
+  display: flex; align-items: flex-end; overflow: hidden;
+  background: linear-gradient(160deg, #2a1748, #0a0514);
+}
+.nf-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.nf-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,5,20,.1) 0%, rgba(10,5,20,.55) 55%, var(--bg) 100%),
+              linear-gradient(90deg, rgba(10,5,20,.75) 0%, transparent 55%);
+}
+.nf-hero-content { position: relative; z-index: 2; padding: 20px 20px 22px; width: 100%; }
+.nf-hero-badge {
+  display: inline-block; background: var(--gold); color: #1a0e32; font-family: 'Cinzel', serif;
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px; padding: 3px 9px; border-radius: 4px; margin-bottom: 10px;
+}
+.nf-hero-kicker { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.nf-hero-title {
+  font-family: 'Cinzel', serif; font-size: 34px; color: #fff; line-height: 1;
+  text-shadow: 0 3px 12px rgba(0,0,0,.6); margin-bottom: 8px;
+}
+.nf-hero-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.nf-hero-desc { font-size: 13px; color: #ece7f7; line-height: 1.5; max-width: 340px; margin-bottom: 16px; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+.nf-hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.nf-hero-btn {
+  display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; padding: 10px 18px;
+  font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .5px; text-decoration: none; cursor: pointer; border: none;
+  transition: transform .2s, opacity .2s;
+}
+.nf-hero-btn:active { transform: scale(.96); }
+.nf-hero-btn.primary { background: #fff; color: #0a0514; }
+.nf-hero-btn.primary:hover { background: #e9e4f5; }
+.nf-hero-btn.secondary { background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(6px); }
+.nf-hero-btn.secondary:hover { background: rgba(255,255,255,.28); }
+
+/* ══════════════════════════════════════
+   MODALE DI REGISTRAZIONE / BENVENUTO
+══════════════════════════════════════ */
+.nf-reg-modal {
+  display: none; position: fixed; inset: 0; z-index: 300;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.nf-reg-modal.show { display: flex; }
+.nf-reg-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,5,20,.55) 0%, rgba(10,5,20,.92) 75%, var(--bg) 100%),
+    radial-gradient(ellipse 70% 50% at 50% 20%, #2a174870 0%, transparent 70%);
+}
+.nf-reg-box {
+  position: relative; z-index: 2; max-width: 380px; width: 100%;
+  background: linear-gradient(145deg, #1a0e32, #0d0820);
+  border: 1.5px solid var(--border); border-radius: 22px;
+  padding: 34px 26px 26px; text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 60px rgba(212,175,55,.12);
+  animation: mIn .35s ease;
+}
+.nf-reg-glow { font-size: 30px; margin-bottom: 8px; }
+.nf-reg-box .nf-reg-title { font-family: 'Cinzel', serif; font-size: 21px; color: var(--gold); letter-spacing: 1px; margin-bottom: 10px; }
+.nf-reg-box .nf-reg-sub { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+.nf-reg-input {
+  width: 100%; background: rgba(255,255,255,.05); border: 1.5px solid var(--border); color: var(--text);
+  border-radius: 10px; padding: 13px 14px; font-size: 14px; font-family: 'Crimson Pro', serif;
+  margin-bottom: 12px; text-align: center;
+}
+.nf-reg-input:focus { outline: none; border-color: var(--gold); }
+.nf-reg-signup {
+  display: block; width: 100%; background: linear-gradient(135deg, #d4af37, #b8860b); color: #0a0514;
+  border: none; border-radius: 10px; padding: 14px; font-family: 'Cinzel', serif; font-size: 13px;
+  font-weight: 700; letter-spacing: .5px; cursor: pointer; margin-bottom: 10px; transition: transform .2s;
+}
+.nf-reg-signup:hover { transform: translateY(-2px); }
+.nf-reg-login {
+  display: block; width: 100%; background: transparent; border: 1.5px solid var(--border); color: var(--text);
+  border-radius: 10px; padding: 13px; font-family: 'Cinzel', serif; font-size: 12.5px; cursor: pointer; margin-bottom: 14px;
+}
+.nf-reg-login:hover { border-color: var(--gold); }
+.nf-reg-guest { background: none; border: none; color: var(--muted); font-size: 12.5px; cursor: pointer; text-decoration: underline; margin-bottom: 8px; }
+.nf-reg-guest:hover { color: var(--gold); }
+.nf-reg-note { font-size: 10.5px; color: #4a4262; margin-top: 6px; }
+
+@media (max-width: 380px) {
+  .nf-hero-title { font-size: 27px; }
+  .nf-hero-desc { max-width: 100%; }
+}
+
+/* ══════════════════════════════════════
+   BOTTOM NAV MOBILE (stile Netfloz)
+══════════════════════════════════════ */
+.nf-bottomnav {
+  display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: rgba(0,0,0,.97); border-top: 1px solid rgba(255,255,255,.1);
+  padding: 8px 4px max(8px, env(safe-area-inset-bottom,0px));
+  justify-content: space-around; align-items: center;
+}
+.nf-bn-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  color: #8a8a9a; text-decoration: none; background: none; border: none; cursor: pointer;
+  font-size: 9px; font-family: 'Crimson Pro', serif; flex: 1;
+}
+.nf-bn-item .nf-bn-ic { font-size: 20px; }
+.nf-bn-item.active { color: var(--gold); }
+.nf-bn-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin-top: 1px; visibility: hidden; }
+.nf-bn-item.active .nf-bn-dot { visibility: visible; }
+@media (max-width: 680px) {
+  .nf-sidebar { display: none; }
+  #app { padding-left: 0; padding-bottom: 64px; }
+  .nf-bottomnav { display: flex; }
+}
+
+/* ══════════════════════════════════════
+   BADGE STATISTICHE + BANNER COMMUNITY
+══════════════════════════════════════ */
+.nf-stats-row { display: flex; gap: 10px; margin: 4px 0 16px; }
+.nf-stat-card {
+  flex: 1; background: linear-gradient(135deg, rgba(212,175,55,.14), rgba(157,78,221,.1));
+  border: 1px solid var(--border); border-radius: 14px; padding: 12px 10px; text-align: center;
+  text-decoration: none;
+}
+.nf-stat-num { font-family: 'Cinzel', serif; font-size: 21px; color: var(--gold); font-weight: 700; }
+.nf-stat-lbl { font-size: 10.5px; color: var(--muted); letter-spacing: .3px; margin-top: 2px; }
+.nf-community {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(135deg, rgba(42,23,72,.6), rgba(13,8,32,.6));
+  border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; margin-bottom: 20px;
+  text-decoration: none; color: var(--text);
+}
+.nf-community-ic { font-size: 22px; flex-shrink: 0; }
+.nf-community-txt { flex: 1; }
+.nf-community-title { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); letter-spacing: .3px; }
+.nf-community-sub { font-size: 11px; color: var(--muted); }
+.nf-community-arrow { color: var(--gold); font-size: 16px; }
+
+/* ══════════════════════════════════════
+   RIGA TOP 10
+══════════════════════════════════════ */
+.nf-top10 .dash-card { flex: 0 0 108px; width: 108px; position: relative; }
+.nf-top10-badge {
+  position: absolute; top: -6px; left: -4px; z-index: 3;
+  font-family: 'Cinzel', serif; font-size: 34px; font-weight: 700; line-height: 1;
+  color: #0a0514; -webkit-text-stroke: 1.5px var(--gold);
+  text-shadow: -1.5px -1.5px 0 var(--gold), 1.5px -1.5px 0 var(--gold), -1.5px 1.5px 0 var(--gold), 1.5px 1.5px 0 var(--gold);
+}
+
+/* ══════════════════════════════════════
+   PILLOLE RACCOLTE SPECIALI
+══════════════════════════════════════ */
+.nf-pills-row {
+  display: flex; gap: 8px; overflow-x: auto; margin: 0 -20px 18px; padding: 2px 20px 6px;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.nf-pills-row::-webkit-scrollbar { display: none; }
+.nf-pill {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(212,175,55,.1); border: 1.5px solid var(--border); color: var(--text);
+  border-radius: 20px; padding: 8px 16px; font-size: 12.5px; text-decoration: none; white-space: nowrap;
+}
+.nf-pill:hover { border-color: var(--gold); background: rgba(212,175,55,.18); }
+
+/* ══════════════════════════════════════
+   GRIGLIA "ESPLORA PER CATEGORIA" (immagini grandi)
+══════════════════════════════════════ */
+.nf-genre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.nf-genre-card {
+  position: relative; aspect-ratio: 16/11; border-radius: 14px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; text-decoration: none;
+  border: 1px solid var(--border); background: linear-gradient(145deg, #2a1748, #0d0820);
+}
+.nf-genre-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.55); }
+.nf-genre-card span {
+  position: relative; z-index: 2; font-family: 'Cinzel', serif; color: #fff; font-size: 15px;
+  text-align: center; letter-spacing: .5px; text-shadow: 0 2px 8px rgba(0,0,0,.7); padding: 0 8px;
+}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" id="skip-link">Vai al contenuto principale</a>
 <div class="cosmos" aria-hidden="true"></div>
+
+<!-- ══════════════════════════
+     SIDEBAR NERA STILE NETFLIX
+══════════════════════════ -->
+<nav class="nf-sidebar" id="nfSidebar" aria-label="Menu principale">
+  <div class="nf-logo">M</div>
+  <div class="nf-nav">
+    <a href="./index.html" class="nf-item active"><span class="nf-ic">🏠</span><span class="nf-lbl" id="nav-home">Home</span></a>
+    <a href="#main-content" class="nf-item"><span class="nf-ic">🧭</span><span class="nf-lbl" id="nav-explore">Esplora</span></a>
+    <a href="./profilo-mistico.html" class="nf-item"><span class="nf-ic">👤</span><span class="nf-lbl" id="nav-space">Il Mio Spazio</span></a>
+    <a href="./archivio.html" class="nf-item"><span class="nf-ic">📂</span><span class="nf-lbl" id="nav-archive">Archivio</span></a>
+    <button type="button" class="nf-item" onclick="document.getElementById('premiumModal')?.classList.add('show')"><span class="nf-ic">💎</span><span class="nf-lbl" id="nav-premium">Premium</span></button>
+  </div>
+  <div class="nf-langs" role="group" aria-label="Lingua">
+    <button type="button" class="nf-item nf-sidebar-lang" data-lang="it"><span class="nf-ic">🇮🇹</span><span class="nf-lbl">Italiano</span></button>
+    <button type="button" class="nf-item nf-sidebar-lang" data-lang="en"><span class="nf-ic">🇬🇧</span><span class="nf-lbl">English</span></button>
+    <button type="button" class="nf-item nf-sidebar-lang" data-lang="es"><span class="nf-ic">🇪🇸</span><span class="nf-lbl">Español</span></button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════
+     BOTTOM NAV MOBILE (stile Netfloz)
+══════════════════════════ -->
+<nav class="nf-bottomnav" aria-label="Menu principale mobile">
+  <a href="./index.html" class="nf-bn-item active"><span class="nf-bn-ic">🏠</span><span id="bn-home">Home</span><span class="nf-bn-dot"></span></a>
+  <a href="#main-content" class="nf-bn-item"><span class="nf-bn-ic">🃏</span><span id="bn-tools">Strumenti</span><span class="nf-bn-dot"></span></a>
+  <a href="./oroscopo.html" class="nf-bn-item"><span class="nf-bn-ic">🌙</span><span id="bn-horo">Oroscopo</span><span class="nf-bn-dot"></span></a>
+  <a href="./enciclopedia.html" class="nf-bn-item"><span class="nf-bn-ic">▦</span><span id="bn-enc">Categorie</span><span class="nf-bn-dot"></span></a>
+  <a href="./profilo-mistico.html" class="nf-bn-item"><span class="nf-bn-ic">👤</span><span id="bn-profile">Profilo</span><span class="nf-bn-dot"></span></a>
+</nav>
+
 <div id="app">
 
 <!-- ══════════════════════════
      HEADER HOME
 ══════════════════════════ -->
 <header class="home-header" id="mainHeader">
-  <div class="header-top-row">
-    <div class="header-controls">
+  <div class="hh-row">
+    <div class="hh-logo">
+      <span class="logo-glow" aria-hidden="true">✦</span>
+      <h1 class="logo-title" id="logo-title">MYSTICA</h1>
+    </div>
+    <div class="hh-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
-    </div>
-    <div class="lang-switch" role="group" aria-label="Selezione lingua">
-      <button data-lang="it" class="btn-lang active" aria-label="Italiano">IT</button>
-      <button data-lang="en" class="btn-lang" aria-label="English">EN</button>
-      <button data-lang="es" class="btn-lang" aria-label="Español">ES</button>
+      <div class="lang-switch" role="group" aria-label="Selezione lingua">
+        <button data-lang="it" class="btn-lang active" aria-label="Italiano">IT</button>
+        <button data-lang="en" class="btn-lang" aria-label="English">EN</button>
+        <button data-lang="es" class="btn-lang" aria-label="Español">ES</button>
+      </div>
     </div>
   </div>
 
-  <div class="logo-section">
-    <div class="logo-glow" aria-hidden="true">✦</div>
-    <h1 class="logo-title" id="logo-title">MYSTICA</h1>
-    <p class="logo-sub" id="logo-sub"></p>
-    <p class="logo-tagline" id="logo-tagline"></p>
-  </div>
-
-  <a href="./oroscopo.html" class="hero-cta" id="hero-cta"></a>
+  <!-- Sottotitolo/tagline/CTA: usati da applyLang(), già mostrati nell'hero sotto — nascosti qui per header snello -->
+  <p class="logo-sub sr-only" id="logo-sub"></p>
+  <p class="logo-tagline sr-only" id="logo-tagline"></p>
+  <a href="./oroscopo.html" class="hero-cta sr-only" id="hero-cta"></a>
 </header>
 
 <!-- ══ Banner Premium ══ -->
@@ -440,6 +692,91 @@ body {
      CONTENT
 ══════════════════════════ -->
 <main class="content" id="main-content">
+
+<!-- ══════════════════════════
+     HERO BANNER IN EVIDENZA (stile Netflix)
+══════════════════════════ -->
+<section class="nf-hero" aria-label="In evidenza">
+  <img class="nf-hero-img" src="./images/icone/home/hero-tarocchi.webp" alt="" loading="eager" fetchpriority="high"
+       onerror="this.src='./images/mystica-orizzontale.webp'; this.onerror=null;">
+  <div class="nf-hero-content">
+    <span class="nf-hero-badge" id="hero-badge">IN EVIDENZA</span>
+    <div class="nf-hero-kicker" id="hero-kicker">Strumento del Giorno</div>
+    <h2 class="nf-hero-title" id="hero-title">Tarocchi</h2>
+    <div class="nf-hero-meta" id="hero-meta">Divinazione · 78 Carte · Gratis</div>
+    <p class="nf-hero-desc" id="hero-desc">Consulta l'Arcano che ti guida oggi.</p>
+    <div class="nf-hero-btns">
+      <a href="./tarocchi.html" class="nf-hero-btn primary" id="hero-btn-start">▶ Inizia Ora</a>
+      <a href="./guida-tarocchi.html" class="nf-hero-btn secondary" id="hero-btn-info">ℹ️ Maggiori Info</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Badge statistiche ══ -->
+<div class="nf-stats-row">
+  <a href="./enciclopedia.html" class="nf-stat-card">
+    <div class="nf-stat-num">60+</div>
+    <div class="nf-stat-lbl" id="stat-tools">Strumenti Divinatori</div>
+  </a>
+  <a href="./tradizioni-spirituali.html" class="nf-stat-card">
+    <div class="nf-stat-num">30+</div>
+    <div class="nf-stat-lbl" id="stat-trad">Tradizioni Esoteriche</div>
+  </a>
+</div>
+
+<!-- ══ Banner Community ══ -->
+<a href="./community.html" class="nf-community">
+  <span class="nf-community-ic">💬</span>
+  <span class="nf-community-txt">
+    <span class="nf-community-title" id="community-title">Community MYSTICA</span><br>
+    <span class="nf-community-sub" id="community-sub">Unisciti e condividi le tue esperienze</span>
+  </span>
+  <span class="nf-community-arrow">→</span>
+</a>
+
+<!-- ══ Riga Top 10 ══ -->
+<div class="dash-title" id="sec-top10">🏆 I Più Consultati</div>
+<div class="dash-grid nf-top10">
+  <a class="dash-card c-gold" href="./tarocchi.html"><span class="nf-top10-badge">1</span>
+    <div class="dash-img-wrap"><img src="./images/icone/home/tarocchi.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🃏</div>'"></div>
+    <div class="dash-label" id="top10-1">Tarocchi</div>
+  </a>
+  <a class="dash-card c-purple" href="./oroscopo.html"><span class="nf-top10-badge">2</span>
+    <div class="dash-img-wrap"><img src="./images/icone/home/oroscopo.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🌟</div>'"></div>
+    <div class="dash-label" id="top10-2">Oroscopo</div>
+  </a>
+  <a class="dash-card c-teal" href="./iching.html"><span class="nf-top10-badge">3</span>
+    <div class="dash-img-wrap"><img src="./images/icone/home/i-ching.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>☯️</div>'"></div>
+    <div class="dash-label" id="top10-3">I Ching</div>
+  </a>
+  <a class="dash-card c-orange" href="./rune.html"><span class="nf-top10-badge">4</span>
+    <div class="dash-img-wrap"><img src="./images/icone/home/rune.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>ᚱ</div>'"></div>
+    <div class="dash-label" id="top10-4">Rune</div>
+  </a>
+  <a class="dash-card c-blue" href="./numerologia.html"><span class="nf-top10-badge">5</span>
+    <div class="dash-img-wrap"><img src="./images/icone/home/numerologia.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🔢</div>'"></div>
+    <div class="dash-label" id="top10-5">Numerologia</div>
+  </a>
+</div>
+
+<!-- ══ Pillole Raccolte Speciali ══ -->
+<div class="dash-title" id="sec-raccolte">✨ Raccolte Speciali</div>
+<div class="nf-pills-row">
+  <a href="./cicli-tempo.html#stagioni-magiche" class="nf-pill" id="pill-1">🌗 Luna Piena</a>
+  <a href="./cicli-tempo.html#tzolkin" class="nf-pill" id="pill-2">🌾 Equinozi & Solstizi</a>
+  <a href="./oroscopo-segni.html" class="nf-pill" id="pill-3">♈ Il Tuo Segno</a>
+  <a href="./compatibilita.html" class="nf-pill" id="pill-4">💜 Amore & Affinità</a>
+  <a href="./sogni.html" class="nf-pill" id="pill-5">🌙 Interpreta i Sogni</a>
+</div>
+
+<!-- ══ Esplora per Categoria (immagini grandi) ══ -->
+<div class="dash-title" id="sec-explore-cat">🔮 Esplora per Categoria</div>
+<div class="nf-genre-grid">
+  <a class="nf-genre-card" href="./guida-i-ching.html"><img src="./images/icone/home/i-ching.webp" alt="" loading="lazy" onerror="this.style.display='none'"><span id="genre-1">Divinazione</span></a>
+  <a class="nf-genre-card" href="./astrologia-avanzata.html"><img src="./images/icone/home/oroscopo.webp" alt="" loading="lazy" onerror="this.style.display='none'"><span id="genre-2">Astrologia</span></a>
+  <a class="nf-genre-card" href="./magia-bianca.html"><img src="./images/icone/home/magia-bianca.webp" alt="" loading="lazy" onerror="this.style.display='none'"><span id="genre-3">Magia Rituale</span></a>
+  <a class="nf-genre-card" href="./tradizioni-spirituali.html"><img src="./images/icone/home/ermetismo.webp" alt="" loading="lazy" onerror="this.style.display='none'"><span id="genre-4">Tradizioni</span></a>
+</div>
 
 <!-- AdSense top -->
 <div class="ad-slot">
@@ -946,6 +1283,21 @@ body {
 
 </div><!-- /app -->
 
+<!-- ══ MODALE BENVENUTO / REGISTRAZIONE (stile Netflix) ══ -->
+<div class="nf-reg-modal" id="nfRegModal" role="dialog" aria-modal="true" aria-labelledby="nf-reg-title">
+  <div class="nf-reg-overlay" onclick="closeRegModal(true)"></div>
+  <div class="nf-reg-box">
+    <div class="nf-reg-glow" aria-hidden="true">✦</div>
+    <h2 class="nf-reg-title" id="nf-reg-title">Benvenuto su MYSTICA</h2>
+    <p class="nf-reg-sub" id="nf-reg-sub">Crea un profilo per salvare letture, preferiti e ricevere il tuo oroscopo ogni giorno.</p>
+    <input type="email" class="nf-reg-input" id="nf-reg-email" placeholder="La tua email" autocomplete="email">
+    <button type="button" class="nf-reg-signup" id="nf-reg-signup" onclick="submitRegistration()">Registrati Gratis</button>
+    <button type="button" class="nf-reg-login" id="nf-reg-login" onclick="submitRegistration()">Ho già un account</button>
+    <button type="button" class="nf-reg-guest" id="nf-reg-guest" onclick="closeRegModal(true)">Continua come Ospite</button>
+    <p class="nf-reg-note" id="nf-reg-note">Gratuito · Nessuna carta richiesta</p>
+  </div>
+</div>
+
 <!-- ══ MODAL PREMIUM ══ -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
@@ -973,6 +1325,23 @@ const LANG = {
     logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
     tagline: "L'oracolo esoterico italiano più completo",
     heroCta: '🔮 Scopri il Tuo Oroscopo',
+    navHome: 'Home', navExplore: 'Esplora', navSpace: 'Il Mio Spazio', navPremium: 'Premium', navLang: 'Lingua',
+    heroBadge: 'IN EVIDENZA', heroKicker: 'Strumento del Giorno',
+    heroTitle: 'Tarocchi',
+    heroMeta: 'Divinazione · 78 Carte · Gratis',
+    heroDesc: "Consulta l'Arcano che ti guida oggi: interpretazioni autentiche, stesa a tre carte e archivio delle tue letture personali.",
+    heroBtnInfo: 'ℹ️ Maggiori Info', heroBtnStart: '▶ Inizia Ora',
+    regTitle: 'Benvenuto su MYSTICA', regSub: "Il tuo portale esoterico personale: crea un profilo per salvare letture, preferiti e ricevere il tuo oroscopo ogni giorno.",
+    regEmailPh: 'La tua email', regBtnSignup: 'Registrati Gratis', regBtnLogin: 'Ho già un account', regBtnGuest: 'Continua come Ospite', regNote: 'Gratuito · Nessuna carta richiesta',
+    bnHome: 'Home', bnTools: 'Strumenti', bnHoro: 'Oroscopo', bnEnc: 'Categorie', bnProfile: 'Profilo',
+    statTools: 'Strumenti Divinatori', statTrad: 'Tradizioni Esoteriche',
+    communityTitle: 'Community MYSTICA', communitySub: 'Unisciti e condividi le tue esperienze',
+    secTop10: '🏆 I Più Consultati',
+    top10_1: 'Tarocchi', top10_2: 'Oroscopo', top10_3: 'I Ching', top10_4: 'Rune', top10_5: 'Numerologia',
+    secRaccolte: '✨ Raccolte Speciali',
+    pill1: '🌗 Luna Piena', pill2: '🌾 Equinozi & Solstizi', pill3: '♈ Il Tuo Segno', pill4: '💜 Amore & Affinità', pill5: '🌙 Interpreta i Sogni',
+    secExploreCat: '🔮 Esplora per Categoria',
+    genre1: 'Divinazione', genre2: 'Astrologia', genre3: 'Magia Rituale', genre4: 'Tradizioni',
     bannerText: '✦ Sblocca MYSTICA Premium — Accesso illimitato a tutto · 4,99€ una tantum',
     bannerBtn: 'Attiva ora',
     bannerActive: '✦ Premium Attivo',
@@ -1113,6 +1482,23 @@ const LANG = {
     logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
     tagline: "Italy's most complete esoteric oracle",
     heroCta: '🔮 Discover Your Horoscope',
+    navHome: 'Home', navExplore: 'Explore', navSpace: 'My Space', navPremium: 'Premium', navLang: 'Language',
+    heroBadge: 'FEATURED', heroKicker: "Today's Tool",
+    heroTitle: 'Tarot',
+    heroMeta: 'Divination · 78 Cards · Free',
+    heroDesc: "Consult the Arcana guiding you today: authentic interpretations, three-card spread and your personal reading archive.",
+    heroBtnInfo: 'ℹ️ More Info', heroBtnStart: '▶ Start Now',
+    regTitle: 'Welcome to MYSTICA', regSub: 'Your personal esoteric portal: create a profile to save readings, favorites and get your daily horoscope.',
+    regEmailPh: 'Your email', regBtnSignup: 'Sign Up Free', regBtnLogin: 'I already have an account', regBtnGuest: 'Continue as Guest', regNote: 'Free · No card required',
+    bnHome: 'Home', bnTools: 'Tools', bnHoro: 'Horoscope', bnEnc: 'Categories', bnProfile: 'Profile',
+    statTools: 'Divination Tools', statTrad: 'Esoteric Traditions',
+    communityTitle: 'MYSTICA Community', communitySub: 'Join and share your mystical experiences',
+    secTop10: '🏆 Most Consulted',
+    top10_1: 'Tarot', top10_2: 'Horoscope', top10_3: 'I Ching', top10_4: 'Runes', top10_5: 'Numerology',
+    secRaccolte: '✨ Special Collections',
+    pill1: '🌗 Full Moon', pill2: '🌾 Equinoxes & Solstices', pill3: '♈ Your Sign', pill4: '💜 Love & Compatibility', pill5: '🌙 Dream Interpretation',
+    secExploreCat: '🔮 Explore by Category',
+    genre1: 'Divination', genre2: 'Astrology', genre3: 'Ritual Magic', genre4: 'Traditions',
     bannerText: '✦ Unlock MYSTICA Premium — Unlimited access to everything · €4.99 one-time',
     bannerBtn: 'Activate now',
     bannerActive: '✦ Premium Active',
@@ -1253,6 +1639,23 @@ const LANG = {
     logoSub: 'MAGO PETRO · DOTT. PETROLESE GIOVANNI',
     tagline: 'El portal esotérico italiano más completo',
     heroCta: '🔮 Descubre Tu Horóscopo',
+    navHome: 'Inicio', navExplore: 'Explorar', navSpace: 'Mi Espacio', navPremium: 'Premium', navLang: 'Idioma',
+    heroBadge: 'DESTACADO', heroKicker: 'Herramienta del Día',
+    heroTitle: 'Tarot',
+    heroMeta: 'Adivinación · 78 Cartas · Gratis',
+    heroDesc: 'Consulta el Arcano que te guía hoy: interpretaciones auténticas, tirada de tres cartas y archivo de tus lecturas personales.',
+    heroBtnInfo: 'ℹ️ Más Información', heroBtnStart: '▶ Empezar Ahora',
+    regTitle: 'Bienvenido a MYSTICA', regSub: 'Tu portal esotérico personal: crea un perfil para guardar lecturas, favoritos y recibir tu horóscopo diario.',
+    regEmailPh: 'Tu email', regBtnSignup: 'Regístrate Gratis', regBtnLogin: 'Ya tengo una cuenta', regBtnGuest: 'Continuar como Invitado', regNote: 'Gratis · Sin tarjeta requerida',
+    bnHome: 'Inicio', bnTools: 'Herramientas', bnHoro: 'Horóscopo', bnEnc: 'Categorías', bnProfile: 'Perfil',
+    statTools: 'Herramientas de Adivinación', statTrad: 'Tradiciones Esotéricas',
+    communityTitle: 'Comunidad MYSTICA', communitySub: 'Únete y comparte tus experiencias místicas',
+    secTop10: '🏆 Los Más Consultados',
+    top10_1: 'Tarot', top10_2: 'Horóscopo', top10_3: 'I Ching', top10_4: 'Runas', top10_5: 'Numerología',
+    secRaccolte: '✨ Colecciones Especiales',
+    pill1: '🌗 Luna Llena', pill2: '🌾 Equinoccios y Solsticios', pill3: '♈ Tu Signo', pill4: '💜 Amor y Compatibilidad', pill5: '🌙 Interpretar Sueños',
+    secExploreCat: '🔮 Explorar por Categoría',
+    genre1: 'Adivinación', genre2: 'Astrología', genre3: 'Magia Ritual', genre4: 'Tradiciones',
     bannerText: '✦ Desbloquea MYSTICA Premium — Acceso ilimitado a todo · 4,99€ pago único',
     bannerBtn: 'Activar ahora',
     bannerActive: '✦ Premium Activo',
@@ -1640,6 +2043,66 @@ function applyLang() {
   document.getElementById('logo-tagline').textContent  = L.tagline;
   document.getElementById('hero-cta').textContent      = L.heroCta;
 
+  // Sidebar Netflix
+  document.getElementById('nav-home').textContent    = L.navHome;
+  document.getElementById('nav-explore').textContent = L.navExplore;
+  document.getElementById('nav-space').textContent   = L.navSpace;
+  document.getElementById('nav-premium').textContent = L.navPremium;
+
+  // Hero banner in evidenza
+  document.getElementById('hero-badge').textContent     = L.heroBadge;
+  document.getElementById('hero-kicker').textContent    = L.heroKicker;
+  document.getElementById('hero-title').textContent     = L.heroTitle;
+  document.getElementById('hero-meta').textContent      = L.heroMeta;
+  document.getElementById('hero-desc').textContent      = L.heroDesc;
+  document.getElementById('hero-btn-start').textContent = L.heroBtnStart;
+  document.getElementById('hero-btn-info').textContent  = L.heroBtnInfo;
+
+  // Modale registrazione
+  document.getElementById('nf-reg-title').textContent   = L.regTitle;
+  document.getElementById('nf-reg-sub').textContent     = L.regSub;
+  document.getElementById('nf-reg-email').placeholder   = L.regEmailPh;
+  document.getElementById('nf-reg-signup').textContent  = L.regBtnSignup;
+  document.getElementById('nf-reg-login').textContent   = L.regBtnLogin;
+  document.getElementById('nf-reg-guest').textContent   = L.regBtnGuest;
+  document.getElementById('nf-reg-note').textContent    = L.regNote;
+
+  // Bottom nav mobile
+  document.getElementById('bn-home').textContent    = L.bnHome;
+  document.getElementById('bn-tools').textContent   = L.bnTools;
+  document.getElementById('bn-horo').textContent    = L.bnHoro;
+  document.getElementById('bn-enc').textContent     = L.bnEnc;
+  document.getElementById('bn-profile').textContent = L.bnProfile;
+
+  // Badge statistiche + community
+  document.getElementById('stat-tools').textContent = L.statTools;
+  document.getElementById('stat-trad').textContent  = L.statTrad;
+  document.getElementById('community-title').textContent = L.communityTitle;
+  document.getElementById('community-sub').textContent   = L.communitySub;
+
+  // Top 10
+  document.getElementById('sec-top10').textContent = L.secTop10;
+  document.getElementById('top10-1').textContent = L.top10_1;
+  document.getElementById('top10-2').textContent = L.top10_2;
+  document.getElementById('top10-3').textContent = L.top10_3;
+  document.getElementById('top10-4').textContent = L.top10_4;
+  document.getElementById('top10-5').textContent = L.top10_5;
+
+  // Pillole raccolte speciali
+  document.getElementById('sec-raccolte').textContent = L.secRaccolte;
+  document.getElementById('pill-1').textContent = L.pill1;
+  document.getElementById('pill-2').textContent = L.pill2;
+  document.getElementById('pill-3').textContent = L.pill3;
+  document.getElementById('pill-4').textContent = L.pill4;
+  document.getElementById('pill-5').textContent = L.pill5;
+
+  // Esplora per categoria
+  document.getElementById('sec-explore-cat').textContent = L.secExploreCat;
+  document.getElementById('genre-1').textContent = L.genre1;
+  document.getElementById('genre-2').textContent = L.genre2;
+  document.getElementById('genre-3').textContent = L.genre3;
+  document.getElementById('genre-4').textContent = L.genre4;
+
   // Bottoni toggle
   window.audioManager?.updateUI();
   applyTheme(isDayMode);
@@ -1707,14 +2170,30 @@ function applyLang() {
     b.classList.toggle('active', b.dataset.lang === currentLang));
 }
 
-/* ── Switch lingua ── */
+/* ── Switch lingua (header + sidebar) ── */
 document.querySelectorAll('[data-lang]').forEach(btn => {
   btn.addEventListener('click', e => {
-    currentLang = e.target.dataset.lang;
+    currentLang = e.currentTarget.dataset.lang;
     localStorage.setItem('myst_lang', currentLang);
     applyLang();
   });
 });
+
+/* ── Modale di benvenuto / registrazione (solo cosmetico: nessun backend collegato) ── */
+function closeRegModal(guest) {
+  document.getElementById('nfRegModal').classList.remove('show');
+  localStorage.setItem('myst_v3_reg_seen', '1');
+  if (guest) localStorage.setItem('myst_v3_guest', '1');
+}
+function submitRegistration() {
+  const email = document.getElementById('nf-reg-email').value.trim();
+  if (email) localStorage.setItem('myst_v3_email', email);
+  closeRegModal(false);
+}
+function initRegModal() {
+  if (localStorage.getItem('myst_v3_reg_seen')) return;
+  setTimeout(() => document.getElementById('nfRegModal').classList.add('show'), 400);
+}
 
 /* ── AdSense ── */
 (function() {
@@ -1761,6 +2240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLang();             // 2. Lingua + SEO (include applyCategoryLang)
   checkBannerPremium();    // 3. Banner (sempre nascosto — premium disattivato)
   initPremiumGate();       // 4. Gate card (no-op — tutto gratuito per ora)
+  initRegModal();          // 5. Modale di benvenuto/registrazione (prima visita)
 });
 </script>
 </body>
