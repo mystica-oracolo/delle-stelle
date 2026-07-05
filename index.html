@@ -445,7 +445,7 @@ body {
   display: flex; align-items: flex-end; overflow: hidden;
   background: linear-gradient(160deg, #2a1748, #0a0514);
 }
-.nf-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.nf-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .35s ease; }
 .nf-hero::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(10,5,20,.1) 0%, rgba(10,5,20,.55) 55%, var(--bg) 100%),
@@ -474,6 +474,12 @@ body {
 .nf-hero-btn.primary:hover { background: #e9e4f5; }
 .nf-hero-btn.secondary { background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(6px); }
 .nf-hero-btn.secondary:hover { background: rgba(255,255,255,.28); }
+.nf-hero-dots { display: flex; gap: 6px; margin-top: 16px; }
+.nf-hero-dot {
+  width: 7px; height: 7px; border-radius: 4px; border: none; padding: 0;
+  background: rgba(255,255,255,.35); cursor: pointer; transition: all .25s ease;
+}
+.nf-hero-dot.active { width: 22px; background: #fff; }
 
 /* ══════════════════════════════════════
    MODALE DI REGISTRAZIONE / BENVENUTO
@@ -696,8 +702,8 @@ body {
 <!-- ══════════════════════════
      HERO BANNER IN EVIDENZA (stile Netflix)
 ══════════════════════════ -->
-<section class="nf-hero" aria-label="In evidenza">
-  <img class="nf-hero-img" src="./images/icone/home/hero-tarocchi.webp" alt="" loading="eager" fetchpriority="high"
+<section class="nf-hero" aria-label="In evidenza" id="nfHero">
+  <img class="nf-hero-img" id="hero-img" src="./images/icone/home/hero-tarocchi.webp" alt="" loading="eager" fetchpriority="high"
        onerror="this.src='./images/mystica-orizzontale.webp'; this.onerror=null;">
   <div class="nf-hero-content">
     <span class="nf-hero-badge" id="hero-badge">IN EVIDENZA</span>
@@ -708,6 +714,13 @@ body {
     <div class="nf-hero-btns">
       <a href="./tarocchi.html" class="nf-hero-btn primary" id="hero-btn-start">▶ Inizia Ora</a>
       <a href="./guida-tarocchi.html" class="nf-hero-btn secondary" id="hero-btn-info">ℹ️ Maggiori Info</a>
+    </div>
+    <div class="nf-hero-dots" id="heroDots" role="tablist" aria-label="Slide in evidenza">
+      <button type="button" class="nf-hero-dot active" onclick="goToHeroSlide(0)" aria-label="Slide 1"></button>
+      <button type="button" class="nf-hero-dot" onclick="goToHeroSlide(1)" aria-label="Slide 2"></button>
+      <button type="button" class="nf-hero-dot" onclick="goToHeroSlide(2)" aria-label="Slide 3"></button>
+      <button type="button" class="nf-hero-dot" onclick="goToHeroSlide(3)" aria-label="Slide 4"></button>
+      <button type="button" class="nf-hero-dot" onclick="goToHeroSlide(4)" aria-label="Slide 5"></button>
     </div>
   </div>
 </section>
@@ -785,23 +798,7 @@ body {
     data-ad-format="auto" data-full-width-responsive="true"></ins>
 </div>
 
-<!-- ══ SEZIONE EDITORIALE ══ -->
-<article class="article-section editorial-section">
-  <h2 id="art-title">MYSTICA — Il Portale Esoterico Italiano</h2>
-  <img src="./images/mystica-orizzontale.webp"
-       id="art-hero" alt="MYSTICA Oracoli — portale esoterico italiano" loading="eager" fetchpriority="high" class="art-hero"
-       width="480" height="200" onerror="this.style.display='none'">
-  <h3 id="art-h2">Le Origini dell'Esoterismo: dalla Mesopotamia all'Era Digitale</h3>
-  <p id="art-p1">MYSTICA nasce dalla volontà di rendere accessibile l'esoterismo autentico a chiunque, ovunque, senza filtri elitari e senza il bisogno di un consulente fisico. Non è un semplice oroscopo del giorno, ma un ecosistema completo che riunisce oltre sessanta strumenti divinatori, tradizioni magiche, astrologia avanzata orientale e occidentale, numerologia e conoscenza esoterica enciclopedica. Dai tarocchi alle rune norrene, dall'I Ching alla numerologia pitagorica, dalla Cabala all'alchimia rinascimentale, fino allo sciamanesimo e al Human Design: tutto in un'unica applicazione pensata per chi cerca risposte concrete, ispirazione quotidiana e una connessione autentica con il sacro.</p>
-  <p id="art-p2">L'esoterismo occidentale affonda le radici in Mesopotamia, dove i Babilonesi leggevano il cielo notturno per predire il destino dei re e registravano meticolosamente i movimenti planetari su tavolette d'argilla. L'Egitto antico elaborò sistemi di divinazione sofisticati, dalla geomanzia all'interpretazione dei sogni, custoditi nei templi dai sacerdoti. La Grecia classica sintetizzò queste tradizioni orientali nella filosofia ermetica, il cui principio fondante — «Ciò che è in alto è come ciò che è in basso» — attribuito a Ermete Trismegisto, è ancora oggi il cuore pulsante di ogni pratica magica e divinatoria occidentale, dai tarocchi all'astrologia moderna.</p>
-  <p id="art-p3">Il Rinascimento italiano fu il vero crogiuolo dell'esoterismo moderno: Marsilio Ficino tradusse il Corpus Hermeticum per Cosimo de' Medici a Firenze nel 1463, Pico della Mirandola fuse la Cabala ebraica con la filosofia platonica nelle sue novecento tesi, Giordano Bruno portò l'arte della memoria e la magia naturale nei circoli intellettuali di tutta Europa, pagando con la vita le proprie idee. L'Italia possiede quindi una tradizione esoterica millenaria che raramente trova voce adeguata nel panorama digitale contemporaneo — MYSTICA nasce anche per colmare questo vuoto culturale, restituendo dignità e profondità a un patrimonio spesso banalizzato.</p>
-  <h3 id="art-h3">Perché Usare Strumenti Esoterici Online</h3>
-  <p id="art-p4">Gli strumenti esoterici digitali offrono qualcosa che i libri stampati e i consulenti fisici non possono garantire con la stessa immediatezza: disponibilità continua ventiquattr'ore su ventiquattro, privacy totale senza dover condividere le proprie domande più intime con estranei, e un accesso democratico che abbatte le barriere economiche e geografiche. Puoi consultare i tarocchi alle tre di notte quando l'ansia non ti fa dormire, calcolare il tuo profilo numerologico completo mentre sei in treno, leggere l'I Ching mentre aspetti in fila. La tecnologia non svuota il sacro del suo significato — semplicemente lo rende portatile e sempre a portata di mano.</p>
-  <p id="art-p5">Ogni sezione di MYSTICA è costruita con rispetto scrupoloso per le tradizioni originali: le interpretazioni delle rune attingono direttamente all'Elder Futhark autentico documentato dalle fonti runologiche scandinave, i sessantaquattro esagrammi dell'I Ching seguono la traduzione classica del Libro dei Mutamenti, i rituali di magia bianca, rossa e nera sono documentati nelle fonti storiche e nei grimori tradizionali, non inventati per l'occasione. Non è intrattenimento superficiale confezionato per il clic facile — è un invito sincero all'esplorazione consapevole del proprio mondo interiore, accompagnato da un rigore storico e simbolico che raramente si trova altrove online.</p>
-  <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
-</article>
-
-<!-- ════════════════════════════════
+<!-- ══════════════════════════════════
      SEZIONE 1 — SPAZIO PERSONALE (libera)
 ════════════════════════════════ -->
 <div class="dash-title" id="sec-spazio">✨ Il Tuo Spazio Personale</div>
@@ -1244,6 +1241,22 @@ body {
 </div>
 
 <!-- ══ SHARE ══ -->
+<!-- ══ SEZIONE EDITORIALE ══ -->
+<article class="article-section editorial-section">
+  <h2 id="art-title">MYSTICA — Il Portale Esoterico Italiano</h2>
+  <img src="./images/mystica-orizzontale.webp"
+       id="art-hero" alt="MYSTICA Oracoli — portale esoterico italiano" loading="lazy" class="art-hero"
+       width="480" height="200" onerror="this.style.display='none'">
+  <h3 id="art-h2">Le Origini dell'Esoterismo: dalla Mesopotamia all'Era Digitale</h3>
+  <p id="art-p1">MYSTICA nasce dalla volontà di rendere accessibile l'esoterismo autentico a chiunque, ovunque, senza filtri elitari e senza il bisogno di un consulente fisico. Non è un semplice oroscopo del giorno, ma un ecosistema completo che riunisce oltre sessanta strumenti divinatori, tradizioni magiche, astrologia avanzata orientale e occidentale, numerologia e conoscenza esoterica enciclopedica. Dai tarocchi alle rune norrene, dall'I Ching alla numerologia pitagorica, dalla Cabala all'alchimia rinascimentale, fino allo sciamanesimo e al Human Design: tutto in un'unica applicazione pensata per chi cerca risposte concrete, ispirazione quotidiana e una connessione autentica con il sacro.</p>
+  <p id="art-p2">L'esoterismo occidentale affonda le radici in Mesopotamia, dove i Babilonesi leggevano il cielo notturno per predire il destino dei re e registravano meticolosamente i movimenti planetari su tavolette d'argilla. L'Egitto antico elaborò sistemi di divinazione sofisticati, dalla geomanzia all'interpretazione dei sogni, custoditi nei templi dai sacerdoti. La Grecia classica sintetizzò queste tradizioni orientali nella filosofia ermetica, il cui principio fondante — «Ciò che è in alto è come ciò che è in basso» — attribuito a Ermete Trismegisto, è ancora oggi il cuore pulsante di ogni pratica magica e divinatoria occidentale, dai tarocchi all'astrologia moderna.</p>
+  <p id="art-p3">Il Rinascimento italiano fu il vero crogiuolo dell'esoterismo moderno: Marsilio Ficino tradusse il Corpus Hermeticum per Cosimo de' Medici a Firenze nel 1463, Pico della Mirandola fuse la Cabala ebraica con la filosofia platonica nelle sue novecento tesi, Giordano Bruno portò l'arte della memoria e la magia naturale nei circoli intellettuali di tutta Europa, pagando con la vita le proprie idee. L'Italia possiede quindi una tradizione esoterica millenaria che raramente trova voce adeguata nel panorama digitale contemporaneo — MYSTICA nasce anche per colmare questo vuoto culturale, restituendo dignità e profondità a un patrimonio spesso banalizzato.</p>
+  <h3 id="art-h3">Perché Usare Strumenti Esoterici Online</h3>
+  <p id="art-p4">Gli strumenti esoterici digitali offrono qualcosa che i libri stampati e i consulenti fisici non possono garantire con la stessa immediatezza: disponibilità continua ventiquattr'ore su ventiquattro, privacy totale senza dover condividere le proprie domande più intime con estranei, e un accesso democratico che abbatte le barriere economiche e geografiche. Puoi consultare i tarocchi alle tre di notte quando l'ansia non ti fa dormire, calcolare il tuo profilo numerologico completo mentre sei in treno, leggere l'I Ching mentre aspetti in fila. La tecnologia non svuota il sacro del suo significato — semplicemente lo rende portatile e sempre a portata di mano.</p>
+  <p id="art-p5">Ogni sezione di MYSTICA è costruita con rispetto scrupoloso per le tradizioni originali: le interpretazioni delle rune attingono direttamente all'Elder Futhark autentico documentato dalle fonti runologiche scandinave, i sessantaquattro esagrammi dell'I Ching seguono la traduzione classica del Libro dei Mutamenti, i rituali di magia bianca, rossa e nera sono documentati nelle fonti storiche e nei grimori tradizionali, non inventati per l'occasione. Non è intrattenimento superficiale confezionato per il clic facile — è un invito sincero all'esplorazione consapevole del proprio mondo interiore, accompagnato da un rigore storico e simbolico che raramente si trova altrove online.</p>
+  <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
+</article>
+
 <div class="share-section" id="share-section" aria-label="Condividi MYSTICA">
   <div class="share-section-title" id="share-section-title"></div>
   <button class="btn-share" id="btn-share-label" onclick="shareContent()"></button>
@@ -1331,6 +1344,13 @@ const LANG = {
     heroMeta: 'Divinazione · 78 Carte · Gratis',
     heroDesc: "Consulta l'Arcano che ti guida oggi: interpretazioni autentiche, stesa a tre carte e archivio delle tue letture personali.",
     heroBtnInfo: 'ℹ️ Maggiori Info', heroBtnStart: '▶ Inizia Ora',
+    heroSlides: [
+      { title: 'Tarocchi', meta: 'Divinazione · 78 Carte · Gratis', desc: "Consulta l'Arcano che ti guida oggi: interpretazioni autentiche, stesa a tre carte e archivio delle tue letture personali.", img: './images/icone/home/hero-tarocchi.webp', link: './tarocchi.html', infoLink: './guida-tarocchi.html' },
+      { title: 'Oroscopo', meta: 'Astrologia · 12 Segni · Gratis', desc: 'Il tuo oroscopo del giorno, della settimana e del mese: previsioni dettagliate segno per segno.', img: './images/icone/home/hero-oroscopo.webp', link: './oroscopo.html', infoLink: './oroscopo-segni.html' },
+      { title: 'I Ching', meta: 'Oracolo Cinese · 64 Esagrammi', desc: "Consulta il Libro dei Mutamenti: la millenaria saggezza cinese per interpretare il presente e orientare le tue scelte.", img: './images/icone/home/hero-iching.webp', link: './iching.html', infoLink: './guida-i-ching.html' },
+      { title: 'Rune', meta: 'Elder Futhark · 24 Rune', desc: "Lascia che le rune norrene, autentiche e documentate, ti guidino con la saggezza degli antichi popoli scandinavi.", img: './images/icone/home/hero-rune.webp', link: './rune.html', infoLink: './significato-rune.html' },
+      { title: 'Numerologia', meta: 'Oracoli Numerici · Gratis', desc: 'Scopri il tuo Numero del Destino e il significato nascosto dietro le cifre che accompagnano la tua vita.', img: './images/icone/home/hero-numerologia.webp', link: './numerologia.html', infoLink: './numerologia.html' },
+    ],
     regTitle: 'Benvenuto su MYSTICA', regSub: "Il tuo portale esoterico personale: crea un profilo per salvare letture, preferiti e ricevere il tuo oroscopo ogni giorno.",
     regEmailPh: 'La tua email', regBtnSignup: 'Registrati Gratis', regBtnLogin: 'Ho già un account', regBtnGuest: 'Continua come Ospite', regNote: 'Gratuito · Nessuna carta richiesta',
     bnHome: 'Home', bnTools: 'Strumenti', bnHoro: 'Oroscopo', bnEnc: 'Categorie', bnProfile: 'Profilo',
@@ -1488,6 +1508,13 @@ const LANG = {
     heroMeta: 'Divination · 78 Cards · Free',
     heroDesc: "Consult the Arcana guiding you today: authentic interpretations, three-card spread and your personal reading archive.",
     heroBtnInfo: 'ℹ️ More Info', heroBtnStart: '▶ Start Now',
+    heroSlides: [
+      { title: 'Tarot', meta: 'Divination · 78 Cards · Free', desc: "Consult the Arcana guiding you today: authentic interpretations, three-card spread and your personal reading archive.", img: './images/icone/home/hero-tarocchi.webp', link: './tarocchi.html', infoLink: './guida-tarocchi.html' },
+      { title: 'Horoscope', meta: 'Astrology · 12 Signs · Free', desc: 'Your daily, weekly and monthly horoscope: detailed predictions sign by sign.', img: './images/icone/home/hero-oroscopo.webp', link: './oroscopo.html', infoLink: './oroscopo-segni.html' },
+      { title: 'I Ching', meta: 'Chinese Oracle · 64 Hexagrams', desc: 'Consult the Book of Changes: ancient Chinese wisdom to interpret the present and guide your choices.', img: './images/icone/home/hero-iching.webp', link: './iching.html', infoLink: './guida-i-ching.html' },
+      { title: 'Runes', meta: 'Elder Futhark · 24 Runes', desc: 'Let the authentic, documented Norse runes guide you with the wisdom of ancient Scandinavian peoples.', img: './images/icone/home/hero-rune.webp', link: './rune.html', infoLink: './significato-rune.html' },
+      { title: 'Numerology', meta: 'Numeric Oracles · Free', desc: 'Discover your Destiny Number and the hidden meaning behind the numbers that accompany your life.', img: './images/icone/home/hero-numerologia.webp', link: './numerologia.html', infoLink: './numerologia.html' },
+    ],
     regTitle: 'Welcome to MYSTICA', regSub: 'Your personal esoteric portal: create a profile to save readings, favorites and get your daily horoscope.',
     regEmailPh: 'Your email', regBtnSignup: 'Sign Up Free', regBtnLogin: 'I already have an account', regBtnGuest: 'Continue as Guest', regNote: 'Free · No card required',
     bnHome: 'Home', bnTools: 'Tools', bnHoro: 'Horoscope', bnEnc: 'Categories', bnProfile: 'Profile',
@@ -1645,6 +1672,13 @@ const LANG = {
     heroMeta: 'Adivinación · 78 Cartas · Gratis',
     heroDesc: 'Consulta el Arcano que te guía hoy: interpretaciones auténticas, tirada de tres cartas y archivo de tus lecturas personales.',
     heroBtnInfo: 'ℹ️ Más Información', heroBtnStart: '▶ Empezar Ahora',
+    heroSlides: [
+      { title: 'Tarot', meta: 'Adivinación · 78 Cartas · Gratis', desc: 'Consulta el Arcano que te guía hoy: interpretaciones auténticas, tirada de tres cartas y archivo de tus lecturas personales.', img: './images/icone/home/hero-tarocchi.webp', link: './tarocchi.html', infoLink: './guida-tarocchi.html' },
+      { title: 'Horóscopo', meta: 'Astrología · 12 Signos · Gratis', desc: 'Tu horóscopo diario, semanal y mensual: predicciones detalladas signo por signo.', img: './images/icone/home/hero-oroscopo.webp', link: './oroscopo.html', infoLink: './oroscopo-segni.html' },
+      { title: 'I Ching', meta: 'Oráculo Chino · 64 Hexagramas', desc: 'Consulta el Libro de los Cambios: la sabiduría milenaria china para interpretar el presente y guiar tus decisiones.', img: './images/icone/home/hero-iching.webp', link: './iching.html', infoLink: './guida-i-ching.html' },
+      { title: 'Runas', meta: 'Elder Futhark · 24 Runas', desc: 'Deja que las runas nórdicas, auténticas y documentadas, te guíen con la sabiduría de los antiguos pueblos escandinavos.', img: './images/icone/home/hero-rune.webp', link: './rune.html', infoLink: './significato-rune.html' },
+      { title: 'Numerología', meta: 'Oráculos Numéricos · Gratis', desc: 'Descubre tu Número del Destino y el significado oculto detrás de las cifras que acompañan tu vida.', img: './images/icone/home/hero-numerologia.webp', link: './numerologia.html', infoLink: './numerologia.html' },
+    ],
     regTitle: 'Bienvenido a MYSTICA', regSub: 'Tu portal esotérico personal: crea un perfil para guardar lecturas, favoritos y recibir tu horóscopo diario.',
     regEmailPh: 'Tu email', regBtnSignup: 'Regístrate Gratis', regBtnLogin: 'Ya tengo una cuenta', regBtnGuest: 'Continuar como Invitado', regNote: 'Gratis · Sin tarjeta requerida',
     bnHome: 'Inicio', bnTools: 'Herramientas', bnHoro: 'Horóscopo', bnEnc: 'Categorías', bnProfile: 'Perfil',
@@ -2052,11 +2086,9 @@ function applyLang() {
   // Hero banner in evidenza
   document.getElementById('hero-badge').textContent     = L.heroBadge;
   document.getElementById('hero-kicker').textContent    = L.heroKicker;
-  document.getElementById('hero-title').textContent     = L.heroTitle;
-  document.getElementById('hero-meta').textContent      = L.heroMeta;
-  document.getElementById('hero-desc').textContent      = L.heroDesc;
   document.getElementById('hero-btn-start').textContent = L.heroBtnStart;
   document.getElementById('hero-btn-info').textContent  = L.heroBtnInfo;
+  renderHeroSlide(HERO_STATE.idx); // titolo/meta/desc/immagine/link del carosello
 
   // Modale registrazione
   document.getElementById('nf-reg-title').textContent   = L.regTitle;
@@ -2233,6 +2265,68 @@ setTimeout(() => {
   }, { passive: true });
 })();
 
+/* ── Carosello Hero (swipe + dots + autoplay) ── */
+const HERO_STATE = { idx: 0, timer: null };
+function renderHeroSlide(i) {
+  const L = LANG[currentLang];
+  const slides = L.heroSlides;
+  if (!slides || !slides[i]) return;
+  const s = slides[i];
+  HERO_STATE.idx = i;
+
+  const imgEl = document.getElementById('hero-img');
+  if (imgEl) {
+    imgEl.style.opacity = 0;
+    setTimeout(() => {
+      imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = './images/mystica-orizzontale.webp'; };
+      imgEl.src = s.img;
+      imgEl.style.opacity = .85;
+    }, 180);
+  }
+  document.getElementById('hero-title').textContent = s.title;
+  document.getElementById('hero-meta').textContent  = s.meta;
+  document.getElementById('hero-desc').textContent  = s.desc;
+  const btnStart = document.getElementById('hero-btn-start');
+  const btnInfo  = document.getElementById('hero-btn-info');
+  if (btnStart) btnStart.href = s.link;
+  if (btnInfo)  btnInfo.href  = s.infoLink;
+
+  document.querySelectorAll('.nf-hero-dot').forEach((d, di) => d.classList.toggle('active', di === i));
+}
+function goToHeroSlide(i) {
+  renderHeroSlide(i);
+  resetHeroAutoplay();
+}
+function nextHeroSlide(dir) {
+  const L = LANG[currentLang];
+  const slides = L.heroSlides || [];
+  if (!slides.length) return;
+  const idx = (HERO_STATE.idx + dir + slides.length) % slides.length;
+  renderHeroSlide(idx);
+}
+function resetHeroAutoplay() {
+  clearInterval(HERO_STATE.timer);
+  HERO_STATE.timer = setInterval(() => nextHeroSlide(1), 6000);
+}
+(function() {
+  const hero = document.getElementById('nfHero');
+  if (!hero) return;
+  let startX = 0, startY = 0, dragging = false;
+  hero.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY; dragging = true;
+  }, { passive: true });
+  hero.addEventListener('touchend', e => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      nextHeroSlide(dx < 0 ? 1 : -1);
+      resetHeroAutoplay();
+    }
+  }, { passive: true });
+})();
+
 /* ── Init sequence ── */
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(isDayMode);   // 1. Tema
@@ -2241,6 +2335,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkBannerPremium();    // 3. Banner (sempre nascosto — premium disattivato)
   initPremiumGate();       // 4. Gate card (no-op — tutto gratuito per ora)
   initRegModal();          // 5. Modale di benvenuto/registrazione (prima visita)
+  resetHeroAutoplay();     // 6. Autoplay carosello hero (6s)
 });
 </script>
 </body>
