@@ -102,6 +102,9 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
 .hero{text-align:center;padding:26px 16px 22px;background:linear-gradient(145deg,#180d30,#08040f);border-radius:18px;border:1px solid var(--gold-dim);margin-bottom:18px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,175,55,.1),transparent 70%);pointer-events:none}
 .hero-icon{font-size:42px;margin-bottom:10px;filter:drop-shadow(0 0 16px #d4af3770)}
+.hero-banner{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero-banner-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,4,15,.15) 0%,rgba(8,4,15,.82) 72%,rgba(8,4,15,.97) 100%)}
+.hero-content{position:relative;z-index:1}
 .hero h2{font-family:'Cinzel',serif;font-size:21px;color:var(--gold);letter-spacing:1px;line-height:1.4;margin-bottom:8px;text-shadow:0 2px 4px rgba(0,0,0,0.5)}
 .hero p{font-size:13.5px;color:var(--muted);line-height:1.7;font-style:italic;max-width:340px;margin:0 auto}
 
@@ -180,6 +183,39 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
 .esplora-card{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);border-radius:8px;padding:10px 16px;color:var(--gold);text-decoration:none;font-family:"Cinzel",serif;font-size:0.78rem;letter-spacing:1px}
 .esplora-card:hover{background:rgba(212,175,55,0.18);border-color:rgba(212,175,55,0.6)}
 
+/* ── Netflix-style row & poster cards ── */
+.nx-row-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:1px;margin:0 2px 10px;text-transform:uppercase}
+.nx-row{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 2px 14px;margin:0 -14px 8px;padding-left:14px;padding-right:14px;scrollbar-width:none}
+.nx-row::-webkit-scrollbar{display:none}
+.nx-poster{position:relative;flex:0 0 auto;width:66%;max-width:280px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;scroll-snap-align:start;background:none;border:1px solid rgba(212,175,55,.35);box-shadow:0 6px 18px rgba(0,0,0,.55);transition:transform .15s ease}
+.nx-poster:active{transform:scale(.96)}
+.nx-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.nx-poster .nx-fallback{position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,var(--th,#2a1748),#07020e)}
+.nx-poster .nx-fallback-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);font-size:30px;filter:drop-shadow(0 0 10px rgba(212,175,55,.5))}
+.nx-poster .nx-gradient{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,2,12,.9) 100%)}
+.nx-poster .nx-label{position:absolute;left:0;right:0;bottom:0;padding:8px 10px 9px;text-align:left}
+.nx-poster .nx-eyebrow{font-family:'Cinzel',serif;font-size:7.5px;color:var(--gold-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px;display:block}
+.nx-poster .nx-title{font-family:'Cinzel',serif;font-size:12.5px;color:#fff;letter-spacing:.4px;line-height:1.25;text-shadow:0 1px 4px rgba(0,0,0,.8);display:block}
+
+/* ── Modale dettaglio stile Netflix ── */
+.nx-modal{position:fixed;inset:0;z-index:998;visibility:hidden;pointer-events:none}
+.nx-modal.show{visibility:visible;pointer-events:auto}
+.nx-modal-overlay{position:absolute;inset:0;background:rgba(4,2,10,.75);backdrop-filter:blur(3px);opacity:0;transition:opacity .25s ease}
+.nx-modal.show .nx-modal-overlay{opacity:1}
+.nx-modal-panel{position:absolute;left:0;right:0;bottom:0;top:6vh;max-width:480px;margin:0 auto;background:var(--card);border-radius:20px 20px 0 0;border:1px solid var(--border);border-bottom:none;overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateY(100%);transition:transform .3s cubic-bezier(.22,.68,.35,1);box-shadow:0 -10px 40px rgba(0,0,0,.6)}
+.nx-modal.show .nx-modal-panel{transform:translateY(0)}
+.nx-modal-hero{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:20px 20px 0 0}
+.nx-modal-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nx-modal-hero .nx-fallback{position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,var(--th,#2a1748),#07020e)}
+.nx-modal-hero .nx-fallback-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:52px}
+.nx-modal-hero .nx-gradient{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,5,20,.95) 100%)}
+.nx-modal-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(5,2,12,.65);border:1px solid rgba(212,175,55,.4);color:var(--gold);font-size:16px;display:flex;align-items:center;justify-content:center;z-index:2}
+.nx-modal-heading{position:absolute;left:16px;right:16px;bottom:12px}
+.nx-modal-eyebrow{font-family:'Cinzel',serif;font-size:8.5px;color:var(--gold-dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;display:block}
+.nx-modal-title{font-family:'Cinzel',serif;font-size:19px;color:var(--gold);letter-spacing:.5px;text-shadow:0 2px 6px rgba(0,0,0,.7);display:block}
+.nx-modal-sub{font-size:12px;color:var(--muted);font-style:italic;margin-top:2px;display:block}
+.nx-modal-body{padding:16px 16px calc(28px + env(safe-area-inset-bottom,0px))}
+
 /* ── Premium Modal ── */
 .premium-modal{position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;padding:20px}
 .premium-modal.show{display:flex}
@@ -220,14 +256,17 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
     <!-- 3a. SEZIONE INTERATTIVA — accordion tradizioni (IN CIMA) -->
     <section aria-label="Tradizioni spirituali del mondo">
       <div class="hero">
-        <div class="hero-icon">🌿</div>
-        <h2 id="hero-title"></h2>
-        <p id="hero-text"></p>
+        <img class="hero-banner" src="./images/locandine/hero-banner.webp" alt="" width="1333" height="640" loading="eager" decoding="async" onerror="this.remove()">
+        <div class="hero-banner-fade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-icon">🌿</div>
+          <h2 id="hero-title"></h2>
+          <p id="hero-text"></p>
+        </div>
       </div>
 
-      <nav class="toc" id="tocList" aria-label="Indice tradizioni"></nav>
-
-      <div id="tradList"></div>
+      <div class="nx-row-title" id="rowTitle"></div>
+      <div class="nx-row" id="tradList" role="list" aria-label="Tradizioni spirituali"></div>
     </section>
 
     <!-- 3b. SHARE -->
@@ -296,6 +335,21 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
     <p id="footer-disclaimer" class="footer-disclaimer"></p>
   </footer>
 
+  <div class="nx-modal" id="tradModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="nx-modal-overlay" onclick="closeTradModal()"></div>
+    <div class="nx-modal-panel" id="tradModalPanel">
+      <div class="nx-modal-hero" id="tradModalHero">
+        <button class="nx-modal-close" onclick="closeTradModal()" aria-label="Chiudi">✕</button>
+        <div class="nx-modal-heading">
+          <span class="nx-modal-eyebrow" id="tradModalEyebrow"></span>
+          <span class="nx-modal-title" id="tradModalTitle"></span>
+          <span class="nx-modal-sub" id="tradModalSub"></span>
+        </div>
+      </div>
+      <div class="nx-modal-body" id="tradModalBody"></div>
+    </div>
+  </div>
+
   <div class="premium-modal" id="premiumModal" aria-hidden="true">
     <div class="modal-overlay" onclick="closePremiumModal()"></div>
     <div class="modal-content">
@@ -313,6 +367,18 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
 /* ══════════════════════════════════════════
    DATI TRADIZIONI (contenuto specifico pagina)
    ══════════════════════════════════════════ */
+/* ── Locandine orizzontali (stile Netflix) ──
+   Compila qui il percorso dell'immagine per ogni tradizione (stesso id in it/en/es).
+   Finché il valore resta vuoto '' viene mostrato il riquadro colorato con icona al posto dell'immagine. */
+const POSTER_MAP = {
+  'sciamanesimo': './images/locandine/sciamanesimo.webp',
+  'buddismo-esoterico': './images/locandine/buddismo-esoterico.webp',
+  'sufismo': './images/locandine/sufismo.webp',
+  'druidismo': './images/locandine/druidismo.webp',
+  'voodoo': './images/locandine/voodoo.webp',
+  'rosacroce': './images/locandine/rosacroce.webp'
+};
+
 const TRAD_DATA = {
 it:[
 {id:'sciamanesimo',icon:'🪶',th:'#3a2810',eyebrow:'Tradizione Universale',title:'Sciamanesimo',sub:'Il viaggio tra i mondi',
@@ -770,46 +836,35 @@ function updateSEO() {
   }
 }
 
-/* ── Render tradizioni (sezione interattiva) ── */
+/* ── Render tradizioni (riga stile Netflix + modale dettaglio) ── */
 function renderTraditions() {
   const L = LANG[currentLang];
   const data = TRAD_DATA[currentLang];
-  const toc = document.getElementById('tocList');
-  toc.innerHTML = data.map(t => `<a class="toc-pill" href="#${t.id}">${t.title}</a>`).join('');
+
+  const rowTitle = document.getElementById('rowTitle');
+  if (rowTitle) rowTitle.textContent = L.heroTitle;
 
   const list = document.getElementById('tradList');
-  list.innerHTML = data.map(t => `
-    <div class="trad-card" id="${t.id}" style="--th:${t.th}">
-      <button class="trad-head" onclick="toggleTrad(this)" aria-expanded="false">
-        <div class="trad-ico" aria-hidden="true">${t.icon}</div>
-        <div class="trad-info">
-          <div class="trad-eyebrow">${t.eyebrow}</div>
-          <h2 class="trad-title">${t.title}</h2>
-          <div class="trad-sub">${t.sub}</div>
-        </div>
-        <div class="trad-toggle" aria-hidden="true">▾</div>
-      </button>
-      <div class="trad-body">
-        ${t.blocks.map(b => `
-          <div class="trad-block">
-            <div class="block-img"><img src="${b.img}" alt="${b.alt}" width="380" height="214" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></div>
-            <h3>${b.h3}</h3>
-            ${b.p.map(par => `<p>${par}</p>`).join('')}
-          </div>
-        `).join('')}
-        ${t.diffBox ? `<div class="diff-box"><strong>${t.diffBox.t}</strong>${t.diffBox.x}</div>` : ''}
-        ${t.note ? `<div class="trad-note">${t.note}</div>` : ''}
-        <div class="trad-tags">${t.tags.map(tag => `<span class="trad-tag">${tag}</span>`).join('')}</div>
+  list.innerHTML = data.map(t => {
+    const poster = POSTER_MAP[t.id];
+    return `
+    <button class="nx-poster" style="--th:${t.th}" data-id="${t.id}" onclick="openTradModal('${t.id}')" role="listitem" aria-label="${t.title}">
+      ${poster
+        ? `<img src="${poster}" alt="${t.title}" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">`
+        : ''}
+      <div class="nx-fallback" style="${poster ? 'display:none' : ''}"><span class="nx-fallback-icon">${t.icon}</span></div>
+      <div class="nx-gradient"></div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">${t.eyebrow}</span>
+        <span class="nx-title">${t.title}</span>
       </div>
-    </div>
-  `).join('');
+    </button>
+  `;
+  }).join('');
 
-  // riapre la card già aperta in precedenza, se presente
+  // riapre il modale della tradizione già aperta in precedenza, se presente nell'hash
   const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    const card = document.getElementById(hash);
-    if (card && card.classList.contains('trad-card')) card.classList.add('open');
-  }
+  if (hash && data.some(t => t.id === hash)) openTradModal(hash);
 
   // testi statici hero / esplora
   document.getElementById('hero-title').textContent = L.heroTitle;
@@ -817,14 +872,63 @@ function renderTraditions() {
   L.esplora.forEach((txt, i) => { const el = document.getElementById('esp-' + (i+1)); if (el) el.textContent = txt; });
 }
 
-function toggleTrad(headEl) {
-  const card = headEl.closest('.trad-card');
-  const wasOpen = card.classList.contains('open');
-  document.querySelectorAll('.trad-card.open').forEach(c => { if (c !== card) { c.classList.remove('open'); c.querySelector('.trad-head').setAttribute('aria-expanded','false'); } });
-  card.classList.toggle('open', !wasOpen);
-  headEl.setAttribute('aria-expanded', String(!wasOpen));
-  if (!wasOpen) setTimeout(() => { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
+function openTradModal(id) {
+  const data = TRAD_DATA[currentLang];
+  const t = data.find(x => x.id === id);
+  if (!t) return;
+  const poster = POSTER_MAP[id];
+
+  const hero = document.getElementById('tradModalHero');
+  hero.style.setProperty('--th', t.th);
+  const oldImg = hero.querySelector('img'); if (oldImg) oldImg.remove();
+  const oldFb = hero.querySelector('.nx-fallback'); if (oldFb) oldFb.remove();
+  const oldGr = hero.querySelector('.nx-gradient'); if (oldGr) oldGr.remove();
+  const heroInner = poster
+    ? `<img src="${poster}" alt="${t.title}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">${t.icon}</span></div>`
+    : `<div class="nx-fallback"><span class="nx-fallback-icon">${t.icon}</span></div>`;
+  hero.insertAdjacentHTML('afterbegin', heroInner + '<div class="nx-gradient"></div>');
+  // riporta il bottone di chiusura e il titolo in cima (insertAdjacentHTML li ha lasciati dopo, sistemiamo l'ordine)
+  const closeBtn = hero.querySelector('.nx-modal-close');
+  const heading = hero.querySelector('.nx-modal-heading');
+  hero.appendChild(closeBtn);
+  hero.appendChild(heading);
+
+  document.getElementById('tradModalEyebrow').textContent = t.eyebrow;
+  document.getElementById('tradModalTitle').textContent = t.title;
+  document.getElementById('tradModalSub').textContent = t.sub;
+
+  document.getElementById('tradModalBody').innerHTML = `
+    ${t.blocks.map(b => `
+      <div class="trad-block">
+        <div class="block-img"><img src="${b.img}" alt="${b.alt}" width="380" height="214" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></div>
+        <h3>${b.h3}</h3>
+        ${b.p.map(par => `<p>${par}</p>`).join('')}
+      </div>
+    `).join('')}
+    ${t.diffBox ? `<div class="diff-box"><strong>${t.diffBox.t}</strong>${t.diffBox.x}</div>` : ''}
+    ${t.note ? `<div class="trad-note">${t.note}</div>` : ''}
+    <div class="trad-tags">${t.tags.map(tag => `<span class="trad-tag">${tag}</span>`).join('')}</div>
+  `;
+
+  const modal = document.getElementById('tradModal');
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+  document.getElementById('tradModalPanel').scrollTop = 0;
+  history.replaceState(null, '', '#' + id);
+  document.body.style.overflow = 'hidden';
 }
+
+function closeTradModal() {
+  const modal = document.getElementById('tradModal');
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  history.replaceState(null, '', window.location.pathname);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeTradModal();
+});
 
 /* ── Lingua ── */
 function applyLang() {
