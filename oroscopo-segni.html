@@ -11,7 +11,10 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://mysticaoracoli.it/oroscopo-segni.html">
 
-  <!-- hreflang -->
+  <!-- hreflang: obbligatorio per multilingua SEO -->
+  <link rel="alternate" hreflang="it"        href="https://mysticaoracoli.it/oroscopo-segni.html">
+  <link rel="alternate" hreflang="en"        href="https://mysticaoracoli.it/oroscopo-segni.html">
+  <link rel="alternate" hreflang="es"        href="https://mysticaoracoli.it/oroscopo-segni.html">
   <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/oroscopo-segni.html">
 
   <!-- Open Graph — VUOTI, popolati da updateSEO() -->
@@ -27,16 +30,16 @@
   <meta property="og:locale:alternate" content="es_ES">
   <meta property="og:site_name" content="MYSTICA Oracoli">
 
-  <!-- Twitter Card -->
+  <!-- Twitter Card — VUOTA, popolata da updateSEO() -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="">
   <meta name="twitter:description" content="">
   <meta name="twitter:image" content="https://mysticaoracoli.it/images/icone/home/oroscopo-segni.webp">
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD — inizialmente vuoto {}, rigenerato da updateSEO() -->
   <script type="application/ld+json">{}</script>
 
-  <!-- GA4 -->
+  <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,22 +48,24 @@
     gtag('config', 'G-TDGH40FYK4');
   </script>
 
-  <!-- AdSense -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=optional" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
 
   <!-- PWA -->
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
   <meta name="theme-color" content="#0a0514">
 
-  <!-- ── CSS ── -->
+  <!-- ══════════════ CSS ══════════════ -->
   <style>
+    /* ── Reset / Variables ── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --bg: #0a0514;
       --card: #140c24;
@@ -86,16 +91,57 @@
       --border: #c89742;
     }
 
+    html.theme-day .card,
+    html.theme-day .compat-card,
+    html.theme-day .faq-item,
+    html.theme-day .related-link,
+    html.theme-day .esplora-card,
+    html.theme-day .poster-card {
+      background-color: var(--card);
+      border: 2px solid var(--border);
+      color: var(--text);
+    }
+
+    html.theme-day h1,
+    html.theme-day h2,
+    html.theme-day h3 {
+      color: var(--text);
+      text-shadow: none;
+    }
+
+    html.theme-day .btn-icon,
+    html.theme-day .btn-lang {
+      background-color: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+    }
+
+    html.theme-day .btn-lang.active {
+      background-color: var(--gold);
+      color: #fff;
+    }
+
+    /* ── Layout base ── */
+    html, body { background: var(--bg); }
     body {
-      background: var(--bg);
       color: var(--text);
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 16px;
       line-height: 1.8;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* ── Cosmos Background ── */
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: var(--gold); color: #000;
+      padding: 10px 16px; z-index: 2000; border-radius: 0 0 8px 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    a { color: inherit; }
+
+    /* ── Sfondo Cosmico ── */
     .cosmos {
       position: fixed; top: 0; left: 0;
       width: 100%; height: 100%;
@@ -117,667 +163,734 @@
       100% { opacity: .45; }
     }
 
-    /* ── Header ── */
-    header {
-      position: sticky; top: 0; z-index: 100;
+    /* ── Header standard ── */
+    .page-header {
+      position: relative; z-index: 10;
       background: linear-gradient(135deg, #1a0c32, #0a0520);
       border-bottom: 1px solid var(--border);
-      padding: max(16px, calc(16px + env(safe-area-inset-top)));
-      display: flex; align-items: center; justify-content: space-between;
+      padding: max(16px, calc(16px + env(safe-area-inset-top))) 16px 18px;
       backdrop-filter: blur(10px);
     }
 
-    .logo {
-      font-family: 'Cinzel', serif;
-      font-size: 18px;
-      color: var(--gold);
-      letter-spacing: 2px;
-      text-shadow: 0 0 20px rgba(212,175,55,0.4);
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
 
-    .logo a {
-      color: inherit;
+    .btn-back {
+      color: var(--gold);
       text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.25s ease;
     }
+    .btn-back:hover { opacity: 0.75; }
 
     .header-controls {
-      display: flex; align-items: center; gap: 10px;
+      display: flex; align-items: center; gap: 8px;
     }
 
-    .icon-btn {
+    .btn-icon {
       background: transparent;
-      border: none;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       color: var(--gold);
-      font-size: 20px;
+      font-size: 17px;
       cursor: pointer;
-      padding: 8px;
+      padding: 7px 10px;
+      line-height: 1;
+      transition: all 0.25s ease;
+    }
+    .btn-icon:hover {
+      border-color: rgba(212,175,55,0.5);
+      transform: scale(1.06);
+    }
+
+    .page-title {
+      font-family: 'Cinzel', serif;
+      font-size: 21px;
+      color: var(--gold);
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px rgba(212,175,55,0.35);
+      margin-bottom: 14px;
+    }
+
+    /* ── Selettore Lingua — visibile, centrato, in alto ── */
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-lang {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 7px 18px;
+      border-radius: 20px;
+      cursor: pointer;
       transition: all 0.25s ease;
     }
 
-    .icon-btn:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 15px rgba(212,175,55,0.6);
+    .btn-lang:hover {
+      border-color: rgba(212,175,55,0.5);
+      color: var(--gold);
+    }
+
+    .btn-lang.active {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #1a0c32;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(212,175,55,0.35);
     }
 
     /* ── Main ── */
-    main {
-      position: relative; z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-      padding-top: max(40px, calc(40px + env(safe-area-inset-top)));
-    }
+    main { position: relative; z-index: 1; }
 
-    /* ── Hero ── */
-    .hero {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 36px 24px;
-      background: linear-gradient(145deg, #1a0c32, #0d0620);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+    /* ══════════════ HERO BANNER STILE NETFLIX ══════════════ */
+    .nx-hero {
       position: relative;
+      min-height: 46vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px 20px 28px;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,175,55,0.07), transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-icon {
-      font-size: 52px;
-      margin-bottom: 14px;
-      display: block;
-      position: relative; z-index: 1;
-    }
-
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 28px;
-      color: var(--gold);
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      line-height: 1.3;
-      position: relative; z-index: 1;
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 auto;
-      position: relative; z-index: 1;
-    }
-
-    /* ── Sezioni ── */
-    section {
-      margin-bottom: 36px;
-      position: relative; z-index: 1;
-    }
-
-    h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      color: var(--gold);
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 20%, rgba(212,175,55,0.16), transparent 65%),
+        linear-gradient(180deg, #150a28 0%, #0d0620 55%, var(--bg) 100%);
       border-bottom: 1px solid var(--border);
     }
 
-    p {
+    .nx-hero-zodiac {
+      position: absolute;
+      top: 14%; left: 0; right: 0;
+      text-align: center;
+      font-size: 15vw;
+      letter-spacing: 6px;
+      color: rgba(212,175,55,0.14);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .nx-hero-content {
+      position: relative; z-index: 2;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nx-hero-badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
       margin-bottom: 14px;
-      color: var(--text);
-      opacity: 0.9;
+      background: rgba(212,175,55,0.06);
+    }
+
+    .nx-hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 30px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      text-shadow: 0 0 24px rgba(212,175,55,0.3);
+    }
+
+    .nx-hero p {
       font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 20px;
     }
 
-    /* ── Sign Grid ── */
-    .sign-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 16px 0;
-    }
-
-    @media (max-width: 540px) {
-      .sign-grid { grid-template-columns: 1fr; }
-    }
-
-    .sign-card {
-      background: linear-gradient(145deg, #130b26, #0d0620);
-      border: 1px solid rgba(212,175,55,0.18);
-      border-radius: 16px;
-      padding: 18px;
+    .nx-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #1a0c32;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 13px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
       cursor: pointer;
       transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
+    }
+    .nx-hero-cta:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 22px rgba(212,175,55,0.3);
     }
 
-    .sign-card:hover {
-      border-color: rgba(212,175,55,0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(212,175,55,0.15);
-    }
+    /* ══════════════ RIGHE ORIZZONTALI (ROWS) ══════════════ */
+    .nx-rows { padding: 28px 0 8px; }
 
-    .sign-image {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
+    .nx-row { margin-bottom: 30px; }
+
+    .nx-row-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      padding: 0 20px;
       margin-bottom: 12px;
+    }
+
+    .nx-row-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 6px 20px 14px;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nx-row-track::-webkit-scrollbar { display: none; }
+
+    .poster-card {
+      flex: 0 0 auto;
+      width: 132px;
+      scroll-snap-align: start;
+      background: linear-gradient(145deg, #150c28, #0d0620);
+      border: 1px solid rgba(212,175,55,0.18);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .poster-card:hover,
+    .poster-card:focus-visible {
+      transform: translateY(-6px) scale(1.055);
+      border-color: rgba(212,175,55,0.55);
+      box-shadow: 0 12px 26px rgba(212,175,55,0.22);
+      z-index: 3;
+    }
+
+    .poster-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
       background: rgba(212,175,55,0.05);
     }
 
-    .sign-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
+    .poster-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .sign-emoji {
-      font-size: 28px;
-      flex-shrink: 0;
+    .poster-scrim {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(10,5,20,0.95), transparent);
+      pointer-events: none;
     }
 
-    .sign-name {
+    .poster-emoji {
+      position: absolute; top: 6px; left: 8px;
+      font-size: 20px;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+    }
+
+    .poster-info {
+      padding: 8px 10px 10px;
+    }
+
+    .poster-name {
       font-family: 'Cinzel', serif;
-      font-size: 14px;
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .poster-dates {
+      font-size: 10.5px;
+      color: var(--muted);
+    }
+
+    /* ══════════════ MODAL DETTAGLIO SEGNO ══════════════ */
+    .sign-modal {
+      position: fixed; inset: 0;
+      background: rgba(4,2,10,0.85);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      backdrop-filter: blur(3px);
+    }
+    .sign-modal.show { display: flex; }
+
+    .sign-modal-content {
+      background: linear-gradient(160deg, #1a0c32, #0d0620);
+      border: 1px solid var(--border);
+      border-radius: 20px 20px 0 0;
+      max-width: 480px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      padding: 0 0 28px;
+      position: relative;
+      animation: slideUp 0.28s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    .sign-modal-img {
+      width: 100%; height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sign-modal-close {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(10,5,20,0.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .sign-modal-body { padding: 20px 22px 0; }
+
+    .sign-modal-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .sign-modal-emoji { font-size: 34px; }
+    .sign-modal-name {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
       color: var(--gold);
       letter-spacing: 1px;
     }
+    .sign-modal-dates { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    .sign-dates {
+    .sign-modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .sign-modal-tags span {
       font-size: 11px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .sign-meta {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
-
-    .sign-tag {
-      font-size: 10px;
-      padding: 2px 8px;
+      border: 1px solid var(--border);
       border-radius: 10px;
-      border: 1px solid rgba(212,175,55,0.2);
+      padding: 3px 10px;
       color: var(--muted);
       font-family: 'Cinzel', serif;
       letter-spacing: 0.5px;
     }
 
-    .sign-desc {
+    .sign-modal-desc { font-size: 14.5px; opacity: 0.9; margin-bottom: 10px; }
+    .sign-modal-traits { font-size: 13px; color: var(--muted); font-style: italic; }
+
+    /* ── Sezioni generiche ── */
+    section, article { position: relative; z-index: 1; }
+
+    .section-inner { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      margin: 18px 0 10px;
+    }
+
+    p { margin-bottom: 14px; opacity: 0.9; font-size: 15px; }
+
+    /* ── Share ── */
+    .share-section { margin: 34px 0 6px; text-align: center; }
+    .btn-share {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
       font-size: 13px;
-      color: var(--text);
-      opacity: 0.85;
-      line-height: 1.65;
-      margin-bottom: 8px;
+      letter-spacing: 1px;
+      padding: 11px 26px;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-share:hover { border-color: rgba(212,175,55,0.5); transform: scale(1.03); }
+
+    .share-popup {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 999;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .share-popup.show { display: flex; }
+    .share-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 320px; width: 100%;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .share-box a, .share-box button {
+      background: var(--gold);
+      color: #1a0c32;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 14px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
+    .share-box a:hover, .share-box button:hover { transform: scale(1.03); }
+    .share-close {
+      align-self: flex-end;
+      background: transparent !important;
+      color: var(--muted) !important;
+      font-size: 22px;
+      padding: 0 !important;
     }
 
-    .sign-traits {
-      font-size: 12px;
-      color: var(--muted);
-      font-style: italic;
+    /* ── Articolo editoriale ── */
+    .article-section { padding: 8px 20px 10px; }
+    .article-section img#art-hero {
+      width: 100%;
+      border-radius: 14px;
+      margin: 14px 0 18px;
     }
+    .article-links {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin: 18px 0;
+    }
+    .article-links a {
+      font-size: 13px;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 7px 14px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .article-links a:hover { border-color: rgba(212,175,55,0.5); }
 
-    /* ── Card ── */
-    .card {
+    .cta-explore {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 26px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #1a0c32;
+      border-radius: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .cta-explore:hover { transform: scale(1.04); }
+
+    /* ── Compatibilità ── */
+    .compat-section { padding: 8px 20px 10px; }
+    .compat-card {
       background: linear-gradient(145deg, #130b26, #0d0620);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    ul, ol {
-      padding-left: 22px;
+      padding: 22px;
       margin-bottom: 16px;
     }
-
-    li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      color: var(--text);
-      opacity: 0.9;
-      line-height: 1.7;
-    }
-
-    strong {
-      color: var(--text);
-      opacity: 1;
-    }
-
-    /* ── Highlight ── */
-    .highlight {
+    .compat-card ul { padding-left: 20px; }
+    .compat-card li { margin-bottom: 9px; font-size: 14.5px; opacity: 0.9; }
+    .compat-highlight {
       background: linear-gradient(145deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));
       border-left: 3px solid var(--gold);
       border-radius: 8px;
-      padding: 18px;
-      margin: 20px 0;
+      padding: 16px 18px;
     }
+    .compat-highlight p { margin: 0; font-size: 14px; }
 
-    .highlight p {
-      margin: 0;
-    }
-
-    /* ── FAQ Accordion ── */
-    .faq-section {
-      margin: 40px 0;
-    }
-
-    #faqList {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
+    /* ── FAQ ── */
+    .faq-section { padding: 8px 20px 10px; margin: 10px 0; }
+    #faqList { display: flex; flex-direction: column; gap: 8px; }
     .faq-item {
       background: linear-gradient(145deg, #130b26, #0d0620);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
     }
-
     .faq-question {
       width: 100%;
       background: transparent;
       border: none;
-      padding: 16px 20px;
+      padding: 15px 18px;
       text-align: left;
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
       color: var(--gold);
       font-family: 'Cinzel', serif;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      transition: all 0.25s ease;
+      font-size: 13.5px;
+      letter-spacing: 0.4px;
     }
+    .faq-question:hover { background: rgba(212,175,55,0.08); }
+    .faq-icon { font-size: 19px; flex-shrink: 0; }
+    .faq-answer { padding: 0 18px; border-top: 1px solid var(--border); }
+    .faq-answer[hidden] { display: none; }
+    .faq-answer p { padding: 14px 0; margin: 0; font-size: 13.5px; }
 
-    .faq-question:hover {
-      background: rgba(212,175,55,0.08);
-    }
-
-    .faq-icon {
-      font-size: 20px;
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
-    }
-
-    .faq-answer {
-      padding: 0 20px;
-      max-height: 500px;
-      overflow: hidden;
-      transition: all 0.25s ease;
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-answer[hidden] {
-      display: none;
-    }
-
-    .faq-answer p {
-      padding: 16px 0;
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* ── Related ── */
-    .related {
-      margin: 40px 0;
-      position: relative; z-index: 1;
-    }
-
-    .related-title {
-      font-family: 'Cinzel', serif;
-      font-size: 16px;
-      color: var(--gold);
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
-    .related-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media (max-width: 540px) {
-      .related-grid { grid-template-columns: 1fr; }
-    }
-
+    /* ── Related / Esplora ── */
+    .related-section { padding: 8px 20px 10px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr 1fr; } }
     .related-link {
       background: linear-gradient(145deg, #130b26, #0d0620);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px 12px;
+      padding: 16px 10px;
       text-align: center;
       text-decoration: none;
-      color: var(--text);
-      transition: all 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .related-link:hover {
-      border-color: rgba(212,175,55,0.4);
-      transform: translateY(-4px);
-    }
-
-    .related-link-icon {
-      font-size: 28px;
-    }
-
-    .related-link-text {
-      font-family: 'Cinzel', serif;
-      font-size: 13px;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-    }
-
-    /* ── CTA ── */
-    .cta {
-      background: linear-gradient(145deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      text-align: center;
-      margin: 40px 0;
-      position: relative; z-index: 1;
-    }
-
-    .cta p {
-      font-size: 14px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 28px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
       transition: all 0.25s ease;
     }
+    .related-link:hover { border-color: rgba(212,175,55,0.4); transform: translateY(-3px); }
+    .related-link-icon { font-size: 26px; }
+    .related-link-text { font-family: 'Cinzel', serif; font-size: 12.5px; color: var(--gold); }
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(212,175,55,0.3);
-    }
-
-    /* ── Esplora Sezione ── */
     .esplora-section {
       background: linear-gradient(145deg, #130b26, #0d0620);
       border-top: 1px solid var(--border);
-      padding: 40px 20px;
-      position: relative; z-index: 1;
-      margin-top: 40px;
+      padding: 34px 20px;
+      margin-top: 14px;
     }
-
-    .esplora-section h2 {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
+    .esplora-section h2 { text-align: center; max-width: 720px; margin: 0 auto 22px; }
     .esplora-grid {
-      max-width: 760px;
-      margin: 0 auto;
+      max-width: 720px; margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
     }
-
     .esplora-card {
       background: linear-gradient(145deg, #0a0514, #140c24);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px 12px;
+      padding: 15px 10px;
       text-align: center;
-      color: var(--text);
       text-decoration: none;
-      font-size: 13px;
-      transition: all 0.25s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 60px;
+      color: var(--text);
+      font-size: 12.5px;
       font-family: 'Cinzel', serif;
       letter-spacing: 0.5px;
-    }
-
-    .esplora-card:hover {
-      border-color: rgba(212,175,55,0.4);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: linear-gradient(145deg, #0a0514, #140c24);
-      border-top: 1px solid var(--border);
-      padding: 32px 20px 60px;
-      text-align: center;
-      position: relative; z-index: 1;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      font-size: 13px;
-    }
-
-    .footer-links a {
-      color: var(--gold);
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 56px;
       transition: all 0.25s ease;
     }
+    .esplora-card:hover { border-color: rgba(212,175,55,0.4); color: var(--gold); transform: translateY(-2px); }
 
-    .footer-links a:hover {
-      opacity: 0.8;
+    /* ── Footer ── */
+    .page-footer {
+      background: linear-gradient(145deg, #0a0514, #140c24);
+      border-top: 1px solid var(--border);
+      padding: 30px 20px 50px;
+      text-align: center;
     }
-
-    footer > p {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0;
+    .footer-links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      margin-bottom: 14px; font-size: 13px;
     }
-
-    .footer-disclaimer {
-      font-size: 11px !important;
-      opacity: 0.7 !important;
-      margin-top: 8px !important;
-    }
+    .footer-links a { color: var(--gold); text-decoration: none; }
+    .footer-links a:hover { opacity: 0.8; }
+    .page-footer > p { font-size: 12px; color: var(--muted); margin: 0; }
+    .footer-disclaimer { font-size: 11px !important; opacity: 0.7 !important; margin-top: 8px !important; }
 
     /* ── Premium Modal ── */
     .premium-modal {
       display: none;
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(0,0,0,0.8);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
+      z-index: 1100;
+      align-items: center; justify-content: center;
+      padding: 20px;
     }
-
-    .premium-modal[hidden="false"] {
-      display: flex;
-    }
-
-    .premium-box {
+    .premium-modal.show { display: flex; }
+    .modal-overlay { position: absolute; inset: 0; }
+    .modal-content {
+      position: relative;
       background: linear-gradient(145deg, #1a0c32, #0d0620);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px 24px;
-      max-width: 380px;
+      padding: 30px 24px;
+      max-width: 380px; width: 100%;
       text-align: center;
     }
-
-    .premium-box h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 22px;
-      color: var(--gold);
-      margin-bottom: 12px;
+    .modal-content h2 { font-size: 21px; border: none; padding: 0; margin-bottom: 10px; }
+    .modal-content p { font-size: 14px; }
+    .premium-price { color: var(--gold); font-family: 'Cinzel', serif; font-size: 15px; margin-bottom: 18px; }
+    .btn-premium-buy {
+      display: block; width: 100%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #1a0c32;
+      border: none; border-radius: 10px;
+      padding: 13px; font-family: 'Cinzel', serif;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+      cursor: pointer; margin-bottom: 10px;
+      transition: transform 0.25s ease;
+    }
+    .btn-premium-buy:hover { transform: scale(1.03); }
+    .btn-premium-skip {
+      background: transparent; border: none;
+      color: var(--muted); font-size: 13px;
+      cursor: pointer; text-decoration: underline;
     }
 
-    .premium-box p {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .premium-close {
-      float: right;
-      background: transparent;
-      border: none;
-      color: var(--muted);
-      font-size: 24px;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    /* ── Share Popup ── */
-    .share-popup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .share-popup[hidden="false"] {
-      display: flex;
-    }
-
-    .share-box {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 24px;
-      max-width: 320px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .share-box button {
-      background: var(--gold);
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 0.5px;
-    }
-
-    .share-box button:hover {
-      transform: scale(1.05);
-    }
-
-    .share-close {
-      align-self: flex-end;
-      background: transparent;
-      border: none;
-      color: var(--muted);
-      font-size: 24px;
-      cursor: pointer;
-    }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
   </style>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
   <div class="cosmos" aria-hidden="true"></div>
 
-  <!-- ── Header ── -->
-  <header>
-    <div class="logo">
-      <a href="./index.html">✦ MYSTICA ✦</a>
+  <!-- ══════ Header ══════ -->
+  <header class="page-header">
+    <div class="header-top">
+      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <div class="header-controls">
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      </div>
     </div>
-    <div class="header-controls">
-      <button class="icon-btn" id="themeToggle" aria-label="Cambia tema" title="Cambia tema">
-        ☀️
-      </button>
-      <button class="icon-btn" id="shareBtn" aria-label="Condividi" title="Condividi">
-        ⤴️
-      </button>
-      <button class="icon-btn" id="langToggle" aria-label="Lingua" title="Lingua">
-        🌐
-      </button>
+    <h1 class="page-title" id="page-title"></h1>
+    <div class="lang-switch">
+      <button data-lang="it" class="btn-lang active">IT</button>
+      <button data-lang="en" class="btn-lang">EN</button>
+      <button data-lang="es" class="btn-lang">ES</button>
     </div>
   </header>
 
-  <!-- ── Main ── -->
-  <main>
-    <!-- Hero -->
-    <div class="hero">
-      <span class="hero-icon">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</span>
-      <h1 id="heroTitle"></h1>
-      <p class="hero-sub" id="heroSub"></p>
-    </div>
+  <!-- ══════ Main ══════ -->
+  <main id="main-content">
 
-    <!-- Segni Zodiacali -->
-    <section id="segniSection">
-      <h2 id="segniTitle"></h2>
-      <div class="sign-grid" id="signGrid"></div>
+    <!-- Hero stile Netflix -->
+    <section class="nx-hero">
+      <div class="nx-hero-zodiac" aria-hidden="true">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</div>
+      <div class="nx-hero-content">
+        <span class="nx-hero-badge" id="heroBadge"></span>
+        <h1 id="heroTitle"></h1>
+        <p id="heroSub"></p>
+        <a href="#segniRows" class="nx-hero-cta" id="heroCta"></a>
+      </div>
     </section>
 
-    <!-- Compatibilità -->
-    <section id="compatSection">
-      <h2 id="compatTitle"></h2>
-      <div class="card">
-        <p id="compatIntro"></p>
-        <ul id="compatList"></ul>
+    <!-- Righe orizzontali per elemento -->
+    <section class="nx-rows" id="segniRows" aria-label="Segni zodiacali per elemento">
+      <div id="rowsContainer"></div>
+    </section>
+
+    <!-- Share -->
+    <div class="share-section">
+      <button class="btn-share" onclick="shareContent()" id="shareBtnLabel">📤 Condividi</button>
+      <div class="share-popup" id="sharePopup" hidden>
+        <div class="share-box">
+          <button class="share-close" onclick="closeSharePopup()">&times;</button>
+          <a id="share-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="share-tg" href="#" target="_blank" rel="noopener">Telegram</a>
+          <a id="share-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+          <a id="share-x" href="#" target="_blank" rel="noopener">X</a>
+          <button id="share-copy" onclick="copyLink()"></button>
+        </div>
       </div>
-      <div class="highlight" id="compatHighlight"></div>
+    </div>
+
+    <!-- Articolo editoriale -->
+    <article class="article-section">
+      <h2 id="art-title"></h2>
+      <img src="./images/icone/home/oroscopo-segni.webp"
+           id="art-hero"
+           alt=""
+           loading="eager"
+           decoding="async"
+           width="1200" height="630">
+      <h3 id="art-h2"></h3>
+      <p id="art-p1"></p>
+      <p id="art-p2"></p>
+      <p id="art-p3"></p>
+      <h3 id="art-h3"></h3>
+      <p id="art-p4"></p>
+      <p id="art-p5"></p>
+      <nav class="article-links" aria-label="Approfondimenti correlati">
+        <a href="./tarocchi.html">Tarocchi e cartomanzia</a>
+        <a href="./numerologia.html">Numerologia del proprio nome</a>
+        <a href="./luna-pianeti.html">Fasi lunari e pianeti</a>
+        <a href="./astrologia-vedica.html">Astrologia vedica</a>
+      </nav>
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </article>
+
+    <!-- Compatibilità -->
+    <section class="compat-section" aria-labelledby="compatTitle">
+      <div class="section-inner" style="padding:0">
+        <h2 id="compatTitle"></h2>
+        <div class="compat-card">
+          <p id="compatIntro"></p>
+          <ul id="compatList"></ul>
+        </div>
+        <div class="compat-highlight" id="compatHighlight"></div>
+      </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section">
-      <h2 id="faqTitle"></h2>
-      <div id="faqList"></div>
+    <section class="faq-section" aria-labelledby="faqTitle">
+      <div class="section-inner" style="padding:0">
+        <h2 id="faqTitle"></h2>
+        <div id="faqList"></div>
+      </div>
     </section>
 
     <!-- Related -->
-    <div class="related">
-      <div class="related-title" id="relatedTitle"></div>
-      <div class="related-grid" id="relatedGrid"></div>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta">
-      <div style="font-size:36px;margin-bottom:10px">⭐</div>
-      <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;margin-bottom:8px" id="ctaTitle"></div>
-      <p id="ctaDesc"></p>
-      <a href="https://mysticaoracoli.it/" class="cta-btn" id="ctaBtn"></a>
-    </div>
+    <section class="related-section">
+      <div class="section-inner" style="padding:0">
+        <h2 id="relatedTitle"></h2>
+        <div class="related-grid" id="relatedGrid"></div>
+      </div>
+    </section>
   </main>
 
   <!-- Esplora -->
@@ -786,56 +899,84 @@
     <div class="esplora-grid" id="esploraGrid"></div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- ══════ Footer ══════ -->
+  <footer class="page-footer">
     <div class="footer-links">
       <a href="./index.html" id="footerHome"></a>
       <a href="./contatti.html" id="footerContact"></a>
       <a href="./about.html" id="footerAbout"></a>
       <a href="./privacy.html" id="footerPrivacy"></a>
     </div>
-    <p id="footerCopy"></p>
-    <p class="footer-disclaimer" id="footerDisclaimer"></p>
+    <p id="footer-copy"></p>
+    <p class="footer-disclaimer" id="footer-disclaimer"></p>
   </footer>
 
+  <!-- Modal dettaglio segno (stile "preview" Netflix) -->
+  <div class="sign-modal" id="signModal" aria-hidden="true">
+    <div class="sign-modal-content">
+      <button class="sign-modal-close" onclick="closeSignModal()" aria-label="Chiudi">&times;</button>
+      <img class="sign-modal-img" id="signModalImg" src="" alt="" loading="lazy" decoding="async" width="480" height="200">
+      <div class="sign-modal-body">
+        <div class="sign-modal-header">
+          <span class="sign-modal-emoji" id="signModalEmoji"></span>
+          <div>
+            <div class="sign-modal-name" id="signModalName"></div>
+            <div class="sign-modal-dates" id="signModalDates"></div>
+          </div>
+        </div>
+        <div class="sign-modal-tags" id="signModalTags"></div>
+        <p class="sign-modal-desc" id="signModalDesc"></p>
+        <p class="sign-modal-traits" id="signModalTraits"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- Premium Modal -->
-  <div class="premium-modal" id="premiumModal" hidden="true">
-    <div class="premium-box">
-      <button class="premium-close" onclick="closePremiumModal()">&times;</button>
-      <h3 id="premiumTitle"></h3>
-      <p id="premiumMsg"></p>
-      <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="cta-btn" id="premiumBtn"></a>
+  <div class="premium-modal" id="premiumModal" aria-hidden="true">
+    <div class="modal-overlay" onclick="closePremiumModal()"></div>
+    <div class="modal-content">
+      <h2 id="premium-title"></h2>
+      <p id="premium-text"></p>
+      <p class="premium-price" id="premium-price"></p>
+      <button class="btn-premium-buy" id="premium-btn"
+        onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+      <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
     </div>
   </div>
 
-  <!-- Share Popup -->
-  <div class="share-popup" id="sharePopup" hidden="true">
-    <div class="share-box">
-      <button class="share-close" onclick="closeSharePopup()">&times;</button>
-      <button id="share-wa" onclick="window.open(this.href, '_blank'); return false;">WhatsApp</button>
-      <button id="share-tg" onclick="window.open(this.href, '_blank'); return false;">Telegram</button>
-      <button id="share-fb" onclick="window.open(this.href, '_blank'); return false;">Facebook</button>
-      <button id="share-x" onclick="window.open(this.href, '_blank'); return false;">X</button>
-      <button id="share-copy" onclick="copyLink()"></button>
-    </div>
-  </div>
-
-  <!-- ── JavaScript ── -->
+  <!-- ══════════════ JavaScript ══════════════ -->
   <script>
-    /* ── Global State ── */
+    /* ══════ Init state ══════ */
     let currentLang = localStorage.getItem('myst_lang') || 'it';
     let isDayMode = localStorage.getItem('myst_theme') === 'day';
+    const PAGE_URL = 'https://mysticaoracoli.it/oroscopo-segni.html';
 
-    /* ── LANG Object ── */
+    /* ══════ LANG object ══════ */
     const LANG = {
       it: {
+        back: '← Torna alla Home',
+        music: { on: '🎵', off: '🔇' },
+        theme: { day: '☀️', night: '🌙' },
+        pageTitle: '♈ I Segni Zodiacali',
+        ctaExplore: '🔍 Scopri le Altre Categorie',
+        premiumTitle: '✦ Funzione Premium',
+        premiumText: 'Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutte le categorie MYSTICA.',
+        premiumPrice: 'Solo 4,99€ una tantum',
+        premiumBtn: 'Sblocca MYSTICA Premium',
+        premiumSkip: 'Continua Gratis',
+        shareTitle: 'MYSTICA Oracoli',
+        shareText: 'Scopri i 12 segni zodiacali su MYSTICA Oracoli – Guida completa all\'astrologia e alla compatibilità',
+        shareCopy: '🔗 Copia Link',
+        shareCopied: '✓ Copiato!',
+        footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+        footerDisclaimer: 'DISCLAIMER: MYSTICA fornisce contenuti per intrattenimento. Non è una consulenza medica, finanziaria o legale. Consultare professionisti qualificati per decisioni importanti.',
         seo: {
           htmlLang: 'it',
           title: 'I 12 Segni Zodiacali: Caratteristiche, Elementi e Compatibilità | MYSTICA',
           description: 'Guida completa ai 12 segni zodiacali: caratteristiche, elementi, pianeti dominanti, compatibilità. Astrologia personalizzata e oroscopi per ogni segno.',
           keywords: 'segni zodiacali, oroscopo, astrologia, compatibilità zodiacale, ariete, toro, gemelli, cancro, leone, vergine, bilancia, scorpione, sagittario, capricorno, acquario, pesci',
           ogTitle: 'I 12 Segni Zodiacali: Guida Completa | MYSTICA Oracoli',
-          ogDesc: 'Scopri le caratteristiche, gli elementi e la compatibilità di tutti i 12 segni zodiacali. Guida esoterica completa all\'astrologia italiana.',
+          ogDesc: 'Scopri le caratteristiche, gli elementi e la compatibilità di tutti i 12 segni zodiacali. Guida esoterica completa all\'astrologia.',
           ogLocale: 'it_IT',
           faqLD: [
             { q: 'Quali sono i segni zodiacali di fuoco?', a: 'I tre segni di fuoco sono Ariete (21 marzo – 19 aprile), Leone (23 luglio – 22 agosto) e Sagittario (22 novembre – 21 dicembre). Condividono energia, entusiasmo, passione e impulso all\'azione.' },
@@ -845,28 +986,36 @@
             { q: 'Quali segni zodiacali vanno d\'accordo?', a: 'I segni dello stesso elemento si comprendono facilmente. Fuoco+Aria e Terra+Acqua sono le combinazioni più armoniche. I segni opposti hanno forte attrazione ma anche tensione.' }
           ]
         },
-        nav: { home: 'Home', contact: 'Contatti', about: 'Chi Siamo', privacy: 'Privacy' },
         hero: {
-          title: 'I 12 Segni Zodiacali',
-          sub: 'Scopri le caratteristiche, gli elementi, i pianeti dominanti e la compatibilità di ogni segno dello zodiaco. Guida completa all\'astrologia.'
+          badge: '12 Segni · 4 Elementi',
+          title: 'I 12 Segni dello Zodiaco',
+          sub: 'Scorri le carte per scoprire caratteristiche, elementi, pianeti dominanti e compatibilità di ogni segno zodiacale.',
+          cta: '🔮 Sfoglia i Segni'
         },
-        segni: {
-          title: '✦ I Dodici Segni dello Zodiaco',
-          signs: [
-            { name: 'ARIETE', emoji: '♈', dates: '21 mar – 19 apr', element: '🔥 Fuoco', ruler: '♂ Marte', quality: 'Cardinale', desc: 'Il guerriero dello zodiaco, impulsivo e audace. L\'Ariete non aspetta: agisce. Governato da Marte, è il pioniere che apre nuovi sentieri.', traits: '✦ Forza: coraggio, entusiasmo, dinamismo · ✦ Debolezza: impulsività, irascibilità, mancanza di tatto', img: 'ariete-oriz.webp' },
-            { name: 'TORO', emoji: '♉', dates: '20 apr – 20 mag', element: '🌱 Terra', ruler: '♀ Venere', quality: 'Fisso', desc: 'Lo stabilizzatore dello zodiaco, pratico e sensuale. Il Toro costruisce con pazienza e determina valori saldi. Governato da Venere, ama la bellezza e il piacere.', traits: '✦ Forza: affidabilità, stabilità, sensibilità · ✦ Debolezza: testardaggine, gelosia, materialismo', img: 'toro-oriz.webp' },
-            { name: 'GEMELLI', emoji: '♊', dates: '21 mag – 20 giu', element: '💨 Aria', ruler: '☿ Mercurio', quality: 'Mutevole', desc: 'Il comunicatore dello zodiaco, curioso e versatile. I Gemelli amano imparare e condividere idee. Governati da Mercurio, sono i messaggeri del cosmo.', traits: '✦ Forza: comunicazione, adattabilità, intelligenza · ✦ Debolezza: superficialità, incostanza, ansia', img: 'gemelli-oriz.webp' },
-            { name: 'CANCRO', emoji: '♋', dates: '21 giu – 22 lug', element: '💧 Acqua', ruler: '🌙 Luna', quality: 'Cardinale', desc: 'Il custode dello zodiaco, protettivo e introspettivo. Profondamente legato alla famiglia e alle radici, il Cancro crea spazi di calore e sicurezza per chi ama.', traits: '✦ Forza: empatia, lealtà, intuizione · ✦ Debolezza: ipersensibilità, chiusura difensiva, malinconia', img: 'cancro-oriz.webp' },
-            { name: 'LEONE', emoji: '♌', dates: '23 lug – 22 ago', element: '🔥 Fuoco', ruler: '☉ Sole', quality: 'Fisso', desc: 'Il re dello zodiaco, generoso e teatrale. Il Leone brilla per natura: ama essere il centro dell\'attenzione. Governato dal Sole, porta luce e calore ovunque vada.', traits: '✦ Forza: carisma, generosità, lealtà · ✦ Debolezza: orgoglio, egocentrismo, bisogno di ammirazione', img: 'leone-oriz.webp' },
-            { name: 'VERGINE', emoji: '♍', dates: '23 ago – 22 set', element: '🌱 Terra', ruler: '☿ Mercurio', quality: 'Mutevole', desc: 'L\'analista dello zodiaco, attento ai dettagli e pratico. La Vergine cerca la perfezione e ama essere utile. Governata da Mercurio, ha una mente acuta e ordinata.', traits: '✦ Forza: precisione, dedizione, discernimento · ✦ Debolezza: perfezionismo eccessivo, critica, ansia', img: 'vergine-oriz.webp' },
-            { name: 'BILANCIA', emoji: '♎', dates: '23 set – 22 ott', element: '💨 Aria', ruler: '♀ Venere', quality: 'Cardinale', desc: 'L\'arbitro dello zodiaco, sempre alla ricerca dell\'equilibrio. La Bilancia ama l\'armonia, la bellezza e la giustizia. Governata da Venere, cerca il bello in ogni cosa.', traits: '✦ Forza: equità, diplomazia, socievolezza · ✦ Debolezza: indecisione, dipendenza, conflitti interni', img: 'bilancia-oriz.webp' },
-            { name: 'SCORPIONE', emoji: '♏', dates: '23 ott – 21 nov', element: '💧 Acqua', ruler: '♇ Plutone', quality: 'Fisso', desc: 'Il trasformatore dello zodiaco, intenso e misterioso. Lo Scorpione non si accontenta della superficie: vuole la verità nuda. Governato da Plutone, muore e rinasce più volte.', traits: '✦ Forza: intensità, perspicacia, resilienza · ✦ Debolezza: gelosia, controllo, vendetta', img: 'scorpione-oriz.webp' },
-            { name: 'SAGITTARIO', emoji: '♐', dates: '22 nov – 21 dic', element: '🔥 Fuoco', ruler: '♃ Giove', quality: 'Mutevole', desc: 'L\'avventuriero dello zodiaco, ottimista e amante della libertà. Il Sagittario cerca sempre l\'orizzonte successivo. Governato da Giove, espande tutto ciò che tocca.', traits: '✦ Forza: ottimismo, avventura, generosità · ✦ Debolezza: imprudenza, eccessività, mancanza di tatto', img: 'sagittario-oriz.webp' },
-            { name: 'CAPRICORNO', emoji: '♑', dates: '22 dic – 19 gen', element: '🌱 Terra', ruler: '♄ Saturno', quality: 'Cardinale', desc: 'L\'ambizioso dello zodiaco, disciplinato e responsabile. Il Capricorno scala la montagna della vita con metodo e pazienza. Governato da Saturno, conosce il valore del tempo.', traits: '✦ Forza: disciplina, ambizione, affidabilità · ✦ Debolezza: freddo, pessimismo, durezza emotiva', img: 'capricorno-oriz.webp' },
-            { name: 'ACQUARIO', emoji: '♒', dates: '20 gen – 18 feb', element: '💨 Aria', ruler: '♅ Urano', quality: 'Fisso', desc: 'L\'innovatore dello zodiaco, visionary e anticonformista. L\'Acquario vede il futuro dove altri vedono il presente. Governato da Urano, porta cambiamento e rivoluzione.', traits: '✦ Forza: innovazione, indipendenza, altruismo · ✦ Debolezza: distacco, ribellione, incomunicabilità', img: 'acquario-oriz.webp' },
-            { name: 'PESCI', emoji: '♓', dates: '19 feb – 20 mar', element: '💧 Acqua', ruler: '♆ Nettuno', quality: 'Mutevole', desc: 'Il sognatore dello zodiaco, mistico e sensibile. I Pesci vivono sul confine tra il mondo fisico e quello spirituale. Governati da Nettuno, sono gli artisti e i guaritori naturali.', traits: '✦ Forza: compassione, creatività, spiritualità · ✦ Debolezza: evasione, confusione, dipendenza', img: 'pesci-oriz.webp' }
-          ]
-        },
+        rowSuffix: 'Segni di',
+        segni: [
+          { name: 'ARIETE', emoji: '♈', dates: '21 mar – 19 apr', element: '🔥 Fuoco', ruler: '♂ Marte', quality: 'Cardinale', desc: 'Il guerriero dello zodiaco, impulsivo e audace. L\'Ariete non aspetta: agisce. Governato da Marte, è il pioniere che apre nuovi sentieri.', traits: '✦ Forza: coraggio, entusiasmo, dinamismo · ✦ Debolezza: impulsività, irascibilità, mancanza di tatto', img: 'ariete-oriz.webp' },
+          { name: 'TORO', emoji: '♉', dates: '20 apr – 20 mag', element: '🌱 Terra', ruler: '♀ Venere', quality: 'Fisso', desc: 'Lo stabilizzatore dello zodiaco, pratico e sensuale. Il Toro costruisce con pazienza e determina valori saldi. Governato da Venere, ama la bellezza e il piacere.', traits: '✦ Forza: affidabilità, stabilità, sensibilità · ✦ Debolezza: testardaggine, gelosia, materialismo', img: 'toro-oriz.webp' },
+          { name: 'GEMELLI', emoji: '♊', dates: '21 mag – 20 giu', element: '💨 Aria', ruler: '☿ Mercurio', quality: 'Mutevole', desc: 'Il comunicatore dello zodiaco, curioso e versatile. I Gemelli amano imparare e condividere idee. Governati da Mercurio, sono i messaggeri del cosmo.', traits: '✦ Forza: comunicazione, adattabilità, intelligenza · ✦ Debolezza: superficialità, incostanza, ansia', img: 'gemelli-oriz.webp' },
+          { name: 'CANCRO', emoji: '♋', dates: '21 giu – 22 lug', element: '💧 Acqua', ruler: '🌙 Luna', quality: 'Cardinale', desc: 'Il custode dello zodiaco, protettivo e introspettivo. Profondamente legato alla famiglia e alle radici, il Cancro crea spazi di calore e sicurezza per chi ama.', traits: '✦ Forza: empatia, lealtà, intuizione · ✦ Debolezza: ipersensibilità, chiusura difensiva, malinconia', img: 'cancro-oriz.webp' },
+          { name: 'LEONE', emoji: '♌', dates: '23 lug – 22 ago', element: '🔥 Fuoco', ruler: '☉ Sole', quality: 'Fisso', desc: 'Il re dello zodiaco, generoso e teatrale. Il Leone brilla per natura: ama essere il centro dell\'attenzione. Governato dal Sole, porta luce e calore ovunque vada.', traits: '✦ Forza: carisma, generosità, lealtà · ✦ Debolezza: orgoglio, egocentrismo, bisogno di ammirazione', img: 'leone-oriz.webp' },
+          { name: 'VERGINE', emoji: '♍', dates: '23 ago – 22 set', element: '🌱 Terra', ruler: '☿ Mercurio', quality: 'Mutevole', desc: 'L\'analista dello zodiaco, attento ai dettagli e pratico. La Vergine cerca la perfezione e ama essere utile. Governata da Mercurio, ha una mente acuta e ordinata.', traits: '✦ Forza: precisione, dedizione, discernimento · ✦ Debolezza: perfezionismo eccessivo, critica, ansia', img: 'vergine-oriz.webp' },
+          { name: 'BILANCIA', emoji: '♎', dates: '23 set – 22 ott', element: '💨 Aria', ruler: '♀ Venere', quality: 'Cardinale', desc: 'L\'arbitro dello zodiaco, sempre alla ricerca dell\'equilibrio. La Bilancia ama l\'armonia, la bellezza e la giustizia. Governata da Venere, cerca il bello in ogni cosa.', traits: '✦ Forza: equità, diplomazia, socievolezza · ✦ Debolezza: indecisione, dipendenza, conflitti interni', img: 'bilancia-oriz.webp' },
+          { name: 'SCORPIONE', emoji: '♏', dates: '23 ott – 21 nov', element: '💧 Acqua', ruler: '♇ Plutone', quality: 'Fisso', desc: 'Il trasformatore dello zodiaco, intenso e misterioso. Lo Scorpione non si accontenta della superficie: vuole la verità nuda. Governato da Plutone, muore e rinasce più volte.', traits: '✦ Forza: intensità, perspicacia, resilienza · ✦ Debolezza: gelosia, controllo, vendetta', img: 'scorpione-oriz.webp' },
+          { name: 'SAGITTARIO', emoji: '♐', dates: '22 nov – 21 dic', element: '🔥 Fuoco', ruler: '♃ Giove', quality: 'Mutevole', desc: 'L\'avventuriero dello zodiaco, ottimista e amante della libertà. Il Sagittario cerca sempre l\'orizzonte successivo. Governato da Giove, espande tutto ciò che tocca.', traits: '✦ Forza: ottimismo, avventura, generosità · ✦ Debolezza: imprudenza, eccessività, mancanza di tatto', img: 'sagittario-oriz.webp' },
+          { name: 'CAPRICORNO', emoji: '♑', dates: '22 dic – 19 gen', element: '🌱 Terra', ruler: '♄ Saturno', quality: 'Cardinale', desc: 'L\'ambizioso dello zodiaco, disciplinato e responsabile. Il Capricorno scala la montagna della vita con metodo e pazienza. Governato da Saturno, conosce il valore del tempo.', traits: '✦ Forza: disciplina, ambizione, affidabilità · ✦ Debolezza: freddezza, pessimismo, durezza emotiva', img: 'capricorno-oriz.webp' },
+          { name: 'ACQUARIO', emoji: '♒', dates: '20 gen – 18 feb', element: '💨 Aria', ruler: '♅ Urano', quality: 'Fisso', desc: 'L\'innovatore dello zodiaco, visionario e anticonformista. L\'Acquario vede il futuro dove altri vedono il presente. Governato da Urano, porta cambiamento e rivoluzione.', traits: '✦ Forza: innovazione, indipendenza, altruismo · ✦ Debolezza: distacco, ribellione, incomunicabilità', img: 'acquario-oriz.webp' },
+          { name: 'PESCI', emoji: '♓', dates: '19 feb – 20 mar', element: '💧 Acqua', ruler: '♆ Nettuno', quality: 'Mutevole', desc: 'Il sognatore dello zodiaco, mistico e sensibile. I Pesci vivono sul confine tra il mondo fisico e quello spirituale. Governati da Nettuno, sono gli artisti e i guaritori naturali.', traits: '✦ Forza: compassione, creatività, spiritualità · ✦ Debolezza: evasione, confusione, dipendenza', img: 'pesci-oriz.webp' }
+        ],
+        artTitle: 'Storia e Origini dei Segni Zodiacali',
+        artH2: 'Da Babilonia alle App: un Viaggio di Quattromila Anni',
+        artH3: 'Zodiaco Occidentale e Zodiaco Vedico: Due Sguardi sul Cielo',
+        artP1: 'Lo zodiaco che oggi troviamo su riviste, app e oroscopi quotidiani affonda le radici nell\'antica Mesopotamia. Furono gli astronomi babilonesi, già nel secondo millennio a.C., a suddividere il percorso apparente del Sole in dodici settori, ciascuno legato a una costellazione. Questo sistema arrivò in Grecia attorno al IV secolo a.C. e venne codificato in modo sistematico da Claudio Tolomeo nel suo Tetrabiblos, opera del II secolo d.C. che per oltre un millennio restò il testo di riferimento dell\'astrologia occidentale.',
+        artP2: 'Ogni segno viene associato a uno dei quattro elementi classici — fuoco, terra, aria, acqua — e a una delle tre modalità: cardinale, fisso, mutevole. Questa combinazione non è casuale: i segni di fuoco (Ariete, Leone, Sagittario) rappresentano l\'iniziativa e l\'energia vitale, i segni di terra (Toro, Vergine, Capricorno) la concretezza e la costruzione, i segni d\'aria (Gemelli, Bilancia, Acquario) la mente e la relazione, i segni d\'acqua (Cancro, Scorpione, Pesci) l\'emotività e l\'intuizione. Le tre modalità descrivono invece come ciascun segno agisce nel proprio elemento: avviando, mantenendo o trasformando.',
+        artP3: 'Un errore comune è ridurre l\'astrologia al solo segno solare, quello che leggiamo nell\'oroscopo dei quotidiani. In realtà un tema natale completo considera anche il segno lunare, che descrive la vita emotiva, e l\'ascendente, che indica come una persona appare agli altri al primo impatto. Due persone nate lo stesso giorno ma in città diverse possono avere ascendenti completamente diversi, perché questo dipende dall\'ora e dal luogo esatti di nascita, non solo dalla data.',
+        artP4: 'Accanto allo zodiaco tropicale usato in Occidente esiste lo zodiaco sidereo, alla base dell\'astrologia vedica (Jyotish) praticata in India. La differenza tra i due sistemi, dovuta alla precessione degli equinozi, oggi supera i venti gradi: questo significa che chi nasce sotto il segno occidentale dei Pesci potrebbe risultare Acquario nello zodiaco vedico. Nessuno dei due sistemi è "sbagliato": semplicemente misurano il cielo con riferimenti diversi, uno legato alle stagioni e l\'altro alle stelle fisse.',
+        artP5: 'Al di là delle divergenze tecniche, i segni zodiacali restano un linguaggio simbolico condiviso da millenni di culture diverse: cinese, indiana, mesopotamica, greca, ognuna con la propria lente. Comprendere gli elementi e le modalità aiuta a leggere l\'oroscopo con più consapevolezza, distinguendo tra intrattenimento popolare e tradizione astrologica più articolata, senza però trasformare nessuna delle due in una certezza assoluta sul proprio destino.',
+        artImgAlt: 'Ruota dello zodiaco con i dodici segni e i quattro elementi',
         compat: {
           title: '✦ Compatibilità tra Segni Zodiacali',
           intro: 'La compatibilità astrologica vera dipende dai temi natali completi. Detto questo, esiste una tendenza generale basata sugli elementi:',
@@ -879,16 +1028,13 @@
           ],
           highlight: '⭐ <strong>Ricorda:</strong> L\'astrologia offre tendenze, non certezze. La compatibilità vera dipende dalla comunicazione e dalla volontà di costruire qualcosa insieme — indipendentemente dai segni.'
         },
-        faq: {
-          title: '✦ Domande Frequenti',
-          items: [
-            { q: 'Quali sono i segni zodiacali di fuoco?', a: 'I tre segni di fuoco sono <strong>Ariete</strong>, <strong>Leone</strong> e <strong>Sagittario</strong>. Condividono energia, entusiasmo, passione e impulso all\'azione. Sono i segni più dinamici dello zodiaco.' },
-            { q: 'Cosa determina il segno zodiacale?', a: 'Il segno zodiacale è determinato dalla <strong>posizione del Sole al momento della nascita</strong>. Lo zodiaco divide l\'eclittica in 12 sezioni di 30° ciascuna, corrispondenti alle 12 costellazioni che il Sole attraversa nel corso di un anno.' },
-            { q: 'Qual è la differenza tra segno solare, lunare e ascendente?', a: 'Il <strong>segno solare</strong> descrive l\'identità conscia e la personalità. Il <strong>segno lunare</strong> governa le emozioni e il mondo interiore. L\'<strong>ascendente</strong> descrive come ci presentiamo al mondo e l\'immagine esterna.' },
-            { q: 'Quali segni zodiacali vanno d\'accordo?', a: 'Le combinazioni più armoniche sono generalmente <strong>Fuoco con Aria</strong> e <strong>Terra con Acqua</strong>. I segni dello stesso elemento si comprendono facilmente. I segni opposti nello zodiaco possono avere forte attrazione ma anche tensione.' },
-            { q: 'Qual è il segno più compatibile con il Toro?', a: 'Il Toro ha le migliori compatibilità con gli altri segni di terra (<strong>Vergine e Capricorno</strong>) e con i segni d\'acqua (Cancro, Scorpione, Pesci). La combinazione Terra-Acqua è particolarmente armoniosa.' }
-          ]
-        },
+        faq: [
+          { q: 'Quali sono i segni zodiacali di fuoco?', a: 'I tre segni di fuoco sono <strong>Ariete</strong>, <strong>Leone</strong> e <strong>Sagittario</strong>. Condividono energia, entusiasmo, passione e impulso all\'azione. Sono i segni più dinamici dello zodiaco.' },
+          { q: 'Cosa determina il segno zodiacale?', a: 'Il segno zodiacale è determinato dalla <strong>posizione del Sole al momento della nascita</strong>. Lo zodiaco divide l\'eclittica in 12 sezioni di 30° ciascuna, corrispondenti alle 12 costellazioni che il Sole attraversa nel corso di un anno.' },
+          { q: 'Qual è la differenza tra segno solare, lunare e ascendente?', a: 'Il <strong>segno solare</strong> descrive l\'identità conscia e la personalità. Il <strong>segno lunare</strong> governa le emozioni e il mondo interiore. L\'<strong>ascendente</strong> descrive come ci presentiamo al mondo e l\'immagine esterna.' },
+          { q: 'Quali segni zodiacali vanno d\'accordo?', a: 'Le combinazioni più armoniche sono generalmente <strong>Fuoco con Aria</strong> e <strong>Terra con Acqua</strong>. I segni dello stesso elemento si comprendono facilmente. I segni opposti nello zodiaco possono avere forte attrazione ma anche tensione.' },
+          { q: 'Qual è il segno più compatibile con il Toro?', a: 'Il Toro ha le migliori compatibilità con gli altri segni di terra (<strong>Vergine e Capricorno</strong>) e con i segni d\'acqua (Cancro, Scorpione, Pesci). La combinazione Terra-Acqua è particolarmente armoniosa.' }
+        ],
         related: {
           title: '✦ Approfondisci su MYSTICA',
           items: [
@@ -908,30 +1054,26 @@
             { name: '💎 Pietre Magiche', href: './pietre-magiche.html' }
           ]
         },
-        cta: {
-          title: 'Scopri il Tuo Oroscopo Personale',
-          desc: 'MYSTICA calcola l\'oroscopo personalizzato per il tuo segno, giornaliero e mensile, con compatibilità zodiacale completa. Gratis.',
-          btn: '✦ Leggi il Tuo Oroscopo ✦'
-        },
-        footer: {
-          home: 'Home',
-          contact: 'Contatti',
-          about: 'Chi Siamo',
-          privacy: 'Privacy',
-          copy: 'PetroCorporation © 2025–2026 · MYSTICA – Oracolo delle Stelle',
-          disclaimer: 'DISCLAIMER: MYSTICA fornisce contenuti per intrattenimento. Non è una consulenza medica, finanziaria o legale. Consultare professionisti qualificati per decisioni importanti.'
-        },
-        premium: {
-          title: '✨ Feature Premium',
-          msg: 'Questa feature è disponibile con l\'accesso premium. Sblocca MYSTICA per €3,99 una tantum.',
-          btn: '🔓 Sblocca Premium'
-        },
-        share: {
-          title: 'Condividi',
-          text: 'Scopri i 12 segni zodiacali su MYSTICA Oracoli – Guida completa all\'astrologia e compatibilità'
-        }
+        footer: { home: 'Home', contact: 'Contatti', about: 'Chi Siamo', privacy: 'Privacy' }
       },
+
       en: {
+        back: '← Back to Home',
+        music: { on: '🎵', off: '🔇' },
+        theme: { day: '☀️', night: '🌙' },
+        pageTitle: '♈ The Zodiac Signs',
+        ctaExplore: '🔍 Explore Other Categories',
+        premiumTitle: '✦ Premium Feature',
+        premiumText: 'Unlock unlimited readings, complete interpretations and advanced consultations across all MYSTICA categories.',
+        premiumPrice: 'Only €4.99 one-time',
+        premiumBtn: 'Unlock MYSTICA Premium',
+        premiumSkip: 'Continue Free',
+        shareTitle: 'MYSTICA Oracles',
+        shareText: 'Discover the 12 zodiac signs on MYSTICA Oracles – Complete guide to astrology and compatibility',
+        shareCopy: '🔗 Copy Link',
+        shareCopied: '✓ Copied!',
+        footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+        footerDisclaimer: 'DISCLAIMER: MYSTICA provides content for entertainment. It is not medical, financial or legal advice. Consult qualified professionals for important decisions.',
         seo: {
           htmlLang: 'en',
           title: 'The 12 Zodiac Signs: Characteristics, Elements and Compatibility | MYSTICA',
@@ -941,57 +1083,62 @@
           ogDesc: 'Discover the characteristics, elements and compatibility of all 12 zodiac signs. Complete esoteric guide to astrology.',
           ogLocale: 'en_US',
           faqLD: [
-            { q: 'What are the fire zodiac signs?', a: 'The three fire signs are Aries (March 21 – April 19), Leo (July 23 – August 22) and Sagittarius (November 22 – December 21). They share energy, enthusiasm, passion and drive.' },
-            { q: 'What is the most compatible zodiac sign with Taurus?', a: 'Taurus has the best compatibility with other earth signs (Virgo and Capricorn) and water signs (Cancer, Scorpio, Pisces). The Earth-Water combination is particularly harmonious.' },
-            { q: 'What determines the zodiac sign?', a: 'The zodiac sign is determined by the position of the Sun at the time of birth. The zodiac divides the ecliptic into 12 sections of 30° each.' },
-            { q: 'What is the difference between sun, moon and rising signs?', a: 'The sun sign describes conscious identity. The moon sign governs emotions and inner world. The rising sign describes how you present yourself to the world.' },
-            { q: 'Which zodiac signs get along?', a: 'Signs of the same element easily understand each other. Fire+Air and Earth+Water are the most harmonious combinations. Opposite signs have strong attraction but also tension.' }
+            { q: 'What are the fire zodiac signs?', a: 'The three fire signs are Aries, Leo and Sagittarius. They share energy, enthusiasm, passion and drive.' },
+            { q: 'What is the most compatible zodiac sign with Taurus?', a: 'Taurus has the best compatibility with other earth signs (Virgo and Capricorn) and water signs (Cancer, Scorpio, Pisces).' },
+            { q: 'What determines the zodiac sign?', a: 'The zodiac sign is determined by the position of the Sun at the time of birth, across 12 sections of 30° each.' },
+            { q: 'What is the difference between sun, moon and rising signs?', a: 'The sun sign describes conscious identity, the moon sign emotions, and the rising sign how you present yourself to the world.' },
+            { q: 'Which zodiac signs get along?', a: 'Fire+Air and Earth+Water are the most harmonious combinations. Opposite signs have strong attraction but also tension.' }
           ]
         },
-        nav: { home: 'Home', contact: 'Contact', about: 'About Us', privacy: 'Privacy' },
         hero: {
-          title: 'The 12 Zodiac Signs',
-          sub: 'Discover the characteristics, elements, ruling planets and compatibility of each zodiac sign. Complete guide to astrology.'
+          badge: '12 Signs · 4 Elements',
+          title: 'The 12 Signs of the Zodiac',
+          sub: 'Scroll through the cards to discover the characteristics, elements, ruling planets and compatibility of each zodiac sign.',
+          cta: '🔮 Browse the Signs'
         },
-        segni: {
-          title: '✦ The Twelve Signs of the Zodiac',
-          signs: [
-            { name: 'ARIES', emoji: '♈', dates: 'Mar 21 – Apr 19', element: '🔥 Fire', ruler: '♂ Mars', quality: 'Cardinal', desc: 'The warrior of the zodiac, impulsive and bold. Aries doesn\'t wait: it acts. Ruled by Mars, it is the pioneer who opens new paths.', traits: '✦ Strength: courage, enthusiasm, dynamism · ✦ Weakness: impulsiveness, irritability, tactlessness', img: 'ariete-oriz.webp' },
-            { name: 'TAURUS', emoji: '♉', dates: 'Apr 20 – May 20', element: '🌱 Earth', ruler: '♀ Venus', quality: 'Fixed', desc: 'The stabilizer of the zodiac, practical and sensual. Taurus builds with patience and determines solid values. Ruled by Venus, it loves beauty and pleasure.', traits: '✦ Strength: reliability, stability, sensuality · ✦ Weakness: stubbornness, jealousy, materialism', img: 'toro-oriz.webp' },
-            { name: 'GEMINI', emoji: '♊', dates: 'May 21 – Jun 20', element: '💨 Air', ruler: '☿ Mercury', quality: 'Mutable', desc: 'The communicator of the zodiac, curious and versatile. Gemini loves learning and sharing ideas. Ruled by Mercury, they are the messengers of the cosmos.', traits: '✦ Strength: communication, adaptability, intelligence · ✦ Weakness: superficiality, inconsistency, anxiety', img: 'gemelli-oriz.webp' },
-            { name: 'CANCER', emoji: '♋', dates: 'Jun 21 – Jul 22', element: '💧 Water', ruler: '🌙 Moon', quality: 'Cardinal', desc: 'The guardian of the zodiac, protective and introspective. Deeply connected to family and roots, Cancer creates spaces of warmth and safety for those it loves.', traits: '✦ Strength: empathy, loyalty, intuition · ✦ Weakness: oversensitivity, defensive withdrawal, melancholy', img: 'cancro-oriz.webp' },
-            { name: 'LEO', emoji: '♌', dates: 'Jul 23 – Aug 22', element: '🔥 Fire', ruler: '☉ Sun', quality: 'Fixed', desc: 'The king of the zodiac, generous and theatrical. Leo shines by nature: it loves to be the center of attention. Ruled by the Sun, it brings light and warmth wherever it goes.', traits: '✦ Strength: charisma, generosity, loyalty · ✦ Weakness: pride, egocentrism, need for admiration', img: 'leone-oriz.webp' },
-            { name: 'VIRGO', emoji: '♍', dates: 'Aug 23 – Sep 22', element: '🌱 Earth', ruler: '☿ Mercury', quality: 'Mutable', desc: 'The analyst of the zodiac, attentive to detail and practical. Virgo seeks perfection and loves being helpful. Ruled by Mercury, it has an acute and orderly mind.', traits: '✦ Strength: precision, dedication, discernment · ✦ Weakness: excessive perfectionism, criticism, anxiety', img: 'vergine-oriz.webp' },
-            { name: 'LIBRA', emoji: '♎', dates: 'Sep 23 – Oct 22', element: '💨 Air', ruler: '♀ Venus', quality: 'Cardinal', desc: 'The judge of the zodiac, always seeking balance. Libra loves harmony, beauty and justice. Ruled by Venus, it seeks beauty in all things.', traits: '✦ Strength: fairness, diplomacy, sociability · ✦ Weakness: indecision, dependence, internal conflict', img: 'bilancia-oriz.webp' },
-            { name: 'SCORPIO', emoji: '♏', dates: 'Oct 23 – Nov 21', element: '💧 Water', ruler: '♇ Pluto', quality: 'Fixed', desc: 'The transformer of the zodiac, intense and mysterious. Scorpio is not satisfied with the surface: it wants the naked truth. Ruled by Pluto, it dies and is reborn many times.', traits: '✦ Strength: intensity, perspicacity, resilience · ✦ Weakness: jealousy, control, revenge', img: 'scorpione-oriz.webp' },
-            { name: 'SAGITTARIUS', emoji: '♐', dates: 'Nov 22 – Dec 21', element: '🔥 Fire', ruler: '♃ Jupiter', quality: 'Mutable', desc: 'The adventurer of the zodiac, optimistic and freedom-loving. Sagittarius always seeks the next horizon. Ruled by Jupiter, it expands all it touches.', traits: '✦ Strength: optimism, adventure, generosity · ✦ Weakness: recklessness, excessiveness, tactlessness', img: 'sagittario-oriz.webp' },
-            { name: 'CAPRICORN', emoji: '♑', dates: 'Dec 22 – Jan 19', element: '🌱 Earth', ruler: '♄ Saturn', quality: 'Cardinal', desc: 'The ambitious one of the zodiac, disciplined and responsible. Capricorn climbs the mountain of life with method and patience. Ruled by Saturn, it knows the value of time.', traits: '✦ Strength: discipline, ambition, reliability · ✦ Weakness: coldness, pessimism, emotional hardness', img: 'capricorno-oriz.webp' },
-            { name: 'AQUARIUS', emoji: '♒', dates: 'Jan 20 – Feb 18', element: '💨 Air', ruler: '♅ Uranus', quality: 'Fixed', desc: 'The innovator of the zodiac, visionary and unconventional. Aquarius sees the future where others see the present. Ruled by Uranus, it brings change and revolution.', traits: '✦ Strength: innovation, independence, altruism · ✦ Weakness: detachment, rebellion, incommunicativeness', img: 'acquario-oriz.webp' },
-            { name: 'PISCES', emoji: '♓', dates: 'Feb 19 – Mar 20', element: '💧 Water', ruler: '♆ Neptune', quality: 'Mutable', desc: 'The dreamer of the zodiac, mystical and sensitive. Pisces live on the border between the physical and spiritual worlds. Ruled by Neptune, they are natural artists and healers.', traits: '✦ Strength: compassion, creativity, spirituality · ✦ Weakness: escapism, confusion, dependence', img: 'pesci-oriz.webp' }
-          ]
-        },
+        rowSuffix: 'Signs',
+        segni: [
+          { name: 'ARIES', emoji: '♈', dates: 'Mar 21 – Apr 19', element: '🔥 Fire', ruler: '♂ Mars', quality: 'Cardinal', desc: 'The warrior of the zodiac, impulsive and bold. Aries doesn\'t wait: it acts. Ruled by Mars, it is the pioneer who opens new paths.', traits: '✦ Strength: courage, enthusiasm, dynamism · ✦ Weakness: impulsiveness, irritability, tactlessness', img: 'ariete-oriz.webp' },
+          { name: 'TAURUS', emoji: '♉', dates: 'Apr 20 – May 20', element: '🌱 Earth', ruler: '♀ Venus', quality: 'Fixed', desc: 'The stabilizer of the zodiac, practical and sensual. Taurus builds with patience and determines solid values. Ruled by Venus, it loves beauty and pleasure.', traits: '✦ Strength: reliability, stability, sensuality · ✦ Weakness: stubbornness, jealousy, materialism', img: 'toro-oriz.webp' },
+          { name: 'GEMINI', emoji: '♊', dates: 'May 21 – Jun 20', element: '💨 Air', ruler: '☿ Mercury', quality: 'Mutable', desc: 'The communicator of the zodiac, curious and versatile. Gemini loves learning and sharing ideas. Ruled by Mercury, they are the messengers of the cosmos.', traits: '✦ Strength: communication, adaptability, intelligence · ✦ Weakness: superficiality, inconsistency, anxiety', img: 'gemelli-oriz.webp' },
+          { name: 'CANCER', emoji: '♋', dates: 'Jun 21 – Jul 22', element: '💧 Water', ruler: '🌙 Moon', quality: 'Cardinal', desc: 'The guardian of the zodiac, protective and introspective. Deeply connected to family and roots, Cancer creates spaces of warmth and safety.', traits: '✦ Strength: empathy, loyalty, intuition · ✦ Weakness: oversensitivity, defensive withdrawal, melancholy', img: 'cancro-oriz.webp' },
+          { name: 'LEO', emoji: '♌', dates: 'Jul 23 – Aug 22', element: '🔥 Fire', ruler: '☉ Sun', quality: 'Fixed', desc: 'The king of the zodiac, generous and theatrical. Leo shines by nature: it loves being the center of attention. Ruled by the Sun, it brings light wherever it goes.', traits: '✦ Strength: charisma, generosity, loyalty · ✦ Weakness: pride, egocentrism, need for admiration', img: 'leone-oriz.webp' },
+          { name: 'VIRGO', emoji: '♍', dates: 'Aug 23 – Sep 22', element: '🌱 Earth', ruler: '☿ Mercury', quality: 'Mutable', desc: 'The analyst of the zodiac, attentive to detail and practical. Virgo seeks perfection and loves being helpful. Ruled by Mercury, it has an orderly mind.', traits: '✦ Strength: precision, dedication, discernment · ✦ Weakness: perfectionism, criticism, anxiety', img: 'vergine-oriz.webp' },
+          { name: 'LIBRA', emoji: '♎', dates: 'Sep 23 – Oct 22', element: '💨 Air', ruler: '♀ Venus', quality: 'Cardinal', desc: 'The judge of the zodiac, always seeking balance. Libra loves harmony, beauty and justice. Ruled by Venus, it seeks beauty in all things.', traits: '✦ Strength: fairness, diplomacy, sociability · ✦ Weakness: indecision, dependence, internal conflict', img: 'bilancia-oriz.webp' },
+          { name: 'SCORPIO', emoji: '♏', dates: 'Oct 23 – Nov 21', element: '💧 Water', ruler: '♇ Pluto', quality: 'Fixed', desc: 'The transformer of the zodiac, intense and mysterious. Scorpio wants the naked truth. Ruled by Pluto, it dies and is reborn many times.', traits: '✦ Strength: intensity, perspicacity, resilience · ✦ Weakness: jealousy, control, revenge', img: 'scorpione-oriz.webp' },
+          { name: 'SAGITTARIUS', emoji: '♐', dates: 'Nov 22 – Dec 21', element: '🔥 Fire', ruler: '♃ Jupiter', quality: 'Mutable', desc: 'The adventurer of the zodiac, optimistic and freedom-loving. Sagittarius seeks the next horizon. Ruled by Jupiter, it expands all it touches.', traits: '✦ Strength: optimism, adventure, generosity · ✦ Weakness: recklessness, excessiveness, tactlessness', img: 'sagittario-oriz.webp' },
+          { name: 'CAPRICORN', emoji: '♑', dates: 'Dec 22 – Jan 19', element: '🌱 Earth', ruler: '♄ Saturn', quality: 'Cardinal', desc: 'The ambitious one of the zodiac, disciplined and responsible. Capricorn climbs with method and patience. Ruled by Saturn, it knows the value of time.', traits: '✦ Strength: discipline, ambition, reliability · ✦ Weakness: coldness, pessimism, emotional hardness', img: 'capricorno-oriz.webp' },
+          { name: 'AQUARIUS', emoji: '♒', dates: 'Jan 20 – Feb 18', element: '💨 Air', ruler: '♅ Uranus', quality: 'Fixed', desc: 'The innovator of the zodiac, visionary and unconventional. Aquarius sees the future where others see the present. Ruled by Uranus.', traits: '✦ Strength: innovation, independence, altruism · ✦ Weakness: detachment, rebellion, incommunicativeness', img: 'acquario-oriz.webp' },
+          { name: 'PISCES', emoji: '♓', dates: 'Feb 19 – Mar 20', element: '💧 Water', ruler: '♆ Neptune', quality: 'Mutable', desc: 'The dreamer of the zodiac, mystical and sensitive. Pisces live on the border between the physical and spiritual worlds. Ruled by Neptune.', traits: '✦ Strength: compassion, creativity, spirituality · ✦ Weakness: escapism, confusion, dependence', img: 'pesci-oriz.webp' }
+        ],
+        artTitle: 'History and Origins of the Zodiac Signs',
+        artH2: 'From Babylon to Apps: a Four-Thousand-Year Journey',
+        artH3: 'Western Zodiac and Vedic Zodiac: Two Views of the Sky',
+        artP1: 'The zodiac we find today in magazines, apps and daily horoscopes has its roots in ancient Mesopotamia. Babylonian astronomers, as early as the second millennium BC, divided the Sun\'s apparent path into twelve sectors, each linked to a constellation. The system reached Greece around the 4th century BC and was systematized by Claudius Ptolemy in his Tetrabiblos, a 2nd-century work that remained the reference text of Western astrology for over a thousand years.',
+        artP2: 'Each sign is linked to one of the four classical elements — fire, earth, air, water — and one of three modalities: cardinal, fixed, mutable. Fire signs represent initiative and vital energy, earth signs stand for concreteness and construction, air signs for the mind and relationships, water signs for emotion and intuition. The modalities describe how each sign acts within its element: starting, sustaining, or transforming.',
+        artP3: 'A common mistake is reducing astrology to the sun sign alone, the one read in daily horoscopes. A full birth chart also considers the moon sign, describing emotional life, and the rising sign, indicating how a person appears to others at first impression. Two people born on the same day in different cities can have completely different rising signs, since this depends on the exact time and place of birth.',
+        artP4: 'Alongside the tropical zodiac used in the West exists the sidereal zodiac, the basis of Vedic astrology (Jyotish) practiced in India. The gap between the two systems, caused by the precession of the equinoxes, now exceeds twenty degrees, meaning someone born under the Western sign of Pisces could be Aquarius in the Vedic zodiac. Neither system is "wrong": they simply measure the sky using different reference points.',
+        artP5: 'Beyond technical differences, the zodiac signs remain a symbolic language shared by thousands of years of different cultures — Chinese, Indian, Mesopotamian, Greek — each with its own lens. Understanding elements and modalities helps read the horoscope with more awareness, without turning either tradition into an absolute certainty about one\'s destiny.',
+        artImgAlt: 'Zodiac wheel with the twelve signs and four elements',
         compat: {
           title: '✦ Compatibility Between Zodiac Signs',
           intro: 'True astrological compatibility depends on complete birth charts. That said, there is a general tendency based on elements:',
           items: [
-            { title: '🔥 Fire + 💨 Air', desc: 'Very compatible combination. Air feeds fire: air signs stimulate fire signs intellectually, giving energy to airy ideas.' },
-            { title: '🌱 Earth + 💧 Water', desc: 'Excellent pairing. Earth gives structure to water, water nourishes earth. Stability and emotional depth meet.' },
+            { title: '🔥 Fire + 💨 Air', desc: 'Very compatible combination. Air feeds fire: air signs intellectually stimulate fire signs.' },
+            { title: '🌱 Earth + 💧 Water', desc: 'Excellent pairing. Earth gives structure to water, water nourishes earth.' },
             { title: '🔥 Fire + 🔥 Fire', desc: 'Explosive passion and mutual understanding, but risk of competition and clashes.' },
             { title: '🌱 Earth + 🌱 Earth', desc: 'Solid and reliable, but may lack spark over time.' },
-            { title: '💧 Water + 💧 Water', desc: 'Extraordinary emotional depth, but risk of getting lost without practical direction.' }
+            { title: '💧 Water + 💧 Water', desc: 'Extraordinary emotional depth, but risk of getting lost without direction.' }
           ],
-          highlight: '⭐ <strong>Remember:</strong> Astrology offers tendencies, not certainties. True compatibility depends on communication and willingness to build something together — regardless of signs.'
+          highlight: '⭐ <strong>Remember:</strong> Astrology offers tendencies, not certainties. Real compatibility depends on communication and the will to build something together.'
         },
-        faq: {
-          title: '✦ Frequently Asked Questions',
-          items: [
-            { q: 'What are the fire zodiac signs?', a: 'The three fire signs are <strong>Aries</strong>, <strong>Leo</strong> and <strong>Sagittarius</strong>. They share energy, enthusiasm, passion and drive to action. They are the most dynamic signs of the zodiac.' },
-            { q: 'What determines the zodiac sign?', a: 'The zodiac sign is determined by the <strong>position of the Sun at the time of birth</strong>. The zodiac divides the ecliptic into 12 sections of 30° each, corresponding to the 12 constellations that the Sun crosses during the year.' },
-            { q: 'What is the difference between sun, moon and rising signs?', a: 'The <strong>sun sign</strong> describes conscious identity and personality. The <strong>moon sign</strong> governs emotions and inner world. The <strong>rising sign</strong> describes how you present yourself to the world and external image.' },
-            { q: 'Which zodiac signs get along?', a: 'The most harmonious combinations are generally <strong>Fire with Air</strong> and <strong>Earth with Water</strong>. Signs of the same element easily understand each other. Opposite signs in the zodiac can have strong attraction but also tension.' },
-            { q: 'What is the most compatible sign with Taurus?', a: 'Taurus has the best compatibility with other earth signs (<strong>Virgo and Capricorn</strong>) and water signs (Cancer, Scorpio, Pisces). The Earth-Water combination is particularly harmonious.' }
-          ]
-        },
+        faq: [
+          { q: 'What are the fire zodiac signs?', a: 'The three fire signs are <strong>Aries</strong>, <strong>Leo</strong> and <strong>Sagittarius</strong>. They share energy, enthusiasm, passion and drive to action.' },
+          { q: 'What determines the zodiac sign?', a: 'The zodiac sign is determined by the <strong>position of the Sun at the time of birth</strong>, across the 12 constellations the Sun crosses each year.' },
+          { q: 'What is the difference between sun, moon and rising signs?', a: 'The <strong>sun sign</strong> describes conscious identity. The <strong>moon sign</strong> governs emotions. The <strong>rising sign</strong> describes external presentation.' },
+          { q: 'Which zodiac signs get along?', a: 'The most harmonious combinations are generally <strong>Fire with Air</strong> and <strong>Earth with Water</strong>. Opposite signs can have strong attraction but also tension.' },
+          { q: 'What is the most compatible sign with Taurus?', a: 'Taurus has the best compatibility with other earth signs (<strong>Virgo and Capricorn</strong>) and water signs (Cancer, Scorpio, Pisces).' }
+        ],
         related: {
           title: '✦ Discover More on MYSTICA',
           items: [
@@ -1011,30 +1158,26 @@
             { name: '💎 Magical Stones', href: './pietre-magiche.html' }
           ]
         },
-        cta: {
-          title: 'Discover Your Personal Horoscope',
-          desc: 'MYSTICA calculates your personalized horoscope for your sign, daily and monthly, with complete zodiac compatibility. Free.',
-          btn: '✦ Read Your Horoscope ✦'
-        },
-        footer: {
-          home: 'Home',
-          contact: 'Contact',
-          about: 'About Us',
-          privacy: 'Privacy',
-          copy: 'PetroCorporation © 2025–2026 · MYSTICA – Oracle of the Stars',
-          disclaimer: 'DISCLAIMER: MYSTICA provides content for entertainment. It is not medical, financial or legal advice. Consult qualified professionals for important decisions.'
-        },
-        premium: {
-          title: '✨ Premium Feature',
-          msg: 'This feature is available with premium access. Unlock MYSTICA for €3.99 one-time.',
-          btn: '🔓 Unlock Premium'
-        },
-        share: {
-          title: 'Share',
-          text: 'Discover the 12 zodiac signs on MYSTICA Oracles – Complete guide to astrology and compatibility'
-        }
+        footer: { home: 'Home', contact: 'Contact', about: 'About Us', privacy: 'Privacy' }
       },
+
       es: {
+        back: '← Volver al Inicio',
+        music: { on: '🎵', off: '🔇' },
+        theme: { day: '☀️', night: '🌙' },
+        pageTitle: '♈ Los Signos Zodiacales',
+        ctaExplore: '🔍 Explorar Otras Categorías',
+        premiumTitle: '✦ Función Premium',
+        premiumText: 'Desbloquea lecturas ilimitadas, interpretaciones completas y consultas avanzadas en todas las categorías de MYSTICA.',
+        premiumPrice: 'Solo 4,99€ pago único',
+        premiumBtn: 'Desbloquear MYSTICA Premium',
+        premiumSkip: 'Continuar Gratis',
+        shareTitle: 'MYSTICA Oráculos',
+        shareText: 'Descubre los 12 signos zodiacales en MYSTICA Oráculos – Guía completa de astrología y compatibilidad',
+        shareCopy: '🔗 Copiar Enlace',
+        shareCopied: '✓ ¡Copiado!',
+        footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+        footerDisclaimer: 'DESCARGO DE RESPONSABILIDAD: MYSTICA proporciona contenido para entretenimiento. No es consejo médico, financiero ni legal. Consulta a profesionales calificados para decisiones importantes.',
         seo: {
           htmlLang: 'es',
           title: 'Los 12 Signos Zodiacales: Características, Elementos y Compatibilidad | MYSTICA',
@@ -1044,57 +1187,62 @@
           ogDesc: 'Descubre las características, elementos y compatibilidad de todos los 12 signos zodiacales. Guía esotérica completa de astrología.',
           ogLocale: 'es_ES',
           faqLD: [
-            { q: '¿Cuáles son los signos zodiacales de fuego?', a: 'Los tres signos de fuego son Aries (21 de marzo – 19 de abril), Leo (23 de julio – 22 de agosto) y Sagitario (22 de noviembre – 21 de diciembre). Comparten energía, entusiasmo, pasión e impulso.' },
-            { q: '¿Cuál es el signo zodiacal más compatible con Tauro?', a: 'Tauro tiene la mejor compatibilidad con otros signos de tierra (Virgo y Capricornio) y signos de agua (Cáncer, Escorpio, Piscis). La combinación Tierra-Agua es particularmente armoniosa.' },
-            { q: '¿Qué determina el signo zodiacal?', a: 'El signo zodiacal está determinado por la posición del Sol en el momento del nacimiento. El zodiaco divide la eclíptica en 12 secciones de 30° cada una.' },
-            { q: '¿Cuál es la diferencia entre el signo solar, lunar y ascendente?', a: 'El signo solar describe la identidad consciente. El signo lunar rige las emociones y el mundo interior. El ascendente describe cómo te presentas al mundo.' },
-            { q: '¿Cuáles son los signos zodiacales que se llevan bien?', a: 'Las combinaciones más armoniosas son generalmente Fuego con Aire y Tierra con Agua. Los signos del mismo elemento se entienden fácilmente. Los signos opuestos pueden tener fuerte atracción pero también tensión.' }
+            { q: '¿Cuáles son los signos zodiacales de fuego?', a: 'Los tres signos de fuego son Aries, Leo y Sagitario. Comparten energía, entusiasmo, pasión e impulso.' },
+            { q: '¿Cuál es el signo más compatible con Tauro?', a: 'Tauro tiene la mejor compatibilidad con otros signos de tierra (Virgo y Capricornio) y signos de agua (Cáncer, Escorpio, Piscis).' },
+            { q: '¿Qué determina el signo zodiacal?', a: 'El signo zodiacal está determinado por la posición del Sol en el momento del nacimiento, en 12 secciones de 30° cada una.' },
+            { q: '¿Cuál es la diferencia entre el signo solar, lunar y ascendente?', a: 'El signo solar describe la identidad consciente, el lunar las emociones y el ascendente cómo te presentas al mundo.' },
+            { q: '¿Qué signos zodiacales se llevan bien?', a: 'Fuego con Aire y Tierra con Agua son las combinaciones más armoniosas. Los signos opuestos tienen fuerte atracción pero también tensión.' }
           ]
         },
-        nav: { home: 'Inicio', contact: 'Contacto', about: 'Quiénes Somos', privacy: 'Privacidad' },
         hero: {
-          title: 'Los 12 Signos Zodiacales',
-          sub: 'Descubre las características, elementos, planetas dominantes y compatibilidad de cada signo zodiacal. Guía completa de astrología.'
+          badge: '12 Signos · 4 Elementos',
+          title: 'Los 12 Signos del Zodiaco',
+          sub: 'Desliza las tarjetas para descubrir las características, elementos, planetas dominantes y compatibilidad de cada signo zodiacal.',
+          cta: '🔮 Explorar los Signos'
         },
-        segni: {
-          title: '✦ Los Doce Signos del Zodiaco',
-          signs: [
-            { name: 'ARIES', emoji: '♈', dates: '21 mar – 19 abr', element: '🔥 Fuego', ruler: '♂ Marte', quality: 'Cardinal', desc: 'El guerrero del zodiaco, impulsivo y audaz. Aries no espera: actúa. Regido por Marte, es el pionero que abre nuevos caminos.', traits: '✦ Fortaleza: coraje, entusiasmo, dinamismo · ✦ Debilidad: impulsividad, irascibilidad, falta de tacto', img: 'ariete-oriz.webp' },
-            { name: 'TAURO', emoji: '♉', dates: '20 abr – 20 may', element: '🌱 Tierra', ruler: '♀ Venus', quality: 'Fijo', desc: 'El estabilizador del zodiaco, práctico y sensual. Tauro construye con paciencia y determina valores sólidos. Regido por Venus, ama la belleza y el placer.', traits: '✦ Fortaleza: confiabilidad, estabilidad, sensualidad · ✦ Debilidad: terquedad, celos, materialismo', img: 'toro-oriz.webp' },
-            { name: 'GÉMINIS', emoji: '♊', dates: '21 may – 20 jun', element: '💨 Aire', ruler: '☿ Mercurio', quality: 'Mutable', desc: 'El comunicador del zodiaco, curioso y versátil. Géminis ama aprender y compartir ideas. Regido por Mercurio, son los mensajeros del cosmos.', traits: '✦ Fortaleza: comunicación, adaptabilidad, inteligencia · ✦ Debilidad: superficialidad, inconstancia, ansiedad', img: 'gemelli-oriz.webp' },
-            { name: 'CÁNCER', emoji: '♋', dates: '21 jun – 22 jul', element: '💧 Agua', ruler: '🌙 Luna', quality: 'Cardinal', desc: 'El guardián del zodiaco, protector e introspectivo. Profundamente conectado a la familia y raíces, Cáncer crea espacios de calidez y seguridad para quienes ama.', traits: '✦ Fortaleza: empatía, lealtad, intuición · ✦ Debilidad: hipersensibilidad, retraimiento defensivo, melancolía', img: 'cancro-oriz.webp' },
-            { name: 'LEO', emoji: '♌', dates: '23 jul – 22 ago', element: '🔥 Fuego', ruler: '☉ Sol', quality: 'Fijo', desc: 'El rey del zodiaco, generoso y teatral. Leo brilla por naturaleza: ama ser el centro de atención. Regido por el Sol, lleva luz y calidez a donde va.', traits: '✦ Fortaleza: carisma, generosidad, lealtad · ✦ Debilidad: orgullo, egocentrismo, necesidad de admiración', img: 'leone-oriz.webp' },
-            { name: 'VIRGO', emoji: '♍', dates: '23 ago – 22 sep', element: '🌱 Tierra', ruler: '☿ Mercurio', quality: 'Mutable', desc: 'El analista del zodiaco, atento a los detalles y práctico. Virgo busca la perfección y ama ser útil. Regida por Mercurio, tiene una mente aguda y ordenada.', traits: '✦ Fortaleza: precisión, dedicación, discernimiento · ✦ Debilidad: perfeccionismo excesivo, crítica, ansiedad', img: 'vergine-oriz.webp' },
-            { name: 'LIBRA', emoji: '♎', dates: '23 sep – 22 oct', element: '💨 Aire', ruler: '♀ Venus', quality: 'Cardinal', desc: 'El juez del zodiaco, siempre buscando equilibrio. Libra ama la armonía, la belleza y la justicia. Regida por Venus, busca lo bello en todas las cosas.', traits: '✦ Fortaleza: equidad, diplomacia, sociabilidad · ✦ Debilidad: indecisión, dependencia, conflicto interno', img: 'bilancia-oriz.webp' },
-            { name: 'ESCORPIO', emoji: '♏', dates: '23 oct – 21 nov', element: '💧 Agua', ruler: '♇ Plutón', quality: 'Fijo', desc: 'El transformador del zodiaco, intenso y misterioso. Escorpio no se conforma con la superficie: quiere la verdad desnuda. Regido por Plutón, muere y renace muchas veces.', traits: '✦ Fortaleza: intensidad, perspicacia, resiliencia · ✦ Debilidad: celos, control, venganza', img: 'scorpione-oriz.webp' },
-            { name: 'SAGITARIO', emoji: '♐', dates: '22 nov – 21 dic', element: '🔥 Fuego', ruler: '♃ Júpiter', quality: 'Mutable', desc: 'El aventurero del zodiaco, optimista y amante de la libertad. Sagitario siempre busca el próximo horizonte. Regido por Júpiter, expande todo lo que toca.', traits: '✦ Fortaleza: optimismo, aventura, generosidad · ✦ Debilidad: imprudencia, exceso, falta de tacto', img: 'sagittario-oriz.webp' },
-            { name: 'CAPRICORNIO', emoji: '♑', dates: '22 dic – 19 ene', element: '🌱 Tierra', ruler: '♄ Saturno', quality: 'Cardinal', desc: 'El ambicioso del zodiaco, disciplinado y responsable. Capricornio escala la montaña de la vida con método y paciencia. Regido por Saturno, conoce el valor del tiempo.', traits: '✦ Fortaleza: disciplina, ambición, confiabilidad · ✦ Debilidad: frialdad, pesimismo, dureza emocional', img: 'capricorno-oriz.webp' },
-            { name: 'ACUARIO', emoji: '♒', dates: '20 ene – 18 feb', element: '💨 Aire', ruler: '♅ Urano', quality: 'Fijo', desc: 'El innovador del zodiaco, visionario y anticonformista. Acuario ve el futuro donde otros ven el presente. Regido por Urano, trae cambio y revolución.', traits: '✦ Fortaleza: innovación, independencia, altruismo · ✦ Debilidad: distanciamiento, rebeldía, incomunicabilidad', img: 'acquario-oriz.webp' },
-            { name: 'PISCIS', emoji: '♓', dates: '19 feb – 20 mar', element: '💧 Agua', ruler: '♆ Neptuno', quality: 'Mutable', desc: 'El soñador del zodiaco, místico y sensible. Piscis vive en el borde entre el mundo físico y espiritual. Regidos por Neptuno, son artistas y sanadores naturales.', traits: '✦ Fortaleza: compasión, creatividad, espiritualidad · ✦ Debilidad: evasión, confusión, dependencia', img: 'pesci-oriz.webp' }
-          ]
-        },
+        rowSuffix: 'Signos de',
+        segni: [
+          { name: 'ARIES', emoji: '♈', dates: '21 mar – 19 abr', element: '🔥 Fuego', ruler: '♂ Marte', quality: 'Cardinal', desc: 'El guerrero del zodiaco, impulsivo y audaz. Aries no espera: actúa. Regido por Marte, es el pionero que abre nuevos caminos.', traits: '✦ Fortaleza: coraje, entusiasmo, dinamismo · ✦ Debilidad: impulsividad, irascibilidad, falta de tacto', img: 'ariete-oriz.webp' },
+          { name: 'TAURO', emoji: '♉', dates: '20 abr – 20 may', element: '🌱 Tierra', ruler: '♀ Venus', quality: 'Fijo', desc: 'El estabilizador del zodiaco, práctico y sensual. Tauro construye con paciencia y determina valores sólidos. Regido por Venus, ama la belleza y el placer.', traits: '✦ Fortaleza: confiabilidad, estabilidad, sensualidad · ✦ Debilidad: terquedad, celos, materialismo', img: 'toro-oriz.webp' },
+          { name: 'GÉMINIS', emoji: '♊', dates: '21 may – 20 jun', element: '💨 Aire', ruler: '☿ Mercurio', quality: 'Mutable', desc: 'El comunicador del zodiaco, curioso y versátil. Géminis ama aprender y compartir ideas. Regido por Mercurio, son los mensajeros del cosmos.', traits: '✦ Fortaleza: comunicación, adaptabilidad, inteligencia · ✦ Debilidad: superficialidad, inconstancia, ansiedad', img: 'gemelli-oriz.webp' },
+          { name: 'CÁNCER', emoji: '♋', dates: '21 jun – 22 jul', element: '💧 Agua', ruler: '🌙 Luna', quality: 'Cardinal', desc: 'El guardián del zodiaco, protector e introspectivo. Profundamente conectado a la familia, Cáncer crea espacios de calidez y seguridad.', traits: '✦ Fortaleza: empatía, lealtad, intuición · ✦ Debilidad: hipersensibilidad, retraimiento, melancolía', img: 'cancro-oriz.webp' },
+          { name: 'LEO', emoji: '♌', dates: '23 jul – 22 ago', element: '🔥 Fuego', ruler: '☉ Sol', quality: 'Fijo', desc: 'El rey del zodiaco, generoso y teatral. Leo brilla por naturaleza: ama ser el centro de atención. Regido por el Sol, lleva luz a donde va.', traits: '✦ Fortaleza: carisma, generosidad, lealtad · ✦ Debilidad: orgullo, egocentrismo, necesidad de admiración', img: 'leone-oriz.webp' },
+          { name: 'VIRGO', emoji: '♍', dates: '23 ago – 22 sep', element: '🌱 Tierra', ruler: '☿ Mercurio', quality: 'Mutable', desc: 'El analista del zodiaco, atento a los detalles y práctico. Virgo busca la perfección. Regida por Mercurio, tiene una mente aguda y ordenada.', traits: '✦ Fortaleza: precisión, dedicación, discernimiento · ✦ Debilidad: perfeccionismo, crítica, ansiedad', img: 'vergine-oriz.webp' },
+          { name: 'LIBRA', emoji: '♎', dates: '23 sep – 22 oct', element: '💨 Aire', ruler: '♀ Venus', quality: 'Cardinal', desc: 'El juez del zodiaco, siempre buscando equilibrio. Libra ama la armonía y la belleza. Regida por Venus, busca lo bello en todas las cosas.', traits: '✦ Fortaleza: equidad, diplomacia, sociabilidad · ✦ Debilidad: indecisión, dependencia, conflicto interno', img: 'bilancia-oriz.webp' },
+          { name: 'ESCORPIO', emoji: '♏', dates: '23 oct – 21 nov', element: '💧 Agua', ruler: '♇ Plutón', quality: 'Fijo', desc: 'El transformador del zodiaco, intenso y misterioso. Escorpio quiere la verdad desnuda. Regido por Plutón, muere y renace muchas veces.', traits: '✦ Fortaleza: intensidad, perspicacia, resiliencia · ✦ Debilidad: celos, control, venganza', img: 'scorpione-oriz.webp' },
+          { name: 'SAGITARIO', emoji: '♐', dates: '22 nov – 21 dic', element: '🔥 Fuego', ruler: '♃ Júpiter', quality: 'Mutable', desc: 'El aventurero del zodiaco, optimista y amante de la libertad. Sagitario busca siempre el próximo horizonte. Regido por Júpiter.', traits: '✦ Fortaleza: optimismo, aventura, generosidad · ✦ Debilidad: imprudencia, exceso, falta de tacto', img: 'sagittario-oriz.webp' },
+          { name: 'CAPRICORNIO', emoji: '♑', dates: '22 dic – 19 ene', element: '🌱 Tierra', ruler: '♄ Saturno', quality: 'Cardinal', desc: 'El ambicioso del zodiaco, disciplinado y responsable. Capricornio escala con método y paciencia. Regido por Saturno.', traits: '✦ Fortaleza: disciplina, ambición, confiabilidad · ✦ Debilidad: frialdad, pesimismo, dureza emocional', img: 'capricorno-oriz.webp' },
+          { name: 'ACUARIO', emoji: '♒', dates: '20 ene – 18 feb', element: '💨 Aire', ruler: '♅ Urano', quality: 'Fijo', desc: 'El innovador del zodiaco, visionario y anticonformista. Acuario ve el futuro donde otros ven el presente. Regido por Urano.', traits: '✦ Fortaleza: innovación, independencia, altruismo · ✦ Debilidad: distanciamiento, rebeldía, incomunicabilidad', img: 'acquario-oriz.webp' },
+          { name: 'PISCIS', emoji: '♓', dates: '19 feb – 20 mar', element: '💧 Agua', ruler: '♆ Neptuno', quality: 'Mutable', desc: 'El soñador del zodiaco, místico y sensible. Piscis vive en el borde entre el mundo físico y espiritual. Regidos por Neptuno.', traits: '✦ Fortaleza: compasión, creatividad, espiritualidad · ✦ Debilidad: evasión, confusión, dependencia', img: 'pesci-oriz.webp' }
+        ],
+        artTitle: 'Historia y Orígenes de los Signos Zodiacales',
+        artH2: 'De Babilonia a las Apps: un Viaje de Cuatro Mil Años',
+        artH3: 'Zodiaco Occidental y Zodiaco Védico: Dos Miradas al Cielo',
+        artP1: 'El zodiaco que hoy encontramos en revistas, apps y horóscopos diarios tiene sus raíces en la antigua Mesopotamia. Los astrónomos babilonios, ya en el segundo milenio a.C., dividieron el recorrido aparente del Sol en doce sectores, cada uno ligado a una constelación. El sistema llegó a Grecia hacia el siglo IV a.C. y fue sistematizado por Claudio Ptolomeo en su Tetrabiblos, obra del siglo II que permaneció como texto de referencia de la astrología occidental durante más de mil años.',
+        artP2: 'Cada signo se asocia a uno de los cuatro elementos clásicos — fuego, tierra, aire, agua — y a una de tres modalidades: cardinal, fijo, mutable. Los signos de fuego representan la iniciativa, los de tierra la concreción, los de aire la mente y las relaciones, los de agua la emoción y la intuición. Las modalidades describen cómo actúa cada signo dentro de su elemento: iniciando, sosteniendo o transformando.',
+        artP3: 'Un error común es reducir la astrología solo al signo solar, el que se lee en los horóscopos diarios. Una carta natal completa considera también el signo lunar, que describe la vida emocional, y el ascendente, que indica cómo una persona aparece ante los demás a primera vista. Dos personas nacidas el mismo día en ciudades distintas pueden tener ascendentes completamente diferentes.',
+        artP4: 'Junto al zodiaco tropical usado en Occidente existe el zodiaco sideral, base de la astrología védica (Jyotish) practicada en India. La diferencia entre ambos sistemas, debida a la precesión de los equinoccios, hoy supera los veinte grados: alguien nacido bajo el signo occidental de Piscis podría ser Acuario en el zodiaco védico. Ningún sistema está "equivocado": simplemente miden el cielo con referencias distintas.',
+        artP5: 'Más allá de las diferencias técnicas, los signos zodiacales siguen siendo un lenguaje simbólico compartido por miles de años de culturas diferentes — china, india, mesopotámica, griega —, cada una con su propia mirada. Comprender los elementos y las modalidades ayuda a leer el horóscopo con más conciencia, sin convertir ninguna de las dos tradiciones en una certeza absoluta sobre el destino.',
+        artImgAlt: 'Rueda del zodiaco con los doce signos y los cuatro elementos',
         compat: {
           title: '✦ Compatibilidad entre Signos Zodiacales',
           intro: 'La verdadera compatibilidad astrológica depende de las cartas natales completas. Dicho esto, existe una tendencia general basada en los elementos:',
           items: [
-            { title: '🔥 Fuego + 💨 Aire', desc: 'Combinación muy compatible. El aire alimenta el fuego: los signos de aire estimulan intelectualmente los signos de fuego, que dan energía a las ideas aéreas.' },
-            { title: '🌱 Tierra + 💧 Agua', desc: 'Emparejamiento excelente. La tierra da estructura al agua, el agua nutre la tierra. La estabilidad y la profundidad emocional se encuentran.' },
+            { title: '🔥 Fuego + 💨 Aire', desc: 'Combinación muy compatible. El aire alimenta el fuego, estimulando intelectualmente a los signos de fuego.' },
+            { title: '🌱 Tierra + 💧 Agua', desc: 'Emparejamiento excelente. La tierra da estructura al agua, el agua nutre la tierra.' },
             { title: '🔥 Fuego + 🔥 Fuego', desc: 'Pasión explosiva y comprensión mutua, pero riesgo de competencia y choques.' },
-            { title: '🌱 Tierra + 🌱 Tierra', desc: 'Sólido y confiable, pero puede falta r chispa con el tiempo.' },
+            { title: '🌱 Tierra + 🌱 Tierra', desc: 'Sólido y confiable, pero puede faltar chispa con el tiempo.' },
             { title: '💧 Agua + 💧 Agua', desc: 'Profundidad emocional extraordinaria, pero riesgo de perderse sin dirección práctica.' }
           ],
-          highlight: '⭐ <strong>Recuerda:</strong> La astrología ofrece tendencias, no certezas. La compatibilidad verdadera depende de la comunicación y la voluntad de construir algo juntos — independientemente de los signos.'
+          highlight: '⭐ <strong>Recuerda:</strong> La astrología ofrece tendencias, no certezas. La compatibilidad verdadera depende de la comunicación y la voluntad de construir algo juntos.'
         },
-        faq: {
-          title: '✦ Preguntas Frecuentes',
-          items: [
-            { q: '¿Cuáles son los signos zodiacales de fuego?', a: 'Los tres signos de fuego son <strong>Aries</strong>, <strong>Leo</strong> y <strong>Sagitario</strong>. Comparten energía, entusiasmo, pasión e impulso de acción. Son los signos más dinámicos del zodiaco.' },
-            { q: '¿Qué determina el signo zodiacal?', a: 'El signo zodiacal está determinado por la <strong>posición del Sol en el momento del nacimiento</strong>. El zodiaco divide la eclíptica en 12 secciones de 30° cada una, correspondientes a las 12 constelaciones que el Sol cruza durante el año.' },
-            { q: '¿Cuál es la diferencia entre el signo solar, lunar y ascendente?', a: 'El <strong>signo solar</strong> describe la identidad consciente y la personalidad. El <strong>signo lunar</strong> rige las emociones y el mundo interior. El <strong>ascendente</strong> describe cómo te presentas al mundo y la imagen externa.' },
-            { q: '¿Cuáles son los signos zodiacales que se llevan bien?', a: 'Las combinaciones más armoniosas son generalmente <strong>Fuego con Aire</strong> y <strong>Tierra con Agua</strong>. Los signos del mismo elemento se entienden fácilmente. Los signos opuestos en el zodiaco pueden tener fuerte atracción pero también tensión.' },
-            { q: '¿Cuál es el signo más compatible con Tauro?', a: 'Tauro tiene la mejor compatibilidad con otros signos de tierra (<strong>Virgo y Capricornio</strong>) y signos de agua (Cáncer, Escorpio, Piscis). La combinación Tierra-Agua es particularmente armoniosa.' }
-          ]
-        },
+        faq: [
+          { q: '¿Cuáles son los signos zodiacales de fuego?', a: 'Los tres signos de fuego son <strong>Aries</strong>, <strong>Leo</strong> y <strong>Sagitario</strong>. Comparten energía, entusiasmo, pasión e impulso de acción.' },
+          { q: '¿Qué determina el signo zodiacal?', a: 'El signo zodiacal está determinado por la <strong>posición del Sol en el momento del nacimiento</strong>, en las 12 constelaciones que el Sol cruza cada año.' },
+          { q: '¿Cuál es la diferencia entre el signo solar, lunar y ascendente?', a: 'El <strong>signo solar</strong> describe la identidad consciente. El <strong>signo lunar</strong> rige las emociones. El <strong>ascendente</strong> describe la imagen externa.' },
+          { q: '¿Qué signos zodiacales se llevan bien?', a: 'Las combinaciones más armoniosas son generalmente <strong>Fuego con Aire</strong> y <strong>Tierra con Agua</strong>. Los signos opuestos pueden tener fuerte atracción pero también tensión.' },
+          { q: '¿Cuál es el signo más compatible con Tauro?', a: 'Tauro tiene la mejor compatibilidad con otros signos de tierra (<strong>Virgo y Capricornio</strong>) y signos de agua (Cáncer, Escorpio, Piscis).' }
+        ],
         related: {
           title: '✦ Descubre Más en MYSTICA',
           items: [
@@ -1114,32 +1262,11 @@
             { name: '💎 Piedras Mágicas', href: './pietre-magiche.html' }
           ]
         },
-        cta: {
-          title: 'Descubre Tu Horóscopo Personal',
-          desc: 'MYSTICA calcula tu horóscopo personalizado para tu signo, diario y mensual, con compatibilidad zodiacal completa. Gratis.',
-          btn: '✦ Lee Tu Horóscopo ✦'
-        },
-        footer: {
-          home: 'Inicio',
-          contact: 'Contacto',
-          about: 'Quiénes Somos',
-          privacy: 'Privacidad',
-          copy: 'PetroCorporation © 2025–2026 · MYSTICA – Oráculo de las Estrellas',
-          disclaimer: 'DESCARGO DE RESPONSABILIDAD: MYSTICA proporciona contenido para entretenimiento. No es consejo médico, financiero ni legal. Consulta a profesionales calificados para decisiones importantes.'
-        },
-        premium: {
-          title: '✨ Función Premium',
-          msg: 'Esta función está disponible con acceso premium. Desbloquea MYSTICA por €3,99 una sola vez.',
-          btn: '🔓 Desbloquear Premium'
-        },
-        share: {
-          title: 'Compartir',
-          text: 'Descubre los 12 signos zodiacales en MYSTICA Oráculos – Guía completa de astrología y compatibilidad'
-        }
+        footer: { home: 'Inicio', contact: 'Contacto', about: 'Quiénes Somos', privacy: 'Privacidad' }
       }
     };
 
-    /* ── updateSEO() ── */
+    /* ══════ updateSEO() ══════ */
     function updateSEO() {
       const S = LANG[currentLang].seo;
       document.documentElement.lang = S.htmlLang;
@@ -1151,63 +1278,286 @@
       document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
       document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
       document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
-      
+
       const ld = document.querySelector('script[type="application/ld+json"]');
       if (ld && S.faqLD) {
         ld.textContent = JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: S.faqLD.map(f => ({
-            '@type': 'Question',
-            name: f.q,
-            acceptedAnswer: { '@type': 'Answer', text: f.a }
-          }))
+          '@graph': [
+            {
+              '@type': 'FAQPage',
+              mainEntity: S.faqLD.map(f => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a }
+              }))
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'MYSTICA', item: 'https://mysticaoracoli.it/index.html' },
+                { '@type': 'ListItem', position: 2, name: S.title, item: PAGE_URL }
+              ]
+            }
+          ]
         });
       }
     }
 
-    /* ── applyLang() ── */
-    function applyLang() {
-      updateSEO();
-      const L = LANG[currentLang];
+    /* ══════ renderRows() — righe orizzontali stile Netflix ══════ */
+    function renderRows(L) {
+      const groups = [[], [], [], []]; // 0 fuoco · 1 terra · 2 aria · 3 acqua
+      L.segni.forEach((s, i) => groups[i % 4].push(s));
 
-      // Hero
-      document.getElementById('heroTitle').textContent = L.hero.title;
-      document.getElementById('heroSub').textContent = L.hero.sub;
-
-      // Segni
-      document.getElementById('segniTitle').textContent = L.segni.title;
-      const grid = document.getElementById('signGrid');
-      grid.innerHTML = L.segni.signs.map(s => `
-        <div class="sign-card">
-          <img src="./images/zodiaco-orizzontale/${s.img}" alt="${s.name}" width="180" height="180" loading="lazy" class="sign-image">
-          <div class="sign-header">
-            <div class="sign-emoji">${s.emoji}</div>
-            <div>
-              <div class="sign-name">${s.name}</div>
-              <div class="sign-dates">${s.dates}</div>
-            </div>
+      const container = document.getElementById('rowsContainer');
+      container.innerHTML = groups.map((group, gi) => `
+        <div class="nx-row">
+          <div class="nx-row-title">${group[0].element} ${L.rowSuffix}</div>
+          <div class="nx-row-track">
+            ${group.map((s) => {
+              const globalIndex = L.segni.indexOf(s);
+              return `
+              <div class="poster-card" tabindex="0" role="button"
+                   aria-label="${s.name}"
+                   onclick="openSignModal(${globalIndex})"
+                   onkeydown="if(event.key==='Enter')openSignModal(${globalIndex})">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/${s.img}" alt="${s.name}"
+                       width="132" height="150"
+                       loading="${globalIndex === 0 ? 'eager' : 'lazy'}" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">${s.emoji}</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">${s.name}</div>
+                  <div class="poster-dates">${s.dates}</div>
+                </div>
+              </div>`;
+            }).join('')}
           </div>
-          <div class="sign-meta">
-            <span class="sign-tag">${s.element}</span>
-            <span class="sign-tag">${s.ruler}</span>
-            <span class="sign-tag">${s.quality}</span>
-          </div>
-          <div class="sign-desc">${s.desc}</div>
-          <div class="sign-traits">${s.traits}</div>
         </div>
       `).join('');
+    }
+
+    /* ══════ Modal dettaglio segno ══════ */
+    function openSignModal(index) {
+      const s = LANG[currentLang].segni[index];
+      document.getElementById('signModalImg').src = `./images/zodiaco-orizzontale/${s.img}`;
+      document.getElementById('signModalImg').alt = s.name;
+      document.getElementById('signModalEmoji').textContent = s.emoji;
+      document.getElementById('signModalName').textContent = s.name;
+      document.getElementById('signModalDates').textContent = s.dates;
+      document.getElementById('signModalTags').innerHTML =
+        `<span>${s.element}</span><span>${s.ruler}</span><span>${s.quality}</span>`;
+      document.getElementById('signModalDesc').textContent = s.desc;
+      document.getElementById('signModalTraits').textContent = s.traits;
+      const modal = document.getElementById('signModal');
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function closeSignModal() {
+      const modal = document.getElementById('signModal');
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+    document.getElementById('signModal').addEventListener('click', e => {
+      if (e.target.id === 'signModal') closeSignModal();
+    });
+
+    /* ══════ applyLang() ══════ */
+    function applyLang() {
+      updateSEO(); // ← sempre prima
+
+      const L = LANG[currentLang];
+
+      // Header
+      document.getElementById('btn-back').textContent = L.back;
+      document.getElementById('page-title').textContent = L.pageTitle;
+      const mt = document.getElementById('musicToggle');
+      if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+      const tt = document.getElementById('themeToggle');
+      if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+
+      // Hero
+      document.getElementById('heroBadge').textContent = L.hero.badge;
+      document.getElementById('heroTitle').textContent = L.hero.title;
+      document.getElementById('heroSub').textContent = L.hero.sub;
+      document.getElementById('heroCta').textContent = L.hero.cta;
+
+      // Righe segni
+      renderRows(L);
+
+      // Share
+      document.getElementById('shareBtnLabel').textContent = '📤 ' + L.shareTitle;
+      document.getElementById('share-copy').textContent = L.shareCopy;
+
+      // Articolo
+      document.getElementById('art-title').textContent = L.artTitle;
+      document.getElementById('art-h2').textContent = L.artH2;
+      document.getElementById('art-h3').textContent = L.artH3;
+      document.getElementById('art-p1').textContent = L.artP1;
+      document.getElementById('art-p2').textContent = L.artP2;
+      document.getElementById('art-p3').textContent = L.artP3;
+      document.getElementById('art-p4').textContent = L.artP4;
+      document.getElementById('art-p5').textContent = L.artP5;
+      document.getElementById('art-hero').alt = L.artImgAlt;
+      document.getElementById('cta-explore').textContent = L.ctaExplore;
 
       // Compatibilità
       document.getElementById('compatTitle').textContent = L.compat.title;
       document.getElementById('compatIntro').textContent = L.compat.intro;
-      document.getElementById('compatList').innerHTML = L.compat.items.map(c => `<li><strong>${c.title}</strong> ${c.desc}</li>`).join('');
+      document.getElementById('compatList').innerHTML = L.compat.items.map(c => `<li><strong>${c.title}</strong> — ${c.desc}</li>`).join('');
       document.getElementById('compatHighlight').innerHTML = L.compat.highlight;
 
       // FAQ
-      document.getElementById('faqTitle').textContent = L.faq.title;
-      const faqList = document.getElementById('faqList');
-      faqList.innerHTML = L.faq.items.map((f, i) => `
+      document.getElementById('faqTitle').textContent = currentLang === 'it' ? '✦ Domande Frequenti' : (currentLang === 'en' ? '✦ Frequently Asked Questions' : '✦ Preguntas Frecuentes');
+      renderFAQ(L.faq);
+
+      // Related
+      document.getElementById('relatedTitle').textContent = L.related.title;
+      document.getElementById('relatedGrid').innerHTML = L.related.items.map(r => `
+        <a href="${r.href}" class="related-link">
+          <span class="related-link-icon">${r.icon}</span>
+          <div class="related-link-text">${r.name}</div>
+        </a>`).join('');
+
+      // Esplora
+      document.getElementById('esploraTitle').textContent = L.esplora.title;
+      document.getElementById('esploraGrid').innerHTML = L.esplora.items.map(e => `<a href="${e.href}" class="esplora-card">${e.name}</a>`).join('');
+
+      // Footer
+      document.getElementById('footerHome').textContent = L.footer.home;
+      document.getElementById('footerContact').textContent = L.footer.contact;
+      document.getElementById('footerAbout').textContent = L.footer.about;
+      document.getElementById('footerPrivacy').textContent = L.footer.privacy;
+      document.getElementById('footer-copy').textContent = L.footerCopy;
+      document.getElementById('footer-disclaimer').textContent = L.footerDisclaimer;
+
+      // Premium modal
+      document.getElementById('premium-title').textContent = L.premiumTitle;
+      document.getElementById('premium-text').textContent = L.premiumText;
+      document.getElementById('premium-price').textContent = L.premiumPrice;
+      document.getElementById('premium-btn').textContent = L.premiumBtn;
+      document.getElementById('premium-skip').textContent = L.premiumSkip;
+
+      // Evidenzia bottone lingua attivo
+      document.querySelectorAll('[data-lang]').forEach(b =>
+        b.classList.toggle('active', b.dataset.lang === currentLang));
+    }
+
+    // Switch lingua
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        currentLang = e.target.dataset.lang;
+        localStorage.setItem('myst_lang', currentLang);
+        applyLang();
+      });
+    });
+
+    /* ══════ AudioManager (musica continua cross-page) ══════ */
+    const AUDIO_KEY = 'myst_audio_state';
+    const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+
+    class AudioManager {
+      constructor() {
+        this.audio = null;
+        this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+        this.initAudio();
+      }
+      initAudio() {
+        this.audio = new Audio(AUDIO_URL);
+        this.audio.loop = true;
+        this.audio.volume = 0.3;
+        if (this.isPlaying) this.play();
+        this.updateUI();
+      }
+      play() {
+        this.audio?.play().catch(() => {});
+        this.isPlaying = true;
+        sessionStorage.setItem(AUDIO_KEY, 'true');
+        this.updateUI();
+      }
+      pause() {
+        this.audio?.pause();
+        this.isPlaying = false;
+        sessionStorage.setItem(AUDIO_KEY, 'false');
+        this.updateUI();
+      }
+      toggle() { this.isPlaying ? this.pause() : this.play(); }
+      updateUI() {
+        const btn = document.getElementById('musicToggle');
+        const L = LANG[currentLang];
+        if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+      }
+    }
+    window.audioManager = new AudioManager();
+    document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+    /* ══════ Tema Giorno/Notte ══════ */
+    function applyTheme(isDay) {
+      document.documentElement.classList.toggle('theme-day', isDay);
+      const btn = document.getElementById('themeToggle');
+      const L = LANG[currentLang];
+      if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+      localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+    }
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      isDayMode = !isDayMode;
+      applyTheme(isDayMode);
+    });
+
+    /* ══════ Premium Gate ══════ */
+    function isPremium() {
+      return localStorage.getItem('myst_premium') === '1';
+    }
+    function requirePremium(actionType) {
+      if (isPremium()) return true;
+      document.getElementById('premiumModal')?.classList.add('show');
+      document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
+      return false;
+    }
+    function closePremiumModal() {
+      document.getElementById('premiumModal')?.classList.remove('show');
+      document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+    }
+
+    /* ══════ Share ══════ */
+    function shareContent(customText) {
+      const L = LANG[currentLang];
+      const text = customText || L.shareText;
+      if (navigator.share) {
+        navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+        return;
+      }
+      const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+      const ue = encodeURIComponent(PAGE_URL);
+      document.getElementById('share-wa').href = `https://wa.me/?text=${enc}`;
+      document.getElementById('share-tg').href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+      document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+      document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${enc}`;
+      document.getElementById('sharePopup').hidden = false;
+      document.getElementById('sharePopup').classList.add('show');
+    }
+    function closeSharePopup() {
+      document.getElementById('sharePopup').hidden = true;
+      document.getElementById('sharePopup').classList.remove('show');
+    }
+    function copyLink() {
+      const L = LANG[currentLang];
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        const b = document.getElementById('share-copy');
+        if (b) {
+          b.textContent = L.shareCopied;
+          setTimeout(() => { b.textContent = L.shareCopy; }, 2000);
+        }
+      });
+    }
+
+    /* ══════ FAQ Accordion ══════ */
+    function renderFAQ(faqs) {
+      const container = document.getElementById('faqList');
+      if (!container) return;
+      container.innerHTML = faqs.map((f, i) => `
         <div class="faq-item" id="faq-${i}">
           <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
             <span>${f.q}</span>
@@ -1218,131 +1568,21 @@
           </div>
         </div>
       `).join('');
-
-      // Related
-      document.getElementById('relatedTitle').textContent = L.related.title;
-      document.getElementById('relatedGrid').innerHTML = L.related.items.map(r => `
-        <a href="${r.href}" class="related-link">
-          <span class="related-link-icon">${r.icon}</span>
-          <div class="related-link-text">${r.name}</div>
-        </a>
-      `).join('');
-
-      // Esplora
-      document.getElementById('esploraTitle').textContent = L.esplora.title;
-      document.getElementById('esploraGrid').innerHTML = L.esplora.items.map(e => `
-        <a href="${e.href}" class="esplora-card">${e.name}</a>
-      `).join('');
-
-      // CTA
-      document.getElementById('ctaTitle').textContent = L.cta.title;
-      document.getElementById('ctaDesc').textContent = L.cta.desc;
-      document.getElementById('ctaBtn').textContent = L.cta.btn;
-
-      // Footer
-      document.getElementById('footerHome').textContent = L.footer.home;
-      document.getElementById('footerContact').textContent = L.footer.contact;
-      document.getElementById('footerAbout').textContent = L.footer.about;
-      document.getElementById('footerPrivacy').textContent = L.footer.privacy;
-      document.getElementById('footerCopy').textContent = L.footer.copy;
-      document.getElementById('footerDisclaimer').innerHTML = L.footer.disclaimer;
-
-      // Premium
-      document.getElementById('premiumTitle').textContent = L.premium.title;
-      document.getElementById('premiumMsg').textContent = L.premium.msg;
-      document.getElementById('premiumBtn').textContent = L.premium.btn;
-
-      // Lang button
-      const langBtn = document.getElementById('langToggle');
-      const langMap = { it: 'EN', en: 'ES', es: 'IT' };
-      langBtn.textContent = langMap[currentLang];
     }
-
-    /* ── applyTheme() ── */
-    function applyTheme(isDayMode) {
-      if (isDayMode) {
-        document.documentElement.classList.add('theme-day');
-        document.getElementById('themeToggle').textContent = '🌙';
-      } else {
-        document.documentElement.classList.remove('theme-day');
-        document.getElementById('themeToggle').textContent = '☀️';
-      }
-    }
-
-    /* ── toggleFAQ() ── */
     function toggleFAQ(i) {
       const ans = document.getElementById(`faq-ans-${i}`);
       const btn = document.querySelector(`#faq-${i} .faq-question`);
-      const icon = btn.querySelector('.faq-icon');
+      const icon = btn?.querySelector('.faq-icon');
       const isOpen = !ans.hidden;
       ans.hidden = isOpen;
-      icon.textContent = isOpen ? '+' : '−';
-      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (icon) icon.textContent = isOpen ? '+' : '−';
+      btn?.setAttribute('aria-expanded', String(!isOpen));
     }
 
-    /* ── Premium Modal ── */
-    function closePremiumModal() {
-      document.getElementById('premiumModal').setAttribute('hidden', 'true');
-    }
-
-    /* ── Share ── */
-    const PAGE_URL = 'https://mysticaoracoli.it/oroscopo-segni.html';
-
-    function shareContent(customText) {
-      const L = LANG[currentLang];
-      const text = customText || L.share.text;
-      if (navigator.share) {
-        navigator.share({ title: L.share.title, text, url: PAGE_URL }).catch(() => {});
-        return;
-      }
-      const encoded = encodeURIComponent(text + ' ' + PAGE_URL);
-      const urlEnc = encodeURIComponent(PAGE_URL);
-      document.getElementById('share-wa').href = `https://wa.me/?text=${encoded}`;
-      document.getElementById('share-tg').href = `https://t.me/share/url?url=${urlEnc}&text=${encodeURIComponent(text)}`;
-      document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${urlEnc}`;
-      document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encoded}`;
-      document.getElementById('sharePopup').setAttribute('hidden', 'false');
-    }
-
-    function closeSharePopup() {
-      document.getElementById('sharePopup').setAttribute('hidden', 'true');
-    }
-
-    function copyLink() {
-      const L = LANG[currentLang];
-      navigator.clipboard.writeText(PAGE_URL).then(() => {
-        const btn = document.getElementById('share-copy');
-        const originalText = L.footer.home; // Placeholder
-        btn.textContent = '✓ Copiato!';
-        setTimeout(() => {
-          btn.textContent = 'Copia Link';
-        }, 2000);
-      });
-    }
-
-    /* ── Event Listeners ── */
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      isDayMode = !isDayMode;
-      localStorage.setItem('myst_theme', isDayMode ? 'day' : 'night');
-      applyTheme(isDayMode);
-    });
-
-    document.getElementById('langToggle').addEventListener('click', () => {
-      const langs = ['it', 'en', 'es'];
-      const idx = langs.indexOf(currentLang);
-      currentLang = langs[(idx + 1) % 3];
-      localStorage.setItem('myst_lang', currentLang);
-      applyLang();
-    });
-
-    document.getElementById('shareBtn').addEventListener('click', () => {
-      shareContent();
-    });
-
-    /* ── Init ── */
+    /* ══════ Init ══════ */
     document.addEventListener('DOMContentLoaded', () => {
-      applyTheme(isDayMode);
-      applyLang();
+      applyTheme(isDayMode);   // 1. Tema
+      applyLang();             // 2. Lingua (chiama updateSEO() come prima cosa)
     });
   </script>
 </body>
