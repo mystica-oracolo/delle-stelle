@@ -61,12 +61,14 @@ body.light-mode .tab-btn.active { color:var(--gold); border-bottom-color:var(--g
 body.light-mode .tab-content { background:transparent; }
 body.light-mode .tab-text { color:var(--text); }
 body.light-mode .tab-title { color:var(--gold); }
-body.light-mode .sign-cell { background:linear-gradient(145deg,#ede5f8,#f8f4ff); border-color:rgba(139,105,20,0.3); }
-body.light-mode .sign-cell:hover { border-color:var(--gold-dim); }
-body.light-mode .sign-cell.active { border-color:var(--gold); box-shadow:0 0 16px var(--gold-glow); }
-body.light-mode .sign-cell .sc-name { color:var(--muted); }
-body.light-mode .sign-cell.active .sc-name { color:var(--gold); }
-body.light-mode .sign-cell .sc-dates { color:var(--muted); opacity:0.7; }
+body.light-mode .poster-frame { background:linear-gradient(145deg,#ede5f8,#f8f4ff); border-color:rgba(139,105,20,0.3); }
+body.light-mode .poster-card.active .poster-frame { border-color:var(--gold); box-shadow:0 0 16px var(--gold-glow); }
+body.light-mode .poster-name { color:var(--muted); }
+body.light-mode .poster-card.active .poster-name { color:var(--gold); }
+body.light-mode .poster-dates { color:var(--muted); opacity:0.7; }
+body.light-mode .rc-hero-gradient { background:linear-gradient(to bottom,rgba(240,234,248,0.1) 0%,rgba(255,255,255,0.55) 55%,var(--card) 100%); }
+body.light-mode .rc-hero-badge { background:rgba(255,255,255,0.7); }
+body.light-mode .hero-eyebrow, body.light-mode .hero-title, body.light-mode .hero-dates { text-shadow:0 2px 8px rgba(255,255,255,.8); }
 body.light-mode .seo-section { background:rgba(237,229,248,0.6); border-color:var(--border); }
 body.light-mode .seo-section h2 { color:var(--gold); }
 body.light-mode .seo-section p { color:var(--text); }
@@ -132,28 +134,57 @@ body.light-mode .theme-btn { background:rgba(139,105,20,0.1); border-color:rgba(
 /* Segno salvato */
 .saved-sign-bar{margin:12px 0 8px;padding:12px 14px;background:linear-gradient(135deg,rgba(42,23,72,0.5),rgba(20,10,40,0.5));border:1.5px solid rgba(212,175,55,0.35);border-radius:14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .25s}
 .saved-sign-bar:hover{border-color:var(--gold)}
-.saved-sign-bar .ssb-emoji{font-size:28px;flex-shrink:0}
+.saved-sign-bar .ssb-thumb{width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--gold-dim)}
 .saved-sign-bar .ssb-info{flex:1}
 .saved-sign-bar .ssb-label{font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
 .saved-sign-bar .ssb-name{font-family:'Cinzel',serif;font-size:14px;color:var(--gold)}
 .saved-sign-bar .ssb-arrow{color:var(--gold);font-size:16px;flex-shrink:0}
 
-/* Sign grid */
-.sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
-.sign-cell{background:linear-gradient(145deg,#130828,#07031a);border:1.5px solid rgba(42,23,72,0.7);border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;transition:all .25s ease;touch-action:manipulation}
-.sign-cell:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
-.sign-cell.active{border-color:var(--gold);box-shadow:0 0 16px var(--gold-glow)}
-.sign-cell .sc-emoji{font-size:22px;margin-bottom:3px}
-.sign-cell .sc-name{font-family:'Cinzel',serif;font-size:9px;color:var(--muted);letter-spacing:.5px}
-.sign-cell.active .sc-name{color:var(--gold)}
-.sign-cell .sc-dates{font-size:8px;color:var(--muted);opacity:0.5;margin-top:1px}
+/* ══ HERO BANNER (Netflix-style) ══ */
+.hero-banner{position:relative;margin:0 -16px 18px;height:56vw;max-height:280px;min-height:210px;overflow:hidden;background:#0d0620}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 25%;opacity:0;transition:opacity .5s ease}
+.hero-bg.loaded{opacity:1}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,5,20,0.05) 0%,rgba(10,5,20,0.35) 45%,var(--bg) 96%),linear-gradient(to right,rgba(10,5,20,0.55) 0%,transparent 55%)}
+body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234,248,0.05) 0%,rgba(240,234,248,0.4) 45%,var(--bg) 96%),linear-gradient(to right,rgba(240,234,248,0.6) 0%,transparent 55%)}
+.hero-content{position:absolute;left:0;right:0;bottom:0;padding:14px 18px 16px;z-index:2}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:6px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero-title{font-family:'Cinzel',serif;font-size:26px;color:var(--text);letter-spacing:1px;margin:0 0 4px;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.hero-dates{font-size:12px;color:var(--muted);margin-bottom:10px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero-cta{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#0a0514;font-family:'Cinzel',serif;font-size:11.5px;font-weight:700;letter-spacing:1px;padding:11px 20px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(212,175,55,0.4)}
+.hero-dots{display:flex;gap:4px;position:absolute;top:12px;right:14px;z-index:2}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.35)}
+.hero-dot.active{background:var(--gold);box-shadow:0 0 6px var(--gold-glow)}
 
-/* Reading card */
+/* ══ CAROUSEL — righe stile catalogo ══ */
+.carousel-row{margin:0 0 20px}
+.carousel-head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 10px}
+.carousel-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;color:var(--gold);display:flex;align-items:center;gap:6px}
+.carousel-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -16px;padding-left:16px;padding-right:16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.carousel-track::-webkit-scrollbar{height:3px}
+.carousel-track::-webkit-scrollbar-thumb{background:rgba(212,175,55,0.3);border-radius:4px}
+.poster-card{flex:0 0 92px;scroll-snap-align:start;cursor:pointer;touch-action:manipulation}
+.poster-frame{position:relative;width:92px;height:138px;border-radius:11px;overflow:hidden;border:1.5px solid rgba(42,23,72,0.7);background:linear-gradient(145deg,#130828,#07031a);transition:all .25s ease}
+.poster-card:active .poster-frame{transform:scale(.96)}
+.poster-card.active .poster-frame{border-color:var(--gold);box-shadow:0 0 16px var(--gold-glow)}
+.poster-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .35s ease;z-index:1}
+.poster-img.loaded{opacity:1}
+.poster-fallback{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font-size:30px}
+.poster-shade{position:absolute;left:0;right:0;bottom:0;height:52%;z-index:2;background:linear-gradient(to top,rgba(5,2,15,0.92),transparent);display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}
+.poster-symbol{font-size:15px;color:var(--gold);filter:drop-shadow(0 0 4px rgba(0,0,0,.8))}
+.poster-name{font-family:'Cinzel',serif;font-size:10px;text-align:center;margin-top:6px;color:var(--muted);letter-spacing:.4px}
+.poster-card.active .poster-name{color:var(--gold)}
+.poster-dates{font-size:8px;text-align:center;color:var(--muted);opacity:.55;margin-top:1px}
+
+/* Reading card — Netflix detail-page style */
 .reading-card{background:linear-gradient(145deg,#130828,#09041e);border:1px solid rgba(212,175,55,0.25);border-radius:18px;overflow:hidden;margin:14px 0}
-.rc-header{padding:18px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px}
-.rc-emoji{font-size:52px;filter:drop-shadow(0 0 12px rgba(212,175,55,0.4))}
+.rc-hero{position:relative;height:172px;overflow:hidden;background:#0d0620}
+.rc-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 22%;opacity:0;transition:opacity .4s ease}
+.rc-hero-bg.loaded{opacity:1}
+.rc-hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,5,20,0.1) 0%,rgba(19,8,40,0.55) 55%,rgba(19,8,40,0.98) 100%)}
+.rc-hero-badge{position:absolute;top:12px;left:14px;width:38px;height:38px;border-radius:50%;background:rgba(10,5,20,0.6);border:1px solid rgba(212,175,55,0.5);display:flex;align-items:center;justify-content:center;font-size:19px;backdrop-filter:blur(4px)}
+.rc-header{padding:10px 18px 12px;border-bottom:1px solid var(--border)}
 .rc-meta{flex:1}
-.rc-sign-name{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:1px;margin-bottom:2px}
+.rc-sign-name{font-family:'Cinzel',serif;font-size:21px;color:var(--gold);letter-spacing:1px;margin-bottom:2px}
 .rc-sign-dates{font-size:11px;color:var(--muted);margin-bottom:4px}
 .rc-sign-el{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:2px 8px;background:rgba(42,23,72,0.3)}
 .rc-keys{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
@@ -254,17 +285,23 @@ body.light-mode .theme-btn { background:rgba(139,105,20,0.1); border-color:rgba(
 
   <div class="main-content">
 
-    <!-- INTRO -->
-    <div class="page-intro" id="introSection">
-      <div class="page-big-icon">⭐</div>
-      <h1 id="i18nTitle">Oroscopo</h1>
-      <p id="i18nSubtitle">Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
-      <div class="date-badge" id="dateBadge">—</div>
+    <!-- HERO BANNER (Netflix-style, ruota tra i segni) -->
+    <div class="hero-banner" id="heroBanner" onclick="selectSign(_heroSign)">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-gradient"></div>
+      <div class="hero-dots" id="heroDots"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">⭐ <span id="i18nTitle">Oroscopo</span> · <span id="dateBadge">—</span></div>
+        <h1 class="hero-title" id="heroTitle">—</h1>
+        <div class="hero-dates" id="heroDates">—</div>
+        <button class="hero-cta" id="i18nHeroCta" onclick="event.stopPropagation();selectSign(_heroSign)">▶ Leggi l'oroscopo</button>
+      </div>
     </div>
+    <p class="hero-subtitle" id="i18nSubtitle" style="text-align:center;font-size:12.5px;color:var(--muted);margin:-10px 0 14px">Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
 
     <!-- SEGNO SALVATO -->
     <div class="saved-sign-bar" id="savedSignBar" style="display:none" onclick="selectSign(_savedSign)">
-      <div class="ssb-emoji" id="ssbEmoji">♈</div>
+      <img class="ssb-thumb" id="ssbThumb" alt="" width="34" height="34">
       <div class="ssb-info">
         <div class="ssb-label" id="i18nYourSign">Il tuo segno</div>
         <div class="ssb-name" id="ssbName">—</div>
@@ -272,15 +309,24 @@ body.light-mode .theme-btn { background:rgba(139,105,20,0.1); border-color:rgba(
       <div class="ssb-arrow">›</div>
     </div>
 
-    <!-- SIGN GRID -->
-    <div class="sign-grid" id="signGrid"></div>
+    <!-- CATALOGO SEGNI — carosello stile Netflix -->
+    <div class="carousel-row" id="signGridWrap">
+      <div class="carousel-head">
+        <div class="carousel-title">✨ <span id="i18nAllSigns">Tutti i Segni</span></div>
+      </div>
+      <div class="carousel-track" id="signGrid"></div>
+    </div>
 
     <!-- READING -->
     <div id="readingSection" style="display:none">
 
       <div class="reading-card">
+        <div class="rc-hero">
+          <div class="rc-hero-bg" id="rcHeroBg"></div>
+          <div class="rc-hero-gradient"></div>
+          <div class="rc-hero-badge" id="rcEmoji">♈</div>
+        </div>
         <div class="rc-header">
-          <div class="rc-emoji" id="rcEmoji">♈</div>
           <div class="rc-meta">
             <div class="rc-sign-name" id="rcName">—</div>
             <div class="rc-sign-dates" id="rcDates">—</div>
@@ -416,7 +462,7 @@ const I18N = {
   it: {
     htmlLang:'it', pageTitle:'Oroscopo del Giorno — 12 Segni | MYSTICA',
     i18nTitle:'Oroscopo', i18nSubtitle:'Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali',
-    i18nYourSign:'Il tuo segno',
+    i18nYourSign:'Il tuo segno', i18nHeroCta:"▶ Leggi l'oroscopo", i18nAllSigns:'Tutti i Segni',
     i18nTabAmore:'Amore', i18nTabLavoro:'Lavoro', i18nTabSalute:'Salute', i18nTabFortuna:'Fortuna', i18nTabMistico:'Mistico',
     i18nAmoreTitle:'Amore &amp; Relazioni', i18nLavoroTitle:'Lavoro &amp; Finanze',
     i18nSaluteTitle:'Salute &amp; Benessere', i18nFortunaTitle:'Fortuna del Giorno',
@@ -441,7 +487,7 @@ const I18N = {
   en: {
     htmlLang:'en', pageTitle:'Daily Horoscope — 12 Zodiac Signs | MYSTICA',
     i18nTitle:'Horoscope', i18nSubtitle:'Love · Work · Health · Fortune<br>for all 12 zodiac signs',
-    i18nYourSign:'Your sign',
+    i18nYourSign:'Your sign', i18nHeroCta:'▶ Read your horoscope', i18nAllSigns:'All Signs',
     i18nTabAmore:'Love', i18nTabLavoro:'Work', i18nTabSalute:'Health', i18nTabFortuna:'Fortune', i18nTabMistico:'Mystic',
     i18nAmoreTitle:'Love &amp; Relationships', i18nLavoroTitle:'Work &amp; Finance',
     i18nSaluteTitle:'Health &amp; Wellness', i18nFortunaTitle:"Today's Fortune",
@@ -466,7 +512,7 @@ const I18N = {
   es: {
     htmlLang:'es', pageTitle:'Horóscopo Diario — 12 Signos del Zodíaco | MYSTICA',
     i18nTitle:'Horóscopo', i18nSubtitle:'Amor · Trabajo · Salud · Fortuna<br>para los 12 signos del zodíaco',
-    i18nYourSign:'Tu signo',
+    i18nYourSign:'Tu signo', i18nHeroCta:'▶ Lee tu horóscopo', i18nAllSigns:'Todos los Signos',
     i18nTabAmore:'Amor', i18nTabLavoro:'Trabajo', i18nTabSalute:'Salud', i18nTabFortuna:'Fortuna', i18nTabMistico:'Místico',
     i18nAmoreTitle:'Amor &amp; Relaciones', i18nLavoroTitle:'Trabajo &amp; Finanzas',
     i18nSaluteTitle:'Salud &amp; Bienestar', i18nFortunaTitle:'Fortuna del Día',
@@ -533,6 +579,10 @@ const SEGNI = {
 };
 
 const SIGN_ORDER = ['ariete','toro','gemelli','cancro','leone','vergine','bilancia','scorpione','sagittario','capricorno','acquario','pesci'];
+
+// Immagini reali del segno (poster verticale + backdrop orizzontale)
+function imgPoster(key){ return `./images/zodiaco-verticale/${key}.webp`; }
+function imgBackdrop(key){ return `./images/zodiaco-orizzontale/${key}-oriz.webp`; }
 
 const OROSCOPI = {
   ariete:{
@@ -688,6 +738,7 @@ const GENERAL_ES = [
 // ═══════════════════════════════════════════════
 let _currentSign = null;
 let _savedSign = null;
+let _heroSign = 'ariete';
 let _activeTab = 'amore';
 let _toastTimer = null;
 let _lang = 'it';
@@ -738,7 +789,7 @@ function applyLang() {
     if (btn) btn.classList.toggle('active', l === _lang);
   });
   // Rebuild grid con nomi tradotti (se necessario in futuro)
-  if (_currentSign === null) buildGrid();
+  if (_currentSign === null) { buildGrid(); buildHero(); }
 }
 
 function updateDateBadge() {
@@ -810,10 +861,28 @@ function init() {
   if (_savedSign && SEGNI[_savedSign]) {
     const s = SEGNI[_savedSign];
     $('#savedSignBar').style.display = 'flex';
-    $('#ssbEmoji').textContent = s.e;
+    $('#ssbThumb').src = imgPoster(_savedSign);
+    $('#ssbThumb').alt = s.n;
     $('#ssbName').textContent = s.n;
   }
+  // Il segno "in evidenza" nell'hero ruota ogni giorno
+  _heroSign = _savedSign && SEGNI[_savedSign] ? _savedSign : SIGN_ORDER[daySeed() % SIGN_ORDER.length];
+  buildHero();
   buildGrid();
+}
+
+function buildHero() {
+  const s = SEGNI[_heroSign];
+  const t = I18N[_lang];
+  const bg = $('#heroBg');
+  bg.classList.remove('loaded');
+  const img = new Image();
+  img.onload = () => { bg.style.backgroundImage = `url('${imgBackdrop(_heroSign)}')`; bg.classList.add('loaded'); };
+  img.onerror = () => { bg.style.backgroundImage = `linear-gradient(145deg,#130828,#07031a)`; bg.classList.add('loaded'); };
+  img.src = imgBackdrop(_heroSign);
+  $('#heroTitle').textContent = `${s.e} ${s.n}`;
+  $('#heroDates').textContent = s.d + ' · ' + (t.elLabels[s.el] || s.el);
+  $('#heroDots').innerHTML = SIGN_ORDER.map(k => `<div class="hero-dot${k===_heroSign?' active':''}"></div>`).join('');
 }
 
 function buildGrid() {
@@ -822,8 +891,15 @@ function buildGrid() {
   SIGN_ORDER.forEach(key => {
     const s = SEGNI[key];
     const el = document.createElement('div');
-    el.className = 'sign-cell' + (key === _currentSign ? ' active' : '');
-    el.innerHTML = `<div class="sc-emoji">${s.e}</div><div class="sc-name">${s.n}</div><div class="sc-dates">${s.d.split('–')[0].trim()}</div>`;
+    el.className = 'poster-card' + (key === _currentSign ? ' active' : '');
+    el.innerHTML = `
+      <div class="poster-frame">
+        <div class="poster-fallback">${s.e}</div>
+        <img class="poster-img" src="${imgPoster(key)}" alt="${s.n} — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">${s.e}</span></div>
+      </div>
+      <div class="poster-name">${s.n}</div>
+      <div class="poster-dates">${s.d.split('–')[0].trim()}</div>`;
     el.onclick = () => selectSign(key);
     g.appendChild(el);
   });
@@ -837,9 +913,10 @@ function selectSign(key) {
   buildGrid();
   renderReading(key);
 
-  $('#introSection').style.display = 'none';
+  $('#heroBanner').style.display = 'none';
+  $('.hero-subtitle') && ($('.hero-subtitle').style.display = 'none');
   $('#savedSignBar').style.display = 'none';
-  $('#signGrid').style.display = 'none';
+  $('#signGridWrap').style.display = 'none';
   $('#seoSection').style.display = 'none';
   $('#readingSection').style.display = 'block';
 
@@ -849,14 +926,15 @@ function selectSign(key) {
 function backToGrid() {
   _currentSign = null;
   $('#readingSection').style.display = 'none';
-  $('#introSection').style.display = 'block';
-  $('#signGrid').style.display = 'grid';
+  $('#heroBanner').style.display = 'block';
+  $('.hero-subtitle') && ($('.hero-subtitle').style.display = 'block');
+  $('#signGridWrap').style.display = 'block';
   $('#seoSection').style.display = 'block';
 
   _savedSign = localStorage.getItem('myst_segno_principale');
   if (_savedSign && SEGNI[_savedSign]) {
     $('#savedSignBar').style.display = 'flex';
-    $('#ssbEmoji').textContent = SEGNI[_savedSign].e;
+    $('#ssbThumb').src = imgPoster(_savedSign);
     $('#ssbName').textContent = SEGNI[_savedSign].n;
   }
   buildGrid();
@@ -868,8 +946,14 @@ function renderReading(key) {
   const o = OROSCOPI[key];
   const t = I18N[_lang];
 
-  // Header
+  // Header + backdrop
   $('#rcEmoji').textContent = s.e;
+  const heroBg = $('#rcHeroBg');
+  heroBg.classList.remove('loaded');
+  const himg = new Image();
+  himg.onload = () => { heroBg.style.backgroundImage = `url('${imgBackdrop(key)}')`; heroBg.classList.add('loaded'); };
+  himg.onerror = () => { heroBg.style.backgroundImage = `linear-gradient(145deg,#130828,#07031a)`; heroBg.classList.add('loaded'); };
+  himg.src = imgBackdrop(key);
   $('#rcName').textContent = s.n;
   $('#rcDates').textContent = s.d + ' · ' + (t.elLabels[s.el] || s.el) + ' · ' + s.p;
   const elIcons = {Fuoco:'🔥',Terra:'🌍',Aria:'💨',Acqua:'💧'};
