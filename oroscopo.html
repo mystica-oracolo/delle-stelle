@@ -77,10 +77,6 @@ body.light-mode .seo-link:hover { color:var(--gold); border-color:var(--gold-dim
 body.light-mode .page-intro h1 { color:var(--gold); }
 body.light-mode .page-intro p { color:var(--muted); }
 body.light-mode .date-badge { color:var(--gold); border-color:var(--border); background:rgba(139,105,20,0.08); }
-body.light-mode .saved-sign-bar { background:linear-gradient(135deg,rgba(220,200,255,0.5),rgba(237,229,248,0.5)); border-color:var(--border); }
-body.light-mode .saved-sign-bar .ssb-label { color:var(--muted); }
-body.light-mode .saved-sign-bar .ssb-name { color:var(--gold); }
-body.light-mode .saved-sign-bar .ssb-arrow { color:var(--gold); }
 body.light-mode .rc-header { border-bottom-color:var(--border); }
 body.light-mode .rc-sign-name { color:var(--gold); }
 body.light-mode .rc-sign-dates { color:var(--muted); }
@@ -102,6 +98,7 @@ body.light-mode #generalText { color:var(--text); }
 body.light-mode .footer-mini { color:var(--muted); border-top-color:var(--border); }
 body.light-mode .footer-mini a { color:var(--muted); }
 body.light-mode .footer-mini a:hover { color:var(--gold); }
+body.light-mode .section-divider { background:rgba(237,229,248,0.5); border-color:var(--border); }
 body.light-mode .toast { background:var(--card); border-color:var(--gold-dim); color:var(--text); }
 body.light-mode .premium-overlay { background:linear-gradient(to bottom, transparent 0%, rgba(240,234,248,0.85) 35%, rgba(240,234,248,0.98) 65%); }
 body.light-mode .premium-card { background:#fff; border-color:var(--border); }
@@ -132,16 +129,9 @@ body.light-mode .theme-btn { background:rgba(139,105,20,0.1); border-color:rgba(
 .date-badge{display:inline-block;margin-top:8px;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:4px 12px;border-radius:20px}
 
 /* Segno salvato */
-.saved-sign-bar{margin:12px 0 8px;padding:12px 14px;background:linear-gradient(135deg,rgba(42,23,72,0.5),rgba(20,10,40,0.5));border:1.5px solid rgba(212,175,55,0.35);border-radius:14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .25s}
-.saved-sign-bar:hover{border-color:var(--gold)}
-.saved-sign-bar .ssb-thumb{width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--gold-dim)}
-.saved-sign-bar .ssb-info{flex:1}
-.saved-sign-bar .ssb-label{font-size:10px;color:var(--muted);font-family:'Cinzel',serif;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
-.saved-sign-bar .ssb-name{font-family:'Cinzel',serif;font-size:14px;color:var(--gold)}
-.saved-sign-bar .ssb-arrow{color:var(--gold);font-size:16px;flex-shrink:0}
 
 /* ══ HERO BANNER (Netflix-style) ══ */
-.hero-banner{position:relative;margin:0 -16px 18px;height:56vw;max-height:280px;min-height:210px;overflow:hidden;background:#0d0620}
+.hero-banner{position:relative;margin:0 -16px 20px;height:78vw;max-height:400px;min-height:300px;overflow:hidden;background:#0d0620}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 25%;opacity:0;transition:opacity .5s ease}
 .hero-bg.loaded{opacity:1}
 .hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,5,20,0.05) 0%,rgba(10,5,20,0.35) 45%,var(--bg) 96%),linear-gradient(to right,rgba(10,5,20,0.55) 0%,transparent 55%)}
@@ -155,29 +145,27 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
 .hero-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.35)}
 .hero-dot.active{background:var(--gold);box-shadow:0 0 6px var(--gold-glow)}
 
-/* ══ CAROUSEL — righe stile catalogo ══ */
-.carousel-row{margin:0 0 20px}
-.carousel-head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 10px}
-.carousel-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;color:var(--gold);display:flex;align-items:center;gap:6px}
-.carousel-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -16px;padding-left:16px;padding-right:16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.carousel-track::-webkit-scrollbar{height:3px}
-.carousel-track::-webkit-scrollbar-thumb{background:rgba(212,175,55,0.3);border-radius:4px}
-.poster-card{flex:0 0 92px;scroll-snap-align:start;cursor:pointer;touch-action:manipulation}
-.poster-frame{position:relative;width:92px;height:138px;border-radius:11px;overflow:hidden;border:1.5px solid rgba(42,23,72,0.7);background:linear-gradient(145deg,#130828,#07031a);transition:all .25s ease}
+/* ══ GRIGLIA SEGNI — 3 colonne x 4 righe, stile catalogo ══ */
+.carousel-row{margin:0 0 22px}
+.carousel-head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 12px}
+.carousel-title{font-family:'Cinzel',serif;font-size:14px;letter-spacing:1px;color:var(--gold);display:flex;align-items:center;gap:6px}
+.carousel-track{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 10px}
+.poster-card{cursor:pointer;touch-action:manipulation}
+.poster-frame{position:relative;width:100%;aspect-ratio:2/3;border-radius:12px;overflow:hidden;border:1.5px solid rgba(42,23,72,0.7);background:linear-gradient(145deg,#130828,#07031a);transition:all .25s ease}
 .poster-card:active .poster-frame{transform:scale(.96)}
 .poster-card.active .poster-frame{border-color:var(--gold);box-shadow:0 0 16px var(--gold-glow)}
 .poster-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .35s ease;z-index:1}
 .poster-img.loaded{opacity:1}
-.poster-fallback{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font-size:30px}
-.poster-shade{position:absolute;left:0;right:0;bottom:0;height:52%;z-index:2;background:linear-gradient(to top,rgba(5,2,15,0.92),transparent);display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}
-.poster-symbol{font-size:15px;color:var(--gold);filter:drop-shadow(0 0 4px rgba(0,0,0,.8))}
-.poster-name{font-family:'Cinzel',serif;font-size:10px;text-align:center;margin-top:6px;color:var(--muted);letter-spacing:.4px}
+.poster-fallback{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font-size:36px}
+.poster-shade{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:2;background:linear-gradient(to top,rgba(5,2,15,0.94),transparent);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.poster-symbol{font-size:17px;color:var(--gold);filter:drop-shadow(0 0 4px rgba(0,0,0,.8))}
+.poster-name{font-family:'Cinzel',serif;font-size:11px;text-align:center;margin-top:7px;color:var(--muted);letter-spacing:.4px}
 .poster-card.active .poster-name{color:var(--gold)}
-.poster-dates{font-size:8px;text-align:center;color:var(--muted);opacity:.55;margin-top:1px}
+.poster-dates{font-size:9px;text-align:center;color:var(--muted);opacity:.55;margin-top:1px}
 
 /* Reading card — Netflix detail-page style */
 .reading-card{background:linear-gradient(145deg,#130828,#09041e);border:1px solid rgba(212,175,55,0.25);border-radius:18px;overflow:hidden;margin:14px 0}
-.rc-hero{position:relative;height:172px;overflow:hidden;background:#0d0620}
+.rc-hero{position:relative;height:52vw;max-height:240px;min-height:170px;overflow:hidden;background:#0d0620}
 .rc-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 22%;opacity:0;transition:opacity .4s ease}
 .rc-hero-bg.loaded{opacity:1}
 .rc-hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,5,20,0.1) 0%,rgba(19,8,40,0.55) 55%,rgba(19,8,40,0.98) 100%)}
@@ -214,7 +202,10 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
 .obj-item{background:rgba(7,3,26,0.5);border:1px solid rgba(42,23,72,0.7);border-radius:8px;padding:8px 10px;font-size:12px;color:var(--muted);line-height:1.4}
 
 /* Mood meter */
-.mood-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.mood-section{padding:16px 18px 4px}
+.mood-section-title{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.section-divider{height:8px;background:rgba(7,3,26,0.35);border-top:1px solid rgba(42,23,72,0.4);border-bottom:1px solid rgba(42,23,72,0.4)}
+.mood-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0}
 .mood-item{text-align:center;padding:10px 6px;background:rgba(7,3,26,0.5);border-radius:10px;border:1px solid rgba(42,23,72,0.6)}
 .mood-icon{font-size:20px;margin-bottom:3px}
 .mood-label{font-size:9px;font-family:'Cinzel',serif;color:var(--muted);letter-spacing:.5px;margin-bottom:5px}
@@ -297,19 +288,9 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
         <button class="hero-cta" id="i18nHeroCta" onclick="event.stopPropagation();selectSign(_heroSign)">▶ Leggi l'oroscopo</button>
       </div>
     </div>
-    <p class="hero-subtitle" id="i18nSubtitle" style="text-align:center;font-size:12.5px;color:var(--muted);margin:-10px 0 14px">Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
+    <p class="hero-subtitle" id="i18nSubtitle" style="text-align:center;font-size:12.5px;color:var(--muted);margin:-10px 0 18px">Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali</p>
 
-    <!-- SEGNO SALVATO -->
-    <div class="saved-sign-bar" id="savedSignBar" style="display:none" onclick="selectSign(_savedSign)">
-      <img class="ssb-thumb" id="ssbThumb" alt="" width="34" height="34">
-      <div class="ssb-info">
-        <div class="ssb-label" id="i18nYourSign">Il tuo segno</div>
-        <div class="ssb-name" id="ssbName">—</div>
-      </div>
-      <div class="ssb-arrow">›</div>
-    </div>
-
-    <!-- CATALOGO SEGNI — carosello stile Netflix -->
+    <!-- CATALOGO SEGNI — griglia stile catalogo -->
     <div class="carousel-row" id="signGridWrap">
       <div class="carousel-head">
         <div class="carousel-title">✨ <span id="i18nAllSigns">Tutti i Segni</span></div>
@@ -335,11 +316,13 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
           </div>
         </div>
 
-        <div style="padding:14px 18px 0">
+        <div class="mood-section">
+          <div class="mood-section-title">🌙 <span id="i18nMoodTitle">Energia di Oggi</span></div>
           <div class="mood-row" id="moodRow"></div>
         </div>
 
         <!-- Tabs -->
+        <div class="section-divider"></div>
         <div class="tab-bar">
           <div class="tab-btn active" onclick="openTab('amore')" id="tabAmore"><span class="tb-icon">💕</span><span id="i18nTabAmore">Amore</span></div>
           <div class="tab-btn" onclick="openTab('lavoro')" id="tabLavoro"><span class="tb-icon">💼</span><span id="i18nTabLavoro">Lavoro</span></div>
@@ -467,7 +450,7 @@ const I18N = {
     i18nAmoreTitle:'Amore &amp; Relazioni', i18nLavoroTitle:'Lavoro &amp; Finanze',
     i18nSaluteTitle:'Salute &amp; Benessere', i18nFortunaTitle:'Fortuna del Giorno',
     i18nMisticoTitle:'Guida Mistica', i18nPietreTitle:'Pietre del Segno', i18nOggettiTitle:'Oggetti Magici',
-    i18nAdviceTitle:'Messaggio delle Stelle', i18nGeneralTitle:'Energia del Giorno',
+    i18nAdviceTitle:'Messaggio delle Stelle', i18nGeneralTitle:'Energia del Giorno', i18nMoodTitle:'Energia di Oggi',
     i18nUnlockFortuna:'Sblocca Fortuna completa', i18nUnlockMistico:'Sblocca Guida Mistica',
     i18nPremiumCta:'✦ MYSTICA Premium · 4,99€',
     i18nDismiss:'Continua senza Premium', i18nDismiss2:'Continua senza Premium',
@@ -492,7 +475,7 @@ const I18N = {
     i18nAmoreTitle:'Love &amp; Relationships', i18nLavoroTitle:'Work &amp; Finance',
     i18nSaluteTitle:'Health &amp; Wellness', i18nFortunaTitle:"Today's Fortune",
     i18nMisticoTitle:'Mystic Guide', i18nPietreTitle:'Sign Stones', i18nOggettiTitle:'Magic Objects',
-    i18nAdviceTitle:'Message from the Stars', i18nGeneralTitle:"Today's Energy",
+    i18nAdviceTitle:'Message from the Stars', i18nGeneralTitle:"Today's Energy", i18nMoodTitle:"Today's Mood",
     i18nUnlockFortuna:'Unlock Full Fortune', i18nUnlockMistico:'Unlock Mystic Guide',
     i18nPremiumCta:'✦ MYSTICA Premium · €4.99',
     i18nDismiss:'Continue without Premium', i18nDismiss2:'Continue without Premium',
@@ -517,7 +500,7 @@ const I18N = {
     i18nAmoreTitle:'Amor &amp; Relaciones', i18nLavoroTitle:'Trabajo &amp; Finanzas',
     i18nSaluteTitle:'Salud &amp; Bienestar', i18nFortunaTitle:'Fortuna del Día',
     i18nMisticoTitle:'Guía Mística', i18nPietreTitle:'Piedras del Signo', i18nOggettiTitle:'Objetos Mágicos',
-    i18nAdviceTitle:'Mensaje de las Estrellas', i18nGeneralTitle:'Energía del Día',
+    i18nAdviceTitle:'Mensaje de las Estrellas', i18nGeneralTitle:'Energía del Día', i18nMoodTitle:'Energía de Hoy',
     i18nUnlockFortuna:'Desbloquea Fortuna completa', i18nUnlockMistico:'Desbloquea Guía Mística',
     i18nPremiumCta:'✦ MYSTICA Premium · 4,99€',
     i18nDismiss:'Continuar sin Premium', i18nDismiss2:'Continuar sin Premium',
@@ -858,14 +841,7 @@ function init() {
   applyLang();
 
   _savedSign = localStorage.getItem('myst_segno_principale');
-  if (_savedSign && SEGNI[_savedSign]) {
-    const s = SEGNI[_savedSign];
-    $('#savedSignBar').style.display = 'flex';
-    $('#ssbThumb').src = imgPoster(_savedSign);
-    $('#ssbThumb').alt = s.n;
-    $('#ssbName').textContent = s.n;
-  }
-  // Il segno "in evidenza" nell'hero ruota ogni giorno
+  // Il segno "in evidenza" nell'hero ruota ogni giorno, o mostra il tuo segno salvato
   _heroSign = _savedSign && SEGNI[_savedSign] ? _savedSign : SIGN_ORDER[daySeed() % SIGN_ORDER.length];
   buildHero();
   buildGrid();
@@ -915,7 +891,6 @@ function selectSign(key) {
 
   $('#heroBanner').style.display = 'none';
   $('.hero-subtitle') && ($('.hero-subtitle').style.display = 'none');
-  $('#savedSignBar').style.display = 'none';
   $('#signGridWrap').style.display = 'none';
   $('#seoSection').style.display = 'none';
   $('#readingSection').style.display = 'block';
@@ -932,11 +907,8 @@ function backToGrid() {
   $('#seoSection').style.display = 'block';
 
   _savedSign = localStorage.getItem('myst_segno_principale');
-  if (_savedSign && SEGNI[_savedSign]) {
-    $('#savedSignBar').style.display = 'flex';
-    $('#ssbThumb').src = imgPoster(_savedSign);
-    $('#ssbName').textContent = SEGNI[_savedSign].n;
-  }
+  _heroSign = _savedSign && SEGNI[_savedSign] ? _savedSign : _heroSign;
+  buildHero();
   buildGrid();
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
