@@ -306,6 +306,10 @@ body {
 .dash-card:active { transform: scale(.97); }
 .dash-card.span2 { flex-basis: 210px; width: 210px; }
 .dash-card.span2 .dash-img-wrap { aspect-ratio: 2/1; }
+.dash-card.sp-featured { flex-basis: 300px; width: 300px; padding-bottom: 16px; }
+.dash-card.sp-featured .dash-img-wrap { aspect-ratio: 16/9; margin-bottom: 14px; }
+.dash-card.sp-featured .dash-label { font-size: 16px; }
+.dash-card.sp-featured .dash-sub { font-size: 12px; margin-top: 3px; }
 
 /* Colori bordo superiore */
 .c-gold::before   { background: linear-gradient(90deg, transparent, #d4af37, transparent); }
@@ -813,12 +817,12 @@ body {
 ════════════════════════════════ -->
 <div class="dash-title" id="sec-spazio">✨ Il Tuo Spazio Personale</div>
 <div class="dash-grid">
-  <a class="dash-card c-gold span2" href="./profilo-mistico.html" data-cat="profilo_mistico">
+  <a class="dash-card c-gold sp-featured" href="./profilo-mistico.html" data-cat="profilo_mistico">
     <div class="dash-img-wrap"><img src="./images/icone/home/profilo-mistico.webp" width="600" height="300" alt="" loading="lazy" decoding="async" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>⭐</div>'"></div>
     <div class="dash-label"></div>
     <div class="dash-sub" style="color:#d4af37"></div>
   </a>
-  <a class="dash-card c-purple span2" href="./archivio.html" data-cat="archivio">
+  <a class="dash-card c-purple sp-featured" href="./archivio.html" data-cat="archivio">
     <div class="dash-img-wrap"><img src="./images/icone/home/archivio.webp" width="600" height="300" alt="" loading="lazy" decoding="async" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>📂</div>'"></div>
     <div class="dash-label"></div>
     <div class="dash-sub" style="color:#b88fe0"></div>
