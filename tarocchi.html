@@ -291,11 +291,10 @@
         <div class="mode-card" data-mode="approfondita" onclick="selectAndStart('approfondita')">
           <div class="card-media" style="aspect-ratio:900/518">
             <img src="./images/tarocchi/lettura-5.webp" alt="Croce della Vita - 5 carte" loading="lazy" decoding="async">
-            <div class="lock-badge" id="mb-approfondita" aria-hidden="true">✨</div>
           </div>
           <div class="card-footer">
             <div class="mode-name" id="mn-approfondita">Croce della Vita</div>
-            <div class="mode-desc" id="md-approfondita">5 carte · Lettura approfondita · Premium</div>
+            <div class="mode-desc" id="md-approfondita">5 carte · Lettura approfondita</div>
           </div>
         </div>
         <div class="mode-card" data-mode="amore" onclick="selectAndStart('amore')">
@@ -443,7 +442,7 @@ it: {
   introTitle: 'I Tarocchi',
   introText: '78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore e scegli la stesa più adatta a te.',
   modeSemplice: { n: 'Lettura Semplice', d: '3 carte · Passato · Presente · Futuro' },
-  modeApprofondita: { n: 'Croce della Vita', d: '5 carte · Lettura approfondita', badge: '✨ Premium' },
+  modeApprofondita: { n: 'Croce della Vita', d: '5 carte · Lettura approfondita' },
   btnStart: '✨ Inizia la Lettura',
   btnBack: '← Indietro',
   forOtherLabel: "Lettura per un'altra persona",
@@ -513,7 +512,7 @@ en: {
   introTitle: 'Tarot Cards',
   introText: '78 cards, Major and Minor Arcana.<br>Focus, ask your inner question and pick the spread that suits you best.',
   modeSemplice: { n: 'Simple Reading', d: '3 cards · Past · Present · Future' },
-  modeApprofondita: { n: 'Cross of Life', d: '5 cards · In-depth reading', badge: '✨ Premium' },
+  modeApprofondita: { n: 'Cross of Life', d: '5 cards · In-depth reading' },
   btnStart: '✨ Start the Reading',
   btnBack: '← Back',
   forOtherLabel: 'Reading for someone else',
@@ -583,7 +582,7 @@ es: {
   introTitle: 'El Tarot',
   introText: '78 cartas, Arcanos Mayores y Menores.<br>Concéntrate, formula tu pregunta interior y elige la tirada que mejor se adapte a ti.',
   modeSemplice: { n: 'Tirada Simple', d: '3 cartas · Pasado · Presente · Futuro' },
-  modeApprofondita: { n: 'Cruz de la Vida', d: '5 cartas · Lectura profunda', badge: '✨ Premium' },
+  modeApprofondita: { n: 'Cruz de la Vida', d: '5 cartas · Lectura profunda' },
   btnStart: '✨ Comenzar la Lectura',
   btnBack: '← Atrás',
   forOtherLabel: 'Lectura para otra persona',
@@ -652,18 +651,18 @@ let currentLang = localStorage.getItem('myst_lang') || 'it';
    ═══════════════════════════════════════════════════ */
 const SPREADS = [
   { key:'sionno',    icon:'☯️', img:'./images/tarocchi/sionno.webp', ratio:'700/401', cards:1, premium:false, name:{it:'Tarocchi Sì o No',en:'Yes or No Tarot',es:'Tarot Sí o No'}, desc:{it:'1 carta · risposta rapida',en:'1 card · quick answer',es:'1 carta · respuesta rápida'} },
-  { key:'marsiglia', icon:'🎴', img:'./images/tarocchi/marsiglia.webp', ratio:'700/324', cards:5, premium:true,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
+  { key:'marsiglia', icon:'🎴', img:'./images/tarocchi/marsiglia.webp', ratio:'700/324', cards:5, premium:false,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
   { key:'angeli',    icon:'👼', img:'./images/tarocchi/angeli.webp', ratio:'700/407', cards:3, premium:false, name:{it:'Tarocchi degli Angeli',en:'Angel Tarot',es:'Tarot de los Ángeles'}, desc:{it:'3 carte · messaggio e guida',en:'3 cards · message and guidance',es:'3 cartas · mensaje y guía'} },
   { key:'coppia',    icon:'💑', img:'./images/tarocchi/coppia.webp', ratio:'700/362', cards:2, premium:false, name:{it:'Tarocchi per la Coppia',en:'Couple Tarot',es:'Tarot para la Pareja'}, desc:{it:'2 carte · tu e il partner',en:'2 cards · you and your partner',es:'2 cartas · tú y tu pareja'} },
   { key:'salute',    icon:'🩺', img:'./images/tarocchi/salute.webp', ratio:'700/322', cards:3, premium:false, name:{it:'Tarocchi della Salute',en:'Health Tarot',es:'Tarot de la Salud'}, desc:{it:'3 carte · corpo e mente',en:'3 cards · body and mind',es:'3 cartas · cuerpo y mente'} },
   { key:'lavoro',    icon:'💼', img:'./images/tarocchi/lavoro.webp', ratio:'700/322', cards:3, premium:false, name:{it:'Tarocchi del Lavoro',en:'Career Tarot',es:'Tarot del Trabajo'}, desc:{it:'3 carte · carriera e progetti',en:'3 cards · career and projects',es:'3 cartas · carrera y proyectos'} },
-  { key:'celtici',   icon:'☘️', img:'./images/tarocchi/celtici.webp', ratio:'700/340', cards:5, premium:true,  name:{it:'Tarocchi Celtici',en:'Celtic Tarot',es:'Tarot Celta'}, desc:{it:'5 carte · Croce Celtica',en:'5 cards · Celtic Cross',es:'5 cartas · Cruz Celta'} },
+  { key:'celtici',   icon:'☘️', img:'./images/tarocchi/celtici.webp', ratio:'700/340', cards:5, premium:false,  name:{it:'Tarocchi Celtici',en:'Celtic Tarot',es:'Tarot Celta'}, desc:{it:'5 carte · Croce Celtica',en:'5 cards · Celtic Cross',es:'5 cartas · Cruz Celta'} },
   { key:'egiziani',  icon:'𓂀', img:'./images/tarocchi/egiziani.webp', ratio:'700/384', cards:3, premium:false, name:{it:'Tarocchi Egiziani',en:'Egyptian Tarot',es:'Tarot Egipcio'}, desc:{it:'3 carte · simbologia antica',en:'3 cards · ancient symbolism',es:'3 cartas · simbología antigua'} },
   { key:'zingara',   icon:'🔮', img:'./images/tarocchi/zingara.webp', ratio:'700/305', cards:3, premium:false, name:{it:'Tarocchi della Zingara',en:'Gypsy Tarot',es:'Tarot de la Gitana'}, desc:{it:'3 carte · tradizione popolare',en:'3 cards · folk tradition',es:'3 cartas · tradición popular'} },
   { key:'amore',     icon:'💞', img:'./images/tarocchi/amore.webp', ratio:'700/312', cards:3, premium:false, name:{it:"Tarocchi dell'Amore",en:'Love Tarot',es:'Tarot del Amor'}, desc:{it:'3 carte · sentimenti e cuore',en:'3 cards · feelings and heart',es:'3 cartas · sentimientos y corazón'} }
 ];
 
-const MODES = { semplice:{cards:3,premium:false}, approfondita:{cards:5,premium:true} };
+const MODES = { semplice:{cards:3,premium:false}, approfondita:{cards:5,premium:false} };
 SPREADS.forEach(s => { MODES[s.key] = { cards:s.cards, premium:s.premium }; });
 
 const MODE_TITLES = {
@@ -962,7 +961,7 @@ document.getElementById('themeToggle')?.addEventListener('click', () => { isDayM
 /* ═══════════════════════════════════════════════════
    Premium Gate
    ═══════════════════════════════════════════════════ */
-function isPremium() { return localStorage.getItem('myst_premium') === 'true'; }
+function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
 function requirePremium(actionType) {
   if (isPremium()) return true;
   document.getElementById('premiumModal')?.classList.add('show');
