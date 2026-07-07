@@ -86,12 +86,11 @@
 .main-content{flex:1;padding:16px;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
 
 /* Intro / hero video (stile Netflix) */
-.tarot-hero{position:relative;width:100%;border-radius:18px;overflow:hidden;margin:14px 0 18px;aspect-ratio:16/10;background:#0a0514;box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 1px rgba(212,175,55,.25)}
-.tarot-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tarot-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,4,20,.05) 0%,rgba(8,4,20,.35) 45%,rgba(8,4,20,.95) 100%);pointer-events:none}
-.tarot-hero-overlay{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 16px;z-index:2;text-align:center}
-.tarot-hero-overlay h2{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);letter-spacing:2px;margin-bottom:6px;text-shadow:0 2px 14px rgba(0,0,0,.85)}
-.tarot-hero-overlay p{font-size:13px;color:#e7e0f5;line-height:1.55;margin-bottom:0;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.tarot-hero{position:relative;width:100%;border-radius:18px;overflow:hidden;margin:14px 0 4px;aspect-ratio:2/1;background:linear-gradient(160deg,#150828,#050210);box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 1px rgba(212,175,55,.25)}
+.tarot-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.tarot-hero-caption{text-align:center;padding:12px 8px 4px}
+.tarot-hero-caption h2{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:2px;margin-bottom:6px}
+.tarot-hero-caption p{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:0}
 
 .section-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;margin:22px 0 10px;text-align:center}
 
@@ -101,19 +100,19 @@
 .mode-card,.spread-card{position:relative;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:linear-gradient(145deg,#150828,#070310);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:manipulation}
 .mode-card:hover,.spread-card:hover{transform:translateY(-3px);border-color:var(--gold-dim)}
 .mode-card.active,.spread-card.active{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.35)}
-/* Area immagine: rapporto largo per evitare di tagliare i lati (dove ci sono le scritte) — si taglia solo in verticale */
-.card-media{position:relative;width:100%;aspect-ratio:23/10;overflow:hidden;background:#0a0514;flex-shrink:0}
-.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
-.mode-card:hover .card-media img,.spread-card:hover .card-media img{transform:scale(1.06)}
+/* Area immagine: contain, mai cover — l'immagine si vede SEMPRE intera, zero rischio di tagliare le scritte */
+.card-media{position:relative;width:100%;aspect-ratio:2/1;overflow:hidden;background:linear-gradient(160deg,#150828,#050210);flex-shrink:0}
+.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .5s ease}
+.mode-card:hover .card-media img,.spread-card:hover .card-media img{transform:scale(1.05)}
 .spread-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,#1c0f38,#0a0514);filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
-/* Testo SEMPRE sotto l'immagine, mai sovrapposto */
-.card-footer{padding:8px 10px 9px;flex:1;display:flex;flex-direction:column;justify-content:center}
-.mode-name,.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:12px;letter-spacing:.3px;margin-bottom:3px}
+/* Testo SEMPRE sotto l'immagine, mai sovrapposto. Il lucchetto/badge premium è testo inline, non più sovrapposto alla foto */
+.card-footer{padding:8px 10px 9px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.mode-name,.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:12px;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
 .spread-name{font-size:11px}
 .mode-desc,.spread-desc{color:var(--muted);font-size:10.5px;line-height:1.35}
 .spread-desc{font-size:9.5px}
-.lock-chip,.premium-chip{position:absolute;top:8px;right:8px;z-index:3;background:rgba(8,4,20,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(212,175,55,.4);color:var(--gold);font-size:10px;padding:3px 7px;border-radius:20px;line-height:1}
-.premium-chip{font-family:'Cinzel',serif;letter-spacing:.3px}
+.lock-chip{font-size:9px}
+.premium-chip{display:inline-block;background:rgba(212,175,55,0.14);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.3px;padding:2px 7px;border-radius:8px;width:fit-content}
 
 /* "Lettura per" banner */
 .for-other-row{margin:4px 0 12px;display:flex;align-items:center;gap:8px}
@@ -272,10 +271,10 @@
                poster="./images/tarocchi/hero-poster.webp" aria-hidden="true">
           <source src="./images/tarocchi/video-tarocchi.mp4" type="video/mp4">
         </video>
-        <div class="tarot-hero-overlay">
-          <h2 id="introTitle">I Tarocchi</h2>
-          <p id="introText">78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore e scegli la stesa più adatta a te.</p>
-        </div>
+      </div>
+      <div class="tarot-hero-caption">
+        <h2 id="introTitle">I Tarocchi</h2>
+        <p id="introText">78 carte, Arcani Maggiori e Minori.<br>Concentrati, poni la tua domanda interiore e scegli la stesa più adatta a te.</p>
       </div>
 
       <!-- Modalità principali -->
@@ -292,11 +291,11 @@
         <div class="mode-card" data-mode="approfondita" onclick="selectMode('approfondita')">
           <div class="card-media">
             <img src="./images/tarocchi/lettura-5.webp" alt="" loading="lazy" decoding="async">
-            <div class="premium-chip" id="mb-approfondita">✨ Premium</div>
           </div>
           <div class="card-footer">
             <div class="mode-name" id="mn-approfondita">Croce della Vita</div>
             <div class="mode-desc" id="md-approfondita">5 carte · Lettura approfondita</div>
+            <div class="premium-chip" id="mb-approfondita">✨ Premium</div>
           </div>
         </div>
       </div>
@@ -869,10 +868,9 @@ function renderSpreadGrid() {
         ${s.img
           ? `<img src="${s.img}" alt="" loading="lazy" decoding="async">`
           : `<div class="spread-icon" aria-hidden="true">${s.icon}</div>`}
-        ${s.premium ? `<div class="lock-chip" aria-hidden="true">🔒</div>` : ''}
       </div>
       <div class="card-footer">
-        <div class="spread-name">${s.name[currentLang]}</div>
+        <div class="spread-name">${s.name[currentLang]}${s.premium ? ' <span class="lock-chip" aria-hidden="true">🔒</span>' : ''}</div>
         <div class="spread-desc">${s.desc[currentLang]}</div>
       </div>
     </div>
