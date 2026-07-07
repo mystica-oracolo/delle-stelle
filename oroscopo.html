@@ -190,6 +190,10 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
 .tab-content.visible{display:block}
 .tab-text{font-size:14px;line-height:1.8;color:var(--text)}
 .tab-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.audio-btn{margin-left:auto;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:50%;width:26px;height:26px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s}
+.audio-btn:hover{background:var(--gold);color:#130828;transform:scale(1.08)}
+.audio-btn.playing{animation:audioPulse 1s infinite}
+@keyframes audioPulse{0%,100%{opacity:1}50%{opacity:.5}}
 
 .lucky-item{background:rgba(7,3,26,0.7);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px 12px}
 .lucky-label{font-size:9px;font-family:'Cinzel',serif;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
@@ -333,19 +337,19 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
 
         <!-- FREE: Amore -->
         <div class="tab-content visible" id="tabContentAmore">
-          <div class="tab-title">💕 <span id="i18nAmoreTitle">Amore &amp; Relazioni</span></div>
+          <div class="tab-title">💕 <span id="i18nAmoreTitle">Amore &amp; Relazioni</span> <button class="audio-btn" onclick="playAudio('amore')" id="audioBtnAmore" aria-label="Ascolta">🔊</button></div>
           <p class="tab-text" id="tcAmore"></p>
         </div>
 
         <!-- FREE: Lavoro -->
         <div class="tab-content" id="tabContentLavoro">
-          <div class="tab-title">💼 <span id="i18nLavoroTitle">Lavoro &amp; Finanze</span></div>
+          <div class="tab-title">💼 <span id="i18nLavoroTitle">Lavoro &amp; Finanze</span> <button class="audio-btn" onclick="playAudio('lavoro')" id="audioBtnLavoro" aria-label="Ascolta">🔊</button></div>
           <p class="tab-text" id="tcLavoro"></p>
         </div>
 
         <!-- FREE: Salute -->
         <div class="tab-content" id="tabContentSalute">
-          <div class="tab-title">🌿 <span id="i18nSaluteTitle">Salute &amp; Benessere</span></div>
+          <div class="tab-title">🌿 <span id="i18nSaluteTitle">Salute &amp; Benessere</span> <button class="audio-btn" onclick="playAudio('salute')" id="audioBtnSalute" aria-label="Ascolta">🔊</button></div>
           <p class="tab-text" id="tcSalute"></p>
         </div>
 
@@ -726,6 +730,10 @@ let _activeTab = 'amore';
 let _toastTimer = null;
 let _lang = 'it';
 let _premiumDismissed = { fortuna: false, mistico: false };
+const _currentAudioIdx = {};
+const AUDIO_BASE = 'https://cdn.jsdelivr.net/gh/mystica-oracolo/delle-stelle@main/audio/';
+let _audioPlayer = null;
+let _audioPlayingField = null;
 
 const $ = s => document.querySelector(s);
 
@@ -946,15 +954,17 @@ function renderReading(key) {
   // Tab contents
   const seed = daySeed();
   const si = SIGN_ORDER.indexOf(key);
-  function pick(arr, offset) {
+  function pick(arr, offset, field) {
     const r = seededRand(seed + si * 31 + offset, offset);
-    return arr[Math.floor(r * arr.length)];
+    const idx = Math.floor(r * arr.length);
+    if (field) _currentAudioIdx[field] = idx;
+    return arr[idx];
   }
 
-  $('#tcAmore').textContent = pick(o.amore, 0);
-  $('#tcLavoro').textContent = pick(o.lavoro, 7);
-  $('#tcSalute').textContent = pick(o.salute, 14);
-  $('#tcFortuna').textContent = pick(o.fortuna, 21);
+  $('#tcAmore').textContent = pick(o.amore, 0, 'amore');
+  $('#tcLavoro').textContent = pick(o.lavoro, 7, 'lavoro');
+  $('#tcSalute').textContent = pick(o.salute, 14, 'salute');
+  $('#tcFortuna').textContent = pick(o.fortuna, 21, 'fortuna');
 
   // Lucky strip (tradotto)
   const numF = pick(o.fortuna, 21);
@@ -999,6 +1009,38 @@ function renderReading(key) {
   });
 
   openTab('amore');
+}
+
+function playAudio(field) {
+  if (!_currentSign || _currentAudioIdx[field] === undefined) return;
+  const btn = document.getElementById('audioBtn' + field.charAt(0).toUpperCase() + field.slice(1));
+
+  // Se sto già suonando questo stesso audio, metti in pausa (toggle)
+  if (_audioPlayer && _audioPlayingField === field && !_audioPlayer.paused) {
+    _audioPlayer.pause();
+    if (btn) btn.classList.remove('playing');
+    return;
+  }
+
+  // Ferma un eventuale audio precedente di un'altra sezione
+  if (_audioPlayer) {
+    _audioPlayer.pause();
+    document.querySelectorAll('.audio-btn.playing').forEach(b => b.classList.remove('playing'));
+  }
+
+  const idx = _currentAudioIdx[field];
+  const url = `${AUDIO_BASE}${_currentSign}_${field}_${idx}.mp3`;
+
+  _audioPlayer = new Audio(url);
+  _audioPlayingField = field;
+  if (btn) btn.classList.add('playing');
+
+  _audioPlayer.play().catch(() => {
+    toast('Audio non disponibile per questa lettura');
+    if (btn) btn.classList.remove('playing');
+  });
+
+  _audioPlayer.onended = () => { if (btn) btn.classList.remove('playing'); };
 }
 
 function openTab(name) {
