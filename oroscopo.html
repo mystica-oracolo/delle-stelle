@@ -195,6 +195,26 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
 .audio-btn.playing{animation:audioPulse 1s infinite}
 @keyframes audioPulse{0%,100%{opacity:1}50%{opacity:.5}}
 
+/* ══ LETTURA UNICA — narrazione continua Netflix-style ══ */
+.unified-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.play-all-btn{flex-shrink:0;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#0a0514;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(212,175,55,0.4);transition:transform .18s ease}
+.play-all-btn:hover{transform:scale(1.06)}
+.play-all-btn:active{transform:scale(.94)}
+.play-all-btn.playing{animation:playPulse 1.4s ease-in-out infinite}
+@keyframes playPulse{0%,100%{box-shadow:0 4px 18px rgba(212,175,55,0.4)}50%{box-shadow:0 4px 28px rgba(212,175,55,0.75)}}
+.audio-progress{height:3px;border-radius:2px;background:rgba(42,23,72,0.5);overflow:hidden;margin-bottom:16px}
+.audio-progress-fill{height:100%;width:0%;border-radius:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .15s linear}
+
+.unified-reading{display:flex;flex-direction:column;gap:14px}
+.unified-block{margin:0;padding:14px 16px;border-radius:12px;background:rgba(7,3,26,0.35);border:1px solid rgba(42,23,72,0.5);opacity:.68;transition:opacity .4s ease,background .4s ease,border-color .4s ease,box-shadow .4s ease;cursor:pointer}
+.unified-block .unified-label{display:block;font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;transition:color .3s ease}
+.unified-block.active{opacity:1;background:rgba(212,175,55,0.08);border-color:rgba(212,175,55,0.4);box-shadow:0 0 22px rgba(212,175,55,0.12)}
+.unified-block.active .unified-label{color:var(--gold)}
+.unified-block.done{opacity:.85}
+.unified-block.done .unified-label::after{content:' ✓';opacity:.6}
+body.light-mode .unified-block{background:rgba(237,229,248,0.6);border-color:var(--border)}
+body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-color:var(--gold)}
+
 .lucky-item{background:rgba(7,3,26,0.7);border:1px solid rgba(42,23,72,0.7);border-radius:10px;padding:10px 12px}
 .lucky-label{font-size:9px;font-family:'Cinzel',serif;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
 .lucky-val{font-size:13px;color:var(--gold);font-weight:600}
@@ -328,29 +348,32 @@ body.light-mode .hero-gradient{background:linear-gradient(to bottom,rgba(240,234
         <!-- Tabs -->
         <div class="section-divider"></div>
         <div class="tab-bar">
-          <div class="tab-btn active" onclick="openTab('amore')" id="tabAmore"><span class="tb-icon">💕</span><span id="i18nTabAmore">Amore</span></div>
-          <div class="tab-btn" onclick="openTab('lavoro')" id="tabLavoro"><span class="tb-icon">💼</span><span id="i18nTabLavoro">Lavoro</span></div>
-          <div class="tab-btn" onclick="openTab('salute')" id="tabSalute"><span class="tb-icon">🌿</span><span id="i18nTabSalute">Salute</span></div>
+          <div class="tab-btn active" onclick="openTab('oggi')" id="tabOggi"><span class="tb-icon">🌙</span><span id="i18nTabOggi">Oggi</span></div>
           <div class="tab-btn" onclick="openTab('fortuna')" id="tabFortuna"><span class="tb-icon">🍀</span><span id="i18nTabFortuna">Fortuna</span></div>
           <div class="tab-btn" onclick="openTab('mistico')" id="tabMistico"><span class="tb-icon">🔮</span><span id="i18nTabMistico">Mistico</span></div>
         </div>
 
-        <!-- FREE: Amore -->
-        <div class="tab-content visible" id="tabContentAmore">
-          <div class="tab-title">💕 <span id="i18nAmoreTitle">Amore &amp; Relazioni</span> <button class="audio-btn" onclick="playAudio('amore')" id="audioBtnAmore" aria-label="Ascolta">🔊</button></div>
-          <p class="tab-text" id="tcAmore"></p>
-        </div>
+        <!-- FREE: Lettura unica — Amore + Lavoro + Salute in un unico discorso -->
+        <div class="tab-content visible" id="tabContentOggi">
+          <div class="unified-head">
+            <div class="tab-title" style="margin-bottom:0"><span id="i18nOggiTitle">La lettura di oggi</span></div>
+            <button class="play-all-btn" onclick="playAllAudio()" id="audioBtnAll" aria-label="Ascolta la lettura completa">
+              <span id="audioBtnAllIcon">▶</span>
+            </button>
+          </div>
+          <div class="audio-progress"><div class="audio-progress-fill" id="audioProgressFill"></div></div>
 
-        <!-- FREE: Lavoro -->
-        <div class="tab-content" id="tabContentLavoro">
-          <div class="tab-title">💼 <span id="i18nLavoroTitle">Lavoro &amp; Finanze</span> <button class="audio-btn" onclick="playAudio('lavoro')" id="audioBtnLavoro" aria-label="Ascolta">🔊</button></div>
-          <p class="tab-text" id="tcLavoro"></p>
-        </div>
-
-        <!-- FREE: Salute -->
-        <div class="tab-content" id="tabContentSalute">
-          <div class="tab-title">🌿 <span id="i18nSaluteTitle">Salute &amp; Benessere</span> <button class="audio-btn" onclick="playAudio('salute')" id="audioBtnSalute" aria-label="Ascolta">🔊</button></div>
-          <p class="tab-text" id="tcSalute"></p>
+          <div class="unified-reading" id="unifiedReading">
+            <p class="tab-text unified-block" id="blockAmore" data-field="amore" onclick="jumpToBlock('amore')">
+              <span class="unified-label">💕 <span id="i18nTabAmore">Amore</span></span><span id="tcAmore"></span>
+            </p>
+            <p class="tab-text unified-block" id="blockLavoro" data-field="lavoro" onclick="jumpToBlock('lavoro')">
+              <span class="unified-label">💼 <span id="i18nTabLavoro">Lavoro</span></span><span id="tcLavoro"></span>
+            </p>
+            <p class="tab-text unified-block" id="blockSalute" data-field="salute" onclick="jumpToBlock('salute')">
+              <span class="unified-label">🌿 <span id="i18nTabSalute">Salute</span></span><span id="tcSalute"></span>
+            </p>
+          </div>
         </div>
 
         <!-- PREMIUM: Fortuna — anteprima + gate -->
@@ -451,6 +474,7 @@ const I18N = {
     i18nTitle:'Oroscopo', i18nSubtitle:'Amore · Lavoro · Salute · Fortuna<br>per tutti i 12 segni zodiacali',
     i18nYourSign:'Il tuo segno', i18nHeroCta:"▶ Leggi l'oroscopo", i18nAllSigns:'Tutti i Segni',
     i18nTabAmore:'Amore', i18nTabLavoro:'Lavoro', i18nTabSalute:'Salute', i18nTabFortuna:'Fortuna', i18nTabMistico:'Mistico',
+    i18nTabOggi:'Oggi', i18nOggiTitle:'La lettura di oggi',
     i18nAmoreTitle:'Amore &amp; Relazioni', i18nLavoroTitle:'Lavoro &amp; Finanze',
     i18nSaluteTitle:'Salute &amp; Benessere', i18nFortunaTitle:'Fortuna del Giorno',
     i18nMisticoTitle:'Guida Mistica', i18nPietreTitle:'Pietre del Segno', i18nOggettiTitle:'Oggetti Magici',
@@ -476,6 +500,7 @@ const I18N = {
     i18nTitle:'Horoscope', i18nSubtitle:'Love · Work · Health · Fortune<br>for all 12 zodiac signs',
     i18nYourSign:'Your sign', i18nHeroCta:'▶ Read your horoscope', i18nAllSigns:'All Signs',
     i18nTabAmore:'Love', i18nTabLavoro:'Work', i18nTabSalute:'Health', i18nTabFortuna:'Fortune', i18nTabMistico:'Mystic',
+    i18nTabOggi:'Today', i18nOggiTitle:"Today's reading",
     i18nAmoreTitle:'Love &amp; Relationships', i18nLavoroTitle:'Work &amp; Finance',
     i18nSaluteTitle:'Health &amp; Wellness', i18nFortunaTitle:"Today's Fortune",
     i18nMisticoTitle:'Mystic Guide', i18nPietreTitle:'Sign Stones', i18nOggettiTitle:'Magic Objects',
@@ -501,6 +526,7 @@ const I18N = {
     i18nTitle:'Horóscopo', i18nSubtitle:'Amor · Trabajo · Salud · Fortuna<br>para los 12 signos del zodíaco',
     i18nYourSign:'Tu signo', i18nHeroCta:'▶ Lee tu horóscopo', i18nAllSigns:'Todos los Signos',
     i18nTabAmore:'Amor', i18nTabLavoro:'Trabajo', i18nTabSalute:'Salud', i18nTabFortuna:'Fortuna', i18nTabMistico:'Místico',
+    i18nTabOggi:'Hoy', i18nOggiTitle:'La lectura de hoy',
     i18nAmoreTitle:'Amor &amp; Relaciones', i18nLavoroTitle:'Trabajo &amp; Finanzas',
     i18nSaluteTitle:'Salud &amp; Bienestar', i18nFortunaTitle:'Fortuna del Día',
     i18nMisticoTitle:'Guía Mística', i18nPietreTitle:'Piedras del Signo', i18nOggettiTitle:'Objetos Mágicos',
@@ -726,7 +752,7 @@ const GENERAL_ES = [
 let _currentSign = null;
 let _savedSign = null;
 let _heroSign = 'ariete';
-let _activeTab = 'amore';
+let _activeTab = 'oggi';
 let _toastTimer = null;
 let _lang = 'it';
 let _premiumDismissed = { fortuna: false, mistico: false };
@@ -891,7 +917,7 @@ function buildGrid() {
 
 function selectSign(key) {
   _currentSign = key;
-  _activeTab = 'amore';
+  _activeTab = 'oggi';
   localStorage.setItem('myst_segno_principale', key);
 
   buildGrid();
@@ -1008,44 +1034,135 @@ function renderReading(key) {
     }
   });
 
-  openTab('amore');
+  resetAudioSequence();
+  openTab('oggi');
 }
 
-function playAudio(field) {
-  if (!_currentSign || _currentAudioIdx[field] === undefined) return;
-  const btn = document.getElementById('audioBtn' + field.charAt(0).toUpperCase() + field.slice(1));
+// ═══════════════════════════════════════════════
+// AUDIO — lettura unica, sequenza automatica
+// Amore → Lavoro → Salute, con evidenziazione del
+// blocco che sta parlando e avanzamento automatico.
+// ═══════════════════════════════════════════════
+const _sequenceFields = ['amore','lavoro','salute'];
+let _seqIndex = 0;
+let _seqPlaying = false;
 
-  // Se sto già suonando questo stesso audio, metti in pausa (toggle)
-  if (_audioPlayer && _audioPlayingField === field && !_audioPlayer.paused) {
-    _audioPlayer.pause();
-    if (btn) btn.classList.remove('playing');
+function fieldCap(f) { return f.charAt(0).toUpperCase() + f.slice(1); }
+
+function setPlayAllBtnState(playing) {
+  const btn = document.getElementById('audioBtnAll');
+  const icon = document.getElementById('audioBtnAllIcon');
+  if (!btn) return;
+  btn.classList.toggle('playing', playing);
+  if (icon) icon.textContent = playing ? '⏸' : '▶';
+}
+
+function resetAudioSequence() {
+  if (_audioPlayer) { _audioPlayer.onended = null; _audioPlayer.pause(); }
+  _audioPlayer = null;
+  _audioPlayingField = null;
+  _seqIndex = 0;
+  _seqPlaying = false;
+  setPlayAllBtnState(false);
+  document.querySelectorAll('.unified-block').forEach(b => b.classList.remove('active','done'));
+  const fill = document.getElementById('audioProgressFill');
+  if (fill) fill.style.width = '0%';
+}
+
+function stopAudioSequence() {
+  if (_audioPlayer) _audioPlayer.pause();
+  _seqPlaying = false;
+  setPlayAllBtnState(false);
+}
+
+function highlightBlock(field) {
+  document.querySelectorAll('.unified-block').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById('block' + fieldCap(field));
+  if (el) {
+    el.classList.add('active');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function updateSequenceProgress() {
+  if (!_audioPlayer || !_audioPlayer.duration) return;
+  const segProgress = _audioPlayer.currentTime / _audioPlayer.duration;
+  const overall = ((_seqIndex + segProgress) / _sequenceFields.length) * 100;
+  const fill = document.getElementById('audioProgressFill');
+  if (fill) fill.style.width = Math.min(100, overall) + '%';
+}
+
+function playSequenceStep() {
+  if (_seqIndex >= _sequenceFields.length) {
+    _seqPlaying = false;
+    setPlayAllBtnState(false);
+    document.querySelectorAll('.unified-block').forEach(b => b.classList.remove('active'));
+    const fill = document.getElementById('audioProgressFill');
+    if (fill) fill.style.width = '100%';
     return;
   }
+  const field = _sequenceFields[_seqIndex];
+  if (_currentAudioIdx[field] === undefined) { _seqIndex++; playSequenceStep(); return; }
 
-  // Ferma un eventuale audio precedente di un'altra sezione
-  if (_audioPlayer) {
-    _audioPlayer.pause();
-    document.querySelectorAll('.audio-btn.playing').forEach(b => b.classList.remove('playing'));
-  }
+  highlightBlock(field);
 
   const idx = _currentAudioIdx[field];
   const url = `${AUDIO_BASE}${_currentSign}_${field}_${idx}.mp3`;
-
   _audioPlayer = new Audio(url);
   _audioPlayingField = field;
-  if (btn) btn.classList.add('playing');
-
+  _audioPlayer.ontimeupdate = updateSequenceProgress;
+  _audioPlayer.onended = () => {
+    document.getElementById('block' + fieldCap(field))?.classList.add('done');
+    _seqIndex++;
+    playSequenceStep();
+  };
   _audioPlayer.play().catch(() => {
     toast('Audio non disponibile per questa lettura');
-    if (btn) btn.classList.remove('playing');
+    _seqIndex++;
+    playSequenceStep();
   });
+}
 
-  _audioPlayer.onended = () => { if (btn) btn.classList.remove('playing'); };
+function playAllAudio() {
+  if (!_currentSign) return;
+
+  // Toggle pausa se già in riproduzione
+  if (_seqPlaying) {
+    _seqPlaying = false;
+    if (_audioPlayer) _audioPlayer.pause();
+    setPlayAllBtnState(false);
+    return;
+  }
+
+  _seqPlaying = true;
+  setPlayAllBtnState(true);
+
+  // Riprendi da dove interrotto, oppure riparti dall'inizio se la sequenza era terminata
+  if (_audioPlayer && _audioPlayingField === _sequenceFields[_seqIndex] && _audioPlayer.paused && _audioPlayer.currentTime > 0 && _seqIndex < _sequenceFields.length) {
+    highlightBlock(_audioPlayingField);
+    _audioPlayer.play().catch(() => { _seqIndex++; playSequenceStep(); });
+    return;
+  }
+
+  if (_seqIndex >= _sequenceFields.length) _seqIndex = 0;
+  playSequenceStep();
+}
+
+// Permette di toccare un blocco per saltare direttamente a quella sezione
+function jumpToBlock(field) {
+  if (!_currentSign) return;
+  const targetIdx = _sequenceFields.indexOf(field);
+  if (targetIdx === -1) return;
+  _seqIndex = targetIdx;
+  _seqPlaying = true;
+  setPlayAllBtnState(true);
+  playSequenceStep();
 }
 
 function openTab(name) {
+  if (name !== 'oggi') stopAudioSequence();
   _activeTab = name;
-  const tabs = ['amore','lavoro','salute','fortuna','mistico'];
+  const tabs = ['oggi','fortuna','mistico'];
   tabs.forEach(t => {
     document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1))?.classList.toggle('active', t === name);
     document.getElementById('tabContent' + t.charAt(0).toUpperCase() + t.slice(1))?.classList.toggle('visible', t === name);
