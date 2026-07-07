@@ -588,12 +588,16 @@ body {
 /* ══════════════════════════════════════
    RIGA TOP 10
 ══════════════════════════════════════ */
-.nf-top10 .dash-card { flex: 0 0 108px; width: 108px; position: relative; overflow: visible; }
+.nf-top10 .dash-card { flex: 0 0 130px; width: 130px; position: relative; overflow: hidden; padding: 0; border-radius: 14px; }
+.nf-top10 .dash-img-wrap { aspect-ratio: 9/16; margin-bottom: 0; border-radius: 14px; }
+.nf-top10 .dash-img-wrap img { border-radius: 14px; }
+.nf-top10 .dash-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 .nf-top10-badge {
-  position: absolute; top: 2px; left: 4px; z-index: 3;
-  font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; line-height: 1;
+  position: absolute; top: 8px; left: 7px; z-index: 3;
+  font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; line-height: 1;
   color: #0a0514; -webkit-text-stroke: 1.5px var(--gold);
-  text-shadow: -1.5px -1.5px 0 var(--gold), 1.5px -1.5px 0 var(--gold), -1.5px 1.5px 0 var(--gold), 1.5px 1.5px 0 var(--gold);
+  text-shadow: -1.5px -1.5px 0 var(--gold), 1.5px -1.5px 0 var(--gold), -1.5px 1.5px 0 var(--gold), 1.5px 1.5px 0 var(--gold),
+    0 3px 6px rgba(0,0,0,.55);
 }
 
 /* ══════════════════════════════════════
@@ -757,23 +761,23 @@ body {
 <div class="dash-title" id="sec-top10">🏆 I Più Consultati</div>
 <div class="dash-grid nf-top10">
   <a class="dash-card c-gold" href="./tarocchi.html"><span class="nf-top10-badge">1</span>
-    <div class="dash-img-wrap"><img src="./images/icone/home/tarocchi.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🃏</div>'"></div>
+    <div class="dash-img-wrap"><img src="./images/icone/home/tarocchi-home.webp" alt="Tarocchi" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🃏</div>'"></div>
     <div class="dash-label" id="top10-1">Tarocchi</div>
   </a>
   <a class="dash-card c-purple" href="./oroscopo.html"><span class="nf-top10-badge">2</span>
-    <div class="dash-img-wrap"><img src="./images/icone/home/oroscopo.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🌟</div>'"></div>
+    <div class="dash-img-wrap"><img src="./images/icone/home/oroscopo-home.webp" alt="Oroscopo" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🌟</div>'"></div>
     <div class="dash-label" id="top10-2">Oroscopo</div>
   </a>
   <a class="dash-card c-teal" href="./iching.html"><span class="nf-top10-badge">3</span>
-    <div class="dash-img-wrap"><img src="./images/icone/home/i-ching.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>☯️</div>'"></div>
+    <div class="dash-img-wrap"><img src="./images/icone/home/i-ching-home.webp" alt="I Ching" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>☯️</div>'"></div>
     <div class="dash-label" id="top10-3">I Ching</div>
   </a>
   <a class="dash-card c-orange" href="./rune.html"><span class="nf-top10-badge">4</span>
-    <div class="dash-img-wrap"><img src="./images/icone/home/rune.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>ᚱ</div>'"></div>
+    <div class="dash-img-wrap"><img src="./images/icone/home/rune-home.webp" alt="Rune" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>ᚱ</div>'"></div>
     <div class="dash-label" id="top10-4">Rune</div>
   </a>
   <a class="dash-card c-blue" href="./numerologia.html"><span class="nf-top10-badge">5</span>
-    <div class="dash-img-wrap"><img src="./images/icone/home/numerologia.webp" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🔢</div>'"></div>
+    <div class="dash-img-wrap"><img src="./images/icone/home/numerologia-home.webp" alt="Numerologia" loading="lazy" onerror="this.parentNode.innerHTML='<div style=font-size:42px;padding:18px>🔢</div>'"></div>
     <div class="dash-label" id="top10-5">Numerologia</div>
   </a>
 </div>
