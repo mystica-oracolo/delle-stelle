@@ -94,27 +94,27 @@
 
 .section-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;margin:22px 0 10px;text-align:center}
 
-/* Tile stile Netflix (condiviso da mode-card e spread-card): l'immagine è protagonista, grande, mai rimpicciolita */
-.mode-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 12px}
-.spread-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
-.mode-card,.spread-card{position:relative;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:linear-gradient(145deg,#150828,#070310);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:manipulation}
+/* Tile stile Netflix: carosello orizzontale, card grandi, l'immagine è protagonista */
+.mode-wrap,.spread-grid{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 12px;margin:16px 0 6px;scrollbar-width:none}
+.mode-wrap::-webkit-scrollbar,.spread-grid::-webkit-scrollbar{display:none}
+.mode-card,.spread-card{position:relative;flex:0 0 auto;width:76vw;max-width:320px;scroll-snap-align:start;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:linear-gradient(145deg,#150828,#070310);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:pan-x}
 .mode-card:hover,.spread-card:hover{transform:translateY(-3px);border-color:var(--gold-dim)}
 .mode-card.active,.spread-card.active{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.35)}
-/* Area immagine: rapporto ultra-largo (21:9, ≥ al rapporto di ogni foto) → si taglia SOLO in verticale, mai ai lati dove ci sono le scritte */
+/* Area immagine: rapporto ultra-largo (21:9, ≥ al rapporto di ogni foto) → si taglia SOLO in verticale, mai ai lati dove ci sono le scritte. Card grande = immagine grande */
 .card-media{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;background:#0a0514;flex-shrink:0}
 .card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
 .card-media.pos-top img{object-position:top}
 .card-media.pos-bottom img{object-position:bottom}
 .mode-card:hover .card-media img,.spread-card:hover .card-media img{transform:scale(1.06)}
-.spread-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,#1c0f38,#0a0514);filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
+.spread-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px;background:linear-gradient(135deg,#1c0f38,#0a0514);filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
 /* Testo SEMPRE sotto l'immagine, fuori dal contorno della foto, mai sovrapposto */
-.card-footer{padding:8px 10px 9px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
-.mode-name,.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:12px;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
-.spread-name{font-size:11px}
-.mode-desc,.spread-desc{color:var(--muted);font-size:10.5px;line-height:1.35}
-.spread-desc{font-size:9.5px}
-.lock-chip{font-size:9px}
-.premium-chip{display:inline-block;background:rgba(212,175,55,0.14);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.3px;padding:2px 7px;border-radius:8px;width:fit-content}
+.card-footer{padding:10px 12px 11px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.mode-name,.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:14px;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+.spread-name{font-size:13px}
+.mode-desc,.spread-desc{color:var(--muted);font-size:11.5px;line-height:1.4}
+.spread-desc{font-size:11px}
+.lock-chip{font-size:10px}
+.premium-chip{display:inline-block;background:rgba(212,175,55,0.14);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3px;padding:2px 8px;border-radius:8px;width:fit-content}
 .btn-back{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.08);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.3px;padding:8px 14px;border-radius:10px;cursor:pointer;margin-bottom:14px}
 .btn-back:hover{background:rgba(212,175,55,.16)}
 
@@ -942,7 +942,7 @@ document.getElementById('themeToggle')?.addEventListener('click', () => { isDayM
 /* ═══════════════════════════════════════════════════
    Premium Gate
    ═══════════════════════════════════════════════════ */
-function isPremium() { return localStorage.getItem('myst_premium') === '1'; }
+function isPremium() { return localStorage.getItem('myst_premium') === 'true'; }
 function requirePremium(actionType) {
   if (isPremium()) return true;
   document.getElementById('premiumModal')?.classList.add('show');
@@ -1314,6 +1314,8 @@ function startTarot() {
   const cfg = MODES[_mode] || MODES.semplice;
   if (cfg.premium && !requirePremium(_mode)) return;
 
+  window.scrollTo({ top: 0, behavior: 'instant' in document.documentElement.style ? 'instant' : 'auto' });
+
   _deck = [...TAROT_CARDS].sort(() => Math.random() - .5);
   _picked = []; _step = 0; _pickLock = true;
 
@@ -1520,6 +1522,7 @@ function resetTarot() {
   $('#tarotContent').innerHTML = '';
   $('#tGrid').innerHTML = '';
   $('#posBar').innerHTML = '';
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
 function saveReading() {
