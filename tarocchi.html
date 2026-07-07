@@ -100,7 +100,7 @@
 .mode-wrap::-webkit-scrollbar,.spread-row::-webkit-scrollbar{display:none}
 .mode-wrap{margin:16px 0 6px}
 /* Card grande quanto il video hero: l'immagine è l'unica protagonista, il riquadro segue SEMPRE il rapporto naturale della foto (mai tagliata) */
-.mode-card,.spread-card{position:relative;flex:0 0 auto;width:88%;scroll-snap-align:start;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:#0a0514;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:pan-x;box-shadow:0 8px 26px rgba(0,0,0,.5)}
+.mode-card,.spread-card{position:relative;flex:0 0 auto;width:88%;scroll-snap-align:start;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:#0a0514;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:manipulation;box-shadow:0 8px 26px rgba(0,0,0,.5)}
 .mode-card:hover,.spread-card:hover{transform:translateY(-3px);border-color:var(--gold-dim)}
 .mode-card.active,.spread-card.active{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.35)}
 .card-media{position:relative;width:100%;overflow:hidden;background:#0a0514;display:block}
@@ -296,6 +296,15 @@
           <div class="card-footer">
             <div class="mode-name" id="mn-approfondita">Croce della Vita</div>
             <div class="mode-desc" id="md-approfondita">5 carte · Lettura approfondita · Premium</div>
+          </div>
+        </div>
+        <div class="mode-card" data-mode="amore" onclick="selectAndStart('amore')">
+          <div class="card-media" style="aspect-ratio:700/312">
+            <img src="./images/tarocchi/amore.webp" alt="Tarocchi dell'Amore - 3 carte" loading="lazy" decoding="async">
+          </div>
+          <div class="card-footer">
+            <div class="mode-name" id="mn-amore">Tarocchi dell'Amore</div>
+            <div class="mode-desc" id="md-amore">3 carte · sentimenti e cuore</div>
           </div>
         </div>
       </div>
@@ -644,14 +653,14 @@ let currentLang = localStorage.getItem('myst_lang') || 'it';
 const SPREADS = [
   { key:'sionno',    icon:'☯️', img:'./images/tarocchi/sionno.webp', ratio:'700/401', cards:1, premium:false, name:{it:'Tarocchi Sì o No',en:'Yes or No Tarot',es:'Tarot Sí o No'}, desc:{it:'1 carta · risposta rapida',en:'1 card · quick answer',es:'1 carta · respuesta rápida'} },
   { key:'marsiglia', icon:'🎴', img:'./images/tarocchi/marsiglia.webp', ratio:'700/324', cards:5, premium:true,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
-  { key:'amore',     icon:'💞', img:'./images/tarocchi/amore.webp', ratio:'700/312', cards:3, premium:false, name:{it:"Tarocchi dell'Amore",en:'Love Tarot',es:'Tarot del Amor'}, desc:{it:'3 carte · sentimenti e cuore',en:'3 cards · feelings and heart',es:'3 cartas · sentimientos y corazón'} },
+  { key:'angeli',    icon:'👼', img:'./images/tarocchi/angeli.webp', ratio:'700/407', cards:3, premium:false, name:{it:'Tarocchi degli Angeli',en:'Angel Tarot',es:'Tarot de los Ángeles'}, desc:{it:'3 carte · messaggio e guida',en:'3 cards · message and guidance',es:'3 cartas · mensaje y guía'} },
   { key:'coppia',    icon:'💑', img:'./images/tarocchi/coppia.webp', ratio:'700/362', cards:2, premium:false, name:{it:'Tarocchi per la Coppia',en:'Couple Tarot',es:'Tarot para la Pareja'}, desc:{it:'2 carte · tu e il partner',en:'2 cards · you and your partner',es:'2 cartas · tú y tu pareja'} },
   { key:'salute',    icon:'🩺', img:'./images/tarocchi/salute.webp', ratio:'700/322', cards:3, premium:false, name:{it:'Tarocchi della Salute',en:'Health Tarot',es:'Tarot de la Salud'}, desc:{it:'3 carte · corpo e mente',en:'3 cards · body and mind',es:'3 cartas · cuerpo y mente'} },
   { key:'lavoro',    icon:'💼', img:'./images/tarocchi/lavoro.webp', ratio:'700/322', cards:3, premium:false, name:{it:'Tarocchi del Lavoro',en:'Career Tarot',es:'Tarot del Trabajo'}, desc:{it:'3 carte · carriera e progetti',en:'3 cards · career and projects',es:'3 cartas · carrera y proyectos'} },
   { key:'celtici',   icon:'☘️', img:'./images/tarocchi/celtici.webp', ratio:'700/340', cards:5, premium:true,  name:{it:'Tarocchi Celtici',en:'Celtic Tarot',es:'Tarot Celta'}, desc:{it:'5 carte · Croce Celtica',en:'5 cards · Celtic Cross',es:'5 cartas · Cruz Celta'} },
   { key:'egiziani',  icon:'𓂀', img:'./images/tarocchi/egiziani.webp', ratio:'700/384', cards:3, premium:false, name:{it:'Tarocchi Egiziani',en:'Egyptian Tarot',es:'Tarot Egipcio'}, desc:{it:'3 carte · simbologia antica',en:'3 cards · ancient symbolism',es:'3 cartas · simbología antigua'} },
   { key:'zingara',   icon:'🔮', img:'./images/tarocchi/zingara.webp', ratio:'700/305', cards:3, premium:false, name:{it:'Tarocchi della Zingara',en:'Gypsy Tarot',es:'Tarot de la Gitana'}, desc:{it:'3 carte · tradizione popolare',en:'3 cards · folk tradition',es:'3 cartas · tradición popular'} },
-  { key:'angeli',    icon:'👼', img:'./images/tarocchi/angeli.webp', ratio:'700/407', cards:3, premium:false, name:{it:'Tarocchi degli Angeli',en:'Angel Tarot',es:'Tarot de los Ángeles'}, desc:{it:'3 carte · messaggio e guida',en:'3 cards · message and guidance',es:'3 cartas · mensaje y guía'} }
+  { key:'amore',     icon:'💞', img:'./images/tarocchi/amore.webp', ratio:'700/312', cards:3, premium:false, name:{it:"Tarocchi dell'Amore",en:'Love Tarot',es:'Tarot del Amor'}, desc:{it:'3 carte · sentimenti e cuore',en:'3 cards · feelings and heart',es:'3 cartas · sentimientos y corazón'} }
 ];
 
 const MODES = { semplice:{cards:3,premium:false}, approfondita:{cards:5,premium:true} };
@@ -816,6 +825,11 @@ function applyLang() {
   document.getElementById('md-semplice').textContent = L.modeSemplice.d;
   document.getElementById('mn-approfondita').textContent = L.modeApprofondita.n;
   document.getElementById('md-approfondita').textContent = L.modeApprofondita.d;
+  const amoreData = SPREADS.find(s => s.key === 'amore');
+  if (amoreData) {
+    document.getElementById('mn-amore').textContent = amoreData.name[currentLang];
+    document.getElementById('md-amore').textContent = amoreData.desc[currentLang];
+  }
   document.getElementById('btnBackReading').textContent = L.btnBack;
   document.getElementById('forOtherLabel').textContent = _forOther ? '👤 ' + L.forOtherLabel + ': ' + _forOther.name : L.forOtherLabel;
   document.getElementById('spreadSectionTitle').textContent = L.spreadSectionTitle;
@@ -885,7 +899,7 @@ function spreadCardHtml(s) {
 
 function renderSpreadGrid() {
   const grid = document.getElementById('spreadGrid');
-  const rows = chunkArray(SPREADS, 3);
+  const rows = chunkArray(SPREADS.filter(s => s.key !== 'amore'), 3);
   grid.innerHTML = rows.map(row => `<div class="spread-row">${row.map(spreadCardHtml).join('')}</div>`).join('');
 }
 
