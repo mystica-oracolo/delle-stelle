@@ -86,26 +86,28 @@
 .main-content{flex:1;padding:16px;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
 
 /* Intro / hero video (stile Netflix) */
-.tarot-hero{position:relative;width:100%;border-radius:18px;overflow:hidden;margin:14px 0 4px;aspect-ratio:2/1;background:linear-gradient(160deg,#150828,#050210);box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 1px rgba(212,175,55,.25)}
-.tarot-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.tarot-hero{position:relative;width:100%;border-radius:18px;overflow:hidden;margin:14px 0 4px;aspect-ratio:16/9;background:#0a0514;box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 1px rgba(212,175,55,.25)}
+.tarot-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .tarot-hero-caption{text-align:center;padding:12px 8px 4px}
 .tarot-hero-caption h2{font-family:'Cinzel',serif;font-size:20px;color:var(--gold);letter-spacing:2px;margin-bottom:6px}
 .tarot-hero-caption p{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:0}
 
 .section-label{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1.5px;margin:22px 0 10px;text-align:center}
 
-/* Tile stile Netflix (condiviso da mode-card e spread-card) */
+/* Tile stile Netflix (condiviso da mode-card e spread-card): l'immagine è protagonista, grande, mai rimpicciolita */
 .mode-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 12px}
 .spread-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
 .mode-card,.spread-card{position:relative;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:2px solid rgba(212,175,55,.22);cursor:pointer;background:linear-gradient(145deg,#150828,#070310);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;touch-action:manipulation}
 .mode-card:hover,.spread-card:hover{transform:translateY(-3px);border-color:var(--gold-dim)}
 .mode-card.active,.spread-card.active{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.35)}
-/* Area immagine: contain, mai cover — l'immagine si vede SEMPRE intera, zero rischio di tagliare le scritte */
-.card-media{position:relative;width:100%;aspect-ratio:2/1;overflow:hidden;background:linear-gradient(160deg,#150828,#050210);flex-shrink:0}
-.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .5s ease}
-.mode-card:hover .card-media img,.spread-card:hover .card-media img{transform:scale(1.05)}
+/* Area immagine: rapporto ultra-largo (21:9, ≥ al rapporto di ogni foto) → si taglia SOLO in verticale, mai ai lati dove ci sono le scritte */
+.card-media{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;background:#0a0514;flex-shrink:0}
+.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease}
+.card-media.pos-top img{object-position:top}
+.card-media.pos-bottom img{object-position:bottom}
+.mode-card:hover .card-media img,.spread-card:hover .card-media img{transform:scale(1.06)}
 .spread-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,#1c0f38,#0a0514);filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
-/* Testo SEMPRE sotto l'immagine, mai sovrapposto. Il lucchetto/badge premium è testo inline, non più sovrapposto alla foto */
+/* Testo SEMPRE sotto l'immagine, fuori dal contorno della foto, mai sovrapposto */
 .card-footer{padding:8px 10px 9px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
 .mode-name,.spread-name{font-family:'Cinzel',serif;color:var(--gold);font-size:12px;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
 .spread-name{font-size:11px}
@@ -113,6 +115,8 @@
 .spread-desc{font-size:9.5px}
 .lock-chip{font-size:9px}
 .premium-chip{display:inline-block;background:rgba(212,175,55,0.14);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.3px;padding:2px 7px;border-radius:8px;width:fit-content}
+.btn-back{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.08);border:1px solid var(--gold-dim);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.3px;padding:8px 14px;border-radius:10px;cursor:pointer;margin-bottom:14px}
+.btn-back:hover{background:rgba(212,175,55,.16)}
 
 /* "Lettura per" banner */
 .for-other-row{margin:4px 0 12px;display:flex;align-items:center;gap:8px}
@@ -279,8 +283,8 @@
 
       <!-- Modalità principali -->
       <div class="mode-wrap">
-        <div class="mode-card active" data-mode="semplice" onclick="selectMode('semplice')">
-          <div class="card-media">
+        <div class="mode-card active" data-mode="semplice" onclick="selectAndStart('semplice')">
+          <div class="card-media pos-top">
             <img src="./images/tarocchi/lettura-3.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-footer">
@@ -288,8 +292,8 @@
             <div class="mode-desc" id="md-semplice">3 carte · Passato · Presente · Futuro</div>
           </div>
         </div>
-        <div class="mode-card" data-mode="approfondita" onclick="selectMode('approfondita')">
-          <div class="card-media">
+        <div class="mode-card" data-mode="approfondita" onclick="selectAndStart('approfondita')">
+          <div class="card-media pos-top">
             <img src="./images/tarocchi/lettura-5.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-footer">
@@ -299,8 +303,6 @@
           </div>
         </div>
       </div>
-
-      <button class="btn" onclick="startTarot()" style="margin-top:4px" id="btnStart"></button>
 
       <!-- Lettura per un'altra persona -->
       <div class="for-other-row">
@@ -319,6 +321,7 @@
 
     <!-- ═══ READING ═══ -->
     <div id="tarotReading" style="display:none">
+      <button class="btn-back" id="btnBackReading" onclick="resetTarot()">← Indietro</button>
       <div class="tarot-instr" id="tarotInstr"></div>
       <h2 id="tarotTitle" style="font-size:15px;margin-bottom:8px"></h2>
       <div class="posbar" id="posBar"></div>
@@ -437,6 +440,7 @@ it: {
   modeSemplice: { n: 'Lettura Semplice', d: '3 carte · Passato · Presente · Futuro' },
   modeApprofondita: { n: 'Croce della Vita', d: '5 carte · Lettura approfondita', badge: '✨ Premium' },
   btnStart: '✨ Inizia la Lettura',
+  btnBack: '← Indietro',
   forOtherLabel: "Lettura per un'altra persona",
   spreadSectionTitle: '✦ Stese di Tarocchi',
   btnNewReading: '↩ Nuova Lettura',
@@ -506,6 +510,7 @@ en: {
   modeSemplice: { n: 'Simple Reading', d: '3 cards · Past · Present · Future' },
   modeApprofondita: { n: 'Cross of Life', d: '5 cards · In-depth reading', badge: '✨ Premium' },
   btnStart: '✨ Start the Reading',
+  btnBack: '← Back',
   forOtherLabel: 'Reading for someone else',
   spreadSectionTitle: '✦ Tarot Spreads',
   btnNewReading: '↩ New Reading',
@@ -575,6 +580,7 @@ es: {
   modeSemplice: { n: 'Tirada Simple', d: '3 cartas · Pasado · Presente · Futuro' },
   modeApprofondita: { n: 'Cruz de la Vida', d: '5 cartas · Lectura profunda', badge: '✨ Premium' },
   btnStart: '✨ Comenzar la Lectura',
+  btnBack: '← Atrás',
   forOtherLabel: 'Lectura para otra persona',
   spreadSectionTitle: '✦ Tiradas de Tarot',
   btnNewReading: '↩ Nueva Lectura',
@@ -641,13 +647,13 @@ let currentLang = localStorage.getItem('myst_lang') || 'it';
    ═══════════════════════════════════════════════════ */
 const SPREADS = [
   { key:'sionno',    icon:'☯️', img:'./images/tarocchi/sionno.webp', cards:1, premium:false, name:{it:'Tarocchi Sì o No',en:'Yes or No Tarot',es:'Tarot Sí o No'}, desc:{it:'1 carta · risposta rapida',en:'1 card · quick answer',es:'1 carta · respuesta rápida'} },
-  { key:'marsiglia', icon:'🎴', img:'./images/tarocchi/marsiglia.webp', cards:5, premium:true,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
+  { key:'marsiglia', icon:'🎴', img:'./images/tarocchi/marsiglia.webp', pos:'top', cards:5, premium:true,  name:{it:'Tarocchi di Marsiglia',en:'Marseille Tarot',es:'Tarot de Marsella'}, desc:{it:'5 carte · scuola classica francese',en:'5 cards · classic French school',es:'5 cartas · escuela clásica francesa'} },
   { key:'amore',     icon:'💞', img:'./images/tarocchi/amore.webp', cards:3, premium:false, name:{it:"Tarocchi dell'Amore",en:'Love Tarot',es:'Tarot del Amor'}, desc:{it:'3 carte · sentimenti e cuore',en:'3 cards · feelings and heart',es:'3 cartas · sentimientos y corazón'} },
-  { key:'coppia',    icon:'💑', img:'./images/tarocchi/coppia.webp', cards:2, premium:false, name:{it:'Tarocchi per la Coppia',en:'Couple Tarot',es:'Tarot para la Pareja'}, desc:{it:'2 carte · tu e il partner',en:'2 cards · you and your partner',es:'2 cartas · tú y tu pareja'} },
+  { key:'coppia',    icon:'💑', img:'./images/tarocchi/coppia.webp', pos:'bottom', cards:2, premium:false, name:{it:'Tarocchi per la Coppia',en:'Couple Tarot',es:'Tarot para la Pareja'}, desc:{it:'2 carte · tu e il partner',en:'2 cards · you and your partner',es:'2 cartas · tú y tu pareja'} },
   { key:'salute',    icon:'🩺', img:'./images/tarocchi/salute.webp', cards:3, premium:false, name:{it:'Tarocchi della Salute',en:'Health Tarot',es:'Tarot de la Salud'}, desc:{it:'3 carte · corpo e mente',en:'3 cards · body and mind',es:'3 cartas · cuerpo y mente'} },
   { key:'lavoro',    icon:'💼', img:'./images/tarocchi/lavoro.webp', cards:3, premium:false, name:{it:'Tarocchi del Lavoro',en:'Career Tarot',es:'Tarot del Trabajo'}, desc:{it:'3 carte · carriera e progetti',en:'3 cards · career and projects',es:'3 cartas · carrera y proyectos'} },
   { key:'celtici',   icon:'☘️', img:'./images/tarocchi/celtici.webp', cards:5, premium:true,  name:{it:'Tarocchi Celtici',en:'Celtic Tarot',es:'Tarot Celta'}, desc:{it:'5 carte · Croce Celtica',en:'5 cards · Celtic Cross',es:'5 cartas · Cruz Celta'} },
-  { key:'egiziani',  icon:'𓂀', img:'./images/tarocchi/egiziani.webp', cards:3, premium:false, name:{it:'Tarocchi Egiziani',en:'Egyptian Tarot',es:'Tarot Egipcio'}, desc:{it:'3 carte · simbologia antica',en:'3 cards · ancient symbolism',es:'3 cartas · simbología antigua'} },
+  { key:'egiziani',  icon:'𓂀', img:'./images/tarocchi/egiziani.webp', pos:'top', cards:3, premium:false, name:{it:'Tarocchi Egiziani',en:'Egyptian Tarot',es:'Tarot Egipcio'}, desc:{it:'3 carte · simbologia antica',en:'3 cards · ancient symbolism',es:'3 cartas · simbología antigua'} },
   { key:'zingara',   icon:'🔮', img:'./images/tarocchi/zingara.webp', cards:3, premium:false, name:{it:'Tarocchi della Zingara',en:'Gypsy Tarot',es:'Tarot de la Gitana'}, desc:{it:'3 carte · tradizione popolare',en:'3 cards · folk tradition',es:'3 cartas · tradición popular'} },
   { key:'angeli',    icon:'👼', img:'./images/tarocchi/angeli.webp', cards:3, premium:false, name:{it:'Tarocchi degli Angeli',en:'Angel Tarot',es:'Tarot de los Ángeles'}, desc:{it:'3 carte · messaggio e guida',en:'3 cards · message and guidance',es:'3 cartas · mensaje y guía'} }
 ];
@@ -815,7 +821,7 @@ function applyLang() {
   document.getElementById('mn-approfondita').textContent = L.modeApprofondita.n;
   document.getElementById('md-approfondita').textContent = L.modeApprofondita.d;
   document.getElementById('mb-approfondita').textContent = L.modeApprofondita.badge;
-  document.getElementById('btnStart').textContent = L.btnStart;
+  document.getElementById('btnBackReading').textContent = L.btnBack;
   document.getElementById('forOtherLabel').textContent = _forOther ? '👤 ' + L.forOtherLabel + ': ' + _forOther.name : L.forOtherLabel;
   document.getElementById('spreadSectionTitle').textContent = L.spreadSectionTitle;
   document.getElementById('btnNewReading').textContent = L.btnNewReading;
@@ -863,8 +869,8 @@ function renderSpreadGrid() {
   const L = LANG[currentLang];
   const grid = document.getElementById('spreadGrid');
   grid.innerHTML = SPREADS.map(s => `
-    <div class="spread-card${_mode===s.key?' active':''}" data-mode="${s.key}" onclick="selectMode('${s.key}')">
-      <div class="card-media">
+    <div class="spread-card${_mode===s.key?' active':''}" data-mode="${s.key}" onclick="selectAndStart('${s.key}')">
+      <div class="card-media${s.pos ? ' pos-' + s.pos : ''}">
         ${s.img
           ? `<img src="${s.img}" alt="" loading="lazy" decoding="async">`
           : `<div class="spread-icon" aria-hidden="true">${s.icon}</div>`}
@@ -1279,6 +1285,11 @@ function selectMode(mode) {
   document.querySelectorAll('.mode-card, .spread-card').forEach(el => {
     el.classList.toggle('active', el.dataset.mode === mode);
   });
+}
+
+function selectAndStart(mode) {
+  selectMode(mode);
+  startTarot();
 }
 
 function openForOther() {
