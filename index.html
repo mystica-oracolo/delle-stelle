@@ -316,6 +316,11 @@ body {
 /* Sezione 3 — Astrologia Orientale & Moderna: icone +3px per lato rispetto alla base (132px) */
 #sec-astro-ori + .dash-grid .dash-card { flex-basis: 138px; width: 138px; }
 
+/* Sezione 2 — Astrologia Occidentale: tutta la riga uniforme a 173px, Astrologia Avanzata quadrata come le altre */
+#sec-astro-occ + .dash-grid .dash-card { flex-basis: 173px; width: 173px; }
+#sec-astro-occ + .dash-grid .dash-card.span2 { flex-basis: 173px; width: 173px; }
+#sec-astro-occ + .dash-grid .dash-card.span2 .dash-img-wrap { aspect-ratio: 1/1; }
+
 /* Colori bordo superiore */
 .c-gold::before   { background: linear-gradient(90deg, transparent, #d4af37, transparent); }
 .c-purple::before { background: linear-gradient(90deg, transparent, #9b59b6, transparent); }
