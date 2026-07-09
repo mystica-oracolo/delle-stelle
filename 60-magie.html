@@ -311,60 +311,570 @@ html.theme-day .rituale-content{color:var(--text)}
 
   <div class="intro">
     <div class="intro-icon">📖</div>
-    <h2 id="intro-title"></h2>
-    <p id="intro-text"></p>
+    <h2 id="intro-title">60 Magie della Tradizione</h2>
+    <p id="intro-text">Saggezza popolare, alchimia domestica e rituali antichi. Dalle tradizioni europee, mediterranee e oltre.</p>
   </div>
 
   <div class="filter-bar" id="filterBar" role="group" aria-label="Filtra rituali per categoria">
-    <button class="filter-btn active" data-cat="tutti" id="filter-tutti"></button>
-    <button class="filter-btn" data-cat="protection" id="filter-protection"></button>
-    <button class="filter-btn" data-cat="prosperity" id="filter-prosperity"></button>
-    <button class="filter-btn" data-cat="love" id="filter-love"></button>
-    <button class="filter-btn" data-cat="purification" id="filter-purification"></button>
-    <button class="filter-btn" data-cat="dreams" id="filter-dreams"></button>
-    <button class="filter-btn" data-cat="mind" id="filter-mind"></button>
+    <button class="filter-btn active" data-cat="tutti" id="filter-tutti">Tutti</button>
+    <button class="filter-btn" data-cat="protection" id="filter-protection">Protezione</button>
+    <button class="filter-btn" data-cat="prosperity" id="filter-prosperity">Prosperità</button>
+    <button class="filter-btn" data-cat="love" id="filter-love">Amore</button>
+    <button class="filter-btn" data-cat="purification" id="filter-purification">Purificazione</button>
+    <button class="filter-btn" data-cat="dreams" id="filter-dreams">Sogni</button>
+    <button class="filter-btn" data-cat="mind" id="filter-mind">Mente</button>
   </div>
 
-  <div class="results-count" id="resultsCount"></div>
+  <div class="results-count" id="resultsCount">60 rituali</div>
 
-  <div class="cards-list" id="cardsList" aria-live="polite"></div>
+  <div class="cards-list" id="cardsList" aria-live="polite">
+      <div class="rituale-card " data-id="1" onclick="toggleCard(1)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">01</span>
+          <span class="rituale-card-title">Il Cerchio di Sale</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine Storica</h4><ul><li>Magia popolare europea, alchimia medievale, grimori rinascimentali</li><li>Il sale era considerato "incorruttibile", capace di respingere impurità, malattie e influssi ostili</li></ul><h4>🕯️ Occorrente &amp; Momento</h4><ul><li>Sale grosso naturale, candela bianca, ciotola, abiti chiari</li><li>Luna calante, tramonto, sabato. Evitare temporali o vento forte</li></ul><h4>📐 Procedura</h4><p>Disporre il sale in senso orario partendo da est, senza interruzioni. Accendere la candela e restare immobili 7 minuti. Formula tradizionale: <em>"Nessuna ombra attraversi questo confine."</em></p><h4>🧠 Significato</h4><p>Funziona come tecnica meditativa e delimitazione mentale. Crea un confine psicologico di sicurezza e concentrazione.</p></div>
+      </div>
+      <div class="rituale-card " data-id="2" onclick="toggleCard(2)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">02</span>
+          <span class="rituale-card-title">Purificazione con la Salvia</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizioni indigene nordamericane e diffusione esoterica occidentale. Il fumo aveva funzione purificatrice, antisettica e spirituale.</p><h4>🌿 Occorrente &amp; Momento</h4><ul><li>Fascio di salvia bianca, ciotola (terracotta/abalone), piuma o mano</li><li>Alba, dopo litigi, malattie o cambio casa</li></ul><h4>🌬️ Procedura</h4><p>Aprire una finestra. Accendere la salvia, spegnere la fiamma lasciando brace e fumo. Camminare lentamente in senso orario, indirizzando il fumo negli angoli, dietro porte e sotto finestre.</p><h4>🗣️ Formula</h4><p><em>"Che il pesante si dissolva e rimanga solo la pace."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="3" onclick="toggleCard(3)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">03</span>
+          <span class="rituale-card-title">Formula contro il Malocchio</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Folklore del Sud Italia (Campania, Sicilia, Calabria, Puglia). Tramandata oralmente, spesso solo la notte di Natale, da donne anziane.</p><h4>🥣 Occorrente &amp; Giorni</h4><ul><li>Piatto bianco, acqua, olio d'oliva</li><li>Martedì o Venerdì. Mai domenica</li></ul><h4>💧 Procedura</h4><p>Riempire il piatto d'acqua, fare il segno della croce, lasciare cadere tre gocce d'olio. Osservare: se l'olio resta compatto non c'è malocchio, se si disperde indica presenza simbolica di invidia.</p><h4>👥 Aspetto Antropologico</h4><p>Serviva a rassicurare, calmare l'ansia e dare un senso logico a sfortune improvvise.</p></div>
+      </div>
+      <div class="rituale-card " data-id="4" onclick="toggleCard(4)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">04</span>
+          <span class="rituale-card-title">Il Nodo di Iside (Tyet)</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Antico Egitto. Associato alla dea Iside. Il Tyet era chiamato "Nodo del Sangue" o "Nodo della Vita".</p><h4>🔮 Occorrente &amp; Momento</h4><ul><li>Pietra rossa, diaspro, corniola, lino rosso</li><li>Viaggi, gravidanza, malattia, riti funerari</li></ul><h4>📐 Procedura</h4><p>L'amuleto veniva lavato con acqua profumata, esposto al sole nascente e legato vicino al petto.</p><h4>🗣️ Formula &amp; Simbolismo</h4><p>Il rosso simboleggiava vita, sangue ed energia difensiva. Protezione divina invocata.</p></div>
+      </div>
+      <div class="rituale-card " data-id="5" onclick="toggleCard(5)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">05</span>
+          <span class="rituale-card-title">Il Ferro di Cavallo</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Europa medievale. Il ferro era considerato repellente per streghe, spiriti e fate ostili.</p><h4>🛡️ Occorrente &amp; Posizione</h4><ul><li>Ferro di cavallo usato, chiodi in ferro</li><li>Punte verso l'alto, sopra la porta principale</li><li>Sabato mattina</li></ul><h4>📐 Procedura</h4><p>Alcuni aggiungevano 7 chiodi o un ramo d'ulivo vicino. Tradizionalmente fissato con intenzione di protezione.</p><h4>👥 Significato</h4><p>Protezione domestica e prosperità. Il gesto materializzava il confine tra interno sicuro ed esterno incerto.</p></div>
+      </div>
+      <div class="rituale-card " data-id="6" onclick="toggleCard(6)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">06</span>
+          <span class="rituale-card-title">Esorcismo dell'Acqua e del Sale</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tardo medioevo cristiano, diffuso in monasteri e rituali popolari.</p><h4>💧 Occorrente &amp; Momento</h4><ul><li>Sale, acqua sorgiva, ciotola d'argento/ceramica, candela</li><li>Dopo lutti, malattie, litigi, incubi frequenti</li></ul><h4>📐 Procedura</h4><p>Il sale veniva versato nell'acqua pronunciando formule latine. Si aspergevano muri, porte, finestre e letto.</p><h4>👥 Simbolismo</h4><p>L'acqua purifica, il sale conserva e protegge. Rito di pulizia simbolica post-trauma.</p></div>
+      </div>
+      <div class="rituale-card " data-id="7" onclick="toggleCard(7)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">07</span>
+          <span class="rituale-card-title">Bagno di Purificazione all'Issoppo</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizioni bibliche e mediterranee. L'issoppo compare nei testi sacri come pianta purificatrice.</p><h4>🌿 Occorrente &amp; Procedura</h4><ul><li>Issoppo essiccato, sale marino, acqua calda, candela bianca</li><li>Lasciare in infusione, versare nell'acqua del bagno, restare immersi 15 min</li></ul><h4>⚠️ Regola Antica</h4><p>Non parlare durante il bagno. "Lavare via" il peso emotivo.</p></div>
+      </div>
+      <div class="rituale-card " data-id="8" onclick="toggleCard(8)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">08</span>
+          <span class="rituale-card-title">Il Quadrato del Sator</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Antica Roma. Trovato su muri, amuleti, caserme e monasteri. Palindromo famoso.</p><h4>📝 Il Quadrato</h4><p style="text-align:center;font-family:monospace;background:rgba(0,0,0,.3);padding:10px;border-radius:8px;margin:8px 0">SATOR<br>AREPO<br>TENET<br>OPERA<br>ROTAS</p><h4>🛡️ Uso Tradizionale</h4><p>Scritto su carta, pergamena o legno. Portato durante viaggi, battaglie, traversate. Proteggeva da incendi, incidenti, malattie.</p></div>
+      </div>
+      <div class="rituale-card " data-id="9" onclick="toggleCard(9)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">09</span>
+          <span class="rituale-card-title">Sigillo di Salomone</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Magia cerimoniale medievale. Associato alla <em>Key of Solomon</em>.</p><h4>🖋️ Materiali &amp; Preparazione</h4><ul><li>Pergamena vergine, inchiostro nero, candela blu, incenso</li><li>Praticante digiunava leggermente, evitava rumori, lavorava in silenzio</li></ul><h4>📐 Procedura</h4><p>Il simbolo tracciato lentamente. Ogni linea: equilibrio, dominio della mente, ordine sul caos. Rivolti verso est.</p><h4>🧠 Scopo</h4><p>Protezione mentale e disciplina spirituale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="10" onclick="toggleCard(10)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">10</span>
+          <span class="rituale-card-title">L'Amuleto dell'Aglio</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Folklore europeo e mediterraneo. Considerato antisettico, protettivo, scaccia-spiriti.</p><h4>🧄 Occorrente &amp; Posizione</h4><ul><li>Tre teste d'aglio, spago naturale rosso</li><li>Cucina, porta d'ingresso, finestra</li></ul><h4>📅 Momento &amp; Curiosità</h4><p>Luna nuova o raccolto estivo. Nel folklore proteggeva da vampiri, peste e "malocchio".</p></div>
+      </div>
+      <div class="rituale-card " data-id="11" onclick="toggleCard(11)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">11</span>
+          <span class="rituale-card-title">Il Barattolo del Denaro</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Magia popolare europea, hoodoo americano, tradizioni contadine. Simbolo di ricchezza e sicurezza invernale.</p><h4>🪙 Occorrente &amp; Momento</h4><ul><li>Barattolo vetro, monete, cannella, alloro, zucchero, calamita, candela verde</li><li>Luna crescente, giovedì, prime ore della sera</li></ul><h4>📐 Procedura</h4><p>Inserire lentamente gli oggetti. Formula: <em>"Che ciò che mi serve trovi la strada verso di me."</em></p><h4>📍 Dove Tenerlo</h4><p>Vicino all'ingresso, lavoro o documenti. Mai a terra.</p></div>
+      </div>
+      <div class="rituale-card " data-id="12" onclick="toggleCard(12)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">12</span>
+          <span class="rituale-card-title">Incantesimo del Nodo della Fortuna</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizioni celtiche, magia marinaresca, folklore nordico. Il nodo fissa un'intenzione e sigilla una promessa.</p><h4>🪢 Procedura</h4><p>3 nodi lenti su nastro verde/dorato: 1° opportunità, 2° stabilità, 3° successo. Visualizzare la scena positiva a ogni nodo.</p><h4>🗣️ Formula</h4><p><em>"Con il primo nodo apro la via. Con il secondo la fortuna resta. Con il terzo il cammino si compie."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="13" onclick="toggleCard(13)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">13</span>
+          <span class="rituale-card-title">Formula dell'Alloro sotto il Cuscino</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizione romana e greca. Alloro sacro ad Apollo: profezia, lucidità, vittoria.</p><h4>🌿 Occorrente &amp; Momento</h4><ul><li>3 foglie secche, sacchetto bianco, candela blu/bianca</li><li>Prima della mezzanotte, luna piena, notte dom/lun</li></ul><h4>📐 Procedura</h4><p>Scrivere domanda, mettere foglio e foglie sotto cuscino. Spegnere candela senza soffiare. Interpretare i sogni al risveglio.</p></div>
+      </div>
+      <div class="rituale-card " data-id="14" onclick="toggleCard(14)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">14</span>
+          <span class="rituale-card-title">Consacrazione della Moneta</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Europa medievale, tradizioni romane, folklore mercantile. Usata da mercanti, soldati, viaggiatori.</p><h4>🪙 Occorrente &amp; Procedura</h4><ul><li>Moneta lucida, acqua corrente, sale, panno bianco, candela verde</li><li>Lavare, passare nel sale, asciugare, tenere tra le mani</li></ul><h4>🗣️ Formula</h4><p><em>"Come questa moneta resta con me, così resti la buona sorte."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="15" onclick="toggleCard(15)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">15</span>
+          <span class="rituale-card-title">Rituale del Grano e del Riso</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Rituale agricolo europeo antichissimo. Grano = vita, riso = fertilità e abbondanza.</p><h4>🌾 Occorrente &amp; Procedura</h4><ul><li>Chicchi di grano, riso bianco, candela dorata</li><li>Spargere su soglia, cucina, ingresso</li></ul><h4>🗣️ Formula</h4><p><em>"Che questa casa non conosca fame né mancanza."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="16" onclick="toggleCard(16)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">16</span>
+          <span class="rituale-card-title">Incantesimo della Candela Verde</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Esoterismo medievale, magia popolare, tradizione ermetica. Verde = crescita, denaro, sviluppo.</p><h4>🕯️ Occorrente &amp; Preparazione</h4><ul><li>Candela verde, cannella, foglio obiettivo, olio d'oliva/basilico</li><li>Strofinare dal basso verso l'alto con olio</li></ul><h4>📐 Procedura</h4><p>Accendere lentamente. Formula: <em>"Come cresce questa luce, così cresca il mio cammino."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="17" onclick="toggleCard(17)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">17</span>
+          <span class="rituale-card-title">Invocazione di Abundantia</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Figura romana associata a prosperità, raccolto, fortuna domestica. Cornucopia, monete, grano.</p><h4>🍷 Occorrente &amp; Momento</h4><ul><li>Pane, vino, candela dorata, ciotola</li><li>Tramonto, fine settimana, inizio attività economica</li></ul><h4>🗣️ Formula</h4><p><em>"Che il necessario non manchi mai a questa casa."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="18" onclick="toggleCard(18)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">18</span>
+          <span class="rituale-card-title">La Pietra Calamita (Lodestone)</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Hoodoo americano, alchimia, magia commerciale XIX sec. Magnetite naturale.</p><h4>🪨 Occorrente &amp; Procedura</h4><ul><li>Pietra calamita, limatura ferro, panno verde, moneta</li><li>Pulire, avvolgere, "nutrire" con limatura</li></ul><h4>🗣️ Formula</h4><p><em>"Come il ferro segue la pietra, così venga verso di me ciò che cerco."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="19" onclick="toggleCard(19)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">19</span>
+          <span class="rituale-card-title">Rituale del Sale della Terra</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizione rurale europea. Terra = stabilità, eredità, continuità.</p><h4>🌍 Occorrente &amp; Procedura</h4><ul><li>4 monete, sale grosso, piccola pala, candela bianca</li><li>Seppellire monete ai 4 angoli proprietà con pizzico di sale</li></ul><h4>🗣️ Formula</h4><p><em>"Che questa terra resti salda, fertile e protetta."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="20" onclick="toggleCard(20)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">20</span>
+          <span class="rituale-card-title">Fumigazione di Benzoino</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Templi orientali, monasteri, magia popolare. Resina purificante e calmante.</p><h4>💨 Occorrente &amp; Procedura</h4><ul><li>Resina benzoino, carboncino, braciere, candela dorata</li><li>Accendere carbone, posare resina, camminare in senso orario</li></ul><h4>🗣️ Formula</h4><p><em>"Che le vie chiuse si aprano e ciò che è fermo torni a muoversi."</em></p></div>
+      </div>
+      <div class="rituale-card " data-id="21" onclick="toggleCard(21)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">21</span>
+          <span class="rituale-card-title">Sacchetto di Venere</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Convergenza tra filtri medievali e mojo bag afroamericani. Archetipo di oggetto-caricatore.</p><h4>🌹 Materiali &amp; Procedura</h4><ul><li>Lino/cotone, petali rosa, lavanda, quarzo rosa</li><li>Inserire elementi con attenzione tattile, soffiare dentro, chiudere</li></ul><h4>📅 Tempistica</h4><p>Venerdì, luna crescente. Focalizzazione cognitiva e affettiva per stabilizzare intenzione emotiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="22" onclick="toggleCard(22)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">22</span>
+          <span class="rituale-card-title">Specchio dell'Autostima</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Matrici ascetiche, tecniche di confessione, psicologia del sé (XX sec).</p><h4>🪞 Procedura</h4><ul><li>Posizionarsi frontalmente, contatto visivo prolungato</li><li>Pronunciare frasi in presente ("sono", "accetto"), mantenere sguardo</li></ul><h4>📅 Tempistica</h4><p>Mattino. Tecnica di riallineamento dell'identità narrativa tramite feedback visivo diretto.</p></div>
+      </div>
+      <div class="rituale-card " data-id="23" onclick="toggleCard(23)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">23</span>
+          <span class="rituale-card-title">Legame del Nastro Rosso</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizione cinese (filo del destino), folklore europeo, reinterpretazioni neopagane.</p><h4>🎗️ Procedura</h4><p>Avvolgere nastro attorno a 2 oggetti simbolici con movimenti circolari. Ogni giro = qualità (fedeltà, continuità). Chiudere con nodo.</p><h4>📅 Tempistica</h4><p>Luna crescente/plenilunio. Materializzazione del legame sociale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="24" onclick="toggleCard(24)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">24</span>
+          <span class="rituale-card-title">Bagno ai Petali di Calendula</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Erboristeria medievale europea (monasteri benedettini, scuola salernitana).</p><h4>🌼 Procedura</h4><p>Infusione petali in acqua calda. Immersione o lavaggio mani/viso. Accompagnare da introspezione.</p><h4>📅 Tempistica</h4><p>Sera o momenti di transizione. Rito liminale per segnare passaggio tra stati emotivi.</p></div>
+      </div>
+      <div class="rituale-card " data-id="25" onclick="toggleCard(25)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">25</span>
+          <span class="rituale-card-title">Candela Rosa per l'Armonia</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Magia cerimoniale moderna, sistema ermetico colore-pianeta-emozione.</p><h4>🕯️ Procedura</h4><p>Accendere in ambiente stabile. Osservare fiamma, visualizzare relazioni pacificate. Spegnere senza soffiare.</p><h4>🧠 Funzione</h4><p>Tecnica di regolazione emotiva tramite attenzione focalizzata e simbolismo cromatico.</p></div>
+      </div>
+      <div class="rituale-card " data-id="26" onclick="toggleCard(26)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">26</span>
+          <span class="rituale-card-title">Melissa e Miele</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Dioscoride, medicina monastica medievale. Melissa officinalis = erba calmante.</p><h4>☕ Procedura</h4><p>Infuso caldo + miele. Consumo lento in quiete.</p><h4>📅 Tempistica</h4><p>Sera o stress. Sedazione lieve reale + effetto percepito potenziato dal gesto rituale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="27" onclick="toggleCard(27)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">27</span>
+          <span class="rituale-card-title">Nodo d'Amore</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tradizioni celtiche, folklore marinaro, manoscritti medievali.</p><h4>🪢 Procedura</h4><p>Intrecciare filo lentamente. Ogni nodo = valore relazionale. Nodo finale sigilla l'intenzione.</p><h4>🧠 Funzione</h4><p>Metafora fisica della coesione sociale e affettiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="28" onclick="toggleCard(28)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">28</span>
+          <span class="rituale-card-title">Rilascio del Passato</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tabellae greco-romane, rituali medievali, spiritismo moderno.</p><h4>🔥 Procedura</h4><p>Scrivere contenuto emotivo, leggere, bruciare in contenitore sicuro, disperdere ceneri.</p><h4>📅 Tempistica</h4><p>Notte o chiusura emotiva. Atto di esternalizzazione cognitiva del trauma.</p></div>
+      </div>
+      <div class="rituale-card " data-id="29" onclick="toggleCard(29)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">29</span>
+          <span class="rituale-card-title">Amuleto di Giada</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Cina preimperiale, tradizione confuciana/taoista.</p><h4>🪨 Procedura</h4><p>Portare a contatto col corpo, "purificare" con acqua/fumo, stabilizzare come oggetto personale.</p><h4>🧠 Funzione</h4><p>Oggetto di stabilizzazione identitaria e sociale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="30" onclick="toggleCard(30)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">30</span>
+          <span class="rituale-card-title">Invocazione di Erzulie</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Lwa del Vodou haitiano, sincretizzata con figure mariane.</p><h4>🌸 Procedura</h4><p>Preparare altare domestico, invocazione cantata/recitata, offerta simbolica, momento di contemplazione.</p><h4>📅 Tempistica</h4><p>Cerimonie o crisi emotiva. Mediazione tramite archetipi femminili.</p></div>
+      </div>
+      <div class="rituale-card " data-id="31" onclick="toggleCard(31)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">31</span>
+          <span class="rituale-card-title">Artemisia per i Sogni</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Fitoterapia europea antica. Artemisia vulgaris associata a luna e dimensione notturna.</p><h4>🌿 Procedura</h4><p>Tisana leggera o sacchetto cuscino. Momento di quiete pre-sonno. Ripetere intenzione di ricordare.</p><h4>🧠 Funzione</h4><p>Dispositivo di induzione attentiva al sogno tramite autosuggestione e ritualizzazione del sonno.</p></div>
+      </div>
+      <div class="rituale-card " data-id="32" onclick="toggleCard(32)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">32</span>
+          <span class="rituale-card-title">Consacrazione dei Tarocchi</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Reinterpretazione esoterica XVIII-XIX sec (Lévi, società ermetiche).</p><h4>🃏 Procedura</h4><p>Tenere mazzo, esporre a fumo incenso, passare carte singolarmente (opz.). Utilizzo esclusivo.</p><h4>📅 Tempistica</h4><p>Inizio utilizzo, luna crescente. Ritualizzazione della relazione soggetto-sistema simbolico.</p></div>
+      </div>
+      <div class="rituale-card " data-id="33" onclick="toggleCard(33)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">33</span>
+          <span class="rituale-card-title">Meditazione della Candela Bianca</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Contemplazione occidentale/orientale (dharana yogica, luce cristiana).</p><h4>🕯️ Procedura</h4><p>Accendere, fissare fiamma senza sforzo, ridurre dialogo interno, ritornare a ogni distrazione.</p><h4>📅 Tempistica</h4><p>10-20 min serali. Regolazione attentiva e riduzione rumore cognitivo.</p></div>
+      </div>
+      <div class="rituale-card " data-id="34" onclick="toggleCard(34)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">34</span>
+          <span class="rituale-card-title">Rituale della Luna Piena</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Culture agricole pre-moderne. Riferimento naturale per raccolta/fertilità.</p><h4>🌕 Procedura</h4><p>Disporre oggetti personali sotto luce lunare, osservare in silenzio, formulare intenzioni.</p><h4>📅 Tempistica</h4><p>Notte plenilunio. Sincronizzazione simbolica con cicli naturali ordinatori.</p></div>
+      </div>
+      <div class="rituale-card " data-id="35" onclick="toggleCard(35)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">35</span>
+          <span class="rituale-card-title">Incenso d'Olibano</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Egitto, Grecia, Roma, liturgie cristiane. Associato a purificazione.</p><h4>🌬️ Procedura</h4><p>Resina su carbone, diffondere fumo, concentrare su respiro e odore.</p><h4>🧠 Funzione</h4><p>Modulatore sensoriale per stati di attenzione ridotta e introspezione.</p></div>
+      </div>
+      <div class="rituale-card " data-id="36" onclick="toggleCard(36)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">36</span>
+          <span class="rituale-card-title">Bagno di Sale Marino</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Universale: conservazione, purificazione, protezione.</p><h4>🛁 Procedura</h4><p>Sciogliere sale, immersione, quiete senza stimoli, uscita lenta.</p><h4>📅 Tempistica</h4><p>Dopo giornate intense. Decontaminazione simbolica di stress e fatica.</p></div>
+      </div>
+      <div class="rituale-card " data-id="37" onclick="toggleCard(37)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">37</span>
+          <span class="rituale-card-title">Incantesimo del Silenzio</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Monachesimo, ascetismo, pratiche sciamaniche.</p><h4>🤫 Procedura</h4><p>Astensione verbale totale, riduzione stimoli, osservazione pensieri non verbalizzati.</p><h4>📅 Tempistica</h4><p>30 min - ore. Deprivazione sensoriale linguistica per consapevolezza introspettiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="38" onclick="toggleCard(38)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">38</span>
+          <span class="rituale-card-title">Connessione con gli Antenati</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Culti romani (lares), tradizioni africane, memorie familiari.</p><h4>🕯️ Procedura</h4><p>Accendere luce, momento ricordo/narrazione, offerta simbolica, chiusura ringraziamento.</p><h4>📅 Tempistica</h4><p>Notte o ricorrenze. Sistema di continuità identitaria tra generazioni.</p></div>
+      </div>
+      <div class="rituale-card " data-id="39" onclick="toggleCard(39)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">39</span>
+          <span class="rituale-card-title">Scrittura Automatica Focalizzata</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Spiritismo ottocentesco (Kardec), scrittura surrealista.</p><h4>📝 Procedura</h4><p>Scrivere senza pianificazione, ridurre controllo cosciente, flusso continuo, lettura successiva.</p><h4>📅 Tempistica</h4><p>10-20 min. Accesso facilitato a contenuti cognitivi non filtrati.</p></div>
+      </div>
+      <div class="rituale-card " data-id="40" onclick="toggleCard(40)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">40</span>
+          <span class="rituale-card-title">Consacrazione dello Spazio Sacro</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Tempulum romano, mandala, cerchi magici medievali.</p><h4>🕯️ Procedura</h4><p>Pulizia area, definizione confini simbolici, oggetti significativi, uso esclusivo.</p><h4>📅 Tempistica</h4><p>Inizio nuove pratiche. Segmentazione spazio funzionale per concentrazione.</p></div>
+      </div>
+      <div class="rituale-card " data-id="41" onclick="toggleCard(41)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">41</span>
+          <span class="rituale-card-title">Occhio di Tigre</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Sincretismo mineralogico ottocentesco, occultismo, new age.</p><h4>🪨 Procedura</h4><p>Tenere in mano prima attività impegnativa, "riscaldare" nel palmo, usare ripetutamente.</p><h4>🧠 Funzione</h4><p>Ancoraggio attentivo: correlazione stabile tra stimolo tattile e sicurezza psicologica.</p></div>
+      </div>
+      <div class="rituale-card " data-id="42" onclick="toggleCard(42)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">42</span>
+          <span class="rituale-card-title">Candela Gialla</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Occultismo moderno, ermetismo XIX-XX sec. Colore → stato psicologico.</p><h4>🕯️ Procedura</h4><p>Accendere, focalizzare su fiamma, associare luce a chiarezza, spegnere controllato.</p><h4>🧠 Funzione</h4><p>Priming cognitivo visivo per attività analitiche.</p></div>
+      </div>
+      <div class="rituale-card " data-id="43" onclick="toggleCard(43)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">43</span>
+          <span class="rituale-card-title">Rosmarino sulle Tempie</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Medicina mediterranea, Grecia/Roma. Simbolo di memoria.</p><h4>🌿 Procedura</h4><p>Applicazione lieve tempie o inalazione aroma. Respirazione lenta.</p><h4>📅 Tempistica</h4><p>Prima studio/mnemotecniche. Stimolazione olfattiva per potenziamento attentivo.</p></div>
+      </div>
+      <div class="rituale-card " data-id="44" onclick="toggleCard(44)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">44</span>
+          <span class="rituale-card-title">Ancoraggio del Coraggio</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Memoria emotiva sciamanica, formalizzata in psicologia (NLP).</p><h4>💪 Procedura</h4><p>Richiamare ricordo sicurezza, associare a gesto fisico (pugno), ripetere per stabilizzare.</p><h4>🧠 Funzione</h4><p>Condizionamento somatico intenzionale per attivazione in situazioni difficili.</p></div>
+      </div>
+      <div class="rituale-card " data-id="45" onclick="toggleCard(45)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">45</span>
+          <span class="rituale-card-title">Taglio dei Rami Secchi</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Simbolismo agricolo, meditazioni guidate moderne.</p><h4>🌳 Procedura</h4><p>Visualizzare problemi come "rami secchi", simulare potatura, percepire alleggerimento.</p><h4>🧠 Funzione</h4><p>Metafora operativa di ristrutturazione cognitiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="46" onclick="toggleCard(46)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">46</span>
+          <span class="rituale-card-title">Fumigazione di Menta Piperita</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Erboristeria mediterranea/araba. Pianta rinfrescante/stimolante.</p><h4>🍃 Procedura</h4><p>Bruciatura leggera o diffusione aroma, inalazione consapevole.</p><h4>📅 Tempistica</h4><p>Mattino/stanchezza. Attivazione fisiologica lieve tramite olfatto.</p></div>
+      </div>
+      <div class="rituale-card " data-id="47" onclick="toggleCard(47)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">47</span>
+          <span class="rituale-card-title">Radice di Zenzero</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Ayurveda, medicina cinese. Tonico riscaldante.</p><h4>🌱 Procedura</h4><p>Portare con sé, masticare/annusare, associare a intenzioni di movimento.</p><h4>🧠 Funzione</h4><p>Simbolo somatico di attivazione metabolica e mentale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="48" onclick="toggleCard(48)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">48</span>
+          <span class="rituale-card-title">Terra sotto i Piedi</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Culture agrarie, rituali sciamanici, reinterpretazione moderna.</p><h4>👣 Procedura</h4><p>Camminata scalza su suolo naturale, attenzione contatto, respirazione lenta.</p><h4>🧠 Funzione</h4><p>Riconnessione sensoriale con ambiente naturale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="49" onclick="toggleCard(49)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">49</span>
+          <span class="rituale-card-title">Scudo Mentale Visivo</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Immaginazione sciamanica, meditazioni moderne.</p><h4>🛡️ Procedura</h4><p>Visualizzare barriera luminosa, definire confini, rafforzare con respiro, richiamare in stress.</p><h4>🧠 Funzione</h4><p>Regolazione ansia tramite imagery protettiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="50" onclick="toggleCard(50)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">50</span>
+          <span class="rituale-card-title">Consacrazione della Penna</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Benedizione strumenti in mestieri/religioni.</p><h4>🖋️ Procedura</h4><p>Passare vicino a fuoco/luce, associare a successo, uso esclusivo per attività importanti.</p><h4>🧠 Funzione</h4><p>Sacralizzazione funzionale che aumenta valore percepito dello strumento.</p></div>
+      </div>
+      <div class="rituale-card " data-id="51" onclick="toggleCard(51)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">51</span>
+          <span class="rituale-card-title">Sale nei Quattro Angoli</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Grecia/Roma, tradizione ebraica, folklore medievale.</p><h4>🧂 Procedura</h4><p>Deporre sale nei 4 punti estremi stanza/casa in silenzio con intenzione di stabilizzazione.</p><h4>📅 Tempistica</h4><p>Inizio ciclo/cambiamento. Marcatura simbolica per ristabilire ordine percepito.</p></div>
+      </div>
+      <div class="rituale-card " data-id="52" onclick="toggleCard(52)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">52</span>
+          <span class="rituale-card-title">Campanello d'Ottone</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Campane tibetane, Europa medievale, sciamanesimo. Dispositivo di interruzione percettiva.</p><h4>🔔 Procedura</h4><p>Suonare in ogni stanza lentamente, lasciare decadere suono, respirazione lenta.</p><h4>📅 Tempistica</h4><p>Dopo conflitti/stagnazione. Discontinuità acustica per riorganizzazione cognitiva.</p></div>
+      </div>
+      <div class="rituale-card " data-id="53" onclick="toggleCard(53)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">53</span>
+          <span class="rituale-card-title">Lavanda sugli Stipiti</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Erboristeria romana/mediterranea (lavare → purificare).</p><h4>🌸 Procedura</h4><p>Applicare olio/rametti su stipiti, movimento interno/esterno, associazione "entrata di pace".</p><h4>📅 Tempistica</h4><p>Primavera/cambiamenti. Pratica di soglia tra interno sicuro ed esterno incerto.</p></div>
+      </div>
+      <div class="rituale-card " data-id="54" onclick="toggleCard(54)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">54</span>
+          <span class="rituale-card-title">Piantumazione Rituale</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Mesopotamia, Mediterraneo, Americhe precolombiane. Trasposizione intenzionale agricola.</p><h4>🌱 Procedura</h4><p>Tenere seme con intenzione, piantare lento, irrigare, osservare crescita come metafora.</p><h4>📅 Tempistica</h4><p>Primavera/inizio progetti. Metafora operativa di cambiamento graduale.</p></div>
+      </div>
+      <div class="rituale-card " data-id="55" onclick="toggleCard(55)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">55</span>
+          <span class="rituale-card-title">Benedizione del Focolare</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Celtiche, romane, contadine europee. Centro simbolico sopravvivenza.</p><h4>🔥 Procedura</h4><p>Accendere/osservare fuoco, silenzio/ringraziamento, gesto protezione, chiusura.</p><h4>📅 Tempistica</h4><p>Inverno/riunioni. Rito di coesione sociale e stabilità domestica.</p></div>
+      </div>
+      <div class="rituale-card " data-id="56" onclick="toggleCard(56)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">56</span>
+          <span class="rituale-card-title">Acqua di Sole</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Pratica rurale diffusa. Esposizione simbolica alla luce.</p><h4>💧 Procedura</h4><p>Esposizione contenitore trasparente per ore, uso per irrigazione/lavaggi, intenzione mentale.</p><h4>📅 Tempistica</h4><p>Giorni soleggiati. Trasformazione simbolica tramite ciclo luce/tempo.</p></div>
+      </div>
+      <div class="rituale-card " data-id="57" onclick="toggleCard(57)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">57</span>
+          <span class="rituale-card-title">Pietra Forata</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Europa settentrionale/mediterranea. Hag Stone / Odin Stone.</p><h4>🕳️ Procedura</h4><p>Raccogliere in natura, pulire, appendere a porte/finestre, guardare attraverso foro.</p><h4>📅 Tempistica</h4><p>Installazione permanente. Oggetto liminale tra visibile e invisibile.</p></div>
+      </div>
+      <div class="rituale-card " data-id="58" onclick="toggleCard(58)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">58</span>
+          <span class="rituale-card-title">Fumigazione di Pino e Abete</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Nordiche, alpine. Purificazione ambientale e medica.</p><h4>🌲 Procedura</h4><p>Bruciare aghi lentamente, diffondere fumo in angoli stanza.</p><h4>📅 Tempistica</h4><p>Dopo malattie/isolamento. Sanificazione simbolica dell'ambiente.</p></div>
+      </div>
+      <div class="rituale-card " data-id="59" onclick="toggleCard(59)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">59</span>
+          <span class="rituale-card-title">Benvenuto agli Uccelli</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Asia, Europa rurale, culture animiste. Gesto di reciprocità naturale.</p><h4>🕊️ Procedura</h4><p>Deposizione cibo su davanzale, osservazione senza interferenza, ripetizione.</p><h4>📅 Tempistica</h4><p>Mattino/stagioni fredde. Atto di reciprocità simbolica uomo-ambiente.</p></div>
+      </div>
+      <div class="rituale-card " data-id="60" onclick="toggleCard(60)" tabindex="0" role="button" aria-expanded="false">
+        <div class="rituale-card-header">
+          <span class="rituale-num">60</span>
+          <span class="rituale-card-title">Congedo delle Energie</span>
+          <span class="rituale-toggle">▾</span>
+        </div>
+        <div class="rituale-content"><h4>📜 Origine</h4><p>Formula chiusura sistemi medievali/neopagani. "De-attivazione" rito.</p><h4>🚪 Procedura</h4><p>Silenzio, dichiarazione verbale: <em>"Chiuso ciò che è stato aperto, senza danno e senza legame"</em>, riorientamento quotidiano.</p><h4>📅 Tempistica</h4><p>Fine pratica. Reintegrazione cognitiva nella normalità.</p></div>
+      </div></div>
 
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()">📤 <span id="share-label"></span></button>
+    <button class="btn-share" onclick="shareContent()">📤 <span id="share-label">Condividi</span></button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Le 60 Magie della Tradizione Popolare: Storia, Simboli e Pratica</h2>
     <img src="./images/60magie.webp"
          srcset="./images/60magie.webp 1x"
          id="art-hero" alt="" loading="eager" decoding="async" width="800" height="500">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Origini di un Sapere Tramandato</h3>
+    <p id="art-p1">Le sessanta magie raccolte in questa sezione nascono dall'incontro tra tradizioni molto diverse tra loro: il folklore contadino dell'Italia meridionale, i grimori rinascimentali europei, le pratiche popolari di purificazione mediterranee, l'hoodoo afroamericano e alcune usanze celtiche e nordiche giunte fino a noi attraverso manoscritti, racconti orali e memorie di famiglia. Ogni rito qui presentato non è un'invenzione moderna, ma il risultato di secoli di pratica quotidiana, tramandata spesso da donne anziane nei paesi del Sud Italia o custodita nei conventi medievali come sapere erboristico e devozionale insieme.</p>
+    <p id="art-p2">Dietro ogni gesto rituale, dal cerchio di sale alla purificazione con la salvia, si nasconde una logica antropologica precisa: dare forma concreta a un bisogno emotivo, sia esso protezione, chiarezza mentale, prosperità o consolazione dopo un lutto. Gli storici delle religioni hanno osservato come questi riti abbiano spesso una doppia natura, simbolica e pratica: il sale disinfetta davvero, la salvia bruciata ha proprietà realmente antisettiche, la respirazione lenta durante un rituale produce un effetto calmante misurabile. La magia popolare, in questo senso, unisce sapere empirico e narrazione simbolica in un unico gesto.</p>
+    <p id="art-p3">Le sei categorie proposte in questa raccolta — protezione, prosperità, amore, purificazione, sogni e mente — rispecchiano i bisogni universali che hanno motivato la nascita di questi rituali in culture lontane tra loro ma sorprendentemente simili nelle risposte trovate. Il ferro di cavallo europeo e l'amuleto di giada cinese, per esempio, nascono da contesti opposti ma condividono la stessa funzione: marcare un confine simbolico tra sicurezza e minaccia. Studiare queste analogie aiuta a comprendere quanto il bisogno di protezione sia una costante antropologica, non una particolarità italiana o esoterica.</p>
+    <h3 id="art-h3">Come Avvicinarsi ai Rituali con Consapevolezza</h3>
+    <p id="art-p4">Chi si avvicina per la prima volta a questi rituali commette spesso un errore comune: cercare un effetto immediato e spettacolare, dimenticando che la loro funzione storica era più sottile — offrire un contenitore simbolico per emozioni difficili da gestire altrimenti. Un altro errore frequente è saltare la fase di raccoglimento e concentrazione che precede ogni gesto: senza intenzione chiara, il rituale perde gran parte del suo significato originario. È utile leggere prima la sezione "Origine" di ogni scheda per capire il contesto storico, senza ridurre la pratica a una semplice sequenza meccanica di azioni.</p>
+    <p id="art-p5">Vale la pena ricordare che questi rituali non sostituiscono cure mediche, consulenze psicologiche o decisioni legali: appartengono alla sfera del benessere simbolico e della tradizione popolare, non alla medicina. Tutte le sessanta magie di questa raccolta — dal cerchio di sale alla formula contro il malocchio, fino ai rituali dedicati a prosperità, amore, purificazione, sogni e concentrazione mentale — sono liberamente consultabili, con schede dettagliate su origine storica, occorrente e procedura per ogni singolo rito.</p>
     <nav class="article-links" aria-label="Link interni correlati">
-      <a href="./magia-bianca.html" id="link-bianca"></a>
-      <a href="./magia-rossa.html" id="link-rossa"></a>
-      <a href="./magia-nera.html" id="link-nera"></a>
-      <a href="./sigilli-salomone.html" id="link-sigilli"></a>
-      <a href="./index.html" id="link-index"></a>
+      <a href="./magia-bianca.html" id="link-bianca">Magia Bianca</a>
+      <a href="./magia-rossa.html" id="link-rossa">Magia Rossa</a>
+      <a href="./magia-nera.html" id="link-nera">Magia Nera</a>
+      <a href="./sigilli-salomone.html" id="link-sigilli">Sigilli di Salomone</a>
+      <a href="./index.html" id="link-index">Tutti gli Oracoli</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <section class="faq-section">
     <h2 class="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false" id="faqq-0">
+        <span>Questi rituali funzionano davvero?</span><span class="faq-icon" id="faqicon-0">+</span>
+      </button>
+      <div class="faq-answer" id="faqa-0" hidden=""><p>Non esistono prove scientifiche che questi gesti agiscano su eventi esterni, ma buona parte di essi produce effetti reali su piano psicologico ed emotivo: la respirazione lenta riduce lo stress, il fuoco e la luce di una candela favoriscono la concentrazione, alcune erbe come la salvia o la lavanda hanno proprietà calmanti documentate. La componente simbolica aiuta a dare struttura a intenzioni ed emozioni, funzionando come un rito di passaggio personale più che come un incantesimo nel senso letterale.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false" id="faqq-1">
+        <span>Servono oggetti rari o costosi per praticare questi rituali?</span><span class="faq-icon" id="faqicon-1">+</span>
+      </button>
+      <div class="faq-answer" id="faqa-1" hidden=""><p>No. La maggior parte delle 60 magie utilizza materiali comuni e facilmente reperibili: sale, candele, erbe aromatiche, monete, acqua, nastri. Solo alcuni rituali storici richiedono elementi più specifici, come pietre particolari o pergamena, ma anche in questi casi sono sempre indicate alternative moderne accessibili. La tradizione popolare, del resto, nasce proprio dall'uso di ciò che si aveva a disposizione in casa o in campagna.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false" id="faqq-2">
+        <span>Qual è la differenza tra queste 60 magie e la <a href="./magia-nera.html">magia nera</a> o la <a href="./magia-rossa.html">magia rossa</a>?</span><span class="faq-icon" id="faqicon-2">+</span>
+      </button>
+      <div class="faq-answer" id="faqa-2" hidden=""><p>Le magie raccolte in questa sezione appartengono principalmente alla tradizione popolare e alla magia bianca: protezione, purificazione, prosperità e benessere emotivo, senza alcuna intenzione di nuocere a terzi. La magia nera, per definizione, implica intenzioni dannose verso altre persone e appartiene a una tradizione distinta, così come la magia rossa è specificamente legata a passione e legami affettivi intensi. Consulta le pagine dedicate per approfondire le differenze storiche e simboliche tra le tradizioni.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false" id="faqq-3">
+        <span>Posso praticare più rituali nello stesso giorno?</span><span class="faq-icon" id="faqicon-3">+</span>
+      </button>
+      <div class="faq-answer" id="faqa-3" hidden=""><p>È possibile, ma la tradizione popolare consiglia moderazione: ogni rito richiede concentrazione e un momento dedicato, quindi accumulare troppe pratiche nella stessa giornata rischia di svuotarle di significato. Meglio scegliere un rituale alla volta, leggerne con calma origine e procedura, e lasciare che l'intenzione si sedimenti prima di passare al successivo. Alcuni praticanti abbinano un rituale di protezione al mattino e uno di purificazione o rilassamento alla sera.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false" id="faqq-4">
+        <span>Come sono organizzate le 60 magie?</span><span class="faq-icon" id="faqicon-4">+</span>
+      </button>
+      <div class="faq-answer" id="faqa-4" hidden=""><p>I rituali sono divisi in sei categorie — protezione, prosperità, amore, purificazione, sogni e mente — e sono tutti liberamente consultabili, senza alcun costo o sblocco richiesto. Ogni scheda include origine storica, occorrente, procedura dettagliata e significato antropologico.</p></div>
+    </div></div>
   </section>
 
 </main>
@@ -376,8 +886,8 @@ html.theme-day .rituale-content{color:var(--text)}
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">Contenuti a scopo di intrattenimento e tradizione culturale. Non sostituiscono consulenze mediche, psicologiche o legali professionali.</p>
 </footer>
 
 </div>

@@ -382,10 +382,10 @@ footer{border-top:1px solid var(--border); padding:2rem 1.25rem; text-align:cent
 
   <section class="finder-section" id="finderSection">
     <h2 class="finder-title" id="finderTitle">🔮 Trova la Tua Pietra</h2>
-    <p class="finder-intro" id="finderIntro"></p>
-    <div class="finder-cats" id="finderCats"></div>
+    <p class="finder-intro" id="finderIntro">Scegli l'intenzione che senti più vicina in questo momento: ti suggeriremo la pietra magica più adatta tra le 50 della nostra collezione.</p>
+    <div class="finder-cats" id="finderCats"><button class="finder-cat-btn">💖 Amore</button><button class="finder-cat-btn">🛡️ Protezione</button><button class="finder-cat-btn">💰 Abbondanza</button><button class="finder-cat-btn">🌊 Calma</button><button class="finder-cat-btn">🧠 Chiarezza</button><button class="finder-cat-btn">🔥 Coraggio</button></div>
     <div class="finder-result" id="finderResult">
-      <div class="finder-result-label" id="finderResultLabel"></div>
+      <div class="finder-result-label" id="finderResultLabel">La pietra consigliata per te è:</div>
       <div class="finder-result-name" id="finderResultName"></div>
       <div class="finder-result-desc" id="finderResultDesc"></div>
       <div class="finder-result-actions">
@@ -402,41 +402,841 @@ footer{border-top:1px solid var(--border); padding:2rem 1.25rem; text-align:cent
 
   <article class="article-section">
     <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp" alt="" class="article-hero-img" id="artImg" width="1000" height="340" loading="eager" fetchpriority="high" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 2x">
-    <h1 class="art-title" id="artTitle"></h1>
-    <p class="art-p" id="artP1"></p>
-    <h2 class="art-h2" id="artH2"></h2>
-    <p class="art-p" id="artP2"></p>
-    <p class="art-p" id="artP3"></p>
-    <h3 class="art-h3" id="artH3"></h3>
-    <p class="art-p" id="artP4"></p>
-    <p class="art-p" id="artP5"></p>
+    <h1 class="art-title" id="artTitle">Pietre Magiche: la Guida Completa ai Cristalli e ai Loro Poteri</h1>
+    <p class="art-p" id="artP1">L'uso delle pietre a scopo magico e curativo affonda le radici in ogni civiltà antica documentata. Gli Egizi macinavano il Lapislazzuli per adornare le maschere funerarie dei faraoni e proteggere l'anima nel viaggio verso l'aldilà, mentre i Sumeri incidevano sigilli su Corniola e Agata già nel 3000 a.C. In Cina, il Giada veniva considerato più prezioso dell'oro e associato alla longevità imperiale, tanto che alcuni sovrani venivano sepolti in armature intere ricavate da questa pietra. I Greci attribuirono all'Ametista il potere di proteggere dall'ebbrezza, da cui deriva il nome stesso della pietra, che significa letteralmente 'non ubriaco'. Questa tradizione millenaria è sopravvissuta fino a oggi, integrandosi con le pratiche di benessere olistico contemporanee.</p>
+    <h2 class="art-h2" id="artH2">Storia e Origini della Cristalloterapia</h2>
+    <p class="art-p" id="artP2">La moderna cristalloterapia nasce dall'incontro tra queste tradizioni antiche e le teorie energetiche orientali sui chakra, i sette centri energetici del corpo sottile descritti nella tradizione induista e buddista. Ogni pietra viene associata a uno o più chakra in base al colore, alla struttura cristallina e alla composizione minerale: le pietre rosse e nere lavorano generalmente sui chakra inferiori legati al radicamento e alla sopravvivenza, quelle verdi e rosa sul chakra del cuore, quelle blu e viola sui chakra superiori legati alla comunicazione e all'intuizione. Questo sistema di corrispondenze non ha validità scientifica dimostrata, ma rappresenta un linguaggio simbolico coerente che milioni di praticanti in tutto il mondo utilizzano quotidianamente per orientare la propria pratica spirituale personale.</p>
+    <p class="art-p" id="artP3">Scegliere una pietra non richiede necessariamente uno studio approfondito: spesso è l'attrazione istintiva verso un colore, una forma o una trama a indicare la pietra più adatta al momento. Alcuni praticanti consigliano di lasciare che sia la pietra a 'scegliere' la persona, osservando quale cristallo cattura per primo lo sguardo in un negozio o in una collezione. Altri preferiscono un approccio più razionale, selezionando la pietra in base all'intenzione specifica: la Tormalina Nera per la protezione quotidiana, il Quarzo Rosa per il lavoro sulle relazioni, il Citrino per l'abbondanza materiale. Puoi approfondire questi collegamenti simbolici nella nostra <a href="./enciclopedia.html">enciclopedia esoterica</a>. Entrambi gli approcci sono validi e spesso vengono combinati nella pratica quotidiana di chi lavora con i cristalli da anni.</p>
+    <h3 class="art-h3" id="artH3">Come Scegliere, Purificare e Attivare le Tue Pietre</h3>
+    <p class="art-p" id="artP4">La purificazione è il passaggio che precede sempre l'uso di una nuova pietra o il suo riutilizzo dopo un periodo intenso. Serve a rimuovere le energie accumulate durante l'estrazione, il trasporto e la manipolazione da parte di altre persone. I metodi variano in base alla composizione della pietra: l'acqua corrente fredda è adatta alla maggior parte dei quarzi ma va evitata su pietre tenere o solubili come Selenite e Calcite, che si danneggiano a contatto con l'umidità. Il fumo di Salvia Bianca o Palo Santo è un metodo universale e sicuro per qualsiasi pietra, così come il seppellimento nella terra per una notte intera, particolarmente indicato per le pietre di radicamento come Ematite e Ossidiana Nera.</p>
+    <p class="art-p" id="artP5">L'attivazione, o ricarica, avviene solitamente esponendo la pietra a una fonte di luce naturale. La Luna Piena è considerata il momento ideale per quasi ogni cristallo, poiché la sua energia è ritenuta più delicata e meno rischiosa rispetto al sole diretto, che può sbiadire pietre colorate come Ametista, Fluorite e Quarzo Rosa nel tempo. Alcune pietre, come il Cristallo di Rocca e la Selenite, sono considerate autopurificanti e amplificatrici: posizionare altre pietre sopra o accanto a esse durante la notte è un metodo comune per rinnovarne l'energia senza rischio di danneggiamento. È bene ricordare che, indipendentemente dalla pratica scelta, il valore più grande di questo lavoro resta l'intenzione consapevole con cui lo si compie.</p>
   </article>
 
   <section class="index-section">
     <h2 class="index-title" id="indexTitle">📖 Indice delle 50 Pietre</h2>
     <input type="text" class="search-box" id="searchBox" placeholder="🔍 Cerca una pietra per nome...">
-    <div class="index-grid" id="indexGrid"></div>
+    <div class="index-grid" id="indexGrid"><a href="#stone-ametista" class="index-chip" data-name="ametista"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp" alt="Ametista" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 2x"><span>Ametista</span></a><a href="#stone-quarzo-rosa" class="index-chip" data-name="quarzo rosa"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp" alt="Quarzo Rosa" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp 2x"><span>Quarzo Rosa</span></a><a href="#stone-tormalina-nera" class="index-chip" data-name="tormalina nera"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp" alt="Tormalina Nera" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp 2x"><span>Tormalina Nera</span></a><a href="#stone-citrino" class="index-chip" data-name="citrino"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp" alt="Citrino" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp 2x"><span>Citrino</span></a><a href="#stone-lapislazzuli" class="index-chip" data-name="lapislazzuli"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp" alt="Lapislazzuli" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp 2x"><span>Lapislazzuli</span></a><a href="#stone-labradorite" class="index-chip" data-name="labradorite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp" alt="Labradorite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp 2x"><span>Labradorite</span></a><a href="#stone-ossidiana-nera" class="index-chip" data-name="ossidiana nera"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp" alt="Ossidiana Nera" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp 2x"><span>Ossidiana Nera</span></a><a href="#stone-malachite" class="index-chip" data-name="malachite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp" alt="Malachite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp 2x"><span>Malachite</span></a><a href="#stone-occhio-di-tigre" class="index-chip" data-name="occhio di tigre"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp" alt="Occhio di Tigre" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp 2x"><span>Occhio di Tigre</span></a><a href="#stone-cristallo-di-rocca" class="index-chip" data-name="cristallo di rocca"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp" alt="Cristallo di Rocca" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp 2x"><span>Cristallo di Rocca</span></a><a href="#stone-acquamarina" class="index-chip" data-name="acquamarina"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp" alt="Acquamarina" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp 2x"><span>Acquamarina</span></a><a href="#stone-ambra" class="index-chip" data-name="ambra"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp" alt="Ambra" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp 2x"><span>Ambra</span></a><a href="#stone-pietra-di-luna" class="index-chip" data-name="pietra di luna"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp" alt="Pietra di Luna" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp 2x"><span>Pietra di Luna</span></a><a href="#stone-smeraldo" class="index-chip" data-name="smeraldo"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp" alt="Smeraldo" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp 2x"><span>Smeraldo</span></a><a href="#stone-corniola" class="index-chip" data-name="corniola"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp" alt="Corniola" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp 2x"><span>Corniola</span></a><a href="#stone-pirite" class="index-chip" data-name="pirite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp" alt="Pirite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp 2x"><span>Pirite</span></a><a href="#stone-rubino" class="index-chip" data-name="rubino"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp" alt="Rubino" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp 2x"><span>Rubino</span></a><a href="#stone-zaffiro" class="index-chip" data-name="zaffiro"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp" alt="Zaffiro" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp 2x"><span>Zaffiro</span></a><a href="#stone-granato" class="index-chip" data-name="granato"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp" alt="Granato" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp 2x"><span>Granato</span></a><a href="#stone-fluorite" class="index-chip" data-name="fluorite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp" alt="Fluorite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp 2x"><span>Fluorite</span></a><a href="#stone-agata-blu" class="index-chip" data-name="agata blu"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp" alt="Agata Blu" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp 2x"><span>Agata Blu</span></a><a href="#stone-amazzonite" class="index-chip" data-name="amazzonite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp" alt="Amazzonite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp 2x"><span>Amazzonite</span></a><a href="#stone-ametrino" class="index-chip" data-name="ametrino"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp" alt="Ametrino" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp 2x"><span>Ametrino</span></a><a href="#stone-apatite" class="index-chip" data-name="apatite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp" alt="Apatite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp 2x"><span>Apatite</span></a><a href="#stone-azzurrite" class="index-chip" data-name="azzurrite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp" alt="Azzurrite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp 2x"><span>Azzurrite</span></a><a href="#stone-calcite-gialla" class="index-chip" data-name="calcite gialla"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp" alt="Calcite Gialla" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp 2x"><span>Calcite Gialla</span></a><a href="#stone-celestina" class="index-chip" data-name="celestina"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp" alt="Celestina" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp 2x"><span>Celestina</span></a><a href="#stone-crisocolla" class="index-chip" data-name="crisocolla"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp" alt="Crisocolla" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp 2x"><span>Crisocolla</span></a><a href="#stone-eliotropio" class="index-chip" data-name="eliotropio"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp" alt="Eliotropio" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp 2x"><span>Eliotropio</span></a><a href="#stone-ematite" class="index-chip" data-name="ematite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp" alt="Ematite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp 2x"><span>Ematite</span></a><a href="#stone-agata-botswana" class="index-chip" data-name="agata botswana"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp" alt="Agata Botswana" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp 2x"><span>Agata Botswana</span></a><a href="#stone-agata-di-fuoco" class="index-chip" data-name="agata di fuoco"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp" alt="Agata di Fuoco" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp 2x"><span>Agata di Fuoco</span></a><a href="#stone-agata-muschiata" class="index-chip" data-name="agata muschiata"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp" alt="Agata Muschiata" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp 2x"><span>Agata Muschiata</span></a><a href="#stone-agata-nera" class="index-chip" data-name="agata nera"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp" alt="Agata Nera" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp 2x"><span>Agata Nera</span></a><a href="#stone-agata-verde" class="index-chip" data-name="agata verde"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp" alt="Agata Verde" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp 2x"><span>Agata Verde</span></a><a href="#stone-angelite" class="index-chip" data-name="angelite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp" alt="Angelite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp 2x"><span>Angelite</span></a><a href="#stone-astrophillite" class="index-chip" data-name="astrophillite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp" alt="Astrophillite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp 2x"><span>Astrophillite</span></a><a href="#stone-calcedonio" class="index-chip" data-name="calcedonio"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp" alt="Calcedonio" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp 2x"><span>Calcedonio</span></a><a href="#stone-calcite-mielata" class="index-chip" data-name="calcite mielata"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp" alt="Calcite Mielata" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp 2x"><span>Calcite Mielata</span></a><a href="#stone-calcite-verde" class="index-chip" data-name="calcite verde"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp" alt="Calcite Verde" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp 2x"><span>Calcite Verde</span></a><a href="#stone-onice" class="index-chip" data-name="onice"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp" alt="Onice" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp 2x"><span>Onice</span></a><a href="#stone-avventurina" class="index-chip" data-name="avventurina"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp" alt="Avventurina" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp 2x"><span>Avventurina</span></a><a href="#stone-selenite" class="index-chip" data-name="selenite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp" alt="Selenite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp 2x"><span>Selenite</span></a><a href="#stone-giada" class="index-chip" data-name="giada"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp" alt="Giada" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp 2x"><span>Giada</span></a><a href="#stone-quarzo-fume" class="index-chip" data-name="quarzo fumé"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp" alt="Quarzo Fumé" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp 2x"><span>Quarzo Fumé</span></a><a href="#stone-howlite" class="index-chip" data-name="howlite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp" alt="Howlite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp 2x"><span>Howlite</span></a><a href="#stone-larimar" class="index-chip" data-name="larimar"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp" alt="Larimar" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp 2x"><span>Larimar</span></a><a href="#stone-cianite" class="index-chip" data-name="cianite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp" alt="Cianite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp 2x"><span>Cianite</span></a><a href="#stone-rodocrosite" class="index-chip" data-name="rodocrosite"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp" alt="Rodocrosite" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp 2x"><span>Rodocrosite</span></a><a href="#stone-turchese-arizona" class="index-chip" data-name="turchese arizona"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp" alt="Turchese Arizona" width="130" height="130" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp 2x"><span>Turchese Arizona</span></a></div>
   </section>
 
-  <section class="stones-grid" id="stonesGrid"></section>
+  <section class="stones-grid" id="stonesGrid"><article class="stone-item" id="stone-ametista">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp" alt="Ametista - Pietra della Trasmutazione Spirituale" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Ametista</h2>
+          <span class="stone-tagline">Pietra della Trasmutazione Spirituale</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Ametista è uno dei cristalli più venerati nella storia dell'esoterismo. Considerata un ponte tra il mondo materiale e quello divino, agisce come un potente trasmutatore di energie, elevando la frequenza vibrazionale di chi la possiede.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Pietra del Terzo Occhio:</strong> Lavora intensamente sul sesto e settimo chakra, aprendo la mente a visioni superiori e premonizioni.</li><li><strong>La Trasmutazione Violetta:</strong> Rappresenta la capacità alchemica di trasformare le ombre e le energie pesanti in pura vibrazione d'amore e luce.</li><li><strong>Connessione Divina:</strong> Facilita il dialogo con le proprie guide spirituali e l'Io Superiore durante la meditazione profonda.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Evita il sale. Lavala sotto acqua corrente fredda per pochi secondi o usa il fumo di Salvia Bianca. Attivazione: L'Ametista adora la Luna Piena. Lasciala esposta ai suoi raggi per una notte. Attenzione: Non esporla mai al sole diretto, poiché i raggi solari ne sbiadiscono il colore e ne indeboliscono il potere.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-quarzo-rosa">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp" alt="Quarzo Rosa - Essenza dell'Amore Incondizionato" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-rosa.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Quarzo Rosa</h2>
+          <span class="stone-tagline">Essenza dell'Amore Incondizionato</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Quarzo Rosa è la pietra del cuore per eccellenza. La sua vibrazione delicata ma profonda insegna la vera essenza dell'amore, partendo dalla guarigione interiore e dal perdono verso se stessi.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Chakra del Cuore:</strong> Rimuove i blocchi emotivi e le vecchie ferite, permettendo al cuore di aprirsi nuovamente alla fiducia.</li><li><strong>Armonia Relazionale:</strong> Attira l'amore e rafforza i legami esistenti, portando pace e comprensione reciproca.</li><li><strong>Auto-accettazione:</strong> Insegna ad amarsi e a riconoscere il proprio valore divino, dissipando l'insicurezza.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Immergila in acqua pura con petali di fiori rosa o bianchi per un'ora. Attivazione: Tienila sul cuore durante il tramonto. Visualizza una luce rosa che si espande dal cristallo verso tutto il tuo corpo. Recita: "Io merito amore, io sono circondato dall'amore".</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-tormalina-nera">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp" alt="Tormalina Nera - Lo Scudo Invalicabile" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/tormalina-nera.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Tormalina Nera</h2>
+          <span class="stone-tagline">Lo Scudo Invalicabile</span>
+        </div>
+      </div>
+      <p class="stone-text">In esoterismo, la Tormalina Nera è considerata il talismano di protezione più potente. Non assorbe solo le energie negative, ma le neutralizza e le scarica a terra, proteggendo l'aura da attacchi psichici e influenze esterne.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Protezione Psichica:</strong> Crea una barriera impenetrabile contro l'invidia, il malocchio e le proiezioni negative altrui.</li><li><strong>Ancoraggio alla Terra:</strong> Aiuta a rimanere focalizzati e presenti, impedendo alla mente di disperdersi in ansie e paure.</li><li><strong>Pulizia Ambientale:</strong> Collocata vicino ai dispositivi elettronici, neutralizza le radiazioni elettromagnetiche nocive.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Seppelliscila nella terra (in un vaso o in giardino) per un intero ciclo di 24 ore per scaricare le energie accumulate. Attivazione: Tienila tra le mani e visualizza radici nere che partono dai tuoi piedi e si intrecciano con il cristallo, ancorandoti saldamente al centro della Terra.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-citrino">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp" alt="Citrino - Il Raggio di Sole Alchemico" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/citrino.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Citrino</h2>
+          <span class="stone-tagline">Il Raggio di Sole Alchemico</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Citrino è la pietra dell'abbondanza, della gioia e della volontà solare. A differenza di molti altri cristalli, il Citrino naturale non trattiene l'energia negativa, ma la trasforma e la dissipa istantaneamente.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Plesso Solare:</strong> Potenzia la volontà individuale, la creatività e la capacità di agire con fiducia nel mondo.</li><li><strong>Magia dell'Abbondanza:</strong> Conosciuta come la "Pietra del Mercante", attira prosperità finanziaria e successo professionale.</li><li><strong>Energia Vitale:</strong> Combatte la depressione e la stanchezza cronica, portando una ventata di ottimismo e calore.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Raramente ne ha bisogno, ma puoi passarla velocemente sotto l'acqua corrente. Attivazione: Esponila alla luce del Sole del mattino (non quella cocente del pomeriggio). Tienila nel portafoglio o sul luogo di lavoro per attivare il flusso dell'abbondanza.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-lapislazzuli">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp" alt="Lapislazzuli - Il Cielo Stellato della Conoscenza" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/lapislazzuli.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Lapislazzuli</h2>
+          <span class="stone-tagline">Il Cielo Stellato della Conoscenza</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Lapislazzuli è stato per millenni la pietra di re, sacerdoti e veggenti. È il cristallo della verità universale, capace di risvegliare le facoltà psichiche e di connettere l'individuo con la saggezza degli antichi.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Chakra della Gola:</strong> Facilita la comunicazione onesta e l'espressione della propria verità interiore senza paura.</li><li><strong>Chakra del Terzo Occhio:</strong> Stimola la chiaroveggenza e la comprensione dei misteri esoterici più profondi.</li><li><strong>Illuminazione:</strong> Aiuta a superare la depressione e a trovare il senso spirituale dietro le prove della vita.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Molto sensibile. Usa solo il fumo di incenso nobile (Sandalo o Mirra). Evita l'acqua salata. Attivazione: Medita con la pietra appoggiata sulla fronte. Visualizza un cielo notturno pieno di stelle che si riflette dentro di te, portando risposte alle tue domande più profonde.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-labradorite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp" alt="Labradorite - Il Tempio delle Stelle" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/labradorite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Labradorite</h2>
+          <span class="stone-tagline">Il Tempio delle Stelle</span>
+        </div>
+      </div>
+      <p class="stone-text">La Labradorite è la pietra dei maghi e dei ricercatori spirituali. I suoi riflessi cangianti (labradorescenza) ricordano le aurore boreali e simboleggiano la luce nascosta dietro il velo della realtà materiale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Risveglio dei Poteri:</strong> Amplifica le doti psichiche innate e facilita i viaggi fuori dal corpo (proiezione astrale).</li><li><strong>Scudo dell'Aura:</strong> Sigilla l'aura impedendo le perdite di energia e proteggendo dai "vampiri energetici".</li><li><strong>Trasformazione:</strong> Supporta durante i grandi cambiamenti, infondendo forza e perseveranza.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua fredda e fumo di Palo Santo. Attivazione: Caricala sotto la luce della Luna Nuova per favorire nuovi inizi magici. Tienila vicina mentre pratichi divinazione (tarocchi o rune) per potenziare la tua visione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-ossidiana-nera">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp" alt="Ossidiana Nera - Lo Specchio dell'Anima" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ossidiana-nera.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Ossidiana Nera</h2>
+          <span class="stone-tagline">Lo Specchio dell'Anima</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Ossidiana è vetro vulcanico nato dal fuoco primordiale. È una pietra senza confini né limitazioni, che agisce con una velocità estrema per rivelare la verità, anche quella più scomoda nascosta nell'ombra.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Specchio Interiore:</strong> Costringe a guardare i propri difetti e le proprie paure per poterli finalmente integrare e superare.</li><li><strong>Taglio dei Legami:</strong> Utilizzata nei rituali per recidere cordoni energetici con persone o situazioni tossiche del passato.</li><li><strong>Protezione Terrena:</strong> Agisce come un'ancora potente, proteggendo chi lavora con energie molto sottili o pericolose.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Lavala spesso sotto acqua corrente, poiché assorbe molta negatività. Attivazione: Usala con cautela. Siediti al buio con una candela accesa e osserva la superficie della pietra (scrying) per ricevere risposte dal tuo inconscio.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-malachite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp" alt="Malachite - Pietra della Trasformazione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/malachite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Malachite</h2>
+          <span class="stone-tagline">Pietra della Trasformazione</span>
+        </div>
+      </div>
+      <p class="stone-text">La Malachite è un potente amplificatore di energie, sia positive che negative. È una pietra "intelligente" che mette in luce ciò che ostacola la crescita spirituale, spingendo verso una trasformazione radicale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Assorbimento del Dolore:</strong> Estrae le energie negative dal corpo fisico ed emotivo (ottima per i traumi).</li><li><strong>Spirito d'Avventura:</strong> Incoraggia il rischio e il cambiamento, rompendo schemi obsoleti e inibizioni.</li><li><strong>Sintonia con la Natura:</strong> Facilita la comunicazione con il regno vegetale e gli spiriti della foresta.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Non usare mai acqua o sale (è porosa e tossica se ingerita). Usa solo incenso o una drusa di cristallo. Attivazione: Appoggiala sul plesso solare per liberare le emozioni represse. Visualizza il verde intenso della pietra che rigenera ogni tua cellula.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-occhio-di-tigre">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp" alt="Occhio di Tigre - Il Coraggio del Guerriero" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/occhio-di-tigre.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Occhio di Tigre</h2>
+          <span class="stone-tagline">Il Coraggio del Guerriero</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Occhio di Tigre combina l'energia della Terra con quella del Sole. È la pietra della fiducia in se stessi, del coraggio e della determinazione necessaria per affrontare le sfide della vita materiale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Protezione dal Malocchio:</strong> Tradizionalmente usata per respingere maledizioni e intenzioni malevole.</li><li><strong>Equilibrio Mentale:</strong> Aiuta a distinguere tra ciò che desideriamo e ciò di cui abbiamo realmente bisogno.</li><li><strong>Fortuna Pratica:</strong> Attira ricchezza e stabilità, favorendo il successo nei progetti a lungo termine.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente e sole mattutino. Attivazione: Indossala come anello o bracciale sul braccio dominante per proiettare la tua volontà e proteggere i tuoi confini personali durante il giorno.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-cristallo-di-rocca">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp" alt="Cristallo di Rocca - Il Maestro Guaritore" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cristallo-di-rocca.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Cristallo di Rocca</h2>
+          <span class="stone-tagline">Il Maestro Guaritore</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Quarzo Ialino o Cristallo di Rocca è il cristallo più versatile e potente del regno minerale. Agisce come un amplificatore universale, potenziando l'energia di qualsiasi altra pietra e purificando ogni sistema energetico.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Purificatore Universale:</strong> Dissipa l'elettricità statica e neutralizza le radiazioni, portando chiarezza mentale assoluta.</li><li><strong>Programmazione Magica:</strong> Può essere "istruito" con un'intenzione specifica, mantenendo la vibrazione del tuo desiderio nel tempo.</li><li><strong>Connessione Multidimensionale:</strong> Facilita la comunicazione con i regni superiori e accelera il risveglio spirituale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua pura, incenso, sole, luna o terra. È il cristallo più resistente. Attivazione: Tienilo tra le mani e proietta al suo interno un'immagine nitida del tuo obiettivo. Visualizza il cristallo che brilla di luce bianca purissima, sigillando la tua intenzione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-acquamarina">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp" alt="Acquamarina - Il Respiro dell'Oceano" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/acquamarina.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Acquamarina</h2>
+          <span class="stone-tagline">Il Respiro dell'Oceano</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Acquamarina è la pietra della calma e della purificazione. Legata all'elemento acqua, aiuta a fluire con la vita e a comunicare la propria verità con dolcezza e chiarezza.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Comunicazione:</strong> Libera il chakra della gola, permettendo un'espressione onesta e senza paure.</li><li><strong>Serenità:</strong> Riduce lo stress e placa le tempeste emotive, portando pace interiore.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Lavala in acqua corrente o acqua di mare. Attivazione: Tienila in mano e visualizza un'onda azzurra che pulisce la tua mente.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-ambra">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp" alt="Ambra - Luce Solare Cristallizzata" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ambra.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Ambra</h2>
+          <span class="stone-tagline">Luce Solare Cristallizzata</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Ambra non è un minerale ma resina fossile. È un potente guaritore che purifica il corpo, la mente e lo spirito, portando calore e vitalità solare.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Protezione:</strong> Assorbe le energie negative e le trasforma in forze positive.</li><li><strong>Saggezza Antica:</strong> Connette con la memoria della terra e le proprie radici.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Fumo di incenso. Attivazione: Esponila al sole del mattino per caricare la sua energia calda.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-pietra-di-luna">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp" alt="Pietra di Luna - Mistero e Femminilità" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pietra-di-luna.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Pietra di Luna</h2>
+          <span class="stone-tagline">Mistero e Femminilità</span>
+        </div>
+      </div>
+      <p class="stone-text">Sacra alla Dea, la Pietra di Luna riflette i misteri del subconscio. È la pietra dei nuovi inizi e dell'intuizione profonda.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Energia Femminile:</strong> Equilibra gli ormoni e i cicli naturali.</li><li><strong>Sogni:</strong> Favorisce il ricordo dei sogni e la visione profetica.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Solo luce lunare. Attivazione: Lasciala fuori durante la Luna Piena.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-smeraldo">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp" alt="Smeraldo - Amore e Rinascita" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/smeraldo.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Smeraldo</h2>
+          <span class="stone-tagline">Amore e Rinascita</span>
+        </div>
+      </div>
+      <p class="stone-text">Lo Smeraldo è la pietra dell'amore incondizionato e della speranza. Favorisce l'armonia domestica e la crescita spirituale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Guarigione:</strong> Rigenera il cuore dopo ferite emotive profonde.</li><li><strong>Prosperità:</strong> Attira l'abbondanza spirituale e materiale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua fredda. Attivazione: Tienila sul cuore visualizzando una luce verde smeraldo.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-corniola">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp" alt="Corniola - Fuoco Creativo" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/corniola.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Corniola</h2>
+          <span class="stone-tagline">Fuoco Creativo</span>
+        </div>
+      </div>
+      <p class="stone-text">La Corniola infonde coraggio e vitalità. È la pietra degli artisti e di chi deve agire con determinazione.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Creatività:</strong> Stimola il secondo chakra, risvegliando la passione e il desiderio.</li><li><strong>Motivazione:</strong> Aiuta a superare la pigrizia e a concretizzare i progetti.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Terra o Sale. Attivazione: Portala con te durante un lavoro creativo.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-pirite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp" alt="Pirite - Oro degli Stolti, Scudo dei Saggi" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/pirite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Pirite</h2>
+          <span class="stone-tagline">Oro degli Stolti, Scudo dei Saggi</span>
+        </div>
+      </div>
+      <p class="stone-text">La Pirite è una pietra di protezione e abbondanza. La sua struttura cubica riflette ordine e stabilità mentale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Schermatura:</strong> Crea una barriera contro le negatività esterne.</li><li><strong>Successo:</strong> Attira opportunità finanziarie e stabilità lavorativa.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: NO acqua (arrugginisce). Usa fumo o terra. Attivazione: Mettila nel portafoglio.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-rubino">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp" alt="Rubino - Sangue della Terra" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rubino.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Rubino</h2>
+          <span class="stone-tagline">Sangue della Terra</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Rubino è la pietra della nobiltà e della forza vitale. Risveglia la passione per la vita e il vigore fisico.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Energia:</strong> Combatte la stanchezza e la depressione.</li><li><strong>Protezione:</strong> Anticamente usato per proteggere i regni e i guerrieri.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua e Sale. Attivazione: Tienila tra le mani durante il sorgere del sole.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-zaffiro">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp" alt="Zaffiro - Pietra del Destino" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/zaffiro.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Zaffiro</h2>
+          <span class="stone-tagline">Pietra del Destino</span>
+        </div>
+      </div>
+      <p class="stone-text">Lo Zaffiro porta ordine e chiarezza mentale. È associato alla saggezza divina e alla lealtà spirituale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Focus:</strong> Aiuta a concentrarsi e a vedere oltre le illusioni.</li><li><strong>Pace:</strong> Allevia la confusione mentale e porta disciplina.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua fredda. Attivazione: Medita tenendolo sul terzo occhio.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-granato">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp" alt="Granato - Fiamma della Speranza" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/granato.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Granato</h2>
+          <span class="stone-tagline">Fiamma della Speranza</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Granato è una pietra di impegno e devozione. È utile nei momenti di crisi, dove sembra non esserci via d'uscita.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Rigenerazione:</strong> Stimola il metabolismo e la circolazione.</li><li><strong>Coraggio:</strong> Trasforma le crisi in sfide da superare con grinta.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Terra. Attivazione: Portalo con te quando devi affrontare una prova difficile.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-fluorite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp" alt="Fluorite - Genio Multicolore" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/fluorite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Fluorite</h2>
+          <span class="stone-tagline">Genio Multicolore</span>
+        </div>
+      </div>
+      <p class="stone-text">La Fluorite è la pietra dell'apprendimento e della struttura mentale. Organizza i pensieri e pulisce l'aura dalle energie stagnanti.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Studio:</strong> Perfetta per studenti e ricercatori, aumenta la concentrazione.</li><li><strong>Pulizia:</strong> Dissolve le forme pensiero negative e lo stress.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua o incenso. Attivazione: Tienila sulla scrivania mentre lavori o studi.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-blu">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp" alt="Agata Blu - La Pietra della Calma e della Comunicazione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-blu.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata Blu</h2>
+          <span class="stone-tagline">La Pietra della Calma e della Comunicazione</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata Blu è una pietra di pace e tranquillità. Favorisce la comunicazione chiara e onesta, alleviando lo stress e promuovendo l'armonia interiore. È ideale per chi cerca serenità e un'espressione autentica di sé.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Comunicazione:</strong> Supporta il chakra della gola, facilitando l'espressione verbale e l'ascolto.</li><li><strong>Calma:</strong> Riduce l'ansia e le tensioni, portando un senso di pace e rilassamento.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o fumo di incenso. Attivazione: Tienila vicino alla gola o al cuore durante la meditazione, visualizzando una luce azzurra che ti avvolge.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-amazzonite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp" alt="Amazzonite - Il Ponte tra Cuore e Mente" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/amazzonite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Amazzonite</h2>
+          <span class="stone-tagline">Il Ponte tra Cuore e Mente</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Amazzonite è una pietra di verità e integrità. Aiuta a bilanciare le energie maschili e femminili, promuovendo l'armonia e la comunicazione autentica. È un potente alleato per esprimere la propria verità interiore.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Equilibrio:</strong> Armonizza il cuore e la mente, favorendo l'integrità personale.</li><li><strong>Espressione:</strong> Incoraggia l'espressione dei pensieri e dei sentimenti con chiarezza e fiducia.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o luce lunare. Attivazione: Tienila sul cuore o sul chakra della gola, concentrandoti sulla tua intenzione di verità e armonia.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-ametrino">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp" alt="Ametrino - L'Unione di Mente e Spirito" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametrino.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Ametrino</h2>
+          <span class="stone-tagline">L'Unione di Mente e Spirito</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Ametrino è una fusione naturale di Ametista e Citrino, combinando le proprietà di entrambi. Promuove la chiarezza mentale, la creatività e l'equilibrio spirituale, aiutando a superare i blocchi e a trovare soluzioni.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Equilibrio:</strong> Armonizza le energie maschili e femminili, la logica e l'intuizione.</li><li><strong>Creatività:</strong> Stimola l'intelletto e l'immaginazione, favorendo nuove idee e soluzioni.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Fumo di incenso o terra. Attivazione: Medita con l'Ametrino sul terzo occhio per stimolare la visione e la creatività.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-apatite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp" alt="Apatite - La Pietra dell'Ispirazione e della Manifestazione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/apatite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Apatite</h2>
+          <span class="stone-tagline">La Pietra dell'Ispirazione e della Manifestazione</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Apatite è una pietra che stimola l'intelletto e l'ispirazione. Aiuta a manifestare i propri sogni e desideri, promuovendo la chiarezza mentale e la motivazione. È un ottimo supporto per lo studio e la crescita personale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Ispirazione:</strong> Stimola la creatività e l'intelletto, favorendo nuove idee e soluzioni.</li><li><strong>Manifestazione:</strong> Aiuta a trasformare i sogni in realtà, portando motivazione e determinazione.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o fumo di incenso. Attivazione: Tienila sulla fronte o sul plesso solare durante la meditazione, visualizzando i tuoi obiettivi che si realizzano.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-azzurrite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp" alt="Azzurrite - Il Ponte verso la Saggezza Divina" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/azzurrite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Azzurrite</h2>
+          <span class="stone-tagline">Il Ponte verso la Saggezza Divina</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Azzurrite è una pietra di profonda intuizione e saggezza. Stimola il terzo occhio, aprendo la mente a nuove prospettive e facilitando la connessione con la guida spirituale. È ideale per la meditazione e la crescita spirituale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Terzo Occhio:</strong> Attiva e purifica il chakra del terzo occhio, amplificando l'intuizione e la chiaroveggenza.</li><li><strong>Connessione Spirituale:</strong> Facilita il contatto con i regni superiori e la guida spirituale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Fumo di incenso o luce lunare. Evita l'acqua. Attivazione: Medita con l'Azzurrite sulla fronte, concentrandoti sulla tua intenzione di saggezza e intuizione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-calcite-gialla">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp" alt="Calcite Gialla - Il Raggio di Gioia e Ottimismo" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-gialla.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Calcite Gialla</h2>
+          <span class="stone-tagline">Il Raggio di Gioia e Ottimismo</span>
+        </div>
+      </div>
+      <p class="stone-text">La Calcite Gialla è una pietra di gioia, ottimismo e fiducia in se stessi. Porta energia solare, stimolando la creatività e la motivazione. È un ottimo supporto per superare la timidezza e affrontare le sfide con positività.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Ottimismo:</strong> Infunde gioia e positività, aiutando a superare la depressione e la tristezza.</li><li><strong>Fiducia:</strong> Rafforza l'autostima e la fiducia in se stessi, incoraggiando l'espressione personale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o luce solare (brevemente). Attivazione: Tienila sul plesso solare, visualizzando una luce gialla brillante che ti riempie di energia e gioia.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-celestina">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp" alt="Celestina - La Voce degli Angeli" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/celestina.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Celestina</h2>
+          <span class="stone-tagline">La Voce degli Angeli</span>
+        </div>
+      </div>
+      <p class="stone-text">La Celestina è una pietra di alta vibrazione, associata alla pace, alla serenità e alla comunicazione angelica. Favorisce la connessione con i regni spirituali, portando calma e chiarezza mentale. È ideale per la meditazione e il contatto con gli angeli.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Pace:</strong> Porta un profondo senso di pace e tranquillità, alleviando lo stress e l'ansia.</li><li><strong>Connessione Angelica:</strong> Facilita il contatto con gli angeli e le guide spirituali, amplificando l'intuizione.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Fumo di incenso o luce lunare. Evita l'acqua. Attivazione: Tienila sul chakra della gola o del terzo occhio, concentrandoti sulla tua intenzione di pace e connessione spirituale.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-crisocolla">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp" alt="Crisocolla - La Pietra della Dea che Cura" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/crisocolla.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Crisocolla</h2>
+          <span class="stone-tagline">La Pietra della Dea che Cura</span>
+        </div>
+      </div>
+      <p class="stone-text">La Crisocolla è una pietra di guarigione e comunicazione. Associata all'energia femminile, promuove la compassione, la pazienza e la tolleranza. Aiuta a esprimere le proprie emozioni con calma e chiarezza, portando armonia nelle relazioni.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Guarigione:</strong> Supporta la guarigione emotiva e fisica, alleviando lo stress e le tensioni.</li><li><strong>Comunicazione:</strong> Facilita l'espressione delle emozioni e la comprensione reciproca nelle relazioni.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o fumo di incenso. Attivazione: Tienila sul cuore o sul chakra della gola, concentrandoti sulla tua intenzione di guarigione e compassione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-eliotropio">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp" alt="Eliotropio - Il Sangue del Drago" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/eliotropio.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Eliotropio</h2>
+          <span class="stone-tagline">Il Sangue del Drago</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Eliotropio, noto anche come Diaspro Sanguigno, è una pietra di forza, coraggio e radicamento. Aiuta a superare le sfide, a proteggersi dalle energie negative e a rafforzare la vitalità. È un potente alleato per chi cerca stabilità e protezione.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Coraggio:</strong> Infunde forza e determinazione per affrontare le difficoltà.</li><li><strong>Protezione:</strong> Crea uno scudo contro le energie negative e le influenze esterne.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o terra. Attivazione: Tienila in mano durante la meditazione, visualizzando la sua energia che ti riempie di forza e coraggio.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-ematite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp" alt="Ematite - Lo Scudo di Ferro" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ematite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Ematite</h2>
+          <span class="stone-tagline">Lo Scudo di Ferro</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Ematite è una pietra di radicamento e protezione. Aiuta a dissipare le energie negative, a rafforzare la volontà e a migliorare la concentrazione. È un potente alleato per chi cerca stabilità, equilibrio e protezione psichica.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Radicamento:</strong> Connette con l'energia della Terra, fornendo stabilità e sicurezza.</li><li><strong>Protezione:</strong> Crea uno scudo contro le energie negative e le influenze esterne.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente o fumo di incenso. Attivazione: Tienila in mano durante la meditazione, concentrandoti sulla tua intenzione di radicamento e protezione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-botswana">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp" alt="Agata Botswana - Pietra della Soluzione e della Protezione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-botswana.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata Botswana</h2>
+          <span class="stone-tagline">Pietra della Soluzione e della Protezione</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata Botswana è una varietà rara e bellissima di agata, nota per le sue delicate striature grigie e rosate. Agisce profondamente sul chakra della corona e favorisce l'apertura del terzo occhio, aiutando a vedere oltre le apparenze.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Problem Solving:</strong> Aiuta a trovare soluzioni creative e innovative a problemi complessi.</li><li><strong>Protezione Elementale:</strong> Tradizionalmente usata per proteggere dal fuoco e dal fumo.</li><li><strong>Equilibrio Emotivo:</strong> Allevia la depressione e aiuta a mantenere la calma nei momenti di stress.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Lavala sotto acqua corrente fredda per pochi secondi. Attivazione: Esponila alla luce della Luna per una notte intera per ricaricare la sua energia intuitiva.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-di-fuoco">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp" alt="Agata di Fuoco - Scudo di Protezione e Vitalità" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-di-fuoco.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata di Fuoco</h2>
+          <span class="stone-tagline">Scudo di Protezione e Vitalità</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata di Fuoco è una pietra estremamente protettiva che crea un potente scudo intorno all'aura. La sua energia è legata all'elemento fuoco e alla terra, fornendo una spinta di vitalità fisica e spirituale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Scudo Psichico:</strong> Respinge le maledizioni e le cattive intenzioni, rimandandole alla fonte.</li><li><strong>Energia Vitale:</strong> Stimola la passione, la libido e la vitalità fisica.</li><li><strong>Coraggio:</strong> Aiuta a superare le paure profonde e a agire con determinazione.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Seppelliscila nella terra o usa le vibrazioni sonore di una campana tibetana. Attivazione: Attivala esponendola alla luce diretta del Sole per qualche ora a mezzogiorno.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-muschiata">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp" alt="Agata Muschiata - Connessione con la Natura e Rinascita" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-muschiata.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata Muschiata</h2>
+          <span class="stone-tagline">Connessione con la Natura e Rinascita</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata Muschiata è la pietra dei giardinieri e di chi ama la terra. Fortemente legata al chakra del cuore, favorisce la guarigione emotiva e la riconnessione con i ritmi naturali del pianeta.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Rinascita:</strong> Pietra dei nuovi inizi, aiuta a liberarsi dai vecchi schemi e a prosperare.</li><li><strong>Connessione Spirituale:</strong> Facilita la comunicazione con gli spiriti della natura e i Deva delle piante.</li><li><strong>Salute Fisica:</strong> Rafforza il sistema immunitario e aiuta nei processi di guarigione.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Immergila in acqua di fonte o piovana. Attivazione: Mettila a contatto diretto con la terra o tra le radici di una pianta rigogliosa per 24 ore.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-nera">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp" alt="Agata Nera - Ancoraggio e Protezione Notturna" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-nera.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata Nera</h2>
+          <span class="stone-tagline">Ancoraggio e Protezione Notturna</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata Nera è una pietra di radicamento profondo. Dona coraggio e forza interiore per affrontare le sfide quotidiane, agendo come un'ancora per la mente che tende a disperdersi.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Stabilità:</strong> Aiuta a rimanere focalizzati e presenti, specialmente in situazioni caotiche.</li><li><strong>Protezione Notturna:</strong> Protegge dai pericoli fisici e mentali durante le ore di buio.</li><li><strong>Forza Mentale:</strong> Trasforma la paura in determinazione e resilienza.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Usa il fumo di Salvia Bianca o Palo Santo. Attivazione: Tienila tra le mani durante il crepuscolo, visualizzando la tua forza che si radica al suolo.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-agata-verde">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp" alt="Agata Verde - Equilibrio e Guarigione del Cuore" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/agata-verde.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Agata Verde</h2>
+          <span class="stone-tagline">Equilibrio e Guarigione del Cuore</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Agata Verde è una pietra di equilibrio e armonia. Associata all'abbondanza e alla serenità, lavora sul chakra del cuore per portare pace interiore e rafforzare la creatività.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Pace Interiore:</strong> Allevia le tensioni emotive e porta serenità mentale.</li><li><strong>Abbondanza:</strong> Attira prosperità e successo nei progetti creativi.</li><li><strong>Equilibrio:</strong> Armonizza il corpo fisico con quello sottile, migliorando la salute generale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Acqua corrente e petali di fiori verdi o foglie fresche. Attivazione: Esponila alla luce solare filtrata dalle foglie di un albero per un pomeriggio.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-angelite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp" alt="Angelite - Ponte con i Regni Angelici" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/angelite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Angelite</h2>
+          <span class="stone-tagline">Ponte con i Regni Angelici</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Angelite è una pietra di alta vibrazione, celebre per la sua capacità di facilitare la comunicazione con le guide spirituali e gli angeli. Il suo colore azzurro tenue ispira pace e accoglienza.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Connessione:</strong> Apre i canali per ricevere messaggi dai piani superiori di coscienza.</li><li><strong>Pace Profonda:</strong> Calma l'ansia, la rabbia e favorisce il perdono verso se stessi e gli altri.</li><li><strong>Verità:</strong> Aiuta a esprimere la propria verità con dolcezza e chiarezza.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: NON usare acqua (è porosa). Usa il suono di campane tibetane o fumo di incenso leggero. Attivazione: Tienila sul chakra della gola durante una meditazione silenziosa all'alba.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-astrophillite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp" alt="Astrophillite - Stella dell'Autoconsapevolezza" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/astrophillite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Astrophillite</h2>
+          <span class="stone-tagline">Stella dell'Autoconsapevolezza</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Astrophillite è una pietra rara che agisce come uno specchio per l'anima. Aiuta a vedere e accettare gli aspetti più profondi e nascosti di sé, promuovendo una crescita spirituale senza precedenti.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Autoconsapevolezza:</strong> Rivela il proprio potenziale illimitato e lo scopo della vita.</li><li><strong>Sogni Veritieri:</strong> Facilita i sogni lucidi e la capacità di ricevere visioni profetiche.</li><li><strong>Integrazione:</strong> Aiuta a integrare le esperienze passate per vivere pienamente il presente.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Fumo di Palo Santo o esposizione alla luce delle stelle. Attivazione: Attivala con i raggi del sole mattutino per potenziare la sua energia stellare.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-calcedonio">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp" alt="Calcedonio - Pietra dell'Eloquenza e della Calma" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcedonio.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Calcedonio</h2>
+          <span class="stone-tagline">Pietra dell'Eloquenza e della Calma</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Calcedonio, specialmente nella varietà azzurra, è la pietra della comunicazione per eccellenza. Calma la mente agitata e favorisce l'espressione armoniosa dei pensieri.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Eloquenza:</strong> Migliora la capacità di parlare in pubblico e di ascoltare gli altri.</li><li><strong>Calma Mentale:</strong> Allontana la malinconia e i pensieri ripetitivi o negativi.</li><li><strong>Apprendimento:</strong> Rafforza la memoria e la capacità di assimilare nuove informazioni.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Lasciala sotto l'acqua corrente fredda per un minuto. Attivazione: Attivala esponendola alla luce della Luna Crescente per favorire l'espansione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-calcite-mielata">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp" alt="Calcite Mielata - Dolcezza e Chiarezza Mentale" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-mielata.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Calcite Mielata</h2>
+          <span class="stone-tagline">Dolcezza e Chiarezza Mentale</span>
+        </div>
+      </div>
+      <p class="stone-text">La Calcite Mielata (o al miele) emana un'energia calda e rassicurante. È un potente equilibratore emozionale che aiuta a dissolvere le barriere mentali create dalla paura.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Fiducia:</strong> Dissipa i dubbi e le fobie, sostituendoli con un sano ottimismo.</li><li><strong>Focus:</strong> Ottima per lo studio, migliora la concentrazione e la chiarezza mentale.</li><li><strong>Relax:</strong> Allevia lo stress e favorisce un riposo rigenerante.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Usa il fumo di un incenso dolce come la vaniglia o il benzoino. Attivazione: Tienila tra le mani visualizzando una luce dorata che ti avvolge completamente.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-calcite-verde">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp" alt="Calcite Verde - Rigenerazione e Compassione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/calcite-verde.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Calcite Verde</h2>
+          <span class="stone-tagline">Rigenerazione e Compassione</span>
+        </div>
+      </div>
+      <p class="stone-text">La Calcite Verde è un potente guaritore del cuore. Aiuta a liberarsi da vecchi schemi mentali rigidi e da convinzioni limitanti, permettendo all'amore incondizionato di fluire.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Rilascio:</strong> Facilita il distacco da traumi passati e da rancori accumulati.</li><li><strong>Compassione:</strong> Promuove il perdono e la comprensione verso se stessi e gli altri.</li><li><strong>Crescita:</strong> Stimola la mente a essere più flessibile e aperta al cambiamento.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Passala velocemente sotto l'acqua fresca (non lasciarla in ammollo). Attivazione: Appoggiala sul centro del petto durante una meditazione sul respiro.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-onice">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp" alt="Onice - Pietra della Forza e del Controllo" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/onice.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Onice</h2>
+          <span class="stone-tagline">Pietra della Forza e del Controllo</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Onice è una pietra fondamentale per chi cerca stabilità e protezione. Conosciuta per la sua capacità di donare forza interiore, aiuta a dominare le emozioni e a superare lo stress, agendo come un'ancora durante i periodi difficili.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Stabilità:</strong> Favorisce il senso di responsabilità e l'autocontrollo.</li><li><strong>Scudo Energetico:</strong> Protegge dalle influenze negative esterne e dai conflitti.</li><li><strong>Focus:</strong> Migliora la concentrazione e aiuta a portare a termine i propri obiettivi.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Usa il fumo d'incenso o di sandalo per pulire la sua energia. Attivazione: Attivala alla luce della Luna Calante per scacciare il superfluo e rafforzare la tua determinazione.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-avventurina">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp" alt="Avventurina - Il Talismano della Fortuna e del Cuore" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/avventurina.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Avventurina</h2>
+          <span class="stone-tagline">Il Talismano della Fortuna e del Cuore</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Avventurina Verde è la pietra della prosperità e del successo per eccellenza. Armonizza il chakra del cuore, portando una ventata di ottimismo e creatività che aiuta a cogliere le opportunità della vita.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Fortuna:</strong> Attira l'abbondanza e il successo nei nuovi progetti.</li><li><strong>Calma Emotiva:</strong> Placata l'ansia e favorisce la pace interiore.</li><li><strong>Crescita:</strong> Stimola la rigenerazione fisica e spirituale.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Lavala sotto l'acqua corrente fredda per un minute. Attivazione: Mettila tra l'erba o a contatto con una pianta rigogliosa per ricaricarla con l'energia della natura.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-selenite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp" alt="Selenite - Luce Divina e Purificazione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/selenite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Selenite</h2>
+          <span class="stone-tagline">Luce Divina e Purificazione</span>
+        </div>
+      </div>
+      <p class="stone-text">La Selenite è un cristallo di altissima vibrazione, capace di pulire l'aura e ricaricare gli altri cristalli. La sua energia pura favorisce la chiarezza mentale e la connessione con i regni spirituali superiori.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Purificatore:</strong> Rimuove i blocchi energetici e le negatività dagli ambienti.</li><li><strong>Pace Mentale:</strong> Induce uno stato di calma profonda ideale per la meditazione.</li><li><strong>Guida:</strong> Facilita il contatto con le proprie guide spirituali.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Attenzione: NON usare acqua (si scioglie). Usa il fumo o il suono. Attivazione: Esponila alla luce della Luna Piena per massimizzare il suo potere purificatore.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-giada">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp" alt="Giada - Saggezza Antica e Longevità" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/giada.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Giada</h2>
+          <span class="stone-tagline">Saggezza Antica e Longevità</span>
+        </div>
+      </div>
+      <p class="stone-text">La Giada è da millenni simbolo di purezza e serenità. Attira la fortuna e protegge chi la indossa, favorendo un profondo senso di pace interiore e la guarigione sia fisica che spirituale.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Protezione:</strong> Agisce come un amuleto contro la sfortuna e i pericoli.</li><li><strong>Saggezza:</strong> Aiuta a prendere decisioni equilibrate e sagge.</li><li><strong>Armonia:</strong> Bilancia le energie del corpo e promuove la longevità.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Purificazione rapida con acqua e un pizzico di sale marino. Attivazione: Attivala seppellendola nella terra in un vaso o in giardino per una notte intera.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-quarzo-fume">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp" alt="Quarzo Fumé - L'Ancora di Luce" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/quarzo-fume.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Quarzo Fumé</h2>
+          <span class="stone-tagline">L'Ancora di Luce</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Quarzo Fumé è uno dei cristalli più potenti per il radicamento. Ha la straordinaria capacità di trasformare le energie negative in positive, aiutando a lasciare andare ciò che non serve più alla nostra evoluzione.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Ancoraggio:</strong> Connette saldamente alla terra, dando stabilità nei momenti di crisi.</li><li><strong>Disintossicazione:</strong> Aiuta a liberarsi dalle dipendenze e dai pensieri tossici.</li><li><strong>Protezione:</strong> Crea una barriera contro lo stress geopatico ed elettromagnetico.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Usa la terra o il fumo di Palo Santo per scaricare le tensioni accumulate. Attivazione: Attivala durante il tramonto, visualizzando la negatività che fluisce verso il suolo.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-howlite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp" alt="Howlite - Calma Profonda e Sonno Sereno" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/howlite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Howlite</h2>
+          <span class="stone-tagline">Calma Profonda e Sonno Sereno</span>
+        </div>
+      </div>
+      <p class="stone-text">L'Howlite è la pietra perfetta per chi soffre di insonnia o stress. La sua vibrazione rilassante riduce la rabbia e favorisce la pazienza, portando una consapevolezza di sé più profonda e tranquilla.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Sonno:</strong> Calma la mente iperattiva e aiuta a scivolare in un sonno ristoratore.</li><li><strong>Rilascio:</strong> Aiuta a sciogliere i legami con la rabbia e il risentimento.</li><li><strong>Memoria:</strong> Stimola il desiderio di conoscenza e rafforza la memoria.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Passala sotto l'acqua corrente fredda e asciugala con cura. Attivazione: Mettila sotto il cuscino per una notte per sintonizzarla con i tuoi ritmi onirici.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-larimar">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp" alt="Larimar - Il Respiro di Atlantide" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/larimar.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Larimar</h2>
+          <span class="stone-tagline">Il Respiro di Atlantide</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Larimar è una pietra rarissima che emana le vibrazioni di pace e amore del mare e del cielo. Facilita la comunicazione con i regni angelici e aiuta a guarire le ferite emotive del passato.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Serenità:</strong> Porta la calma delle acque oceaniche nel cuore e nella mente.</li><li><strong>Verità:</strong> Aiuta a esprimere i propri sentimenti con onestà e dolcezza.</li><li><strong>Guarigione:</strong> Ottima per superare fobie e traumi legati all'infanzia.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Usa acqua di mare o acqua con sale marino per onorare la sua origine. Attivazione: Attivala alla luce del mattino vicino a una fonte d'acqua per risvegliare la sua energia.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-cianite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp" alt="Cianite - Spada dell'Allineamento" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/cianite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Cianite</h2>
+          <span class="stone-tagline">Spada dell'Allineamento</span>
+        </div>
+      </div>
+      <p class="stone-text">La Cianite Blu è una pietra straordinaria che allinea istantaneamente tutti i chakra. È uno dei pochi cristalli che non accumula mai energia negativa e, per questo, non necessita di purificazione.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Allineamento:</strong> Bilancia i corpi sottili e pulisce i meridiani energetici.</li><li><strong>Sogni:</strong> Favorisce il ricordo dei sogni e le esperienze fuori dal corpo.</li><li><strong>Verità:</strong> Dissipa la confusione, l'illusione e la rabbia.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Non necessita di purificazione periodica (è autopulente). Attivazione: Esponila al cielo stellato per sintonizzarla con le frequenze cosmiche.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-rodocrosite">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp" alt="Rodocrosite - Il Balsamo dell'Amore Altruistico" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/rodocrosite.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Rodocrosite</h2>
+          <span class="stone-tagline">Il Balsamo dell'Amore Altruistico</span>
+        </div>
+      </div>
+      <p class="stone-text">La Rodocrosite è la pietra del cuore e delle relazioni per eccellenza. Aiuta a guarire traumi emotivi profondi e a integrare le emozioni, insegnando l'importanza fondamentale dell'amore per se stessi.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Amore di Sé:</strong> Incoraggia un'attitudine positiva e amorevole verso se stessi.</li><li><strong>Rilascio:</strong> Aiuta a far emergere e rilasciare i sentimenti repressi.</li><li><strong>Relazioni:</strong> Attira l'anima gemella e rafforza i legami affettivi esistenti.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Mettila in un contenitore con petali di rosa e coprila con acqua pura. Attivazione: Tienila sul cuore durante una meditazione, visualizzando una luce rosa che ti avvolge.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article><article class="stone-item" id="stone-turchese-arizona">
+      <div class="stone-header">
+        <img class="stone-img" src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp" alt="Turchese Arizona - Scudo di Verità e Protezione" width="140" height="140" loading="lazy" srcset="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp 1x, https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/turchese-arizona.webp 2x">
+        <div class="stone-headtext">
+          <h2 class="stone-title">Turchese Arizona</h2>
+          <span class="stone-tagline">Scudo di Verità e Protezione</span>
+        </div>
+      </div>
+      <p class="stone-text">Il Turchese è una pietra sacra usata da millenni per la protezione. Favorisce la comunicazione sincera e la saggezza, proteggendo chi la indossa durante i viaggi e dagli influssi negativi esterni.</p>
+      <h3 class="stone-subtitle">✦ Significato Esoterico</h3>
+      <ul class="stone-list"><li><strong>Amuleto:</strong> Protegge dalle energie negative e attira la buona sorte.</li><li><strong>Verità:</strong> Aiuta a parlare con onestà e a vedere la verità nelle situazioni.</li><li><strong>Equilibrio:</strong> Unisce le energie del cielo e della terra, portando equilibrio fisico.</li></ul>
+      <div class="ritual-box">
+        <div class="ritual-title">✨ Benedizione e Attivazione</div>
+        <div class="ritual-content">Purificazione: Attenzione: NON usare sale diretto. Usa il fumo di Salvia Bianca. Attivazione: Attivala alla luce del Sole mattutino (non troppo forte) per caricare la sua forza vitale.</div>
+      </div>
+      <a href="#indexTitle" class="back-to-index-link">↑ Torna all'indice</a>
+    </article></section>
 
   <section class="faq-section" id="faqSection">
     <h2>❓ Domande Frequenti</h2>
-    <div id="faqList"></div>
+    <div id="faqList"><div class="faq-item"><button class="faq-q" aria-expanded="false">Come si caricano le pietre magiche?</button><div class="faq-a">Le pietre possono essere caricate esponendole alla luce della Luna Piena, del Sole (solo per le varietà che non sbiadiscono, come Citrino o Cristallo di Rocca) oppure posizionandole su un gruppo di Cristallo di Rocca o Selenite. Questi due minerali sono considerati amplificatori e ricaricano le altre pietre senza mai esaurirsi. Consulta la scheda ✨ Benedizione e Attivazione sotto ogni pietra per il metodo specifico consigliato.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Qual è la pietra più potente per la protezione?</button><div class="faq-a">La Tormalina Nera è generalmente considerata lo scudo energetico più potente contro le energie negative, il malocchio e le radiazioni elettromagnetiche. Ottime alternative sono l'Ossidiana Nera per la protezione psichica intensa, l'Ematite per un radicamento profondo e l'Onice per la forza di volontà e il controllo emotivo nelle situazioni difficili.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Come capire se una pietra è vera?</button><div class="faq-a">Le pietre naturali sono generalmente fredde al tatto per alcuni secondi prima di scaldarsi, presentano piccole imperfezioni, inclusioni o variazioni cromatiche naturali, e hanno un peso specifico superiore rispetto a repliche in vetro colorato o resina, che risultano invece perfettamente uniformi, leggere e prive di qualunque variazione.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Quante pietre si possono indossare o usare insieme?</button><div class="faq-a">Non c'è un limite fisso, ma è consigliato iniziare con 2-3 pietre scelte per intenzioni complementari, ad esempio Tormalina Nera per la protezione insieme ad Ametista per la calma mentale. Usare troppe pietre insieme senza uno scopo chiaro può disperdere l'attenzione e rendere più difficile percepire i benefici di ciascuna.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Ogni quanto vanno purificate le pietre magiche?</button><div class="faq-a">In generale una volta ogni 15-20 giorni in caso di uso quotidiano, oppure subito dopo che la pietra ha assorbito una forte carica emotiva propria o di altre persone. Pietre come Selenite, Cianite e Citrino sono considerate autopurificanti e non necessitano mai di essere pulite energeticamente.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Posso usare le pietre magiche insieme ad altre pratiche come i Tarocchi?</button><div class="faq-a">Sì, molti praticanti combinano le pietre con altre discipline esoteriche per amplificare l'intenzione di una lettura o di un rituale. Puoi approfondire la nostra <a href="./guida-tarocchi.html">guida ai Tarocchi</a> o la sezione dedicata a <a href="./tradizioni-spirituali.html">tradizioni spirituali</a> per costruire una pratica personale più completa.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Le pietre magiche possono sostituire le cure mediche?</button><div class="faq-a">No, in nessun caso. Le pietre sono strumenti di supporto energetico, simbolico e spirituale che accompagnano il benessere personale, ma non sostituiscono in alcun modo diagnosi, terapie, farmaci o trattamenti prescritti da un medico, uno psicologo o un altro professionista sanitario qualificato.</div></div></div>
   </section>
 
 </main>
 
 <footer>
-  <p class="footer-copy" id="footerCopy"></p>
-  <p class="footer-disclaimer" id="footerDisclaimer"></p>
+  <p class="footer-copy" id="footerCopy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p class="footer-disclaimer" id="footerDisclaimer">I contenuti di questa pagina hanno finalità informative, spirituali e di intrattenimento. Le pietre e i cristalli non sostituiscono diagnosi, cure o trattamenti medici professionali.</p>
 </footer>
 
 <div class="modal-overlay" id="premiumModal">
   <div class="modal-box">
     <div class="modal-title" id="premiumTitle">✦ Funzione Premium</div>
-    <p class="modal-text" id="premiumText"></p>
-    <div class="modal-price" id="premiumPrice"></div>
+    <p class="modal-text" id="premiumText">Sblocca il Rituale Personalizzato completo con 3 pietre abbinate alla tua intenzione, la guida di combinazione avanzata e l'accesso illimitato allo storico delle tue ricerche.</p>
+    <div class="modal-price" id="premiumPrice">Solo 4,99€ una tantum</div>
     <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" target="_blank" rel="noopener" class="modal-btn" id="premiumBtn">Sblocca MYSTICA Premium</a>
     <button class="modal-skip" id="premiumSkip">Continua Gratis</button>
   </div>

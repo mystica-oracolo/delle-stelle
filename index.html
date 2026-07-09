@@ -47,6 +47,14 @@
       "inLanguage": "it",
       "publisher": {
         "@id": "https://mysticaoracoli.it/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://mysticaoracoli.it/cerca.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       }
     },
     {
@@ -830,6 +838,7 @@ body {
       <h1 class="logo-title" id="logo-title">MYSTICA</h1>
     </div>
     <div class="hh-controls">
+      <a href="./cerca.html" class="btn-icon" id="searchLink" aria-label="Cerca">🔍</a>
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
       <div class="lang-switch" role="group" aria-label="Selezione lingua">
@@ -841,20 +850,20 @@ body {
   </div>
 
   <!-- Sottotitolo/tagline/CTA: usati da applyLang(), già mostrati nell'hero sotto — nascosti qui per header snello -->
-  <p class="logo-sub sr-only" id="logo-sub"></p>
-  <p class="logo-tagline sr-only" id="logo-tagline"></p>
-  <a href="./oroscopo.html" class="hero-cta sr-only" id="hero-cta"></a>
+  <p class="logo-sub sr-only" id="logo-sub">MAGO PETRO · DOTT. PETROLESE GIOVANNI</p>
+  <p class="logo-tagline sr-only" id="logo-tagline">L'oracolo esoterico italiano più completo</p>
+  <a href="./oroscopo.html" class="hero-cta sr-only" id="hero-cta">🔮 Scopri il Tuo Oroscopo</a>
 </header>
 
 <!-- ══ Banner Premium ══ -->
 <div class="premium-banner" id="premiumBanner" hidden>
-  <span id="banner-text"></span>
+  <span id="banner-text">✦ Sblocca MYSTICA Premium — Accesso illimitato a tutto · 4,99€ una tantum</span>
   <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01"
-     class="banner-btn" id="banner-btn" target="_blank" rel="noopener"></a>
+     class="banner-btn" id="banner-btn" target="_blank" rel="noopener">Attiva ora</a>
 </div>
 <!-- Badge Premium Attivo -->
 <div class="premium-badge-active" id="premiumBadgeActive" hidden>
-  <span id="banner-active"></span>
+  <span id="banner-active">✦ Premium Attivo</span>
 </div>
 
 <!-- ══════════════════════════
@@ -1431,8 +1440,8 @@ body {
 </article>
 
 <div class="share-section" id="share-section" aria-label="Condividi MYSTICA">
-  <div class="share-section-title" id="share-section-title"></div>
-  <button class="btn-share" id="btn-share-label" onclick="shareContent()"></button>
+  <div class="share-section-title" id="share-section-title">✦ Condividi MYSTICA</div>
+  <button class="btn-share" id="btn-share-label" onclick="shareContent()">📤 Condividi</button>
   <div class="share-popup" id="sharePopup" hidden>
     <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
     <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
@@ -1444,8 +1453,68 @@ body {
 
 <!-- ══ FAQ ACCORDION ══ -->
 <section class="faq-section" id="faq-section" aria-label="Domande frequenti">
-  <div class="faq-title" id="faq-title"></div>
-  <div class="faq-list" id="faqList"></div>
+  <div class="faq-title" id="faq-title">✦ Domande Frequenti</div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cosa sono i tarocchi online?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>I tarocchi online sono uno strumento di divinazione digitale che usa il mazzo tradizionale di 78 carte. Su MYSTICA puoi fare la carta del giorno, stese a 3 carte e letture tematiche complete, tutte gratuite ogni giorno.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come funziona l'oroscopo su MYSTICA?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Seleziona il tuo segno zodiacale e ricevi previsioni giornaliere per amore, lavoro, salute ed energia. Puoi salvare il tuo segno preferito e consultare l'archivio delle letture passate nel tuo profilo personale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Le rune sono affidabili per la divinazione?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Le 24 rune dell'Elder Futhark sono uno dei sistemi divinatori più antichi e complessi. Ogni runa ha un significato dritto e rovesciato, una radice etimologica, una corrispondenza nella mitologia norrena. Su MYSTICA trovi le interpretazioni complete di tutte le 24 rune più la Runa del Vuoto.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>MYSTICA è davvero gratuito?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Sì. Al momento tutte le funzioni di MYSTICA sono completamente gratuite e senza limitazioni: stese complete ai tarocchi, oroscopo settimanale e mensile, rituali completi, profilo numerologico integrale e ogni altra sezione del sito.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Posso usare MYSTICA senza registrarmi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Sì. MYSTICA funziona senza account. Le tue preferenze (segno zodiacale, lingua, tema, storico letture) vengono salvate localmente sul tuo dispositivo tramite il tuo browser. Nessuna email richiesta per le funzioni gratuite.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>MYSTICA funziona anche offline?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Sì. MYSTICA è una Progressive Web App (PWA): dopo la prima visita, molte funzioni sono disponibili anche senza connessione. Puoi anche aggiungerla alla schermata home del tuo telefono come se fosse un'app nativa.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ CTA ESPLORA ══ -->
@@ -1463,8 +1532,8 @@ body {
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA è un servizio di intrattenimento. Le letture e le previsioni hanno finalità ludiche e non sostituiscono consulenze professionali mediche, legali o finanziarie.</p>
 </footer>
 
 </div><!-- /app -->
@@ -1488,12 +1557,12 @@ body {
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.open('https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01','_blank')"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.open('https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01','_blank')">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 
@@ -2032,7 +2101,15 @@ function updateSEO() {
         name: 'MYSTICA Oracoli',
         description: S.description,
         inLanguage: S.htmlLang,
-        publisher: { '@id': SITE + '#organization' }
+        publisher: { '@id': SITE + '#organization' },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: SITE + 'cerca.html?q={search_term_string}'
+          },
+          'query-input': 'required name=search_term_string'
+        }
       },
       {
         '@type': 'Organization',

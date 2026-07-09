@@ -330,17 +330,17 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 <div class="cosmos" aria-hidden="true"></div>
-<a href="#main-content" class="skip-link" id="skip-link"></a>
+<a href="#main-content" class="skip-link" id="skip-link">Vai al contenuto principale</a>
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle music"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle theme"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle music">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🎴 Guida ai Tarocchi</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -350,24 +350,24 @@ a:hover{text-decoration:underline}
 
 <main id="main-content">
   <nav class="breadcrumb" aria-label="Breadcrumb" id="nav-breadcrumb">
-    <a href="./index.html" id="bc-home"></a>
+    <a href="./index.html" id="bc-home">Home</a>
     <span>›</span>
-    <span id="bc-current"></span>
+    <span id="bc-current">Come Leggere i Tarocchi</span>
   </nav>
 
   <div class="hero">
     <span class="hero-icon" aria-hidden="true">🎴</span>
-    <h2 id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 id="hero-title">Come Leggere i Tarocchi: Guida Completa</h2>
+    <p class="hero-sub" id="hero-sub">Dai fondamenti del mazzo al significato di ogni carta: tutto quello che devi sapere per iniziare a leggere i tarocchi, passo per passo.</p>
   </div>
 
   <nav class="toc" aria-label="Indice" id="nav-toc">
-    <div class="toc-title" id="toc-title"></div>
-    <ol id="toc-list"></ol>
+    <div class="toc-title" id="toc-title">Indice</div>
+    <ol id="toc-list"><li><a href="#storia" data-idx="0">Storia e Origini dei Tarocchi</a></li><li><a href="#mazzo" data-idx="1">La Struttura del Mazzo: 78 Carte</a></li><li><a href="#arcani-maggiori" data-idx="2">Gli Arcani Maggiori</a></li><li><a href="#arcani-minori" data-idx="3">Gli Arcani Minori: I Quattro Semi</a></li><li><a href="#stese" data-idx="4">Le Stese Principali</a></li><li><a href="#come-leggere" data-idx="5">Come Interpretare le Carte</a></li><li><a href="#rovesciate" data-idx="6">Le Carte Rovesciate</a></li><li><a href="#consigli" data-idx="7">Consigli per i Principianti</a></li><li><a href="#faq" data-idx="8">Domande Frequenti</a></li></ol>
   </nav>
 
   <section id="storia">
-    <h2 id="storia-title"></h2>
+    <h2 id="storia-title">Storia e Origini dei Tarocchi</h2>
     <div class="img-section">
       <img src="./images/icone/home/tarocchi.webp"
            srcset="./images/icone/home/tarocchi.webp 1x"
@@ -375,137 +375,222 @@ a:hover{text-decoration:underline}
            style="max-height:220px;object-fit:cover;width:100%">
     </div>
     <div class="card">
-      <p id="storia-p1"></p>
-      <p id="storia-p2"></p>
-      <p id="storia-p3"></p>
+      <p id="storia-p1">I tarocchi hanno origini sorprendentemente laiche: nacquero nel nord Italia intorno al 1430 come gioco di carte aristocratico, chiamato "tarocchi" o "trionfi". Le prime versioni conosciute — come il mazzo Visconti-Sforza — erano elaborate opere d'arte commissionate dalle famiglie nobili lombarde, senza alcuna funzione divinatoria.</p>
+      <p id="storia-p2">Solo nel XVIII secolo i tarocchi iniziarono ad essere usati per la cartomanzia, grazie all'occultista francese Antoine Court de Gébelin, che nel 1781 sostenne — erroneamente, ma con grande influenza — che le carte discendessero dall'antico Libro di Thoth egiziano. Questa reinterpretazione esoterica trasformò definitivamente i tarocchi in uno strumento di divinazione e autoconoscenza.</p>
+      <p id="storia-p3">Il mazzo di riferimento universale è il Rider-Waite-Smith, pubblicato nel 1909 da Arthur Edward Waite con le illustrazioni di Pamela Colman Smith. È il primo mazzo in cui tutti e 78 gli Arcani Minori presentano scene figurative complete, rendendo l'interpretazione più intuitiva. Da quel momento i tarocchi sono diventati il sistema divinatorio più diffuso al mondo.</p>
     </div>
   </section>
 
   <section id="mazzo">
-    <h2 id="mazzo-title"></h2>
-    <p id="mazzo-intro"></p>
-    <div class="card-grid" id="mazzo-grid"></div>
+    <h2 id="mazzo-title">La Struttura del Mazzo: 78 Carte</h2>
+    <p id="mazzo-intro">Un mazzo di tarocchi completo è composto da 78 carte, divise in due grandi famiglie: gli Arcani Maggiori e gli Arcani Minori.</p>
+    <div class="card-grid" id="mazzo-grid">
+    <div class="card-item">
+      <span class="card-item-icon" aria-hidden="true">⭐</span>
+      <div class="card-item-title">Arcani Maggiori</div>
+      <div class="card-item-desc">22 carte numerate da 0 a 21, dalla carta del Matto al Mondo. Rappresentano archetipi universali e temi profondi dell'esistenza.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon" aria-hidden="true">🃏</span>
+      <div class="card-item-title">Arcani Minori</div>
+      <div class="card-item-desc">56 carte divise in 4 semi (Bastoni, Coppe, Spade, Pentacoli), ognuno con 14 carte dall'Asso al 10 più 4 figure di corte.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon" aria-hidden="true">🔥</span>
+      <div class="card-item-title">I Quattro Semi</div>
+      <div class="card-item-desc">Bastoni (fuoco, creatività), Coppe (acqua, emozioni), Spade (aria, pensiero), Pentacoli (terra, materialità).</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon" aria-hidden="true">👑</span>
+      <div class="card-item-title">Le Figure di Corte</div>
+      <div class="card-item-desc">Fante, Cavaliere, Regina e Re per ogni seme. Rappresentano personalità, stili di comportamento o persone reali.</div>
+    </div></div>
   </section>
 
   <section id="arcani-maggiori">
-    <h2 id="am-title"></h2>
-    <p id="am-intro"></p>
+    <h2 id="am-title">Gli Arcani Maggiori: Significati</h2>
+    <p id="am-intro">Gli Arcani Maggiori rappresentano le grandi forze cosmiche e le tappe fondamentali del percorso dell'anima — il cosiddetto "Viaggio del Matto", dalla inconsapevolezza all'illuminazione.</p>
     <table class="arcana-table">
       <thead>
         <tr>
-          <th id="am-th-num"></th><th id="am-th-card"></th>
-          <th id="am-th-meaning"></th><th id="am-th-keyword"></th>
+          <th id="am-th-num">N°</th><th id="am-th-card">Carta</th>
+          <th id="am-th-meaning">Significato Principale</th><th id="am-th-keyword">Parola Chiave</th>
         </tr>
       </thead>
-      <tbody id="am-rows"></tbody>
+      <tbody id="am-rows"><tr><td>0</td><td>🃏 Il Matto</td><td>Inizio del viaggio, libertà, potenziale infinito</td><td>Inizio</td></tr><tr><td>I</td><td>🎩 Il Mago</td><td>Volontà, abilità, manifestazione, potere creativo</td><td>Azione</td></tr><tr><td>II</td><td>📚 La Papessa</td><td>Intuizione, saggezza interiore, conoscenza nascosta</td><td>Intuizione</td></tr><tr><td>III</td><td>🌿 L'Imperatrice</td><td>Fertilità, abbondanza, natura, creatività</td><td>Abbondanza</td></tr><tr><td>IV</td><td>🏛️ L'Imperatore</td><td>Struttura, autorità, stabilità, ordine</td><td>Controllo</td></tr><tr><td>V</td><td>⛪ Il Papa</td><td>Tradizione, guida spirituale, insegnamento</td><td>Saggezza</td></tr><tr><td>VI</td><td>❤️ Gli Innamorati</td><td>Amore, scelta, valori, unione</td><td>Scelta</td></tr><tr><td>VII</td><td>🏆 Il Carro</td><td>Determinazione, vittoria, controllo, ambizione</td><td>Vittoria</td></tr><tr><td>VIII</td><td>🦁 La Forza</td><td>Coraggio interiore, compassione, padronanza</td><td>Forza</td></tr><tr><td>IX</td><td>🔦 L'Eremita</td><td>Riflessione, solitudine, ricerca interiore</td><td>Introspezione</td></tr><tr><td>X</td><td>☸️ La Ruota</td><td>Cicli del destino, cambiamento, karma</td><td>Ciclo</td></tr><tr><td>XI</td><td>⚖️ La Giustizia</td><td>Equità, verità, causa-effetto, responsabilità</td><td>Equilibrio</td></tr><tr><td>XII</td><td>🙃 L'Appeso</td><td>Sospensione, sacrificio, nuova prospettiva</td><td>Pausa</td></tr><tr><td>XIII</td><td>💀 La Morte</td><td>Trasformazione profonda, fine di un ciclo, rinascita</td><td>Trasformazione</td></tr><tr><td>XIV</td><td>🏺 La Temperanza</td><td>Equilibrio, moderazione, pazienza, armonia</td><td>Armonia</td></tr><tr><td>XV</td><td>😈 Il Diavolo</td><td>Schiavitù, illusione, dipendenza, ombre</td><td>Liberazione</td></tr><tr><td>XVI</td><td>⚡ La Torre</td><td>Crollo improvviso, rivelazione, cambiamento radicale</td><td>Rottura</td></tr><tr><td>XVII</td><td>⭐ Le Stelle</td><td>Speranza, ispirazione, guarigione, rinnovamento</td><td>Speranza</td></tr><tr><td>XVIII</td><td>🌙 La Luna</td><td>Illusione, paura, inconscio, ambiguità</td><td>Mistero</td></tr><tr><td>XIX</td><td>☀️ Il Sole</td><td>Gioia, successo, vitalità, chiarezza</td><td>Gioia</td></tr><tr><td>XX</td><td>📯 Il Giudizio</td><td>Risveglio, redenzione, vocazione, rinascita</td><td>Rinascita</td></tr><tr><td>XXI</td><td>🌍 Il Mondo</td><td>Completamento, integrazione, successo totale</td><td>Completamento</td></tr></tbody>
     </table>
   </section>
 
   <section id="arcani-minori">
-    <h2 id="mi-title"></h2>
-    <p id="mi-intro"></p>
-    <div class="card" id="mi-suits"></div>
+    <h2 id="mi-title">Gli Arcani Minori: I Quattro Semi</h2>
+    <p id="mi-intro">Gli Arcani Minori riflettono le situazioni quotidiane della vita. Ogni seme governa una sfera specifica dell'esperienza umana ed è associato a un elemento naturale.</p>
+    <div class="card" id="mi-suits"><h3>🔥 Bastoni — Elemento Fuoco</h3><p>I Bastoni rappresentano energia, ispirazione, creatività e passione. Sono le carte dell'azione e della volontà. Una prevalenza di Bastoni indica un periodo di grande dinamismo e nuovi progetti. L'Asso di Bastoni è il seme puro della creatività: una nuova idea che prende forma.</p><h3>💧 Coppe — Elemento Acqua</h3><p>Le Coppe governano il mondo emotivo: amore, relazioni, intuizione e vita interiore. Una prevalenza di Coppe suggerisce che le questioni emotive sono al centro della situazione. Il Due di Coppe rappresenta il legame romantico o la profonda connessione tra due persone.</p><h3>⚔️ Spade — Elemento Aria</h3><p>Le Spade corrispondono alla mente, al pensiero e ai conflitti. Sono spesso le carte più temute, ma rappresentano la chiarezza del pensiero e la necessità di verità. L'Asso di Spade è la lama della verità: chiarezza mentale assoluta.</p><h3>🌱 Pentacoli — Elemento Terra</h3><p>I Pentacoli riguardano la sfera materiale: lavoro, denaro, salute, risorse fisiche. Sono le carte della concretezza e della stabilità. L'Asso di Pentacoli promette una nuova opportunità materiale o finanziaria.</p></div>
   </section>
 
   <section id="stese">
-    <h2 id="stese-title"></h2>
-    <p id="stese-intro"></p>
-    <div id="stese-list"></div>
+    <h2 id="stese-title">Le Stese Principali</h2>
+    <p id="stese-intro">La "stesa" è il modo in cui le carte vengono disposte. Ogni posizione ha un significato specifico che influenza l'interpretazione della carta estratta.</p>
+    <div id="stese-list">
+    <div class="stesa-box">
+      <div class="stesa-title">🃏 Carta Singola — Il Messaggio del Giorno</div>
+      <p class="stesa-desc">La stesa più semplice: una sola carta per rispondere a una domanda o ricevere un messaggio per la giornata. Ideale per chi inizia.</p>
+      <div class="stesa-cards"><div class="stesa-card"><div class="stesa-card-num">1</div>Messaggio</div></div>
+    </div>
+    <div class="stesa-box">
+      <div class="stesa-title">🃏🃏🃏 Tre Carte — Passato, Presente, Futuro</div>
+      <p class="stesa-desc">La stesa classica per eccellenza. Tre carte in fila offrono una visione temporale della situazione. Perfetta per domande sulla direzione generale.</p>
+      <div class="stesa-cards"><div class="stesa-card"><div class="stesa-card-num">1</div>Passato</div><div class="stesa-card"><div class="stesa-card-num">2</div>Presente</div><div class="stesa-card"><div class="stesa-card-num">3</div>Futuro</div></div>
+    </div>
+    <div class="stesa-box">
+      <div class="stesa-title">✝️ La Croce Celtica — Stesa Approfondita (10 carte)</div>
+      <p class="stesa-desc">La stesa più completa usata dai lettori esperti. 10 carte esplorano la situazione presente, gli ostacoli, le influenze passate e future, i timori, le speranze e l'esito probabile.</p>
+      <div class="stesa-cards"><div class="stesa-card"><div class="stesa-card-num">1</div>Situazione</div><div class="stesa-card"><div class="stesa-card-num">2</div>Ostacolo</div><div class="stesa-card"><div class="stesa-card-num">3</div>Radici</div><div class="stesa-card"><div class="stesa-card-num">4</div>Passato</div><div class="stesa-card"><div class="stesa-card-num">5</div>Futuro pross.</div><div class="stesa-card"><div class="stesa-card-num">6</div>Coscienza</div><div class="stesa-card"><div class="stesa-card-num">7</div>Te stesso</div><div class="stesa-card"><div class="stesa-card-num">8</div>Ambiente</div><div class="stesa-card"><div class="stesa-card-num">9</div>Speranze</div><div class="stesa-card"><div class="stesa-card-num">10</div>Esito</div></div>
+    </div></div>
   </section>
 
   <section id="come-leggere">
-    <h2 id="cl-title"></h2>
+    <h2 id="cl-title">Come Interpretare le Carte</h2>
     <div class="card">
-      <p id="cl-intro"></p>
-      <ol id="cl-steps"></ol>
+      <p id="cl-intro">L'interpretazione dei tarocchi non è un processo meccanico di memorizzazione. È un dialogo tra il significato tradizionale della carta, la sua posizione nella stesa, la domanda posta e l'intuizione del lettore.</p>
+      <ol id="cl-steps"><li><strong>Formula una domanda chiara.</strong> Le domande aperte ("Cosa devo sapere su...") funzionano meglio di quelle chiuse sì/no.</li><li><strong>Osserva la carta nel suo insieme.</strong> Prima di cercare il significato, guarda l'immagine: cosa vedi? Come ti fa sentire?</li><li><strong>Considera la posizione nella stesa.</strong> Una stessa carta ha sfumature diverse a seconda della posizione.</li><li><strong>Leggi le carte in relazione tra loro.</strong> Cerca le connessioni e la storia complessiva che le carte raccontano insieme.</li><li><strong>Aggiungi la tua intuizione.</strong> I significati tradizionali sono una guida, non una prigione.</li></ol>
     </div>
   </section>
 
   <section id="rovesciate">
-    <h2 id="rov-title"></h2>
+    <h2 id="rov-title">Le Carte Rovesciate</h2>
     <div class="card">
-      <p id="rov-p1"></p>
-      <div class="highlight"><p id="rov-example"></p></div>
-      <p id="rov-p2"></p>
+      <p id="rov-p1">Una carta "rovesciata" è estratta in posizione invertita (capovolta). Non tutti i lettori le usano, ma nella tradizione moderna rappresentano sfumature importanti: l'energia della carta bloccata, espressa in modo distorto, o la necessità di guarire un aspetto prima che quell'energia possa fluire liberamente.</p>
+      <div class="highlight"><p id="rov-example">💡 Esempio: Il Sole dritto indica gioia e successo. Il Sole rovesciato può suggerire ottimismo eccessivo o difficoltà temporanee prima che la luce ritorni.</p></div>
+      <p id="rov-p2">Per chi inizia, è consigliabile imparare prima i significati in posizione diritta e introdurre le rovesciate solo quando si ha una buona padronanza del mazzo.</p>
     </div>
   </section>
 
   <section id="consigli">
-    <h2 id="cons-title"></h2>
-    <ul id="cons-list"></ul>
+    <h2 id="cons-title">Consigli Pratici per i Principianti</h2>
+    <ul id="cons-list"><li><strong>Un mazzo alla volta.</strong> Inizia con un solo mazzo — il Rider-Waite-Smith è il più consigliato — e familiarizzaci completamente prima di aggiungerne altri.</li><li><strong>Una carta al giorno.</strong> Estrarre una singola carta ogni mattina e rifletterci durante la giornata è uno degli esercizi migliori per imparare in modo naturale.</li><li><strong>Tieni un diario delle letture.</strong> Annota le carte estratte, le tue interpretazioni e come gli eventi si sono poi sviluppati.</li><li><strong>Non ripetere la stessa lettura.</strong> Fare più letture sullo stesso argomento in poco tempo crea confusione. Fidati della prima lettura.</li><li><strong>I tarocchi non predicono in modo assoluto.</strong> Mostrano tendenze e potenziali. Il futuro rimane sempre nelle tue mani.</li></ul>
   </section>
 
   <div class="share-section">
-    <button class="btn-share" id="btn-share" onclick="shareContent()"></button>
+    <button class="btn-share" id="btn-share" onclick="shareContent()">📤 Condividi</button>
   </div>
   <div class="share-popup" id="sharePopup" hidden>
     <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
     <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
     <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
     <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-    <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+    <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
   </div>
 
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Perché Studiare i Tarocchi Cambia il Modo in cui Guardi la Vita</h2>
     <img src="./images/icone/home/tarocchi.webp"
          srcset="./images/icone/home/tarocchi.webp 1x"
          id="art-hero" alt="" loading="lazy" decoding="async" width="720" height="360">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Uno strumento di introspezione, non solo di divinazione</h3>
+    <p id="art-p1">Studiare i tarocchi significa allenare uno sguardo diverso sulla realtà quotidiana. Ogni carta è un archetipo — una figura universale che si ripresenta nei miti, nei sogni e nelle esperienze umane di ogni epoca. Il Mago non è solo una carta: è la capacità che ognuno di noi ha di trasformare un'idea in azione concreta. La Torre non è solo un crollo improvviso: è il momento in cui una struttura falsa deve cadere perché ne nasca una più autentica. Leggere i tarocchi con regolarità significa imparare a riconoscere questi pattern anche fuori dal mazzo, nella vita reale.</p>
+    <p id="art-p2">Molti principianti si avvicinano ai tarocchi cercando risposte certe sul futuro, ma chi pratica da anni sa che il vero valore dello strumento è un altro: le carte offrono uno specchio per guardare con onestà una situazione, senza i filtri e le razionalizzazioni che spesso usiamo per evitare di vedere la verità. In questo senso i tarocchi funzionano in modo simile alla scrittura terapeutica o alla meditazione guidata: creano uno spazio protetto in cui riflettere prima di agire, permettendo di prendere decisioni più consapevoli invece di reagire d'istinto alle circostanze.</p>
+    <p id="art-p3">Esistono diverse scuole di lettura che nel tempo hanno sviluppato approcci distinti. La scuola francese, storicamente legata a Court de Gébelin e più tardi a Etteilla, privilegia significati fissi e tabelle di corrispondenza rigorose. La scuola anglosassone, influenzata dalla Golden Dawn e dal sistema Rider-Waite-Smith, integra invece simbolismo astrologico, cabalistico ed elementale, lasciando più spazio all'interpretazione intuitiva del lettore. Nessuna delle due è "più corretta": rappresentano semplicemente approcci diversi allo stesso linguaggio simbolico. Conoscere entrambe le prospettive aiuta ad ampliare la propria sensibilità di lettura nel tempo.</p>
+    <h3 id="art-h3">Differenze tra scuole di lettura e come scegliere la propria</h3>
+    <p id="art-p4">Un errore comune tra i principianti è voler imparare tutti i 78 significati a memoria prima di iniziare a fare letture. In realtà il metodo più efficace è l'opposto: si impara leggendo, carta dopo carta, lettura dopo lettura, lasciando che la memoria si costruisca attraverso l'esperienza diretta piuttosto che attraverso lo studio mnemonico. Anche gli errori di interpretazione fanno parte del percorso e aiutano a raffinare progressivamente la propria sensibilità simbolica. Il tempo dedicato alla pratica quotidiana conta, alla lunga, più di qualsiasi manuale teorico.</p>
+    <p id="art-p5">Infine, è importante distinguere i tarocchi da altri sistemi divinatori con cui vengono spesso confusi, come le rune o l'I Ching. Le rune, di origine germanica e runica, sono legate a un alfabeto sacro e vengono tradizionalmente estratte in numero ridotto per risposte più dirette. L'I Ching, di origine cinese, si basa su 64 esagrammi generati tramite monete o bastoncini e offre una visione più filosofica e ciclica del cambiamento. I tarocchi, con le loro 78 carte illustrate, restano lo strumento più narrativo e visivo tra i tre, ideale per chi preferisce un linguaggio simbolico ricco di immagini.</p>
     <nav class="article-links" aria-label="Approfondimenti" id="nav-article-links">
-      <a href="./significato-rune.html" id="link-rune"></a>
-      <a href="./guida-i-ching.html" id="link-iching"></a>
-      <a href="./oroscopo-segni.html" id="link-oroscopo"></a>
-      <a href="./numerologia.html" id="link-numerologia"></a>
+      <a href="./significato-rune.html" id="link-rune">Guida alle Rune</a>
+      <a href="./guida-i-ching.html" id="link-iching">Guida I Ching</a>
+      <a href="./oroscopo-segni.html" id="link-oroscopo">Segni Zodiacali</a>
+      <a href="./numerologia.html" id="link-numerologia">Scopri la Numerologia</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <section class="faq-section">
-    <h2 class="faq-title" id="faq-title"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faq-title">Domande Frequenti sui Tarocchi</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Quante carte ha un mazzo di tarocchi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Un mazzo completo è composto da 78 carte: 22 Arcani Maggiori (dal Matto al Mondo) e 56 Arcani Minori divisi in quattro semi — Bastoni, Coppe, Spade e Pentacoli — ciascuno con 14 carte. Gli Arcani Maggiori rappresentano temi archetipici profondi, mentre i Minori riflettono le dinamiche quotidiane della vita.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come si inizia a leggere i tarocchi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il modo migliore è scegliere un solo mazzo (il Rider-Waite-Smith è il più consigliato), estrarre una carta al giorno e rifletterci durante la giornata. Prima di passare a stese complesse è importante familiarizzare con le singole carte, osservando le immagini prima ancora di leggere i significati.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cosa significa una carta rovesciata?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Una carta rovesciata può indicare che l'energia è bloccata, espressa in modo distorto, o che c'è resistenza interna verso quella qualità. Non tutte le scuole di lettura usano le carte rovesciate: molti principianti preferiscono iniziare senza, per poi introdurle in un secondo momento.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>I tarocchi predicono il futuro?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>I tarocchi non predicono il futuro in modo assoluto. Mostrano tendenze e potenziali basandosi sulla situazione presente. Il futuro rimane sempre nelle mani della persona: i tarocchi sono uno specchio di riflessione, non una sentenza immutabile da subire passivamente.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Qual è la stesa più semplice per chi inizia?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>La carta singola è la stesa più semplice: una sola carta per un messaggio del giorno. La stesa a tre carte (Passato, Presente, Futuro) è il secondo passo naturale per chi vuole una visione più articolata della situazione.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
   <div class="related">
-    <div class="related-title" id="related-title"></div>
-    <div class="related-grid" id="related-grid"></div>
+    <div class="related-title" id="related-title">Approfondisci su MYSTICA</div>
+    <div class="related-grid" id="related-grid"><a href="./significato-rune.html" class="related-link"><span class="related-link-icon" aria-hidden="true">ᚱ</span><div class="related-link-text">Guida alle Rune</div></a><a href="./oroscopo-segni.html" class="related-link"><span class="related-link-icon" aria-hidden="true">⭐</span><div class="related-link-text">Segni Zodiacali</div></a><a href="./guida-i-ching.html" class="related-link"><span class="related-link-icon" aria-hidden="true">☯️</span><div class="related-link-text">Guida I Ching</div></a></div>
   </div>
 
   <div class="cta">
     <div class="cta-icon" aria-hidden="true">🎴</div>
-    <div class="cta-title" id="cta-title"></div>
-    <p class="cta-text" id="cta-text"></p>
-    <a href="./index.html" class="cta-btn" id="cta-btn"></a>
-    <button class="cta-btn-secondary" id="cta-premium" onclick="requirePremium('lettura_estesa')"></button>
+    <div class="cta-title" id="cta-title">Prova i Tarocchi Online Gratis</div>
+    <p class="cta-text" id="cta-text">MYSTICA offre lettura dei tarocchi con tutte e 78 le carte, stese a 3 e 5 carte e interpretazioni complete in italiano. Gratis, senza registrazione.</p>
+    <a href="./index.html" class="cta-btn" id="cta-btn">✦ Inizia la Lettura ✦</a>
+    <button class="cta-btn-secondary" id="cta-premium" onclick="requirePremium('lettura_estesa')">🔓 Sblocca Letture Illimitate</button>
   </div>
 </main>
 
 <section class="esplora-section" aria-label="Esplora MYSTICA" id="esplora-section">
-  <h2 id="esplora-title"></h2>
-  <div class="esplora-grid" id="esplora-grid"></div>
+  <h2 id="esplora-title">✨ Esplora Anche</h2>
+  <div class="esplora-grid" id="esplora-grid"><a href="./guida-i-ching.html" class="esplora-card">☯ Guida I Ching</a><a href="./significato-rune.html" class="esplora-card">ᚱ Significato Rune</a><a href="./divinazione-alternativa.html" class="esplora-card">🎴 Cartomanzia</a><a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a><a href="./pratiche.html" class="esplora-card">🔮 Figure del Mistico</a><a href="./strega.html" class="esplora-card">🧙 Percorso Strega</a></div>
 </section>
 
 <footer class="page-footer">
-  <div class="footer-links" id="footer-links"></div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <div class="footer-links" id="footer-links"><a href="./index.html">Home</a><a href="./contatti.html">Contatti</a><a href="./about.html">Chi Siamo</a><a href="./significato-rune.html">Significato Rune</a><a href="./oroscopo-segni.html">Segni Zodiacali</a><a href="./guida-i-ching.html">Guida I Ching</a><a href="./privacy.html">Privacy</a></div>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di MYSTICA hanno finalità di intrattenimento, introspezione e crescita personale e non sostituiscono consulenze mediche, legali, finanziarie o psicologiche professionali.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete a 10 carte e consulti avanzati sui tarocchi.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

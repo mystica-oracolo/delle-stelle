@@ -442,15 +442,15 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🎵</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">🌙</button>
     </div>
   </div>
   <div class="hero-symbol" aria-hidden="true">🐾</div>
-  <h1 class="page-title" id="page-title"></h1>
-  <p class="page-sub" id="page-sub"></p>
+  <h1 class="page-title" id="page-title">🐾 Animale Totem</h1>
+  <p class="page-sub" id="page-sub">Lo Spirito Guida della Tua Anima</p>
   <div class="lang-switch" role="group" aria-label="Selettore lingua">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -464,14 +464,49 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
   <!-- ORACOLO / QUIZ — SEZIONE INTERATTIVA, SEMPRE IN CIMA -->
   <section class="section z1" id="oracolo">
     <div class="section-header">
-      <div class="section-eyebrow" id="quiz-eyebrow"></div>
-      <h2 class="section-title" id="quiz-title"></h2>
-      <p class="section-intro" id="quiz-intro"></p>
+      <div class="section-eyebrow" id="quiz-eyebrow">Test Psico-Archetipico</div>
+      <h2 class="section-title" id="quiz-title">Scopri il Tuo Totem</h2>
+      <p class="section-intro" id="quiz-intro">Cinque domande per rivelare lo spirito animale che rispecchia la tua anima. Rispondi con il cuore, non con la mente.</p>
     </div>
     <div class="oracle-box">
-      <div class="oracle-title" id="oracle-title"></div>
-      <div class="oracle-sub" id="oracle-sub"></div>
-      <div id="totemQuiz"></div>
+      <div class="oracle-title" id="oracle-title">🐾 Rivelazione dello Spirito Guida</div>
+      <div class="oracle-sub" id="oracle-sub">RISPONDI ISTINTIVAMENTE · NON ESISTE RISPOSTA GIUSTA</div>
+      <div id="totemQuiz">
+    <div class="quiz-step active" id="totemStep0">
+      <div class="quiz-progress">DOMANDA 1 DI 5</div>
+      <div class="quiz-q">Sei in un bosco all'alba. Senti un rumore tra gli alberi. Qual è la tua prima reazione?</div>
+      <div class="totem-opts">
+        <button class="totem-opt" onclick="totemAnswer(0,0)"><span class="opt-emoji" aria-hidden="true">🦅</span>Mi fermo e scansiono l'intera area dall'alto, cercando di capire il quadro completo</button><button class="totem-opt" onclick="totemAnswer(0,1)"><span class="opt-emoji" aria-hidden="true">🐺</span>Mi avvicino con cautela — il mio istinto mi dice se è pericoloso o no</button><button class="totem-opt" onclick="totemAnswer(0,2)"><span class="opt-emoji" aria-hidden="true">🐻</span>Mi ritiro lentamente — il mio territorio, le mie regole</button><button class="totem-opt" onclick="totemAnswer(0,3)"><span class="opt-emoji" aria-hidden="true">🐬</span>Emetto un suono per vedere se risponde — la comunicazione è tutto</button>
+      </div>
+    </div>
+    <div class="quiz-step" id="totemStep1">
+      <div class="quiz-progress">DOMANDA 2 DI 5</div>
+      <div class="quiz-q">Un tuo caro amico ti confida un segreto doloroso. Come lo accompagni?</div>
+      <div class="totem-opts">
+        <button class="totem-opt" onclick="totemAnswer(1,0)"><span class="opt-emoji" aria-hidden="true">🦉</span>Ascolto in silenzio, poi offro una prospettiva che non aveva considerato</button><button class="totem-opt" onclick="totemAnswer(1,1)"><span class="opt-emoji" aria-hidden="true">🦌</span>Lo abbraccio e piango con lui — sentire insieme è più importante delle parole</button><button class="totem-opt" onclick="totemAnswer(1,2)"><span class="opt-emoji" aria-hidden="true">🦁</span>Lo incoraggio con forza — lo spingo a trovare la propria soluzione</button><button class="totem-opt" onclick="totemAnswer(1,3)"><span class="opt-emoji" aria-hidden="true">🐍</span>Lo aiuto a vedere come questa crisi è in realtà una trasformazione necessaria</button>
+      </div>
+    </div>
+    <div class="quiz-step" id="totemStep2">
+      <div class="quiz-progress">DOMANDA 3 DI 5</div>
+      <div class="quiz-q">Qual è il tuo rapporto con la solitudine?</div>
+      <div class="totem-opts">
+        <button class="totem-opt" onclick="totemAnswer(2,0)"><span class="opt-emoji" aria-hidden="true">🦅</span>La cerco — ho bisogno di spazio per vedere le cose con chiarezza</button><button class="totem-opt" onclick="totemAnswer(2,1)"><span class="opt-emoji" aria-hidden="true">🐺</span>Mi pesa — ho bisogno del mio branco per sentirmi completo</button><button class="totem-opt" onclick="totemAnswer(2,2)"><span class="opt-emoji" aria-hidden="true">🐻</span>Entro in ibernazione periodica — i ritiri mi rigenerano profondamente</button><button class="totem-opt" onclick="totemAnswer(2,3)"><span class="opt-emoji" aria-hidden="true">🐬</span>La uso per ricaricarmi, ma poi ho bisogno di connessione</button>
+      </div>
+    </div>
+    <div class="quiz-step" id="totemStep3">
+      <div class="quiz-progress">DOMANDA 4 DI 5</div>
+      <div class="quiz-q">Di fronte a un grande cambiamento nella tua vita, la tua tendenza naturale è...</div>
+      <div class="totem-opts">
+        <button class="totem-opt" onclick="totemAnswer(3,0)"><span class="opt-emoji" aria-hidden="true">🦁</span>Prendere il comando — il cambiamento mi energizza</button><button class="totem-opt" onclick="totemAnswer(3,1)"><span class="opt-emoji" aria-hidden="true">🐍</span>Abbracciare la trasformazione — lascio andare il vecchio senza rimpianti</button><button class="totem-opt" onclick="totemAnswer(3,2)"><span class="opt-emoji" aria-hidden="true">🦉</span>Osservare prima di agire — studio le implicazioni profonde</button><button class="totem-opt" onclick="totemAnswer(3,3)"><span class="opt-emoji" aria-hidden="true">🦌</span>Cerco armonia — tento di portare tutti sulla stessa onda</button>
+      </div>
+    </div>
+    <div class="quiz-step" id="totemStep4">
+      <div class="quiz-progress">DOMANDA 5 DI 5</div>
+      <div class="quiz-q">Quale ambiente ti ricarica più profondamente?</div>
+      <div class="totem-opts">
+        <button class="totem-opt" onclick="totemAnswer(4,0)"><span class="opt-emoji" aria-hidden="true">🏔️</span>Le vette e i luoghi elevati — aria rarefatta, visione sconfinata</button><button class="totem-opt" onclick="totemAnswer(4,1)"><span class="opt-emoji" aria-hidden="true">🌲</span>La foresta fitta — suoni animali, ombre, misteri</button><button class="totem-opt" onclick="totemAnswer(4,2)"><span class="opt-emoji" aria-hidden="true">🌊</span>Il mare o i fiumi — l'acqua come specchio dell'anima</button><button class="totem-opt" onclick="totemAnswer(4,3)"><span class="opt-emoji" aria-hidden="true">🌙</span>La notte stellata — silenzio, profondità, cosmo infinito</button>
+      </div>
+    </div></div>
       <div id="totemResult"></div>
     </div>
   </section>
@@ -484,7 +519,7 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -493,83 +528,207 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
     <div class="img-placeholder">
       <img src="./images/totem/totem-copertina.webp" id="intro-img" alt="" loading="eager" decoding="sync" onerror="this.style.display='none'">
       <span class="ph-icon" aria-hidden="true">🐺</span>
-      <span class="ph-label" id="intro-ph-label"></span>
+      <span class="ph-label" id="intro-ph-label">SPIRITI ANIMALI</span>
     </div>
     <div class="section-header">
-      <div class="section-eyebrow" id="intro-eyebrow"></div>
-      <h2 class="section-title" id="intro-title"></h2>
-      <p class="section-intro" id="intro-text1"></p>
+      <div class="section-eyebrow" id="intro-eyebrow">Tradizioni Sciamaniche</div>
+      <h2 class="section-title" id="intro-title">Il Linguaggio degli Spiriti</h2>
+      <p class="section-intro" id="intro-text1">In ogni tradizione sciamanica del mondo — dalle Americhe indigene alle steppe siberiane, dall'Africa subsahariana alle Isole del Pacifico — gli animali non sono semplici creature: sono messaggeri tra il mondo fisico e quello spirituale, custodi di saggezze primordiali.</p>
     </div>
-    <p class="prose" id="intro-text2a"></p>
-    <p class="prose" id="intro-text2b"></p>
+    <p class="prose" id="intro-text2a">L'Animale Totem è uno spirito guida che ti accompagna nell'arco della vita, incarnando qualità archetipiche che rispecchiano la tua essenza più profonda. Non è un'identità fissa — può cambiare con le stagioni dell'anima — ma esiste sempre un animale primario che riflette il tuo modo fondamentale di stare nel mondo.</p>
+    <p class="prose" id="intro-text2b">Lo sciamanesimo insegna che non sei tu a scegliere il tuo totem: è lui a trovarti. Il test che segue non è arbitrario — è una mappa psicologico-archetipica basata su cinque domande che esplorano le tue reazioni profonde a situazioni fondamentali dell'esistenza.</p>
     <div class="highlight">
-      <h4 id="intro-box-title"></h4>
-      <p id="intro-box-text"></p>
+      <h4 id="intro-box-title">✦ Cos'è uno Spirito Animale?</h4>
+      <p id="intro-box-text">Nelle tradizioni native americane, ogni essere umano nasce con almeno sette spiriti animali che lo accompagnano attraverso la vita. Il totem primario — il Main Power Animal — rappresenta la tua energia dominante e i tuoi doni naturali. Gli altri sei proteggono i punti cardinali e offrono supporto in diversi ambiti dell'esistenza.</p>
     </div>
   </section>
 
   <!-- GLI OTTO TOTEM -->
   <section class="section z1">
     <div class="section-header">
-      <div class="section-eyebrow" id="totems-eyebrow"></div>
-      <h2 class="section-title" id="totems-title"></h2>
-      <p class="section-intro" id="totems-intro"></p>
+      <div class="section-eyebrow" id="totems-eyebrow">Galleria degli Spiriti</div>
+      <h2 class="section-title" id="totems-title">Gli Otto Archetipi</h2>
+      <p class="section-intro" id="totems-intro">Otto spiriti animali custodiscono le qualità fondamentali dell'anima umana. Ognuno porta con sé doni, sfide e un messaggio unico per chi lo riceve.</p>
     </div>
-    <div class="totem-grid" id="totemGrid"></div>
+    <div class="totem-grid" id="totemGrid"><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🦅</span>
+      <div class="totem-card-name">Aquila</div>
+      <div class="totem-card-tribe">Guardiano dell'Alto</div>
+      <div class="totem-card-keys"><span class="tag">Visione</span><span class="tag">Libertà</span><span class="tag">Autorità spirituale</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🐺</span>
+      <div class="totem-card-name">Lupo</div>
+      <div class="totem-card-tribe">Custode del Branco</div>
+      <div class="totem-card-keys"><span class="tag">Lealtà</span><span class="tag">Intuizione</span><span class="tag">Insegnamento</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🐻</span>
+      <div class="totem-card-name">Orso</div>
+      <div class="totem-card-tribe">Il Grande Guaritore</div>
+      <div class="totem-card-keys"><span class="tag">Forza interiore</span><span class="tag">Guarigione</span><span class="tag">Introversione sacra</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🐬</span>
+      <div class="totem-card-name">Delfino</div>
+      <div class="totem-card-tribe">Messaggero delle Acque</div>
+      <div class="totem-card-keys"><span class="tag">Gioia</span><span class="tag">Comunicazione</span><span class="tag">Intelligenza emotiva</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🐍</span>
+      <div class="totem-card-name">Serpente</div>
+      <div class="totem-card-tribe">Custode della Trasformazione</div>
+      <div class="totem-card-keys"><span class="tag">Trasformazione</span><span class="tag">Saggezza ombra</span><span class="tag">Guarigione</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🦌</span>
+      <div class="totem-card-name">Cervo</div>
+      <div class="totem-card-tribe">Il Cammino Gentile</div>
+      <div class="totem-card-keys"><span class="tag">Grazia</span><span class="tag">Gentilezza come forza</span><span class="tag">Intuizione del cuore</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🦉</span>
+      <div class="totem-card-name">Gufo</div>
+      <div class="totem-card-tribe">Veggente del Notturno</div>
+      <div class="totem-card-keys"><span class="tag">Saggezza</span><span class="tag">Visione notturna</span><span class="tag">Verità nascosta</span></div>
+    </div><div class="totem-card">
+      <span class="totem-card-emoji" aria-hidden="true">🦁</span>
+      <div class="totem-card-name">Leone</div>
+      <div class="totem-card-tribe">Re del Cuore</div>
+      <div class="totem-card-keys"><span class="tag">Coraggio</span><span class="tag">Creatività</span><span class="tag">Leadership</span></div>
+    </div></div>
   </section>
 
   <!-- FIGURE MITOLOGICHE -->
   <section class="section z1">
     <div class="section-header">
-      <div class="section-eyebrow" id="myth-eyebrow"></div>
-      <h2 class="section-title" id="myth-title"></h2>
-      <p class="section-intro" id="myth-intro"></p>
+      <div class="section-eyebrow" id="myth-eyebrow">Mito &amp; Simbolismo</div>
+      <h2 class="section-title" id="myth-title">Spiriti Animali nella Mitologia</h2>
+      <p class="section-intro" id="myth-intro">Dal chamán siberiano all'Apache del deserto, dagli sciamani amazzonici ai druidi celtici — il rapporto tra uomo e animale guida attraversa ogni cultura e ogni epoca.</p>
     </div>
-    <div class="myth-grid" id="mythGrid"></div>
+    <div class="myth-grid" id="mythGrid"><div class="myth-card">
+      <div class="myth-card-header">
+        <div class="myth-img"><img src="./images/totem-aquila.webp" alt="L'Aquila di Thunderbird" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.textContent='🦅'"></div>
+        <div><h3>L'Aquila di Thunderbird</h3><div class="myth-sub">TRADIZIONI NATIVE AMERICANE</div></div>
+      </div>
+      <p>Nelle culture dei nativi americani delle Grandi Pianure, l'Aquila è il Thunderbird — l'essere soprannaturale che porta le tempeste e comunica con il Grande Spirito. Le piume d'aquila sono tra gli oggetti più sacri delle cerimonie: simboleggiano la connessione diretta tra la terra e il cielo, tra l'umano e il divino. Solo i guerrieri e gli sciamani più degni ricevono l'Aquila come spirito guida.</p>
+    </div><div class="myth-card">
+      <div class="myth-card-header">
+        <div class="myth-img"><img src="./images/totem-lupo.webp" alt="Lupus — Il Maestro dei Cammini" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.textContent='🐺'"></div>
+        <div><h3>Lupus — Il Maestro dei Cammini</h3><div class="myth-sub">TRADIZIONI NORDICHE &amp; CELTICHE</div></div>
+      </div>
+      <p>Nella mitologia norrena, Odin è sempre accompagnato da due lupi — Geri e Freki — che percorrono il mondo raccogliendo informazioni per il dio della saggezza. Nella tradizione Cherokee, il Lupo insegna l'importanza della famiglia e della cooperazione: il branco che caccia insieme sopravvive sempre meglio del lupo solitario. I guerrieri lupo — i berserker — indossavano pelli di lupo per evocare la ferocia e l'istinto dell'animale.</p>
+    </div><div class="myth-card">
+      <div class="myth-card-header">
+        <div class="myth-img"><img src="./images/totem-orso.webp" alt="Artio — La Dea Orsa" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.textContent='🐻'"></div>
+        <div><h3>Artio — La Dea Orsa</h3><div class="myth-sub">TRADIZIONI CELTICHE &amp; SIBERIANE</div></div>
+      </div>
+      <p>Tra i celti, Artio era la dea orsa della fertilità e della guarigione. La parola stessa "Arte" in gaelico significa orso — e da qui deriverebbe il nome del leggendario Re Artù, il cui regno era protetto dallo spirito dell'orso. In Siberia, l'orso è considerato il progenitore dell'umanità: alcuni popoli lo chiamano "Nonno" con reverenza, e mangiarne la carne è un atto rituale che trasferisce la sua forza a chi lo consuma.</p>
+    </div><div class="myth-card">
+      <div class="myth-card-header">
+        <div class="myth-img"><img src="./images/totem-delfino.webp" alt="Delphinus — Il Messaggero di Poseidone" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.textContent='🐬'"></div>
+        <div><h3>Delphinus — Il Messaggero di Poseidone</h3><div class="myth-sub">MITOLOGIA GRECA &amp; ROMANA</div></div>
+      </div>
+      <p>Nella mitologia greca, i delfini erano considerati salvatori dei naufraghi e messaggeri degli dei. Il dio Apollo si trasformò in delfino per guidare i marinai cretesi verso Delfi — da qui il nome del famoso oracolo. Poseidone inviò un delfino come ambasciatore per convincere la ninfa Anfitrite a sposarlo: gesto riuscito, tanto che il dio del mare pose l'immagine del delfino tra le stelle come costellazione di Delphinus.</p>
+    </div></div>
   </section>
 
   <!-- TRADIZIONI -->
   <section class="section z1">
     <div class="section-header">
-      <div class="section-eyebrow" id="trad-eyebrow"></div>
-      <h2 class="section-title" id="trad-title"></h2>
+      <div class="section-eyebrow" id="trad-eyebrow">Percorsi Sciamanici</div>
+      <h2 class="section-title" id="trad-title">Il Totem nelle Tradizioni del Mondo</h2>
     </div>
-    <div class="trad-tabs" id="tradTabs" role="tablist"></div>
-    <div id="tradPanelsWrap"></div>
+    <div class="trad-tabs" id="tradTabs" role="tablist"><button class="trad-tab active" role="tab" onclick="switchTrad(0)">🪶 Nativi Americani</button><button class="trad-tab" role="tab" onclick="switchTrad(1)">🌿 Celtica</button><button class="trad-tab" role="tab" onclick="switchTrad(2)">🌏 Sciamanesimo Siberiano</button><button class="trad-tab" role="tab" onclick="switchTrad(3)">🐉 Taoismo &amp; Zen</button></div>
+    <div id="tradPanelsWrap"><div id="tradPanel0" class="trad-panel active"><div class="highlight"><h4>🪶 Medicine Animals — Nativi Americani</h4><p>Le culture indigene del Nord America svilupparono il sistema totemico più elaborato al mondo. I totem pole dei popoli della Costa Nord-Ovest (Haida, Tlingit, Tsimshian) sono racconti genealogici scolpiti: ogni figura animale rappresenta un antenato, un evento fondativo, o un potere ricevuto in visione. Il Vision Quest — il digiuno solitario nella natura per ricevere il proprio spirito guida — è un rito di passaggio praticato ancora oggi. L'animale che appare in sogno o visione durante il quest diventa il compagno spirituale per la vita.</p></div></div><div id="tradPanel1" class="trad-panel"><div class="highlight"><h4>🌿 Clan Animali — Tradizione Celtica</h4><p>I Celti organizzavano le loro tribù in clan totemici: famiglie che discendevano da un antenato animale mitico. Il clan del Cervo portava l'antler come simbolo; il clan del Corvo era guardiano dei segreti. I druidi — i sacerdoti-sciamani celti — si addestravano per anni a comunicare con gli spiriti animali attraverso sogni, divinazione e trance rituale. Lo shapeshifting — la trasformazione in animale — era considerato un'abilità druidica avanzata: chi padroneggiava il proprio totem poteva "diventarlo" temporaneamente in spirito.</p></div></div><div id="tradPanel2" class="trad-panel"><div class="highlight"><h4>🌏 Spiriti Assistenti — Sciamanesimo Siberiano</h4><p>Lo sciamanesimo siberiano è forse la tradizione più antica che conosciamo: risale a 40.000 anni fa secondo alcuni studi archeologici. Lo sciamano — il kam — riceve i suoi spiriti assistenti (animali guida) attraverso una "malattia iniziatica": una crisi profonda che lo porta ai confini della morte. È in questo viaggio agli inferi che l'animale si manifesta e decide di accompagnarlo. L'Orso è il più potente spirito sciamano siberiano; il Cervo è la sua cavalcatura nel viaggio verso il cielo; il Corvo è il messaggero tra i mondi.</p></div></div><div id="tradPanel3" class="trad-panel"><div class="highlight"><h4>🐉 Animali Auspici — Taoismo &amp; Tradizione Cinese</h4><p>Nella cosmologia cinese, quattro grandi animali mitologici proteggono i punti cardinali: il Drago Verde (Est, primavera, rinascita), la Fenice Rossa (Sud, estate, trasformazione), la Tigre Bianca (Ovest, autunno, forza), la Tartaruga Nera (Nord, inverno, saggezza). Nel Taoismo, ogni essere umano è associato a uno di questi archetipi in base alla data di nascita. Il Feng Shui utilizza questi animali cosmici per armonizzare gli spazi: posizionare simboli del tuo animale guida nell'angolo corretto amplifica la tua energia naturale.</p></div></div></div>
   </section>
 
   <!-- NOTA PRATICA -->
   <section class="section z1">
     <div class="section-header">
-      <div class="section-eyebrow" id="practice-eyebrow"></div>
-      <h2 class="section-title" id="practice-title"></h2>
+      <div class="section-eyebrow" id="practice-eyebrow">Pratica Sciamanica</div>
+      <h2 class="section-title" id="practice-title">Come Lavorare con il Tuo Totem</h2>
     </div>
-    <div id="practiceGrid"></div>
+    <div id="practiceGrid"><div class="highlight"><h4>🌿 Il Sogno di Potere</h4><p>La via tradizionale per incontrare il proprio spirito animale è il sogno guidato. Prima di dormire, formula l'intenzione di incontrare il tuo animale guida. Tieni un diario accanto al letto. Annota ogni sogno che coinvolge animali — i messaggi arrivano spesso in forma simbolica, non letterale.</p></div><div class="highlight"><h4>🥁 Il Viaggio Sciamanico</h4><p>Il tamburo sciamanico (4-7 battiti al secondo) induce uno stato di coscienza alterata che facilita il contatto con gli spiriti guida. Siediti in posizione comoda, chiudi gli occhi, e lascia che il ritmo del tamburo ti porti nel Lowerworld — il mondo degli spiriti animali. Chiedi al primo animale che incontri: "Sei il mio spirito guida?" Un totem autentico si presenterà da solo, ripetutamente.</p></div><div class="highlight"><h4>🪶 Onorare il Tuo Totem</h4><p>Una volta identificato il tuo spirito animale, onoralo: studia il suo comportamento in natura, porta con te un suo simbolo (piuma, pietra, immagine), medita sulla qualità che incarna. Il totem non è solo un simbolo — è una relazione viva. Più la coltivi, più la sua guida diventa chiara nella tua vita quotidiana.</p></div></div>
   </section>
 
   <!-- ARTICOLO EDITORIALE -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Animale Totem: Storia, Simbologia e Significato dello Spirito Guida</h2>
     <img src="./images/totem/totem-copertina.webp"
          srcset="./images/totem/totem-copertina.webp 1x"
          onerror="this.style.display='none'"
          id="art-hero" alt="" loading="lazy" decoding="async" width="740" height="420"
          style="width:100%;height:auto;border-radius:14px;margin:16px 0">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
-    <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"></nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <h3 id="art-h2">Origini e Diffusione del Totemismo nel Mondo</h3>
+    <p id="art-p1">Il termine "totem" deriva da ototeman, parola della lingua ojibwe che significa "egli è mio parente". Fu l'antropologo James Frazer, alla fine dell'Ottocento, a introdurre il concetto nel linguaggio accademico occidentale, studiando i sistemi di parentela clanica dei popoli dei Grandi Laghi nordamericani. Claude Lévi-Strauss, nel Novecento, ne approfondì la funzione simbolica: il totem non è un semplice emblema, ma un sistema di classificazione con cui le culture umane organizzano il rapporto tra uomo, natura e comunità. Pur nascendo in contesti specifici, il principio del totemismo riemerge quasi identico in tradizioni lontanissime tra loro, dalle Ande alla Siberia, dall'Australia aborigena all'Africa bantu.</p>
+    <p id="art-p2">Nella costruzione di un sistema totemico contemporaneo come quello proposto qui, la scelta degli otto archetipi animali — Aquila, Lupo, Orso, Delfino, Serpente, Cervo, Gufo, Leone — risponde a una logica junghiana: ciascun animale rappresenta un pattern comportamentale ricorrente nella psiche umana, riconoscibile in ogni cultura indipendentemente dal contesto geografico. L'Aquila incarna la visione d'insieme, il Lupo l'appartenenza sociale, l'Orso l'introspezione rigenerativa, il Serpente la capacità di trasformarsi. Non sono etichette rigide: sono lenti attraverso cui osservare tendenze e reazioni istintive che già possiedi, spesso senza averle mai nominate con chiarezza.</p>
+    <p id="art-p3">Il test proposto in questa pagina si basa su cinque scenari archetipici — la reazione a un imprevisto, il modo di sostenere un amico in difficoltà, il rapporto con la solitudine, l'atteggiamento verso il cambiamento, l'ambiente che rigenera più profondamente. Ogni risposta assegna un punteggio a ciascuno degli otto animali secondo una matrice calibrata sulle caratteristiche archetipiche di ognuno; il totem che emerge con il punteggio più alto è quello che, in questo momento della tua vita, meglio rispecchia il tuo modo dominante di reagire, sentire e agire. Non è un responso definitivo: è una fotografia dell'oggi.</p>
+    <h3 id="art-h3">Come Riconoscere e Onorare il Proprio Totem</h3>
+    <p id="art-p4">L'errore più comune è credere che il totem sia una scelta — "voglio il lupo perché mi piace" — quando la tradizione insegna l'esatto contrario: è lo spirito animale a manifestarsi, spesso in modo scomodo o inatteso. Un altro equivoco diffuso è confondere l'animale totem con il segno zodiacale cinese: quest'ultimo è un sistema calendariale fisso legato all'anno di nascita, mentre il totem sciamanico è dinamico e non dipende da alcuna data. Infine, avere un totem "meno nobile" di un altro — un Cervo invece di un Leone — non indica alcuna gerarchia: ogni animale porta doni equivalenti.</p>
+    <p id="art-p5">Rispetto ad altri strumenti divinatori come i Tarocchi o l'Oroscopo, il totemismo animale non predice eventi futuri: descrive una struttura interiore stabile, un archetipo con cui dialogare nel tempo. Per approfondire, restano riferimenti importanti "Animal-Speak" di Ted Andrews, gli studi etnografici di Mircea Eliade sullo sciamanesimo siberiano e "Il pensiero selvaggio" di Lévi-Strauss. Se il tuo Animale Totem ti ha incuriosito, esplora anche il significato dei tuoi sogni ricorrenti, il tuo profilo astrologico o le pratiche di viaggio astrale per completare il quadro della tua mappa spirituale.</p>
+    <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"><a href="./sogni.html">Interpretazione dei Sogni</a><a href="./viaggio-astrale.html">Viaggio Astrale e Stati di Trance</a><a href="./tradizioni-spirituali.html">Tradizioni Spirituali del Mondo</a><a href="./angeli.html">Angeli Custodi e Numeri Angelici</a></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section">
     <h2 class="faq-title" id="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è esattamente un animale totem e come si "riceve"?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Nelle tradizioni sciamaniche, l'animale totem è uno spirito guida che accompagna una persona lungo il cammino della vita, incarnando qualità archetipiche specifiche. Non lo si sceglie razionalmente: tradizionalmente si manifesta attraverso sogni ricorrenti, incontri simbolici in natura o stati di trance rituale come il Vision Quest dei nativi americani. Il test proposto in questa pagina offre una via psicologico-simbolica moderna per avvicinarsi a questa scoperta, analizzando le tue reazioni istintive a cinque situazioni chiave.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Il test dell'animale totem ha basi scientifiche?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il test si ispira alla psicologia archetipica junghiana più che al metodo scientifico in senso stretto: non predice il futuro né misura tratti clinici di personalità. È uno strumento simbolico-riflessivo che ti invita a riconoscere pattern comportamentali ricorrenti attraverso il linguaggio universale degli animali. Il suo valore sta nell'autoconoscenza che stimola, non in una validazione empirica formale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Posso avere più di un animale totem nella vita?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Sì. Molte tradizioni, in particolare quella nativa americana, insegnano che ogni persona è accompagnata da più spiriti animali: un totem primario, legato alla tua natura profonda, e spiriti secondari che intervengono in fasi specifiche o affiancano i quattro punti cardinali della vita. Il totem primario tende a restare stabile, mentre quelli secondari possono cambiare con le stagioni dell'esistenza.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra animale totem e segno zodiacale cinese?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Il segno zodiacale cinese è un sistema calendariale fisso: dipende esclusivamente dall'anno di nascita e segue un ciclo di dodici animali predeterminato. L'animale totem sciamanico, al contrario, non ha alcun legame con la data di nascita: emerge da un percorso interiore, da un'esperienza di visione o, come in questo test, dall'analisi delle tue reazioni istintive attuali. Sono due sistemi simbolici distinti che possono coesistere senza contraddirsi.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Come faccio ad "attivare" la connessione con il mio animale totem?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>La pratica più diffusa è il sogno di potere: prima di dormire, formula l'intenzione di incontrare il tuo spirito guida e tieni un diario dei sogni accanto al letto. Puoi anche portare con te un simbolo del tuo totem, osservarne il comportamento reale in natura o in documentari, e meditare regolarmente sulle qualità che rappresenta. La connessione si rafforza con l'attenzione costante, non con un singolo rituale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Il mio animale totem può cambiare nel tempo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Sì, ed è normale che accada. Mentre il totem primario tende a restare una costante della tua identità profonda, molte tradizioni sciamaniche insegnano che spiriti guida diversi possono emergere in momenti di transizione — un lutto, una nascita, un cambiamento radicale di vita. Se rifai il test in un periodo diverso della tua esistenza e ottieni un risultato differente, non è un errore: è il segno che stai attraversando una fase nuova.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -581,20 +740,20 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-tagline"></p>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-tagline">🐾 MYSTICA Oracoli · Spiriti Guida &amp; Animali Totem</p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità di intrattenimento, riflessione personale e crescita spirituale. Non sostituiscono consulenza medica, psicologica o professionale.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca l'interpretazione estesa del tuo animale totem, con l'aspetto ombra, il dono nascosto e un rituale di attivazione personalizzato.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

@@ -522,10 +522,10 @@
 <!-- HEADER -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">📜 ERMETISMO</h1>
@@ -541,22 +541,22 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-icon">⚗️</div>
-    <h2 id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
-    <span class="hero-badge" id="hero-badge"></span>
+    <h2 id="hero-title">La Via di Ermete Trismegisto</h2>
+    <p class="hero-sub" id="hero-sub">Sette leggi cosmiche che governano la realtà, la mente e la trasformazione dell'anima. Dalla Biblioteca di Alessandria alle logge segrete del Rinascimento — la saggezza che non muore.</p>
+    <span class="hero-badge" id="hero-badge">✦ PHILOSOPHIA HERMETICA ✦</span>
   </div>
 
   <!-- 3a. SEZIONE INTERATTIVA — SEMPRE IN CIMA -->
   <div class="content-wrap tool-section">
-    <div class="section-title" id="title-principi"></div>
+    <div class="section-title" id="title-principi">I 7 PRINCIPI ERMETICI</div>
 
-    <div class="principi-intro" id="principi-intro"></div>
+    <div class="principi-intro" id="principi-intro">Seleziona un principio per esplorarlo o lascia che il destino scelga per te. Ogni principio è una chiave che apre una diversa porta della realtà.</div>
 
-    <div class="tab-grid" id="tabGrid"></div>
+    <div class="tab-grid" id="tabGrid"><button class="princip-tab active" id="herTab0"><span class="t-icon">🧠</span>Il Mentalismo</button><button class="princip-tab" id="herTab1"><span class="t-icon">🔁</span>La Corrispondenza</button><button class="princip-tab" id="herTab2"><span class="t-icon">🌊</span>La Vibrazione</button><button class="princip-tab" id="herTab3"><span class="t-icon">⚖️</span>La Polarità</button><button class="princip-tab" id="herTab4"><span class="t-icon">🔄</span>Il Ritmo</button><button class="princip-tab" id="herTab5"><span class="t-icon">⚙️</span>Causa ed Effetto</button><button class="princip-tab" id="herTab6"><span class="t-icon">⚛️</span>Il Genere</button></div>
 
     <div class="btn-grp" style="margin-bottom:16px;">
-      <button class="btn btn-random" onclick="herRandom()" id="btn-random"></button>
-      <button class="btn btn-primary" onclick="calcErmetismo()" id="btn-reveal"></button>
+      <button class="btn btn-random" onclick="herRandom()" id="btn-random">🎲 Principio Casuale</button>
+      <button class="btn btn-primary" onclick="calcErmetismo()" id="btn-reveal">⚗️ Rivela Principio</button>
     </div>
 
     <div id="hermetResult" style="display:none;"></div>
@@ -565,13 +565,13 @@
   <!-- 3b. SHARE -->
   <div class="content-wrap">
     <div class="share-section">
-      <button class="btn-share" onclick="shareContent()">📤 <span id="share-label"></span></button>
+      <button class="btn-share" onclick="shareContent()">📤 <span id="share-label">Condividi</span></button>
       <div class="share-popup" id="sharePopup" hidden>
         <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
         <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
         <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
         <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+        <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
       </div>
     </div>
   </div>
@@ -579,7 +579,7 @@
   <!-- 3c. ARTICOLO EDITORIALE -->
   <div class="content-wrap">
     <article class="article-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Ermetismo: la filosofia dei Sette Principi Universali</h2>
       <img src="./images/ermetismo.webp"
            srcset="./images/ermetismo.webp 1x"
            id="art-hero" class="hero-img" alt=""
@@ -587,34 +587,104 @@
            loading="eager" decoding="async"
            onerror="this.style.display='none'">
 
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
+      <h3 id="art-h2">Ermete Trismegisto e le origini del pensiero ermetico</h3>
+      <p id="art-p1">Ermete Trismegisto — letteralmente "Thoth il Tre Volte Grande" — è la figura leggendaria al centro della tradizione ermetica: per i Greci dell'Egitto ellenistico nasce dalla fusione di Thoth, dio egizio della scrittura e della magia, e Hermes, messaggero greco degli dei. Gli scritti a lui attribuiti, raccolti nel Corpus Hermeticum, furono probabilmente composti tra il I e il III secolo d.C. ad Alessandria d'Egitto, crocevia intellettuale del mondo antico, anche se la leggenda lo vuole contemporaneo — o maestro — di Mosè. Nel 1463 Cosimo de' Medici incaricò Marsilio Ficino di tradurre in latino i manoscritti appena giunti da Costantinopoli, con un ordine perentorio: prima di Platone. Il Rinascimento europeo ne fu scosso alle fondamenta.</p>
+      <p id="art-p2">Il testo ermetico più noto è la Tabula Smaragdina, la Tavola Smeraldina: tredici versetti che la leggenda vuole incisi su una lastra di smeraldo trovata nella tomba di Ermete. La sua frase più celebre — "come in alto, così in basso, come nell'interno, così nell'esterno" — è diventata il codice segreto di ogni praticante esoterico attraverso i secoli. Il testo fu probabilmente scritto in aramaico o greco tra il VI e l'VIII secolo, circolò nelle traduzioni arabe medievali e raggiunse l'Europa latina nel XII secolo. Persino Isaac Newton ne possedeva una copia personale, studiata in modo quasi ossessivo durante le sue ricerche alchemiche.</p>
+      <p id="art-p3">La tradizione ermetica si è diffusa per quasi duemila anni attraverso contesti molto diversi: nell'Egitto ellenistico i circoli neoplatonici e gnostici di Alessandria la fondono con filosofia greca e misticismo ebraico; nell'Islam medievale traduttori come Jabir ibn Hayyan la preservano e la integrano nell'alchimia araba; nel Rinascimento italiano Ficino, Pico della Mirandola e Giordano Bruno la trasformano nella filosofia segreta delle corti; nell'età moderna rinasce attraverso la Massoneria, la Teosofia di Helena Blavatsky e l'Ordine Ermetico della Golden Dawn, fondato a Londra nel 1888.</p>
 
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h3">Il Kybalion e l'eredità moderna dei Sette Principi</h3>
+      <p id="art-p4">Il nome con cui oggi conosciamo i "Sette Principi Ermetici" deriva dal Kybalion, pubblicato nel 1908 da autori firmatisi "Tre Iniziati", probabilmente guidati da William Walker Atkinson. Non è un manoscritto antico, ma una riformulazione in linguaggio accessibile dei concetti ermetici tradizionali: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto e Genere. Tradotto in decine di lingue, resta il testo introduttivo all'ermetismo più letto del XX e XXI secolo, e la porta d'accesso più diffusa a questa tradizione.</p>
+      <p id="art-p5">Un errore comune è considerare i Sette Principi come semplici massime motivazionali: nella tradizione ermetica sono invece leggi operative, da applicare con disciplina quotidiana e da verificare nell'esperienza diretta, non da accettare per fede. Un altro malinteso frequente è confondere l'ermetismo con la magia cerimoniale o con l'alchimia: in realtà queste sono applicazioni pratiche di una filosofia più ampia, che riguarda il rapporto tra mente, cosmo e trasformazione personale. A differenza dei Tarocchi o delle Rune, che sono strumenti divinatori, l'ermetismo è un sistema di pensiero — una mappa per interpretare la realtà, non per predirla.</p>
 
       <!-- FIGURE INFLUENTI -->
-      <div class="section-title" id="title-figure"></div>
-      <div class="person-grid" id="personGrid"></div>
+      <div class="section-title" id="title-figure">FIGURE INFLUENTI</div>
+      <div class="person-grid" id="personGrid">
+    <div class="person-card">
+      <div class="p-icon">🧙</div>
+      <div class="p-name">Marsilio Ficino</div>
+      <div class="p-dates">1433–1499</div>
+      <div class="p-desc">Traduttore del Corpus Hermeticum per i Medici. Fondò l'Accademia Platonica di Firenze. Unì magia, astrologia e neoplatonismo.</div>
+    </div>
+    <div class="person-card">
+      <div class="p-icon">🔬</div>
+      <div class="p-name">Isaac Newton</div>
+      <div class="p-dates">1643–1727</div>
+      <div class="p-desc">Fisico rivoluzionario ma anche alchimista ermetico. Scrisse più pagine di alchimia che di fisica. Cercava la pietra filosofale.</div>
+    </div>
+    <div class="person-card">
+      <div class="p-icon">🦁</div>
+      <div class="p-name">Giordano Bruno</div>
+      <div class="p-dates">1548–1600</div>
+      <div class="p-desc">Filosofo ermetico bruciato dall'Inquisizione. Insegnò che l'universo è infinito e che il divino è in tutto. Martire della saggezza.</div>
+    </div>
+    <div class="person-card">
+      <div class="p-icon">🌹</div>
+      <div class="p-name">Helena Blavatsky</div>
+      <div class="p-dates">1831–1891</div>
+      <div class="p-desc">Fondatrice della Teosofia. Sintetizzò ermetismo, cabala e filosofie orientali. La sua "Dottrina Segreta" influenzò l'esoterismo moderno.</div>
+    </div>
+    <div class="person-card">
+      <div class="p-icon">⚔️</div>
+      <div class="p-name">Hermes Trismegistus</div>
+      <div class="p-dates">Mitico</div>
+      <div class="p-desc">Il maestro dei maestri. Figura leggendaria, fusione di Thoth ed Ermes. Autore immaginario di migliaia di testi sacri perduti.</div>
+    </div>
+    <div class="person-card">
+      <div class="p-icon">🌙</div>
+      <div class="p-name">Franz Bardon</div>
+      <div class="p-dates">1909–1958</div>
+      <div class="p-desc">Mago pratico ceco. Il suo "Iniziazione all'Ermetismo" è considerato il manuale tecnico più completo della tradizione.</div>
+    </div></div>
 
       <!-- USANZE -->
-      <div class="section-title" id="title-usanze"></div>
-      <div class="usanze-grid" id="usanzeGrid"></div>
+      <div class="section-title" id="title-usanze">USANZE &amp; PRATICHE TRADIZIONALI</div>
+      <div class="usanze-grid" id="usanzeGrid">
+    <div class="usanza-card">
+      <span class="usanza-icon">🔥</span>
+      <div><h4>Il Laboratorio Alchemico</h4><p>Gli ermetisti medievali lavoravano in laboratori segreti, distillando e calcinando sostanze fisiche come metafora della trasformazione interiore. Il lavoro sulla materia era simultaneamente lavoro sull'anima.</p></div>
+    </div>
+    <div class="usanza-card">
+      <span class="usanza-icon">⭐</span>
+      <div><h4>La Corrispondenza Astrologica</h4><p>Ogni pianeta, metallo, erba e parte del corpo erano in corrispondenza ermetica. Operare sull'uno significava operare sull'altro: astrologo, medico e mago erano spesso la stessa persona.</p></div>
+    </div>
+    <div class="usanza-card">
+      <span class="usanza-icon">📖</span>
+      <div><h4>Il Grimorio Personale</h4><p>L'adepto ermetico teneva un diario segreto — il grimorio — dove annotava osservazioni, meditazioni e corrispondenze. Era il libro della vita interiore, mai mostrato a nessuno.</p></div>
+    </div>
+    <div class="usanza-card">
+      <span class="usanza-icon">🌒</span>
+      <div><h4>Il Lavoro Notturno</h4><p>Molte pratiche ermetiche si svolgevano di notte, quando il silenzio della mente razionale permette ai livelli più profondi della coscienza di emergere. La notte era "il laboratorio del Cielo".</p></div>
+    </div>
+    <div class="usanza-card">
+      <span class="usanza-icon">🗝️</span>
+      <div><h4>La Catena di Trasmissione</h4><p>La conoscenza ermetica non si leggeva soltanto: si riceveva. Ogni adepto aveva un maestro e diventava maestro a sua volta, perché la trasmissione orale diretta era ritenuta indispensabile.</p></div>
+    </div></div>
 
       <!-- CORPUS HERMETICUM -->
-      <div class="section-title" id="title-corpus"></div>
-      <div id="corpusList"></div>
+      <div class="section-title" id="title-corpus">IL CORPUS HERMETICUM</div>
+      <div id="corpusList">
+    <div class="corpus-card" onclick="toggleCorpus(0)">
+      <div class="corpus-header"><h4>📖 Il Poimandres — La Mente del Sovrano</h4><span class="corpus-toggle" id="ct0">▼</span></div>
+      <div class="corpus-body" id="cb0"><p>Il primo e più importante testo del Corpus. Ermete riceve una visione cosmica della creazione: la Mente universale gli rivela l'origine del cosmo, la caduta dell'anima nella materia e la via del ritorno — una cosmogonia che riecheggia i miti di discesa e ascesa di molte culture.</p></div>
+    </div>
+    <div class="corpus-card" onclick="toggleCorpus(1)">
+      <div class="corpus-header"><h4>📖 L'Asclepius — Dio e il Mondo</h4><span class="corpus-toggle" id="ct1">▼</span></div>
+      <div class="corpus-body" id="cb1"><p>Il dialogo tra Ermete e Asclepio esplora la relazione tra divino e materiale. Contiene la celebre "Lamentazione ermetica", una profezia sulla caduta della saggezza egiziana sorprendentemente vicina agli eventi storici successivi.</p></div>
+    </div>
+    <div class="corpus-card" onclick="toggleCorpus(2)">
+      <div class="corpus-header"><h4>📖 Il Kybalion — Sintesi Moderna</h4><span class="corpus-toggle" id="ct2">▼</span></div>
+      <div class="corpus-body" id="cb2"><p>Pubblicato nel 1908 da "Tre Iniziati", è la sintesi moderna più accessibile dei principi ermetici. Non è un testo antico, ma una formulazione in linguaggio contemporaneo, tradotta in decine di lingue.</p></div>
+    </div></div>
 
       <!-- LEGGENDE -->
-      <div class="section-title" id="title-leggende"></div>
-      <div id="leggendeList"></div>
+      <div class="section-title" id="title-leggende">LEGGENDE &amp; STORIE</div>
+      <div id="leggendeList">
+    <div class="storia-card"><h4>💎 La Leggenda della Tomba di Ermete</h4><p>Secondo una tradizione medievale, Alessandro Magno — durante la conquista dell'Egitto nel 332 a.C. — trovò la tomba di Ermete Trismegisto sotto la Grande Piramide, con la Tavola Smeraldina in mano alla mummia. La leggenda è quasi certamente apocrifa, ma riflette l'idea che la saggezza più profonda sia rivelata solo a chi possiede la chiave interiore.</p></div>
+    <div class="storia-card"><h4>🌙 L'Ordine della Golden Dawn</h4><p>Fondata a Londra nel 1888 da tre massoni e un manoscritto cifrato di dubbia provenienza, l'Ordine Ermetico della Golden Dawn divenne la più influente scuola di magia pratica dell'era moderna. Tra i suoi membri: il poeta W.B. Yeats, il mago Aleister Crowley, l'occultista Dion Fortune. Si dissolse nel 1903, ma il suo sistema è ancora vivo in decine di scuole contemporanee.</p></div></div>
 
-      <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"></nav>
+      <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"><a href="./alchimia.html">⚗️ Alchimia: simboli e fasi del Magnum Opus</a><a href="./cabala.html">✡️ Cabala: l'Albero della Vita e i Sefirot</a><a href="./numerologia.html">🔢 Numerologia: il significato dei numeri</a><a href="./tarocchi.html">🃏 Tarocchi: gli Arcani Maggiori e Minori</a></nav>
 
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
   </div>
 
@@ -622,7 +692,43 @@
   <div class="content-wrap">
     <section class="faq-section">
       <h2 class="faq-title">FAQ</h2>
-      <div class="faq-list" id="faqList"></div>
+      <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cosa sono i 7 Principi Ermetici?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden=""><p>Sono le sette leggi cosmiche descritte nel Kybalion del 1908: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto e Genere. Secondo la tradizione ermetica governano l'universo, la mente e la trasformazione interiore di chi le studia e le applica nella vita quotidiana.</p></div>
+    </div>
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Chi era davvero Ermete Trismegisto?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden=""><p>È una figura leggendaria, fusione del dio egizio Thoth e del dio greco Hermes. La tradizione gli attribuisce il Corpus Hermeticum, ma gli storici ritengono che i testi siano stati composti da più autori ad Alessandria d'Egitto tra il I e il III secolo d.C. Puoi approfondire le origini storiche anche nella nostra <a href="./cabala.html">guida alla Cabala</a>, tradizione che si è intrecciata spesso con l'ermetismo rinascimentale.</p></div>
+    </div>
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Come si applicano i principi ermetici nella vita quotidiana?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden=""><p>Si parte dall'osservazione: ogni principio offre una lente diversa per leggere una situazione. Il Principio del Ritmo, ad esempio, invita a riconoscere i cicli personali invece di forzarli; quello di Causa-Effetto a individuare le azioni quotidiane che generano i risultati desiderati. Nella sezione interattiva qui sopra puoi esplorare ogni principio con una pratica dedicata.</p></div>
+    </div>
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra ermetismo e alchimia?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden=""><p>L'alchimia è un'applicazione pratica dell'ermetismo, che usa il linguaggio della trasformazione della materia — calcinazione, dissoluzione, distillazione — come metafora del lavoro interiore. Se l'argomento ti interessa, la nostra pagina dedicata all'<a href="./alchimia.html">Alchimia</a> approfondisce simboli e fasi del processo alchemico.</p></div>
+    </div>
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Il Kybalion è un testo antico o moderno?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden=""><p>È un testo moderno, pubblicato nel 1908 da autori anonimi firmatisi "Tre Iniziati". Non riproduce un manoscritto antico, ma sintetizza in linguaggio accessibile principi ermetici di origine molto più antica, risalenti almeno al Corpus Hermeticum alessandrino.</p></div>
+    </div>
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Cos'è l'Ordine Ermetico della Golden Dawn?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden=""><p>Fu fondato a Londra nel 1888 e divenne la più influente scuola di magia pratica dell'epoca moderna, integrando ermetismo, cabala, astrologia e rituale egiziano. Tra i suoi membri figurarono il poeta W.B. Yeats e il mago Aleister Crowley.</p></div>
+    </div></div>
     </section>
   </div>
 
@@ -636,20 +742,20 @@
     <a href="./about.html">About</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità storiche, filosofiche e divulgative. Non sostituiscono consulenze professionali mediche, legali o psicologiche.</p>
 </footer>
 
 <!-- PREMIUM MODAL -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutta la piattaforma MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

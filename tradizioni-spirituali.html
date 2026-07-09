@@ -337,10 +337,10 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
 
   <header class="page-header">
     <div class="header-top">
-      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
       <div class="header-controls">
-        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
       </div>
     </div>
     <h1 class="page-title" id="page-title">🌿 Tradizioni & Spiritualità</h1>
@@ -360,12 +360,78 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
           <img class="hero-banner" src="./images/locandine/hero-banner.webp" alt="" width="1333" height="640" loading="eager" decoding="async" onerror="this.parentElement.style.display='none'">
         </div>
         <div class="hero-content">
-          <p id="hero-text"></p>
+          <p id="hero-text">Sei percorsi sacri da culture e continenti diversi: pratiche, simboli e saggezze che da secoli accompagnano la ricerca interiore dell'essere umano.</p>
         </div>
       </div>
 
-      <div class="nx-row-title" id="rowTitle"></div>
-      <div class="nx-row" id="tradList" role="list" aria-label="Tradizioni spirituali"></div>
+      <div class="nx-row-title" id="rowTitle">Tradizioni &amp; Spiritualità del Mondo</div>
+      <div class="nx-row" id="tradList" role="list" aria-label="Tradizioni spirituali">
+    <button class="nx-poster" style="--th:#3a2810" data-id="sciamanesimo" onclick="openTradModal('sciamanesimo')" role="listitem" aria-label="Sciamanesimo">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/sciamanesimo.webp" alt="Sciamanesimo" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">🪶</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Tradizione Universale</span>
+        <span class="nx-title">Sciamanesimo</span>
+      </div>
+    </button>
+  
+    <button class="nx-poster" style="--th:#3d1a30" data-id="buddismo-esoterico" onclick="openTradModal('buddismo-esoterico')" role="listitem" aria-label="Buddismo Esoterico &amp; Tantra">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/buddismo-esoterico.webp" alt="Buddismo Esoterico &amp; Tantra" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">☸️</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Via Tantrica</span>
+        <span class="nx-title">Buddismo Esoterico &amp; Tantra</span>
+      </div>
+    </button>
+  
+    <button class="nx-poster" style="--th:#1a3038" data-id="sufismo" onclick="openTradModal('sufismo')" role="listitem" aria-label="Sufismo">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/sufismo.webp" alt="Sufismo" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">🌀</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Mistica Islamica</span>
+        <span class="nx-title">Sufismo</span>
+      </div>
+    </button>
+  
+    <button class="nx-poster" style="--th:#1a3018" data-id="druidismo" onclick="openTradModal('druidismo')" role="listitem" aria-label="Druidismo">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/druidismo.webp" alt="Druidismo" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">🌳</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Tradizione Celtica</span>
+        <span class="nx-title">Druidismo</span>
+      </div>
+    </button>
+  
+    <button class="nx-poster" style="--th:#3d1010" data-id="voodoo" onclick="openTradModal('voodoo')" role="listitem" aria-label="Voodoo &amp; Hoodoo">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/voodoo.webp" alt="Voodoo &amp; Hoodoo" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">🕯️</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Tradizione Afrocaraibica</span>
+        <span class="nx-title">Voodoo &amp; Hoodoo</span>
+      </div>
+    </button>
+  
+    <button class="nx-poster" style="--th:#2a1748" data-id="rosacroce" onclick="openTradModal('rosacroce')" role="listitem" aria-label="Rosacroce">
+      <div class="nx-poster-media">
+        <img src="./images/locandine/rosacroce.webp" alt="Rosacroce" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="nx-fallback" style="display:none"><span class="nx-fallback-icon">🌹</span></div>
+      </div>
+      <div class="nx-label">
+        <span class="nx-eyebrow">Ordine Esoterico Occidentale</span>
+        <span class="nx-title">Rosacroce</span>
+      </div>
+    </button>
+  </div>
     </section>
 
     <!-- 3b. SHARE -->
@@ -376,37 +442,86 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
         <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
         <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
         <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+        <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
       </div>
     </div>
 
     <!-- 3c. ARTICOLO EDITORIALE -->
     <article class="article-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Un viaggio tra le grandi tradizioni spirituali del mondo</h2>
       <img src="./images/icone/tradizioni/sciamanesimo/origini-e-diffusione.webp"
            srcset="./images/icone/tradizioni/sciamanesimo/origini-e-diffusione.webp 1x, ./images/icone/tradizioni/sciamanesimo/origini-e-diffusione.webp 2x"
            id="art-hero" alt="" width="380" height="214" loading="eager" decoding="async">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
-      <nav class="article-links" aria-label="Link correlati" id="art-links"></nav>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <h3 id="art-h2">Perché studiare le tradizioni spirituali del mondo</h3>
+      <p id="art-p1">Le grandi tradizioni spirituali del mondo — dallo Sciamanesimo siberiano al Buddismo tantrico tibetano, dal Sufismo islamico al Druidismo celtico, dal Voodoo haitiano al Rosacroce occidentale — condividono un nucleo comune nonostante provengano da continenti e secoli lontanissimi tra loro: il bisogno umano di entrare in relazione con una realtà più ampia di quella visibile, attraverso pratiche, simboli e maestri che custodiscono e tramandano questo sapere di generazione in generazione. Conoscerle non significa soltanto raccogliere curiosità folkloristiche, ma comprendere meglio le radici profonde della spiritualità umana in tutte le sue forme.</p>
+      <p id="art-p2">Ognuna di queste vie ha sviluppato un proprio linguaggio simbolico: il tamburo e il volo dell'anima nello sciamanesimo, il mantra e il mandala nel Buddismo Vajrayana, il dhikr e la rotazione del derviscio nel Sufismo, la quercia e la Ruota dell'Anno nel Druidismo, i Loa e i vèvè nel Voodoo, la rosa sulla croce nell'eredità rosacrociana. Studiarle fianco a fianco permette di cogliere sia ciò che le distingue profondamente sia il filo comune di ricerca interiore che le attraversa tutte.</p>
+      <p id="art-p3">Su MYSTICA affrontiamo questi temi con un approccio storico ed enciclopedico, distinguendo sempre tra ciò che le fonti documentano e ciò che appartiene invece al mito o alla leggenda. È un equilibrio importante: tradizioni come il Voodoo, ad esempio, sono state per decenni distorte dal cinema horror occidentale, mentre meritano di essere comprese nel loro reale contesto religioso, storico e culturale, con il rispetto dovuto a fedi vive ancora oggi praticate da milioni di persone in tutto il mondo, non a curiosità da consumare superficialmente.</p>
+      <h3 id="art-h3">Un patrimonio da rispettare, non da consumare</h3>
+      <p id="art-p4">Un errore comune di chi si avvicina per la prima volta a questi temi è mescolare tradizioni diverse come se fossero intercambiabili, creando un "calderone" sincretico privo di radici reali. Le comunità indigene che custodiscono lo sciamanesimo, così come i praticanti haitiani del Vodou, denunciano spesso proprio questo tipo di appropriazione superficiale, che svuota di significato pratiche nate in contesti culturali precisi. Un approccio rispettoso parte sempre dal riconoscere la specificità storica e culturale di ogni singola via, prima ancora di confrontarla con le altre.</p>
+      <p id="art-p5">Allo stesso tempo, queste tradizioni continuano a evolversi e a dialogare con il mondo contemporaneo: dal "core shamanism" occidentale alla diffusione internazionale di AMORC, dai gruppi neo-druidici che celebrano i solstizi a Stonehenge alla pratica quotidiana del dhikr in tutto il mondo islamico. Esplorarle oggi significa avvicinarsi a un patrimonio vivo, plurale e in continua trasformazione, non a semplici reperti del passato, ma a percorsi che milioni di persone scelgono ancora oggi come bussola concreta per orientare la propria vita interiore.</p>
+      <nav class="article-links" aria-label="Link correlati" id="art-links"><a href="./pratiche.html">Figure del Mistico</a><a href="./strega.html">Percorso Strega</a><a href="./guida-i-ching.html">Guida I Ching</a><a href="./enciclopedia.html">Enciclopedia Esoterica</a></nav>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
 
     <!-- 3d. FAQ -->
     <section class="faq-section">
       <h2 class="faq-title">FAQ</h2>
-      <div class="faq-list" id="faqList"></div>
+      <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è lo Sciamanesimo e come si pratica oggi?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden=""><p>Lo sciamanesimo è una tecnologia spirituale universale, non una religione con dogmi: attraverso il "viaggio", uno stato di trance indotto dal suono ripetitivo del tamburo, dal canto o dal digiuno, lo sciamano accede a mondi invisibili per guarire, consigliare e custodire la memoria della comunità. Oggi sopravvive in forme tradizionali indigene in Siberia, Amazzonia e Nord America, e nel "core shamanism" codificato in Occidente dall'antropologo Michael Harner a partire dagli anni '70.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Qual è la differenza tra il Buddismo Vajrayana e gli altri rami del Buddismo?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden=""><p>Il Buddismo Vajrayana, diffuso soprattutto in Tibet, si distingue per la pretesa di offrire una "via rapida" al risveglio attraverso tecniche dirette — mantra, mandala, mudra, lavoro sui chakra — che trasformano emozioni e desideri in strumenti di realizzazione invece di limitarsi a contenerli, come avviene nel Buddismo più tradizionale.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Chi erano i dervisci rotanti e cosa rappresenta la loro danza?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden=""><p>I dervisci rotanti appartengono all'ordine sufi Mevlevi, fondato sull'eredità del poeta mistico persiano Rumi. La rotazione cerimoniale, chiamata sema, è una meditazione in movimento: simboleggia l'unione con il divino, con il braccio destro alzato che riceve la grazia e quello sinistro abbassato che la trasmette al mondo.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Quali erano le funzioni sociali dei Druidi nell'antica società celtica?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden=""><p>I Druidi non erano solo figure religiose: agivano anche come giudici nelle controversie tra clan, consiglieri dei capi, insegnanti della nobiltà e custodi orali della memoria storica e genealogica del popolo celtico, in una formazione che poteva durare fino a vent'anni.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Qual è la differenza tra Vodou haitiano e Hoodoo nordamericano?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden=""><p>Il Vodou è una religione strutturata con clero, templi e cosmologia propria, nata ad Haiti dall'incontro tra tradizioni dell'Africa occidentale e cattolicesimo. L'Hoodoo è invece un insieme di pratiche di magia popolare nato nel Sud degli Stati Uniti, spesso conservato anche da persone di fede cristiana senza contraddizione percepita.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Cosa simboleggia la rosa sulla croce nella tradizione Rosacroce?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden=""><p>La croce rappresenta il corpo e la condizione terrena, mentre la rosa che sboccia al suo centro simboleggia lo sviluppo dell'anima e la rivelazione interiore, che fiorisce proprio a partire dalla disciplina e dalla sofferenza accettata e trasformata, non evitata.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-6">
+      <button class="faq-question" onclick="toggleFAQ(6)" aria-expanded="false">
+        <span>Esistono ancora oggi ordini rosacrociani attivi?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-6" hidden=""><p>Sì: il più diffuso a livello internazionale è l'AMORC, fondato negli Stati Uniti nel 1915 da Harvey Spencer Lewis e attivo anche in Italia, con un percorso iniziatico per gradi basato su lezioni a domicilio incentrate su misticismo pratico e filosofia.</p></div>
+    </div>
+  </div>
     </section>
 
-    <p class="disclaimer" id="disclaimer-text"></p>
+    <p class="disclaimer" id="disclaimer-text">I contenuti di questa pagina hanno finalità informativa, culturale e divulgativa. Tradizioni religiose e spirituali appartengono ai popoli che le custodiscono: trattiamo questi temi con rispetto, senza pretesa di esaustività dottrinale.</p>
 
     <div class="footer-nav">
-      <a class="fn-btn" id="fn-home" href="./index.html"></a>
+      <a class="fn-btn" id="fn-home" href="./index.html">✦ Torna a MYSTICA</a>
     </div>
 
   </main>
@@ -414,12 +529,12 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
   <section class="esplora-section" aria-label="Esplora MYSTICA">
     <h2 id="esplora-title">✨ Esplora Anche</h2>
     <div class="esplora-grid">
-      <a href="./pratiche.html" class="esplora-card">🔮 <span id="esp-1"></span></a>
-      <a href="./strega.html" class="esplora-card">🧙 <span id="esp-2"></span></a>
-      <a href="./mente-energia.html" class="esplora-card">🧘 <span id="esp-3"></span></a>
-      <a href="./enciclopedia.html" class="esplora-card">📖 <span id="esp-4"></span></a>
-      <a href="./guida-i-ching.html" class="esplora-card">☯ <span id="esp-5"></span></a>
-      <a href="./pietre-magiche.html" class="esplora-card">💎 <span id="esp-6"></span></a>
+      <a href="./pratiche.html" class="esplora-card">🔮 <span id="esp-1">Figure del Mistico</span></a>
+      <a href="./strega.html" class="esplora-card">🧙 <span id="esp-2">Percorso Strega</span></a>
+      <a href="./mente-energia.html" class="esplora-card">🧘 <span id="esp-3">Mente &amp; Energia</span></a>
+      <a href="./enciclopedia.html" class="esplora-card">📖 <span id="esp-4">Enciclopedia Esoterica</span></a>
+      <a href="./guida-i-ching.html" class="esplora-card">☯ <span id="esp-5">Guida I Ching</span></a>
+      <a href="./pietre-magiche.html" class="esplora-card">💎 <span id="esp-6">Pietre Magiche</span></a>
     </div>
   </section>
 
@@ -430,8 +545,8 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
       <a href="./about.html" id="f-about">Chi Siamo</a>
       <a href="./privacy.html" id="f-privacy">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p id="footer-disclaimer" class="footer-disclaimer">I contenuti hanno finalità informativa, culturale e divulgativa.</p>
   </footer>
 
   <div class="nx-modal" id="tradModal" aria-hidden="true" role="dialog" aria-modal="true">
@@ -452,11 +567,11 @@ main{flex:1;padding:16px 14px calc(40px + env(safe-area-inset-bottom,0px));posit
   <div class="premium-modal" id="premiumModal" aria-hidden="true">
     <div class="modal-overlay" onclick="closePremiumModal()"></div>
     <div class="modal-content">
-      <h2 id="premium-title"></h2>
-      <p id="premium-text"></p>
-      <p class="premium-price" id="premium-price"></p>
-      <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-      <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      <h2 id="premium-title">✦ Funzione Premium</h2>
+      <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutto MYSTICA.</p>
+      <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
+      <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
     </div>
   </div>
 

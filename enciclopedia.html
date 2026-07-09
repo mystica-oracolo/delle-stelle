@@ -394,13 +394,14 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
 <!-- ═══ HEADER STANDARD ═══ -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <a href="./cerca.html" class="btn-icon" id="searchLink" aria-label="Cerca">🔍</a>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">📚 Enciclopedia</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -413,35 +414,35 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
 
   <!-- Breadcrumb strutturato -->
   <nav class="breadcrumb" aria-label="Percorso di navigazione">
-    <a href="https://mysticaoracoli.it/" id="bc-home"></a>
+    <a href="https://mysticaoracoli.it/" id="bc-home">🏠 Home</a>
     <span class="sep">›</span>
-    <span id="bc-current"></span>
+    <span id="bc-current">Enciclopedia Esoterica</span>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <span class="hero-icon" aria-hidden="true">📚</span>
-    <h2 id="hero-title"></h2>
-    <p id="hero-subtitle"></p>
+    <h2 id="hero-title">Enciclopedia Esoterica</h2>
+    <p id="hero-subtitle">Guide complete sull'esoterismo, storia delle tradizioni mistiche e approfondimenti spirituali in italiano, inglese e spagnolo</p>
   </section>
 
   <!-- ═══ SEZIONE INTERATTIVA (indice rapido — sempre in cima) ═══ -->
   <nav class="topic-nav" aria-label="Naviga per argomento">
-    <p id="topic-nav-label"></p>
+    <p id="topic-nav-label">Salta direttamente a un argomento</p>
     <div class="topic-pills">
-      <a href="#art-pentacoli" id="pill-pentacoli"></a>
-      <a href="#art-tarocchi" id="pill-tarocchi"></a>
-      <a href="#art-rune" id="pill-rune"></a>
-      <a href="#art-iching" id="pill-iching"></a>
-      <a href="#art-astrologia" id="pill-astrologia"></a>
-      <a href="#art-numerologia" id="pill-numerologia"></a>
-      <a href="#art-cabala" id="pill-cabala"></a>
-      <a href="#art-alchimia" id="pill-alchimia"></a>
-      <a href="#art-wicca" id="pill-wicca"></a>
-      <a href="#art-chakra" id="pill-chakra"></a>
-      <a href="#art-sogni" id="pill-sogni"></a>
-      <a href="#art-magia" id="pill-magia"></a>
-      <a href="#art-animali" id="pill-animali"></a>
+      <a href="#art-pentacoli" id="pill-pentacoli">Pentacoli</a>
+      <a href="#art-tarocchi" id="pill-tarocchi">Tarocchi</a>
+      <a href="#art-rune" id="pill-rune">Rune</a>
+      <a href="#art-iching" id="pill-iching">I Ching</a>
+      <a href="#art-astrologia" id="pill-astrologia">Astrologia</a>
+      <a href="#art-numerologia" id="pill-numerologia">Numerologia</a>
+      <a href="#art-cabala" id="pill-cabala">Cabala</a>
+      <a href="#art-alchimia" id="pill-alchimia">Alchimia</a>
+      <a href="#art-wicca" id="pill-wicca">Wicca</a>
+      <a href="#art-chakra" id="pill-chakra">Chakra</a>
+      <a href="#art-sogni" id="pill-sogni">Sogni</a>
+      <a href="#art-magia" id="pill-magia">Magia</a>
+      <a href="#art-animali" id="pill-animali">Totem</a>
     </div>
   </nav>
 
@@ -453,7 +454,7 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -469,9 +470,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="eager"
       width="680" height="297"
     >
-    <h2 id="h2-pentacoli"></h2>
-    <div id="body-pentacoli" class="topic-body"></div>
-    <a href="./pentacoli-salomone.html" class="btn-read" id="btn-pentacoli"></a>
+    <h2 id="h2-pentacoli">I 44 Pentacoli di Re Salomone: Sigilli di Potere Planetario</h2>
+    <div id="body-pentacoli" class="topic-body"><p>I Pentacoli di Re Salomone rappresentano uno dei pilastri più affascinanti e potenti della magia cerimoniale occidentale. Tratti dalla celebre <em>Clavicula Salomonis</em> (La Chiave di Salomone), un grimorio medievale attribuito al sapiente Re d'Israele, questi 44 sigilli sono strumenti progettati per canalizzare le energie dei sette pianeti classici: Sole, Luna, Marte, Mercurio, Giove, Venere e Saturno. Manoscritti della Clavicula Salomonis circolarono in tutta Europa dal Medioevo al Rinascimento, tradotti in latino, francese, italiano e inglese, spesso arricchiti da glosse e varianti regionali che riflettono le diverse scuole magiche del continente.</p><p>Ogni pentacolo non è un semplice disegno, ma un complesso glifo simbolico che combina versetti biblici, nomi divini e caratteri angelici. La loro funzione è quella di "chiave" spirituale capace di invocare specifiche intelligenze planetarie per ottenere protezione, saggezza, successo o guarigione. Ad esempio, i pentacoli di Giove sono tradizionalmente usati per attirare abbondanza e giustizia, mentre quelli di Marte offrono coraggio e difesa contro le avversità. Anche i pentacoli lunari e mercuriali trovano largo impiego: i primi per la protezione durante i viaggi e le trasformazioni interiori, i secondi per favorire l'eloquenza, il commercio e la rapidità mentale nelle decisioni quotidiane.</p><p>La tradizione salomonica richiede che ogni sigillo venga tracciato e consacrato nel giorno e nell'ora planetaria corrispondente, utilizzando materiali specifici come l'oro per il Sole o l'argento per la Luna. Oggi, questi simboli continuano a essere studiati e utilizzati come potenti archetipi di trasformazione interiore, capaci di risuonare con le forze sottili del cosmo che influenzano la nostra esistenza quotidiana. Molti praticanti contemporanei di magia cerimoniale integrano questi sigilli in percorsi di meditazione guidata, combinandoli con la respirazione ritmica e la visualizzazione per amplificarne l'effetto simbolico e psicologico.</p></div>
+    <a href="./pentacoli-salomone.html" class="btn-read" id="btn-pentacoli">📖 Leggi la Guida ai 44 Pentacoli</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -494,9 +495,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-tarocchi"></h2>
-    <div id="body-tarocchi" class="topic-body"></div>
-    <a href="./guida-tarocchi.html" class="btn-read" id="btn-tarocchi"></a>
+    <h2 id="h2-tarocchi">Storia dei Tarocchi: Dalle Corti Rinascimentali all'Oracolo Moderno</h2>
+    <div id="body-tarocchi" class="topic-body"><p>I tarocchi nascono nell'Italia settentrionale del XV secolo, non come strumento divinatorio, ma come gioco di carte aristocratico. Le prime serie documentate, i cosiddetti <em>tarocchi milanesi</em>, furono commissionate dalla famiglia Visconti di Milano intorno al 1440. Erano carte dipinte a mano, rivestite d'oro, destinate al passatempo dei nobili e al gioco del <em>tarocco</em>, un antenato del bridge. Il termine stesso "tarocco" appare già nei registri di corte ferraresi del 1442, a testimonianza di quanto rapidamente il gioco si diffuse tra le famiglie nobili dell'Italia settentrionale.</p><p>Solo nel XVIII secolo i tarocchi iniziarono la loro trasformazione in strumento esoterico. Il mago e occultista Antoine Court de Gébelin sostenne nel 1781 che le immagini degli Arcani Maggiori contenessero la saggezza segreta dell'antico Egitto. Sebbene storicamente infondata, questa teoria fu rivoluzionaria: trasformò 78 carte da gioco in un sistema simbolico complesso, capace di riflettere l'intera esperienza umana. Le sue idee ispirarono generazioni successive di occultisti, tra cui Éliphas Lévi, che nell'Ottocento intrecciò definitivamente i tarocchi con la Cabala ebraica e l'astrologia occidentale.</p><p>Il mazzo Rider-Waite-Smith, pubblicato nel 1909 da Arthur Edward Waite e illustrato da Pamela Colman Smith, è oggi il più diffuso al mondo. Per la prima volta tutte le 78 carte — incluse le 56 carte minori — furono illustrate con scene narrative, rendendo la lettura accessibile a chiunque. Gli <em>Arcani Maggiori</em> rappresentano i grandi temi esistenziali: il Matto simboleggia il viaggio dell'anima, il Carro la volontà di affermarsi, la Torre il cambiamento improvviso, il Mondo il completamento del ciclo.</p><p>Oggi i tarocchi sono usati in tutto il mondo come strumento di <em>psicologia simbolica</em>: non per predire il futuro in modo deterministico, ma per esplorare le dinamiche inconsce, chiarire situazioni complesse e stimolare la riflessione personale. Carl Gustav Jung stesso studiò i simboli alchemici e archetipici presenti nei tarocchi, vedendovi una mappa del processo di individuazione psichica. Numerosi terapeuti e counselor utilizzano oggi i tarocchi come strumento proiettivo in percorsi di crescita personale, affiancandoli a tecniche narrative e di mindfulness per favorire l'auto-consapevolezza.</p></div>
+    <a href="./guida-tarocchi.html" class="btn-read" id="btn-tarocchi">🃏 Approfondisci la Guida ai Tarocchi</a>
   </article>
 
   <article class="card" id="art-rune">
@@ -509,9 +510,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-rune"></h2>
-    <div id="body-rune" class="topic-body"></div>
-    <a href="./significato-rune.html" class="btn-read" id="btn-rune"></a>
+    <h2 id="h2-rune">Rune: L'Alfabeto Sacro dei Popoli Nordici</h2>
+    <div id="body-rune" class="topic-body"><p>Le rune sono molto più di un semplice alfabeto. Per i popoli germanici e nordici dell'antichità, ogni segno runico era un <em>essere vivente</em>, un principio cosmico, una chiave per comprendere la realtà. La parola stessa <em>rūna</em> in antico germanico significa "segreto", "mistero", "sussurro". Non si trattava di lettere nel senso moderno del termine, ma di simboli carichi di forza magica e spirituale. Gli storici distinguono le rune del Futhark Antico dai più tardi alfabeti runici anglosassoni e scandinavi, ciascuno sviluppatosi con varianti regionali proprie nel corso dei secoli.</p><p>Secondo la mitologia nordica, il dio Odino ottenne la conoscenza delle rune attraverso un sacrificio estremo: si appese capovolto all'Yggdrasil, l'albero del mondo, per nove giorni e nove notti, senza cibo né acqua, trafitto dalla propria lancia. In questo stato di morte e rinascita iniziatica, le rune si rivelarono a lui. Questo mito sottolinea come la conoscenza runica non si "impara" ma si "riceve" attraverso la trasformazione personale. Questo racconto, narrato negli <em>Hávamál</em> (I Detti dell'Alto), è considerato uno dei miti fondativi più potenti della spiritualità nordica, paragonabile per intensità simbolica al sacrificio iniziatico.</p><p>L'alfabeto runico più noto è il <em>Futhark Antico</em>, composto da 24 simboli divisi in tre gruppi di otto chiamati <em>ætir</em>. Ogni runa ha un nome (come Fehu, Uruz, Thurisaz), un suono, un significato simbolico e una serie di associazioni cosmologiche. Fehu rappresenta il bestiame — quindi la ricchezza, l'abbondanza, l'energia vitale in movimento. Isa raffigura il ghiaccio: stasi, blocco, ma anche purezza e concentrazione. Esistono anche varianti successive come il <em>Futhark Recente</em> a 16 simboli e il <em>Futhorc</em> anglosassone a 33 caratteri, ciascuno adattato alle esigenze linguistiche delle rispettive culture.</p><p>Nel contesto della divinazione moderna, le rune vengono estratte a caso da un sacchetto e interpretate singolarmente o in schemi chiamati <em>rune spread</em>. La lettura delle rune non mira a predire eventi futuri ma a illuminare le energie presenti in una situazione, offrendo una prospettiva archetipica che stimola l'intuizione e la saggezza interiore. Molti praticanti costruiscono il proprio set scolpendo le rune a mano su legno, osso o pietra, un gesto che secondo la tradizione infonde nel simbolo l'energia personale di chi lo crea.</p></div>
+    <a href="./significato-rune.html" class="btn-read" id="btn-rune">ᚱ Esplora il Significato delle Rune</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -534,9 +535,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-iching"></h2>
-    <div id="body-iching" class="topic-body"></div>
-    <a href="./guida-i-ching.html" class="btn-read" id="btn-iching"></a>
+    <h2 id="h2-iching">I Ching: Il Libro dei Mutamenti nella Filosofia Cinese</h2>
+    <div id="body-iching" class="topic-body"><p>L'I Ching, o <em>Yìjīng</em> (易經), è uno dei testi più antichi e profondi mai scritti dall'umanità. La sua origine si perde nella notte dei tempi: la tradizione attribuisce i primi otto trigrammi all'imperatore mitico Fu Xi (circa 2800 a.C.), mentre il sistema completo dei 64 esagrammi è associato al re Wen della dinastia Zhou (XII secolo a.C.). I commentari filosofici, noti come i "Dieci Venti" o <em>Shí Yì</em>, sono attribuiti a Confucio. Il testo raggiunse la sua forma canonica durante la dinastia Han e da allora è rimasto un pilastro imprescindibile del pensiero cinese, accanto al Confucianesimo e al Taoismo.</p><p>Il principio fondamentale dell'I Ching è la <em>mutevolezza continua</em> della realtà. L'universo non è statico ma in perenne trasformazione, governato dall'interazione di due forze complementari: Yang (attivo, luminoso, maschile, il cielo) e Yin (ricettivo, oscuro, femminile, la terra). Gli 8 trigrammi di base — Cielo, Terra, Tuono, Acqua, Montagna, Vento, Fuoco, Lago — rappresentano gli otto stati fondamentali dell'energia cosmica. Questa visione ciclica e dinamica della realtà anticipa concetti che secoli dopo troveranno eco nella fisica dei sistemi complessi e nella teoria del cambiamento continuo.</p><p>La divinazione con l'I Ching avviene tradizionalmente lanciando 50 steli di millefoglio (<em>Achillea millefolium</em>) oppure tre monete per sei volte, costruendo un esagramma composto da sei linee intere (Yang) o spezzate (Yin). Ciascuno dei 64 esagrammi possibili porta il nome di un archetipo situazionale — come "Il Creativo", "Il Recettivo", "L'Abbondanza" — e un testo che descrive la qualità energetica del momento. Il testo che accompagna ogni esagramma include anche il giudizio generale e il commento alle singole linee mobili, che indicano come una situazione stia per trasformarsi in un'altra.</p><p>Carl Gustav Jung era affascinato dall'I Ching e scrisse la prefazione alla traduzione di Richard Wilhelm nel 1950, introducendo il concetto di <em>sincronicità</em>: l'idea che eventi apparentemente casuali possano essere connessi da un significato simbolico condiviso. Per Jung, l'I Ching non "prevedeva" il futuro, ma rispecchiava lo stato psichico dell'interrogante nel momento della consultazione. Questa interpretazione psicologica ha reso l'I Ching estremamente popolare in Occidente a partire dagli anni Sessanta, tra artisti, scrittori e pensatori del movimento della controcultura. Ancora oggi resta uno dei testi più consultati al mondo per la riflessione strategica e personale.</p></div>
+    <a href="./guida-i-ching.html" class="btn-read" id="btn-iching">☯️ Leggi la Guida all'I Ching</a>
   </article>
 
   <article class="card" id="art-astrologia">
@@ -549,9 +550,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-astrologia"></h2>
-    <div id="body-astrologia" class="topic-body"></div>
-    <a href="./oroscopo-segni.html" class="btn-read" id="btn-astrologia"></a>
+    <h2 id="h2-astrologia">Astrologia: La Mappa Celeste della Tua Anima</h2>
+    <div id="body-astrologia" class="topic-body"><p>L'astrologia è una delle tradizioni simboliche più antiche dell'umanità, con radici documentate nella Mesopotamia del III millennio a.C. I sacerdoti-astronomi babilonesi osservavano il cielo per interpretare i movimenti dei pianeti come messaggi divini destinati ai re e alle nazioni. Dal Vicino Oriente antico, l'astrologia si diffuse in Egitto, Grecia, Roma e infine in tutto il mondo islamico e poi europeo medievale. Anche l'antico Egitto contribuì con il concetto dei decani, trenta gradi zodiacali suddivisi in tre parti ciascuno, ancora oggi utilizzati in alcune scuole di astrologia esoterica.</p><p>Il fondamento dell'astrologia occidentale è il <em>tema natale</em>, una mappa del cielo fotografata nel momento esatto della nascita di una persona. I dodici segni zodiacali — da Ariete a Pesci — non sono semplicemente "caratteri" ma archetipi energetici che colorano l'espressione dei pianeti che li attraversano. Il Sole in un certo segno indica il nucleo dell'identità, la Luna il mondo emotivo e i bisogni profondi, Venere il modo di amare, Marte l'energia e il coraggio. Mercurio governa la comunicazione e il pensiero razionale, Giove l'espansione e la fortuna, Saturno la disciplina e i limiti strutturali che permettono la crescita duratura nel tempo.</p><p>Le dodici <em>case astrologiche</em> dividono il tema in settori che rappresentano aree di vita: la prima casa governa l'identità e l'apparenza, la seconda i valori e le risorse materiali, la settima le relazioni e i matrimoni, la decima la carriera e il ruolo pubblico. L'interazione tra pianeti, segni e case crea un sistema di straordinaria complessità e sfumatura. Anche gli aspetti planetari — le angolazioni geometriche tra i pianeti come congiunzioni, quadrature e trigoni — arricchiscono la lettura, indicando tensioni o armonie tra le diverse energie del tema.</p><p>L'astrologia moderna, fortemente influenzata dalla psicologia analitica junghiana, si è allontanata dalla predizione deterministica per abbracciare un approccio psicologico e simbolico. Il tema natale viene letto come una mappa del potenziale, delle sfide e dei doni dell'anima — non come un destino immutabile, ma come un terreno di consapevolezza su cui costruire la propria vita con maggiore intenzionalità. Molti astrologi contemporanei integrano l'analisi del tema natale con la psicologia archetipica e la terapia della Gestalt, offrendo consulti che uniscono simbolismo celeste e crescita personale concreta.</p></div>
+    <a href="./oroscopo-segni.html" class="btn-read" id="btn-astrologia">🌙 Scopri i Segni Zodiacali</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -574,9 +575,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-numerologia"></h2>
-    <div id="body-numerologia" class="topic-body"></div>
-    <a href="./numerologia-simboli.html" class="btn-read" id="btn-numerologia"></a>
+    <h2 id="h2-numerologia">Numerologia: Il Linguaggio Segreto dei Numeri</h2>
+    <div id="body-numerologia" class="topic-body"><p>La numerologia è l'antica arte di trovare significato nei numeri che permeano la nostra esistenza. La sua origine filosofica è attribuita a Pitagora di Samo (570–495 a.C.), il matematico greco che sosteneva che "tutto è numero" e che ogni numero porta in sé una qualità vibrazionale propria. Per Pitagora i numeri non erano semplici strumenti di calcolo: erano i mattoni fondamentali della realtà, espressioni dell'armonia cosmica. La sua scuola, il Pitagorismo, considerava lo studio della matematica una via di purificazione spirituale, capace di condurre l'anima verso l'armonia cosmica attraverso la contemplazione dei rapporti numerici.</p><p>Il sistema più diffuso nella numerologia moderna si basa sulla riduzione numerica: ogni numero viene ridotto a una cifra singola (da 1 a 9) sommando le sue cifre. Il <em>Numero del Destino</em> si calcola sommando le cifre della data di nascita completa. Il <em>Numero del Nome</em> si ottiene assegnando a ogni lettera del nome un valore numerico secondo la tavola pitagorica (A=1, B=2, C=3, ecc.) e sommando il tutto. Esistono anche sistemi alternativi come la numerologia caldea, che assegna valori diversi alle lettere e considera sacri i numeri 11 e 22 fin dall'antica Babilonia.</p><p>Ogni numero da 1 a 9 porta un archetipo distinto: il numero 1 rappresenta la leadership e il coraggio pionieristico; il 2 la diplomazia e la sensibilità; il 3 la creatività e la gioia; il 4 la stabilità e il metodo; il 5 la libertà e l'avventura; il 6 la responsabilità e l'amore; il 7 la saggezza interiore e la spiritualità; l'8 il potere e l'abbondanza; il 9 l'umanitarismo e la compassione universale. Questi archetipi numerici vengono spesso combinati per delineare un profilo completo, includendo il Numero dell'Anima, il Numero della Personalità e il Numero del Compleanno.</p><p>I numeri maestri 11, 22 e 33 sono considerati particolarmente potenti: l'11 è il numero dell'illuminazione e dell'intuizione elevata, il 22 il "costruttore maestro" capace di trasformare grandi visioni in realtà concrete, il 33 il "maestro insegnante" portatore di compassione e guarigione spirituale. Chi nasce sotto questi numeri porta una missione di vita particolarmente intensa e significativa. Anche il numero 7, pur non essendo un numero maestro nel senso classico, è considerato dai numerologi un ponte tra il mondo materiale e quello spirituale.</p></div>
+    <a href="./numerologia-simboli.html" class="btn-read" id="btn-numerologia">🔢 Calcola il Tuo Profilo Numerologico</a>
   </article>
 
   <article class="card" id="art-cabala">
@@ -589,9 +590,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-cabala"></h2>
-    <div id="body-cabala" class="topic-body"></div>
-    <a href="./cabala.html" class="btn-read" id="btn-cabala"></a>
+    <h2 id="h2-cabala">Cabala: L'Albero della Vita e i Segreti della Torah</h2>
+    <div id="body-cabala" class="topic-body"><p>La Cabala (dal termine ebraico <em>qabbalah</em>, "ricezione" o "tradizione ricevuta") è un corpus di dottrine mistiche ebraiche che cercano di spiegare la relazione tra il Divino infinito e la creazione finita. Le sue radici affondano nella letteratura mistica ebraica dei secoli II–VI d.C., ma la sua fioritura classica avviene nella Spagna medievale del XII–XIII secolo, culminando nel testo fondamentale dello <em>Zohar</em> (Libro dello Splendore), attribuito al rabbi Shimon bar Yochai ma probabilmente composto da Moses de León intorno al 1280.</p><p>Il simbolo centrale della Cabala è l'<em>Albero della Vita</em> (<em>Etz Chayyim</em>), un diagramma composto da dieci sfere chiamate <em>Sefirot</em> collegate da 22 sentieri. Ogni Sefirah rappresenta un attributo divino: Keter (Corona) è la volontà divina primordiale; Chokmah (Saggezza) è il primo lampo dell'intuizione; Binah (Comprensione) dà forma all'intuizione; Chesed (Grazia) è la compassione espansiva; Geburah (Rigore) è la forza e il giudizio; Tiferet (Bellezza) è l'armonia e il cuore dell'albero. Le restanti quattro Sefirot — Netzach (Vittoria), Hod (Gloria), Yesod (Fondamento) e Malkuth (Regno) — completano la struttura, collegando il piano divino a quello della manifestazione terrena e quotidiana.</p><p>Nel Rinascimento italiano, la Cabala fu reinterpretata da umanisti cristiani come Pico della Mirandola, che videro nell'Albero della Vita una conferma filosofica del Cristianesimo. Nel XIX secolo, la <em>Cabala ermetica</em> sviluppata dalla Golden Dawn trasformò l'Albero della Vita in un sistema universale che associava ogni Sefirah a pianeti, segni zodiacali, carte dei tarocchi e colori. Oggi la Cabala è studiata sia nella sua forma ebraica originale, sia nella sua versione esoterica occidentale, come sistema simbolico universale per la comprensione della struttura della realtà e il percorso di crescita interiore dell'anima.</p></div>
+    <a href="./cabala.html" class="btn-read" id="btn-cabala">🕎 Approfondisci la Cabala</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -614,9 +615,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-alchimia"></h2>
-    <div id="body-alchimia" class="topic-body"></div>
-    <a href="./alchimia.html" class="btn-read" id="btn-alchimia"></a>
+    <h2 id="h2-alchimia">Alchimia: La Grande Opera tra Scienza e Mistica</h2>
+    <div id="body-alchimia" class="topic-body"><p>L'alchimia è spesso ridotta al tentativo di trasformare i metalli vili in oro, ma questa è solo la sua dimensione più superficiale. Nella sua essenza più profonda, l'alchimia è una tradizione filosofica e spirituale millenaria che cerca la trasformazione interiore dell'essere umano, la purificazione dell'anima e la comprensione dei principi fondamentali della natura. La <em>Grande Opera</em> (<em>Magnum Opus</em>) è allo stesso tempo una trasformazione della materia e una trasformazione di sé. Il simbolismo alchemico si ritrova ancora oggi in numerosi contesti culturali, dalla letteratura fantastica al linguaggio della psicologia del profondo, a testimonianza della sua straordinaria persistenza storica.</p><p>Le radici dell'alchimia si trovano nell'Egitto ellenistico del I–III secolo d.C., dove la tradizione artigianale degli orafi si fusero con la filosofia neoplatonica e la mistica ermetica. Il leggendario <em>Ermete Trismegisto</em> è il mitico fondatore della tradizione. La sua opera più citata è il <em>Tabula Smaragdina</em> (Tavola di Smeraldo), il cui aforisma "ciò che è in basso è come ciò che è in alto" sintetizza il principio di corrispondenza tra microcosmo e macrocosmo. Numerosi alchimisti medievali e rinascimentali, tra cui Paracelso e Nicolas Flamel, ampliarono questa tradizione integrando conoscenze mediche, botaniche e mineralogiche nella pratica del Grande Lavoro.</p><p>Il processo alchemico classico è diviso in quattro fasi indicate dai colori: la <em>Nigredo</em> (nero) è la fase di putrefazione e dissoluzione dell'ego; l'<em>Albedo</em> (bianco) è la purificazione e l'emergere della coscienza pulita; la <em>Citrinitas</em> (giallo) è l'illuminazione interiore; la <em>Rubedo</em> (rosso) è la fase finale dell'integrazione e della realizzazione, la creazione della <em>Pietra Filosofale</em>. Ogni fase richiedeva mesi o anni di paziente lavoro in laboratorio, accompagnati da preghiere, digiuni e meditazioni che rendevano l'opera tanto spirituale quanto materiale. Solo pochi iniziati completavano l'intero percorso simbolico fino alla fine.</p><p>Carl Gustav Jung dedicò gran parte della sua vita allo studio dell'alchimia, pubblicando <em>Psicologia e Alchimia</em> (1944). Per Jung, i simboli alchemici descrivevano i processi inconsci della psiche. La Grande Opera era una mappa del processo di individuazione: la lenta, faticosa integrazione degli aspetti inconsci della personalità per raggiungere la totalità del Sé. Questa lettura psicologica dell'alchimia continua oggi a influenzare la psicoterapia junghiana, che utilizza le immagini alchemiche come strumento di elaborazione simbolica in seduta. Le sue opere restano tra i riferimenti più citati sull'argomento.</p></div>
+    <a href="./alchimia.html" class="btn-read" id="btn-alchimia">⚗️ Scopri la Grande Opera</a>
   </article>
 
   <article class="card" id="art-wicca">
@@ -629,9 +630,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-wicca"></h2>
-    <div id="body-wicca" class="topic-body"></div>
-    <a href="./stregoneria-wicca.html" class="btn-read" id="btn-wicca"></a>
+    <h2 id="h2-wicca">Wicca e Stregoneria Moderna: La Ruota dell'Anno</h2>
+    <div id="body-wicca" class="topic-body"><p>La Wicca è una religione neopagana fondata nel XX secolo, popolarizzata dall'inglese Gerald Gardner dopo la seconda guerra mondiale con la pubblicazione di <em>Witchcraft Today</em> (1954). Gli storici moderni considerano la Wicca una sintesi creativa di elementi pagani precristiani, esoterismo vittoriano (Golden Dawn, Thelema), folklore europeo e filosofia romantica della natura. Gardner stesso affermava di essere stato iniziato da una congrega segreta del New Forest, un'affermazione che gli storici moderni considerano più mito fondativo che fatto storicamente verificabile. Questo non toglie valore alla componente spirituale vissuta dai praticanti odierni.</p><p>Il cuore della pratica Wicca è la <em>Ruota dell'Anno</em>, un calendario di otto feste sacre che scandiscono i cicli stagionali e cosmici. Le quattro feste maggiori — Samhain (31 ottobre), Imbolc (1–2 febbraio), Beltane (30 aprile–1 maggio) e Lughnasadh (1 agosto) — hanno radici nelle tradizioni celtiche e pastorali delle isole britanniche. I quattro solstizi ed equinozi completano la ruota: Yule, Ostara, Litha e Mabon. Ogni festa è accompagnata da rituali specifici, colori simbolici e cibi tradizionali che rafforzano il legame tra il praticante e il ritmo naturale delle stagioni.</p><p>La teologia Wicca è politeista e dualistica: venera la <em>Grande Dea</em> (associata alla luna, alla terra, al ciclo vitale) e il <em>Dio Cornuto</em> (associato al sole, alla foresta, alla caccia e alla fertilità). Il principio etico fondamentale è il <em>Wiccan Rede</em>: "Se non fa male a nessuno, fai ciò che vuoi", accompagnato dalla Legge del Triplo Ritorno, secondo cui ogni azione magica torna al mittente triplicata. Molti covens strutturano i propri rituali attorno alla figura della Sacerdotessa e del Sacerdote, che incarnano ritualmente la Dea e il Dio durante le cerimonie di gruppo.</p><p>Oggi esistono milioni di praticanti Wicca e stregoneria moderna nel mondo. Correnti come la <em>Strega Solitaria</em>, la <em>Stregoneria del Caos</em> e il <em>Paganesimo Ricostruzionista</em> offrono approcci diversi. Ciò che accomuna tutte queste tradizioni è il rispetto per la natura, il riconoscimento del sacro nel quotidiano e l'uso della magia come pratica di trasformazione personale. La pratica solitaria, in particolare, è cresciuta enormemente grazie a internet, che ha reso accessibili testi, rituali e comunità un tempo riservati a pochi iniziati. Il numero di praticanti continua a crescere ogni anno in tutto il mondo occidentale.</p></div>
+    <a href="./stregoneria-wicca.html" class="btn-read" id="btn-wicca">🌿 Esplora la Ruota dell'Anno</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -654,9 +655,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-chakra"></h2>
-    <div id="body-chakra" class="topic-body"></div>
-    <a href="./mente-energia.html" class="btn-read" id="btn-chakra"></a>
+    <h2 id="h2-chakra">Chakra e Kundalini: Il Sistema Energetico del Corpo Sottile</h2>
+    <div id="body-chakra" class="topic-body"><p>Il sistema dei chakra è uno dei contributi più profondi della filosofia indiana alla comprensione della natura umana. La parola sanscrita <em>chakra</em> significa "ruota" o "cerchio": i chakra sono centri di energia sottile distribuiti lungo l'asse centrale del corpo, il <em>Sushumna Nadi</em>. La loro descrizione appare nei testi del Tantra indù, risalenti al VI–VII secolo d.C., e divenne sistematizzata nei testi medievali come il <em>Sat-Chakra-Nirupana</em> del XVI secolo. Il termine entrò nel vocabolario occidentale grazie alle traduzioni pionieristiche di Sir John Woodroffe agli inizi del Novecento, che introdussero il Tantra indù al pubblico europeo.</p><p>Il sistema classico identifica sette chakra principali: <em>Muladhara</em> (radice) è associato alla sopravvivenza e al radicamento; <em>Svadhisthana</em> (sacrale) governa la creatività e le emozioni; <em>Manipura</em> (plesso solare) è il centro del potere personale; <em>Anahata</em> (cuore) è la sede dell'amore e della compassione; <em>Vishuddha</em> (gola) governa la comunicazione; <em>Ajna</em> (terzo occhio) è il centro dell'intuizione; <em>Sahasrara</em> (corona) rappresenta la connessione con il Divino. Ogni chakra è inoltre associato a un colore, un elemento naturale, un suono seed (bija mantra) e una divinità specifica secondo la tradizione tantrica classica.</p><p>La <em>Kundalini</em> è descritta come un'energia serpentina dormiente, arrotolata alla base della colonna vertebrale. L'obiettivo di molte pratiche tantriche e yogiche è il risveglio della Kundalini e la sua ascesa attraverso i sette chakra fino alla corona, dove produce stati di coscienza espansa descritti come <em>samadhi</em> o illuminazione. Nella pratica dello yoga kundalini, tecniche di respirazione (pranayama), posture (asana) e canto di mantra vengono utilizzate per favorire questo risveglio energetico in sicurezza. Molte scuole raccomandano la guida di un insegnante esperto prima di intraprendere pratiche intensive.</p><p>Nel contesto del benessere olistico moderno, i chakra sono usati come mappa psico-somatica: blocchi energetici in un chakra specifico si manifesterebbero come problemi fisici o psicologici nell'area corrispondente. Pratiche come yoga, meditazione, reiki, cristalloterapia e suono terapeutico vengono usate per riequilibrare il sistema chakrico. Sebbene la scienza medica non riconosca i chakra come strutture anatomiche, milioni di praticanti nel mondo continuano a trovare valore in queste pratiche di consapevolezza corporea. Il benessere percepito da chi le pratica resta un dato costantemente riportato.</p></div>
+    <a href="./mente-energia.html" class="btn-read" id="btn-chakra">🕉️ Riequilibra i Tuoi Chakra</a>
   </article>
 
   <article class="card" id="art-sogni">
@@ -669,9 +670,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-sogni"></h2>
-    <div id="body-sogni" class="topic-body"></div>
-    <a href="./sogni.html" class="btn-read" id="btn-sogni"></a>
+    <h2 id="h2-sogni">Oniromanzia: L'Arte di Interpretare i Sogni</h2>
+    <div id="body-sogni" class="topic-body"><p>I sogni hanno affascinato l'umanità da sempre. Nelle culture antiche erano considerati messaggi divini, profezie velate, visioni dell'aldilà. Gli Egizi costruivano templi dedicati all'incubazione onirica dove i fedeli dormivano in attesa di un sogno guaritore. I Greci praticavano l'<em>enkoimesis</em> nei templi di Asclepio, il dio della medicina: il malato si addormentava sull'abaton sacro e il dio appariva in sogno per indicare la cura. Il testo mesopotamico <em>Ziqiqu</em> (I–II millennio a.C.) è forse il primo manuale sistematico di interpretazione dei sogni della storia.</p><p>La svolta moderna nella comprensione dei sogni arriva con Sigmund Freud e il suo <em>L'Interpretazione dei Sogni</em> (1900). Per Freud il sogno è la "via regia all'inconscio": i contenuti rimossi dalla coscienza durante la veglia emergono nottetempo in forma simbolica e distorta. Il lavoro onirico (<em>Traumarbeit</em>) trasforma i desideri latenti in immagini manifeste attraverso condensazione, spostamento e rappresentazione simbolica. Freud distingueva tra il contenuto manifesto, ciò che ricordiamo al risveglio, e il contenuto latente, il vero significato nascosto dietro i simboli onirici.</p><p>Carl Gustav Jung sviluppò un approccio radicalmente diverso. Per lui i sogni erano comunicazioni dell'inconscio collettivo. I personaggi onirici sono spesso <em>archetipi</em>: l'Ombra (gli aspetti rifiutati della personalità), l'Anima/Animus (il principio femminile/maschile interiore), il Vecchio Saggio, la Grande Madre. Interpretare un sogno in chiave junghiana significa dialogare con questi personaggi archetipici per integrare aspetti sconosciuti di sé. Jung riteneva inoltre che i sogni ricorrenti fossero messaggi particolarmente urgenti dell'inconscio, meritevoli di un'attenzione interpretativa più approfondita rispetto ai sogni isolati. Questo dialogo simbolico è centrale nella psicologia junghiana contemporanea.</p><p>Il <em>sogno lucido</em> è uno stato in cui il sognatore è consapevole di stare sognando e può esercitare un certo controllo sulla narrativa onirica. Tecniche come la <em>MILD</em> e la <em>WILD</em> permettono di indurre la lucidità onirica intenzionalmente. I praticanti tibetani del <em>sogno yoga</em> (<em>Milam</em>) usano il sogno lucido come pratica spirituale avanzata per riconoscere la natura illusoria della realtà. La ricerca scientifica contemporanea sul sonno REM ha confermato che il sogno lucido è misurabile in laboratorio attraverso specifici pattern di attività cerebrale e movimento oculare.</p></div>
+    <a href="./sogni.html" class="btn-read" id="btn-sogni">🌙 Interpreta i Tuoi Sogni</a>
   </article>
 
   <div class="ad-slot" aria-hidden="true">
@@ -694,9 +695,9 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-magia"></h2>
-    <div id="body-magia" class="topic-body"></div>
-    <a href="./60-magie.html" class="btn-read" id="btn-magia"></a>
+    <h2 id="h2-magia">Magia Cerimoniale: Simboli, Rituali e Trasformazione</h2>
+    <div id="body-magia" class="topic-body"><p>La magia cerimoniale è la tradizione esoterica occidentale che utilizza rituali formali, simboli, invocazioni e strumenti sacri per operare trasformazioni nella realtà interiore ed esteriore. A differenza della magia popolare o folclorica, la magia cerimoniale è un sistema elaborato e codificato, con radici nel neoplatonismo antico, nell'ermetismo rinascimentale, nella Cabala e nella magia medievale dei grimori. Questa tradizione si distingue nettamente dalla stregoneria popolare per il suo approccio sistematico, filosofico e spesso accademico alla pratica magica. Per questo motivo richiede anni di studio disciplinato prima della pratica reale.</p><p>Il grimorio (<em>grimoire</em>) è il manuale della magia cerimoniale. I più famosi includono la <em>Clavicula Salomonis</em> (Chiave di Salomone), l'<em>Arbatel de Magia Veterum</em> (1575) e la <em>Lemegeton</em> o <em>Piccola Chiave di Salomone</em>, che include il celebre <em>Goetia</em> con i 72 demoni. Questi testi descrivono procedure elaborate per evocare spiriti, angeli e demoni, richiedendo cerchi magici, sigilli e formule in lingue sacre. La trasmissione di questi testi avveniva spesso in segreto, tra maestro e allievo, per proteggere conoscenze considerate pericolose se cadute in mani inesperte o malintenzionate.</p><p>Aleister Crowley (1875–1947) fondò il sistema di <em>Thelema</em> e scrisse opere monumentali come <em>Magick</em> e il <em>Liber AL vel Legis</em>. Il suo motto "Fai ciò che vuoi sarà tutta la Legge" non è un invito al libertinismo, ma alla scoperta e realizzazione della propria <em>Vera Volontà</em>, il fine ultimo dell'anima. Austin Osman Spare sviluppò invece la <em>magia del caos</em>, un approccio pragmatico e post-moderno che libera la pratica magica da qualsiasi sistema fisso. Entrambi i pensatori influenzarono profondamente la magia occidentale del XX secolo, ispirando movimenti che vanno dall'occultismo accademico alla controcultura degli anni Sessanta e Settanta.</p><p>La <em>magia del caos</em> contemporanea, teorizzata da Peter Carroll nel <em>Liber Null</em> (1978), sostiene che qualsiasi sistema magico funzioni se il praticante ci crede abbastanza. I sigilli — simboli personali creati condensando un'intenzione magica — vengono disegnati, caricati con energia durante uno stato alterato di coscienza, e poi "dimenticati" per permettere all'intenzione di agire nell'inconscio. Questo approccio pragmatico ha reso la magia del caos particolarmente popolare tra i praticanti moderni che rifiutano dogmi religiosi fissi in favore della sperimentazione personale diretta.</p></div>
+    <a href="./60-magie.html" class="btn-read" id="btn-magia">✨ Scopri le 60 Magie</a>
   </article>
 
   <article class="card" id="art-animali">
@@ -709,36 +710,86 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
       loading="lazy" decoding="async"
       width="680" height="297"
     >
-    <h2 id="h2-animali"></h2>
-    <div id="body-animali" class="topic-body"></div>
-    <a href="./totem.html" class="btn-read" id="btn-animali"></a>
+    <h2 id="h2-animali">Animali Totem: Guide Spirituali nelle Tradizioni Sciamaniche</h2>
+    <div id="body-animali" class="topic-body"><p>In numerose tradizioni spirituali del mondo — dai nativi americani alle culture siberiane, dagli aborigeni australiani ai popoli celtici — gli animali non sono semplici creature: sono messaggeri, guide e alleati spirituali. Il concetto di <em>animale totem</em> indica un essere animale con cui una persona condivide un legame speciale, che si manifesta attraverso sogni, visioni, incontri ripetuti nella vita reale o durante cerimonie sciamaniche. Il legame con l'animale totem non è mai scelto a tavolino, ma si rivela gradualmente attraverso segnali ripetuti che il praticante impara a riconoscere con pazienza.</p><p>Nella tradizione sciamanica, lo sciamano è il mediatore tra il mondo umano e il mondo degli spiriti. Durante il <em>viaggio sciamanico</em> — uno stato di trance indotto da tamburi, canti o piante sacre — lo sciamano attraversa i livelli del cosmo (Mondo di Sotto, Mondo di Mezzo, Mondo di Sopra) accompagnato dai suoi spiriti ausiliari, spesso in forma animale. Questi spiriti sono fondamentali per il lavoro di guarigione, profezia e recupero delle parti perdute dell'anima (<em>soul retrieval</em>). Il tamburo sciamanico, in particolare, viene considerato un vero e proprio veicolo, capace di trasportare la coscienza dello sciamano tra i diversi piani di realtà.</p><p>Ogni animale porta una medicina specifica. L'<em>Aquila</em> è il messaggero del Grande Spirito, simbolo di visione d'insieme e coraggio spirituale. Il <em>Lupo</em> insegna la fedeltà al branco e la connessione con gli istinti profondi. L'<em>Orso</em> è il guaritore e custode della rinascita primaverile. Il <em>Delfino</em> porta la gioia, la comunicazione e l'intelligenza del cuore. Anche il Cervo, il Corvo e il Serpente ricoprono ruoli fondamentali in molte tradizioni, rispettivamente come simboli di grazia, trasformazione e conoscenza nascosta. Ogni cultura sciamanica attribuisce sfumature leggermente diverse a questi stessi animali guida.</p><p>Nella pratica moderna, scoprire il proprio animale totem può avvenire attraverso meditazioni guidate, analisi dei sogni ricorrenti, osservazione degli animali che appaiono frequentemente nella vita quotidiana, o letture con carte degli animali come il <em>Medicine Cards</em> di Jamie Sams. Il rispetto, l'intenzione sincera e un cuore aperto sono la chiave per stabilire un legame autentico con il proprio spirito guida animale. Molti praticanti tengono un diario dedicato agli incontri con gli animali totem, annotando date, circostanze e sensazioni per riconoscere pattern significativi nel tempo.</p></div>
+    <a href="./totem.html" class="btn-read" id="btn-animali">🦅 Trova il Tuo Animale Totem</a>
   </article>
 
   </article>
 
   <!-- ═══ CTA – TORNA ALL'APP ═══ -->
   <div class="cta-app">
-    <p id="cta-app-text"></p>
-    <a href="https://mysticaoracoli.it/" id="cta-app-btn"></a>
+    <p id="cta-app-text">Consulta Tarocchi, I Ching, Rune, Oroscopo e 25+ oracoli direttamente nell'app — gratis, senza registrazione.</p>
+    <a href="https://mysticaoracoli.it/" id="cta-app-btn">🔮 Apri MYSTICA – App Gratuita</a>
   </div>
 
   <!-- LINK CORRELATI SEO -->
   <nav class="card related-nav" aria-label="Pagine correlate">
-    <p id="related-label"></p>
+    <p id="related-label">Approfondisci su MYSTICA</p>
     <div class="topic-pills">
-      <a href="https://mysticaoracoli.it/guida-tarocchi.html" id="related-0"></a>
-      <a href="https://mysticaoracoli.it/guida-i-ching.html" id="related-1"></a>
-      <a href="https://mysticaoracoli.it/significato-rune.html" id="related-2"></a>
-      <a href="https://mysticaoracoli.it/oroscopo-segni.html" id="related-3"></a>
-      <a href="https://mysticaoracoli.it/pentacoli-salomone.html" id="related-4"></a>
-      <a href="https://mysticaoracoli.it/about.html" id="related-5"></a>
+      <a href="https://mysticaoracoli.it/guida-tarocchi.html" id="related-0">🃏 Guida ai Tarocchi</a>
+      <a href="https://mysticaoracoli.it/guida-i-ching.html" id="related-1">☯️ Guida I Ching</a>
+      <a href="https://mysticaoracoli.it/significato-rune.html" id="related-2">ᚱ Significato Rune</a>
+      <a href="https://mysticaoracoli.it/oroscopo-segni.html" id="related-3">🌙 Segni Zodiacali</a>
+      <a href="https://mysticaoracoli.it/pentacoli-salomone.html" id="related-4">🔯 Pentacoli Salomone</a>
+      <a href="https://mysticaoracoli.it/about.html" id="related-5">ℹ️ Chi Siamo</a>
     </div>
   </nav>
 
   <!-- ═══ FAQ ═══ -->
   <section class="faq-section">
-    <h2 class="faq-title" id="faq-title"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faq-title">Domande Frequenti</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è l'Enciclopedia Esoterica di MYSTICA?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>È una raccolta gratuita di 13 guide approfondite sulle principali tradizioni esoteriche e spirituali del mondo: Pentacoli di Salomone, Tarocchi, Rune, I Ching, Astrologia, Numerologia, Cabala, Alchimia, Wicca, Chakra, Oniromanzia, Magia Cerimoniale e Animali Totem. Ogni scheda copre storia, origini documentate, simbologia e uso pratico, con link di approfondimento verso le guide complete e gli oracoli interattivi del sito.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Le guide dell'enciclopedia sono davvero gratuite?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Sì, tutti i contenuti editoriali dell'enciclopedia sono completamente gratuiti e liberamente consultabili, senza registrazione né limiti di lettura. Solo alcune funzioni avanzate degli oracoli interattivi collegati — come letture estese a più carte o interpretazioni complete oltre la preview — richiedono lo sblocco Premium, mentre la parte storica e informativa resta sempre accessibile a tutti.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Che differenza c'è tra l'enciclopedia e gli oracoli interattivi di MYSTICA?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>L'enciclopedia è la sezione di approfondimento culturale e storico del sito: qui trovi il contesto, le origini e i significati simbolici di ogni tradizione. Gli oracoli interattivi (Tarocchi, I Ching, Rune, Oroscopo e oltre 25 altri strumenti) sono invece le funzioni pratiche dell'app, dove puoi effettivamente estrarre carte, lanciare monete o calcolare il tuo tema natale in tempo reale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Con che frequenza vengono aggiornati i contenuti dell'enciclopedia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>I contenuti vengono revisionati periodicamente per garantire accuratezza storica, aggiungere nuovi approfondimenti e migliorare la struttura SEO e multilingua. Ogni scheda riporta corrette informazioni verificate su date, personaggi storici e fonti documentate, distinguendo sempre tra fatti storici accertati e tradizioni leggendarie o non verificabili.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Posso approfondire ogni argomento con letture pratiche sull'app?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Certamente. Ogni scheda dell'enciclopedia include un collegamento diretto alla guida completa o allo strumento interattivo corrispondente: dai Tarocchi ai Pentacoli di Salomone, dall'I Ching alla Numerologia. Puoi quindi passare dalla teoria alla pratica con un solo tocco, sperimentando direttamente ciò che hai appena letto.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -753,23 +804,21 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
     <a href="https://mysticaoracoli.it/termini.html">Termini</a>
     <a href="https://mysticaoracoli.it/sitemap.xml">Sitemap</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025–2026 MYSTICA – Mago Petro / PetroCorporation · Tutti i diritti riservati</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa enciclopedia hanno finalità storiche, culturali e informative. Non sostituiscono consulenza medica, legale, psicologica o finanziaria professionale.</p>
 </footer>
 
 <!-- ═══ PREMIUM MODAL ═══ -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutti gli oracoli MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 
@@ -780,14 +829,14 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
 
 <!-- ═══ ESPLORA ANCHE ═══ -->
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2 id="esplora-title"></h2>
+  <h2 id="esplora-title">✨ Esplora Anche</h2>
   <div class="esplora-grid">
-  <a href="./guida-tarocchi.html" class="esplora-card" id="esplora-0"></a>
-  <a href="./significato-rune.html" class="esplora-card" id="esplora-1"></a>
-  <a href="./guida-i-ching.html" class="esplora-card" id="esplora-2"></a>
-  <a href="./astrologia-avanzata.html" class="esplora-card" id="esplora-3"></a>
-  <a href="./pratiche.html" class="esplora-card" id="esplora-4"></a>
-  <a href="./tradizioni-spirituali.html" class="esplora-card" id="esplora-5"></a>
+  <a href="./guida-tarocchi.html" class="esplora-card" id="esplora-0">🃏 Guida Tarocchi</a>
+  <a href="./significato-rune.html" class="esplora-card" id="esplora-1">ᚱ Significato Rune</a>
+  <a href="./guida-i-ching.html" class="esplora-card" id="esplora-2">☯ Guida I Ching</a>
+  <a href="./astrologia-avanzata.html" class="esplora-card" id="esplora-3">🌠 Astrologia Avanzata</a>
+  <a href="./pratiche.html" class="esplora-card" id="esplora-4">🔮 Figure del Mistico</a>
+  <a href="./tradizioni-spirituali.html" class="esplora-card" id="esplora-5">🌍 Tradizioni Spirituali</a>
   </div>
 </section>
 

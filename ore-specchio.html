@@ -387,13 +387,13 @@ html.theme-day .cta{background:linear-gradient(145deg,var(--bg4),var(--bg2))}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🪞 Ore Specchio</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -406,41 +406,41 @@ html.theme-day .cta{background:linear-gradient(145deg,var(--bg4),var(--bg2))}
   <!-- 3a. SEZIONE INTERATTIVA — sempre in cima -->
   <div class="hero">
     <span class="hero-symbol" aria-hidden="true">🪞</span>
-    <h2 id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
-    <span class="hero-badge" id="hero-badge"></span>
+    <h2 id="hero-title">Ore Specchio</h2>
+    <p class="hero-sub" id="hero-sub">Hai guardato l'orologio e hai visto 11:11, 22:22 o 03:03? Non è un caso. Ogni ora specchio porta un messaggio preciso dagli angeli e dall'universo. Inserisci l'orario e scopri cosa ti stanno comunicando.</p>
+    <span class="hero-badge" id="hero-badge">Numerologia Angelica · Sincronicità · Messaggi Cosmici</span>
   </div>
 
   <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="./index.html" id="bc-home"></a>
+    <a href="./index.html" id="bc-home">Home</a>
     <span>›</span>
-    <a href="./enciclopedia.html" id="bc-enc"></a>
+    <a href="./enciclopedia.html" id="bc-enc">Enciclopedia</a>
     <span>›</span>
-    <span id="bc-current"></span>
+    <span id="bc-current">Ore Specchio</span>
   </nav>
 
   <div class="toc">
-    <div class="toc-title" id="toc-title"></div>
-    <ol id="tocList"></ol>
+    <div class="toc-title" id="toc-title">📜 Indice</div>
+    <ol id="tocList"><li><a href="#interpreta">Interpreta il Tuo Orario</a></li><li><a href="#cosa-sono">Cosa Sono le Ore Specchio</a></li><li><a href="#tutte-le-ore">Guida a Tutte le Ore Specchio</a></li><li><a href="#numeri-maestro">Le Ore Maestro: 11:11 e 22:22</a></li><li><a href="#ore-inverse">Ore Inverse e Palindrome</a></li><li><a href="#angeli-section">Gli Angeli Custodi nelle Ore</a></li><li><a href="#faq">Domande Frequenti</a></li></ol>
   </div>
 
   <section id="interpreta">
-    <h2 id="sec-interpreta-title"></h2>
-    <p id="sec-interpreta-sub"></p>
+    <h2 id="sec-interpreta-title">🔮 Interpreta il Tuo Orario</h2>
+    <p id="sec-interpreta-sub">Inserisci l'ora che hai visto e ricevi il messaggio spirituale completo: significato, angelo custode, consiglio per l'amore e rituale del momento.</p>
 
     <div class="calc-box">
-      <div class="calc-title" id="calc-title"></div>
-      <div class="calc-sub" id="calc-sub"></div>
+      <div class="calc-title" id="calc-title">✦ IL MESSAGGIO DELL'ORA ✦</div>
+      <div class="calc-sub" id="calc-sub">Inserisci l'orario che hai visto sull'orologio</div>
 
       <div id="oreForm" class="ore-form">
-        <label for="oreTime" id="ore-label"></label>
+        <label for="oreTime" id="ore-label">ORARIO (HH:MM)</label>
         <input type="time" id="oreTime" class="ore-time-input" aria-label="Orario">
         <br>
         <div class="btn-row">
-          <button class="btn-calc" id="btn-interpreta" onclick="calcOreSpecchio()"></button>
-          <button class="btn-now" id="btn-now" onclick="oreDetectNow()"></button>
+          <button class="btn-calc" id="btn-interpreta" onclick="calcOreSpecchio()">✦ INTERPRETA ✦</button>
+          <button class="btn-now" id="btn-now" onclick="oreDetectNow()">🕐 Usa Adesso</button>
         </div>
-        <span class="quick-label" id="quick-label"></span>
+        <span class="quick-label" id="quick-label">✦ Ore Specchio Frequenti</span>
         <div class="quick-grid">
           <button class="quick-btn" onclick="setOra('00:00')">00:00</button>
           <button class="quick-btn" onclick="setOra('11:11')">11:11</button>
@@ -459,13 +459,13 @@ html.theme-day .cta{background:linear-gradient(145deg,var(--bg4),var(--bg2))}
 
   <!-- 3b. SHARE -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()" id="btn-share-label"></button>
+    <button class="btn-share" onclick="shareContent()" id="btn-share-label">📤 Condividi</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -473,138 +473,270 @@ html.theme-day .cta{background:linear-gradient(145deg,var(--bg4),var(--bg2))}
   <article class="article-section">
 
     <section id="cosa-sono">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Ore Specchio: Significato, Origini e Sincronicità</h2>
       <img src="./images/ore-specchio.webp"
            srcset="./images/ore-specchio.webp 1x"
            id="art-hero" alt="" width="760" height="400"
            loading="eager" decoding="async"
            style="width:100%;border-radius:14px;margin:16px 0">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <div class="highlight"><p id="art-highlight"></p></div>
-      <p id="art-p3"></p>
+      <h3 id="art-h2">Cosa Sono le Ore Specchio e la Teoria della Sincronicità</h3>
+      <p id="art-p1">Le ore specchio sono quegli orari in cui ore e minuti mostrano le stesse cifre — come 01:01, 11:11, 22:22 — creando una perfetta simmetria sul quadrante digitale. Il termine nasce dall'immagine dello specchio: un numero che si riflette identico su sé stesso. Secondo la tradizione numerologica e angelica, questi momenti non sono casuali: il fatto che tu stia guardando l'orologio esattamente in quell'istante è un atto di sincronicità, il termine coniato dallo psicologo svizzero Carl Gustav Jung negli anni '20 per descrivere coincidenze significative che sfidano la spiegazione puramente statistica.</p>
+      <p id="art-p2">La pratica di interpretare le ore specchio affonda le radici nella numerologia angelica, sviluppata e diffusa a livello globale dagli anni '90 in poi soprattutto grazie ad autori come Doreen Virtue, e si intreccia con la tradizione cabalistica dei 72 angeli (Shem HaMephorash), secondo la quale ogni segmento di tempo del giorno è governato da un angelo specifico che presiede a quella vibrazione energetica. Jung descrisse la sincronicità come una "coincidenza di significato": due eventi separati che non hanno causa comune, ma che si incontrano in un punto di senso condiviso per chi li osserva.</p>
+      <div class="highlight"><p id="art-highlight">🔑 La domanda non è "è possibile che sia un caso?" — statisticamente lo è. La domanda è: "cosa sento in questo momento?" Le ore specchio funzionano come un promemoria cosmico che ci invita a fare una pausa e a prestare attenzione alla nostra vita interiore.</p></div>
+      <p id="art-p3">Guardare l'orologio è un atto fisico ordinario; il momento esatto in cui lo facciamo, però, è determinato — almeno in parte — dalla nostra attenzione sottile, da quello che in molte tradizioni viene chiamato intuizione, angelo custode o Sé Superiore. Non serve credere letteralmente in entità angeliche per trarre beneficio dalla pratica: anche da un punto di vista puramente psicologico, fermarsi un istante a notare un orario simmetrico è un piccolo rituale di consapevolezza che riporta l'attenzione al presente, spesso in un momento di passaggio o di decisione importante.</p>
     </section>
 
     <!-- TUTTE LE ORE -->
     <section id="tutte-le-ore">
-      <h2 id="sec-tutte-title"></h2>
-      <p id="sec-tutte-sub"></p>
-      <div class="ore-table-grid" id="oreGrid" role="list"></div>
+      <h2 id="sec-tutte-title">Guida a Tutte le Ore Specchio</h2>
+      <p id="sec-tutte-sub">Tocca un orario per visualizzarne immediatamente il messaggio completo nel calcolatore qui sopra.</p>
+      <div class="ore-table-grid" id="oreGrid" role="list"><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('00:00')" onkeypress="if(event.key==='Enter')setOraScroll('00:00')">
+      <span class="ore-card-time">00:00</span><span class="ore-card-emoji">🌌</span>
+      <div class="ore-card-name">Ora Specchio del Vuoto</div>
+      <span class="ore-card-int">Intensità 10/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('01:01')" onkeypress="if(event.key==='Enter')setOraScroll('01:01')">
+      <span class="ore-card-time">01:01</span><span class="ore-card-emoji">✨</span>
+      <div class="ore-card-name">Ora Specchio del Nuovo Inizio</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('02:02')" onkeypress="if(event.key==='Enter')setOraScroll('02:02')">
+      <span class="ore-card-time">02:02</span><span class="ore-card-emoji">🌙</span>
+      <div class="ore-card-name">Ora Specchio della Connessione</div>
+      <span class="ore-card-int">Intensità 7/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('03:03')" onkeypress="if(event.key==='Enter')setOraScroll('03:03')">
+      <span class="ore-card-time">03:03</span><span class="ore-card-emoji">🎨</span>
+      <div class="ore-card-name">Ora della Trinità Creativa</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('04:04')" onkeypress="if(event.key==='Enter')setOraScroll('04:04')">
+      <span class="ore-card-time">04:04</span><span class="ore-card-emoji">🏛️</span>
+      <div class="ore-card-name">Ora della Fondazione</div>
+      <span class="ore-card-int">Intensità 6/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('05:05')" onkeypress="if(event.key==='Enter')setOraScroll('05:05')">
+      <span class="ore-card-time">05:05</span><span class="ore-card-emoji">🦋</span>
+      <div class="ore-card-name">Ora del Cambiamento</div>
+      <span class="ore-card-int">Intensità 7/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('06:06')" onkeypress="if(event.key==='Enter')setOraScroll('06:06')">
+      <span class="ore-card-time">06:06</span><span class="ore-card-emoji">💚</span>
+      <div class="ore-card-name">Ora dell'Amore</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('07:07')" onkeypress="if(event.key==='Enter')setOraScroll('07:07')">
+      <span class="ore-card-time">07:07</span><span class="ore-card-emoji">🍀</span>
+      <div class="ore-card-name">Ora della Fortuna Spirituale</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('08:08')" onkeypress="if(event.key==='Enter')setOraScroll('08:08')">
+      <span class="ore-card-time">08:08</span><span class="ore-card-emoji">♾️</span>
+      <div class="ore-card-name">Ora dell'Abbondanza</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('09:09')" onkeypress="if(event.key==='Enter')setOraScroll('09:09')">
+      <span class="ore-card-time">09:09</span><span class="ore-card-emoji">🌌</span>
+      <div class="ore-card-name">Ora del Completamento</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('10:10')" onkeypress="if(event.key==='Enter')setOraScroll('10:10')">
+      <span class="ore-card-time">10:10</span><span class="ore-card-emoji">⚡</span>
+      <div class="ore-card-name">Ora della Manifestazione</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card master" role="listitem" tabindex="0" onclick="setOraScroll('11:11')" onkeypress="if(event.key==='Enter')setOraScroll('11:11')">
+      <span class="ore-card-time">11:11</span><span class="ore-card-emoji">👼</span>
+      <div class="ore-card-name">Porta degli Angeli — Numero Maestro</div>
+      <span class="ore-card-int">Intensità 11/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('12:12')" onkeypress="if(event.key==='Enter')setOraScroll('12:12')">
+      <span class="ore-card-time">12:12</span><span class="ore-card-emoji">🌟</span>
+      <div class="ore-card-name">Ora della Grazia Cosmica</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('13:13')" onkeypress="if(event.key==='Enter')setOraScroll('13:13')">
+      <span class="ore-card-time">13:13</span><span class="ore-card-emoji">🔄</span>
+      <div class="ore-card-name">Ora della Trasformazione</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('14:14')" onkeypress="if(event.key==='Enter')setOraScroll('14:14')">
+      <span class="ore-card-time">14:14</span><span class="ore-card-emoji">🦅</span>
+      <div class="ore-card-name">Ora della Libertà Saggia</div>
+      <span class="ore-card-int">Intensità 7/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('15:15')" onkeypress="if(event.key==='Enter')setOraScroll('15:15')">
+      <span class="ore-card-time">15:15</span><span class="ore-card-emoji">⭐</span>
+      <div class="ore-card-name">Ora della Magia Pratica</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('16:16')" onkeypress="if(event.key==='Enter')setOraScroll('16:16')">
+      <span class="ore-card-time">16:16</span><span class="ore-card-emoji">⚡</span>
+      <div class="ore-card-name">Ora del Risveglio</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('17:17')" onkeypress="if(event.key==='Enter')setOraScroll('17:17')">
+      <span class="ore-card-time">17:17</span><span class="ore-card-emoji">⭐</span>
+      <div class="ore-card-name">Ora della Stella — Speranza</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('18:18')" onkeypress="if(event.key==='Enter')setOraScroll('18:18')">
+      <span class="ore-card-time">18:18</span><span class="ore-card-emoji">🌊</span>
+      <div class="ore-card-name">Ora del Discernimento</div>
+      <span class="ore-card-int">Intensità 7/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('19:19')" onkeypress="if(event.key==='Enter')setOraScroll('19:19')">
+      <span class="ore-card-time">19:19</span><span class="ore-card-emoji">☀️</span>
+      <div class="ore-card-name">Ora del Sole — Successo</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('20:20')" onkeypress="if(event.key==='Enter')setOraScroll('20:20')">
+      <span class="ore-card-time">20:20</span><span class="ore-card-emoji">🦋</span>
+      <div class="ore-card-name">Ora del Giudizio — Rinascita</div>
+      <span class="ore-card-int">Intensità 9/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('21:21')" onkeypress="if(event.key==='Enter')setOraScroll('21:21')">
+      <span class="ore-card-time">21:21</span><span class="ore-card-emoji">🌍</span>
+      <div class="ore-card-name">Ora del Mondo — Completamento Glorioso</div>
+      <span class="ore-card-int">Intensità 10/11</span>
+    </div><div class="ore-table-card master" role="listitem" tabindex="0" onclick="setOraScroll('22:22')" onkeypress="if(event.key==='Enter')setOraScroll('22:22')">
+      <span class="ore-card-time">22:22</span><span class="ore-card-emoji">🏗️</span>
+      <div class="ore-card-name">Ora del Maestro Costruttore — Numero Maestro</div>
+      <span class="ore-card-int">Intensità 11/11</span>
+    </div><div class="ore-table-card" role="listitem" tabindex="0" onclick="setOraScroll('23:23')" onkeypress="if(event.key==='Enter')setOraScroll('23:23')">
+      <span class="ore-card-time">23:23</span><span class="ore-card-emoji">🌙</span>
+      <div class="ore-card-name">Ora del Confine — Soglia Notturna</div>
+      <span class="ore-card-int">Intensità 8/11</span>
+    </div></div>
     </section>
 
     <!-- NUMERI MAESTRO -->
     <section id="numeri-maestro">
-      <h2 id="sec-maestro-title"></h2>
-      <p id="sec-maestro-intro"></p>
+      <h2 id="sec-maestro-title">Le Ore Maestro: 11:11 e 22:22</h2>
+      <p id="sec-maestro-intro">Tra tutte le ore specchio, 11:11 e 22:22 hanno un'intensità massima (11/11) perché corrispondono ai Numeri Maestro della numerologia. Sono i due orari più segnalati e più attesi dalle persone sensibili ai messaggi spirituali.</p>
 
       <div class="card">
-        <h3 id="maestro1111-title"></h3>
-        <p id="maestro1111-p1"></p>
-        <p id="maestro1111-p2"></p>
-        <div class="highlight"><p id="maestro1111-rit"></p></div>
+        <h3 id="maestro1111-title">👼 11:11 — La Porta degli Angeli</h3>
+        <p id="maestro1111-p1">L'11:11 è universalmente riconosciuto come la firma degli angeli nel tempo, il momento in cui il velo tra il mondo materiale e quello spirituale è più sottile. Non è un caso che sia diventato simbolo globale di risveglio spirituale: milioni di persone nel mondo lo segnalano come momento di svolta nella propria vita.</p>
+        <p id="maestro1111-p2">L'angelo associato è Lauviah, e l'arcangelo è Uriel — il portatore della luce divina. Vedere 11:11 è un invito a fermarsi completamente per un minuto, ascoltare in silenzio e, se lo si desidera, esprimere un'intenzione sincera.</p>
+        <div class="highlight"><p id="maestro1111-rit">🕯️ Rituale 11:11: scrivi un messaggio a qualcuno che non c'è più, o a una versione futura di te stesso. Tienilo in un luogo sacro. La scrittura in questo momento ha una carica intenzionale straordinaria.</p></div>
       </div>
 
       <div class="card">
-        <h3 id="maestro2222-title"></h3>
-        <p id="maestro2222-p1"></p>
-        <p id="maestro2222-p2"></p>
+        <h3 id="maestro2222-title">🏗️ 22:22 — Il Maestro Costruttore</h3>
+        <p id="maestro2222-p1">Il 22:22 porta la vibrazione del Numero Maestro 22 — il Maestro Costruttore. È il messaggio dell'universo che dice: le tue visioni più grandi sono realizzabili. Non è il momento di sognare in piccolo. L'angelo Yeiayel e l'arcangelo Zadkiel governano questa ora.</p>
+        <p id="maestro2222-p2">Chi vede spesso 22:22 è spesso in un momento di costruzione di qualcosa di importante — una carriera, una relazione, un progetto di vita. L'universo conferma che il lavoro che stai facendo ha basi cosmiche solide.</p>
       </div>
 
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h3">Numeri Maestri, Tarocchi e Uso Pratico delle Ore Specchio</h3>
+      <p id="art-p4">Oltre a 11:11 e 22:22, ogni ora specchio della seconda metà del giorno (13:13–23:23) condivide la propria struttura numerologica con un Arcano Maggiore dei Tarocchi: 13:13 con la Morte, 16:16 con la Torre, 17:17 con la Stella, 19:19 con il Sole, 21:21 con il Mondo. Questo non è casuale: i venti due Arcani Maggiori e i ventiquattro orari del giorno condividono un'origine simbolica comune nella numerologia occidentale, dove ogni cifra da 0 a 9 porta un archetipo psicologico ricorrente che si ripete amplificato nei numeri composti.</p>
+      <p id="art-p5">L'errore più comune di chi si avvicina per la prima volta alle ore specchio è considerarle un oracolo deterministico, come se dicessero esattamente cosa accadrà. In realtà funzionano meglio come uno specchio, appunto: riflettono lo stato interiore di chi le osserva nel momento in cui le nota. Un altro mito da sfatare è che vedere spesso la stessa ora specchio sia "più potente" di vederla una volta sola — la frequenza non è una scala di intensità, è semplicemente un invito a prestare più attenzione a quel tema specifico nella propria vita.</p>
     </section>
 
     <!-- ORE INVERSE -->
     <section id="ore-inverse">
-      <h2 id="sec-inverse-title"></h2>
-      <p id="sec-inverse-intro"></p>
+      <h2 id="sec-inverse-title">Ore Inverse e Palindrome</h2>
+      <p id="sec-inverse-intro">Oltre alle ore specchio classiche, esistono due categorie speciali di orari significativi.</p>
 
-      <h3 id="sec-inverse-h3a"></h3>
-      <p id="sec-inverse-pa"></p>
-      <div class="card"><ul id="inverse-list-a"></ul></div>
+      <h3 id="sec-inverse-h3a">Ore Inverse</h3>
+      <p id="sec-inverse-pa">Sono orari in cui i minuti sono il rovescio delle ore: 01:10, 02:20, 03:30. Indicano qualcosa che emerge dall'inconscio verso la coscienza — un processo in corso, una comprensione che sta maturando. Il messaggio è: pazienza, la chiarezza sta arrivando.</p>
+      <div class="card"><ul id="inverse-list-a"><li><strong>01:10 🌱</strong> — Intuizione Nascente. Nuova comprensione in gestazione.</li><li><strong>02:20 🌊</strong> — Partnership in Evoluzione. Una relazione sta maturando.</li><li><strong>03:30 🎭</strong> — Creatività in Gestazione. Un progetto sta nascendo in silenzio.</li></ul></div>
 
-      <h3 id="sec-inverse-h3b"></h3>
-      <p id="sec-inverse-pb"></p>
-      <div class="card"><ul id="inverse-list-b"></ul></div>
+      <h3 id="sec-inverse-h3b">Ore Palindrome</h3>
+      <p id="sec-inverse-pb">Sono orari che si leggono uguali in entrambe le direzioni: 12:21, 10:01. Portano il messaggio del rispecchiamento totale — quello che sta accadendo fuori è il riflesso esatto di quello che sta succedendo dentro.</p>
+      <div class="card"><ul id="inverse-list-b"><li><strong>12:21 🪞</strong> — Rispecchiamento Totale. Cambia l'interno e l'esterno seguirà.</li><li><strong>10:01 🔄</strong> — Ritorno all'Origine. Stai tornando a qualcosa di essenziale con nuova saggezza.</li></ul></div>
     </section>
 
     <!-- ANGELI -->
     <section id="angeli-section">
-      <h2 id="sec-angeli-title"></h2>
-      <p id="sec-angeli-intro"></p>
+      <h2 id="sec-angeli-title">Gli Angeli Custodi nelle Ore</h2>
+      <p id="sec-angeli-intro">Nella tradizione angelica ebraica e nella cabala, ogni ora del giorno è governata da un angelo specifico. Quando vedi un'ora specchio, l'angelo associato a quell'ora è particolarmente vicino e reattivo alle tue intenzioni.</p>
       <div class="card">
         <table>
           <thead><tr>
-            <th id="th-ora"></th><th id="th-angelo"></th><th id="th-arcangelo"></th>
+            <th id="th-ora">Ora</th><th id="th-angelo">Angelo</th><th id="th-arcangelo">Arcangelo</th>
           </tr></thead>
-          <tbody id="angeliTableBody"></tbody>
+          <tbody id="angeliTableBody"><tr><td>00:00</td><td style="color:var(--muted)">Nemamiah</td><td style="color:var(--muted)">Metatron</td></tr><tr><td>01:01</td><td style="color:var(--muted)">Elemiah</td><td style="color:var(--muted)">Raffaele</td></tr><tr><td>02:02</td><td style="color:var(--muted)">Jeliel</td><td style="color:var(--muted)">Gabriele</td></tr><tr><td>03:03</td><td style="color:var(--muted)">Sitael</td><td style="color:var(--muted)">Uriel</td></tr><tr><td>06:06</td><td style="color:var(--muted)">Lelahel</td><td style="color:var(--muted)">Raffaele</td></tr><tr><td>07:07</td><td style="color:var(--muted)">Achaiah</td><td style="color:var(--muted)">Zadkiel</td></tr><tr><td>08:08</td><td style="color:var(--muted)">Cahetel</td><td style="color:var(--muted)">Metatron</td></tr><tr><td>11:11</td><td style="color:var(--gold)">Lauviah ✦</td><td style="color:var(--gold)">Uriel ✦</td></tr><tr><td>17:17</td><td style="color:var(--muted)">Lauviah II</td><td style="color:var(--muted)">Gabriele</td></tr><tr><td>19:19</td><td style="color:var(--muted)">Leuviah</td><td style="color:var(--muted)">Raffaele</td></tr><tr><td>22:22</td><td style="color:var(--gold)">Yeiayel ✦</td><td style="color:var(--gold)">Zadkiel ✦</td></tr></tbody>
         </table>
       </div>
-      <p id="sec-angeli-outro"></p>
+      <p id="sec-angeli-outro">Per approfondire la tradizione angelica — i 72 angeli della cabala, i numeri angelici (111, 333, 444…) e i messaggi dei numeri ripetuti — esplora la sezione Angeli Custodi su MYSTICA.</p>
     </section>
 
     <nav class="article-links" aria-label="Link correlati">
-      <a href="./numerologia.html" id="link-numerologia"></a>
-      <a href="./angeli.html" id="link-angeli"></a>
-      <a href="./luna-pianeti.html" id="link-luna"></a>
-      <a href="./sogni.html" id="link-sogni"></a>
+      <a href="./numerologia.html" id="link-numerologia">🔢 Numerologia del tuo nome</a>
+      <a href="./angeli.html" id="link-angeli">👼 Angeli Custodi e Numeri Angelici</a>
+      <a href="./luna-pianeti.html" id="link-luna">🌙 Fasi Lunari e Pianeti</a>
+      <a href="./sogni.html" id="link-sogni">💭 Significato dei Sogni</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- 3d. FAQ -->
   <section class="faq-section" id="faq">
-    <h2 class="faq-title" id="faq-title"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faq-title">FAQ</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cosa sono le ore specchio?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden=""><p>Le ore specchio sono orari in cui ore e minuti mostrano le stesse cifre, come 11:11, 22:22, 03:03. Secondo la tradizione numerologica e angelica, questi momenti non sono casuali: siamo guidati a guardare l'orologio esattamente in quell'istante da energie sottili che vogliono comunicarci un messaggio. Approfondisci anche la <a href="./numerologia.html">numerologia del tuo nome</a> per capire meglio il tuo profilo vibrazionale.</p></div>
+    </div>
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cosa significa vedere 11:11?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden=""><p>11:11 è considerata la "Porta degli Angeli" — il momento in cui il velo tra il mondo materiale e quello spirituale è più sottile. È associato all'arcangelo Uriel e suggerisce un momento di ascolto profondo: fermarsi in silenzio per un minuto, esprimere un'intenzione sincera o fare una piccola preghiera.</p></div>
+    </div>
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cosa sono le ore inverse?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden=""><p>Le ore inverse (come 01:10, 02:20, 03:30) sono orari in cui i minuti sono il rovescio delle ore. Indicano qualcosa che emerge dall'inconscio verso la coscienza, un processo in corso che richiede pazienza e attenzione ai segnali sottili. Sono trattate nella sezione dedicata più sopra in questa pagina.</p></div>
+    </div>
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Gli angeli comunicano davvero attraverso gli orari?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden=""><p>Nella tradizione angelica e nella numerologia, le guide spirituali usano la sincronicità per catturare la nostra attenzione. Gli orari doppi sono uno dei segnali più facilmente riconoscibili nella vita quotidiana moderna. Che si creda o meno agli angeli, il valore pratico resta lo stesso: un invito a fare una pausa consapevole. Scopri di più nella sezione <a href="./angeli.html">Angeli Custodi</a>.</p></div>
+    </div>
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Qual è la differenza tra ore specchio e numeri angelici?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden=""><p>Le ore specchio sono specificamente gli orari con cifre doppie sull'orologio digitale. I numeri angelici sono sequenze numeriche ricorrenti (111, 333, 444, 555…) che possono apparire ovunque: prezzi, numeri di telefono, targhe, pagine di libri. Entrambi fanno parte della stessa famiglia di segnali sincronici.</p></div>
+    </div>
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>È vero che 22:22 è più "potente" di un'altra ora specchio?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden=""><p>11:11 e 22:22 corrispondono ai Numeri Maestro 11 e 22 della numerologia, considerati portatori di un'energia particolarmente intensa rispetto ai numeri ordinari. Per questo nel nostro calcolatore hanno intensità massima (11/11). Non significa però che le altre ore specchio siano meno valide — ognuna porta un messaggio specifico e pertinente al momento in cui la osservi.</p></div>
+    </div></div>
   </section>
 
   <div class="cta">
-    <h3 id="cta2-title"></h3>
-    <p id="cta2-text"></p>
-    <a href="./index.html" class="cta-explore" id="cta2-btn"></a>
+    <h3 id="cta2-title">✦ Esplora Tutti gli Oracoli su MYSTICA ✦</h3>
+    <p id="cta2-text">Tarocchi, I Ching, rune, astrologia, numerologia e molto altro — tutto gratis e in italiano.</p>
+    <a href="./index.html" class="cta-explore" id="cta2-btn">🔍 Scopri le Altre Categorie</a>
   </div>
 
   <section class="seo-crosslinks" aria-labelledby="seo-cross-title">
-    <h2 id="seo-cross-title"></h2>
-    <ul id="crossLinksList"></ul>
+    <h2 id="seo-cross-title">Approfondimenti Correlati</h2>
+    <ul id="crossLinksList"><li><a href="./numerologia.html">Numerologia: Calcola il Tuo Numero di Vita</a></li><li><a href="./angeli.html">Angeli Custodi e Numeri Angelici</a></li><li><a href="./luna-pianeti.html">Fasi Lunari e Influenza dei Pianeti</a></li><li><a href="./enciclopedia.html">Enciclopedia Esoterica</a></li></ul>
   </section>
 
 </main>
 
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2 id="esplora-title"></h2>
+  <h2 id="esplora-title">✨ Esplora Anche</h2>
   <div class="esplora-grid">
-    <a href="./numerologia.html" class="esplora-card" id="esplora-1"></a>
-    <a href="./angeli.html" class="esplora-card" id="esplora-2"></a>
-    <a href="./rune.html" class="esplora-card" id="esplora-3"></a>
-    <a href="./iching.html" class="esplora-card" id="esplora-4"></a>
-    <a href="./tarocchi.html" class="esplora-card" id="esplora-5"></a>
-    <a href="./enciclopedia.html" class="esplora-card" id="esplora-6"></a>
+    <a href="./numerologia.html" class="esplora-card" id="esplora-1">🔢 Numerologia</a>
+    <a href="./angeli.html" class="esplora-card" id="esplora-2">👼 Angeli Custodi</a>
+    <a href="./rune.html" class="esplora-card" id="esplora-3">ᚱ Rune</a>
+    <a href="./iching.html" class="esplora-card" id="esplora-4">☯ I Ching</a>
+    <a href="./tarocchi.html" class="esplora-card" id="esplora-5">🃏 Tarocchi</a>
+    <a href="./enciclopedia.html" class="esplora-card" id="esplora-6">📖 Enciclopedia</a>
   </div>
 </section>
 
 <footer class="page-footer" role="contentinfo">
   <nav class="footer-links" aria-label="Link utili">
-    <a href="./index.html" id="footer-home"></a>
-    <a href="./contatti.html" id="footer-contatti"></a>
-    <a href="./about.html" id="footer-about"></a>
-    <a href="./privacy.html" id="footer-privacy"></a>
+    <a href="./index.html" id="footer-home">Home</a>
+    <a href="./contatti.html" id="footer-contatti">Contatti</a>
+    <a href="./about.html" id="footer-about">Chi Siamo</a>
+    <a href="./privacy.html" id="footer-privacy">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità di intrattenimento e crescita personale e non sostituiscono consulenza medica, psicologica, legale o finanziaria professionale.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca lo storico illimitato delle tue ore specchio, l'interpretazione combinata di più orari e i rituali avanzati con timing personalizzato.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

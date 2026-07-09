@@ -788,20 +788,20 @@ html.theme-day .page-header { background: rgba(245,242,237,0.97); }
   <!-- ══ TAB: GUIDA ══ -->
   <div id="tabGuida" class="tab-panel" role="tabpanel">
     <article class="article-section">
-      <div class="art-eyebrow" id="art-eyebrow"></div>
-      <h1 id="art-title"></h1>
+      <div class="art-eyebrow" id="art-eyebrow">Astronomia Sacra</div>
+      <h1 id="art-title">Luna &amp; Pianeti: Il Ciclo Cosmico che Governa la Vita</h1>
       <img onerror="this.style.display='none'" src="./images/icone/home/luna-pianeti.webp"
            srcset="./images/icone/home/luna-pianeti.webp 1x"
            id="art-hero" alt="" loading="eager" class="article-hero">
-      <h2 id="art-h2"></h2>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <h2 id="art-h2b"></h2>
-      <p id="art-p3"></p>
-      <p id="art-p4"></p>
-      <h2 id="art-h2c"></h2>
-      <p id="art-p5"></p>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <h2 id="art-h2">La Luna nell'Occulto e nelle Tradizioni</h2>
+      <p id="art-p1">La Luna è il grande specchio del cielo — riflette la luce del Sole e la trasforma in qualcosa di più misterioso, onirico, emotivo. Nell'astrologia classica è la Notte che completa il Giorno del Sole. Governa l'inconscio, la memoria ancestrale, i cicli del corpo, il femminino cosmico. Le otto fasi lunari non sono semplici fenomeni astronomici: sono stati di coscienza cosmica che influenzano le maree oceaniche, i fluidi corporei, i campi elettromagnetici e — secondo millenni di osservazione sciamanica e astrologica — le energie sottili della vita quotidiana.</p>
+      <p id="art-p2">Nelle tradizioni esoteriche, la Luna Nuova è paragonata al Caos primordiale — il punto zero da cui tutto emerge. È il momento in cui le intenzioni hanno maggiore forza germinativa. La Luna Piena è invece il culmine: nelle tradizioni wicca, è la notte più potente per i rituali di ringraziamento, liberazione e manifestazione. Influenza il sonno, aumenta l'attività emotiva e psichica. In molte culture indigene, la Luna Piena ha un nome proprio per ogni mese che riflette i cicli naturali della terra.</p>
+      <h2 id="art-h2b">I Sette Pianeti Classici e il Loro Governo</h2>
+      <p id="art-p3">Nell'astrologia tradizionale, sette pianeti governano sette sfere della vita e sette giorni della settimana. Il Sole governa l'ego cosciente, la vitalità e la creatività. La Luna governa le emozioni, l'inconscio e la memoria. Mercurio regola la mente, la comunicazione e i viaggi brevi — il suo stato retrogrado porta la famosa confusione comunicativa. Venere governa l'amore, la bellezza e i valori; il suo ciclo disegna un pentagramma perfetto nel cielo ogni 8 anni. Marte governa l'azione, il desiderio e la passione. Giove porta espansione e fortuna. Saturno struttura il karma e la disciplina.</p>
+      <p id="art-p4">Urano, Nettuno e Plutone — scoperti tra il 1781 e il 1930 — governano le forze collettive che trascendono l'individuo. Urano regola le rivoluzioni e le scoperte improvvise. Nettuno governa i sogni, le illusioni e la spiritualità — la sua energia dissolve i confini dell'ego. Plutone governa le trasformazioni radicali, il potere e la rinascita. Il suo transito in Capricorno dal 2008 al 2023 ha coinciso con la crisi finanziaria globale e le trasformazioni delle istituzioni.</p>
+      <h2 id="art-h2c">Come Usare i Transiti nella Pratica</h2>
+      <p id="art-p5">La pratica più semplice e potente: allinea le tue intenzioni al ciclo lunare. Luna Nuova → avvia nuovi obiettivi. Luna Piena → celebra i risultati e rilascia ciò che non serve. Quarto Calante → pulisci ed elimina. Luna Calante → riposa e prepara il prossimo ciclo. Per i transiti planetari, ricorda: quando un pianeta è retrogrado, la sua energia si rivolge verso l'interno. I retrogradi non sono 'cattivi' — sono inviti alla profondità interiore e alla revisione consapevole.</p>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
   </div>
 
@@ -813,19 +813,49 @@ html.theme-day .page-header { background: rgba(245,242,237,0.97); }
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ── FAQ ── -->
   <section class="faq-section">
     <h2 class="faq-title" id="faq-heading">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Come si calcola la fase lunare?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden=""><p>La fase lunare si calcola in base alla posizione relativa di Sole, Terra e Luna. Il ciclo sinodico lunare dura circa 29,5 giorni. Partendo da una Luna Nuova di riferimento, si calcola quanti giorni sono trascorsi e si divide il ciclo in 8 fasi principali. Il calcolatore di MYSTICA usa questo metodo astronomico per darti la fase precisa di qualsiasi data.</p></div>
+    </div>
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cosa sono i pianeti retrogradi e come influenzano la vita?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden=""><p>Un pianeta è 'retrogrado' quando, dal punto di vista terrestre, sembra muoversi all'indietro nel cielo. Non è un movimento reale ma un'illusione ottica causata dalle diverse velocità orbitali. Astrologicamente, il retrogrado porta l'energia del pianeta verso l'interno: Mercurio ℛ porta revisione nelle comunicazioni, Venere ℛ rivalutazione dei valori, Marte ℛ riflessione sulle azioni.</p></div>
+    </div>
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Qual è la differenza tra fase lunare e segno lunare?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden=""><p>La fase lunare indica la quantità di Luna illuminata visibile (dipende dalla posizione relativa Sole-Luna-Terra) e determina il tipo di energia del momento. Il segno lunare indica in quale costellazione zodiacale si trova la Luna, aggiungendo un'ulteriore sfumatura energetica. Entrambi sono rilevanti: la fase dice 'quanto' e il segno dice 'come'.</p></div>
+    </div>
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Quando è il momento migliore per avviare nuovi progetti secondo l'astrologia lunare?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden=""><p>Il momento più potente per avviare nuovi progetti è la Luna Nuova — il primo giorno del ciclo, quando l'energia lunare è tutta potenziale e non ancora manifestata. Anche le 24-48 ore successive alla Luna Nuova mantengono questa potenza germinativa. Evita invece la Luna Calante e l'Ultimo Quarto per i nuovi inizi.</p></div>
+    </div>
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Come si usano i transiti planetari nella vita quotidiana?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden=""><p>I transiti planetari segnalano periodi favorevoli o sfidanti per diverse aree della vita. Giove in transito porta espansione e opportunità. Saturno porta struttura e prove. Mercurio retrogrado suggerisce revisione e attenzione nelle comunicazioni. Non devi aspettare transiti perfetti per agire: usali come contesto per calibrare le tue energie e il tempismo delle decisioni importanti.</p></div>
+    </div></div>
   </section>
 
   <!-- ── Banner Premium ── -->
   <div class="banner-premium" id="bannerPremium">
-    <p id="banner-text"></p>
+    <p id="banner-text">Sblocca rituali lunari avanzati, analisi planetarie complete e previsioni mensili personalizzate.</p>
     <button class="btn-banner-premium" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'" aria-label="Sblocca Premium">✦ <span id="banner-btn-text">Sblocca MYSTICA Premium</span> · 4,99€</button>
   </div>
 
@@ -837,8 +867,8 @@ html.theme-day .page-header { background: rgba(245,242,237,0.97); }
       <a href="./about.html">Chi Siamo</a>
       <a href="./privacy.html">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p id="footer-disclaimer" class="footer-disclaimer">Le analisi astrologiche e lunari sono a scopo divinatorio e di intrattenimento. Non sostituiscono consulenze professionali.</p>
   </footer>
 
 </div><!-- /content -->
@@ -850,13 +880,13 @@ html.theme-day .page-header { background: rgba(245,242,237,0.97); }
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca rituali lunari completi, analisi planetarie avanzate e previsioni mensili personalizzate.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()"></button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

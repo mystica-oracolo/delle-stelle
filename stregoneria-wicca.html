@@ -355,19 +355,19 @@ html.theme-day .btn-premium-buy{color:#fff}
 </head>
 <body>
 
-<a href="#main-content" class="skip-link" id="skipLink"></a>
+<a href="#main-content" class="skip-link" id="skipLink">Vai al contenuto principale</a>
 
 <div class="cosmos" aria-hidden="true"></div>
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🧙 Stregoneria &amp; Wicca</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -379,18 +379,18 @@ html.theme-day .btn-premium-buy{color:#fff}
 
 <section class="hero">
   <span class="hero-icon" aria-hidden="true">🧙</span>
-  <p class="hero-sub" id="heroSub"></p>
+  <p class="hero-sub" id="heroSub">Corrispondenze magiche, Ruota dell'Anno e rituali per ogni intenzione spirituale</p>
 </section>
 
 <!-- SABBAT CORRENTE -->
 <div class="sabbat-box" id="sabbatBox">
   <span class="sabbat-icon" id="sabbatIcon" aria-hidden="true">⏳</span>
-  <div class="sabbat-label" id="sabbatLabel"></div>
-  <div class="sabbat-name" id="sabbatName"></div>
-  <div class="sabbat-date" id="sabbatDate"></div>
-  <div class="sabbat-desc" id="sabbatDesc"></div>
-  <div class="sabbat-colors" id="sabbatColors"></div>
-  <div class="sabbat-countdown" id="sabbatCountdown"></div>
+  <div class="sabbat-label" id="sabbatLabel">✦ Sabbat in corso ✦</div>
+  <div class="sabbat-name" id="sabbatName">Litha</div>
+  <div class="sabbat-date" id="sabbatDate">Solstizio d'Estate — Il Sole al Culmine</div>
+  <div class="sabbat-desc" id="sabbatDesc">Litha è il Solstizio d'Estate, il giorno più lungo dell'anno. Il Sole è al massimo del suo potere. Le erbe magiche raccolte a mezzanotte del solstizio hanno potere straordinario.</div>
+  <div class="sabbat-colors" id="sabbatColors"><span class="sabbat-color">Oro</span><span class="sabbat-color">Giallo</span><span class="sabbat-color">Arancio</span><span class="sabbat-color">Bianco Caldo</span></div>
+  <div class="sabbat-countdown" id="sabbatCountdown">Prossimo: Lammas 🌾 — tra 23 giorni</div>
 </div>
 
 <div class="ad-wrap">
@@ -400,7 +400,7 @@ html.theme-day .btn-premium-buy{color:#fff}
 
 <div class="wrap">
 
-  <div class="section-title" id="sectionTitleIntent"></div>
+  <div class="section-title" id="sectionTitleIntent">Scegli la tua Intenzione Magica</div>
 
   <!-- FORM -->
   <div id="wiccaForm">
@@ -414,12 +414,12 @@ html.theme-day .btn-premium-buy{color:#fff}
     </div>
 
     <div class="domanda-box">
-      <div class="domanda-label" id="domandaLabel"></div>
+      <div class="domanda-label" id="domandaLabel">🌙 Hai una domanda o intenzione specifica? (opzionale)</div>
       <label for="wiccaDomanda" class="sr-only" style="position:absolute;left:-9999px">Domanda</label>
       <textarea class="domanda-inp" id="wiccaDomanda"></textarea>
     </div>
 
-    <button class="btn-calc" id="btnCalc" onclick="calcWicca()"></button>
+    <button class="btn-calc" id="btnCalc" onclick="calcWicca()">🌙 Rivela le Corrispondenze Magiche</button>
   </div>
 
   <!-- RISULTATO -->
@@ -435,8 +435,8 @@ html.theme-day .btn-premium-buy{color:#fff}
     <div class="wicca-block" id="resRituale"></div>
     <div class="invocazione" id="resInvocazione"></div>
     <div class="btn-row">
-      <button class="btn-reset" id="btnReset" onclick="resetWicca()"></button>
-      <button class="btn-sec" id="btnHome" onclick="window.location.href='./index.html'"></button>
+      <button class="btn-reset" id="btnReset" onclick="resetWicca()">🔄 Nuova Lettura</button>
+      <button class="btn-sec" id="btnHome" onclick="window.location.href='./index.html'">🏠 App Principale</button>
     </div>
   </div>
 
@@ -446,8 +446,64 @@ html.theme-day .btn-premium-buy{color:#fff}
   </div>
 
   <!-- RUOTA DELL'ANNO -->
-  <div class="section-title" id="sectionTitleWheel" style="margin-top:32px"></div>
-  <div class="sabbat-grid" id="sabbatGrid"></div>
+  <div class="section-title" id="sectionTitleWheel" style="margin-top:32px">La Ruota dell'Anno — Otto Sabbat</div>
+  <div class="sabbat-grid" id="sabbatGrid">
+    <div class="sabbat-card" title="Accendi una candela rossa o dorata al tramonto. Siediti in silenzio e visualizza un seme di luce che cresce nel tuo petto. Ringrazia l'oscurità per ciò che ti ha insegnato.">
+      <div class="sabbat-card-icon" aria-hidden="true">❄️</div>
+      <div class="sabbat-card-name">Yule</div>
+      <div class="sabbat-card-date">21 Dicembre</div>
+      <div class="sabbat-card-el">Terra &amp; Fuoco</div>
+    </div>
+  
+    <div class="sabbat-card" title="Prepara una candela bianca e circondala con petali di lavanda. Scrivi su un foglio ciò che vuoi far germogliare nella tua vita. Brucia il foglio alla fiamma.">
+      <div class="sabbat-card-icon" aria-hidden="true">🌱</div>
+      <div class="sabbat-card-name">Imbolc</div>
+      <div class="sabbat-card-date">2 Febbraio</div>
+      <div class="sabbat-card-el">Fuoco</div>
+    </div>
+  
+    <div class="sabbat-card" title="Dipingi un uovo con simboli delle tue intenzioni. Tienilo tra le mani, trasferigli la tua energia. Seppelliscilo in terra o riponilo sull'altare per 13 giorni.">
+      <div class="sabbat-card-icon" aria-hidden="true">🌸</div>
+      <div class="sabbat-card-name">Ostara</div>
+      <div class="sabbat-card-date">21 Marzo</div>
+      <div class="sabbat-card-el">Aria</div>
+    </div>
+  
+    <div class="sabbat-card" title="Accendi un grande falò o una candela rossa. Salta simbolicamente le fiamme dicendo: &quot;Lascio il vecchio, abbraccio il nuovo.&quot; Danza intorno al fuoco.">
+      <div class="sabbat-card-icon" aria-hidden="true">🔥</div>
+      <div class="sabbat-card-name">Beltane</div>
+      <div class="sabbat-card-date">1 Maggio</div>
+      <div class="sabbat-card-el">Fuoco</div>
+    </div>
+  
+    <div class="sabbat-card" title="Al sorgere del sole, porta le mani aperte verso la luce per un minuto. Poi porta le mani al petto: &quot;Porto questa luce dentro di me.&quot;">
+      <div class="sabbat-card-icon" aria-hidden="true">☀️</div>
+      <div class="sabbat-card-name">Litha</div>
+      <div class="sabbat-card-date">21 Giugno</div>
+      <div class="sabbat-card-el">Fuoco &amp; Aria</div>
+    </div>
+  
+    <div class="sabbat-card" title="Tieni in mano un chicco di grano. Ringrazia per ciò che hai ricevuto quest'anno. Poi identifica qualcosa che devi lasciare andare: scrivi su carta e bruciala.">
+      <div class="sabbat-card-icon" aria-hidden="true">🌾</div>
+      <div class="sabbat-card-name">Lammas</div>
+      <div class="sabbat-card-date">1 Agosto</div>
+      <div class="sabbat-card-el">Terra</div>
+    </div>
+  
+    <div class="sabbat-card" title="Prepara un pasto con frutti di stagione. Prima di mangiare, nomina tre cose per cui sei grato/a e tre cose che hai imparato.">
+      <div class="sabbat-card-icon" aria-hidden="true">🍂</div>
+      <div class="sabbat-card-name">Mabon</div>
+      <div class="sabbat-card-date">21 Settembre</div>
+      <div class="sabbat-card-el">Terra</div>
+    </div>
+  
+    <div class="sabbat-card" title="Accendi una candela nera e una bianca. Posa una foto o un oggetto di un defunto amato. Siediti in silenzio e invitalo a comunicare.">
+      <div class="sabbat-card-icon" aria-hidden="true">🕯️</div>
+      <div class="sabbat-card-name">Samhain</div>
+      <div class="sabbat-card-date">31 Ottobre</div>
+      <div class="sabbat-card-el">Spirito</div>
+    </div>
+  </div>
 
 </div>
 
@@ -458,12 +514,12 @@ html.theme-day .btn-premium-buy{color:#fff}
     <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
     <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
     <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-    <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+    <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
   </div>
 </div>
 
 <article class="article-section">
-  <h2 id="art-title"></h2>
+  <h2 id="art-title">Stregoneria e Wicca: Storia, Corrispondenze e Pratica della Magia Naturale</h2>
   <img src="./images/stregoneria.webp"
        srcset="./images/stregoneria.webp 1x"
        id="art-hero"
@@ -472,25 +528,95 @@ html.theme-day .btn-premium-buy{color:#fff}
        loading="eager"
        decoding="async"
        style="width:100%;height:auto;border-radius:14px;margin:16px 0">
-  <h3 id="art-h2"></h3>
-  <p id="art-p1"></p>
-  <p id="art-p2"></p>
-  <p id="art-p3"></p>
-  <h3 id="art-h3"></h3>
-  <p id="art-p4"></p>
-  <p id="art-p5"></p>
+  <h3 id="art-h2">Dalle Radici Pagane alla Wicca Contemporanea</h3>
+  <p id="art-p1">La parola "strega" affonda le sue radici nel latino "striga", figura notturna temuta nell'antichità, ma le pratiche che oggi chiamiamo stregoneria affondano in tradizioni molto più antiche e diversificate: sciamanesimo europeo, culti agrari mediterranei, erboristeria popolare e magia cerimoniale rinascimentale. La Wicca, nello specifico, nasce come religione strutturata nel Regno Unito grazie a Gerald Gardner, che negli anni '40 e '50 pubblicò testi come "Witchcraft Today" (1954), sintetizzando frammenti di folklore britannico, massoneria, cerimonialismo occultista di Aleister Crowley e la teoria della "Old Religion" proposta dall'antropologa Margaret Murray. Da questa sintesi nacque un culto della natura duoteistico, incentrato sulla Dea Triplice (Fanciulla, Madre, Anziana) e sul Dio Cornuto, celebrato attraverso otto festività stagionali chiamate Sabbat.</p>
+  <p id="art-p2">Negli anni successivi la Wicca si diramò in numerose tradizioni: la linea Gardneriana originale, quella Alessandrina fondata da Alex Sanders negli anni '60 con un approccio più cerimoniale, e infine la Wicca Eclettica e la Stregoneria Solitaria, diffuse soprattutto dagli anni '80 grazie ad autrici come Scott Cunningham e Silver RavenWolf, che resero la pratica accessibile senza necessità di iniziazione in un coven. Questa evoluzione ha permesso a milioni di praticanti solitari nel mondo di costruire un rapporto personale con la natura, i cicli lunari e le proprie intenzioni, mantenendo comunque un forte legame simbolico con le radici storiche del movimento.</p>
+  <p id="art-p3">Il cuore pratico della stregoneria moderna sono le corrispondenze magiche: un sistema di associazioni tra pianeti, giorni della settimana, elementi, colori, erbe, cristalli e divinità che permette di allineare un rituale a un'intenzione precisa. Un lavoro di prosperità, ad esempio, si svolge tradizionalmente di giovedì, sotto l'influsso di Giove, con erbe come menta e cannella e cristalli come citrino e pirite; un lavoro di protezione predilige invece Marte o Saturno, il martedì o il sabato, erbe come rosmarino e salvia, cristalli scuri come l'ossidiana. Questo sistema non è arbitrario: deriva dalla magia planetaria rinascimentale, codificata in testi come i "Tre Libri di Filosofia Occulta" di Cornelio Agrippa (1533), poi riadattata dalla Wicca contemporanea.</p>
+  <h3 id="art-h3">Corrispondenze, Sabbat e Pratica Quotidiana</h3>
+  <p id="art-p4">La Ruota dell'Anno, con i suoi otto Sabbat, rappresenta il calendario sacro della pratica wicca: Yule e Litha segnano i due solstizi, Ostara e Mabon i due equinozi, mentre Imbolc, Beltane, Lammas e Samhain sono le antiche feste del fuoco celtiche che marcano i punti intermedi. Samhain, in particolare, è considerato il capodanno celtico e il momento in cui il velo tra i mondi si assottiglia maggiormente, rendendo la divinazione particolarmente potente; Beltane, all'opposto della ruota, celebra la fertilità e l'unione vitale. Ogni Sabbat porta con sé colori, rituali e significati specifici che permettono al praticante di sincronizzare la propria pratica con i ritmi naturali delle stagioni.</p>
+  <p id="art-p5">Un errore comune tra chi si avvicina per la prima volta alla stregoneria è confondere la magia con un sostituto di azione, medicina o responsabilità personale: la pratica wicca seria considera il rituale un catalizzatore di intenzione, non una scorciatoia magica priva di impegno concreto. Un altro mito diffuso è che la Wicca richieda necessariamente un coven o un'iniziazione: la Stregoneria Solitaria è una via pienamente legittima, purché sostenuta da studio, rispetto della tradizione e pratica costante. Comprendere queste sfumature — insieme alla differenza tra Wicca religiosa e stregoneria folk più laica — è il primo passo per una pratica autentica e consapevole.</p>
   <nav class="article-links" aria-label="Approfondimenti correlati">
-    <a href="./magia-bianca.html" id="link1"></a>
-    <a href="./sigilli-salomone.html" id="link2"></a>
-    <a href="./luna-pianeti.html" id="link3"></a>
-    <a href="./pietre-magiche.html" id="link4"></a>
+    <a href="./magia-bianca.html" id="link1">🕯️ Approfondisci la Magia Bianca</a>
+    <a href="./sigilli-salomone.html" id="link2">🔯 Scopri i Sigilli di Salomone</a>
+    <a href="./luna-pianeti.html" id="link3">🌙 Consulta Luna &amp; Pianeti</a>
+    <a href="./pietre-magiche.html" id="link4">💎 Esplora le Pietre Magiche</a>
   </nav>
-  <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
 </article>
 
 <section class="faq-section">
   <h2 class="faq-title" id="faqTitle">FAQ</h2>
-  <div class="faq-list" id="faqList"></div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è esattamente la Wicca e in cosa si differenzia dalla stregoneria tradizionale?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>La Wicca è una religione neopagana codificata da Gerald Gardner nel Regno Unito tra gli anni '40 e '50, che unisce culti pre-cristiani della natura, il concetto di Dea Triplice e Dio Cornuto, e una struttura rituale precisa scandita da otto Sabbat. La stregoneria tradizionale è invece un termine più ampio: comprende pratiche magiche popolari spesso più antiche della Wicca, non necessariamente religiose, tramandate a livello familiare o regionale senza una struttura di coven codificata. Molti praticanti oggi mescolano elementi di entrambe.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come si calcolano le corrispondenze magiche per un'intenzione specifica?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Ogni intenzione — amore, protezione, prosperità, guarigione, divinazione, trasformazione — è collegata a un pianeta, un giorno della settimana, elementi, erbe, cristalli e divinità specifiche secondo il sistema di magia planetaria rinascimentale poi ripreso dalla Wicca. Amore è Venere e venerdì, protezione è Marte/Saturno, prosperità è Giove e giovedì. Allineare il rituale a queste corrispondenze — scegliendo il giorno giusto, gli ingredienti coerenti e la fase lunare adatta — rende il lavoro magico più coerente ed efficace secondo la tradizione.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cosa sono i Sabbat e perché sono otto?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>I Sabbat sono le otto festività sacre della Ruota dell'Anno: Yule, Imbolc, Ostara, Beltane, Litha, Lammas, Mabon e Samhain. Comprendono i due solstizi, i due equinozi e quattro feste del fuoco intermedie derivate dal calendario celtico. Insieme formano un ciclo narrativo completo che rispecchia nascita, crescita, raccolto e morte simbolica, permettendo al praticante di sincronizzare la propria vita spirituale ai ritmi naturali delle stagioni. Puoi consultare la Ruota dell'Anno completa più in basso in questa pagina.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Serve essere iniziati per praticare rituali wicca in autonomia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>No. La Wicca tradizionale (Gardneriana, Alessandrina) richiede un'iniziazione formale in coven, ma dagli anni '80 si è affermata con forza la Stregoneria Solitaria e la Wicca Eclettica, percorsi pienamente legittimi che non richiedono alcuna iniziazione. È comunque fondamentale studiare seriamente storia, etica e simbologia prima di praticare, per evitare superficialità o appropriazioni scorrette di tradizioni altrui.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>È pericoloso o eticamente problematico lanciare un incantesimo su un'altra persona?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Secondo l'etica wicca, la Legge del Ritorno Triplice sostiene che l'energia inviata torni amplificata a chi la genera, mentre la Regola Wicca invita a non arrecare danno e a rispettare il libero arbitrio altrui. Per questo motivo gli incantesimi mirati a influenzare direttamente un'altra persona — specialmente in ambito amoroso — sono generalmente sconsigliati dalla tradizione seria: è preferibile lavorare sulla propria energia, apertura e intenzione, lasciando spazio alla libera scelta di chiunque altro sia coinvolto.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Qual è la differenza tra un altare permanente e uno temporaneo?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Un altare permanente rimane allestito stabilmente in casa, spesso dedicato a una divinità specifica o alla pratica quotidiana, ed è ideale per chi ha spazio dedicato e continuità nella pratica. Un altare temporaneo, invece, viene costruito solo per la durata di un rituale specifico — magari su un tavolino, un fazzoletto di stoffa o persino un vassoio — e smontato subito dopo: è la scelta più pratica per chi vive con altre persone o preferisce discrezione.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-6">
+      <button class="faq-question" onclick="toggleFAQ(6)" aria-expanded="false">
+        <span>Quali errori commettono più spesso i principianti nella pratica wicca?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-6" hidden="">
+        <p>Gli errori più comuni includono: aspettarsi risultati immediati senza costanza rituale, saltare la fase di purificazione dello spazio prima del rito, mescolare tradizioni diverse senza comprenderne il significato originario, e affidarsi esclusivamente alla magia trascurando l'azione concreta nel mondo reale. Un altro errore frequente è ignorare la sicurezza con candele e incensi, elementi centrali in quasi ogni rituale wicca.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
@@ -502,19 +628,19 @@ html.theme-day .btn-premium-buy{color:#fff}
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti hanno finalità spirituali, culturali e di intrattenimento. Non sostituiscono consulenze mediche, legali o finanziarie professionali.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca rituali completi con timing avanzato, il tuo storico letture illimitato e i consulti personalizzati con Mago Petro.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

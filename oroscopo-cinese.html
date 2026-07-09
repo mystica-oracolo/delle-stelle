@@ -372,13 +372,13 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🎵</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">🌙</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🐎 Oroscopo Cinese</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -391,29 +391,29 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
   <!-- HERO -->
   <div class="hero">
     <span class="hero-hanzi">生肖</span>
-    <p class="hero-sub" id="hero-sub"></p>
-    <span class="hero-badge" id="hero-badge"></span>
+    <p class="hero-sub" id="hero-sub">I 12 animali dello zodiaco cinese e i 5 elementi: un sistema millenario che assegna a ogni anno un carattere unico. Calcola il tuo segno, scopri le sue qualità e le compatibilità con gli altri animali.</p>
+    <span class="hero-badge" id="hero-badge">生肖 Shēngxiào · Lo Zodiaco degli Animali</span>
   </div>
 
   <!-- BREADCRUMB -->
   <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="./index.html" id="bc-home"></a>
+    <a href="./index.html" id="bc-home">Home</a>
     <span>›</span>
-    <a href="./enciclopedia.html" id="bc-enc"></a>
+    <a href="./enciclopedia.html" id="bc-enc">Enciclopedia</a>
     <span>›</span>
-    <span id="bc-current"></span>
+    <span id="bc-current">Oroscopo Cinese</span>
   </nav>
 
   <!-- 3a. SEZIONE INTERATTIVA — CALCOLATORE (SEMPRE IN CIMA) -->
   <section class="calc-section" id="calcolatore" aria-labelledby="calc-title">
-    <h2 id="calc-title"></h2>
-    <p class="calc-note" id="calc-note"></p>
+    <h2 id="calc-title">🐉 Calcola il Tuo Segno Zodiacale Cinese</h2>
+    <p class="calc-note" id="calc-note">Inserisci la tua data di nascita: il calcolo tiene conto della data esatta del Capodanno cinese, non del 1° gennaio.</p>
 
     <div class="calc-field">
-      <label for="birthdate" id="calc-label"></label>
+      <label for="birthdate" id="calc-label">La tua data di nascita</label>
       <input type="date" id="birthdate" min="1924-01-01" max="2033-12-31">
     </div>
-    <button type="button" class="btn-primary" id="calc-btn"></button>
+    <button type="button" class="btn-primary" id="calc-btn">✦ Scopri il Tuo Animale</button>
 
     <div class="calc-result" id="calcResult" aria-live="polite">
       <span class="calc-result-hanzi" id="result-hanzi"></span>
@@ -422,12 +422,12 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
       <p class="calc-result-trait" id="result-trait"></p>
 
       <div class="calc-locked" id="calc-locked" hidden>
-        <h3 id="calc-locked-title"></h3>
+        <h3 id="calc-locked-title">🔒 Compatibilità Avanzata</h3>
         <div class="calc-field">
-          <label for="partnerdate" id="calc-label-2"></label>
+          <label for="partnerdate" id="calc-label-2">Data di nascita dell'altra persona</label>
           <input type="date" id="partnerdate" min="1924-01-01" max="2033-12-31">
         </div>
-        <button type="button" class="btn-secondary" id="calc-btn-2"></button>
+        <button type="button" class="btn-secondary" id="calc-btn-2">💞 Confronta Compatibilità</button>
         <p class="calc-result-trait" id="result-compat" style="margin-top:12px"></p>
       </div>
     </div>
@@ -435,19 +435,19 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
 
   <!-- 3b. SHARE -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()" id="share-btn"></button>
+    <button class="btn-share" onclick="shareContent()" id="share-btn">📤 Condividi</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- 3c. ARTICOLO EDITORIALE -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Origini e Leggenda dei 12 Animali</h2>
     <img src="./images/icone/cinese/cavallo.webp"
          srcset="./images/icone/cinese/cavallo.webp 1x"
          id="art-hero"
@@ -456,91 +456,209 @@ figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
          loading="eager"
          decoding="async"
          style="width:100%;border-radius:14px;margin:16px 0">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <div class="highlight"><p id="art-highlight-1"></p></div>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
+    <h3 id="art-h2">La leggenda della gara dell'Imperatore di Giada</h3>
+    <p id="art-p1">L'Oroscopo Cinese (生肖, Shēngxiào, letteralmente "segno della nascita") è uno dei sistemi astrologici più antichi e diffusi al mondo, con radici che affondano in più di 2000 anni di storia cinese. A differenza dell'astrologia occidentale, che si basa sul mese di nascita, lo zodiaco cinese assegna un animale a ogni anno, seguendo un ciclo di 12 anni che si ripete all'infinito. La leggenda più nota racconta che l'Imperatore di Giada, sovrano celeste, organizzò una grande gara per stabilire l'ordine degli animali: chiunque fosse riuscito ad attraversare per primo il fiume avrebbe ottenuto un posto d'onore nel calendario.</p>
+    <div class="highlight"><p id="art-highlight-1">🐱 Una variante della leggenda spiega anche perché il Gatto non fa parte dello zodiaco: il Topo, temendo la concorrenza, non avrebbe avvisato il Gatto del giorno della gara, facendolo arrivare troppo tardi.</p></div>
+    <p id="art-p2">Il furbo Topo convinse il Bue a portarlo sulla schiena durante l'attraversamento, e proprio all'ultimo istante saltò giù conquistando il primo posto sulla riva opposta. A seguire arrivarono nell'ordine: Bue, Tigre, Coniglio, Drago, Serpente, Cavallo, Capra, Scimmia, Gallo, Cane e infine il Maiale, arrivato per ultimo perché si era fermato a mangiare e a dormire lungo il tragitto. Questo ordine, tramandato oralmente per millenni prima di essere fissato nei testi classici, è ancora oggi alla base di ogni calcolo dello zodiaco cinese, tanto nella Cina continentale quanto nella diaspora e nei paesi limitrofi.</p>
+    <p id="art-p3">Ogni animale non rappresenta solo l'anno di nascita, ma porta con sé un insieme di qualità, tratti caratteriali e simbolismi che, secondo la tradizione, influenzano la personalità e il destino di chi nasce sotto quel segno. A differenza dell'astrologia occidentale, che osserva la posizione dei pianeti al momento della nascita, il sistema cinese si fonda su un ciclo cosmologico più ampio, legato al calendario lunisolare e alla filosofia dei Wu Xing, i cinque elementi che regolano l'equilibrio dell'universo e che si intrecciano con gli animali per generare sessanta combinazioni uniche, ciascuna con sfumature proprie.</p>
 
     <!-- Sotto-sezione: I 12 Animali -->
-    <h2 id="animali-title"></h2>
-    <p id="animali-intro"></p>
-    <div class="animal-grid" id="animalGrid"></div>
-    <h3 id="animali-h3"></h3>
-    <ul id="animalTraits"></ul>
+    <h2 id="animali-title">I 12 Animali dello Zodiaco Cinese</h2>
+    <p id="animali-intro">Ecco i 12 animali nell'ordine tradizionale del ciclo, ciascuno con il proprio elemento fisso e le qualità principali associate dalla tradizione:</p>
+    <div class="animal-grid" id="animalGrid"><div class="animal-card">
+      <img src="./images/icone/cinese/topo.webp" srcset="./images/icone/cinese/topo.webp 1x" alt="Topo - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Topo (鼠)</div>
+      <div class="animal-card-elem">Acqua</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/bue.webp" srcset="./images/icone/cinese/bue.webp 1x" alt="Bue - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Bue (牛)</div>
+      <div class="animal-card-elem">Terra</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/tigre.webp" srcset="./images/icone/cinese/tigre.webp 1x" alt="Tigre - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Tigre (虎)</div>
+      <div class="animal-card-elem">Legno</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/coniglio.webp" srcset="./images/icone/cinese/coniglio.webp 1x" alt="Coniglio - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Coniglio (兔)</div>
+      <div class="animal-card-elem">Legno</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/drago.webp" srcset="./images/icone/cinese/drago.webp 1x" alt="Drago - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Drago (龍)</div>
+      <div class="animal-card-elem">Terra</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/serpente.webp" srcset="./images/icone/cinese/serpente.webp 1x" alt="Serpente - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Serpente (蛇)</div>
+      <div class="animal-card-elem">Fuoco</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/cavallo.webp" srcset="./images/icone/cinese/cavallo.webp 1x" alt="Cavallo - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Cavallo (馬)</div>
+      <div class="animal-card-elem">Fuoco</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/capra.webp" srcset="./images/icone/cinese/capra.webp 1x" alt="Capra - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Capra (羊)</div>
+      <div class="animal-card-elem">Terra</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/scimmia.webp" srcset="./images/icone/cinese/scimmia.webp 1x" alt="Scimmia - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Scimmia (猴)</div>
+      <div class="animal-card-elem">Metallo</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/gallo.webp" srcset="./images/icone/cinese/gallo.webp 1x" alt="Gallo - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Gallo (雞)</div>
+      <div class="animal-card-elem">Metallo</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/cane.webp" srcset="./images/icone/cinese/cane.webp 1x" alt="Cane - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Cane (狗)</div>
+      <div class="animal-card-elem">Terra</div>
+    </div><div class="animal-card">
+      <img src="./images/icone/cinese/maiale.webp" srcset="./images/icone/cinese/maiale.webp 1x" alt="Maiale - Oroscopo Cinese" loading="lazy" decoding="async" width="150" height="150">
+      <div class="animal-card-name">Maiale (豬)</div>
+      <div class="animal-card-elem">Acqua</div>
+    </div></div>
+    <h3 id="animali-h3">Caratteristiche principali di ciascun segno</h3>
+    <ul id="animalTraits"><li><strong>Topo</strong> — Intelligente, adattabile, intraprendente. Sa cogliere le opportunità al volo.</li><li><strong>Bue</strong> — Affidabile, paziente, laborioso. Costruisce risultati solidi con costanza.</li><li><strong>Tigre</strong> — Coraggiosa, carismatica, indipendente. Naturale leader, ama le sfide.</li><li><strong>Coniglio</strong> — Gentile, elegante, diplomatico. Cerca armonia ed evita i conflitti.</li><li><strong>Drago</strong> — Ambizioso, carismatico, fortunato. L'unico animale mitologico del ciclo, simbolo di potere.</li><li><strong>Serpente</strong> — Saggio, intuitivo, misterioso. Osserva prima di agire, raramente si sbaglia.</li><li><strong>Cavallo</strong> — Energico, libero, socievole. Ama il movimento e l'indipendenza.</li><li><strong>Capra</strong> — Creativa, sensibile, gentile. Dotata di gusto artistico e profondità emotiva.</li><li><strong>Scimmia</strong> — Ingegnosa, curiosa, brillante. Risolve i problemi con creatività e umorismo.</li><li><strong>Gallo</strong> — Preciso, sicuro di sé, onesto. Ama distinguersi e dire le cose come stanno.</li><li><strong>Cane</strong> — Leale, giusto, protettivo. Difende chi ama con grande senso etico.</li><li><strong>Maiale</strong> — Generoso, sincero, ottimista. Gode della vita con semplicità e calore umano.</li></ul>
 
     <!-- Sotto-sezione: I 5 Elementi -->
-    <h2 id="elementi-title"></h2>
-    <p id="elementi-p1"></p>
-    <div class="elements-grid" id="elementsGrid"></div>
-    <p id="elementi-p2"></p>
-    <div class="highlight"><p id="elementi-highlight"></p></div>
+    <h2 id="elementi-title">I 5 Elementi (Wu Xing)</h2>
+    <p id="elementi-p1">A ogni anno, oltre all'animale, è associato anche uno dei 5 Elementi (五行, Wǔ Xíng) della cosmologia cinese. Mentre il ciclo degli animali dura 12 anni, gli elementi si alternano in coppie (Yin e Yang) ogni 2 anni, creando un ciclo completo di 60 anni prima che la stessa combinazione animale-elemento si ripeta esattamente.</p>
+    <div class="elements-grid" id="elementsGrid"><div class="element-card wood">
+      <span class="element-hanzi">木</span>
+      <span class="element-name">LEGNO</span>
+      <span class="element-cn">Crescita</span>
+    </div><div class="element-card fire">
+      <span class="element-hanzi">火</span>
+      <span class="element-name">FUOCO</span>
+      <span class="element-cn">Azione</span>
+    </div><div class="element-card earth">
+      <span class="element-hanzi">土</span>
+      <span class="element-name">TERRA</span>
+      <span class="element-cn">Stabilità</span>
+    </div><div class="element-card metal">
+      <span class="element-hanzi">金</span>
+      <span class="element-name">METALLO</span>
+      <span class="element-cn">Precisione</span>
+    </div><div class="element-card water">
+      <span class="element-hanzi">水</span>
+      <span class="element-name">ACQUA</span>
+      <span class="element-cn">Saggezza</span>
+    </div></div>
+    <p id="elementi-p2">Ogni elemento porta una sfumatura diversa al carattere dell'animale: un Drago di Fuoco sarà più impulsivo e passionale, mentre un Drago di Acqua sarà più riflessivo e diplomatico. Per questo non basta conoscere l'animale: la combinazione con l'elemento rende ogni anno, e ogni persona, unico.</p>
+    <div class="highlight"><p id="elementi-highlight">💡 Si calcola l'elemento dell'anno dall'ultima cifra dell'anno di nascita: 0-1 → Metallo, 2-3 → Acqua, 4-5 → Legno, 6-7 → Fuoco, 8-9 → Terra. Ad esempio, chi è nato nel 2026 ha come elemento il Fuoco.</p></div>
 
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h3">Un sistema di qualità, non solo di anni</h3>
+    <p id="art-p4">Un errore molto comune di chi si avvicina per la prima volta a questo sistema è calcolare il segno usando semplicemente l'anno solare, ignorando lo scarto rispetto al Capodanno lunare: come visto, chi nasce a gennaio o nei primi giorni di febbraio rischia di attribuirsi l'animale sbagliato. Un secondo errore frequente è confondere lo zodiaco cinese con quello occidentale, trattandoli come sistemi equivalenti solo tradotti in animali: in realtà nascono da presupposti cosmologici del tutto diversi. Infine, molti credono erroneamente che l'elemento sia fisso per ogni animale, mentre cambia ogni due anni secondo il ciclo dei Wu Xing.</p>
+    <p id="art-p5">Tra i miti da sfatare, il più diffuso è che l'animale di nascita determini in modo assoluto e immutabile il carattere di una persona: la tradizione cinese lo considera piuttosto un'inclinazione di fondo, modulata dall'elemento, dal mese e dall'ora di nascita. È inoltre una curiosità poco nota che lo zodiaco degli animali non sia identico in tutta l'Asia: in Vietnam il Coniglio è sostituito dal Gatto e il Bue dal Bufalo d'acqua, mentre in alcune tradizioni giapponesi il Maiale diventa il Cinghiale. Conoscere queste varianti aiuta ad apprezzare un sistema di pensiero antico quanto affascinante, distinto ma per certi versi complementare all'astrologia occidentale.</p>
 
     <!-- Sotto-sezione: Anno del Cavallo 2026 -->
-    <h2 id="anno2026-title"></h2>
+    <h2 id="anno2026-title">2026: Anno del Cavallo di Fuoco</h2>
     <div class="card">
       <img src="./images/icone/cinese/cavallo.webp" srcset="./images/icone/cinese/cavallo.webp 1x" alt="" id="anno2026-img" loading="lazy" decoding="async" width="160" height="160" style="width:160px;border-radius:14px;display:block;margin:0 auto 16px">
-      <p id="anno2026-p1"></p>
-      <p id="anno2026-p2"></p>
+      <p id="anno2026-p1">Il 17 febbraio 2026 si apre l'anno del Cavallo di Fuoco (丙午), che durerà fino al 5 febbraio 2027. Il Cavallo è il settimo animale del ciclo e simboleggia energia, libertà, indipendenza e voglia di movimento. Combinato con l'elemento Fuoco, già naturalmente associato a questo segno, l'energia del 2026 risulta particolarmente intensa, dinamica e accelerata.</p>
+      <p id="anno2026-p2">È tradizionalmente considerato un anno favorevole per intraprendere nuovi progetti, viaggiare, cambiare lavoro o affrontare decisioni rimandate da tempo. La controparte di questa spinta propulsiva è una certa instabilità: la tradizione consiglia moderazione e attenzione a non lasciarsi trascinare da entusiasmi impulsivi.</p>
     </div>
 
     <!-- Sotto-sezione: Compatibilità -->
-    <h2 id="compat-title"></h2>
-    <p id="compat-p1"></p>
-    <table class="compat-table" id="compatTable"></table>
-    <p id="compat-p2"></p>
+    <h2 id="compat-title">Compatibilità tra Segni</h2>
+    <p id="compat-p1">La tradizione cinese individua gruppi di animali particolarmente affini, detti Triplici Affinità (三合), formati da segni che condividono valori ed energie compatibili:</p>
+    <table class="compat-table" id="compatTable"><tbody><tr><th>Trigono</th><th>Animali</th><th>Energia condivisa</th></tr><tr><td>1°</td><td>Topo · Drago · Scimmia</td><td>Ambizione e intelligenza strategica</td></tr><tr><td>2°</td><td>Bue · Serpente · Gallo</td><td>Metodo, costanza e precisione</td></tr><tr><td>3°</td><td>Tigre · Cavallo · Cane</td><td>Indipendenza e azione</td></tr><tr><td>4°</td><td>Coniglio · Capra · Maiale</td><td>Armonia, gentilezza e sensibilità</td></tr></tbody></table>
+    <p id="compat-p2">Esistono anche coppie di animali in opposizione diretta (相沖), che si trovano a 6 posizioni di distanza nel ciclo. Queste relazioni non significano incompatibilità assoluta, ma indicano dinamiche di forte confronto e crescita reciproca.</p>
 
     <!-- Sotto-sezione: BaZi -->
-    <h2 id="bazi-title"></h2>
-    <p id="bazi-p1"></p>
-    <p id="bazi-p2"></p>
-    <div class="highlight"><p id="bazi-highlight"></p></div>
+    <h2 id="bazi-title">Oroscopo Cinese vs BaZi: qual è la differenza?</h2>
+    <p id="bazi-p1">L'oroscopo cinese popolare, quello che assegna un solo animale in base all'anno di nascita, è la versione più semplice e diffusa dell'astrologia cinese, ma è anche la più generica: tutte le persone nate nello stesso anno condividono lo stesso segno.</p>
+    <p id="bazi-p2">Per un'analisi realmente personalizzata, la tradizione cinese utilizza il BaZi (Otto Caratteri), che considera anno, mese, giorno e ora di nascita per costruire un tema natale unico, con un livello di dettaglio molto più simile a quello dell'astrologia occidentale completa.</p>
+    <div class="highlight"><p id="bazi-highlight">🔮 Su MYSTICA puoi esplorare entrambi i livelli: l'oroscopo cinese classico per conoscere il tuo animale guida, e la guida al BaZi per approfondire l'astrologia cinese più avanzata.</p></div>
 
     <nav class="article-links" aria-label="Approfondimenti correlati">
-      <a href="./bazi-cinese.html" id="link-bazi"></a>
-      <a href="./zi-wei-dou-shu.html" id="link-ziwei"></a>
-      <a href="./astrologia-vedica.html" id="link-vedica"></a>
-      <a href="./oroscopo-segni.html" id="link-segni"></a>
-      <a href="./numerologia-simboli.html" id="link-numero"></a>
-      <a href="./guida-i-ching.html" id="link-iching"></a>
+      <a href="./bazi-cinese.html" id="link-bazi">八 BaZi: l'Astrologia Cinese degli Otto Caratteri</a>
+      <a href="./zi-wei-dou-shu.html" id="link-ziwei">⭐ Zi Wei Dou Shu: l'Astrologia delle Stelle Viola</a>
+      <a href="./astrologia-vedica.html" id="link-vedica">🕉️ Astrologia Vedica: il Jyotish indiano</a>
+      <a href="./oroscopo-segni.html" id="link-segni">♈ Segni Zodiacali Occidentali</a>
+      <a href="./numerologia-simboli.html" id="link-numero">🔢 Numerologia e Simboli</a>
+      <a href="./guida-i-ching.html" id="link-iching">☯️ I Ching: il Libro dei Mutamenti</a>
     </nav>
 
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- 3d. FAQ -->
   <section class="faq-section" aria-labelledby="faq-heading">
     <h2 class="faq-title" id="faq-heading">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Come si calcola il proprio segno zodiacale cinese?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Si calcola dall'anno di nascita, ma bisogna conoscere la data esatta del Capodanno cinese di quell'anno, che varia ogni volta tra fine gennaio e metà febbraio. Chi nasce prima di quella data appartiene ancora al segno dell'anno precedente. Usa il calcolatore qui sopra per un risultato immediato e preciso.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Quanti sono gli animali dello zodiaco cinese?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Sono 12: Topo, Bue, Tigre, Coniglio, Drago, Serpente, Cavallo, Capra, Scimmia, Gallo, Cane e Maiale, secondo l'ordine stabilito dalla leggenda della gara organizzata dall'Imperatore di Giada. Il ciclo si ripete ogni 12 anni in questo stesso ordine.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cosa sono i 5 elementi dello zodiaco cinese?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Sono Legno, Fuoco, Terra, Metallo e Acqua. Si combinano con i 12 animali creando un ciclo completo di 60 anni, dopo il quale la stessa combinazione animale-elemento si ripete esattamente. Puoi approfondire anche la numerologia collegata su MYSTICA.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è l'anno zodiacale cinese del 2026?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Il 2026 è l'anno del Cavallo di Fuoco, che inizia il 17 febbraio 2026 e termina il 5 febbraio 2027. È un anno associato a energia, dinamismo e voglia di azione, come raccontato nella sezione dedicata di questa pagina.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Qual è la differenza tra Oroscopo Cinese e BaZi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>L'oroscopo cinese popolare considera solo l'anno di nascita. Il BaZi analizza anno, mese, giorno e ora per un'analisi del destino molto più personalizzata e dettagliata: puoi scoprirlo nella guida dedicata al BaZi su MYSTICA.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
 
 <footer class="page-footer" role="contentinfo">
   <div class="footer-links">
-    <a href="./index.html" id="foot-home"></a>
-    <a href="./contatti.html" id="foot-contact"></a>
-    <a href="./about.html" id="foot-about"></a>
-    <a href="./privacy.html" id="foot-privacy"></a>
+    <a href="./index.html" id="foot-home">Home</a>
+    <a href="./contatti.html" id="foot-contact">Contatti</a>
+    <a href="./about.html" id="foot-about">Chi Siamo</a>
+    <a href="./privacy.html" id="foot-privacy">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità informativa, culturale e di intrattenimento. Non sostituiscono consulenze professionali di alcun tipo.</p>
 </footer>
 
 <!-- Premium Modal -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca il confronto di compatibilità completo tra il tuo segno e quello di un'altra persona, con analisi dettagliata di trigono, opposizione ed energia condivisa.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

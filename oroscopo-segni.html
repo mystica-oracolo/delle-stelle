@@ -859,13 +859,13 @@
   <!-- ══════ Header ══════ -->
   <header class="page-header">
     <div class="header-top">
-      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
       <div class="header-controls">
-        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
       </div>
     </div>
-    <h1 class="page-title" id="page-title"></h1>
+    <h1 class="page-title" id="page-title">♈ I Segni Zodiacali</h1>
     <div class="lang-switch">
       <button data-lang="it" class="btn-lang active">IT</button>
       <button data-lang="en" class="btn-lang">EN</button>
@@ -880,16 +880,176 @@
     <section class="nx-hero">
       <div class="nx-hero-zodiac" aria-hidden="true">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</div>
       <div class="nx-hero-content">
-        <span class="nx-hero-badge" id="heroBadge"></span>
-        <h2 id="heroTitle"></h2>
-        <p id="heroSub"></p>
-        <a href="#segniRows" class="nx-hero-cta" id="heroCta"></a>
+        <span class="nx-hero-badge" id="heroBadge">12 Segni · 4 Elementi</span>
+        <h2 id="heroTitle">I 12 Segni dello Zodiaco</h2>
+        <p id="heroSub">Scorri le carte per scoprire caratteristiche, elementi, pianeti dominanti e compatibilità di ogni segno zodiacale.</p>
+        <a href="#segniRows" class="nx-hero-cta" id="heroCta">🔮 Sfoglia i Segni</a>
       </div>
     </section>
 
     <!-- Righe orizzontali per elemento -->
     <section class="nx-rows" id="segniRows" aria-label="Segni zodiacali per elemento">
-      <div id="rowsContainer"></div>
+      <div id="rowsContainer">
+        <div class="nx-row">
+          <div class="nx-row-title">🔥 Fuoco Segni di</div>
+          <div class="nx-row-track">
+            
+              <div class="poster-card" tabindex="0" role="button" aria-label="ARIETE" onclick="openSignModal(0)" onkeydown="if(event.key==='Enter')openSignModal(0)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/ariete-oriz.webp" alt="ARIETE" width="132" height="150" loading="eager" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♈</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">ARIETE</div>
+                  <div class="poster-dates">21 mar – 19 apr</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="LEONE" onclick="openSignModal(4)" onkeydown="if(event.key==='Enter')openSignModal(4)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/leone-oriz.webp" alt="LEONE" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♌</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">LEONE</div>
+                  <div class="poster-dates">23 lug – 22 ago</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="SAGITTARIO" onclick="openSignModal(8)" onkeydown="if(event.key==='Enter')openSignModal(8)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/sagittario-oriz.webp" alt="SAGITTARIO" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♐</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">SAGITTARIO</div>
+                  <div class="poster-dates">22 nov – 21 dic</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+        <div class="nx-row">
+          <div class="nx-row-title">🌱 Terra Segni di</div>
+          <div class="nx-row-track">
+            
+              <div class="poster-card" tabindex="0" role="button" aria-label="TORO" onclick="openSignModal(1)" onkeydown="if(event.key==='Enter')openSignModal(1)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/toro-oriz.webp" alt="TORO" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♉</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">TORO</div>
+                  <div class="poster-dates">20 apr – 20 mag</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="VERGINE" onclick="openSignModal(5)" onkeydown="if(event.key==='Enter')openSignModal(5)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/vergine-oriz.webp" alt="VERGINE" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♍</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">VERGINE</div>
+                  <div class="poster-dates">23 ago – 22 set</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="CAPRICORNO" onclick="openSignModal(9)" onkeydown="if(event.key==='Enter')openSignModal(9)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/capricorno-oriz.webp" alt="CAPRICORNO" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♑</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">CAPRICORNO</div>
+                  <div class="poster-dates">22 dic – 19 gen</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+        <div class="nx-row">
+          <div class="nx-row-title">💨 Aria Segni di</div>
+          <div class="nx-row-track">
+            
+              <div class="poster-card" tabindex="0" role="button" aria-label="GEMELLI" onclick="openSignModal(2)" onkeydown="if(event.key==='Enter')openSignModal(2)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/gemelli-oriz.webp" alt="GEMELLI" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♊</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">GEMELLI</div>
+                  <div class="poster-dates">21 mag – 20 giu</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="BILANCIA" onclick="openSignModal(6)" onkeydown="if(event.key==='Enter')openSignModal(6)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/bilancia-oriz.webp" alt="BILANCIA" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♎</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">BILANCIA</div>
+                  <div class="poster-dates">23 set – 22 ott</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="ACQUARIO" onclick="openSignModal(10)" onkeydown="if(event.key==='Enter')openSignModal(10)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/acquario-oriz.webp" alt="ACQUARIO" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♒</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">ACQUARIO</div>
+                  <div class="poster-dates">20 gen – 18 feb</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+        <div class="nx-row">
+          <div class="nx-row-title">💧 Acqua Segni di</div>
+          <div class="nx-row-track">
+            
+              <div class="poster-card" tabindex="0" role="button" aria-label="CANCRO" onclick="openSignModal(3)" onkeydown="if(event.key==='Enter')openSignModal(3)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/cancro-oriz.webp" alt="CANCRO" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♋</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">CANCRO</div>
+                  <div class="poster-dates">21 giu – 22 lug</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="SCORPIONE" onclick="openSignModal(7)" onkeydown="if(event.key==='Enter')openSignModal(7)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/scorpione-oriz.webp" alt="SCORPIONE" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♏</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">SCORPIONE</div>
+                  <div class="poster-dates">23 ott – 21 nov</div>
+                </div>
+              </div>
+              <div class="poster-card" tabindex="0" role="button" aria-label="PESCI" onclick="openSignModal(11)" onkeydown="if(event.key==='Enter')openSignModal(11)">
+                <div class="poster-img-wrap">
+                  <img src="./images/zodiaco-orizzontale/pesci-oriz.webp" alt="PESCI" width="132" height="150" loading="lazy" decoding="async">
+                  <div class="poster-scrim"></div>
+                  <span class="poster-emoji">♓</span>
+                </div>
+                <div class="poster-info">
+                  <div class="poster-name">PESCI</div>
+                  <div class="poster-dates">19 feb – 20 mar</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Share -->
@@ -902,81 +1062,143 @@
           <a id="share-tg" href="#" target="_blank" rel="noopener">Telegram</a>
           <a id="share-fb" href="#" target="_blank" rel="noopener">Facebook</a>
           <a id="share-x" href="#" target="_blank" rel="noopener">X</a>
-          <button id="share-copy" onclick="copyLink()"></button>
+          <button id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
         </div>
       </div>
     </div>
 
     <!-- Articolo editoriale -->
     <article class="article-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Storia e Origini dei Segni Zodiacali</h2>
       <img src="./images/icone/home/oroscopo-segni.webp"
            id="art-hero"
            alt=""
            loading="eager"
            decoding="async"
            width="1200" height="630">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h2">Da Babilonia alle App: un Viaggio di Quattromila Anni</h3>
+      <p id="art-p1">Lo zodiaco che oggi troviamo su riviste, app e oroscopi quotidiani affonda le radici nell'antica Mesopotamia. Furono gli astronomi babilonesi, già nel secondo millennio a.C., a suddividere il percorso apparente del Sole in dodici settori, ciascuno legato a una costellazione. Questo sistema arrivò in Grecia attorno al IV secolo a.C. e venne codificato in modo sistematico da Claudio Tolomeo nel suo Tetrabiblos, opera del II secolo d.C. che per oltre un millennio restò il testo di riferimento dell'astrologia occidentale.</p>
+      <p id="art-p2">Ogni segno viene associato a uno dei quattro elementi classici — fuoco, terra, aria, acqua — e a una delle tre modalità: cardinale, fisso, mutevole. Questa combinazione non è casuale: i segni di fuoco (Ariete, Leone, Sagittario) rappresentano l'iniziativa e l'energia vitale, i segni di terra (Toro, Vergine, Capricorno) la concretezza e la costruzione, i segni d'aria (Gemelli, Bilancia, Acquario) la mente e la relazione, i segni d'acqua (Cancro, Scorpione, Pesci) l'emotività e l'intuizione. Le tre modalità descrivono invece come ciascun segno agisce nel proprio elemento: avviando, mantenendo o trasformando.</p>
+      <p id="art-p3">Un errore comune è ridurre l'astrologia al solo segno solare, quello che leggiamo nell'oroscopo dei quotidiani. In realtà un tema natale completo considera anche il segno lunare, che descrive la vita emotiva, e l'ascendente, che indica come una persona appare agli altri al primo impatto. Due persone nate lo stesso giorno ma in città diverse possono avere ascendenti completamente diversi, perché questo dipende dall'ora e dal luogo esatti di nascita, non solo dalla data.</p>
+      <h3 id="art-h3">Zodiaco Occidentale e Zodiaco Vedico: Due Sguardi sul Cielo</h3>
+      <p id="art-p4">Accanto allo zodiaco tropicale usato in Occidente esiste lo zodiaco sidereo, alla base dell'astrologia vedica (Jyotish) praticata in India. La differenza tra i due sistemi, dovuta alla precessione degli equinozi, oggi supera i venti gradi: questo significa che chi nasce sotto il segno occidentale dei Pesci potrebbe risultare Acquario nello zodiaco vedico. Nessuno dei due sistemi è "sbagliato": semplicemente misurano il cielo con riferimenti diversi, uno legato alle stagioni e l'altro alle stelle fisse.</p>
+      <p id="art-p5">Al di là delle divergenze tecniche, i segni zodiacali restano un linguaggio simbolico condiviso da millenni di culture diverse: cinese, indiana, mesopotamica, greca, ognuna con la propria lente. Comprendere gli elementi e le modalità aiuta a leggere l'oroscopo con più consapevolezza, distinguendo tra intrattenimento popolare e tradizione astrologica più articolata, senza però trasformare nessuna delle due in una certezza assoluta sul proprio destino.</p>
       <nav class="article-links" aria-label="Approfondimenti correlati">
         <a href="./tarocchi.html">Tarocchi e cartomanzia</a>
         <a href="./numerologia.html">Numerologia del proprio nome</a>
         <a href="./luna-pianeti.html">Fasi lunari e pianeti</a>
         <a href="./astrologia-vedica.html">Astrologia vedica</a>
       </nav>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
 
     <!-- Compatibilità -->
     <section class="compat-section" aria-labelledby="compatTitle">
       <div class="section-inner" style="padding:0">
-        <h2 id="compatTitle"></h2>
+        <h2 id="compatTitle">✦ Compatibilità tra Segni Zodiacali</h2>
         <div class="compat-card">
-          <p id="compatIntro"></p>
-          <ul id="compatList"></ul>
+          <p id="compatIntro">La compatibilità astrologica vera dipende dai temi natali completi. Detto questo, esiste una tendenza generale basata sugli elementi:</p>
+          <ul id="compatList"><li><strong>🔥 Fuoco + 💨 Aria</strong> — Combinazione molto compatibile. L'aria alimenta il fuoco: i segni d'aria stimolano intellettualmente i segni di fuoco, che danno energia alle idee aeree.</li><li><strong>🌱 Terra + 💧 Acqua</strong> — Abbinamento eccellente. La terra dà struttura all'acqua, l'acqua nutre la terra. Stabilità e profondità emotiva si incontrano.</li><li><strong>🔥 Fuoco + 🔥 Fuoco</strong> — Passione esplosiva e comprensione reciproca, ma rischio di competizione e scontri.</li><li><strong>🌱 Terra + 🌱 Terra</strong> — Solido e affidabile, ma può mancare di scintilla nel tempo.</li><li><strong>💧 Acqua + 💧 Acqua</strong> — Profondità emotiva straordinaria, ma rischio di perdersi senza direzione pratica.</li></ul>
         </div>
-        <div class="compat-highlight" id="compatHighlight"></div>
+        <div class="compat-highlight" id="compatHighlight">⭐ <strong>Ricorda:</strong> L'astrologia offre tendenze, non certezze. La compatibilità vera dipende dalla comunicazione e dalla volontà di costruire qualcosa insieme — indipendentemente dai segni.</div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq-section" aria-labelledby="faqTitle">
       <div class="section-inner" style="padding:0">
-        <h2 id="faqTitle"></h2>
-        <div id="faqList"></div>
+        <h2 id="faqTitle">✦ Domande Frequenti</h2>
+        <div id="faqList">
+        <div class="faq-item" id="faq-0">
+          <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+            <span>Quali sono i segni zodiacali di fuoco?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-ans-0" hidden="">
+            <p>I tre segni di fuoco sono <strong>Ariete</strong>, <strong>Leone</strong> e <strong>Sagittario</strong>. Condividono energia, entusiasmo, passione e impulso all'azione. Sono i segni più dinamici dello zodiaco.</p>
+          </div>
+        </div>
+      
+        <div class="faq-item" id="faq-1">
+          <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+            <span>Cosa determina il segno zodiacale?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-ans-1" hidden="">
+            <p>Il segno zodiacale è determinato dalla <strong>posizione del Sole al momento della nascita</strong>. Lo zodiaco divide l'eclittica in 12 sezioni di 30° ciascuna, corrispondenti alle 12 costellazioni che il Sole attraversa nel corso di un anno.</p>
+          </div>
+        </div>
+      
+        <div class="faq-item" id="faq-2">
+          <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+            <span>Qual è la differenza tra segno solare, lunare e ascendente?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-ans-2" hidden="">
+            <p>Il <strong>segno solare</strong> descrive l'identità conscia e la personalità. Il <strong>segno lunare</strong> governa le emozioni e il mondo interiore. L'<strong>ascendente</strong> descrive come ci presentiamo al mondo e l'immagine esterna.</p>
+          </div>
+        </div>
+      
+        <div class="faq-item" id="faq-3">
+          <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+            <span>Quali segni zodiacali vanno d'accordo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-ans-3" hidden="">
+            <p>Le combinazioni più armoniche sono generalmente <strong>Fuoco con Aria</strong> e <strong>Terra con Acqua</strong>. I segni dello stesso elemento si comprendono facilmente. I segni opposti nello zodiaco possono avere forte attrazione ma anche tensione.</p>
+          </div>
+        </div>
+      
+        <div class="faq-item" id="faq-4">
+          <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+            <span>Qual è il segno più compatibile con il Toro?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-ans-4" hidden="">
+            <p>Il Toro ha le migliori compatibilità con gli altri segni di terra (<strong>Vergine e Capricorno</strong>) e con i segni d'acqua (Cancro, Scorpione, Pesci). La combinazione Terra-Acqua è particolarmente armoniosa.</p>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 
     <!-- Related -->
     <section class="related-section">
       <div class="section-inner" style="padding:0">
-        <h2 id="relatedTitle"></h2>
-        <div class="related-grid" id="relatedGrid"></div>
+        <h2 id="relatedTitle">✦ Approfondisci su MYSTICA</h2>
+        <div class="related-grid" id="relatedGrid">
+        <a href="./tarocchi.html" class="related-link">
+          <span class="related-link-icon">🔮</span>
+          <div class="related-link-text">Tarocchi</div>
+        </a>
+        <a href="./enciclopedia.html" class="related-link">
+          <span class="related-link-icon">📖</span>
+          <div class="related-link-text">Enciclopedia</div>
+        </a>
+        <a href="./iching.html" class="related-link">
+          <span class="related-link-icon">☯️</span>
+          <div class="related-link-text">I Ching</div>
+        </a></div>
       </div>
     </section>
   </main>
 
   <!-- Esplora -->
   <section class="esplora-section" aria-label="Esplora MYSTICA">
-    <h2 id="esploraTitle"></h2>
-    <div class="esplora-grid" id="esploraGrid"></div>
+    <h2 id="esploraTitle">✨ Esplora Anche</h2>
+    <div class="esplora-grid" id="esploraGrid"><a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a><a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a><a href="./bazi-cinese.html" class="esplora-card">🐉 Bazi Cinese</a><a href="./cicli-tempo.html" class="esplora-card">🌙 Cicli e Tempo</a><a href="./human-design.html" class="esplora-card">✨ Human Design</a><a href="./pietre-magiche.html" class="esplora-card">💎 Pietre Magiche</a></div>
   </section>
 
   <!-- ══════ Footer ══════ -->
   <footer class="page-footer">
     <div class="footer-links">
-      <a href="./index.html" id="footerHome"></a>
-      <a href="./contatti.html" id="footerContact"></a>
-      <a href="./about.html" id="footerAbout"></a>
-      <a href="./privacy.html" id="footerPrivacy"></a>
+      <a href="./index.html" id="footerHome">Home</a>
+      <a href="./contatti.html" id="footerContact">Contatti</a>
+      <a href="./about.html" id="footerAbout">Chi Siamo</a>
+      <a href="./privacy.html" id="footerPrivacy">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p class="footer-disclaimer" id="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p class="footer-disclaimer" id="footer-disclaimer">DISCLAIMER: MYSTICA fornisce contenuti per intrattenimento. Non è una consulenza medica, finanziaria o legale. Consultare professionisti qualificati per decisioni importanti.</p>
   </footer>
 
   <!-- Modal dettaglio segno (stile "preview" Netflix) -->
@@ -1003,12 +1225,12 @@
   <div class="premium-modal" id="premiumModal" aria-hidden="true">
     <div class="modal-overlay" onclick="closePremiumModal()"></div>
     <div class="modal-content">
-      <h2 id="premium-title"></h2>
-      <p id="premium-text"></p>
-      <p class="premium-price" id="premium-price"></p>
+      <h2 id="premium-title">✦ Funzione Premium</h2>
+      <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutte le categorie MYSTICA.</p>
+      <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
       <button class="btn-premium-buy" id="premium-btn"
-        onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-      <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+        onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
     </div>
   </div>
 

@@ -413,10 +413,10 @@ textarea::placeholder{color:var(--muted)}
 <!-- ── Header ── -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">🧠 Mente &amp; Energia</h1>
@@ -435,7 +435,7 @@ textarea::placeholder{color:var(--muted)}
 <div class="me-hero">
   <div class="me-hero-icon" aria-hidden="true">🧠</div>
   <h2><span>&</span> Mente Energia</h2>
-  <p class="me-hero-desc" id="hero-desc"></p>
+  <p class="me-hero-desc" id="hero-desc">Tecniche antiche e moderne per espandere la coscienza, liberare blocchi energetici e riconoscere i messaggi dell'universo.</p>
 </div>
 
 <!-- ── Nav Pills ── -->
@@ -823,7 +823,7 @@ textarea::placeholder{color:var(--muted)}
       <div class="sec-title">📓 Diario delle Regressioni</div>
       <textarea id="regInput" rows="4" placeholder="Descrivi la tua esperienza: immagini, sensazioni, emozioni, luoghi, persone, messaggi ricevuti..."></textarea>
       <button class="btn-me" onclick="saveReg()">💾 Salva Esperienza</button>
-      <div id="regLog" style="margin-top:12px"></div>
+      <div id="regLog" style="margin-top:12px"><div style="text-align:center;color:var(--muted);font-style:italic;font-size:13px;padding:16px 0">Le tue esperienze appariranno qui.</div></div>
     </div>
 
   </div>
@@ -880,7 +880,7 @@ textarea::placeholder{color:var(--muted)}
     <div class="me-tab-content" id="et-sessione">
       <div class="eft-intensity">
         <div class="eft-int-label">Intensità Attuale del Problema (SUD 0-10)</div>
-        <div class="eft-int-track" id="eftIntTrack"></div>
+        <div class="eft-int-track" id="eftIntTrack"><div class="eft-int-dot">1</div><div class="eft-int-dot">2</div><div class="eft-int-dot">3</div><div class="eft-int-dot">4</div><div class="eft-int-dot">5</div><div class="eft-int-dot">6</div><div class="eft-int-dot">7</div><div class="eft-int-dot">8</div><div class="eft-int-dot">9</div><div class="eft-int-dot">10</div></div>
         <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--muted)" id="eftIntLabel">Tocca un punto per valutare</div>
       </div>
 
@@ -1043,13 +1043,13 @@ textarea::placeholder{color:var(--muted)}
     <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
     <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener noreferrer">👥 Facebook</a>
     <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener noreferrer">🐦 X</a>
-    <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+    <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
   </div>
 </div>
 
 <!-- ── Articolo Editoriale ── -->
 <article class="article-section">
-  <h2 id="art-title"></h2>
+  <h2 id="art-title">Mente ed Energia: il Confine tra Scienza e Tradizione Contemplativa</h2>
   <figure>
     <img src="./images/mente-energia.webp"
          srcset="./images/mente-energia.webp 1x"
@@ -1058,26 +1058,76 @@ textarea::placeholder{color:var(--muted)}
          width="480" height="270"
          style="width:100%;border-radius:14px;margin:16px 0">
   </figure>
-  <h3 id="art-h2"></h3>
-  <p id="art-p1"></p>
-  <p id="art-p2"></p>
-  <p id="art-p3"></p>
-  <h3 id="art-h3"></h3>
-  <p id="art-p4"></p>
-  <p id="art-p5"></p>
+  <h3 id="art-h2">La Mappa della Coscienza — Dai Testi Antichi alla Neuroscienza</h3>
+  <p id="art-p1">Per millenni le tradizioni contemplative — induismo, buddhismo, taoismo, sciamanismo, le scuole ermetiche d'Occidente — hanno sviluppato mappe della coscienza dettagliate, con tecniche per espanderne i confini. Il Pranayama vedico, codificato nei Veda circa 3.000 anni fa, era già una scienza sofisticata della modulazione del respiro per agire sull'energia sottile (prana). I testi tantrici del Kashmir Shaivismo del IX secolo descrivono stati di coscienza espansa identici a quelli che la neuroscienza moderna classifica come "stati di flusso" o "esperienza di picco". La tradizione occidentale alchemica e la Cabala ebraica hanno elaborato percorsi di trasformazione interiore altrettanto rigorosi, seppure con linguaggi diversi.</p>
+  <p id="art-p2">La moderna neuroscienze ha iniziato a studiare queste pratiche solo dagli anni '90, con la prima ricerca scientifica sulla meditazione condotta da Jon Kabat-Zinn al MIT. Da allora, oltre 6.000 studi peer-reviewed hanno documentato gli effetti delle tecniche contemplative: la meditazione mindfulness riduce il volume dell'amigdala e aumenta la densità della corteccia prefrontale; il Pranayama modula la variabilità della frequenza cardiaca; l'EFT riduce i livelli di cortisolo salivare del 24-43% in sessioni singole. Quello che i maestri antichi chiamavano "liberazione dalla sofferenza" o "espansione della coscienza" mostra correlati neurobiologici misurabili.</p>
+  <p id="art-p3">La meditazione non è rilassamento passivo. È un'abilità attiva che richiede pratica, come suonare uno strumento. I principianti spesso abbandonano dopo pochi giorni, convinti che "non riescono a non pensare". Il malinteso fondamentale è questo: la meditazione non consiste nel fermare i pensieri — è impossibile. Consiste nell'osservare i pensieri senza identificarsi con essi. Ogni volta che la mente vaga e tu la riporti al respiro, stai esercitando il "muscolo" dell'attenzione. Questo è l'esercizio.</p>
+  <h3 id="art-h3">Pratiche, Strumenti e il Loro Uso Corretto</h3>
+  <p id="art-p4">L'EFT fu sviluppata da Gary Craig negli anni '90 a partire dal lavoro del dott. Roger Callahan sulla Thought Field Therapy, a sua volta derivata dall'agopressura cinese. La tecnica si è poi evoluta in decine di varianti. La ricerca più solida si concentra sull'EFT per PTSD: uno studio del 2013 su veterani di guerra (Church et al.) ha mostrato riduzioni del 64% nei sintomi diagnostici dopo sole sei sessioni. Il Journal of Evidence-Based Integrative Medicine ha pubblicato nel 2019 una meta-analisi di 14 studi randomizzati confermando l'efficacia per depressione, ansia e PTSD. Non è magia: è neurobiologia applicata ai meridiani.</p>
+  <p id="art-p5">Le sincronicità — il termine che Carl Gustav Jung coniò nel 1952 in collaborazione con il fisico Wolfgang Pauli — rappresentano uno dei concetti più controversi e affascinanti della psicologia del profondo. Jung le definì come "coincidenze di significato" tra eventi interni (pensieri, sogni, intuizioni) ed eventi esterni, prive di nesso causale apparente. La sua collaborazione con Pauli — premio Nobel per la fisica — non era accidentale: entrambi cercavano un principio di connessione acausale che spiegasse fenomeni come la sincronicità e la non-località quantistica. Che si tratti di psicologia dell'inconscio o di fisica, la pratica di notare e annotare le sincronicità sviluppa una qualità di attenzione alla vita che, indipendentemente dalla spiegazione, produce orientamento e significato.</p>
   <nav class="article-links" aria-label="Approfondimenti correlati">
     <a href="./sogni.html">🌙 Interpretazione dei Sogni — Esplora l'inconscio notturno</a>
     <a href="./viaggio-astrale.html">✨ Viaggio Astrale — Tecniche di proiezione e OBE</a>
     <a href="./tradizioni-spirituali.html">🌍 Tradizioni Spirituali — Pratiche contemplative nel mondo</a>
     <a href="./pietre-magiche.html">💎 Pietre Magiche — Cristalli per meditazione ed energia</a>
   </nav>
-  <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+  <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
 </article>
 
 <!-- ── FAQ ── -->
 <section class="faq-section">
   <h2 class="faq-title">FAQ</h2>
-  <div class="faq-list" id="faqList"></div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Quante volte alla settimana dovrei meditare per vedere risultati?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>La ricerca scientifica mostra effetti misurabili con una pratica quotidiana di 8 settimane, anche solo 10-15 minuti al giorno. La costanza batte la durata: 10 minuti ogni giorno è più efficace di 1 ora una volta a settimana. Il programma MBSR (Mindfulness-Based Stress Reduction) di Jon Kabat-Zinn, il più studiato al mondo, prevede 45 minuti al giorno per 8 settimane — ma anche versioni ridotte mostrano benefici significativi. Inizia con 10 minuti, mattina o sera, e aumenta gradualmente.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>La respirazione Wim Hof è sicura? Per chi non è consigliata?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il Metodo Wim Hof (iperventilazione seguita da trattenuta del respiro) è documentato da studi dell'Università di Radboud che mostrano effetti sul sistema immunitario e sulla risposta allo stress. Non è consigliata per: gravidanza, epilessia, malattie cardiovascolari, ipertensione, storia di ictus o perdita di conoscenza. Non va MAI praticata in acqua o alla guida — la bassa di CO2 può causare svenimento. Le persone sane e adulte che la praticano correttamente riportano aumenti di energia, riduzione dell'ansia e miglioramenti del sonno.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>I numeri angelici sono reali o è solo apofenia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>L'apofenia è la tendenza umana a trovare pattern significativi nel rumore casuale — è una caratteristica del cervello, non un difetto. Che i numeri "angelici" abbiano una realtà metafisica oggettiva è una questione filosofica aperta. Quello che è documentato è l'effetto psicologico: prestare attenzione ai numeri ripetuti crea uno stato di apertura e riflessività che spesso porta a intuizioni genuine. Jung lo chiamava "funzione simbolica dell'inconscio". Se il numero 444 ti ferma un momento e ti chiedi "cosa stava succedendo nella mia vita in questo istante?", l'utilità non è nella risposta del numero — è nella domanda che hai fatto a te stesso.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Come si distingue un'esperienza di regressione autentica da fantasia creativa?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Questa è la domanda che anche i ricercatori più seri pongono. Brian Weiss, psichiatra di Yale, ha documentato casi in cui pazienti fornivano dettagli storici verificabili di cui non potevano avere conoscenza pregressa (lingue antiche, nomi, luoghi). D'altra parte, la mente creativa è potentissima nel produrre narrative convincenti. Il confine è sfumato e probabilmente irrilevante: l'approccio terapeutico alla regressione si concentra sul significato emotivo e simbolico dell'esperienza, non sulla sua storicità letterale. Se una "vita passata" ti aiuta a capire un pattern doloroso della vita attuale, il valore è reale indipendentemente dalla sua natura.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Posso combinare EFT con la meditazione o la respirazione?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Assolutamente sì — e molti professionisti lo consigliano. Una sequenza efficace: inizia con 5 minuti di respirazione diaframmatica profonda per calmare il sistema nervoso; poi 2-3 round di EFT sull'emozione o blocco che vuoi affrontare; chiudi con 10 minuti di meditazione per integrare il rilascio. Questa combinazione lavora su tre livelli: il corpo (respiro), il sistema energetico-emotivo (EFT) e la mente (meditazione). L'ordine è importante: calma prima, poi lavora sul materiale emotivo, poi integra.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 </div><!-- /content -->
@@ -1092,23 +1142,21 @@ textarea::placeholder{color:var(--muted)}
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p class="footer-copy" id="footer-copy"></p>
-  <p class="footer-disclaimer" id="footer-disclaimer"></p>
+  <p class="footer-copy" id="footer-copy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p class="footer-disclaimer" id="footer-disclaimer">Le tecniche di meditazione, respirazione e tapping descritte hanno scopo informativo e di benessere personale. Non sostituiscono diagnosi medica o psicologica.</p>
 </footer>
 
 <!-- ── Premium Modal ── -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca meditazioni avanzate, diari illimitati e interpretazioni complete per la tua crescita spirituale.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

@@ -343,14 +343,14 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
-  <div class="page-subtitle" id="page-subtitle"></div>
+  <h1 class="page-title" id="page-title">🔮 Profilo Mistico</h1>
+  <div class="page-subtitle" id="page-subtitle">La tua mappa cosmica personale</div>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -363,34 +363,34 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
   <!-- FORM (sezione interattiva — SEMPRE IN CIMA) -->
   <div class="form-card" id="formCard">
-    <h2 id="formTitle"></h2>
-    <p id="formDesc"></p>
+    <h2 id="formTitle">✨ Inserisci i tuoi dati</h2>
+    <p id="formDesc">Il profilo mistico viene generato dalla tua data di nascita e custodito solo sul tuo dispositivo</p>
 
     <div class="field" id="fieldName">
-      <label id="labelName"></label>
+      <label id="labelName">Il tuo nome</label>
       <input type="text" id="inpName" placeholder="" maxlength="40" autocomplete="given-name">
     </div>
 
     <div class="field">
-      <label id="labelBirth"></label>
+      <label id="labelBirth">Data di nascita</label>
       <div class="date-row">
-        <select id="wDay" aria-label="Giorno"></select>
-        <select id="wMonth" aria-label="Mese"></select>
-        <select id="wYear" aria-label="Anno"></select>
+        <select id="wDay" aria-label="Giorno"><option value="">Giorno</option><option value="01">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+        <select id="wMonth" aria-label="Mese"><option value="">Mese</option><option value="01">Gennaio</option><option value="02">Febbraio</option><option value="03">Marzo</option><option value="04">Aprile</option><option value="05">Maggio</option><option value="06">Giugno</option><option value="07">Luglio</option><option value="08">Agosto</option><option value="09">Settembre</option><option value="10">Ottobre</option><option value="11">Novembre</option><option value="12">Dicembre</option></select>
+        <select id="wYear" aria-label="Anno"><option value="">Anno</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
       </div>
     </div>
 
     <div class="field">
-      <label id="labelGender"></label>
+      <label id="labelGender">Genere (opzionale)</label>
       <select id="inpGender">
-        <option value="" id="genderOptUnspec"></option>
-        <option value="f" id="genderOptF"></option>
-        <option value="m" id="genderOptM"></option>
-        <option value="o" id="genderOptO"></option>
+        <option value="" id="genderOptUnspec">— Non specificato —</option>
+        <option value="f" id="genderOptF">Femminile</option>
+        <option value="m" id="genderOptM">Maschile</option>
+        <option value="o" id="genderOptO">Altro</option>
       </select>
     </div>
 
-    <button class="btn-gen" id="btnGenerate" onclick="generaProfilo()"></button>
+    <button class="btn-gen" id="btnGenerate" onclick="generaProfilo()">🌟 Genera il Mio Profilo Mistico</button>
   </div>
 
   <!-- OUTPUT -->
@@ -409,12 +409,12 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
     <!-- MESSAGGIO COSMICO -->
     <div class="cosmic-msg">
       <div class="msg-text" id="cosmicMsg"></div>
-      <div class="msg-src" id="cosmicMsgSrc"></div>
+      <div class="msg-src" id="cosmicMsgSrc">✦ Messaggio dell'Universo ✦</div>
     </div>
 
     <!-- NUMERO DESTINO -->
     <div class="section-card">
-      <h3 id="destinySectionTitle"></h3>
+      <h3 id="destinySectionTitle">🔢 Numero del Destino</h3>
       <div class="destiny-display">
         <div class="destiny-num" id="destNum">—</div>
         <div class="destiny-info">
@@ -426,7 +426,7 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
     <!-- ANIMALE CINESE -->
     <div class="section-card" id="cineseCard">
-      <h3 id="cineseSectionTitle"></h3>
+      <h3 id="cineseSectionTitle">🐉 Animale dello Zodiaco Cinese</h3>
       <div class="cinese-display">
         <div class="cinese-emoji" id="cineseEmoji">🐭</div>
         <div class="cinese-info">
@@ -436,69 +436,119 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
         </div>
       </div>
       <div class="divider"></div>
-      <div style="font-size:13px;color:var(--muted)"><span id="cineseFortunaLabel"></span> <span id="cineseFortuna" style="color:var(--gold)"></span></div>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px"><span id="cineseOggettoLabel"></span> <span id="cineseOggetto" style="color:var(--text)"></span></div>
+      <div style="font-size:13px;color:var(--muted)"><span id="cineseFortunaLabel">🎨 Colori fortunati:</span> <span id="cineseFortuna" style="color:var(--gold)"></span></div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px"><span id="cineseOggettoLabel">🔮 Oggetto totemico:</span> <span id="cineseOggetto" style="color:var(--text)"></span></div>
     </div>
 
     <!-- PIETRE -->
     <div class="section-card">
-      <h3 id="pietreSectionTitle"></h3>
+      <h3 id="pietreSectionTitle">💎 Le Tue Pietre Mistiche</h3>
       <div id="pietreList"></div>
     </div>
 
     <!-- OGGETTI -->
     <div class="section-card">
-      <h3 id="oggettiSectionTitle"></h3>
+      <h3 id="oggettiSectionTitle">🔮 I Tuoi Oggetti Fortunati</h3>
       <div id="oggettiList"></div>
     </div>
 
     <!-- COMPATIBILI TOP -->
     <div class="section-card">
-      <h3 id="compatSectionTitle"></h3>
+      <h3 id="compatSectionTitle">💞 Segni Più Compatibili con Te</h3>
       <div id="compatTop"></div>
     </div>
 
     <!-- RESET / PREMIUM -->
-    <button class="btn-reset" id="btnReset" onclick="resetProfilo()"></button>
-    <button class="btn-premium-cta" id="btnPremiumCta" onclick="if(!requirePremium('interpretazione_estesa'))return;"></button>
+    <button class="btn-reset" id="btnReset" onclick="resetProfilo()">↩ Modifica Profilo</button>
+    <button class="btn-premium-cta" id="btnPremiumCta" onclick="if(!requirePremium('interpretazione_estesa'))return;">🔓 Interpretazione Estesa del Profilo</button>
 
   </div>
 
   <!-- SHARE -->
   <div class="share-section">
-    <button class="btn-share" id="btnShareMain" onclick="shareContent()"></button>
+    <button class="btn-share" id="btnShareMain" onclick="shareContent()">📤 Condividi il Tuo Profilo</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ARTICOLO EDITORIALE -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h2 id="art-title">Il Profilo Mistico: la Sintesi delle Tue Coordinate Cosmiche</h2>
+    <h3 id="art-h2">Origini e Fondamenti del Profilo Astro-Numerologico</h3>
+    <p id="art-p1">L'idea di racchiudere in un'unica mappa la data di nascita di una persona affonda le radici in pratiche antichissime: l'astrologia babilonese del II millennio a.C. legava già i pianeti al destino individuale, mentre la numerologia pitagorica, sviluppata nella Magna Grecia intorno al VI secolo a.C., attribuiva ai numeri un significato vibrazionale preciso. Parallelamente, in Cina, l'astrologia dello zodiaco dei dodici animali veniva codificata durante la dinastia Han per calcolare compatibilità dinastiche e auspici agricoli. Il profilo mistico moderno unisce questi tre sistemi millenari — segno solare, numero del destino e animale cinese — restituendo una fotografia sintetica e multiculturale dell'identità cosmica di ciascuno.</p>
+    <p id="art-p2">Ogni elemento del profilo racconta una parte diversa della persona. Il segno zodiacale, governato da un pianeta e da un elemento (fuoco, terra, aria o acqua), descrive il temperamento istintivo e il modo in cui reagiamo agli stimoli. Il numero del destino, ottenuto sommando le cifre della data di nascita fino a ridurle a un numero singolo o a un numero maestro come 11, 22 o 33, rivela invece la missione evolutiva secondo la tradizione pitagorica e la sua rielaborazione novecentesca. L'animale dello zodiaco cinese, calcolato sull'anno solare, aggiunge infine una lente relazionale e caratteriale che nella cultura orientale accompagna ogni decisione importante, dal matrimonio agli affari.</p>
+    <p id="art-p3">Per ottenere un profilo attendibile basta inserire nome, data di nascita completa e, facoltativamente, il genere: l'algoritmo calcola istantaneamente segno solare, numero del destino e animale cinese, restituendo pietre, oggetti simbolici e le affinità zodiacali più forti. Il consiglio è di rileggere il proprio profilo con calma, annotando quali affermazioni risuonano davvero e quali invece sembrano generiche: la vera utilità di questi strumenti non sta nella predizione meccanica ma nello stimolo alla riflessione su tendenze, risorse interiori e aree di crescita personale, da usare come bussola simbolica più che come verdetto assoluto.</p>
+    <h3 id="art-h3">Come Leggere e Usare la Tua Mappa Cosmica</h3>
+    <p id="art-p4">Un errore frequente è credere che il profilo mistico sostituisca un tema natalo completo: in realtà il segno solare descrive solo la posizione del Sole al momento della nascita, mentre un vero studio astrologico richiede ora e luogo esatti per calcolare ascendente, case e aspetti planetari. Un altro mito diffuso è che il numero del destino "predica" eventi specifici: la tradizione numerologica lo interpreta piuttosto come un potenziale caratteriale da sviluppare consapevolmente. Allo stesso modo, l'animale cinese non è un oroscopo annuale ma un archetipo di personalità da integrare, non da seguire alla lettera come un manuale di istruzioni.</p>
+    <p id="art-p5">A differenza dei tarocchi o delle rune, che offrono risposte contestuali a una domanda precisa, il profilo mistico è uno strumento anagrafico: nasce una volta sola dalla data di nascita e resta stabile nel tempo, mentre gli oracoli generano ogni volta letture diverse. Una curiosità poco nota è che i numeri maestri 11, 22 e 33 non vengono mai ridotti nella numerologia pitagorica classica perché considerati portatori di un potenziale spirituale superiore alla media: comparire con uno di questi numeri nel proprio profilo è statisticamente raro e viene tradizionalmente letto come un segno di responsabilità karmica particolare.</p>
     <nav class="article-links" aria-label="Approfondimenti correlati">
-      <a href="./numerologia.html" id="link-numerologia"></a>
-      <a href="./oroscopo-segni.html" id="link-oroscopo"></a>
-      <a href="./compatibilita.html" id="link-compat"></a>
-      <a href="./human-design.html" id="link-hd"></a>
+      <a href="./numerologia.html" id="link-numerologia">🔢 Approfondisci il tuo numero del destino nella Numerologia</a>
+      <a href="./oroscopo-segni.html" id="link-oroscopo">♈ Leggi l'oroscopo completo del tuo segno</a>
+      <a href="./compatibilita.html" id="link-compat">💞 Calcola la compatibilità di coppia completa</a>
+      <a href="./human-design.html" id="link-hd">🧬 Scopri anche il tuo Human Design</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section">
     <h2 class="faq-title" id="faqSectionTitle">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Come viene calcolato il segno zodiacale nel profilo mistico?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Il segno solare viene calcolato automaticamente confrontando giorno e mese della data inserita con gli intervalli tradizionali dei dodici segni, da Ariete (21 marzo) a Pesci (20 marzo). Non serve conoscere l'ora di nascita: basta la data completa. Per un'analisi più approfondita puoi consultare anche <a href="./oroscopo-segni.html">la guida completa ai segni zodiacali</a>.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cos'è il numero del destino e come si calcola?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Si sommano tutte le cifre della data di nascita (giorno, mese, anno) fino a ottenere un numero singolo da 1 a 9. Se durante la somma compare 11, 22 o 33, il calcolo si ferma: sono considerati "numeri maestri" nella tradizione pitagorica e portano un significato più intenso. Trovi il metodo completo nella pagina di <a href="./numerologia.html">Numerologia</a>.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Il mio profilo mistico viene salvato o condiviso online?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>No. Nome, data di nascita e genere restano esclusivamente sul tuo dispositivo grazie a localStorage: non vengono mai inviati a server esterni, non sono visibili ad altri utenti e non vengono usati per pubblicità di terze parti. Puoi cancellarli in ogni momento generando un nuovo profilo.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra profilo mistico e tema natale completo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Il profilo mistico è una sintesi rapida basata solo sulla data di nascita. Un tema natale astrologico completo richiede invece anche ora e luogo esatti di nascita per calcolare ascendente, case astrologiche e aspetti tra i pianeti: uno strumento più tecnico, riservato a chi vuole approfondire con l'<a href="./human-design.html">analisi Human Design</a> o l'astrologia avanzata.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Posso generare il profilo mistico di un'altra persona?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Certamente. Puoi modificare nome, data di nascita e genere nel form in qualsiasi momento tramite il pulsante "Modifica Profilo": ogni nuova generazione sovrascrive i dati precedenti salvati sul dispositivo, così puoi confrontare il tuo profilo con quello di amici e familiari.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </div>
@@ -506,27 +556,25 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
 <footer class="page-footer">
   <div class="footer-links">
-    <a href="./index.html" id="footer-link-home"></a>
-    <a href="./contatti.html" id="footer-link-contact"></a>
-    <a href="./about.html" id="footer-link-about"></a>
-    <a href="./privacy.html" id="footer-link-privacy"></a>
+    <a href="./index.html" id="footer-link-home">Home</a>
+    <a href="./contatti.html" id="footer-link-contact">Contatti</a>
+    <a href="./about.html" id="footer-link-about">Chi Siamo</a>
+    <a href="./privacy.html" id="footer-link-privacy">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità di intrattenimento, riflessione personale e crescita interiore. Non sostituiscono consulenze mediche, legali, finanziarie o psicologiche professionali.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca l'interpretazione estesa del profilo mistico, lo storico illimitato delle letture e i consulti avanzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

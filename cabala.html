@@ -839,28 +839,28 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-icon">✡️</div>
-      <h1 class="hero-title" id="page-title"></h1>
-      <p class="hero-subtitle" id="page-subtitle"></p>
+      <h1 class="hero-title" id="page-title">Cabala</h1>
+      <p class="hero-subtitle" id="page-subtitle">Albero della Vita e le 10 Sephirot</p>
       <div class="hero-divider"></div>
-      <p class="hero-intro" id="page-intro"></p>
+      <p class="hero-intro" id="page-intro">Esplora i 10 sentieri dell'Albero della Vita, le forze divine che plasmano l'universo. Seleziona una Sephirah o consulta l'oracolo per ricevere il messaggio della qabbalah ebraica.</p>
     </section>
 
     <!-- Interactive Oracolo Section -->
     <section class="oracolo-section" id="oracolo">
       <div id="kabForm">
         <div class="form-group">
-          <label class="form-label" id="label-domanda"></label>
+          <label class="form-label" id="label-domanda">La tua domanda (opzionale)</label>
           <input type="text" id="kabDomanda" placeholder="">
         </div>
 
         <div class="form-group">
-          <label class="form-label" id="label-seleziona"></label>
-          <div class="sephirot-grid" id="sephirot-grid"></div>
+          <label class="form-label" id="label-seleziona">Seleziona una Sephirah</label>
+          <div class="sephirot-grid" id="sephirot-grid"><button class="seph-btn active" id="kabTab0">Kether</button><button class="seph-btn" id="kabTab1">Chokmah</button><button class="seph-btn" id="kabTab2">Binah</button><button class="seph-btn" id="kabTab3">Chesed</button><button class="seph-btn" id="kabTab4">Gevurah</button><button class="seph-btn" id="kabTab5">Tiferet</button><button class="seph-btn" id="kabTab6">Netzach</button><button class="seph-btn" id="kabTab7">Hod</button><button class="seph-btn" id="kabTab8">Yesod</button><button class="seph-btn" id="kabTab9">Malkuth</button></div>
         </div>
 
         <div class="btn-grp" id="kabFormBtns">
-          <button class="btn" id="btn-consulta" onclick="calcCabala()"></button>
-          <button class="btn btn-sec" id="btn-random" onclick="kabRandom()"></button>
+          <button class="btn" id="btn-consulta" onclick="calcCabala()">Consulta l'Oracolo</button>
+          <button class="btn btn-sec" id="btn-random" onclick="kabRandom()">Sephirah Casuale</button>
         </div>
       </div>
 
@@ -869,7 +869,7 @@
 
     <!-- Share Section -->
     <section class="share-section" id="share-section">
-      <div class="share-title" id="share-title"></div>
+      <div class="share-title" id="share-title">Condividi questo messaggio</div>
       <div class="share-btns">
         <button class="share-btn" id="share-wa" aria-label="WhatsApp">💬</button>
         <button class="share-btn" id="share-tg" aria-label="Telegram">📱</button>
@@ -881,29 +881,44 @@
 
     <!-- Article Section -->
     <article class="article-section" id="article-section">
-      <h2 class="section-title" id="art-title"></h2>
-      <p class="section-intro" id="art-intro"></p>
-      <p id="artP1"></p>
-      <p id="artP2"></p>
-      <p id="artP3"></p>
-      <p id="artP4"></p>
-      <p id="artP5"></p>
+      <h2 class="section-title" id="art-title">La Cabala: Mistica Ebraica e Geometria Sacra</h2>
+      <p class="section-intro" id="art-intro">La Cabala è la tradizione mistica dell'ebraismo, fondata sulla visione che l'universo fisico rifletta una struttura divina. L'Albero della Vita rappresenta questa geometria sacra: dieci sefirot interconnesse tramite 22 sentieri, descrivendo il percorso di discesa della divinità nel mondo materiale e il viaggio di ascesa dell'anima verso il divino.</p>
+      <p id="artP1">Secondo la Cabala, la creazione non è un atto puntuale bensì un processo continuo di manifestazione divina che fluisce attraverso i tre mondi: Atziluth (il mondo archetipico), Briah (il mondo della creazione), Yetzirah (il mondo della formazione) e infine Assiah (il mondo dell'azione materiale). L'Albero della Vita mappa questi livelli: le tre Sephirot superiori (Kether, Chokmah, Binah) appartengono al mondo archetipico, mentre le Sephirot inferiori gradualmente si manifestano nei mondi più densi. Lo studio delle dieci Sephirot è dunque lo studio della natura stessa del reale, dai livelli più sottili della coscienza pura fino ai fenomeni concreti della materia.</p>
+      <p id="artP2">I 22 sentieri che collegano le Sephirot corrispondono alle 22 lettere dell'alfabeto ebraico e alle 22 carte dei Tarocchi maggiori. Questa corrispondenza non è casuale: la Cabala insegna che la realtà è costruita attraverso il linguaggio — la Parola divina che "parla" la creazione in essere. Studiare i sentieri significa meditare sulla trasformazione dell'energia spirituale mentre scende e si manifesta nel mondo. Ogni sentiero è una tappa del Grande Lavoro ermetico, un'iniziazione che spinge il mistico verso l'unificazione della propria coscienza con l'Assoluto.</p>
+      <p id="artP3">La Gematria, l'arte di assegnare valori numerici alle lettere ebraiche, rivela connessioni nascoste tra parole e concetti. Secondo questo sistema, parole con lo stesso valore numerico condividono una dimensione profonda di significato: ad esempio, "Amore" e "Uno" hanno lo stesso numero (13), suggerendo che l'amore è l'esperienza dell'unicità divina. Questo metodo permette al mistico di comprendere come il linguaggio umano sia una manifestazione del linguaggio divino, e come le parole che usiamo modulano inconsciamente la realtà che percepiamo. La Gematria trasforma la lingua in uno strumento di magia e di illuminazione.</p>
+      <p id="artP4">Storicamente, la Cabala emerge in forma scritta intorno al XII-XIII secolo, con testi come lo Zohar (il "Libro dello Splendore") che codificano la tradizione orale più antica. Grandi cabalisti come Isaac Luria (1534-1572) e Chaim Vital espandono la visione con il concetto del Tzimtzum — la "contrazione" divina che consente allo spazio infinito di contenere creature finite. Nel Rinascimento, cabalisti cristiani come Pico della Mirandola integrano la saggezza cabbalistica con la filosofia neoplatonica e l'ermetismo, creando un ponte tra le tradizioni spirituali. L'influenza della Cabala si estende poi all'alchimia, al Tarocco, e alla magia occidentale moderna.</p>
+      <p id="artP5">Praticare la Cabala oggi significa intraprendere un cammino di trasformazione interiore. Non si tratta di superstizione: è una psicologia profonda che mappa i livelli della mente e della coscienza, insegnando come riconoscere i pattern inconsci e integrarli in una visione unificata della realtà. Meditare sulle Sephirot, studiare i sentieri, praticare la visualizzazione dell'Albero nel corpo — questi sono strumenti per sviluppare facoltà mentali superiori e per realizzare il motto tradizionale: "Conosci te stesso e conoscerai l'universo e gli dei."</p>
     </article>
 
     <!-- FAQ Section -->
     <section class="faq-section" id="faq-section">
-      <h2 class="section-title" id="faq-title"></h2>
-      <div id="faq-container"></div>
+      <h2 class="section-title" id="faq-title">Domande Frequenti sulla Cabala</h2>
+      <div id="faq-container"><div class="faq-item"><div class="faq-question">
+          <span>Cosa significa "Cabala"?</span>
+          <span class="faq-icon">▼</span>
+        </div><div class="faq-answer">Cabala significa "ricezione" in ebraico. La tradizione mistica ebraica insegna che il Divino ha rivelato la propria natura attraverso il testo della Torah, e il cabalista è colui che riceve e integra questa rivelazione nel proprio cuore e nella propria pratica spirituale.</div></div><div class="faq-item"><div class="faq-question">
+          <span>Qual è la differenza tra le 10 Sephirot e i 22 Sentieri?</span>
+          <span class="faq-icon">▼</span>
+        </div><div class="faq-answer">Le 10 Sephirot sono gli stati di coscienza divina, i "vasi" attraverso cui l'energia creativa si manifesta. I 22 Sentieri sono i canali di connessione tra di esse, rappresentando i processi di trasformazione e integrazione dell'energia. Insieme, formano l'Albero della Vita completo.</div></div><div class="faq-item"><div class="faq-question">
+          <span>Come si pratica la Meditazione Cabbalistica?</span>
+          <span class="faq-icon">▼</span>
+        </div><div class="faq-answer">Una pratica base è la "pathworking": visualizzare il percorso lungo uno dei Sentieri, incontrando simboli e archetipi che rappresentano quella trasformazione. Altre pratiche includono la meditazione sulle Sephirot individuali, lo studio della Gematria, e la costruzione mentale dell'Albero nel corpo.</div></div><div class="faq-item"><div class="faq-question">
+          <span>La Cabala è una religione o una pratica spirituale?</span>
+          <span class="faq-icon">▼</span>
+        </div><div class="faq-answer">La Cabala è una pratica spirituale mistica fondata sull'ebraismo, ma può essere studiata e praticata da persone di qualsiasi background. Nel Rinascimento, molti non-ebrei l'adottarono come via di illuminazione, integrandola con altre tradizioni.</div></div><div class="faq-item"><div class="faq-question">
+          <span>Qual è il significato di "Ain Soph" e "Ain"?</span>
+          <span class="faq-icon">▼</span>
+        </div><div class="faq-answer">"Ain Soph" significa "senza limite" ed è il concetto del Divino infinito, l'indifferenziato assoluto oltre tutta la forma. "Ain" significa semplicemente "nulla" — il Divino prima di qualsiasi manifestazione. Questi concetti insegnano che l'esperienza mistica suprema è quella dell'unione con l'Assoluto oltre ogni dualità.</div></div></div>
     </section>
   </main>
 
   <!-- ── FOOTER ── -->
   <footer class="page-footer">
-    <p class="footer-text" id="footer-copyright"></p>
+    <p class="footer-text" id="footer-copyright">© 2026 MYSTICA Oracoli · Mago Petro</p>
     <div class="footer-links">
-      <a href="./index.html" class="footer-link" id="footer-home"></a>
-      <a href="./contatti.html" class="footer-link" id="footer-contatti"></a>
-      <a href="./about.html" class="footer-link" id="footer-about"></a>
+      <a href="./index.html" class="footer-link" id="footer-home">Home</a>
+      <a href="./contatti.html" class="footer-link" id="footer-contatti">Contatti</a>
+      <a href="./about.html" class="footer-link" id="footer-about">Chi Siamo</a>
     </div>
   </footer>
 
@@ -911,11 +926,11 @@
   <div class="premium-modal" id="premium-modal" aria-hidden="true">
     <div class="premium-modal-content">
       <div class="premium-modal-icon">✨</div>
-      <h3 class="premium-modal-title" id="prem-title"></h3>
-      <p class="premium-modal-text" id="prem-text"></p>
+      <h3 class="premium-modal-title" id="prem-title">Contenuto Premium</h3>
+      <p class="premium-modal-text" id="prem-text">Questa funzione avanzata è disponibile solo per i nostri utenti premium. Sblocca accesso completo a tutti gli oracoli e alle meditazioni guidate.</p>
       <div class="premium-modal-btns">
-        <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn" id="prem-btn"></a>
-        <button class="btn btn-sec" onclick="closePremiumModal()" id="prem-close"></button>
+        <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn" id="prem-btn">Attiva Premium — 4,99€</a>
+        <button class="btn btn-sec" onclick="closePremiumModal()" id="prem-close">Continua Gratis</button>
       </div>
     </div>
   </div>

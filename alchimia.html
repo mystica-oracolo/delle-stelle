@@ -478,15 +478,15 @@ textarea::placeholder{color:var(--muted)}
 <!-- HEADER -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <div class="hero-symbol" aria-hidden="true">⚗️</div>
-  <h1 class="page-title" id="page-title"></h1>
-  <div class="page-sub" id="page-sub"></div>
+  <h1 class="page-title" id="page-title">Alchimia</h1>
+  <div class="page-sub" id="page-sub">L'Arte della Trasmutazione</div>
   <div class="divider-gold"></div>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
@@ -502,22 +502,22 @@ textarea::placeholder{color:var(--muted)}
        SEZIONE INTERATTIVA — ORACOLO (SEMPRE IN CIMA)
   ══════════════════════════════════ -->
   <div class="oracle-section z1" id="oracolo">
-    <h2 id="oracTitle"></h2>
-    <p id="oracSubtitle"></p>
+    <h2 id="oracTitle">⚗️ Consulta la Grande Opera</h2>
+    <p id="oracSubtitle">Scegli la fase alchemica che rispecchia il tuo momento interiore</p>
 
     <div class="tabs" role="tablist">
-      <button class="tab-btn active" id="alchTab0" onclick="alchSelStage(0)" role="tab" aria-selected="true"><span class="tab-emoji" aria-hidden="true">🌑</span><span id="alchTabLabel0"></span></button>
-      <button class="tab-btn" id="alchTab1" onclick="alchSelStage(1)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌕</span><span id="alchTabLabel1"></span></button>
-      <button class="tab-btn" id="alchTab2" onclick="alchSelStage(2)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌞</span><span id="alchTabLabel2"></span></button>
-      <button class="tab-btn" id="alchTab3" onclick="alchSelStage(3)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🔴</span><span id="alchTabLabel3"></span></button>
+      <button class="tab-btn active" id="alchTab0" onclick="alchSelStage(0)" role="tab" aria-selected="true"><span class="tab-emoji" aria-hidden="true">🌑</span><span id="alchTabLabel0">Nigredo</span></button>
+      <button class="tab-btn" id="alchTab1" onclick="alchSelStage(1)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌕</span><span id="alchTabLabel1">Albedo</span></button>
+      <button class="tab-btn" id="alchTab2" onclick="alchSelStage(2)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🌞</span><span id="alchTabLabel2">Citrinitas</span></button>
+      <button class="tab-btn" id="alchTab3" onclick="alchSelStage(3)" role="tab" aria-selected="false"><span class="tab-emoji" aria-hidden="true">🔴</span><span id="alchTabLabel3">Rubedo</span></button>
     </div>
 
     <label for="alchDomanda" class="sr-only" style="position:absolute;left:-9999px">Domanda</label>
     <textarea id="alchDomanda" rows="3"></textarea>
 
     <div class="btn-grp" id="alchFormBtns">
-      <button class="btn btn-sec" onclick="alchRandom()" id="alchBtnRandom"></button>
-      <button class="btn" onclick="calcAlchimia()" id="alchBtnReveal"></button>
+      <button class="btn btn-sec" onclick="alchRandom()" id="alchBtnRandom">🎲 Fase Casuale</button>
+      <button class="btn" onclick="calcAlchimia()" id="alchBtnReveal">⚗️ Rivela la Fase</button>
     </div>
 
     <div class="result-card" id="alchResult" aria-live="polite"></div>
@@ -533,7 +533,7 @@ textarea::placeholder{color:var(--muted)}
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -551,26 +551,26 @@ textarea::placeholder{color:var(--muted)}
         <span class="ph-icon" aria-hidden="true">🏛️</span>
         <span class="ph-label">images/alchimia/<br>storia-alchimia.webp</span>
       </div>
-      <div class="section-eyebrow" id="storiaEyebrow"></div>
+      <div class="section-eyebrow" id="storiaEyebrow">Origini &amp; Storia</div>
     </div>
 
-    <h2 id="art-title"></h2>
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
+    <h2 id="art-title">L'Arte Sacra delle Origini</h2>
+    <h3 id="art-h2">Le Origini nell'Antico Egitto e nel Mondo Ellenistico</h3>
+    <p id="art-p1">L'alchimia è una delle tradizioni esoterico-scientifiche più antiche dell'umanità. Le sue radici affondano nell'Egitto ellenistico del III secolo a.C., dove la parola stessa — dal greco khemeia, e poi dall'arabo al-kīmiyāʾ — rimandava all'arte segreta della terra nera: la fertile terra del Nilo, simbolo di morte e rinascita. Per tremila anni questa disciplina ha attraversato culture e continenti, mutando forma senza mai perdere il suo nucleo simbolico più profondo: la trasformazione della materia come specchio della trasformazione dell'anima. Nessun'altra tradizione ha saputo tenere insieme, per così tanto tempo, il rigore del laboratorio e la profondità della ricerca spirituale.</p>
+    <p id="art-p2">I primi testi alchemici conosciuti provengono dalla Biblioteca di Alessandria. Erano attribuiti a Zosimo di Panopoli (III-IV sec. d.C.), il primo autore alchemico di cui si abbiano opere certe. Scriveva di visioni, di angeli che trasmutavano il metallo in oro, di fornaci come altari e di laboratori come templi. Per lui l'alchimia non era chimica: era teologia incarnata nella materia, un dialogo continuo tra il mondo visibile e quello invisibile. Le sue Visioni raccontano di un sacerdote divorato, bollito e calcinato per poi risorgere trasformato — un'allegoria della morte simbolica dell'ego che anticipa di secoli le letture psicologiche moderne dell'alchimia.</p>
 
     <div class="highlight">
-      <h4 id="art-highlight-title"></h4>
-      <p id="art-highlight-text"></p>
+      <h4 id="art-highlight-title">📜 La Tavola di Smeraldo</h4>
+      <p id="art-highlight-text">Il testo fondante dell'alchimia occidentale è attribuito a Ermete Trismegisto — figura leggendaria fusione del dio egizio Thoth e del greco Hermes. La Tavola di Smeraldo, redatta tra il VI e l'VIII secolo d.C., enuncia il principio universale: "Ciò che è in alto è come ciò che è in basso." Quindici righe che hanno guidato secoli di speculazione filosofica e pratica di laboratorio.</p>
     </div>
 
-    <h3 id="art-h3"></h3>
-    <p id="art-p3"></p>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h3">Dal Mondo Islamico alla Scienza Moderna</h3>
+    <p id="art-p3">Con la traduzione araba dei testi greci tra l'VIII e il X secolo, l'alchimia divenne la scienza madre del mondo islamico. Jabir ibn Hayyan (noto in occidente come Geber) sistematizzò teorie sui quattro elementi, sui sette metalli planetari e sulla pietra filosofale. I suoi laboratori a Kufa e Baghdad produssero scoperte reali: l'acido solforico, l'acido nitrico, il cloruro di ammonio, oltre a tecniche di distillazione ancora oggi fondamentali in chimica. La Casa della Sapienza di Baghdad divenne il principale centro mondiale di ricerca alchemica, dove testi greci, persiani e indiani venivano tradotti, confrontati e ampliati da generazioni di studiosi.</p>
+    <p id="art-p4">Nel Medioevo europeo, l'alchimia si diffuse attraverso le scuole di traduzione di Toledo e Salerno. Divenne disciplina ambigua: praticata nei conventi, vietata dai papi, finanziata dai re. Era simultaneamente proto-chimica, filosofia naturale, spiritualità ermetica e frode. Questo doppio volto — scienza e mistica, onestà e impostura — non è un difetto: è la sua natura più profonda, ed è ciò che la distingue nettamente dalla chimica sperimentale che ne ereditò solo la parte materiale. Alberto Magno e Ruggero Bacone la studiarono seriamente, convinti che comprendere la materia significasse avvicinarsi alla comprensione del Creatore.</p>
+    <p id="art-p5">Con Antoine Lavoisier e la rivoluzione chimica del Settecento, la scienza si separò definitivamente dalla mistica: nacque la chimica moderna, quantitativa e priva di simbolismo spirituale. Ma l'eredità psicologica dell'alchimia non si è mai spenta. Nel Novecento Carl Gustav Jung la rilesse come mappa simbolica dell'inconscio, mentre oggi la sua struttura in quattro fasi continua a offrire un linguaggio potente per leggere le crisi e le trasformazioni della vita interiore, distinguendola nettamente da discipline affini come l'astrologia o la cabala, con cui pure condivide radici ermetiche comuni.</p>
 
-    <nav class="article-links" id="articleLinks" aria-label="Link correlati"></nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <nav class="article-links" id="articleLinks" aria-label="Link correlati"><a href="./ermetismo.html">Approfondisci l’Ermetismo e la Tavola di Smeraldo</a><a href="./cabala.html">Esplora la Cabala e l’Albero della Vita</a><a href="./tarocchi.html">Scopri il significato degli Arcani Maggiori</a><a href="./numerologia.html">Calcola il tuo Numero del Destino</a></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ══════════════════════════════════
@@ -582,14 +582,30 @@ textarea::placeholder{color:var(--muted)}
         <span class="ph-icon" aria-hidden="true">🔮</span>
         <span class="ph-label">images/alchimia/<br>pietra-filosofale.webp</span>
       </div>
-      <div class="section-eyebrow" id="oroEyebrow"></div>
-      <h2 class="section-title" id="oroTitle"></h2>
-      <p class="section-intro" id="oroIntro"></p>
+      <div class="section-eyebrow" id="oroEyebrow">La Grande Impresa</div>
+      <h2 class="section-title" id="oroTitle">La Caccia all'Oro: Chi Ci Provò Davvero</h2>
+      <p class="section-intro" id="oroIntro">Imperatori, monaci, filosofi e ciarlatani. La storia dei tentativi di trasmutare i metalli vili in oro puro.</p>
     </div>
-    <div id="oroList"></div>
+    <div id="oroList">
+    <div class="gold-attempt">
+      <span class="gold-attempt-num">I</span>
+      <div class="gold-attempt-text"><h4>Rodolfo II d'Asburgo — L'Imperatore Ossessionato (1576–1612)</h4><p>L'imperatore del Sacro Romano Impero trasformò il castello di Praga in un laboratorio alchemico a cielo aperto. Convocò a corte decine di alchimisti da tutta Europa, finanziandoli a vita in cambio della promessa dell'oro. Edward Kelley, John Dee, Michael Sendivogius — tutti passarono per Praga. Rodolfo non vide mai l'oro, ma le sue spese finanziarono indirettamente importanti scoperte chimiche e astronomiche: Tycho Brahe e Keplero lavorarono alla sua corte.</p></div>
+    </div>
+    <div class="gold-attempt">
+      <span class="gold-attempt-num">II</span>
+      <div class="gold-attempt-text"><h4>Enrico VI d’Inghilterra — La Corona in Cerca d’Oro (1440)</h4><p>Tormentato da debiti di guerra, Enrico VI emanò nel 1440 una serie di regie patenti che autorizzavano specificamente la pratica alchemica — cosa rara, poiché la trasmutazione era solitamente illegale (chi avesse prodotto oro avrebbe minato la moneta reale). Il re sperò che i suoi alchimisti potessero finanziare la guerra dei Cent'Anni. Nessun oro fu mai prodotto; il regno cadde in bancarotta.</p></div>
+    </div>
+    <div class="gold-attempt">
+      <span class="gold-attempt-num">III</span>
+      <div class="gold-attempt-text"><h4>La Truffa di James Price (1782)</h4><p>James Price era un chimico rispettabile, membro della Royal Society britannica. Nel 1782 annunciò di aver prodotto oro da mercurio usando una polvere rossa e una bianca misteriose, davanti a testimoni aristocratici. La Royal Society, incerta tra il credere e lo smascherarlo, lo convocò per una dimostrazione pubblica. Price, che sapeva che la frode sarebbe stata scoperta, bevve acido prussico di fronte ai commissari e morì davanti a loro. L'oro era falso. La storia vera era la disperazione di un uomo preso nella propria menzogna.</p></div>
+    </div>
+    <div class="gold-attempt">
+      <span class="gold-attempt-num">IV</span>
+      <div class="gold-attempt-text"><h4>Isaac Newton — Il Genio Segreto (1666–1696)</h4><p>Uno dei più grandi scienziati della storia dedicò più tempo all'alchimia che alla fisica. I suoi manoscritti alchemici — oltre un milione di parole rimaste inedite per secoli — mostrano un Newton ossessionato dalla pietra filosofale e dalla materia prima. Credeva che l'oro potesse essere estratto dal piombo attraverso una serie di operazioni che oggi chiameremmo trasmutazione nucleare. Aveva ragione sul principio: fisicamente impossibile con le sue tecniche, ma corretto teoricamente. Nel 1980, scienziati russi sintetizzarono oro stabile da bismuto bombardandolo con protoni. Newton aspettava qualcosa di simile.</p></div>
+    </div></div>
     <div class="highlight">
-      <h4 id="oroHighlightTitle"></h4>
-      <p id="oroHighlightText"></p>
+      <h4 id="oroHighlightTitle">⚛️ L'Ironia della Storia Moderna</h4>
+      <p id="oroHighlightText">Nel 1924 il fisico Fritz Haber, premio Nobel per la chimica, cercò di estrarre oro dall'acqua di mare per pagare le riparazioni di guerra della Germania. Scoprì che l'oro era presente nell'oceano, ma in concentrazioni così basse da rendere l'estrazione uneconomica. Più tardi, nel laboratorio Glenn T. Seaborg nel 1980, scienziati del Lawrence Berkeley Laboratory trasmutarono fisicamente bismuto in oro — producendo quantità infinitesimali, a un costo milioni di volte superiore al valore del metallo ottenuto. L'oro era possibile. Era solo inutile.</p>
     </div>
   </section>
 
@@ -602,11 +618,65 @@ textarea::placeholder{color:var(--muted)}
         <span class="ph-icon" aria-hidden="true">🧙</span>
         <span class="ph-label">images/alchimia/<br>alchimisti-famosi.webp</span>
       </div>
-      <div class="section-eyebrow" id="alcEyebrow"></div>
-      <h2 class="section-title" id="alcTitle"></h2>
-      <p class="section-intro" id="alcIntro"></p>
+      <div class="section-eyebrow" id="alcEyebrow">I Maestri</div>
+      <h2 class="section-title" id="alcTitle">Gli Alchimisti più Celebri della Storia</h2>
+      <p class="section-intro" id="alcIntro">Visionari, filosofi, scienziati e mistici. Le figure che hanno definito l'arte della trasmutazione.</p>
     </div>
-    <div class="alchemist-grid" id="alcGrid"></div>
+    <div class="alchemist-grid" id="alcGrid">
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">⚗️</span><span class="ph-label">jabir-ibn-hayyan.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Jabir ibn Hayyan</div>
+        <div class="alc-dates">721 – 815 d.C. · Kufa, Iraq</div>
+        <p class="alc-desc">Conosciuto in Occidente come Geber, è il padre dell’alchimia araba e, per molti versi, della chimica sperimentale. Scrisse oltre tremila testi. Distinse per primo tra sostanze che bruciano (solfuri) e sostanze che non bruciano (metalli). Sviluppò tecniche di distillazione, cristallizzazione e calcinazione ancora usate. Il suo sistema dei sette metalli planetari — ognuno governato da un pianeta e dotato di proprietà spirituali — è il cuore della cosmologia alchemica medievale.</p>
+        <div class="alc-claim"><strong>La sua impresa:</strong> Prima sintesi documentata di acido solforico e acido nitrico. Scoprì l’acqua regia, l’unico acido capace di sciogliere l’oro.</div>
+      </div>
+    </div>
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">🌹</span><span class="ph-label">nicolas-flamel.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Nicolas Flamel</div>
+        <div class="alc-dates">1330 – 1418 · Pontoise, Francia</div>
+        <p class="alc-desc">Notaio e libraio parigino, Flamel divenne la leggenda alchemica più duratura della storia. Secondo la tradizione, acquistò un misterioso libro ebraico — il Libro di Abramo l’Ebreo — e dopo vent’anni di studio riuscì a decifrarne i segreti, ottenendo la Pietra Filosofale nel 1382. Da notaio di modesta fortuna divenne improvvisamente ricchissimo, finanziò chiese, ospedali e fondazioni caritatevoli. Alla sua morte, la sua tomba fu aperta dai cercatori di tesori: era vuota. Si disse che lui e sua moglie Pernelle fossero immortali.</p>
+        <div class="alc-claim"><strong>Il mistero:</strong> I documenti storici confermano la sua ricchezza improvvisa e le sue donazioni. L’origine della fortuna rimane inspiegata. La leggenda è sopravvissuta sette secoli.</div>
+      </div>
+    </div>
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">🔬</span><span class="ph-label">paracelso.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Paracelso</div>
+        <div class="alc-dates">1493 – 1541 · Einsiedeln, Svizzera</div>
+        <p class="alc-desc">Philippus Aureolus Theophrastus Bombastus von Hohenheim — che si ribattezzò Paracelso (oltre Celso, il grande medico romano) — fu il più rivoluzionario degli alchimisti. Bruciò pubblicamente i testi di Galeno e Avicenna. Affermò che lo scopo dell’alchimia non era fare oro ma produrre medicine. Inventò l’uso di composti di zinco, rame, arsenico e laudano in terapia. La farmacologia moderna gli deve più di quanto voglia ammettere.</p>
+        <div class="alc-claim"><strong>La sua rivoluzione:</strong> Spostò l’obiettivo dell’alchimia dalla produzione di oro alla creazione di medicinali. Fondò la iatrochimica, antenata della farmacologia.</div>
+      </div>
+    </div>
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">🔭</span><span class="ph-label">isaac-newton.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Isaac Newton</div>
+        <div class="alc-dates">1643 – 1727 · Woolsthorpe, Inghilterra</div>
+        <p class="alc-desc">L’inventore del calcolo infinitesimale, scopritore della gravitazione universale, padre dell’ottica moderna. Ma anche: alchimista clandestino per trent’anni. Newton custodì i suoi esperimenti alchemici con ossessiva segretezza, terrorizzato dalle conseguenze legali. Credeva che l’universo fosse animato da forze attive e spirituali — non solo meccaniche — e che l’alchimia rivelasse la grammatica nascosta di quelle forze.</p>
+        <div class="alc-claim"><strong>Il paradosso:</strong> John Maynard Keynes, che comprò all’asta i manoscritti alchemici di Newton nel 1936, scrisse: "Newton non fu il primo dell’Età della Ragione. Fu l’ultimo dei maghi."</div>
+      </div>
+    </div>
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">👁️</span><span class="ph-label">edward-kelley.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Edward Kelley</div>
+        <div class="alc-dates">1555 – 1597 · Worcester, Inghilterra</div>
+        <p class="alc-desc">Mago, veggente, ciarlatano o genio? Edward Kelley collaborò per anni con il matematico ed astrologo reale John Dee, comunicando con gli angeli attraverso una sfera di cristallo. Affermò di possedere la vera polvere filosofale — e dimostrò la trasmutazione di metallo in oro davanti a testimoni aristocratici a Praga. Rodolfo II lo imprigionò due volte per ottenere il segreto. Kelley morì cercando di fuggire dalla finestra della torre.</p>
+        <div class="alc-claim"><strong>L’enigma:</strong> Il resoconto delle sue trasmutazioni fu testimoniato da persone attendibili, tra cui il medico di corte imperiale. Le analisi moderne sui documenti storici non sono conclusive.</div>
+      </div>
+    </div>
+    <div class="alc-card">
+      <div class="alc-card-img"><span class="ph-icon" aria-hidden="true">🌊</span><span class="ph-label">zosimo-panopoli.webp</span></div>
+      <div class="alc-card-body">
+        <div class="alc-name">Zosimo di Panopoli</div>
+        <div class="alc-dates">III–IV sec. d.C. · Panopoli, Egitto</div>
+        <p class="alc-desc">Il più antico autore alchemico identificabile. Nei suoi testi — scritti in greco e sopravvissuti parzialmente — l’alchimia è già pienamente formata come fusione di tecnica e mistica. Zosimo descrive visioni: un sacerdote che viene divorato, bollito, calcinato e poi risorge trasformato — allegoria del processo alchemico come morte e rinascita. Le sue istruzioni pratiche per la distillazione, la sublimazione e la fermentazione sono sorprendentemente accurate.</p>
+        <div class="alc-claim"><strong>L’eredità:</strong> Jung studiò i testi di Zosimo intensamente, vedendovi la prima elaborazione sistematica dell’inconscio collettivo in linguaggio simbolico-materiale.</div>
+      </div>
+    </div></div>
   </section>
 
   <!-- ══════════════════════════════════
@@ -618,19 +688,119 @@ textarea::placeholder{color:var(--muted)}
         <span class="ph-icon" aria-hidden="true">🐉</span>
         <span class="ph-label">images/alchimia/<br>mitologia-alchimia.webp</span>
       </div>
-      <div class="section-eyebrow" id="mitiEyebrow"></div>
-      <h2 class="section-title" id="mitiTitle"></h2>
-      <p class="section-intro" id="mitiIntro"></p>
+      <div class="section-eyebrow" id="mitiEyebrow">Miti &amp; Simboli</div>
+      <h2 class="section-title" id="mitiTitle">Le Mitologie dell'Alchimia</h2>
+      <p class="section-intro" id="mitiIntro">Le grandi narrazioni sacre che hanno dato forma al linguaggio simbolico della Grande Opera.</p>
     </div>
-    <div class="myth-grid" id="mitiGrid"></div>
+    <div class="myth-grid" id="mitiGrid">
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">🔥</span><span class="ph-label">ermete-trismegisto.webp</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">Ermete Trismegisto e il Corpus Hermeticum</div>
+        <div class="myth-origin">Egitto ellenistico · II–III sec. d.C.</div>
+        <p class="myth-desc">Ermete Trismegisto — "Thrice-Great Hermes", il tre volte grande — è la figura fondatrice dell’ermetismo e dell’alchimia occidentale. Metà umano e metà divino, avrebbe rivelato all’umanità i segreti della creazione attraverso il Corpus Hermeticum. Il Rinascimento lo credette contemporaneo di Mosè — un errore cronologico che però ne amplificò enormemente l’autorità. La sua formula più celebre, "Come in alto, così in basso", rimane il principio operativo dell’astrologia, dell’alchimia e della magia cerimoniale ancora oggi.</p>
+      </div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">🐍</span><span class="ph-label">ouroboros.webp</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">L’Ouroboros — Il Serpente che Si Morde la Coda</div>
+        <div class="myth-origin">Egitto antico · XIV sec. a.C.</div>
+        <p class="myth-desc">Il serpente o drago che si divora la propria coda è uno dei simboli più antichi e universali dell’umanità. Compare nella tomba di Tutankhamon, nei testi gnostici, nell’alchimia medievale, nella filosofia greca, nel buddhismo e nei miti nordici. Per gli alchimisti rappresentava il ciclo infinito della materia: dissoluzione e coagulazione, morte e rinascita, nigredo e rubedo. Jung lo identificò come immagine dell’inconscio che si auto-consuma e si auto-rigenera.</p>
+      </div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">⚗️</span><span class="ph-label">rebis.webp</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">Il Rebis — L'Androgino Alchemico</div>
+        <div class="myth-origin">Alchimia medievale europea · XII–XVII sec.</div>
+        <p class="myth-desc">Il Rebis (dal latino res bina, la cosa doppia) è la figura che coronava il processo alchemico: un essere androgino, metà uomo e metà donna, che reggeva in una mano il sole e nell’altra la luna, in piedi su un drago. Rappresentava la coniunctio oppositorum — l’unione dei contrari — che produceva la Pietra Filosofale, immagine dell’essere umano completato.</p>
+      </div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">🦅</span><span class="ph-label">fenice-alchimia.webp</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">La Fenice — Il Fuoco che Rigenera</div>
+        <div class="myth-origin">Egitto, Grecia, Arabia, Cina · mitologia universale</div>
+        <p class="myth-desc">L’uccello che muore nel fuoco e rinasce dalle proprie ceneri è il mito alchemico per eccellenza. In Egitto era il Bennu, l’uccello sacro di Ra. In Grecia divenne la Fenice, che viveva cinquecento anni prima di incendiarsi e rinascere giovane. Per gli alchimisti la Fenice era la rubedo — la fase rossa finale del processo, dove la materia "morta" nella nigredo tornava sostanza incorruttibile e luminosa.</p>
+      </div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-card-img"><span class="ph-icon" aria-hidden="true">🌑</span><span class="ph-label">saturno-kronos.webp</span></div>
+      <div class="myth-card-body">
+        <div class="myth-title">Saturno e il Piombo Primordiale</div>
+        <div class="myth-origin">Mitologia greco-romana · alchimia planetaria</div>
+        <p class="myth-desc">Saturno/Kronos, il dio del tempo e della dissoluzione, era associato al piombo — il metallo più pesante e più vile del sistema planetario alchemico. Regnava sulla nigredo, la fase oscura del processo. Ma proprio perché Saturno divora i suoi figli, il piombo porta in sé la materia prima di tutti gli altri metalli: contiene l’oro nella sua oscurità, come il dolore contiene la saggezza.</p>
+      </div>
+    </div></div>
   </section>
 
   <!-- ══════════════════════════════════
        FAQ
   ══════════════════════════════════ -->
   <section class="faq-section z1">
-    <h2 class="faq-title" id="faqSectionTitle"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faqSectionTitle">Domande Frequenti</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos’è l’alchimia e qual è il suo scopo reale?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>L’alchimia è una tradizione esoterico-scientifica nata nell’Egitto ellenistico che intreccia pratica di laboratorio e trasformazione spirituale. Il suo scopo dichiarato era trasmutare i metalli vili in oro puro, ma il suo scopo più profondo — quello che sopravvive ancora oggi — era la trasformazione interiore dell’alchimista stesso attraverso un processo simbolico in quattro fasi. Non a caso molti storici la considerano l’antenata sia della chimica moderna sia della psicologia del profondo.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cosa rappresentano nigredo, albedo, citrinitas e rubedo?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Sono le quattro fasi della Grande Opera alchemica. La nigredo è la fase nera di dissoluzione e crisi, l’albedo la fase bianca di purificazione e chiarezza, la citrinitas il risveglio solare dell’intuizione, la rubedo l’unione finale dei contrari, simboleggiata dalla Pietra Filosofale. Puoi esplorarle tutte con l’oracolo in cima a questa pagina, oppure approfondire i loro corrispettivi negli <a href="./tarocchi.html">Arcani Maggiori dei Tarocchi</a>.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Qualcuno è mai realmente riuscito a trasformare il piombo in oro?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Nessun alchimista storico vi riuscì con i metodi disponibili all’epoca. Solo nel 1980, al Lawrence Berkeley Laboratory, fu trasmutato del bismuto in oro tramite reazioni nucleari controllate, ma in quantità infinitesimali e a un costo enormemente superiore al valore del metallo ottenuto. La trasmutazione fisica è possibile, ma economicamente priva di senso.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra alchimia e chimica moderna?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>La chimica moderna, nata nel Settecento con Antoine Lavoisier, si occupa esclusivamente della trasformazione fisica e misurabile della materia. L’alchimia, invece, univa la ricerca materiale a una cosmologia simbolica e spirituale completa: ogni operazione di laboratorio — calcinazione, distillazione, sublimazione — rifletteva un processo interiore parallelo nell’alchimista stesso.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Perché Carl Jung si interessò così tanto all’alchimia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Jung vide nei testi alchemici, in particolare in quelli di Zosimo di Panopoli, la prima elaborazione sistematica del processo di individuazione psichica. La trasmutazione della materia grezza in oro rispecchiava simbolicamente l’integrazione dell’inconscio nella coscienza. Un tema che ritrovi anche esplorando l’<a href="./ermetismo.html">Ermetismo</a> e la sua cosmologia simbolica.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Come si usa l’oracolo delle fasi alchemiche di MYSTICA?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Scegli la fase che rispecchia il tuo momento attuale tra le quattro schede in cima alla pagina — oppure lascia scegliere il caso con "Fase Casuale". Scrivi facoltativamente la tua domanda e premi "Rivela la Fase" per ricevere descrizione completa, doni, ombre da integrare, prescrizione ermetica, meditazione guidata e l’Arcano dei Tarocchi associato.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </div>
@@ -638,24 +808,24 @@ textarea::placeholder{color:var(--muted)}
 
 <footer class="page-footer">
   <nav class="footer-links">
-    <a href="./index.html" id="footNavHome"></a>
-    <a href="./contatti.html" id="footNavContact"></a>
-    <a href="./about.html" id="footNavAbout"></a>
-    <a href="./privacy.html" id="footNavPrivacy"></a>
+    <a href="./index.html" id="footNavHome">Home</a>
+    <a href="./contatti.html" id="footNavContact">Contatti</a>
+    <a href="./about.html" id="footNavAbout">Chi Siamo</a>
+    <a href="./privacy.html" id="footNavPrivacy">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli è una piattaforma dedicata a intrattenimento, crescita personale e approfondimento delle tradizioni esoteriche. I contenuti non sostituiscono consulenza medica, psicologica, legale o finanziaria professionale.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutte le sezioni di MYSTICA Oracoli.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

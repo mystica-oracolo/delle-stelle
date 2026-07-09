@@ -518,10 +518,10 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">🔮 MYSTICA</h1>
@@ -537,8 +537,8 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
 
     <!-- Hero -->
     <div class="card gold-border">
-      <h2 id="hero-title"></h2>
-      <p class="t-muted" id="hero-subtitle"></p>
+      <h2 id="hero-title">🔮 Strumenti del Praticante</h2>
+      <p class="t-muted" id="hero-subtitle">Grimorio · Japamala · Pendolo — i tuoi strumenti sacri</p>
     </div>
 
     <!-- AdSense -->
@@ -554,20 +554,20 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
     <!-- ══════════════════════════════════════
          SEZIONE INTERATTIVA 1 — GRIMORIO
     ══════════════════════════════════════ -->
-    <div class="eng-section-title" id="grim-section-title"></div>
+    <div class="eng-section-title" id="grim-section-title">📓 Grimorio</div>
     <div class="card">
-      <h3 id="grim-card-title"></h3>
-      <p style="font-size:13px;opacity:.8;margin-bottom:8px" id="grim-card-desc"></p>
+      <h3 id="grim-card-title">📓 Book of Shadows</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:8px" id="grim-card-desc">Il tuo diario esoterico. Annota rituali, intenzioni, sogni e riflessioni magiche.</p>
       <textarea id="eng-grimorio-nota" rows="4"></textarea>
-      <button class="btn" id="grim-btn-save" onclick="engSalvaGrimorio()"></button>
+      <button class="btn" id="grim-btn-save" onclick="engSalvaGrimorio()">📓 Sigilla nel Grimorio</button>
       <div class="eng-result" id="eng-r-grimorio"></div>
 
       <div id="grimorioListWrap" style="margin-top:16px;display:none">
         <div class="grimorio-header">
-          <span id="grim-list-header"></span>
+          <span id="grim-list-header">PAGINE DEL GRIMORIO</span>
           <span class="grimorio-count-badge" id="grimorioCount">0</span>
           <span class="grimorio-spacer"></span>
-          <button class="grimorio-del-all" id="grim-btn-del-all" onclick="grimorioClearAll()"></button>
+          <button class="grimorio-del-all" id="grim-btn-del-all" onclick="grimorioClearAll()">Elimina tutto</button>
         </div>
         <div id="grimorioList"></div>
       </div>
@@ -575,17 +575,49 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
 
     <!-- Guida al grimorio -->
     <div class="card">
-      <h3 class="guide-title" id="grim-guide-title"></h3>
-      <div id="grim-guide-list"></div>
+      <h3 class="guide-title" id="grim-guide-title">📜 Cos'è un Grimorio</h3>
+      <div id="grim-guide-list">
+    <div class="strumento-card">
+      <div class="strumento-ico">🌿</div>
+      <div class="strumento-body">
+        <h4>Erbe &amp; Corrispondenze</h4>
+        <p>Annota le erbe che usi nei rituali, i loro pianeti reggenti, le stagioni e le intenzioni. Ogni osservazione personale ha valore magico.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🕯️</div>
+      <div class="strumento-body">
+        <h4>Rituali &amp; Incantesimi</h4>
+        <p>Registra procedure, materiali e risultati di ogni rito. Il grimorio è la memoria vivente della tua pratica — migliora con ogni aggiunta.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🌙</div>
+      <div class="strumento-body">
+        <h4>Sogni &amp; Visioni</h4>
+        <p>Appunta i sogni significativi al risveglio. L'inconscio parla in simboli — il grimorio li conserva finché non sei pronto a decodificarli.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">⭐</div>
+      <div class="strumento-body">
+        <h4>Intenzioni &amp; Manifestazioni</h4>
+        <p>Scrivi le tue intenzioni con data e luna. Rileggerle dopo settimane svela quali si sono avverate e come l'universo ha risposto.</p>
+      </div>
+    </div>
+  </div>
     </div>
 
     <!-- ══════════════════════════════════════
          SEZIONE INTERATTIVA 2 — JAPAMALA
     ══════════════════════════════════════ -->
-    <div class="eng-section-title" id="mala-section-title"></div>
+    <div class="eng-section-title" id="mala-section-title">📿 Japamala &amp; Mantra</div>
     <div class="card">
-      <h3 id="mala-card-title"></h3>
-      <p style="font-size:13px;opacity:.8;margin-bottom:8px" id="mala-card-desc"></p>
+      <h3 id="mala-card-title">📿 Ciclo dei 108</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:8px" id="mala-card-desc">Il 108 è il numero sacro dell'universo. Conta i tuoi mantra, preghiere o respiri.</p>
 
       <input type="text" id="eng-mala-mantra">
 
@@ -595,27 +627,51 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
         <span class="eng-mala-of" id="eng-mala-of">0 / 108</span>
       </div>
 
-      <div class="mala-perle" id="malaPerle" aria-label="Perle del mala"></div>
+      <div class="mala-perle" id="malaPerle" aria-label="Perle del mala"><div class="perla" title="1"></div><div class="perla" title="2"></div><div class="perla" title="3"></div><div class="perla" title="4"></div><div class="perla" title="5"></div><div class="perla" title="6"></div><div class="perla" title="7"></div><div class="perla" title="8"></div><div class="perla" title="9"></div><div class="perla" title="10"></div><div class="perla" title="11"></div><div class="perla" title="12"></div><div class="perla" title="13"></div><div class="perla" title="14"></div><div class="perla" title="15"></div><div class="perla" title="16"></div><div class="perla" title="17"></div><div class="perla" title="18"></div><div class="perla" title="19"></div><div class="perla" title="20"></div><div class="perla" title="21"></div><div class="perla" title="22"></div><div class="perla" title="23"></div><div class="perla" title="24"></div><div class="perla" title="25"></div><div class="perla" title="26"></div><div class="perla" title="27"></div><div class="perla" title="28"></div><div class="perla" title="29"></div><div class="perla" title="30"></div><div class="perla" title="31"></div><div class="perla" title="32"></div><div class="perla" title="33"></div><div class="perla" title="34"></div><div class="perla" title="35"></div><div class="perla" title="36"></div><div class="perla" title="37"></div><div class="perla" title="38"></div><div class="perla" title="39"></div><div class="perla" title="40"></div><div class="perla" title="41"></div><div class="perla" title="42"></div><div class="perla" title="43"></div><div class="perla" title="44"></div><div class="perla" title="45"></div><div class="perla" title="46"></div><div class="perla" title="47"></div><div class="perla" title="48"></div><div class="perla" title="49"></div><div class="perla" title="50"></div><div class="perla" title="51"></div><div class="perla" title="52"></div><div class="perla" title="53"></div><div class="perla" title="54"></div><div class="perla" title="55"></div><div class="perla" title="56"></div><div class="perla" title="57"></div><div class="perla" title="58"></div><div class="perla" title="59"></div><div class="perla" title="60"></div><div class="perla" title="61"></div><div class="perla" title="62"></div><div class="perla" title="63"></div><div class="perla" title="64"></div><div class="perla" title="65"></div><div class="perla" title="66"></div><div class="perla" title="67"></div><div class="perla" title="68"></div><div class="perla" title="69"></div><div class="perla" title="70"></div><div class="perla" title="71"></div><div class="perla" title="72"></div><div class="perla" title="73"></div><div class="perla" title="74"></div><div class="perla" title="75"></div><div class="perla" title="76"></div><div class="perla" title="77"></div><div class="perla" title="78"></div><div class="perla" title="79"></div><div class="perla" title="80"></div><div class="perla" title="81"></div><div class="perla" title="82"></div><div class="perla" title="83"></div><div class="perla" title="84"></div><div class="perla" title="85"></div><div class="perla" title="86"></div><div class="perla" title="87"></div><div class="perla" title="88"></div><div class="perla" title="89"></div><div class="perla" title="90"></div><div class="perla" title="91"></div><div class="perla" title="92"></div><div class="perla" title="93"></div><div class="perla" title="94"></div><div class="perla" title="95"></div><div class="perla" title="96"></div><div class="perla" title="97"></div><div class="perla" title="98"></div><div class="perla" title="99"></div><div class="perla" title="100"></div><div class="perla" title="101"></div><div class="perla" title="102"></div><div class="perla" title="103"></div><div class="perla" title="104"></div><div class="perla" title="105"></div><div class="perla" title="106"></div><div class="perla" title="107"></div><div class="perla" title="108"></div></div>
 
       <div class="btn-grp">
-        <button class="btn" id="mala-btn-add" onclick="engMalaInc()"></button>
-        <button class="btn btn-sec" id="mala-btn-reset" onclick="engMalaReset()"></button>
+        <button class="btn" id="mala-btn-add" onclick="engMalaInc()">📿 +1 Perla</button>
+        <button class="btn btn-sec" id="mala-btn-reset" onclick="engMalaReset()">↺ Ricomincia</button>
       </div>
     </div>
 
     <!-- Info japamala -->
     <div class="card">
-      <h3 class="guide-title" id="mala-info-title"></h3>
-      <div id="mala-info-list"></div>
+      <h3 class="guide-title" id="mala-info-title">🙏 Il Significato del 108</h3>
+      <div id="mala-info-list">
+    <div class="strumento-card">
+      <div class="strumento-ico">🔢</div>
+      <div class="strumento-body">
+        <h4>Il Numero Sacro</h4>
+        <p>108 = 1 (unità divina) × 4 (quattro direzioni) × 27 (nakshatra lunari). È la distanza Sole-Terra misurata in diametri solari. Un numero che unisce astronomia e spiritualità.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🕉️</div>
+      <div class="strumento-body">
+        <h4>Tradizioni del Mondo</h4>
+        <p>Induismo, Buddismo tibetano, Yoga — tutte le tradizioni contemplative orientali usano il 108 per completare un ciclo di meditazione o preghiera.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">💫</div>
+      <div class="strumento-body">
+        <h4>Come Usare il Mala</h4>
+        <p>Tieni il mala nella mano destra. Con il pollice fai scorrere ogni perla recitando il mantra. La perla guru (più grande) non si conta — segna l'inizio e la fine.</p>
+      </div>
+    </div>
+  </div>
     </div>
 
     <!-- ══════════════════════════════════════
          SEZIONE INTERATTIVA 3 — PENDOLO
     ══════════════════════════════════════ -->
-    <div class="eng-section-title" id="pend-section-title"></div>
+    <div class="eng-section-title" id="pend-section-title">🔮 Pendolo &amp; Radiestesia</div>
     <div class="card">
-      <h3 id="pend-card-title"></h3>
-      <p style="font-size:13px;opacity:.8;margin-bottom:12px" id="pend-card-desc"></p>
+      <h3 id="pend-card-title">🔮 Oracolo del Pendolo</h3>
+      <p style="font-size:13px;opacity:.8;margin-bottom:12px" id="pend-card-desc">Concentrati sulla tua domanda. Visualizza il pendolo immobile, poi chiedi all'universo.</p>
 
       <textarea id="pendolo-domanda" rows="2"></textarea>
 
@@ -624,32 +680,152 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
       </div>
 
       <div class="btn-grp">
-        <button class="btn" id="pend-btn-ask" onclick="pendoloConsulta()"></button>
-        <button class="btn btn-sec" id="pendolo-btn-ferma" onclick="pendoloFerma()" style="display:none"></button>
+        <button class="btn" id="pend-btn-ask" onclick="pendoloConsulta()">🔮 Consulta il Pendolo</button>
+        <button class="btn btn-sec" id="pendolo-btn-ferma" onclick="pendoloFerma()" style="display:none">⏹ Ferma</button>
       </div>
       <div class="eng-result" id="pendolo-result"></div>
 
       <!-- Dizionario movimenti -->
       <div style="margin-top:18px">
-        <div class="pendolo-dict-title" id="pend-dict-title"></div>
-        <div id="pend-dict-list"></div>
+        <div class="pendolo-dict-title" id="pend-dict-title">DIZIONARIO DEI MOVIMENTI</div>
+        <div id="pend-dict-list">
+    <div class="pendolo-dict-item">
+      <div class="pendolo-dict-sym">↔️</div>
+      <div>
+        <div class="pendolo-dict-label">OSCILLAZIONE LATERALE — SÌ</div>
+        <div class="pendolo-dict-desc">Il pendolo oscilla da sinistra a destra. Risposta positiva — energia in accordo con la domanda.</div>
+      </div>
+    </div>
+  
+    <div class="pendolo-dict-item">
+      <div class="pendolo-dict-sym">↕️</div>
+      <div>
+        <div class="pendolo-dict-label">OSCILLAZIONE VERTICALE — NO</div>
+        <div class="pendolo-dict-desc">Oscilla avanti e indietro (verso di te e lontano). Risposta negativa o resistenza energetica.</div>
+      </div>
+    </div>
+  
+    <div class="pendolo-dict-item">
+      <div class="pendolo-dict-sym">🔄</div>
+      <div>
+        <div class="pendolo-dict-label">ROTAZIONE CIRCOLARE — FORSE / NEUTRO</div>
+        <div class="pendolo-dict-desc">Oraria = energia positiva in crescita. Antioraria = rilascio necessario. Risposta non ancora definita.</div>
+      </div>
+    </div>
+  
+    <div class="pendolo-dict-item">
+      <div class="pendolo-dict-sym">🌀</div>
+      <div>
+        <div class="pendolo-dict-label">MOVIMENTI IRREGOLARI — CHIEDI ANCORA</div>
+        <div class="pendolo-dict-desc">Interferenza energetica. Purifica lo spazio, respira tre volte e ripeti.</div>
+      </div>
+    </div>
+  </div>
       </div>
     </div>
 
     <!-- Guida radiestesia -->
     <div class="card">
-      <h3 class="guide-title" id="pend-guide-title"></h3>
-      <div id="pend-guide-list"></div>
+      <h3 class="guide-title" id="pend-guide-title">🔭 Guida alla Radiestesia</h3>
+      <div id="pend-guide-list">
+    <div class="strumento-card">
+      <div class="strumento-ico">💎</div>
+      <div class="strumento-body">
+        <h4>Tipi di Pendolo</h4>
+        <p>Cristallo di quarzo (universale), Ossidiana nera (protezione), Ametista (intuizione spirituale), Rame (conduttività energetica), Legno (contatto con la terra).</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🧘</div>
+      <div class="strumento-body">
+        <h4>Preparazione</h4>
+        <p>Siediti in silenzio, respira tre volte profondamente. Tieni il filo tra pollice e indice, lascia il pendolo libero. Aspetta che si stabilizzi prima di chiedere.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🌬️</div>
+      <div class="strumento-body">
+        <h4>Purificazione del Pendolo</h4>
+        <p>Prima di usarlo: passalo sul fumo di salvia o palo santo. Lascialo su selenite tutta la notte. Immergilo brevemente in acqua salata se ha assorbito energie pesanti.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">❓</div>
+      <div class="strumento-body">
+        <h4>Come Formulare le Domande</h4>
+        <p>Solo domande con risposta sì/no. Formula in modo chiaro e specifico. Evita domande doppie o negazioni. Es: "Questa opportunità è favorevole per me in questo momento?"</p>
+      </div>
+    </div>
+  </div>
     </div>
 
     <!-- ══════════════════════════════════════
          SEZIONE INTERATTIVA 4 — ALTARE (guida)
     ══════════════════════════════════════ -->
-    <div class="eng-section-title" id="alt-section-title"></div>
+    <div class="eng-section-title" id="alt-section-title">⚗️ Strumenti dell'Altare</div>
     <div class="card">
-      <h3 id="alt-card-title"></h3>
-      <p style="font-size:13px;opacity:.75;margin-bottom:14px" id="alt-card-desc"></p>
-      <div id="alt-item-list"></div>
+      <h3 id="alt-card-title">Gli Strumenti Tradizionali</h3>
+      <p style="font-size:13px;opacity:.75;margin-bottom:14px" id="alt-card-desc">Ogni oggetto sull'altare è un simbolo e un amplificatore di intenzione.</p>
+      <div id="alt-item-list">
+    <div class="strumento-card">
+      <div class="strumento-ico">🗡️</div>
+      <div class="strumento-body">
+        <h4>Athame</h4>
+        <p>Il coltello rituale a doppio filo rappresenta l'elemento Aria e la volontà. Non si usa per tagliare fisicamente ma per dirigere l'energia.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🪄</div>
+      <div class="strumento-body">
+        <h4>Bacchetta</h4>
+        <p>Simbolo del Fuoco e della creatività. Usata per invocare, disegnare il cerchio magico e guidare l'energia verso l'intenzione. Tradizionalmente di quercia o salice.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🏺</div>
+      <div class="strumento-body">
+        <h4>Calderone</h4>
+        <p>Simbolo dell'elemento Acqua e della trasformazione. Usato per bruciare erbe, mescolare pozioni, ospitare il fuoco sacro nei rituali.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">⭐</div>
+      <div class="strumento-body">
+        <h4>Pentacolo</h4>
+        <p>Disco con pentagramma, simbolo della Terra. Posto al centro dell'altare, benedice e protegge tutti gli oggetti posati sopra.</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🥢</div>
+      <div class="strumento-body">
+        <h4>Incenso &amp; Incensiere</h4>
+        <p>Il fumo purifica e eleva le preghiere verso il divino. Ogni resina ha una corrispondenza: olibano (sole/purificazione), mirra (luna/protezione), benzoino (mercurio/chiarezza).</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">🕯️</div>
+      <div class="strumento-body">
+        <h4>Candele</h4>
+        <p>Il fuoco è il tramite tra i mondi. Il colore ha un significato specifico: bianco (purezza), rosso (passione), verde (prosperità), nero (protezione/banimento), viola (spiritualità).</p>
+      </div>
+    </div>
+  
+    <div class="strumento-card">
+      <div class="strumento-ico">💧</div>
+      <div class="strumento-body">
+        <h4>Calice</h4>
+        <p>Il calice rappresenta il femminile divino, l'accoglienza e l'abbondanza. Contiene acqua sacra o bevanda rituale. Simboleggia il grembo dell'universo.</p>
+      </div>
+    </div>
+  </div>
     </div>
 
     <!-- AdSense bottom -->
@@ -664,30 +840,30 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
 
     <!-- Link navigazione -->
     <div class="card" style="text-align:center">
-      <p class="t-muted" style="margin-bottom:14px" id="nav-explore-label"></p>
+      <p class="t-muted" style="margin-bottom:14px" id="nav-explore-label">Esplora altri strumenti di MYSTICA</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <a href="./sogni.html" class="nav-card">
           <div class="strumento-card nav-tile">
             <span class="nav-tile-ico">🌙</span>
-            <span class="nav-tile-label" id="nav-sogni"></span>
+            <span class="nav-tile-label" id="nav-sogni">Sogni</span>
           </div>
         </a>
         <a href="./mente-energia.html" class="nav-card">
           <div class="strumento-card nav-tile">
             <span class="nav-tile-ico">🧘</span>
-            <span class="nav-tile-label" id="nav-mente"></span>
+            <span class="nav-tile-label" id="nav-mente">Mente &amp; Energia</span>
           </div>
         </a>
         <a href="./pietre-magiche.html" class="nav-card">
           <div class="strumento-card nav-tile">
             <span class="nav-tile-ico">💎</span>
-            <span class="nav-tile-label" id="nav-pietre"></span>
+            <span class="nav-tile-label" id="nav-pietre">Pietre Magiche</span>
           </div>
         </a>
         <a href="./index.html" class="nav-card">
           <div class="strumento-card nav-tile">
             <span class="nav-tile-ico">🔮</span>
-            <span class="nav-tile-label" id="nav-home"></span>
+            <span class="nav-tile-label" id="nav-home">Home MYSTICA</span>
           </div>
         </a>
       </div>
@@ -697,13 +873,13 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
          SHARE
     ══════════════════════════════════════ -->
     <div class="share-section">
-      <button class="btn-share" id="btn-share-label" onclick="shareContent()"></button>
+      <button class="btn-share" id="btn-share-label" onclick="shareContent()">📤 Condividi</button>
       <div class="share-popup" id="sharePopup" hidden>
         <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
         <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
         <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
         <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+        <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
       </div>
     </div>
 
@@ -711,7 +887,7 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
          ARTICOLO EDITORIALE
     ══════════════════════════════════════ -->
     <article class="article-section" id="art-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Grimorio, Japamala e Pendolo: gli Strumenti Sacri del Praticante Esoterico</h2>
       <img src="./images/strumenti.webp"
            srcset="./images/strumenti.webp 1x"
            id="art-hero"
@@ -720,28 +896,78 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
            loading="eager"
            decoding="async"
            style="width:100%;height:auto;border-radius:14px;margin:16px 0">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h2">Origini e Storia degli Strumenti Divinatori</h3>
+      <p id="art-p1">Il termine grimorio deriva dal francese antico grammaire, indicando originariamente qualsiasi testo scritto in una lingua dotta e incomprensibile ai più. Nel Medioevo europeo i grimori raccoglievano formule, sigilli planetari e corrispondenze magiche tramandate da maghi, alchimisti e guaritori di villaggio. Testi come la Clavicula Salomonis o il Grand Grimoire circolavano clandestinamente tra pochi iniziati, spesso copiati a mano e custoditi come beni preziosi. Oggi il grimorio personale non è più un manuale di incantesimi altrui, ma un diario vivo: uno spazio dove annotare intenzioni, sogni ricorrenti, fasi lunari osservate e la propria evoluzione spirituale, seguendo un'eredità che attraversa secoli di pratica silenziosa.</p>
+      <p id="art-p2">Il japamala, o semplicemente mala, nasce nell'India vedica come strumento per contare le ripetizioni dei mantra durante la meditazione. Le fonti più antiche risalgono a testi induisti di oltre duemila anni fa, mentre il buddismo tibetano ne ha sviluppato varianti con 108 grani realizzati in legno di bodhi, semi di rudraksha o pietre preziose. Il numero 108 non è casuale: è il prodotto di 1, 4 e 27, richiama le distanze astronomiche tra Terra, Sole e Luna misurate in diametri planetari, e compare nei nakshatra dell'astrologia vedica. Yoga, buddismo e induismo condividono questo numero come soglia simbolica per completare un ciclo di preghiera, respiro o intenzione ripetuta.</p>
+      <p id="art-p3">La radiestesia, ovvero l'uso del pendolo per rilevare energie sottili, ha radici che affondano nei rabdomanti medievali, cercatori d'acqua che utilizzavano bacchette biforcute per individuare falde sotterranee. Il termine radiestesia venne coniato solo nel Novecento dall'abate francese Alexis Bouly, che sistematizzò l'osservazione empirica in un metodo replicabile. Il pendolo, sospeso a un filo tenuto tra pollice e indice, risponde a micromovimenti muscolari involontari noti come effetto ideomotorio, un fenomeno studiato anche dalla psicologia scientifica ottocentesca. Che lo si interpreti come canale intuitivo o come specchio dell'inconscio, il pendolo resta uno strumento di introspezione capace di rendere visibili risposte che la mente razionale fatica a formulare.</p>
+      <h3 id="art-h3">Come Integrare Grimorio, Mala e Pendolo nella Pratica Quotidiana</h3>
+      <p id="art-p4">Chi si avvicina per la prima volta a questi strumenti commette spesso lo stesso errore: pretendere risposte immediate senza creare le condizioni giuste. Il grimorio funziona meglio se scritto con costanza, anche poche righe al giorno, piuttosto che in sessioni sporadiche e dimenticate. Con il mala, l'errore più comune è contare meccanicamente il numero senza sincronizzare respiro e mantra, perdendo il beneficio meditativo dello strumento. Con il pendolo, molti principianti formulano domande ambigue o cariche di aspettativa, influenzando inconsapevolmente il movimento con la propria tensione muscolare. La chiave, in tutti e tre i casi, è la calma: uno spazio silenzioso, un respiro lento e domande formulate con chiarezza fanno la differenza tra uno strumento vuoto e uno strumento vivo.</p>
+      <p id="art-p5">Un mito diffuso vuole che il grimorio debba contenere formule segrete o linguaggi cifrati per essere efficace: in realtà la sua forza sta nell'autenticità di chi scrive, non nella complessità del codice usato. Sul pendolo circola la credenza che risponda sempre con verità assoluta, mentre andrebbe considerato uno strumento di dialogo interiore più che un oracolo infallibile. Rispetto ai tarocchi, che offrono narrazioni simboliche complesse, il pendolo dà risposte binarie rapide, utile per domande specifiche più che per letture articolate. Il mala, a differenza di entrambi, non predice nulla: è un contatore di presenza, un alleato per la disciplina meditativa quotidiana. Curiosamente, tutte e tre le pratiche condividono la stessa funzione profonda: trasformare un gesto ripetuto in un atto sacro.</p>
       <nav class="article-links" aria-label="Link correlati">
-        <a href="./sogni.html" id="link-sogni"></a>
-        <a href="./tarocchi.html" id="link-tarocchi"></a>
-        <a href="./pietre-magiche.html" id="link-pietre"></a>
-        <a href="./oroscopo.html" id="link-oroscopo"></a>
+        <a href="./sogni.html" id="link-sogni">Diario dei Sogni</a>
+        <a href="./tarocchi.html" id="link-tarocchi">Lettura dei Tarocchi</a>
+        <a href="./pietre-magiche.html" id="link-pietre">Pietre Magiche</a>
+        <a href="./oroscopo.html" id="link-oroscopo">L'Oroscopo del Giorno</a>
       </nav>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
 
     <!-- ══════════════════════════════════════
          FAQ
     ══════════════════════════════════════ -->
     <section class="faq-section" aria-label="Domande frequenti">
-      <h2 class="faq-title" id="faq-title"></h2>
-      <div class="faq-list" id="faqList"></div>
+      <h2 class="faq-title" id="faq-title">Domande Frequenti</h2>
+      <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è un grimorio e come si inizia a scriverlo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Un grimorio è un diario esoterico personale in cui annotare rituali, intenzioni, sogni e osservazioni sulla propria pratica magica. Per iniziare basta un quaderno o, come su MYSTICA, uno spazio digitale sicuro: scrivi con regolarità, anche solo poche righe, indicando data e fase lunare. Con il tempo diventa un archivio prezioso della tua evoluzione spirituale, utile da rileggere insieme al tuo Diario dei Sogni.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Quante perle ha un mala e perché proprio 108?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il mala tradizionale conta 108 perle più una perla guru che segna inizio e fine del giro, senza essere contata nel totale. Il numero 108 unisce significati astronomici, matematici e spirituali condivisi da induismo, buddismo e yoga. Ogni perla accompagna una ripetizione del mantra, aiutando la mente a restare concentrata senza dover contare mentalmente.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Il pendolo dice sempre la verità?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Il pendolo non va considerato un oracolo infallibile, ma uno strumento che amplifica micromovimenti legati all'intuizione e al subconscio. Le risposte vanno interpretate con discernimento, specialmente su domande cariche di forte aspettativa emotiva. Per consultazioni più articolate, con narrazioni simboliche complesse, la Lettura dei Tarocchi offre un livello di dettaglio diverso.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Come si purifica un pendolo o un mala prima dell'uso?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Entrambi gli strumenti assorbono energie nel tempo e vanno purificati periodicamente. Il metodo più diffuso è passarli nel fumo di salvia bianca o palo santo, oppure lasciarli riposare una notte su una lastra di selenite. Per il pendolo si può anche usare un breve passaggio in acqua salata, evitando pietre porose o metalli delicati. La pulizia energetica va abbinata a un momento di raccoglimento, magari annotato nel grimorio.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Grimorio, mala e pendolo si possono usare insieme?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Sì, anzi si completano a vicenda in una pratica quotidiana coerente: il mala aiuta a centrare la mente attraverso la ripetizione del mantra, il pendolo offre un momento di ascolto intuitivo su domande specifiche, e il grimorio raccoglie entrambe le esperienze in forma scritta. Molti praticanti dedicano un piccolo rituale serale a questa sequenza, magari accompagnato dalle Pietre Magiche.</p>
+      </div>
+    </div>
+  </div>
     </section>
 
   </div><!-- /content -->
@@ -749,28 +975,26 @@ html.theme-day .footer-disclaimer{color:var(--muted)}
 
 <footer class="page-footer">
   <div class="footer-links">
-    <a href="./index.html" id="footer-link-home"></a>
-    <a href="./contatti.html" id="footer-link-contatti"></a>
-    <a href="./about.html" id="footer-link-about"></a>
-    <a href="./privacy.html" id="footer-link-privacy"></a>
+    <a href="./index.html" id="footer-link-home">Home</a>
+    <a href="./contatti.html" id="footer-link-contatti">Contatti</a>
+    <a href="./about.html" id="footer-link-about">Chi Siamo</a>
+    <a href="./privacy.html" id="footer-link-privacy">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">Strumenti per uso ludico e meditativo. Non sostituiscono consulenze professionali mediche, legali o finanziarie.</p>
 </footer>
 
 <!-- Premium Modal -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

@@ -576,10 +576,10 @@
 <!-- Header -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">🖤 Magia Nera</h1>
@@ -594,9 +594,929 @@
 <main id="main-content">
 
   <!-- Sezione Interattiva: 40 Rituali -->
-  <div class="avviso" id="avviso-text"></div>
-  <p class="counter" id="counter"></p>
-  <div id="ritual-list" role="list"></div>
+  <div class="avviso" id="avviso-text">⚠️ Tutti i rituali presenti sono a scopo difensivo ed etico. La tradizione autentica non insegna a nuocere — insegna a proteggersi.</div>
+  <p class="counter" id="counter">40 rituali disponibili</p>
+  <div id="ritual-list" role="list"><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">01</span>
+        <span class="ritual-title">Scongiuro contro Malocchio</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Neutralizzare invidie e energie negative ricevute.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Olio d'oliva, acqua, ciotola, ago di ferro.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Riempi d'acqua, versa 3 gocce d'olio. Se l'olio si disperde, è assorbito. Se forma bolle, immergi l'ago: <em>"Ciò che è lanciato si spezza"</em>. Versa in terra lontana.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">02</span>
+        <span class="ritual-title">Legame Difensivo</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Fermare energia nociva proveniente dall'esterno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Filo nero, sasso scuro, candela nera, foglio.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi ciò da fermare. Avvolgi nel filo: <em>"Ciò che nuoce resta fermo"</em>. Appoggia il sasso. Tieni chiuso fino a risoluzione, poi brucia.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">03</span>
+        <span class="ritual-title">Lavoro con l'Ombra</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Integrare paure negate e aspetti nascosti di sé.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Diario, penna nera, candela grigia.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">In luna calante, scrivi 3 cose evitate. Leggi ad alta voce. Rispondi: <em>"Cosa mi insegnano?"</em>. Conserva. Ripeti ogni 3 mesi.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">04</span>
+        <span class="ritual-title">Rituale di Chiusura</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Chiudere cicli tossici in modo definitivo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Foglio, forbici, sacchetto nero, terra.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi la situazione. Taglia in 4. Metti nel sacchetto: <em>"Ciò che è finito resta chiuso"</em>. Seppellisci o tieni in luogo buio.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">05</span>
+        <span class="ritual-title">Specchio di Difesa</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Scudo energetico contro intenzioni negative altrui.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Specchio cornice nera, sale, cordino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Cospargi i bordi di sale. Posiziona verso la fonte di disturbo. Tocca il vetro: <em>"La mia soglia è sacra"</em>. Rinnova sale ogni luna piena.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">06</span>
+        <span class="ritual-title">Cerchio di Ferro</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Barriera fisica e simbolica di protezione della casa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Chiodi o oggetti di ferro, sale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi gli oggetti lungo il perimetro di casa. Versa sale dietro. Recita: <em>"Il ferro taglia, il sale purifica"</em>. Controlla mensilmente.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">07</span>
+        <span class="ritual-title">Rituale di Silenzio</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Neutralizzare pettegolezzi e voci false.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Ago, filo nero, pezzo di stoffa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Cuci la stoffa chiudendola: <em>"Le bocche si chiudono, la verità resta"</em>. Conserva in cassaforte o cassetto bloccato.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">08</span>
+        <span class="ritual-title">Bagno di Scarico Energetico</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rimuovere pesi e residui energetici accumulati.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sale nero, carbone attivo, aceto, acqua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Sciogli nel bagno. Immergiti visualizzando il nero che esce dai pori. Esci, sciacqua con acqua dolce. Non riutilizzare l'acqua.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">09</span>
+        <span class="ritual-title">Rituale della Corda Tagliata</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Staccarsi definitivamente da dipendenze emotive.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Corda di iuta, forbici, candela nera.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Tieni la corda rappresentante il legame. Tagliala al centro: <em>"Io mi scelgo, il resto si dissolve"</em>. Brucia i pezzi in sicurezza.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">10</span>
+        <span class="ritual-title">Protezione Notturna con Aglio</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Scudo energetico durante il sonno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">3 spicchi d'aglio, sacchetto di tela.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Metti gli spicchi nel sacchetto. Appendilo alla testiera del letto. Recita: <em>"La notte è mia, ciò che è oscuro resta fuori"</em>. Sostituisci quando appassiscono.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">11</span>
+        <span class="ritual-title">Rituale di Ritorno al Mittente</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rimandare energia negativa senza ritorsione attiva.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Specchio rivolto verso l'esterno, sale, acqua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Posiziona lo specchio verso la porta o finestra. Versa sale e acqua alla base: <em>"Ciò che è mio torna, ciò che non è mio si ferma"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">12</span>
+        <span class="ritual-title">Lavoro con la Terra Nera</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Radicamento e guarigione dopo traumi profondi.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Terra scura, vaso, semi di basilico.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Pianta i semi nella terra. Ogni volta che annaffi, dì: <em>"Ciò che è marcio nutre, ciò che è vivo cresce"</em>. Osserva la germinazione.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">13</span>
+        <span class="ritual-title">Rituale della Chiave Chiusa</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Bloccare intrusioni fisiche ed energetiche.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Vecchia chiave, ceralacca nera, nastro.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Sigilla la chiave con la cera. Legala con il nastro. Tienila vicino alla porta d'ingresso: <em>"Ciò che non è invitato, non entra"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">14</span>
+        <span class="ritual-title">Meditazione dell'Abisso</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Accettazione del vuoto e preparazione alla rinascita.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Luogo buio, tappetino, campana.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Siediti al buio. Suona la campana. Ascolta il silenzio che segue. Non opporre resistenza al vuoto. Resta 15 min.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">15</span>
+        <span class="ritual-title">Rituale del Nome Nascosto</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione profonda dell'identità e dell'essenza.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Carta, penna, scatola di legno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi il tuo nome completo. Piega la carta 3 volte verso di te. Mettila nella scatola: <em>"Ciò che è mio resta nascosto"</em>. Conserva al sicuro.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">16</span>
+        <span class="ritual-title">Cerchio di Cenere</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Purificazione profonda dopo un conflitto o rottura.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cenere di legno o erbe, gesso.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Traccia un cerchio a terra. Stai al centro. Visualizza il conflitto trasformarsi in cenere. Esci dal cerchio senza guardare indietro.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">17</span>
+        <span class="ritual-title">Rituale del Pugno Chiuso</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Affermazione di confine personale con forza.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Nessuno — solo intenzione e corpo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Chiudi il pugno destro. Stringi forte 10 sec. Rilascia: <em>"Il mio limite è legge"</em>. Ripeti 3 volte. Senti la fermezza nel corpo.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">18</span>
+        <span class="ritual-title">Offerta alla Notte</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rispetto e onore per l'oscurità necessaria.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Acqua scura, pane nero, candela spenta.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Esponi gli oggetti al buio per 1 ora. Non accendere fiamme. Ringrazia l'oscurità per il riposo e la protezione. Riponi al mattino.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">19</span>
+        <span class="ritual-title">Rituale della Pietra Pesante</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Scarico fisico di stress emotivo accumulato.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sasso levigato, acqua corrente.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Tieni il sasso, trasferiscigli il peso emotivo. Gettalo in un fiume o mare: <em>"L'acqua porta via ciò che non serve"</em>. Non recuperarlo.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">20</span>
+        <span class="ritual-title">Trasformazione dell'Ombra in Luce</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Alchimia interiore — integrare luce e oscurità.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela nera e bianca, specchio.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Accendi entrambe. Guarda il riflesso: <em>"Ciò che è oscuro mi insegna, ciò che è chiaro mi guida"</em>. Spegni la nera, lascia la bianca. Conserva la cera fusa come talismano.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">21</span>
+        <span class="ritual-title">Diario della Rabbia</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Trasmutare la collera in energia consapevole.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Quaderno, penna.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi tutto senza filtro. Strappa la pagina. Brucia in sicurezza. <em>"Fuoco che pulisce, non distrugge"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">22</span>
+        <span class="ritual-title">Rituale del Confinamento</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Delimitare spazi emotivi e confini personali.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Gesso o nastro.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Traccia una linea a terra. <em>"Qui finisco io, lì inizi tu"</em>. Oltrepassa solo con consenso reciproco.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">23</span>
+        <span class="ritual-title">Bagno di Assenzio</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione e chiarezza severa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Assenzio secco, acqua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Prepara un decotto, filtra e aggiungilo al bagno. <em>"Amarezza che sveglia, lucidità che protegge"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">24</span>
+        <span class="ritual-title">Cerchio di Pietre Scure</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Ancoraggio in momenti di crisi intensa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">7 pietre levigate nere o grigie.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi le pietre in cerchio attorno a te. Toccale una a una. <em>"Stabilità, peso, presenza"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">25</span>
+        <span class="ritual-title">Rituale del Silenzio Interiore</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Spegnere le voci interne negative.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cuffie o luogo silenzioso.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">5 min di silenzio totale. Quando arriva il pensiero negativo, visualizzalo dissolversi in polvere. Non reagire.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">26</span>
+        <span class="ritual-title">Scudo di Cenere e Sale</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione quotidiana rapida.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Ciotolina, cenere, sale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Mescola. Tocca fronte e petto. <em>"Cenere assorbe, sale sigilla"</em>. Lava le mani dopo.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">27</span>
+        <span class="ritual-title">Rituale della Soglia Invisibile</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Barriera mentale in luoghi stressanti.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Nessuno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Prima di entrare in un luogo stressante, immagina un vetro spesso tra te e l'esterno. <em>"Vedo, non assorbo"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">28</span>
+        <span class="ritual-title">Bagno di Aceto e Sale</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rimuovere legami energetici non voluti.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Aceto bianco, sale grosso.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Sciogli in un catino. Lava mani e piedi. <em>"Ciò che non ho scelto, scivola via"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">29</span>
+        <span class="ritual-title">Meditazione del Drago Interiore</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Risvegliare la forza protettiva interiore.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cuscino, musica bassa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Visualizza un drago nero che dorme nel petto. Sveglialo con il respiro profondo. <em>"Proteggo, non attacco"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">30</span>
+        <span class="ritual-title">Rituale della Parola Tagliente</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Affermare i confini con fermezza.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Specchio.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Guarda il riflesso. Di' ad alta voce: <em>"No. Basta. Non ora."</em>. Ripeti finché non senti fermezza nel corpo.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">31</span>
+        <span class="ritual-title">Cerchio di Ombra Consapevole</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Accettare le parti difficili di sé.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela spenta, diario.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi 3 tratti che giudichi negativamente. Accanto, scrivi come possono proteggerti. Integra le risposte.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">32</span>
+        <span class="ritual-title">Bagno di Carbone Attivo</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Detox energetico intenso.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Polvere di carbone, acqua tiepida.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Mescola e versa in un catino. Immergi mani e braccia. <em>"Assorbe, non trattiene"</em>. Risciacqua abbondantemente.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">33</span>
+        <span class="ritual-title">Rituale della Chiave che Gira</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Chiudere porte energetiche indesiderate.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Chiave reale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Tienila in mano. Gira in senso antiorario 3 volte. <em>"Porta chiusa, chiave mia"</em>. Mettila in tasca.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">34</span>
+        <span class="ritual-title">Meditazione del Vuoto Protettivo</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Creare spazio tra stimolo e reazione.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sedia.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Inspira 4, trattieni 4, espira 6. Nel vuoto tra espirazione e inspirazione, di': <em>"Scelgo io"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">35</span>
+        <span class="ritual-title">Rituale del Sale alle Finestre</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione ambientale continua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sale, 4 piattini.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Posa i piattini sui davanzali. <em>"Vento passa, pesantezza resta fuori"</em>. Cambia il sale quando diventa umido.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">36</span>
+        <span class="ritual-title">Cerchio di Respiro Nero</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Scarico immediato di tensioni.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Nessuno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Espira forte dalla bocca 3 volte, come se soffiassi via polvere nera. Inspira normalmente. Ripeti 5 cicli.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">37</span>
+        <span class="ritual-title">Rituale della Terra che Assorbe</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Restituire il peso emotivo alla natura.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Vaso con terra, foglio.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi il tuo peso su carta. Seppellisci. <em>"La terra trasforma, io resto leggero"</em>. Annaffia la terra.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">38</span>
+        <span class="ritual-title">Meditazione del Confine di Fuoco</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Difesa attiva senza aggressione.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela rossa.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Fissa la fiamma. Visualizza un cerchio di fuoco basso attorno a te. <em>"Chi entra con rispetto, resta. Chi entra con forza, si ferma"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">39</span>
+        <span class="ritual-title">Rituale del Nome Tagliato</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Staccarsi da identità e ruoli imposti da altri.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Carta, forbici.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi il nome o l'etichetta che altri ti hanno dato. Taglia in 4. <em>"Io decido chi sono"</em>. Brucia o getta.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault();}">
+        <span class="ritual-num">40</span>
+        <span class="ritual-title">Cerchio di Chiusura Oscura</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Concludere un ciclo protettivo con intenzione.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela nera, sale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Accendi la candela. Versa il sale attorno. <em>"Ciclo chiuso, difesa sciolta, pace resta"</em>. Spegni, conserva la cera.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div></div>
 
   <!-- Share -->
   <div class="share-section">
@@ -606,13 +1526,13 @@
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener noreferrer">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener noreferrer">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- Articolo Editoriale -->
   <article class="article-section" aria-labelledby="art-title">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Magia Nera: Storia, Tradizione e Pratica Difensiva</h2>
     <figure>
       <img src="./images/icone/home/magia-nera.webp"
            srcset="./images/icone/home/magia-nera.webp 1x"
@@ -623,13 +1543,13 @@
            decoding="async"
            style="width:100%;border-radius:14px;margin:16px 0">
     </figure>
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Le Radici Storiche della Magia Nera nell'Occidente Esoterico</h3>
+    <p id="art-p1">La Magia Nera porta con sé il peso di millenni di fraintendimenti. Nell'immaginario collettivo evoca streghe malefiche, patti col diavolo e operazioni finalizzate a nuocere. La realtà storica è più complessa e, per certi versi, più affascinante. Le prime tracce di pratiche magiche difensive — utilizzando simboli oscuri, metalli, terra e oggetti notturni — si trovano già nei papiri magici greci (III-V secolo d.C.), dove formule di protezione convivono con scongiuri di chiusura e legamenti difensivi. Il colore nero non ha mai significato "il male": nell'esoterismo occidentale rappresenta l'assenza di forma, il grembo del possibile, la terra fertile da cui nasce la rinascita.</p>
+    <p id="art-p2">Nel Medioevo europeo la distinzione tra magia "bianca" e "nera" era perlopiù teologica: bianca quella invocante angeli e santi, nera quella che lavorava con spiriti anonimi, con l'ombra e con la notte. Non necessariamente malevola — spesso semplicemente heterodossa rispetto alla morale ecclesiastica. La tradizione italiana aveva le proprie varianti: la janara campana, la maga calabrese, la fattucchiera siciliana lavoravano con un repertorio che mescolava preghiere cristiane, materiali naturali e formule precoloniali. Il confine tra devozione e magia era sottile, spesso inesistente. Proteggere la famiglia dal malocchio, chiudere una porta energetica aperta, rompere un legame tossico: queste erano le operazioni quotidiane della magia popolare italiana.</p>
+    <p id="art-p3">Con il Rinascimento e la Riforma la magia subì una sistematizzazione. La scuola ermetica fiorentina — Ficino, Pico della Mirandola — separò la magia naturale (lecita) dalla magia demoniaca (vietata). I grimori del XVII e XVIII secolo, come la Grande Grimoire e il Grimorium Verum, codificarono rituali di evocazione e difesa. Ma la magia difensiva più autentica non è mai passata per i grimori: era orale, tramandata da nonna a nipote, da strega a discepola. Solo nel XX secolo con studiosi come Dion Fortune e Gerald Gardner questa tradizione iniziò a essere documentata sistematicamente, distinguendo finalmente tra magia volontaria e magia difensiva.</p>
+    <h3 id="art-h3">Lavoro con l'Ombra: Psicologia e Pratica Spirituale</h3>
+    <p id="art-p4">Carl Gustav Jung introdusse il concetto di Ombra nella psicologia analitica per descrivere tutto ciò che l'individuo nega di sé: la rabbia repressa, le paure infantili, i desideri considerati inaccettabili. La Magia Nera difensiva contemporanea ha fatto propria questa intuizione: lavorare con l'Ombra significa non combatterla, ma integrarla. Un rituale come il "Lavoro con l'Ombra" presente in questa raccolta non è un'operazione di magia oscura nel senso popolare: è un esercizio di onestà interiore che porta alla luce ciò che è stato sepolto. La potenza simbolica di candele, specchi e diari in questi contesti serve da amplificatore dell'intenzione cosciente.</p>
+    <p id="art-p5">Errori comuni di chi si avvicina per la prima volta alla Magia Nera difensiva: confonderla con la magia offensiva, cercare effetti immediati e spettacolari, trascurare l'aspetto psicologico in favore del puro ritualismo. La pratica autentica è lenta, personale, radicata nel corpo. Non richiede ingredienti rari o inaccessibili — spesso basta sale, acqua, un pezzo di carta e un'intenzione chiara. Gli strumenti materiali sono amplificatori simbolici, non condizioni necessarie: la vera variabile è la coerenza interiore tra ciò che si intende fare e ciò che si fa. In questa raccolta trovi 40 rituali testati dalla tradizione esoterica italiana, riproposti in forma accessibile e rispettosa.</p>
     <nav class="article-links" aria-label="Approfondimenti correlati">
       <a href="./magia-bianca.html">✨ Magia Bianca</a>
       <a href="./magia-rossa.html">🔴 Magia Rossa</a>
@@ -638,13 +1558,63 @@
       <a href="./alchimia.html">⚗️ Alchimia</a>
       <a href="./rituali.html">🕯️ Rituali</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section" aria-labelledby="faq-heading">
     <h2 class="faq-title" id="faq-heading">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è la Magia Nera difensiva?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>È un ramo della tradizione esoterica che utilizza simboli, rituali e intenzioni per creare protezione da energie negative, influenze nocive e dinamiche relazionali tossiche. A differenza della Magia Nera offensiva — spesso confusa con essa — quella difensiva non mira a danneggiare nessuno: costruisce scudi, chiude porte aperte, neutralizza ciò che pesa. Le sue radici affondano nel folklore italiano, nella magia cerimoniale europea e nelle tradizioni di protezione del Mediterraneo antico. È praticata da secoli, con varianti regionali profonde: dalla fattucchiera siciliana alla strega calabrese, ogni tradizione locale ha i propri metodi di difesa.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>I rituali di Magia Nera sono pericolosi?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>I rituali presenti in questa raccolta sono formulati esclusivamente per scopi protettivi. La questione della pericolosità nella pratica magica riguarda sempre l'intenzione del praticante, non gli strumenti. Sale, ferro, candele nere e specchi sono oggetti fisici con un forte peso simbolico e una lunga storia di uso protettivo. Come per qualsiasi pratica spirituale, è fondamentale approcciarvisi con chiarezza mentale, rispetto per la tradizione e consapevolezza degli effetti psicologici che un rituale può avere. Evitare la pratica in stati emotivi alterati è una regola base condivisa da tutte le tradizioni esoteriche.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Qual è la differenza tra Magia Nera e Magia Bianca?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>La distinzione è in parte storica, in parte convenzionale. Tradizionalmente la Magia Bianca si associa alla luce, alla guarigione e all'invocazione del divino; la Magia Nera lavora con l'ombra, la chiusura, il confine e la protezione notturna. Nella pratica contemporanea molti studiosi ritengono questa divisione semplificatoria: la magia rossa, ad esempio, non si colloca facilmente né nell'una né nell'altra categoria. Ciò che distingue le pratiche etiche da quelle non etiche non è il colore simbolico, ma l'intenzione. Puoi approfondire il tema nella nostra pagina dedicata alla Magia Bianca.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Con quale frequenza eseguire i rituali di protezione?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Dipende dal tipo di rituale e dalla situazione. I rituali ambientali — sale alle finestre, specchio difensivo, cerchio di ferro — si rinnovano ciclicamente seguendo le fasi lunari: luna piena per attivare gli scudi, luna calante per sciogliere ciò che pesa. I rituali di scarico energetico si eseguono quando si avverte accumulo emotivo, generalmente una volta al mese. I grandi rituali di chiusura o taglio dei legami si fanno in corrispondenza di momenti significativi: fine di una relazione, cambio di casa, conclusione di un ciclo. L'intuizione personale è una guida valida quanto il calendario.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Cosa significa "lavorare con l'Ombra"?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Il concetto di Ombra — elaborato da Carl Gustav Jung — indica le parti di sé rimosse, negate o considerate inaccettabili: paure, rabbia repressa, vulnerabilità. Lavorare con l'Ombra in chiave esoterica significa confrontarsi consapevolmente con questi aspetti anziché ignorarli o proiettarli sugli altri. Nella Magia Nera difensiva questo processo diventa un atto sacro di autoconoscenza che rafforza la resilienza emotiva e riduce la permeabilità a influenze negative esterne. Non è lavoro sugli altri, ma su sé stessi — uno degli impegni più profondi che la tradizione esoterica possa offrire.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -657,23 +1627,21 @@
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">Questo sito ha scopo informativo e culturale. I rituali sono presentati come tradizione esoterica storica. Non incoraggiamo pratiche dannose o illegali. Consulta un esperto per questioni personali.</p>
 </footer>
 
 <!-- Premium Modal -->
 <div class="premium-modal" id="premiumModal" role="dialog" aria-modal="true" aria-labelledby="premium-title" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca rituali avanzati, interpretazioni complete e tutti i 40 rituali senza limiti.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

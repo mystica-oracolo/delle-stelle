@@ -655,15 +655,15 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca rituali completi, protezioni avanzate e consulti illimitati sul Malocchio.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
       onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"
-      aria-label="Acquista MYSTICA Premium"></button>
+      aria-label="Acquista MYSTICA Premium">🧿 Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
       onclick="closePremiumModal()"
-      aria-label="Continua gratis"></button>
+      aria-label="Continua gratis">Continua Gratis</button>
   </div>
 </div>
 
@@ -672,10 +672,10 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
   <!-- ── HEADER STANDARD v2.3 ── -->
   <header class="page-header">
     <div class="header-top">
-      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
       <div class="header-controls">
-        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
       </div>
     </div>
     <h1 class="page-title" id="page-title">🧿 Il Malocchio</h1>
@@ -698,18 +698,18 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
              id="art-hero" alt=""
              width="120" height="120" loading="eager" decoding="sync">
       </div>
-      <h2 id="hero-title"></h2>
-      <p id="hero-sub"></p>
+      <h2 id="hero-title">Il Malocchio</h2>
+      <p id="hero-sub">Dall'occhio di invidia dell'antichità alle pratiche di protezione della nonna: un viaggio completo nella credenza più diffusa del Mediterraneo.</p>
     </section>
 
     <!-- TOC -->
     <nav class="toc" aria-label="Indice argomenti">
-      <a class="toc-pill" href="#origini" id="toc-origini"></a>
-      <a class="toc-pill" href="#riconoscere" id="toc-riconoscere"></a>
-      <a class="toc-pill" href="#rituali" id="toc-rituali"></a>
-      <a class="toc-pill" href="#protezione" id="toc-protezione"></a>
-      <a class="toc-pill" href="#tradizioni" id="toc-tradizioni"></a>
-      <a class="toc-pill" href="#falsi-miti" id="toc-falsimiti"></a>
+      <a class="toc-pill" href="#origini" id="toc-origini">Origini</a>
+      <a class="toc-pill" href="#riconoscere" id="toc-riconoscere">Riconoscerlo</a>
+      <a class="toc-pill" href="#rituali" id="toc-rituali">Come Toglierlo</a>
+      <a class="toc-pill" href="#protezione" id="toc-protezione">Protezione</a>
+      <a class="toc-pill" href="#tradizioni" id="toc-tradizioni">Tradizioni</a>
+      <a class="toc-pill" href="#falsi-miti" id="toc-falsimiti">Falsi Miti</a>
     </nav>
 
     <!-- AD SLOT 1 -->
@@ -1179,14 +1179,14 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
 
     <!-- ── SHARE ── -->
     <div class="share-section">
-      <p id="share-intro-text"></p>
+      <p id="share-intro-text">Hai trovato utile questa guida sul Malocchio?</p>
       <button class="share-main-btn" onclick="shareContent()" aria-label="Condividi questa pagina">📤 Condividi</button>
       <div class="share-popup" id="sharePopup" hidden>
         <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener noreferrer" aria-label="Condividi su WhatsApp">💬 WhatsApp</a>
         <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Telegram">✈️ Telegram</a>
         <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Facebook">👥 Facebook</a>
         <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener noreferrer" aria-label="Condividi su X">🐦 X</a>
-        <button class="share-btn copy" id="share-copy" onclick="copyLink()" aria-label="Copia link"></button>
+        <button class="share-btn copy" id="share-copy" onclick="copyLink()" aria-label="Copia link">🔗 Copia Link</button>
       </div>
     </div>
 
@@ -1201,16 +1201,76 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
     </nav>
 
     <!-- ── CTA EXPLORE ── -->
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
 
     <!-- ── FAQ ── -->
     <section class="faq-section" aria-labelledby="faq-heading">
       <h2 class="faq-title" id="faq-heading">FAQ</h2>
-      <div id="faqList"></div>
+      <div id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false" aria-controls="faq-ans-0">
+        <span>Come si riconosce il malocchio?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>I sintomi classici includono mal di testa improvviso e frontale, stanchezza cronica inspiegabile, nausea, sfortuna a catena (oggetti che si rompono, incidenti), sonno disturbato con sogni angoscianti e irritabilità senza causa. Il test diagnostico più antico e diffuso è il test dell'olio: tre gocce di olio extravergine versate in acqua — se rimangono unite non c'è malocchio; se si disperdono o affondano, la presenza è confermata.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false" aria-controls="faq-ans-1">
+        <span>Come si toglie il malocchio secondo la tradizione?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Ogni regione italiana ha il proprio rituale. In Campania si usa l'Olio di San Giovanni (tre gocce d'olio in acqua, ripetuto tre volte). In Sicilia il rituale del Grano e del Sale prevede far girare il piatto attorno alla testa della persona colpita prima di bruciarne il contenuto. In Calabria le Tre Candele prevedono il passaggio di un uovo su tutto il corpo. Il componente essenziale è sempre la formula verbale tramandata oralmente, mai divulgabile fuori dalla famiglia.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false" aria-controls="faq-ans-2">
+        <span>Il cornicello protegge davvero?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Secondo la tradizione autentica, il cornicello funziona solo se rispetta tre condizioni: deve essere regalato (mai acquistato per sé), deve essere in corallo vero o oro puro (non metalli industriali), e deve essere "caricato" attraverso un rituale o benedizione. Un cornicello di plastica o metallo industriale comprato per sé al mercato non ha il potere protettivo della tradizione originale — nella logica del folklore, mancano i requisiti fondamentali.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false" aria-controls="faq-ans-3">
+        <span>Chi può fare il malocchio?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Chiunque, incluse persone che amano sinceramente la vittima. Nella tradizione autentica il meccanismo non è morale ma energetico: è l'invidia — anche del tutto inconscia — il vettore della trasmissione. Ecco perché la formula «ti voglio bene, senza malocchio» era obbligatoria dopo un complimento sincero, e perché i neonati venivano protetti anche dai parenti più amorevoli.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false" aria-controls="faq-ans-4">
+        <span>Il malocchio è solo italiano?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>No, è documentato in oltre cento culture su tutti i continenti. In Turchia il Nazar boncuğu; in Grecia il Mati; nella tradizione ebraica l'Ayin ha'ra; in quella islamica l'Al-ʿayn (citato direttamente nel Corano); in India il Nazar/Drishti; in Etiopia il Buda. Lo studio dell'antropologo Clarence Maloney (2009) lo ha identificato come la superstizione con la maggiore distribuzione geografica al mondo.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false" aria-controls="faq-ans-5">
+        <span>Cosa dice la scienza?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>La psicologia documenta che la percezione dell'invidia altrui produce effetti fisiologici misurabili: aumento del cortisolo, riduzione delle performance cognitive e motorie, alterazione del sonno. I rituali anti-malocchio funzionano come interventi psicologici strutturati: forniscono una spiegazione all'esperienza negativa, attivano un senso di agenzia e segnalano la presa in carico da parte della comunità. Questi meccanismi hanno effetti reali sul benessere soggettivo.</p>
+      </div>
+    </div>
+  </div>
     </section>
 
     <!-- ── DISCLAIMER ── -->
-    <p class="disclaimer" id="footer-disclaimer"></p>
+    <p class="disclaimer" id="footer-disclaimer">✦ I contenuti di questa pagina hanno scopo informativo e culturale. Le pratiche descritte appartengono al folklore e alla tradizione popolare. Per qualsiasi sintomo fisico o psicologico rivolgersi sempre a un professionista della salute. ✦</p>
 
   </div><!-- /content -->
 
@@ -1236,8 +1296,8 @@ button{touch-action:manipulation;-webkit-appearance:none;font-family:inherit}
       <a href="./about.html">Chi Siamo</a>
       <a href="./privacy.html">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p id="footer-disclaimer-footer" class="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p id="footer-disclaimer-footer" class="footer-disclaimer">✦ I contenuti di questa pagina hanno scopo informativo e culturale. Le pratiche descritte appartengono al folklore e alla tradizione popolare. Per qualsiasi sintomo fisico o psicologico rivolgersi sempre a un professionista della salute. ✦</p>
   </footer>
 
   </main>

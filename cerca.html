@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- SEO — popolati anche da updateSEO() -->
+<title>Cerca su MYSTICA — Trova Tarocchi, Oroscopo, Rune e Altro</title>
+<meta name="description" content="Cerca tra oltre 60 strumenti divinatori e guide di MYSTICA: tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.">
+<meta name="keywords" content="cerca mystica, ricerca oracoli, trova tarocchi oroscopo rune, motore di ricerca esoterico, mysticaoracoli">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mysticaoracoli.it/cerca.html">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/cerca.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cerca su MYSTICA — Trova Tarocchi, Oroscopo, Rune e Altro">
+<meta property="og:description" content="Cerca tra oltre 60 strumenti divinatori e guide di MYSTICA: tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mysticaoracoli.it/cerca.html">
+<meta property="og:image" content="https://mysticaoracoli.it/images/mystica-orizzontale.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="MYSTICA Oracoli">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cerca su MYSTICA — Trova Tarocchi, Oroscopo, Rune e Altro">
+<meta name="twitter:description" content="Cerca tra oltre 60 strumenti divinatori e guide di MYSTICA: tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.">
+<meta name="twitter:image" content="https://mysticaoracoli.it/images/mystica-orizzontale.webp">
+
+<!-- JSON-LD — rigenerato da updateSEO() -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mysticaoracoli.it/cerca.html#webpage",
+      "url": "https://mysticaoracoli.it/cerca.html",
+      "name": "Cerca su MYSTICA — Trova Tarocchi, Oroscopo, Rune e Altro",
+      "description": "Cerca tra oltre 60 strumenti divinatori e guide di MYSTICA: tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.",
+      "inLanguage": "it",
+      "isPartOf": { "@id": "https://mysticaoracoli.it/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mysticaoracoli.it/" },
+        { "@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://mysticaoracoli.it/cerca.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TDGH40FYK4');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0522720046244970" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=optional" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./apple-touch-icon-v2.png">
+<link rel="icon" type="image/png" href="./icon-192-v2.png">
+<meta name="theme-color" content="#0a0514">
+
+<style>
+/* ── Reset & Variabili (identiche allo standard MYSTICA) ── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0514;
+  --card:#140c24;
+  --purple:#2a1748;
+  --gold:#d4af37;
+  --gold-dim:#b8860b;
+  --gold-glow:rgba(212,175,55,0.4);
+  --text:#f4f1fa;
+  --muted:#b8b2d1;
+  --radius:18px;
+  --border:rgba(212,175,55,0.2);
+}
+html.theme-day{
+  --bg:#f5f2ed;
+  --card:#ede8df;
+  --text:#2a1748;
+  --muted:#6b5b7f;
+  --purple:#6b5b7f;
+  --gold:#c89742;
+  --gold-dim:#a67c52;
+  --gold-glow:rgba(200,151,66,0.2);
+  --border:#c89742;
+}
+html.theme-day .result-card,
+html.theme-day .search-box,
+html.theme-day .hero{
+  background:var(--card);
+  border-color:var(--border);
+  color:var(--text);
+}
+html.theme-day h1,html.theme-day h2,html.theme-day h3{
+  color:var(--text);
+  text-shadow:none;
+}
+
+body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.8;min-height:100vh;transition:background 0.3s,color 0.3s}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ── Skip Link ── */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:#0a0514;padding:10px 18px;z-index:10000;border-radius:0 0 8px 0;font-family:'Cinzel',serif;font-size:12px}
+.skip-link:focus{left:0}
+
+/* ── Sfondo Cosmico ── */
+.cosmos{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #2a174830 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, #1a073820 0%, transparent 60%),
+    radial-gradient(2px 2px at 15% 25%, #fff9 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff7 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, #d4af3780 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, #fff6 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 85%, #fff5 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 35%, #d4af3760 0%, transparent 100%);
+  animation:twinkle 14s infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
+html.theme-day .cosmos{opacity:0.25}
+
+/* ── Header standard ── */
+.page-header{background:linear-gradient(135deg,#1a0c32,#0a0520);border-bottom:1px solid var(--border);padding:max(16px,calc(16px + env(safe-area-inset-top,0px))) 20px 16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+html.theme-day .page-header{background:linear-gradient(135deg,#ede8df,#f5f2ed)}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.btn-back{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1px;text-decoration:none}
+.header-controls{display:flex;gap:8px}
+.btn-icon{background:rgba(212,175,55,0.08);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;padding:6px 12px;border-radius:20px;cursor:pointer;transition:all 0.2s}
+.btn-icon:hover{background:rgba(212,175,55,0.18);border-color:var(--gold)}
+.page-title{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:2px;text-align:center;text-shadow:0 0 20px rgba(212,175,55,0.35);margin-bottom:10px}
+.lang-switch{display:flex;gap:6px;justify-content:center}
+.btn-lang{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;padding:4px 12px;border-radius:14px;cursor:pointer;transition:all 0.2s}
+.btn-lang.active,.btn-lang:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,0.1)}
+
+main{max-width:760px;margin:0 auto;padding:32px 20px 60px;position:relative;z-index:1}
+.hero{text-align:center;margin-bottom:28px;padding:36px 24px;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+html.theme-day .hero{background:linear-gradient(145deg,#ede8df,#f5f2ed)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
+.hero-icon{font-size:52px;margin-bottom:14px;display:block}
+.hero-title{font-family:'Cinzel',serif;font-size:26px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;line-height:1.3}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto}
+nav.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:24px}
+nav.breadcrumb a{color:var(--gold);text-decoration:none}
+nav.breadcrumb span{margin:0 6px;opacity:0.5}
+
+/* ── Search box ── */
+.search-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:24px;position:relative}
+.search-input-wrap{position:relative}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;opacity:0.7}
+#searchInput{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:12px;padding:14px 44px 14px 46px;color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;outline:none;transition:border-color 0.25s}
+html.theme-day #searchInput{background:rgba(0,0,0,0.03)}
+#searchInput:focus{border-color:var(--gold)}
+#searchClear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:6px;display:none}
+#searchClear.show{display:block}
+.results-count{font-family:'Cinzel',serif;font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.results-count span{color:var(--gold)}
+
+/* ── Results ── */
+#resultsList{display:flex;flex-direction:column;gap:12px}
+.result-card{display:flex;gap:14px;background:linear-gradient(145deg,#130b26,#0d0620);border:1px solid rgba(212,175,55,0.18);border-radius:14px;padding:16px;text-decoration:none;transition:border-color 0.2s,transform 0.2s;animation:fadeIn 0.25s ease}
+html.theme-day .result-card{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
+.result-card:hover{border-color:rgba(212,175,55,0.5);transform:translateY(-1px);text-decoration:none}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.result-thumb{width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;background:rgba(212,175,55,0.08)}
+.result-body{min-width:0;flex:1}
+.result-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:.3px;margin-bottom:5px;line-height:1.4}
+.result-title mark,.result-desc mark{background:rgba(212,175,55,0.3);color:inherit;border-radius:3px;padding:0 2px}
+.result-desc{font-size:13px;color:var(--muted);line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ── Empty / no-results states ── */
+.state-box{text-align:center;padding:50px 20px}
+.state-icon{font-size:52px;opacity:0.35;margin-bottom:16px;display:block}
+.state-title{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.state-sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:360px;margin:0 auto}
+
+/* ── Quick pills (ricerche suggerite) ── */
+.suggest-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.suggest-pill{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:.5px;padding:7px 14px;border-radius:20px;cursor:pointer;transition:all 0.2s}
+.suggest-pill:hover{background:rgba(212,175,55,0.14);border-color:rgba(212,175,55,0.5)}
+
+/* ── Intro editoriale breve ── */
+.intro-note{font-size:13px;color:var(--muted);text-align:center;margin:20px 0 0;line-height:1.6}
+
+/* ── Footer ── */
+.page-footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:40px;position:relative;z-index:1}
+.page-footer a{color:var(--gold);text-decoration:none;margin:0 8px}
+.page-footer a:hover{text-decoration:underline}
+.footer-links{margin-bottom:10px;line-height:2}
+.footer-disclaimer{max-width:520px;margin:8px auto 0;opacity:0.75}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link" id="skip-link">Vai al contenuto principale</a>
+<div class="cosmos" aria-hidden="true"></div>
+
+<header class="page-header">
+  <div class="header-top">
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
+    <div class="header-controls">
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
+    </div>
+  </div>
+  <h1 class="page-title" id="page-title">🔍 Cerca</h1>
+  <div class="lang-switch">
+    <button data-lang="it" class="btn-lang active">IT</button>
+    <button data-lang="en" class="btn-lang">EN</button>
+    <button data-lang="es" class="btn-lang">ES</button>
+  </div>
+</header>
+
+<main id="main-content">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="./index.html" id="breadcrumb-home">Home</a>
+    <span>›</span>
+    <span id="breadcrumb-current">Cerca</span>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-icon" aria-hidden="true">🔍</span>
+    <h2 class="hero-title" id="hero-title">Cerca su MYSTICA</h2>
+    <p class="hero-sub" id="hero-sub">Trova subito tarocchi, oroscopo, rune, numerologia e oltre 60 strumenti e guide del sito.</p>
+  </div>
+
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Cerca tarocchi, oroscopo, rune…" autocomplete="off" aria-label="Cerca su MYSTICA">
+      <button id="searchClear" aria-label="Cancella ricerca">✕</button>
+    </div>
+    <div class="results-count" id="resultsCount" hidden></div>
+  </div>
+
+  <div id="resultsList"></div>
+
+  <div class="state-box" id="emptyState">
+    <span class="state-icon" aria-hidden="true">✦</span>
+    <div class="state-title" id="emptyTitle">Inizia a digitare per cercare</div>
+    <p class="state-sub" id="emptySub">Cerca tra tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.</p>
+    <div class="suggest-pills" id="suggestPills">
+      <button class="suggest-pill" data-q="tarocchi">Tarocchi</button>
+      <button class="suggest-pill" data-q="oroscopo">Oroscopo</button>
+      <button class="suggest-pill" data-q="rune">Rune</button>
+      <button class="suggest-pill" data-q="numerologia">Numerologia</button>
+      <button class="suggest-pill" data-q="astrologia">Astrologia</button>
+      <button class="suggest-pill" data-q="magia">Magia</button>
+    </div>
+  </div>
+
+  <div class="state-box" id="noResultsState" hidden>
+    <span class="state-icon" aria-hidden="true">🌑</span>
+    <div class="state-title" id="noResultsTitle">Nessun risultato</div>
+    <p class="state-sub" id="noResultsSub">Prova con un altro termine, oppure esplora l'enciclopedia completa.</p>
+  </div>
+
+  <p class="intro-note" id="introNote">La ricerca confronta il termine digitato con titoli, descrizioni e parole chiave di tutte le pagine di MYSTICA — nessun dato lascia il tuo browser.</p>
+</main>
+
+<footer class="page-footer">
+  <div class="footer-links">
+    <a href="./index.html" id="fl-home">Home</a>
+    <a href="./enciclopedia.html" id="fl-enc">Enciclopedia</a>
+    <a href="./contatti.html" id="fl-contatti">Contatti</a>
+    <a href="./about.html" id="fl-about">Chi Sono</a>
+    <a href="./privacy.html" id="fl-privacy">Privacy</a>
+  </div>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.</p>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   MYSTICA ORACOLI — cerca.html — v1.0
+   Motore di ricerca client-side, indice generato programmaticamente
+   dai title/description/keywords reali delle 61 pagine del sito.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Indice di ricerca (generato via script da title/meta reali) ── */
+const SEARCH_INDEX = [
+  {"u":"./60-magie.html","t":"60 Magie della Tradizione Esoterica | MYSTICA Oracoli","d":"60 rituali e magie della tradizione esoterica italiana ed europea: protezione, purificazione, prosperità, amore e sogni.","k":"rituali magici, magie tradizionali, protezione malocchio, purificazione salvia, rituale prosperità, magia popolare italiana, folklore esoterico, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/60-magie.webp"},
+  {"u":"./about.html","t":"Chi Sono – MYSTICA | App Tarocchi, Oracoli e Astrologia","d":"Scopri chi ha creato MYSTICA, l'app gratuita di tarocchi, oroscopo, I Ching e oltre 25 oracoli esoterici in italiano.","k":"chi siamo mystica, mystica oracoli, tarocchi online gratis, giovanni petrolese, oracolo delle stelle, mysticaoracoli","i":"https://mysticaoracoli.it/images/chi-sono.webp"},
+  {"u":"./alchimia.html","t":"Alchimia: Storia, Fasi (Nigredo, Albedo, Rubedo) e Oracolo","d":"Scopri la storia dell’alchimia, i grandi alchimisti da Jabir ibn Hayyan a Newton, i miti della Grande Opera e consulta l’oracolo delle quattro fasi alchemiche.","k":"alchimia, nigredo, albedo, citrinitas, rubedo, pietra filosofale, alchimisti famosi, grande opera, ermetismo, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/alchimia.webp"},
+  {"u":"./angeli.html","t":"Angelologia: 72 Angeli Custodi & Oracolo degli Angeli | MYSTICA Oracoli","d":"Scopri il tuo Angelo Custode tra i 72 Angeli della tradizione cabbalistica. Calcolo gratuito per data e ora di nascita.","k":"angelo custode, 72 angeli, angelologia, cabala angeli, oracolo angeli, arcangeli, numeri angelici, tradizione ebraica, angeli custodi nascita, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/angeli.webp"},
+  {"u":"./archivio.html","t":"Archivio Mistico – Le Tue Letture Salvate | MYSTICA Oracoli","d":"Ritrova tutte le tue letture di tarocchi, oroscopi, rune, I Ching e numerologia salvate in locale. Esporta o cancella il tuo diario mistico quando vuoi.","k":"archivio mistico, storico letture tarocchi, diario esoterico, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/archivio.webp"},
+  {"u":"./astrologia-avanzata.html","t":"Astrologia Avanzata: Carta Natale, Sinastria e Karma","d":"Guida completa all'astrologia avanzata: come leggere la carta natale, la sinastria di coppia.","k":"carta natale, tema natale, sinastria, astrologia oraria, astrologia karmica, nodi lunari, pianeti retrogradi, ascendente, case astrologiche, interpretazione oroscopo","i":"https://mysticaoracoli.it/images/icone/home/astrologia-avanzata.webp"},
+  {"u":"./astrologia-vedica.html","t":"Astrologia Vedica (Jyotish): Guida Completa","d":"Guida completa all’Astrologia Vedica (Jyotish): zodiaco siderale, Nava Graha, 27 Nakshatra, 12 Rashi e sistema delle Dasha. Scopri l’antica scienza indiana.","k":"astrologia vedica, jyotish, nakshatra, rashi, graha, nava graha, dasha, zodiaco siderale, oroscopo vedico, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/astrologia-vedica.webp"},
+  {"u":"./bazi-cinese.html","t":"BaZi – Gli Otto Caratteri dell'Astrologia Cinese","d":"Guida completa al BaZi (八字): Quattro Pilastri del Destino, Tronchi Celesti, Rami Terrestri, Cinque Elementi, Day Master e Cicli di Grande Fortuna.","k":"bazi, otto caratteri, quattro pilastri del destino, astrologia cinese, tronchi celesti, rami terrestri, cinque elementi, day master, giorno maestro, zi ping, cicli di grande fortuna, wu xing, divinazione cinese, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/bazi-cinese.webp"},
+  {"u":"./bibliomanzia-tasseomanzia.html","t":"Bibliomanzia & Tasseomanzia — Oracolo del Libro e dei Fondi di Caffè | MYSTICA Oracoli","d":"Scopri la Bibliomanzia e la Tasseomanzia: storia, significati dei simboli e oracolo interattivo.","k":"bibliomanzia, tasseomanzia, oracolo libro, fondi caffè divinazione, sortes virgilianae, lettura fondi tè, divinazione, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/bibliomanzia-tasseomanzia.webp"},
+  {"u":"./blog.html","t":"Blog Esoterico – Tarocchi, Astrologia, Rune e Magia","d":"Articoli esoterici approfonditi su Tarocchi, Astrologia, Rune, I Ching, Numerologia, Cabala, Alchimia, Wicca e Magia.","k":"blog esoterico, tarocchi articoli, astrologia guide, rune significato, cabala spiegazione, alchimia storia, wicca magia, misticaoracoli, oracolo italiano","i":"https://mysticaoracoli.it/images/icone/home/blog.webp"},
+  {"u":"./cabala.html","t":"Cabala: Albero della Vita e 10 Sephirot | MYSTICA","d":"Scopri la Cabala ebraica con l'Albero della Vita interattivo. Esplora le 10 Sephirot, la Gematria, i 22 Sentieri e la mistica ebraica su MYSTICA Oracoli.","k":"cabala, albero della vita, sephirot, gematria, cabala ebraica, misticismo ebraico, zohar, kabbala, sefirot, ain soph, meditazione cabbalistica","i":"https://mysticaoracoli.it/images/icone/home/cabala.webp"},
+  {"u":"./cicli-tempo.html","t":"Cicli & Tempo Magico — Calendario Lunare, Tzolkin Maya, Ore Planetarie | MYSTICA Oracoli","d":"Scopri i cicli del tempo esoterico: Calendario Lunare per le fasi della Luna, Tzolkin Maya con 13 toni e 20 segni.","k":"calendario lunare esoterico, fasi lunari rituali, tzolkin maya online, kin maya calcolo, ore planetarie oggi, stagioni magiche sabbat, equinozio solstizio significato, cicli cosmici, tempo magico, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/cicli-tempo.webp"},
+  {"u":"./community.html","t":"Community & Recensioni — MYSTICA Oracoli","d":"Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.","k":"community mystica, recensioni mystica oracoli, forum esoterico italiano, community spirituale, recensioni app esoterica","i":"https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/home/mystica-orizzontale.webp"},
+  {"u":"./compatibilita.html","t":"Compatibilità Zodiacale — Affinità Cosmica tra Segni","d":"Calcola la compatibilità zodiacale tra i 12 segni. Scopri l'affinità cosmica con il tuo partner con la tavola sinoptica astrologica di MYSTICA Oracoli.","k":"compatibilità zodiacale, compatibilità segni zodiacali, affinità amorosa, oroscopo coppia, compatibilità astrologica, segni compatibili, amore zodiaco, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/compatibilita.webp"},
+  {"u":"./contatti.html","t":"Contatti – MYSTICA Oracoli | mysticaoracoli.it","d":"Contatta MYSTICA per assistenza, segnalazioni o domande sulla nostra app di tarocchi online, oroscopo e oracoli. Risponderemo entro 48 ore.","k":"","i":"https://mysticaoracoli.it/og-image.jpg"},
+  {"u":"./divinazione-alternativa.html","t":"Cartomanzia Online Gratis","d":"Cartomanzia online gratis con le 52 carte da gioco, Lenormand, Oracolo degli Angeli, Ogham celtico, Specchio Nero e Cromomanzia.","k":"cartomanzia online gratis, cartomanzia carte da gioco, lenormand online gratis, oracolo degli angeli gratis, ogham celtico, specchio nero scrying, cromomanzia, divinazione alternativa, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/divinazione-alternativa.webp"},
+  {"u":"./enciclopedia.html","t":"Enciclopedia Esoterica","d":"Enciclopedia esoterica gratuita: voci approfondite su tarocchi, rune, I Ching, astrologia, numerologia, cabala, alchimia, wicca, chakra.","k":"enciclopedia esoterica, glossario esoterismo, significati tarocchi, rune significato, cabala albero della vita, chakra kundalini, magia cerimoniale, mysticaoracoli","i":"https://mysticaoracoli.it/images/mystica-orizzontale.webp"},
+  {"u":"./energia-chakra.html","t":"Chakra, Reiki & Feng Shui Online — Strumenti Energetici | MYSTICA Oracoli","d":"Bilancia i tuoi 7 chakra, canalizza il Reiki, scopri cristalli e erbe magiche, purifica lo spazio con Feng Shui e Cinque Elementi.","k":"chakra equilibrio, reiki online, cristalloterapia, erbe magiche, feng shui, cinque elementi, karma reincarnazione, prana, bilanciamento energetico, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/energia-chakra.webp"},
+  {"u":"./ermetismo.html","t":"Ermetismo: i 7 Principi Ermetici del Kybalion","d":"I 7 Principi Ermetici del Kybalion spiegati: Mentalismo, Corrispondenza, Vibrazione, Polarità, Ritmo, Causa-Effetto, Genere.","k":"ermetismo, principi ermetici, kybalion, ermete trismegisto, tavola di smeraldo, corpus hermeticum, golden dawn, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/ermetismo.webp"},
+  {"u":"./gene-keys.html","t":"Gene Keys — Le 64 Chiavi Genetiche di Richard Rudd","d":"Guida completa alle Gene Keys: le 64 Chiavi Genetiche, i tre livelli Ombra–Dono–Siddhi, l'Ologramma Aurico e come calcolare il tuo profilo personale.","k":"gene keys, gene keys italiano, 64 gene keys, richard rudd, chiavi genetiche, ombra dono siddhi, ologramma aurico, profilo gene keys, gene keys i ching, gene keys human design, gene keys calcolo","i":"https://mysticaoracoli.it/images/icone/home/gene-keys.webp"},
+  {"u":"./geomanzia.html","t":"Geomanzia Online Gratis — 16 Figure Geomantiche","d":"Consulta la geomanzia online gratis. Traccia 4 righe per ottenere una delle 16 figure geomantiche con interpretazione completa: significato, amore.","k":"geomanzia online gratis, figure geomantiche, oracolo terra, geomanzia italiana, Via Popolo Fortuna, divinazione terra, oracolo geomantico, geomanzia significato","i":"https://mysticaoracoli.it/images/icone/home/geomanzia.webp"},
+  {"u":"./guida-i-ching.html","t":"I Ching: Guida Completa al Libro dei Mutamenti","d":"Guida completa all'I Ching: storia, 8 trigrammi, 64 esagrammi, linee mutanti e come consultare il Libro dei Mutamenti.","k":"i ching guida, libro dei mutamenti, trigrammi i ching, esagrammi i ching, come consultare i ching, yin yang, oracolo cinese, i ching significato, i ching online, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/i-ching.webp"},
+  {"u":"./guida-tarocchi.html","t":"Come Leggere i Tarocchi: Guida Completa per Principianti","d":"Guida completa alla lettura dei tarocchi in italiano: significato degli Arcani Maggiori e Minori.","k":"come leggere i tarocchi, significato arcani maggiori, arcani minori, stese tarocchi, guida tarocchi principianti, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/tarocchi.webp"},
+  {"u":"./human-design.html","t":"Human Design – I 5 Tipi, 9 Centri e 64 Gate","d":"Guida completa all'Human Design: scopri i 5 Tipi energetici, i 9 Centri, l'Autorità Interiore, i 64 Gate e il tuo Profilo.","k":"human design, tipi human design, generatore human design, manifestatore, proiettore, riflettore, manifesting generator, centri human design, autorità interiore, gate human design, bodygraph, canali human design, ra uru hu, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/human-design.webp"},
+  {"u":"./iching.html","t":"I Ching Online Gratis — 64 Esagrammi del Libro dei Mutamenti","d":"Consulta l'I Ching online con il metodo tradizionale delle tre monete. Tutti i 64 esagrammi del Libro dei Mutamenti con interpretazione completa.","k":"I Ching online gratis, libro dei mutamenti, yijing italiano, oracolo cinese, 64 esagrammi, tre monete I Ching, esagramma significato, I Ching interpretazione, divinazione cinese, yì jīng","i":"https://mysticaoracoli.it/images/icone/home/iching.webp"},
+  {"u":"./libro-delle-risposte.html","t":"Libro delle Risposte Online Gratis","d":"Consulta il Libro delle Risposte online gratuito: poni una domanda, concentrati e ricevi un messaggio oracolare immediato.","k":"libro delle risposte, libro delle risposte online, oracolo si no, libro delle risposte gratis, domanda oracolo, libro magico risposte, sincronicità","i":"https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/mystica-orizzontale.webp"},
+  {"u":"./luna-pianeti.html","t":"Fase Lunare Oggi e Transiti Planetari in Tempo Reale","d":"Scopri la fase lunare di oggi e i transiti dei pianeti in tempo reale. Fasi della Luna, pianeti retrogradi.","k":"fase lunare oggi, fasi della luna, transiti planetari, pianeti retrogradi, luna piena, luna nuova, rituali lunari, aspetti astrologici, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/luna-pianeti.webp"},
+  {"u":"./magia-bianca.html","t":"Magia Bianca: 40 Rituali di Purificazione e Protezione","d":"40 rituali di Magia Bianca per purificazione, protezione e guarigione energetica. Storia, origini e pratica della tradizione esoterica italiana.","k":"magia bianca, rituali magia bianca, purificazione energetica, protezione magia, benedizione casa, candela bianca, salvia bianca, cristalli quarzo, cerchio di sale, luna piena rituali, magia etica, guarigione energetica, esoterico italiano, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/magia-bianca.webp"},
+  {"u":"./magia-nera.html","t":"Magia Nera Difensiva: 40 Rituali di Protezione e Ombra","d":"Scopri 40 rituali di Magia Nera difensiva: protezione energetica, lavoro con l'Ombra, scarico emotivo e confini sacri.","k":"magia nera, rituali magia nera, protezione energetica, lavoro con l'ombra, magia difensiva, scudo energetico, rituali protezione, chiusura energetica, scarico energetico, confini energetici, magia difensiva etica, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/magia-nera.webp"},
+  {"u":"./magia-rossa.html","t":"Magia Rossa: 40 Rituali d'Amore e Attrazione","d":"Scopri 40 rituali etici di Magia Rossa per amore, attrazione e connessione emotiva. Tradizione esoterica italiana con procedure passo per passo.","k":"magia rossa, rituali amore, incantesimi amore, magia amore, rituali coppia, attrazione amore, rituale candela rossa, rituali sentimentali, amore esoterico, magia passione, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/magia-rossa.webp"},
+  {"u":"./malocchio.html","t":"Malocchio: Origini, Riconoscimento e Rituali di Protezione","d":"Guida completa sul Malocchio: storia millenaria da Sumeri a oggi, come riconoscerlo, rituali per toglierlo, amuleti e tradizioni italiane.","k":"malocchio, evil eye, jettatura, come togliere il malocchio, rimedi malocchio, tradizioni italiane, cornicello, nazar, rituali protezione, amuleto malocchio, olio malocchio, mysticaoracoli","i":"https://mysticaoracoli.it/images/malocchio.webp"},
+  {"u":"./mente-energia.html","t":"Mente & Energia — Meditazione, Pranayama, EFT, Ipnosi | MYSTICA Oracoli","d":"Guida pratica a meditazione guidata, respirazione Pranayama, EFT Tapping, ipnosi regressiva e sincronicità.","k":"meditazione guidata italiano, pranayama tecniche respirazione, EFT tapping meridiani, ipnosi regressione vite passate, sincronicità Jung, breathwork, mindfulness, numeri angelici, animali totem, meditazione chakra","i":"https://mysticaoracoli.it/images/icone/home/meditazione.webp"},
+  {"u":"./negromanzia.html","t":"Negromanzia: Comunicare con i Defunti nella Tradizione","d":"La Negromanzia nella storia: dall'Antico Egitto al Medioevo, riti per onorare i defunti, Negromanzia Etica e Oracolo dei Reami gratuito su MYSTICA Oracoli.","k":"negromanzia, comunicazione con i morti, spiriti defunti, evocazione spiriti, oracolo dei morti, negromanzia italiana, antenati rituali, spiriti guida, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/negromanzia.webp"},
+  {"u":"./numerologia-simboli.html","t":"Quadrato Magico e Gematria – Numerologia & Simboli Sacri | Mystica Oracoli","d":"Enciclopedia dei 7 Quadrati Magici planetari (Kamea di Saturno, Giove, Marte, Sole, Venere, Mercurio e Luna) secondo Cornelio Agrippa.","k":"","i":"https://mysticaoracoli.it/og-image.jpg"},
+  {"u":"./numerologia.html","t":"Numerologia Gratis — Calcola il Tuo Numero del Destino","d":"Calcola gratis il tuo Numero del Sentiero di Vita e il Numero del Destino con la numerologia pitagorica.","k":"numerologia gratis, numero sentiero di vita, numero del destino, numeri maestro 11 22 33, calcolo numerologico, significato numeri, numerologia pitagorica, calcolo nome numerologia","i":"https://mysticaoracoli.it/images/icone/home/numerologia.webp"},
+  {"u":"./oracoli.html","t":"Oracoli Antichi – Delfi, Rune, I Ching, Angeli, Totem","d":"Scopri tutti gli oracoli antichi di MYSTICA: Delfi, Rune, I Ching, Angeli, Totem, Geomanzia e Numerologia. Divinazione gratuita, senza registrazione.","k":"oracoli antichi, oracolo di delfi, rune, i ching, angeli custodi, animali totem, geomanzia, bibliomanzia, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/oracolo-di-delfi.webp"},
+  {"u":"./ore-specchio.html","t":"Ore Specchio: Significato di 11:11, 22:22 e Numeri Angelici","d":"Scopri il significato delle ore specchio (11:11, 22:22, 00:00…) e dei numeri angelici. Interpreta l'orario che hai visto: messaggio spirituale.","k":"ore specchio, 11:11 significato, 22:22 significato, numeri angelici, ore doppie, sincronicità, angeli custodi, ore inverse, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/ore-specchio.webp"},
+  {"u":"./oroscopo-cinese.html","t":"Oroscopo Cinese: I 12 Animali dello Zodiaco e i 5 Elementi","d":"Guida completa all'Oroscopo Cinese: i 12 animali, i 5 elementi, calcolo del segno con il Capodanno lunare.","k":"oroscopo cinese, zodiaco cinese, 12 animali zodiaco cinese, segno cinese, anno del cavallo, cinque elementi cinesi, shengxiao, calcolo segno cinese, compatibilità zodiaco cinese, anno nuovo cinese 2026","i":"https://mysticaoracoli.it/images/icone/cinese/cavallo.webp"},
+  {"u":"./oroscopo-segni.html","t":"I 12 Segni Zodiacali: Caratteristiche ed Elementi","d":"Guida completa ai 12 segni zodiacali: caratteristiche, elementi, pianeti dominanti, compatibilità. Astrologia personalizzata e oroscopi per ogni segno.","k":"segni zodiacali, oroscopo, astrologia, compatibilità zodiacale, ariete, toro, gemelli, cancro, leone, vergine, bilancia, scorpione, sagittario, capricorno, acquario, pesci","i":"https://mysticaoracoli.it/images/icone/home/oroscopo-segni.webp"},
+  {"u":"./oroscopo-zodcinese.html","t":"Zodiaco Cinese — Scopri il Tuo Animale | MYSTICA","d":"Scopri il tuo animale dello Zodiaco Cinese inserendo l'anno di nascita. Carattere, colori fortunati.","k":"zodiaco cinese, animale zodiaco cinese, segno cinese anno nascita, topo bue tigre coniglio drago serpente cavallo capra scimmia gallo cane maiale, compatibilità cinese, shengxiao","i":"https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/icone/cinese/oroscopoint.webp"},
+  {"u":"./oroscopo.html","t":"Oroscopo Giornaliero Gratis — 12 Segni Zodiacali | MYSTICA","d":"Oroscopo giornaliero gratis in italiano. Amore, lavoro, salute e fortuna per tutti i 12 segni zodiacali.","k":"oroscopo oggi gratis, oroscopo giornaliero, oroscopo amore lavoro, oroscopo ariete toro gemelli, oroscopo cancro leone vergine, oroscopo bilancia scorpione sagittario, oroscopo capricorno acquario pesci","i":"https://mysticaoracoli.it/og-image.jpg"},
+  {"u":"./ouija.html","t":"Tavola Ouija: Storia, Uso Corretto e Sicurezza","d":"Guida completa alla tavola Ouija: origini dal 1890, uso corretto, regole di sicurezza, preghiera di protezione e differenze con altri strumenti divinatori.","k":"tavola ouija, come usare la ouija, ouija storia origini, ouija sicurezza, planchette spiritismo, tavola parlante, protezione energetica ouija, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/enciclopedia/IMG_COM_202606051305409996.webp"},
+  {"u":"./pentacoli-salomone.html","t":"I 44 Pentacoli di Re Salomone | MYSTICA Oracoli","d":"Enciclopedia completa dei 44 Pentacoli di Re Salomone: origine, simbologia, uso magico, tempistica di consacrazione e pianeta.","k":"pentacoli salomone, sigilli magici, clavicula salomonis, magia cabalistica, pentacoli pianeti, grimorio salomone","i":"https://mysticaoracoli.it/images/pentacoliresalomone/principale/i44pentacoli.webp"},
+  {"u":"./pietre-magiche.html","t":"Pietre Magiche: 50 Cristalli, Poteri e Rituali","d":"Scopri i poteri di 50 pietre magiche: significato esoterico, chakra, rituali di purificazione. Trova la pietra giusta per amore, protezione e abbondanza.","k":"pietre magiche, cristalli, cristalloterapia, ametista, quarzo rosa, tormalina nera, purificazione cristalli, attivazione pietre, chakra pietre, mysticaoracoli","i":"https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pietre/ametista.webp"},
+  {"u":"./pratica-quotidiana.html","t":"Pratica Quotidiana Esoterica: Diario, Affermazioni e Sigilli","d":"Diario Mistico, Affermazioni e Decreti, Sigillazione dell'Intenzione, Altare Virtuale e Respiro Sacro: la tua pratica esoterica quotidiana gratuita.","k":"pratica quotidiana esoterica, diario mistico, affermazioni positive, sigillazione intenzione, altare virtuale, respiro sacro, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/pratica-quotidiana.webp"},
+  {"u":"./pratiche.html","t":"Le Figure del Mistico – Streghe, Maghi, Veggenti e Sciamani","d":"Chi sono davvero le figure del mondo esoterico? Guida completa a streghe, maghi cerimoniali, cartomanti, chiaroveggenti, sensitivi, medium, astrologi.","k":"strega stregone differenza, mago cerimoniale, cartomante tarocchi, chiaroveggente sensitivo differenza, medium spiritismo, astrologo astrologia, sciamano sciamanesimo, numerologo numerologia, figure mistiche esoterismo, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/enciclopedia/IMG_COM_2026060513054130810.webp"},
+  {"u":"./privacy.html","t":"Privacy Policy – MYSTICA | App Tarocchi Online Gratis","d":"Privacy Policy di MYSTICA, la web app gratuita di tarocchi e oracoli in italiano. Informativa completa sul trattamento dei dati personali ai sensi del.","k":"","i":"https://mysticaoracoli.it/og-image.jpg"},
+  {"u":"./profilo-mistico.html","t":"Profilo Mistico Personale — La Tua Mappa Cosmica","d":"Genera il tuo profilo mistico gratuito: segno zodiacale, numero del destino, animale cinese, pietre e oggetti fortunati.","k":"profilo mistico, mappa cosmica, segno zodiacale, animale cinese, numero destino, pietre magiche, oroscopo personale, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/profilo-mistico.webp"},
+  {"u":"./rune.html","t":"Oracolo Runico — Elder Futhark Online | MYSTICA Oracoli","d":"Lancia le Rune Elder Futhark online: estrazione singola o diffusione Passato-Presente-Futuro con 25 rune, significati dettagliati.","k":"rune elder futhark, lancio rune online, oracolo runico, rune significato, runologia, rune divinazione, fehu uruz ansuz, rune italiane, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/rune.webp"},
+  {"u":"./sigilli-salomone.html","t":"Sigilli di Salomone: Scopri il Tuo Pentacolo Planetario","d":"Genera il tuo Sigillo di Salomone personale: 7 pentacoli planetari sacri della Clavicula Salomonis. Saturno, Giove, Marte, Sole, Venere, Mercurio, Luna.","k":"sigilli di salomone, pentacoli planetari, clavicula salomonis, talismano magico, magia cerimoniale, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/sigilli-salomone.webp"},
+  {"u":"./significato-rune.html","t":"Le 24 Rune Norrene: Significati e Oracolo Runico Online","d":"Scopri il significato delle 24 rune dell’Elder Futhark: storia, simbologia e oracolo runico gratuito. Lancia le rune online e leggi la loro interpretazione in italiano.","k":"rune norrene, elder futhark, significato rune, oracolo runico, rune vichinghe, divinazione rune, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/rune.webp"},
+  {"u":"./sogni.html","t":"I Sogni — Interpretazioni, Significati e Smorfia Napoletana","d":"Guida completa ai sogni e all'oniromanzia: analizzatore gratuito, simboli onirici, Smorfia napoletana 1-90 e tecniche di interpretazione da Freud a Jung.","k":"significato sogni, oniromanzia, interpretazione sogni, smorfia napoletana numeri 1-90, simboli sogni, analizzatore sogni online, sogni premonitori, sogni ricorrenti, sogni lucidi, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/i-sogni.webp"},
+  {"u":"./strega.html","t":"Diventa una Strega – Percorso Iniziatico Completo | MYSTICA","d":"Guida completa per diventare una strega: percorso iniziatico in 4 fasi, meditazioni, riti con le candele, cicli lunari.","k":"come diventare una strega, percorso iniziatico wicca, stregoneria moderna principianti, rito candela, cicli lunari magia, libro delle ombre, altare wicca, cristalli magia, erbe magiche, legge del tre, wicca italiana, magia bianca principianti, strega solitaria, stregoneria pratica","i":"https://mysticaoracoli.it/images/icone/home/stregoneria.webp"},
+  {"u":"./stregoneria-wicca.html","t":"Stregoneria & Wicca — Corrispondenze Magiche e Ruota dell'Anno | MYSTICA Oracoli","d":"Corrispondenze magiche wicca per amore, protezione, prosperità, guarigione, divinazione e trasformazione.","k":"wicca, stregoneria, corrispondenze magiche, sabbat, rituali wicca, erbe magiche, cristalli, pentacolo, ruota dell'anno, magia naturale, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/stregoneria-wicca.webp"},
+  {"u":"./strumenti.html","t":"Strumenti del Praticante: Grimorio e Pendolo | MYSTICA","d":"Grimorio digitale, Japamala dei 108 e Oracolo del Pendolo animato: gli strumenti sacri del praticante esoterico, gratuiti su MYSTICA Oracoli.","k":"grimorio digitale, japamala 108, pendolo radiestesia, book of shadows, strumenti esoterici, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/strumenti.webp"},
+  {"u":"./tarocchi.html","t":"Tarocchi Online Gratis — Lettura 78 Carte | MYSTICA Oracoli","d":"Lettura dei Tarocchi online gratis in italiano: 78 carte, Arcani Maggiori e Minori, oltre 10 stese diverse (amore, lavoro, salute, sì/no, celtica, egizia).","k":"tarocchi online gratis, lettura tarocchi, arcani maggiori, arcani minori, tarocchi amore, tarocchi sì o no, tarocchi celtici, tarocchi egiziani, cartomanzia, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/tarocchi.webp"},
+  {"u":"./termini.html","t":"Termini di Servizio – MYSTICA Oracoli","d":"Termini e condizioni d'uso di MYSTICA – App Tarocchi Online Gratis. Leggi le regole di utilizzo del sito mysticaoracoli.it prima di usare i nostri servizi.","k":"","i":"https://mysticaoracoli.it/og-image.jpg"},
+  {"u":"./totem.html","t":"Animale Totem: Scopri il Tuo Spirito Guida | MYSTICA Oracoli","d":"Scopri il tuo Animale Totem con il test dei 5 archetipi sciamanici. Aquila, Lupo, Orso, Delfino, Serpente, Cervo.","k":"animale totem, spirito guida, sciamanesimo, test totem animale, spirit animal, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/totem.webp"},
+  {"u":"./tradizioni-spirituali.html","t":"Tradizioni & Spiritualità del Mondo | Sciamanesimo, Sufismo, Druidismo, Voodoo, Rosacroce — MYSTICA","d":"Sciamanesimo, Buddismo Esoterico, Sufismo, Druidismo, Voodoo e Rosacroce: storia, pratiche e simbolismo delle grandi tradizioni spirituali del mondo su.","k":"sciamanesimo, viaggio sciamanico, spiriti guida, buddismo esoterico, tantra, mantra, mandala, mudra, sufismo, mistica islamica, druidismo, tradizione celtica, voodoo, hoodoo, rosacroce, tradizioni spirituali, mysticaoracoli","i":"https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/mystica-orizzontale.webp"},
+  {"u":"./viaggio-astrale.html","t":"Viaggio Astrale: Guida Completa con Onde Theta","d":"Guida completa al Viaggio Astrale: onde theta binaurali, tecniche di proiezione (WILD, Corda, Monroe), chakra, protezione energetica e diario astrale.","k":"viaggio astrale, proiezione astrale, onde theta, binaural beats, chakra, corpo astrale, meditazione profonda, OBE, cordone d'argento","i":"https://mysticaoracoli.it/images/icone/home/viaggio-astrale.webp"},
+  {"u":"./zi-wei-dou-shu.html","t":"Zi Wei Dou Shu: Astrologia Imperiale Cinese | Guida Completa","d":"Guida completa a Zi Wei Dou Shu, l'astrologia imperiale cinese delle stelle. Scopri le 14 stelle principali, i 12 palazzi.","k":"zi wei dou shu, astrologia cinese imperiale, stelle cinesi destino, zwds, calcolo zi wei, palazzo destino, stelle principali cinesi, tema natale cinese, bazi zi wei, 紫微斗數, mysticaoracoli","i":"https://mysticaoracoli.it/images/icone/home/zi-wei-dou-shu.webp"}
+];
+
+/* ── LANG Object ── */
+const LANG = {
+  it: {
+    seo: {
+      htmlLang: 'it', title: 'Cerca su MYSTICA — Trova Tarocchi, Oroscopo, Rune e Altro',
+      description: 'Cerca tra oltre 60 strumenti divinatori e guide di MYSTICA: tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.',
+      keywords: 'cerca mystica, ricerca oracoli, trova tarocchi oroscopo rune, motore di ricerca esoterico, mysticaoracoli',
+      ogTitle: 'Cerca su MYSTICA', ogDesc: 'Trova tarocchi, oroscopo, rune e oltre 60 strumenti esoterici.', ogLocale: 'it_IT'
+    },
+    back: '← Torna alla Home', skipLink: 'Vai al contenuto principale',
+    music: { on: '🎵 Musica ON', off: '🔇 Musica OFF' },
+    theme: { day: '☀️ Giorno', night: '🌙 Notte' },
+    pageTitle: '🔍 Cerca',
+    breadcrumbHome: 'Home', breadcrumbCurrent: 'Cerca',
+    heroTitle: 'Cerca su MYSTICA',
+    heroSub: 'Trova subito tarocchi, oroscopo, rune, numerologia e oltre 60 strumenti e guide del sito.',
+    searchPlaceholder: 'Cerca tarocchi, oroscopo, rune…',
+    searchClearLabel: 'Cancella ricerca',
+    resultsOne: 'risultato trovato', resultsMany: 'risultati trovati',
+    emptyTitle: 'Inizia a digitare per cercare',
+    emptySub: 'Cerca tra tarocchi, oroscopo, rune, I Ching, numerologia, astrologia, magia e tradizioni spirituali.',
+    noResultsTitle: 'Nessun risultato',
+    noResultsSub: "Prova con un altro termine, oppure esplora l'enciclopedia completa.",
+    introNote: 'La ricerca confronta il termine digitato con titoli, descrizioni e parole chiave di tutte le pagine di MYSTICA — nessun dato lascia il tuo browser.',
+    pills: { tarocchi:'Tarocchi', oroscopo:'Oroscopo', rune:'Rune', numerologia:'Numerologia', astrologia:'Astrologia', magia:'Magia' },
+    footer: { home:'Home', enc:'Enciclopedia', contatti:'Contatti', about:'Chi Sono', privacy:'Privacy' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.'
+  },
+  en: {
+    seo: {
+      htmlLang: 'en', title: 'Search MYSTICA — Find Tarot, Horoscope, Runes and More',
+      description: 'Search over 60 divination tools and guides on MYSTICA: tarot, horoscope, runes, I Ching, numerology, astrology, magic and spiritual traditions.',
+      keywords: 'search mystica, oracle search, find tarot horoscope runes, esoteric search engine, mysticaoracoli',
+      ogTitle: 'Search MYSTICA', ogDesc: 'Find tarot, horoscope, runes and over 60 esoteric tools.', ogLocale: 'en_US'
+    },
+    back: '← Back to Home', skipLink: 'Skip to main content',
+    music: { on: '🎵 Music ON', off: '🔇 Music OFF' },
+    theme: { day: '☀️ Day', night: '🌙 Night' },
+    pageTitle: '🔍 Search',
+    breadcrumbHome: 'Home', breadcrumbCurrent: 'Search',
+    heroTitle: 'Search MYSTICA',
+    heroSub: 'Instantly find tarot, horoscope, runes, numerology and over 60 tools and guides on the site.',
+    searchPlaceholder: 'Search tarot, horoscope, runes…',
+    searchClearLabel: 'Clear search',
+    resultsOne: 'result found', resultsMany: 'results found',
+    emptyTitle: 'Start typing to search',
+    emptySub: 'Search among tarot, horoscope, runes, I Ching, numerology, astrology, magic and spiritual traditions.',
+    noResultsTitle: 'No results',
+    noResultsSub: 'Try a different term, or explore the full encyclopedia.',
+    introNote: 'Search matches your query against titles, descriptions and keywords of every MYSTICA page — no data leaves your browser.',
+    pills: { tarocchi:'Tarot', oroscopo:'Horoscope', rune:'Runes', numerologia:'Numerology', astrologia:'Astrology', magia:'Magic' },
+    footer: { home:'Home', enc:'Encyclopedia', contatti:'Contact', about:'About', privacy:'Privacy' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracoli is an entertainment and personal growth tool, and does not replace professional medical, legal or psychological advice.'
+  },
+  es: {
+    seo: {
+      htmlLang: 'es', title: 'Buscar en MYSTICA — Encuentra Tarot, Horóscopo, Runas y Más',
+      description: 'Busca entre más de 60 herramientas de adivinación y guías de MYSTICA: tarot, horóscopo, runas, I Ching, numerología, astrología, magia y tradiciones espirituales.',
+      keywords: 'buscar mystica, búsqueda oráculos, encontrar tarot horóscopo runas, motor de búsqueda esotérico, mysticaoracoli',
+      ogTitle: 'Buscar en MYSTICA', ogDesc: 'Encuentra tarot, horóscopo, runas y más de 60 herramientas esotéricas.', ogLocale: 'es_ES'
+    },
+    back: '← Volver al Inicio', skipLink: 'Ir al contenido principal',
+    music: { on: '🎵 Música ON', off: '🔇 Música OFF' },
+    theme: { day: '☀️ Día', night: '🌙 Noche' },
+    pageTitle: '🔍 Buscar',
+    breadcrumbHome: 'Inicio', breadcrumbCurrent: 'Buscar',
+    heroTitle: 'Buscar en MYSTICA',
+    heroSub: 'Encuentra al instante tarot, horóscopo, runas, numerología y más de 60 herramientas y guías del sitio.',
+    searchPlaceholder: 'Buscar tarot, horóscopo, runas…',
+    searchClearLabel: 'Borrar búsqueda',
+    resultsOne: 'resultado encontrado', resultsMany: 'resultados encontrados',
+    emptyTitle: 'Empieza a escribir para buscar',
+    emptySub: 'Busca entre tarot, horóscopo, runas, I Ching, numerología, astrología, magia y tradiciones espirituales.',
+    noResultsTitle: 'Sin resultados',
+    noResultsSub: 'Prueba con otro término, o explora la enciclopedia completa.',
+    introNote: 'La búsqueda compara el término introducido con títulos, descripciones y palabras clave de todas las páginas de MYSTICA — ningún dato sale de tu navegador.',
+    pills: { tarocchi:'Tarot', oroscopo:'Horóscopo', rune:'Runas', numerologia:'Numerología', astrologia:'Astrología', magia:'Magia' },
+    footer: { home:'Inicio', enc:'Enciclopedia', contatti:'Contacto', about:'Sobre Mí', privacy:'Privacidad' },
+    footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
+    footerDisclaimer: 'MYSTICA Oracoli es una herramienta de entretenimiento y crecimiento personal, no sustituye el asesoramiento médico, legal o psicológico profesional.'
+  }
+};
+
+let currentLang = localStorage.getItem('myst_lang') || 'it';
+
+/* ── SEO Multilingua ── */
+function updateSEO() {
+  const S = LANG[currentLang].seo;
+  document.documentElement.lang = S.htmlLang;
+  document.title = S.title;
+  document.querySelector('meta[name="description"]').content = S.description;
+  document.querySelector('meta[name="keywords"]').content = S.keywords;
+  document.querySelector('meta[property="og:title"]').content = S.ogTitle;
+  document.querySelector('meta[property="og:description"]').content = S.ogDesc;
+  document.querySelector('meta[property="og:locale"]').content = S.ogLocale;
+  document.querySelector('meta[name="twitter:title"]').content = S.ogTitle;
+  document.querySelector('meta[name="twitter:description"]').content = S.ogDesc;
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (ld) {
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': 'https://mysticaoracoli.it/cerca.html#webpage',
+          url: 'https://mysticaoracoli.it/cerca.html',
+          name: S.title,
+          description: S.description,
+          inLanguage: S.htmlLang,
+          isPartOf: { '@id': 'https://mysticaoracoli.it/#website' }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: LANG[currentLang].breadcrumbHome, item: 'https://mysticaoracoli.it/' },
+            { '@type': 'ListItem', position: 2, name: LANG[currentLang].breadcrumbCurrent, item: 'https://mysticaoracoli.it/cerca.html' }
+          ]
+        }
+      ]
+    });
+  }
+}
+
+/* ── Lingua ── */
+function applyLang() {
+  updateSEO();
+  const L = LANG[currentLang];
+
+  const bb = document.getElementById('btn-back'); if (bb) bb.textContent = L.back;
+  const sk = document.getElementById('skip-link'); if (sk) sk.textContent = L.skipLink;
+  const mt = document.getElementById('musicToggle'); if (mt) mt.textContent = window.audioManager?.isPlaying ? L.music.on : L.music.off;
+  const tt = document.getElementById('themeToggle'); if (tt) tt.textContent = isDayMode ? L.theme.night : L.theme.day;
+  const pgt = document.getElementById('page-title'); if (pgt) pgt.textContent = L.pageTitle;
+
+  const bh = document.getElementById('breadcrumb-home'); if (bh) bh.textContent = L.breadcrumbHome;
+  const bc = document.getElementById('breadcrumb-current'); if (bc) bc.textContent = L.breadcrumbCurrent;
+  const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.heroTitle;
+  const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+
+  const si = document.getElementById('searchInput');
+  if (si) { si.placeholder = L.searchPlaceholder; si.setAttribute('aria-label', L.heroTitle); }
+  const scl = document.getElementById('searchClear'); if (scl) scl.setAttribute('aria-label', L.searchClearLabel);
+
+  const et = document.getElementById('emptyTitle'); if (et) et.textContent = L.emptyTitle;
+  const es = document.getElementById('emptySub'); if (es) es.textContent = L.emptySub;
+  const nrt = document.getElementById('noResultsTitle'); if (nrt) nrt.textContent = L.noResultsTitle;
+  const nrs = document.getElementById('noResultsSub'); if (nrs) nrs.textContent = L.noResultsSub;
+  const inn = document.getElementById('introNote'); if (inn) inn.textContent = L.introNote;
+
+  document.querySelectorAll('.suggest-pill').forEach(el => { el.textContent = L.pills[el.dataset.q] || el.dataset.q; });
+
+  const flh = document.getElementById('fl-home'); if (flh) flh.textContent = L.footer.home;
+  const fle = document.getElementById('fl-enc'); if (fle) fle.textContent = L.footer.enc;
+  const flc = document.getElementById('fl-contatti'); if (flc) flc.textContent = L.footer.contatti;
+  const fla = document.getElementById('fl-about'); if (fla) fla.textContent = L.footer.about;
+  const flp = document.getElementById('fl-privacy'); if (flp) flp.textContent = L.footer.privacy;
+  const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
+  const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+
+  runSearch(document.getElementById('searchInput').value);
+}
+
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    currentLang = e.target.dataset.lang;
+    localStorage.setItem('myst_lang', currentLang);
+    applyLang();
+    document.querySelectorAll('[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === currentLang));
+  });
+});
+
+/* ── Audio Manager (standard) ── */
+const AUDIO_KEY = 'myst_audio_state';
+const AUDIO_URL = './images/icone/audio/mystica_ambient_432_528.mp3';
+class AudioManager {
+  constructor() {
+    this.audio = null;
+    this.isPlaying = sessionStorage.getItem(AUDIO_KEY) === 'true';
+    this.initAudio();
+  }
+  initAudio() {
+    this.audio = new Audio(AUDIO_URL);
+    this.audio.preload = 'none';
+    this.audio.loop = true;
+    this.audio.volume = 0.3;
+    if (this.isPlaying) this.play();
+    this.updateUI();
+  }
+  play() { this.audio?.play().catch(() => {}); this.isPlaying = true; sessionStorage.setItem(AUDIO_KEY, 'true'); this.updateUI(); }
+  pause() { this.audio?.pause(); this.isPlaying = false; sessionStorage.setItem(AUDIO_KEY, 'false'); this.updateUI(); }
+  toggle() { this.isPlaying ? this.pause() : this.play(); }
+  updateUI() {
+    const btn = document.getElementById('musicToggle');
+    const L = LANG[currentLang];
+    if (btn) btn.textContent = this.isPlaying ? L.music.on : L.music.off;
+  }
+}
+window.audioManager = new AudioManager();
+document.getElementById('musicToggle')?.addEventListener('click', () => window.audioManager.toggle());
+
+/* ── Tema Giorno/Notte (standard) ── */
+let isDayMode = localStorage.getItem('myst_theme') === 'day';
+function applyTheme(isDay) {
+  document.documentElement.classList.toggle('theme-day', isDay);
+  const btn = document.getElementById('themeToggle');
+  const L = LANG[currentLang];
+  if (btn) btn.textContent = isDay ? L.theme.night : L.theme.day;
+  localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
+}
+document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ══════════════════════════════════════════════════════════════
+   MOTORE DI RICERCA
+   ══════════════════════════════════════════════════════════════ */
+function normalize(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function highlight(text, terms) {
+  let out = escHtml(text);
+  terms.forEach(t => {
+    if (!t) return;
+    const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+    out = out.replace(re, '<mark>$1</mark>');
+  });
+  return out;
+}
+
+function scoreItem(item, termsNorm) {
+  const nt = normalize(item.t), nd = normalize(item.d), nk = normalize(item.k);
+  let score = 0;
+  for (const term of termsNorm) {
+    if (!term) continue;
+    if (nt.includes(term)) score += nt.startsWith(term) ? 12 : 8;
+    if (nk.includes(term)) score += 4;
+    if (nd.includes(term)) score += 2;
+  }
+  return score;
+}
+
+function runSearch(rawQuery) {
+  const L = LANG[currentLang];
+  const query = (rawQuery || '').trim();
+  const resultsList = document.getElementById('resultsList');
+  const resultsCount = document.getElementById('resultsCount');
+  const emptyState = document.getElementById('emptyState');
+  const noResultsState = document.getElementById('noResultsState');
+  const clearBtn = document.getElementById('searchClear');
+
+  clearBtn.classList.toggle('show', query.length > 0);
+
+  if (!query) {
+    resultsList.innerHTML = '';
+    resultsCount.hidden = true;
+    emptyState.hidden = false;
+    noResultsState.hidden = true;
+    return;
+  }
+
+  const termsNorm = normalize(query).split(/\s+/).filter(Boolean);
+  const termsRaw = query.split(/\s+/).filter(Boolean);
+
+  const scored = SEARCH_INDEX
+    .map(item => ({ item, score: scoreItem(item, termsNorm) }))
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  emptyState.hidden = true;
+
+  if (scored.length === 0) {
+    resultsList.innerHTML = '';
+    resultsCount.hidden = true;
+    noResultsState.hidden = false;
+    return;
+  }
+
+  noResultsState.hidden = true;
+  resultsCount.hidden = false;
+  resultsCount.innerHTML = `<span>${scored.length}</span> ${scored.length === 1 ? L.resultsOne : L.resultsMany}`;
+
+  resultsList.innerHTML = scored.map(({ item }) => `
+    <a class="result-card" href="${item.u}">
+      <img class="result-thumb" src="${item.i}" alt="" loading="lazy" onerror="this.style.display='none'">
+      <div class="result-body">
+        <div class="result-title">${highlight(item.t, termsRaw)}</div>
+        <div class="result-desc">${highlight(item.d, termsRaw)}</div>
+      </div>
+    </a>
+  `).join('');
+}
+
+/* ── Eventi ricerca ── */
+const searchInput = document.getElementById('searchInput');
+let searchDebounce = null;
+searchInput.addEventListener('input', e => {
+  clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(() => {
+    runSearch(e.target.value);
+    const url = new URL(window.location);
+    if (e.target.value) url.searchParams.set('q', e.target.value); else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  }, 120);
+});
+document.getElementById('searchClear').addEventListener('click', () => {
+  searchInput.value = '';
+  runSearch('');
+  const url = new URL(window.location);
+  url.searchParams.delete('q');
+  history.replaceState(null, '', url);
+  searchInput.focus();
+});
+document.querySelectorAll('.suggest-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const q = LANG[currentLang].pills[btn.dataset.q] || btn.dataset.q;
+    searchInput.value = q;
+    runSearch(q);
+    searchInput.focus();
+  });
+});
+
+/* ── Init Sequence ── */
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(isDayMode);
+  applyLang();
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+
+  // Supporto ?q= per SearchAction / link diretti
+  const params = new URLSearchParams(window.location.search);
+  const initialQ = params.get('q');
+  if (initialQ) {
+    searchInput.value = initialQ;
+    runSearch(initialQ);
+  }
+});
+</script>
+</body>
+</html>

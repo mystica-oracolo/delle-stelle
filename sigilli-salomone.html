@@ -440,13 +440,13 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
 <!-- HEADER -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← MYSTICA</a>
     <div class="header-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🔯 Sigilli di Salomone</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -459,21 +459,21 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
   <!-- SEZIONE INTERATTIVA (sempre in cima) -->
   <div class="hero">
     <span class="hero-icon" aria-hidden="true">🔯</span>
-    <h2 class="hero-title" id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 class="hero-title" id="hero-title">SIGILLI DI SALOMONE</h2>
+    <p class="hero-sub" id="hero-sub">I 7 Pentacoli Planetari della Clavicula Salomonis — talismanica cerimoniale dal 1750</p>
   </div>
 
   <div class="container">
 
     <!-- FORM -->
     <div id="sigilloForm" class="form-card">
-      <label class="form-label" id="lbl-intento" for="sigilloIntento"></label>
+      <label class="form-label" id="lbl-intento" for="sigilloIntento">✦ LA TUA INTENZIONE</label>
       <textarea class="form-input" id="sigilloIntento" placeholder=""></textarea>
 
-      <label class="form-label" id="lbl-nome" for="sigilloNome"></label>
+      <label class="form-label" id="lbl-nome" for="sigilloNome">✦ IL TUO NOME</label>
       <input class="form-input" type="text" id="sigilloNome" placeholder="">
 
-      <label class="form-label" id="lbl-pianeta" style="margin-bottom:10px"></label>
+      <label class="form-label" id="lbl-pianeta" style="margin-bottom:10px">✦ SCEGLI PIANETA (opzionale)</label>
       <div class="planet-grid" id="planetGrid">
         <div class="planet-btn" data-idx="0" onclick="selPianeta(0)">
           <span class="pb-sym" aria-hidden="true">♄</span>
@@ -505,11 +505,11 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
         </div>
         <div class="planet-btn active" data-idx="-1" onclick="selPianeta(-1)">
           <span class="pb-sym" aria-hidden="true">✦</span>
-          <span class="pb-name" id="pb-auto"></span>
+          <span class="pb-name" id="pb-auto">AUTO</span>
         </div>
       </div>
 
-      <button class="btn" id="btnGenera" onclick="trovaSigillo()"></button>
+      <button class="btn" id="btnGenera" onclick="trovaSigillo()">🔯 GENERA IL TUO SIGILLO</button>
     </div>
 
     <!-- RESULT -->
@@ -521,28 +521,301 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
       </div>
 
       <div class="info-block">
-        <h4 id="lbl-significato"></h4>
+        <h4 id="lbl-significato">📜 SIGNIFICATO</h4>
         <p id="res-descrizione"></p>
       </div>
 
       <div class="mantra-box" id="res-mantra"></div>
 
       <div class="info-block">
-        <h4 id="lbl-comeusarlo"></h4>
-        <p id="txt-comeusarlo"></p>
+        <h4 id="lbl-comeusarlo">🕯️ COME USARLO</h4>
+        <p id="txt-comeusarlo">Copia o disegna questo sigillo su carta naturale o sulla superficie indicata dalla tradizione. Consacralo nell'ora planetaria corrispondente, tenendolo tra le mani e visualizzando la tua intenzione. Recita il mantra 7 volte. Conservalo su di te o in un luogo sacro.</p>
       </div>
 
       <div class="btn-grp">
-        <button class="btn btn-sec" id="btnReset" onclick="resetSigillo()"></button>
-        <button class="btn" id="btnSalva" onclick="salvaGrimorio()"></button>
+        <button class="btn btn-sec" id="btnReset" onclick="resetSigillo()">🔄 Nuovo Sigillo</button>
+        <button class="btn" id="btnSalva" onclick="salvaGrimorio()">💾 Salva</button>
       </div>
     </div>
 
     <!-- DIVIDER -->
-    <div class="divider" id="txt-divider"></div>
+    <div class="divider" id="txt-divider">I 7 SIGILLI PLANETARI</div>
 
     <!-- ALL PLANETS -->
-    <div class="planets-section" id="planetsSection"></div>
+    <div class="planets-section" id="planetsSection">
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#6b6b8a;text-shadow:0 0 12px #6b6b8a70" aria-hidden="true">♄</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#6b6b8a">Sigillo di Saturno</div>
+          <div class="planet-card-sub">protezione · disciplina · saggezza</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo di Saturno governa la disciplina, la saggezza antica e la protezione dalle influenze negative. Inciso nel piombo o tracciato in inchiostro nero, dona costanza e capacità di superare le prove del tempo.</p>
+        <div class="pc-mantra">« Per Saturnum, fundamentum aeternum »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">protezione</span><span class="pc-kw-tag">disciplina</span><span class="pc-kw-tag">saggezza</span><span class="pc-kw-tag">tempo</span><span class="pc-kw-tag">karma</span><span class="pc-kw-tag">limite</span><span class="pc-kw-tag">struttura</span><span class="pc-kw-tag">perseveranza</span><span class="pc-kw-tag">vecchio</span><span class="pc-kw-tag">meditazione</span><span class="pc-kw-tag">silenzio</span><span class="pc-kw-tag">solitudine</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-saturno.webp','Sigillo di Saturno — 1°','Protezione potente contro ogni pericolo e nemico')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-saturno.webp" alt="SATURNO — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-saturno.webp','Sigillo di Saturno — 2°','Evoca gli spiriti di Saturno e concede lunga vita')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-saturno.webp" alt="SATURNO — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-saturno.webp','Sigillo di Saturno — 3°','Difesa contro le forze ostili e gli spiriti maligni')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-saturno.webp" alt="SATURNO — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-saturno.webp','Sigillo di Saturno — 4°','Ottenere rispetto e autorità dagli altri')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-saturno.webp" alt="SATURNO — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-saturno.webp','Sigillo di Saturno — 5°','Aprire serrature e barriere spirituali')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-saturno.webp" alt="SATURNO — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-saturno.webp','Sigillo di Saturno — 6°','Conoscere i misteri nascosti del tempo')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-saturno.webp" alt="SATURNO — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-saturno.webp','Sigillo di Saturno — 7°','Conferisce resistenza alle malattie e agli incantesimi')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-saturno.webp" alt="SATURNO — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(0)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#4a7fbf;text-shadow:0 0 12px #4a7fbf70" aria-hidden="true">♃</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#4a7fbf">Sigillo di Giove</div>
+          <div class="planet-card-sub">ricchezza · abbondanza · prosperità</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo di Giove attira ricchezza, prosperità e onori. È il talismano dell'abbondanza e della giustizia divina, da incidere su lamine di stagno o disegnare in inchiostro blu durante l'ora di Giove.</p>
+        <div class="pc-mantra">« Iuppiter omnipotens, dator bonorum »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">ricchezza</span><span class="pc-kw-tag">abbondanza</span><span class="pc-kw-tag">prosperità</span><span class="pc-kw-tag">fortuna</span><span class="pc-kw-tag">successo</span><span class="pc-kw-tag">denaro</span><span class="pc-kw-tag">crescita</span><span class="pc-kw-tag">espansione</span><span class="pc-kw-tag">onore</span><span class="pc-kw-tag">gloria</span><span class="pc-kw-tag">vittoria</span><span class="pc-kw-tag">autorità</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-giove.webp','Sigillo di Giove — 1°','Richiamare abbondanza e prosperità materiale')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-giove.webp" alt="GIOVE — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-giove.webp','Sigillo di Giove — 2°','Acquisire gloria, onore e rispetto')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-giove.webp" alt="GIOVE — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-giove.webp','Sigillo di Giove — 3°','Protezione e fortuna nei viaggi e affari')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-giove.webp" alt="GIOVE — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-giove.webp','Sigillo di Giove — 4°','Favorire la giustizia e i giudizi a proprio favore')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-giove.webp" alt="GIOVE — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-giove.webp','Sigillo di Giove — 5°','Attrarre ricchezza e opportunità finanziarie')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-giove.webp" alt="GIOVE — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-giove.webp','Sigillo di Giove — 6°','Conquista di terre, proprietà e beni materiali')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-giove.webp" alt="GIOVE — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-giove.webp','Sigillo di Giove — 7°','Onori dai potenti e successo sociale')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-giove.webp" alt="GIOVE — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(1)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#c84a3a;text-shadow:0 0 12px #c84a3a70" aria-hidden="true">♂</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#c84a3a">Sigillo di Marte</div>
+          <div class="planet-card-sub">coraggio · forza · vittoria</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo di Marte conferisce coraggio, forza fisica e vittoria nelle battaglie della vita. Tradizionalmente inciso su ferro durante l'ora di Marte, protegge dai nemici e accende la volontà.</p>
+        <div class="pc-mantra">« Mars potens, vincere et superare »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">coraggio</span><span class="pc-kw-tag">forza</span><span class="pc-kw-tag">vittoria</span><span class="pc-kw-tag">battaglia</span><span class="pc-kw-tag">passione</span><span class="pc-kw-tag">azione</span><span class="pc-kw-tag">difesa</span><span class="pc-kw-tag">potere</span><span class="pc-kw-tag">volontà</span><span class="pc-kw-tag">guerra</span><span class="pc-kw-tag">energia</span><span class="pc-kw-tag">determinazione</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-marte.webp','Sigillo di Marte — 1°','Vittoria nelle battaglie e nei conflitti')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-marte.webp" alt="MARTE — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-marte.webp','Sigillo di Marte — 2°','Protezione dai nemici visibili e invisibili')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-marte.webp" alt="MARTE — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-marte.webp','Sigillo di Marte — 3°','Seminare discordia tra i nemici')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-marte.webp" alt="MARTE — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-marte.webp','Sigillo di Marte — 4°','Difendersi dagli attacchi magici e fisici')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-marte.webp" alt="MARTE — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-marte.webp','Sigillo di Marte — 5°','Conferire coraggio e determinazione imbattibili')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-marte.webp" alt="MARTE — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-marte.webp','Sigillo di Marte — 6°','Rendere invincibili in guerra e competizioni')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-marte.webp" alt="MARTE — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-marte.webp','Sigillo di Marte — 7°','Dominare e piegare le volontà avversarie')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-marte.webp" alt="MARTE — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(2)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#e6b800;text-shadow:0 0 12px #e6b80070" aria-hidden="true">☉</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#e6b800">Sigillo del Sole</div>
+          <div class="planet-card-sub">successo · gloria · illuminazione</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo del Sole irradia successo, gloria e vitalità. Inciso sull'oro o tracciato in inchiostro giallo, dona carisma, salute radiosa e favori dai potenti. Sigillo della suprema luce.</p>
+        <div class="pc-mantra">« Sol invictus, lux mundi »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">successo</span><span class="pc-kw-tag">gloria</span><span class="pc-kw-tag">illuminazione</span><span class="pc-kw-tag">salute</span><span class="pc-kw-tag">vitalità</span><span class="pc-kw-tag">carisma</span><span class="pc-kw-tag">leadership</span><span class="pc-kw-tag">luce</span><span class="pc-kw-tag">splendore</span><span class="pc-kw-tag">fama</span><span class="pc-kw-tag">autorità</span><span class="pc-kw-tag">re</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-sole.webp','Sigillo del Sole — 1°','Acquisire fama, gloria e luce divina')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-sole.webp" alt="SOLE — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-sole.webp','Sigillo del Sole — 2°','Ottenere favori dai potenti e dai re')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-sole.webp" alt="SOLE — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-sole.webp','Sigillo del Sole — 3°','Aprire ogni porta e sconfiggere ogni ostacolo')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-sole.webp" alt="SOLE — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-sole.webp','Sigillo del Sole — 4°','Illuminazione spirituale e visione interiore')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-sole.webp" alt="SOLE — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-sole.webp','Sigillo del Sole — 5°','Guarigione del corpo e vitalità radiosa')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-sole.webp" alt="SOLE — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-sole.webp','Sigillo del Sole — 6°','Diventare invisibili agli occhi dei nemici')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-sole.webp" alt="SOLE — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-sole.webp','Sigillo del Sole — 7°','Potere supremo su tutti gli spiriti solari')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-sole.webp" alt="SOLE — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(3)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#3da88e;text-shadow:0 0 12px #3da88e70" aria-hidden="true">♀</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#3da88e">Sigillo di Venere</div>
+          <div class="planet-card-sub">amore · bellezza · seduzione</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo di Venere apre i cuori e attira amore, bellezza e armonia. Inciso sul rame con inchiostro verde, è il talismano per relazioni felici, riconciliazioni e seduzione benevola.</p>
+        <div class="pc-mantra">« Venus dea, amoris flamma »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">amore</span><span class="pc-kw-tag">bellezza</span><span class="pc-kw-tag">seduzione</span><span class="pc-kw-tag">armonia</span><span class="pc-kw-tag">arte</span><span class="pc-kw-tag">piacere</span><span class="pc-kw-tag">romanticismo</span><span class="pc-kw-tag">desiderio</span><span class="pc-kw-tag">attrazione</span><span class="pc-kw-tag">passione</span><span class="pc-kw-tag">tenerezza</span><span class="pc-kw-tag">grazia</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-venere.webp','Sigillo di Venere — 1°','Attrarre amore e desiderio reciproco')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-venere.webp" alt="VENERE — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-venere.webp','Sigillo di Venere — 2°','Creare armonia nelle relazioni di coppia')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-venere.webp" alt="VENERE — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-venere.webp','Sigillo di Venere — 3°','Favorire incontri romantici e nuove amicizie')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-venere.webp" alt="VENERE — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-venere.webp','Sigillo di Venere — 4°','Riconciliazione dopo conflitti amorosi')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-venere.webp" alt="VENERE — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-venere.webp','Sigillo di Venere — 5°','Bellezza, grazia e magnetismo personale')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-venere.webp" alt="VENERE — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-venere.webp','Sigillo di Venere — 6°','Legare due cuori in un vincolo duraturo')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-venere.webp" alt="VENERE — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-venere.webp','Sigillo di Venere — 7°','Seduzione benevola e connessione spirituale')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-venere.webp" alt="VENERE — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(4)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#d97a3a;text-shadow:0 0 12px #d97a3a70" aria-hidden="true">☿</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#d97a3a">Sigillo di Mercurio</div>
+          <div class="planet-card-sub">comunicazione · intelligenza · viaggio</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo di Mercurio aguzza l'intelletto, favorisce la comunicazione e protegge i viaggi. Inciso sull'argento-mercurio o tracciato in inchiostro arancione, è essenziale per studiosi e mercanti.</p>
+        <div class="pc-mantra">« Mercurius velox, sermo et sapientia »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">comunicazione</span><span class="pc-kw-tag">intelligenza</span><span class="pc-kw-tag">viaggio</span><span class="pc-kw-tag">commercio</span><span class="pc-kw-tag">studio</span><span class="pc-kw-tag">scrittura</span><span class="pc-kw-tag">parola</span><span class="pc-kw-tag">intelletto</span><span class="pc-kw-tag">astuzia</span><span class="pc-kw-tag">apprendimento</span><span class="pc-kw-tag">contratto</span><span class="pc-kw-tag">messaggio</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-mercurio.webp','Sigillo di Mercurio — 1°','Acquisire eloquenza e potere persuasivo')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-mercurio.webp" alt="MERCURIO — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-mercurio.webp','Sigillo di Mercurio — 2°','Protezione durante i viaggi e gli spostamenti')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-mercurio.webp" alt="MERCURIO — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-mercurio.webp','Sigillo di Mercurio — 3°','Favorire commerci, contratti e affari')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-mercurio.webp" alt="MERCURIO — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-mercurio.webp','Sigillo di Mercurio — 4°','Memoria prodigiosa e capacità di apprendimento')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-mercurio.webp" alt="MERCURIO — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-mercurio.webp','Sigillo di Mercurio — 5°','Invisibilità e protezione contro i ladri')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-mercurio.webp" alt="MERCURIO — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-mercurio.webp','Sigillo di Mercurio — 6°','Comunicare con gli spiriti e ricevere risposte')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-mercurio.webp" alt="MERCURIO — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-mercurio.webp','Sigillo di Mercurio — 7°','Astuzia e intelligenza soprannaturale')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-mercurio.webp" alt="MERCURIO — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(5)">✦ Usa questo Sigillo</button>
+      </div>
+    </div>
+    <div class="planet-card" onclick="toggleCard(this)">
+      <div class="planet-card-head">
+        <span class="planet-card-sym" style="color:#b8a8d4;text-shadow:0 0 12px #b8a8d470" aria-hidden="true">☾</span>
+        <div class="planet-card-info">
+          <div class="planet-card-name" style="color:#b8a8d4">Sigillo della Luna</div>
+          <div class="planet-card-sub">intuizione · sogno · psichismo</div>
+        </div>
+        <span class="planet-card-toggle" aria-hidden="true">▾</span>
+      </div>
+      <div class="planet-card-body">
+        <p style="font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px">Il Sigillo della Luna risveglia l'intuizione, i sogni profetici e i poteri psichici. Inciso sull'argento durante la luna crescente, protegge il viaggiatore notturno e amplifica la medianità.</p>
+        <div class="pc-mantra">« Luna mater, regina noctis »</div>
+        <div class="pc-kw"><span class="pc-kw-tag">intuizione</span><span class="pc-kw-tag">sogno</span><span class="pc-kw-tag">psichismo</span><span class="pc-kw-tag">divinazione</span><span class="pc-kw-tag">emozione</span><span class="pc-kw-tag">famiglia</span><span class="pc-kw-tag">casa</span><span class="pc-kw-tag">madre</span><span class="pc-kw-tag">ciclo</span><span class="pc-kw-tag">mistero</span><span class="pc-kw-tag">notte</span><span class="pc-kw-tag">acqua</span></div>
+        <div class="pentacoli-label">✦ I 7 PENTACOLI ✦</div>
+        <div class="pentacoli-grid"><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-luna.webp','Sigillo della Luna — 1°','Risvegliare poteri psichici e medianità')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/primo-luna.webp" alt="LUNA — Pentacolo 1" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">1°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-luna.webp','Sigillo della Luna — 2°','Protezione durante le ore notturne')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/secondo-luna.webp" alt="LUNA — Pentacolo 2" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">2°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-luna.webp','Sigillo della Luna — 3°','Favorire i sogni profetici e lucidi')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/terzo-luna.webp" alt="LUNA — Pentacolo 3" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">3°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-luna.webp','Sigillo della Luna — 4°','Controllo sulle acque e i fluidi vitali')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quarto-luna.webp" alt="LUNA — Pentacolo 4" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">4°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-luna.webp','Sigillo della Luna — 5°','Protezione della casa e della famiglia')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/quinto-luna.webp" alt="LUNA — Pentacolo 5" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">5°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-luna.webp','Sigillo della Luna — 6°','Divinazione e visione del futuro')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/sesto-luna.webp" alt="LUNA — Pentacolo 6" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">6°</div>
+    </div><div class="pentacolo-item" onclick="event.stopPropagation();openLightbox('https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-luna.webp','Sigillo della Luna — 7°','Connessione con gli spiriti lunari e gli antenati')">
+      <img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/pentacoliresalomone/pentacoli/settimo-luna.webp" alt="LUNA — Pentacolo 7" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      <div class="pnum">7°</div>
+    </div></div>
+        <button class="btn" style="margin-top:14px;font-size:11px;padding:10px" onclick="event.stopPropagation();usaPianeta(6)">✦ Usa questo Sigillo</button>
+      </div>
+    </div></div>
 
   </div>
 
@@ -554,46 +827,96 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
       <img class="lightbox-img" id="lb-img" src="" alt="">
       <div class="lightbox-title" id="lb-title"></div>
       <div class="lightbox-desc" id="lb-desc"></div>
-      <button class="lightbox-close" id="lb-close" onclick="closeLightbox()"></button>
+      <button class="lightbox-close" id="lb-close" onclick="closeLightbox()">✕ Chiudi</button>
     </div>
   </div>
 
   <!-- SHARE -->
   <div class="share-section">
-    <button class="btn-share" id="btnShare" onclick="shareContent()"></button>
+    <button class="btn-share" id="btnShare" onclick="shareContent()">📤 Condividi</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ARTICOLO EDITORIALE -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Sigilli di Salomone: Storia, Simbologia e Uso dei Pentacoli Planetari</h2>
     <img src="./images/sigilli.webp"
          srcset="./images/sigilli.webp 1x"
          id="art-hero"
          alt=""
          width="900" height="600"
          loading="lazy" decoding="async">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
-    <nav class="article-links" id="articleLinks" aria-label="Link correlati"></nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <h3 id="art-h2">Origini nella Clavicula Salomonis</h3>
+    <p id="art-p1">I Sigilli di Salomone affondano le radici in un corpus di testi magici noti come Clavicula Salomonis, o Chiave di Salomone, un grimorio che circolò in numerose versioni manoscritte tra il XIV e il XVII secolo in Europa, per poi essere pubblicato in forma più organica intorno al 1750. La leggenda attribuisce l'origine di questi sigilli al re Salomone d'Israele, celebre nella tradizione ebraica e islamica per la sua saggezza e per il presunto dominio sui demoni tramite un anello magico. Sebbene l'attribuzione storica al sovrano biblico sia leggendaria, i testi che raccolgono i Pentacoli Planetari rappresentano una sintesi affascinante tra astrologia ellenistica, cabala ebraica e magia cerimoniale rinascimentale.</p>
+    <p id="art-p2">Ogni sigillo planetario è collegato a uno dei sette astri classici — Saturno, Giove, Marte, Sole, Venere, Mercurio e Luna — secondo il modello geocentrico dell'astrologia antica, che riconosceva a ciascun corpo celeste un'influenza specifica su aspetti della vita umana. Il grimorio descrive per ciascun pianeta sette pentacoli distinti, per un totale di quarantanove figure, ognuna con uno scopo dichiarato: protezione, ricchezza, vittoria, amore, comunicazione, intuizione o autorità. Le figure geometriche che compongono i sigilli combinano cerchi, poligoni stellati e caratteri ebraici o pseudo-ebraici, secondo un linguaggio simbolico tipico della magia talismanica del tardo Medioevo.</p>
+    <p id="art-p3">Il pentacolo, nella terminologia della Clavicula, non coincide esattamente con il sigillo: quest'ultimo è la figura geometrica astratta, mentre il pentacolo è l'oggetto completo, spesso di forma circolare, che racchiude il sigillo insieme a nomi divini, versetti biblici e iscrizioni protettive. Nella pratica storica venivano incisi su metalli associati al pianeta corrispondente — piombo per Saturno, stagno per Giove, ferro per Marte, oro per il Sole, rame per Venere, una lega di metalli per Mercurio e argento per la Luna — oppure tracciati su pergamena vergine con inchiostri specifici, sempre nell'ora planetaria ritenuta più favorevole.</p>
+    <h3 id="art-h3">Simbologia e Differenze con Altri Sistemi</h3>
+    <p id="art-p4">Un errore comune tra chi si avvicina per la prima volta a questo sistema è confondere i Sigilli di Salomone con le rune nordiche o con gli arcani dei tarocchi: si tratta di tradizioni distinte, nate in epoche e culture diverse, che condividono solo la funzione generale di strumenti simbolici per la divinazione o la richiesta di protezione. A differenza delle rune, che sono un alfabeto con valore sia fonetico sia divinatorio, e dei tarocchi, che sono un mazzo narrativo di ottantadue carte, i sigilli planetari non si "leggono" in una stesa, ma si scelgono e si consacrano per uno scopo specifico, in modo più vicino alla pratica talismanica che a quella oracolare.</p>
+    <p id="art-p5">Un mito diffuso vuole che i sigilli garantiscano poteri sovrannaturali immediati o controllo su entità spirituali: la ricerca storica e antropologica mostra invece che questi strumenti nacquero come risposta al bisogno umano di dare forma tangibile a intenzioni astratte, in un'epoca in cui la linea tra scienza astrologica, religione e magia cerimoniale era molto più sfumata di oggi. Studiare i sigilli planetari, oggi, significa avvicinarsi a un patrimonio simbolico che ha influenzato l'arte, l'astrologia occidentale e l'immaginario esoterico moderno, mantenendo comunque un valore autentico come pratica di concentrazione e visualizzazione dell'intenzione personale.</p>
+    <nav class="article-links" id="articleLinks" aria-label="Link correlati"><a href="./cabala.html">Cabala e Albero della Vita</a><a href="./ermetismo.html">Ermetismo e Corpus Hermeticum</a><a href="./alchimia.html">Alchimia e Grande Opera</a><a href="./magia-bianca.html">Magia Bianca e Rituali di Protezione</a></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section">
-    <h2 class="faq-title" id="faqTitle"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faqTitle">FAQ</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cosa sono esattamente i Sigilli di Salomone?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Sono simboli magici geometrici tratti dai Pentacoli della Clavicula Salomonis, un grimorio rinascimentale attribuito alla tradizione del re Salomone. Ogni sigillo è collegato a uno dei sette pianeti classici e racchiude uno scopo simbolico preciso, dalla protezione alla prosperità. Puoi approfondire tradizioni correlate nella nostra pagina di <a href="./cabala.html">Cabala</a>.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come funziona il generatore di questa pagina?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Scrivi la tua intenzione e il tuo nome: l'algoritmo analizza le parole chiave e propone il sigillo planetario più affine, oppure puoi scegliere manualmente uno dei sette pianeti dalla griglia in alto. Ogni sigillo viene disegnato dal vivo tramite grafica vettoriale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Come si usa e si consacra un sigillo nella pratica?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>La tradizione suggerisce di tracciarlo su un supporto adatto — carta, pergamena o il metallo del pianeta — durante l'ora planetaria corrispondente, recitando il mantra latino ad alta voce e visualizzando con chiarezza l'intento personale. Puoi conservarlo su di te o in un luogo che consideri sacro.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra sigillo e pentacolo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Il sigillo è la figura geometrica astratta associata a un pianeta; il pentacolo è l'oggetto completo, spesso circolare, che racchiude il sigillo insieme a nomi sacri, versetti e iscrizioni protettive descritti nella Clavicula Salomonis.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>In cosa si differenziano i sigilli planetari da rune e tarocchi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Rune e tarocchi sono sistemi divinatori pensati per essere "letti" in una stesa o estrazione; i sigilli planetari appartengono invece alla magia talismanica e si scelgono e consacrano per uno scopo specifico. Puoi confrontare i tre sistemi visitando anche le pagine dedicate a <a href="./ermetismo.html">Ermetismo</a> e Tarocchi.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -601,25 +924,25 @@ html.theme-day .article-section p,html.theme-day .faq-answer p,html.theme-day .i
 <!-- FOOTER -->
 <footer class="page-footer">
   <nav class="footer-links">
-    <a href="./index.html" id="fl-home"></a>
-    <a href="./contatti.html" id="fl-contatti"></a>
-    <a href="./about.html" id="fl-about"></a>
-    <a href="./privacy.html" id="fl-privacy"></a>
+    <a href="./index.html" id="fl-home">Home</a>
+    <a href="./contatti.html" id="fl-contatti">Contatti</a>
+    <a href="./about.html" id="fl-about">Chi Siamo</a>
+    <a href="./privacy.html" id="fl-privacy">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità storiche, culturali e di intrattenimento. Non sostituiscono consulenze mediche, legali o finanziarie professionali.</p>
 </footer>
 
 <!-- PREMIUM MODAL -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca lo storico illimitato dei sigilli, i consulti avanzati e le letture complete.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

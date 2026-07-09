@@ -674,10 +674,10 @@
 <!-- ── Header ── -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">📜 Blog Esoterico</h1>
@@ -701,8 +701,8 @@
   <!-- Hero -->
   <div class="hero-section">
     <span class="hero-icon" aria-hidden="true">📜</span>
-    <h2 class="page-title-hero" id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 class="page-title-hero" id="hero-title">Blog Esoterico</h2>
+    <p class="hero-sub" id="hero-sub">Approfondimenti, guide e articoli sulla saggezza antica: Tarocchi, Astrologia, Rune, Cabala, Magia e molto altro. Conoscenza esoterica gratuita in italiano.</p>
   </div>
 
   <!-- Topic pills -->
@@ -724,12 +724,12 @@
   <!-- Filter bar -->
   <div class="filter-bar" role="group" aria-label="Filtri articoli">
     <span class="filter-label" id="filter-label">Filtra:</span>
-    <div class="ftab active" data-f="all"         onclick="filterCards('all',this)"         tabindex="0">✨ <span id="f-all"></span></div>
-    <div class="ftab"        data-f="divinazione" onclick="filterCards('divinazione',this)"  tabindex="0">🔮 <span id="f-div"></span></div>
-    <div class="ftab"        data-f="astrologia"  onclick="filterCards('astrologia',this)"   tabindex="0">🌙 <span id="f-ast"></span></div>
-    <div class="ftab"        data-f="magia"       onclick="filterCards('magia',this)"        tabindex="0">✨ <span id="f-mag"></span></div>
-    <div class="ftab"        data-f="spiritualita" onclick="filterCards('spiritualita',this)" tabindex="0">🕉️ <span id="f-spi"></span></div>
-    <div class="ftab"        data-f="guide"       onclick="filterCards('guide',this)"        tabindex="0">📖 <span id="f-gui"></span></div>
+    <div class="ftab active" data-f="all"         onclick="filterCards('all',this)"         tabindex="0">✨ <span id="f-all">Tutti</span></div>
+    <div class="ftab"        data-f="divinazione" onclick="filterCards('divinazione',this)"  tabindex="0">🔮 <span id="f-div">Divinazione</span></div>
+    <div class="ftab"        data-f="astrologia"  onclick="filterCards('astrologia',this)"   tabindex="0">🌙 <span id="f-ast">Astrologia</span></div>
+    <div class="ftab"        data-f="magia"       onclick="filterCards('magia',this)"        tabindex="0">✨ <span id="f-mag">Magia</span></div>
+    <div class="ftab"        data-f="spiritualita" onclick="filterCards('spiritualita',this)" tabindex="0">🕉️ <span id="f-spi">Spiritualità</span></div>
+    <div class="ftab"        data-f="guide"       onclick="filterCards('guide',this)"        tabindex="0">📖 <span id="f-gui">Guide</span></div>
   </div>
 
   <!-- Blog grid -->
@@ -964,74 +964,74 @@
   <div class="guide-grid">
     <a href="./guida-tarocchi.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">🃏</span>
-      <span class="guide-card-title" id="guide-tarot-title"></span>
-      <span class="guide-card-sub" id="guide-tarot-sub"></span>
+      <span class="guide-card-title" id="guide-tarot-title">Guida ai Tarocchi</span>
+      <span class="guide-card-sub" id="guide-tarot-sub">78 carte, arcani, letture</span>
     </a>
     <a href="./significato-rune.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">ᚱ</span>
-      <span class="guide-card-title" id="guide-rune-title"></span>
-      <span class="guide-card-sub" id="guide-rune-sub"></span>
+      <span class="guide-card-title" id="guide-rune-title">Significato delle Rune</span>
+      <span class="guide-card-sub" id="guide-rune-sub">24 rune del Futhark</span>
     </a>
     <a href="./guida-i-ching.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">☯️</span>
-      <span class="guide-card-title" id="guide-iching-title"></span>
-      <span class="guide-card-sub" id="guide-iching-sub"></span>
+      <span class="guide-card-title" id="guide-iching-title">Guida all'I Ching</span>
+      <span class="guide-card-sub" id="guide-iching-sub">64 esagrammi spiegati</span>
     </a>
     <a href="./oroscopo-segni.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">🌙</span>
-      <span class="guide-card-title" id="guide-zodiac-title"></span>
-      <span class="guide-card-sub" id="guide-zodiac-sub"></span>
+      <span class="guide-card-title" id="guide-zodiac-title">I 12 Segni Zodiacali</span>
+      <span class="guide-card-sub" id="guide-zodiac-sub">Caratteristiche e compatibilità</span>
     </a>
     <a href="./astrologia-avanzata.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">🌠</span>
-      <span class="guide-card-title" id="guide-astro-title"></span>
-      <span class="guide-card-sub" id="guide-astro-sub"></span>
+      <span class="guide-card-title" id="guide-astro-title">Astrologia Avanzata</span>
+      <span class="guide-card-sub" id="guide-astro-sub">Tema natale, aspetti, case</span>
     </a>
     <a href="./numerologia.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">🔢</span>
-      <span class="guide-card-title" id="guide-num-title"></span>
-      <span class="guide-card-sub" id="guide-num-sub"></span>
+      <span class="guide-card-title" id="guide-num-title">Numerologia &amp; Simboli</span>
+      <span class="guide-card-sub" id="guide-num-sub">Numeri, significati, calcoli</span>
     </a>
     <a href="./pietre-magiche.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">💎</span>
-      <span class="guide-card-title" id="guide-pietre-title"></span>
-      <span class="guide-card-sub" id="guide-pietre-sub"></span>
+      <span class="guide-card-title" id="guide-pietre-title">Pietre Magiche</span>
+      <span class="guide-card-sub" id="guide-pietre-sub">Cristalli, proprietà, usi</span>
     </a>
     <a href="./alchimia.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">⚗️</span>
-      <span class="guide-card-title" id="guide-alch-title"></span>
-      <span class="guide-card-sub" id="guide-alch-sub"></span>
+      <span class="guide-card-title" id="guide-alch-title">Alchimia</span>
+      <span class="guide-card-sub" id="guide-alch-sub">La Grande Opera</span>
     </a>
     <a href="./cabala.html" class="guide-card">
       <span class="guide-card-icon" aria-hidden="true">🕎</span>
-      <span class="guide-card-title" id="guide-cab-title"></span>
-      <span class="guide-card-sub" id="guide-cab-sub"></span>
+      <span class="guide-card-title" id="guide-cab-title">Cabala</span>
+      <span class="guide-card-sub" id="guide-cab-sub">Albero della Vita</span>
     </a>
   </div>
 
   <!-- CTA box -->
   <div class="cta-box">
     <span class="cta-icon" aria-hidden="true">⭐</span>
-    <div class="cta-title" id="cta-main-title"></div>
-    <p class="cta-sub" id="cta-main-sub"></p>
-    <a href="./index.html" class="cta-btn" id="cta-main-btn"></a>
+    <div class="cta-title" id="cta-main-title">Prova gli Oracoli dal Vivo</div>
+    <p class="cta-sub" id="cta-main-sub">Leggi i Tarocchi, consulta il tuo Oroscopo personale, lancia le Rune e molto altro. Gratis, in italiano, senza registrazione.</p>
+    <a href="./index.html" class="cta-btn" id="cta-main-btn">✦ Entra nell'Oracolo ✦</a>
   </div>
 
   <!-- Related -->
   <div class="related">
-    <div class="related-title" id="related-title"></div>
+    <div class="related-title" id="related-title">✦ Approfondisci su MYSTICA</div>
     <div class="related-grid">
       <a href="./enciclopedia.html" class="related-link">
         <span class="related-link-icon" aria-hidden="true">📖</span>
-        <div class="related-link-text" id="rel-enc"></div>
+        <div class="related-link-text" id="rel-enc">Enciclopedia Completa</div>
       </a>
       <a href="./tradizioni-spirituali.html" class="related-link">
         <span class="related-link-icon" aria-hidden="true">🌍</span>
-        <div class="related-link-text" id="rel-trad"></div>
+        <div class="related-link-text" id="rel-trad">Tradizioni Spirituali</div>
       </a>
       <a href="./sogni.html" class="related-link">
         <span class="related-link-icon" aria-hidden="true">💤</span>
-        <div class="related-link-text" id="rel-sogni"></div>
+        <div class="related-link-text" id="rel-sogni">Interpretazione Sogni</div>
       </a>
     </div>
   </div>
@@ -1044,38 +1044,88 @@
       <a class="share-btn telegram"  id="share-tg" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
       <a class="share-btn facebook"  id="share-fb" target="_blank" rel="noopener noreferrer">👥 Facebook</a>
       <a class="share-btn twitter"   id="share-x"  target="_blank" rel="noopener noreferrer">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- Articolo editoriale -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">L'Esoterismo come Tradizione Viva: Origini, Strumenti e Percorsi di Conoscenza</h2>
     <img onerror="this.style.display='none'" src="./images/icone/home/blog.webp"
          srcset="./images/icone/home/blog.webp 1x"
          id="art-hero" alt="" loading="lazy" decoding="async"
          width="860" height="430"
          style="width:100%;border-radius:14px;margin:16px 0">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Perché l'esoterismo occidentale è ancora rilevante oggi</h3>
+    <p id="art-p1">L'esoterismo non è mai stato una moda. Quando i filosofi della scuola neoplatonica di Alessandria, nel III e IV secolo d.C., sintetizzavano Platone, Pitagora e le tradizioni ermetiche egiziane, stavano costruendo un sistema di pensiero destinato a influenzare secoli di cultura occidentale. Quella tradizione, fatta di simboli, corrispondenze e pratiche interiori, non si è mai spezzata: si è adattata, si è nascosta durante le persecuzioni, è riemersa nel Rinascimento italiano — nelle corti di Lorenzo de' Medici e nei manoscritti del Corpus Hermeticum tradotti da Marsilio Ficino nel 1463 — e ha continuato a evolversi fino ai nostri giorni.</p>
+    <p id="art-p2">Ogni strumento esoterico è, in fondo, un linguaggio simbolico costruito per dare forma a ciò che il pensiero razionale fatica ad afferrare. I Tarocchi, nati come giochi di carte nel Quattrocento lombardo, diventano con i pittori del Tarot de Marseille uno specchio dell'anima collettiva. Le Rune, alfabeto sacro dei popoli germanici documentato già nel II secolo d.C., non erano solo scrittura: erano invocazioni, sigilli, contenitori di forza cosmica. L'I Ching, compilato nella sua forma attuale sotto la dinastia Zhou (1046–256 a.C.) partendo da tradizioni orali ancora più antiche, descrive la realtà come un sistema di mutamento continuo in cui ogni situazione contiene il seme della sua trasformazione.</p>
+    <p id="art-p3">La numerologia pitagorica, la cabala ebraica con le sue dieci Sefirot, l'astrologia babilonese codificata nel Tetrabiblos di Tolomeo nel 150 d.C.: sistemi apparentemente distanti che condividono una visione del mondo fondata sulla corrispondenza tra macro e microcosmo. "Come in alto, così in basso" — il principio ermetico che ancora oggi orienta chi studia queste discipline — non è misticismo vago ma una precisa ipotesi epistemologica: che le strutture del cosmo si riflettano nelle strutture dell'individuo e viceversa.</p>
+    <h3 id="art-h3">Dai sistemi divinatori alla trasformazione interiore</h3>
+    <p id="art-p4">L'errore più comune di chi si avvicina all'esoterismo è cercarne la verifica empirica immediata. Tarocchi, Rune e Astrologia non sono strumenti di previsione nel senso deterministico del termine: sono specchi che amplificano la consapevolezza del momento, che costringono a formulare domande precise, che mettono in dialogo la coscienza razionale con quella simbolica. Chi usa un mazzo di Tarocchi non chiede al caso di decidere per lui; chiede a se stesso di vedere ciò che già sa attraverso il filtro di un linguaggio archetipico. Questo è il vero potere degli strumenti esoterici — non la profezia, ma la lucidità.</p>
+    <p id="art-p5">Sul Blog Esoterico di MYSTICA trovi articoli che trattano queste tradizioni con rispetto per la loro complessità storica e culturale. La storia dei Tarocchi dalle corti rinascimentali all'oracolo moderno, il Futhark Antico e i suoi 24 simboli, la Grande Opera alchemica nelle sue quattro fasi, il sistema Sefirotico della Cabala, la Wicca di Gerald Gardner e il neopaganesimo contemporaneo, l'oniromanzia da Artemidoro di Daldi (II sec. d.C.) fino all'analisi junghiana dei simboli onirici. Ogni articolo è un punto di partenza per approfondire e, soprattutto, per sperimentare direttamente attraverso gli oracoli interattivi della piattaforma.</p>
     <nav class="article-links" aria-label="Link correlati">
       <a href="./enciclopedia.html">📖 Enciclopedia Esoterica</a>
       <a href="./tarocchi.html">🃏 Tarocchi Online</a>
       <a href="./oroscopo.html">🌙 Oroscopo Personale</a>
       <a href="./rune.html">ᚱ Oracolo delle Rune</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section" aria-labelledby="faq-heading">
     <h2 class="faq-title" id="faq-heading">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Come iniziare a studiare l'esoterismo partendo da zero?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Il percorso più efficace per chi parte da zero è scegliere un sistema che rispecchi già qualcosa di familiare. Chi è attratto dai simboli visivi troverà i Tarocchi immediatamente coinvolgenti: le 78 carte del mazzo offrono un linguaggio archetipico completo. Chi preferisce la matematica e i numeri può iniziare dalla Numerologia pitagorica — calcolare il numero del destino dalla data di nascita è un esercizio concreto e immediato. Per chi ama la filosofia orientale, l'I Ching con i suoi 64 esagrammi è un punto di ingresso straordinario. Sul Blog di MYSTICA trovi guide dedicate a ciascuno di questi sistemi.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Tarocchi, Rune e I Ching: qual è la differenza tra questi sistemi divinatori?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>I Tarocchi operano attraverso immagini archetipiche, nati nell'Europa medievale e rinascimentale: lavorano sul piano dell'inconscio visivo e della narrazione simbolica. Le Rune appartengono alla tradizione germanico-nordica: ogni simbolo porta un significato cosmogonico legato a forze naturali (vento, fuoco, acqua, terra). L'I Ching è radicato nella filosofia taoista e confuciana cinese: lavora sul principio del cambiamento e della dualità yin/yang, fornendo non tanto una risposta quanto una mappa del momento presente. Nessuno è "migliore": sono linguaggi diversi per leggere la stessa realtà.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cos'è la Cabala e in cosa si differenzia dalla Cabala cristiana o ermetica?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>La Cabala è la tradizione mistica ebraica che studia la struttura nascosta della Torah e della creazione attraverso l'Albero della Vita (Etz Chaim), formato da dieci Sefirot collegati da 22 sentieri. La Cabala ebraica originale (Qabalah) è strettamente legata allo studio del testo biblico ebraico. La Cabala cristiana del Rinascimento (Pico della Mirandola, 1486) la reinterpretò in chiave cristologica. La Cabala ermetica occidentale, sviluppata dalla Golden Dawn nell'Ottocento, la integra con astrologia, tarocchi e alchimia. Sul Blog MYSTICA trovi un articolo dedicato che copre tutte e tre le tradizioni.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Perché l'astrologia continua ad affascinare anche in un'epoca scientifica?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>L'astrologia sopravvive perché risponde a un bisogno che la scienza empirica soddisfa solo parzialmente: il bisogno di significato. Non si tratta di credere che i pianeti "causino" eventi terrestri in senso meccanicistico; si tratta di usare il cielo come sistema simbolico per comprendere ciclicità, tendenze e potenzialità. Ricercatori come Richard Tarnas (Cosmos and Psyche, 2006) hanno analizzato le corrispondenze tra cicli planetari e movimenti culturali con rigore accademico. L'astrologia funziona meglio quando è usata come linguaggio di autoconoscenza piuttosto che come strumento di previsione.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Come posso approfondire un argomento specifico dopo aver letto un articolo del Blog?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Ogni articolo del Blog Esoterico di MYSTICA è collegato alle sezioni interattive della piattaforma: dopo aver letto della storia dei Tarocchi puoi fare una lettura reale con il nostro oracolo; dopo aver studiato le Rune puoi lanciarne tre e leggerne i significati; dopo l'articolo sull'Astrologia puoi calcolare il tuo oroscopo personale. Per approfondimenti accademici consigliamo l'Enciclopedia Esoterica di MYSTICA, le sezioni dedicate su enciclopedia.html, e testi fondamentali come "Il libro dei simboli" di Archive for Research in Archetypal Symbolism (ARAS) o il Corpus Hermeticum tradotto da Brian Copenhaver.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -1107,23 +1157,21 @@
     <a href="./significato-rune.html">Guida Rune</a>
     <a href="./oroscopo-segni.html">Segni Zodiacali</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti del Blog MYSTICA sono a scopo culturale e divulgativo. Non sostituiscono consulenza professionale.</p>
 </footer>
 
 <!-- Premium Modal -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su Tarocchi, Astrologia, Rune e molto altro.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

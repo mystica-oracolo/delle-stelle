@@ -1010,10 +1010,10 @@
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">📚☕ Bibliomanzia & Tasseomanzia</h1>
@@ -1037,12 +1037,12 @@
 
   <!-- BIBLIO FORM -->
   <div id="biblioForm">
-    <div id="biblioDesc" class="istr-box" aria-live="polite"></div>
+    <div id="biblioDesc" class="istr-box" aria-live="polite"><strong>📖 COME FUNZIONA</strong><br>La <strong>Bibliomanzia</strong> consiste nell'aprire un libro sacro o di saggezza a una pagina casuale per ricevere un messaggio dall'universo. Tieni la tua domanda nel cuore, chiudi gli occhi, e premi il pulsante.</div>
     <div class="domanda-wrap">
-      <label class="domanda-label" for="domandaInput" id="domanda-label-text"></label>
+      <label class="domanda-label" for="domandaInput" id="domanda-label-text">LA TUA DOMANDA (opzionale)</label>
       <textarea class="domanda-input" id="domandaInput" aria-labelledby="domanda-label-text"></textarea>
     </div>
-    <button class="btn" onclick="consulta()" id="btn-consulta" aria-label="Consulta l'oracolo"></button>
+    <button class="btn" onclick="consulta()" id="btn-consulta" aria-label="Consulta l'oracolo">✨ Apri il Libro Sacro</button>
   </div>
 
   <!-- BIBLIO RESULT -->
@@ -1051,7 +1051,7 @@
     <span class="oracle-source" id="oracleSource"></span>
     <p class="oracle-text" id="oracleText"></p>
     <div class="oracle-divider" aria-hidden="true">✦ ✦ ✦</div>
-    <button class="btn-sec" onclick="reset()" id="btn-nuova-pagina" aria-label="Nuova pagina"></button>
+    <button class="btn-sec" onclick="reset()" id="btn-nuova-pagina" aria-label="Nuova pagina">🔄 Nuova Pagina</button>
   </div>
 
   <!-- TASSEO RESULT -->
@@ -1062,12 +1062,12 @@
   </div>
 
   <div class="tasseo-secondary" id="tasseoSec">
-    <div class="sec-label" id="sec-label-text"></div>
+    <div class="sec-label" id="sec-label-text">SIMBOLO SECONDARIO</div>
     <div class="sec-symbol" id="secSym" aria-hidden="true"></div>
     <div class="sec-name" id="secName"></div>
     <p class="sec-meaning" id="secMean"></p>
     <div style="margin-top:14px;">
-      <button class="btn-sec" onclick="reset()" id="btn-nuova-lettura" aria-label="Nuova lettura"></button>
+      <button class="btn-sec" onclick="reset()" id="btn-nuova-lettura" aria-label="Nuova lettura">☕ Nuova Lettura</button>
     </div>
   </div>
 
@@ -1081,7 +1081,7 @@
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener noreferrer">👥 Facebook</a>
       <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener noreferrer">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -1330,7 +1330,7 @@
        ARTICOLO EDITORIALE
   ══════════════════════════════════════ -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Bibliomanzia e Tasseomanzia: le Arti Divinatorie della Parola e del Simbolo</h2>
     <img src="./images/bibliomanzia.webp"
          srcset="./images/bibliomanzia.webp 1x"
          id="art-hero"
@@ -1340,13 +1340,13 @@
          loading="lazy"
          decoding="async"
          style="width:100%;border-radius:14px;margin:16px 0">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Quando il Libro Parla e la Tazza Rivela</h3>
+    <p id="art-p1">Tra tutte le forme di divinazione sviluppate dall'umanità nel corso dei millenni, la Bibliomanzia e la Tasseomanzia occupano un posto peculiare: non richiedono strumenti costosi, non presuppongono un'iniziazione lunga, e si adattano a qualsiasi tradizione spirituale. La prima utilizza la parola scritta — il testo sacro come vettore del destino; la seconda lavora con le tracce materiali che il caso lascia sul fondo di una tazza. Eppure entrambe condividono la stessa premessa fondamentale: il "caso" non esiste, o meglio, ciò che chiamiamo caso è in realtà il linguaggio dell'universo che parla attraverso eventi apparentemente privi di nesso.</p>
+    <p id="art-p2">La Bibliomanzia ha attraversato tremila anni di storia e non ha mai perso la sua presa. I Greci aprissero Omero per ricevere presagi, i Romani aprissero Virgilio, i cristiani medievali aprissero la Bibbia con gli occhi chiusi prima delle battaglie. Carlo Magno lo faceva, e con lui imperatori, papi e condottieri. Nel XVI secolo Rabelais ne scrisse in modo satirico nel Gargantua, segno che la pratica era talmente diffusa da essere entrata nella cultura popolare. Oggi, in molte comunità islamiche, il Corano viene ancora aperto con intenzione e preghiera alla ricerca di una parola guida — le Sortes Coranicae non sono mai scomparse.</p>
+    <p id="art-p3">La Tasseomanzia ha un profilo geografico più marcato: nasce nell'Asia Centrale, viaggia attraverso l'Impero Ottomano, penetra in Grecia, nei Balcani, nell'Europa celtica attraverso le rotte dei mercanti. In Turchia, il "kahve falı" — la lettura del caffè — è parte integrante della cultura del caffè turco, pratica che l'UNESCO ha riconosciuto come patrimonio immateriale dell'umanità nel 2013. Non è raro, a Istanbul, che dopo un pranzo le donne della famiglia si passino la tazza rovesciata e commentino insieme i simboli. La lettura è collettiva, sociale, ed è considerata tanto un gioco quanto un momento di riflessione autentica.</p>
+    <h3 id="art-h3">La Sincronicità come Fondamento di Entrambe le Arti</h3>
+    <p id="art-p4">La psicologia analitica di Carl Gustav Jung offre forse la chiave di lettura più affascinante per entrambe le pratiche. Il concetto di sincronicità — la "coincidenza significativa" tra eventi esterni e stati interiori — suggerisce che quando apriamo un libro a caso o osserviamo i fondi di una tazza, la nostra psiche inconscia guida in qualche modo la scelta verso il simbolo di cui abbiamo bisogno. Non si tratta di magia nel senso letterale: si tratta di un dialogo tra il conscio e l'inconscio, mediato da un sistema simbolico esterno. La parola del libro o il simbolo nella tazza diventano lo specchio in cui l'anima si riconosce.</p>
+    <p id="art-p5">Un errore comune di chi si avvicina per la prima volta a queste arti è aspettarsi risposte letterali e definitive. La Bibliomanzia non dice "sì" o "no" — offre un passo di testo che richiede interpretazione personale. La Tasseomanzia non mostra il futuro come una mappa stradale — rivela tendenze, energie, simboli che il consultante deve integrare con la propria situazione. Il valore sta nel processo: nella concentrazione prima della domanda, nell'apertura intuitiva al simbolo, nella riflessione che segue. Usate insieme, come propone MYSTICA, le due arti si completano: la parola fornisce il messaggio razionale, il simbolo quello emotivo-visivo.</p>
     <nav class="article-links" aria-label="Link interni correlati">
       <a href="./divinazione-alternativa.html">🔮 Divinazione Alternativa</a>
       <a href="./iching.html">☯️ I Ching — Oracolo del Libro dei Mutamenti</a>
@@ -1354,7 +1354,7 @@
       <a href="./tarocchi.html">🃏 Tarocchi</a>
       <a href="./ermetismo.html">⚗️ Ermetismo</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ══════════════════════════════════════
@@ -1362,7 +1362,57 @@
   ══════════════════════════════════════ -->
   <section class="faq-section">
     <h2 class="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è la Bibliomanzia e come funziona?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>La Bibliomanzia è l'arte divinatoria che consiste nell'aprire a caso un testo sacro o sapienziale per ricevere un messaggio dall'universo. Si tiene la domanda nel cuore, si chiudono gli occhi, poi si apre il libro in modo casuale e si legge il passo rivelato. Praticata fin dall'antica Grecia con le opere di Omero (Rapsodomanzia) e dai Romani con Virgilio (Sortes Virgilianae), è ancora diffusa nelle tradizioni cristiana, islamica, taoista e induista. L'oracolo interattivo di MYSTICA simula questa pratica con testi sapienziali da tradizioni di tutto il mondo.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cos'è la Tasseomanzia e da dove viene?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>La Tasseomanzia è la divinazione attraverso la lettura dei fondi di tè, caffè o vino. Ogni forma che si crea casualmente nei residui viene interpretata come simbolo portatore di significato. Ha origini nell'Asia Centrale e nel Medio Oriente, si è diffusa in Europa nel XVII secolo attraverso le rotte commerciali ottomane e in Turchia e Grecia è ancora pratica quotidiana. Il UNESCO ha riconosciuto il caffè turco — inclusa la sua lettura — come patrimonio immateriale dell'umanità nel 2013.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Quali libri si possono usare per la Bibliomanzia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Qualsiasi testo considerato sacro o portatore di saggezza profonda è appropriato: la Bibbia, il Corano, il Tao Tê Ching, il Bhagavad Gita, le Upanishad, il Corpus Hermeticum, l'I Ching, Omero, Virgilio. La scelta dipende dalla tradizione spirituale di chi consulta. L'importante è che il libro abbia un significato autentico per chi lo usa come oracolo — non è il libro in sé che parla, ma il legame simbolico tra il testo e chi lo interroga.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Bibliomanzia e Tasseomanzia hanno basi scientifiche?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Non esistono prove scientifiche di capacità predittive letterali. Tuttavia, la psicologia analitica di Carl Jung ha studiato il concetto di sincronicità — la coincidenza significativa tra eventi casuali e stati interiori — come possibile meccanismo psicologico alla base di queste pratiche. Dal punto di vista neuropsicologico, la proiezione di significati su forme ambigue (come i fondi di caffè) è un processo normale della mente umana, simile al test di Rorschach. MYSTICA propone queste arti come strumenti di introspezione e riflessione.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Come si differenziano la Bibliomanzia e la Tasseomanzia dagli altri oracoli come Tarocchi e Rune?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>La Bibliomanzia e la Tasseomanzia si distinguono dagli altri sistemi divinatori per la loro spontaneità: non usano un mazzo fisso di simboli codificati come i <a href="./tarocchi.html">Tarocchi</a> o le <a href="./rune.html">Rune</a>, né si basano su calcoli precisi come la <a href="./numerologia.html">Numerologia</a>. Il loro strumento è il caso — il passo casuale del libro, la forma casuale dei fondi. Questo le rende meno sistematizzate ma forse più immediate nella risposta intuitiva. L'assenza di un sistema fisso può essere sia un limite che una ricchezza.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -1378,23 +1428,21 @@
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli ha scopo ludico e culturale. Le letture di Bibliomanzia e Tasseomanzia non costituiscono consulenza professionale di alcun tipo.</p>
 </footer>
 
 <!-- PREMIUM MODAL -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true" role="dialog" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati con accesso esclusivo a tutte le funzioni di MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

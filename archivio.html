@@ -418,13 +418,13 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">📿 Archivio Mistico</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -434,15 +434,15 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
 
 <main id="main-content">
   <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="./index.html" id="breadcrumb-home"></a>
+    <a href="./index.html" id="breadcrumb-home">Home</a>
     <span>›</span>
-    <span id="breadcrumb-current"></span>
+    <span id="breadcrumb-current">Archivio Mistico</span>
   </nav>
 
   <div class="hero">
     <span class="hero-icon" aria-hidden="true">📿</span>
-    <h2 class="hero-title" id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 class="hero-title" id="hero-title">Archivio Mistico</h2>
+    <p class="hero-sub" id="hero-sub">Qui riposano tutte le tue letture mistiche. Ogni consultazione è un filo nel tessuto del tuo cammino spirituale — custodito per te.</p>
   </div>
 
   <!-- Stats (visibili solo se ci sono letture) -->
@@ -450,15 +450,15 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
     <div class="arch-stats">
       <div class="stat-card">
         <span class="stat-num" id="statTotale">0</span>
-        <div class="stat-label" id="statLabelTotale"></div>
+        <div class="stat-label" id="statLabelTotale">Letture totali</div>
       </div>
       <div class="stat-card">
         <span class="stat-num" id="statTipi">0</span>
-        <div class="stat-label" id="statLabelTipi"></div>
+        <div class="stat-label" id="statLabelTipi">Discipline diverse</div>
       </div>
       <div class="stat-card">
         <span class="stat-num" id="statGiorni">0</span>
-        <div class="stat-label" id="statLabelGiorni"></div>
+        <div class="stat-label" id="statLabelGiorni">Giorni di pratica</div>
       </div>
     </div>
   </div>
@@ -466,30 +466,36 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
   <!-- Toolbar + filtri -->
   <div id="toolbarSection" style="display:none">
     <div class="arch-toolbar">
-      <div class="arch-count"><span id="toolbarCountPrefix"></span> <span id="archCountLabel">0</span> <span id="toolbarCountSuffix"></span></div>
-      <button class="btn-clear" id="archClearBtn" onclick="clearArch()"></button>
+      <div class="arch-count"><span id="toolbarCountPrefix">Storico:</span> <span id="archCountLabel">0</span> <span id="toolbarCountSuffix">letture</span></div>
+      <button class="btn-clear" id="archClearBtn" onclick="clearArch()">🗑️ Svuota archivio</button>
     </div>
     <div class="filter-tabs" id="filterTabs">
-      <div class="filter-tab active" data-filter="all" id="filterAllTab" onclick="setFilter('all',this)"></div>
+      <div class="filter-tab active" data-filter="all" id="filterAllTab" onclick="setFilter('all',this)">✨ Tutte</div>
     </div>
   </div>
 
   <!-- Lista letture (SEZIONE INTERATTIVA PRINCIPALE) -->
-  <div id="archList"></div>
+  <div id="archList">
+      <div class="arch-empty">
+        <span class="arch-empty-icon" aria-hidden="true">📿</span>
+        <div class="arch-empty-title">Archivio ancora vuoto</div>
+        <p class="arch-empty-sub">Ogni lettura che esegui viene custodita qui automaticamente.<br>Inizia la tua prima consultazione per popolare il tuo archivio mistico.</p>
+        <a href="./index.html" class="btn-start">✦ Vai all'Oracolo</a>
+      </div></div>
 
   <!-- Export -->
   <div class="export-box" id="exportBox" style="display:none">
     <div class="export-icon" aria-hidden="true">📋</div>
     <div class="export-text">
-      <div class="export-title" id="exportTitle"></div>
-      <div class="export-sub" id="exportSub"></div>
+      <div class="export-title" id="exportTitle">Esporta il tuo archivio</div>
+      <div class="export-sub" id="exportSub">Salva una copia delle tue letture in formato testo — utile per tenere un diario mistico.</div>
     </div>
-    <button class="btn-export" id="exportBtn" onclick="exportArchivio()"></button>
+    <button class="btn-export" id="exportBtn" onclick="exportArchivio()">⬇ Esporta .txt</button>
   </div>
 
   <!-- Link rapidi -->
   <div id="quickSection" style="margin-top:40px">
-    <div class="section-title" id="quickSectionTitle"></div>
+    <div class="section-title" id="quickSectionTitle">✦ Inizia una Nuova Lettura</div>
     <div class="quick-grid" id="quickGrid">
       <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🃏</span><span class="quick-card-label" data-qk="tarocchi"></span></a>
       <a href="./index.html" class="quick-card"><span class="quick-card-icon" aria-hidden="true">🌙</span><span class="quick-card-label" data-qk="oroscopo"></span></a>
@@ -507,7 +513,7 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
   </div>
 
   <div class="related" style="margin-top:40px">
-    <div class="related-title" id="relatedTitle"></div>
+    <div class="related-title" id="relatedTitle">✦ Approfondisci su MYSTICA</div>
     <div class="related-grid">
       <a href="./guida-tarocchi.html" class="related-link"><span class="related-link-icon" aria-hidden="true">🎴</span><div class="related-link-text" data-rk="tarocchi"></div></a>
       <a href="./significato-rune.html" class="related-link"><span class="related-link-icon" aria-hidden="true">ᚱ</span><div class="related-link-text" data-rk="rune"></div></a>
@@ -517,19 +523,19 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
 
   <!-- Share -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()" id="btn-share-label"></button>
+    <button class="btn-share" onclick="shareContent()" id="btn-share-label">📤 Condividi</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- Articolo editoriale -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">L'Archivio Mistico: Il Tuo Diario di Bordo Spirituale</h2>
     <img src="./images/archivio.webp"
          srcset="./images/archivio.webp 1x"
          id="art-hero"
@@ -537,31 +543,91 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
          width="640" height="360"
          loading="eager"
          decoding="async">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Perché Custodire le Proprie Letture Ha un Valore Reale</h3>
+    <p id="art-p1">La pratica di annotare le proprie consultazioni esoteriche affonda le radici in secoli di tradizione. Astrologi di corte come Nostradamus tenevano registri dettagliati delle effemeridi e delle previsioni fatte per i propri committenti, mentre gli alchimisti custodivano diari cifrati per tracciare esperimenti e intuizioni. Nei villaggi contadini italiani, le cartomanti trascrivevano a mano le stese più significative su quaderni tramandati di generazione in generazione. Questo bisogno di lasciare traccia del proprio cammino divinatorio non è mai svanito: è semplicemente cambiato forma, passando dalla carta agli schermi, mantenendo intatto il valore simbolico di un diario che accompagna la crescita interiore di chi lo scrive.</p>
+    <p id="art-p2">MYSTICA ha introdotto l'Archivio Mistico proprio per restituire questa funzione al mondo digitale, senza però snaturarla. Ogni lettura di tarocchi, ogni oroscopo consultato, ogni lancio di rune o esagramma dell'I Ching viene registrato automaticamente sul tuo dispositivo, organizzato per data e disciplina. Non serve alcuna registrazione, non viene creato alcun account: l'archivio vive esclusivamente nel browser che stai usando, proprio come un taccuino che tieni in un cassetto. Questo approccio rispecchia la filosofia dell'intero progetto: strumenti esoterici accessibili, immediati, senza frizioni tecniche che allontanino dall'esperienza contemplativa della consultazione.</p>
+    <p id="art-p3">Rileggere le proprie letture nel tempo permette di riconoscere ricorrenze che sfuggirebbero a una consultazione isolata. Chi torna spesso sull'Arcano della Torre, ad esempio, potrebbe interrogarsi su quali situazioni di rottura si ripresentano nella propria vita; chi vede tornare più volte il segno dei Pesci nelle compatibilità richieste potrebbe scoprire un pattern relazionale interessante da esplorare. Gli antichi indovini chiamavano questa capacità di lettura incrociata 'sincronicità', un concetto poi ripreso da Carl Gustav Jung in ambito psicologico: non è la singola carta a parlare, ma la sequenza che si compone lettura dopo lettura.</p>
+    <h3 id="art-h3">Come Trarre il Massimo dal Tuo Archivio Personale</h3>
+    <p id="art-p4">L'errore più comune è considerare l'archivio come un mero registro tecnico da ignorare, invece che come uno strumento di auto-osservazione. Molti utenti abbandonano la pratica di rileggere le consultazioni passate, perdendo così la possibilità di cogliere l'evoluzione del proprio percorso. Un altro errore diffuso è affidarsi esclusivamente alla memoria del dispositivo senza mai esportare una copia: cancellare la cache del browser o cambiare smartphone può cancellare mesi di letture salvate localmente. Per questo motivo MYSTICA consente di esportare l'intero archivio in un file di testo scaricabile, da conservare come un vero diario mistico personale.</p>
+    <p id="art-p5">Dal punto di vista tecnico, l'Archivio Mistico si appoggia al localStorage del browser: nessun dato lascia il tuo dispositivo, nessuna lettura viene trasmessa ai server di MYSTICA o condivisa con terze parti. È una scelta di trasparenza deliberata, coerente con l'approccio rispettoso della privacy che contraddistingue l'intero progetto PetroCorporation. Una curiosità: nell'antico Egitto i sacerdoti del tempio di Karnak conservavano rotoli di papiro con le interpretazioni degli oracoli offerti ai faraoni, alcuni dei quali sono giunti fino a noi grazie al clima secco del deserto — il desiderio umano di custodire la propria memoria spirituale attraversa letteralmente i millenni.</p>
     <nav class="article-links" aria-label="Approfondimenti correlati">
       <a href="./profilo-mistico.html" data-al="profilo"></a>
       <a href="./guida-tarocchi.html" data-al="tarocchi"></a>
       <a href="./significato-rune.html" data-al="rune"></a>
       <a href="./enciclopedia.html" data-al="enciclopedia"></a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- FAQ -->
   <section class="faq-section">
     <h2 class="faq-title" id="faq-title-text">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è l'Archivio Mistico e come funziona?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>L'Archivio Mistico raccoglie automaticamente tutte le letture di tarocchi, oroscopi, rune, I Ching, numerologia e altre discipline che consulti su MYSTICA. Ogni volta che completi una lettura, i dati essenziali — tipo, dettaglio, data — vengono salvati sul tuo dispositivo, così puoi ritrovarli in qualsiasi momento senza doverli ricordare a memoria.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Dove vengono conservati i dati delle mie letture?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Tutti i dati restano esclusivamente nel localStorage del tuo browser, sul tuo dispositivo. MYSTICA non trasmette né conserva questi contenuti sui propri server: nessun account è richiesto e nessuna informazione personale viene condivisa con terze parti.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Posso esportare o cancellare il mio archivio?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Sì. Il pulsante "Esporta .txt" genera un file di testo scaricabile con tutte le tue letture, utile come diario mistico permanente. Il pulsante "Svuota archivio" cancella definitivamente lo storico dal tuo dispositivo, con una richiesta di conferma per evitare cancellazioni accidentali.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Cosa succede se cambio dispositivo o cancello la cache del browser?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Poiché i dati vivono solo nel browser locale, cambiare dispositivo, disinstallare l'app o svuotare la cache comporta la perdita dello storico non esportato. Per questo consigliamo di esportare periodicamente l'archivio se desideri conservarlo a lungo termine.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Perché conviene tenere un archivio delle proprie consultazioni esoteriche?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Rivedere le letture passate aiuta a riconoscere pattern e ricorrenze — carte, segni o simboli che tornano più volte — offrendo una prospettiva più ampia sul proprio percorso interiore rispetto a una singola consultazione isolata nel tempo.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>L'archivio funziona anche per le funzioni premium?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Sì, l'archivio registra sia le letture gratuite sia quelle sbloccate con MYSTICA Premium. L'accesso e la consultazione dell'archivio stesso restano sempre completamente gratuiti, senza alcuna limitazione.</p>
+      </div>
+    </div>
+  </div>
   </section>
 </main>
 
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2 id="esploraTitle"></h2>
+  <h2 id="esploraTitle">✨ Esplora Anche</h2>
   <div class="esplora-grid">
     <a href="./astrologia-avanzata.html" class="esplora-card" data-ek="astro-avanzata"></a>
     <a href="./astrologia-vedica.html" class="esplora-card" data-ek="astro-vedica"></a>
@@ -583,19 +649,19 @@ html.theme-day .modal-content{background:linear-gradient(145deg,#f5f2ed,#ede8df)
     <a href="./guida-i-ching.html" data-fk="guida-iching"></a>
     <a href="./privacy.html" data-fk="privacy"></a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

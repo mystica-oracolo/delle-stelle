@@ -255,10 +255,10 @@ a:hover{text-decoration:underline}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title">八字 BaZi</h1>
@@ -484,23 +484,23 @@ a:hover{text-decoration:underline}
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">BaZi e la Visione Cinese del Destino: Storia, Filosofia e Pratica</h2>
     <img src="./images/bazi-cinese.webp"
          srcset="./images/bazi-cinese.webp 1x"
          id="art-hero" alt="" loading="lazy" width="480" height="260"
          style="width:100%;border-radius:14px;margin:16px 0;object-fit:cover">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Da Li Xu Zhong a Xu Zi Ping: duemila anni di raffinamento</h3>
+    <p id="art-p1">Il BaZi nasce in un contesto culturale dove il tempo non è lineare ma ciclico: gli anni si alternano in sessantennali che combinano i Dieci Tronchi Celesti con i Dodici Rami Terrestri, generando sequenze che si ripetono ogni sessant'anni. Questa visione ciclica della realtà — condivisa con il calendario lunare cinese, il Feng Shui e la medicina tradizionale — ha permesso di sviluppare nel corso dei secoli un sistema di cartografia del destino di straordinaria complessità e coerenza interna, capace di resistere a oltre mille anni di trasformazioni culturali e politiche.</p>
+    <p id="art-p2">La Dinastia Tang (618–907 d.C.) fu il crogiolo in cui il BaZi prese forma compiuta. Il maestro Li Xu Zhong sistematizzò per primo le relazioni tra Tronchi Celesti e Rami Terrestri applicate alla data di nascita. Ma fu Xu Zi Ping, durante la Dinastia Song (960–1279), a operare la svolta decisiva: spostò il centro dell'analisi dal Pilastro dell'Anno al Pilastro del Giorno, introducendo il concetto di Day Master. Da quel momento il BaZi divenne un sistema centrato sull'individuo, aprendo la via all'analisi psicologica che lo contraddistingue ancora oggi.</p>
+    <p id="art-p3">I testi classici che codificarono questo sapere — il Di Tian Sui (滴天髓), il Qiong Tong Bao Jian (穷通宝鉴) e il San Ming Tong Hui (三命通会) — rimangono le fonti primarie per i praticanti seri. Non si limitano a descrivere i caratteri: analizzano le interazioni dinamiche tra gli elementi stagione per stagione, mostrando come lo stesso Day Master abbia bisogni completamente diversi a seconda del mese di nascita. Un Fuoco Yang nato d'estate ha troppo calore e ha bisogno di Acqua; lo stesso Fuoco Yang nato in inverno ha invece bisogno di Legno che lo alimenti.</p>
+    <h3 id="art-h3">Il BaZi oggi: tra tradizione e rinascita globale</h3>
+    <p id="art-p4">Nel Novecento il BaZi ha conosciuto una seconda giovinezza grazie alla diaspora cinese in Hong Kong, Singapore e Taiwan, e poi alla globalizzazione digitale. Maestri come Joey Yap, Raymond Lo e Lillian Too hanno tradotto e adattato i classici in inglese, portando il sistema all'attenzione mondiale. Oggi si contano centinaia di scuole internazionali, software di calcolo automatico e comunità online che studiano e praticano il BaZi nel rispetto delle radici tradizionali cinesi.</p>
+    <p id="art-p5">Ciò che rende il BaZi irriducibile a una semplice app di oroscopo è la sua natura relazionale: non esistono caratteri buoni o cattivi in assoluto, ma solo equilibri e squilibri. Un tema con molto Fuoco può indicare intelligenza brillante e carisma oppure instabilità emotiva — a seconda del contesto generale e del Day Master. È questa complessità sfumata, questa attenzione alle interazioni piuttosto che ai singoli simboli, che ha permesso al BaZi di sopravvivere e fiorire per oltre mille anni come strumento di comprensione dell'esistenza umana.</p>
     <nav class="article-links" aria-label="Pagine correlate">
       <a href="./zi-wei-dou-shu.html">⭐ Zi Wei Dou Shu</a>
       <a href="./iching.html">☯️ I Ching</a>
@@ -508,12 +508,12 @@ a:hover{text-decoration:underline}
       <a href="./numerologia.html">🔢 Numerologia</a>
       <a href="./cicli-tempo.html">🌙 Cicli e Tempo</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <section class="faq-section" id="faq">
     <h2 class="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList"><div class="faq-item" id="faq-0"><button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false"><span>Cos'è esattamente il BaZi e come viene costruito il tema natale?</span><span class="faq-icon">+</span></button><div class="faq-answer" id="faq-ans-0" hidden=""><p>Il BaZi (八字) è un sistema astrologico cinese che analizza data e ora di nascita per costruire un tema composto da quattro pilastri: Anno, Mese, Giorno e Ora. Ogni pilastro contiene due caratteri — un Tronco Celeste e un Ramo Terrestre — per un totale di otto caratteri da cui deriva il nome. La costruzione del tema richiede la conversione della data gregoriana nel calendario cinese usando tabelle Tongshu o software dedicati. Il risultato è una mappa unica che riflette il potenziale energetico, le tendenze caratteriali e i cicli di vita della persona.</p></div></div><div class="faq-item" id="faq-1"><button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false"><span>Qual è la differenza tra BaZi, oroscopo cinese e Zi Wei Dou Shu?</span><span class="faq-icon">+</span></button><div class="faq-answer" id="faq-ans-1" hidden=""><p>L'oroscopo cinese popolare usa solo l'anno di nascita — sistema generico e poco preciso. Il BaZi usa anno, mese, giorno e ora, analizzando le interazioni tra i Cinque Elementi per una mappa personalizzata. Lo Zi Wei Dou Shu è un altro sistema cinese sofisticato, basato su un diverso set di stelle e palazzi, generalmente orientato alla previsione dettagliata degli eventi. I praticanti esperti spesso usano entrambi in modo complementare. Puoi approfondire lo Zi Wei Dou Shu nella sezione dedicata di MYSTICA.</p></div></div><div class="faq-item" id="faq-2"><button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false"><span>Cosa significa "Day Master forte o debole" nel BaZi?</span><span class="faq-icon">+</span></button><div class="faq-answer" id="faq-ans-2" hidden=""><p>Il Day Master è il Tronco Celeste del Pilastro del Giorno e rappresenta l'essenza della persona. La sua forza si valuta analizzando quanto supporto riceve dagli altri elementi del tema: viene considerato forte se il mese di nascita corrisponde alla stagione del suo elemento e ha molti caratteri alleati. La distinzione è fondamentale: gli elementi favorevoli per un Day Master forte sono completamente diversi da quelli per un Day Master debole, il che ribalta l'interpretazione di molti simboli.</p></div></div><div class="faq-item" id="faq-3"><button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false"><span>Come si calcola il proprio Giorno Maestro nel BaZi?</span><span class="faq-icon">+</span></button><div class="faq-answer" id="faq-ans-3" hidden=""><p>Per calcolare il Giorno Maestro è necessario convertire la data di nascita gregoriana in caratteri cinesi usando le tavole del calendario cinese (Tongshu). Il Giorno Maestro è il Tronco Celeste (il carattere superiore) del Pilastro del Giorno. Esistono app e software online dedicati che eseguono questo calcolo automaticamente dalla data e dall'ora di nascita. Tra i dieci possibili Day Master — uno per ciascuno dei Dieci Tronchi Celesti — il tuo elemento e la sua polarità (Yang o Yin) definiscono la base di tutta l'interpretazione BaZi.</p></div></div><div class="faq-item" id="faq-4"><button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false"><span>Il BaZi può prevedere eventi concreti o indica solo tendenze generali?</span><span class="faq-icon">+</span></button><div class="faq-answer" id="faq-ans-4" hidden=""><p>Il BaZi opera su due livelli. Il primo è strutturale: il tema natale rivela la personalità, i punti di forza e debolezza, e le sfere della vita dove si concentreranno le energie. Il secondo è previsionale: sovrapporre i Cicli di Grande Fortuna decennali e gli Anni di Fortuna annuali al tema natale permette di identificare periodi favorevoli o critici con notevole specificità. I praticanti esperti possono individuare finestre temporali precise per decisioni importanti. Il BaZi indica però tendenze e probabilità, non certezze: le scelte individuali restano sempre determinanti.</p></div></div></div>
   </section>
 
   <div class="related">
@@ -537,18 +537,18 @@ a:hover{text-decoration:underline}
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità educative e culturali. Il BaZi e le discipline astrologiche cinesi sono tradizioni millenarie: MYSTICA le presenta con rispetto storico e spirito di approfondimento. Non costituiscono consulenza professionale di alcun tipo.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
-    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su BaZi e tutti gli oracoli MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
+    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 <script>

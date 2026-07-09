@@ -305,10 +305,10 @@ html.theme-day .star-box{background:var(--card)}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">紫微 Zi Wei Dou Shu</h1>
@@ -328,100 +328,327 @@ html.theme-day .star-box{background:var(--card)}
 
   <div class="hero">
     <span class="hero-icon">紫微</span>
-    <h2 id="heroTitle"></h2>
-    <p class="hero-sub" id="heroSub"></p>
+    <h2 id="heroTitle">Zi Wei Dou Shu<br>Astrologia Imperiale Cinese</h2>
+    <p class="hero-sub" id="heroSub">Il sistema astrologico più completo della tradizione cinese: 108 stelle, 12 palazzi della vita e oltre mille anni di sapienza imperiale per tracciare il tuo destino.</p>
   </div>
 
   <nav class="toc" aria-label="Indice">
-    <div class="toc-title" id="tocTitle"></div>
-    <ol id="tocList"></ol>
+    <div class="toc-title" id="tocTitle">Indice</div>
+    <ol id="tocList"><li><a href="#storia">Storia e Origini</a></li><li><a href="#struttura">Struttura del Sistema</a></li><li><a href="#dodici-palazzi">I 12 Palazzi della Vita</a></li><li><a href="#stelle-principali">Le 14 Stelle Principali</a></li><li><a href="#stelle-secondarie">Le 6 Stelle Secondarie Maggiori</a></li><li><a href="#quattro-trasformazioni">Le Quattro Trasformazioni</a></li><li><a href="#come-leggere">Come Interpretare il Tema</a></li><li><a href="#differenze">Zi Wei vs Altri Sistemi Cinesi</a></li><li><a href="#faq">Domande Frequenti</a></li></ol>
   </nav>
 
   <!-- ═══ STORIA ═══ -->
   <section id="storia">
-    <h2 id="storiaH2"></h2>
+    <h2 id="storiaH2">Storia e Origini di Zi Wei Dou Shu</h2>
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/ziwei/ziwei-hero.webp" id="imgHero" alt="" title="" loading="eager" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%"></div>
     <div class="card">
-      <p id="storiaP1"></p>
+      <p id="storiaP1">Zi Wei Dou Shu (紫微斗數), letteralmente "Calcolo delle Stelle dell'Orsa Maggiore della Stella Purpurea", è l'antico sistema astrologico imperiale cinese attribuito all'eremita taoista Chen Tuan (陳摶), vissuto durante la tarda Dinastia Tang e i Cinque Regni (906–960 d.C.), e ulteriormente codificato nella Dinastia Song (960–1279 d.C.). Per oltre un millennio rimase il sapere riservato agli astrologi di corte, custodito con la stessa segretezza dei segreti di Stato.</p>
       <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/ziwei/chen-tuan.webp" id="imgChenTuan" alt="" title="" loading="lazy" decoding="async" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%"></div>
-      <p id="storiaP2"></p>
-      <p id="storiaP3"></p>
-      <div class="highlight"><p id="storiaCallout"></p></div>
+      <p id="storiaP2">La leggenda narra che Chen Tuan, dopo decenni di meditazione sul monte Huashan, ricevette in sogno la rivelazione del sistema direttamente dagli Immortali Taoisti. La stella Zi Wei — corrispondente alla Stella Polare Imperiale (Alpha Ursae Minoris) — era considerata la residenza dell'Imperatore Celeste, polo fisso attorno al quale ruotava il cielo e, per analogia, il destino umano.</p>
+      <p id="storiaP3">Per secoli il sistema rimase segreto, riservato esclusivamente agli astrologi di corte che lo usavano per consigliare l'Imperatore nelle decisioni di Stato, nella scelta dei generali e nel calcolo dei momenti propizi per battaglie e cerimonie. Solo dopo la caduta dell'ultimo impero (1912) il sistema fu reso accessibile al grande pubblico, dapprima a Taiwan e Hong Kong, poi, a partire dagli anni '80, in Occidente.</p>
+      <div class="highlight"><p id="storiaCallout">⭐ Curiosità: Zi Wei Dou Shu era chiamato il "sistema del figlio del cielo" — lo stesso termine usato per l'Imperatore cinese. Possedere la conoscenza di questo sistema era considerato privilegio riservato alla classe dirigente imperiale.</p></div>
     </div>
   </section>
 
   <!-- ═══ STRUTTURA ═══ -->
   <section id="struttura">
-    <h2 id="strutturaH2"></h2>
-    <p id="strutturaIntro"></p>
-    <div class="card-grid" id="strutturaCards"></div>
-    <div class="highlight"><p id="strutturaCallout"></p></div>
+    <h2 id="strutturaH2">Struttura del Sistema</h2>
+    <p id="strutturaIntro">A differenza dell'astrologia occidentale basata sulla posizione dei pianeti sull'eclittica, Zi Wei Dou Shu si fonda su un sistema stellare polare. Il tema natale (命盤, Ming Pan) è una griglia quadrata di 12 case disposte a formare un quadrato concavo — il "palazzo imperiale" — ciascuna delle quali ospita un insieme di stelle.</p>
+    <div class="card-grid" id="strutturaCards">
+    <div class="card-item">
+      <span class="card-item-icon">📅</span>
+      <div class="card-item-title">Dati Necessari</div>
+      <div class="card-item-desc">Anno, mese, giorno e ora di nascita nel calendario lunare cinese (Nong Li). Il genere è rilevante per l'assegnazione di alcune stelle.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">⭐</span>
+      <div class="card-item-title">108 Stelle Totali</div>
+      <div class="card-item-desc">14 stelle principali, 6 stelle ausiliarie maggiori, e 88 stelle minori di supporto, trasformazione e temporali.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">🏛️</span>
+      <div class="card-item-title">12 Palazzi</div>
+      <div class="card-item-desc">Ogni palazzo governa una sfera della vita. Le stelle che cadono in ciascun palazzo ne colorano la natura e indicano gli eventi e la qualità di quell'area.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">🔄</span>
+      <div class="card-item-title">Cicli Temporali</div>
+      <div class="card-item-desc">Il sistema include cicli di Grande Fortuna (10 anni), Fortuna Annuale (1 anno), Mensile e persino Oraria, per previsioni a breve termine.</div>
+    </div></div>
+    <div class="highlight"><p id="strutturaCallout">🧭 Il Ming Pan: Il tema natale è disposto in un quadrato di 3×4 caselle con il centro vuoto (spazio imperiale). Si legge in senso antiorario, a partire dal palazzo del Destino posizionato in base all'ora di nascita e all'anno lunare.</p></div>
   </section>
 
   <!-- ═══ 12 PALAZZI ═══ -->
   <section id="dodici-palazzi">
-    <h2 id="palazziH2"></h2>
-    <p id="palazziIntro"></p>
+    <h2 id="palazziH2">I 12 Palazzi della Vita</h2>
+    <p id="palazziIntro">I dodici palazzi coprono ogni aspetto dell'esistenza umana. Ogni palazzo ha un palazzo opposto (detto "palazzo specchio") che lo influenza e lo bilancia. La posizione e la qualità delle stelle in ogni palazzo determinano gli eventi e le tendenze di quell'area di vita.</p>
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/ziwei/mingpan-12palazzi.webp" id="imgPalazzi" alt="" title="" loading="lazy" decoding="async" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%"></div>
-    <div class="palace-grid" id="palazziGrid"></div>
-    <div class="highlight"><p id="palazziCallout"></p></div>
+    <div class="palace-grid" id="palazziGrid">
+    <div class="palace-box">
+      <div class="palace-num">01</div>
+      <div class="palace-cn">命</div>
+      <div class="palace-name">Destino</div>
+      <div class="palace-desc">Ming — Carattere, identità, salute generale e vita complessiva</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">02</div>
+      <div class="palace-cn">兄</div>
+      <div class="palace-name">Fratelli</div>
+      <div class="palace-desc">Xiong Di — Fratelli, sorelle, amici stretti e colleghi</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">03</div>
+      <div class="palace-cn">夫</div>
+      <div class="palace-name">Coniuge</div>
+      <div class="palace-desc">Fu Qi — Partner romantico, matrimonio, relazioni intime</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">04</div>
+      <div class="palace-cn">子</div>
+      <div class="palace-name">Figli</div>
+      <div class="palace-desc">Zi Nu — Figli, creatività, studenti e subordinati diretti</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">05</div>
+      <div class="palace-cn">財</div>
+      <div class="palace-name">Ricchezza</div>
+      <div class="palace-desc">Cai Bo — Denaro, risorse materiali, capacità di guadagno</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">06</div>
+      <div class="palace-cn">疾</div>
+      <div class="palace-name">Salute</div>
+      <div class="palace-desc">Ji E — Salute fisica, malattie, vizi e limitazioni corporee</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">07</div>
+      <div class="palace-cn">遷</div>
+      <div class="palace-name">Viaggi</div>
+      <div class="palace-desc">Qian Yi — Spostamenti, trasferimenti, vita all'estero, sociale</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">08</div>
+      <div class="palace-cn">僕</div>
+      <div class="palace-name">Servi</div>
+      <div class="palace-desc">Pu Yi — Dipendenti, collaboratori, relazioni di servizio</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">09</div>
+      <div class="palace-cn">官</div>
+      <div class="palace-name">Carriera</div>
+      <div class="palace-desc">Guan Lu — Lavoro, posizione sociale, ambizioni professionali</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">10</div>
+      <div class="palace-cn">田</div>
+      <div class="palace-name">Proprietà</div>
+      <div class="palace-desc">Tian Zhai — Casa, immobili, eredità, famiglia di origine</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">11</div>
+      <div class="palace-cn">福</div>
+      <div class="palace-name">Fortuna</div>
+      <div class="palace-desc">Fu De — Gioia interiore, karma passato, spiritualità, piaceri</div>
+    </div>
+    <div class="palace-box">
+      <div class="palace-num">12</div>
+      <div class="palace-cn">父</div>
+      <div class="palace-name">Genitori</div>
+      <div class="palace-desc">Fu Mu — Genitori, autorità, documenti, protezione esterna</div>
+    </div></div>
+    <div class="highlight"><p id="palazziCallout">💡 Il Palazzo del Destino (命 Ming) è il più importante: descrive la personalità fondamentale della persona, la costituzione fisica, il carattere e la direzione generale della vita. È il primo punto da analizzare in ogni lettura.</p></div>
   </section>
 
   <!-- ═══ 14 STELLE PRINCIPALI ═══ -->
   <section id="stelle-principali">
-    <h2 id="stelleH2"></h2>
-    <p id="stelleIntro"></p>
+    <h2 id="stelleH2">Le 14 Stelle Principali</h2>
+    <p id="stelleIntro">Le stelle principali (正曜, Zheng Yao) sono le più potenti del sistema. Si dividono in 6 stelle Zi Wei (gruppo nord, Yang) e 8 stelle Tian Fu (gruppo sud, Yin). La loro presenza in un palazzo ne definisce profondamente la natura.</p>
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/ziwei/stelle-principali.webp" id="imgStelle" alt="" title="" loading="lazy" decoding="async" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%"></div>
-    <div id="stelleList"></div>
+    <div id="stelleList">
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">紫微</span> Zi Wei — Stella Imperiale Viola <span class="badge">YANG</span></div>
+      <div class="star-desc">La stella più nobile del sistema. Conferisce leadership naturale, carisma, senso del dovere e ambizione. Chi la possiede nel palazzo Destino ha un'aura di autorità e tende a posizioni di comando. Ama il lusso, la qualità e il riconoscimento. Può sfociare in arroganza se non bilanciata.</div>
+      <div class="star-keywords"><span class="star-kw">Nobiltà</span><span class="star-kw">Leadership</span><span class="star-kw">Autorità</span><span class="star-kw">Carisma</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">天機</span> Tian Ji — Macchina Celeste <span class="badge">YIN</span></div>
+      <div class="star-desc">Stella dell'intelligenza strategica, del cambiamento e dell'adattabilità. Conferisce mente veloce, creatività e abilità nelle strategie. Le persone con Tian Ji prominente cambiano spesso direzione, viaggiano e si adattano con facilità. Correlata a fratelli, affari e trasformazioni continue.</div>
+      <div class="star-keywords"><span class="star-kw">Intelligenza</span><span class="star-kw">Strategia</span><span class="star-kw">Cambiamento</span><span class="star-kw">Mobilità</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">太陽</span> Tai Yang — Grande Sole <span class="badge">YANG</span></div>
+      <div class="star-desc">Il Sole rappresenta gloria, generosità, vita pubblica e relazioni paterne. Chi ha Tai Yang prominente è visibile, generoso, orientato al servizio degli altri. È la stella degli uomini influenti, dei padri e dei leader spirituali. Molto potente quando nasce di giorno.</div>
+      <div class="star-keywords"><span class="star-kw">Gloria</span><span class="star-kw">Generosità</span><span class="star-kw">Fama</span><span class="star-kw">Pubblico</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">武曲</span> Wu Qu — Generale Militare <span class="badge">YIN</span></div>
+      <div class="star-desc">Stella della determinazione, della forza, del denaro guadagnato con il lavoro duro e della giustizia. Conferisce carattere diretto, pratico, spesso solitario. È eccellente per la carriera militare, finanziaria e tecnica. Può portare solitudine emotiva se non bilanciata dalle stelle d'amore.</div>
+      <div class="star-keywords"><span class="star-kw">Forza</span><span class="star-kw">Denaro</span><span class="star-kw">Determinazione</span><span class="star-kw">Praticità</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">天同</span> Tian Tong — Armonia Celeste <span class="badge">YANG</span></div>
+      <div class="star-desc">Stella della pace, della gioia, dei piaceri e della vita serena. Chi la porta nel Destino è gentile, ottimista, ama il comfort e le belle cose. È la stella dei bambini e della felicità interiore. Tende tuttavia alla pigrizia se non stimolata da stelle più energiche.</div>
+      <div class="star-keywords"><span class="star-kw">Pace</span><span class="star-kw">Gioia</span><span class="star-kw">Serenità</span><span class="star-kw">Piacere</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">廉貞</span> Lian Zhen — Onestà Pura <span class="badge">YIN</span></div>
+      <div class="star-desc">Stella della passione, del desiderio, dei rischi e delle relazioni intense. È una stella ambivalente: può portare successo straordinario o scandali e cadute. Conferisce fascino magnetico, talento artistico e intensità emotiva. Associata alla politica, alla legge e alle relazioni clandestine.</div>
+      <div class="star-keywords"><span class="star-kw">Passione</span><span class="star-kw">Rischio</span><span class="star-kw">Fascino</span><span class="star-kw">Intensità</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">天府</span> Tian Fu — Tesoreria Celeste <span class="badge">YANG</span></div>
+      <div class="star-desc">La stella opposta a Zi Wei nel sistema Tian Fu. Conferisce stabilità, conservazione della ricchezza, prudenza e senso di responsabilità. È la stella dell'accumulo e della gestione delle risorse. Chi la porta tende a costruire con lentezza ma solidità, mantenendo ciò che acquisisce.</div>
+      <div class="star-keywords"><span class="star-kw">Stabilità</span><span class="star-kw">Ricchezza</span><span class="star-kw">Prudenza</span><span class="star-kw">Conservazione</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">太陰</span> Tai Yin — Grande Luna <span class="badge">YIN</span></div>
+      <div class="star-desc">La Luna rappresenta intuizione, immaginazione, emozioni profonde e la sfera femminile. Conferisce bellezza, sensibilità artistica, capacità empatiche e un forte legame con la madre. È la stella delle donne influenti e delle energie notturne. Molto potente per chi nasce di notte.</div>
+      <div class="star-keywords"><span class="star-kw">Intuizione</span><span class="star-kw">Bellezza</span><span class="star-kw">Emozioni</span><span class="star-kw">Arte</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">貪狼</span> Tan Lang — Lupo Bramoso <span class="badge">YANG</span></div>
+      <div class="star-desc">Stella del desiderio, della seduzione, dell'ambizione e della spiritualità taoista. È la stella più complessa del sistema: può manifestarsi come materialismo e sensualità, ma anche come profonda ricerca spirituale. Conferisce carisma sessuale, abilità nelle arti e nelle relazioni sociali.</div>
+      <div class="star-keywords"><span class="star-kw">Desiderio</span><span class="star-kw">Seduzione</span><span class="star-kw">Ambizione</span><span class="star-kw">Spirito</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">巨門</span> Ju Men — Porta Grande <span class="badge">YIN</span></div>
+      <div class="star-desc">Stella della comunicazione, dei segreti, dei conflitti verbali e del potere delle parole. Chi la porta nel Destino ha grande talento per l'eloquenza, la scrittura e la risoluzione dei conflitti. Può tuttavia portare incomprensioni, pettegolezzi e tensioni nelle relazioni se non incanalata correttamente.</div>
+      <div class="star-keywords"><span class="star-kw">Parola</span><span class="star-kw">Segreti</span><span class="star-kw">Eloquenza</span><span class="star-kw">Conflitti</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">天相</span> Tian Xiang — Ministro Celeste <span class="badge">YANG</span></div>
+      <div class="star-desc">Stella dell'eleganza, del buon gusto, della diplomazia e del supporto altrui. È la stella del consigliere fidato, di colui che lavora nell'ombra supportando i leader. Conferisce aspetto gradevole, senso estetico raffinato e capacità di mediazione. Legata alla moda, all'arte e alla burocrazia.</div>
+      <div class="star-keywords"><span class="star-kw">Eleganza</span><span class="star-kw">Diplomazia</span><span class="star-kw">Supporto</span><span class="star-kw">Estetica</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">天梁</span> Tian Liang — Trave Celeste <span class="badge">YANG</span></div>
+      <div class="star-desc">Stella della longevità, della protezione, della medicina e della saggezza degli anziani. Chi la porta è dotato di grande senso morale, capacità di guarire e proteggere gli altri. È la stella dei medici, dei guaritori e degli insegnanti spirituali. Porta fortuna attraverso le difficoltà.</div>
+      <div class="star-keywords"><span class="star-kw">Protezione</span><span class="star-kw">Longevità</span><span class="star-kw">Guarigione</span><span class="star-kw">Saggezza</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">七殺</span> Qi Sha — Sette Uccisioni <span class="badge">YANG</span></div>
+      <div class="star-desc">Stella del guerriero, del coraggio estremo, dei cambiamenti radicali e dell'indipendenza. È una delle stelle più potenti e difficili: porta grandi successi dopo grandi sfide. Chi la porta nel Destino è coraggioso, indipendente, intollerante alla routine. Eccellente per la leadership in situazioni di crisi.</div>
+      <div class="star-keywords"><span class="star-kw">Coraggio</span><span class="star-kw">Indipendenza</span><span class="star-kw">Cambiamento</span><span class="star-kw">Forza</span></div>
+    </div>
+    <div class="star-box">
+      <div class="star-title"><span class="star-cn">破軍</span> Po Jun — Distruttore dell'Esercito <span class="badge">YIN</span></div>
+      <div class="star-desc">Stella della rottura, del rinnovamento radicale, della trasformazione e delle nuove fondamenta. È l'ultima delle 14 stelle principali e la più destrutturante: distrugge per ricostruire. Chi la porta vive molti cambiamenti, difficoltà nelle relazioni ma anche straordinarie rinascite. Associata all'innovazione e alla rivoluzione.</div>
+      <div class="star-keywords"><span class="star-kw">Rottura</span><span class="star-kw">Rinascita</span><span class="star-kw">Innovazione</span><span class="star-kw">Trasformazione</span></div>
+    </div></div>
   </section>
 
   <!-- ═══ STELLE SECONDARIE ═══ -->
   <section id="stelle-secondarie">
-    <h2 id="secH2"></h2>
-    <p id="secIntro"></p>
+    <h2 id="secH2">Le 6 Stelle Secondarie Maggiori</h2>
+    <p id="secIntro">Le stelle secondarie maggiori (六吉星 Liu Ji Xing, stelle ausiliarie benefiche e 六煞星 Liu Sha Xing, stelle ausiliarie malefiche) si combinano con le stelle principali per modificarne la qualità. La loro presenza può elevare o attenuare significativamente l'effetto della stella principale del palazzo.</p>
     <table class="arcana-table">
-      <thead><tr id="secBeneficHead"></tr></thead>
-      <tbody id="secBeneficBody"></tbody>
+      <thead><tr id="secBeneficHead"><th>Stelle Benefiche</th><th>Cinese</th><th>Significato</th></tr></thead>
+      <tbody id="secBeneficBody"><tr><td><strong>Zuo Fu</strong></td><td>左輔</td><td>Supporto destro: amici influenti, aiuti inaspettati, collaboratori leali</td></tr><tr><td><strong>You Bi</strong></td><td>右弼</td><td>Supporto sinistro: alleanze, protezione invisibile, lavoro di squadra</td></tr><tr><td><strong>Tian Kui</strong></td><td>天魁</td><td>Nobiltà celeste Yang: protezione di uomini influenti, favori da superiori</td></tr><tr><td><strong>Tian Yue</strong></td><td>天鉞</td><td>Nobiltà celeste Yin: protezione di donne influenti, grazia e fortuna</td></tr><tr><td><strong>Wen Chang</strong></td><td>文昌</td><td>Letteratura Yang: talento accademico, scrittura, esami, carriera culturale</td></tr><tr><td><strong>Wen Qu</strong></td><td>文曲</td><td>Letteratura Yin: arti, musica, oratoria, carisma personale</td></tr></tbody>
     </table>
     <table class="arcana-table" style="margin-top:16px">
-      <thead><tr id="secMaleficHead"></tr></thead>
-      <tbody id="secMaleficBody"></tbody>
+      <thead><tr id="secMaleficHead"><th>Stelle Malefiche</th><th>Cinese</th><th>Significato</th></tr></thead>
+      <tbody id="secMaleficBody"><tr><td><strong>Qing Yang</strong></td><td>擎羊</td><td>Ariete sollevato: conflitti, infortuni, chirurgia, scontri fisici</td></tr><tr><td><strong>Tuo Luo</strong></td><td>陀羅</td><td>Ritardo e accumulo: ostacoli lenti, procrastinazione, tortuosità</td></tr><tr><td><strong>Huo Xing</strong></td><td>火星</td><td>Stella di Fuoco: esplosività, impulsività, cambiamenti improvvisi e violenti</td></tr><tr><td><strong>Ling Xing</strong></td><td>鈴星</td><td>Stella Tintinnante: agitazione, tensione nervosa, provocazioni esterne</td></tr><tr><td><strong>Di Jie</strong></td><td>地劫</td><td>Ladro Terrestre: perdite materiali, disorganizzazione, dispersione</td></tr><tr><td><strong>Tian Kong</strong></td><td>天空</td><td>Vuoto Celeste: idealismo distaccato dalla realtà, spirito, filosofia</td></tr></tbody>
     </table>
   </section>
 
   <!-- ═══ QUATTRO TRASFORMAZIONI ═══ -->
   <section id="quattro-trasformazioni">
-    <h2 id="trasfH2"></h2>
-    <p id="trasfIntro"></p>
+    <h2 id="trasfH2">Le Quattro Trasformazioni (四化 Si Hua)</h2>
+    <p id="trasfIntro">Le Quattro Trasformazioni sono modificatori annuali e natali di fondamentale importanza. Ogni anno, i quattro Tronchi Celesti attivano quattro stelle principali trasformandole nelle quattro qualità cardinali dell'esistenza. Nel tema natale, le trasformazioni rivelano le energie dominanti della vita della persona.</p>
     <div class="img-section"><img src="https://raw.githubusercontent.com/mystica-oracolo/delle-stelle/main/images/ziwei/quattro-trasformazioni.webp" id="imgTrasf" alt="" title="" loading="lazy" decoding="async" width="760" height="220" style="max-height:220px;object-fit:cover;width:100%"></div>
     <table class="arcana-table trasf-table">
-      <thead><tr id="trasfHead"></tr></thead>
-      <tbody id="trasfBody"></tbody>
+      <thead><tr id="trasfHead"><th>Trasformazione</th><th>Cinese</th><th>Simbolo</th><th>Significato</th></tr></thead>
+      <tbody id="trasfBody"><tr><td>Hua Lu</td><td>化祿</td><td>🟢</td><td>Prosperità: abbondanza, flusso di ricchezza, amore, fortuna nel palazzo attivato. La stella trasformata porta grande fortuna nell'area che governa.</td></tr><tr><td>Hua Quan</td><td>化權</td><td>🔵</td><td>Potere: autorità, controllo, ambizione, competizione nel palazzo attivato. Indica desiderio di dominanza e leadership nell'area coinvolta.</td></tr><tr><td>Hua Ke</td><td>化科</td><td>⚪</td><td>Fama: reputazione, riconoscimento, accademia, buone relazioni pubbliche. Porta rispetto e visibilità positiva nel palazzo che la riceve.</td></tr><tr><td>Hua Ji</td><td>化忌</td><td>🔴</td><td>Ostacolo: blocchi, complicazioni, conflitti, eccessiva enfasi nell'area del palazzo coinvolto. Non sempre negativo: spesso indica l'area di maggiore crescita della persona.</td></tr></tbody>
     </table>
-    <div class="highlight"><p id="trasfExample"></p></div>
+    <div class="highlight"><p id="trasfExample">🔄 Esempio pratico: Se Hua Lu cade nel palazzo della Ricchezza, la persona ha grande facilità nel guadagnare denaro. Se Hua Ji cade nel palazzo del Coniuge, le relazioni romantiche tendono a essere complicate ma sono anche l'area di maggiore evoluzione personale.</p></div>
   </section>
 
   <!-- ═══ COME LEGGERE ═══ -->
   <section id="come-leggere">
-    <h2 id="readH2"></h2>
+    <h2 id="readH2">Come Interpretare il Tema Zi Wei</h2>
     <div class="card">
-      <p id="readIntro"></p>
-      <ol id="readSteps"></ol>
+      <p id="readIntro">Una lettura completa del Ming Pan (tema natale) segue un ordine preciso che parte dal palazzo centrale per espandersi progressivamente a tutti gli aspetti della vita.</p>
+      <ol id="readSteps"><li>Identifica il Palazzo del Destino (命 Ming). Quale stella principale vi risiede? Questa è la struttura fondamentale della personalità. Leggi la stella principale, poi le stelle ausiliarie presenti.</li><li>Analizza il Palazzo della Carriera (官 Guan Lu). Cosa mostrano le stelle in questo palazzo? Indicano la vocazione naturale, la strada professionale più favorevole.</li><li>Osserva il Palazzo della Ricchezza (財 Cai Bo). Le stelle qui presenti rivelano come la persona genera e gestisce le risorse materiali.</li><li>Esamina il Palazzo del Coniuge (夫 Fu Qi). Le caratteristiche del partner ideale e le dinamiche romantiche fondamentali della vita della persona.</li><li>Individua le Quattro Trasformazioni natali. Dove cadono Hua Lu, Hua Quan, Hua Ke e Hua Ji? Questi punti sono i fuochi centrali del destino della persona.</li><li>Attiva i Cicli di Grande Fortuna. Ogni 10 anni un nuovo palazzo diventa il "palazzo pilota" che governa quel decennio di vita. Questa rotazione riorienta tutte le priorità.</li></ol>
     </div>
-    <div class="highlight"><p id="readWarning"></p></div>
+    <div class="highlight"><p id="readWarning">⚠️ Importante: Zi Wei Dou Shu non è fatalista. Il tema natale mostra le tendenze e le energie disponibili, non un destino immutabile. La consapevolezza del proprio tema permette di lavorare con le energie anziché contro di esse.</p></div>
   </section>
 
   <!-- ═══ DIFFERENZE ═══ -->
   <section id="differenze">
-    <h2 id="diffH2"></h2>
-    <div class="card-grid" id="diffCards"></div>
-    <p id="diffQuote"></p>
+    <h2 id="diffH2">Zi Wei Dou Shu vs Altri Sistemi Cinesi</h2>
+    <div class="card-grid" id="diffCards">
+    <div class="card-item">
+      <span class="card-item-icon">🎋</span>
+      <div class="card-item-title">BaZi (Quattro Pilastri)</div>
+      <div class="card-item-desc">Usa 8 caratteri (anno, mese, giorno, ora) con Tronchi e Rami. Eccellente per le energie temporali e gli anni favorevoli. Meno dettagliato di Zi Wei per le sfere specifiche della vita.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">☯️</span>
+      <div class="card-item-title">I Ching</div>
+      <div class="card-item-desc">Sistema oracolare basato su 64 esagrammi. Non è propriamente astrologico ma divinatorio: risponde a domande specifiche piuttosto che tracciare il tema natale.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">🐉</span>
+      <div class="card-item-title">Astrologia dei 12 Animali</div>
+      <div class="card-item-desc">Il sistema popolare dei 12 animali (anno di nascita) è solo uno strato del BaZi. Da solo è troppo generalista per previsioni precise, ma utile come introduzione.</div>
+    </div>
+    <div class="card-item">
+      <span class="card-item-icon">⭐</span>
+      <div class="card-item-title">Zi Wei Dou Shu</div>
+      <div class="card-item-desc">Il sistema più completo e specifico: 108 stelle in 12 palazzi tematici, cicli temporali annuali, mensili e orari. Richiede ora di nascita precisa ma offre la lettura più dettagliata.</div>
+    </div></div>
+    <p id="diffQuote">Tra i praticanti cinesi tradizionali, si dice: "BaZi per vedere le energie del tempo. Zi Wei per vedere la forma del destino." I due sistemi sono complementari e molti maestri li usano insieme per una lettura integrata.</p>
   </section>
 
   <!-- ═══ FAQ ═══ -->
   <section class="faq-section" id="faq">
-    <h2 class="faq-title" id="faqH2"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faqH2">Domande Frequenti su Zi Wei Dou Shu</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è Zi Wei Dou Shu?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Zi Wei Dou Shu (紫微斗數) è il principale sistema astrologico imperiale cinese, sviluppato durante la Dinastia Tang e perfezionato nella Dinastia Song. Si basa su 108 stelle distribuite in 12 palazzi tematici a formare un tema natale completo. Per secoli fu riservato esclusivamente agli astrologi di corte imperiale.</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come si calcola il tema Zi Wei Dou Shu?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il calcolo richiede data di nascita completa (anno, mese, giorno) e ora di nascita nel calendario lunare cinese. La posizione della stella Zi Wei viene determinata dal mese lunare e dal giorno di nascita. Le altre 13 stelle principali si collocano di conseguenza, seguendo formule codificate nella tradizione. Il genere influenza il verso di rotazione dei cicli di Grande Fortuna.</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Quale è il palazzo più importante nel tema Zi Wei?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Il Palazzo del Destino (命 Ming) è il più importante: descrive la personalità, la costituzione fisica e la direzione generale della vita. Subito dopo, i pratici considerano la trinità: Destino, Carriera (官) e Ricchezza (財), che insieme rivelano chi si è, come si lavora e come si guadagna.</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la differenza tra Zi Wei Dou Shu e il BaZi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Il BaZi usa otto caratteri derivati dai Tronchi Celesti e Rami Terrestri: è eccellente per le energie temporali. Zi Wei è un sistema stellare con 12 palazzi tematici: è più preciso per descrivere le singole aree della vita. Molti maestri cinesi usano entrambi i sistemi insieme per una lettura completa.</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Cos'è la Grande Fortuna in Zi Wei Dou Shu?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>La Grande Fortuna (大限 Da Xian) è un ciclo di 10 anni in cui un palazzo specifico del tema natale diventa il "palazzo pilota" della vita. Ogni decennio è governato da un palazzo diverso, che ne colora le tematiche principali. Queste fasi iniziano a 2–9 anni d'età (variabile in base al tema) e si succedono per tutta la vita, fornendo una mappa dettagliata delle stagioni dell'esistenza.</p>
+      </div>
+    </div></div>
   </section>
 
   <!-- ═══ SHARE ═══ -->
@@ -432,45 +659,57 @@ html.theme-day .star-box{background:var(--card)}
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ═══ RELATED ═══ -->
   <div class="related">
-    <div class="related-title" id="relatedTitle"></div>
-    <div class="related-grid" id="relatedGrid"></div>
+    <div class="related-title" id="relatedTitle">✦ Approfondisci su MYSTICA</div>
+    <div class="related-grid" id="relatedGrid">
+    <a href="https://mysticaoracoli.it/guida-i-ching.html" class="related-link">
+      <span class="related-link-icon">☯️</span>
+      <div class="related-link-text">Guida I Ching</div>
+    </a>
+    <a href="https://mysticaoracoli.it/guida-tarocchi.html" class="related-link">
+      <span class="related-link-icon">🎴</span>
+      <div class="related-link-text">Guida Tarocchi</div>
+    </a>
+    <a href="https://mysticaoracoli.it/significato-rune.html" class="related-link">
+      <span class="related-link-icon">ᚱ</span>
+      <div class="related-link-text">Guida Rune</div>
+    </a></div>
   </div>
 
   <!-- ═══ CTA ═══ -->
   <div class="cta">
     <div style="font-size:36px;margin-bottom:10px">紫微</div>
-    <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;margin-bottom:8px" id="ctaTitle"></div>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:0" id="ctaText"></p>
-    <a href="https://mysticaoracoli.it/" class="cta-btn" id="ctaBtn"></a>
+    <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:1.5px;margin-bottom:8px" id="ctaTitle">Esplora tutti gli Oracoli su MYSTICA</div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:0" id="ctaText">I Ching, Tarocchi, Rune, Astrologia e molto altro. Gratis, senza registrazione, direttamente nel browser.</p>
+    <a href="https://mysticaoracoli.it/" class="cta-btn" id="ctaBtn">✦ Vai all'App ✦</a>
   </div>
 </main>
 
 <section class="esplora-section" aria-label="Esplora MYSTICA">
-  <h2 id="esploraTitle"></h2>
-  <div class="esplora-grid" id="esploraGrid"></div>
+  <h2 id="esploraTitle">✨ Esplora Anche</h2>
+  <div class="esplora-grid" id="esploraGrid"><a href="./bazi-cinese.html" class="esplora-card">☯ BaZi Cinese</a><a href="./oroscopo-cinese.html" class="esplora-card">🐉 Oroscopo Cinese</a><a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a><a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a><a href="./human-design.html" class="esplora-card">🧬 Human Design</a><a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a></div>
 </section>
 
 <footer class="page-footer" role="contentinfo">
-  <nav class="footer-links" aria-label="Link utili" id="footerLinks"></nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <nav class="footer-links" aria-label="Link utili" id="footerLinks"><a href="https://mysticaoracoli.it/">Home</a><a href="https://mysticaoracoli.it/about.html">Chi Siamo</a><a href="https://mysticaoracoli.it/contatti.html">Contatti</a><a href="https://mysticaoracoli.it/privacy.html">Privacy Policy</a><a href="https://mysticaoracoli.it/termini.html">Termini di Servizio</a></nav>
+  <p id="footer-copy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di questa pagina hanno finalità informative, storiche e di intrattenimento. Non sostituiscono consulenza professionale medica, legale o finanziaria.</p>
 </footer>
 
 <!-- ═══ PREMIUM MODAL ═══ -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
-    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca l'enciclopedia completa MYSTICA: tutte le guide avanzate, gli approfondimenti esclusivi e i consulti personalizzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
+    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

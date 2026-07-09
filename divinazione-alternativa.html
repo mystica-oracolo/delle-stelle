@@ -321,14 +321,14 @@ html.theme-day .faq-item{border-color:var(--border)}
 
   <header class="page-header">
     <div class="header-top">
-      <a href="./index.html" class="btn-back" id="btn-back"></a>
+      <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
       <div class="header-controls">
-        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+        <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
       </div>
     </div>
-    <h1 class="page-title" id="page-title">🎴 <span id="page-title-text"></span></h1>
-    <div class="header-sub" id="header-sub"></div>
+    <h1 class="page-title" id="page-title">🎴 <span id="page-title-text">Divinazione Alternativa</span></h1>
+    <div class="header-sub" id="header-sub">Sei Antichi Sistemi Oracolari</div>
     <div class="lang-switch">
       <button data-lang="it" class="btn-lang active">IT</button>
       <button data-lang="en" class="btn-lang">EN</button>
@@ -339,79 +339,152 @@ html.theme-day .faq-item{border-color:var(--border)}
   <main class="content" id="main-content">
 
     <div class="intro-card">
-      <p id="intro-text" style="margin-bottom:0"></p>
+      <p id="intro-text" style="margin-bottom:0">Oltre ai Tarocchi e alle Rune, la tradizione divinatoria custodisce molti altri linguaggi simbolici. In questa sezione trovi sei oracoli alternativi gratuiti: la Cartomanzia con le 52 carte da gioco, il Lenormand a 36 carte, l'Oracolo degli Angeli, l'Oracolo dei Celti basato sull'alfabeto Ogham, lo Specchio Nero per la pratica dello scrying e la Cromomanzia, la divinazione attraverso i colori.</p>
     </div>
 
     <nav class="tabs" id="tabsBar" aria-label="Sistemi oracolari">
-      <div class="tab-btn" data-tab="cartomanzia"><span class="tb-ico" aria-hidden="true">🎴</span><span id="tab-label-cartomanzia"></span></div>
-      <div class="tab-btn" data-tab="lenormand"><span class="tb-ico" aria-hidden="true">🍀</span><span id="tab-label-lenormand"></span></div>
-      <div class="tab-btn" data-tab="angeli-oracolo"><span class="tb-ico" aria-hidden="true">👼</span><span id="tab-label-angeli"></span></div>
-      <div class="tab-btn" data-tab="celti"><span class="tb-ico" aria-hidden="true">🌳</span><span id="tab-label-celti"></span></div>
-      <div class="tab-btn" data-tab="specchio"><span class="tb-ico" aria-hidden="true">🪞</span><span id="tab-label-specchio"></span></div>
-      <div class="tab-btn" data-tab="cromomanzia"><span class="tb-ico" aria-hidden="true">🎨</span><span id="tab-label-cromomanzia"></span></div>
+      <div class="tab-btn" data-tab="cartomanzia"><span class="tb-ico" aria-hidden="true">🎴</span><span id="tab-label-cartomanzia">Cartomanzia</span></div>
+      <div class="tab-btn" data-tab="lenormand"><span class="tb-ico" aria-hidden="true">🍀</span><span id="tab-label-lenormand">Lenormand</span></div>
+      <div class="tab-btn" data-tab="angeli-oracolo"><span class="tb-ico" aria-hidden="true">👼</span><span id="tab-label-angeli">Angeli</span></div>
+      <div class="tab-btn" data-tab="celti"><span class="tb-ico" aria-hidden="true">🌳</span><span id="tab-label-celti">Celti</span></div>
+      <div class="tab-btn" data-tab="specchio"><span class="tb-ico" aria-hidden="true">🪞</span><span id="tab-label-specchio">Specchio</span></div>
+      <div class="tab-btn" data-tab="cromomanzia"><span class="tb-ico" aria-hidden="true">🎨</span><span id="tab-label-cromomanzia">Colori</span></div>
     </nav>
 
     <!-- ═══ CARTOMANZIA ═══ -->
     <div class="panel" id="panel-cartomanzia">
 
       <div class="card">
-        <h2 id="ct-carto-h1"></h2>
+        <h2 id="ct-carto-h1">🎴 Cartomanzia con le Carte da Gioco</h2>
         <div class="carto-section-img">
           <img src="./images/cartomanzia/cartomanzia_hero.webp"
              srcset="./images/cartomanzia/cartomanzia_hero.webp 400w, ./images/cartomanzia/cartomanzia_hero@2x.webp 800w"
              sizes="(max-width:480px) 100vw, 400px"
              id="ct-carto-img1" alt="" width="400" height="200" loading="eager">
         </div>
-        <p id="ct-carto-p1"></p>
-        <p id="ct-carto-p2"></p>
+        <p id="ct-carto-p1">La cartomanzia è una delle forme di divinazione più antiche e diffuse al mondo: l'arte di interrogare il futuro attraverso un comune mazzo di 52 carte da gioco. Nata in Asia e giunta in Europa nel XIV secolo attraverso mercanti e viaggiatori, la cartomanzia si è radicata nella tradizione popolare italiana e francese prima ancora che i Tarocchi diventassero strumenti divinatori.</p>
+        <p id="ct-carto-p2">A differenza dei Tarocchi — che nascono come gioco di corte e diventano strumento esoterico solo nel XVIII secolo — le carte da gioco vengono usate per la divinazione fin dalla loro comparsa in Europa, circa il 1370. Ogni seme non è scelto a caso: cuori, quadri, fiori e picche sono l'eredità delle quattro classi sociali medievali e delle quattro stagioni dell'anno.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-carto-q1t"></p>
-          <p class="storia-source" id="ct-carto-q1s"></p>
+          <p class="storia-text" id="ct-carto-q1t">«Le carte da gioco arrivano in Europa durante il regno di Carlo V di Francia (1364-1380). Entro la fine del '300, a Firenze, Milano e Venezia esistono già cartomanti che le usano per predire il futuro.»</p>
+          <p class="storia-source" id="ct-carto-q1s">— Fonti storiche sulla cartomanzia europea</p>
         </div>
-        <p class="t-muted" id="ct-carto-hint1" style="margin-top:10px"></p>
-        <button class="btn" id="btn-carto1" onclick="drawCarto()"></button>
+        <p class="t-muted" id="ct-carto-hint1" style="margin-top:10px">Estrai tre carte per una lettura Passato · Presente · Futuro.</p>
+        <button class="btn" id="btn-carto1" onclick="drawCarto()">🎴 Estrai 3 Carte</button>
         <div id="resCarto"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-carto-sd2"></div>
-        <h2 id="ct-carto-h2"></h2>
+        <div class="section-divider" id="ct-carto-sd2">I Quattro Semi e il Loro Significato</div>
+        <h2 id="ct-carto-h2">♥ ♦ ♣ ♠ I 4 Semi</h2>
         <div class="carto-section-img">
           <img src="./images/cartomanzia/cartomanzia_semi.webp"
              srcset="./images/cartomanzia/cartomanzia_semi.webp 400w, ./images/cartomanzia/cartomanzia_semi@2x.webp 800w"
              sizes="(max-width:480px) 100vw, 400px"
              id="ct-carto-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-carto-p3"></p>
-        <div class="semi-grid" id="ct-carto-semi"></div>
+        <p id="ct-carto-p3">Ogni seme governa un'area precisa dell'esistenza. Quando una lettura produce più carte dello stesso seme, quell'area della vita è dominante nel momento presente.</p>
+        <div class="semi-grid" id="ct-carto-semi">
+    <div class="seme-card cuori">
+      <span class="seme-ico">♥</span>
+      <div class="seme-name">Cuori</div>
+      <div class="seme-area">Amore · Emozioni · Famiglia</div>
+      <div class="seme-desc">Governa la vita emotiva e sentimentale: relazioni d'amore, amicizie profonde, vita familiare e stati d'animo interiori. Seme dell'acqua e della Luna. Dominanti i Cuori → la situazione è guidata dal cuore, non dalla testa.</div>
+    </div>
+  
+    <div class="seme-card quadri">
+      <span class="seme-ico">♦</span>
+      <div class="seme-name">Quadri</div>
+      <div class="seme-area">Lavoro · Denaro · Successo</div>
+      <div class="seme-desc">Copre la sfera materiale e professionale: carriera, finanze, proprietà, contratti e ambizioni concrete. Seme della terra e del sole. Molti Quadri → il denaro o il lavoro è la questione centrale.</div>
+    </div>
+  
+    <div class="seme-card fiori">
+      <span class="seme-ico">♣</span>
+      <div class="seme-name">Fiori</div>
+      <div class="seme-area">Progetti · Azioni · Creatività</div>
+      <div class="seme-desc">Parla di iniziative, viaggi, spostamenti, comunicazioni e idee in movimento. Seme del fuoco e dell'aria. Prevalenza di Fiori → c'è energia disponibile per agire, ma serve direzione.</div>
+    </div>
+  
+    <div class="seme-card picche">
+      <span class="seme-ico">♠</span>
+      <div class="seme-name">Picche</div>
+      <div class="seme-area">Sfide · Ostacoli · Trasformazione</div>
+      <div class="seme-desc">Il seme più temuto ma anche più onesto: rivela difficoltà, blocchi, paure e situazioni che richiedono coraggio. Seme dell'inverno e della luna oscura. Tante Picche → avvertimento, non fatalità.</div>
+    </div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-carto-sd3"></div>
-        <h2 id="ct-carto-h3"></h2>
+        <div class="section-divider" id="ct-carto-sd3">Le Figure: Re, Donna, Fante</div>
+        <h2 id="ct-carto-h3">👑 Le Figure e i Numeri</h2>
         <div class="carto-section-img">
           <img src="./images/cartomanzia/cartomanzia_figure.webp"
              srcset="./images/cartomanzia/cartomanzia_figure.webp 400w, ./images/cartomanzia/cartomanzia_figure@2x.webp 800w"
              sizes="(max-width:480px) 100vw, 400px"
              id="ct-carto-img3" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-carto-p4"></p>
-        <div class="figure-list" id="ct-carto-fig"></div>
+        <p id="ct-carto-p4">Nelle 52 carte le figure (Re, Donna, Fante) rappresentano persone reali o archetipi energetici che influenzano la situazione. Il loro seme ne colora la natura.</p>
+        <div class="figure-list" id="ct-carto-fig">
+    <div class="figura-row">
+      <span class="figura-ico">👑</span>
+      <div><div class="figura-name">Re</div><div class="figura-desc">Una figura maschile matura, autorevole e decisa. Rappresenta un uomo adulto nella vita del consultante, oppure l'energia di leadership, controllo e responsabilità. Il Re di Cuori è il padre premuroso; il Re di Picche l'avvocato o il giudice; il Re di Quadri l'uomo d'affari; il Re di Fiori il mentore creativo.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">👸</span>
+      <div><div class="figura-name">Donna (Regina)</div><div class="figura-desc">Una figura femminile o l'energia femminile nella situazione: intuizione, cura, capacità relazionale. La Donna di Cuori è la madre amorevole o la partner fedele; quella di Picche la donna determinata o la rivale; quella di Quadri la donna d'affari pragmatica; quella di Fiori la creatrice energica.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🃏</span>
+      <div><div class="figura-name">Fante (Jack)</div><div class="figura-desc">Una persona giovane, un messaggero o un'energia in arrivo. Spesso indica notizie, nuove conoscenze, studenti o situazioni che sono ancora in fase embrionale. Il Fante di Cuori porta notizie sentimentali; quello di Quadri annuncia opportunità lavorative; quello di Fiori suggerisce una partenza; quello di Picche avverte di un rivale giovane.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🂡</span>
+      <div><div class="figura-name">Asso</div><div class="figura-desc">La carta più potente del seme: rappresenta un inizio puro, un'energia assoluta e non ancora manifesta. L'Asso di Cuori è la carta dell'amore assoluto o di un nuovo sentimento. L'Asso di Picche è la carta più ambivalente: cambiamento radicale, verità dura ma liberatoria.</div></div>
+    </div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-carto-sd4"></div>
-        <h2 id="ct-carto-h4"></h2>
+        <div class="section-divider" id="ct-carto-sd4">Come Fare una Lettura</div>
+        <h2 id="ct-carto-h4">🔮 Come Si Legge la Cartomanzia</h2>
         <div class="carto-section-img">
           <img src="./images/cartomanzia/cartomanzia_lettura.webp"
              srcset="./images/cartomanzia/cartomanzia_lettura.webp 400w, ./images/cartomanzia/cartomanzia_lettura@2x.webp 800w"
              sizes="(max-width:480px) 100vw, 400px"
              id="ct-carto-img4" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-carto-p5"></p>
-        <div class="metodo-steps" id="ct-carto-steps"></div>
-        <p class="t-muted" id="ct-carto-hint2" style="margin-top:10px"></p>
-        <button class="btn" id="btn-carto2" onclick="drawCarto()"></button>
+        <p id="ct-carto-p5">La cartomanzia tradizionale italiana segue regole semplici che si tramandano da generazioni. Non serve essere "dotati": serve concentrazione, onestà e disponibilità ad ascoltare ciò che emerge.</p>
+        <div class="metodo-steps" id="ct-carto-steps">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-text"><strong>Formula la domanda</strong> Tieni in mente una domanda chiara e specifica. Le domande aperte ("Cosa succede nella mia relazione?") funzionano meglio di quelle chiuse ("Mi lascerà?").</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-text"><strong>Mescola con intenzione</strong> Taglia e rimescola il mazzo per tre volte mentre pensi alla tua domanda. Alcuni cartomanti chiedono al consultante di soffiare sulle carte.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-text"><strong>Estrai 3 carte</strong> Posizionali da sinistra a destra: Passato (l'origine), Presente (la situazione attuale), Futuro (la direzione probabile se nulla cambia).</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">4</div>
+      <div class="metodo-text"><strong>Leggi il seme dominante</strong> Se due carte su tre sono dello stesso seme, quell'area è preponderante. Tre carte diverse indicano una situazione complessa che tocca più aspetti della vita.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">5</div>
+      <div class="metodo-text"><strong>Combina i significati</strong> Non leggere ogni carta isolatamente. Osserva il racconto complessivo: le carte si influenzano a vicenda, creando una narrazione che va oltre la somma dei singoli simboli.</div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-carto-hint2" style="margin-top:10px">Estrai le tue carte qui sotto e osserva la lettura generata.</p>
+        <button class="btn" id="btn-carto2" onclick="drawCarto()">🎴 Prova la Lettura Completa</button>
         <div id="resCarto2"></div>
       </div>
 
@@ -421,61 +494,163 @@ html.theme-day .faq-item{border-color:var(--border)}
     <div class="panel" id="panel-lenormand">
 
       <div class="card">
-        <h2 id="ct-len-h1"></h2>
+        <h2 id="ct-len-h1">🍀 Oracolo Lenormand</h2>
         <div class="len-section-img">
           <img src="./images/lenormand/lenormand_hero.webp"
                srcset="./images/lenormand/lenormand_hero.webp 400w, ./images/lenormand/lenormand_hero@2x.webp 800w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-len-img1" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-len-p1"></p>
-        <p id="ct-len-p2"></p>
+        <p id="ct-len-p1">Il Lenormand è un sistema oracolare di 36 carte nato nell'Europa del XVIII secolo, popolarissimo ancora oggi in Francia, Germania, Svizzera e nei paesi dell'Est. Il nome viene da Marie Anne Lenormand (1772–1843), la cartomante più famosa della storia europea: consultata da Napoleone Bonaparte, Joséphine de Beauharnais, Alessandro I di Russia e dall'imperatrice Giuseppina.</p>
+        <p id="ct-len-p2">In realtà il mazzo che oggi chiamiamo "Lenormand" — conosciuto anche come Petit Lenormand o Das Spiel der Hoffnung ("Il Gioco della Speranza") — fu pubblicato in Germania nel 1799, quando Marie Anne aveva soli 27 anni. Il suo nome fu associato al mazzo solo postumo, dopo la sua morte nel 1843, per sfruttare la fama leggendaria della veggente.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-len-q1t"></p>
-          <p class="storia-source" id="ct-len-q1s"></p>
+          <p class="storia-text" id="ct-len-q1t">«Marie Anne Lenormand fu processata e incarcerata più volte per le sue profezie, considerate pericolose dai regimi napoleonici. Eppure continuò a leggere le carte per decenni, diventando la figura più influente della cartomanzia europea moderna.»</p>
+          <p class="storia-source" id="ct-len-q1s">— Storia della cartomanzia europea, XVIII-XIX sec.</p>
         </div>
-        <p class="t-muted" id="ct-len-hint1" style="margin-top:10px"></p>
-        <button class="btn" id="btn-len1" onclick="drawLenormand()"></button>
+        <p class="t-muted" id="ct-len-hint1" style="margin-top:10px">Estrai tre carte per una lettura Situazione · Influenza · Esito.</p>
+        <button class="btn" id="btn-len1" onclick="drawLenormand()">🍀 Estrai 3 Carte</button>
         <div id="resLenormand"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-len-sd2"></div>
-        <h2 id="ct-len-h2"></h2>
+        <div class="section-divider" id="ct-len-sd2">Lenormand vs Tarocchi</div>
+        <h2 id="ct-len-h2">⚖️ Come Differisce dai Tarocchi</h2>
         <div class="len-section-img">
           <img src="./images/lenormand/lenormand_mazzo.webp"
                srcset="./images/lenormand/lenormand_mazzo.webp 400w, ./images/lenormand/lenormand_mazzo@2x.webp 800w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-len-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <div class="len-info-badge"><span class="len-info-badge-ico" aria-hidden="true">🃏</span><span id="ct-len-badge"></span></div>
-        <p id="ct-len-p3"></p>
-        <p id="ct-len-p4"></p>
-        <div class="len-combo-list" id="ct-len-vsrows"></div>
+        <div class="len-info-badge"><span class="len-info-badge-ico" aria-hidden="true">🃏</span><span id="ct-len-badge">Il Lenormand usa 36 carte con simboli concreti. I Tarocchi ne hanno 78 con archetipi universali.</span></div>
+        <p id="ct-len-p3">La differenza fondamentale non è solo numerica. Il Lenormand è un oracolo diretto e narrativo: le carte si combinano tra loro come parole in una frase, creando significati che vanno oltre il singolo simbolo. I Tarocchi invece lavorano per archetipi e simbolismi profondi, lasciando spazio a molte interpretazioni.</p>
+        <p id="ct-len-p4">Nel Lenormand non esistono Arcani Maggiori o Minori: tutte le 36 carte hanno lo stesso peso. I simboli sono oggetti del mondo reale — una casa, una lettera, un cane — interpretati concretamente. La Bara non significa morte ma fine di un ciclo; la Volpe non è il male ma l'astuzia necessaria.</p>
+        <div class="len-combo-list" id="ct-len-vsrows">
+    <div class="len-combo-row">
+      <div class="len-combo-title">🎴 Tarocchi — Approccio psicologico e archetipico</div>
+      <div class="len-combo-desc">Esplora il mondo interiore, le emozioni profonde, gli archetipi dell'inconscio. Ideale per domande sul sé, sulla crescita spirituale e su dinamiche emotive complesse.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">🍀 Lenormand — Approccio pratico e narrativo</div>
+      <div class="len-combo-desc">Risponde a domande concrete su lavoro, relazioni, casa, denaro, viaggi. Le carte si combinano come soggetto + verbo + oggetto, creando frasi precise e leggibili.</div>
+    </div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-len-sd3"></div>
-        <h2 id="ct-len-h3"></h2>
+        <div class="section-divider" id="ct-len-sd3">Le 36 Carte del Mazzo</div>
+        <h2 id="ct-len-h3">🔑 Le 36 Carte Principali</h2>
         <div class="len-section-img">
           <img src="./images/lenormand/lenormand_simboli.webp"
                srcset="./images/lenormand/lenormand_simboli.webp 400w, ./images/lenormand/lenormand_simboli@2x.webp 800w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-len-img3" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-len-p5"></p>
-        <div class="len-cards-grid" id="ct-len-cards"></div>
+        <p id="ct-len-p5">Ogni carta del Lenormand porta un simbolo quotidiano e un significato diretto. Toccale o usale come riferimento durante la tua lettura.</p>
+        <div class="len-cards-grid" id="ct-len-cards">
+    <div class="len-card-item"><span class="len-card-ico">🏇</span><span class="len-card-name">Il Cavaliere</span><span class="len-card-key">Notizie rapide in arrivo</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🍀</span><span class="len-card-name">Il Quadrifoglio</span><span class="len-card-key">Piccola fortuna inaspettata</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">⛵</span><span class="len-card-name">La Nave</span><span class="len-card-key">Viaggio, lontananza</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🏠</span><span class="len-card-name">La Casa</span><span class="len-card-key">Famiglia, sicurezza, base</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🌳</span><span class="len-card-name">L'Albero</span><span class="len-card-key">Salute, crescita radicata</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">☁️</span><span class="len-card-name">Le Nuvole</span><span class="len-card-key">Confusione, dubbio</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐍</span><span class="len-card-name">Il Serpente</span><span class="len-card-key">Inganno o astuzia</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">⚰️</span><span class="len-card-name">La Bara</span><span class="len-card-key">Fine di un ciclo</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">💐</span><span class="len-card-name">I Fiori</span><span class="len-card-key">Regalo, sorpresa dolce</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🌾</span><span class="len-card-name">La Falce</span><span class="len-card-key">Decisione rapida, taglio</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🪃</span><span class="len-card-name">La Frusta</span><span class="len-card-key">Conflitto, ripetizione</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐦</span><span class="len-card-name">Gli Uccelli</span><span class="len-card-key">Chiacchiere, nervosismo</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">👶</span><span class="len-card-name">Il Bambino</span><span class="len-card-key">Nuovo inizio, fragilità</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🦊</span><span class="len-card-name">La Volpe</span><span class="len-card-key">Astuzia, inganno al lavoro</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐻</span><span class="len-card-name">L'Orso</span><span class="len-card-key">Forza, protezione</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">⭐</span><span class="len-card-name">Le Stelle</span><span class="len-card-key">Speranza, guida superiore</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🦢</span><span class="len-card-name">La Cicogna</span><span class="len-card-key">Cambiamento positivo</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐕</span><span class="len-card-name">Il Cane</span><span class="len-card-key">Fedeltà, amicizia</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🗼</span><span class="len-card-name">La Torre</span><span class="len-card-key">Istituzione, solitudine</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🌷</span><span class="len-card-name">Il Giardino</span><span class="len-card-key">Vita sociale, comunità</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">⛰️</span><span class="len-card-name">La Montagna</span><span class="len-card-key">Ostacolo, blocco</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🛤️</span><span class="len-card-name">Le Strade</span><span class="len-card-key">Scelta, bivio</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐀</span><span class="len-card-name">I Topi</span><span class="len-card-key">Perdita lenta, stress</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">❤️</span><span class="len-card-name">Il Cuore</span><span class="len-card-key">Amore, sentimenti sinceri</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">💍</span><span class="len-card-name">L'Anello</span><span class="len-card-key">Impegno, contratto</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">📖</span><span class="len-card-name">Il Libro</span><span class="len-card-key">Segreto, conoscenza</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">✉️</span><span class="len-card-name">La Lettera</span><span class="len-card-key">Comunicazione scritta</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🧑</span><span class="len-card-name">L'Uomo</span><span class="len-card-key">Figura maschile chiave</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">👩</span><span class="len-card-name">La Donna</span><span class="len-card-key">Figura femminile chiave</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🌸</span><span class="len-card-name">Il Giglio</span><span class="len-card-key">Maturità, pace</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">☀️</span><span class="len-card-name">Il Sole</span><span class="len-card-key">Successo, vittoria</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🌙</span><span class="len-card-name">La Luna</span><span class="len-card-key">Intuito, riconoscimento</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🗝️</span><span class="len-card-name">La Chiave</span><span class="len-card-key">Soluzione, svolta</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">🐟</span><span class="len-card-name">I Pesci</span><span class="len-card-key">Abbondanza, denaro</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">⚓</span><span class="len-card-name">L'Ancora</span><span class="len-card-key">Stabilità, porto sicuro</span></div>
+  
+    <div class="len-card-item"><span class="len-card-ico">✝️</span><span class="len-card-name">La Croce</span><span class="len-card-key">Peso del destino</span></div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-len-sd4"></div>
-        <h2 id="ct-len-h4"></h2>
+        <div class="section-divider" id="ct-len-sd4">Come Leggere il Lenormand</div>
+        <h2 id="ct-len-h4">📖 Come Si Legge</h2>
         <div class="len-section-img">
           <img src="./images/lenormand/lenormand_lettura.webp"
                srcset="./images/lenormand/lenormand_lettura.webp 400w, ./images/lenormand/lenormand_lettura@2x.webp 800w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-len-img4" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-len-p6"></p>
-        <div class="len-combo-list" id="ct-len-combos"></div>
-        <p class="t-muted" id="ct-len-hint2" style="margin-top:10px"></p>
-        <button class="btn" id="btn-len2" onclick="drawLenormand()"></button>
+        <p id="ct-len-p6">Il segreto del Lenormand è la combinazione: le carte non si leggono isolatamente ma come parole di una frase. La carta centrale risponde alla domanda, quella a sinistra indica l'influenza passata o la causa, quella a destra la direzione futura o la conseguenza.</p>
+        <div class="len-combo-list" id="ct-len-combos">
+    <div class="len-combo-row">
+      <div class="len-combo-title">🐕 Cane + ❤️ Cuore</div>
+      <div class="len-combo-desc">Un amico fedele porta amore, oppure una relazione basata sull'amicizia profonda. L'amicizia si trasforma in amore.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">💍 Anello + 🐀 Topi</div>
+      <div class="len-combo-desc">Un contratto o un impegno si sta sgretolando lentamente. Attenzione a clausole nascoste o accordi che perdono valore.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">☀️ Sole + 🗝️ Chiave</div>
+      <div class="len-combo-desc">Il successo è la soluzione. La chiave del problema è il coraggio e l'azione decisa. Una svolta positiva è garantita.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">☁️ Nuvole + 🏠 Casa</div>
+      <div class="len-combo-desc">Confusione in ambito familiare o domestico. Problemi in casa che non sono ancora chiari nella loro natura.</div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-len-hint2" style="margin-top:10px">Prova la lettura a tre carte: Situazione · Influenza · Esito.</p>
+        <button class="btn" id="btn-len2" onclick="drawLenormand()">🍀 Estrai 3 Carte Lenormand</button>
         <div id="resLenormand2"></div>
       </div>
 
@@ -485,97 +660,202 @@ html.theme-day .faq-item{border-color:var(--border)}
     <div class="panel" id="panel-angeli-oracolo">
 
       <div class="card">
-        <h2 id="ct-ang-h1"></h2>
+        <h2 id="ct-ang-h1">👼 Oracolo degli Angeli</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_hero.webp"
                srcset="./images/angeli/angeli_hero.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img1" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p1"></p>
-        <p id="ct-ang-p2"></p>
+        <p id="ct-ang-p1">L'Oracolo degli Angeli è un mazzo divinatorio moderno composto da carte che racchiudono un singolo concetto-chiave — fiducia, guarigione, coraggio — accompagnato da un breve messaggio di guida. A differenza dei Tarocchi, non racconta una storia complessa: offre una risposta diretta e confortante a una domanda del cuore.</p>
+        <p id="ct-ang-p2">Il formato che conosciamo oggi nasce negli Stati Uniti negli anni '90, quando l'autrice Doreen Virtue pubblicò i primi mazzi di "Angel Cards", ispirati alla tradizione popolare degli angeli custodi presente in quasi tutte le culture religiose e spirituali. Da allora il genere si è moltiplicato in decine di varianti, restando uno degli oracoli più diffusi al mondo per la sua semplicità d'uso.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-ang-q1t"></p>
-          <p class="storia-source" id="ct-ang-q1s"></p>
+          <p class="storia-text" id="ct-ang-q1t">«La credenza in messaggeri celesti che vegliano sull'uomo attraversa l'ebraismo, il cristianesimo, l'islam e numerose tradizioni popolari europee: dagli angeli custodi medievali ai nove cori angelici descritti da Pseudo-Dionigi l'Areopagita nel V secolo.»</p>
+          <p class="storia-source" id="ct-ang-q1s">— Tradizione angelologica occidentale</p>
         </div>
-        <p class="t-muted" id="ct-ang-p3" style="margin-top:10px"></p>
-        <p id="ct-ang-p4"></p>
+        <p class="t-muted" id="ct-ang-p3" style="margin-top:10px">È importante distinguere l'Oracolo degli Angeli, strumento di riflessione personale e crescita interiore, dall'Angelologia religiosa tradizionale, che cataloga formalmente 72 o più entità in gerarchie precise: il primo si rivolge all'intuizione, la seconda alla teologia.</p>
+        <p id="ct-ang-p4">Nella Cabala ebraica, ad esempio, gli angeli sono organizzati in dieci ordini corrispondenti alle Sefirot dell'Albero della Vita, mentre la tradizione islamica ne riconosce alcuni con compiti specifici, come Jibril (Gabriele) portatore della rivelazione. L'oracolo moderno non riprende questa complessità dottrinale, ma ne eredita l'idea di fondo: l'esistenza di una guida invisibile e benevola a cui rivolgersi nei momenti di incertezza.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd2"></div>
-        <h2 id="ct-ang-h2"></h2>
+        <div class="section-divider" id="ct-ang-sd2">Le Figure di Riferimento</div>
+        <h2 id="ct-ang-h2">✨ I Quattro Arcangeli Principali</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_arcangeli.webp"
                srcset="./images/angeli/angeli_arcangeli.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p5"></p>
-        <div class="figure-list" id="ct-ang-arc"></div>
+        <p id="ct-ang-p5">Molti mazzi oracolari associano i propri messaggi a quattro figure arcangeliche ricorrenti nella tradizione giudaico-cristiana, ciascuna legata a un'area simbolica precisa:</p>
+        <div class="figure-list" id="ct-ang-arc">
+    <div class="figura-row">
+      <span class="figura-ico">⚔️</span>
+      <div><div class="figura-name">Michele — Protezione e Coraggio</div><div class="figura-desc">Guida nelle decisioni difficili, allontana le paure e dona la forza per affrontare ostacoli e conflitti.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">📯</span>
+      <div><div class="figura-name">Gabriele — Comunicazione e Nuovi Inizi</div><div class="figura-desc">Associato agli annunci e ai messaggi importanti, aiuta a esprimere la verità e ad accogliere un cambiamento.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌿</span>
+      <div><div class="figura-name">Raffaele — Guarigione</div><div class="figura-desc">Il suo nome significa "Dio guarisce": è invocato per il benessere fisico, emotivo e per i percorsi di recupero.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🔥</span>
+      <div><div class="figura-name">Uriel — Chiarezza e Saggezza</div><div class="figura-desc">Il suo nome significa "luce di Dio": illumina situazioni confuse e aiuta a vedere con lucidità ciò che prima sfuggiva.</div></div>
+    </div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd3"></div>
-        <h2 id="ct-ang-h3"></h2>
+        <div class="section-divider" id="ct-ang-sd3">Il Metodo</div>
+        <h2 id="ct-ang-h3">📖 Come Interpretare il Messaggio</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_lettura.webp"
                srcset="./images/angeli/angeli_lettura.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img3" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p6"></p>
-        <div class="metodo-steps" id="ct-ang-steps"></div>
-        <p class="t-muted" id="ct-ang-hint1" style="margin-top:10px"></p>
-        <button class="btn" id="btn-ang1" onclick="drawAngelo()"></button>
+        <p id="ct-ang-p6">A differenza della cartomanzia o dei Tarocchi, l'Oracolo degli Angeli non richiede combinazioni complesse: il valore della pratica sta nella concentrazione e nell'accoglienza del messaggio.</p>
+        <div class="metodo-steps" id="ct-ang-steps">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-text"><strong>Formula una domanda aperta</strong> non "sì/no", ma qualcosa come "di cosa ho bisogno ora?".</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-text"><strong>Fai un respiro profondo</strong> e lascia la mente libera da aspettative prima di estrarre.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-text"><strong>Estrai un solo messaggio</strong> e leggilo come un consiglio, non come una previsione fissa.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">4</div>
+      <div class="metodo-text"><strong>Rifletti su dove, nella tua vita reale,</strong> quel concetto si applica in questo momento.</div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-ang-hint1" style="margin-top:10px">Concentrati sulla tua domanda e lascia che il messaggio emerga.</p>
+        <button class="btn" id="btn-ang1" onclick="drawAngelo()">👼 Estrai un Messaggio Angelico</button>
         <div id="resAngelo"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd4"></div>
-        <h2 id="ct-ang-h4"></h2>
-        <p id="ct-ang-p7"></p>
-        <div class="figure-list" id="ct-ang-num"></div>
-        <p id="ct-ang-p8"></p>
-        <div class="ritual-box"><strong id="ct-ang-rit1strong"></strong> <span id="ct-ang-rit1"></span></div>
+        <div class="section-divider" id="ct-ang-sd4">Approfondimento</div>
+        <h2 id="ct-ang-h4">🔢 I Numeri Angelici</h2>
+        <p id="ct-ang-p7">Un fenomeno strettamente legato all'Oracolo degli Angeli è quello dei cosiddetti numeri angelici: sequenze ripetute come 11:11, 222 o 444 che molte persone notano con insistenza su orologi, targhe o ricevute. Nella pratica oracolare contemporanea, popolarizzata insieme alle carte angeliche a partire dagli anni '90-2000, ogni sequenza viene letta come un messaggio sintetico:</p>
+        <div class="figure-list" id="ct-ang-num">
+    <div class="figura-row">
+      <span class="figura-ico">1️⃣</span>
+      <div><div class="figura-name">111 / 1111 — Nuovi Inizi</div><div class="figura-desc">I tuoi pensieri si stanno manifestando rapidamente: presta attenzione a ciò su cui ti concentri.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">2️⃣</span>
+      <div><div class="figura-name">222 — Equilibrio e Fiducia</div><div class="figura-desc">Sei sulla strada giusta, anche se i risultati non sono ancora visibili: continua con costanza.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">4️⃣</span>
+      <div><div class="figura-name">444 — Protezione</div><div class="figura-desc">Una presenza di sostegno è vicina; è un segnale di rassicurazione nei momenti di dubbio.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">7️⃣</span>
+      <div><div class="figura-name">777 — Allineamento Spirituale</div><div class="figura-desc">Stai vivendo una fase di crescita interiore in sintonia con il tuo percorso più autentico.</div></div>
+    </div>
+  </div>
+        <p id="ct-ang-p8">Che si scelga di interpretarli come sincronicità junghiana o come segnale simbolico, i numeri angelici rappresentano oggi una delle porte d'accesso più popolari alla pratica oracolare, spesso complementare alla lettura delle carte.</p>
+        <div class="ritual-box"><strong id="ct-ang-rit1strong">Un consiglio pratico:</strong> <span id="ct-ang-rit1">tieni un piccolo diario dei messaggi ricevuti — sia dalle carte sia dai numeri notati casualmente. Con il tempo, riconoscerai pattern personali che la lettura isolata non potrebbe rivelare.</span></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd5"></div>
-        <h2 id="ct-ang-h5"></h2>
+        <div class="section-divider" id="ct-ang-sd5">Articolo</div>
+        <h2 id="ct-ang-h5">🕊️ Angelo Custode o Spirito Guida? Le Differenze</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_custode.webp"
                srcset="./images/angeli/angeli_custode.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img5" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p9"></p>
-        <p id="ct-ang-p10"></p>
-        <div class="figure-list" id="ct-ang-cust"></div>
-        <p id="ct-ang-p11"></p>
+        <p id="ct-ang-p9">Chi si avvicina per la prima volta alla pratica oracolare spesso confonde due figure che, pur simili, hanno origini e funzioni distinte: l'angelo custode e lo spirito guida. La differenza non è solo terminologica, ma riguarda il tipo di relazione che si instaura.</p>
+        <p id="ct-ang-p10">L'angelo custode appartiene alla tradizione religiosa occidentale: è una presenza assegnata fin dalla nascita, non legata a esperienze terrene, il cui compito è proteggere e orientare senza mai interferire con il libero arbitrio. Lo spirito guida, concetto più diffuso nello sciamanesimo e nelle correnti New Age, può invece essere un antenato, un animale totemico o un'entità che si manifesta in momenti diversi della vita, spesso in risposta a una fase di crescita specifica.</p>
+        <div class="figure-list" id="ct-ang-cust">
+    <div class="figura-row">
+      <span class="figura-ico">🕊️</span>
+      <div><div class="figura-name">Angelo Custode</div><div class="figura-desc">Presenza costante e universale, non legata a un'esperienza terrena, di matrice religiosa.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🐺</span>
+      <div><div class="figura-name">Spirito Guida</div><div class="figura-desc">Presenza che può cambiare nel tempo, spesso identificata con antenati, animali o maestri spirituali.</div></div>
+    </div>
+  </div>
+        <p id="ct-ang-p11">Nell'Oracolo degli Angeli moderno i confini tra le due figure si sfumano volutamente: l'obiettivo non è la precisione dottrinale ma offrire un punto di riferimento simbolico a cui rivolgersi. Molti praticanti scelgono semplicemente di chiamare questa presenza "la mia guida", senza necessità di etichettarla in modo rigido.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd6"></div>
-        <h2 id="ct-ang-h6"></h2>
+        <div class="section-divider" id="ct-ang-sd6">Articolo</div>
+        <h2 id="ct-ang-h6">🪶 I Segnali Angelici nella Vita Quotidiana</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_segnali.webp"
                srcset="./images/angeli/angeli_segnali.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img6" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p12"></p>
-        <div class="figure-list" id="ct-ang-seg"></div>
-        <p id="ct-ang-p13"></p>
+        <p id="ct-ang-p12">Oltre alle carte e ai numeri ripetuti, la tradizione oracolare contemporanea attribuisce significato a una serie di piccoli eventi quotidiani, interpretati come "segnali" di una presenza protettiva. Non si tratta di prove in senso scientifico, ma di simboli su cui la pratica riflessiva invita a soffermarsi.</p>
+        <div class="figure-list" id="ct-ang-seg">
+    <div class="figura-row">
+      <span class="figura-ico">🪶</span>
+      <div><div class="figura-name">Piume Bianche</div><div class="figura-desc">Il segnale più citato nella tradizione popolare anglosassone: trovarne una nel posto e nel momento "giusto" è letto come una conferma o un saluto.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🦋</span>
+      <div><div class="figura-name">Farfalle e Libellule</div><div class="figura-desc">Associate alla trasformazione e, in molte culture, a visite simboliche di persone care che non ci sono più.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌟</span>
+      <div><div class="figura-name">Luci e Scintille Improvvise</div><div class="figura-desc">Bagliori percepiti con la coda dell'occhio, spesso riportati durante meditazioni o momenti di forte emozione.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🎵</span>
+      <div><div class="figura-name">Canzoni "al Momento Giusto"</div><div class="figura-desc">Una canzone significativa che riappare in un momento di dubbio, vissuta come un piccolo promemoria.</div></div>
+    </div>
+  </div>
+        <p id="ct-ang-p13">Lo scetticismo verso questi segnali è legittimo quanto la pratica stessa: la psicologia li ricondurrebbe al fenomeno dell'apofenia, la tendenza naturale della mente a trovare schemi significativi in eventi casuali. Ciò non toglie valore all'esperienza soggettiva: anche solo come esercizio di attenzione e presenza, notare questi segnali può avere un effetto calmante e radicante.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-ang-sd7"></div>
-        <h2 id="ct-ang-h7"></h2>
+        <div class="section-divider" id="ct-ang-sd7">Articolo</div>
+        <h2 id="ct-ang-h7">🃏 Come Scegliere il Proprio Mazzo Angelico</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/angeli/angeli_mazzo.webp"
                srcset="./images/angeli/angeli_mazzo.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-ang-img7" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-ang-p14"></p>
-        <p id="ct-ang-p15"></p>
-        <div class="metodo-steps" id="ct-ang-msteps"></div>
-        <p class="t-muted" id="ct-ang-p16" style="margin-top:10px"></p>
+        <p id="ct-ang-p14">Esistono oggi centinaia di mazzi oracolari a tema angelico, ciascuno con uno stile illustrativo e un taglio tematico diverso: alcuni si concentrano sulla guarigione, altri sulla manifestazione, altri ancora su una specifica tradizione culturale. Una domanda frequente tra chi inizia è: come si fa a scegliere?</p>
+        <p id="ct-ang-p15">La pratica più diffusa è affidarsi alla risposta istintiva di fronte alle immagini di copertina, piuttosto che a un confronto razionale delle caratteristiche. Questo approccio, mutuato dalla cartomanzia tradizionale, parte dal presupposto che l'attrazione visiva immediata segnali già una sintonia personale con quel particolare set di simboli.</p>
+        <div class="metodo-steps" id="ct-ang-msteps">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-text"><strong>Osserva diverse copertine</strong> senza leggere le descrizioni: nota quale ti attira di più a livello visivo e istintivo.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-text"><strong>Verifica il tema dichiarato</strong> dall'autore (guarigione, amore, carriera, spiritualità generale) e confrontalo con i tuoi bisogni attuali.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-text"><strong>Considera il formato dei messaggi</strong> alcuni mazzi offrono solo una parola-chiave, altri un piccolo testo guida — scegli ciò che ti aiuta davvero a riflettere.</div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-ang-p16" style="margin-top:10px">Non esiste un mazzo "sbagliato": ogni set di carte è semplicemente uno strumento diverso per attivare la stessa capacità, già presente in te, di ascoltare la propria intuizione.</p>
       </div>
 
     </div>
@@ -584,91 +864,166 @@ html.theme-day .faq-item{border-color:var(--border)}
     <div class="panel" id="panel-celti">
 
       <div class="card">
-        <h2 id="ct-cel-h1"></h2>
+        <h2 id="ct-cel-h1">🌳 Oracolo dei Celti — Alfabeto Ogham</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_hero.webp"
                srcset="./images/celti/celti_hero.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img1" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p1"></p>
-        <p id="ct-cel-p2"></p>
+        <p id="ct-cel-p1">L'Ogham (si pronuncia "óh-am") è l'antico alfabeto sacro dei popoli celtici dell'Irlanda e della Scozia, attestato a partire dal IV secolo d.C. su monoliti di pietra, dove le iscrizioni segnavano confini territoriali e tombe. Ogni segno è composto da linee incise lungo uno spigolo verticale — il druim — e ciascuna lettera è associata al nome di un albero o di una pianta sacra.</p>
+        <p id="ct-cel-p2">La leggenda attribuisce l'invenzione dell'Ogham al dio Ogma, divinità della parola e dell'eloquenza nella mitologia irlandese, da cui l'alfabeto prende il nome. Era utilizzato da druidi e bardi non solo per scrivere, ma come sistema mnemonico per memorizzare leggi, genealogie e conoscenze botaniche e astronomiche, in una cultura orale che affidava poco alla scrittura.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-cel-q1t"></p>
-          <p class="storia-source" id="ct-cel-q1s"></p>
+          <p class="storia-text" id="ct-cel-q1t">«Il Book of Ballymote, manoscritto irlandese del XIV secolo, raccoglie oltre cento varianti dell'Ogham e ne spiega l'uso anche come codice cifrato tra druidi, segno della sua dimensione esoterica oltre che pratica.»</p>
+          <p class="storia-source" id="ct-cel-q1s">— Tradizione manoscritta irlandese medievale</p>
         </div>
-        <p class="t-muted" id="ct-cel-hint1" style="margin-top:10px"></p>
+        <p class="t-muted" id="ct-cel-hint1" style="margin-top:10px">Come oracolo, l'Ogham fu riscoperto e sistematizzato solo nel XX secolo, in particolare grazie agli studi del poeta Robert Graves ne "La Dea Bianca" (1948), che collegò ogni albero a un periodo del calendario lunare celtico.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cel-sd2"></div>
-        <h2 id="ct-cel-h2"></h2>
+        <div class="section-divider" id="ct-cel-sd2">La Struttura del Sistema</div>
+        <h2 id="ct-cel-h2">🌲 Le Quattro Aicme</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_struttura.webp"
                srcset="./images/celti/celti_struttura.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p3"></p>
-        <div class="figure-list" id="ct-cel-aicme"></div>
-        <p id="ct-cel-p4"></p>
+        <p id="ct-cel-p3">L'alfabeto Ogham classico è composto da 20 lettere principali, suddivise in quattro famiglie da cinque segni chiamate Aicme ("famiglia" in gaelico antico). Una quinta serie di lettere aggiuntive, chiamata Forfeda, fu introdotta più tardi per rappresentare suoni greci e latini.</p>
+        <div class="figure-list" id="ct-cel-aicme">
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Aicme Beithe (B-L-F-S-N)</div><div class="figura-desc">La famiglia di Betulla: inizi, protezione, fondamenta, flessibilità, connessione.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Aicme hÚatha (H-D-T-C-Q)</div><div class="figura-desc">La famiglia del Biancospino: ostacoli, forza, equilibrio, saggezza, scelta.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Aicme Muine (M-G-NG-Z-R)</div><div class="figura-desc">La famiglia della Vite: introspezione, determinazione, direzione, sfida, trasformazione.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Aicme Ailme (A-O-U-E-I)</div><div class="figura-desc">La famiglia dell'Abete, vocali legate a visione, raccolta, guarigione, resistenza, rinascita.</div></div>
+    </div>
+  </div>
+        <p id="ct-cel-p4">Questa organizzazione non era casuale: rifletteva la classificazione botanica celtica degli alberi in "nobili" (querce, meli) e "comuni", e il loro ruolo pratico nella vita quotidiana — costruzione, medicina, combustibile, magia.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cel-sd3"></div>
-        <h2 id="ct-cel-h3"></h2>
+        <div class="section-divider" id="ct-cel-sd3">Il Metodo</div>
+        <h2 id="ct-cel-h3">📖 Come Si Consulta l'Oracolo</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_lettura.webp"
                srcset="./images/celti/celti_lettura.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img3" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p5"></p>
-        <div class="metodo-steps" id="ct-cel-steps"></div>
-        <p class="t-muted" id="ct-cel-hint2" style="margin-top:10px"></p>
-        <button class="btn" id="btn-cel1" onclick="drawOgham()"></button>
+        <p id="ct-cel-p5">Tradizionalmente i druidi intagliavano i simboli su piccoli bastoncini di legno (feda), estratti a caso da una sacca come si farebbe oggi con le rune. Ogni albero porta con sé non solo un significato divinatorio ma anche proprietà curative ed energetiche attribuite dalla tradizione erboristica celtica.</p>
+        <div class="metodo-steps" id="ct-cel-steps">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-text"><strong>Poni una domanda</strong> legata a un percorso di crescita, una sfida o una fase della tua vita.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-text"><strong>Estrai un simbolo</strong> e osserva a quale famiglia (Aicme) appartiene: indica l'area generale del messaggio.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-text"><strong>Collega l'albero alla natura</strong> pensa alle sue caratteristiche reali — radici, stagionalità, resistenza — come chiave simbolica.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">4</div>
+      <div class="metodo-text"><strong>Lascia che il messaggio si depositi</strong> nei giorni successivi: la saggezza Ogham agisce spesso in modo lento e radicato, come un albero.</div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-cel-hint2" style="margin-top:10px">Consulta gli Ogham per ricevere la guida dell'albero che ti rappresenta in questo momento.</p>
+        <button class="btn" id="btn-cel1" onclick="drawOgham()">🌳 Consulta gli Ogham</button>
         <div id="resOgham"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cel-sd4"></div>
-        <h2 id="ct-cel-h4"></h2>
+        <div class="section-divider" id="ct-cel-sd4">Articolo</div>
+        <h2 id="ct-cel-h4">🌙 Il Calendario Lunare degli Alberi</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_calendario.webp"
                srcset="./images/celti/celti_calendario.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img4" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p6"></p>
-        <p id="ct-cel-p7"></p>
-        <div class="figure-list" id="ct-cel-cal"></div>
-        <p class="t-muted" id="ct-cel-hint3" style="margin-top:10px"></p>
+        <p id="ct-cel-p6">Una delle interpretazioni più affascinanti dell'Ogham, proposta da Robert Graves ne "La Dea Bianca", è quella di un calendario arboreo: tredici mesi lunari, ciascuno di 28 giorni, governati da un albero diverso, a cui si aggiungono i giorni intercalari del solstizio. Questa lettura non è attestata nelle fonti celtiche antiche, ma è oggi parte integrante della pratica neopagana e oracolare contemporanea.</p>
+        <p id="ct-cel-p7">Nel sistema proposto da Graves, il mese inizia simbolicamente con la Betulla — l'albero dei nuovi inizi, associato al periodo successivo al solstizio d'inverno — e si conclude con il Sambuco, legato alla fine di un ciclo e alla trasformazione. Conoscere il "tuo" albero in base alla data di nascita è diventato, per molti praticanti, un modo per leggere il proprio tema simbolico personale, in parallelo all'astrologia solare.</p>
+        <div class="figure-list" id="ct-cel-cal">
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Betulla — 24 dic / 20 gen</div><div class="figura-desc">Inizio, purificazione, ripartenza dopo il buio invernale.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Quercia — 10 giu / 7 lug</div><div class="figura-desc">Forza, resistenza, il culmine dell'energia solare estiva.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Edera — 28 set / 27 ott</div><div class="figura-desc">Tenacia, ricerca di sostegno, capacità di adattamento.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌳</span>
+      <div><div class="figura-name">Sambuco — 25 nov / 22 dic</div><div class="figura-desc">Chiusura di un ciclo, soglia tra la fine e un nuovo inizio.</div></div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-cel-hint3" style="margin-top:10px">Questa associazione resta un'elaborazione moderna e poetica più che un dato storico documentato: il suo valore sta nella capacità di offrire una chiave simbolica accessibile, non in una presunta autenticità archeologica.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cel-sd5"></div>
-        <h2 id="ct-cel-h5"></h2>
+        <div class="section-divider" id="ct-cel-sd5">Articolo</div>
+        <h2 id="ct-cel-h5">📿 Druidi, Bardi e Vati: i Custodi della Sapienza Celtica</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_druidi.webp"
                srcset="./images/celti/celti_druidi.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img5" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p8"></p>
-        <div class="figure-list" id="ct-cel-druidi"></div>
-        <p id="ct-cel-p9"></p>
+        <p id="ct-cel-p8">Le fonti classiche, in particolare lo storico greco Posidonio e successivamente Giulio Cesare nel "De Bello Gallico", descrivono la società celtica come strutturata attorno a tre classi di sapienti, distinte per ruolo e formazione, tutte legate alla trasmissione orale della conoscenza che l'Ogham avrebbe poi affiancato.</p>
+        <div class="figure-list" id="ct-cel-druidi">
+    <div class="figura-row">
+      <span class="figura-ico">🦌</span>
+      <div><div class="figura-name">Druidi</div><div class="figura-desc">Sacerdoti, giudici e filosofi: governavano i riti religiosi, l'istruzione e la legge, con una formazione che secondo Cesare poteva durare fino a vent'anni.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🎶</span>
+      <div><div class="figura-name">Bardi</div><div class="figura-desc">Poeti e musicisti, custodi della memoria storica e genealogica attraverso il canto e la composizione orale.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🔮</span>
+      <div><div class="figura-name">Vati (Filid)</div><div class="figura-desc">Specialisti della divinazione e della profezia, spesso associati a pratiche oracolari come l'osservazione del volo degli uccelli.</div></div>
+    </div>
+  </div>
+        <p id="ct-cel-p9">Con la cristianizzazione dell'Irlanda a partire dal V secolo, queste figure non scomparvero del tutto: molte conoscenze druidiche confluirono nella figura del monaco-bardo medievale, che ricopiò proprio nei manoscritti come il già citato Book of Ballymote le tradizioni Ogham, permettendone la sopravvivenza fino a oggi.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cel-sd6"></div>
-        <h2 id="ct-cel-h6"></h2>
+        <div class="section-divider" id="ct-cel-sd6">Articolo</div>
+        <h2 id="ct-cel-h6">🌲 Gli Alberi Sacri nella Mitologia Celtica</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/celti/celti_alberi_sacri.webp"
                srcset="./images/celti/celti_alberi_sacri.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cel-img6" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cel-p10"></p>
-        <p id="ct-cel-p11"></p>
+        <p id="ct-cel-p10">Per i Celti la foresta non era uno sfondo, ma un luogo abitato da presenze: i boschi sacri, chiamati nemeton, erano gli spazi rituali per eccellenza, spesso privi di costruzioni perché si riteneva che gli alberi stessi fossero la dimora del sacro. Alcune specie ricorrono con particolare insistenza nei miti e nelle pratiche rituali.</p>
+        <p id="ct-cel-p11">La quercia era probabilmente l'albero più venerato: il termine stesso "druido" è stato collegato da alcuni filologi alla radice indoeuropea per "quercia" (drus), sebbene l'etimologia resti dibattuta. Il nocciolo era associato alla saggezza: nella leggenda irlandese del Salmone della Conoscenza, il pesce sacro si nutriva delle nocciole cadute in un pozzo magico, assorbendone tutto il sapere del mondo. Il tasso, longevo fino a migliaia di anni, era invece il simbolo per eccellenza dell'eternità e veniva spesso piantato nei luoghi di sepoltura.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-cel-q2t"></p>
-          <p class="storia-source" id="ct-cel-q2s"></p>
+          <p class="storia-text" id="ct-cel-q2t">«Chi mangia anche solo un pezzo del Salmone della Conoscenza, nutrito dalle nove nocciole del pozzo sacro, ottiene tutta la sapienza del mondo: così narra una delle leggende fondative della tradizione irlandese.»</p>
+          <p class="storia-source" id="ct-cel-q2s">— Mitologia irlandese, ciclo fenian</p>
         </div>
-        <p class="t-muted" id="ct-cel-hint4" style="margin-top:10px"></p>
+        <p class="t-muted" id="ct-cel-hint4" style="margin-top:10px">Questo legame profondo tra albero, sapienza e sacralità è la radice culturale da cui nasce l'intero sistema Ogham: non un semplice codice alfabetico, ma una vera e propria mappa simbolica del mondo naturale.</p>
       </div>
 
     </div>
@@ -677,43 +1032,83 @@ html.theme-day .faq-item{border-color:var(--border)}
     <div class="panel" id="panel-specchio">
 
       <div class="card">
-        <h2 id="ct-spe-h1"></h2>
+        <h2 id="ct-spe-h1">🪞 Specchio Nero</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/specchio/specchio_hero.webp"
                srcset="./images/specchio/specchio_hero.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-spe-img1" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-spe-p1"></p>
-        <p id="ct-spe-p2"></p>
+        <p id="ct-spe-p1">Lo scrying con lo specchio nero è una delle pratiche divinatorie più antiche e diffuse al mondo: si osserva una superficie scura e riflettente lasciando che la mente entri in uno stato contemplativo, finché non emergono forme, ombre o impressioni simboliche da interpretare. Il termine deriva dall'inglese to descry, "scorgere", "distinguere a fatica".</p>
+        <p id="ct-spe-p2">La pratica ha radici antichissime: gli specchi in ossidiana venivano usati dagli Aztechi già nel XV secolo, mentre in Europa lo scrying con superfici scure — acqua, inchiostro, cristalli affumicati — è documentato fin dall'antichità classica. Il caso più celebre è quello dell'astrologo elisabettiano John Dee, che nel XVI secolo utilizzava uno specchio di ossidiana per le sue sedute divinatorie alla corte di Elisabetta I d'Inghilterra.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-spe-q1t"></p>
-          <p class="storia-source" id="ct-spe-q1s"></p>
+          <p class="storia-text" id="ct-spe-q1t">«Lo specchio di John Dee, oggi conservato al British Museum, è ricavato da un singolo blocco di ossidiana levigata di origine messicana, probabilmente portato in Europa al ritorno dei conquistadores.»</p>
+          <p class="storia-source" id="ct-spe-q1s">— Storia dello scrying occidentale, XVI sec.</p>
         </div>
-        <p id="ct-spe-p3"></p>
+        <p id="ct-spe-p3">Lo scrying non si limita allo specchio nero: nella storia della divinazione la stessa tecnica contemplativa è stata applicata a sfere di cristallo, pozze d'acqua scura, inchiostro versato su un piatto (la lecanomanzia babilonese) e persino fiamme di candela. Il principio comune è sempre lo stesso: una superficie priva di dettagli definiti diventa uno "schermo" su cui la mente proietta immagini provenienti dall'intuizione e dal subconscio, un processo che la psicologia moderna avvicina al fenomeno della pareidolia guidata dallo stato meditativo.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-spe-sd2"></div>
-        <h2 id="ct-spe-h2"></h2>
+        <div class="section-divider" id="ct-spe-sd2">Il Rituale</div>
+        <h2 id="ct-spe-h2">🕯️ Come Si Pratica lo Scrying</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/specchio/specchio_rituale.webp"
                srcset="./images/specchio/specchio_rituale.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-spe-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-spe-p4"></p>
-        <div class="metodo-steps" id="ct-spe-steps"></div>
-        <div class="ritual-box"><strong id="ct-spe-rit1strong"></strong> <span id="ct-spe-rit1"></span></div>
-        <button class="btn" id="btn-spe1" onclick="drawSpecchio()"></button>
+        <p id="ct-spe-p4">A differenza della cartomanzia, lo scrying non lavora con simboli fissi: ogni immagine percepita va interpretata in base al contesto personale e alla domanda posta, più come un sogno a occhi aperti che come un sistema codificato.</p>
+        <div class="metodo-steps" id="ct-spe-steps">
+    <div class="metodo-step">
+      <div class="metodo-num">1</div>
+      <div class="metodo-text"><strong>Siediti al buio</strong> con una sola candela accesa dietro le spalle, mai davanti, per evitare riflessi diretti sulla superficie.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">2</div>
+      <div class="metodo-text"><strong>Posiziona lo specchio</strong> davanti a te a distanza di un braccio e respira lentamente per alcuni minuti.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">3</div>
+      <div class="metodo-text"><strong>Non fissare un punto preciso</strong> lascia che lo sguardo si rilassi, quasi sfocato, senza forzare la visione.</div>
+    </div>
+  
+    <div class="metodo-step">
+      <div class="metodo-num">4</div>
+      <div class="metodo-text"><strong>Nota la prima immagine o sensazione</strong> che emerge, senza analizzarla subito: scrivila solo dopo aver concluso.</div>
+    </div>
+  </div>
+        <div class="ritual-box"><strong id="ct-spe-rit1strong">Attenzione:</strong> <span id="ct-spe-rit1">10-15 minuti per seduta sono sufficienti. Una leggera sensazione di "assenza" o lieve capogiro è normale all'inizio; se compare disagio, interrompi e riprendi un'altra volta.</span></div>
+        <button class="btn" id="btn-spe1" onclick="drawSpecchio()">🪞 Guarda nello Specchio</button>
         <div id="resSpecchio"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-spe-sd3"></div>
-        <h2 id="ct-spe-h3"></h2>
-        <p id="ct-spe-p5"></p>
-        <div class="figure-list" id="ct-spe-sup"></div>
-        <p id="ct-spe-p6"></p>
-        <div class="ritual-box"><strong id="ct-spe-rit2strong"></strong> <span id="ct-spe-rit2"></span></div>
+        <div class="section-divider" id="ct-spe-sd3">Approfondimento</div>
+        <h2 id="ct-spe-h3">🔮 Superfici, Materiali e Precauzioni</h2>
+        <p id="ct-spe-p5">Non esiste un unico "specchio nero corretto": nel corso della storia sono stati impiegati materiali diversi, ciascuno con una qualità energetica leggermente differente secondo la tradizione esoterica.</p>
+        <div class="figure-list" id="ct-spe-sup">
+    <div class="figura-row">
+      <span class="figura-ico">⚫</span>
+      <div><div class="figura-name">Ossidiana</div><div class="figura-desc">Vetro vulcanico naturale, associato a protezione e verità: il materiale dello specchio di John Dee.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🖼️</span>
+      <div><div class="figura-name">Vetro Annerito</div><div class="figura-desc">Una cornice di vetro dipinta di nero sul retro: la versione più diffusa e accessibile.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">💧</span>
+      <div><div class="figura-name">Acqua Scura</div><div class="figura-desc">Una ciotola scura riempita d'acqua o inchiostro: variante più antica, detta idromanzia.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">💎</span>
+      <div><div class="figura-name">Cristallo Affumicato</div><div class="figura-desc">Quarzo o ametista scura, scelta per la lettura energetica più sottile e prolungata.</div></div>
+    </div>
+  </div>
+        <p id="ct-spe-p6">Indipendentemente dal materiale, la pratica costante è più importante della "qualità" dello strumento: le prime sedute spesso non producono visioni nitide, e questo è del tutto normale. Lo scrying è una capacità che si affina nel tempo, come un muscolo percettivo.</p>
+        <div class="ritual-box"><strong id="ct-spe-rit2strong">Per chi è sconsigliato:</strong> <span id="ct-spe-rit2">chi soffre di epilessia fotosensibile, disturbi dissociativi o ansia legata a stati alterati di coscienza dovrebbe evitare sedute prolungate o praticarle solo con la supervisione di un professionista.</span></div>
       </div>
 
     </div>
@@ -722,92 +1117,197 @@ html.theme-day .faq-item{border-color:var(--border)}
     <div class="panel" id="panel-cromomanzia">
 
       <div class="card">
-        <h2 id="ct-cro-h1"></h2>
+        <h2 id="ct-cro-h1">🎨 Cromomanzia</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/cromomanzia/cromomanzia_hero.webp"
                srcset="./images/cromomanzia/cromomanzia_hero.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cro-img1" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cro-p1"></p>
-        <p id="ct-cro-p2"></p>
+        <p id="ct-cro-p1">La cromomanzia interpreta i colori come messaggeri energetici: il colore che ti attrae istintivamente in un dato momento rivela uno stato interiore o un'energia di cui hai bisogno. È una delle forme di divinazione più immediate, perché non richiede simboli da memorizzare ma solo l'ascolto di una reazione spontanea.</p>
+        <p id="ct-cro-p2">Il legame tra colore e significato simbolico affonda le radici nell'antico Egitto, dove i sacerdoti usavano camere colorate per scopi terapeutici, e si ritrova nella tradizione indiana dei chakra, i centri energetici del corpo associati ciascuno a un colore specifico. In epoca moderna, la cromoterapia e la psicologia del colore — penso agli studi di Goethe sulla teoria dei colori nel XIX secolo — hanno dato nuova base a queste antiche intuizioni.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-cro-q1t"></p>
-          <p class="storia-source" id="ct-cro-q1s"></p>
+          <p class="storia-text" id="ct-cro-q1t">«Ogni colore vibra a una propria frequenza e produce un effetto preciso sullo stato mentale ed emotivo: una corrispondenza che la tradizione esoterica conosceva intuitivamente molto prima della fisica delle onde luminose.»</p>
+          <p class="storia-source" id="ct-cro-q1s">— Tradizione della cromoterapia simbolica</p>
         </div>
-        <p id="ct-cro-p3"></p>
+        <p id="ct-cro-p3">Anche le grandi tradizioni spirituali orientali hanno costruito sistemi complessi attorno al colore: nello Yoga e nell'Ayurveda i sette chakra principali — dal rosso del Muladhara alla base della colonna fino al violetto del Sahasrara sulla sommità del capo — formano una scala cromatica che rispecchia l'intera mappa energetica del corpo. La cromomanzia che pratichi qui ne è una versione semplificata e accessibile, pensata per un check-in rapido sul proprio stato interiore.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd2"></div>
-        <h2 id="ct-cro-h2"></h2>
+        <div class="section-divider" id="ct-cro-sd2">Significati Principali</div>
+        <h2 id="ct-cro-h2">🌈 Il Linguaggio dei Colori</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/cromomanzia/cromomanzia_palette.webp"
                srcset="./images/cromomanzia/cromomanzia_palette.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cro-img2" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cro-p4"></p>
-        <div class="figure-list" id="ct-cro-col"></div>
+        <p id="ct-cro-p4">Ogni colore porta con sé un'energia riconoscibile. Ecco alcuni dei significati cardine usati nella lettura cromomantica:</p>
+        <div class="figure-list" id="ct-cro-col">
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#c0392b">●</span>
+      <div><div class="figura-name">Rosso</div><div class="figura-desc">Energia, passione, azione immediata, forza vitale.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#d4af37">●</span>
+      <div><div class="figura-name">Giallo</div><div class="figura-desc">Chiarezza mentale, ottimismo, comunicazione, intelletto.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#3a8a50">●</span>
+      <div><div class="figura-name">Verde</div><div class="figura-desc">Equilibrio, crescita, guarigione, armonia con la natura.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#2a4a8a">●</span>
+      <div><div class="figura-name">Blu</div><div class="figura-desc">Intuizione, profondità, introspezione, fiducia.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#7a4ab8">●</span>
+      <div><div class="figura-name">Violetto</div><div class="figura-desc">Trasformazione, spiritualità, connessione con il mistero.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#1a1a1a">●</span>
+      <div><div class="figura-name">Nero</div><div class="figura-desc">Protezione, mistero, necessità di un'introspezione profonda.</div></div>
+    </div>
+  </div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd3"></div>
-        <h2 id="ct-cro-h3"></h2>
-        <p id="ct-cro-p5"></p>
-        <div class="swatch-grid" id="swatchGrid"></div>
-        <button class="btn" id="btn-cro1" onclick="drawColore()"></button>
+        <div class="section-divider" id="ct-cro-sd3">Il Metodo</div>
+        <h2 id="ct-cro-h3">🎨 Estrai il Tuo Colore</h2>
+        <p id="ct-cro-p5">Puoi scegliere consapevolmente il colore che ti attrae di più in questo momento, oppure lasciare che sia l'oracolo a estrarlo casualmente: entrambi gli approcci sono validi, perché anche la scelta istintiva nasce da un impulso significativo.</p>
+        <div class="swatch-grid" id="swatchGrid"><div class="swatch" data-i="0" style="background:#c0392b" onclick="showColore(0)"><span>Rosso</span></div><div class="swatch" data-i="1" style="background:#e07b39" onclick="showColore(1)"><span>Arancione</span></div><div class="swatch" data-i="2" style="background:#d4af37" onclick="showColore(2)"><span>Giallo</span></div><div class="swatch" data-i="3" style="background:#3a8a50" onclick="showColore(3)"><span>Verde</span></div><div class="swatch" data-i="4" style="background:#4a90d9" onclick="showColore(4)"><span>Celeste</span></div><div class="swatch" data-i="5" style="background:#2a4a8a" onclick="showColore(5)"><span>Blu</span></div><div class="swatch" data-i="6" style="background:#4b0082" onclick="showColore(6)"><span>Indaco</span></div><div class="swatch" data-i="7" style="background:#7a4ab8" onclick="showColore(7)"><span>Violetto</span></div><div class="swatch" data-i="8" style="background:#e08ab8" onclick="showColore(8)"><span>Rosa</span></div><div class="swatch" data-i="9" style="background:#e8e8e8" onclick="showColore(9)"><span>Bianco</span></div><div class="swatch" data-i="10" style="background:#1a1a1a" onclick="showColore(10)"><span>Nero</span></div><div class="swatch" data-i="11" style="background:#888888" onclick="showColore(11)"><span>Grigio</span></div><div class="swatch" data-i="12" style="background:#6f4e37" onclick="showColore(12)"><span>Marrone</span></div><div class="swatch" data-i="13" style="background:#d4af37" onclick="showColore(13)"><span>Oro</span></div></div>
+        <button class="btn" id="btn-cro1" onclick="drawColore()">🎨 Estrai un Colore a Caso</button>
         <div id="resColore"></div>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd4"></div>
-        <h2 id="ct-cro-h4"></h2>
-        <p id="ct-cro-p6"></p>
-        <div class="len-combo-list" id="ct-cro-combos"></div>
-        <p id="ct-cro-p7"></p>
+        <div class="section-divider" id="ct-cro-sd4">Approfondimento</div>
+        <h2 id="ct-cro-h4">🖌️ Letture Combinate e Contesti d'Uso</h2>
+        <p id="ct-cro-p6">Oltre all'estrazione di un singolo colore, alcuni praticanti scelgono due colori in sequenza per ottenere una lettura più articolata: il primo rappresenta la situazione attuale, il secondo l'energia verso cui muoversi. Le combinazioni più ricorrenti hanno significati riconoscibili:</p>
+        <div class="len-combo-list" id="ct-cro-combos">
+    <div class="len-combo-row">
+      <div class="len-combo-title">🔴 Rosso + 🔵 Blu</div>
+      <div class="len-combo-desc">Un'energia impulsiva che chiede di essere temperata dalla calma e dalla riflessione.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">⚫ Nero + ⚪ Bianco</div>
+      <div class="len-combo-desc">Una fase di transizione netta: qualcosa si chiude per lasciare spazio a un nuovo inizio.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">🟢 Verde + 🟡 Oro</div>
+      <div class="len-combo-desc">Crescita che sta per dare i suoi frutti: un periodo di abbondanza si avvicina.</div>
+    </div>
+  
+    <div class="len-combo-row">
+      <div class="len-combo-title">🟣 Violetto + 🩷 Rosa</div>
+      <div class="len-combo-desc">Trasformazione interiore guidata dall'amore verso se stessi più che dal controllo razionale.</div>
+    </div>
+  </div>
+        <p id="ct-cro-p7">La cromomanzia si presta anche ad applicazioni quotidiane molto concrete: scegliere il colore di un abito, di un ambiente o persino di un fiore da regalare in base all'energia che si vuole trasmettere è una forma pratica della stessa logica simbolica, già nota agli arredatori e ai terapisti del colore.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd5"></div>
-        <h2 id="ct-cro-h5"></h2>
+        <div class="section-divider" id="ct-cro-sd5">Articolo</div>
+        <h2 id="ct-cro-h5">🧘 Cromoterapia e i Sette Chakra</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/cromomanzia/cromomanzia_chakra.webp"
                srcset="./images/cromomanzia/cromomanzia_chakra.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cro-img5" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cro-p8"></p>
-        <p id="ct-cro-p9"></p>
-        <div class="figure-list" id="ct-cro-chakra"></div>
-        <p class="t-muted" id="ct-cro-p10" style="margin-top:10px"></p>
+        <p id="ct-cro-p8">La cromoterapia nasce come disciplina sistematica agli inizi del XX secolo, ma le sue radici affondano in pratiche molto più antiche: nell'antico Egitto esistevano vere e proprie "camere solari" colorate usate a scopo curativo nei templi di Heliopolis, mentre la medicina ayurvedica indiana collega da millenni colore, respiro ed energia vitale (prana).</p>
+        <p id="ct-cro-p9">Il sistema dei sette chakra è oggi il riferimento più diffuso per chi pratica la cromomanzia in chiave energetica: ogni centro, posizionato lungo la colonna vertebrale, è associato a un colore e a un'area specifica dell'esperienza umana.</p>
+        <div class="figure-list" id="ct-cro-chakra">
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#c0392b">●</span>
+      <div><div class="figura-name">Muladhara — Rosso</div><div class="figura-desc">Radicamento, sicurezza, sopravvivenza, base della colonna vertebrale.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#e67e22">●</span>
+      <div><div class="figura-name">Svadhisthana — Arancione</div><div class="figura-desc">Creatività, piacere, emotività, area sacrale.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#d4af37">●</span>
+      <div><div class="figura-name">Manipura — Giallo</div><div class="figura-desc">Volontà personale, autostima, plesso solare.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#3a8a50">●</span>
+      <div><div class="figura-name">Anahata — Verde</div><div class="figura-desc">Amore, compassione, equilibrio, centro del petto.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#2a4a8a">●</span>
+      <div><div class="figura-name">Vishuddha — Blu</div><div class="figura-desc">Espressione, verità, comunicazione, gola.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#3949ab">●</span>
+      <div><div class="figura-name">Ajna — Indaco</div><div class="figura-desc">Intuizione, visione interiore, terzo occhio.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico" style="color:#7a4ab8">●</span>
+      <div><div class="figura-name">Sahasrara — Violetto</div><div class="figura-desc">Spiritualità, connessione col tutto, sommità del capo.</div></div>
+    </div>
+  </div>
+        <p class="t-muted" id="ct-cro-p10" style="margin-top:10px">Quando in una lettura cromomantica emerge ripetutamente un colore legato a un chakra specifico, molti praticanti lo interpretano come un invito a portare attenzione a quell'area della propria vita.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd6"></div>
-        <h2 id="ct-cro-h6"></h2>
+        <div class="section-divider" id="ct-cro-sd6">Articolo</div>
+        <h2 id="ct-cro-h6">🎓 Cosa Dice la Psicologia del Colore</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/cromomanzia/cromomanzia_psicologia.webp"
                srcset="./images/cromomanzia/cromomanzia_psicologia.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cro-img6" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cro-p11"></p>
-        <p id="ct-cro-p12"></p>
+        <p id="ct-cro-p11">Accanto alla lettura simbolica e intuitiva, esiste un filone di ricerca scientifica che studia l'effetto reale dei colori su emozioni, percezione e persino comportamento. Il primo studio sistematico è quello di Johann Wolfgang von Goethe, che nel 1810 pubblicò "La Teoria dei Colori", proponendo una classificazione basata sull'effetto psicologico più che sulla fisica della luce, in aperta polemica con Newton.</p>
+        <p id="ct-cro-p12">Studi contemporanei di psicologia ambientale hanno confermato alcune intuizioni di quella tradizione: il colore rosso, ad esempio, è stato associato in diversi esperimenti a un aumento misurabile della frequenza cardiaca e dell'attenzione, mentre tonalità di blu e verde tendono a favorire stati di calma e concentrazione. Questo non dimostra che un colore abbia un "significato" oracolare fisso, ma spiega perché l'essere umano, in ogni cultura, abbia sempre attribuito ai colori un peso simbolico ed emotivo così forte.</p>
         <div class="storia-box">
-          <p class="storia-text" id="ct-cro-q2t"></p>
-          <p class="storia-source" id="ct-cro-q2s"></p>
+          <p class="storia-text" id="ct-cro-q2t">«Il colore agisce sull'anima: può suscitare sensazioni, evocare sentimenti che ci confortano o ci spaventano, ci rallegrano o ci rattristano.»</p>
+          <p class="storia-source" id="ct-cro-q2s">— J. W. Goethe, concetto centrale della sua teoria dei colori</p>
         </div>
-        <p class="t-muted" id="ct-cro-p13" style="margin-top:10px"></p>
+        <p class="t-muted" id="ct-cro-p13" style="margin-top:10px">La cromomanzia può essere vista, in questa luce, come un ponte tra l'intuizione simbolica più antica e ciò che la scienza moderna conferma sull'impatto reale del colore sul nostro stato interiore.</p>
       </div>
 
       <div class="card">
-        <div class="section-divider" id="ct-cro-sd7"></div>
-        <h2 id="ct-cro-h7"></h2>
+        <div class="section-divider" id="ct-cro-sd7">Articolo</div>
+        <h2 id="ct-cro-h7">🕯️ Scegliere un Colore per un'Intenzione Precisa</h2>
         <div class="len-section-img">
           <img onerror="this.style.display='none'" src="./images/cromomanzia/cromomanzia_intenzioni.webp"
                srcset="./images/cromomanzia/cromomanzia_intenzioni.webp 400w"
                sizes="(max-width:480px) 100vw, 400px" id="ct-cro-img7" alt="" width="400" height="200" loading="lazy" decoding="async">
         </div>
-        <p id="ct-cro-p14"></p>
-        <div class="figure-list" id="ct-cro-int"></div>
-        <p id="ct-cro-p15"></p>
+        <p id="ct-cro-p14">Oltre alla lettura oracolare spontanea, molte tradizioni — dalla magia popolare europea alla candle magic anglosassone — usano il colore in modo intenzionale: si sceglie consapevolmente una tonalità per "vestire" un obiettivo specifico, ad esempio nella scelta del colore di una candela da accendere durante un momento di concentrazione o meditazione.</p>
+        <div class="figure-list" id="ct-cro-int">
+    <div class="figura-row">
+      <span class="figura-ico">💼</span>
+      <div><div class="figura-name">Per la Carriera e il Successo</div><div class="figura-desc">Oro e giallo, associati a chiarezza mentale, leadership e visibilità.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">❤️</span>
+      <div><div class="figura-name">Per l'Amore e le Relazioni</div><div class="figura-desc">Rosa e rosso, legati rispettivamente alla tenerezza e alla passione.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🌿</span>
+      <div><div class="figura-name">Per la Guarigione e il Riposo</div><div class="figura-desc">Verde e azzurro chiaro, collegati a rigenerazione fisica ed emotiva.</div></div>
+    </div>
+  
+    <div class="figura-row">
+      <span class="figura-ico">🛡️</span>
+      <div><div class="figura-name">Per la Protezione</div><div class="figura-desc">Nero e blu scuro, usati tradizionalmente per delimitare uno spazio sicuro.</div></div>
+    </div>
+  </div>
+        <p id="ct-cro-p15">Questo uso "attivo" del colore si distingue dalla lettura oracolare passiva: invece di interpretare un colore già estratto, si sceglie deliberatamente quale energia evocare, un approccio che molti praticanti integrano nei propri rituali quotidiani — dall'abbigliamento alla scelta dei fiori, fino alla decorazione di un piccolo angolo dedicato alla riflessione.</p>
       </div>
 
     </div>
@@ -820,52 +1320,112 @@ html.theme-day .faq-item{border-color:var(--border)}
         <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
         <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
         <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-        <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+        <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
       </div>
     </div>
 
     <!-- ═══ ARTICOLO EDITORIALE GENERALE ═══ -->
     <article class="article-section">
-      <h2 id="art-title"></h2>
+      <h2 id="art-title">Divinazione Alternativa: Sei Oracoli a Confronto tra Storia e Pratica</h2>
       <img onerror="this.style.display='none'" src="./images/icone/home/divinazione-alternativa.webp"
            srcset="./images/icone/home/divinazione-alternativa.webp 1x"
            id="art-hero" alt="" width="440" height="260" loading="lazy" decoding="async"
            style="width:100%;border-radius:14px;margin:16px 0">
-      <h3 id="art-h2"></h3>
-      <p id="art-p1"></p>
-      <p id="art-p2"></p>
-      <p id="art-p3"></p>
-      <h3 id="art-h3"></h3>
-      <p id="art-p4"></p>
-      <p id="art-p5"></p>
+      <h3 id="art-h2">Perché Esistono Tanti Sistemi Oracolari Diversi</h3>
+      <p id="art-p1">Accanto ai Tarocchi e alle Rune, la storia della divinazione ha prodotto decine di sistemi simbolici diversi, ognuno nato in un contesto culturale specifico e capace di rispondere a un tipo particolare di domanda. La cartomanzia con le carte da gioco affonda le radici nell'Europa del Trecento, quando i mazzi giunti dall'Asia attraverso le rotte commerciali divennero presto strumenti di lettura del destino nelle corti e nelle piazze italiane. Il Lenormand, codificato in Germania nel 1799 e poi associato alla leggendaria cartomante francese Marie Anne Lenormand, porta avanti questa tradizione con un linguaggio più diretto e narrativo, fatto di oggetti quotidiani facilmente riconoscibili.</p>
+      <p id="art-p2">L'Oracolo degli Angeli rappresenta invece una tradizione più recente, nata negli Stati Uniti negli anni Novanta ma capace di attingere a una sensibilità religiosa antichissima, comune all'ebraismo, al cristianesimo e all'islam: quella di una presenza protettiva invisibile che accompagna l'essere umano nei momenti di difficoltà. L'Ogham celtico, al contrario, guarda al passato remoto: nato come alfabeto sacro dei druidi attorno al IV secolo, è stato riscoperto come strumento oracolare solo nel Novecento grazie agli studi del poeta Robert Graves, che ne fece un vero e proprio calendario simbolico legato agli alberi.</p>
+      <p id="art-p3">Lo Specchio Nero e la Cromomanzia chiudono il quadro con due approcci complementari: il primo lavora per immagini libere, in uno stato contemplativo che ricorda la meditazione a occhi aperti; la seconda lavora invece per colori, sfruttando una reazione istintiva e immediata che non richiede memorizzare alcun simbolo. Entrambi dimostrano come la divinazione, nelle sue forme più diverse, condivida sempre lo stesso meccanismo psicologico di fondo: offrire alla mente uno stimolo ambiguo su cui proiettare intuizioni, desideri e timori che spesso restano inespressi nella vita quotidiana.</p>
+      <h3 id="art-h3">Come Scegliere l'Oracolo Più Adatto a Te</h3>
+      <p id="art-p4">Scegliere tra questi sei sistemi non significa stabilire quale sia "il migliore", ma riconoscere quale linguaggio simbolico risuoni di più con il proprio modo di pensare. Chi cerca risposte concrete su lavoro, denaro e relazioni troverà nel Lenormand un alleato diretto e pratico. Chi è alla ricerca di conforto emotivo e di un punto di riferimento interiore si troverà più a suo agio con l'Oracolo degli Angeli. Chi ama la profondità storica e la connessione con la natura potrà approfondire l'Ogham celtico, mentre chi preferisce un approccio più libero e meditativo troverà nello Specchio Nero e nella Cromomanzia gli strumenti più immediati.</p>
+      <p id="art-p5">Va sempre ricordato che nessuno di questi sistemi sostituisce un consulto medico, legale o finanziario professionale: la loro funzione è di intrattenimento, riflessione personale e auto-ascolto, non di previsione certa del futuro. Usati con questa consapevolezza, gli oracoli alternativi diventano un esercizio prezioso di attenzione interiore, capace di restituire, lettura dopo lettura, una mappa sempre più precisa dei propri desideri e delle proprie paure.</p>
       <nav class="article-links" aria-label="Approfondimenti correlati">
-        <a href="./tarocchi.html" id="link-tarocchi"></a>
-        <a href="./significato-rune.html" id="link-rune"></a>
-        <a href="./guida-i-ching.html" id="link-iching"></a>
-        <a href="./numerologia.html" id="link-numerologia"></a>
+        <a href="./tarocchi.html" id="link-tarocchi">🎴 Approfondisci la Guida ai Tarocchi</a>
+        <a href="./significato-rune.html" id="link-rune">ᚱ Scopri il Significato delle Rune</a>
+        <a href="./guida-i-ching.html" id="link-iching">☯ Esplora l'Oracolo I Ching</a>
+        <a href="./numerologia.html" id="link-numerologia">🔢 Calcola il Tuo Profilo Numerologico</a>
       </nav>
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </article>
 
     <!-- ═══ FAQ ═══ -->
     <section class="faq-section">
       <h2 class="faq-title" id="faq-title-text">FAQ</h2>
-      <div class="faq-list" id="faqList"></div>
+      <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Qual è la differenza tra cartomanzia e tarocchi?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>La cartomanzia usa le 52 carte da gioco comuni, nate in Asia e diffuse in Europa dal XIV secolo come strumento divinatorio popolare. I Tarocchi hanno invece 78 carte con Arcani Maggiori e Minori e diventano strumento esoterico solo nel XVIII secolo. La cartomanzia è più diretta e concreta nelle risposte; i Tarocchi offrono una simbologia più ricca e archetipica, utile per domande introspettive. Puoi approfondire entrambi i sistemi nella nostra guida dedicata ai Tarocchi.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come si interpreta una lettura a tre carte Passato-Presente-Futuro?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Dopo aver mescolato il mazzo concentrandoti sulla domanda, estrai tre carte e disponile da sinistra a destra. La prima rappresenta l'origine della situazione, la seconda lo stato attuale, la terza la direzione probabile se nulla cambia. Osserva sempre il seme o il simbolo dominante: se due carte su tre condividono la stessa area tematica, quella sfera della vita è centrale nella lettura.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Chi era Marie Anne Lenormand e perché il mazzo porta il suo nome?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Marie Anne Lenormand (1772-1843) fu la cartomante più influente della storia europea, consultata da Napoleone Bonaparte, Giuseppina di Beauharnais e Alessandro I di Russia. Il mazzo di 36 carte che oggi porta il suo nome fu in realtà pubblicato in Germania nel 1799, quando lei aveva 27 anni; l'associazione con il suo nome avvenne solo dopo la sua morte, per sfruttarne la fama leggendaria.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>L'Oracolo degli Angeli ha basi religiose ufficiali?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>No: l'Oracolo degli Angeli moderno è uno strumento di riflessione personale nato negli anni Novanta, ispirato alla credenza popolare negli angeli custodi presente in ebraismo, cristianesimo e islam, ma senza pretesa di rigore teologico. È diverso dall'angelologia religiosa tradizionale, che cataloga formalmente decine di entità in gerarchie precise.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>È pericoloso praticare lo scrying con lo specchio nero?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Per la maggior parte delle persone è una pratica contemplativa sicura, simile a una meditazione a occhi aperti, se svolta per 10-15 minuti per volta. Chi soffre di epilessia fotosensibile, disturbi dissociativi o ansia legata a stati alterati di coscienza dovrebbe evitare sedute prolungate o praticarle solo con supervisione professionale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Posso scegliere il colore invece di estrarlo a caso nella cromomanzia?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Sì, entrambi gli approcci sono validi nella tradizione cromomantica. Scegliere consapevolmente il colore che ti attrae in un dato momento è considerato significativo quanto un'estrazione casuale, perché anche l'istinto visivo nasce da uno stato interiore reale che merita ascolto.</p>
+      </div>
+    </div>
+  </div>
     </section>
 
   </main>
 
   <footer class="page-footer">
     <div class="footer-links">
-      <a href="./index.html" id="foot-home"></a>
-      <a href="./guida-tarocchi.html" id="foot-tarocchi"></a>
-      <a href="./significato-rune.html" id="foot-rune"></a>
-      <a href="./contatti.html" id="foot-contatti"></a>
-      <a href="./about.html" id="foot-about"></a>
-      <a href="./privacy.html" id="foot-privacy"></a>
+      <a href="./index.html" id="foot-home">Home</a>
+      <a href="./guida-tarocchi.html" id="foot-tarocchi">Guida Tarocchi</a>
+      <a href="./significato-rune.html" id="foot-rune">Rune</a>
+      <a href="./contatti.html" id="foot-contatti">Contatti</a>
+      <a href="./about.html" id="foot-about">Chi Siamo</a>
+      <a href="./privacy.html" id="foot-privacy">Privacy</a>
     </div>
-    <p id="footer-copy"></p>
-    <p id="footer-disclaimer" class="footer-disclaimer"></p>
+    <p id="footer-copy">© 2025-2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+    <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA è un'app di intrattenimento esoterico. Cartomanzia, Lenormand e tutti gli oracoli presenti hanno scopo esclusivamente ludico e di riflessione personale, e non sostituiscono consulenze medico-legali o finanziarie professionali.</p>
   </footer>
 
 </div>
@@ -873,11 +1433,11 @@ html.theme-day .faq-item{border-color:var(--border)}
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
-    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutti gli oracoli di MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
+    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 <script>

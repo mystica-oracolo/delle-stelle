@@ -380,13 +380,13 @@ footer.page-footer a:hover{text-decoration:underline}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">🌙</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🔮 Oracoli Antichi</h1>
   <div class="lang-switch">
     <button data-lang="it" class="btn-lang active">IT</button>
     <button data-lang="en" class="btn-lang">EN</button>
@@ -396,16 +396,16 @@ footer.page-footer a:hover{text-decoration:underline}
 
 <main id="main-content">
   <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="./index.html" id="bc-home"></a>
+    <a href="./index.html" id="bc-home">Home</a>
     <span>›</span>
-    <span id="bc-current"></span>
+    <span id="bc-current">Oracoli Antichi</span>
   </nav>
 
   <!-- ══════ 3a. SEZIONE PRINCIPALE: HUB ORACOLI (sempre in cima) ══════ -->
   <div class="hero">
     <span class="hero-icon" aria-hidden="true">🌿</span>
-    <h2 id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 id="hero-title">Oracoli Antichi</h2>
+    <p class="hero-sub" id="hero-sub">Saggezze millenarie che parlano all'anima. Scegli il tuo oracolo e lascia che l'universo risponda alla tua domanda.</p>
   </div>
 
   <a href="./index.html" class="delfi-featured" id="delfi-link">
@@ -416,35 +416,204 @@ footer.page-footer a:hover{text-decoration:underline}
          width="90" height="90"
          onerror="this.style.display='none'">
     <div class="delfi-featured-body">
-      <span class="delfi-badge" id="delfi-badge"></span>
-      <div class="delfi-featured-title" id="delfi-title"></div>
-      <p class="delfi-featured-desc" id="delfi-desc"></p>
-      <span class="delfi-btn" id="delfi-btn"></span>
+      <span class="delfi-badge" id="delfi-badge">✦ IN EVIDENZA</span>
+      <div class="delfi-featured-title" id="delfi-title">🏛️ Oracolo di Delfi</div>
+      <p class="delfi-featured-desc" id="delfi-desc">Il più antico oracolo del mondo greco. Poni la tua domanda alla Pizia e ricevi la risposta di Apollo attraverso il rito dell'alloro, del fuoco o dell'acqua.</p>
+      <span class="delfi-btn" id="delfi-btn">✦ Consulta la Pizia</span>
     </div>
   </a>
 
-  <div class="section-title" id="sec-classica"></div>
-  <div class="oracle-grid" id="grid-classica"></div>
+  <div class="section-title" id="sec-classica">✦ Divinazione Classica</div>
+  <div class="oracle-grid" id="grid-classica"><a href="./rune.html" class="oracle-card">
+      <img src="./images/icone/home/rune.webp" alt="Runologia" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">ᚱ</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Runologia</div>
+        <div class="oracle-card-desc">Lancio delle rune Elder Futhark. 24 simboli nordici per rivelare il cammino.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./iching.html" class="oracle-card">
+      <img src="./images/icone/home/i-ching.webp" alt="I Ching" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">☯️</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">I Ching</div>
+        <div class="oracle-card-desc">Il Libro dei Mutamenti. 64 esagrammi di saggezza taoista in risposta alla tua domanda.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./geomanzia.html" class="oracle-card">
+      <img src="./images/icone/home/geomanzia.webp" alt="Geomanzia" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🌍</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Geomanzia</div>
+        <div class="oracle-card-desc">Le 16 figure della terra rivelano forze invisibili che agiscono nella tua vita.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./numerologia.html" class="oracle-card">
+      <img src="./images/icone/home/numerologia.webp" alt="Numerologia" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🔢</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Numerologia</div>
+        <div class="oracle-card-desc">Il numero del tuo destino e il significato dei numeri maestri nella tua vita.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./bibliomanzia-tasseomanzia.html" class="oracle-card">
+      <img src="./images/icone/home/bibliomanzia.webp" alt="Bibliomanzia &amp; Tasseomanzia" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">📖</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Bibliomanzia &amp; Tasseomanzia</div>
+        <div class="oracle-card-desc">Il libro sacro risponde, i fondi di tè rivelano. Due oracoli in uno.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./libro-delle-risposte.html" class="oracle-card">
+      <img src="./images/icone/home/libro-delle-risposte.webp" alt="Libro delle Risposte" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">📕</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Libro delle Risposte</div>
+        <div class="oracle-card-desc">Chiudi gli occhi, fai la tua domanda, apri il libro. La risposta è già scritta.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a></div>
 
-  <div class="section-title" id="sec-celeste"></div>
-  <div class="oracle-grid" id="grid-celeste"></div>
+  <div class="section-title" id="sec-celeste">✦ Oracoli Celesti</div>
+  <div class="oracle-grid" id="grid-celeste"><a href="./luna-pianeti.html" class="oracle-card">
+      <img src="./images/icone/home/fasi-lunari.webp" alt="Fasi Lunari" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🌕</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Fasi Lunari</div>
+        <div class="oracle-card-desc">La fase lunare di oggi e il suo significato energetico e divinatorio.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./luna-pianeti.html" class="oracle-card">
+      <img src="./images/icone/home/transiti.webp" alt="Transiti Planetari" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🪐</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Transiti Planetari</div>
+        <div class="oracle-card-desc">Posizioni in tempo reale dei pianeti, retrogradi e loro influenze astrologiche.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./ore-specchio.html" class="oracle-card">
+      <img src="./images/icone/home/ore-specchio.webp" alt="Ore Specchio" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🕐</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Ore Specchio</div>
+        <div class="oracle-card-desc">11:11, 22:22, 03:33 — i numeri doppi che l'universo ti manda come messaggi.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./astrologia-avanzata.html" class="oracle-card">
+      <img src="./images/icone/home/astrologia-avanzata.webp" alt="Astrologia Avanzata" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🌠</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Astrologia Avanzata</div>
+        <div class="oracle-card-desc">Tema natale, aspetti, case e pianeti: la mappa celeste completa della tua anima.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a></div>
 
-  <div class="section-title" id="sec-spirituale"></div>
-  <div class="oracle-grid" id="grid-spirituale"></div>
+  <div class="section-title" id="sec-spirituale">✦ Guide Spirituali</div>
+  <div class="oracle-grid" id="grid-spirituale"><a href="./angeli.html" class="oracle-card">
+      <img src="./images/icone/home/angelologia.webp" alt="Angelologia" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">👼</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Angelologia</div>
+        <div class="oracle-card-desc">I 72 angeli custodi, i numeri angelici e i messaggi delle sfere celesti.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./totem.html" class="oracle-card">
+      <img src="./images/icone/home/animali-guida.webp" alt="Animali Guida (Totem)" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🦅</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Animali Guida (Totem)</div>
+        <div class="oracle-card-desc">Quiz per scoprire il tuo animale totem e il suo messaggio sciamanico.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./sogni.html" class="oracle-card">
+      <img src="./images/icone/home/sogni.webp" alt="Oniromanzia &amp; Sogni" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">💤</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Oniromanzia &amp; Sogni</div>
+        <div class="oracle-card-desc">Interpreta i tuoi sogni con la chiave simbolica junghiana e il diario onirico.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a><a href="./viaggio-astrale.html" class="oracle-card">
+      <img src="./images/icone/home/viaggio-astrale.webp" alt="Viaggio Astrale" class="oracle-card-img" loading="lazy" decoding="async" width="52" height="52" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="oracle-card-icon" style="display:none">🌌</div>
+      <div class="oracle-card-body">
+        <div class="oracle-card-name">Viaggio Astrale</div>
+        <div class="oracle-card-desc">Tecniche per la proiezione astrale, il corpo eterico e la coscienza fuori dal corpo.</div>
+      </div>
+      <span class="oracle-card-arrow" aria-hidden="true">›</span>
+    </a></div>
 
-  <div class="divider" id="sec-tradizioni"></div>
-  <div class="oracle-mini-grid" id="grid-tradizioni"></div>
+  <div class="divider" id="sec-tradizioni">✦ Tradizioni Mistiche</div>
+  <div class="oracle-mini-grid" id="grid-tradizioni"><a href="./alchimia.html" class="oracle-mini">
+        <img src="./images/icone/home/alchimia.webp" alt="Alchimia" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">⚗️</div>
+        <span class="oracle-mini-name">Alchimia</span>
+        <span class="oracle-mini-sub">La Grande Opera</span>
+      </a><a href="./cabala.html" class="oracle-mini">
+        <img src="./images/icone/home/cabala.webp" alt="Cabala" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">🕎</div>
+        <span class="oracle-mini-name">Cabala</span>
+        <span class="oracle-mini-sub">Albero della Vita</span>
+      </a><a href="./ermetismo.html" class="oracle-mini">
+        <img src="./images/icone/home/ermetismo.webp" alt="Ermetismo" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">🔱</div>
+        <span class="oracle-mini-name">Ermetismo</span>
+        <span class="oracle-mini-sub">7 Principi Cosmici</span>
+      </a><a href="./stregoneria-wicca.html" class="oracle-mini">
+        <img src="./images/icone/home/stregoneria.webp" alt="Stregoneria &amp; Wicca" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">🌿</div>
+        <span class="oracle-mini-name">Stregoneria &amp; Wicca</span>
+        <span class="oracle-mini-sub">Ruota dell'Anno</span>
+      </a><a href="./negromanzia.html" class="oracle-mini">
+        <img src="./images/icone/home/negromanzia.webp" alt="Negromanzia" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">💀</div>
+        <span class="oracle-mini-name">Negromanzia</span>
+        <span class="oracle-mini-sub">Spiriti degli Antenati</span>
+      </a><a href="./sigilli-salomone.html" class="oracle-mini">
+        <img src="./images/icone/home/sigilli.webp" alt="Sigilli di Salomone" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">🔯</div>
+        <span class="oracle-mini-name">Sigilli di Salomone</span>
+        <span class="oracle-mini-sub">44 Pentacoli Planetari</span>
+      </a><a href="./magia-bianca.html" class="oracle-mini">
+        <img src="./images/icone/home/magia-bianca.webp" alt="Magia Bianca" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">✨</div>
+        <span class="oracle-mini-name">Magia Bianca</span>
+        <span class="oracle-mini-sub">Rituali di Luce</span>
+      </a><a href="./malocchio.html" class="oracle-mini">
+        <img src="./images/icone/home/malocchio.webp" alt="Malocchio" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">🧿</div>
+        <span class="oracle-mini-name">Malocchio</span>
+        <span class="oracle-mini-sub">Protezione &amp; Rimozione</span>
+      </a><a href="./pietre-magiche.html" class="oracle-mini">
+        <img src="./images/icone/home/cartomanzia.webp" alt="Pietre Magiche" loading="lazy" decoding="async" width="44" height="44" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="oracle-mini-icon" style="display:none">💎</div>
+        <span class="oracle-mini-name">Pietre Magiche</span>
+        <span class="oracle-mini-sub">Cristalli &amp; Energie</span>
+      </a></div>
 
   <div class="cta-box">
     <span class="cta-icon" aria-hidden="true">⭐</span>
-    <div class="cta-title" id="cta-title"></div>
-    <p class="cta-sub" id="cta-sub"></p>
-    <a href="./index.html" class="cta-btn" id="cta-btn"></a>
+    <div class="cta-title" id="cta-title">Accedi all'Oracolo Completo</div>
+    <p class="cta-sub" id="cta-sub">Tutti questi oracoli sono disponibili nell'app MYSTICA: Tarocchi, Oroscopo, Compatibilità e molto altro. Gratis, senza registrazione.</p>
+    <a href="./index.html" class="cta-btn" id="cta-btn">✦ Entra nell'Oracolo ✦</a>
   </div>
 
   <div class="related">
-    <div class="related-title" id="related-title"></div>
-    <div class="related-grid" id="related-grid"></div>
+    <div class="related-title" id="related-title">✦ Approfondisci su MYSTICA</div>
+    <div class="related-grid" id="related-grid">
+    <a href="./guida-tarocchi.html" class="related-link">
+      <span class="related-link-icon" aria-hidden="true">🃏</span>
+      <div class="related-link-text">Guida Tarocchi</div>
+    </a>
+    <a href="./significato-rune.html" class="related-link">
+      <span class="related-link-icon" aria-hidden="true">ᚱ</span>
+      <div class="related-link-text">Guida Rune</div>
+    </a>
+    <a href="./guida-i-ching.html" class="related-link">
+      <span class="related-link-icon" aria-hidden="true">☯️</span>
+      <div class="related-link-text">Guida I Ching</div>
+    </a></div>
   </div>
 
   <!-- ══════ 3b. SHARE ══════ -->
@@ -455,13 +624,13 @@ footer.page-footer a:hover{text-decoration:underline}
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x"  target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ══════ 3c. ARTICOLO EDITORIALE ══════ -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Oracoli Antichi: Storia, Simbologia e Guida alla Divinazione</h2>
     <img src="./images/oracoli.webp"
          srcset="./images/oracoli.webp 1x"
          onerror="this.style.display='none'"
@@ -471,45 +640,95 @@ footer.page-footer a:hover{text-decoration:underline}
          width="760" height="420"
          style="width:100%;height:auto;border-radius:14px;margin:16px 0"
          onerror="this.style.display='none'">
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
-    <nav class="article-links" id="article-links" aria-label="Approfondimenti correlati"></nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <h3 id="art-h2">Che cos'è un oracolo e perché l'uomo lo consulta da millenni</h3>
+    <p id="art-p1">La parola "oracolo" deriva dal latino oraculum, luogo dove si pronunciava un responso divino, ma la pratica è molto più antica del termine stesso. Già nell'antica Mesopotamia i sacerdoti interpretavano il volo degli uccelli e le viscere degli animali per leggere la volontà degli dèi. In Grecia, il santuario di Delfi divenne il centro divinatorio più autorevole del mondo antico: per oltre mille anni, dal periodo miceneo fino alla chiusura imposta dall'imperatore Teodosio nel 393 d.C., la Pizia pronunciò responsi in stato di trance, spesso ambigui e da interpretare con attenzione.</p>
+    <p id="art-p2">Ogni tradizione oracolare ha sviluppato un proprio linguaggio simbolico per tradurre l'invisibile in segni leggibili. Le rune Elder Futhark, incise su legno o pietra dai popoli germanici a partire dal II secolo d.C., non erano soltanto un alfabeto ma un sistema cosmologico: ogni simbolo racchiudeva un concetto, una forza naturale, un destino. Allo stesso modo l'I Ching cinese, con i suoi 64 esagrammi costruiti da linee spezzate e continue, rappresenta l'alternarsi eterno di yin e yang, il principio secondo cui ogni situazione contiene già il seme del proprio mutamento.</p>
+    <p id="art-p3">Consultare un oracolo oggi non richiede competenze esoteriche avanzate: basta un momento di raccoglimento, una domanda formulata con chiarezza e la disponibilità ad accogliere una risposta che spesso arriva per immagini o simboli, non per affermazioni dirette. Su MYSTICA puoi lanciare le rune, interrogare l'I Ching, aprire il Libro delle Risposte o consultare la Pizia digitale in pochi secondi, gratuitamente e senza registrazione, scegliendo lo strumento più adatto al tipo di domanda che porti con te. È utile scrivere la domanda prima di procedere, evitando formulazioni troppo generiche come "cosa mi riserva il futuro" e preferendo invece quesiti specifici legati a una scelta concreta o a un momento di passaggio della propria vita.</p>
+    <h3 id="art-h3">Come scegliere l'oracolo giusto per la tua domanda</h3>
+    <p id="art-p4">L'errore più comune è pretendere dall'oracolo una risposta univoca e definitiva, come se fosse un oggetto meccanico invece che uno strumento di riflessione. Un altro equivoco diffuso è credere che gli antichi oracoli "predicessero il futuro" in senso letterale: in realtà la funzione storica della Pizia era più spesso quella di consigliare re e città su decisioni politiche, guerre e fondazioni di colonie, non di rivelare eventi immutabili. Anche oggi il valore di un oracolo sta nel dialogo che apre con la propria interiorità, non nella certezza che promette.</p>
+    <p id="art-p5">Ogni sistema divinatorio ha un carattere proprio: le rune parlano un linguaggio diretto e guerriero, legato al destino e all'azione; l'I Ching predilige la sfumatura e il consiglio strategico, radicato nel taoismo e nel confucianesimo; la bibliomanzia e la tasseomanzia si affidano invece al caso apparente per rivelare un ordine nascosto. Per approfondire la simbologia di ciascun sistema puoi consultare le guide dedicate su MYSTICA, così da scegliere con maggiore consapevolezza lo strumento più affine al tuo momento di vita.</p>
+    <nav class="article-links" id="article-links" aria-label="Approfondimenti correlati"><a href="./rune.html">Scopri le Rune</a><a href="./iching.html">Consulta l'I Ching</a><a href="./bibliomanzia-tasseomanzia.html">Bibliomanzia &amp; Tasseomanzia</a><a href="./guida-tarocchi.html">Guida ai Tarocchi</a></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ══════ 3d. FAQ ══════ -->
   <section class="faq-section">
     <h2 class="faq-title" id="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Qual è l'oracolo più antico al mondo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>L'Oracolo di Delfi, in Grecia, è tradizionalmente considerato il più autorevole e documentato dell'antichità, attivo per oltre un millennio a partire dall'epoca micenea. Tuttavia pratiche divinatorie ancora più antiche esistevano in Mesopotamia e in Egitto, dove sacerdoti interpretavano sogni, viscere animali e fenomeni celesti. Su MYSTICA puoi consultare una versione digitale ispirata al rito della Pizia direttamente dalla home.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Come funziona la lettura delle rune Elder Futhark?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Il sistema più diffuso prevede il lancio o l'estrazione casuale di uno o più simboli runici da un set di 24, ciascuno associato a un significato archetipico legato a natura, destino e azione. La posizione della runa e la sua combinazione con altre estratte arricchiscono l'interpretazione. Puoi provare il lancio gratuito nella sezione dedicata alle Rune.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Qual è la differenza tra I Ching e Tarocchi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>L'I Ching è un sistema filosofico-divinatorio cinese basato su 64 esagrammi e un metodo matematico di generazione, radicato nel taoismo e orientato al consiglio strategico. I Tarocchi sono un mazzo di 78 carte di origine europea, più narrativo e simbolico. Entrambi sono strumenti di riflessione, non di previsione assoluta.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Gli oracoli online sono affidabili quanto quelli tradizionali?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Un oracolo digitale come quello di MYSTICA utilizza algoritmi di estrazione casuale realmente equiprobabili, equivalenti al lancio fisico di monete, dadi o rune. Va sempre interpretato come strumento di auto-riflessione, non come sostituto di decisioni mediche, legali o finanziarie professionali.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Posso consultare più oracoli per la stessa domanda?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Sì, ed è una pratica comune: incrociare le risposte di sistemi diversi, come Rune e I Ching, può offrire prospettive complementari sulla stessa domanda. È consigliabile evitare di consultare ossessivamente lo stesso oracolo più volte nella stessa giornata sperando in una risposta diversa.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
   <!-- Extra: Esplora Anche (internal linking) -->
   <section class="esplora-section" aria-label="Esplora MYSTICA">
-    <h2 id="esplora-title"></h2>
-    <div class="esplora-grid" id="esplora-grid"></div>
+    <h2 id="esplora-title">✨ Esplora Anche</h2>
+    <div class="esplora-grid" id="esplora-grid"><a href="./astrologia-avanzata.html" class="esplora-card">🌠 Astrologia Avanzata</a><a href="./astrologia-vedica.html" class="esplora-card">🪐 Astrologia Vedica</a><a href="./bazi-cinese.html" class="esplora-card">🐉 Oroscopo Cinese (BaZi)</a><a href="./enciclopedia.html" class="esplora-card">📖 Enciclopedia Esoterica</a><a href="./guida-tarocchi.html" class="esplora-card">🃏 Guida Tarocchi</a><a href="./blog.html" class="esplora-card">📜 Blog Esoterico</a><a href="./tradizioni-spirituali.html" class="esplora-card">🌍 Tradizioni Spirituali</a><a href="./sogni.html" class="esplora-card">💤 Sogni</a></div>
   </section>
 </main>
 
 <footer class="page-footer">
-  <div class="footer-links" id="footer-links"></div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <div class="footer-links" id="footer-links"><a href="./index.html">Home</a><a href="./contatti.html">Contatti</a><a href="./about.html">Chi Siamo</a><a href="./guida-tarocchi.html">Guida Tarocchi</a><a href="./enciclopedia.html">Enciclopedia</a><a href="./privacy.html">Privacy</a></div>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli offre contenuti a scopo di intrattenimento, riflessione personale e crescita spirituale. Non sostituisce consulenze mediche, legali, finanziarie o psicologiche professionali.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

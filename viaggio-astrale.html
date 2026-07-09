@@ -387,10 +387,10 @@ main{position:relative;z-index:1}
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
   <h1 class="page-title" id="page-title">🌌 Viaggio Astrale</h1>
@@ -406,56 +406,56 @@ main{position:relative;z-index:1}
   <!-- ═══ SEZIONE INTERATTIVA (sempre in cima) ═══ -->
   <section class="hero">
     <span class="hero-icon" aria-hidden="true">🌌</span>
-    <h2 id="hero-title"></h2>
-    <p class="hero-sub" id="hero-sub"></p>
+    <h2 id="hero-title">Viaggio Astrale</h2>
+    <p class="hero-sub" id="hero-sub">Guida completa alla proiezione astrale con onde theta binaurali, tecniche di separazione e protezione energetica</p>
   </section>
 
   <div class="theta-player">
-    <h3 id="theta-title"></h3>
-    <p class="theta-info" id="theta-info"></p>
+    <h3 id="theta-title">🎵 Onde Theta Binaurali</h3>
+    <p class="theta-info" id="theta-info">Le onde theta (4–8 Hz) inducono stati di coscienza espansi ideali per la proiezione astrale. Usa cuffie stereo per il massimo effetto binaurale.</p>
     <div class="theta-controls">
       <div class="theta-row">
-        <span class="theta-label" id="theta-freq-label"></span>
+        <span class="theta-label" id="theta-freq-label">Frequenza</span>
         <select class="theta-sel" id="thetaFreq" onchange="changeThetaFreq()">
-          <option value="4" id="theta-opt-4"></option>
-          <option value="6" selected id="theta-opt-6"></option>
-          <option value="7.5" id="theta-opt-75"></option>
-          <option value="8" id="theta-opt-8"></option>
+          <option value="4" id="theta-opt-4">4 Hz — Theta Profondo (sonno lucido)</option>
+          <option value="6" selected id="theta-opt-6">6 Hz — Theta Mediano (proiezione)</option>
+          <option value="7.5" id="theta-opt-75">7.5 Hz — Theta Alto (meditazione)</option>
+          <option value="8" id="theta-opt-8">8 Hz — Alpha/Theta (rilassamento)</option>
         </select>
       </div>
       <div class="theta-row">
-        <span class="theta-label" id="theta-vol-label"></span>
+        <span class="theta-label" id="theta-vol-label">Volume</span>
         <input type="range" id="thetaVol" min="0" max="0.5" step="0.01" value="0.25" oninput="updateThetaVol()" aria-label="Volume onde theta">
       </div>
-      <button class="btn-theta" id="thetaPlayBtn" onclick="toggleTheta()"></button>
+      <button class="btn-theta" id="thetaPlayBtn" onclick="toggleTheta()">▶ Avvia Onde Theta</button>
     </div>
     <div class="theta-viz" id="thetaViz" aria-hidden="true">
       <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
       <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
       <div class="theta-bar"></div><div class="theta-bar"></div><div class="theta-bar"></div>
     </div>
-    <p class="theta-warning" id="theta-warning"></p>
+    <p class="theta-warning" id="theta-warning">⚠️ Non usare alla guida o in attività che richiedono attenzione. Non adatto a chi soffre di epilessia.</p>
   </div>
 
   <div class="toc-wrap">
-    <div class="toc-label" id="toc-label"></div>
-    <div class="toc-pills" id="tocPills"></div>
+    <div class="toc-label" id="toc-label">Capitoli della Guida</div>
+    <div class="toc-pills" id="tocPills"><div class="toc-pill active" onclick="scrollChapter(1)">① Cos'è</div><div class="toc-pill" onclick="scrollChapter(2)">② Scienza</div><div class="toc-pill" onclick="scrollChapter(3)">③ Preparazione</div><div class="toc-pill" onclick="scrollChapter(4)">④ Tecniche</div><div class="toc-pill" onclick="scrollChapter(5)">⑤ Chakra</div><div class="toc-pill" onclick="scrollChapter(6)">⑥ Protezione</div><div class="toc-pill" onclick="scrollChapter(7)">⑦ Esperienze</div><div class="toc-pill" onclick="scrollChapter(8)">⑧ Diario</div></div>
   </div>
 
   <div class="premium-banner">
-    <p id="premium-banner-text"></p>
-    <button id="premium-banner-btn" onclick="requirePremium('viaggio_astrale_extra')"></button>
+    <p id="premium-banner-text">Sblocca il Diario Astrale digitale illimitato e le meditazioni guidate audio per la proiezione.</p>
+    <button id="premium-banner-btn" onclick="requirePremium('viaggio_astrale_extra')">✦ Scopri Premium</button>
   </div>
 
   <!-- ═══ SHARE ═══ -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()" id="share-btn-label"></button>
+    <button class="btn-share" onclick="shareContent()" id="share-btn-label">📤 Condividi</button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
@@ -471,47 +471,177 @@ main{position:relative;z-index:1}
          id="art-hero" alt="" loading="eager" decoding="async" width="720" height="380"
          style="width:100%;height:auto;border-radius:14px;margin:0 0 24px;display:block">
 
-    <div id="chaptersContainer"></div>
+    <div id="chaptersContainer"><div class="astral-chapter" id="a1">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">🌟</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo I</div>
+          <div class="chapter-title">Cos'è il Viaggio Astrale</div>
+          <div class="chapter-sub">L'esperienza di uscita dal corpo fisico</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Il <strong>Viaggio Astrale</strong> — noto anche come OBE (Out-of-Body Experience) o proiezione astrale — è lo stato in cui la coscienza percepisce se stessa separata dal corpo fisico. Molte tradizioni spirituali lo descrivono come la prova dell'esistenza di un <em>corpo sottile</em> capace di muoversi autonomamente nello spazio e nel tempo.</p><p>Nelle tradizioni esoteriche, l'essere umano è composto da più corpi sovrapposti: il corpo fisico, il corpo eterico (strettamente legato al fisico), il corpo astrale (sede delle emozioni e dei desideri), il corpo mentale e quelli spirituali superiori. Durante il viaggio astrale, la coscienza si sposta nel corpo astrale, mantenendo un legame con il fisico attraverso il <em>Cordone d'Argento</em> — un filo energetico indistruttibile.</p><div class="callout callout-spirit"><div class="callout-title">✦ Il Piano Astrale</div><div class="callout-body">Il piano astrale è un livello di realtà parallelo a quello fisico, composto di materia sottile. Comprende zone che corrispondono ai luoghi fisici (piano astrale basso), zone di transizione, e piani più elevati di luce e saggezza. La qualità della tua esperienza astrale dipende dal tuo stato emotivo e spirituale al momento della proiezione.</div></div><p>Le testimonianze storiche attraversano millenni e culture: gli antichi Egizi descrivevano il <em>Ka</em> come il doppio astrale; le tradizioni tibetane parlano del <em>corpo di sogno</em>; gli sciamani di tutto il mondo praticano il viaggio in mondi non ordinari. Nella moderna ricerca parapsicologica, le OBE sono state studiate da ricercatori come Robert Monroe, che fondò il Monroe Institute per la ricerca sistematica di questi stati.</p></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a2">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">🧠</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo II</div>
+          <div class="chapter-title">La Scienza delle Onde Theta</div>
+          <div class="chapter-sub">Neuroscienze e stati alterati di coscienza</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Il cervello produce onde elettriche a diverse frequenze a seconda dello stato di coscienza. Le <strong>onde theta (4–8 Hz)</strong> compaiono naturalmente durante la transizione sonno-veglia (ipnagogia), nelle meditazioni profonde e nella fase REM del sonno. Sono lo stato in cui la mente è più ricettiva, creativa e aperta a esperienze non ordinarie.</p><div class="callout callout-tech"><div class="callout-title">🎧 Come Funzionano i Binaural Beats</div><div class="callout-body">Quando l'orecchio sinistro riceve un tono a 150 Hz e il destro a 156 Hz, il cervello "percepisce" una terza frequenza — la differenza: 6 Hz (theta). Questo fenomeno, chiamato battimento binaurale, sincronizza lentamente le onde cerebrali alla frequenza target. Per funzionare è essenziale usare cuffie stereo: gli altoparlanti mescolano i suoni prima che raggiungano il cervello.</div></div><p>La finestra theta ideale per la proiezione astrale è tra <strong>6 e 7 Hz</strong>. In questo range la coscienza è sveglia ma il corpo è profondamente rilassato — la condizione perfetta per favorire la separazione. Tradizioni tibetane e tecniche come la WILD (Wake-Induced Lucid Dream) sfruttano precisamente questa finestra.</p><div class="kw-row"><span class="kw">4 Hz — Theta Profondo</span><span class="kw">6 Hz — Proiezione Astrale</span><span class="kw">7.5 Hz — Meditazione Profonda</span><span class="kw">8 Hz — Creatività</span><span class="kw">10 Hz — Alpha — Rilassamento</span></div><p>Le ricerche di Monroe e del suo successore William Buhlman mostrano che la coerenza theta nell'emisfero destro precede spesso le esperienze di uscita dal corpo. La tecnologia audio non è magica — è uno strumento per agevolare un processo che la mente conosce già istintivamente.</p></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a3">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">🛏️</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo III</div>
+          <div class="chapter-title">Preparazione al Viaggio</div>
+          <div class="chapter-sub">Corpo, ambiente e stato mentale</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Il successo nel viaggio astrale dipende per l'80% dalla preparazione. Un tentativo improvvisato raramente produce risultati — ma un praticante che prepara sistematicamente corpo, mente e ambiente ottiene esperienze significative anche nelle prime settimane di pratica.</p><div class="callout callout-tip"><div class="callout-title">⏰ Il Momento Ideale</div><div class="callout-body">Il momento migliore è tra le 3 e le 6 del mattino, dopo aver dormito 4–5 ore. La mente è in stato theta naturale, il corpo è rilassato ma non ha bisogno di sonno profondo. Molti praticanti puntano la sveglia, dormono brevemente e poi tentano la proiezione.</div></div><p><strong>Preparazione Fisica</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>Digiuno leggero:</strong> Evita pasti pesanti nelle 2 ore precedenti. La digestione distrae l'energia vitale.</div></li><li><div class="step-num">2</div><div class="step-text"><strong>Temperatura:</strong> L'ambiente deve essere leggermente fresco (18–20°C). Il caldo eccessivo disturba la transizione.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>Posizione:</strong> Sdraiato sulla schiena, braccia lungo i fianchi. Cuscino basso o nessun cuscino. Non incrociare gambe o braccia.</div></li><li><div class="step-num">4</div><div class="step-text"><strong>Silenzio:</strong> Telefoni in modalità silenziosa. Tappi per le orecchie o cuffie con i binaural. Oscurità totale o mascherina per gli occhi.</div></li></ul><p><strong>Preparazione Mentale</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>Intenzione chiara:</strong> Prima di iniziare, afferma mentalmente il tuo obiettivo: "Questa notte mi proietto con sicurezza e torno in pace."</div></li><li><div class="step-num">2</div><div class="step-text"><strong>Eliminazione del timore:</strong> La paura è il principale ostacolo. Ricorda che il cordone d'argento non può spezzarsi — sei sempre in sicurezza.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>Aspettativa calma:</strong> Non cercare di "forzare" l'uscita. La proiezione avviene quando la mente smette di aspettarsi qualcosa.</div></li></ul></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a4">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">🚀</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo IV</div>
+          <div class="chapter-title">Tecniche di Proiezione</div>
+          <div class="chapter-sub">Metodi testati per la separazione consapevole</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p><strong style="color:#b090d0">① Tecnica del Rilassamento Progressivo (WILD)</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>1.</strong> Sdraiati comodamente. Attiva i binaural theta a 6 Hz. Chiudi gli occhi.</div></li><li><div class="step-num">2</div><div class="step-text"><strong>2.</strong> Rilassa progressivamente ogni parte del corpo: piedi → polpacci → cosce → addome → petto → braccia → collo → viso.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>3.</strong> Quando senti formicolio, pesantezza o vibrazione — sono segnali positivi. Non muoverti. Respira lentamente.</div></li><li><div class="step-num">4</div><div class="step-text"><strong>4.</strong> Visualizza te stesso che ti alzi dal letto e cammini nella stanza. Non con gli occhi fisici — con la mente.</div></li><li><div class="step-num">5</div><div class="step-text"><strong>5.</strong> Se senti le vibrazioni aumentare, mentalmente "rotola" fuori dal corpo lateralmente. Lentamente, con calma.</div></li></ul><div class="callout callout-tech"><div class="callout-title">⚡ Tecnica delle Vibrazioni di Monroe</div><div class="callout-body">Robert Monroe insegnava a portare deliberatamente le vibrazioni nel corpo durante lo stato ipnagogico. Immagina un flusso energetico che parte dalla testa e scende ai piedi, poi risale — oscillando sempre più velocemente. Quando le vibrazioni raggiungono il culmine, "rotolatevi dentro" e uscite.</div></div><p><strong style="color:#b090d0">② Tecnica della Corda (Robert Bruce)</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>1.</strong> In stato di rilassamento profondo, visualizza una corda robusta che pende dal soffitto sopra di te.</div></li><li><div class="step-num">2</div><div class="step-text"><strong>2.</strong> Con le mani astrali (non fisiche), afferra la corda e inizia ad arrampicarti. Senti la texture — ruvida, spessa.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>3.</strong> Continua ad arrampicarti fino a sentirti separare. La sensazione tipica è di "sfilarsi" dal corpo fisico come da un guanto.</div></li></ul><p><strong style="color:#b090d0">③ Tecnica del Punto di Mira</strong></p><p>Prima di addormentarti, scegli un luogo fisico che conosci bene (casa di un amico, un parco, una città). Visualizzalo nei minimi dettagli. Mantieni questa immagine mentre ti addormenti. La coscienza tende a proiettarsi verso l'oggetto del focus.</p><div class="callout callout-warning"><div class="callout-title">⚠️ Paralisi del Sonno</div><div class="callout-body">Durante la transizione potresti sperimentare paralisi del sonno — sensazione di non poter muovere il corpo fisico. Questo è normale e un buon segnale: significa che sei nello stato giusto. Non spaventarti. Respira profondamente e usa lo stato per proiettarti.</div></div></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a5">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">⚡</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo V</div>
+          <div class="chapter-title">I Chakra nel Viaggio Astrale</div>
+          <div class="chapter-sub">Centri energetici e attivazione per la proiezione</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>I <strong>sette chakra</strong> principali sono i centri energetici che regolano il flusso del prana (energia vitale) attraverso il corpo sottile. La loro attivazione e allineamento prima di un viaggio astrale aumenta significativamente la probabilità di proiezione riuscita.</p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>Muladhara (Radice) — 🔴 Rosso:</strong> Radicamento e sicurezza. Attiva visualizzando una sfera rossa pulsante alla base della colonna. "Sono al sicuro nel corpo e fuori da esso."</div></li><li><div class="step-num">2</div><div class="step-text"><strong>Svadhisthana (Sacrale) — 🟠 Arancione:</strong> Flusso e creatività. Sfera arancione sotto l'ombelico. "Mi muovo liberamente tra i mondi."</div></li><li><div class="step-num">3</div><div class="step-text"><strong>Manipura (Plesso Solare) — 🟡 Giallo:</strong> Volontà e potere personale. Sfera gialla solare al plesso. "Ho la forza di esplorare oltre il fisico."</div></li><li><div class="step-num">4</div><div class="step-text"><strong>Anahata (Cuore) — 💚 Verde:</strong> Amore e connessione. Sfera verde luminosa al centro del petto. "Il mio cuore è la mia bussola astrale."</div></li><li><div class="step-num">5</div><div class="step-text"><strong>Vishuddha (Gola) — 🔵 Azzurro:</strong> Comunicazione e verità. "Posso comunicare attraverso i piani."</div></li><li><div class="step-num">6</div><div class="step-text"><strong>Ajna (Terzo Occhio) — 🟣 Indaco:</strong> Visione e intuizione. Il chakra più importante per la proiezione. Sfera indaco tra le sopracciglia. "Vedo oltre il visibile."</div></li><li><div class="step-num">7</div><div class="step-text"><strong>Sahasrara (Corona) — ⚪ Viola/Bianco:</strong> Connessione cosmica. Sfera viola alla sommità del capo. "Sono connesso all'infinito."</div></li></ul><div class="callout callout-spirit"><div class="callout-title">✦ Il Chakra del Terzo Occhio nel Viaggio Astrale</div><div class="callout-body">L'Ajna è il portale principale per la proiezione. Durante gli stati ipnagogici, concentrare la consapevolezza sull'area del terzo occhio (tra le sopracciglia) spesso precipita la visione astrale. Molti praticanti descrivono un "click" o una sensazione di apertura in questa zona prima della separazione.</div></div></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a6">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">🛡️</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo VI</div>
+          <div class="chapter-title">Protezione Energetica</div>
+          <div class="chapter-sub">Sicurezza nel piano astrale</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Il piano astrale è ricco di entità e energie di diversa natura. Una protezione energetica adeguata non è superstizione — è igiene spirituale, esattamente come lavarsi le mani è igiene fisica. Un praticante protetto viaggia con serenità e ritorna integro.</p><div class="callout callout-tip"><div class="callout-title">⭐ Il Guscio di Luce Dorata</div><div class="callout-body">Prima di ogni viaggio, visualizza una sfera di luce dorata che si espande dal tuo cuore fino ad avvolgerti completamente. Immagina questa luce densa, impenetrabile a qualsiasi energia che non sia in armonia con il tuo bene superiore. Dichiara: "Solo ciò che è in sintonia con la mia luce può avvicinarsi."</div></div><p><strong>Rituali di Protezione Pre-Viaggio:</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>Cerchio di Sale:</strong> Posa una piccola quantità di sale marino sotto il letto o in cerchio attorno alla tua postazione. Il sale assorbe le energie dense.</div></li><li><div class="step-num">2</div><div class="step-text"><strong>Cristalli Protettivi:</strong> Tormalina nera (protezione), labradorite (scudo tra i mondi), ossidiana (riflessione energetica). Posizionali ai quattro angoli del letto.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>Invocazione Protettiva:</strong> "Sono circondato/a da luce bianca. Nessuna entità oscura può avvicinarsi. Il mio cordone d'argento è indistruttibile. Viaggio in pace, torno in pace."</div></li><li><div class="step-num">4</div><div class="step-text"><strong>Fiamma Astrale:</strong> Visualizza una piccola fiamma viola nel centro del petto che brucia per tutta la durata del viaggio — un faro che guida il ritorno.</div></li></ul><p><strong>Il Cordone d'Argento:</strong> In tutte le tradizioni di proiezione astrale esiste il concetto del Cordone d'Argento — un filo energetico che collega il corpo astrale a quello fisico. Non può spezzarsi. Anche se non lo vedi sempre, è sempre lì. Quando vuoi tornare, pensa al tuo corpo fisico e il richiamo è immediato.</p></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a7">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">💫</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo VII</div>
+          <div class="chapter-title">Cosa Aspettarsi nel Piano Astrale</div>
+          <div class="chapter-sub">Esperienze tipiche e loro interpretazione</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Il piano astrale è profondamente influenzato dalla mente — i tuoi pensieri possono manifestarsi rapidamente. La lucidità e la calma sono le qualità più importanti durante il viaggio.</p><p><strong>Segnali della Separazione:</strong></p><div class="kw-row"><span class="kw">Vibrazioni nel corpo</span><span class="kw">Ronzio o suoni</span><span class="kw">Sensazione di galleggiare</span><span class="kw">Visione ipnagogica</span><span class="kw">Paralisi del sonno</span><span class="kw">Pressione alla testa</span><span class="kw">Sensazione di sfilarsi</span></div><p><strong>Cosa Fare Appena Usciti:</strong></p><ul class="step-list"><li><div class="step-num">1</div><div class="step-text"><strong>Allontanati subito:</strong> Muoviti fisicamente lontano dal corpo per ridurre l'attrazione di ritorno involontario.</div></li><li><div class="step-num">2</div><div class="step-text"><strong>Stabilizza la visione:</strong> Se l'immagine è sfocata, tocca gli oggetti vicini o pronuncia "chiarezza!" per stabilizzare la percezione.</div></li><li><div class="step-num">3</div><div class="step-text"><strong>Mantieni la calma:</strong> L'eccitazione può causare ritorno involontario. Respira lentamente (anche astralmente) e mantieni la compostezza.</div></li><li><div class="step-num">4</div><div class="step-text"><strong>Esplora con intenzione:</strong> Ricorda il tuo obiettivo. Puoi visitare luoghi, incontrare guide spirituali, o esplorare liberamente.</div></li></ul><div class="callout callout-warning"><div class="callout-title">⚠️ Entità e Incontri</div><div class="callout-body">Nel piano astrale potresti incontrare esseri di vario tipo. La regola d'oro: le entità di luce non si impongono mai — si avvicinano solo quando invitate. Se incontri qualcosa che ti spaventa, invoca la tua protezione di luce e dichiara "Solo la luce!". Il tuo stato emotivo è il tuo scudo più potente.</div></div></div>
+    </div><div class="divider">✦ ✦ ✦</div><div class="astral-chapter" id="a8">
+      <div class="chapter-header">
+        <div class="chapter-icon" aria-hidden="true">📔</div>
+        <div class="chapter-meta">
+          <div class="chapter-num">Capitolo VIII</div>
+          <div class="chapter-title">Il Diario Astrale</div>
+          <div class="chapter-sub">Documentare i viaggi per approfondire la pratica</div>
+        </div>
+      </div>
+      <div class="chapter-body"><p>Tenere un <strong>diario astrale</strong> è una delle pratiche più utili per chi vuole sviluppare sistematicamente la proiezione. La mente dimentica rapidamente i dettagli dei viaggi — esattamente come dimentica i sogni — ma la documentazione immediata al risveglio preserva le informazioni preziose.</p><div class="callout callout-tip"><div class="callout-title">📝 Come Compilare il Diario Astrale</div><div class="callout-body">Immediatamente al risveglio (entro 2 minuti) annota: luogo/i visitati, entità o presenze incontrate, sensazioni fisiche durante la separazione, messaggi o intuizioni ricevuti, chiarezza della visione (1–10), durata percepita del viaggio, tecnica usata e suo esito. Tieni il diario e una penna sul comodino.</div></div><p>Con il tempo, il diario rivela pattern — le condizioni che favoriscono la proiezione, le aree del piano astrale che visiti più spesso, l'evoluzione della tua lucidità. Diventa una mappa personale di territori interiori.</p><p>I praticanti esperti testimoniano che la pratica regolare per 30–90 giorni, documentata sistematicamente, trasforma la proiezione astrale da evento casuale a capacità consapevole. La chiave è la costanza, non il talento.</p></div>
+    </div></div>
 
     <div class="ad-wrap">
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0522720046244970" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
       <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
     </div>
 
-    <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"></nav>
+    <nav class="article-links" id="articleLinks" aria-label="Approfondimenti correlati"><a href="./sogni.html">Interpretazione dei Sogni</a><a href="./mente-energia.html">Mente ed Energia</a><a href="./tradizioni-spirituali.html">Tradizioni Spirituali</a><a href="./pietre-magiche.html">Pietre e Cristalli Magici</a></nav>
 
     <div class="cta-wrap">
-      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+      <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
     </div>
   </article>
 
   <!-- ═══ FAQ ═══ -->
   <section class="faq-section">
-    <h2 class="faq-title" id="faq-title"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faq-title">Domande Frequenti</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos'è esattamente il Viaggio Astrale e come funziona?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Il viaggio astrale, o proiezione astrale (OBE), è l'esperienza in cui la coscienza percepisce se stessa separata dal corpo fisico e capace di muoversi autonomamente. Secondo le tradizioni esoteriche avviene attraverso lo spostamento della consapevolezza nel corpo astrale, mantenuto collegato al fisico dal Cordone d'Argento. Le tecniche più efficaci sfruttano lo stato ipnagogico, la soglia tra veglia e sonno, spesso agevolata da onde theta binaurali.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Il viaggio astrale è pericoloso?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Nella grande maggioranza delle testimonianze, no. Il Cordone d'Argento, secondo tutte le tradizioni, non può spezzarsi, e il corpo fisico continua le sue funzioni vitali normalmente. I rischi reali riguardano più che altro lo spavento di chi non è preparato: pratiche di protezione energetica, calma mentale e conoscenza previa dei fenomeni tipici (vibrazioni, paralisi del sonno) riducono drasticamente il disagio.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Quanto tempo serve per imparare a proiettarsi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Varia moltissimo da persona a persona. Alcuni praticanti riportano le prime sensazioni di separazione entro le prime settimane di pratica costante, altri impiegano mesi. La costanza conta più del talento: una pratica quotidiana di 20–30 minuti nella finestra ideale (3–6 del mattino) per 30–90 giorni, documentata nel diario astrale, è lo standard suggerito dai praticanti esperti come Robert Bruce e William Buhlman.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Le onde theta funzionano davvero per la proiezione astrale?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Le onde theta (4–8 Hz) sono documentate dalle neuroscienze come lo stato cerebrale naturale della fase ipnagogica e della meditazione profonda — la finestra in cui la proiezione astrale è più probabile. I binaural beats non 'creano' magicamente l'esperienza, ma aiutano a sincronizzare il cervello verso quello stato più rapidamente, agendo come facilitatore piuttosto che come causa diretta.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Qual è la differenza tra sogno lucido e viaggio astrale?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Nel sogno lucido la coscienza prende consapevolezza di essere dentro un sogno e può modificarne il contenuto, restando comunque all'interno di uno scenario onirico generato dalla mente. Nel viaggio astrale, secondo le tradizioni esoteriche, la coscienza esce realmente dal corpo fisico e si sposta su un piano di realtà parallelo — il piano astrale — percepito come oggettivo e indipendente dall'immaginazione. Molte tecniche, come la WILD, usano il sogno lucido come porta d'accesso alla proiezione.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
 
 <footer class="page-footer">
   <div class="footer-links">
-    <a href="./index.html" id="footer-link-home"></a>
-    <a href="./contatti.html" id="footer-link-contact"></a>
-    <a href="./about.html" id="footer-link-about"></a>
-    <a href="./privacy.html" id="footer-link-privacy"></a>
+    <a href="./index.html" id="footer-link-home">Home</a>
+    <a href="./contatti.html" id="footer-link-contact">Contatti</a>
+    <a href="./about.html" id="footer-link-about">Chi Siamo</a>
+    <a href="./privacy.html" id="footer-link-privacy">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">Contenuti a scopo informativo, esperienziale e di intrattenimento spirituale. Non sostituiscono consulenza medica o psicologica.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
-    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca il Diario Astrale illimitato, meditazioni guidate audio complete e la libreria estesa di rituali di protezione.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
+    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

@@ -435,7 +435,7 @@
 
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
       <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🎵</button>
       <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">🌙</button>
@@ -454,11 +454,11 @@
   <!-- ── Sezione Interattiva (sempre in cima) ── -->
   <section class="interactive-section" aria-labelledby="toolTitle">
     <div class="interactive-card">
-      <h2 id="toolTitle"></h2>
-      <p id="toolIntro"></p>
-      <label for="toolSelect" id="toolLabel" style="display:block;font-size:0.85rem;color:var(--muted);margin-top:0.6rem;"></label>
-      <select id="toolSelect" aria-label="Segno zodiacale occidentale"></select>
-      <button class="btn-tool" id="toolBtn" onclick="findRashi()"></button>
+      <h2 id="toolTitle">🔮 Trova la tua Rashi Vedica</h2>
+      <p id="toolIntro">Seleziona il tuo segno zodiacale occidentale per scoprire l’equivalente approssimativo nello zodiaco siderale vedico.</p>
+      <label for="toolSelect" id="toolLabel" style="display:block;font-size:0.85rem;color:var(--muted);margin-top:0.6rem;">Il mio segno occidentale:</label>
+      <select id="toolSelect" aria-label="Segno zodiacale occidentale"><option value="0">Ariete</option><option value="1">Toro</option><option value="2">Gemelli</option><option value="3">Cancro</option><option value="4">Leone</option><option value="5">Vergine</option><option value="6">Bilancia</option><option value="7">Scorpione</option><option value="8">Sagittario</option><option value="9">Capricorno</option><option value="10">Acquario</option><option value="11">Pesci</option></select>
+      <button class="btn-tool" id="toolBtn" onclick="findRashi()">✨ Calcola la mia Rashi</button>
       <div class="tool-result" id="toolResult" role="status" aria-live="polite"></div>
     </div>
   </section>
@@ -471,88 +471,574 @@
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ── Articolo Editoriale ── -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Astrologia Vedica (Jyotish): la Scienza della Luce</h2>
     <img src="./images/astrologia-vedica.webp"
          srcset="./images/astrologia-vedica.webp 1x"
          id="art-hero" alt="" loading="eager" decoding="async" width="800" height="450">
 
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <div class="info-box" id="box-storia"><div class="info-box-title" id="box-storia-t"></div><p id="box-storia-x"></p></div>
-    <p id="art-p3"></p>
+    <h3 id="art-h2">Storia e Origini del Jyotish</h3>
+    <p id="art-p1">L’astrologia vedica, in sanscrito Jyotish (“scienza della luce”), è uno dei sei Vedanga, le discipline ausiliarie che da millenni accompagnano lo studio dei Veda, i testi sacri più antichi dell’induismo. Le sue radici affondano in osservazioni astronomiche già presenti nel Rigveda, ma il sistema predittivo che conosciamo oggi si è codificato e raffinato soprattutto nei secoli successivi, attraverso generazioni di astronomi-sacerdoti che hanno tramandato calcoli sempre più precisi sulle posizioni planetarie e sui loro effetti nella vita umana, costruendo nel tempo un corpus dottrinale tra i più articolati e longevi dell’intera storia astrologica mondiale.</p>
+    <p id="art-p2">Il testo classico di riferimento è il Brihat Parashara Hora Shastra, attribuito al saggio Parashara, che descrive in modo sistematico pianeti, case, segni e periodi planetari. Un altro pilastro è il Surya Siddhanta, trattato astronomico che ha fissato per secoli i calcoli delle posizioni planetarie nel subcontinente indiano. A differenza dell’astrologia occidentale moderna, spesso orientata all’introspezione psicologica, il Jyotish è nato come strumento pratico legato alla vita religiosa e sociale: scegliere il momento propizio (muhurta) per un matrimonio, comprendere il proprio dharma e il karma accumulato.</p>
+    <div class="info-box" id="box-storia"><div class="info-box-title" id="box-storia-t">📜 Il Brihat Parashara Hora Shastra</div><p id="box-storia-x">Uno dei testi fondativi del Jyotish, attribuito al saggio Parashara. I manoscritti originali, tramandati di guru in guru, contenevano non solo regole astrologiche ma interi sistemi di calcolo astronomico per determinare le posizioni planetarie con precisione matematica.</p></div>
+    <p id="art-p3">Oggi il Jyotish convive con l’astrologia occidentale in un dialogo crescente: molti appassionati confrontano i due sistemi per ottenere una lettura più completa del proprio tema natale, apprezzando la profondità predittiva temporale che il sistema vedico offre attraverso le Dasha, assente nella tradizione tropicale classica. In India questa disciplina resta parte viva della cultura quotidiana, consultata per matrimoni, inaugurazioni e scelte importanti, mentre in Occidente sta conoscendo una riscoperta crescente grazie a praticanti, scuole specializzate e una comunità internazionale sempre più ampia e curiosa.</p>
 
-    <h3 id="vsTitle"></h3>
-    <p id="vsP1"></p>
-    <div class="info-box tip" id="box-ayanamsa"><div class="info-box-title" id="box-ayanamsa-t"></div><p id="box-ayanamsa-x"></p></div>
-    <div class="info-box" id="box-siderale"><div class="info-box-title" id="box-siderale-t"></div><p id="box-siderale-x"></p></div>
-    <p id="vsP2"></p>
+    <h3 id="vsTitle">Astrologia Vedica vs Occidentale: Sidereale contro Tropicale</h3>
+    <p id="vsP1">La differenza più importante tra i due sistemi riguarda il punto di partenza dello zodiaco. L’astrologia occidentale usa lo zodiaco tropicale, ancorato all’equinozio di primavera: 0° Ariete coincide sempre con l’inizio della primavera. L’astrologia vedica usa invece lo zodiaco siderale, ancorato alla posizione reale delle costellazioni fisse nel cielo, rendendo il sistema più astronomicamente letterale ma sfasato rispetto a quello tropicale.</p>
+    <div class="info-box tip" id="box-ayanamsa"><div class="info-box-title" id="box-ayanamsa-t">💡 L’Ayanamsa</div><p id="box-ayanamsa-x">A causa della precessione degli equinozi, oggi i due zodiaci sono sfasati di circa 24 gradi. Questo scarto si chiama Ayanamsa (il più usato è quello di Lahiri). Per questo chi è Leone in Occidente può scoprire di essere Cancro nel proprio tema vedico.</p></div>
+    <div class="info-box" id="box-siderale"><div class="info-box-title" id="box-siderale-t">🌌 Zodiaco Siderale: lo Zodiaco delle Stelle Fisse</div><p id="box-siderale-x">A differenza del sistema tropicale occidentale, il Jyotish ancora i suoi segni alle costellazioni reali nel cielo. L’eclittica viene divisa in base alle stelle di riferimento, non all’equinozio: un sistema più letterale astronomicamente, ma sfasato rispetto ai calcoli occidentali.</p></div>
+    <p id="vsP2">Ci sono anche differenze di metodo: il Jyotish dà un peso enorme alla Luna e alla Nakshatra in cui si trova alla nascita, più che al Sole; usa il sistema predittivo delle Dasha per collocare gli eventi nel tempo con precisione; e si affida a carte divisionali (varga) multiple per analizzare aspetti specifici della vita, come matrimonio o carriera.</p>
 
-    <h3 id="grahaTitle"></h3>
-    <p id="grahaP1"></p>
-    <div class="info-box" id="box-graha"><div class="info-box-title" id="box-graha-t"></div><p id="box-graha-x"></p></div>
-    <div class="graha-grid" id="grahaGrid"></div>
+    <h3 id="grahaTitle">I Nava Graha: i Nove Pianeti Vedici</h3>
+    <p id="grahaP1">Il Jyotish lavora con nove corpi celesti, i Nava Graha (“nove afferratori”), che includono anche i due nodi lunari, assenti nell’astrologia occidentale classica. Ogni Graha non è un semplice corpo celeste ma una vera e propria entità cosmica con personalità, poteri e influenze specifiche sulla vita umana.</p>
+    <div class="info-box" id="box-graha"><div class="info-box-title" id="box-graha-t">🪐 I Nava Graha: Pianeti come Divinità</div><p id="box-graha-x">Nel Jyotish i nove pianeti non sono semplici corpi celesti ma entità cosmiche con personalità e poteri propri, rappresentate come divinità in forma umana o animale nei templi indiani. Rahu e Ketu, i due nodi lunari, sono privi di corpo fisico e simboleggiano desiderio materiale e distacco spirituale.</p></div>
+    <div class="graha-grid" id="grahaGrid">
+    <div class="graha-card">
+      <span class="graha-name">☀️ Surya</span>
+      <span class="graha-body">Sole</span>
+      <span class="graha-desc">Anima, ego, autorità, padre</span>
+      <span class="graha-day">Domenica</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">🌙 Chandra</span>
+      <span class="graha-body">Luna</span>
+      <span class="graha-desc">Mente, emozioni, madre</span>
+      <span class="graha-day">Lunedì</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">♂️ Mangala</span>
+      <span class="graha-body">Marte</span>
+      <span class="graha-desc">Energia, coraggio, conflitto</span>
+      <span class="graha-day">Martedì</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">☿️ Budha</span>
+      <span class="graha-body">Mercurio</span>
+      <span class="graha-desc">Intelletto, comunicazione</span>
+      <span class="graha-day">Mercoledì</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">♃ Guru</span>
+      <span class="graha-body">Giove</span>
+      <span class="graha-desc">Saggezza, espansione, fortuna</span>
+      <span class="graha-day">Giovedì</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">♀️ Shukra</span>
+      <span class="graha-body">Venere</span>
+      <span class="graha-desc">Amore, bellezza, piacere</span>
+      <span class="graha-day">Venerdì</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">♄ Shani</span>
+      <span class="graha-body">Saturno</span>
+      <span class="graha-desc">Disciplina, karma, limiti</span>
+      <span class="graha-day">Sabato</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">☊ Rahu</span>
+      <span class="graha-body">Nodo Nord</span>
+      <span class="graha-desc">Desiderio, illusione, ambizione</span>
+      <span class="graha-day">—</span>
+    </div>
+  
+    <div class="graha-card">
+      <span class="graha-name">☋ Ketu</span>
+      <span class="graha-body">Nodo Sud</span>
+      <span class="graha-desc">Distacco, karma passato, spiritualità</span>
+      <span class="graha-day">—</span>
+    </div>
+  </div>
 
-    <h3 id="rashiTitle"></h3>
-    <p id="rashiP1"></p>
-    <div class="info-box" id="box-rashi"><div class="info-box-title" id="box-rashi-t"></div><p id="box-rashi-x"></p></div>
-    <div class="rashi-grid" id="rashiGrid"></div>
+    <h3 id="rashiTitle">Le 12 Rashi: i Segni Zodiacali Vedici</h3>
+    <p id="rashiP1">Le Rashi corrispondono ai dodici segni, calcolati però sullo zodiaco siderale. I nomi e i simboli sono molto simili a quelli occidentali, ma la loro posizione nel cielo è sfasata dall’Ayanamsa di circa un mese rispetto al calendario tropicale.</p>
+    <div class="info-box" id="box-rashi"><div class="info-box-title" id="box-rashi-t">♈ Le 12 Rashi: il Cerchio dello Zodiaco Siderale</div><p id="box-rashi-x">La ruota delle Rashi divide l’eclittica in dodici settori di 30° ciascuno. A differenza della ruota occidentale, il punto 0° di Mesha è ancorato a riferimenti stellari fissi, non all’equinozio di primavera. Ogni Rashi è governata da un pianeta che ne colora profondamente il significato.</p></div>
+    <div class="rashi-grid" id="rashiGrid">
+    <div class="rashi-card">
+      <span class="rashi-name">Mesha</span>
+      <span class="rashi-equiv">Ariete</span>
+      <span class="rashi-el">🔥 Fuoco</span>
+      <span class="rashi-ruler">Marte</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Vrishabha</span>
+      <span class="rashi-equiv">Toro</span>
+      <span class="rashi-el">🌍 Terra</span>
+      <span class="rashi-ruler">Venere</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Mithuna</span>
+      <span class="rashi-equiv">Gemelli</span>
+      <span class="rashi-el">💨 Aria</span>
+      <span class="rashi-ruler">Mercurio</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Karka</span>
+      <span class="rashi-equiv">Cancro</span>
+      <span class="rashi-el">💧 Acqua</span>
+      <span class="rashi-ruler">Luna</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Simha</span>
+      <span class="rashi-equiv">Leone</span>
+      <span class="rashi-el">🔥 Fuoco</span>
+      <span class="rashi-ruler">Sole</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Kanya</span>
+      <span class="rashi-equiv">Vergine</span>
+      <span class="rashi-el">🌍 Terra</span>
+      <span class="rashi-ruler">Mercurio</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Tula</span>
+      <span class="rashi-equiv">Bilancia</span>
+      <span class="rashi-el">💨 Aria</span>
+      <span class="rashi-ruler">Venere</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Vrischika</span>
+      <span class="rashi-equiv">Scorpione</span>
+      <span class="rashi-el">💧 Acqua</span>
+      <span class="rashi-ruler">Marte</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Dhanu</span>
+      <span class="rashi-equiv">Sagittario</span>
+      <span class="rashi-el">🔥 Fuoco</span>
+      <span class="rashi-ruler">Giove</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Makara</span>
+      <span class="rashi-equiv">Capricorno</span>
+      <span class="rashi-el">🌍 Terra</span>
+      <span class="rashi-ruler">Saturno</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Kumbha</span>
+      <span class="rashi-equiv">Acquario</span>
+      <span class="rashi-el">💨 Aria</span>
+      <span class="rashi-ruler">Saturno</span>
+    </div>
+  
+    <div class="rashi-card">
+      <span class="rashi-name">Meena</span>
+      <span class="rashi-equiv">Pesci</span>
+      <span class="rashi-el">💧 Acqua</span>
+      <span class="rashi-ruler">Giove</span>
+    </div>
+  </div>
 
-    <h3 id="nakshatraTitle"></h3>
-    <p id="nakshatraP1"></p>
-    <div class="info-box" id="box-nak"><div class="info-box-title" id="box-nak-t"></div><p id="box-nak-x"></p></div>
-    <div class="nakshatra-grid" id="nakshatraGrid"></div>
+    <h3 id="nakshatraTitle">Le 27 Nakshatra: le Costellazioni Lunari</h3>
+    <p id="nakshatraP1">Le Nakshatra sono il vero cuore distintivo del Jyotish: 27 settori di 13°20’ ciascuno in cui è divisa l’eclittica, che tracciano il cammino mensile della Luna. La Nakshatra in cui si trovava la Luna al momento della nascita influenza profondamente carattere, compatibilità di coppia e il punto di partenza del sistema delle Dasha.</p>
+    <div class="info-box" id="box-nak"><div class="info-box-title" id="box-nak-t">🌕 Il Cammino della Luna tra le 27 Dimore</div><p id="box-nak-x">Le Nakshatra nascono dall’osservazione che la Luna impiega circa 27,3 giorni a completare il giro attorno alla Terra, sostando ogni notte in una diversa dimora stellare. Sistema antichissimo, già menzionato nell’Atharva Veda, con paralleli nella tradizione cinese (Xiu) e araba (Manazil al-Qamar).</p></div>
+    <div class="nakshatra-grid" id="nakshatraGrid">
+    <div class="nakshatra-card">
+      <span class="nak-num">1</span>
+      <span class="nak-name">Ashwini</span>
+      <span class="nak-ruler">Ketu</span>
+      <span class="nak-symbol">Testa di cavallo</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">2</span>
+      <span class="nak-name">Bharani</span>
+      <span class="nak-ruler">Venere</span>
+      <span class="nak-symbol">Yoni</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">3</span>
+      <span class="nak-name">Krittika</span>
+      <span class="nak-ruler">Sole</span>
+      <span class="nak-symbol">Lama, rasoio</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">4</span>
+      <span class="nak-name">Rohini</span>
+      <span class="nak-ruler">Luna</span>
+      <span class="nak-symbol">Carro</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">5</span>
+      <span class="nak-name">Mrigashira</span>
+      <span class="nak-ruler">Marte</span>
+      <span class="nak-symbol">Testa di cervo</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">6</span>
+      <span class="nak-name">Ardra</span>
+      <span class="nak-ruler">Rahu</span>
+      <span class="nak-symbol">Lacrima, diamante</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">7</span>
+      <span class="nak-name">Punarvasu</span>
+      <span class="nak-ruler">Giove</span>
+      <span class="nak-symbol">Faretra</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">8</span>
+      <span class="nak-name">Pushya</span>
+      <span class="nak-ruler">Saturno</span>
+      <span class="nak-symbol">Fiore, cerchio</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">9</span>
+      <span class="nak-name">Ashlesha</span>
+      <span class="nak-ruler">Mercurio</span>
+      <span class="nak-symbol">Serpente attorcigliato</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">10</span>
+      <span class="nak-name">Magha</span>
+      <span class="nak-ruler">Ketu</span>
+      <span class="nak-symbol">Trono</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">11</span>
+      <span class="nak-name">Purva Phalguni</span>
+      <span class="nak-ruler">Venere</span>
+      <span class="nak-symbol">Amaca</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">12</span>
+      <span class="nak-name">Uttara Phalguni</span>
+      <span class="nak-ruler">Sole</span>
+      <span class="nak-symbol">Letto</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">13</span>
+      <span class="nak-name">Hasta</span>
+      <span class="nak-ruler">Luna</span>
+      <span class="nak-symbol">Mano</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">14</span>
+      <span class="nak-name">Chitra</span>
+      <span class="nak-ruler">Marte</span>
+      <span class="nak-symbol">Perla</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">15</span>
+      <span class="nak-name">Swati</span>
+      <span class="nak-ruler">Rahu</span>
+      <span class="nak-symbol">Germoglio</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">16</span>
+      <span class="nak-name">Vishakha</span>
+      <span class="nak-ruler">Giove</span>
+      <span class="nak-symbol">Arco trionfale</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">17</span>
+      <span class="nak-name">Anuradha</span>
+      <span class="nak-ruler">Saturno</span>
+      <span class="nak-symbol">Fiore di loto</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">18</span>
+      <span class="nak-name">Jyeshtha</span>
+      <span class="nak-ruler">Mercurio</span>
+      <span class="nak-symbol">Orecchino, ombrello</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">19</span>
+      <span class="nak-name">Mula</span>
+      <span class="nak-ruler">Ketu</span>
+      <span class="nak-symbol">Radici</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">20</span>
+      <span class="nak-name">Purva Ashadha</span>
+      <span class="nak-ruler">Venere</span>
+      <span class="nak-symbol">Ventaglio</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">21</span>
+      <span class="nak-name">Uttara Ashadha</span>
+      <span class="nak-ruler">Sole</span>
+      <span class="nak-symbol">Zanna d’elefante</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">22</span>
+      <span class="nak-name">Shravana</span>
+      <span class="nak-ruler">Luna</span>
+      <span class="nak-symbol">Orecchio, tre impronte</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">23</span>
+      <span class="nak-name">Dhanishta</span>
+      <span class="nak-ruler">Marte</span>
+      <span class="nak-symbol">Tamburo</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">24</span>
+      <span class="nak-name">Shatabhisha</span>
+      <span class="nak-ruler">Rahu</span>
+      <span class="nak-symbol">Cerchio vuoto</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">25</span>
+      <span class="nak-name">Purva Bhadrapada</span>
+      <span class="nak-ruler">Giove</span>
+      <span class="nak-symbol">Spada</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">26</span>
+      <span class="nak-name">Uttara Bhadrapada</span>
+      <span class="nak-ruler">Saturno</span>
+      <span class="nak-symbol">Serpente d’acqua</span>
+    </div>
+  
+    <div class="nakshatra-card">
+      <span class="nak-num">27</span>
+      <span class="nak-name">Revati</span>
+      <span class="nak-ruler">Mercurio</span>
+      <span class="nak-symbol">Pesce, tamburo</span>
+    </div>
+  </div>
 
-    <h3 id="bhavaTitle"></h3>
-    <p id="bhavaP1"></p>
-    <div class="info-box" id="box-bhava"><div class="info-box-title" id="box-bhava-t"></div><p id="box-bhava-x"></p></div>
-    <div class="bhava-grid" id="bhavaGrid"></div>
+    <h3 id="bhavaTitle">Le 12 Case (Bhava)</h3>
+    <p id="bhavaP1">Come in Occidente, anche il Jyotish divide il cielo natale in 12 case, ma con nomi e sfumature proprie legate alla filosofia indiana del dharma, artha, kama e moksha, i quattro scopi tradizionali della vita.</p>
+    <div class="info-box" id="box-bhava"><div class="info-box-title" id="box-bhava-t">🏠 Le 12 Bhava: i Dodici Campi dell’Esperienza</div><p id="box-bhava-x">Le case nella carta vedica non sono mai vuote di significato: anche in assenza di pianeti, la casa è attivata dal suo signore (Bhavesh) e dalla Rashi che la occupa. La lettura incrociata tra pianeti, segni e case è il nucleo della pratica astrologica vedica classica.</p></div>
+    <div class="bhava-grid" id="bhavaGrid">
+    <div class="bhava-card">
+      <span class="bhava-num">1</span>
+      <div><span class="bhava-name">Tanu Bhava</span><p class="bhava-desc">Sé, corpo, personalità, vitalità</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">2</span>
+      <div><span class="bhava-name">Dhana Bhava</span><p class="bhava-desc">Ricchezza, famiglia, parola</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">3</span>
+      <div><span class="bhava-name">Sahaja Bhava</span><p class="bhava-desc">Coraggio, fratelli, comunicazione</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">4</span>
+      <div><span class="bhava-name">Sukha Bhava</span><p class="bhava-desc">Casa, madre, radici, felicità</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">5</span>
+      <div><span class="bhava-name">Putra Bhava</span><p class="bhava-desc">Figli, creatività, intelletto</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">6</span>
+      <div><span class="bhava-name">Roga Bhava</span><p class="bhava-desc">Malattie, nemici, ostacoli</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">7</span>
+      <div><span class="bhava-name">Kalatra Bhava</span><p class="bhava-desc">Matrimonio, partner, relazioni</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">8</span>
+      <div><span class="bhava-name">Ayur Bhava</span><p class="bhava-desc">Trasformazione, occulto, longevità</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">9</span>
+      <div><span class="bhava-name">Bhagya Bhava</span><p class="bhava-desc">Fortuna, dharma, padre, spiritualità</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">10</span>
+      <div><span class="bhava-name">Karma Bhava</span><p class="bhava-desc">Carriera, status sociale, azione</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">11</span>
+      <div><span class="bhava-name">Labha Bhava</span><p class="bhava-desc">Guadagni, desideri, amicizie</p></div>
+    </div>
+  
+    <div class="bhava-card">
+      <span class="bhava-num">12</span>
+      <div><span class="bhava-name">Moksha Bhava</span><p class="bhava-desc">Perdite, spiritualità, liberazione</p></div>
+    </div>
+  </div>
 
-    <h3 id="kundaliTitle"></h3>
-    <p id="kundaliP1"></p>
-    <div class="info-box" id="box-kundali"><div class="info-box-title" id="box-kundali-t"></div><p id="box-kundali-x"></p></div>
-    <p id="kundaliP2"></p>
+    <h3 id="kundaliTitle">Il Lagna e la Carta Natale (Kundali)</h3>
+    <p id="kundaliP1">Il Lagna (Ascendente) è il segno che sorgeva all’orizzonte est nel momento esatto della nascita, e nel Jyotish è il vero punto di ancoraggio del tema natale, la lente attraverso cui si leggono tutte le altre posizioni planetarie.</p>
+    <div class="info-box" id="box-kundali"><div class="info-box-title" id="box-kundali-t">📐 Janma Kundali: Due Stili, Un’Unica Carta</div><p id="box-kundali-x">Lo stile nord-indiano disegna la carta come un diamante con case fisse e segni che ruotano; lo stile sud-indiano usa una griglia quadrata con segni fissi e case che variano. Entrambi contengono le stesse informazioni, cambia solo la convenzione visiva di lettura.</p></div>
+    <p id="kundaliP2">Oltre alla carta principale (Rashi chart o D1), il Jyotish utilizza numerose carte divisionali (varga) per analizzare aspetti specifici: la più importante è la Navamsa (D9), usata soprattutto per approfondire matrimonio e vita spirituale, che raffina e a volte corregge le indicazioni della carta principale.</p>
 
-    <h3 id="dashaTitle"></h3>
-    <p id="dashaP1"></p>
-    <div class="info-box" id="box-dasha"><div class="info-box-title" id="box-dasha-t"></div><p id="box-dasha-x"></p></div>
-    <div class="info-box tip" id="box-dashatip"><div class="info-box-title" id="box-dashatip-t"></div><p id="box-dashatip-x"></p></div>
+    <h3 id="dashaTitle">Il Sistema delle Dasha</h3>
+    <p id="dashaP1">Ciò che rende il Jyotish unico nel panorama mondiale è il suo sofisticato sistema predittivo basato sui tempi: le Dasha, periodi planetari che si succedono durante l’intera vita di una persona. Il sistema più diffuso è la Vimshottari Dasha, calcolata a partire dalla Nakshatra della Luna alla nascita, per un ciclo totale di 120 anni.</p>
+    <div class="info-box" id="box-dasha"><div class="info-box-title" id="box-dasha-t">⏳ Vimshottari Dasha: la Mappa del Tempo</div><p id="box-dasha-x">Il sistema Vimshottari assegna a ciascuno dei nove pianeti un periodo di anni in ordine fisso, a partire dal pianeta che governa la Nakshatra lunare natale. Il punto esatto della Luna nella Nakshatra determina quanti anni restano nel primo periodo.</p></div>
+    <div class="info-box tip" id="box-dashatip"><div class="info-box-title" id="box-dashatip-t">💡 Mahadasha e Antardasha</div><p id="box-dashatip-x">Ogni periodo planetario maggiore (Mahadasha) si suddivide in sottoperiodi (Antardasha) governati dagli altri pianeti, permettendo una lettura molto più fine e dettagliata degli eventi nel tempo.</p></div>
     <div class="table-wrap dasha-table">
       <table>
-        <thead><tr><th id="dashaThPlanet"></th><th id="dashaThYears"></th></tr></thead>
-        <tbody id="dashaBody"></tbody>
+        <thead><tr><th id="dashaThPlanet">Pianeta (Mahadasha)</th><th id="dashaThYears">Durata</th></tr></thead>
+        <tbody id="dashaBody"><tr><td>☋ Ketu</td><td>7 anni</td></tr><tr><td>♀️ Venere (Shukra)</td><td>20 anni</td></tr><tr><td>☀️ Sole (Surya)</td><td>6 anni</td></tr><tr><td>🌙 Luna (Chandra)</td><td>10 anni</td></tr><tr><td>♂️ Marte (Mangala)</td><td>7 anni</td></tr><tr><td>☊ Rahu</td><td>18 anni</td></tr><tr><td>♃ Giove (Guru)</td><td>16 anni</td></tr><tr><td>♄ Saturno (Shani)</td><td>19 anni</td></tr><tr><td>☿️ Mercurio (Budha)</td><td>17 anni</td></tr></tbody>
       </table>
     </div>
 
-    <h3 id="yogaTitle"></h3>
-    <p id="yogaIntro"></p>
-    <ul class="yoga-list" id="yogaList"></ul>
+    <h3 id="yogaTitle">Yoga: Combinazioni Favorevoli</h3>
+    <p id="yogaIntro">Nel Jyotish, “Yoga” indica una combinazione planetaria specifica che produce un effetto particolare nella vita della persona.</p>
+    <ul class="yoga-list" id="yogaList"><li><strong>Raj Yoga — “Combinazione Regale”</strong><p>Indica potenziale di successo, autorità e prestigio. Si forma quando i signori di case di dharma (1ª, 5ª, 9ª) si combinano con quelli di artha (2ª, 6ª, 10ª) o kama (3ª, 7ª, 11ª).</p></li><li><strong>Gajakesari Yoga — Luna e Giove in relazione</strong><p>Associato a fama, intelligenza e buona reputazione. Si forma tradizionalmente quando Giove è in kendra (1ª, 4ª, 7ª, 10ª) dalla Luna.</p></li><li><strong>Dhana Yoga — Combinazioni di Prosperità</strong><p>Configurazioni che indicano potenziale di ricchezza materiale, coinvolgendo solitamente i signori della 2ª, 5ª, 9ª e 11ª casa.</p></li></ul>
 
-    <h3 id="doshaTitle"></h3>
-    <p id="doshaIntro"></p>
-    <ul class="dosha-list" id="doshaList"></ul>
+    <h3 id="doshaTitle">Dosha: Afflizioni da Bilanciare</h3>
+    <p id="doshaIntro">Un Dosha è una configurazione planetaria considerata sfidante, da comprendere e bilanciare piuttosto che da temere.</p>
+    <ul class="dosha-list" id="doshaList"><li><strong>Mangal Dosha (Kuja Dosha)</strong><p>Riguarda posizioni di Marte ritenute critiche per l’armonia matrimoniale, in particolare in 1ª, 4ª, 7ª, 8ª o 12ª casa. La tradizione suggerisce l’unione tra persone con lo stesso Dosha per bilanciarne l’effetto.</p></li><li><strong>Kaal Sarp Dosha</strong><p>Si verifica quando tutti i pianeti si trovano racchiusi tra Rahu e Ketu. Indica sfide karmiche significative ma anche potenziale per una crescita spirituale profonda.</p></li><li><strong>Pitra Dosha</strong><p>Collegato al karma ereditato dalla linea ancestrale, spesso associato all’afflizione del Sole o del nono signore. Le pratiche rituali di pitru tarpan sono i rimedi tradizionali principali.</p></li></ul>
 
-    <h3 id="rimediTitle"></h3>
-    <p id="rimediP1"></p>
-    <div class="rimedi-grid" id="rimediGrid"></div>
+    <h3 id="rimediTitle">Rimedi Vedici Tradizionali</h3>
+    <p id="rimediP1">Il Jyotish non è solo un sistema di lettura del destino ma anche una tradizione pratica di intervento sul karma attraverso rimedi (upaaya) che mirano ad armonizzare le energie planetarie nella vita quotidiana.</p>
+    <div class="rimedi-grid" id="rimediGrid">
+    <div class="rimedi-card">
+      <span class="rimedi-icon">💎</span>
+      <span class="rimedi-title">Gemme Planetarie (Navaratna)</span>
+      <p class="rimedi-text">Ogni pianeta è associato a una gemma specifica da indossare a contatto con la pelle: rubino, perla, corallo rosso, smeraldo, zaffiro giallo, diamante, zaffiro blu, hessonite, occhio di gatto. Il set completo si chiama Navaratna.</p>
+    </div>
+  
+    <div class="rimedi-card">
+      <span class="rimedi-icon">🔔</span>
+      <span class="rimedi-title">Mantra Planetari</span>
+      <p class="rimedi-text">Ogni pianeta ha un beej mantra (mantra-seme) associato, recitato in un numero specifico di ripetizioni per armonizzarne l’energia.</p>
+    </div>
+  
+    <div class="rimedi-card">
+      <span class="rimedi-icon">🎨</span>
+      <span class="rimedi-title">Colori e Giorni</span>
+      <p class="rimedi-text">Indossare il colore associato a un pianeta nel suo giorno della settimana è una pratica comune: rosso il martedì per Marte, giallo il giovedì per Giove.</p>
+    </div>
+  
+    <div class="rimedi-card">
+      <span class="rimedi-icon">🙏</span>
+      <span class="rimedi-title">Daan (Carità)</span>
+      <p class="rimedi-text">Fare donazioni specifiche nei giorni planetari è considerato un modo tradizionale per placare un pianeta sfavorevole.</p>
+    </div>
+  
+    <div class="rimedi-card">
+      <span class="rimedi-icon">🔷</span>
+      <span class="rimedi-title">Yantra</span>
+      <p class="rimedi-text">Diagrammi geometrici sacri usati come supporto alla meditazione. Ogni pianeta ha il proprio Yantra, un pattern matematico che ne rappresenta l’essenza energetica.</p>
+    </div>
+  </div>
 
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <p id="art-p4">Tra gli errori più comuni di chi si avvicina per la prima volta al Jyotish c’è confondere il proprio segno occidentale con quello vedico senza considerare l’Ayanamsa, oppure interpretare i Dosha come condanne immutabili invece che come indicazioni da bilanciare con consapevolezza e pratica costante. Un altro mito diffuso è credere che il Jyotish “predica il futuro” in modo deterministico: la tradizione classica parla piuttosto di tendenze karmiche e finestre temporali favorevoli o sfidanti, non di eventi scolpiti nella pietra e immutabili nel destino di ciascuno.</p>
+    <p id="art-p5">Capire il Jyotish significa anche apprezzarne le differenze interne: la scuola Parashari, più diffusa, convive con sistemi come il Jaimini, che usa metodi di calcolo alternativi per Dasha e aspetti planetari. Avvicinarsi a questa tradizione con curiosità autentica, magari confrontandola con la propria carta occidentale, apre una prospettiva complementare sul proprio cammino, fatta di cicli, ritmi e significati che la sola lettura tropicale non sempre riesce a cogliere. Su MYSTICA puoi continuare l’esplorazione con i nostri strumenti dedicati all’astrologia avanzata e ai segni zodiacali occidentali, per costruire un quadro davvero completo.</p>
 
-    <nav class="article-links" id="articleLinks" aria-label="Link correlati"></nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <nav class="article-links" id="articleLinks" aria-label="Link correlati"><a href="./oroscopo-segni.html">⭐ Segni Zodiacali Occidentali</a><a href="./astrologia-avanzata.html">🌠 Astrologia Avanzata</a><a href="./numerologia.html">🔢 Numerologia</a><a href="./bazi-cinese.html">☯ BaZi Cinese</a></nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ── FAQ ── -->
   <section class="faq-section">
     <h2 class="faq-title">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Cos’è l’astrologia vedica e in cosa differisce da quella occidentale?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>Il Jyotish è il sistema astrologico indiano, parte dei Vedanga tradizionali. Usa lo zodiaco siderale anziché tropicale, dà centralità alla Luna e alle Nakshatra, e affianca alla lettura del carattere un raffinato sistema predittivo temporale, le Dasha, assente nella tradizione occidentale classica. Per approfondire i segni puoi consultare anche la nostra <a href="./oroscopo-segni.html">guida ai segni zodiacali</a>.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cos’è l’Ayanamsa e perché il mio segno vedico è diverso da quello occidentale?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>L’Ayanamsa è lo scarto angolare, oggi circa 24°, tra zodiaco tropicale e siderale, dovuto alla precessione degli equinozi. Per convertire una posizione planetaria dal sistema tropicale a quello vedico si sottrae l’Ayanamsa: ecco perché molte persone risultano nel segno precedente nel tema vedico rispetto a quello occidentale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Cosa sono le Nakshatra e perché sono così importanti?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>Le Nakshatra sono 27 dimore lunari di 13°20’ ciascuna che dividono l’eclittica. Rappresentano le stazioni mensili della Luna e sono alla base del sistema delle Dasha e della compatibilità di coppia. Ogni Nakshatra ha un pianeta reggente, un simbolo e qualità specifiche che influenzano il carattere.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Cos’è una Dasha e come funziona nel dettaglio?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>Una Dasha è un periodo planetario nel sistema predittivo Jyotish. Il sistema Vimshottari Dasha assegna a ciascuno dei 9 pianeti una durata specifica, da 6 a 20 anni, per un totale di 120 anni. Il pianeta che governa la Nakshatra lunare natale determina la Dasha di partenza, e ogni Mahadasha si suddivide in Antardasha per previsioni più dettagliate.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>L’astrologia vedica è una scienza riconosciuta?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Il Jyotish è riconosciuto come disciplina accademica in India, dove alcune università offrono corsi specifici. Dal punto di vista scientifico occidentale non è considerata una scienza empirica, ma una tradizione culturale e filosofica millenaria, ricca di profondità simbolica e psicologica.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Posso confrontare la mia Rashi vedica con il mio segno occidentale su MYSTICA?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden="">
+        <p>Sì: usa lo strumento in cima a questa pagina per ottenere un’equivalenza orientativa. Per un calcolo preciso basato su ora e luogo di nascita ti consigliamo anche di esplorare la nostra sezione di <a href="./astrologia-avanzata.html">astrologia avanzata</a>.</p>
+      </div>
+    </div>
+  </div>
   </section>
 
 </main>
@@ -564,19 +1050,19 @@
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti hanno finalità informativa, culturale e di intrattenimento. Non sostituiscono consulenze mediche, legali o finanziarie professionali.</p>
 </footer>
 
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutte le sezioni di MYSTICA.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

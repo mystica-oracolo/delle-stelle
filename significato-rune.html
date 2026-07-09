@@ -359,11 +359,11 @@ main{position:relative; z-index:1; padding-bottom:40px}
   <!-- ══ 3a. SEZIONE INTERATTIVA — Oracolo delle Rune ══ -->
   <section class="oracle-section" aria-labelledby="oracle-title">
     <div class="card">
-      <h2 id="oracle-title" style="font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:1px;margin-bottom:8px;text-align:center"></h2>
-      <p class="oracle-intro" id="oracle-intro"></p>
+      <h2 id="oracle-title" style="font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:1px;margin-bottom:8px;text-align:center">✦ Consulta l’Oracolo delle Rune</h2>
+      <p class="oracle-intro" id="oracle-intro">Formula una domanda, poi estrai una runa singola per un messaggio rapido oppure una stesa a tre rune per esplorare passato, presente e futuro.</p>
       <div class="oracle-actions">
-        <button class="btn-oracle" id="btn-draw-single"></button>
-        <button class="btn-oracle secondary" id="btn-draw-spread"></button>
+        <button class="btn-oracle" id="btn-draw-single">ᚠ Estrai una Runa</button>
+        <button class="btn-oracle secondary" id="btn-draw-spread">✦ Stesa delle Tre Norne</button>
       </div>
 
       <div class="oracle-result" id="single-result">
@@ -374,26 +374,26 @@ main{position:relative; z-index:1; padding-bottom:40px}
           <div class="orientation" id="single-orientation"></div>
           <p class="meaning" id="single-meaning"></p>
         </div>
-        <button class="btn-extended" id="btn-extended-single"></button>
+        <button class="btn-extended" id="btn-extended-single">🔒 Leggi l’interpretazione estesa</button>
         <p class="extended-text" id="extended-text-single"></p>
       </div>
 
       <div class="oracle-result" id="spread-result">
         <div class="spread-grid">
           <div class="spread-card">
-            <div class="label" id="spread-label-1"></div>
+            <div class="label" id="spread-label-1">Passato</div>
             <span class="symbol" id="spread-symbol-1"></span>
             <div class="name" id="spread-name-1"></div>
             <div class="meaning" id="spread-meaning-1"></div>
           </div>
           <div class="spread-card">
-            <div class="label" id="spread-label-2"></div>
+            <div class="label" id="spread-label-2">Presente</div>
             <span class="symbol" id="spread-symbol-2"></span>
             <div class="name" id="spread-name-2"></div>
             <div class="meaning" id="spread-meaning-2"></div>
           </div>
           <div class="spread-card">
-            <div class="label" id="spread-label-3"></div>
+            <div class="label" id="spread-label-3">Futuro</div>
             <span class="symbol" id="spread-symbol-3"></span>
             <div class="name" id="spread-name-3"></div>
             <div class="meaning" id="spread-meaning-3"></div>
@@ -405,58 +405,286 @@ main{position:relative; z-index:1; padding-bottom:40px}
 
   <!-- ══ Tavole di riferimento — sempre gratuite (Sezione 10.1) ══ -->
   <section class="reference-section" aria-labelledby="ref-title">
-    <h2 id="ref-title" style="font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:1px;margin-bottom:6px"></h2>
-    <p id="ref-intro" style="font-size:13px;color:var(--muted);margin-bottom:4px"></p>
-    <div id="aett-container"></div>
+    <h2 id="ref-title" style="font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">Le 24 Rune dell’Elder Futhark</h2>
+    <p id="ref-intro" style="font-size:13px;color:var(--muted);margin-bottom:4px">Tavola di riferimento sempre gratuita — tocca ogni runa per ripassarne il significato.</p>
+    <div id="aett-container">
+    <h3 class="aett-title">Primo Ætt — Le Rune di Freya</h3>
+    <p class="aett-desc">Governato da Freya, dea dell’amore e della magia: forze primordiali della creazione, ricchezza, forza vitale, protezione e dono.</p>
+    <div class="rune-grid">
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚠ</span>
+          <div class="rune-name">Fehu</div>
+          <div class="rune-phonetic">F — "bestiame"</div>
+          <div class="rune-meaning">Ricchezza, abbondanza, prosperità materiale, energia creativa, nuovi inizi</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚢ</span>
+          <div class="rune-name">Uruz</div>
+          <div class="rune-phonetic">U — "uro selvatico"</div>
+          <div class="rune-meaning">Forza bruta, salute, vitalità, istinto, potere selvaggio</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚦ</span>
+          <div class="rune-name">Thurisaz</div>
+          <div class="rune-phonetic">Th — "gigante/spine"</div>
+          <div class="rune-meaning">Forza distruttiva e protettiva, difesa, cambiamento repentino</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚨ</span>
+          <div class="rune-name">Ansuz</div>
+          <div class="rune-phonetic">A — "bocca/dio"</div>
+          <div class="rune-meaning">Comunicazione divina, saggezza, ispirazione, eloquenza, Odino</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚱ</span>
+          <div class="rune-name">Raidho</div>
+          <div class="rune-phonetic">R — "viaggio"</div>
+          <div class="rune-meaning">Viaggio fisico o spirituale, movimento, ritmo, giustizia</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚲ</span>
+          <div class="rune-name">Kenaz</div>
+          <div class="rune-phonetic">K — "torcia"</div>
+          <div class="rune-meaning">Conoscenza, creatività, illuminazione, fuoco della mente</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚷ</span>
+          <div class="rune-name">Gebo</div>
+          <div class="rune-phonetic">G — "dono"</div>
+          <div class="rune-meaning">Regalo, partnership, equilibrio nel dare e ricevere, unione</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚹ</span>
+          <div class="rune-name">Wunjo</div>
+          <div class="rune-phonetic">W — "gioia"</div>
+          <div class="rune-meaning">Felicità, armonia, successo, benessere, soddisfazione</div>
+        </div>
+      
+    </div>
+  
+    <h3 class="aett-title">Secondo Ætt — Le Rune di Heimdall</h3>
+    <p class="aett-desc">Associato a Heimdall, guardiano del Bifrost: sfide umane, resistenza, protezione e trasformazione attraverso le prove della vita.</p>
+    <div class="rune-grid">
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚺ</span>
+          <div class="rune-name">Hagalaz</div>
+          <div class="rune-phonetic">H — "grandine"</div>
+          <div class="rune-meaning">Disruzione, forze incontrollabili, crisi, purificazione necessaria</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᚾ</span>
+          <div class="rune-name">Nauthiz</div>
+          <div class="rune-phonetic">N — "bisogno"</div>
+          <div class="rune-meaning">Necessità, resistenza, vincoli, forza attraverso la privazione</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛁ</span>
+          <div class="rune-name">Isa</div>
+          <div class="rune-phonetic">I — "ghiaccio"</div>
+          <div class="rune-meaning">Stasi, blocco, pausa forzata, chiarezza mentale</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛃ</span>
+          <div class="rune-name">Jera</div>
+          <div class="rune-phonetic">J/Y — "anno/raccolto"</div>
+          <div class="rune-meaning">Cicli naturali, raccolto, ricompensa per il lavoro svolto</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛇ</span>
+          <div class="rune-name">Eihwaz</div>
+          <div class="rune-phonetic">Ei — "tasso"</div>
+          <div class="rune-meaning">Resistenza, longevità, morte e rinascita, protezione</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛈ</span>
+          <div class="rune-name">Perthro</div>
+          <div class="rune-phonetic">P — "dado/coppa"</div>
+          <div class="rune-meaning">Destino, mistero, segreti rivelati, magia nascosta</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛉ</span>
+          <div class="rune-name">Algiz</div>
+          <div class="rune-phonetic">Z — "alce/protezione"</div>
+          <div class="rune-meaning">Protezione, difesa, connessione con il divino, scudo</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛊ</span>
+          <div class="rune-name">Sowilo</div>
+          <div class="rune-phonetic">S — "sole"</div>
+          <div class="rune-meaning">Successo, vittoria, energia solare, salute, chiarezza</div>
+        </div>
+      
+    </div>
+  
+    <h3 class="aett-title">Terzo Ætt — Le Rune di Tyr</h3>
+    <p class="aett-desc">Governato da Tyr, dio della giustizia: sacrificio onorevole, rinascita, eredità e completamento del ciclo cosmico.</p>
+    <div class="rune-grid">
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛏ</span>
+          <div class="rune-name">Tiwaz</div>
+          <div class="rune-phonetic">T — "Tyr/vittoria"</div>
+          <div class="rune-meaning">Giustizia, sacrificio onorevole, vittoria, integrità</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛒ</span>
+          <div class="rune-name">Berkano</div>
+          <div class="rune-phonetic">B — "betulla"</div>
+          <div class="rune-meaning">Rinascita, fertilità, crescita, nuovi inizi, guarigione</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛖ</span>
+          <div class="rune-name">Ehwaz</div>
+          <div class="rune-phonetic">E — "cavallo"</div>
+          <div class="rune-meaning">Movimento, partnership, fiducia, progresso, lavoro di squadra</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛗ</span>
+          <div class="rune-name">Mannaz</div>
+          <div class="rune-phonetic">M — "uomo/umanità"</div>
+          <div class="rune-meaning">Sé, identità, comunità umana, consapevolezza di sé</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛚ</span>
+          <div class="rune-name">Laguz</div>
+          <div class="rune-phonetic">L — "acqua/lago"</div>
+          <div class="rune-meaning">Intuizione, inconscio, flusso emotivo, sogni, profondità</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛜ</span>
+          <div class="rune-name">Ingwaz</div>
+          <div class="rune-phonetic">Ng — "dio Ing"</div>
+          <div class="rune-meaning">Fertilità, potenziale accumulato, riposo prima dell’azione</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛞ</span>
+          <div class="rune-name">Dagaz</div>
+          <div class="rune-phonetic">D — "giorno"</div>
+          <div class="rune-meaning">Alba, svolta, trasformazione radicale, nuovo ciclo</div>
+        </div>
+      
+        <div class="rune-card">
+          <span class="rune-symbol">ᛟ</span>
+          <div class="rune-name">Othalan</div>
+          <div class="rune-phonetic">O — "eredità"</div>
+          <div class="rune-meaning">Eredità, patria, radici ancestrali, identità profonda</div>
+        </div>
+      
+    </div>
+  </div>
   </section>
 
   <!-- ══ 3b. Share ══ -->
   <div class="share-section">
-    <button class="btn-share" onclick="shareContent()">📤 <span id="share-label"></span></button>
+    <button class="btn-share" onclick="shareContent()">📤 <span id="share-label">Condividi</span></button>
     <div class="share-popup" id="sharePopup" hidden>
       <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
       <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
       <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
-      <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ══ 3c. Articolo Editoriale ══ -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Le Rune Norrene: Storia, Significati e Uso Divinatorio</h2>
     <figure>
       <img src="./images/icone/home/rune.webp"
            srcset="./images/icone/home/rune.webp 1x, ./images/icone/home/rune.webp 2x"
            id="art-hero" alt="" loading="eager" decoding="async"
            width="720" height="405"
            style="width:100%;border-radius:14px">
-      <figcaption id="art-caption"></figcaption>
+      <figcaption id="art-caption">L’Elder Futhark, l’alfabeto runico più antico usato nella divinazione norrena</figcaption>
     </figure>
 
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
+    <h3 id="art-h2">Origini e Storia del Sistema Runico</h3>
+    <p id="art-p1">Le rune sono un alfabeto antico usato dai popoli germanici e norreni, con le prime testimonianze archeologiche datate intorno al II secolo d.C., trovate su fibule, armi e pietre commemorative in Scandinavia e nell’Europa settentrionale. La parola "runa" deriva dal proto-germanico rūnō, che significa segreto, sussurro, mistero: un indizio chiaro della loro natura non solo come lettere, ma come simboli carichi di potere sacro. Secondo la mitologia norrena raccontata nell’Edda poetica, le rune non furono inventate ma scoperte: il dio Odino si appese al grande albero cosmico Yggdrasil per nove giorni e nove notti, trafitto dalla propria lancia, senza mangiare né bere, finché le rune non gli si rivelarono dal pozzo di Urd.</p>
+    <p id="art-p2">Il sistema runico più diffuso nella divinazione moderna è l’Elder Futhark, composto da 24 rune suddivise in tre gruppi di otto chiamati ætts, ciascuno associato a una divinità norrena: il primo ætt appartiene a Freya e tratta le forze primordiali della creazione, il secondo è governato da Heimdall e affronta le sfide e le resistenze umane, il terzo è dedicato a Tyr e riguarda sacrificio, eredità e completamento del ciclo cosmico. Il numero 24, diviso in tre gruppi di otto, non è casuale: nella numerologia norrena l’otto rappresenta l’equilibrio e l’infinito, mentre il tre è il numero sacro per eccellenza, presente anche nelle tre Norne che tessono il destino.</p>
+    <p id="art-p3">Storicamente le rune venivano incise su pietre, armi, gioielli e oggetti rituali a scopo magico: protezione in battaglia, guarigione, benedizioni per il raccolto. L’uso come sistema divinatorio strutturato, con estrazione casuale e interpretazione simbolica, si sviluppò soprattutto nel XX secolo, in parallelo al rinascimento dell’interesse per le tradizioni norrene e germaniche. Il metodo più semplice resta la runa singola: si formula una domanda e si estrae una runa dal sacchetto senza guardare. Per letture più articolate si usa la stesa delle tre rune, ispirata alle Norne Urd, Verdandi e Skuld, che esplora passato, presente e futuro di una situazione.</p>
 
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h3">Uso Pratico, Errori Comuni e Differenze con Altri Oracoli</h3>
+    <p id="art-p4">L’errore più comune di chi si avvicina alle rune per la prima volta è trattarle come un sistema di previsione automatica, ignorando che ogni runa richiede contestualizzazione rispetto alla domanda posta. Un altro mito da sfatare riguarda l’orientamento: si crede spesso che tutte le rune abbiano un significato rovesciato (merkstave), ma alcune, come Gebo e Isa, sono simmetriche e non cambiano mai valore. È inoltre falso che le rune siano "più antiche" o "più potenti" dei tarocchi: sono due sistemi simbolici paralleli, nati in contesti culturali diversi, con logiche interpretative proprie.</p>
+    <p id="art-p5">A differenza dei tarocchi, che si basano su 78 arcani illustrati con scene narrative complesse, le rune sono simboli grafici essenziali, più vicini alla scrittura sacra che all’immagine allegorica: questo le rende adatte a letture rapide e dirette, spesso usate anche in meditazione runica (galdr) e magia pratica. Chi desidera confrontare sistemi divinatori differenti può approfondire anche la nostra guida ai tarocchi o la guida all’I Ching, l’oracolo cinese basato sugli esagrammi, per scoprire come culture diverse abbiano sviluppato linguaggi simbolici altrettanto profondi per rispondere alle stesse domande universali sul destino e sulla conoscenza di sé.</p>
 
     <nav class="article-links" aria-label="Approfondimenti correlati">
-      <a href="./guida-tarocchi.html" id="link-tarocchi"></a>
-      <a href="./guida-i-ching.html" id="link-iching"></a>
-      <a href="./oroscopo-segni.html" id="link-oroscopo"></a>
-      <a href="./numerologia-simboli.html" id="link-numerologia"></a>
-      <a href="./enciclopedia.html" id="link-enciclopedia"></a>
+      <a href="./guida-tarocchi.html" id="link-tarocchi">🎴 Guida Tarocchi</a>
+      <a href="./guida-i-ching.html" id="link-iching">☯️ Guida I Ching</a>
+      <a href="./oroscopo-segni.html" id="link-oroscopo">⭐ Segni Zodiacali</a>
+      <a href="./numerologia-simboli.html" id="link-numerologia">🔢 Numerologia &amp; Simboli</a>
+      <a href="./enciclopedia.html" id="link-enciclopedia">📖 Enciclopedia Esoterica</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ══ 3d. FAQ ══ -->
   <section class="faq-section" aria-labelledby="faq-heading">
     <h2 class="faq-title" id="faq-heading">FAQ</h2>
-    <div class="faq-list" id="faqList"></div>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false">
+        <span>Quante rune esistono nell’Elder Futhark e perché sono divise in tre gruppi?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden=""><p>L’Elder Futhark è composto da 24 rune divise in tre gruppi di otto chiamati ætts: quello di Freya, di Heimdall e di Tyr. Ogni ætt rappresenta un tema cosmico distinto, dalla creazione alla sfida fino al completamento. Puoi ripassare tutte le rune nella tavola di riferimento qui sopra o approfondire con la nostra guida ai tarocchi per confrontare due sistemi simbolici molto diversi.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false">
+        <span>Cosa significa la runa Fehu e quando compare in una lettura?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden=""><p>Fehu (ᚠ) è la prima runa dell’Elder Futhark e significa letteralmente "bestiame". Rappresenta ricchezza, abbondanza e prosperità materiale conquistate con l’impegno. Quando compare rovesciata (merkstave) segnala invece perdita di risorse o occasioni sprecate: il contesto della domanda è sempre decisivo per l’interpretazione.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false">
+        <span>Come si usano le rune per la divinazione, passo dopo passo?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden=""><p>Formula mentalmente una domanda chiara, poi estrai una runa dal sacchetto senza guardare per un messaggio rapido, oppure tre rune in sequenza per la stesa delle Norne (passato, presente, futuro). Le rune possono uscire dritte o rovesciate: entrambi gli orientamenti hanno un significato specifico che trovi nell’oracolo qui sopra.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false">
+        <span>Qual è la runa più potente o fortunata?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden=""><p>Non esiste una gerarchia assoluta tra le rune: ognuna governa una sfera diversa dell’esistenza. Algiz è tradizionalmente considerata la runa di protezione più forte, mentre Sowilo è associata a vittoria e successo. La "potenza" di una runa dipende sempre dal contesto della domanda posta.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false">
+        <span>Cosa sono le rune merkstave e quali rune non si possono rovesciare?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden=""><p>Merkstave significa "bastone oscuro" in norreno antico: indica una runa estratta in posizione invertita, il cui significato può risultare bloccato o distorto. Alcune rune, come Gebo e Isa, sono graficamente simmetriche e mantengono sempre lo stesso significato, dritte o rovesciate.</p></div>
+    </div>
+  
+    <div class="faq-item" id="faq-5">
+      <button class="faq-question" onclick="toggleFAQ(5)" aria-expanded="false">
+        <span>Che differenza c’è tra rune e tarocchi come strumenti divinatori?</span><span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-5" hidden=""><p>Le rune sono simboli grafici essenziali legati alla scrittura sacra norrena, mentre i tarocchi si basano su 78 carte illustrate con scene narrative complesse. Le rune si prestano a letture rapide e dirette, i tarocchi offrono narrazioni più articolate. Puoi confrontare i due sistemi nella nostra guida ai tarocchi.</p></div>
+    </div>
+  </div>
   </section>
 
 </div>
@@ -464,27 +692,27 @@ main{position:relative; z-index:1; padding-bottom:40px}
 
 <footer class="page-footer">
   <div class="footer-links">
-    <a href="./index.html" id="foot-home"></a>
-    <a href="./contatti.html" id="foot-contact"></a>
-    <a href="./about.html" id="foot-about"></a>
-    <a href="./privacy.html" id="foot-privacy"></a>
-    <a href="./guida-tarocchi.html" id="foot-tarocchi"></a>
-    <a href="./guida-i-ching.html" id="foot-iching"></a>
+    <a href="./index.html" id="foot-home">Home</a>
+    <a href="./contatti.html" id="foot-contact">Contatti</a>
+    <a href="./about.html" id="foot-about">Chi Siamo</a>
+    <a href="./privacy.html" id="foot-privacy">Privacy</a>
+    <a href="./guida-tarocchi.html" id="foot-tarocchi">Guida Tarocchi</a>
+    <a href="./guida-i-ching.html" id="foot-iching">Guida I Ching</a>
   </div>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I contenuti di MYSTICA hanno finalità di intrattenimento e crescita personale e non sostituiscono consulenze professionali mediche, legali o finanziarie.</p>
 </footer>
 
 <!-- ══ Premium Modal ══ -->
 <div class="premium-modal" id="premiumModal" aria-hidden="true">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca l’interpretazione estesa di ogni runa, la stesa avanzata e le letture illimitate.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
-    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

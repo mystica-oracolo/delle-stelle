@@ -649,13 +649,13 @@
 <!-- Header -->
 <header class="page-header">
   <div class="header-top">
-    <a href="./index.html" class="btn-back" id="btn-back"></a>
+    <a href="./index.html" class="btn-back" id="btn-back">← Torna alla Home</a>
     <div class="header-controls">
-      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica"></button>
-      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema"></button>
+      <button id="musicToggle" class="btn-icon" aria-label="Toggle musica">🔇 Musica OFF</button>
+      <button id="themeToggle" class="btn-icon" aria-label="Toggle tema">☀️ Giorno</button>
     </div>
   </div>
-  <h1 class="page-title" id="page-title"></h1>
+  <h1 class="page-title" id="page-title">🤍 Magia Bianca</h1>
   <div class="lang-switch" role="group" aria-label="Selezione lingua">
     <button data-lang="it" class="btn-lang active" aria-pressed="true">IT</button>
     <button data-lang="en" class="btn-lang" aria-pressed="false">EN</button>
@@ -666,8 +666,928 @@
 <!-- Contenuto principale -->
 <main id="main-content">
   <!-- ── Sezione Interattiva ── -->
-  <div class="counter" id="counter" aria-live="polite"></div>
-  <div id="ritual-list" role="list" aria-label="Lista rituali di Magia Bianca"></div>
+  <div class="counter" id="counter" aria-live="polite">40 rituali disponibili</div>
+  <div id="ritual-list" role="list" aria-label="Lista rituali di Magia Bianca"><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-0">
+        <span class="ritual-num">01</span>
+        <span class="ritual-title">Purificazione con Sale e Acqua</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-0">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rimuovere energie stagnanti dall'ambiente o dal corpo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sale marino, acqua di sorgente, ciotola di vetro, candela bianca.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Sciogli 1 cucchiaio di sale nell'acqua. Accendi la candela, recita 3 volte: <em>"Come l'acqua scorre, ogni ombra si dissolve"</em>. Aspergi l'ambiente o le mani visualizzando luce bianca. Lascia asciugare.</div>
+          </div>
+          <div class="field"><div class="field-label">✦ Nota</div><div class="field-text">Ripeti ogni luna nuova.</div></div>
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-1">
+        <span class="ritual-num">02</span>
+        <span class="ritual-title">Benedizione della Casa con Salvia Bianca</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-1">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Purificare e proteggere gli spazi domestici.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Salvia bianca secca, campanello, incensiere resistente.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Apri finestre. Accendi la salvia, parti da nord-est e muovi in senso orario suonando il campanello ogni 3 passi. Recita: <em>"Luce e pace a questo luogo, via il peso, resta il fuoco sacro"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-2">
+        <span class="ritual-num">03</span>
+        <span class="ritual-title">Amuleto di Quarzo Trasparente</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-2">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Talismano di protezione e chiarezza mentale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cristallo di quarzo, cordino bianco, olio di lavanda.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Tieni il cristallo 5 min respirando. Aggiungi 1 goccia di lavanda, lega il cordino pronunciando il tuo nome e intento. Indossalo a sinistra o sotto il cuscino.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-3">
+        <span class="ritual-num">04</span>
+        <span class="ritual-title">Rituale di Guarigione con Lavanda e Camomilla</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-3">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rilassamento profondo e recupero energetico.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Lavanda, camomilla, tazza bianca, acqua calda.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Prepara l'infuso. Prima di bere, posa le mani sulla tazza, visualizza calore dorato nel petto. Bevi lentamente ripetendo: <em>"Il mio corpo sa guarire"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-4">
+        <span class="ritual-num">05</span>
+        <span class="ritual-title">Cerchio di Luce per Intenzioni</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-4">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Lancio etico di un desiderio con purezza d'intento.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">5 candele bianche, carta naturale, penna blu.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi le candele in cerchio. Scrivi l'intento al presente. Accendi partendo da est, gira il foglio al centro 3 volte. Lascia consumare o spegni con le dita.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-5">
+        <span class="ritual-num">06</span>
+        <span class="ritual-title">Carica Lunare dei Cristalli</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-5">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rigenerare e purificare le pietre energetiche.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cristalli, panno di seta, finestra esposta alla luna.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Pulisci i cristalli con il panno. Esponili alla luna piena tutta la notte. Al mattino, ringrazia e riponili.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-6">
+        <span class="ritual-num">07</span>
+        <span class="ritual-title">Bagno di Riconnessione Terrestre</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-6">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Radicamento e equilibrio emotivo profondo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Argilla, sale grosso, oli essenziali di cedro e patchouli.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Sciogli nel bagno tiepido. Immergiti 15 min visualizzando radici che scendono nei piedi. Esci lentamente, asciugati senza fretta.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-7">
+        <span class="ritual-num">08</span>
+        <span class="ritual-title">Offerta agli Antenati</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-7">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Onorare la linea ancestrale e ricevere guida.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Acqua fresca, pane, candela bianca, foto o simbolo familiare.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi gli oggetti su un altarino. Accendi la candela, versa l'acqua a terra recitando: <em>"A chi è venuto prima, gratitudine e rispetto"</em>. Lascia 1 ora, poi smaltisci.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-8">
+        <span class="ritual-num">09</span>
+        <span class="ritual-title">Meditazione del Respiro Bianco</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-8">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Calma mentale e chiarezza interiore.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Luogo tranquillo, timer, candela.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Siediti, accendi la candela. Inspira 4 sec, trattieni 4, espira 6. Ripeti 10 cicli. Visualizza ogni respiro come luce che lava i pensieri.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-9">
+        <span class="ritual-num">10</span>
+        <span class="ritual-title">Rituale di Gratitudine Solare</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-9">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Attrarre abbondanza etica e riconoscere i doni.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Carta gialla, penna dorata, sole del mattino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi 5 cose per cui sei grato/a. Esponi al sole 10 min. Piega la carta verso di te e conservala nel portafoglio.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-10">
+        <span class="ritual-num">11</span>
+        <span class="ritual-title">Protezione con Sale alle Soglie</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-10">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Barriera energetica domestica permanente.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sale grosso, scopa, ciotolina.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Versa il sale lungo la soglia esterna. Ripassa con la scopa verso l'esterno recitando: <em>"Solo ciò che è benedetto entra"</em>. Rifai ogni settimana.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-11">
+        <span class="ritual-num">12</span>
+        <span class="ritual-title">Infuso di Chiarezza Mentale</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-11">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Focus e decisione consapevole.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Rosmarino, menta, acqua, miele.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Prepara l'infuso. Prima di bere, guarda il vapore e chiedi: <em>"Cosa devo vedere chiaramente?"</em>. Bevi lentamente, annota le intuizioni.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-12">
+        <span class="ritual-num">13</span>
+        <span class="ritual-title">Cerchio di Pace Familiare</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-12">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Armonia nelle relazioni domestiche.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">4 candele bianche, foto di famiglia, camomilla secca.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi le candele ai 4 angoli del tavolo. Accendile, spargi la camomilla al centro. Recita una preghiera o intenzione di pace. Lascia spegnere.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-13">
+        <span class="ritual-num">14</span>
+        <span class="ritual-title">Pulizia Energetica con Suono</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-13">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rompere ristagni vibratori negli spazi.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Campana tibetana o ciotola, bacchetta.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Percorri le stanze in senso orario. Suona lentamente, lascia che le vibrazioni riempiano ogni angolo. Concentrati sul silenzio tra un suono e l'altro.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-14">
+        <span class="ritual-num">15</span>
+        <span class="ritual-title">Rituale della Nuova Alba</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-14">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Rinascita dopo un periodo difficile.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela gialla, foglio, penna, acqua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi ciò che lasci andare. Brucia il foglio in sicurezza. Accendi la candela, versa l'acqua a terra dicendo: <em>"Rinasco con il sole"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-15">
+        <span class="ritual-num">16</span>
+        <span class="ritual-title">Amuleto di Erbe Sacre</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-15">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione portatile per la vita quotidiana.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sacchetto di lino, alloro, iperico, salvia.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Riempi il sacchetto, chiudilo con 3 nodi. Tienilo nella borsa o sotto il materasso. Rinova le erbe ogni 3 mesi.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-16">
+        <span class="ritual-num">17</span>
+        <span class="ritual-title">Meditazione del Cuore Aperto</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-16">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Compassione, perdono e apertura emotiva.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela rosa, cuscino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Fissa la fiamma. Inspira amore, espira perdono. Ripeti: <em>"Accolgo, rilascio, amo"</em>. 10 minuti al giorno per 7 giorni.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-17">
+        <span class="ritual-num">18</span>
+        <span class="ritual-title">Rituale di Ringraziamento alla Natura</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-17">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Riconnessione ecologica e spirituale.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Frutta secca, acqua, albero o giardino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Offri il cibo alla terra, versa l'acqua alle radici. Ringrazia ad alta voce. Resta in silenzio 5 min ascoltando i suoni naturali.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-18">
+        <span class="ritual-num">19</span>
+        <span class="ritual-title">Pulizia del Sonno con Lavanda</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-18">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Sogni lucidi e riposo profondo rigenerante.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sacchetto di lavanda, federa, candela blu.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Infila il sacchetto nella federa. Accendi la candela prima di dormire, spegnila recitando: <em>"La notte custodisce il mio riposo"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-19">
+        <span class="ritual-num">20</span>
+        <span class="ritual-title">Cerchio di Luce Globale</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-19">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Invio di energia positiva a tutto il mondo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">1 candela bianca, mappa, penna.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Traccia un cerchio sulla mappa intorno alla tua zona. Accendi la candela al centro. Visualizza luce che si espande. Recita: <em>"Pace e luce a tutti gli esseri"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-20">
+        <span class="ritual-num">21</span>
+        <span class="ritual-title">Acqua di Luna Piena</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-20">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Carica purificatrice per uso quotidiano.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Caraffa di vetro, acqua di sorgente.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Esponi la caraffa alla luna piena tutta la notte. Al mattino usa per aspergere viso e mani recitando: <em>"Luce che lava e rigenera"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-21">
+        <span class="ritual-num">22</span>
+        <span class="ritual-title">Meditazione dell'Albero</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-21">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Radicamento e pazienza interiore.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Albero o pianta grande, cuscino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Siediti vicino all'albero. Visualizza radici che scendono dai tuoi piedi, rami che salgono dalle spalle. Respira in silenzio per 10 min.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-22">
+        <span class="ritual-num">23</span>
+        <span class="ritual-title">Cerchio di Sale Protettivo</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-22">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Scudo temporaneo durante pratiche spirituali.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sale grosso, gesso.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Traccia un cerchio a terra intorno a te. Siediti dentro. Recita: <em>"Nessuna energia esterna mi tocca"</em>. Sciogli il cerchio dopo la pratica.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-23">
+        <span class="ritual-num">24</span>
+        <span class="ritual-title">Pulizia con Acqua e Limone</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-23">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Freschezza energetica rapida per ambienti.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">2 limoni, acqua, spruzzatore.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Mescola il succo con l'acqua. Spruzza negli angoli della stanza. <em>"Asprezza che pulisce, freschezza che rimane"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-24">
+        <span class="ritual-num">25</span>
+        <span class="ritual-title">Benedizione del Cibo</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-24">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Gratitudine e nutrimento consapevole.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Pasto, candela piccola.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Prima di mangiare, posa le mani sul piatto. Recita: <em>"Gratitudine per la terra, per le mani, per questo nutrimento"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-25">
+        <span class="ritual-num">26</span>
+        <span class="ritual-title">Rituale della Piuma Bianca</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-25">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Leggerezza e messaggi d'intuizione.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Piuma trovata, nastro bianco.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Lega il nastro alla piuma. Tienila sulla scrivania. <em>"Leggerezza che guida, vento che porta chiarezza"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-26">
+        <span class="ritual-num">27</span>
+        <span class="ritual-title">Meditazione della Stella Polare</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-26">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Direzione e costanza nei momenti di crisi.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cielo notturno o immagine della stella, coperta.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Fissa la stella. Inspira direzione, espira confusione. Ripeti: <em>"So dove vado, anche al buio"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-27">
+        <span class="ritual-num">28</span>
+        <span class="ritual-title">Carica Solare degli Oggetti</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-27">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Infondere vitalità e impulso all'azione.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Oggetti da caricare, sole mattutino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Esponi gli oggetti 30 min al sole. Toccali: <em>"Energia che attiva, volontà che si muove"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-28">
+        <span class="ritual-num">29</span>
+        <span class="ritual-title">Rituale del Respiro delle Stelle</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-28">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Espansione mentale e senso di appartenenza.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Luogo buio, timer.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Inspira visualizzando galassie, espira i tuoi limiti. 7 cicli. Recita: <em>"Sono parte del tutto"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-29">
+        <span class="ritual-num">30</span>
+        <span class="ritual-title">Benedizione delle Chiavi</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-29">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Protezione durante gli spostamenti quotidiani.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Chiavi, olio di rosmarino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Aggiungi una goccia di olio al portachiavi. Recita: <em>"Apri porte sicure, chiudi vie pericolose"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-30">
+        <span class="ritual-num">31</span>
+        <span class="ritual-title">Cerchio di Erbe Fresche</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-30">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Armonia domestica quotidiana continua.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Menta, basilico, timo freschi.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Disponi le erbe a corona sul tavolo. Ricambiale quando appassiscono. <em>"Freschezza che protegge"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-31">
+        <span class="ritual-num">32</span>
+        <span class="ritual-title">Meditazione del Vuoto Bianco</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-31">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Reset mentale completo.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Cuscino, candela spenta.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Chiudi gli occhi. Immagina un foglio bianco. Ogni pensiero che arriva viene cancellato da una spugna luminosa. 10 min.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-32">
+        <span class="ritual-num">33</span>
+        <span class="ritual-title">Rituale della Rugiada</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-32">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Purezza e nuovo inizio all'alba.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Bicchierino, erba con rugiada mattutina.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Raccogli gocce di rugiada. Toccaci polsi e fronte. <em>"Grazia che scende, rinnovamento che sale"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-33">
+        <span class="ritual-num">34</span>
+        <span class="ritual-title">Protezione con Specchio Tascabile</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-33">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Riflettere energie disturbanti in situazioni caotiche.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Specchio tascabile, panno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Tieni lo specchio in borsa, chiuso. In situazioni caotiche, aprilo per 1 sec verso l'esterno. <em>"Rifletto, non assorbo"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-34">
+        <span class="ritual-num">35</span>
+        <span class="ritual-title">Cerchio di Respiro Condiviso</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-34">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Sincronia energetica con persone care.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Nessuno.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Seduti fronte a fronte. Respira all'unisono per 2 min. <em>"Stesso ritmo, stessa vibrazione"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-35">
+        <span class="ritual-num">36</span>
+        <span class="ritual-title">Rituale della Pietra Levigata</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-35">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Sviluppare pazienza e costanza.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sasso liscio, tasca.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Portalo in tasca. Ogni volta che lo tocchi, respira 3 volte profondamente. <em>"Lento ma costante"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-36">
+        <span class="ritual-num">37</span>
+        <span class="ritual-title">Benedizione del Letto</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-36">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Sonno profondo riparatore.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Lavanda secca, lenzuola.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Spargi la lavanda tra le lenzuola. Recita: <em>"Riposo che rigenera, sogni che guidano"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-37">
+        <span class="ritual-num">38</span>
+        <span class="ritual-title">Meditazione del Respiro Radice</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-37">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Stabilità emotiva e radicamento.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Sedia o tappetino.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Inspira dal basso addome, espira sentendo la schiena. 10 cicli. <em>"Radici profonde, tronco saldo"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-38">
+        <span class="ritual-num">39</span>
+        <span class="ritual-title">Rituale del Vento Messaggero</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-38">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Liberare pensieri pesanti all'aria aperta.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Luogo aperto, foglietto, penna.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi la preoccupazione. Lascia che il vento la porti via. <em>"Vado, vento, portalo via"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div><div class="ritual-card" role="listitem">
+      <div class="ritual-head" onclick="this.parentElement.classList.toggle('open')" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();event.preventDefault()}" aria-controls="ritual-body-39">
+        <span class="ritual-num">40</span>
+        <span class="ritual-title">Cerchio di Chiusura Serale</span>
+        <span class="ritual-arrow" aria-hidden="true">▾</span>
+      </div>
+      <div class="ritual-body" id="ritual-body-39">
+        <div class="ritual-body-inner">
+          <div class="field">
+            <div class="field-label">🎯 Scopo</div>
+            <div class="field-text">Bilancio della giornata e pace notturna.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">🧿 Materiali</div>
+            <div class="field-text">Candela piccola, diario.</div>
+          </div>
+          <div class="field">
+            <div class="field-label">📜 Procedura</div>
+            <div class="field-text">Scrivi 3 cose fatte e 3 da lasciare andare. Spegni la candela. <em>"Giorno chiuso, notte custodisce"</em>.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div></div>
 
   <!-- ── Share ── -->
   <div class="share-section">
@@ -677,13 +1597,13 @@
       <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Telegram">✈️ Telegram</a>
       <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Facebook">👥 Facebook</a>
       <a class="share-btn twitter"  id="share-x"  target="_blank" rel="noopener noreferrer" aria-label="Condividi su X">🐦 X</a>
-      <button class="share-btn copy" id="share-copy" onclick="copyLink()"></button>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
     </div>
   </div>
 
   <!-- ── Articolo Editoriale ── -->
   <article class="article-section">
-    <h2 id="art-title"></h2>
+    <h2 id="art-title">Magia Bianca: Storia, Origini e Pratica della Via della Luce</h2>
     <figure>
       <img src="./images/icone/home/magia-bianca.webp"
            srcset="./images/icone/home/magia-bianca.webp 1x"
@@ -694,28 +1614,78 @@
            loading="eager"
            decoding="async"
            style="width:100%;border-radius:14px;margin:16px 0">
-      <figcaption style="font-size:11px;color:var(--muted);text-align:center;margin-top:-10px;margin-bottom:12px" id="art-img-caption"></figcaption>
+      <figcaption style="font-size:11px;color:var(--muted);text-align:center;margin-top:-10px;margin-bottom:12px" id="art-img-caption">Elementi tradizionali della Magia Bianca: candele bianche, cristalli di quarzo, salvia e sale</figcaption>
     </figure>
-    <h3 id="art-h2"></h3>
-    <p id="art-p1"></p>
-    <p id="art-p2"></p>
-    <p id="art-p3"></p>
-    <h3 id="art-h3"></h3>
-    <p id="art-p4"></p>
-    <p id="art-p5"></p>
+    <h3 id="art-h2">Le Radici Millenarie di una Tradizione Universale</h3>
+    <p id="art-p1">La Magia Bianca, nella sua essenza più pura, è l'arte di operare intenzionalmente con le forze della natura, della mente e dello spirito per scopi etici e costruttivi. Non si tratta di un fenomeno medievale chiuso nei grimori polverosi, ma di una tradizione viva che affonda le radici nelle pratiche sciamaniche preistoriche, nei culti delle dee della fertilità del Neolitico, nei misteri eleusini greci e nelle tradizioni erboristiche e curative di ogni cultura conosciuta. Ogni società umana ha sviluppato forme di magia benevola: i guaritori nativi americani con la medicina delle piante sacre, i curanderos sudamericani, le fattucchiere italiane con i loro brebbaggi di salvia e rosmarino, i druidi celti che lavoravano con il ciclo delle stagioni. Anche le civiltà mesopotamiche ed egizie, attraverso i loro sacerdoti-medici, praticavano forme di magia protettiva intrecciata a conoscenze erboristiche e astronomiche, segno di quanto questo impulso umano verso la cura intenzionale sia trasversale a tempo e luogo.</p>
+    <p id="art-p2">Il termine stesso di Magia Bianca si afferma nell'Europa rinascimentale, in contrasto con la Magia Nera o la Negromanzia, per distinguere le pratiche che operano in armonia con la natura e con la volontà divina da quelle che cercano di piegarla o manipolarla a scopi egoistici. Il filosofo e medico rinascimentale Heinrich Cornelius Agrippa von Nettesheim, nel suo monumentale De Occulta Philosophia del 1531, sistematizzò per la prima volta queste distinzioni, suddividendo la magia in naturale (che sfrutta le proprietà occulte delle erbe, pietre e stelle), celeste (basata sull'astrologia e sulle influenze degli astri) e cerimoniale (che lavora con spiriti e angeli). Agrippa fu forse il primo a proporre una visione etica e filosoficamente coerente della magia come disciplina nobile. Prima di lui, Marsilio Ficino aveva già introdotto a Firenze, attraverso le sue traduzioni del Corpus Hermeticum, l'idea che la magia naturalis fosse una scienza legittima delle corrispondenze cosmiche, gettando le basi filosofiche su cui Agrippa avrebbe poi costruito il proprio sistema più esteso e codificato.</p>
+    <p id="art-p3">In Italia, la tradizione della Magia Bianca ha una storia particolarmente ricca e radicata, intrecciata con la religiosità popolare, il culto dei santi, le pratiche apotropaiche contro il malocchio e le malattie, e un profondo rispetto per i cicli della luna. Le cosiddette fattucchiere e le streghe benigne — diverse dalla figura diabolica costruita dalla propaganda ecclesiastica — erano spesso erboriste, levatrici e guarite rispettate dalla comunità. Nei villaggi del Sud Italia, della Sardegna e della Toscana, sopravvivono ancora oggi tradizioni orali di preghiere curative, legamenti d'amore etici, rituali di purificazione con il fuoco e l'acqua, e cerimonie stagionali che risalgono a epoche remote e pre-cristiane, poi riassorbite e rielaborate dal sincretismo religioso locale.</p>
+    <h3 id="art-h3">La Pratica Moderna: Rituali, Simboli e Intenzioni</h3>
+    <p id="art-p4">La Magia Bianca moderna, influenzata dal Neopaganesimo, dalla Wicca di Gerald Gardner degli anni Cinquanta e dalla New Age degli anni Ottanta, ha sviluppato un corpus di pratiche e principi etici piuttosto ben definiti. Il principio del Triplice Ritorno — l'idea che ciò che si proietta verso gli altri torni amplificato su chi lo ha inviato — è diventato una sorta di imperativo morale universale tra i praticanti contemporanei. I rituali si strutturano attorno a elementi fondamentali: la purificazione dell'intenzione e dello spazio, la creazione di un cerchio protettivo, l'invocazione degli elementi o delle forze naturali pertinenti, l'atto magico vero e proprio (scrittura, candela, cristallo, erba), e infine il ringraziamento e la chiusura. Ogni dettaglio — dalla fase lunare al colore della candela, dall'ora del giorno all'orientamento cardinale — ha una sua logica simbolica coerente.</p>
+    <p id="art-p5">Nella pratica quotidiana, la Magia Bianca si manifesta in gesti semplici e profondi: il benedire un pasto prima di mangiarlo, il purificare casa propria con il fumo della salvia dopo un periodo di tensione, il portare un cristallo in tasca per sentirsi ancorati, l'accendere una candela con un'intenzione precisa ogni mattina. La differenza tra una pratica magica e un rituale comune non risiede negli strumenti usati, ma nella qualità dell'attenzione e della consapevolezza che vi si porta. È questa presenza intenzionale — quella che il filosofo e mistico italiano Julius Evola chiamava «tensione dello spirito verso il sacro» — a fare di un atto ordinario un atto magico. I 40 rituali raccolti in questa pagina provengono da questa lunga tradizione e sono stati selezionati per la loro praticabilità, sicurezza e coerenza etica.</p>
     <nav class="article-links" aria-label="Pagine correlate">
-      <a href="./magia-rossa.html" id="link-1"></a>
-      <a href="./magia-nera.html" id="link-2"></a>
-      <a href="./malocchio.html" id="link-3"></a>
-      <a href="./pietre-magiche.html" id="link-4"></a>
+      <a href="./magia-rossa.html" id="link-1">🔴 Magia Rossa</a>
+      <a href="./magia-nera.html" id="link-2">🖤 Magia Nera</a>
+      <a href="./malocchio.html" id="link-3">🧿 Protezione dal Malocchio</a>
+      <a href="./pietre-magiche.html" id="link-4">💎 Pietre Magiche</a>
     </nav>
-    <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
   <!-- ── FAQ ── -->
   <section class="faq-section" aria-labelledby="faq-heading">
-    <h2 class="faq-title" id="faq-heading"></h2>
-    <div class="faq-list" id="faqList"></div>
+    <h2 class="faq-title" id="faq-heading">Domande Frequenti</h2>
+    <div class="faq-list" id="faqList">
+    <div class="faq-item" id="faq-0">
+      <button class="faq-question" onclick="toggleFAQ(0)" aria-expanded="false" aria-controls="faq-ans-0">
+        <span>Qual è la differenza tra Magia Bianca e Magia Nera?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-0" hidden="">
+        <p>La distinzione fondamentale è nell'intenzione e nell'etica. La Magia Bianca opera sempre nel rispetto del libero arbitrio altrui, per scopi costruttivi e benevoli: protezione, guarigione, chiarezza, armonia, abbondanza. La Magia Nera invece mira a controllare, danneggiare o manipolare altri contro la loro volontà. Nella tradizione esoterica, molti operatori considerano anche la Magia Rossa (passione, amore) come un territorio intermedio che richiede particolare cautela. La Wicca ha codificato questo principio nella cosiddetta Legge del Triplice Ritorno: qualsiasi energia inviata torna all'operatore moltiplicata per tre, nel bene come nel male. Questa credenza ha contribuito a diffondere un approccio eticamente consapevole tra i praticanti contemporanei.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-1">
+      <button class="faq-question" onclick="toggleFAQ(1)" aria-expanded="false" aria-controls="faq-ans-1">
+        <span>La Magia Bianca funziona davvero? C'è una base scientifica?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-1" hidden="">
+        <p>Dal punto di vista scientifico convenzionale, la magia come fenomeno soprannaturale non è verificabile. Quello che invece è ben documentato è il potente effetto psicologico dei rituali sull'operatore stesso: aumentano la concentrazione, rafforzano l'intenzione, attivano risorse emotive e cognitive profonde. L'effetto placebo, gli studi sulla meditazione e la ricerca sull'influenza dell'intenzione mentale sulle proprie azioni dimostrano che creare un rituale intorno a un obiettivo — anche simbolicamente — aumenta concretamente la probabilità di raggiungerlo. Molti praticanti non fanno distinzione tra "funziona magicamente" e "funziona psicologicamente": per loro l'effetto prodotto è reale, indipendentemente dal meccanismo sottostante.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-2">
+      <button class="faq-question" onclick="toggleFAQ(2)" aria-expanded="false" aria-controls="faq-ans-2">
+        <span>Come scegliere il rituale giusto per la propria situazione?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-2" hidden="">
+        <p>La scelta dipende dall'intenzione specifica e dalle risorse disponibili. Per problemi di energia stagnante o atmosfera pesante in casa, la purificazione con salvia o con sale e acqua è il punto di partenza più immediato. Per la protezione personale durante un periodo di stress o conflitto, l'amuleto di quarzo o il cerchio di sale alle soglie sono soluzioni semplici ed efficaci. Per le intenzioni più elaborate — attrarre opportunità, rinascere dopo una perdita, rafforzare relazioni — i rituali con candele e cerchi richiedono più preparazione ma restituiscono risultati più intensi. La luna piena è il momento migliore per i rituali di potenziamento; la luna nuova per quelli di nuovo inizio.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-3">
+      <button class="faq-question" onclick="toggleFAQ(3)" aria-expanded="false" aria-controls="faq-ans-3">
+        <span>Quali materiali servono per iniziare con la Magia Bianca?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-3" hidden="">
+        <p>La Magia Bianca è, nella sua essenza, una pratica minimalista: l'intenzione è lo strumento principale. Detto questo, i materiali più versatili per un principiante sono: candele bianche (purificazione, protezione, chiarezza), sale marino grosso (purificazione di spazi e oggetti), salvia bianca essiccata (smudging), un cristallo di quarzo trasparente (amplificazione dell'intenzione), lavanda (rilassamento, sonno, pace), un quaderno per annotare intenzioni e risultati. Tutti questi elementi sono facilmente reperibili ed economici. Non esistono strumenti "magici" in sé: è la consapevolezza dell'operatore a trasformare un oggetto comune in uno strumento rituale.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item" id="faq-4">
+      <button class="faq-question" onclick="toggleFAQ(4)" aria-expanded="false" aria-controls="faq-ans-4">
+        <span>La Magia Bianca è compatibile con le religioni tradizionali?</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-4" hidden="">
+        <p>Dipende molto dalla tradizione religiosa di riferimento e dall'interpretazione personale. Molte pratiche di Magia Bianca — la preghiera, l'uso di candele votive, la benedizione degli spazi, il rispetto per le stagioni e i cicli naturali — sono già presenti in forme diverse nel Cattolicesimo popolare, nell'Ebraismo mistico (Kabbalah), nel Sufismo islamico, nell'Induismo e in molte tradizioni indigene. La tensione si manifesta principalmente con le letture più ortodosse e letterali delle religioni abramitiche. Molti praticanti contemporanei vivono senza difficoltà un sincretismo personale, attingendo sia alla propria tradizione religiosa familiare sia alle pratiche neo-pagane o wiccan, trovando in esse linguaggi complementari per la stessa spiritualità.</p>
+      </div>
+    </div>
+  </div>
   </section>
 </main>
 
@@ -727,23 +1697,21 @@
     <a href="./about.html">Chi Siamo</a>
     <a href="./privacy.html">Privacy</a>
   </nav>
-  <p id="footer-copy"></p>
-  <p id="footer-disclaimer" class="footer-disclaimer"></p>
+  <p id="footer-copy">© 2025 PetroCorporation · Dott. Petrolese Giovanni</p>
+  <p id="footer-disclaimer" class="footer-disclaimer">I rituali presentati hanno finalità spirituali e meditative. Non sostituiscono in alcun modo cure mediche o psicologiche. MYSTICA Oracoli non si assume responsabilità per usi impropri delle informazioni contenute.</p>
 </footer>
 
 <!-- Premium Modal -->
 <div class="premium-modal" id="premiumModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="premium-title">
   <div class="modal-overlay" onclick="closePremiumModal()"></div>
   <div class="modal-content">
-    <h2 id="premium-title"></h2>
-    <p id="premium-text"></p>
-    <p class="premium-price" id="premium-price"></p>
+    <h2 id="premium-title">✦ Funzione Premium</h2>
+    <p id="premium-text">Sblocca rituali avanzati, letture illimitate e consulti personalizzati sulla Magia Bianca.</p>
+    <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">
-    </button>
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
-      onclick="closePremiumModal()">
-    </button>
+      onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 

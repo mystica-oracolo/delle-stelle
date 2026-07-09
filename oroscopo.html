@@ -358,7 +358,7 @@ body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-co
     <div class="hero-banner" id="heroBanner" onclick="selectSign(_heroSign)">
       <div class="hero-bg" id="heroBg"></div>
       <div class="hero-gradient"></div>
-      <div class="hero-dots" id="heroDots"></div>
+      <div class="hero-dots" id="heroDots"><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot active"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div></div>
       <div class="hero-content">
         <div class="hero-eyebrow">⭐ <span id="i18nTitle">Oroscopo</span> · <span id="dateBadge">—</span></div>
         <h1 class="hero-title" id="heroTitle">—</h1>
@@ -373,7 +373,91 @@ body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-co
       <div class="carousel-head">
         <div class="carousel-title">✨ <span id="i18nAllSigns">Tutti i Segni</span></div>
       </div>
-      <div class="carousel-track" id="signGrid"></div>
+      <div class="carousel-track" id="signGrid"><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♈</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/ariete.webp" alt="Ariete — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♈</span></div>
+      </div>
+      <div class="poster-name">Ariete</div>
+      <div class="poster-dates">21 Mar</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♉</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/toro.webp" alt="Toro — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♉</span></div>
+      </div>
+      <div class="poster-name">Toro</div>
+      <div class="poster-dates">21 Apr</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♊</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/gemelli.webp" alt="Gemelli — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♊</span></div>
+      </div>
+      <div class="poster-name">Gemelli</div>
+      <div class="poster-dates">21 Mag</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♋</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/cancro.webp" alt="Cancro — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♋</span></div>
+      </div>
+      <div class="poster-name">Cancro</div>
+      <div class="poster-dates">22 Giu</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♌</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/leone.webp" alt="Leone — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♌</span></div>
+      </div>
+      <div class="poster-name">Leone</div>
+      <div class="poster-dates">23 Lug</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♍</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/vergine.webp" alt="Vergine — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♍</span></div>
+      </div>
+      <div class="poster-name">Vergine</div>
+      <div class="poster-dates">23 Ago</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♎</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/bilancia.webp" alt="Bilancia — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♎</span></div>
+      </div>
+      <div class="poster-name">Bilancia</div>
+      <div class="poster-dates">23 Set</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♏</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/scorpione.webp" alt="Scorpione — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♏</span></div>
+      </div>
+      <div class="poster-name">Scorpione</div>
+      <div class="poster-dates">23 Ott</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♐</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/sagittario.webp" alt="Sagittario — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♐</span></div>
+      </div>
+      <div class="poster-name">Sagittario</div>
+      <div class="poster-dates">23 Nov</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♑</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/capricorno.webp" alt="Capricorno — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♑</span></div>
+      </div>
+      <div class="poster-name">Capricorno</div>
+      <div class="poster-dates">22 Dic</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♒</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/acquario.webp" alt="Acquario — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♒</span></div>
+      </div>
+      <div class="poster-name">Acquario</div>
+      <div class="poster-dates">21 Gen</div></div><div class="poster-card">
+      <div class="poster-frame">
+        <div class="poster-fallback">♓</div>
+        <img class="poster-img" src="./images/zodiaco-verticale/pesci.webp" alt="Pesci — oroscopo" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        <div class="poster-shade"><span class="poster-symbol">♓</span></div>
+      </div>
+      <div class="poster-name">Pesci</div>
+      <div class="poster-dates">20 Feb</div></div></div>
     </div>
 
     <!-- READING -->
