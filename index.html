@@ -297,14 +297,23 @@ body {
   will-change: transform;
 }
 .home-header.header-hidden { transform: translateY(-100%); }
-.hh-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.hh-logo { display: flex; align-items: center; gap: 6px; }
+.hh-row { display: flex; align-items: center; justify-content: space-between; gap: 8px 10px; flex-wrap: wrap; }
+.hh-logo { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .hh-logo .logo-glow { font-size: 13px; color: var(--gold); opacity: .7; }
 .hh-logo .logo-title {
   font-family: 'Cinzel', serif; font-size: 19px; color: var(--gold);
   letter-spacing: 3px; line-height: 1; text-shadow: 0 0 16px var(--gold-glow);
 }
-.hh-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.hh-controls {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  justify-content: flex-end; flex: 1 1 auto; min-width: 0;
+}
+@media (max-width: 400px) {
+  .hh-row { justify-content: flex-start; }
+  .hh-controls { justify-content: flex-start; width: 100%; }
+  .btn-icon { padding: 5px 8px; font-size: 11px; }
+  .btn-lang { padding: 3px 7px; font-size: 9px; }
+}
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
