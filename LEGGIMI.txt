@@ -1,36 +1,32 @@
 ═══════════════════════════════════════════════════
   MYSTICA — SITO WEB LIVE
-  Versione: 1.1 — Data: 9 Luglio 2026
+  Versione: 1.0 — Data: 23 Maggio 2026
 ═══════════════════════════════════════════════════
 
-QUESTO È IL SITO WEB UFFICIALE SU GITHUB PAGES
-URL: https://mysticaoracoli.it
-Repo: github.com/mystica-oracolo/delle-stelle
-Dominio: registrato su Aruba, DNS puntato a GitHub Pages
+QUESTO È IL SITO WEB UFFICIALE SU NETLIFY
+URL: https://mystica-oracolo.netlify.app
 
 CONTENUTO CARTELLA:
 ───────────────────
 index.html              → App completa (FILE PRINCIPALE)
-sw.js                    → Service Worker (PWA offline)
-manifest.json            → Manifesto PWA
-icon-192.png             → Icona Android/Chrome
-icon-512.png             → Icona Play Store
-apple-touch-icon.png     → Icona iOS
-success.html             → Pagina dopo pagamento Stripe
-sitemap.xml              → Mappa sito per Google
-robots.txt               → Istruzioni per Google
-CNAME                    → File con "mysticaoracoli.it" per il dominio custom su GitHub Pages
-google07f0cd00adc0f158   → Verifica Google Search Console
+sw.js                   → Service Worker (PWA offline)
+manifest.json           → Manifesto PWA
+icon-192.png            → Icona Android/Chrome
+icon-512.png            → Icona Play Store
+apple-touch-icon.png    → Icona iOS
+success.html            → Pagina dopo pagamento Stripe
+sitemap.xml             → Mappa sito per Google
+robots.txt              → Istruzioni per Google
+google07f0cd00adc0f158  → Verifica Google Search Console
 
 COSA È ATTIVO:
 ──────────────
 ✅ AdSense: ca-pub-0522720046244970 (in attesa approvazione Google)
 ✅ Stripe Premium: https://buy.stripe.com/aFa6ozfOx2vNcdAdEW4ow00
-✅ Redirect Premium: https://mysticaoracoli.it/success.html
+✅ Redirect Premium: https://mystica-oracolo.netlify.app/success.html
 ✅ SEO ottimizzato con sitemap e Search Console
 ✅ PWA installabile su Android e iOS
 ✅ Service Worker con cache offline
-✅ Audio oroscopo (298 file) su CDN jsDelivr dal repo mystica-oracolo/delle-stelle
 
 CONTATTI E LEGALE:
 ──────────────────
@@ -41,26 +37,15 @@ Termini di Servizio: inclusi nell'app (footer → Termini)
 
 COME AGGIORNARE IL SITO:
 ─────────────────────────
-1. Modifica i file in questa cartella (es. index.html, oroscopo.html)
-2. Fai commit e push sul branch principale del repo GitHub
-   (es. git add . && git commit -m "aggiornamento" && git push)
-3. GitHub Pages fa il deploy automaticamente in pochi minuti
-4. Verifica su https://mysticaoracoli.it che le modifiche siano live
-   (potrebbe servire uno svuota-cache/hard refresh)
+1. Modifica index.html in questa cartella
+2. Vai su app.netlify.com
+3. Deploys → trascina questa cartella
+4. Aspetta "Deploy is live"
 
-BACKUP / ROLLBACK:
-───────────────────
-GitHub conserva tutta la cronologia dei commit.
-Se qualcosa va storto: vai sul repo → Commits → trova l'ultimo commit
-funzionante → "Revert" oppure ripristina i file da quel commit e fai
-un nuovo push.
-
-NOTE DNS (ARUBA):
-──────────────────
-Il dominio mysticaoracoli.it è registrato su Aruba. I record DNS
-puntano a GitHub Pages. Il file CNAME nella root del repo deve sempre
-contenere "mysticaoracoli.it" — se sparisce, il dominio custom si
-disattiva e GitHub torna a servire dal dominio *.github.io.
+BACKUP NETLIFY:
+───────────────
+Netlify conserva tutti i deploy precedenti.
+Se qualcosa va storto: Deploys → clicca deploy precedente → "Publish deploy"
 
 PROSSIMI PASSI DA FARE:
 ────────────────────────
