@@ -786,7 +786,7 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
     <h3 id="art-h3">Simboli, Miti da Sfatare e Differenze tra le Scuole</h3>
     <p id="art-p4">Esistono numerose scuole e correnti, spesso con differenze sostanziali tra loro. La Wicca gardneriana, la più antica linea iniziatica, richiede una trasmissione diretta tra maestro e allievo attraverso gradi successivi. La Wicca alessandrina, fondata da Alex Sanders negli anni '60, ne condivide la struttura con alcune varianti cerimoniali. La Wicca eclettica e la figura della strega solitaria, invece, permettono un percorso completamente autonomo, senza coven né iniziazione formale — proprio l'approccio proposto in questa guida. Distinta da tutte queste è la stregoneria tradizionale (Traditional Witchcraft), che rifiuta l'impianto religioso duotestico della Wicca per concentrarsi su pratiche folk, erboristeria popolare e un rapporto diretto con gli spiriti del luogo.</p>
     <p id="art-p5">Un aneddoto curioso: i famosi processi di Salem del 1692, spesso associati erroneamente alla stregoneria europea, si svolsero in realtà nel Massachusetts puritano e portarono alla condanna di venti persone, in un contesto sociale segnato da tensioni comunitarie più che da reale pratica magica. Oggi il paganesimo moderno e la Wicca sono riconosciuti come movimenti religiosi in diversi paesi, con comunità attive anche in Italia. Per chi desidera approfondire, testi accademici di storia delle religioni e studi antropologici sul paganesimo contemporaneo offrono una prospettiva equilibrata tra fascino simbolico e rigore storico, ben più solida delle rappresentazioni cinematografiche.</p>
-    <nav class="article-links" id="article-internal-links" aria-label=""><a href="./pratiche.html">Figure del Mistico</a><a href="./tradizioni-spirituali.html">Tradizioni Spirituali</a><a href="./pietre-magiche.html">Pietre Magiche</a><a href="./guida-tarocchi.html">Tarocchi</a></nav>
+    <nav class="article-links" id="article-internal-links" aria-label=""><a href="./pratiche.html">Figure del Mistico</a><a href="./tradizioni-spirituali.html">Tradizioni Spirituali</a><a href="./pietre-magiche.html">Pietre Magiche</a><a href="./guida-tarocchi.html">Tarocchi</a><a href="./60-magie.html">I 60 Rituali di Magia</a></nav>
     <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
   </article>
 
@@ -1031,7 +1031,8 @@ const LANG = {
       { emoji: '🧘', label: 'Mente & Energia', href: './mente-energia.html' },
       { emoji: '👁️', label: 'Tavola Ouija', href: './ouija.html' },
       { emoji: '🃏', label: 'Tarocchi', href: './guida-tarocchi.html' },
-      { emoji: 'ᚱ', label: 'Rune', href: './significato-rune.html' }
+      { emoji: 'ᚱ', label: 'Rune', href: './significato-rune.html' },
+      { emoji: '📖', label: 'I 60 Rituali di Magia', href: './60-magie.html' }
     ],
     esploraTitle: '✨ Esplora Anche',
     artTitle: 'Storia, Origini e Simbologia della Stregoneria Moderna',
@@ -1180,7 +1181,8 @@ const LANG = {
       { emoji: '🧘', label: 'Mind & Energy', href: './mente-energia.html' },
       { emoji: '👁️', label: 'Ouija Board', href: './ouija.html' },
       { emoji: '🃏', label: 'Tarot', href: './guida-tarocchi.html' },
-      { emoji: 'ᚱ', label: 'Runes', href: './significato-rune.html' }
+      { emoji: 'ᚱ', label: 'Runes', href: './significato-rune.html' },
+      { emoji: '📖', label: 'The 60 Magic Rituals', href: './60-magie.html' }
     ],
     esploraTitle: '✨ Explore Also',
     artTitle: 'History, Origins and Symbolism of Modern Witchcraft',
@@ -1329,7 +1331,8 @@ const LANG = {
       { emoji: '🧘', label: 'Mente y Energía', href: './mente-energia.html' },
       { emoji: '👁️', label: 'Tabla Ouija', href: './ouija.html' },
       { emoji: '🃏', label: 'Tarot', href: './guida-tarocchi.html' },
-      { emoji: 'ᚱ', label: 'Runas', href: './significato-rune.html' }
+      { emoji: 'ᚱ', label: 'Runas', href: './significato-rune.html' },
+      { emoji: '📖', label: 'Los 60 Rituales de Magia', href: './60-magie.html' }
     ],
     esploraTitle: '✨ Explora También',
     artTitle: 'Historia, Orígenes y Simbología de la Brujería Moderna',
@@ -1458,7 +1461,8 @@ function renderInternalLinks() {
     { href: './pratiche.html', label: L.related[1].label },
     { href: './tradizioni-spirituali.html', label: L.related[2].label },
     { href: './pietre-magiche.html', label: L.related[3].label },
-    { href: './guida-tarocchi.html', label: L.related[6].label }
+    { href: './guida-tarocchi.html', label: L.related[6].label },
+    { href: './60-magie.html', label: L.related[8].label }
   ];
   el.innerHTML = links.map(l => `<a href="${l.href}">${l.label}</a>`).join('');
 }
