@@ -34,7 +34,72 @@
   <meta name="twitter:image" content="https://mysticaoracoli.it/images/pentacoliresalomone/principale/i44pentacoli.webp">
 
   <!-- JSON-LD — inizialmente vuoto {}, rigenerato da updateSEO() nella lingua corrente -->
-  <script type="application/ld+json">{}</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mysticaoracoli.it/pentacoli-salomone.html",
+      "url": "https://mysticaoracoli.it/pentacoli-salomone.html",
+      "name": "I 44 Pentacoli di Re Salomone | MYSTICA Oracoli",
+      "description": "Enciclopedia completa dei 44 Pentacoli di Re Salomone: origine, simbologia, uso magico, tempistica di consacrazione e pianeta.",
+      "inLanguage": "it-IT",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "MYSTICA Oracoli",
+        "url": "https://mysticaoracoli.it/"
+      },
+      "primaryImageOfPage": "https://mysticaoracoli.it/images/pentacoliresalomone/principale/i44pentacoli.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "MYSTICA Oracoli",
+          "item": "https://mysticaoracoli.it/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pentacoli di Re Salomone",
+          "item": "https://mysticaoracoli.it/pentacoli-salomone.html"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "MYSTICA Oracoli",
+      "url": "https://mysticaoracoli.it/",
+      "logo": "https://mysticaoracoli.it/apple-touch-icon-v2.png"
+    },
+    {
+      "@type": "Article",
+      "headline": "I 44 Pentacoli di Re Salomone",
+      "description": "Enciclopedia completa dei 44 Pentacoli di Re Salomone: origine, simbologia e uso magico.",
+      "image": "https://mysticaoracoli.it/images/pentacoliresalomone/principale/i44pentacoli.webp",
+      "inLanguage": "it-IT",
+      "author": {
+        "@type": "Person",
+        "name": "Dott. Petrolese Giovanni",
+        "alternateName": "Mago Petro",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "PetroCorporation"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MYSTICA Oracoli",
+        "url": "https://mysticaoracoli.it/",
+        "logo": "https://mysticaoracoli.it/apple-touch-icon-v2.png"
+      }
+    }
+  ]
+}
+</script>
 
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGH40FYK4"></script>
@@ -1660,7 +1725,7 @@
           grid.innerHTML = cards.map(card => `
             <div class="pentacolo-card">
               <div class="pentacolo-img-wrap">
-                <img src="${card.img}" srcset="${card.img} 1x, ${card.img.replace('.webp'" class="pentacolo-img" alt="${card.title}" loading="lazy" width="180" height="220">
+                <img src="${card.img}" srcset="${card.img} 1x" class="pentacolo-img" alt="${card.title}" loading="lazy" width="180" height="220">
               </div>
               <div class="pentacolo-body">
                 <div class="pentacolo-num">${card.num}</div>
