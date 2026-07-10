@@ -342,9 +342,14 @@
       'auth/wrong-password': 'Password errata.',
       'auth/invalid-credential': 'Email o password errati.',
       'auth/too-many-requests': 'Troppi tentativi. Riprova tra qualche minuto.',
-      'auth/popup-closed-by-user': 'Accesso Google annullato.'
+      'auth/popup-closed-by-user': 'Accesso Google annullato.',
+      'auth/unauthorized-domain': 'Dominio non autorizzato in Firebase (Authentication → Impostazioni → Domini autorizzati).',
+      'auth/network-request-failed': 'Errore di rete. Controlla la connessione e riprova.'
     };
-    return map[code] || 'Si è verificato un errore. Riprova.';
+    // DEBUG TEMPORANEO: se il codice non è mappato, mostralo comunque in chiaro
+    // così è visibile anche da telefono senza dover aprire la console.
+    // Da togliere una volta risolto il problema di login.
+    return map[code] || ('Si è verificato un errore (' + (code || 'codice sconosciuto') + '). Riprova.');
   }
 
   window._myst_authLogin = async function () {
