@@ -34,6 +34,8 @@
   let _authInitPromise = null;
   let _currentUser = null;
   let _premiumUnsub = null;
+  let _authReadyResolve = null;
+  const _authReadyPromise = new Promise((resolve) => { _authReadyResolve = resolve; });
   let _cachedPremium = (function () {
     try { return localStorage.getItem('myst_premium_cache') === '1'; } catch (e) { return false; }
   })();
@@ -84,6 +86,7 @@
 
       onAuthStateChanged(auth, (user) => {
         _currentUser = user;
+        if (_authReadyResolve) { _authReadyResolve(); _authReadyResolve = null; }
         document.dispatchEvent(new CustomEvent('mystica-auth-changed', { detail: { user } }));
         _renderAccountWidget();
         if (user) {
@@ -405,6 +408,7 @@
   const MysticaAuth = {
     currentUser() { return _currentUser; },
     isLoggedIn() { return !!_currentUser; },
+    ready() { _initAuth(); return _authReadyPromise; },
     getUid() { return _currentUser ? _currentUser.uid : null; },
     isPremium() { return _cachedPremium; },
     openAuthModal,

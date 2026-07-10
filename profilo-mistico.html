@@ -1476,9 +1476,13 @@ function _fillProfileForm(p){
 async function tryLoadSaved(){
   try{
     // Utente loggato → il profilo su Firestore è la fonte di verità
-    if(window.MysticaAuth && window.MysticaAuth.isLoggedIn()){
-      const cloudProfile = await window.MysticaAuth.loadProfile();
-      if(cloudProfile && cloudProfile.date){ _fillProfileForm(cloudProfile); return; }
+    // (attendiamo l'esito CERTO di Firebase Auth, non solo lo stato ancora in caricamento)
+    if(window.MysticaAuth){
+      await window.MysticaAuth.ready();
+      if(window.MysticaAuth.isLoggedIn()){
+        const cloudProfile = await window.MysticaAuth.loadProfile();
+        if(cloudProfile && cloudProfile.date){ _fillProfileForm(cloudProfile); return; }
+      }
     }
     // Ospite (o nessun dato cloud ancora) → fallback locale
     const raw=localStorage.getItem('myst_v3_profile');
@@ -1491,7 +1495,7 @@ async function tryLoadSaved(){
 // Se l'utente accede DOPO il caricamento della pagina, ricarica il profilo dal cloud
 document.addEventListener('mystica-auth-changed', (e)=>{ if(e.detail.user) tryLoadSaved(); });
 
-function generaProfilo(silent){
+async function generaProfilo(silent){
   const L=LANG[currentLang];
   const name=document.getElementById('inpName').value.trim();
   const day=document.getElementById('wDay').value;
@@ -1525,8 +1529,13 @@ function generaProfilo(silent){
 
   const p={name,date:dateStr,segno:segnoKey,gender};
   try{ localStorage.setItem('myst_v3_profile',JSON.stringify(p)); }catch(e){}
-  if(window.MysticaAuth && window.MysticaAuth.isLoggedIn()){
-    window.MysticaAuth.saveProfile(p);
+  if(window.MysticaAuth){
+    // Attendiamo l'esito CERTO di Firebase Auth: subito dopo il caricamento della pagina
+    // isLoggedIn() potrebbe rispondere "false" solo perché l'SDK non ha ancora finito
+    // di inizializzarsi (è caricato in differita), anche se l'utente è davvero loggato.
+    window.MysticaAuth.ready().then(()=>{
+      if(window.MysticaAuth.isLoggedIn()) window.MysticaAuth.saveProfile(p);
+    });
   }
 
   lastGenerated = {name, dateStr, segnoKey, cKey, numDest, year};
