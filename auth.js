@@ -215,8 +215,7 @@
 .au-footer{margin-top:14px;}
 .au-footer a,.au-footer button.au-skip{color:rgba(212,175,55,.65);font-size:.78rem;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Cinzel',serif;display:block;margin:6px auto 0;}
 .au-footer a:hover,.au-footer button.au-skip:hover{color:#d4af37;}
-#_myst_account_widget{position:fixed;bottom:18px;left:18px;z-index:9998;background:rgba(20,12,36,.9);border:1px solid rgba(212,175,55,.4);border-radius:24px;padding:8px 14px;font-family:'Cinzel',serif;font-size:.72rem;color:#d4af37;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px;}
-#_myst_account_widget:hover{border-color:#d4af37;}
+#_myst_account_widget{display:none !important;}
 `;
 
   function _ensureCss() {
