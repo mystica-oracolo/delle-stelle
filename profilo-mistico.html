@@ -1620,6 +1620,13 @@ document.addEventListener('DOMContentLoaded', () => {
     b.classList.toggle('active', b.dataset.lang === currentLang));
   initSelects();
   tryLoadSaved();
+
+  // Se si arriva da un link tipo profilo-mistico.html?auth=register (es. dalla home),
+  // apri subito il modal di accesso/registrazione sulla scheda giusta.
+  const _authParam = new URLSearchParams(window.location.search).get('auth');
+  if ((_authParam === 'register' || _authParam === 'login') && window.MysticaAuth) {
+    window.MysticaAuth.openAuthModal(_authParam);
+  }
 });
 </script>
 
