@@ -23,7 +23,7 @@
   'use strict';
 
   const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyDy8uh1IbW6QEWFheW3HDFzLza9SmgAGBo",
+    apiKey: "AIzaSyDy8uh1lbW6QEWFheW3HDFzLza9SmgAGBo",
     authDomain: "mysticaoracoli.firebaseapp.com",
     projectId: "mysticaoracoli",
     storageBucket: "mysticaoracoli.firebasestorage.app",
