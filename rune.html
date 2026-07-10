@@ -930,7 +930,7 @@ html.theme-day .page-footer { border-top-color: var(--border); }
     <h2>✦ Funzione Premium</h2>
     <p>Sblocca letture illimitate, archivio completo e consulti avanzati (Amore, Lavoro, Salute).</p>
     <p class="price">Solo <strong>4,99€</strong> una tantum</p>
-    <button class="btn-premium" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">✦ Sblocca MYSTICA Premium</button>
+    <button class="btn-premium" onclick="openStripeCheckout()">✦ Sblocca MYSTICA Premium</button>
     <button class="btn-free" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
@@ -938,6 +938,8 @@ html.theme-day .page-footer { border-top-color: var(--border); }
 <!-- TOAST -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 /* ===== MULTILINGUA ===== */
 const LANG = {
@@ -1305,8 +1307,19 @@ function updateMusicBtn() {
 }
 
 /* ===== PREMIUM ===== */
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
 function requirePremium() {
-  if (localStorage.getItem('myst_premium') === '1') return true;
+  if (window.MysticaPremium ? window.MysticaPremium.isPremium() : false) return true;
   document.getElementById('premiumModal').classList.add('show');
   return false;
 }

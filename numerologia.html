@@ -927,11 +927,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
     <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <p style="margin-top:10px;font-family:Crimson Pro,serif;font-size:.78rem;color:rgba(184,178,209,.7);line-height:1.5;">Hai già acquistato? Accedi con lo stesso account usato per il pagamento: il Premium si sblocca da solo, su ogni dispositivo.</p>
     <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
+
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 
 
 <script>
@@ -1793,20 +1796,36 @@ function applyTheme(isDay) {
 /* ══════════════════════════════════════════
    PREMIUM GATE
 ══════════════════════════════════════════ */
-function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
+/* ── Premium Gate (sincronizzato online via auth.js/premium.js) ──
+   Nomi locali diversi da window.isPremium()/window.requirePremium()
+   esposti da premium.js, apposta, per non sovrascriverli. ── */
+function pageIsPremium() {
+  return window.MysticaPremium ? window.MysticaPremium.isPremium() : false;
 }
-
 function requirePremium() {
-  if (isPremium()) return true;
-  document.getElementById('premiumModal').classList.add('show');
-  document.getElementById('premiumModal').setAttribute('aria-hidden', 'false');
+  if (pageIsPremium()) return true;
+  document.getElementById('premiumModal')?.classList.add('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
   return false;
 }
 
 function closePremiumModal() {
-  document.getElementById('premiumModal').classList.remove('show');
-  document.getElementById('premiumModal').setAttribute('aria-hidden', 'true');
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+document.addEventListener('mystica-premium-changed', (e) => {
+  if (e.detail && e.detail.premium) closePremiumModal();
+});
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
 }
 
 // Premium features

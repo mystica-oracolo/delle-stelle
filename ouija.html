@@ -760,7 +760,7 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
     <p id="premium-text">Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutto MYSTICA Oracoli.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
@@ -769,6 +769,8 @@ html.theme-day .esplora-section { background: linear-gradient(135deg,#ede8df,#f5
   <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
 </button>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 /* ══════════════════════════════════════════════════════════════
    MYSTICA Oracoli — ouija.html — JS v3.0
@@ -1505,8 +1507,19 @@ document.getElementById('themeToggle')?.addEventListener('click', () => { isDayM
 
 /* ── Sezione 8.5 — Premium Gate (nessuna funzione avanzata su questa pagina —
      tutto il contenuto editoriale resta libero, Sezione 10.1) ── */
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
 function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
+  return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
 }
 function requirePremium(actionType) {
   if (isPremium()) return true;

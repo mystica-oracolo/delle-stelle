@@ -932,7 +932,7 @@
   <div class="banner-premium" id="bannerPremium">
     <h3>✦ MYSTICA Premium</h3>
     <p>Sblocca consultazioni illimitate e lo Scudo Geomantico completo a 4 figure.</p>
-    <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn-banner-premium">Sblocca · 4,99€</a>
+    <a href="#" onclick="openStripeCheckout();return false;" class="btn-banner-premium">Sblocca · 4,99€</a>
   </div>
 
   <!-- ── Articolo editoriale ── -->
@@ -1059,12 +1059,14 @@
     <p id="premium-text">Sblocca consultazioni illimitate e lo Scudo Geomantico a 4 figure.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
       onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 // ── LANG Object ──
 const LANG = {
@@ -1387,8 +1389,19 @@ window.audioManager = new AudioManager();
 document.getElementById('musicToggle').addEventListener('click', () => window.audioManager.toggle());
 
 // ── Premium Gate ──
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
 function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
+  return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
 }
 
 function requirePremium(actionType) {

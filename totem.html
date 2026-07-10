@@ -752,11 +752,13 @@ html.theme-day .btn-gold,html.theme-day .cta-explore,html.theme-day .btn-premium
     <p id="premium-text">Sblocca l'interpretazione estesa del tuo animale totem, con l'aspetto ombra, il dono nascosto e un rituale di attivazione personalizzato.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 /* ══════════════════════════════════════════════════════════
    MYSTICA Oracoli — Animale Totem — Script Completo
@@ -1458,8 +1460,19 @@ function _showTotemResult(meta){
 }
 
 /* ── Premium Gate (Sezione 8.5 / 10) ── */
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
 function isPremium(){
-  return localStorage.getItem('myst_premium') === '1';
+  return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
 }
 
 function requirePremium(actionType){

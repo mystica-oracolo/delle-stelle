@@ -708,11 +708,13 @@ html.theme-day .star-box{background:var(--card)}
     <h2 id="premium-title">✦ Funzione Premium</h2>
     <p id="premium-text">Sblocca l'enciclopedia completa MYSTICA: tutte le guide avanzate, gli approfondimenti esclusivi e i consulti personalizzati.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
-    <button class="btn-premium-buy" id="premium-btn" onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+    <button class="btn-premium-buy" id="premium-btn" onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()">Continua Gratis</button>
   </div>
 </div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 /* ══════════════════════════════════════════════════════════
    MYSTICA — Zi Wei Dou Shu — LANG OBJECT (IT / EN / ES)
@@ -1567,8 +1569,19 @@ document.getElementById('themeToggle')?.addEventListener('click', () => {
 /* ══════════════════════════════════════════════════════════
    Premium Gate
    ══════════════════════════════════════════════════════════ */
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
 function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
+  return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
 }
 function requirePremium(actionType) {
   if (isPremium()) return true;

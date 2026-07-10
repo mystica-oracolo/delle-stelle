@@ -929,13 +929,15 @@
       <h3 class="premium-modal-title" id="prem-title">Contenuto Premium</h3>
       <p class="premium-modal-text" id="prem-text">Questa funzione avanzata è disponibile solo per i nostri utenti premium. Sblocca accesso completo a tutti gli oracoli e alle meditazioni guidate.</p>
       <div class="premium-modal-btns">
-        <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn" id="prem-btn">Attiva Premium — 4,99€</a>
+        <a href="#" onclick="openStripeCheckout();return false;" class="btn" id="prem-btn">Attiva Premium — 4,99€</a>
         <button class="btn btn-sec" onclick="closePremiumModal()" id="prem-close">Continua Gratis</button>
       </div>
     </div>
   </div>
 
-  <script>
+  <script src="./auth.js"></script>
+<script src="./premium.js"></script>
+<script>
     /* ── Utility Functions ── */
     const $ = id => document.getElementById(id);
     const addClass = (el, cls) => el?.classList.add(cls);
@@ -1329,8 +1331,19 @@
     }
 
     /* ── Premium Check ── */
-    function isPremium() {
-      return localStorage.getItem('myst_premium') === '1';
+    function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
+function isPremium() {
+      return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
     }
 
     function requirePremium(callback) {

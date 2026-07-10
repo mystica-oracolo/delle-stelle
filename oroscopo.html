@@ -564,7 +564,7 @@ body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-co
                 <div style="font-size:22px">🔒</div>
                 <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px" id="i18nUnlockFortuna">Sblocca Fortuna completa</div>
               </div>
-              <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn-premium" id="i18nPremiumCta">✦ MYSTICA Premium · 4,99€</a>
+              <a href="#" onclick="openStripeCheckout();return false;" class="btn-premium" id="i18nPremiumCta">✦ MYSTICA Premium · 4,99€</a>
               <button class="premium-dismiss" onclick="dismissPremium('fortuna')" id="i18nDismiss">Continua senza Premium</button>
             </div>
           </div>
@@ -585,7 +585,7 @@ body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-co
                 <div style="font-size:22px">🔒</div>
                 <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:1px" id="i18nUnlockMistico">Sblocca Guida Mistica</div>
               </div>
-              <a href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" class="btn-premium">✦ MYSTICA Premium · 4,99€</a>
+              <a href="#" onclick="openStripeCheckout();return false;" class="btn-premium">✦ MYSTICA Premium · 4,99€</a>
               <button class="premium-dismiss" onclick="dismissPremium('mistico')" id="i18nDismiss2">Continua senza Premium</button>
             </div>
           </div>
@@ -640,6 +640,8 @@ body.light-mode .unified-block.active{background:rgba(139,105,20,0.08);border-co
 
 <div class="toast" id="toast"></div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 // ═══════════════════════════════════════════════
 // I18N — Traduzioni complete
@@ -1018,6 +1020,21 @@ function toast(msg) {
     t.classList.add('show');
     _toastTimer = setTimeout(() => { t.classList.remove('show'); _toastTimer = null; }, 3200);
   }, _toastTimer ? 80 : 0);
+}
+
+// ═══════════════════════════════════════════════
+// PREMIUM checkout — collega il pagamento all'account
+// ═══════════════════════════════════════════════
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
 }
 
 // ═══════════════════════════════════════════════

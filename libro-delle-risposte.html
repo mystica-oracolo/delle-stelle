@@ -816,13 +816,15 @@
       <h2 id="modal-title">Premium Unlock</h2>
       <p id="modal-desc">Sblocca funzioni esclusive e approfondimenti</p>
       <div class="modal-buttons">
-        <a class="modal-btn modal-btn-premium" id="modal-stripe-btn" href="https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01" target="_blank">Attiva Premium</a>
+        <a class="modal-btn modal-btn-premium" id="modal-stripe-btn" href="#" onclick="openStripeCheckout();return false;" target="_blank">Attiva Premium</a>
         <button class="modal-btn modal-btn-close" id="modal-close-btn">Chiudi</button>
       </div>
     </div>
   </div>
 
-  <script>
+  <script src="./auth.js"></script>
+<script src="./premium.js"></script>
+<script>
   /* ── LANGUAGE & SEO DATA ── */
   const LANG = {
     it: {
@@ -1216,8 +1218,19 @@
   let currentLang = localStorage.getItem('myst_lang') || 'it';
   let currentTheme = localStorage.getItem('myst_theme') || 'night';
 
-  function isPremium() {
-    return localStorage.getItem('myst_premium') === '1';
+  function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
+}
+function isPremium() {
+    return (window.MysticaPremium ? window.MysticaPremium.isPremium() : false);
   }
 
   function requirePremium(featureName) {
