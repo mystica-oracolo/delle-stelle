@@ -460,7 +460,7 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
     <!-- RESET / PREMIUM -->
     <button class="btn-reset" id="btnReset" onclick="resetProfilo()">↩ Modifica Profilo</button>
-    <button class="btn-premium-cta" id="btnPremiumCta" onclick="if(!requirePremium('interpretazione_estesa'))return;">🔓 Interpretazione Estesa del Profilo</button>
+    <button class="btn-premium-cta" id="btnPremiumCta" onclick="if(!pageRequiresPremium('interpretazione_estesa'))return;">🔓 Interpretazione Estesa del Profilo</button>
 
   </div>
 
@@ -572,7 +572,7 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
     <p id="premium-text">Sblocca l'interpretazione estesa del profilo mistico, lo storico illimitato delle letture e i consulti avanzati.</p>
     <p class="premium-price" id="premium-price">Solo 4,99€ una tantum</p>
     <button class="btn-premium-buy" id="premium-btn"
-      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'">Sblocca MYSTICA Premium</button>
+      onclick="openStripeCheckout()">Sblocca MYSTICA Premium</button>
     <button class="btn-premium-skip" id="premium-skip"
       onclick="closePremiumModal()">Continua Gratis</button>
   </div>
@@ -580,6 +580,8 @@ html.theme-day .faq-section{background:var(--card);border-color:var(--border)}
 
 <div class="toast" id="toast"></div>
 
+<script src="./auth.js"></script>
+<script src="./premium.js"></script>
 <script>
 /* ══════════════════════════════════════════════════════════════
    MYSTICA — profilo-mistico.html
@@ -1274,12 +1276,16 @@ function applyTheme(isDay) {
 document.getElementById('themeToggle')
   ?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
 
-/* ── Sezione 8.5: Premium Gate ── */
-function isPremium() {
-  return localStorage.getItem('myst_premium') === '1';
+/* ── Sezione 8.5: Premium Gate (sincronizzato online via auth.js/premium.js) ──
+   Nota: nomi locali diversi da window.isPremium()/window.requirePremium()
+   esposti da premium.js, apposta, per non sovrascriverli — quelle globali
+   usano un'API a callback (requirePremium(cb)), questa pagina invece usa
+   un controllo sincrono booleano prima di un'azione inline. ── */
+function pageIsPremium() {
+  return window.MysticaPremium ? window.MysticaPremium.isPremium() : false;
 }
-function requirePremium(actionType) {
-  if (isPremium()) return true;
+function pageRequiresPremium(actionType) {
+  if (pageIsPremium()) return true;
   document.getElementById('premiumModal')?.classList.add('show');
   document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'false');
   return false;
@@ -1287,6 +1293,21 @@ function requirePremium(actionType) {
 function closePremiumModal() {
   document.getElementById('premiumModal')?.classList.remove('show');
   document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+// Se lo stato premium cambia (login o pagamento confermato), sblocca subito la UI
+document.addEventListener('mystica-premium-changed', (e) => {
+  if (e.detail.premium) closePremiumModal();
+});
+function openStripeCheckout() {
+  if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
+    window.MysticaAuth?.openAuthModal('register');
+    return;
+  }
+  const user = window.MysticaAuth.currentUser();
+  const params = new URLSearchParams();
+  params.set('client_reference_id', user.uid);
+  if (user.email) params.set('prefilled_email', user.email);
+  window.location.href = 'https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01?' + params.toString();
 }
 
 /* ── Sezione 8.6: Share ── */
@@ -1436,24 +1457,39 @@ function initSelects(){
   }
 }
 
-function tryLoadSaved(){
+function _fillProfileForm(p){
+  if(!p) return false;
+  if(p.name) document.getElementById('inpName').value=p.name;
+  if(p.date){
+    const parts=p.date.split('-');
+    if(parts.length===3){
+      document.getElementById('wYear').value=parts[0];
+      document.getElementById('wMonth').value=parts[1];
+      document.getElementById('wDay').value=parts[2];
+    }
+  }
+  if(p.gender) document.getElementById('inpGender').value=p.gender;
+  setTimeout(()=>generaProfilo(true),100);
+  return true;
+}
+
+async function tryLoadSaved(){
   try{
+    // Utente loggato → il profilo su Firestore è la fonte di verità
+    if(window.MysticaAuth && window.MysticaAuth.isLoggedIn()){
+      const cloudProfile = await window.MysticaAuth.loadProfile();
+      if(cloudProfile && cloudProfile.date){ _fillProfileForm(cloudProfile); return; }
+    }
+    // Ospite (o nessun dato cloud ancora) → fallback locale
     const raw=localStorage.getItem('myst_v3_profile');
     if(!raw) return;
     const p=JSON.parse(raw);
-    if(p.name) document.getElementById('inpName').value=p.name;
-    if(p.date){
-      const parts=p.date.split('-');
-      if(parts.length===3){
-        document.getElementById('wYear').value=parts[0];
-        document.getElementById('wMonth').value=parts[1];
-        document.getElementById('wDay').value=parts[2];
-      }
-    }
-    if(p.gender) document.getElementById('inpGender').value=p.gender;
-    setTimeout(()=>generaProfilo(true),100);
+    _fillProfileForm(p);
   }catch(e){}
 }
+
+// Se l'utente accede DOPO il caricamento della pagina, ricarica il profilo dal cloud
+document.addEventListener('mystica-auth-changed', (e)=>{ if(e.detail.user) tryLoadSaved(); });
 
 function generaProfilo(silent){
   const L=LANG[currentLang];
@@ -1487,10 +1523,11 @@ function generaProfilo(silent){
   const cKey=zodCineseFromYear(parts[0]);
   const numDest=calcNumeroDestino(dateStr);
 
-  try{
-    const p={name,date:dateStr,segno:segnoKey,gender};
-    localStorage.setItem('myst_v3_profile',JSON.stringify(p));
-  }catch(e){}
+  const p={name,date:dateStr,segno:segnoKey,gender};
+  try{ localStorage.setItem('myst_v3_profile',JSON.stringify(p)); }catch(e){}
+  if(window.MysticaAuth && window.MysticaAuth.isLoggedIn()){
+    window.MysticaAuth.saveProfile(p);
+  }
 
   lastGenerated = {name, dateStr, segnoKey, cKey, numDest, year};
   renderProfileOutput(L);

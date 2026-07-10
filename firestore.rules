@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Profilo mistico dell'utente: leggibile e scrivibile SOLO dal proprietario ──
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // ── Stato Premium: leggibile dal proprietario, MAI scrivibile dal client.
+    //    Viene scritto esclusivamente dalla Cloud Function (Admin SDK),
+    //    che bypassa queste regole. Questo impedisce a chiunque di
+    //    auto-attivarsi il premium dal browser. ──
+    match /premiumStatus/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // ── Regole già esistenti per commenti/recensioni: mantieni quelle
+    //    attuali del progetto invariate, aggiungi solo i blocchi sopra. ──
+    // match /commenti/{id} { ... }
+    // match /recensioni/{id} { ... }
+  }
+}

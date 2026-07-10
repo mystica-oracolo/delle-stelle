@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v403';
+const CACHE_NAME = 'mystica-v404';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -84,6 +84,8 @@ const URLS_TO_CACHE = [
   './sw.js',
   './commenti.js',
   './consulente.js',
+  './auth.js',
+  './premium.js',
   './mystica.css',
   // ── Icone home ──
   './images/icone/home/astrologia-avanzata.webp',
@@ -141,6 +143,23 @@ self.addEventListener('fetch', event => {
       fetch(event.request)
         .then(response => {
           // Aggiorna la cache con la versione fresca
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // auth.js e premium.js: network first, fallback cache.
+  // Sono i file che gestiscono login e pagamento Premium: un utente non deve
+  // MAI restare bloccato su una versione vecchia dopo un tuo aggiornamento
+  // (stesso motivo per cui index.html è già network first).
+  if (url.pathname.endsWith('/auth.js') || url.pathname.endsWith('/premium.js')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
           const responseClone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
           return response;
