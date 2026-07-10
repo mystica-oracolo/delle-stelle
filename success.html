@@ -196,16 +196,16 @@ body{
 
 <script>
 (function(){
-  // ── Verifica session_id Stripe (dal vecchio success.html) ──
+  // ── Il pagamento è confermato SOLO dal webhook server-side (Stripe → Cloudflare
+  //    Worker → Firestore premiumStatus/{uid}), mai dal browser: la presenza di
+  //    session_id nell'URL è solo un'indicazione, non una prova, quindi qui non
+  //    scriviamo più alcun flag locale. Il premium compare da solo, via account,
+  //    non appena il webhook ha scritto su Firestore (in genere pochi secondi). ──
   const params = new URLSearchParams(window.location.search);
   const sessionId = params.get('session_id');
   const isValidPayment = sessionId && sessionId.startsWith('cs_');
 
   if(isValidPayment){
-    // Pagamento reale verificato — attiva premium
-    try{ localStorage.setItem('myst_premium','1'); }catch(e){}
-    try{ localStorage.setItem('myst_premium_date', new Date().toISOString()); }catch(e){}
-
     // Stelle cadenti celebrative
     const container = document.getElementById('fstars');
     const symbols = ['✦','★','✧','⭐','🌟','✨','💫'];

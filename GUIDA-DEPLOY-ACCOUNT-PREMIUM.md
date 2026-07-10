@@ -1,5 +1,12 @@
 # MYSTICA — Account gratuiti + Premium one-time online: guida al deploy
 
+> **Changelog 10/07/2026** — Correzioni di sicurezza applicate:
+> - `cf-worker/src/index.js` era rimasto nella root del repo come `index.js` sciolto (mai deployato): spostato nella struttura corretta `cf-worker/src/index.js` + `cf-worker/wrangler.toml`, verificato con `node --check`. Vedi sezione 4 per il deploy.
+> - Eliminati `premium-success.html` e `premium-restore.html`: sistema legacy che generava un "codice premium" via hash **lato client**, con il segreto scritto in chiaro nel JS e senza alcuna verifica del pagamento reale — chiunque poteva sbloccare il Premium gratis inserendo dati a caso.
+> - `numerologia.html`: rimosso il blocco "Ho già pagato — Inserisci codice", che accettava **qualsiasi** stringa nel formato `MYST-XXXX-XXXX-XXXX` (nessun controllo contro un vero codice) e scriveva `myst_premium=1` in localStorage.
+> - `success.html`: rimossa la scrittura diretta di `myst_premium` in localStorage basata solo sul prefisso `cs_` di `session_id` (falsificabile aggiungendo `?session_id=cs_qualsiasicosa` all'URL). Ora il Premium si attiva **solo** tramite il webhook → Firestore.
+> - ⚠️ **Le altre ~63 pagine del sito hanno ancora il vecchio modale premium standalone** (non collegato a `auth.js`/`premium.js`), ma senza il pulsante "inserisci codice" quindi non risultano bypassabili allo stato attuale — vanno comunque migrate al sistema account+Firestore come già fatto per `profilo-mistico.html` e `numerologia.html`, in una fase dedicata.
+
 **Aggiornata in base ai chiarimenti:** nessun acquisto pregresso da migrare, app gratuita con registrazione libera (email o Google, nessuna carta richiesta a nessuno), Premium a pagamento unico (4,99€, non abbonamento), stato Premium non manipolabile dal browser.
 
 ---
