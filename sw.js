@@ -2,7 +2,7 @@
 // MYSTICA ORACOLI — Service Worker
 // Versione cache: incrementa questo valore ad ogni deploy
 // ============================================================
-const CACHE_NAME = 'mystica-v404';
+const CACHE_NAME = 'mystica-v405';
 
 // File da mettere in cache per il funzionamento offline
 const URLS_TO_CACHE = [
@@ -152,11 +152,11 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // auth.js e premium.js: network first, fallback cache.
-  // Sono i file che gestiscono login e pagamento Premium: un utente non deve
-  // MAI restare bloccato su una versione vecchia dopo un tuo aggiornamento
-  // (stesso motivo per cui index.html è già network first).
-  if (url.pathname.endsWith('/auth.js') || url.pathname.endsWith('/premium.js')) {
+  // auth.js, premium.js e profilo-mistico.html: network first, fallback cache.
+  // Sono i file che gestiscono login, pagamento Premium e salvataggio profilo:
+  // un utente non deve MAI restare bloccato su una versione vecchia dopo un
+  // tuo aggiornamento (stesso motivo per cui index.html è già network first).
+  if (url.pathname.endsWith('/auth.js') || url.pathname.endsWith('/premium.js') || url.pathname.endsWith('/profilo-mistico.html')) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
