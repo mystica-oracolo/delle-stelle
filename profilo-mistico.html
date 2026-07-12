@@ -1298,7 +1298,12 @@ function closePremiumModal() {
 document.addEventListener('mystica-premium-changed', (e) => {
   if (e.detail.premium) closePremiumModal();
 });
-function openStripeCheckout() {
+async function openStripeCheckout() {
+  // Aspetta che Firebase Auth finisca di ripristinare la sessione: senza questa
+  // attesa, un clic rapido su "Sblocca Premium" poteva risultare in "non loggato"
+  // anche con una sessione valida, aprendo la registrazione e rischiando di
+  // creare un secondo account (UID diverso) da quello con cui si paga davvero.
+  if (window.MysticaAuth) { try { await window.MysticaAuth.ready(); } catch (e) {} }
   if (!window.MysticaAuth || !window.MysticaAuth.isLoggedIn()) {
     window.MysticaAuth?.openAuthModal('register');
     return;
