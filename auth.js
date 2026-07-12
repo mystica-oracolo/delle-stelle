@@ -111,18 +111,13 @@
          (openAuthModal/_myst_authLogin/ecc. chiamano comunque _initAuth(),
           che è idempotente: se è già partito riusa la stessa Promise). ── */
   function _scheduleAuthInit() {
-    const start = () => _initAuth();
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(start, { timeout: 2500 });
-    } else {
-      setTimeout(start, 300);
-    }
+    // Avvio SUBITO, non rimandato: un ritardo qui fa sì che un clic rapido su
+    // "Premium" veda l'utente come "non loggato" anche quando ha già una
+    // sessione valida e il Premium attivo, perché isLoggedIn()/isPremium()
+    // leggono uno stato che Firebase non ha ancora finito di ripristinare.
+    _initAuth();
   }
-  if (document.readyState === 'complete') {
-    _scheduleAuthInit();
-  } else {
-    window.addEventListener('load', _scheduleAuthInit, { once: true });
-  }
+  _scheduleAuthInit();
 
   /* ── Migrazione dati legacy (localStorage → Firestore) al primo login ── */
   async function _migrateLegacyDataIfNeeded(user) {
@@ -215,7 +210,8 @@
 .au-footer{margin-top:14px;}
 .au-footer a,.au-footer button.au-skip{color:rgba(212,175,55,.65);font-size:.78rem;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Cinzel',serif;display:block;margin:6px auto 0;}
 .au-footer a:hover,.au-footer button.au-skip:hover{color:#d4af37;}
-#_myst_account_widget{display:none !important;}
+#_myst_account_widget{position:fixed;bottom:18px;left:18px;z-index:9998;background:rgba(20,12,36,.9);border:1px solid rgba(212,175,55,.4);border-radius:24px;padding:8px 14px;font-family:'Cinzel',serif;font-size:.72rem;color:#d4af37;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px;}
+#_myst_account_widget:hover{border-color:#d4af37;}
 `;
 
   function _ensureCss() {
