@@ -11,7 +11,10 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://mysticaoracoli.it/cerca.html">
 
-<!-- hreflang -->
+<!-- hreflang: obbligatorio per multilingua SEO -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/cerca.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/cerca.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/cerca.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/cerca.html">
 
 <!-- Open Graph -->
@@ -52,6 +55,32 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mysticaoracoli.it/" },
         { "@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://mysticaoracoli.it/cerca.html" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://mysticaoracoli.it/cerca.html#article",
+      "headline": "Come Orientarsi tra Oracoli, Tarocchi e Discipline Esoteriche: Guida alla Ricerca su MYSTICA",
+      "about": "Guida alla ricerca tra oltre 60 strumenti divinatori e discipline esoteriche del sito MYSTICA Oracoli",
+      "inLanguage": "it",
+      "author": { "@type": "Person", "name": "Dott. Petrolese Giovanni", "alternateName": "Mago Petro" },
+      "publisher": { "@type": "Organization", "name": "MYSTICA Oracoli" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MYSTICA Oracoli",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Come funziona la ricerca su MYSTICA Oracoli?", "acceptedAnswer": { "@type": "Answer", "text": "La ricerca confronta il termine digitato con titolo, descrizione e parole chiave di ogni pagina del sito, direttamente nel browser: nessun dato viene inviato a server esterni. Basta digitare almeno una parola per vedere i risultati ordinati per pertinenza." } },
+        { "@type": "Question", "name": "Quali discipline esoteriche posso trovare su MYSTICA?", "acceptedAnswer": { "@type": "Answer", "text": "Il sito raccoglie oltre 60 strumenti e guide: tarocchi, oroscopo occidentale e vedico, rune runiche, I Ching, numerologia, cabala, alchimia, geomanzia, angeli custodi, magia bianca rossa e nera, human design, gene keys, BaZi cinese e molte altre tradizioni divinatorie." } },
+        { "@type": "Question", "name": "La ricerca su MYSTICA è gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "Sì, la ricerca e la consultazione base di ogni oracolo sono completamente gratuite. Solo alcune funzioni avanzate, come letture estese o oroscopi mensili dettagliati, richiedono lo sblocco Premium a 4,99€ una tantum." } },
+        { "@type": "Question", "name": "Come scelgo lo strumento divinatorio più adatto a me?", "acceptedAnswer": { "@type": "Answer", "text": "Dipende dalla domanda che hai in mente: i tarocchi sono ideali per questioni pratiche e relazionali, l'I Ching per decisioni e cicli di cambiamento, le rune per introspezione e guida spirituale, la numerologia per comprendere tratti di personalità e cicli di vita." } },
+        { "@type": "Question", "name": "Perché non trovo risultati per il termine che ho cercato?", "acceptedAnswer": { "@type": "Answer", "text": "Il motore cerca corrispondenze esatte o parziali su titoli e parole chiave: prova un sinonimo o un termine più generico (ad esempio 'carte' invece di 'tarocchi'), oppure consulta l'enciclopedia esoterica per un indice completo degli argomenti trattati." } }
       ]
     }
   ]
@@ -208,6 +237,46 @@ html.theme-day .result-card{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
 /* ── Intro editoriale breve ── */
 .intro-note{font-size:13px;color:var(--muted);text-align:center;margin:20px 0 0;line-height:1.6}
 
+/* ── Share ── */
+.share-section{margin:28px 0;text-align:center;position:relative}
+.btn-share{background:rgba(212,175,55,0.08);border:1px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:1px;padding:10px 22px;border-radius:24px;cursor:pointer;transition:all 0.2s}
+.btn-share:hover{background:rgba(212,175,55,0.18);border-color:var(--gold)}
+.share-popup{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.share-btn{background:var(--card);border:1px solid var(--border);color:var(--text);font-size:12px;padding:8px 14px;border-radius:16px;text-decoration:none;cursor:pointer;transition:all 0.2s}
+.share-btn:hover{border-color:var(--gold);text-decoration:none}
+
+/* ── Articolo editoriale ── */
+.article-section{margin:36px 0;position:relative;z-index:1}
+.article-section h2{font-family:'Cinzel',serif;font-size:21px;color:var(--gold);letter-spacing:.5px;line-height:1.4;margin-bottom:16px}
+.article-section h3{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:.5px;margin:24px 0 12px}
+.article-section p{font-size:15px;color:var(--text);line-height:1.85;margin-bottom:14px}
+.article-section a{color:var(--gold);text-decoration:underline;text-decoration-color:rgba(212,175,55,0.3)}
+.article-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:22px 0;padding-top:16px;border-top:1px solid var(--border)}
+.article-links a{font-size:13px;text-decoration:none;border:1px solid var(--border);padding:6px 14px;border-radius:16px}
+.article-links a:hover{border-color:var(--gold);background:rgba(212,175,55,0.08)}
+.cta-explore{display:block;text-align:center;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:14px;border-radius:14px;margin-top:20px;text-decoration:none}
+.cta-explore:hover{background:var(--gold-dim);text-decoration:none}
+
+/* ── FAQ ── */
+.faq-section{margin:36px 0 20px;position:relative;z-index:1}
+.faq-title{font-family:'Cinzel',serif;font-size:19px;color:var(--gold);letter-spacing:1px;margin-bottom:16px;text-align:center}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:none;border:none;color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:15px;text-align:left;padding:16px 18px;cursor:pointer}
+.faq-icon{color:var(--gold);font-size:18px;flex-shrink:0}
+.faq-answer{padding:0 18px 16px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* ── Premium Modal ── */
+.premium-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.premium-modal.show{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(5,2,12,0.75);backdrop-filter:blur(4px)}
+.modal-content{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 24px;max-width:380px;width:100%;text-align:center}
+.modal-content h2{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);margin-bottom:14px;letter-spacing:1px}
+.modal-content p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.premium-price{color:var(--gold)!important;font-weight:600}
+.btn-premium-buy{width:100%;background:var(--gold);color:var(--bg);border:none;font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px;padding:14px;border-radius:14px;cursor:pointer;margin-top:14px}
+.btn-premium-skip{width:100%;background:none;color:var(--muted);border:none;font-size:13px;padding:10px;cursor:pointer;margin-top:8px;text-decoration:underline}
+
 /* ── Footer ── */
 .page-footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:40px;position:relative;z-index:1}
 .page-footer a{color:var(--gold);text-decoration:none;margin:0 8px}
@@ -282,6 +351,46 @@ html.theme-day .result-card{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
   </div>
 
   <p class="intro-note" id="introNote">La ricerca confronta il termine digitato con titoli, descrizioni e parole chiave di tutte le pagine di MYSTICA — nessun dato lascia il tuo browser.</p>
+
+  <div class="share-section">
+    <button class="btn-share" onclick="shareContent()">📤 <span id="share-label">Condividi</span></button>
+    <div class="share-popup" id="sharePopup" hidden>
+      <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="share-btn telegram" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+      <a class="share-btn twitter" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+      <button class="share-btn copy" id="share-copy" onclick="copyLink()">🔗 Copia Link</button>
+    </div>
+  </div>
+
+  <article class="article-section">
+    <h2 id="art-title">Come Orientarsi tra Oracoli, Tarocchi e Discipline Esoteriche: Guida alla Ricerca su MYSTICA</h2>
+    <img src="./images/icone/home/cerca.webp"
+         id="art-hero"
+         alt="Motore di ricerca esoterico MYSTICA con simboli di tarocchi, rune e stelle"
+         loading="lazy"
+         width="600" height="338"
+         style="width:100%;border-radius:14px;margin:16px 0">
+    <h3 id="art-h2">Le Origini delle Arti Divinatorie Che Puoi Esplorare Qui</h3>
+    <p id="art-p1">Ogni strumento raccolto in questo motore di ricerca ha radici che affondano in epoche e culture diverse. I tarocchi nascono nell'Italia del XV secolo come mazzo da gioco cortigiano prima di trasformarsi, tra Sette e Ottocento, in strumento divinatorio nelle mani di occultisti francesi come Éliphas Lévi. L'I Ching, il Libro dei Mutamenti cinese, precede i tarocchi di oltre due millenni e si basa su 64 esagrammi costruiti a partire dagli otto trigrammi fondamentali. Le rune runiche del Futhark antico venivano incise su legno e osso dalle popolazioni germaniche già nel II secolo, mentre la cabala ebraica sviluppa il suo sistema simbolico dell'Albero della Vita a partire dal Medioevo spagnolo e provenzale.</p>
+    <p id="art-p2">Cercare su MYSTICA significa quindi attraversare tradizioni molto distanti tra loro: dall'astrologia vedica indiana, che legge il cielo tramite le 27 Nakshatra e il sistema delle Dasha, al BaZi cinese basato sui Quattro Pilastri del Destino, fino a pratiche più recenti come l'Human Design, nato negli anni Novanta dall'incontro tra astrologia, I Ching, Cabala e sistema dei chakra. Il motore indicizza oltre sessanta pagine tra guide, oracoli interattivi e approfondimenti, così che digitando anche una sola parola chiave — "rune", "numerologia", "cabala" — sia possibile raggiungere in un istante lo strumento più pertinente senza navigare tra menu e sottocategorie.</p>
+    <p id="art-p3">Un errore frequente di chi si avvicina per la prima volta a queste discipline è pensare che siano tutte intercambiabili, come se tarocchi, rune e I Ching rispondessero allo stesso tipo di domanda con lo stesso linguaggio simbolico. In realtà ogni sistema ha una grammatica propria: i tarocchi lavorano per immagini archetipiche e narrazione, l'I Ching per principi di mutamento e polarità yin-yang, le rune per suoni e forze elementali, la numerologia per calcolo e vibrazione dei numeri. Un secondo errore comune è cercare risposte assolute e definitive, mentre questi strumenti sono pensati per stimolare riflessione personale, non per sostituire decisioni consapevoli.</p>
+    <h3 id="art-h3">Miti da Sfatare e Come Usare al Meglio il Motore di Ricerca</h3>
+    <p id="art-p4">Circola spesso il mito secondo cui i tarocchi o le rune abbiano un'origine "antichissima e segreta" tramandata da presunte civiltà perdute: la ricerca storica documentata smentisce questa narrazione romantica, mostrando invece percorsi evolutivi tracciabili attraverso testi, manoscritti e testimonianze reali. Allo stesso modo, non esiste un unico "vero" significato per una runa o un arcano: scuole diverse — quella francese e quella anglosassone per i tarocchi, ad esempio — offrono letture leggermente differenti dello stesso simbolo, ed è utile confrontarle piuttosto che cercarne una definitiva.</p>
+    <p id="art-p5">Per ottenere risultati più precisi da questo motore conviene digitare il nome della disciplina che si vuole approfondire (ad esempio "geomanzia" o "gene keys") oppure una domanda pratica come "compatibilità zodiacale" o "come leggere i tarocchi". I risultati vengono ordinati per pertinenza in base a titolo, descrizione e parole chiave della pagina, e ogni scheda porta direttamente allo strumento interattivo corrispondente. Chi preferisce un'esplorazione più libera può invece consultare l'<a href="./enciclopedia.html">enciclopedia esoterica completa</a>, la <a href="./guida-tarocchi.html">guida alla lettura dei tarocchi</a> o l'indice dei <a href="./oroscopo-segni.html">segni zodiacali</a> per orientarsi tra tutte le sezioni del sito.</p>
+    <nav class="article-links" aria-label="Approfondimenti correlati">
+      <a href="./enciclopedia.html">Enciclopedia Esoterica</a>
+      <a href="./guida-tarocchi.html">Guida ai Tarocchi</a>
+      <a href="./significato-rune.html">Significato delle Rune</a>
+      <a href="./numerologia.html">Numerologia</a>
+    </nav>
+    <a href="./index.html" class="cta-explore" id="cta-explore">🔍 Scopri le Altre Categorie</a>
+  </article>
+
+  <section class="faq-section">
+    <h2 class="faq-title" id="faq-title">Domande Frequenti</h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
 </main>
 
 <footer class="page-footer">
@@ -295,6 +404,18 @@ html.theme-day .result-card{background:linear-gradient(145deg,#f5f2ed,#ede8df)}
   <p id="footer-copy">© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni</p>
   <p id="footer-disclaimer" class="footer-disclaimer">MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.</p>
 </footer>
+
+<div class="premium-modal" id="premiumModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closePremiumModal()"></div>
+  <div class="modal-content">
+    <h2 id="premium-title"></h2>
+    <p id="premium-text"></p>
+    <p class="premium-price" id="premium-price"></p>
+    <button class="btn-premium-buy" id="premium-btn"
+      onclick="window.location.href='https://buy.stripe.com/6oU4gr6dXfiz5Pc8kC4ow01'"></button>
+    <button class="btn-premium-skip" id="premium-skip" onclick="closePremiumModal()"></button>
+  </div>
+</div>
 
 <script src="./auth.js"></script>
 <script src="./premium.js"></script>
@@ -398,7 +519,35 @@ const LANG = {
     pills: { tarocchi:'Tarocchi', oroscopo:'Oroscopo', rune:'Rune', numerologia:'Numerologia', astrologia:'Astrologia', magia:'Magia' },
     footer: { home:'Home', enc:'Enciclopedia', contatti:'Contatti', about:'Chi Sono', privacy:'Privacy' },
     footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
-    footerDisclaimer: 'MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.'
+    footerDisclaimer: 'MYSTICA Oracoli è uno strumento di intrattenimento e crescita personale, non sostituisce consulenze professionali mediche, legali o psicologiche.',
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    faqTitle: 'Domande Frequenti',
+    shareLabel: 'Condividi',
+    shareTitle: 'MYSTICA Oracoli',
+    shareText: 'Ho trovato subito quello che cercavo su MYSTICA: tarocchi, oroscopo, rune e oltre 60 strumenti esoterici in un unico posto.',
+    shareCopy: '🔗 Copia Link',
+    shareCopied: '✓ Copiato!',
+    premiumTitle: '✦ Funzione Premium',
+    premiumText: 'Sblocca letture illimitate, interpretazioni complete e consulti avanzati su tutti gli oracoli di MYSTICA.',
+    premiumPrice: 'Solo 4,99€ una tantum',
+    premiumBtn: 'Sblocca MYSTICA Premium',
+    premiumSkip: 'Continua Gratis',
+    artTitle: 'Come Orientarsi tra Oracoli, Tarocchi e Discipline Esoteriche: Guida alla Ricerca su MYSTICA',
+    artH2: 'Le Origini delle Arti Divinatorie Che Puoi Esplorare Qui',
+    artH3: 'Miti da Sfatare e Come Usare al Meglio il Motore di Ricerca',
+    artP1: "Ogni strumento raccolto in questo motore di ricerca ha radici che affondano in epoche e culture diverse. I tarocchi nascono nell'Italia del XV secolo come mazzo da gioco cortigiano prima di trasformarsi, tra Sette e Ottocento, in strumento divinatorio nelle mani di occultisti francesi come Éliphas Lévi. L'I Ching, il Libro dei Mutamenti cinese, precede i tarocchi di oltre due millenni e si basa su 64 esagrammi costruiti a partire dagli otto trigrammi fondamentali. Le rune del Futhark antico venivano incise su legno e osso dalle popolazioni germaniche già nel II secolo, mentre la cabala ebraica sviluppa il suo sistema simbolico dell'Albero della Vita a partire dal Medioevo spagnolo e provenzale.",
+    artP2: 'Cercare su MYSTICA significa quindi attraversare tradizioni molto distanti tra loro: dall\'astrologia vedica indiana, che legge il cielo tramite le 27 Nakshatra e il sistema delle Dasha, al BaZi cinese basato sui Quattro Pilastri del Destino, fino a pratiche più recenti come l\'Human Design, nato negli anni Novanta dall\'incontro tra astrologia, I Ching, Cabala e sistema dei chakra. Il motore indicizza oltre sessanta pagine tra guide, oracoli interattivi e approfondimenti, così che digitando anche una sola parola chiave sia possibile raggiungere in un istante lo strumento più pertinente senza navigare tra menu e sottocategorie.',
+    artP3: 'Un errore frequente di chi si avvicina per la prima volta a queste discipline è pensare che siano tutte intercambiabili, come se tarocchi, rune e I Ching rispondessero allo stesso tipo di domanda con lo stesso linguaggio simbolico. In realtà ogni sistema ha una grammatica propria: i tarocchi lavorano per immagini archetipiche e narrazione, l\'I Ching per principi di mutamento e polarità yin-yang, le rune per suoni e forze elementali, la numerologia per calcolo e vibrazione dei numeri. Un secondo errore comune è cercare risposte assolute e definitive, mentre questi strumenti sono pensati per stimolare riflessione personale, non per sostituire decisioni consapevoli.',
+    artP4: 'Circola spesso il mito secondo cui i tarocchi o le rune abbiano un\'origine "antichissima e segreta" tramandata da presunte civiltà perdute: la ricerca storica documentata smentisce questa narrazione romantica, mostrando invece percorsi evolutivi tracciabili attraverso testi, manoscritti e testimonianze reali. Allo stesso modo, non esiste un unico "vero" significato per una runa o un arcano: scuole diverse — quella francese e quella anglosassone per i tarocchi, ad esempio — offrono letture leggermente differenti dello stesso simbolo, ed è utile confrontarle piuttosto che cercarne una definitiva.',
+    artP5: 'Per ottenere risultati più precisi da questo motore conviene digitare il nome della disciplina che si vuole approfondire, ad esempio "geomanzia" o "gene keys", oppure una domanda pratica come "compatibilità zodiacale" o "come leggere i tarocchi". I risultati vengono ordinati per pertinenza in base a titolo, descrizione e parole chiave della pagina, e ogni scheda porta direttamente allo strumento interattivo corrispondente. Chi preferisce un\'esplorazione più libera può consultare l\'enciclopedia esoterica completa, la guida alla lettura dei tarocchi o l\'indice dei segni zodiacali per orientarsi tra tutte le sezioni del sito.',
+    artImgAlt: 'Motore di ricerca esoterico MYSTICA con simboli di tarocchi, rune e stelle',
+    faq: [
+      { q: 'Come funziona la ricerca su MYSTICA Oracoli?', a: 'La ricerca confronta il termine digitato con titolo, descrizione e parole chiave di ogni pagina del sito, direttamente nel tuo browser: nessun dato viene inviato a server esterni. Basta digitare almeno una parola per vedere i risultati ordinati per pertinenza, con i termini corrispondenti evidenziati in ogni scheda.' },
+      { q: 'Quali discipline esoteriche posso trovare su MYSTICA?', a: 'Il sito raccoglie oltre 60 strumenti e guide: tarocchi, oroscopo occidentale e vedico, rune, I Ching, numerologia, cabala, alchimia, geomanzia, angeli custodi, magia bianca rossa e nera, human design, gene keys, BaZi cinese e molte altre tradizioni divinatorie da tutto il mondo.' },
+      { q: 'La ricerca su MYSTICA è gratuita?', a: 'Sì, la ricerca e la consultazione base di ogni oracolo sono completamente gratuite e senza limiti di utilizzo. Solo alcune funzioni avanzate, come letture estese multi-carta o oroscopi mensili dettagliati, richiedono lo sblocco Premium a 4,99€ una tantum, valido su tutti i dispositivi.' },
+      { q: 'Come scelgo lo strumento divinatorio più adatto a me?', a: 'Dipende dalla domanda che hai in mente: i tarocchi sono ideali per questioni pratiche e relazionali, l\'I Ching per decisioni e cicli di cambiamento, le rune per introspezione e guida spirituale, la numerologia per comprendere tratti di personalità e cicli di vita. Prova a cercare per parola chiave o esplora l\'enciclopedia per un confronto completo.' },
+      { q: 'Perché non trovo risultati per il termine che ho cercato?', a: 'Il motore cerca corrispondenze esatte o parziali su titoli e parole chiave: prova un sinonimo o un termine più generico, ad esempio "carte" invece di "tarocchi" o "segno zodiacale" invece di "oroscopo", oppure consulta l\'enciclopedia esoterica per un indice completo degli argomenti trattati.' }
+    ]
   },
   en: {
     seo: {
@@ -425,7 +574,35 @@ const LANG = {
     pills: { tarocchi:'Tarot', oroscopo:'Horoscope', rune:'Runes', numerologia:'Numerology', astrologia:'Astrology', magia:'Magic' },
     footer: { home:'Home', enc:'Encyclopedia', contatti:'Contact', about:'About', privacy:'Privacy' },
     footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
-    footerDisclaimer: 'MYSTICA Oracoli is an entertainment and personal growth tool, and does not replace professional medical, legal or psychological advice.'
+    footerDisclaimer: 'MYSTICA Oracoli is an entertainment and personal growth tool, and does not replace professional medical, legal or psychological advice.',
+    ctaExplore: '🔍 Explore Other Categories',
+    faqTitle: 'Frequently Asked Questions',
+    shareLabel: 'Share',
+    shareTitle: 'MYSTICA Oracles',
+    shareText: 'I just found exactly what I was looking for on MYSTICA: tarot, horoscope, runes and over 60 esoteric tools in one place.',
+    shareCopy: '🔗 Copy Link',
+    shareCopied: '✓ Copied!',
+    premiumTitle: '✦ Premium Feature',
+    premiumText: 'Unlock unlimited readings, complete interpretations and advanced consultations across every MYSTICA oracle.',
+    premiumPrice: 'Only €4.99 one-time',
+    premiumBtn: 'Unlock MYSTICA Premium',
+    premiumSkip: 'Continue Free',
+    artTitle: 'Finding Your Way Through Tarot, Oracles and Esoteric Traditions: A Search Guide to MYSTICA',
+    artH2: 'Where These Divination Systems Actually Come From',
+    artH3: 'Common Myths and How to Get the Most Out of This Search',
+    artP1: "Every tool indexed by this search engine traces back to a different era and culture. Tarot cards emerged in 15th-century Italy as a courtly card game long before French occultists such as Éliphas Lévi reframed them as a divination system in the 18th and 19th centuries. The I Ching, China's Book of Changes, predates tarot by over two thousand years and rests on 64 hexagrams built from eight foundational trigrams. Elder Futhark runes were carved into wood and bone by Germanic peoples as early as the 2nd century, while Jewish Kabbalah developed its Tree of Life symbolism starting in medieval Spain and Provence.",
+    artP2: "Searching MYSTICA means moving across traditions that rarely overlap: Vedic astrology reads the sky through 27 Nakshatras and the Dasha system, Chinese BaZi works from the Four Pillars of Destiny, and newer frameworks like Human Design, born in the 1990s, blend astrology, the I Ching, Kabbalah and the chakra system. This engine indexes more than sixty pages of guides, interactive oracles and deep-dive articles, so typing even a single keyword instantly surfaces the most relevant tool without digging through menus.",
+    artP3: 'A common mistake beginners make is assuming these systems are interchangeable, as if tarot, runes and the I Ching all answered the same kind of question in the same symbolic language. Each system actually has its own grammar: tarot works through archetypal imagery and narrative, the I Ching through change and yin-yang polarity, runes through sound and elemental force, numerology through calculation and numeric vibration. A second common mistake is expecting absolute, final answers, when these tools are designed to prompt personal reflection rather than replace informed decisions.',
+    artP4: 'A persistent myth claims tarot or runes hold an "ancient, secret" origin passed down from some lost civilization; documented history tells a far less romantic but traceable story through real texts and manuscripts. Likewise, there is no single "true" meaning for any rune or card: different schools, such as the French and Anglo-Saxon tarot traditions, read the same symbol somewhat differently, and comparing them is more useful than searching for one definitive answer.',
+    artP5: 'For sharper results, try typing the name of the discipline you want to explore, such as "geomancy" or "gene keys", or a practical question like "zodiac compatibility" or "how to read tarot". Results are ranked by relevance against each page\'s title, description and keywords, and every card links straight to the matching interactive tool. If you prefer to browse more freely, the full esoteric encyclopedia, the tarot reading guide, and the zodiac sign index are good starting points.',
+    artImgAlt: 'MYSTICA esoteric search engine with tarot, rune and star symbols',
+    faq: [
+      { q: 'How does search on MYSTICA Oracles work?', a: 'The search matches your query against each page\'s title, description and keywords, entirely inside your browser: no data is sent to any external server. Type at least one word to see results ranked by relevance, with matching terms highlighted on each card.' },
+      { q: 'What esoteric disciplines can I find on MYSTICA?', a: 'The site brings together more than 60 tools and guides: Western and Vedic astrology, tarot, runes, the I Ching, numerology, Kabbalah, alchemy, geomancy, guardian angels, white, red and black magic, Human Design, Gene Keys, Chinese BaZi and many other divination traditions from around the world.' },
+      { q: 'Is search on MYSTICA free?', a: 'Yes, search and the basic reading for every oracle are completely free with no usage limits. Only a few advanced features, such as extended multi-card spreads or detailed monthly horoscopes, require the one-time €4.99 Premium unlock, valid across all your devices.' },
+      { q: 'How do I choose the right divination tool for me?', a: 'It depends on the question in mind: tarot suits practical and relationship questions, the I Ching suits decisions and cycles of change, runes suit introspection and spiritual guidance, numerology suits understanding personality traits and life cycles. Try a keyword search or browse the encyclopedia for a fuller comparison.' },
+      { q: "Why can't I find results for the term I searched?", a: 'The engine looks for exact or partial matches in titles and keywords: try a synonym or a broader term, for example "cards" instead of "tarot" or "star sign" instead of "horoscope", or check the esoteric encyclopedia for a full index of topics covered.' }
+    ]
   },
   es: {
     seo: {
@@ -452,7 +629,35 @@ const LANG = {
     pills: { tarocchi:'Tarot', oroscopo:'Horóscopo', rune:'Runas', numerologia:'Numerología', astrologia:'Astrología', magia:'Magia' },
     footer: { home:'Inicio', enc:'Enciclopedia', contatti:'Contacto', about:'Sobre Mí', privacy:'Privacidad' },
     footerCopy: '© 2025–2026 PetroCorporation · Dott. Petrolese Giovanni',
-    footerDisclaimer: 'MYSTICA Oracoli es una herramienta de entretenimiento y crecimiento personal, no sustituye el asesoramiento médico, legal o psicológico profesional.'
+    footerDisclaimer: 'MYSTICA Oracoli es una herramienta de entretenimiento y crecimiento personal, no sustituye el asesoramiento médico, legal o psicológico profesional.',
+    ctaExplore: '🔍 Explorar Otras Categorías',
+    faqTitle: 'Preguntas Frecuentes',
+    shareLabel: 'Compartir',
+    shareTitle: 'MYSTICA Oráculos',
+    shareText: 'Acabo de encontrar justo lo que buscaba en MYSTICA: tarot, horóscopo, runas y más de 60 herramientas esotéricas en un solo lugar.',
+    shareCopy: '🔗 Copiar Enlace',
+    shareCopied: '✓ ¡Copiado!',
+    premiumTitle: '✦ Función Premium',
+    premiumText: 'Desbloquea lecturas ilimitadas, interpretaciones completas y consultas avanzadas en todos los oráculos de MYSTICA.',
+    premiumPrice: 'Solo 4,99€ pago único',
+    premiumBtn: 'Desbloquear MYSTICA Premium',
+    premiumSkip: 'Continuar Gratis',
+    artTitle: 'Cómo Orientarte entre Tarot, Oráculos y Tradiciones Esotéricas: Guía de Búsqueda en MYSTICA',
+    artH2: 'El Origen Real de Estos Sistemas Divinatorios',
+    artH3: 'Mitos que Desmentir y Cómo Aprovechar Mejor Este Buscador',
+    artP1: 'Cada herramienta indexada en este buscador hunde sus raíces en épocas y culturas distintas. El tarot nace en la Italia del siglo XV como baraja cortesana, mucho antes de que ocultistas franceses como Éliphas Lévi lo convirtieran en sistema adivinatorio durante los siglos XVIII y XIX. El I Ching, el Libro de los Cambios chino, es más de dos milenios anterior al tarot y se basa en 64 hexagramas construidos a partir de ocho trigramas fundamentales. Las runas del Futhark antiguo ya se tallaban en madera y hueso entre los pueblos germánicos desde el siglo II, mientras que la Cábala judía desarrolla su simbolismo del Árbol de la Vida a partir de la España y la Provenza medievales.',
+    artP2: 'Buscar en MYSTICA implica recorrer tradiciones que rara vez se solapan: la astrología védica lee el cielo mediante 27 Nakshatras y el sistema de Dashas, el BaZi chino trabaja con los Cuatro Pilares del Destino, y marcos más recientes como el Human Design, nacido en los años noventa, combinan astrología, I Ching, Cábala y el sistema de chakras. Este motor indexa más de sesenta páginas entre guías, oráculos interactivos y artículos en profundidad, de modo que con una sola palabra clave aparece al instante la herramienta más relevante, sin necesidad de recorrer menús.',
+    artP3: 'Un error habitual entre quienes se acercan por primera vez a estas disciplinas es suponer que son intercambiables, como si tarot, runas e I Ching respondieran al mismo tipo de pregunta con el mismo lenguaje simbólico. Cada sistema tiene en realidad su propia gramática: el tarot trabaja con imágenes arquetípicas y narrativa, el I Ching con el cambio y la polaridad yin-yang, las runas con sonidos y fuerzas elementales, la numerología con el cálculo y la vibración numérica. Un segundo error frecuente es esperar respuestas absolutas y definitivas, cuando estas herramientas están pensadas para estimular la reflexión personal, no para sustituir decisiones informadas.',
+    artP4: 'Circula a menudo el mito de que el tarot o las runas tienen un origen "antiquísimo y secreto" transmitido por presuntas civilizaciones perdidas: la investigación histórica documentada desmiente esta narrativa romántica y traza en su lugar una evolución rastreable a través de textos y manuscritos reales. Del mismo modo, no existe un único significado "verdadero" para una runa o un arcano: escuelas distintas, como la francesa y la anglosajona en el tarot, ofrecen lecturas ligeramente diferentes del mismo símbolo, y resulta más útil compararlas que buscar una respuesta definitiva.',
+    artP5: 'Para obtener resultados más precisos conviene escribir el nombre de la disciplina que quieres explorar, como "geomancia" o "gene keys", o una pregunta práctica como "compatibilidad zodiacal" o "cómo leer el tarot". Los resultados se ordenan por relevancia según el título, la descripción y las palabras clave de cada página, y cada ficha lleva directamente a la herramienta interactiva correspondiente. Quien prefiera una exploración más libre puede consultar la enciclopedia esotérica completa, la guía de lectura del tarot o el índice de signos del zodiaco.',
+    artImgAlt: 'Buscador esotérico MYSTICA con símbolos de tarot, runas y estrellas',
+    faq: [
+      { q: '¿Cómo funciona la búsqueda en MYSTICA Oráculos?', a: 'La búsqueda compara el término escrito con el título, la descripción y las palabras clave de cada página del sitio, directamente en tu navegador: ningún dato se envía a servidores externos. Basta escribir una palabra para ver resultados ordenados por relevancia, con los términos coincidentes resaltados en cada ficha.' },
+      { q: '¿Qué disciplinas esotéricas puedo encontrar en MYSTICA?', a: 'El sitio reúne más de 60 herramientas y guías: astrología occidental y védica, tarot, runas, I Ching, numerología, Cábala, alquimia, geomancia, ángeles custodios, magia blanca, roja y negra, Human Design, Gene Keys, BaZi chino y muchas otras tradiciones divinatorias del mundo.' },
+      { q: '¿La búsqueda en MYSTICA es gratuita?', a: 'Sí, la búsqueda y la lectura básica de cada oráculo son totalmente gratuitas y sin límite de uso. Solo algunas funciones avanzadas, como tiradas extendidas o el horóscopo mensual detallado, requieren el desbloqueo Premium de 4,99€ pago único, válido en todos tus dispositivos.' },
+      { q: '¿Cómo elijo la herramienta divinatoria más adecuada para mí?', a: 'Depende de la pregunta que tengas en mente: el tarot es ideal para cuestiones prácticas y relacionales, el I Ching para decisiones y ciclos de cambio, las runas para la introspección y la guía espiritual, la numerología para comprender rasgos de personalidad y ciclos vitales. Prueba una búsqueda por palabra clave o explora la enciclopedia para comparar.' },
+      { q: '¿Por qué no encuentro resultados para el término que busqué?', a: 'El motor busca coincidencias exactas o parciales en títulos y palabras clave: prueba un sinónimo o un término más general, por ejemplo "cartas" en lugar de "tarot" o "signo" en lugar de "horóscopo", o consulta la enciclopedia esotérica para un índice completo de los temas tratados.' }
+    ]
   }
 };
 
@@ -461,6 +666,7 @@ let currentLang = localStorage.getItem('myst_lang') || 'it';
 /* ── SEO Multilingua ── */
 function updateSEO() {
   const S = LANG[currentLang].seo;
+  const L = LANG[currentLang];
   document.documentElement.lang = S.htmlLang;
   document.title = S.title;
   document.querySelector('meta[name="description"]').content = S.description;
@@ -487,9 +693,33 @@ function updateSEO() {
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: LANG[currentLang].breadcrumbHome, item: 'https://mysticaoracoli.it/' },
-            { '@type': 'ListItem', position: 2, name: LANG[currentLang].breadcrumbCurrent, item: 'https://mysticaoracoli.it/cerca.html' }
+            { '@type': 'ListItem', position: 1, name: L.breadcrumbHome, item: 'https://mysticaoracoli.it/' },
+            { '@type': 'ListItem', position: 2, name: L.breadcrumbCurrent, item: 'https://mysticaoracoli.it/cerca.html' }
           ]
+        },
+        {
+          '@type': 'Article',
+          '@id': 'https://mysticaoracoli.it/cerca.html#article',
+          headline: L.artTitle,
+          about: S.description,
+          inLanguage: S.htmlLang,
+          author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni', alternateName: 'Mago Petro' },
+          publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli' }
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'MYSTICA Oracoli',
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web, iOS, Android',
+          offers: { '@type': 'Offer', price: '4.99', priceCurrency: 'EUR' }
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: L.faq.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+          }))
         }
       ]
     });
@@ -531,6 +761,33 @@ function applyLang() {
   const flp = document.getElementById('fl-privacy'); if (flp) flp.textContent = L.footer.privacy;
   const fc = document.getElementById('footer-copy'); if (fc) fc.textContent = L.footerCopy;
   const fd = document.getElementById('footer-disclaimer'); if (fd) fd.textContent = L.footerDisclaimer;
+
+  /* ── Share ── */
+  const shl = document.getElementById('share-label'); if (shl) shl.textContent = L.shareLabel;
+  const sc = document.getElementById('share-copy'); if (sc) sc.textContent = L.shareCopy;
+
+  /* ── Articolo editoriale ── */
+  const at = document.getElementById('art-title'); if (at) at.textContent = L.artTitle;
+  const ah2 = document.getElementById('art-h2'); if (ah2) ah2.textContent = L.artH2;
+  const ah3 = document.getElementById('art-h3'); if (ah3) ah3.textContent = L.artH3;
+  const ap1 = document.getElementById('art-p1'); if (ap1) ap1.textContent = L.artP1;
+  const ap2 = document.getElementById('art-p2'); if (ap2) ap2.textContent = L.artP2;
+  const ap3 = document.getElementById('art-p3'); if (ap3) ap3.textContent = L.artP3;
+  const ap4 = document.getElementById('art-p4'); if (ap4) ap4.textContent = L.artP4;
+  const ap5 = document.getElementById('art-p5'); if (ap5) ap5.textContent = L.artP5;
+  const hi = document.getElementById('art-hero'); if (hi) hi.alt = L.artImgAlt || '';
+  const ce = document.getElementById('cta-explore'); if (ce) ce.textContent = L.ctaExplore;
+  const ft = document.getElementById('faq-title'); if (ft) ft.textContent = L.faqTitle;
+
+  /* ── Premium modal ── */
+  const pt = document.getElementById('premium-title'); if (pt) pt.textContent = L.premiumTitle;
+  const px = document.getElementById('premium-text'); if (px) px.textContent = L.premiumText;
+  const pp = document.getElementById('premium-price'); if (pp) pp.textContent = L.premiumPrice;
+  const pb = document.getElementById('premium-btn'); if (pb) pb.textContent = L.premiumBtn;
+  const ps = document.getElementById('premium-skip'); if (ps) ps.textContent = L.premiumSkip;
+
+  /* ── FAQ accordion ── */
+  renderFAQ(L.faq);
 
   runSearch(document.getElementById('searchInput').value);
 }
@@ -584,6 +841,66 @@ function applyTheme(isDay) {
   localStorage.setItem('myst_theme', isDay ? 'day' : 'night');
 }
 document.getElementById('themeToggle')?.addEventListener('click', () => { isDayMode = !isDayMode; applyTheme(isDayMode); });
+
+/* ── Premium Gate (standard) ── */
+function isPremium() {
+  return typeof window.isPremium === 'function' ? window.isPremium() : localStorage.getItem('myst_premium') === '1';
+}
+function closePremiumModal() {
+  document.getElementById('premiumModal')?.classList.remove('show');
+  document.getElementById('premiumModal')?.setAttribute('aria-hidden', 'true');
+}
+
+/* ── Share (standard) ── */
+const PAGE_URL = 'https://mysticaoracoli.it/cerca.html';
+function shareContent(customText) {
+  const L = LANG[currentLang];
+  const text = customText || L.shareText;
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(text + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(text)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
+}
+
+/* ── FAQ Accordion (standard) ── */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${escHtml(f.q)}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${escHtml(f.a)}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
 
 /* ══════════════════════════════════════════════════════════════
    MOTORE DI RICERCA

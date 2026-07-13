@@ -20,6 +20,9 @@
 <link rel="canonical" href="https://mysticaoracoli.it/community.html">
 
 <!-- hreflang -->
+<link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/community.html">
+<link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/community.html">
+<link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/community.html">
 <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/community.html">
 
 <meta property="og:type" content="website">
@@ -42,23 +45,32 @@
 <script type="application/ld+json" id="ld-schema">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Community & Recensioni — MYSTICA Oracoli",
-  "description": "Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.",
-  "url": "https://mysticaoracoli.it/community.html",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "MYSTICA Oracoli",
-    "url": "https://mysticaoracoli.it/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "PetroCorporation",
-    "founder": {
-      "@type": "Person",
-      "name": "Giovanni Petrolese"
-    }
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Community & Recensioni — MYSTICA Oracoli",
+      "description": "Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.",
+      "url": "https://mysticaoracoli.it/community.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "MYSTICA Oracoli",
+        "url": "https://mysticaoracoli.it/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PetroCorporation",
+        "founder": { "@type": "Person", "name": "Giovanni Petrolese" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mysticaoracoli.it/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Community & Recensioni", "item": "https://mysticaoracoli.it/community.html" }
+      ]
+    },
+    { "@type": "FAQPage", "mainEntity": [] }
+  ]
 }
 </script>
 <link rel="manifest" href="./manifest.json">
@@ -381,6 +393,33 @@ textarea::placeholder { color: var(--muted); }
   margin-bottom: 15px; font-size: 13px;
   display: flex; justify-content: space-between; align-items: center;
 }
+
+/* ═══ ARTICOLO EDITORIALE ═══ */
+.article-section { margin: 22px 0 6px; content-visibility: auto; }
+.article-section h2 { text-align: left; font-size: 19px; margin-bottom: 12px; }
+.article-section h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 15px; margin: 18px 0 10px; letter-spacing: .5px; }
+.article-section p { font-size: 14.5px; color: var(--text); }
+.article-hero { width: 100%; border-radius: var(--radius); margin: 4px 0 16px; display: block; border: 1px solid var(--border); }
+.article-links { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; padding: 14px; background: rgba(212,175,55,0.06); border: 1px solid var(--gold-dim); border-radius: 12px; }
+.article-links a { color: var(--gold); font-size: 13px; text-decoration: none; }
+.article-links a:hover { text-decoration: underline; }
+.cta-explore { display: block; text-align: center; margin-top: 6px; padding: 14px; background: linear-gradient(135deg, #2a1748, #160d30); border: 1.5px solid var(--gold); color: var(--gold); border-radius: 12px; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: .5px; text-decoration: none; }
+
+/* ═══ FAQ ═══ */
+.faq-section { margin: 22px 0; content-visibility: auto; }
+.faq-title { text-align: left; font-size: 18px; margin-bottom: 12px; }
+.faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; overflow: hidden; background: rgba(20,12,36,0.4); }
+html.theme-day .faq-item { background: rgba(255,255,255,0.4); }
+.faq-question { width: 100%; text-align: left; background: none; border: none; color: var(--text); padding: 13px 14px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family: 'Crimson Pro', serif; }
+.faq-icon { color: var(--gold); font-size: 16px; flex-shrink: 0; }
+.faq-answer { padding: 0 14px 14px; }
+.faq-answer p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+/* ═══ SHARE ═══ */
+.share-section { margin: 18px 0; text-align: center; }
+.btn-share { width: 100%; padding: 13px; background: linear-gradient(135deg, #2a1748, #160d30); border: 1.5px solid var(--gold); color: var(--gold); border-radius: 12px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: .5px; }
+.share-popup { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px; }
+.share-btn { flex: 1 1 40%; padding: 10px; border-radius: 10px; text-align: center; font-size: 12px; text-decoration: none; border: 1px solid var(--gold-dim); color: var(--text); background: rgba(212,175,55,0.06); }
 </style>
 </head>
 <body>
@@ -410,8 +449,8 @@ textarea::placeholder { color: var(--muted); }
 
     <!-- HERO CARD -->
     <div class="card gold-border">
-      <h2 style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px">✨ Community & Recensioni</h2>
-      <p class="t-muted">Condividi esperienze mistiche e valuta l'app</p>
+      <h2 style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px" id="hero-title">✨ Community & Recensioni</h2>
+      <p class="t-muted" id="hero-subtitle">Condividi esperienze mistiche e valuta l'app</p>
     </div>
 
     <!-- TAB SWITCHER -->
@@ -423,7 +462,7 @@ textarea::placeholder { color: var(--muted); }
     <!-- LOADING FIREBASE -->
     <div id="fb-loading">
       <div class="ld-ring"></div>
-      Connessione alla sfera mistica...
+      <span id="fb-loading-text">Connessione alla sfera mistica...</span>
     </div>
 
     <!-- ══════════ TAB COMMUNITY ══════════ -->
@@ -431,28 +470,28 @@ textarea::placeholder { color: var(--muted); }
 
       <!-- FORM COMMENTO -->
       <div class="card" id="commenti-form-card">
-        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">✍️ Lascia un messaggio</h3>
+        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px" id="comm-form-title">✍️ Lascia un messaggio</h3>
         <div style="margin-bottom:10px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px" id="comm-label-nome">Il tuo nome *</label>
           <input id="comm-nome" type="text" maxlength="40" placeholder="Es: Luna, Arcano, Stella...">
         </div>
         <div style="margin-bottom:10px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Argomento</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px" id="comm-label-topic">Argomento</label>
           <select id="comm-topic">
-            <option value="generale">🔮 Generale</option>
-            <option value="tarocchi">🃏 Tarocchi</option>
-            <option value="astrologia">🌙 Astrologia</option>
-            <option value="sogni">😴 Sogni & Visioni</option>
-            <option value="rune">ᚱ Rune</option>
-            <option value="chakra">🕉️ Chakra & Energia</option>
-            <option value="wicca">🌿 Wicca & Magia</option>
-            <option value="iching">☯️ I Ching</option>
-            <option value="numerologia">🔢 Numerologia</option>
-            <option value="esperienze">✨ Esperienze Mistiche</option>
+            <option value="generale" id="opt-generale">🔮 Generale</option>
+            <option value="tarocchi" id="opt-tarocchi">🃏 Tarocchi</option>
+            <option value="astrologia" id="opt-astrologia">🌙 Astrologia</option>
+            <option value="sogni" id="opt-sogni">😴 Sogni & Visioni</option>
+            <option value="rune" id="opt-rune">ᚱ Rune</option>
+            <option value="chakra" id="opt-chakra">🕉️ Chakra & Energia</option>
+            <option value="wicca" id="opt-wicca">🌿 Wicca & Magia</option>
+            <option value="iching" id="opt-iching">☯️ I Ching</option>
+            <option value="numerologia" id="opt-numerologia">🔢 Numerologia</option>
+            <option value="esperienze" id="opt-esperienze">✨ Esperienze Mistiche</option>
           </select>
         </div>
         <div style="margin-bottom:14px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo messaggio *</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px" id="comm-label-msg">Il tuo messaggio *</label>
           <textarea id="comm-testo" maxlength="600" placeholder="Condividi la tua esperienza, una domanda o una riflessione spirituale..." style="min-height:90px"></textarea>
           <div style="text-align:right;font-size:11px;color:var(--muted)" id="comm-chars">0/600</div>
         </div>
@@ -481,7 +520,7 @@ textarea::placeholder { color: var(--muted); }
       <div id="commenti-lista">
         <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
           <div style="font-size:32px;margin-bottom:8px">🔮</div>
-          In attesa della connessione...
+          <span id="comm-waiting-text">In attesa della connessione...</span>
         </div>
       </div>
 
@@ -500,13 +539,13 @@ textarea::placeholder { color: var(--muted); }
 
       <!-- SCRIVI RECENSIONE -->
       <div class="card">
-        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px">⭐ Scrivi una recensione</h3>
+        <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:15px;margin-bottom:14px" id="rec-form-title">⭐ Scrivi una recensione</h3>
         <div style="margin-bottom:10px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Il tuo nome *</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px" id="rec-label-nome">Il tuo nome *</label>
           <input id="rec-nome" type="text" maxlength="40" placeholder="Es: Marco, Stella, Arianna...">
         </div>
         <div style="margin-bottom:10px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:8px">Valutazione *</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:8px" id="rec-label-voto">Valutazione *</label>
           <div id="rec-stelle-input" style="display:flex;gap:6px;justify-content:center">
             <span onclick="setStelle(1)">⭐</span>
             <span onclick="setStelle(2)">⭐</span>
@@ -517,7 +556,7 @@ textarea::placeholder { color: var(--muted); }
           <div id="rec-stelle-label" style="text-align:center;font-size:12px;color:var(--muted);margin-top:6px">Tocca le stelle</div>
         </div>
         <div style="margin-bottom:14px">
-          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Commento (opzionale)</label>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px" id="rec-label-commento">Commento (opzionale)</label>
           <textarea id="rec-testo" maxlength="400" placeholder="Racconta la tua esperienza con Mystica Oracoli..." style="min-height:80px"></textarea>
           <div style="text-align:right;font-size:11px;color:var(--muted)" id="rec-chars">0/400</div>
         </div>
@@ -535,7 +574,7 @@ textarea::placeholder { color: var(--muted); }
       <div id="recensioni-lista">
         <div style="text-align:center;padding:30px;color:var(--muted);font-size:14px">
           <div style="font-size:32px;margin-bottom:8px">⭐</div>
-          In attesa della connessione...
+          <span id="rec-waiting-text">In attesa della connessione...</span>
         </div>
       </div>
 
@@ -561,16 +600,60 @@ textarea::placeholder { color: var(--muted); }
       <button onclick="apriAdmin()" style="background:none;border:none;color:transparent;font-size:8px;padding:10px">admin</button>
     </div>
 
+    <!-- ARTICOLO EDITORIALE -->
+    <article class="article-section">
+      <h2 id="art-title"></h2>
+      <img src="./images/community.webp"
+           id="art-hero"
+           class="article-hero"
+           alt=""
+           width="960" height="540"
+           loading="lazy" decoding="async">
+      <h3 id="art-h2"></h3>
+      <p id="art-p1"></p>
+      <p id="art-p2"></p>
+      <p id="art-p3"></p>
+      <h3 id="art-h3"></h3>
+      <p id="art-p4"></p>
+      <p id="art-p5"></p>
+      <nav class="article-links" aria-label="Approfondimenti correlati">
+        <a href="./tarocchi.html" id="link-tarocchi"></a>
+        <a href="./oroscopo.html" id="link-oroscopo"></a>
+        <a href="./profilo-mistico.html" id="link-profilo"></a>
+        <a href="./archivio.html" id="link-archivio"></a>
+      </nav>
+      <a href="./index.html" class="cta-explore" id="cta-explore"></a>
+    </article>
+
+    <!-- SHARE -->
+    <div class="share-section">
+      <button class="btn-share" onclick="shareContent()" id="btn-share-label">📤 Condividi</button>
+      <div class="share-popup" id="sharePopup" hidden>
+        <a class="share-btn" id="share-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="share-btn" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+        <a class="share-btn" id="share-fb" target="_blank" rel="noopener">👥 Facebook</a>
+        <a class="share-btn" id="share-x" target="_blank" rel="noopener">🐦 X</a>
+        <button class="share-btn" id="share-copy" onclick="copyLink()"></button>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2 class="faq-title" id="faq-title">FAQ</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="page-footer" style="text-align:center;padding:16px 0 8px;border-top:1px solid rgba(212,175,55,0.15)">
       <div style="display:flex;justify-content:center;gap:14px;margin-bottom:8px;font-size:11px">
-        <a href="./index.html" style="color:var(--gold);text-decoration:none">Home</a>
-        <a href="./contatti.html" style="color:var(--gold);text-decoration:none">Contatti</a>
-        <a href="./about.html" style="color:var(--gold);text-decoration:none">Chi Siamo</a>
-        <a href="./privacy.html" style="color:var(--gold);text-decoration:none">Privacy</a>
+        <a href="./index.html" style="color:var(--gold);text-decoration:none" id="foot-link-home">Home</a>
+        <a href="./contatti.html" style="color:var(--gold);text-decoration:none" id="foot-link-contatti">Contatti</a>
+        <a href="./about.html" style="color:var(--gold);text-decoration:none" id="foot-link-about">Chi Siamo</a>
+        <a href="./privacy.html" style="color:var(--gold);text-decoration:none" id="foot-link-privacy">Privacy</a>
       </div>
       <a href="index.html" style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);text-decoration:none;letter-spacing:1px">✦ MYSTICA ✦</a>
-      <p style="font-size:10px;color:var(--muted);margin-top:6px">© 2026 PetroCorporation — Dott. Petrolese Giovanni</p>
+      <p id="footer-copy" style="font-size:10px;color:var(--muted);margin-top:6px">© 2026 PetroCorporation — Dott. Petrolese Giovanni</p>
+      <p id="footer-disclaimer" style="font-size:9px;color:var(--muted);margin-top:4px;opacity:.8"></p>
     </footer>
 
   </main>
@@ -625,25 +708,145 @@ document.getElementById('musicToggle')?.addEventListener('click', () => window.a
 const LANG = {
   it: {
     headerTitle: '✨ Community', back: '← Torna',
-    seo: { title: 'Community & Recensioni — MYSTICA Oracoli', desc: "Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.", ogTitle: 'Community & Recensioni — MYSTICA Oracoli', ogDesc: "Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.", locale: 'it_IT', htmlLang: 'it' }
+    heroTitle: '✨ Community & Recensioni', heroSubtitle: "Condividi esperienze mistiche e valuta l'app",
+    tabCommunity: '💬 Community', tabReviews: '⭐ Recensioni',
+    loadingText: 'Connessione alla sfera mistica...',
+    commWaiting: 'In attesa della connessione...', recWaiting: 'In attesa della connessione...',
+    commFormTitle: '✍️ Lascia un messaggio', labelNome: 'Il tuo nome *', labelTopic: 'Argomento', labelMessaggio: 'Il tuo messaggio *',
+    topics: { generale:'🔮 Generale', tarocchi:'🃏 Tarocchi', astrologia:'🌙 Astrologia', sogni:'😴 Sogni & Visioni', rune:'ᚱ Rune', chakra:'🕉️ Chakra & Energia', wicca:'🌿 Wicca & Magia', iching:'☯️ I Ching', numerologia:'🔢 Numerologia', esperienze:'✨ Esperienze Mistiche' },
+    filters: { tutti:'Tutti', tarocchi:'🃏 Tarocchi', astrologia:'🌙 Astri', sogni:'😴 Sogni', esperienze:'✨ Esperienze', wicca:'🌿 Wicca', generale:'🔮 Generale' },
+    btnInvia: '🔮 Invia Messaggio',
+    recFormTitle: '⭐ Scrivi una recensione', labelNomeRec: 'Il tuo nome *', labelVoto: 'Valutazione *', stelleHint: 'Tocca le stelle', labelCommento: 'Commento (opzionale)', btnPubblica: '⭐ Pubblica Recensione',
+    mediaNessuna: 'Nessuna recensione ancora',
+    stelleLabel: ['','⭐ Pessima','⭐⭐ Scarsa','⭐⭐⭐ Nella media','⭐⭐⭐⭐ Buona','⭐⭐⭐⭐⭐ Eccellente!'],
+    ctaExplore: '🔍 Scopri le Altre Categorie',
+    shareTitle: 'MYSTICA Oracoli', shareText: 'Unisciti alla community di MYSTICA Oracoli: condividi esperienze e leggi le recensioni!', shareCopy: '🔗 Copia Link', shareCopied: '✓ Copiato!', shareLabel: '📤 Condividi',
+    footerLinks: { home:'Home', contatti:'Contatti', about:'Chi Siamo', privacy:'Privacy' },
+    footerCopy: '© 2026 PetroCorporation — Dott. Petrolese Giovanni',
+    footerDisclaimer: 'I contenuti pubblicati dagli utenti riflettono esperienze personali e non sostituiscono consulenze professionali di alcun tipo.',
+    faqTitle: 'FAQ',
+    linkTarocchi: '🃏 Approfondisci il significato dei Tarocchi',
+    linkOroscopo: '🌙 Leggi l\'oroscopo del giorno',
+    linkProfilo: '🔮 Crea il tuo Profilo Mistico',
+    linkArchivio: '📜 Consulta l\'Archivio delle letture',
+    artTitle: 'Community e Recensioni: il cuore pulsante di MYSTICA Oracoli',
+    artH2: 'Perché condividere la propria esperienza spirituale ha ancora valore oggi',
+    artH3: 'Come partecipare senza perdere l\'autenticità del gesto',
+    artImgAlt: 'Persone che condividono esperienze spirituali in una community online esoterica',
+    artP1: "Il bisogno di raccontare ad altri una lettura di tarocchi, un sogno ricorrente o un presagio non è un'invenzione recente. Nei villaggi contadini dell'Ottocento le donne si riunivano attorno al focolare per interpretare insieme i segni del destino, mentre nei salotti borghesi del primo Novecento le sedute spiritiche e le letture della mano diventavano occasioni di confronto collettivo. Con l'arrivo di internet, negli anni Duemila, questi cerchi si sono trasferiti nei forum di settore e nei gruppi Usenet dedicati all'esoterismo, dove sconosciuti si scambiavano interpretazioni di carte e simboli. La sezione Community di MYSTICA Oracoli raccoglie questa eredità e la porta nel formato di un'app moderna, mantenendo intatto lo spirito originario: il confronto come strumento di comprensione di sé.",
+    artP2: "Dal punto di vista psicologico, mettere per iscritto un'esperienza mistica e condividerla con altri produce un effetto di validazione sociale ben documentato negli studi sulla narrazione personale. Raccontare un sogno lo rende più nitido nella memoria, mentre leggere che altre persone hanno vissuto emozioni simili riduce il senso di isolamento che spesso accompagna le esperienze spirituali intense. Le recensioni, invece, rispondono a un bisogno diverso: quello di orientare le scelte altrui attraverso un giudizio onesto. Chi lascia una valutazione a cinque stelle o segnala un difetto sta contribuendo, senza saperlo, a una forma di intelligenza collettiva che rende l'intero ecosistema più affidabile.",
+    artP3: "Su MYSTICA la Community è organizzata per argomento: tarocchi, astrologia, sogni e visioni, rune, chakra ed energia, wicca e magia, I Ching, numerologia ed esperienze mistiche generiche. Ogni messaggio pubblico passa attraverso un filtro automatico che segnala linguaggio offensivo prima della pubblicazione, mentre le recensioni confluiscono in una media a stelle visibile a tutti, calcolata in tempo reale. La differenza tra un commento e una recensione non è solo tecnica: il primo apre una conversazione e può ricevere risposte, la seconda è un giudizio complessivo sull'esperienza d'uso dell'applicazione e resta un elemento isolato, pensato per orientare chi sta ancora decidendo se affidarsi a Mystica.",
+    artP4: "Chi si avvicina per la prima volta a una community esoterica tende a commettere alcuni errori ricorrenti: aspettarsi risposte univoche a domande intrinsecamente ambigue, condividere dati sensibili come indirizzi o numeri di telefono nei messaggi pubblici, oppure scrivere recensioni impulsive subito dopo un'unica lettura poco convincente, senza dare al sistema il tempo di essere compreso appieno. Circola inoltre un mito diffuso ma privo di fondamento: quello secondo cui scrivere online un'esperienza negativa la 'scaricherebbe' magicamente, liberando chi scrive da un peso energetico. In realtà la scrittura ha un valore catartico ben noto alla psicologia narrativa, ma non sostituisce l'elaborazione personale né tantomeno un eventuale supporto professionale nei momenti di difficoltà reale.",
+    artP5: "Le recensioni autentiche restano lo strumento più prezioso per far crescere un progetto indipendente come Mystica Oracoli, sviluppato e curato artigianalmente senza il supporto di grandi editori. A differenza di molte community esoteriche internazionali dominate da account anonimi e bot, qui ogni messaggio è moderato manualmente e le recensioni negative vengono mantenute visibili accanto a quelle positive, proprio perché un giudizio equilibrato vale più di una vetrina di soli complimenti. Partecipare con rispetto, evitando terminologia offensiva e rispettando la sensibilità altrui, è la condizione minima per mantenere questo spazio un luogo sicuro di scambio autentico."
   },
+
   en: {
     headerTitle: '✨ Community', back: '← Back',
-    seo: { title: 'Community & Reviews — MYSTICA Oracles', desc: 'MYSTICA community: share your spiritual experience, leave a review and join the Italian esoteric community.', ogTitle: 'Community & Reviews — MYSTICA Oracles', ogDesc: "Join the MYSTICA community: comments, mystical experiences and app reviews.", locale: 'en_US', htmlLang: 'en' }
+    heroTitle: '✨ Community & Reviews', heroSubtitle: 'Share mystical experiences and rate the app',
+    tabCommunity: '💬 Community', tabReviews: '⭐ Reviews',
+    loadingText: 'Connecting to the mystic sphere...',
+    commWaiting: 'Waiting for connection...', recWaiting: 'Waiting for connection...',
+    commFormTitle: '✍️ Leave a message', labelNome: 'Your name *', labelTopic: 'Topic', labelMessaggio: 'Your message *',
+    topics: { generale:'🔮 General', tarocchi:'🃏 Tarot', astrologia:'🌙 Astrology', sogni:'😴 Dreams & Visions', rune:'ᚱ Runes', chakra:'🕉️ Chakra & Energy', wicca:'🌿 Wicca & Magic', iching:'☯️ I Ching', numerologia:'🔢 Numerology', esperienze:'✨ Mystical Experiences' },
+    filters: { tutti:'All', tarocchi:'🃏 Tarot', astrologia:'🌙 Astro', sogni:'😴 Dreams', esperienze:'✨ Experiences', wicca:'🌿 Wicca', generale:'🔮 General' },
+    btnInvia: '🔮 Send Message',
+    recFormTitle: '⭐ Write a review', labelNomeRec: 'Your name *', labelVoto: 'Rating *', stelleHint: 'Tap the stars', labelCommento: 'Comment (optional)', btnPubblica: '⭐ Publish Review',
+    mediaNessuna: 'No reviews yet',
+    stelleLabel: ['','⭐ Poor','⭐⭐ Fair','⭐⭐⭐ Average','⭐⭐⭐⭐ Good','⭐⭐⭐⭐⭐ Excellent!'],
+    ctaExplore: '🔍 Explore Other Categories',
+    shareTitle: 'MYSTICA Oracles', shareText: 'Join the MYSTICA Oracles community: share experiences and read reviews!', shareCopy: '🔗 Copy Link', shareCopied: '✓ Copied!', shareLabel: '📤 Share',
+    footerLinks: { home:'Home', contatti:'Contact', about:'About Us', privacy:'Privacy' },
+    footerCopy: '© 2026 PetroCorporation — Dott. Petrolese Giovanni',
+    footerDisclaimer: 'User-generated content reflects personal experiences and does not replace professional advice of any kind.',
+    faqTitle: 'FAQ',
+    linkTarocchi: '🃏 Discover the meaning of Tarot cards',
+    linkOroscopo: '🌙 Read today\'s horoscope',
+    linkProfilo: '🔮 Create your Mystic Profile',
+    linkArchivio: '📜 Browse the reading Archive',
+    artTitle: 'Community & Reviews: the beating heart of MYSTICA Oracoli',
+    artH2: 'Why sharing a spiritual experience still matters today',
+    artH3: 'How to take part without losing authenticity',
+    artImgAlt: 'People sharing spiritual experiences in an online esoteric community',
+    artP1: "The need to tell others about a tarot reading, a recurring dream or an omen is nothing new. Nineteenth-century villagers gathered around the fireplace to interpret signs together, while early twentieth-century séances turned personal insight into collective conversation. When the internet arrived, these circles moved into dedicated forums where strangers exchanged card interpretations. MYSTICA's Community section inherits that tradition and brings it into a modern app format, keeping intact the original spirit: dialogue as a tool for self-understanding, now reachable from a smartphone rather than a fireplace or a smoky parlour.",
+    artP2: "Writing down a mystical experience and sharing it produces a well-documented social validation effect. Telling a dream makes it sharper in memory, and reading that others felt something similar reduces the isolation that often comes with intense spiritual experiences. Reviews serve a different purpose: guiding other people's choices through honest judgment. Anyone leaving five stars, or flagging a flaw, is quietly contributing to a form of collective intelligence that makes the whole ecosystem more trustworthy over time, one voice at a time.",
+    artP3: "On MYSTICA, Community is organised by topic — tarot, astrology, dreams, runes, chakra and energy, Wicca, I Ching, numerology and general mystical experiences. Every public message passes through an automatic filter before publication, while reviews feed into a star average visible to everyone, calculated in real time. A comment opens a conversation and can receive replies; a review is an overall judgment on the app experience and stays a standalone signal meant to help undecided newcomers.",
+    artP4: "Newcomers to esoteric communities tend to repeat a few mistakes: expecting a single definitive answer to inherently ambiguous questions, sharing sensitive data such as phone numbers in public messages, or writing an impulsive review right after one unconvincing reading. A common but baseless myth also circulates: that posting a negative experience online magically 'releases' it. Writing does have a well-known cathartic value, but it cannot replace personal reflection or professional support in genuinely difficult moments.",
+    artP5: "Genuine reviews remain the most valuable tool for growing an independent, hand-crafted project like Mystica Oracoli. Unlike many international esoteric communities dominated by anonymous accounts, every message here is manually moderated, and negative reviews stay visible next to positive ones — a balanced picture is worth more than a wall of compliments. Participating respectfully, avoiding offensive language, is the minimum condition for keeping this a safe space for authentic exchange."
   },
+
   es: {
     headerTitle: '✨ Comunidad', back: '← Volver',
-    seo: { title: 'Comunidad y Reseñas — MYSTICA Oráculos', desc: 'Comunidad MYSTICA: comparte tu experiencia espiritual, deja una reseña y únete a la comunidad esotérica italiana.', ogTitle: 'Comunidad y Reseñas — MYSTICA Oráculos', ogDesc: 'Únete a la comunidad de MYSTICA: comentarios, experiencias místicas y reseñas de la app.', locale: 'es_ES', htmlLang: 'es' }
+    heroTitle: '✨ Comunidad y Reseñas', heroSubtitle: 'Comparte experiencias místicas y valora la app',
+    tabCommunity: '💬 Comunidad', tabReviews: '⭐ Reseñas',
+    loadingText: 'Conectando con la esfera mística...',
+    commWaiting: 'Esperando conexión...', recWaiting: 'Esperando conexión...',
+    commFormTitle: '✍️ Deja un mensaje', labelNome: 'Tu nombre *', labelTopic: 'Tema', labelMessaggio: 'Tu mensaje *',
+    topics: { generale:'🔮 General', tarocchi:'🃏 Tarot', astrologia:'🌙 Astrología', sogni:'😴 Sueños y Visiones', rune:'ᚱ Runas', chakra:'🕉️ Chakra y Energía', wicca:'🌿 Wicca y Magia', iching:'☯️ I Ching', numerologia:'🔢 Numerología', esperienze:'✨ Experiencias Místicas' },
+    filters: { tutti:'Todos', tarocchi:'🃏 Tarot', astrologia:'🌙 Astros', sogni:'😴 Sueños', esperienze:'✨ Experiencias', wicca:'🌿 Wicca', generale:'🔮 General' },
+    btnInvia: '🔮 Enviar Mensaje',
+    recFormTitle: '⭐ Escribe una reseña', labelNomeRec: 'Tu nombre *', labelVoto: 'Valoración *', stelleHint: 'Toca las estrellas', labelCommento: 'Comentario (opcional)', btnPubblica: '⭐ Publicar Reseña',
+    mediaNessuna: 'Todavía no hay reseñas',
+    stelleLabel: ['','⭐ Mala','⭐⭐ Regular','⭐⭐⭐ Normal','⭐⭐⭐⭐ Buena','⭐⭐⭐⭐⭐ ¡Excelente!'],
+    ctaExplore: '🔍 Descubre las Otras Categorías',
+    shareTitle: 'MYSTICA Oráculos', shareText: '¡Únete a la comunidad de MYSTICA Oráculos: comparte experiencias y lee reseñas!', shareCopy: '🔗 Copiar Enlace', shareCopied: '✓ ¡Copiado!', shareLabel: '📤 Compartir',
+    footerLinks: { home:'Inicio', contatti:'Contacto', about:'Sobre Nosotros', privacy:'Privacidad' },
+    footerCopy: '© 2026 PetroCorporation — Dott. Petrolese Giovanni',
+    footerDisclaimer: 'Los contenidos publicados por los usuarios reflejan experiencias personales y no sustituyen ningún tipo de asesoramiento profesional.',
+    faqTitle: 'Preguntas Frecuentes',
+    linkTarocchi: '🃏 Descubre el significado del Tarot',
+    linkOroscopo: '🌙 Lee el horóscopo de hoy',
+    linkProfilo: '🔮 Crea tu Perfil Místico',
+    linkArchivio: '📜 Consulta el Archivo de lecturas',
+    artTitle: 'Comunidad y Reseñas: el corazón de MYSTICA Oráculos',
+    artH2: 'Por qué compartir una experiencia espiritual sigue teniendo valor hoy',
+    artH3: 'Cómo participar sin perder la autenticidad del gesto',
+    artImgAlt: 'Personas compartiendo experiencias espirituales en una comunidad esotérica online',
+    artP1: "La necesidad de contar a otros una tirada de tarot, un sueño recurrente o un presagio no es nada nuevo. En los pueblos del siglo XIX la gente se reunía junto al fuego para interpretar juntos las señales, y a principios del siglo XX las sesiones espiritistas convertían la intuición personal en conversación colectiva. Con la llegada de internet, esos círculos se trasladaron a foros especializados donde desconocidos intercambiaban interpretaciones de cartas y símbolos. La sección Comunidad de MYSTICA hereda esa tradición y la traslada a una app moderna, manteniendo intacto el espíritu original.",
+    artP2: "Escribir una experiencia mística y compartirla produce un efecto de validación social bien documentado. Contar un sueño lo hace más nítido en la memoria, y leer que otras personas sintieron algo parecido reduce el aislamiento que a menudo acompaña las experiencias espirituales intensas. Las reseñas responden a otra necesidad: orientar las decisiones de los demás mediante un juicio honesto sobre la experiencia vivida con la aplicación.",
+    artP3: "En MYSTICA la Comunidad está organizada por tema: tarot, astrología, sueños y visiones, runas, chakra y energía, wicca y magia, I Ching, numerología y experiencias místicas generales. Cada mensaje público pasa por un filtro automático antes de publicarse, mientras que las reseñas alimentan una media de estrellas visible para todos, calculada en tiempo real. Un comentario abre una conversación; una reseña es un juicio global sobre la experiencia de uso y permanece como una señal independiente.",
+    artP4: "Quienes se acercan por primera vez a una comunidad esotérica suelen cometer algunos errores frecuentes: esperar una respuesta única a preguntas intrínsecamente ambiguas, compartir datos sensibles como números de teléfono en mensajes públicos, o escribir una reseña impulsiva justo después de una sola lectura poco convincente. Circula además un mito sin fundamento: que publicar online una experiencia negativa la 'libera' mágicamente. La escritura tiene un valor catártico reconocido, pero no sustituye la elaboración personal ni el apoyo profesional en momentos realmente difíciles.",
+    artP5: "Las reseñas auténticas siguen siendo la herramienta más valiosa para hacer crecer un proyecto independiente y artesanal como Mystica Oracoli. A diferencia de muchas comunidades esotéricas internacionales dominadas por cuentas anónimas, aquí cada mensaje se modera manualmente y las reseñas negativas permanecen visibles junto a las positivas. Participar con respeto, evitando el lenguaje ofensivo, es la condición mínima para mantener este espacio como un lugar seguro de intercambio auténtico."
   }
 };
+
+LANG.it.faq = [
+  { q:'Come funziona la sezione Community di MYSTICA?', a:"È divisa in due parti: Community, dove puoi lasciare messaggi pubblici organizzati per argomento (tarocchi, astrologia, sogni e altro), e Recensioni, dove valuti l'app con stelle e un commento facoltativo. Entrambe le sezioni sono collegate in tempo reale e visibili a tutti gli utenti dell'app." },
+  { q:'Le recensioni sono verificate o moderate?', a:'Ogni recensione e ogni commento passa da un filtro automatico che intercetta linguaggio offensivo prima della pubblicazione, e viene inoltre supervisionato manualmente. Le recensioni negative non vengono nascoste: restano visibili accanto a quelle positive per garantire un quadro onesto.' },
+  { q:'Posso rispondere ai commenti di altri utenti?', a:"Sì, ogni messaggio principale nella sezione Community ha un pulsante 'Rispondi' che apre una conversazione a thread, visibile sotto il messaggio originale. Le risposte ereditano l'argomento del messaggio a cui rispondono." },
+  { q:'I miei dati personali sono al sicuro quando scrivo un commento?', a:"Ti chiediamo solo un nome o soprannome, mai email o dati identificativi. Ti consigliamo comunque di non condividere mai numeri di telefono, indirizzi o altri dati sensibili all'interno dei messaggi pubblici, che restano visibili a chiunque." },
+  { q:'Perché non vedo subito il mio messaggio pubblicato?', a:'La pubblicazione è quasi istantanea grazie alla sincronizzazione in tempo reale, ma in caso di connessione lenta possono servire alcuni secondi. Se il messaggio contiene termini non consentiti, verrà bloccato prima dell\'invio con un avviso specifico.' },
+  { q:'Le recensioni negative vengono cancellate?', a:'No. Crediamo che un giudizio equilibrato, comprese le critiche costruttive, sia più utile di una vetrina di soli complimenti. Le recensioni vengono rimosse solo in presenza di linguaggio offensivo, spam o contenuti non pertinenti.' }
+];
+LANG.en.faq = [
+  { q:'How does the MYSTICA Community section work?', a:'It has two parts: Community, where you can post public messages organised by topic (tarot, astrology, dreams and more), and Reviews, where you rate the app with stars and an optional comment. Both sections sync in real time and are visible to all users.' },
+  { q:'Are reviews verified or moderated?', a:'Every review and comment passes through an automatic filter that catches offensive language before publication, and is also supervised manually. Negative reviews are never hidden — they stay visible next to positive ones for an honest overall picture.' },
+  { q:'Can I reply to other users\' comments?', a:"Yes, every top-level message in the Community section has a 'Reply' button that opens a threaded conversation shown below the original message. Replies inherit the topic of the message they answer." },
+  { q:'Is my personal data safe when I write a comment?', a:'We only ask for a name or nickname, never an email or identifying data. Still, avoid sharing phone numbers, addresses or other sensitive information inside public messages, since these remain visible to everyone.' },
+  { q:'Why doesn\'t my message appear immediately?', a:'Publishing is almost instant thanks to real-time sync, but a slow connection can add a few seconds of delay. If a message contains disallowed terms, it gets blocked before sending, with a specific warning.' },
+  { q:'Are negative reviews deleted?', a:'No. We believe a balanced judgment, including constructive criticism, is more useful than a wall of compliments. Reviews are removed only if they contain offensive language, spam or unrelated content.' }
+];
+LANG.es.faq = [
+  { q:'¿Cómo funciona la sección Comunidad de MYSTICA?', a:'Tiene dos partes: Comunidad, donde puedes dejar mensajes públicos organizados por tema (tarot, astrología, sueños y más), y Reseñas, donde valoras la app con estrellas y un comentario opcional. Ambas secciones se sincronizan en tiempo real y son visibles para todos.' },
+  { q:'¿Las reseñas están verificadas o moderadas?', a:'Cada reseña y comentario pasa por un filtro automático que detecta lenguaje ofensivo antes de publicarse, y además se supervisa manualmente. Las reseñas negativas nunca se ocultan: permanecen visibles junto a las positivas para dar una imagen honesta.' },
+  { q:'¿Puedo responder a los comentarios de otros usuarios?', a:"Sí, cada mensaje principal de la Comunidad tiene un botón 'Responder' que abre una conversación en hilo, visible bajo el mensaje original. Las respuestas heredan el tema del mensaje al que contestan." },
+  { q:'¿Mis datos personales están seguros al escribir un comentario?', a:'Solo pedimos un nombre o apodo, nunca correo electrónico ni datos identificativos. Aun así, evita compartir números de teléfono, direcciones u otros datos sensibles dentro de los mensajes públicos, ya que permanecen visibles para cualquiera.' },
+  { q:'¿Por qué no veo mi mensaje publicado de inmediato?', a:'La publicación es casi instantánea gracias a la sincronización en tiempo real, pero una conexión lenta puede añadir unos segundos. Si el mensaje contiene términos no permitidos, se bloquea antes del envío con un aviso específico.' },
+  { q:'¿Se eliminan las reseñas negativas?', a:'No. Creemos que un juicio equilibrado, incluidas las críticas constructivas, es más útil que una vitrina de solo elogios. Las reseñas se eliminan únicamente si contienen lenguaje ofensivo, spam o contenido no pertinente.' }
+];
+LANG.it.seo = { title: 'Community & Recensioni — MYSTICA Oracoli', description: "Community MYSTICA: condividi la tua esperienza spirituale, lascia una recensione e partecipa alla community esoterica italiana.", keywords: 'community mystica, recensioni mystica oracoli, forum esoterico italiano, community spirituale, recensioni app esoterica', ogTitle: 'Community & Recensioni — MYSTICA Oracoli', ogDesc: "Unisciti alla community di MYSTICA: commenti, esperienze mistiche e recensioni dell'app.", locale: 'it_IT', htmlLang: 'it', faqLD: LANG.it.faq };
+LANG.en.seo = { title: 'Community & Reviews — MYSTICA Oracles', description: 'MYSTICA community: share your spiritual experience, leave a review and join the Italian esoteric community.', keywords: 'mystica community, mystica oracoli reviews, esoteric community, spiritual community app, tarot app reviews', ogTitle: 'Community & Reviews — MYSTICA Oracles', ogDesc: "Join the MYSTICA community: comments, mystical experiences and app reviews.", locale: 'en_US', htmlLang: 'en', faqLD: LANG.en.faq };
+LANG.es.seo = { title: 'Comunidad y Reseñas — MYSTICA Oráculos', description: 'Comunidad MYSTICA: comparte tu experiencia espiritual, deja una reseña y únete a la comunidad esotérica italiana.', keywords: 'comunidad mystica, reseñas mystica oraculos, comunidad esotérica, app espiritual reseñas, tarot app opiniones', ogTitle: 'Comunidad y Reseñas — MYSTICA Oráculos', ogDesc: 'Únete a la comunidad de MYSTICA: comentarios, experiencias místicas y reseñas de la app.', locale: 'es_ES', htmlLang: 'es', faqLD: LANG.es.faq };
+
 let currentLang = localStorage.getItem('myst_lang') || 'it';
+const PAGE_URL = 'https://mysticaoracoli.it/community.html';
 
 function updateSEO() {
   const S = LANG[currentLang].seo;
   document.documentElement.lang = S.htmlLang;
   document.title = S.title;
   const d = id => document.getElementById(id);
-  if (d('seo-desc')) d('seo-desc').content = S.desc;
+  if (d('seo-desc')) d('seo-desc').content = S.description;
+  if (d('seo-keywords')) d('seo-keywords').content = S.keywords;
   if (d('seo-og-title')) d('seo-og-title').content = S.ogTitle;
   if (d('seo-og-desc')) d('seo-og-desc').content = S.ogDesc;
   if (d('seo-og-locale')) d('seo-og-locale').content = S.locale;
@@ -653,12 +856,27 @@ function updateSEO() {
   if (ld) {
     ld.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: S.title,
-      description: S.desc,
-      url: 'https://mysticaoracoli.it/community.html',
-      isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' },
-      publisher: { '@type': 'Organization', name: 'PetroCorporation', founder: { '@type': 'Person', name: 'Giovanni Petrolese' } }
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          name: S.title,
+          description: S.description,
+          url: PAGE_URL,
+          isPartOf: { '@type': 'WebSite', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' },
+          publisher: { '@type': 'Organization', name: 'PetroCorporation', founder: { '@type': 'Person', name: 'Giovanni Petrolese' } }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mysticaoracoli.it/index.html' },
+            { '@type': 'ListItem', position: 2, name: S.title, item: PAGE_URL }
+          ]
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: S.faqLD.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+        }
+      ]
     });
   }
 }
@@ -666,8 +884,119 @@ function updateSEO() {
 function applyLang() {
   updateSEO();
   const L = LANG[currentLang];
-  const ht = document.getElementById('comm-header-title'); if (ht) ht.textContent = L.headerTitle;
-  const bb = document.getElementById('comm-back-btn'); if (bb) bb.textContent = L.back;
+  const d = id => document.getElementById(id);
+
+  // Header
+  if (d('comm-header-title')) d('comm-header-title').textContent = L.headerTitle;
+  if (d('comm-back-btn')) d('comm-back-btn').textContent = L.back;
+
+  // Hero + tabs
+  if (d('hero-title')) d('hero-title').textContent = L.heroTitle;
+  if (d('hero-subtitle')) d('hero-subtitle').textContent = L.heroSubtitle;
+  if (d('tab-btn-community')) d('tab-btn-community').textContent = L.tabCommunity;
+  if (d('tab-btn-recensioni')) d('tab-btn-recensioni').textContent = L.tabReviews;
+  if (d('fb-loading-text')) d('fb-loading-text').textContent = L.loadingText;
+  if (d('comm-waiting-text')) d('comm-waiting-text').textContent = L.commWaiting;
+  if (d('rec-waiting-text')) d('rec-waiting-text').textContent = L.recWaiting;
+
+  // Form commento
+  if (d('comm-form-title')) d('comm-form-title').textContent = L.commFormTitle;
+  if (d('comm-label-nome')) d('comm-label-nome').textContent = L.labelNome;
+  if (d('comm-label-topic')) d('comm-label-topic').textContent = L.labelTopic;
+  if (d('comm-label-msg')) d('comm-label-msg').textContent = L.labelMessaggio;
+  if (d('comm-invia-btn')) d('comm-invia-btn').textContent = L.btnInvia;
+  Object.keys(L.topics).forEach(k => { const opt = d('opt-'+k); if (opt) opt.textContent = L.topics[k]; });
+  Object.keys(L.filters).forEach(k => { const btn = d('filtro-'+k); if (btn) btn.textContent = L.filters[k]; });
+
+  // Form recensione
+  if (d('rec-form-title')) d('rec-form-title').textContent = L.recFormTitle;
+  if (d('rec-label-nome')) d('rec-label-nome').textContent = L.labelNomeRec;
+  if (d('rec-label-voto')) d('rec-label-voto').textContent = L.labelVoto;
+  if (d('rec-label-commento')) d('rec-label-commento').textContent = L.labelCommento;
+  if (d('rec-invia-btn')) d('rec-invia-btn').textContent = L.btnPubblica;
+  if (_stelleSelezionate === 0 && d('rec-stelle-label')) d('rec-stelle-label').textContent = L.stelleHint;
+  if (!window._fbReady && d('rec-media-count')) d('rec-media-count').textContent = L.mediaNessuna;
+
+  // Articolo editoriale
+  if (d('art-title')) d('art-title').textContent = L.artTitle;
+  if (d('art-h2')) d('art-h2').textContent = L.artH2;
+  if (d('art-h3')) d('art-h3').textContent = L.artH3;
+  if (d('art-p1')) d('art-p1').textContent = L.artP1;
+  if (d('art-p2')) d('art-p2').textContent = L.artP2;
+  if (d('art-p3')) d('art-p3').textContent = L.artP3;
+  if (d('art-p4')) d('art-p4').textContent = L.artP4;
+  if (d('art-p5')) d('art-p5').textContent = L.artP5;
+  if (d('art-hero')) d('art-hero').alt = L.artImgAlt;
+  if (d('cta-explore')) d('cta-explore').textContent = L.ctaExplore;
+  if (d('link-tarocchi')) d('link-tarocchi').textContent = L.linkTarocchi;
+  if (d('link-oroscopo')) d('link-oroscopo').textContent = L.linkOroscopo;
+  if (d('link-profilo')) d('link-profilo').textContent = L.linkProfilo;
+  if (d('link-archivio')) d('link-archivio').textContent = L.linkArchivio;
+
+  // Share
+  if (d('btn-share-label')) d('btn-share-label').textContent = L.shareLabel;
+  if (d('share-copy')) d('share-copy').textContent = L.shareCopy;
+
+  // FAQ
+  if (d('faq-title')) d('faq-title').textContent = L.faqTitle;
+  renderFAQ(L.faq);
+
+  // Footer
+  if (d('foot-link-home')) d('foot-link-home').textContent = L.footerLinks.home;
+  if (d('foot-link-contatti')) d('foot-link-contatti').textContent = L.footerLinks.contatti;
+  if (d('foot-link-about')) d('foot-link-about').textContent = L.footerLinks.about;
+  if (d('foot-link-privacy')) d('foot-link-privacy').textContent = L.footerLinks.privacy;
+  if (d('footer-copy')) d('footer-copy').textContent = L.footerCopy;
+  if (d('footer-disclaimer')) d('footer-disclaimer').textContent = L.footerDisclaimer;
+}
+
+/* ── FAQ Accordion ── */
+function renderFAQ(faqs) {
+  const container = document.getElementById('faqList');
+  if (!container || !faqs) return;
+  container.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})" aria-expanded="false">
+        <span>${_sanitize(f.q)}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" id="faq-ans-${i}" hidden>
+        <p>${_sanitize(f.a)}</p>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleFAQ(i) {
+  const ans = document.getElementById(`faq-ans-${i}`);
+  const btn = document.querySelector(`#faq-${i} .faq-question`);
+  const icon = btn?.querySelector('.faq-icon');
+  const isOpen = !ans.hidden;
+  ans.hidden = isOpen;
+  if (icon) icon.textContent = isOpen ? '+' : '−';
+  btn?.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ── Share ── */
+function shareContent() {
+  const L = LANG[currentLang];
+  if (navigator.share) {
+    navigator.share({ title: L.shareTitle, text: L.shareText, url: PAGE_URL }).catch(() => {});
+    return;
+  }
+  const enc = encodeURIComponent(L.shareText + ' ' + PAGE_URL);
+  const ue = encodeURIComponent(PAGE_URL);
+  const wa = document.getElementById('share-wa'); if (wa) wa.href = `https://wa.me/?text=${enc}`;
+  const tg = document.getElementById('share-tg'); if (tg) tg.href = `https://t.me/share/url?url=${ue}&text=${encodeURIComponent(L.shareText)}`;
+  const fb = document.getElementById('share-fb'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${ue}`;
+  const xb = document.getElementById('share-x'); if (xb) xb.href = `https://twitter.com/intent/tweet?text=${enc}`;
+  const sp = document.getElementById('sharePopup'); if (sp) sp.hidden = false;
+}
+function copyLink() {
+  const L = LANG[currentLang];
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
+    const b = document.getElementById('share-copy');
+    if (b) { b.textContent = L.shareCopied; setTimeout(() => { b.textContent = L.shareCopy; }, 2000); }
+  });
 }
 
 document.querySelectorAll('[data-lang]').forEach(btn => {
@@ -868,7 +1197,8 @@ function _renderCommenti() {
     : approvati.filter(c => !c.parentId && c.topic === _filtroAttivo);
 
   if (padri.length === 0) {
-    lista.innerHTML = '<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">🌙</div>Nessun messaggio ancora. Sii il primo a condividere!</div>';
+    const noMsg = { it:'Nessun messaggio ancora. Sii il primo a condividere!', en:'No messages yet. Be the first to share!', es:'Todavía no hay mensajes. ¡Sé el primero en compartir!' }[currentLang] || 'Nessun messaggio ancora. Sii il primo a condividere!';
+    lista.innerHTML = '<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">🌙</div>'+noMsg+'</div>';
     return;
   }
 
@@ -1058,7 +1388,7 @@ function setStelle(n) {
     s.style.transform = i<n ? 'scale(1.15)' : 'scale(1)';
   });
   const lbl = document.getElementById('rec-stelle-label');
-  if (lbl) { lbl.textContent=STELLE_LABEL[n]; lbl.style.color='var(--gold)'; }
+  if (lbl) { lbl.textContent=(LANG[currentLang].stelleLabel||STELLE_LABEL)[n]; lbl.style.color='var(--gold)'; }
 }
 
 /* ===== INVIA RECENSIONE ===== */
@@ -1111,7 +1441,8 @@ function _renderRecensioni() {
   if (!lista) return;
   const approvate = _recensioniTutte.filter(r=>r.approvato!==false);
   if (approvate.length===0) {
-    lista.innerHTML='<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">⭐</div>Nessuna recensione ancora. Sii il primo!</div>';
+    const noRec = { it:'Nessuna recensione ancora. Sii il primo!', en:'No reviews yet. Be the first!', es:'Todavía no hay reseñas. ¡Sé el primero!' }[currentLang] || 'Nessuna recensione ancora. Sii il primo!';
+    lista.innerHTML='<div style="text-align:center;padding:30px;color:var(--muted);font-size:14px"><div style="font-size:32px;margin-bottom:8px">⭐</div>'+noRec+'</div>';
     return;
   }
   lista.innerHTML = approvate.map(r => {
@@ -1139,7 +1470,7 @@ function _renderMedia() {
   if (n===0) {
     elN.textContent='—';
     if (elS) elS.textContent='☆☆☆☆☆';
-    if (elC) elC.textContent='Nessuna recensione ancora';
+    if (elC) elC.textContent = LANG[currentLang].mediaNessuna || 'Nessuna recensione ancora';
     if (elB) elB.innerHTML='';
     return;
   }
