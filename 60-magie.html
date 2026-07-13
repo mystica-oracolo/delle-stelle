@@ -193,6 +193,8 @@ html.theme-day .btn-icon{background:rgba(200,151,66,.12);border-color:var(--bord
 @keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
 
 .page-wrap{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
+@media(min-width:681px){.page-wrap{max-width:1200px}}
+@media(min-width:1440px){.page-wrap{max-width:1320px}}
 
 /* ── Header ── */
 .page-header{background:rgba(10,5,20,.92);backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}

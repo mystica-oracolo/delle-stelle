@@ -163,6 +163,8 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 @keyframes twinkle{0%{opacity:.35}50%{opacity:.55}100%{opacity:.45}}
 
 #app{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
+@media (min-width:681px){#app{max-width:1200px}.swatch-grid{grid-template-columns:repeat(6,1fr)}.semi-grid{grid-template-columns:repeat(4,1fr)}.len-cards-grid{grid-template-columns:repeat(5,1fr)}}
+@media (min-width:1440px){#app{max-width:1320px}}
 
 /* ── Header ── */
 .page-header{padding:18px 20px 14px;padding-top:max(18px,calc(18px + env(safe-area-inset-top,0px)));text-align:center;border-bottom:1px solid var(--border);background:rgba(10,5,20,.6)}

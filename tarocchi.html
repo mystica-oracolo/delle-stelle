@@ -181,6 +181,8 @@
 .skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#0a0514;padding:10px 16px;z-index:999;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
 .page-wrap{max-width:480px;margin:0 auto;position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}
+@media(min-width:681px){.page-wrap{max-width:1200px}}
+@media(min-width:1440px){.page-wrap{max-width:1320px}}
 
 /* ════════ HEADER STANDARD ════════ */
 .page-header{background:rgba(10,5,20,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;padding-top:max(14px,calc(14px + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(212,175,55,0.2);position:sticky;top:0;z-index:20}

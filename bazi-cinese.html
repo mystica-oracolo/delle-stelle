@@ -115,6 +115,8 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 .btn-lang.active,.btn-lang:hover{background:rgba(212,175,55,0.15);color:var(--gold);border-color:var(--gold)}
 .btn-lang:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 main{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:24px 16px 60px}
+@media(min-width:681px){main{max-width:1200px}}
+@media(min-width:1440px){main{max-width:1320px}}
 .bazi-hero{text-align:center;margin-bottom:32px;padding:36px 20px 32px;background:linear-gradient(145deg,#1a0c32,#0d0620);border:1px solid var(--border);border-radius:var(--radius);position:relative;overflow:hidden}
 .bazi-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,175,55,0.07),transparent 70%);pointer-events:none}
 .hero-hanzi{font-size:64px;line-height:1;display:block;margin-bottom:8px;color:var(--gold);letter-spacing:8px;filter:drop-shadow(0 0 20px var(--gold-glow))}

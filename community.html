@@ -179,6 +179,16 @@ input, select, textarea { -webkit-appearance: none; }
   display: flex;
   flex-direction: column;
 }
+/* Desktop (> 680px): il contenuto si centra e si allarga proporzionalmente,
+   come su index.html. Non tocca il mobile. */
+@media (min-width: 681px) {
+  #app { max-width: 1200px; }
+  .comm-header, .lang-switch { max-width: 1200px !important; }
+}
+@media (min-width: 1440px) {
+  #app { max-width: 1320px; }
+  .comm-header, .lang-switch { max-width: 1320px !important; }
+}
 
 /* ═══ HEADER ═══ */
 .comm-header {
