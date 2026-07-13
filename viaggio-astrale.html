@@ -224,12 +224,19 @@ html.theme-day .page-header{background:rgba(245,242,237,.94)}
 .btn-lang{background:transparent;border:1px solid var(--border);border-radius:6px;padding:3px 10px;color:var(--muted);font-size:12px;cursor:pointer;font-family:'Cinzel',serif;transition:all .2s}
 .btn-lang.active,.btn-lang:hover{background:var(--gold);color:#140c24;border-color:var(--gold)}
 
-/* ── HERO ── */
-.hero{text-align:center;padding:36px 20px 24px;position:relative;z-index:1}
-.hero-icon{font-size:64px;display:block;margin-bottom:14px;filter:drop-shadow(0 0 24px rgba(212,175,55,.5));animation:floatIcon 4s ease-in-out infinite}
+/* ── HERO CINEMATOGRAFICO (banner full-bleed in stile streaming) ── */
+.hero{position:relative;text-align:center;padding:0;z-index:1;overflow:hidden;border-radius:0 0 22px 22px;margin-bottom:6px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;display:block;opacity:.65}
+.hero-bg-fallback{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(123,94,167,.35) 0%,transparent 65%),radial-gradient(ellipse 60% 40% at 20% 80%,rgba(64,192,208,.18) 0%,transparent 60%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,5,20,.25) 0%,rgba(10,5,20,.65) 60%,var(--bg) 100%)}
+html.theme-day .hero-bg::after{background:linear-gradient(180deg,rgba(245,242,237,.3) 0%,rgba(245,242,237,.75) 60%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:1;padding:56px 20px 30px}
+.hero-icon{font-size:60px;display:block;margin-bottom:14px;filter:drop-shadow(0 0 24px rgba(212,175,55,.5));animation:floatIcon 4s ease-in-out infinite}
 @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero h1{font-family:'Cinzel',serif;font-size:clamp(24px,6vw,38px);color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(26px,7vw,40px);color:var(--gold);letter-spacing:2px;margin-bottom:10px;text-shadow:0 4px 24px rgba(0,0,0,.5)}
 .hero-sub{color:var(--muted);font-size:16px;max-width:520px;margin:0 auto;font-style:italic}
+html.theme-day .hero-sub{color:#4a3a5f}
 
 /* ── THETA PLAYER (funzione interattiva — logica invariata) ── */
 .theta-player{background:linear-gradient(135deg,rgba(74,58,138,.35),rgba(64,192,208,.1));border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:560px;margin:24px auto;position:relative;z-index:1}
@@ -259,12 +266,15 @@ input[type=range]{cursor:pointer;accent-color:var(--gold)}
 @keyframes thetaWave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.2)}}
 .theta-warning{font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic;opacity:.7}
 
-/* ── TOC ── */
-.toc-wrap{max-width:680px;margin:0 auto 28px;padding:0 20px;position:relative;z-index:1}
-.toc-label{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-align:center;margin-bottom:12px;text-transform:uppercase}
-.toc-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.toc-pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer;transition:all .2s;color:var(--muted)}
-.toc-pill:hover,.toc-pill.active{background:rgba(212,175,55,.15);border-color:var(--gold);color:var(--gold)}
+/* ── TOC — striscia "episodi" scorrevole in stile streaming ── */
+.toc-wrap{max-width:680px;margin:0 auto 28px;padding:0 0 4px;position:relative;z-index:1}
+.toc-label{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-align:center;margin-bottom:12px;text-transform:uppercase;padding:0 20px}
+.toc-pills{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.toc-pills::-webkit-scrollbar{height:5px}
+.toc-pills::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.toc-pill{flex:0 0 auto;scroll-snap-align:start;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:12px;padding:9px 16px;font-size:13px;cursor:pointer;transition:all .2s;color:var(--muted);white-space:nowrap}
+.toc-pill:hover{transform:translateY(-2px);border-color:var(--gold-dim)}
+.toc-pill.active{background:linear-gradient(160deg,rgba(212,175,55,.22),rgba(212,175,55,.06));border-color:var(--gold);color:var(--gold);box-shadow:0 4px 16px rgba(212,175,55,.15)}
 
 /* ── CONTENUTO / ARTICOLO ── */
 main{position:relative;z-index:1}
@@ -304,6 +314,17 @@ main{position:relative;z-index:1}
 /* ── KEYWORD TAGS ── */
 .kw-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .kw{background:rgba(123,94,167,.15);border:1px solid rgba(123,94,167,.3);border-radius:20px;padding:4px 12px;font-size:13px;color:#b090d0}
+
+/* ── STORY CARD — testimonianze / esperienze vissute (stile streaming) ── */
+.story-card{position:relative;margin:20px 0;border-radius:14px;padding:20px 20px 18px 22px;background:linear-gradient(135deg,rgba(42,23,72,.55),rgba(20,12,36,.85));border:1px solid var(--border);overflow:hidden}
+.story-card::before{content:'"';position:absolute;top:-6px;left:10px;font-family:'Cinzel',serif;font-size:70px;color:var(--gold);opacity:.15;line-height:1}
+.story-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;position:relative;z-index:1}
+.story-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--purple-accent),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:0 0 0 2px rgba(212,175,55,.25)}
+.story-who{line-height:1.25}
+.story-name{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.5px}
+.story-role{font-size:12px;color:var(--muted)}
+.story-text{font-size:15.5px;color:var(--text);font-style:italic;line-height:1.65;position:relative;z-index:1}
+.story-img{width:100%;border-radius:10px;margin:0 0 14px;display:block;object-fit:cover;max-height:220px}
 
 /* ── DIVIDER ── */
 .divider{text-align:center;color:var(--gold-dim);letter-spacing:8px;margin:10px 0;font-size:14px;opacity:.5}
@@ -405,9 +426,15 @@ main{position:relative;z-index:1}
 
   <!-- ═══ SEZIONE INTERATTIVA (sempre in cima) ═══ -->
   <section class="hero">
-    <span class="hero-icon" aria-hidden="true">🌌</span>
-    <h2 id="hero-title">Viaggio Astrale</h2>
-    <p class="hero-sub" id="hero-sub">Guida completa alla proiezione astrale con onde theta binaurali, tecniche di separazione e protezione energetica</p>
+    <div class="hero-bg" id="hero-bg" aria-hidden="true">
+      <div class="hero-bg-fallback"></div>
+      <img id="hero-bg-img" src="./images/viaggio-astrale-cover.webp" alt="" loading="eager" decoding="async" width="800" height="500" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-inner">
+      <span class="hero-icon" aria-hidden="true">🌌</span>
+      <h2 id="hero-title">Viaggio Astrale</h2>
+      <p class="hero-sub" id="hero-sub">Guida completa alla proiezione astrale con onde theta binaurali, tecniche di separazione e protezione energetica</p>
+    </div>
   </section>
 
   <div class="theta-player">
@@ -705,14 +732,16 @@ const LANG = {
         {t:"p", v:"Il <strong>Viaggio Astrale</strong> — noto anche come OBE (Out-of-Body Experience) o proiezione astrale — è lo stato in cui la coscienza percepisce se stessa separata dal corpo fisico. Molte tradizioni spirituali lo descrivono come la prova dell'esistenza di un <em>corpo sottile</em> capace di muoversi autonomamente nello spazio e nel tempo."},
         {t:"p", v:"Nelle tradizioni esoteriche, l'essere umano è composto da più corpi sovrapposti: il corpo fisico, il corpo eterico (strettamente legato al fisico), il corpo astrale (sede delle emozioni e dei desideri), il corpo mentale e quelli spirituali superiori. Durante il viaggio astrale, la coscienza si sposta nel corpo astrale, mantenendo un legame con il fisico attraverso il <em>Cordone d'Argento</em> — un filo energetico indistruttibile."},
         {t:"callout", variant:"spirit", title:"✦ Il Piano Astrale", v:"Il piano astrale è un livello di realtà parallelo a quello fisico, composto di materia sottile. Comprende zone che corrispondono ai luoghi fisici (piano astrale basso), zone di transizione, e piani più elevati di luce e saggezza. La qualità della tua esperienza astrale dipende dal tuo stato emotivo e spirituale al momento della proiezione."},
-        {t:"p", v:"Le testimonianze storiche attraversano millenni e culture: gli antichi Egizi descrivevano il <em>Ka</em> come il doppio astrale; le tradizioni tibetane parlano del <em>corpo di sogno</em>; gli sciamani di tutto il mondo praticano il viaggio in mondi non ordinari. Nella moderna ricerca parapsicologica, le OBE sono state studiate da ricercatori come Robert Monroe, che fondò il Monroe Institute per la ricerca sistematica di questi stati."}
+        {t:"p", v:"Le testimonianze storiche attraversano millenni e culture: gli antichi Egizi descrivevano il <em>Ka</em> come il doppio astrale; le tradizioni tibetane parlano del <em>corpo di sogno</em>; gli sciamani di tutto il mondo praticano il viaggio in mondi non ordinari. Nella moderna ricerca parapsicologica, le OBE sono state studiate da ricercatori come Robert Monroe, che fondò il Monroe Institute per la ricerca sistematica di questi stati."},
+        {t:"story", name:"Elena V.", role:"Praticante da 6 anni, Torino", avatar:"🕯️", img:"./images/viaggio-astrale-storia1.webp", imgAlt:"Silhouette femminile sospesa sopra il proprio corpo addormentato, avvolta da luce dorata", v:"La prima volta non me l'aspettavo. Ero sdraiata, stanca dopo una giornata pesante, quando ho sentito un ronzio nelle orecchie e poi una scossa leggera lungo la schiena. In pochi secondi mi sono ritrovata sospesa sopra il letto, a guardare il mio stesso corpo che dormiva. Non avevo paura, solo una curiosità enorme. È durato forse un minuto, ma quel minuto ha cambiato il modo in cui penso a chi sono davvero."}
       ]},
       { id:"a2", icon:"🧠", num:"Capitolo II", title:"La Scienza delle Onde Theta", sub:"Neuroscienze e stati alterati di coscienza", blocks:[
         {t:"p", v:"Il cervello produce onde elettriche a diverse frequenze a seconda dello stato di coscienza. Le <strong>onde theta (4–8 Hz)</strong> compaiono naturalmente durante la transizione sonno-veglia (ipnagogia), nelle meditazioni profonde e nella fase REM del sonno. Sono lo stato in cui la mente è più ricettiva, creativa e aperta a esperienze non ordinarie."},
         {t:"callout", variant:"tech", title:"🎧 Come Funzionano i Binaural Beats", v:"Quando l'orecchio sinistro riceve un tono a 150 Hz e il destro a 156 Hz, il cervello \"percepisce\" una terza frequenza — la differenza: 6 Hz (theta). Questo fenomeno, chiamato battimento binaurale, sincronizza lentamente le onde cerebrali alla frequenza target. Per funzionare è essenziale usare cuffie stereo: gli altoparlanti mescolano i suoni prima che raggiungano il cervello."},
         {t:"p", v:"La finestra theta ideale per la proiezione astrale è tra <strong>6 e 7 Hz</strong>. In questo range la coscienza è sveglia ma il corpo è profondamente rilassato — la condizione perfetta per favorire la separazione. Tradizioni tibetane e tecniche come la WILD (Wake-Induced Lucid Dream) sfruttano precisamente questa finestra."},
         {t:"kw", items:["4 Hz — Theta Profondo","6 Hz — Proiezione Astrale","7.5 Hz — Meditazione Profonda","8 Hz — Creatività","10 Hz — Alpha — Rilassamento"]},
-        {t:"p", v:"Le ricerche di Monroe e del suo successore William Buhlman mostrano che la coerenza theta nell'emisfero destro precede spesso le esperienze di uscita dal corpo. La tecnologia audio non è magica — è uno strumento per agevolare un processo che la mente conosce già istintivamente."}
+        {t:"p", v:"Le ricerche di Monroe e del suo successore William Buhlman mostrano che la coerenza theta nell'emisfero destro precede spesso le esperienze di uscita dal corpo. La tecnologia audio non è magica — è uno strumento per agevolare un processo che la mente conosce già istintivamente."},
+        {t:"story", name:"Marco R.", role:"Ingegnere del suono, Milano", avatar:"🎧", v:"Lavoro con il suono ogni giorno, quindi ero scettico sui battimenti binaurali — mi sembravano marketing. Ho provato comunque, con le cuffie giuste, per due settimane di fila prima di dormire. Non ho avuto proiezioni immediate, ma mi addormentavo più in fretta e ricordavo i sogni con più nitidezza. La sesta notte ho sentito le vibrazioni di cui parlano tutti. Da tecnico, posso dire che l'effetto sulla soglia dell'addormentamento è reale, misurabile."}
       ]},
       { id:"a3", icon:"🛏️", num:"Capitolo III", title:"Preparazione al Viaggio", sub:"Corpo, ambiente e stato mentale", blocks:[
         {t:"p", v:"Il successo nel viaggio astrale dipende per l'80% dalla preparazione. Un tentativo improvvisato raramente produce risultati — ma un praticante che prepara sistematicamente corpo, mente e ambiente ottiene esperienze significative anche nelle prime settimane di pratica."},
@@ -729,7 +758,8 @@ const LANG = {
           {s:"Intenzione chiara:", v:"Prima di iniziare, afferma mentalmente il tuo obiettivo: \"Questa notte mi proietto con sicurezza e torno in pace.\""},
           {s:"Eliminazione del timore:", v:"La paura è il principale ostacolo. Ricorda che il cordone d'argento non può spezzarsi — sei sempre in sicurezza."},
           {s:"Aspettativa calma:", v:"Non cercare di \"forzare\" l'uscita. La proiezione avviene quando la mente smette di aspettarsi qualcosa."}
-        ]}
+        ]},
+        {t:"story", name:"Giulia T.", role:"Insegnante di yoga, Bologna", avatar:"🕰️", v:"Ho capito che la preparazione conta più della tecnica. Camera al buio, niente telefono almeno un'ora prima, una tisana leggera, e la stessa sequenza di respiri ogni sera. All'inizio sembrava solo un rituale, ma dopo un mese il mio corpo aveva imparato ad associare quei gesti al rilassamento profondo. È lì che le prime sensazioni hanno iniziato ad arrivare, quasi come una risposta automatica."}
       ]},
       { id:"a4", icon:"🚀", num:"Capitolo IV", title:"Tecniche di Proiezione", sub:"Metodi testati per la separazione consapevole", blocks:[
         {t:"p", v:"<strong style=\"color:#b090d0\">① Tecnica del Rilassamento Progressivo (WILD)</strong>"},
@@ -749,7 +779,8 @@ const LANG = {
         ]},
         {t:"p", v:"<strong style=\"color:#b090d0\">③ Tecnica del Punto di Mira</strong>"},
         {t:"p", v:"Prima di addormentarti, scegli un luogo fisico che conosci bene (casa di un amico, un parco, una città). Visualizzalo nei minimi dettagli. Mantieni questa immagine mentre ti addormenti. La coscienza tende a proiettarsi verso l'oggetto del focus."},
-        {t:"callout", variant:"warning", title:"⚠️ Paralisi del Sonno", v:"Durante la transizione potresti sperimentare paralisi del sonno — sensazione di non poter muovere il corpo fisico. Questo è normale e un buon segnale: significa che sei nello stato giusto. Non spaventarti. Respira profondamente e usa lo stato per proiettarti."}
+        {t:"callout", variant:"warning", title:"⚠️ Paralisi del Sonno", v:"Durante la transizione potresti sperimentare paralisi del sonno — sensazione di non poter muovere il corpo fisico. Questo è normale e un buon segnale: significa che sei nello stato giusto. Non spaventarti. Respira profondamente e usa lo stato per proiettarti."},
+        {t:"story", name:"Davide S.", role:"Studente di ingegneria, Padova", avatar:"🌙", img:"./images/viaggio-astrale-storia2.webp", imgAlt:"Corpo astrale luminoso che si solleva lentamente dal corpo fisico addormentato al buio", v:"Ho provato la tecnica WILD per settimane senza risultati, restando sveglio mentre il corpo si addormentava, ma senza mai staccarmi davvero. Poi una notte, invece di forzare, ho semplicemente osservato le immagini ipnagogiche senza reagire. Il corpo si è addormentato, la mente è rimasta accesa, e in un attimo ero fuori. La lezione che porto con me è che la proiezione non si conquista con lo sforzo, ma con il lasciar andare."}
       ]},
       { id:"a5", icon:"⚡", num:"Capitolo V", title:"I Chakra nel Viaggio Astrale", sub:"Centri energetici e attivazione per la proiezione", blocks:[
         {t:"p", v:"I <strong>sette chakra</strong> principali sono i centri energetici che regolano il flusso del prana (energia vitale) attraverso il corpo sottile. La loro attivazione e allineamento prima di un viaggio astrale aumenta significativamente la probabilità di proiezione riuscita."},
@@ -762,7 +793,8 @@ const LANG = {
           {s:"Ajna (Terzo Occhio) — 🟣 Indaco:", v:"Visione e intuizione. Il chakra più importante per la proiezione. Sfera indaco tra le sopracciglia. \"Vedo oltre il visibile.\""},
           {s:"Sahasrara (Corona) — ⚪ Viola/Bianco:", v:"Connessione cosmica. Sfera viola alla sommità del capo. \"Sono connesso all'infinito.\""}
         ]},
-        {t:"callout", variant:"spirit", title:"✦ Il Chakra del Terzo Occhio nel Viaggio Astrale", v:"L'Ajna è il portale principale per la proiezione. Durante gli stati ipnagogici, concentrare la consapevolezza sull'area del terzo occhio (tra le sopracciglia) spesso precipita la visione astrale. Molti praticanti descrivono un \"click\" o una sensazione di apertura in questa zona prima della separazione."}
+        {t:"callout", variant:"spirit", title:"✦ Il Chakra del Terzo Occhio nel Viaggio Astrale", v:"L'Ajna è il portale principale per la proiezione. Durante gli stati ipnagogici, concentrare la consapevolezza sull'area del terzo occhio (tra le sopracciglia) spesso precipita la visione astrale. Molti praticanti descrivono un \"click\" o una sensazione di apertura in questa zona prima della separazione."},
+        {t:"story", name:"Sara M.", role:"Terapista olistica, Firenze", avatar:"👁️", v:"Mi concentravo sul terzo occhio ogni sera, senza sentire niente per settimane. Poi, durante una meditazione, ho percepito un piccolo scatto tra le sopracciglia, come una porta che si apre. Da quel momento le mie proiezioni sono diventate più chiare e più frequenti. Ora quel punto è la mia bussola: quando lo sento vibrare, so che la separazione è vicina."}
       ]},
       { id:"a6", icon:"🛡️", num:"Capitolo VI", title:"Protezione Energetica", sub:"Sicurezza nel piano astrale", blocks:[
         {t:"p", v:"Il piano astrale è ricco di entità e energie di diversa natura. Una protezione energetica adeguata non è superstizione — è igiene spirituale, esattamente come lavarsi le mani è igiene fisica. Un praticante protetto viaggia con serenità e ritorna integro."},
@@ -774,7 +806,8 @@ const LANG = {
           {s:"Invocazione Protettiva:", v:"\"Sono circondato/a da luce bianca. Nessuna entità oscura può avvicinarsi. Il mio cordone d'argento è indistruttibile. Viaggio in pace, torno in pace.\""},
           {s:"Fiamma Astrale:", v:"Visualizza una piccola fiamma viola nel centro del petto che brucia per tutta la durata del viaggio — un faro che guida il ritorno."}
         ]},
-        {t:"p", v:"<strong>Il Cordone d'Argento:</strong> In tutte le tradizioni di proiezione astrale esiste il concetto del Cordone d'Argento — un filo energetico che collega il corpo astrale a quello fisico. Non può spezzarsi. Anche se non lo vedi sempre, è sempre lì. Quando vuoi tornare, pensa al tuo corpo fisico e il richiamo è immediato."}
+        {t:"p", v:"<strong>Il Cordone d'Argento:</strong> In tutte le tradizioni di proiezione astrale esiste il concetto del Cordone d'Argento — un filo energetico che collega il corpo astrale a quello fisico. Non può spezzarsi. Anche se non lo vedi sempre, è sempre lì. Quando vuoi tornare, pensa al tuo corpo fisico e il richiamo è immediato."},
+        {t:"story", name:"Luca F.", role:"Praticante da 3 anni, Roma", avatar:"🛡️", v:"Una volta ho incontrato qualcosa che mi ha spaventato durante un viaggio — un'ombra pesante vicino al soffitto. Invece di svegliarmi di colpo, ho richiamato la protezione che uso sempre prima di partire e ho ripetuto la mia invocazione. La sensazione si è dissolta in pochi secondi. Da allora capisco perché tutti i maestri insistono sulla protezione: non serve a evitare tutto, serve a restare centrati quando qualcosa ti sorprende."}
       ]},
       { id:"a7", icon:"💫", num:"Capitolo VII", title:"Cosa Aspettarsi nel Piano Astrale", sub:"Esperienze tipiche e loro interpretazione", blocks:[
         {t:"p", v:"Il piano astrale è profondamente influenzato dalla mente — i tuoi pensieri possono manifestarsi rapidamente. La lucidità e la calma sono le qualità più importanti durante il viaggio."},
@@ -787,13 +820,15 @@ const LANG = {
           {s:"Mantieni la calma:", v:"L'eccitazione può causare ritorno involontario. Respira lentamente (anche astralmente) e mantieni la compostezza."},
           {s:"Esplora con intenzione:", v:"Ricorda il tuo obiettivo. Puoi visitare luoghi, incontrare guide spirituali, o esplorare liberamente."}
         ]},
-        {t:"callout", variant:"warning", title:"⚠️ Entità e Incontri", v:"Nel piano astrale potresti incontrare esseri di vario tipo. La regola d'oro: le entità di luce non si impongono mai — si avvicinano solo quando invitate. Se incontri qualcosa che ti spaventa, invoca la tua protezione di luce e dichiara \"Solo la luce!\". Il tuo stato emotivo è il tuo scudo più potente."}
+        {t:"callout", variant:"warning", title:"⚠️ Entità e Incontri", v:"Nel piano astrale potresti incontrare esseri di vario tipo. La regola d'oro: le entità di luce non si impongono mai — si avvicinano solo quando invitate. Se incontri qualcosa che ti spaventa, invoca la tua protezione di luce e dichiara \"Solo la luce!\". Il tuo stato emotivo è il tuo scudo più potente."},
+        {t:"story", name:"Chiara B.", role:"Scrittrice, Napoli", avatar:"💫", img:"./images/viaggio-astrale-storia3.webp", imgAlt:"Paesaggio onirico astrale con colori surreali e forme sospese nello spazio", v:"Il piano astrale che ho visitato più spesso non assomiglia a nessun luogo fisico che conosco. Colori che non hanno nome, una sensazione di leggerezza totale, e la percezione che i pensieri si trasformano in ambiente quasi istantaneamente. Una volta ho pensato a un giardino e mi sono ritrovata in mezzo a un giardino, senza passaggi intermedi. È l'esperienza più vicina alla libertà pura che abbia mai provato."}
       ]},
       { id:"a8", icon:"📔", num:"Capitolo VIII", title:"Il Diario Astrale", sub:"Documentare i viaggi per approfondire la pratica", blocks:[
         {t:"p", v:"Tenere un <strong>diario astrale</strong> è una delle pratiche più utili per chi vuole sviluppare sistematicamente la proiezione. La mente dimentica rapidamente i dettagli dei viaggi — esattamente come dimentica i sogni — ma la documentazione immediata al risveglio preserva le informazioni preziose."},
         {t:"callout", variant:"tip", title:"📝 Come Compilare il Diario Astrale", v:"Immediatamente al risveglio (entro 2 minuti) annota: luogo/i visitati, entità o presenze incontrate, sensazioni fisiche durante la separazione, messaggi o intuizioni ricevuti, chiarezza della visione (1–10), durata percepita del viaggio, tecnica usata e suo esito. Tieni il diario e una penna sul comodino."},
         {t:"p", v:"Con il tempo, il diario rivela pattern — le condizioni che favoriscono la proiezione, le aree del piano astrale che visiti più spesso, l'evoluzione della tua lucidità. Diventa una mappa personale di territori interiori."},
-        {t:"p", v:"I praticanti esperti testimoniano che la pratica regolare per 30–90 giorni, documentata sistematicamente, trasforma la proiezione astrale da evento casuale a capacità consapevole. La chiave è la costanza, non il talento."}
+        {t:"p", v:"I praticanti esperti testimoniano che la pratica regolare per 30–90 giorni, documentata sistematicamente, trasforma la proiezione astrale da evento casuale a capacità consapevole. La chiave è la costanza, non il talento."},
+        {t:"story", name:"Roberto P.", role:"Praticante da 2 anni, Genova", avatar:"📔", v:"Ho tenuto il diario per sessanta notti di fila, anche quando non ricordavo nulla. Rileggendolo ho scoperto che le mie proiezioni migliori arrivavano sempre nei giorni in cui avevo dormito poco la notte prima, con un pisolino pomeridiano. Senza quelle pagine non l'avrei mai notato. Il diario non racconta solo i viaggi: racconta le condizioni che li rendono possibili."}
       ]}
     ],
     seo: {
@@ -858,14 +893,16 @@ const LANG = {
         {t:"p", v:"<strong>Astral Travel</strong> — also known as an OBE (Out-of-Body Experience) or astral projection — is the state in which consciousness perceives itself as separate from the physical body. Many spiritual traditions describe it as proof of a <em>subtle body</em> capable of moving independently through space and time."},
         {t:"p", v:"In esoteric traditions, the human being is made of several overlapping bodies: the physical body, the etheric body (closely tied to the physical), the astral body (seat of emotions and desires), the mental body, and the higher spiritual bodies. During astral travel, consciousness shifts into the astral body, kept linked to the physical one through the <em>Silver Cord</em> — an indestructible energetic thread."},
         {t:"callout", variant:"spirit", title:"✦ The Astral Plane", v:"The astral plane is a level of reality parallel to the physical one, made of subtle matter. It includes zones that mirror physical locations (lower astral plane), transitional zones, and higher planes of light and wisdom. The quality of your astral experience depends on your emotional and spiritual state at the moment of projection."},
-        {t:"p", v:"Historical accounts span millennia and cultures: the ancient Egyptians described the <em>Ka</em> as the astral double; Tibetan traditions speak of the <em>dream body</em>; shamans worldwide practice traveling into non-ordinary realities. In modern parapsychology, OBEs were studied by researchers such as Robert Monroe, who founded the Monroe Institute for the systematic research of these states."}
+        {t:"p", v:"Historical accounts span millennia and cultures: the ancient Egyptians described the <em>Ka</em> as the astral double; Tibetan traditions speak of the <em>dream body</em>; shamans worldwide practice traveling into non-ordinary realities. In modern parapsychology, OBEs were studied by researchers such as Robert Monroe, who founded the Monroe Institute for the systematic research of these states."},
+        {t:"story", name:"Elena V.", role:"Practitioner for 6 years, Turin", avatar:"🕯️", img:"./images/viaggio-astrale-storia1.webp", imgAlt:"A woman's silhouette hovering above her own sleeping body, wrapped in golden light", v:"I didn't see it coming. I was lying down, worn out after a long day, when I felt a hum in my ears, then a light jolt down my spine. Within seconds I was hovering above the bed, looking at my own body asleep. I wasn't scared — just intensely curious. It lasted maybe a minute, but that minute changed how I think about who I really am."}
       ]},
       { id:"a2", icon:"🧠", num:"Chapter II", title:"The Science of Theta Waves", sub:"Neuroscience and altered states of consciousness", blocks:[
         {t:"p", v:"The brain produces electrical waves at different frequencies depending on the state of consciousness. <strong>Theta waves (4–8 Hz)</strong> occur naturally during the sleep-wake transition (hypnagogia), in deep meditation, and during REM sleep. This is the state in which the mind is most receptive, creative and open to non-ordinary experiences."},
         {t:"callout", variant:"tech", title:"🎧 How Binaural Beats Work", v:"When the left ear receives a 150 Hz tone and the right ear a 156 Hz tone, the brain 'perceives' a third frequency — the difference: 6 Hz (theta). This phenomenon, called a binaural beat, gradually entrains the brainwaves toward the target frequency. Stereo headphones are essential: speakers mix the sounds before they reach the brain."},
         {t:"p", v:"The ideal theta window for astral projection is between <strong>6 and 7 Hz</strong>. In this range consciousness stays awake while the body is deeply relaxed — the perfect condition for separation. Tibetan traditions and techniques such as WILD (Wake-Induced Lucid Dream) exploit precisely this window."},
         {t:"kw", items:["4 Hz — Deep Theta","6 Hz — Astral Projection","7.5 Hz — Deep Meditation","8 Hz — Creativity","10 Hz — Alpha — Relaxation"]},
-        {t:"p", v:"Research by Monroe and his successor William Buhlman shows that right-hemisphere theta coherence often precedes out-of-body experiences. Audio technology isn't magic — it's a tool to ease a process the mind already knows instinctively."}
+        {t:"p", v:"Research by Monroe and his successor William Buhlman shows that right-hemisphere theta coherence often precedes out-of-body experiences. Audio technology isn't magic — it's a tool to ease a process the mind already knows instinctively."},
+        {t:"story", name:"Marco R.", role:"Sound engineer, Milan", avatar:"🎧", v:"I work with sound for a living, so I was skeptical about binaural beats — sounded like marketing to me. I tried anyway, proper headphones, two weeks straight before bed. No instant projections, but I fell asleep faster and remembered dreams more vividly. On the sixth night I felt the vibrations everyone talks about. As a technician, I can say the effect on the falling-asleep threshold is real and measurable."}
       ]},
       { id:"a3", icon:"🛏️", num:"Chapter III", title:"Preparing for the Journey", sub:"Body, environment and mental state", blocks:[
         {t:"p", v:"Success in astral travel depends 80% on preparation. An improvised attempt rarely produces results — but a practitioner who systematically prepares body, mind and environment achieves meaningful experiences even in the first weeks of practice."},
@@ -882,7 +919,8 @@ const LANG = {
           {s:"Clear intention:", v:"Before starting, mentally state your goal: 'Tonight I project safely and return in peace.'"},
           {s:"Releasing fear:", v:"Fear is the main obstacle. Remember the silver cord cannot break — you are always safe."},
           {s:"Calm expectation:", v:"Don't try to 'force' the exit. Projection happens when the mind stops expecting anything."}
-        ]}
+        ]},
+        {t:"story", name:"Giulia T.", role:"Yoga teacher, Bologna", avatar:"🕰️", v:"I learned that preparation matters more than technique. Dark room, no phone for at least an hour, a light herbal tea, the same breathing sequence every night. At first it felt like just a ritual, but after a month my body had learned to associate those gestures with deep relaxation. That's when the first sensations started arriving, almost automatically."}
       ]},
       { id:"a4", icon:"🚀", num:"Chapter IV", title:"Projection Techniques", sub:"Tested methods for conscious separation", blocks:[
         {t:"p", v:"<strong style=\"color:#b090d0\">① Progressive Relaxation Technique (WILD)</strong>"},
@@ -902,7 +940,8 @@ const LANG = {
         ]},
         {t:"p", v:"<strong style=\"color:#b090d0\">③ The Target Point Technique</strong>"},
         {t:"p", v:"Before falling asleep, choose a physical place you know well (a friend's house, a park, a city). Visualize it in fine detail. Hold this image as you fall asleep. Consciousness tends to project toward the object of focus."},
-        {t:"callout", variant:"warning", title:"⚠️ Sleep Paralysis", v:"During the transition you might experience sleep paralysis — the sensation of being unable to move the physical body. This is normal and a good sign: it means you're in the right state. Don't be frightened. Breathe deeply and use the state to project."}
+        {t:"callout", variant:"warning", title:"⚠️ Sleep Paralysis", v:"During the transition you might experience sleep paralysis — the sensation of being unable to move the physical body. This is normal and a good sign: it means you're in the right state. Don't be frightened. Breathe deeply and use the state to project."},
+        {t:"story", name:"Davide S.", role:"Engineering student, Padua", avatar:"🌙", img:"./images/viaggio-astrale-storia2.webp", imgAlt:"A glowing astral body slowly rising out of a sleeping physical body in the dark", v:"I tried the WILD technique for weeks with no results, staying awake while my body fell asleep but never actually separating. Then one night, instead of forcing it, I just watched the hypnagogic images without reacting. My body drifted off, my mind stayed on, and suddenly I was out. What I took from it: projection isn't won through effort, but through letting go."}
       ]},
       { id:"a5", icon:"⚡", num:"Chapter V", title:"Chakras in Astral Travel", sub:"Energy centers and activation for projection", blocks:[
         {t:"p", v:"The <strong>seven main chakras</strong> are the energy centers that regulate the flow of prana (vital energy) through the subtle body. Activating and aligning them before an astral journey significantly increases the likelihood of successful projection."},
@@ -915,7 +954,8 @@ const LANG = {
           {s:"Ajna (Third Eye) — 🟣 Indigo:", v:"Vision and intuition. The most important chakra for projection. Indigo sphere between the eyebrows. 'I see beyond the visible.'"},
           {s:"Sahasrara (Crown) — ⚪ Violet/White:", v:"Cosmic connection. Violet sphere at the top of the head. 'I am connected to the infinite.'"}
         ]},
-        {t:"callout", variant:"spirit", title:"✦ The Third Eye Chakra in Astral Travel", v:"The Ajna is the main gateway for projection. During hypnagogic states, focusing awareness on the third-eye area (between the eyebrows) often precipitates the astral vision. Many practitioners describe a 'click' or a sensation of opening in this area right before separation."}
+        {t:"callout", variant:"spirit", title:"✦ The Third Eye Chakra in Astral Travel", v:"The Ajna is the main gateway for projection. During hypnagogic states, focusing awareness on the third-eye area (between the eyebrows) often precipitates the astral vision. Many practitioners describe a 'click' or a sensation of opening in this area right before separation."},
+        {t:"story", name:"Sara M.", role:"Holistic therapist, Florence", avatar:"👁️", v:"I focused on my third eye every night for weeks without feeling anything. Then, during one meditation, I felt a small click between my eyebrows, like a door opening. From that moment my projections became clearer and more frequent. Now that point is my compass — when I feel it stir, I know separation is close."}
       ]},
       { id:"a6", icon:"🛡️", num:"Chapter VI", title:"Energetic Protection", sub:"Safety on the astral plane", blocks:[
         {t:"p", v:"The astral plane is rich with entities and energies of various natures. Adequate energetic protection isn't superstition — it's spiritual hygiene, just as washing your hands is physical hygiene. A protected practitioner travels serenely and returns intact."},
@@ -927,7 +967,8 @@ const LANG = {
           {s:"Protective Invocation:", v:"'I am surrounded by white light. No dark entity may approach. My silver cord is indestructible. I travel in peace, I return in peace.'"},
           {s:"Astral Flame:", v:"Visualize a small violet flame at the center of the chest that burns throughout the journey — a beacon guiding your return."}
         ]},
-        {t:"p", v:"<strong>The Silver Cord:</strong> Every astral projection tradition speaks of the Silver Cord — an energetic thread connecting the astral body to the physical one. It cannot break. Even when you don't see it, it's always there. When you want to return, think of your physical body and the recall is immediate."}
+        {t:"p", v:"<strong>The Silver Cord:</strong> Every astral projection tradition speaks of the Silver Cord — an energetic thread connecting the astral body to the physical one. It cannot break. Even when you don't see it, it's always there. When you want to return, think of your physical body and the recall is immediate."},
+        {t:"story", name:"Luca F.", role:"Practitioner for 3 years, Rome", avatar:"🛡️", v:"Once I met something unsettling during a journey — a heavy shadow near the ceiling. Instead of snapping awake, I called on the protection I always set before leaving and repeated my invocation. The feeling dissolved within seconds. That's when I understood why every teacher insists on protection: it's not about avoiding everything, it's about staying centered when something catches you off guard."}
       ]},
       { id:"a7", icon:"💫", num:"Chapter VII", title:"What to Expect on the Astral Plane", sub:"Typical experiences and how to interpret them", blocks:[
         {t:"p", v:"The astral plane is deeply influenced by the mind — your thoughts can manifest quickly. Lucidity and calm are the most important qualities during the journey."},
@@ -940,13 +981,15 @@ const LANG = {
           {s:"Stay calm:", v:"Excitement can cause an involuntary return. Breathe slowly (even astrally) and remain composed."},
           {s:"Explore with intention:", v:"Remember your goal. You can visit places, meet spirit guides, or simply explore freely."}
         ]},
-        {t:"callout", variant:"warning", title:"⚠️ Entities and Encounters", v:"On the astral plane you might encounter various kinds of beings. The golden rule: beings of light never impose themselves — they approach only when invited. If you meet something frightening, invoke your protective light and declare 'Only the light!'. Your emotional state is your most powerful shield."}
+        {t:"callout", variant:"warning", title:"⚠️ Entities and Encounters", v:"On the astral plane you might encounter various kinds of beings. The golden rule: beings of light never impose themselves — they approach only when invited. If you meet something frightening, invoke your protective light and declare 'Only the light!'. Your emotional state is your most powerful shield."},
+        {t:"story", name:"Chiara B.", role:"Writer, Naples", avatar:"💫", img:"./images/viaggio-astrale-storia3.webp", imgAlt:"A surreal astral dreamscape with vivid colors and floating shapes suspended in space", v:"The astral plane I visit most often doesn't resemble any physical place I know. Colors with no name, a total sense of lightness, thoughts turning into surroundings almost instantly. Once I thought of a garden and found myself standing in the middle of one, with no steps in between. It's the closest thing to pure freedom I've ever felt."}
       ]},
       { id:"a8", icon:"📔", num:"Chapter VIII", title:"The Astral Journal", sub:"Documenting your journeys to deepen the practice", blocks:[
         {t:"p", v:"Keeping an <strong>astral journal</strong> is one of the most useful practices for anyone wanting to systematically develop projection. The mind quickly forgets journey details — much like it forgets dreams — but writing immediately upon waking preserves the valuable information."},
         {t:"callout", variant:"tip", title:"📝 How to Fill In the Astral Journal", v:"Immediately upon waking (within 2 minutes) note: place(s) visited, entities or presences encountered, physical sensations during separation, messages or intuitions received, clarity of vision (1–10), perceived duration of the journey, technique used and its outcome. Keep the journal and a pen on your nightstand."},
         {t:"p", v:"Over time, the journal reveals patterns — the conditions that favor projection, the areas of the astral plane you visit most often, the evolution of your lucidity. It becomes a personal map of inner territories."},
-        {t:"p", v:"Experienced practitioners report that regular practice for 30–90 days, systematically documented, transforms astral projection from a random event into a conscious skill. Consistency, not talent, is the key."}
+        {t:"p", v:"Experienced practitioners report that regular practice for 30–90 days, systematically documented, transforms astral projection from a random event into a conscious skill. Consistency, not talent, is the key."},
+        {t:"story", name:"Roberto P.", role:"Practitioner for 2 years, Genoa", avatar:"📔", v:"I kept the journal for sixty nights straight, even on nights I remembered nothing. Reading back through it, I noticed my best projections always came on days I'd slept little the night before, followed by an afternoon nap. I would never have noticed that without those pages. The journal doesn't just record the journeys — it records the conditions that make them possible."}
       ]}
     ],
     seo: {
@@ -1011,14 +1054,16 @@ const LANG = {
         {t:"p", v:"El <strong>Viaje Astral</strong> — también conocido como OBE (Out-of-Body Experience) o proyección astral — es el estado en el que la conciencia se percibe separada del cuerpo físico. Muchas tradiciones espirituales lo describen como la prueba de la existencia de un <em>cuerpo sutil</em> capaz de moverse de forma autónoma en el espacio y el tiempo."},
         {t:"p", v:"En las tradiciones esotéricas, el ser humano está compuesto por varios cuerpos superpuestos: el cuerpo físico, el cuerpo etérico (estrechamente ligado al físico), el cuerpo astral (sede de las emociones y los deseos), el cuerpo mental y los cuerpos espirituales superiores. Durante el viaje astral, la conciencia se traslada al cuerpo astral, manteniendo un vínculo con el físico a través del <em>Cordón de Plata</em> — un hilo energético indestructible."},
         {t:"callout", variant:"spirit", title:"✦ El Plano Astral", v:"El plano astral es un nivel de realidad paralelo al físico, compuesto de materia sutil. Comprende zonas que corresponden a lugares físicos (plano astral bajo), zonas de transición y planos más elevados de luz y sabiduría. La calidad de tu experiencia astral depende de tu estado emocional y espiritual en el momento de la proyección."},
-        {t:"p", v:"Los testimonios históricos atraviesan milenios y culturas: los antiguos egipcios describían el <em>Ka</em> como el doble astral; las tradiciones tibetanas hablan del <em>cuerpo de sueño</em>; los chamanes de todo el mundo practican el viaje a mundos no ordinarios. En la investigación parapsicológica moderna, las OBE fueron estudiadas por investigadores como Robert Monroe, quien fundó el Monroe Institute para la investigación sistemática de estos estados."}
+        {t:"p", v:"Los testimonios históricos atraviesan milenios y culturas: los antiguos egipcios describían el <em>Ka</em> como el doble astral; las tradiciones tibetanas hablan del <em>cuerpo de sueño</em>; los chamanes de todo el mundo practican el viaje a mundos no ordinarios. En la investigación parapsicológica moderna, las OBE fueron estudiadas por investigadores como Robert Monroe, quien fundó el Monroe Institute para la investigación sistemática de estos estados."},
+        {t:"story", name:"Elena V.", role:"Practicante desde hace 6 años, Turín", avatar:"🕯️", img:"./images/viaggio-astrale-storia1.webp", imgAlt:"Silueta femenina flotando sobre su propio cuerpo dormido, envuelta en luz dorada", v:"No me lo esperaba. Estaba tumbada, agotada tras un día largo, cuando sentí un zumbido en los oídos y luego una leve sacudida en la espalda. En segundos estaba flotando sobre la cama, mirando mi propio cuerpo dormido. No sentí miedo, solo una curiosidad enorme. Duró quizá un minuto, pero ese minuto cambió mi forma de entender quién soy realmente."}
       ]},
       { id:"a2", icon:"🧠", num:"Capítulo II", title:"La Ciencia de las Ondas Theta", sub:"Neurociencia y estados alterados de conciencia", blocks:[
         {t:"p", v:"El cerebro produce ondas eléctricas a diferentes frecuencias según el estado de conciencia. Las <strong>ondas theta (4–8 Hz)</strong> aparecen naturalmente durante la transición sueño-vigilia (hipnagogia), en meditaciones profundas y en la fase REM del sueño. Es el estado en que la mente es más receptiva, creativa y abierta a experiencias no ordinarias."},
         {t:"callout", variant:"tech", title:"🎧 Cómo Funcionan los Binaural Beats", v:"Cuando el oído izquierdo recibe un tono de 150 Hz y el derecho de 156 Hz, el cerebro 'percibe' una tercera frecuencia — la diferencia: 6 Hz (theta). Este fenómeno, llamado latido binaural, sincroniza lentamente las ondas cerebrales hacia la frecuencia objetivo. Para que funcione es esencial usar auriculares estéreo: los altavoces mezclan los sonidos antes de que lleguen al cerebro."},
         {t:"p", v:"La ventana theta ideal para la proyección astral está entre <strong>6 y 7 Hz</strong>. En este rango la conciencia está despierta pero el cuerpo profundamente relajado — la condición perfecta para favorecer la separación. Tradiciones tibetanas y técnicas como la WILD (Wake-Induced Lucid Dream) aprovechan precisamente esta ventana."},
         {t:"kw", items:["4 Hz — Theta Profundo","6 Hz — Proyección Astral","7.5 Hz — Meditación Profunda","8 Hz — Creatividad","10 Hz — Alpha — Relajación"]},
-        {t:"p", v:"Las investigaciones de Monroe y de su sucesor William Buhlman muestran que la coherencia theta en el hemisferio derecho suele preceder a las experiencias de salida del cuerpo. La tecnología de audio no es magia — es una herramienta para facilitar un proceso que la mente ya conoce instintivamente."}
+        {t:"p", v:"Las investigaciones de Monroe y de su sucesor William Buhlman muestran que la coherencia theta en el hemisferio derecho suele preceder a las experiencias de salida del cuerpo. La tecnología de audio no es magia — es una herramienta para facilitar un proceso que la mente ya conoce instintivamente."},
+        {t:"story", name:"Marco R.", role:"Ingeniero de sonido, Milán", avatar:"🎧", v:"Trabajo con sonido a diario, así que era escéptico con los battimenti binaurales — me parecía marketing. Aun así lo probé, con auriculares adecuados, dos semanas seguidas antes de dormir. No hubo proyecciones inmediatas, pero me dormía más rápido y recordaba los sueños con más nitidez. La sexta noche sentí las vibraciones de las que todos hablan. Como técnico, puedo decir que el efecto sobre el umbral del sueño es real y medible."}
       ]},
       { id:"a3", icon:"🛏️", num:"Capítulo III", title:"Preparación para el Viaje", sub:"Cuerpo, entorno y estado mental", blocks:[
         {t:"p", v:"El éxito en el viaje astral depende en un 80% de la preparación. Un intento improvisado rara vez produce resultados — pero un practicante que prepara sistemáticamente cuerpo, mente y entorno obtiene experiencias significativas incluso en las primeras semanas de práctica."},
@@ -1035,7 +1080,8 @@ const LANG = {
           {s:"Intención clara:", v:"Antes de empezar, afirma mentalmente tu objetivo: 'Esta noche me proyecto con seguridad y regreso en paz.'"},
           {s:"Eliminación del miedo:", v:"El miedo es el principal obstáculo. Recuerda que el cordón de plata no puede romperse — siempre estás a salvo."},
           {s:"Expectativa calmada:", v:"No intentes 'forzar' la salida. La proyección ocurre cuando la mente deja de esperar algo."}
-        ]}
+        ]},
+        {t:"story", name:"Giulia T.", role:"Profesora de yoga, Bolonia", avatar:"🕰️", v:"Entendí que la preparación importa más que la técnica. Habitación a oscuras, nada de móvil al menos una hora antes, una infusión ligera, la misma secuencia de respiraciones cada noche. Al principio parecía solo un ritual, pero tras un mes mi cuerpo había aprendido a asociar esos gestos con la relajación profunda. Ahí empezaron a llegar las primeras sensaciones, casi de forma automática."}
       ]},
       { id:"a4", icon:"🚀", num:"Capítulo IV", title:"Técnicas de Proyección", sub:"Métodos probados para la separación consciente", blocks:[
         {t:"p", v:"<strong style=\"color:#b090d0\">① Técnica de Relajación Progresiva (WILD)</strong>"},
@@ -1055,7 +1101,8 @@ const LANG = {
         ]},
         {t:"p", v:"<strong style=\"color:#b090d0\">③ Técnica del Punto de Mira</strong>"},
         {t:"p", v:"Antes de dormirte, elige un lugar físico que conozcas bien (la casa de un amigo, un parque, una ciudad). Visualízalo con todo detalle. Mantén esta imagen mientras te duermes. La conciencia tiende a proyectarse hacia el objeto del enfoque."},
-        {t:"callout", variant:"warning", title:"⚠️ Parálisis del Sueño", v:"Durante la transición podrías experimentar parálisis del sueño — la sensación de no poder mover el cuerpo físico. Esto es normal y una buena señal: significa que estás en el estado correcto. No te asustes. Respira profundamente y usa el estado para proyectarte."}
+        {t:"callout", variant:"warning", title:"⚠️ Parálisis del Sueño", v:"Durante la transición podrías experimentar parálisis del sueño — la sensación de no poder mover el cuerpo físico. Esto es normal y una buena señal: significa que estás en el estado correcto. No te asustes. Respira profundamente y usa el estado para proyectarte."},
+        {t:"story", name:"Davide S.", role:"Estudiante de ingeniería, Padua", avatar:"🌙", img:"./images/viaggio-astrale-storia2.webp", imgAlt:"Cuerpo astral luminoso elevándose lentamente del cuerpo físico dormido en la oscuridad", v:"Probé la técnica WILD durante semanas sin resultados, manteniéndome despierto mientras el cuerpo se dormía, pero sin llegar a separarme. Luego, una noche, en vez de forzarlo, simplemente observé las imágenes hipnagógicas sin reaccionar. El cuerpo se durmió, la mente siguió activa, y de pronto estaba fuera. La lección que me llevo: la proyección no se conquista con esfuerzo, sino soltando."}
       ]},
       { id:"a5", icon:"⚡", num:"Capítulo V", title:"Los Chakras en el Viaje Astral", sub:"Centros energéticos y activación para la proyección", blocks:[
         {t:"p", v:"Los <strong>siete chakras</strong> principales son los centros energéticos que regulan el flujo del prana (energía vital) a través del cuerpo sutil. Su activación y alineación antes de un viaje astral aumenta significativamente la probabilidad de una proyección exitosa."},
@@ -1068,7 +1115,8 @@ const LANG = {
           {s:"Ajna (Tercer Ojo) — 🟣 Índigo:", v:"Visión e intuición. El chakra más importante para la proyección. Esfera índigo entre las cejas. 'Veo más allá de lo visible.'"},
           {s:"Sahasrara (Corona) — ⚪ Violeta/Blanco:", v:"Conexión cósmica. Esfera violeta en la coronilla. 'Estoy conectado con el infinito.'"}
         ]},
-        {t:"callout", variant:"spirit", title:"✦ El Chakra del Tercer Ojo en el Viaje Astral", v:"El Ajna es el portal principal para la proyección. Durante los estados hipnagógicos, concentrar la conciencia en el área del tercer ojo (entre las cejas) suele precipitar la visión astral. Muchos practicantes describen un 'clic' o una sensación de apertura en esta zona justo antes de la separación."}
+        {t:"callout", variant:"spirit", title:"✦ El Chakra del Tercer Ojo en el Viaje Astral", v:"El Ajna es el portal principal para la proyección. Durante los estados hipnagógicos, concentrar la conciencia en el área del tercer ojo (entre las cejas) suele precipitar la visión astral. Muchos practicantes describen un 'clic' o una sensación de apertura en esta zona justo antes de la separación."},
+        {t:"story", name:"Sara M.", role:"Terapeuta holística, Florencia", avatar:"👁️", v:"Me concentraba en el tercer ojo cada noche sin sentir nada durante semanas. Luego, en una meditación, percibí un pequeño clic entre las cejas, como una puerta que se abre. Desde entonces mis proyecciones son más claras y frecuentes. Ahora ese punto es mi brújula: cuando lo siento vibrar, sé que la separación está cerca."}
       ]},
       { id:"a6", icon:"🛡️", num:"Capítulo VI", title:"Protección Energética", sub:"Seguridad en el plano astral", blocks:[
         {t:"p", v:"El plano astral está lleno de entidades y energías de diversa naturaleza. Una protección energética adecuada no es superstición — es higiene espiritual, tal como lavarse las manos es higiene física. Un practicante protegido viaja con serenidad y regresa íntegro."},
@@ -1080,7 +1128,8 @@ const LANG = {
           {s:"Invocación Protectora:", v:"'Estoy rodeado/a de luz blanca. Ninguna entidad oscura puede acercarse. Mi cordón de plata es indestructible. Viajo en paz, regreso en paz.'"},
           {s:"Llama Astral:", v:"Visualiza una pequeña llama violeta en el centro del pecho que arde durante todo el viaje — un faro que guía el regreso."}
         ]},
-        {t:"p", v:"<strong>El Cordón de Plata:</strong> En todas las tradiciones de proyección astral existe el concepto del Cordón de Plata — un hilo energético que conecta el cuerpo astral con el físico. No puede romperse. Aunque no siempre lo veas, siempre está ahí. Cuando quieras regresar, piensa en tu cuerpo físico y el llamado es inmediato."}
+        {t:"p", v:"<strong>El Cordón de Plata:</strong> En todas las tradiciones de proyección astral existe el concepto del Cordón de Plata — un hilo energético que conecta el cuerpo astral con el físico. No puede romperse. Aunque no siempre lo veas, siempre está ahí. Cuando quieras regresar, piensa en tu cuerpo físico y el llamado es inmediato."},
+        {t:"story", name:"Luca F.", role:"Practicante desde hace 3 años, Roma", avatar:"🛡️", v:"Una vez me encontré con algo inquietante durante un viaje — una sombra pesada cerca del techo. En vez de despertarme de golpe, recurrí a la protección que siempre establezco antes de partir y repetí mi invocación. La sensación se disolvió en segundos. Desde entonces entiendo por qué todos los maestros insisten en la protección: no se trata de evitarlo todo, sino de mantenerse centrado cuando algo te sorprende."}
       ]},
       { id:"a7", icon:"💫", num:"Capítulo VII", title:"Qué Esperar en el Plano Astral", sub:"Experiencias típicas y su interpretación", blocks:[
         {t:"p", v:"El plano astral está profundamente influenciado por la mente — tus pensamientos pueden manifestarse rápidamente. La lucidez y la calma son las cualidades más importantes durante el viaje."},
@@ -1093,13 +1142,15 @@ const LANG = {
           {s:"Mantén la calma:", v:"La excitación puede causar un regreso involuntario. Respira lentamente (incluso astralmente) y mantén la compostura."},
           {s:"Explora con intención:", v:"Recuerda tu objetivo. Puedes visitar lugares, encontrarte con guías espirituales o explorar libremente."}
         ]},
-        {t:"callout", variant:"warning", title:"⚠️ Entidades y Encuentros", v:"En el plano astral podrías encontrarte con seres de diversa índole. La regla de oro: las entidades de luz nunca se imponen — se acercan solo cuando son invitadas. Si te encuentras con algo que te asusta, invoca tu protección de luz y declara '¡Solo la luz!'. Tu estado emocional es tu escudo más poderoso."}
+        {t:"callout", variant:"warning", title:"⚠️ Entidades y Encuentros", v:"En el plano astral podrías encontrarte con seres de diversa índole. La regla de oro: las entidades de luz nunca se imponen — se acercan solo cuando son invitadas. Si te encuentras con algo que te asusta, invoca tu protección de luz y declara '¡Solo la luz!'. Tu estado emocional es tu escudo más poderoso."},
+        {t:"story", name:"Chiara B.", role:"Escritora, Nápoles", avatar:"💫", img:"./images/viaggio-astrale-storia3.webp", imgAlt:"Paisaje onírico astral con colores surrealistas y formas suspendidas en el espacio", v:"El plano astral que visito más a menudo no se parece a ningún lugar físico que conozca. Colores sin nombre, una sensación total de ligereza, pensamientos que se convierten en entorno casi al instante. Una vez pensé en un jardín y me encontré en medio de él, sin pasos intermedios. Es lo más cercano a la libertad pura que he sentido jamás."}
       ]},
       { id:"a8", icon:"📔", num:"Capítulo VIII", title:"El Diario Astral", sub:"Documentar los viajes para profundizar la práctica", blocks:[
         {t:"p", v:"Llevar un <strong>diario astral</strong> es una de las prácticas más útiles para quien quiere desarrollar sistemáticamente la proyección. La mente olvida rápidamente los detalles de los viajes — igual que olvida los sueños — pero la documentación inmediata al despertar preserva la información valiosa."},
         {t:"callout", variant:"tip", title:"📝 Cómo Completar el Diario Astral", v:"Inmediatamente al despertar (dentro de los 2 minutos) anota: lugar(es) visitados, entidades o presencias encontradas, sensaciones físicas durante la separación, mensajes o intuiciones recibidos, claridad de la visión (1–10), duración percibida del viaje, técnica usada y su resultado. Ten el diario y un bolígrafo en la mesita de noche."},
         {t:"p", v:"Con el tiempo, el diario revela patrones — las condiciones que favorecen la proyección, las áreas del plano astral que visitas con más frecuencia, la evolución de tu lucidez. Se convierte en un mapa personal de territorios interiores."},
-        {t:"p", v:"Los practicantes experimentados atestiguan que la práctica regular durante 30–90 días, documentada sistemáticamente, transforma la proyección astral de un evento casual en una capacidad consciente. La clave es la constancia, no el talento."}
+        {t:"p", v:"Los practicantes experimentados atestiguan que la práctica regular durante 30–90 días, documentada sistemáticamente, transforma la proyección astral de un evento casual en una capacidad consciente. La clave es la constancia, no el talento."},
+        {t:"story", name:"Roberto P.", role:"Practicante desde hace 2 años, Génova", avatar:"📔", v:"Llevé el diario durante sesenta noches seguidas, incluso cuando no recordaba nada. Al releerlo descubrí que mis mejores proyecciones llegaban siempre en los días en que había dormido poco la noche anterior, seguidos de una siesta. Nunca lo habría notado sin esas páginas. El diario no solo registra los viajes: registra las condiciones que los hacen posibles."}
       ]}
     ],
     seo: {
@@ -1206,6 +1257,7 @@ function renderChapters(chapters) {
       if (b.t === 'callout') return `<div class="callout callout-${b.variant}"><div class="callout-title">${b.title}</div><div class="callout-body">${b.v}</div></div>`;
       if (b.t === 'kw') return `<div class="kw-row">${b.items.map(k => `<span class="kw">${k}</span>`).join('')}</div>`;
       if (b.t === 'steps') return `<ul class="step-list">${b.items.map((it, i) => `<li><div class="step-num">${it.marker || (i+1)}</div><div class="step-text"><strong>${it.s}</strong> ${it.v}</div></li>`).join('')}</ul>`;
+      if (b.t === 'story') return `<div class="story-card">${b.img ? `<img class="story-img" src="${b.img}" alt="${b.imgAlt || ''}" loading="lazy" decoding="async" width="640" height="360" onerror="this.style.display='none'">` : ''}<div class="story-head"><div class="story-avatar" aria-hidden="true">${b.avatar || '✦'}</div><div class="story-who"><div class="story-name">${b.name}</div><div class="story-role">${b.role}</div></div></div><p class="story-text">${b.v}</p></div>`;
       return '';
     }).join('');
     const divider = idx > 0 ? `<div class="divider">✦ ✦ ✦</div>` : '';
@@ -1263,6 +1315,7 @@ function applyLang() {
   // Hero
   const ht = document.getElementById('hero-title'); if (ht) ht.textContent = L.heroTitle;
   const hs = document.getElementById('hero-sub'); if (hs) hs.textContent = L.heroSub;
+  const hbi = document.getElementById('hero-bg-img'); if (hbi) hbi.alt = L.heroTitle + ' — ' + L.heroSub;
 
   // Theta player
   const thT = document.getElementById('theta-title'); if (thT) thT.textContent = L.thetaTitle;

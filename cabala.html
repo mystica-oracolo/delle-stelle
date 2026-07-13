@@ -12,15 +12,20 @@
   <link rel="canonical" href="https://mysticaoracoli.it/cabala.html">
 
   <!-- hreflang -->
+  <link rel="alternate" hreflang="it" href="https://mysticaoracoli.it/cabala.html">
+  <link rel="alternate" hreflang="en" href="https://mysticaoracoli.it/cabala.html">
+  <link rel="alternate" hreflang="es" href="https://mysticaoracoli.it/cabala.html">
   <link rel="alternate" hreflang="x-default" href="https://mysticaoracoli.it/cabala.html">
 
   <!-- Open Graph — VUOTI, popolati da updateSEO() -->
   <meta property="og:title" content="Cabala: Albero della Vita e le 10 Sephirot — MYSTICA">
   <meta property="og:description" content="Scopri la Cabala ebraica con l'Albero della Vita interattivo. Esplora le 10 Sephirot, la Gematria, i 22 Sentieri e la mistica ebraica su MYSTICA Oracoli.">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:url" content="https://mysticaoracoli.it/cabala.html">
   <meta property="og:image" content="https://mysticaoracoli.it/images/icone/home/cabala.webp">
   <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
 
   <!-- Twitter Card — VUOTO, popolato da updateSEO() -->
   <meta name="twitter:card" content="summary_large_image">
@@ -139,6 +144,11 @@
       scroll-behavior: smooth;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -149,6 +159,25 @@
       overflow-x: hidden;
       position: relative;
       z-index: 1;
+    }
+
+    /* ── Skip Link (a11y) ── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 1000;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .skip-link:focus-visible {
+      left: 16px;
+      top: 16px;
     }
 
     /* ── Cosmos Background ── */
@@ -818,6 +847,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
   <div class="cosmos" aria-hidden="true"></div>
 
   <!-- ── HEADER ── -->
@@ -883,6 +913,14 @@
     <article class="article-section" id="article-section">
       <h2 class="section-title" id="art-title">La Cabala: Mistica Ebraica e Geometria Sacra</h2>
       <p class="section-intro" id="art-intro">La Cabala è la tradizione mistica dell'ebraismo, fondata sulla visione che l'universo fisico rifletta una struttura divina. L'Albero della Vita rappresenta questa geometria sacra: dieci sefirot interconnesse tramite 22 sentieri, descrivendo il percorso di discesa della divinità nel mondo materiale e il viaggio di ascesa dell'anima verso il divino.</p>
+      <img src="./images/icone/home/cabala.webp"
+           srcset="./images/icone/home/cabala.webp 1x, ./images/icone/home/cabala.webp 2x"
+           id="art-hero"
+           alt=""
+           loading="eager"
+           decoding="async"
+           width="1200" height="630"
+           style="width:100%;height:auto;border-radius:14px;margin:16px 0">
       <p id="artP1">Secondo la Cabala, la creazione non è un atto puntuale bensì un processo continuo di manifestazione divina che fluisce attraverso i tre mondi: Atziluth (il mondo archetipico), Briah (il mondo della creazione), Yetzirah (il mondo della formazione) e infine Assiah (il mondo dell'azione materiale). L'Albero della Vita mappa questi livelli: le tre Sephirot superiori (Kether, Chokmah, Binah) appartengono al mondo archetipico, mentre le Sephirot inferiori gradualmente si manifestano nei mondi più densi. Lo studio delle dieci Sephirot è dunque lo studio della natura stessa del reale, dai livelli più sottili della coscienza pura fino ai fenomeni concreti della materia.</p>
       <p id="artP2">I 22 sentieri che collegano le Sephirot corrispondono alle 22 lettere dell'alfabeto ebraico e alle 22 carte dei Tarocchi maggiori. Questa corrispondenza non è casuale: la Cabala insegna che la realtà è costruita attraverso il linguaggio — la Parola divina che "parla" la creazione in essere. Studiare i sentieri significa meditare sulla trasformazione dell'energia spirituale mentre scende e si manifesta nel mondo. Ogni sentiero è una tappa del Grande Lavoro ermetico, un'iniziazione che spinge il mistico verso l'unificazione della propria coscienza con l'Assoluto.</p>
       <p id="artP3">La Gematria, l'arte di assegnare valori numerici alle lettere ebraiche, rivela connessioni nascoste tra parole e concetti. Secondo questo sistema, parole con lo stesso valore numerico condividono una dimensione profonda di significato: ad esempio, "Amore" e "Uno" hanno lo stesso numero (13), suggerendo che l'amore è l'esperienza dell'unicità divina. Questo metodo permette al mistico di comprendere come il linguaggio umano sia una manifestazione del linguaggio divino, e come le parole che usiamo modulano inconsciamente la realtà che percepiamo. La Gematria trasforma la lingua in uno strumento di magia e di illuminazione.</p>
@@ -947,6 +985,7 @@
     /* ── Multilingua Content ── */
     const LANG = {
       it: {
+        aria: { musicOn: 'Attiva musica', musicOff: 'Disattiva musica', themeDay: 'Passa al tema giorno', themeNight: 'Passa al tema notte', back: 'Torna alla Home' },
         pageTitle: 'Cabala',
         pageSubtitle: 'Albero della Vita e le 10 Sephirot',
         pageIntro: 'Esplora i 10 sentieri dell\'Albero della Vita, le forze divine che plasmano l\'universo. Seleziona una Sephirah o consulta l\'oracolo per ricevere il messaggio della qabbalah ebraica.',
@@ -955,8 +994,10 @@
         btnConsulta: 'Consulta l\'Oracolo',
         btnRandom: 'Sephirah Casuale',
         shareTitle: 'Condividi questo messaggio',
+        shareCopied: 'Link copiato!',
         artTitle: 'La Cabala: Mistica Ebraica e Geometria Sacra',
         artIntro: 'La Cabala è la tradizione mistica dell\'ebraismo, fondata sulla visione che l\'universo fisico rifletta una struttura divina. L\'Albero della Vita rappresenta questa geometria sacra: dieci sefirot interconnesse tramite 22 sentieri, descrivendo il percorso di discesa della divinità nel mondo materiale e il viaggio di ascesa dell\'anima verso il divino.',
+        artImgAlt: 'Albero della Vita cabalistico con le 10 Sephirot e i 22 sentieri della mistica ebraica',
         artP1: 'Secondo la Cabala, la creazione non è un atto puntuale bensì un processo continuo di manifestazione divina che fluisce attraverso i tre mondi: Atziluth (il mondo archetipico), Briah (il mondo della creazione), Yetzirah (il mondo della formazione) e infine Assiah (il mondo dell\'azione materiale). L\'Albero della Vita mappa questi livelli: le tre Sephirot superiori (Kether, Chokmah, Binah) appartengono al mondo archetipico, mentre le Sephirot inferiori gradualmente si manifestano nei mondi più densi. Lo studio delle dieci Sephirot è dunque lo studio della natura stessa del reale, dai livelli più sottili della coscienza pura fino ai fenomeni concreti della materia.',
         artP2: 'I 22 sentieri che collegano le Sephirot corrispondono alle 22 lettere dell\'alfabeto ebraico e alle 22 carte dei Tarocchi maggiori. Questa corrispondenza non è casuale: la Cabala insegna che la realtà è costruita attraverso il linguaggio — la Parola divina che "parla" la creazione in essere. Studiare i sentieri significa meditare sulla trasformazione dell\'energia spirituale mentre scende e si manifesta nel mondo. Ogni sentiero è una tappa del Grande Lavoro ermetico, un\'iniziazione che spinge il mistico verso l\'unificazione della propria coscienza con l\'Assoluto.',
         artP3: 'La Gematria, l\'arte di assegnare valori numerici alle lettere ebraiche, rivela connessioni nascoste tra parole e concetti. Secondo questo sistema, parole con lo stesso valore numerico condividono una dimensione profonda di significato: ad esempio, "Amore" e "Uno" hanno lo stesso numero (13), suggerendo che l\'amore è l\'esperienza dell\'unicità divina. Questo metodo permette al mistico di comprendere come il linguaggio umano sia una manifestazione del linguaggio divino, e come le parole che usiamo modulano inconsciamente la realtà che percepiamo. La Gematria trasforma la lingua in uno strumento di magia e di illuminazione.',
@@ -986,6 +1027,15 @@
           }
         ],
         faqTitleNotitle: 'Domande Frequenti',
+        result: {
+          message: 'Il Messaggio della Sephirah',
+          gifts: 'Doni',
+          challenges: 'Sfide da Integrare',
+          meditation: 'Meditazione Kabbalistica',
+          archangel: 'Arcangelo',
+          color: 'Colore',
+          sephirahWord: 'Sephirah'
+        },
         premTitle: 'Contenuto Premium',
         premText: 'Questa funzione avanzata è disponibile solo per i nostri utenti premium. Sblocca accesso completo a tutti gli oracoli e alle meditazioni guidate.',
         premBtn: 'Attiva Premium — 4,99€',
@@ -1014,6 +1064,7 @@
         }
       },
       en: {
+        aria: { musicOn: 'Turn music on', musicOff: 'Turn music off', themeDay: 'Switch to day theme', themeNight: 'Switch to night theme', back: 'Back to Home' },
         pageTitle: 'Kabbalah',
         pageSubtitle: 'The Tree of Life and the 10 Sephiroth',
         pageIntro: 'Explore the 10 paths of the Tree of Life, the divine forces that shape the universe. Select a Sephirah or consult the oracle to receive the message of Jewish Kabbalah.',
@@ -1022,8 +1073,10 @@
         btnConsulta: 'Consult the Oracle',
         btnRandom: 'Random Sephirah',
         shareTitle: 'Share this message',
+        shareCopied: 'Link copied!',
         artTitle: 'Kabbalah: Jewish Mysticism and Sacred Geometry',
         artIntro: 'Kabbalah is the mystical tradition of Judaism, founded on the vision that the physical universe reflects a divine structure. The Tree of Life represents this sacred geometry: ten sephiroth interconnected through 22 paths, describing the descent of divinity into the material world and the soul\'s journey of ascent toward the divine.',
+        artImgAlt: 'Kabbalistic Tree of Life with the 10 Sephiroth and the 22 paths of Jewish mysticism',
         artP1: 'According to Kabbalah, creation is not a punctual act but an ongoing process of divine manifestation flowing through three worlds: Atziluth (the archetypal world), Briah (the world of creation), Yetzirah (the world of formation), and finally Assiah (the material world of action). The Tree of Life maps these levels: the three upper Sephiroth (Kether, Chokmah, Binah) belong to the archetypal world, while the lower Sephiroth gradually manifest in denser worlds. Studying the ten Sephiroth is thus studying the nature of reality itself, from the most subtle levels of pure consciousness to concrete material phenomena.',
         artP2: 'The 22 paths connecting the Sephiroth correspond to the 22 letters of the Hebrew alphabet and the 22 major Tarot arcana. This correspondence is not coincidental: Kabbalah teaches that reality is constructed through language — the divine Word that "speaks" creation into being. Studying the paths means meditating on the transformation of spiritual energy as it descends and manifests in the world. Each path is a stage of the Great Work, an initiation that drives the mystic toward unification of consciousness with the Absolute.',
         artP3: 'Gematria, the art of assigning numerical values to Hebrew letters, reveals hidden connections between words and concepts. According to this system, words with the same numerical value share a profound dimension of meaning: for example, "Love" and "Unity" have the same number, suggesting that love is the experience of divine unity. This method allows the mystic to understand how human language is a manifestation of divine language, and how the words we use unconsciously modulate the reality we perceive. Gematria transforms language into a tool of magic and illumination.',
@@ -1052,6 +1105,15 @@
             a: '"Ain Soph" means "without limit" and is the concept of the infinite Divine, the undifferentiated Absolute beyond all form. "Ain" means simply "nothing" — the Divine before any manifestation. These concepts teach that supreme mystical experience is union with the Absolute beyond all duality.'
           }
         ],
+        result: {
+          message: 'The Message of the Sephirah',
+          gifts: 'Gifts',
+          challenges: 'Challenges to Integrate',
+          meditation: 'Kabbalistic Meditation',
+          archangel: 'Archangel',
+          color: 'Colour',
+          sephirahWord: 'Sephirah'
+        },
         premTitle: 'Premium Content',
         premText: 'This advanced feature is available only for our premium users. Unlock full access to all oracles and guided meditations.',
         premBtn: 'Activate Premium — €4.99',
@@ -1080,6 +1142,7 @@
         }
       },
       es: {
+        aria: { musicOn: 'Activar música', musicOff: 'Desactivar música', themeDay: 'Cambiar a tema día', themeNight: 'Cambiar a tema noche', back: 'Volver al Inicio' },
         pageTitle: 'Cábala',
         pageSubtitle: 'El Árbol de la Vida y los 10 Sefirót',
         pageIntro: 'Explora los 10 senderos del Árbol de la Vida, las fuerzas divinas que moldean el universo. Selecciona un Sefirá u consulta el oráculo para recibir el mensaje de la cábala judía.',
@@ -1088,8 +1151,10 @@
         btnConsulta: 'Consulta el Oráculo',
         btnRandom: 'Sefirá Aleatoria',
         shareTitle: 'Comparte este mensaje',
+        shareCopied: '¡Enlace copiado!',
         artTitle: 'Cábala: Misticismo Judío y Geometría Sagrada',
         artIntro: 'La Cábala es la tradición mística del judaísmo, fundada en la visión de que el universo físico refleja una estructura divina. El Árbol de la Vida representa esta geometría sagrada: diez sefirot interconectadas mediante 22 senderos, describiendo el descenso de la divinidad al mundo material y el viaje de ascenso del alma hacia lo divino.',
+        artImgAlt: 'Árbol de la Vida cabalístico con las 10 Sefirót y los 22 senderos del misticismo judío',
         artP1: 'Según la Cábala, la creación no es un acto puntual sino un proceso continuo de manifestación divina que fluye a través de tres mundos: Atziluth (el mundo arquetípico), Briah (el mundo de la creación), Yetzirah (el mundo de la formación) y finalmente Assiah (el mundo de la acción material). El Árbol de la Vida mapea estos niveles: los tres Sefirót superiores (Kether, Chokmah, Binah) pertenecen al mundo arquetípico, mientras que los Sefirót inferiores se manifiestan gradualmente en mundos más densos. Estudiar los diez Sefirót es así estudiar la naturaleza misma de la realidad, desde los niveles más sutiles de la conciencia pura hasta los fenómenos concretos de la materia.',
         artP2: 'Los 22 senderos que conectan los Sefirót corresponden a las 22 letras del alfabeto hebreo y a los 22 arcanos mayores del Tarot. Esta correspondencia no es casual: la Cábala enseña que la realidad se construye a través del lenguaje — la Palabra divina que "habla" la creación en ser. Estudiar los senderos significa meditar sobre la transformación de la energía espiritual mientras desciende y se manifiesta en el mundo. Cada sendero es una etapa de la Gran Obra, una iniciación que impulsa al místico hacia la unificación de su conciencia con lo Absoluto.',
         artP3: 'La Gematría, el arte de asignar valores numéricos a las letras hebreas, revela conexiones ocultas entre palabras y conceptos. Según este sistema, palabras con el mismo valor numérico comparten una dimensión profunda de significado: por ejemplo, "Amor" y "Uno" tienen el mismo número, sugiriendo que el amor es la experiencia de la unidad divina. Este método permite al místico comprender cómo el lenguaje humano es una manifestación del lenguaje divino, y cómo las palabras que usamos modulan inconscientemente la realidad que percibimos. La Gematría transforma el lenguaje en una herramienta de magia e iluminación.',
@@ -1118,6 +1183,15 @@
             a: '"Ain Soph" significa "sin límite" y es el concepto de lo Divino infinito, lo Absoluto indiferenciado más allá de toda forma. "Ain" significa simplemente "nada" — lo Divino antes de cualquier manifestación. Estos conceptos enseñan que la experiencia mística suprema es la unión con lo Absoluto más allá de toda dualidad.'
           }
         ],
+        result: {
+          message: 'El Mensaje de la Sefirá',
+          gifts: 'Dones',
+          challenges: 'Desafíos por Integrar',
+          meditation: 'Meditación Cabalística',
+          archangel: 'Arcángel',
+          color: 'Color',
+          sephirahWord: 'Sefirá'
+        },
         premTitle: 'Contenido Premium',
         premText: 'Esta función avanzada está disponible solo para nuestros usuarios premium. Desbloquea acceso completo a todos los oráculos y meditaciones guiadas.',
         premBtn: 'Activar Premium — 4,99€',
@@ -1151,147 +1225,187 @@
     let currentLang = localStorage.getItem('myst_lang') || 'it';
     let currentTheme = localStorage.getItem('myst_theme') || 'night';
 
-    /* ── Database: Sephirot ── */
+    /* ── Database: Sephirot (multilingua IT/EN/ES) ── */
     const DB_CABALA = [
       {
-        key: 'kether',
-        nome: 'Kether',
-        trad: 'Corona',
-        num: 1,
-        pianeta: 'Primo Motore',
-        arcangelo: 'Metatron',
-        colore: 'Bianco brillante',
-        simbolo: '👑',
-        desc: 'Kether è la Corona del Divino — il punto dove la manifestazione inizia da pura coscienza. Non è una sephirah che puoi "raggiungere" nel senso ordinario: è la meta suprema del mistico, il punto di unificazione con l\'Assoluto. In questo momento sei invitato a toccare quel vuoto fertile dove tutte le possibilità dormono ancora non-manifestate, il silenzio prima della parola, la luce prima del colore. Oltre ogni domanda, c\'è pace.',
-        luci: 'Unificazione con l\'Assoluto, illuminazione suprema, pace oltre la comprensione, morte all\'ego come esperienza mistica.',
-        ombre: 'Dissociazione dalla realtà, fuga dalla manifestazione, trance spirituale che paralizza l\'azione nel mondo.',
-        meditazione: 'Siediti in silenzio totale. Non meditare su nulla. Fai spazio al Nulla che contiene Tutto. Quando la mente diventa vuota, la Divinità entra.'
+        key: 'kether', num: 1, simbolo: '👑',
+        it: { nome: 'Kether', trad: 'Corona', pianeta: 'Primo Motore', arcangelo: 'Metatron', colore: 'Bianco brillante',
+          desc: 'Kether è la Corona del Divino, il punto in cui la manifestazione nasce da pura coscienza. Non è una sephirah che si "raggiunge" nel senso comune: è la meta ultima del mistico, l\'istante di fusione con l\'Assoluto. Prova a sostare in quel vuoto fertile dove tutte le possibilità dormono ancora non manifestate — il silenzio prima della parola, la luce prima del colore. Oltre ogni domanda, trovi la pace.',
+          luci: 'Unificazione con l\'Assoluto, illuminazione suprema, pace oltre la comprensione razionale, morte simbolica dell\'ego come esperienza mistica.',
+          ombre: 'Dissociazione dalla realtà quotidiana, fuga dalla manifestazione concreta, trance spirituale che paralizza l\'azione nel mondo.',
+          meditazione: 'Siediti in silenzio assoluto, senza oggetto di meditazione. Fai spazio al Nulla che contiene Tutto: quando la mente si svuota, il Divino trova posto.' },
+        en: { nome: 'Kether', trad: 'Crown', pianeta: 'Prime Mover', arcangelo: 'Metatron', colore: 'Brilliant white',
+          desc: 'Kether is the Crown of the Divine, the point where manifestation begins as pure consciousness. It isn\'t a sephirah you "reach" in the ordinary sense — it\'s the mystic\'s ultimate goal, the instant of union with the Absolute. Try to rest in that fertile void where every possibility still sleeps unmanifested, the silence before the word, the light before colour. Beyond every question, there is peace.',
+          luci: 'Union with the Absolute, supreme illumination, peace beyond rational understanding, the symbolic death of the ego as a mystical experience.',
+          ombre: 'Disconnection from everyday reality, avoidance of concrete manifestation, spiritual trance that paralyses action in the world.',
+          meditazione: 'Sit in complete silence with nothing to focus on. Make room for the Nothing that contains Everything: when the mind empties, the Divine finds a place to enter.' },
+        es: { nome: 'Kether', trad: 'Corona', pianeta: 'Primer Motor', arcangelo: 'Metatrón', colore: 'Blanco brillante',
+          desc: 'Kether es la Corona de lo Divino, el punto donde la manifestación nace de la conciencia pura. No es una sefirá que se "alcanza" en el sentido habitual: es la meta última del místico, el instante de fusión con lo Absoluto. Intenta permanecer en ese vacío fértil donde todas las posibilidades aún duermen sin manifestarse — el silencio antes de la palabra, la luz antes del color. Más allá de toda pregunta, encuentras la paz.',
+          luci: 'Unificación con lo Absoluto, iluminación suprema, paz más allá de la comprensión racional, muerte simbólica del ego como experiencia mística.',
+          ombre: 'Desconexión de la realidad cotidiana, huida de la manifestación concreta, trance espiritual que paraliza la acción en el mundo.',
+          meditazione: 'Siéntate en silencio absoluto, sin ningún objeto de meditación. Haz espacio a la Nada que contiene el Todo: cuando la mente se vacía, lo Divino encuentra su lugar.' }
       },
       {
-        key: 'chokmah',
-        nome: 'Chokmah',
-        trad: 'Saggezza',
-        num: 2,
-        pianeta: 'Zodiaco',
-        arcangelo: 'Ratziel',
-        colore: 'Azzurro puro',
-        simbolo: '⚡',
-        desc: 'Chokmah è il fulmine della saggezza — l\'impulso creativo puro, il padre cosmico, la forza maschile che feconda il void. Non è la ragione: è l\'intuizione immediata della verità, il colpo di genio che arriva senza preamboli. In questo momento il tuo intuito è sveglio. Qualcosa vuole nascere dal tuo spirito. Non chiedere il "come": il "cosa" che vuole manifestarsi attraverso te sa da sé il cammino.',
-        luci: 'Intuizione geniale, ispirazioni fulminee, visione cosmica, capacità di agire senza dubbio.',
-        ombre: 'Azioni impulsive senza direzione, caos creativo che non si condensa in forma, idee grandiose che muoiono allo stato nascente.',
-        meditazione: 'Rilassati completamente. Nota il primo impulso, l\'idea spontanea che emerge prima del pensiero. Non afferrarla: osservala nascere e dissolversi. Quali sono i tuoi impulsi genuini, senza paura?'
+        key: 'chokmah', num: 2, simbolo: '⚡',
+        it: { nome: 'Chokmah', trad: 'Saggezza', pianeta: 'Zodiaco', arcangelo: 'Ratziel', colore: 'Azzurro puro',
+          desc: 'Chokmah è il fulmine della saggezza: l\'impulso creativo puro, il padre cosmico, la forza che feconda il vuoto. Non è ragione, è intuizione immediata — il colpo di genio che arriva senza preamboli. Il tuo intuito, proprio ora, è sveglio: qualcosa vuole nascere dal tuo spirito. Non cercare il "come": il "cosa" che vuole manifestarsi attraverso di te conosce già la propria strada.',
+          luci: 'Intuizione geniale, ispirazioni fulminee, visione cosmica ad ampio respiro, capacità di agire senza esitazione.',
+          ombre: 'Azioni impulsive prive di direzione, caos creativo che non si condensa in forma, idee grandiose che muoiono sul nascere.',
+          meditazione: 'Rilassati completamente e osserva il primo impulso, l\'idea spontanea che emerge prima ancora del pensiero. Non afferrarla: guardala nascere e dissolversi. Quali sono i tuoi impulsi più genuini, quando non hai paura?' },
+        en: { nome: 'Chokmah', trad: 'Wisdom', pianeta: 'Zodiac', arcangelo: 'Ratziel', colore: 'Pure blue',
+          desc: 'Chokmah is the lightning bolt of wisdom: pure creative impulse, the cosmic father, the force that fertilises the void. It isn\'t reason — it\'s immediate intuition, the flash of genius that arrives with no build-up. Your intuition is wide awake right now: something wants to be born from your spirit. Don\'t look for the "how" — the "what" that wants to manifest through you already knows its own way.',
+          luci: 'Brilliant intuition, lightning-fast inspiration, sweeping cosmic vision, the ability to act without hesitation.',
+          ombre: 'Impulsive action with no direction, creative chaos that never settles into form, grand ideas that die at birth.',
+          meditazione: 'Relax completely and notice the very first impulse, the spontaneous idea that surfaces before thought itself. Don\'t grasp it — just watch it appear and dissolve. What are your most genuine impulses, when fear is absent?' },
+        es: { nome: 'Chokmah', trad: 'Sabiduría', pianeta: 'Zodíaco', arcangelo: 'Ratziel', colore: 'Azul puro',
+          desc: 'Chokmah es el relámpago de la sabiduría: el impulso creativo puro, el padre cósmico, la fuerza que fecunda el vacío. No es razón, es intuición inmediata — el golpe de genio que llega sin preámbulos. Tu intuición, justo ahora, está despierta: algo quiere nacer de tu espíritu. No busques el "cómo": el "qué" que quiere manifestarse a través de ti ya conoce su propio camino.',
+          luci: 'Intuición genial, inspiraciones fulminantes, visión cósmica de amplio alcance, capacidad de actuar sin vacilar.',
+          ombre: 'Acciones impulsivas sin dirección, caos creativo que no se condensa en forma, ideas grandiosas que mueren al nacer.',
+          meditazione: 'Relájate por completo y observa el primer impulso, la idea espontánea que surge antes incluso del pensamiento. No la retengas: mírala nacer y disolverse. ¿Cuáles son tus impulsos más genuinos, cuando no tienes miedo?' }
       },
       {
-        key: 'binah',
-        nome: 'Binah',
-        trad: 'Intelligenza',
-        num: 3,
-        pianeta: 'Saturno',
-        arcangelo: 'Tzaphkiel',
-        colore: 'Nero stellato',
-        simbolo: '🌑',
-        desc: 'Binah è l\'Intelligenza cosmica — la madre che riceve il fulmine di Chokmah e lo plasma in forma. È la causa formale di tutto: la ragione per cui le cose hanno struttura, i confini che permettono alle cose di essere riconoscibili. Saturno insegna che i limiti non sono punizione: sono protezione. In questo momento sei invitato a comprendere che ciò che contiene il tuo spazio è ciò che ti permette di esistere. Le strutture che protesti contro — la tua storia, il tuo corpo, i tuoi confini psichici — sono il grembo che ti tiene al sicuro.',
-        luci: 'Comprensione profonda dei pattern della vita, saggezza femminile e ricettiva, capacità di contenere e nutrire ciò che cresce, struttura come protezione.',
-        ombre: 'Eccessiva rigidità strutturale, paura del cambiamento che rompe le forme, melanconia saturnia, difficoltà ad accettare la fluidità della vita.',
-        meditazione: 'Disegna un triangolo nell\'aria con il dito. Siediti dentro quel triangolo immaginario. Cosa ti contiene? Cosa protegge il tuo spazio sacro? Ringrazia i confini che ti permettono di esistere.'
+        key: 'binah', num: 3, simbolo: '🌑',
+        it: { nome: 'Binah', trad: 'Intelligenza', pianeta: 'Saturno', arcangelo: 'Tzaphkiel', colore: 'Nero stellato',
+          desc: 'Binah è l\'Intelligenza cosmica, la madre che accoglie il fulmine di Chokmah e lo plasma in forma. È la causa formale di ogni cosa: la ragione per cui la realtà ha struttura, i confini che rendono le cose riconoscibili. Saturno insegna che il limite non è punizione, ma protezione. Ciò che oggi contiene il tuo spazio è anche ciò che ti permette di esistere: le strutture contro cui a volte ti ribelli — la tua storia, il tuo corpo, i tuoi confini psichici — sono il grembo che ti custodisce.',
+          luci: 'Comprensione profonda dei pattern della vita, saggezza ricettiva e femminile, capacità di contenere e nutrire ciò che cresce, struttura vissuta come protezione.',
+          ombre: 'Rigidità strutturale eccessiva, paura del cambiamento che spezza le forme, malinconia saturnina, fatica ad accogliere la fluidità della vita.',
+          meditazione: 'Disegna un triangolo nell\'aria con un dito e immagina di sederti al suo interno. Cosa ti contiene, in questo momento? Cosa protegge il tuo spazio sacro? Ringrazia i confini che ti permettono di esistere.' },
+        en: { nome: 'Binah', trad: 'Understanding', pianeta: 'Saturn', arcangelo: 'Tzaphkiel', colore: 'Starry black',
+          desc: 'Binah is cosmic Understanding, the mother who receives Chokmah\'s lightning and shapes it into form. It is the formal cause behind everything: the reason reality has structure, the boundaries that make things recognisable. Saturn teaches that limits aren\'t punishment — they\'re protection. What contains your space today is also what allows you to exist: the structures you sometimes resist — your history, your body, your psychic boundaries — are the womb that keeps you safe.',
+          luci: 'Deep understanding of life\'s patterns, receptive and feminine wisdom, the ability to hold and nourish what grows, structure experienced as protection.',
+          ombre: 'Excessive structural rigidity, fear of change that breaks familiar forms, Saturnian melancholy, difficulty welcoming life\'s fluidity.',
+          meditazione: 'Trace a triangle in the air with one finger and imagine sitting inside it. What is holding you right now? What protects your sacred space? Give thanks for the boundaries that let you exist.' },
+        es: { nome: 'Binah', trad: 'Entendimiento', pianeta: 'Saturno', arcangelo: 'Tzaphkiel', colore: 'Negro estrellado',
+          desc: 'Binah es la Inteligencia cósmica, la madre que recibe el relámpago de Chokmah y lo moldea en forma. Es la causa formal de todo: la razón por la que la realidad tiene estructura, los límites que hacen las cosas reconocibles. Saturno enseña que el límite no es castigo, sino protección. Lo que hoy contiene tu espacio es también lo que te permite existir: las estructuras contra las que a veces te rebelas —tu historia, tu cuerpo, tus límites psíquicos— son el vientre que te resguarda.',
+          luci: 'Comprensión profunda de los patrones de la vida, sabiduría receptiva y femenina, capacidad de contener y nutrir lo que crece, estructura vivida como protección.',
+          ombre: 'Rigidez estructural excesiva, miedo al cambio que rompe las formas, melancolía saturnina, dificultad para aceptar la fluidez de la vida.',
+          meditazione: 'Dibuja un triángulo en el aire con un dedo e imagina sentarte dentro de él. ¿Qué te contiene en este momento? ¿Qué protege tu espacio sagrado? Agradece los límites que te permiten existir.' }
       },
       {
-        key: 'chesed',
-        nome: 'Chesed',
-        trad: 'Misericordia',
-        num: 4,
-        pianeta: 'Giove',
-        arcangelo: 'Tzadqiel',
-        colore: 'Azzurro profondo',
-        simbolo: '💙',
-        desc: 'Chesed è la misericordia infinita — l\'espansione dell\'amore divino senza condizioni. Giove porta abbondanza, generosità, la grazia che trabocca. In questo momento sei invitato ad espandere il tuo cuore oltre i confini della paura, del risentimento e della scarsità. Chesed ti dice: c\'è abbastanza — abbastanza amore, abbastanza risorse, abbastanza spazio. La generosità che dai torna moltiplicata.',
-        luci: 'Generosità genuina, compassione senza condizioni, espansione della coscienza, leadership benevola, abbondanza naturale.',
-        ombre: 'Eccesso di espansione senza discernimento, generosità che diventa codipendenza, difficoltà a porre confini sani, idealismo ingenuo.',
-        meditazione: 'Apri le braccia completamente. Espira lentamente. Visualizza un\'onda blu di calore che si espande dal tuo petto e avvolge tutto intorno a te. Ogni persona che vedi oggi, desiderale il bene mentalmente.'
+        key: 'chesed', num: 4, simbolo: '💙',
+        it: { nome: 'Chesed', trad: 'Misericordia', pianeta: 'Giove', arcangelo: 'Tzadqiel', colore: 'Azzurro profondo',
+          desc: 'Chesed è la misericordia infinita, l\'espansione dell\'amore divino senza condizioni. Giove porta abbondanza, generosità, la grazia che trabocca oltre ogni misura. Prova ad allargare il cuore oltre i confini della paura, del risentimento, della scarsità: Chesed ti ricorda che c\'è abbastanza — abbastanza amore, abbastanza risorse, abbastanza spazio per tutti. La generosità che doni ritorna, prima o poi, moltiplicata.',
+          luci: 'Generosità genuina, compassione senza condizioni, espansione della coscienza, leadership benevola, senso naturale dell\'abbondanza.',
+          ombre: 'Espansione eccessiva senza discernimento, generosità che scivola in codipendenza, difficoltà a porre confini sani, idealismo ingenuo.',
+          meditazione: 'Apri le braccia completamente ed espira lentamente. Visualizza un\'onda blu di calore che si espande dal petto e avvolge tutto ciò che ti circonda. Per ogni persona che incontri oggi, desidera mentalmente il suo bene.' },
+        en: { nome: 'Chesed', trad: 'Mercy', pianeta: 'Jupiter', arcangelo: 'Tzadqiel', colore: 'Deep blue',
+          desc: 'Chesed is infinite mercy, the expansion of divine love without conditions. Jupiter brings abundance, generosity, grace that overflows every measure. Try widening your heart past the edges of fear, resentment, scarcity: Chesed reminds you there is enough — enough love, enough resources, enough room for everyone. The generosity you give returns, sooner or later, multiplied.',
+          luci: 'Genuine generosity, unconditional compassion, expanded awareness, benevolent leadership, a natural sense of abundance.',
+          ombre: 'Excessive expansion without discernment, generosity sliding into codependency, difficulty setting healthy boundaries, naive idealism.',
+          meditazione: 'Open your arms wide and exhale slowly. Picture a blue wave of warmth expanding from your chest, wrapping around everything nearby. For every person you meet today, silently wish them well.' },
+        es: { nome: 'Chesed', trad: 'Misericordia', pianeta: 'Júpiter', arcangelo: 'Tzadqiel', colore: 'Azul profundo',
+          desc: 'Chesed es la misericordia infinita, la expansión del amor divino sin condiciones. Júpiter trae abundancia, generosidad, la gracia que se desborda más allá de toda medida. Intenta ensanchar el corazón más allá de los límites del miedo, el resentimiento y la escasez: Chesed te recuerda que hay suficiente —suficiente amor, suficientes recursos, suficiente espacio para todos—. La generosidad que das vuelve, tarde o temprano, multiplicada.',
+          luci: 'Generosidad genuina, compasión incondicional, expansión de la conciencia, liderazgo benevolente, sentido natural de la abundancia.',
+          ombre: 'Expansión excesiva sin discernimiento, generosidad que se convierte en codependencia, dificultad para poner límites sanos, idealismo ingenuo.',
+          meditazione: 'Abre los brazos por completo y exhala lentamente. Visualiza una ola azul de calor que se expande desde tu pecho y envuelve todo a tu alrededor. A cada persona que encuentres hoy, deséale mentalmente el bien.' }
       },
       {
-        key: 'gevurah',
-        nome: 'Gevurah',
-        trad: 'Rigore / Forza',
-        num: 5,
-        pianeta: 'Marte',
-        arcangelo: 'Qamael',
-        colore: 'Rosso scuro',
-        simbolo: '⚔️',
-        desc: 'Gevurah è la spada della giustizia — la forza necessaria per tagliare ciò che non serve, per dire no con potere, per mantenere l\'integrità sotto pressione. Questo non è crudeltà: è la chirurgia sacra che salva. Cosa nella tua vita richiede un taglio netto? Quale accordo, relazione, abitudine o pensiero stai mantenendo per paura quando dovresti liberartene con rispetto e fermezza?',
-        luci: 'Disciplina autentica, coraggio di fare scelte difficili, integrità sotto pressione, capacità di proteggere ciò che è sacro.',
-        ombre: 'Rigidità eccessiva, giudizio severo verso se stessi e gli altri, uso della forza senza misericordia, perfezionismo che paralizza.',
-        meditazione: 'Stringi i pugni con tutta la forza. Tienili stretti per 10 secondi. Poi rilascia completamente. Senti la differenza. Cosa devi lasciare andare con questa stessa energia di rilascio?'
+        key: 'gevurah', num: 5, simbolo: '⚔️',
+        it: { nome: 'Gevurah', trad: 'Rigore / Forza', pianeta: 'Marte', arcangelo: 'Qamael', colore: 'Rosso scuro',
+          desc: 'Gevurah è la spada della giustizia: la forza necessaria per tagliare ciò che non serve, per dire no con fermezza, per mantenere l\'integrità sotto pressione. Non è crudeltà, è la chirurgia sacra che salva. Cosa, nella tua vita, richiede oggi un taglio netto? Quale accordo, relazione, abitudine o pensiero stai trascinando per paura, quando invece dovresti lasciarlo andare con rispetto e fermezza?',
+          luci: 'Disciplina autentica, coraggio nelle scelte difficili, integrità sotto pressione, capacità di proteggere ciò che è sacro.',
+          ombre: 'Rigidità eccessiva, giudizio severo verso sé e gli altri, uso della forza senza misericordia, perfezionismo paralizzante.',
+          meditazione: 'Stringi i pugni con tutta la forza che hai e tienili chiusi per dieci secondi. Poi rilascia di colpo e senti la differenza. Cosa devi lasciare andare con questa stessa energia di rilascio?' },
+        en: { nome: 'Gevurah', trad: 'Severity / Strength', pianeta: 'Mars', arcangelo: 'Camael', colore: 'Deep red',
+          desc: 'Gevurah is the sword of justice: the strength needed to cut away what no longer serves, to say no firmly, to keep your integrity under pressure. This isn\'t cruelty — it\'s the sacred surgery that saves. What in your life needs a clean cut today? Which agreement, relationship, habit or thought are you dragging along out of fear, when you should be releasing it with respect and resolve?',
+          luci: 'Real discipline, courage to make hard choices, integrity under pressure, the strength to protect what is sacred.',
+          ombre: 'Excessive rigidity, harsh judgment of yourself and others, force used without mercy, paralysing perfectionism.',
+          meditazione: 'Clench both fists as tightly as you can and hold for ten seconds. Then release everything at once and feel the difference. What do you need to let go of with that same release of energy?' },
+        es: { nome: 'Gevurah', trad: 'Rigor / Fuerza', pianeta: 'Marte', arcangelo: 'Camael', colore: 'Rojo oscuro',
+          desc: 'Gevurah es la espada de la justicia: la fuerza necesaria para cortar lo que ya no sirve, para decir no con firmeza, para mantener la integridad bajo presión. No es crueldad, es la cirugía sagrada que salva. ¿Qué, en tu vida, necesita hoy un corte limpio? ¿Qué acuerdo, relación, hábito o pensamiento arrastras por miedo, cuando deberías soltarlo con respeto y firmeza?',
+          luci: 'Disciplina auténtica, valor para tomar decisiones difíciles, integridad bajo presión, capacidad de proteger lo sagrado.',
+          ombre: 'Rigidez excesiva, juicio severo hacia uno mismo y hacia los demás, uso de la fuerza sin misericordia, perfeccionismo paralizante.',
+          meditazione: 'Aprieta los puños con toda tu fuerza y mantenlos así diez segundos. Luego suelta de golpe y siente la diferencia. ¿Qué necesitas soltar con esa misma energía de liberación?' }
       },
       {
-        key: 'tiferet',
-        nome: 'Tiferet',
-        trad: 'Bellezza',
-        num: 6,
-        pianeta: 'Sole',
-        arcangelo: 'Raphael',
-        colore: 'Giallo oro',
-        simbolo: '☀️',
-        desc: 'Tiferet è il cuore dell\'Albero — il centro di armonia e bellezza dove tutti i contrari si equilibrano. È la sephirah del Cristo, di Buddha, di ogni essere che ha trovato la via di mezzo tra rigore e misericordia. In questo momento sei invitato a trovare il tuo centro — il luogo in te dove gli opposti non si combattono ma si danzano. Sei equilibrio in movimento.',
-        luci: 'Armonia autentica, compassione equilibrata, centro stabile in mezzo al caos, bellezza come via spirituale, capacità di mediazione.',
-        ombre: 'Tendenza al compromesso per mantenere l\'armonia artificiale, difficoltà a stare nella tensione necessaria alla crescita.',
-        meditazione: 'Metti entrambe le mani sul cuore. Respira — 4 dentro, 4 fuori. Unisci nel cuore il cielo (testa) e la terra (piedi). Ripeti mentalmente: "Sono equilibrio in movimento."'
+        key: 'tiferet', num: 6, simbolo: '☀️',
+        it: { nome: 'Tiferet', trad: 'Bellezza', pianeta: 'Sole', arcangelo: 'Raphael', colore: 'Giallo oro',
+          desc: 'Tiferet è il cuore dell\'Albero, il centro di armonia e bellezza dove tutti gli opposti trovano equilibrio. È la sephirah del Cristo, del Buddha, di ogni essere che ha trovato la via di mezzo tra rigore e misericordia. Cerca il tuo centro: il luogo dentro di te dove gli opposti non si combattono, ma danzano insieme. Sei equilibrio in movimento, non immobilità.',
+          luci: 'Armonia autentica, compassione equilibrata, un centro stabile in mezzo al caos, la bellezza vissuta come via spirituale, talento naturale per la mediazione.',
+          ombre: 'Tendenza al compromesso che maschera un\'armonia artificiale, difficoltà a reggere la tensione necessaria alla crescita.',
+          meditazione: 'Poggia entrambe le mani sul cuore e respira: quattro tempi dentro, quattro fuori. Unisci nel cuore il cielo, sopra la testa, e la terra, sotto i piedi. Ripeti mentalmente: sono equilibrio in movimento.' },
+        en: { nome: 'Tiferet', trad: 'Beauty', pianeta: 'Sun', arcangelo: 'Raphael', colore: 'Golden yellow',
+          desc: 'Tiferet is the heart of the Tree, the centre of harmony and beauty where every opposite finds balance. It is the sephirah of the Christ, of the Buddha, of anyone who has found the middle way between severity and mercy. Look for your own centre — the place inside you where opposites stop fighting and start dancing together. You are balance in motion, not stillness.',
+          luci: 'Genuine harmony, balanced compassion, a stable centre amid chaos, beauty lived as a spiritual path, a natural gift for mediation.',
+          ombre: 'A tendency to compromise that masks artificial harmony, difficulty holding the tension that growth requires.',
+          meditazione: 'Rest both hands on your heart and breathe: four counts in, four counts out. In your heart, join the sky above your head and the earth beneath your feet. Repeat silently: I am balance in motion.' },
+        es: { nome: 'Tiferet', trad: 'Belleza', pianeta: 'Sol', arcangelo: 'Rafael', colore: 'Amarillo dorado',
+          desc: 'Tiferet es el corazón del Árbol, el centro de armonía y belleza donde todos los opuestos se equilibran. Es la sefirá de Cristo, de Buda, de todo ser que ha encontrado el camino medio entre el rigor y la misericordia. Busca tu propio centro: el lugar dentro de ti donde los opuestos no luchan, sino que danzan juntos. Eres equilibrio en movimiento, no quietud.',
+          luci: 'Armonía auténtica, compasión equilibrada, un centro estable en medio del caos, la belleza vivida como camino espiritual, talento natural para la mediación.',
+          ombre: 'Tendencia al compromiso que enmascara una armonía artificial, dificultad para sostener la tensión necesaria para crecer.',
+          meditazione: 'Coloca ambas manos sobre el corazón y respira: cuatro tiempos al inhalar, cuatro al exhalar. Une en el corazón el cielo, sobre tu cabeza, y la tierra, bajo tus pies. Repite mentalmente: soy equilibrio en movimiento.' }
       },
       {
-        key: 'netzach',
-        nome: 'Netzach',
-        trad: 'Vittoria / Eternità',
-        num: 7,
-        pianeta: 'Venere',
-        arcangelo: 'Haniel',
-        colore: 'Verde smeraldo',
-        simbolo: '💚',
-        desc: 'Netzach è il regno dell\'emozione, dell\'arte e dell\'istinto — la vittoria della vita che persiste nonostante tutto. Venere porta bellezza, piacere, desiderio, la forza creativa che non si arrende. In questo momento sei chiamato a onorare i tuoi desideri profondi — non a scusarti per essi. Cosa ti muove davvero? Cosa ti fa sentire vivo, bello, desiderante? Il desiderio autentico è sacro.',
-        luci: 'Passione creativa inesauribile, connessione con la natura e la bellezza, emozioni come carburante spirituale, persistenza che sorpassa gli ostacoli.',
-        ombre: 'Eccesso emotivo, incapacità di posticipare la gratificazione, dipendenza da esperienze di picco, perdita di direzione nel mare delle emozioni.',
-        meditazione: 'Cammina lentamente, scalzo se possibile. Senti ogni passo a terra. Cosa ti trattiene nel camminare? Cosa ti spinge avanti? Lascia che il corpo risponda senza filtri mentali.'
+        key: 'netzach', num: 7, simbolo: '💚',
+        it: { nome: 'Netzach', trad: 'Vittoria / Eternità', pianeta: 'Venere', arcangelo: 'Haniel', colore: 'Verde smeraldo',
+          desc: 'Netzach è il regno dell\'emozione, dell\'arte e dell\'istinto: la vittoria della vita che persiste comunque vada. Venere porta bellezza, piacere, desiderio, la forza creativa che non si arrende mai. Onora i tuoi desideri più profondi, senza scusarti per essi. Cosa ti muove davvero? Cosa ti fa sentire vivo, bello, desiderante? Il desiderio autentico è sacro, non un peso di cui vergognarsi.',
+          luci: 'Passione creativa inesauribile, connessione con la natura e la bellezza, emozioni vissute come carburante spirituale, persistenza che supera gli ostacoli.',
+          ombre: 'Eccesso emotivo, difficoltà a rimandare la gratificazione, dipendenza da esperienze di picco, smarrimento nel mare delle emozioni.',
+          meditazione: 'Cammina lentamente, a piedi nudi se puoi, e senti ogni passo che tocca terra. Cosa ti trattiene mentre cammini? Cosa ti spinge avanti? Lascia che sia il corpo a rispondere, senza filtri mentali.' },
+        en: { nome: 'Netzach', trad: 'Victory / Eternity', pianeta: 'Venus', arcangelo: 'Haniel', colore: 'Emerald green',
+          desc: 'Netzach is the realm of emotion, art and instinct: the victory of life that keeps going no matter what. Venus brings beauty, pleasure, desire, the creative force that never surrenders. Honour your deepest desires without apologising for them. What truly moves you? What makes you feel alive, beautiful, wanting? Genuine desire is sacred, not something to feel ashamed of.',
+          luci: 'Inexhaustible creative passion, connection with nature and beauty, emotions used as spiritual fuel, persistence that outlasts obstacles.',
+          ombre: 'Emotional excess, difficulty delaying gratification, dependence on peak experiences, losing direction in a sea of feelings.',
+          meditazione: 'Walk slowly, barefoot if you can, feeling each step touch the ground. What holds you back as you walk? What pushes you forward? Let the body answer, without mental filters.' },
+        es: { nome: 'Netzach', trad: 'Victoria / Eternidad', pianeta: 'Venus', arcangelo: 'Haniel', colore: 'Verde esmeralda',
+          desc: 'Netzach es el reino de la emoción, el arte y el instinto: la victoria de la vida que persiste pase lo que pase. Venus trae belleza, placer, deseo, la fuerza creativa que nunca se rinde. Honra tus deseos más profundos, sin disculparte por ellos. ¿Qué te mueve de verdad? ¿Qué te hace sentir vivo, hermoso, deseante? El deseo auténtico es sagrado, no una carga de la que avergonzarse.',
+          luci: 'Pasión creativa inagotable, conexión con la naturaleza y la belleza, emociones vividas como combustible espiritual, persistencia que supera los obstáculos.',
+          ombre: 'Exceso emocional, dificultad para posponer la gratificación, dependencia de experiencias intensas, pérdida de rumbo en el mar de las emociones.',
+          meditazione: 'Camina lentamente, descalzo si puedes, y siente cada paso que toca el suelo. ¿Qué te retiene mientras caminas? ¿Qué te impulsa hacia adelante? Deja que sea el cuerpo quien responda, sin filtros mentales.' }
       },
       {
-        key: 'hod',
-        nome: 'Hod',
-        trad: 'Splendore',
-        num: 8,
-        pianeta: 'Mercurio',
-        arcangelo: 'Michael',
-        colore: 'Arancione',
-        simbolo: '🟠',
-        desc: 'Hod è lo splendore dell\'intelletto — Mercurio che porta chiarezza, linguaggio, comunicazione, logica e la magia delle parole. La tua mente ora è un\'arma raffinata: usala. Hod ti chiede di portare la luce della ragione nelle aree oscure della tua vita, di articolare ciò che finora era solo sentito, di fare la mappa del territorio interiore con parole precise. Scrivi. Parla. Articola la tua verità.',
-        luci: 'Chiarezza mentale eccezionale, comunicazione potente, capacità di vedere i pattern logici, scrittura e linguaggio come strumenti magici.',
-        ombre: 'Intellettualizzazione delle emozioni, arroganza cognitiva, difficoltà a vivere ciò che si capisce, critiche eccessive verso se stessi e gli altri.',
-        meditazione: 'Scrivi una domanda che ti perseguita. Rispondi con 3 frasi logiche. Poi con 3 frasi intuitive. Confrontale senza giudizio. Cosa emerge tra i due linguaggi?'
+        key: 'hod', num: 8, simbolo: '🟠',
+        it: { nome: 'Hod', trad: 'Splendore', pianeta: 'Mercurio', arcangelo: 'Michael', colore: 'Arancione',
+          desc: 'Hod è lo splendore dell\'intelletto: Mercurio che porta chiarezza, linguaggio, comunicazione, logica e la magia delle parole. La tua mente, in questa fase, è uno strumento raffinato — usala bene. Hod ti chiede di portare la luce della ragione nelle zone d\'ombra della tua vita, di dare parole a ciò che finora era solo sentito, di tracciare la mappa del tuo mondo interiore con precisione. Scrivi. Parla. Metti in parole la tua verità.',
+          luci: 'Chiarezza mentale non comune, comunicazione efficace, capacità di leggere i pattern logici, scrittura e linguaggio come strumenti quasi magici.',
+          ombre: 'Intellettualizzazione delle emozioni, arroganza cognitiva, difficoltà a vivere davvero ciò che si comprende, autocritica eccessiva rivolta a sé e agli altri.',
+          meditazione: 'Scrivi una domanda che ti perseguita da tempo. Rispondi prima con tre frasi logiche, poi con tre frasi intuitive. Confrontale senza giudicarle: cosa emerge tra i due linguaggi?' },
+        en: { nome: 'Hod', trad: 'Splendour', pianeta: 'Mercury', arcangelo: 'Michael', colore: 'Orange',
+          desc: 'Hod is the splendour of the intellect: Mercury bringing clarity, language, communication, logic and the magic of words. Right now your mind is a finely tuned instrument — use it well. Hod asks you to bring the light of reason into the shadowy corners of your life, to put into words what until now was only felt, to map your inner world with precision. Write. Speak. Put your truth into words.',
+          luci: 'Unusual mental clarity, effective communication, the ability to spot logical patterns, writing and language used as near-magical tools.',
+          ombre: 'Intellectualising emotions, cognitive arrogance, difficulty actually living what you understand, excessive self-criticism aimed at yourself and others.',
+          meditazione: 'Write down a question that has been haunting you. Answer it first with three logical sentences, then with three intuitive ones. Compare them without judging: what emerges between the two languages?' },
+        es: { nome: 'Hod', trad: 'Esplendor', pianeta: 'Mercurio', arcangelo: 'Miguel', colore: 'Naranja',
+          desc: 'Hod es el esplendor del intelecto: Mercurio que aporta claridad, lenguaje, comunicación, lógica y la magia de las palabras. Tu mente, en esta etapa, es un instrumento refinado — úsala bien. Hod te pide llevar la luz de la razón a las zonas oscuras de tu vida, poner en palabras lo que hasta ahora solo sentías, trazar el mapa de tu mundo interior con precisión. Escribe. Habla. Pon tu verdad en palabras.',
+          luci: 'Claridad mental poco común, comunicación eficaz, capacidad de leer patrones lógicos, escritura y lenguaje como herramientas casi mágicas.',
+          ombre: 'Intelectualización de las emociones, arrogancia cognitiva, dificultad para vivir realmente lo que se comprende, autocrítica excesiva hacia uno mismo y hacia los demás.',
+          meditazione: 'Escribe una pregunta que te persigue desde hace tiempo. Respóndela primero con tres frases lógicas, luego con tres frases intuitivas. Compáralas sin juzgarlas: ¿qué surge entre los dos lenguajes?' }
       },
       {
-        key: 'yesod',
-        nome: 'Yesod',
-        trad: 'Fondamento',
-        num: 9,
-        pianeta: 'Luna',
-        arcangelo: 'Gabriel',
-        colore: 'Viola',
-        simbolo: '🌙',
-        desc: 'Yesod è il fondamento immaginale — il filtro tra il mondo spirituale e il materiale, la luna che riflette il sole, il luogo dei sogni e dell\'immaginazione. Qui risiede il tuo inconscio personale, la tua storia di vita emotiva, i pattern ancestrali. In questo momento il tuo inconscio ti sta comunicando qualcosa di importante. Presta attenzione ai sogni, alle sincronicità, alle immagini spontanee.',
-        luci: 'Ricettività psichica, connessione con i sogni e i simboli, intuizione emotiva profonda, immaginazione creativa come strumento spirituale.',
-        ombre: 'Instabilità lunare, eccessiva permeabilità alle energie altrui, difficoltà a distinguere reale da immaginario, cicli emotivi non integrati.',
-        meditazione: 'Prima di dormire, visualizza una porta davanti a te. Non aprirla. Siediti davanti ad essa. Osserva il colore, la forma, cosa senti da dietro. Annota appena svegli.'
+        key: 'yesod', num: 9, simbolo: '🌙',
+        it: { nome: 'Yesod', trad: 'Fondamento', pianeta: 'Luna', arcangelo: 'Gabriel', colore: 'Viola',
+          desc: 'Yesod è il fondamento immaginale, il filtro tra mondo spirituale e mondo materiale: la luna che riflette il sole, la sede dei sogni e dell\'immaginazione. Qui abita il tuo inconscio personale, la tua storia emotiva, i pattern che porti in eredità. Qualcosa, nel tuo inconscio, sta cercando di comunicarti qualcosa di importante in questi giorni: presta attenzione ai sogni, alle sincronicità, alle immagini che arrivano senza essere chiamate.',
+          luci: 'Ricettività psichica sviluppata, connessione viva con sogni e simboli, intuizione emotiva profonda, immaginazione creativa come strumento spirituale.',
+          ombre: 'Instabilità lunare, permeabilità eccessiva alle energie altrui, difficoltà a distinguere reale da immaginario, cicli emotivi non ancora integrati.',
+          meditazione: 'Prima di addormentarti, visualizza una porta davanti a te. Non aprirla: siediti di fronte ad essa. Osserva colore, forma, ciò che percepisci provenire da dietro. Annota tutto appena sveglio.' },
+        en: { nome: 'Yesod', trad: 'Foundation', pianeta: 'Moon', arcangelo: 'Gabriel', colore: 'Purple',
+          desc: 'Yesod is the imaginal foundation, the filter between the spiritual and material worlds: the moon reflecting the sun, the home of dreams and imagination. This is where your personal unconscious lives, your emotional history, the patterns you inherited. Something in your unconscious is trying to tell you something important these days: pay attention to dreams, synchronicities, images that arrive uninvited.',
+          luci: 'Well-developed psychic receptivity, a live connection with dreams and symbols, deep emotional intuition, creative imagination used as a spiritual tool.',
+          ombre: 'Lunar instability, excessive permeability to other people\'s energy, difficulty telling real from imagined, emotional cycles not yet integrated.',
+          meditazione: 'Before falling asleep, picture a door in front of you. Don\'t open it — just sit facing it. Notice its colour, its shape, whatever you sense coming from behind it. Write everything down the moment you wake.' },
+        es: { nome: 'Yesod', trad: 'Fundamento', pianeta: 'Luna', arcangelo: 'Gabriel', colore: 'Violeta',
+          desc: 'Yesod es el fundamento imaginal, el filtro entre el mundo espiritual y el material: la luna que refleja el sol, la sede de los sueños y la imaginación. Aquí habita tu inconsciente personal, tu historia emocional, los patrones que llevas en herencia. Algo, en tu inconsciente, está intentando comunicarte algo importante estos días: presta atención a los sueños, a las sincronicidades, a las imágenes que llegan sin ser llamadas.',
+          luci: 'Receptividad psíquica desarrollada, conexión viva con sueños y símbolos, intuición emocional profunda, imaginación creativa como herramienta espiritual.',
+          ombre: 'Inestabilidad lunar, permeabilidad excesiva a energías ajenas, dificultad para distinguir lo real de lo imaginario, ciclos emocionales aún no integrados.',
+          meditazione: 'Antes de dormir, visualiza una puerta frente a ti. No la abras: siéntate frente a ella. Observa su color, su forma, lo que percibes que viene de detrás. Anótalo todo apenas despiertes.' }
       },
       {
-        key: 'malkuth',
-        nome: 'Malkuth',
-        trad: 'Regno',
-        num: 10,
-        pianeta: 'Terra',
-        arcangelo: 'Sandalphon',
-        colore: 'Citrino / Oliva',
-        simbolo: '🌍',
-        desc: 'Malkuth è il regno manifesto — il punto dove l\'eterno si fa carne, dove il divino si tocca con le mani. È la sephirah della terra, del corpo, del momento presente. Tutti i percorsi dell\'Albero convergono qui: nella tua vita quotidiana, nel tuo corpo, nel tuo lavoro, nelle tue relazioni reali. Non esiste spiritualità autentica che non si incarni. La realtà materiale è sacra. Sei già dove devi essere.',
-        luci: 'Incarnazione autentica, presenza totale nel corpo e nella realtà, capacità di manifestare i sogni in forma concreta, gratitudine per il materiale.',
-        ombre: 'Eccessivo attaccamento al materiale, dimenticare la dimensione spirituale dell\'esistenza, reattività alle circostanze senza distanza interiore.',
-        meditazione: 'Tocca 5 oggetti fisici intorno a te. Per ognuno: nominalo, senti il peso, la temperatura, la trama. Sei qui. Il sacro non è altrove. La realtà è sacra.'
+        key: 'malkuth', num: 10, simbolo: '🌍',
+        it: { nome: 'Malkuth', trad: 'Regno', pianeta: 'Terra', arcangelo: 'Sandalphon', colore: 'Citrino / Oliva',
+          desc: 'Malkuth è il regno manifesto, il punto in cui l\'eterno si fa carne e il divino si tocca con le mani. È la sephirah della terra, del corpo, del momento presente. Tutti i sentieri dell\'Albero convergono qui: nella tua vita quotidiana, nel tuo corpo, nel tuo lavoro, nelle relazioni che vivi ogni giorno. Non esiste spiritualità autentica che non si incarni. La realtà materiale è sacra tanto quanto quella invisibile. Sei già, esattamente, dove dovevi essere.',
+          luci: 'Incarnazione autentica, presenza piena nel corpo e nella realtà, capacità di dare forma concreta ai sogni, gratitudine per ciò che è materiale.',
+          ombre: 'Attaccamento eccessivo al materiale, dimenticanza della dimensione spirituale dell\'esistenza, reattività alle circostanze senza distanza interiore.',
+          meditazione: 'Tocca cinque oggetti intorno a te, uno alla volta. Per ognuno: nominalo, senti il peso, la temperatura, la trama. Sei qui, adesso. Il sacro non è altrove: la realtà è sacra.' },
+        en: { nome: 'Malkuth', trad: 'Kingdom', pianeta: 'Earth', arcangelo: 'Sandalphon', colore: 'Citrine / Olive',
+          desc: 'Malkuth is the manifest kingdom, the point where the eternal becomes flesh and the divine can be touched with your hands. It is the sephirah of earth, of the body, of the present moment. Every path on the Tree converges here: in your daily life, in your body, in your work, in the relationships you live out every day. There is no authentic spirituality that doesn\'t become flesh. Material reality is just as sacred as the invisible one. You are already, exactly, where you needed to be.',
+          luci: 'Genuine embodiment, full presence in body and reality, the ability to give concrete form to dreams, gratitude for the material world.',
+          ombre: 'Excessive attachment to material things, forgetting the spiritual dimension of existence, reacting to circumstances with no inner distance.',
+          meditazione: 'Touch five objects around you, one at a time. For each: name it, feel its weight, its temperature, its texture. You are here, now. The sacred isn\'t elsewhere — reality is sacred.' },
+        es: { nome: 'Malkuth', trad: 'Reino', pianeta: 'Tierra', arcangelo: 'Sandalfón', colore: 'Citrino / Oliva',
+          desc: 'Malkuth es el reino manifiesto, el punto donde lo eterno se hace carne y lo divino se toca con las manos. Es la sefirá de la tierra, del cuerpo, del momento presente. Todos los senderos del Árbol convergen aquí: en tu vida cotidiana, en tu cuerpo, en tu trabajo, en las relaciones que vives cada día. No existe espiritualidad auténtica que no se encarne. La realidad material es tan sagrada como la invisible. Ya estás, exactamente, donde debías estar.',
+          luci: 'Encarnación auténtica, presencia plena en el cuerpo y en la realidad, capacidad de dar forma concreta a los sueños, gratitud por lo material.',
+          ombre: 'Apego excesivo a lo material, olvido de la dimensión espiritual de la existencia, reactividad ante las circunstancias sin distancia interior.',
+          meditazione: 'Toca cinco objetos a tu alrededor, uno a uno. Para cada uno: nómbralo, siente su peso, su temperatura, su textura. Estás aquí, ahora. Lo sagrado no está en otra parte: la realidad es sagrada.' }
       }
     ];
 
@@ -1326,7 +1440,10 @@
     function updateAudioToggle() {
       const btn = $('audio-toggle');
       if (btn) {
-        btn.textContent = (AudioManager.audio && !AudioManager.audio.paused) ? '🔉' : '🔊';
+        const playing = AudioManager.audio && !AudioManager.audio.paused;
+        btn.textContent = playing ? '🔉' : '🔊';
+        const A = LANG[currentLang]?.aria;
+        if (A) btn.setAttribute('aria-label', playing ? A.musicOff : A.musicOn);
       }
     }
 
@@ -1387,17 +1504,39 @@ function isPremium() {
       document.querySelector('meta[name="twitter:image"]').content = seo.twitterImage;
       document.querySelector('meta[property="og:locale"]').content = currentLang === 'it' ? 'it_IT' : currentLang === 'en' ? 'en_US' : 'es_ES';
 
+      const txtForSchema = LANG[currentLang];
+      const localeMap = { it: 'it-IT', en: 'en-US', es: 'es-ES' };
+
       const schemaLD = {
         '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: seo.faqLD.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
+        '@graph': [
+          {
+            '@type': 'FAQPage',
+            mainEntity: seo.faqLD.map(item => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a }
+            }))
+          },
+          {
+            '@type': 'Article',
+            headline: txtForSchema.artTitle,
+            description: seo.description,
+            image: seo.ogImage,
+            inLanguage: localeMap[currentLang] || 'it-IT',
+            author: { '@type': 'Person', name: 'Dott. Petrolese Giovanni' },
+            publisher: { '@type': 'Organization', name: 'MYSTICA Oracoli', url: 'https://mysticaoracoli.it/' },
+            mainEntityOfPage: 'https://mysticaoracoli.it/cabala.html'
+          },
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mysticaoracoli.it/index.html' },
+              { '@type': 'ListItem', position: 2, name: 'Oracoli', item: 'https://mysticaoracoli.it/oracoli.html' },
+              { '@type': 'ListItem', position: 3, name: txtForSchema.pageTitle, item: 'https://mysticaoracoli.it/cabala.html' }
+            ]
           }
-        }))
+        ]
       };
       document.getElementById('schema-json').textContent = JSON.stringify(schemaLD);
     }
@@ -1421,6 +1560,7 @@ function isPremium() {
 
       $('art-title').textContent = txt.artTitle;
       $('art-intro').textContent = txt.artIntro;
+      const heroImg = $('art-hero'); if (heroImg) heroImg.alt = txt.artImgAlt || '';
       $('artP1').textContent = txt.artP1;
       $('artP2').textContent = txt.artP2;
       $('artP3').textContent = txt.artP3;
@@ -1441,6 +1581,8 @@ function isPremium() {
       $('footer-about').textContent = txt.footerAbout;
 
       renderSephirot();
+      updateAudioToggle();
+      updateThemeToggle();
     }
 
     /* ── Render Sephirot Grid ── */
@@ -1451,9 +1593,9 @@ function isPremium() {
       
       DB_CABALA.forEach((s, i) => {
         const btn = document.createElement('button');
-        btn.className = 'seph-btn' + (i === 0 ? ' active' : '');
+        btn.className = 'seph-btn' + (i === _kabSeph ? ' active' : '');
         btn.id = 'kabTab' + i;
-        btn.textContent = s.nome;
+        btn.textContent = s[currentLang].nome;
         btn.onclick = () => kabSelSeph(i);
         grid.appendChild(btn);
       });
@@ -1513,28 +1655,30 @@ function isPremium() {
 
     function calcCabala() {
       const domanda = ($('kabDomanda')?.value || '').trim();
-      const d = DB_CABALA[_kabSeph];
+      const s = DB_CABALA[_kabSeph];
+      const d = s[currentLang];
+      const R = LANG[currentLang].result;
 
       const domHtml = domanda
-        ? `<div style="background: rgba(10, 5, 20, 0.5); border: 1px solid var(--border); border-radius: 10px; color: var(--muted); font-style: italic; font-size: 13px; padding: 10px 14px; margin-bottom: 14px; text-align: center;">❓ "${domanda}"</div>`
+        ? `<div style="background: rgba(10, 5, 20, 0.5); border: 1px solid var(--border); border-radius: 10px; color: var(--muted); font-style: italic; font-size: 13px; padding: 10px 14px; margin-bottom: 14px; text-align: center;">❓ "${escapeHtml(domanda)}"</div>`
         : '';
 
       $('kabResult').innerHTML = `
         <div class="result-header">
-          <div class="result-icon">${d.simbolo}</div>
+          <div class="result-icon">${s.simbolo}</div>
           <div class="result-name">${d.nome}</div>
           <div class="result-translation">${d.trad.toUpperCase()}</div>
-          <span class="result-tag">Sephirah ${d.num} · ${d.pianeta}</span>
+          <span class="result-tag">${R.sephirahWord} ${s.num} · ${d.pianeta}</span>
         </div>
         <div class="result-grid">
-          <div class="result-card"><div class="result-card-icon">👼</div><div class="result-card-label">Arcangelo</div><div class="result-card-val">${d.arcangelo}</div></div>
-          <div class="result-card"><div class="result-card-icon">🎨</div><div class="result-card-label">Colore</div><div class="result-card-val">${d.colore}</div></div>
+          <div class="result-card"><div class="result-card-icon">👼</div><div class="result-card-label">${R.archangel}</div><div class="result-card-val">${d.arcangelo}</div></div>
+          <div class="result-card"><div class="result-card-icon">🎨</div><div class="result-card-label">${R.color}</div><div class="result-card-val">${d.colore}</div></div>
         </div>
         ${domHtml}
-        <div class="result-block"><h4>🌌 ${LANG[currentLang].pageTitle === 'Cabala' ? 'Il Messaggio della Sephirah' : 'The Message of the Sephirah'}</h4><p>${d.desc}</p></div>
-        <div class="result-block"><h4>✨ ${LANG[currentLang].pageTitle === 'Cabala' ? 'Doni' : 'Gifts'}</h4><p>${d.luci}</p></div>
-        <div class="result-block"><h4>⚠️ ${LANG[currentLang].pageTitle === 'Cabala' ? 'Sfide da Integrare' : 'Challenges to Integrate'}</h4><p>${d.ombre}</p></div>
-        <div class="result-block" style="border-left-color: #c8b4ff;"><h4 style="color: #c8b4ff;">🧘 ${LANG[currentLang].pageTitle === 'Cabala' ? 'Meditazione Kabbalistica' : 'Kabbalistic Meditation'}</h4><p>${d.meditazione}</p></div>
+        <div class="result-block"><h4>🌌 ${R.message}</h4><p>${d.desc}</p></div>
+        <div class="result-block"><h4>✨ ${R.gifts}</h4><p>${d.luci}</p></div>
+        <div class="result-block"><h4>⚠️ ${R.challenges}</h4><p>${d.ombre}</p></div>
+        <div class="result-block" style="border-left-color: #c8b4ff;"><h4 style="color: #c8b4ff;">🧘 ${R.meditation}</h4><p>${d.meditazione}</p></div>
         <div class="btn-grp">
           <button class="btn btn-sec" onclick="resetCabala()">🔄 ${LANG[currentLang].btnRandom}</button>
         </div>
@@ -1543,6 +1687,12 @@ function isPremium() {
       $('kabFormBtns').style.display = 'flex';
       $('kabDomanda').style.display = 'none';
       $('kabResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
     }
 
     function resetCabala() {
@@ -1584,7 +1734,15 @@ function isPremium() {
 
       $('share-copy')?.addEventListener('click', () => {
         navigator.clipboard.writeText(url).then(() => {
-          alert(currentLang === 'it' ? 'Link copiato!' : currentLang === 'en' ? 'Link copied!' : '¡Enlace copiado!');
+          const btn = $('share-copy');
+          if (!btn) return;
+          const original = btn.textContent;
+          btn.textContent = '✓';
+          btn.setAttribute('aria-label', LANG[currentLang].shareCopied || 'Copiato!');
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.setAttribute('aria-label', 'Copy Link');
+          }, 2000);
         });
       });
     }
@@ -1613,6 +1771,8 @@ function isPremium() {
       const btn = $('theme-toggle');
       if (btn) {
         btn.textContent = currentTheme === 'night' ? '🌙' : '☀️';
+        const A = LANG[currentLang]?.aria;
+        if (A) btn.setAttribute('aria-label', currentTheme === 'night' ? A.themeDay : A.themeNight);
       }
     }
 
