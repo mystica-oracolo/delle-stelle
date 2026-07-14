@@ -289,6 +289,7 @@ input[type=range]{cursor:pointer;accent-color:var(--gold)}
 
 /* ── TOC — striscia "episodi" scorrevole in stile streaming ── */
 .toc-wrap{max-width:680px;margin:0 auto 28px;padding:0 0 4px;position:relative;z-index:1}
+@media(min-width:681px){.toc-wrap{max-width:960px}}
 .toc-label{font-family:'Cinzel',serif;font-size:12px;color:var(--muted);letter-spacing:2px;text-align:center;margin-bottom:12px;text-transform:uppercase;padding:0 20px}
 .toc-pills{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
 .toc-pills::-webkit-scrollbar{height:5px}
