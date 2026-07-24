@@ -88,7 +88,6 @@
         _currentUser = user;
         if (_authReadyResolve) { _authReadyResolve(); _authReadyResolve = null; }
         document.dispatchEvent(new CustomEvent('mystica-auth-changed', { detail: { user } }));
-        _renderAccountWidget();
         if (user) {
           _migrateLegacyDataIfNeeded(user);
           _listenPremium(user.uid);
@@ -210,9 +209,6 @@
 .au-footer{margin-top:14px;}
 .au-footer a,.au-footer button.au-skip{color:rgba(212,175,55,.65);font-size:.78rem;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Cinzel',serif;display:block;margin:6px auto 0;}
 .au-footer a:hover,.au-footer button.au-skip:hover{color:#d4af37;}
-#_myst_account_widget{position:fixed;bottom:18px;left:18px;z-index:9998;background:rgba(20,12,36,.9);border:1px solid rgba(212,175,55,.4);border-radius:24px;padding:8px 14px;font-family:'Cinzel',serif;font-size:.72rem;color:#d4af37;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px;}
-#_myst_account_widget:hover{border-color:#d4af37;}
-@media (max-width:680px){#_myst_account_widget{bottom:calc(64px + env(safe-area-inset-bottom,0px) + 12px);}}
 `;
 
   function _ensureCss() {
@@ -221,27 +217,6 @@
       s.id = '_myst_auth_css';
       s.textContent = CSS;
       document.head.appendChild(s);
-    }
-  }
-
-  /* ── Widget account fisso (basso-sinistra) ── */
-  function _renderAccountWidget() {
-    _ensureCss();
-    let w = document.getElementById('_myst_account_widget');
-    if (!w) {
-      w = document.createElement('div');
-      w.id = '_myst_account_widget';
-      document.body.appendChild(w);
-      w.addEventListener('click', () => {
-        if (_currentUser) { MysticaAuth.openAccountMenu(); }
-        else { MysticaAuth.openAuthModal('login'); }
-      });
-    }
-    if (_currentUser) {
-      const label = _currentUser.email ? _currentUser.email.split('@')[0] : 'Account';
-      w.innerHTML = `✦ ${label}${_cachedPremium ? ' ★' : ''}`;
-    } else {
-      w.innerHTML = `✦ Accedi`;
     }
   }
 
@@ -419,5 +394,4 @@
   };
 
   window.MysticaAuth = MysticaAuth;
-  document.addEventListener('DOMContentLoaded', _renderAccountWidget);
 })();

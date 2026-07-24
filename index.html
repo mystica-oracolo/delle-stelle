@@ -956,6 +956,9 @@ body {
   </div>
 </section>
 
+<!-- ══ Saluto utente (solo se loggato) ══ -->
+<p id="welcomeMsg" style="display:none;text-align:center;font-family:'Cinzel',serif;color:var(--gold);font-size:13px;letter-spacing:.3px;margin:14px 0 2px;">✦ Benvenuto, <span id="welcomeName"></span></p>
+
 <!-- ══ Badge statistiche ══ -->
 <div class="nf-stats-row">
   <a href="./enciclopedia.html" class="nf-stat-card">
@@ -2550,6 +2553,24 @@ function submitRegistration() {
   if (email) localStorage.setItem('myst_v3_email', email);
   closeRegModal(false);
 }
+/* ── Saluto utente in home ── */
+function _updateWelcome(user) {
+  const el = document.getElementById('welcomeMsg');
+  const nameEl = document.getElementById('welcomeName');
+  if (!el || !nameEl) return;
+  if (user) {
+    nameEl.textContent = user.displayName || (user.email ? user.email.split('@')[0] : 'Account');
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+document.addEventListener('mystica-auth-changed', (e) => _updateWelcome(e.detail.user));
+(async function initWelcome() {
+  try { if (window.MysticaAuth) await window.MysticaAuth.ready(); } catch (e) {}
+  if (window.MysticaAuth && window.MysticaAuth.isLoggedIn()) _updateWelcome(window.MysticaAuth.currentUser());
+})();
+
 async function initRegModal() {
   if (localStorage.getItem('myst_v3_reg_seen')) return;
   // Aspetta che Firebase Auth finisca di ripristinare la sessione (può richiedere
