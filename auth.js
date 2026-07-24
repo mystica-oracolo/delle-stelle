@@ -212,6 +212,7 @@
 .au-footer a:hover,.au-footer button.au-skip:hover{color:#d4af37;}
 #_myst_account_widget{position:fixed;bottom:18px;left:18px;z-index:9998;background:rgba(20,12,36,.9);border:1px solid rgba(212,175,55,.4);border-radius:24px;padding:8px 14px;font-family:'Cinzel',serif;font-size:.72rem;color:#d4af37;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px;}
 #_myst_account_widget:hover{border-color:#d4af37;}
+@media (max-width:680px){#_myst_account_widget{bottom:calc(64px + env(safe-area-inset-bottom,0px) + 12px);}}
 `;
 
   function _ensureCss() {
